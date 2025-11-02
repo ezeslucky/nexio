@@ -1,38 +1,90 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+.yarn/versions
 
-# Dependencies
+# compiled output
+*dist
+/tmp
+/out-tsc
+.nyc_output
+.coverage
+.swc
+
+# dependencies
 node_modules
-.pnp
-.pnp.js
 
-# Local env files
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# IDEs and editors
+**/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# Testing
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.template.json
+!.vscode/launch.template.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
 coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+.pnpm-debug.log
+/typings
+tsconfig.tsbuildinfo
 
-# Turbo
-.turbo
-
-# Vercel
-.vercel
-
-# Build Outputs
-.next/
-out/
-build
-dist
-
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Misc
+# System Files
 .DS_Store
-*.pem
+Thumbs.db
+
+# env
+*.env.local
+*.local.env
+.history
+
+.next
+.vercel
+out/
+storybook-static
+
+test-results
+playwright-report
+playwright/.cache
+download
+
+# Cache
+.eslintcache
+next-env.d.ts
+.rollup.cache
+
+# Rust
+target
+*.node
+tsconfig.node.tsbuildinfo
+lib
+affine.db
+apps/web/next-routes.conf
+.nx
+
+packages/frontend/templates/edgeless
+packages/frontend/core/public/static/templates
+
+# script
+af
+af.cmd
+*.resolved
+
+# playwright
+storageState.json
