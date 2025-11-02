@@ -1,0 +1,35 @@
+name: 'Prepare Server Test Environment'
+description: 'Prepare Server Test Environment'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Bundle @affine/reader
+      shell: bash
+      run: |
+        yarn affine @affine/reader build
+
+    - name: Initialize database
+      shell: bash
+      run: |
+        psql -h localhost -U postgres -c "CREATE DATABASE affine;"
+        psql -h localhost -U postgres -c "CREATE USER affine WITH PASSWORD 'affine';"
+        psql -h localhost -U postgres -c "ALTER USER affine WITH SUPERUSER;"
+      env:
+        PGPASSWORD: affine
+
+    - name: Run init-db script
+      shell: bash
+      env:
+        NODE_ENV: test
+      run: |
+        yarn affine @affine/server prisma generate
+        yarn affine @affine/server prisma migrate deploy
+        yarn affine @affine/server data-migration run
+
+    - name: Import config
+      shell: bash
+      env:
+        DEFAULT_CONFIG: '{}'
+      run: |
+        printf '%s\n' "${SERVER_CONFIG:-$DEFAULT_CONFIG}" > ./packages/backend/server/config.json

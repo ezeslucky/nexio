@@ -1,0 +1,6 @@
+query getWorkspaceInfo($workspaceId: String!) {
+  workspace(id: $workspaceId) {
+    role
+    team
+  }
+}
