@@ -802,10 +802,10 @@ export type EventArgs = {
       | 'New Edgeless'
       | 'Start recording meeting'
       | 'Stop recording'
-      | 'Open AFFiNE'
-      | 'About AFFiNE'
+      | 'Open Orbit'
+      | 'About Orbit'
       | 'Meeting Settings'
-      | 'Quit AFFiNE Completely';
+      | 'Quit Orbit Completely';
   };
   mentionMember: {
     type: 'member' | 'invite' | 'more';

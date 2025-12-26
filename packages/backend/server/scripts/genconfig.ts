@@ -41,12 +41,13 @@ function convertDescriptorToSchemaProperty(descriptor: ConfigDescriptor<any>) {
 function generateJsonSchema(outputPath: string) {
   const schema = {
     $schema: 'http://json-schema.org/draft-07/schema#',
-    title: 'AFFiNE Application Configuration',
+    title: 'Orbit Application Configuration',
     type: 'object',
     properties: {},
   };
 
   getDescriptors().forEach(({ module, descriptors }) => {
+    //@ts-ignore
     schema.properties[module] = {
       type: 'object',
       description: `Configuration for ${module} module`,
@@ -54,6 +55,7 @@ function generateJsonSchema(outputPath: string) {
     };
 
     descriptors.forEach(({ key, descriptor }) => {
+      //@ts-ignore
       schema.properties[module].properties[key] =
         convertDescriptorToSchemaProperty(descriptor);
     });
@@ -68,6 +70,7 @@ function generateAdminConfigJson(outputPath: string) {
   const config = {};
   getDescriptors().forEach(({ module, descriptors }) => {
     const modulizedConfig = {};
+    //@ts-ignore
     config[module] = modulizedConfig;
     descriptors.forEach(({ key, descriptor }) => {
       let type: string;
@@ -87,7 +90,7 @@ function generateAdminConfigJson(outputPath: string) {
         default:
           type = 'String';
       }
-
+//@ts-ignore
       modulizedConfig[key] = {
         type,
         desc: descriptor.desc,
