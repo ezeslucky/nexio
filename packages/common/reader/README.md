@@ -1,4 +1,4 @@
-# Affine Blocksuite format YDoc reader
+# Orbit Blocksuite format YDoc reader
 
 ## Usage
 

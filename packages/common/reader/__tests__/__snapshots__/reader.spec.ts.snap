@@ -54,7 +54,7 @@ exports[`should get all docs from root doc work 2`] = `
 
 exports[`should parse page doc work 1`] = `
 {
-  "md": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+  "md": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 
 
@@ -62,9 +62,9 @@ exports[`should parse page doc work 1`] = `
 
 ## Local-first & Real-time collaborative
 
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
-AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 
 
@@ -72,11 +72,11 @@ AFFiNE is a local-first application upon CRDTs with real-time collaboration supp
 
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
-We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
-If you want to learn more about the product design of AFFiNE, here goes the concepts:
+If you want to learn more about the product design of Orbit, here goes the concepts:
 
-To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ## A true canvas for blocks in any form
 
@@ -95,21 +95,21 @@ For more details, please refer to our [RoadMap](https://docs.affine.pro/docs/cor
 
 ## Self Host
 
-Self host AFFiNE
+Self host Orbit
 
 ||Title|Tag|
 |---|---|---|
-|Affine Development|Affine Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">AFFiNE</span>|
-|For developers or installations guides, please go to AFFiNE Doc|For developers or installations guides, please go to AFFiNE Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
+|Orbit Development|Orbit Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">Orbit</span>|
+|For developers or installations guides, please go to Orbit Doc|For developers or installations guides, please go to Orbit Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
 |Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Trello with their Kanban|Trello with their Kanban|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Remnote & Capacities with their object-based tag system|Remnote & Capacities with their object-based tag system||
 
-## Affine Development
+## Orbit Development
 
-For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
+For developer or installation guides, please go to [Orbit Development](https://docs.affine.pro/docs/development/quick-start)
 
 
 
@@ -120,7 +120,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
         "children": [
           {
             "children": [],
-            "content": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+            "content": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 ",
             "flavour": "affine:paragraph",
@@ -156,7 +156,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
 ",
             "flavour": "affine:paragraph",
@@ -165,7 +165,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+            "content": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 ",
             "flavour": "affine:paragraph",
@@ -217,7 +217,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+            "content": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
 ",
             "flavour": "affine:paragraph",
@@ -226,7 +226,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "If you want to learn more about the product design of AFFiNE, here goes the concepts:
+            "content": "If you want to learn more about the product design of Orbit, here goes the concepts:
 
 ",
             "flavour": "affine:paragraph",
@@ -235,7 +235,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+            "content": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ",
             "flavour": "affine:paragraph",
@@ -354,7 +354,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "Self host AFFiNE
+            "content": "Self host Orbit
 
 ",
             "flavour": "affine:paragraph",
@@ -373,8 +373,8 @@ For developer or installation guides, please go to [AFFiNE Development](https://
             "children": [],
             "content": "||Title|Tag|
 |---|---|---|
-|Affine Development|Affine Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">AFFiNE</span>|
-|For developers or installations guides, please go to AFFiNE Doc|For developers or installations guides, please go to AFFiNE Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
+|Orbit Development|Orbit Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">Orbit</span>|
+|For developers or installations guides, please go to Orbit Doc|For developers or installations guides, please go to Orbit Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
 |Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Trello with their Kanban|Trello with their Kanban|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
@@ -390,16 +390,16 @@ For developer or installation guides, please go to [AFFiNE Development](https://
                 "Title": "Affine Development
 
 ",
-                "undefined": "Affine Development
+                "undefined": "Orbit Development
 
 ",
               },
               {
                 "Tag": "<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>",
-                "Title": "For developers or installations guides, please go to AFFiNE Doc
+                "Title": "For developers or installations guides, please go to Orbit Doc
 
 ",
-                "undefined": "For developers or installations guides, please go to AFFiNE Doc
+                "undefined": "For developers or installations guides, please go to Orbit Doc
 
 ",
               },
@@ -462,7 +462,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
         "children": [
           {
             "children": [],
-            "content": "## Affine Development
+            "content": "## Orbit Development
 
 ",
             "flavour": "affine:paragraph",
@@ -471,7 +471,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
           },
           {
             "children": [],
-            "content": "For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
+            "content": "For developer or installation guides, please go to [Orbit Development](https://docs.affine.pro/docs/development/quick-start)
 
 ",
             "flavour": "affine:paragraph",
@@ -505,7 +505,7 @@ For developer or installation guides, please go to [AFFiNE Development](https://
 
 exports[`should parse page doc work with ai editable 1`] = `
 "<!-- block_id=FoPQcAyV_m flavour=affine:paragraph -->
-AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 <!-- block_id=oz48nn_zp8 flavour=affine:paragraph -->
 
@@ -517,10 +517,10 @@ AFFiNE is an open source all in one workspace, an operating system for all the b
 ## Local-first & Real-time collaborative
 
 <!-- block_id=xCuWdM0VLz flavour=affine:paragraph -->
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
 <!-- block_id=zElMi0tViK flavour=affine:paragraph -->
-AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 <!-- block_id=Z4rK0OF9Wk flavour=affine:paragraph -->
 
@@ -532,13 +532,13 @@ AFFiNE is a local-first application upon CRDTs with real-time collaboration supp
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
 <!-- block_id=0H87ypiuv8 flavour=affine:paragraph -->
-We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
 <!-- block_id=Sp4G1KD0Wn flavour=affine:paragraph -->
-If you want to learn more about the product design of AFFiNE, here goes the concepts:
+If you want to learn more about the product design of Orbit, here goes the concepts:
 
 <!-- block_id=RsUhDuEqXa flavour=affine:paragraph -->
-To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 <!-- block_id=Z2HibKzAr- flavour=affine:paragraph -->
 ## A true canvas for blocks in any form
@@ -569,11 +569,11 @@ For more details, please refer to our [RoadMap](https://docs.affine.pro/docs/cor
 ## Self Host
 
 <!-- block_id=QVvitesfbj flavour=affine:paragraph -->
-Self host AFFiNE
+Self host Orbit
 
 <!-- block_id=U_GoHFD9At flavour=affine:database placeholder -->
 <!-- block_id=NyHXrMX3R1 flavour=affine:paragraph -->
-## Affine Development
+## Orbit Development
 
 <!-- block_id=9-K49otbCv flavour=affine:paragraph -->
 For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
@@ -867,7 +867,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "FoPQcAyV_m",
-      "content": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+      "content": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -876,7 +876,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+        "prop:text": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -963,7 +963,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "xCuWdM0VLz",
-      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -972,7 +972,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -987,7 +987,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "zElMi0tViK",
-      "content": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+      "content": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -996,7 +996,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+        "prop:text": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -1083,7 +1083,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "0H87ypiuv8",
-      "content": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+      "content": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1092,7 +1092,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+        "prop:text": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -1107,7 +1107,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "Sp4G1KD0Wn",
-      "content": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
+      "content": "If you want to learn more about the product design of Orbit, here goes the concepts:",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1116,7 +1116,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
+        "prop:text": "If you want to learn more about the product design of Orbit, here goes the concepts:",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -1131,7 +1131,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "RsUhDuEqXa",
-      "content": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+      "content": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1140,7 +1140,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+        "prop:text": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",
@@ -1648,7 +1648,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "VMx9lHw3TR",
-      "content": "For developers or installations guides, please go to AFFiNE Doc",
+      "content": "For developers or installations guides, please go to Orbit Doc",
       "docId": "test-doc",
       "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
@@ -1657,7 +1657,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developers or installations guides, please go to AFFiNE Doc",
+        "prop:text": "For developers or installations guides, please go to Orbit Doc",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "affine:paragraph",

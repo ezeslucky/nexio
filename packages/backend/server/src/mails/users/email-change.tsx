@@ -7,11 +7,11 @@ export type ChangeEmailProps = {
 export default function ChangeEmail(props: ChangeEmailProps) {
   return (
     <Template>
-      <Title>Verify your current email for AFFiNE</Title>
+      <Title>Verify your current email for Orbit</Title>
       <Content>
         <P>
           You recently requested to change the email address associated with
-          your AFFiNE account.
+          your Orbit account.
           <br />
           To complete this process, please click on the verification link below.
         </P>

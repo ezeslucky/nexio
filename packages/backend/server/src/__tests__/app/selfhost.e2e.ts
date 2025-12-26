@@ -22,12 +22,12 @@ const mobileUAString =
 
 function initTestStaticFiles(staticPath: string) {
   const files = {
-    'selfhost.html': `<!DOCTYPE html><html><body>AFFiNE</body><script src="main.a.js"/></html>`,
-    'main.a.js': `const name = 'affine'`,
-    'admin/selfhost.html': `<!DOCTYPE html><html><body>AFFiNE Admin</body><script src="/admin/main.b.js"/></html>`,
-    'admin/main.b.js': `const name = 'affine-admin'`,
-    'mobile/selfhost.html': `<!DOCTYPE html><html><body>AFFiNE mobile</body><script src="/mobile/main.c.js"/></html>`,
-    'mobile/main.c.js': `const name = 'affine-mobile'`,
+    'selfhost.html': `<!DOCTYPE html><html><body>Orbit</body><script src="main.a.js"/></html>`,
+    'main.a.js': `const name = 'orbit'`,
+    'admin/selfhost.html': `<!DOCTYPE html><html><body>Orbit Admin</body><script src="/admin/main.b.js"/></html>`,
+    'admin/main.b.js': `const name = 'orbit-admin'`,
+    'mobile/selfhost.html': `<!DOCTYPE html><html><body>Orbit mobile</body><script src="/mobile/main.c.js"/></html>`,
+    'mobile/main.c.js': `const name = 'orbit-mobile'`,
   };
 
   for (const [filename, content] of Object.entries(files)) {
@@ -210,7 +210,7 @@ test.skip('should return web assets if visited by mobile', async t => {
     .set('user-agent', mobileUAString)
     .expect(200);
 
-  t.true(res.text.includes('AFFiNE mobile'));
+  t.true(res.text.includes('Orbit mobile'));
 });
 
 test('should can send maximum size of body', async t => {

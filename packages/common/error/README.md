@@ -1,3 +1,3 @@
 # @affine/error
 
-AFFiNE error handler utilities
+Orbit error handler utilities

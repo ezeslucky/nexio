@@ -1241,19 +1241,6 @@ export const PackageList = [
     ],
   },
   {
-    location: 'packages/frontend/apps/android',
-    name: '@affine/android',
-    workspaceDependencies: [
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'blocksuite/affine/all',
-      'packages/common/infra',
-    ],
-  },
-  {
     location: 'packages/frontend/apps/electron',
     name: '@affine/electron',
     workspaceDependencies: [
@@ -1278,36 +1265,6 @@ export const PackageList = [
       'blocksuite/affine/all',
       'packages/common/infra',
       'tools/utils',
-    ],
-  },
-  {
-    location: 'packages/frontend/apps/ios',
-    name: '@affine/ios',
-    workspaceDependencies: [
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/common/graphql',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'blocksuite/affine/all',
-      'packages/common/infra',
-      'tools/cli',
-      'tools/utils',
-      'packages/frontend/native',
-    ],
-  },
-  {
-    location: 'packages/frontend/apps/mobile',
-    name: '@affine/mobile',
-    workspaceDependencies: [
-      'packages/frontend/component',
-      'packages/frontend/core',
-      'packages/common/env',
-      'packages/frontend/i18n',
-      'packages/common/nbstore',
-      'blocksuite/affine/all',
-      'packages/common/infra',
     ],
   },
   {
@@ -1575,11 +1532,8 @@ export type PackageName =
   | '@affine/reader'
   | '@y-octo/node'
   | '@affine/admin'
-  | '@affine/android'
   | '@affine/electron'
   | '@affine/electron-renderer'
-  | '@affine/ios'
-  | '@affine/mobile'
   | '@affine/web'
   | '@affine/component'
   | '@affine/core'
