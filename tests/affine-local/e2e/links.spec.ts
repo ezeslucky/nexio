@@ -1143,7 +1143,7 @@ test('should add HTTP protocol into link automatically', async ({ page }) => {
 
   await page.keyboard.press('Space');
 
-  const link = 'https://github.com/toeverything/affine';
+  const link = 'https://github.com/ezeslucky/nexio.git';
 
   const { toolbar, switchViewBtn, cardViewBtn } = toolbarButtons(page);
 
