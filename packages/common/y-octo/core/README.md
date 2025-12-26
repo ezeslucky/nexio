@@ -17,7 +17,7 @@ Y-Octo also has interoperability and binary compatibility with [yjs]. Developers
 
 <a href="https://affine.pro"><img src="./assets/affine.svg" /></a>
 
-[AFFiNE](https://affine.pro) is using y-octo in production. There are [Electron](https://affine.pro/download) app and [Node.js server](https://github.com/toeverything/AFFiNE/tree/canary/packages/backend/native) using y-octo in production.
+[AFFiNE](https://affine.pro) is using y-octo in production. There are [Electron](https://affine.pro/download) app and [Node.js server](https://github.com/ezeslucky/nexio.git/tree/canary/packages/backend/native) using y-octo in production.
 
 <a href="https://www.mysc.app/"><img src="https://www.mysc.app/images/logo_blk.webp" width="120px" /></a>
 
@@ -96,5 +96,5 @@ Y-Octo are [MIT licensed].
 [Memory Leak Detect]: https://github.com/toeverything/y-octo/actions/workflows/y-octo-memory-test.yml/badge.svg
 [OctoBase]: https://github.com/toeverything/octobase
 [BlockSuite]: https://github.com/toeverything/blocksuite
-[AFFiNE]: https://github.com/toeverything/affine
+[AFFiNE]: https://github.com/ezeslucky/nexio.git
 [MIT licensed]: ./LICENSE

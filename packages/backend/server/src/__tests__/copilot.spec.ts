@@ -290,7 +290,7 @@ test('should be able to render listed prompt', async t => {
     content: 'links:\n{{#links}}- {{.}}\n{{/links}}',
   };
   const params = {
-    links: ['https://affine.pro', 'https://github.com/toeverything/affine'],
+    links: ['https://affine.pro', 'https://github.com/ezeslucky/nexio.git'],
   };
 
   await prompt.set(promptName, 'test', [msg]);
@@ -298,7 +298,7 @@ test('should be able to render listed prompt', async t => {
 
   t.is(
     testPrompt?.finish(params).pop()?.content,
-    'links:\n- https://affine.pro\n- https://github.com/toeverything/affine\n',
+    'links:\n- https://affine.pro\n- https://github.com/ezeslucky/nexio.git\n',
     'should render the prompt'
   );
 });

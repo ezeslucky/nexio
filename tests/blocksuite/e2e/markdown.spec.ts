@@ -643,7 +643,7 @@ test.describe('markdown inline-text', () => {
     await undoByKeyboard(page);
     await assertRichTexts(page, ['']);
 
-    // https://github.com/toeverything/AFFiNE/issues/9410
+    // https://github.com/ezeslucky/nexio.git/issues/9410
     await waitNextFrame(page);
     await type(page, 'test**bold** ');
     await assertRichTextInlineDeltas(page, [
