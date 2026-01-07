@@ -21,7 +21,7 @@ export const OthersGroup = () => {
       />
       <RowLayout
         label={t['com.affine.mobile.setting.others.github']()}
-        href="https://github.com/ezeslucky/nexio.git"
+        href="https://github.com/ezeslucky/nexio"
       />
 
       <RowLayout

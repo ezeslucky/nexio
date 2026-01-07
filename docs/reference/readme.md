@@ -1,4 +1,4 @@
-Welcome to AFFiNE development reference.
+Welcome to NEXIO development reference.
 
 This document is intended for developers who want to contribute to AFFiNE. It contains information about the architecture of AFFiNE, how to build it, and how to contribute to it.
 

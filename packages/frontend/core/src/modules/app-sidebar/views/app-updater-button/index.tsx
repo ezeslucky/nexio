@@ -200,7 +200,7 @@ export function AppUpdaterButton({
         }
       } else {
         urlService.openPopupWindow(
-          `https://github.com/ezeslucky/nexio.git/releases/tag/v${updateAvailable.version}`
+          `https://github.com/ezeslucky/nexio/releases/tag/v${updateAvailable.version}`
         );
       }
     } else if (changelogUnread) {

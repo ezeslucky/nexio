@@ -15,7 +15,7 @@
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ezeslucky/nexio.git.git"
+    "url": "git+https://github.com/ezeslucky/nexio.git"
   },
   "dependencies": {
     "@affine/debug": "workspace:*",

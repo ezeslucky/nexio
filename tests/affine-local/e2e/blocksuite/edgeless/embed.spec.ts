@@ -48,7 +48,7 @@ test('embed card should not overflow the edgeless note', async ({ page }) => {
   await pressEnter(page);
   await page
     .locator('.embed-card-modal-input')
-    .fill('https://github.com/ezeslucky/nexio.git/pull/10442');
+    .fill('https://github.com/ezeslucky/nexio/pull/10442');
   await pressEnter(page);
 
   const embedCard = page.locator('affine-embed-github-block');

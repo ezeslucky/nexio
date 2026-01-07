@@ -1,6 +1,6 @@
 {
-  "$schema": "https://github.com/ezeslucky/nexio.git/releases/latest/download/config.schema.json",
+  "$schema": "https://github.com/ezeslucky/nexio/releases/latest/download/config.schema.json",
   "server": {
-    "name": "AFFiNE Self Hosted Server"
+    "name": "NEXIO Self Hosted Server"
   }
 }

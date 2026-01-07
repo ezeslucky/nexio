@@ -73,7 +73,7 @@ export const EMBED_BLOCK_MODEL_LIST = [
 export const DEFAULT_IMAGE_PROXY_ENDPOINT =
   'https://affine-worker.toeverything.workers.dev/api/worker/image-proxy';
 
-// https://github.com/ezeslucky/nexio.git-workers/tree/main/packages/link-preview
+// https://github.com/ezeslucky/nexio-workers/tree/main/packages/link-preview
 export const DEFAULT_LINK_PREVIEW_ENDPOINT =
   'https://affine-worker.toeverything.workers.dev/api/worker/link-preview';
 
