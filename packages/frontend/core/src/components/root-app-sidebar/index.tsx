@@ -250,10 +250,10 @@ export const RootAppSidebar = memo((): ReactElement => {
           />
         </CollapsibleSection>
       </SidebarScrollableContainer>
-      <SidebarContainer className={bottomContainer}>
+      {/* <SidebarContainer className={bottomContainer}>
         <SidebarAudioPlayer />
         {BUILD_CONFIG.isElectron ? <UpdaterButton /> : <AppDownloadButton />}
-      </SidebarContainer>
+      </SidebarContainer> */}
     </AppSidebar>
   );
 });

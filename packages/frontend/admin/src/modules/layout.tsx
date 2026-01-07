@@ -180,7 +180,7 @@ export const LeftPanel = ({
           </Button>
         </SheetTrigger>
         <SheetHeader className="hidden">
-          <SheetTitle>AFFiNE</SheetTitle>
+          <SheetTitle>NEXIO</SheetTitle>
           <SheetDescription>
             Admin panel for managing accounts, AI, config, and settings
           </SheetDescription>
@@ -193,7 +193,7 @@ export const LeftPanel = ({
               )}
             >
               <Logo />
-              AFFiNE
+              NEXIO
             </div>
             <Separator />
             <Nav />
