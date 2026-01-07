@@ -5,11 +5,11 @@
   "main": "./dist/main.js",
   "author": "toeverything",
   "repository": {
-    "url": "https://github.com/ezeslucky/nexio.git",
+    "url": "https://github.com/ezeslucky/nexio",
     "type": "git"
   },
   "description": "AFFiNE Desktop App",
-  "homepage": "https://github.com/ezeslucky/nexio.git",
+  "homepage": "https://github.com/ezeslucky/nexio",
   "exports": {
     "./helper/exposed": "./src/helper/exposed.ts",
     "./main/exposed": "./src/main/exposed.ts",

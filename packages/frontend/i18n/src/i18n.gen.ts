@@ -1089,7 +1089,7 @@ export function useAFFiNEI18N(): {
         max: string;
     }>): string;
     /**
-      * `Welcome to AFFiNE Cloud, you are almost there!`
+      * `Welcome to NEXIO Cloud, you are almost there!`
       */
     ["com.affine.auth.page.sent.email.title"](): string;
     /**

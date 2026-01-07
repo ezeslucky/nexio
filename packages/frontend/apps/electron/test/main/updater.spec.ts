@@ -56,7 +56,7 @@ describe('testing for client update', () => {
       expectReleaseList.map(({ version }) => {
         return [
           http.get(
-            `https://github.com/ezeslucky/nexio.git/releases/download/v${version}/latest.yml`,
+            `https://github.com/ezeslucky/nexio/releases/download/v${version}/latest.yml`,
             async req => {
               const buffer = await fs.readFile(
                 path.join(

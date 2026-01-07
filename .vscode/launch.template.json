@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch AFFiNE Cloud",
+      "name": "Launch NEXIO Cloud",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "yarn",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "name": "Lanuch AFFiNE Web",
+      "name": "Lanuch NEXIO Web",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "yarn",
@@ -28,7 +28,7 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug AFFiNE Web",
+      "name": "Debug NEXIO Web",
       "url": "http://localhost:8080"
     }
   ]
