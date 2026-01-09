@@ -52,22 +52,7 @@ interface SelectionInfo {
 export function createAffineTemplate(
   extensions: ExtensionType[] = DEFAULT_EXTENSIONS
 ) {
-  /**
-   * Parse template strings and build BlockSuite document structure,
-   * then create a host object with the document
-   *
-   * Example:
-   * ```
-   * const host = affine`
-   *   <affine-page id="page">
-   *     <affine-note id="note">
-   *       <affine-paragraph id="paragraph-1">Hello, world<anchor /></affine-paragraph>
-   *       <affine-paragraph id="paragraph-2">Hello, world<focus /></affine-paragraph>
-   *     </affine-note>
-   *   </affine-page>
-   * `;
-   * ```
-   */
+
   function affine(strings: TemplateStringsArray, ...values: any[]) {
     // Merge template strings and values
     let htmlString = '';

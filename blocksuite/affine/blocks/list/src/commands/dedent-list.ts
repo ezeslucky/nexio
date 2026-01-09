@@ -16,11 +16,7 @@ export const canDedentListCommand: Command<
   const { selection, store } = std;
   if (!blockId) {
     const text = selection.find(TextSelection);
-    /**
-     * Do nothing if the selection:
-     * - is not a text selection
-     * - or spans multiple blocks
-     */
+   
     if (!text || (text.to && text.from.blockId !== text.to.blockId)) {
       return;
     }
@@ -32,27 +28,7 @@ export const canDedentListCommand: Command<
     return;
   }
 
-  /**
-   * initial state:
-   * - aaa
-   *   - bbb
-   *     - ccc  <- unindent
-   *       - ddd
-   *     - eee
-   *   - fff
-   *
-   * final state:
-   * - aaa
-   *   - bbb
-   *   - ccc
-   *     - ddd
-   *     - eee
-   *   - fff
-   */
-
-  /**
-   * ccc
-   */
+ 
   const model = store.getBlock(blockId)?.model;
   if (!model || !matchModels(model, [ListBlockModel])) {
     return;

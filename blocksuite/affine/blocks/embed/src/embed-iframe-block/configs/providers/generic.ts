@@ -5,10 +5,7 @@ const GENERIC_DEFAULT_HEIGHT_IN_SURFACE = 600;
 const GENERIC_DEFAULT_WIDTH_PERCENT = 100;
 const GENERIC_DEFAULT_HEIGHT_IN_NOTE = 400;
 
-/**
- * AFFiNE domains that should be excluded from generic embedding
- * These are based on the centralized cloud constants and known AFFiNE domains
- */
+
 const AFFINE_DOMAINS = [
   'affine.pro', // Main AFFiNE domain
   'app.affine.pro', // Stable cloud domain
