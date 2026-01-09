@@ -31,20 +31,7 @@ export type DocDisplayMetaParams = {
   params?: ReferenceParams;
 } & AliasInfo;
 
-/**
- * Customize document display title and icon.
- *
- * Supports the following blocks:
- *
- * * Inline View:
- *      `AffineReference`
- * * Card View:
- *      `EmbedLinkedDocBlockComponent`
- *      `EmbedEdgelessLinkedDocBlockComponent`
- * * Embed View:
- *      `EmbedSyncedDocBlockComponent`
- *      `EmbedEdgelessSyncedDocBlockComponent`
- */
+
 export interface DocDisplayMetaExtension {
   icon: (
     docId: string,

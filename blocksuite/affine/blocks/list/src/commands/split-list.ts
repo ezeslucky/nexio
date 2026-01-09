@@ -80,21 +80,7 @@ export const splitListCommand: Command<{
       return;
     }
 
-    /**
-     * case 2: not top most, unindent the list
-     *
-     * before:
-     * - aaa
-     *   - bbb
-     *   - | <- split here
-     *   - ccc
-     *
-     * after:
-     * - aaa
-     *   - bbb
-     * - |
-     *   - ccc
-     */
+
     if (parent.role === 'content') {
       host.command
         .chain()
