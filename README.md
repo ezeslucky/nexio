@@ -20,4 +20,8 @@ export CI=true
 echo $NODE_OPTIONS
 
 yarn run affine dev -p @affine/web
+
+
+docker start affine-postgres
+
  -->
