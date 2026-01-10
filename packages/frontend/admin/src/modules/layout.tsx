@@ -243,7 +243,7 @@ export const LeftPanel = ({
           >
             <Logo />
           </span>
-          {!isCollapsed && 'AFFiNE'}
+          {!isCollapsed && 'NEXIO'}
         </div>
         <Nav isCollapsed={isCollapsed} />
       </div>

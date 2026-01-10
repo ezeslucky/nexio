@@ -12,10 +12,10 @@ import {
 type Channel = 'stable' | 'canary' | 'beta' | 'internal';
 
 const appNames = {
-  stable: 'AFFiNE',
-  canary: 'AFFiNE Canary',
-  beta: 'AFFiNE Beta',
-  internal: 'AFFiNE Internal',
+  stable: 'NEXIO',
+  canary: 'NEXIO Canary',
+  beta: 'NEXIO Beta',
+  internal: 'NEXIO Internal',
 } satisfies Record<Channel, string>;
 const appName = appNames[BUILD_CONFIG.appBuildType];
 
@@ -23,7 +23,7 @@ const links = [
   {
     href: BUILD_CONFIG.githubUrl,
     icon: <GithubIcon size={20} />,
-    label: 'Star AFFiNE on GitHub',
+    label: 'Star NEXIO on GitHub',
   },
   {
     href: BUILD_CONFIG.githubUrl,
@@ -46,7 +46,7 @@ export function AboutAFFiNE() {
   return (
     <div className="flex flex-col h-full gap-3 py-5 px-6 w-full">
       <div className="flex items-center">
-        <span className="text-xl font-semibold">About AFFiNE</span>
+        <span className="text-xl font-semibold">About NEXIO</span>
       </div>
       <div className="overflow-y-auto space-y-[10px]">
         <div className="flex flex-col rounded-md border">
