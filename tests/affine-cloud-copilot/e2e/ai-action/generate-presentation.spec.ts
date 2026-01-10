@@ -14,7 +14,7 @@ test.describe('AIAction/GeneratePresentation', () => {
   }) => {
     const { generatePresentation } = await utils.editor.askAIWithText(
       page,
-      'AFFiNE is a workspace with fully merged docs'
+      'NEXIO is a workspace with fully merged docs'
     );
     const { answer, responses } = await generatePresentation();
     await expect(answer.locator('ai-slides-renderer')).toBeVisible();
@@ -30,7 +30,7 @@ test.describe('AIAction/GeneratePresentation', () => {
       async () => {
         await utils.editor.createEdgelessText(
           page,
-          'AFFiNE is a workspace with fully merged docs'
+          'NEXIO is a workspace with fully merged docs'
         );
       }
     );
@@ -48,7 +48,7 @@ test.describe('AIAction/GeneratePresentation', () => {
       async () => {
         await utils.editor.createEdgelessNote(
           page,
-          'AFFiNE is a workspace with fully merged docs'
+          'NEXIO is a workspace with fully merged docs'
         );
       }
     );

@@ -14,7 +14,7 @@ test.describe('AIAction/MakeItShorter', () => {
   }) => {
     const { makeItShorter } = await utils.editor.askAIWithText(
       page,
-      'AFFiNE is a workspace with fully merged docs'
+      'NEXIO is a workspace with fully merged docs'
     );
     const { answer, responses } = await makeItShorter();
     await expect(answer).toHaveText(/AFFiNE/, { timeout: 10000 });
@@ -30,7 +30,7 @@ test.describe('AIAction/MakeItShorter', () => {
       async () => {
         await utils.editor.createEdgelessText(
           page,
-          'AFFiNE is a workspace with fully merged docs'
+          'NEXIO is a workspace with fully merged docs'
         );
       }
     );
@@ -48,7 +48,7 @@ test.describe('AIAction/MakeItShorter', () => {
       async () => {
         await utils.editor.createEdgelessNote(
           page,
-          'AFFiNE is a workspace with fully merged docs'
+          'NEXIO is a workspace with fully merged docs'
         );
       }
     );
@@ -63,7 +63,7 @@ test.describe('AIAction/MakeItShorter', () => {
   }) => {
     const { makeItShorter } = await utils.editor.askAIWithText(
       page,
-      'AFFiNE is a workspace with fully merged docs'
+      'NEXIO is a workspace with fully merged docs'
     );
     const { answer } = await makeItShorter();
     await expect(answer).toHaveText(/AFFiNE/, { timeout: 10000 });

@@ -243,7 +243,7 @@ describe('di', () => {
     container.scope(editorScope).add(Editor, [Page]);
 
     const root = container.provider();
-    expect(root.get(System).appName).toEqual('affine');
+    expect(root.get(System).appName).toEqual('.');
     expect(() => root.get(Workspace)).toThrowError(ServiceNotFoundError);
 
     const workspace = container.provider(workspaceScope, root);
