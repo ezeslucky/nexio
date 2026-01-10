@@ -484,7 +484,7 @@ export function useAFFiNEI18N(): {
     /**
       * `Synced with AFFiNE Cloud`
       */
-    ["Synced with AFFiNE Cloud"](): string;
+    ["Synced with NEXIO Cloud"](): string;
     /**
       * `Tags`
       */
