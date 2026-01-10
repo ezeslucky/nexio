@@ -14,7 +14,7 @@ test.describe('AIAction/ChangeTone', () => {
   }) => {
     const { changeTone } = await utils.editor.askAIWithText(
       page,
-      'AFFiNE is a great note-taking app'
+      'NEXIO is a great note-taking app'
     );
     const { answer, responses } = await changeTone('informal');
     await expect(answer).toHaveText(/AFFiNE/, { timeout: 10000 });
@@ -30,7 +30,7 @@ test.describe('AIAction/ChangeTone', () => {
       async () => {
         await utils.editor.createEdgelessText(
           page,
-          'AFFiNE is a great note-taking app'
+          'NEXIO is a great note-taking app'
         );
       }
     );
@@ -49,7 +49,7 @@ test.describe('AIAction/ChangeTone', () => {
       async () => {
         await utils.editor.createEdgelessNote(
           page,
-          'AFFiNE is a great note-taking app'
+          'NEXIO is a great note-taking app'
         );
       }
     );
@@ -65,7 +65,7 @@ test.describe('AIAction/ChangeTone', () => {
   }) => {
     const { changeTone } = await utils.editor.askAIWithText(
       page,
-      'AFFiNE is a great note-taking app'
+      'NEXIO is a great note-taking app'
     );
     const { answer } = await changeTone('informal');
     const replace = answer.getByTestId('answer-replace');

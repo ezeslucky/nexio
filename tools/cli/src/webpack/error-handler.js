@@ -19,7 +19,7 @@
       '<div>',
       '<p class="p1">Unsupported Environment</p>',
       '<p class="p2">',
-      'It looks like AFFiNE cannot run in this environment.',
+      'It looks like NEXIO cannot run in this environment.',
       "Please ensure you are using a supported browser or update your device's operating system to the latest version.",
       'If the issue persists, visit our <a href="https://github.com/ezeslucky/nexio/issues">support page</a> for further assistance.',
       '</p>',
