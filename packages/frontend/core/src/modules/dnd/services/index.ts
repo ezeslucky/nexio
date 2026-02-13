@@ -5,15 +5,15 @@ import {
   monitorForElements,
   type MonitorGetFeedback,
   type toExternalData,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
+} from '@nexio/component';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { SliceSnapshot } from '@blocksuite/affine/store';
-import type { DragBlockPayload } from '@blocksuite/affine/widgets/drag-handle';
+} from '@blocksuite/nexio/shared/services';
+import { BlockStdScope } from '@blocksuite/nexio/std';
+import type { SliceSnapshot } from '@blocksuite/nexio/store';
+import type { DragBlockPayload } from '@blocksuite/nexio/widgets/drag-handle';
 import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';
@@ -21,12 +21,12 @@ import type { EditorSettingService } from '../../editor-setting';
 import { resolveLinkToDoc } from '../../navigation';
 import type { WorkspaceService } from '../../workspace';
 
-type Entity = AffineDNDData['draggable']['entity'];
+type Entity = NexioDNDData['draggable']['entity'];
 type EntityResolver = (data: string) => Entity | null;
 
 type ExternalDragPayload = ExternalGetDataFeedbackArgs['source'];
 
-type MixedDNDData = AffineDNDData & {
+type MixedDNDData = NexioDNDData & {
   draggable: DragBlockPayload;
 };
 
@@ -70,11 +70,8 @@ export class DndService extends Service {
   }
 
   private setupBlocksuiteAdapter() {
-    /**
-     * Migrate from affine to blocksuite
-     * For now, we only support doc
-     */
-    const affineToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
+    
+    const nexioToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (data.entity && !data.bsEntity) {
         if (data.entity.type !== 'doc') {
@@ -86,7 +83,7 @@ export class DndService extends Service {
         }
         const snapshotSlice = dndAPI.fromEntity({
           docId: data.entity.id,
-          flavour: 'affine:embed-linked-doc',
+          flavour: 'nexio:embed-linked-doc',
         });
         if (!snapshotSlice) {
           return;
@@ -99,10 +96,8 @@ export class DndService extends Service {
       }
     };
 
-    /**
-     * Migrate from blocksuite to affine
-     */
-    const blocksuiteToAffine = (args: MonitorGetFeedback<MixedDNDData>) => {
+    
+    const blocksuiteToNexio = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (!data.entity && data.bsEntity) {
         if (data.bsEntity.type !== 'blocks' || !data.bsEntity.snapshot) {
@@ -121,8 +116,8 @@ export class DndService extends Service {
     };
 
     function adaptDragEvent(args: MonitorGetFeedback<MixedDNDData>) {
-      affineToBlocksuite(args);
-      blocksuiteToAffine(args);
+      nexioToBlocksuite(args);
+      blocksuiteToNexio(args);
     }
 
     function canMonitor(args: MonitorGetFeedback<MixedDNDData>) {
@@ -136,9 +131,9 @@ export class DndService extends Service {
     function getBSDropTarget(args: MonitorDragEvent<MixedDNDData>) {
       for (const target of args.location.current.dropTargets) {
         const { tagName } = target.element;
-        if (['AFFINE-EDGELESS-NOTE', 'AFFINE-NOTE'].includes(tagName))
+        if (['NEXIO-EDGELESS-NOTE', 'NEXIO-NOTE'].includes(tagName))
           return 'note';
-        if (tagName === 'AFFINE-EDGELESS-ROOT') return 'canvas';
+        if (tagName === 'NEXIO-EDGELESS-ROOT') return 'canvas';
       }
       return 'other';
     }
@@ -152,7 +147,7 @@ export class DndService extends Service {
       const flavour =
         dropTarget === 'canvas'
           ? this.editorSettingService.editorSetting.docCanvasPreferView.value
-          : 'affine:embed-linked-doc';
+          : 'nexio:embed-linked-doc';
 
       const { entity, bsEntity } = args.source.data;
       if (!entity || !bsEntity) return;
@@ -192,7 +187,7 @@ export class DndService extends Service {
 
   private readonly resolvers: ((
     source: ExternalDragPayload
-  ) => AffineDNDData['draggable'] | null)[] = [];
+  ) => NexioDNDData['draggable'] | null)[] = [];
 
   getBlocksuiteDndAPI(sourceDocId?: string) {
     const collection = this.workspaceService.workspace.docCollection;
@@ -211,7 +206,7 @@ export class DndService extends Service {
     return dndAPI;
   }
 
-  fromExternalData: fromExternalData<AffineDNDData> = (
+  fromExternalData: fromExternalData<NexioDNDData> = (
     args: ExternalGetDataFeedbackArgs,
     isDropEvent?: boolean
   ) => {
@@ -219,7 +214,7 @@ export class DndService extends Service {
       return {};
     }
 
-    let resolved: AffineDNDData['draggable'] | null = null;
+    let resolved: NexioDNDData['draggable'] | null = null;
 
     // in the order of the resolvers instead of the order of the types
     for (const resolver of this.resolvers) {
@@ -237,7 +232,7 @@ export class DndService extends Service {
     return resolved;
   };
 
-  toExternalData: toExternalData<AffineDNDData> = (args, data) => {
+  toExternalData: toExternalData<NexioDNDData> = (args, data) => {
     const normalData = typeof data === 'function' ? data(args) : data;
 
     if (
@@ -257,7 +252,7 @@ export class DndService extends Service {
 
     const snapshotSlice = dndAPI.fromEntity({
       docId: normalData.entity.id,
-      flavour: 'affine:embed-linked-doc',
+      flavour: 'nexio:embed-linked-doc',
     });
 
     if (!snapshotSlice) {
@@ -301,7 +296,7 @@ export class DndService extends Service {
    */
   private readonly resolveBlocksuiteExternalData = (
     source: ExternalDragPayload
-  ): AffineDNDData['draggable'] | null => {
+  ): NexioDNDData['draggable'] | null => {
     const dndAPI = this.getBlocksuiteDndAPI();
     if (!dndAPI) {
       return null;
@@ -347,7 +342,7 @@ export class DndService extends Service {
   ): Entity | null => {
     for (const block of snapshot.content) {
       if (
-        ['affine:embed-linked-doc', 'affine:embed-synced-doc'].includes(
+        ['nexio:embed-linked-doc', 'nexio:embed-synced-doc'].includes(
           block.flavour
         )
       ) {

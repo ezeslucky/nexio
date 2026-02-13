@@ -1,22 +1,22 @@
-import { Button, ConfirmModal, Input, Modal, notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useMutation } from '@affine/core/components/hooks/use-mutation';
+import { Button, ConfirmModal, Input, Modal, notify } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useMutation } from '@nexio/core/components/hooks/use-mutation';
 import {
   SelfhostLicenseService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceQuotaService } from '@affine/core/modules/quota';
-import { UrlService } from '@affine/core/modules/url';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
+} from '@nexio/core/modules/cloud';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
+import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
+import { UrlService } from '@nexio/core/modules/url';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
 import {
   createSelfhostCustomerPortalMutation,
   SubscriptionVariant,
-} from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';

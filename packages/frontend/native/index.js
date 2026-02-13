@@ -73,24 +73,24 @@ function requireNative() {
   } else if (process.platform === 'android') {
     if (process.arch === 'arm64') {
       try {
-        return require('./affine.android-arm64.node')
+        return require('./nexio.android-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-android-arm64')
+        return require('@nexio/native-android-arm64')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 'arm') {
       try {
-        return require('./affine.android-arm-eabi.node')
+        return require('./nexio.android-arm-eabi.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-android-arm-eabi')
+        return require('@nexio/native-android-arm-eabi')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -101,36 +101,36 @@ function requireNative() {
   } else if (process.platform === 'win32') {
     if (process.arch === 'x64') {
       try {
-        return require('./affine.win32-x64-msvc.node')
+        return require('./nexio.win32-x64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-win32-x64-msvc')
+        return require('@nexio/native-win32-x64-msvc')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 'ia32') {
       try {
-        return require('./affine.win32-ia32-msvc.node')
+        return require('./nexio.win32-ia32-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-win32-ia32-msvc')
+        return require('@nexio/native-win32-ia32-msvc')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 'arm64') {
       try {
-        return require('./affine.win32-arm64-msvc.node')
+        return require('./nexio.win32-arm64-msvc.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-win32-arm64-msvc')
+        return require('@nexio/native-win32-arm64-msvc')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -140,36 +140,36 @@ function requireNative() {
     }
   } else if (process.platform === 'darwin') {
     try {
-        return require('./affine.darwin-universal.node')
+        return require('./nexio.darwin-universal.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-darwin-universal')
+        return require('@nexio/native-darwin-universal')
       } catch (e) {
         loadErrors.push(e)
       }
 
     if (process.arch === 'x64') {
       try {
-        return require('./affine.darwin-x64.node')
+        return require('./nexio.darwin-x64.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-darwin-x64')
+        return require('@nexio/native-darwin-x64')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 'arm64') {
       try {
-        return require('./affine.darwin-arm64.node')
+        return require('./nexio.darwin-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-darwin-arm64')
+        return require('@nexio/native-darwin-arm64')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -180,24 +180,24 @@ function requireNative() {
   } else if (process.platform === 'freebsd') {
     if (process.arch === 'x64') {
       try {
-        return require('./affine.freebsd-x64.node')
+        return require('./nexio.freebsd-x64.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-freebsd-x64')
+        return require('@nexio/native-freebsd-x64')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 'arm64') {
       try {
-        return require('./affine.freebsd-arm64.node')
+        return require('./nexio.freebsd-arm64.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-freebsd-arm64')
+        return require('@nexio/native-freebsd-arm64')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -209,24 +209,24 @@ function requireNative() {
     if (process.arch === 'x64') {
       if (isMusl()) {
         try {
-        return require('./affine.linux-x64-musl.node')
+        return require('./nexio.linux-x64-musl.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-x64-musl')
+        return require('@nexio/native-linux-x64-musl')
       } catch (e) {
         loadErrors.push(e)
       }
 
       } else {
         try {
-        return require('./affine.linux-x64-gnu.node')
+        return require('./nexio.linux-x64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-x64-gnu')
+        return require('@nexio/native-linux-x64-gnu')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -235,24 +235,24 @@ function requireNative() {
     } else if (process.arch === 'arm64') {
       if (isMusl()) {
         try {
-        return require('./affine.linux-arm64-musl.node')
+        return require('./nexio.linux-arm64-musl.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-arm64-musl')
+        return require('@nexio/native-linux-arm64-musl')
       } catch (e) {
         loadErrors.push(e)
       }
 
       } else {
         try {
-        return require('./affine.linux-arm64-gnu.node')
+        return require('./nexio.linux-arm64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-arm64-gnu')
+        return require('@nexio/native-linux-arm64-gnu')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -261,24 +261,24 @@ function requireNative() {
     } else if (process.arch === 'arm') {
       if (isMusl()) {
         try {
-        return require('./affine.linux-arm-musleabihf.node')
+        return require('./nexio.linux-arm-musleabihf.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-arm-musleabihf')
+        return require('@nexio/native-linux-arm-musleabihf')
       } catch (e) {
         loadErrors.push(e)
       }
 
       } else {
         try {
-        return require('./affine.linux-arm-gnueabihf.node')
+        return require('./nexio.linux-arm-gnueabihf.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-arm-gnueabihf')
+        return require('@nexio/native-linux-arm-gnueabihf')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -287,24 +287,24 @@ function requireNative() {
     } else if (process.arch === 'riscv64') {
       if (isMusl()) {
         try {
-        return require('./affine.linux-riscv64-musl.node')
+        return require('./nexio.linux-riscv64-musl.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-riscv64-musl')
+        return require('@nexio/native-linux-riscv64-musl')
       } catch (e) {
         loadErrors.push(e)
       }
 
       } else {
         try {
-        return require('./affine.linux-riscv64-gnu.node')
+        return require('./nexio.linux-riscv64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-riscv64-gnu')
+        return require('@nexio/native-linux-riscv64-gnu')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -312,24 +312,24 @@ function requireNative() {
       }
     } else if (process.arch === 'ppc64') {
       try {
-        return require('./affine.linux-ppc64-gnu.node')
+        return require('./nexio.linux-ppc64-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-ppc64-gnu')
+        return require('@nexio/native-linux-ppc64-gnu')
       } catch (e) {
         loadErrors.push(e)
       }
 
     } else if (process.arch === 's390x') {
       try {
-        return require('./affine.linux-s390x-gnu.node')
+        return require('./nexio.linux-s390x-gnu.node')
       } catch (e) {
         loadErrors.push(e)
       }
       try {
-        return require('@affine/native-linux-s390x-gnu')
+        return require('@nexio/native-linux-s390x-gnu')
       } catch (e) {
         loadErrors.push(e)
       }
@@ -346,7 +346,7 @@ nativeBinding = requireNative()
 
 if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
   try {
-    nativeBinding = require('./affine.wasi.cjs')
+    nativeBinding = require('./nexio.wasi.cjs')
   } catch (err) {
     if (process.env.NAPI_RS_FORCE_WASI) {
       loadErrors.push(err)
@@ -354,7 +354,7 @@ if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
   }
   if (!nativeBinding) {
     try {
-      nativeBinding = require('@affine/native-wasm32-wasi')
+      nativeBinding = require('@nexio/native-wasm32-wasi')
     } catch (err) {
       if (process.env.NAPI_RS_FORCE_WASI) {
         loadErrors.push(err)

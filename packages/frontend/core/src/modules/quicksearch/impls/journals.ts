@@ -1,4 +1,4 @@
-import { I18n, i18nTime } from '@affine/i18n';
+import { I18n, i18nTime } from '@nexio/i18n';
 import { DateTimeIcon } from '@blocksuite/icons/rc';
 import { Entity, LiveData } from '@toeverything/infra';
 
@@ -12,7 +12,7 @@ import type { QuickSearchItem } from '../types/item';
 const group: QuickSearchGroup = {
   id: 'journals',
   label: {
-    i18nKey: 'com.affine.cmdk.affine.category.affine.journal',
+    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.journal',
   },
   score: 0,
 };
@@ -55,7 +55,7 @@ export class JournalsQuickSearchSession
         source: 'date-picker',
         group: group,
         label: {
-          title: I18n.t('com.affine.cmdk.affine.category.affine.date-picker'),
+          title: I18n.t('com.nexio.cmdk.nexio.category.nexio.date-picker'),
         },
         score: 0,
         payload: {

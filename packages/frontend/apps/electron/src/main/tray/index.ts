@@ -92,7 +92,7 @@ class TrayState implements Disposable {
     .resize({ width: 18, height: 18 });
 
   // tray's tooltip
-  tooltip: string = 'AFFiNE';
+  tooltip: string = 'NEXIO';
 
   constructor() {
     this.icon.setTemplateImage(true);
@@ -246,15 +246,15 @@ class TrayState implements Disposable {
       key: 'secondary',
       getConfig: () => [
         {
-          label: 'Open AFFiNE',
+          label: 'Open NEXIO',
           click: () => {
-            logger.info('User action: Open AFFiNE');
+            logger.info('User action: Open NEXIO');
             getMainWindow()
               .then(w => {
                 w.show();
               })
               .catch(err => {
-                logger.error('Failed to open AFFiNE:', err);
+                logger.error('Failed to open NEXIO:', err);
               });
           },
         },
@@ -279,9 +279,9 @@ class TrayState implements Disposable {
         },
         'separator',
         {
-          label: 'Quit AFFiNE Completely...',
+          label: 'Quit NEXIO Completely...',
           click: () => {
-            logger.info('User action: Quit AFFiNE Completely');
+            logger.info('User action: Quit NEXIO Completely');
             app.quit();
           },
         },

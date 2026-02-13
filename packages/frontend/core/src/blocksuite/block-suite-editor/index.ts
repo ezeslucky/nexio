@@ -1,5 +1,5 @@
-import { registerAIEffects } from '@affine/core/blocksuite/ai/effects';
-import { editorEffects } from '@affine/core/blocksuite/editors';
+import { registerAIEffects } from '@nexio/core/blocksuite/ai/effects';
+import { editorEffects } from '@nexio/core/blocksuite/editors';
 
 import { registerTemplates } from './register-templates';
 

@@ -1,13 +1,13 @@
-import { Button, ErrorMessage, Skeleton } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
+import { Button, ErrorMessage, Skeleton } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
 import {
   ServerService,
   SubscriptionService,
   UserCopilotQuotaService,
-} from '@affine/core/modules/cloud';
-import { SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/cloud';
+import { SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';
@@ -57,7 +57,7 @@ export const AIUsagePanel = ({
     if (loadError) {
       return (
         <SettingRow
-          name={t['com.affine.payment.ai.usage-title']()}
+          name={t['com.nexio.payment.ai.usage-title']()}
           desc={''}
           spreadCol={false}
         >
@@ -68,7 +68,7 @@ export const AIUsagePanel = ({
     }
     return (
       <SettingRow
-        name={t['com.affine.payment.ai.usage-title']()}
+        name={t['com.nexio.payment.ai.usage-title']()}
         desc={''}
         spreadCol={false}
       >
@@ -95,26 +95,26 @@ export const AIUsagePanel = ({
       spreadCol={aiSubscription ? true : false}
       desc={
         aiSubscription
-          ? t['com.affine.payment.ai.usage-description-purchased']()
+          ? t['com.nexio.payment.ai.usage-description-purchased']()
           : ''
       }
-      name={t['com.affine.payment.ai.usage-title']()}
+      name={t['com.nexio.payment.ai.usage-title']()}
     >
       {copilotActionLimit === 'unlimited' ? (
         hasPaymentFeature && aiSubscription?.canceledAt ? (
           <AIResume />
         ) : (
           <Button onClick={openBilling}>
-            {t['com.affine.payment.ai.usage.change-button-label']()}
+            {t['com.nexio.payment.ai.usage.change-button-label']()}
           </Button>
         )
       ) : (
         <div className={styles.storageProgressContainer}>
           <div className={styles.storageProgressWrapper}>
             <div className="storage-progress-desc">
-              <span>{t['com.affine.payment.ai.usage.used-caption']()}</span>
+              <span>{t['com.nexio.payment.ai.usage.used-caption']()}</span>
               <span>
-                {t['com.affine.payment.ai.usage.used-detail']({
+                {t['com.nexio.payment.ai.usage.used-detail']({
                   used: copilotActionUsed.toString(),
                   limit: copilotActionLimit.toString(),
                 })}
@@ -131,7 +131,7 @@ export const AIUsagePanel = ({
 
           {hasPaymentFeature && (
             <AISubscribe variant="primary">
-              {t['com.affine.payment.ai.usage.purchase-button-label']()}
+              {t['com.nexio.payment.ai.usage.purchase-button-label']()}
             </AISubscribe>
           )}
         </div>

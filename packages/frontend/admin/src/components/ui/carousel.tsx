@@ -1,5 +1,5 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { cn } from '@affine/admin/utils';
+import { Button } from '@nexio/admin/components/ui/button';
+import { cn } from '@nexio/admin/utils';
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from 'embla-carousel-react';

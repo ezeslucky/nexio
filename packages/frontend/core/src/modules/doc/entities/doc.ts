@@ -1,4 +1,4 @@
-import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
 import { Entity } from '@toeverything/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
@@ -136,7 +136,7 @@ export class Doc extends Entity {
   }
 
   changeDocTitle(newTitle: string) {
-    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('affine:page').at(0)
+    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('nexio:page').at(0)
       ?.model as RootBlockModel | undefined;
     if (pageBlock) {
       this.blockSuiteDoc.transact(() => {

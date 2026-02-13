@@ -1,6 +1,6 @@
-import { ImageBlockModel } from '@blocksuite/affine/model';
-import { FetchUtils } from '@blocksuite/affine/shared/adapters';
-import type { BlockModel } from '@blocksuite/affine/store';
+import { ImageBlockModel } from '@blocksuite/nexio/model';
+import { FetchUtils } from '@blocksuite/nexio/shared/adapters';
+import type { BlockModel } from '@blocksuite/nexio/store';
 import type { GfxModel } from '@blocksuite/std/gfx';
 
 export async function fetchImageToFile(

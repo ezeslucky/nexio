@@ -11,27 +11,27 @@ import {
   Scrollable,
   Switch,
   useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
+} from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import {
   type EditorSettingSchema,
   EditorSettingService,
   type FontFamily,
   fontStyleOptions,
-} from '@affine/core/modules/editor-setting';
-import { SpellCheckSettingService } from '@affine/core/modules/editor-setting/services/spell-check-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+} from '@nexio/core/modules/editor-setting';
+import { SpellCheckSettingService } from '@nexio/core/modules/editor-setting/services/spell-check-setting';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import {
   type FontData,
   SystemFontFamilyService,
-} from '@affine/core/modules/system-font-family';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/system-font-family';
+import { Trans, useI18n } from '@nexio/i18n';
 import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import clsx from 'clsx';
@@ -51,13 +51,13 @@ import * as styles from './style.css';
 const getLabel = (fontKey: FontFamily, t: ReturnType<typeof useI18n>) => {
   switch (fontKey) {
     case 'Sans':
-      return t['com.affine.appearanceSettings.fontStyle.sans']();
+      return t['com.nexio.appearanceSettings.fontStyle.sans']();
     case 'Serif':
-      return t['com.affine.appearanceSettings.fontStyle.serif']();
+      return t['com.nexio.appearanceSettings.fontStyle.serif']();
     case 'Mono':
-      return t[`com.affine.appearanceSettings.fontStyle.mono`]();
+      return t[`com.nexio.appearanceSettings.fontStyle.mono`]();
     case 'Custom':
-      return t['com.affine.settings.editorSettings.edgeless.custom']();
+      return t['com.nexio.settings.editorSettings.edgeless.custom']();
     default:
       return '';
   }
@@ -119,8 +119,8 @@ const FontFamilySettings = () => {
 
   return (
     <SettingRow
-      name={t['com.affine.appearanceSettings.font.title']()}
-      desc={t['com.affine.appearanceSettings.font.description']()}
+      name={t['com.nexio.appearanceSettings.font.title']()}
+      desc={t['com.nexio.appearanceSettings.font.description']()}
     >
       <RadioGroup
         items={radioItems}
@@ -287,10 +287,10 @@ const CustomFontFamilySettings = () => {
   return (
     <SettingRow
       name={t[
-        'com.affine.settings.editorSettings.general.font-family.custom.title'
+        'com.nexio.settings.editorSettings.general.font-family.custom.title'
       ]()}
       desc={t[
-        'com.affine.settings.editorSettings.general.font-family.custom.description'
+        'com.nexio.settings.editorSettings.general.font-family.custom.description'
       ]()}
     >
       <Menu
@@ -332,7 +332,7 @@ const NewDocDefaultModeSettings = () => {
         },
         {
           value: 'ask',
-          label: t['com.affine.settings.editorSettings.ask-me-every-time'](),
+          label: t['com.nexio.settings.editorSettings.ask-me-every-time'](),
           testId: 'ask-every-time-trigger',
         },
       ] as const,
@@ -347,10 +347,10 @@ const NewDocDefaultModeSettings = () => {
   return (
     <SettingRow
       name={t[
-        'com.affine.settings.editorSettings.general.default-new-doc.title'
+        'com.nexio.settings.editorSettings.general.default-new-doc.title'
       ]()}
       desc={t[
-        'com.affine.settings.editorSettings.general.default-new-doc.description'
+        'com.nexio.settings.editorSettings.general.default-new-doc.description'
       ]()}
     >
       <Menu
@@ -399,19 +399,19 @@ const AISettings = () => {
     (checked: boolean) => {
       openConfirmModal({
         title: checked
-          ? t['com.affine.settings.editorSettings.general.ai.enable.title']()
-          : t['com.affine.settings.editorSettings.general.ai.disable.title'](),
+          ? t['com.nexio.settings.editorSettings.general.ai.enable.title']()
+          : t['com.nexio.settings.editorSettings.general.ai.disable.title'](),
         description: checked
           ? t[
-              'com.affine.settings.editorSettings.general.ai.enable.description'
+              'com.nexio.settings.editorSettings.general.ai.enable.description'
             ]()
           : t[
-              'com.affine.settings.editorSettings.general.ai.disable.description'
+              'com.nexio.settings.editorSettings.general.ai.disable.description'
             ](),
         confirmText: checked
-          ? t['com.affine.settings.editorSettings.general.ai.enable.confirm']()
+          ? t['com.nexio.settings.editorSettings.general.ai.enable.confirm']()
           : t[
-              'com.affine.settings.editorSettings.general.ai.disable.confirm'
+              'com.nexio.settings.editorSettings.general.ai.disable.confirm'
             ](),
         cancelText: t['Cancel'](),
         onConfirm: () => onAIChange(checked),
@@ -429,8 +429,8 @@ const AISettings = () => {
 
   return (
     <SettingRow
-      name={t['com.affine.settings.editorSettings.general.ai.title']()}
-      desc={t['com.affine.settings.editorSettings.general.ai.description']()}
+      name={t['com.nexio.settings.editorSettings.general.ai.title']()}
+      desc={t['com.nexio.settings.editorSettings.general.ai.description']()}
     >
       <Switch checked={enableAI} onChange={onToggleAI} />
     </SettingRow>
@@ -461,11 +461,11 @@ const SpellCheckSettings = () => {
 
   return (
     <SettingRow
-      name={t['com.affine.settings.editorSettings.general.spell-check.title']()}
+      name={t['com.nexio.settings.editorSettings.general.spell-check.title']()}
       desc={
         requireRestart ? (
           <div className={styles.spellCheckSettingDescription}>
-            <Trans i18nKey="com.affine.settings.editorSettings.general.spell-check.restart-hint">
+            <Trans i18nKey="com.nexio.settings.editorSettings.general.spell-check.restart-hint">
               Settings changed; please restart the app.
               <button
                 onClick={onRestart}
@@ -477,7 +477,7 @@ const SpellCheckSettings = () => {
           </div>
         ) : (
           t[
-            'com.affine.settings.editorSettings.general.spell-check.description'
+            'com.nexio.settings.editorSettings.general.spell-check.description'
           ]()
         )
       }
@@ -500,10 +500,10 @@ const MiddleClickPasteSettings = () => {
   return (
     <SettingRow
       name={t[
-        'com.affine.settings.editorSettings.general.middle-click-paste.title'
+        'com.nexio.settings.editorSettings.general.middle-click-paste.title'
       ]()}
       desc={t[
-        'com.affine.settings.editorSettings.general.middle-click-paste.description'
+        'com.nexio.settings.editorSettings.general.middle-click-paste.description'
       ]()}
     >
       <Switch
@@ -518,7 +518,7 @@ export const General = () => {
   const t = useI18n();
 
   return (
-    <SettingWrapper title={t['com.affine.settings.editorSettings.general']()}>
+    <SettingWrapper title={t['com.nexio.settings.editorSettings.general']()}>
       <AISettings />
       <FontFamilySettings />
       <CustomFontFamilySettings />

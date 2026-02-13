@@ -1,17 +1,17 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { AppThemeService } from '@affine/core/modules/theme';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { AppThemeService } from '@nexio/core/modules/theme';
 import type {
   ContextEmbedStatus,
   CopilotChatHistoryFragment,
-} from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type NotificationService } from '@blocksuite/affine/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
+} from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { type NotificationService } from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType, Store } from '@blocksuite/nexio/store';
 import { DeleteIcon, NewPageIcon } from '@blocksuite/icons/lit';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
@@ -65,7 +65,7 @@ export class PlaygroundChat extends SignalWatcher(
       }
 
       .chat-panel-title {
-        background: var(--affine-background-primary-color);
+        background: var(--nexio-background-primary-color);
         position: relative;
         padding: 8px 0px;
         width: 100%;
@@ -78,13 +78,13 @@ export class PlaygroundChat extends SignalWatcher(
         .chat-panel-title-text {
           font-size: 14px;
           font-weight: 500;
-          color: var(--affine-text-secondary-color);
+          color: var(--nexio-text-secondary-color);
         }
 
         svg {
           width: 18px;
           height: 18px;
-          color: var(--affine-text-secondary-color);
+          color: var(--nexio-text-secondary-color);
         }
       }
 
@@ -97,18 +97,18 @@ export class PlaygroundChat extends SignalWatcher(
         margin: 0 4px;
         padding: 8px 12px;
         border-radius: 8px;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--nexio-border-color);
         font-size: 14px;
         font-weight: 500;
         cursor: pointer;
       }
 
       .chat-panel-hints :first-child {
-        color: var(--affine-text-primary-color);
+        color: var(--nexio-text-primary-color);
       }
 
       .chat-panel-hints :nth-child(2) {
-        color: var(--affine-text-secondary-color);
+        color: var(--nexio-text-secondary-color);
       }
 
       .chat-panel-add,
@@ -168,13 +168,13 @@ export class PlaygroundChat extends SignalWatcher(
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -325,11 +325,11 @@ export class PlaygroundChat extends SignalWatcher(
             ? html`<span data-testid="chat-panel-embedding-progress"
                 >Embedding ${done}/${total}</span
               >`
-            : 'AFFiNE AI'}
+            : 'NEXIO AI'}
         </div>
         <div class="chat-panel-add" @click=${this.addChat}>
           ${NewPageIcon()}
-          <affine-tooltip>Add chat</affine-tooltip>
+          <nexio-tooltip>Add chat</nexio-tooltip>
         </div>
         <ai-history-clear
           .doc=${this.doc}
@@ -351,8 +351,8 @@ export class PlaygroundChat extends SignalWatcher(
         .createSession=${this._createSession}
         .updateContext=${this.updateContext}
         .extensions=${this.extensions}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
-        .affineThemeService=${this.affineThemeService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+        .nexioThemeService=${this.nexioThemeService}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .networkSearchConfig=${this.networkSearchConfig}
@@ -375,8 +375,8 @@ export class PlaygroundChat extends SignalWatcher(
         .searchMenuConfig=${this.searchMenuConfig}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
         .onAISubscribe=${this.onAISubscribe}
       ></ai-chat-composer>
     </div>`;

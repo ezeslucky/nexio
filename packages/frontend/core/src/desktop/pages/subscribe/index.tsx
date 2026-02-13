@@ -1,19 +1,19 @@
-import { Button, Loading } from '@affine/component';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
+import { Button, Loading } from '@nexio/component';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
 import {
   SubscriptionPlan,
   SubscriptionRecurring,
   SubscriptionVariant,
-} from '@affine/graphql';
-import { track } from '@affine/track';
+} from '@nexio/graphql';
+import { track } from '@nexio/track';
 import { effect, fromPromise, useServices } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { switchMap } from 'rxjs';
 
-import { generateSubscriptionCallbackLink } from '../../../components/hooks/affine/use-subscription-notify';
+import { generateSubscriptionCallbackLink } from '../../../components/hooks/nexio/use-subscription-notify';
 import {
   RouteLogic,
   useNavigateHelper,

@@ -1,4 +1,4 @@
-import { effects as tooltipEffects } from '@blocksuite/affine-components/tooltip';
+import { effects as tooltipEffects } from '@blocksuite/nexio-components/tooltip';
 
 import { AIChatBlockComponent } from './blocks/ai-chat-block/ai-chat-block';
 import { EdgelessAIChatBlockComponent } from './blocks/ai-chat-block/ai-chat-edgeless-block';

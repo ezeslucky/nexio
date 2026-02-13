@@ -9,7 +9,7 @@ import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
 import supertest from 'supertest';
 
 import {
-  AFFiNELogger,
+  NEXIOLogger,
   ApplyType,
   GlobalExceptionFilter,
   JobQueue,
@@ -41,7 +41,7 @@ export async function createTestingApp(
   moduleDef: TestingAppMetadata = {}
 ): Promise<TestingApp> {
   const module = await createTestingModule(moduleDef, false);
-  const logger = new AFFiNELogger();
+  const logger = new NEXIOLogger();
   logger.setLogLevels([TEST_LOG_LEVEL]);
 
   const app = module.createNestApplication<NestExpressApplication>({
@@ -168,8 +168,6 @@ export class TestingApp extends ApplyType<INestApplication>() {
     return this.request('patch', path);
   }
 
-  // TODO(@forehalo): directly make proxy for graphql queries defined in `@affine/graphql`
-  // by calling with `app.apis.createWorkspace({ ...variables })`
   async gql<Data = any>(query: string, variables?: any): Promise<Data> {
     const res = await this.POST('/graphql')
       .set({ 'x-request-id': 'test', 'x-operation-name': 'test' })
@@ -200,7 +198,7 @@ export class TestingApp extends ApplyType<INestApplication>() {
   }
 
   private randomEmail() {
-    return `test-${randomUUID()}@affine.pro`;
+    return `test-${randomUUID()}@nexio.pro`;
   }
 
   /**

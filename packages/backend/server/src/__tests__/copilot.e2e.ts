@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
-import { ProjectRoot } from '@affine-tools/utils/path';
+import { ProjectRoot } from '@nexio-tools/utils/path';
 import { PrismaClient } from '@prisma/client';
 import type { TestFn } from 'ava';
 import ava from 'ava';

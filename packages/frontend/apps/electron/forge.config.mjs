@@ -32,7 +32,7 @@ const makers = [
       config: {
         format: 'ULFO',
         icon: icnsPath,
-        name: 'AFFiNE',
+        name: 'NEXIO',
         'icon-size': 128,
         background: path.join(
           __dirname,
@@ -66,7 +66,7 @@ const makers = [
   {
     name: '@electron-forge/maker-zip',
     config: {
-      name: 'affine',
+      name: 'nexio',
       iconUrl: icoPath,
       setupIcon: icoPath,
       platforms: ['darwin', 'linux', 'win32'],
@@ -78,7 +78,7 @@ const makers = [
       name: productName,
       setupIcon: icoPath,
       iconUrl: iconUrl,
-      loadingGif: './resources/icons/affine_installing.gif',
+      loadingGif: './resources/icons/nexio_installing.gif',
     },
   },
   !process.env.SKIP_BUNDLE && {
@@ -125,8 +125,8 @@ const makers = [
         branch: buildType,
         files: [
           [
-            './resources/affine.metainfo.xml',
-            '/usr/share/metainfo/affine.metainfo.xml',
+            './resources/nexio.metainfo.xml',
+            '/usr/share/metainfo/nexio.metainfo.xml',
           ],
         ],
         runtimeVersion: '24.08',
@@ -188,7 +188,7 @@ export default {
     // We need the following line for updater
     extraResource: [
       './resources/app-update.yml',
-      ...(platform === 'linux' ? ['./resources/affine.metainfo.xml'] : []),
+      ...(platform === 'linux' ? ['./resources/nexio.metainfo.xml'] : []),
     ],
     protocols: [
       {
@@ -200,7 +200,7 @@ export default {
     asar: true,
     extendInfo: {
       NSAudioCaptureUsageDescription:
-        'Please allow access in order to capture audio from other apps by AFFiNE.',
+        'Please allow access in order to capture audio from other apps by NEXIO.',
     },
   },
   makers,

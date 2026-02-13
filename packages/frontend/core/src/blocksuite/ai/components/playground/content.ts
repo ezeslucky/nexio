@@ -1,12 +1,12 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { AppThemeService } from '@affine/core/modules/theme';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { AppThemeService } from '@nexio/core/modules/theme';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType, Store } from '@blocksuite/nexio/store';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { css, html } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -121,7 +121,7 @@ export class PlaygroundContent extends SignalWatcher(
       const rootSessionId = await AIProvider.session?.createSession({
         docId: this.doc.id,
         workspaceId: this.doc.workspace.id,
-        promptName: 'Chat With AFFiNE AI',
+        promptName: 'Chat With NEXIO AI',
       });
       if (rootSessionId) {
         this.rootSessionId = rootSessionId;

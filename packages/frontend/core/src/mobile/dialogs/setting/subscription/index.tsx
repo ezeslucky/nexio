@@ -1,7 +1,7 @@
-import { Button } from '@affine/component';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { NativePaywallService } from '@affine/core/modules/paywall';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { NativePaywallService } from '@nexio/core/modules/paywall';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './styles.css';
@@ -36,10 +36,10 @@ export const UserSubscription = () => {
     <div className={styles.root}>
       <div className={styles.content}>
         <div className={styles.title}>
-          {t['com.affine.payment.subscription.title']()}
+          {t['com.nexio.payment.subscription.title']()}
         </div>
         <div className={styles.description}>
-          {t['com.affine.payment.subscription.description']()}
+          {t['com.nexio.payment.subscription.description']()}
         </div>
       </div>
       <Button
@@ -49,7 +49,7 @@ export const UserSubscription = () => {
           void nativePaywallProvider.showPaywall('Pro').catch(console.error)
         }
       >
-        {t['com.affine.payment.subscription.button']()}
+        {t['com.nexio.payment.subscription.button']()}
       </Button>
     </div>
   );

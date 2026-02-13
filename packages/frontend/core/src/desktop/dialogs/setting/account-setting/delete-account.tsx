@@ -1,13 +1,13 @@
-import { ConfirmModal, Input, notify } from '@affine/component';
+import { ConfirmModal, Input, notify } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { Trans, useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/setting-components';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { Trans, useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -34,12 +34,12 @@ export const DeleteAccount = () => {
       <SettingRow
         name={
           <span style={{ color: cssVarV2('status/error') }}>
-            {t['com.affine.setting.account.delete-from-server']({
+            {t['com.nexio.setting.account.delete-from-server']({
               server: serverService.server.config$.value.serverName,
             })}
           </span>
         }
-        desc={t['com.affine.setting.account.delete.message']()}
+        desc={t['com.nexio.setting.account.delete.message']()}
         style={{ cursor: 'pointer' }}
         onClick={openModal}
         data-testid="delete-account-button"
@@ -70,9 +70,9 @@ const TeamOwnerWarningModal = ({
     <ConfirmModal
       open={open}
       onOpenChange={onOpenChange}
-      title={t['com.affine.setting.account.delete.team-warning-title']()}
+      title={t['com.nexio.setting.account.delete.team-warning-title']()}
       description={t[
-        'com.affine.setting.account.delete.team-warning-description'
+        'com.nexio.setting.account.delete.team-warning-description'
       ]()}
       confirmText={t['Confirm']()}
       confirmButtonOptions={{
@@ -128,27 +128,27 @@ const DeleteAccountModal = ({
   return (
     <ConfirmModal
       open={open}
-      cancelText={t['com.affine.confirmModal.button.cancel']()}
+      cancelText={t['com.nexio.confirmModal.button.cancel']()}
       onConfirm={onDeleteAccountConfirm}
       onOpenChange={onOpenChange}
-      title={t['com.affine.setting.account.delete.confirm-title']()}
+      title={t['com.nexio.setting.account.delete.confirm-title']()}
       description={
         <Trans
           i18nKey={
-            'com.affine.setting.account.delete.confirm-delete-description-1'
+            'com.nexio.setting.account.delete.confirm-delete-description-1'
           }
           components={{
             1: <strong />,
           }}
           values={{
             server:
-              serverService.server.id !== 'affine-cloud'
+              serverService.server.id !== 'nexio-cloud'
                 ? `${serverService.server.config$.value.serverName} (${serverService.server.baseUrl})`
                 : serverService.server.config$.value.serverName,
           }}
         />
       }
-      confirmText={t['com.affine.setting.account.delete.confirm-button']()}
+      confirmText={t['com.nexio.setting.account.delete.confirm-button']()}
       confirmButtonOptions={{
         variant: 'error',
         disabled: email !== account.email,
@@ -157,14 +157,14 @@ const DeleteAccountModal = ({
       childrenContentClassName={styles.confirmContent}
     >
       <Trans
-        i18nKey="com.affine.setting.account.delete.confirm-delete-description-2"
+        i18nKey="com.nexio.setting.account.delete.confirm-delete-description-2"
         components={{
           1: <strong />,
         }}
       />
       <Input
         type="text"
-        placeholder={t['com.affine.setting.account.delete.input-placeholder']()}
+        placeholder={t['com.nexio.setting.account.delete.input-placeholder']()}
         value={email}
         onChange={setEmail}
         className={styles.inputWrapper}

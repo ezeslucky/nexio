@@ -1,17 +1,17 @@
 import '@toeverything/theme/style.css';
 import '@toeverything/theme/fonts.css';
 
-import type { DocMode } from '@blocksuite/affine/model';
-import { AffineSchemas } from '@blocksuite/affine/schemas';
+import type { DocMode } from '@blocksuite/nexio/model';
+import { NexioSchemas } from '@blocksuite/nexio/schemas';
 import {
   CommunityCanvasTextFonts,
   FeatureFlagService,
   FontConfigExtension,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   type ViewportTurboRendererExtension,
   ViewportTurboRendererIdentifier,
-} from '@blocksuite/affine-gfx-turbo-renderer';
+} from '@blocksuite/nexio-gfx-turbo-renderer';
 import type { ExtensionType, Store, Transformer } from '@blocksuite/store';
 import { Schema, Text } from '@blocksuite/store';
 import {
@@ -20,7 +20,7 @@ import {
 } from '@blocksuite/store/test';
 
 import { effects } from '../../effects.js';
-import { TestAffineEditorContainer } from '../../index.js';
+import { TestNexioEditorContainer } from '../../index.js';
 import { getTestStoreManager } from '../../store.js';
 import { getTestViewManager } from '../../view.js';
 
@@ -40,7 +40,7 @@ function createCollectionOptions() {
   const schema = new Schema();
   const room = Math.random().toString(16).slice(2, 8);
 
-  schema.register(AffineSchemas);
+  schema.register(NexioSchemas);
 
   const idGenerator = createAutoIncrementIdGenerator();
 
@@ -55,10 +55,10 @@ function initCollection(collection: TestWorkspace) {
   const doc = collection.createDoc('doc:home').getStore();
 
   doc.load(() => {
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new Text(),
     });
-    doc.addBlock('affine:surface', {}, rootId);
+    doc.addBlock('nexio:surface', {}, rootId);
   });
   doc.resetHistory();
 }
@@ -74,7 +74,7 @@ async function createEditor(
     throw new Error('Need to create a doc first');
   }
   const doc = blockCollection.getStore();
-  const editor = new TestAffineEditorContainer();
+  const editor = new TestNexioEditorContainer();
   editor.doc = doc;
   editor.mode = mode;
   editor.pageSpecs = [
@@ -158,12 +158,12 @@ export function cleanup() {
 }
 
 declare global {
-  const editor: TestAffineEditorContainer;
+  const editor: TestNexioEditorContainer;
   const doc: Store;
   const collection: TestWorkspace;
   const job: Transformer;
   interface Window {
-    editor: TestAffineEditorContainer;
+    editor: TestNexioEditorContainer;
     doc: Store;
     job: Transformer;
     collection: TestWorkspace;

@@ -9,7 +9,7 @@
     "privateKey": {
       "type": "String",
       "desc": "The private key for used by the crypto module to create signed tokens or encrypt data.",
-      "env": "AFFINE_PRIVATE_KEY"
+      "env": "NEXIO_PRIVATE_KEY"
     }
   },
   "job": {
@@ -200,17 +200,17 @@
     "externalUrl": {
       "type": "String",
       "desc": "Base url of NEXIO server, used for generating external urls.\nDefault to be `[server.protocol]://[server.host][:server.port]` if not specified.\n    ",
-      "env": "AFFINE_SERVER_EXTERNAL_URL"
+      "env": "NEXIO_SERVER_EXTERNAL_URL"
     },
     "https": {
       "type": "Boolean",
       "desc": "Whether the server is hosted on a ssl enabled domain (https://).",
-      "env": "AFFINE_SERVER_HTTPS"
+      "env": "NEXIO_SERVER_HTTPS"
     },
     "host": {
       "type": "String",
       "desc": "Where the server get deployed(FQDN).",
-      "env": "AFFINE_SERVER_HOST"
+      "env": "NEXIO_SERVER_HOST"
     },
     "hosts": {
       "type": "Array",
@@ -219,12 +219,12 @@
     "port": {
       "type": "Number",
       "desc": "Which port the server will listen on.",
-      "env": "AFFINE_SERVER_PORT"
+      "env": "NEXIO_SERVER_PORT"
     },
     "path": {
       "type": "String",
-      "desc": "Subpath where the server get deployed if there is one.(e.g. /affine)",
-      "env": "AFFINE_SERVER_SUB_PATH"
+      "desc": "Subpath where the server get deployed if there is one.(e.g. /nexio)",
+      "env": "NEXIO_SERVER_SUB_PATH"
     }
   },
   "flags": {
@@ -267,7 +267,7 @@
   "copilot": {
     "enabled": {
       "type": "Boolean",
-      "desc": "Whether to enable the copilot plugin. <br> Document: <a href=\"https://docs.affine.pro/self-host-affine/administer/ai\" target=\"_blank\">https://docs.affine.pro/self-host-affine/administer/ai</a>"
+      "desc": "Whether to enable the copilot plugin. <br> Document: <a href=\"https://docs.nexio.pro/self-host-nexio/administer/ai\" target=\"_blank\">https://docs.nexio.pro/self-host-nexio/administer/ai</a>"
     },
     "scenarios": {
       "type": "Object",
@@ -323,34 +323,34 @@
     "enabled": {
       "type": "Boolean",
       "desc": "Enable indexer plugin",
-      "env": "AFFINE_INDEXER_ENABLED"
+      "env": "NEXIO_INDEXER_ENABLED"
     },
     "provider.type": {
       "type": "String",
       "desc": "Indexer search service provider name",
-      "env": "AFFINE_INDEXER_SEARCH_PROVIDER"
+      "env": "NEXIO_INDEXER_SEARCH_PROVIDER"
     },
     "provider.endpoint": {
       "type": "String",
       "desc": "Indexer search service endpoint",
-      "env": "AFFINE_INDEXER_SEARCH_ENDPOINT"
+      "env": "NEXIO_INDEXER_SEARCH_ENDPOINT"
     },
     "provider.apiKey": {
       "type": "String",
       "desc": "Indexer search service api key. Optional for elasticsearch",
       "link": "https://www.elastic.co/guide/server/current/api-key.html",
-      "env": "AFFINE_INDEXER_SEARCH_API_KEY"
+      "env": "NEXIO_INDEXER_SEARCH_API_KEY"
     },
     "provider.username": {
       "type": "String",
       "desc": "Indexer search service auth username, if not set, basic auth will be disabled. Optional for elasticsearch",
       "link": "https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html",
-      "env": "AFFINE_INDEXER_SEARCH_USERNAME"
+      "env": "NEXIO_INDEXER_SEARCH_USERNAME"
     },
     "provider.password": {
       "type": "String",
       "desc": "Indexer search service auth password, if not set, basic auth will be disabled. Optional for elasticsearch",
-      "env": "AFFINE_INDEXER_SEARCH_PASSWORD"
+      "env": "NEXIO_INDEXER_SEARCH_PASSWORD"
     },
     "autoIndex.batchSize": {
       "type": "Number",

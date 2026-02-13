@@ -1,6 +1,6 @@
-import { PropertyValue, Tooltip } from '@affine/component';
-import { type DocRecord, DocService } from '@affine/core/modules/doc';
-import { i18nTime, useI18n } from '@affine/i18n';
+import { PropertyValue, Tooltip } from '@nexio/component';
+import { type DocRecord, DocService } from '@nexio/core/modules/doc';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import { useLiveData, useServices } from '@toeverything/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
@@ -78,7 +78,7 @@ export const UpdatedAtGroupHeader = ({
   const t = useI18n();
   const date = groupId
     ? toRelativeDate(groupId)
-    : t['com.affine.all-docs.group.updated-at.never-updated']();
+    : t['com.nexio.all-docs.group.updated-at.never-updated']();
   return (
     <PlainTextDocGroupHeader
       style={{ textTransform: 'capitalize' }}

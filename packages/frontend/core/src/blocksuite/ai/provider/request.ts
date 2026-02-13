@@ -1,4 +1,4 @@
-import type { AIToolsConfig } from '@affine/core/modules/ai-button';
+import type { AIToolsConfig } from '@nexio/core/modules/ai-button';
 import { partition } from 'lodash-es';
 
 import { AIProvider } from './ai-provider';

@@ -15,7 +15,7 @@ declare global {
 defineModuleConfig('db', {
   datasourceUrl: {
     desc: 'The datasource url for the prisma client.',
-    default: 'postgresql://localhost:5432/affine',
+    default: 'postgresql://localhost:5432/nexio',
     env: 'DATABASE_URL',
     shape: z.string().url(),
   },

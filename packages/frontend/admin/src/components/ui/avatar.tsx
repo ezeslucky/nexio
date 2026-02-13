@@ -1,4 +1,4 @@
-import { cn } from '@affine/admin/utils';
+import { cn } from '@nexio/admin/utils';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import * as React from 'react';
 

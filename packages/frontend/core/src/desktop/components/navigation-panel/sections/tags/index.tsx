@@ -1,9 +1,9 @@
-import { IconButton } from '@affine/component';
-import { RenameModal } from '@affine/component/rename-modal';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { TagService } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { IconButton } from '@nexio/component';
+import { RenameModal } from '@nexio/component/rename-modal';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { TagService } from '@nexio/core/modules/tag';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { AddTagIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -48,7 +48,7 @@ export const NavigationPanelTags = () => {
       path={path}
       testId="navigation-panel-tags"
       headerClassName={styles.draggedOverHighlight}
-      title={t['com.affine.rootAppSidebar.tags']()}
+      title={t['com.nexio.rootAppSidebar.tags']()}
       actions={
         <div className={styles.iconContainer}>
           <IconButton
@@ -56,7 +56,7 @@ export const NavigationPanelTags = () => {
             onClick={handleOpenCreateModal}
             size="16"
             tooltip={t[
-              'com.affine.rootAppSidebar.explorer.tag-section-add-tooltip'
+              'com.nexio.rootAppSidebar.explorer.tag-section-add-tooltip'
             ]()}
           >
             <AddTagIcon />
@@ -66,7 +66,7 @@ export const NavigationPanelTags = () => {
               open
               onOpenChange={setCreating}
               onRename={handleCreateNewTag}
-              currentName={t['com.affine.rootAppSidebar.tags.new-tag']()}
+              currentName={t['com.nexio.rootAppSidebar.tags.new-tag']()}
             />
           )}
         </div>

@@ -1,15 +1,15 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   AcceptInvitePage,
   ExpiredPage,
   JoinFailedPage,
   RequestToJoinPage,
   SentRequestPage,
-} from '@affine/component/member-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { WorkspaceMemberStatus } from '@affine/graphql';
+} from '@nexio/component/member-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { WorkspaceMemberStatus } from '@nexio/graphql';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
@@ -47,7 +47,7 @@ const AcceptInvite = ({ inviteId: targetInviteId }: { inviteId: string }) => {
     jumpToPage(inviteInfo.workspace.id, 'all', RouteLogic.REPLACE);
   }, [inviteInfo, workspacesService, jumpToPage]);
 
-  const onOpenAffine = useCallback(() => {
+  const onopenNEXIO = useCallback(() => {
     navigateHelper.jumpToIndex();
   }, [navigateHelper]);
 
@@ -91,7 +91,7 @@ const AcceptInvite = ({ inviteId: targetInviteId }: { inviteId: string }) => {
   }
 
   if (!inviteInfo && !loading) {
-    return <ExpiredPage onOpenAffine={onOpenAffine} />;
+    return <ExpiredPage onopenNEXIO={onopenNEXIO} />;
   }
 
   if (error || acceptError) {

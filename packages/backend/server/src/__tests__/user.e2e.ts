@@ -25,7 +25,7 @@ test.after.always(async () => {
 test.skip('should register a user', () => {});
 
 test('should get current user', async t => {
-  const user = await app.signupV1('u1@affine.pro');
+  const user = await app.signupV1('u1@nexio.pro');
   const currUser = await currentUser(app);
   t.is(currUser.id, user.id, 'user.id is not valid');
   t.is(currUser.name, user.name, 'user.name is not valid');
@@ -34,7 +34,7 @@ test('should get current user', async t => {
 });
 
 test('should be able to delete user', async t => {
-  await app.signupV1('u1@affine.pro');
+  await app.signupV1('u1@nexio.pro');
   const deleted = await deleteAccount(app);
   t.true(deleted);
   const currUser = await currentUser(app);

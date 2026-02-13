@@ -5,7 +5,7 @@
         {
           "children": [
           ],
-          "flavour": "affine:divider",
+          "flavour": "nexio:divider",
           "id": "3",
           "props": {
           },
@@ -15,7 +15,7 @@
         {
           "children": [
           ],
-          "flavour": "affine:paragraph",
+          "flavour": "nexio:paragraph",
           "id": "2",
           "props": {
             "collapsed": false,
@@ -37,7 +37,7 @@
             {
               "children": [
               ],
-              "flavour": "affine:paragraph",
+              "flavour": "nexio:paragraph",
               "id": "5",
               "props": {
                 "collapsed": false,
@@ -55,7 +55,7 @@
               "version": 1
             }
           ],
-          "flavour": "affine:paragraph",
+          "flavour": "nexio:paragraph",
           "id": "4",
           "props": {
             "collapsed": false,
@@ -73,7 +73,7 @@
           "version": 1
         }
       ],
-      "flavour": "affine:note",
+      "flavour": "nexio:note",
       "id": "1",
       "props": {
         "background": {
@@ -86,7 +86,7 @@
             "borderRadius": 8,
             "borderSize": 4,
             "borderStyle": "none",
-            "shadowType": "--affine-note-shadow-box"
+            "shadowType": "--nexio-note-shadow-box"
           }
         },
         "hidden": false,
@@ -98,7 +98,7 @@
       "version": 1
     }
   ],
-  "flavour": "affine:page",
+  "flavour": "nexio:page",
   "id": "0",
   "props": {
     "title": {

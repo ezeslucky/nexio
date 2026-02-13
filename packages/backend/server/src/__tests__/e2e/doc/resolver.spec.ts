@@ -4,7 +4,7 @@ import {
   getRecentlyUpdatedDocsQuery,
   getWorkspacePageByIdQuery,
   publishPageMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { Mockers } from '../../mocks';
 import { app, e2e } from '../test';

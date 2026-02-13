@@ -1,10 +1,10 @@
-import { RadioGroup, type RadioItem } from '@affine/component';
-import { registerAffineCommand } from '@affine/core/commands';
-import { EditorService } from '@affine/core/modules/editor';
-import { ViewService, WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import { RadioGroup, type RadioItem } from '@nexio/component';
+import { registerNexioCommand } from '@nexio/core/commands';
+import { EditorService } from '@nexio/core/modules/editor';
+import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -75,13 +75,13 @@ export const EditorModeSwitch = () => {
   useEffect(() => {
     if (trash || isSharedMode || currentMode === undefined || !isActiveView)
       return;
-    return registerAffineCommand({
-      id: 'affine:doc-mode-switch',
+    return registerNexioCommand({
+      id: 'nexio:doc-mode-switch',
       category: 'editor:page',
       label:
         currentMode === 'page'
-          ? t['com.affine.cmdk.switch-to-edgeless']()
-          : t['com.affine.cmdk.switch-to-page'](),
+          ? t['com.nexio.cmdk.switch-to-edgeless']()
+          : t['com.nexio.cmdk.switch-to-page'](),
       icon: currentMode === 'page' ? <EdgelessIcon /> : <PageIcon />,
       keyBinding: {
         binding: 'Alt+KeyS',

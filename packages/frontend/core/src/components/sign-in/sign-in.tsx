@@ -1,17 +1,17 @@
-import { Button, notify } from '@affine/component';
+import { Button, notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { OAuth } from '@affine/core/components/affine/auth/oauth';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/component/auth-components';
+import { OAuth } from '@nexio/core/components/nexio/auth/oauth';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,
@@ -27,7 +27,7 @@ import {
   useState,
 } from 'react';
 
-import { useSelfhostLoginVersionGuard } from '../hooks/affine/use-selfhost-login-version-guard';
+import { useSelfhostLoginVersionGuard } from '../hooks/nexio/use-selfhost-login-version-guard';
 import type { SignInState } from '.';
 import { Back } from './back';
 import * as style from './style.css';
@@ -73,8 +73,8 @@ export const SignInStep = ({
   useEffect(() => {
     if (loginStatus === 'authenticated') {
       notify.success({
-        title: t['com.affine.auth.toast.title.signed-in'](),
-        message: t['com.affine.auth.toast.message.signed-in'](),
+        title: t['com.nexio.auth.toast.title.signed-in'](),
+        message: t['com.nexio.auth.toast.message.signed-in'](),
       });
     }
     onAuthenticated?.(loginStatus);
@@ -131,7 +131,7 @@ export const SignInStep = ({
     return (
       <AuthContainer>
         <AuthHeader
-          title={t['com.affine.auth.sign.in']()}
+          title={t['com.nexio.auth.sign.in']()}
           subTitle={serverName}
         />
         <AuthContent>
@@ -144,7 +144,7 @@ export const SignInStep = ({
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.affine.auth.sign.in']()}
+        title={t['com.nexio.auth.sign.in']()}
         subTitle={serverName}
       />
 
@@ -153,12 +153,12 @@ export const SignInStep = ({
 
         <AuthInput
           className={style.authInput}
-          label={t['com.affine.settings.email']()}
-          placeholder={t['com.affine.auth.sign.email.placeholder']()}
+          label={t['com.nexio.settings.email']()}
+          placeholder={t['com.nexio.auth.sign.email.placeholder']()}
           onChange={setEmail}
           error={!isValidEmail}
           errorHint={
-            isValidEmail ? '' : t['com.affine.auth.sign.email.error']()
+            isValidEmail ? '' : t['com.nexio.auth.sign.email.error']()
           }
           onEnter={onContinue}
         />
@@ -174,16 +174,16 @@ export const SignInStep = ({
           suffixStyle={{ width: 20, height: 20, color: cssVar('blue') }}
           onClick={onContinue}
         >
-          {t['com.affine.auth.sign.email.continue']()}
+          {t['com.nexio.auth.sign.email.continue']()}
         </Button>
 
         {!isSelfhosted && (
           <>
             <div className={style.authMessage}>
               {/*prettier-ignore*/}
-              <Trans i18nKey="com.affine.auth.sign.message">
+              <Trans i18nKey="com.nexio.auth.sign.message">
                 By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
-                you agree to AFFiNE&apos;s <a href="https://affine.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://affine.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
+                you agree to NEXIO&apos;s <a href="https://nexio.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://nexio.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
             </Trans>
             </div>
             <div className={style.skipDivider}>
@@ -201,11 +201,11 @@ export const SignInStep = ({
                   }
                   onClick={onAddSelfhosted}
                 >
-                  {t['com.affine.auth.sign.add-selfhosted']()}
+                  {t['com.nexio.auth.sign.add-selfhosted']()}
                 </Button>
               ) : (
                 <div className={style.skipText}>
-                  {t['com.affine.mobile.sign-in.skip.hint']()}
+                  {t['com.nexio.mobile.sign-in.skip.hint']()}
                 </div>
               )}
               <Button
@@ -214,7 +214,7 @@ export const SignInStep = ({
                 className={style.skipLink}
                 prefix={<LocalWorkspaceIcon className={style.skipLinkIcon} />}
               >
-                {t['com.affine.mobile.sign-in.skip.link']()}
+                {t['com.nexio.mobile.sign-in.skip.link']()}
               </Button>
             </div>
           </>

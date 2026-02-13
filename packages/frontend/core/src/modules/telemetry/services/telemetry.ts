@@ -1,6 +1,6 @@
-import { shallowEqual } from '@affine/component';
-import { ServerDeploymentType } from '@affine/graphql';
-import { mixpanel } from '@affine/track';
+import { shallowEqual } from '@nexio/component';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { mixpanel } from '@nexio/track';
 import { LiveData, OnEvent, Service } from '@toeverything/infra';
 
 import type { AuthAccountInfo, Server, ServersService } from '../../cloud';

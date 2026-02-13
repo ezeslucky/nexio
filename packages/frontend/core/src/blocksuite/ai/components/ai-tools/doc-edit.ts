@@ -1,9 +1,9 @@
-import track from '@affine/track';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/affine/std';
-import { LoadingIcon } from '@blocksuite/affine-components/icons';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import track from '@nexio/track';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
+import { LoadingIcon } from '@blocksuite/nexio-components/icons';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   CloseIcon,
   CopyIcon,
@@ -83,7 +83,7 @@ export class DocEditTool extends WithDisposable(ShadowlessElement) {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      background: ${unsafeCSSVar('--affine-overlay-panel-shadow')};
+      background: ${unsafeCSSVar('--nexio-overlay-panel-shadow')};
       box-shadow: ${unsafeCSSVar('shadow1')};
       border-radius: 8px;
       width: 100%;
@@ -434,13 +434,13 @@ export class DocEditTool extends WithDisposable(ShadowlessElement) {
                   <div class="doc-edit-tool-result-card-header-operations">
                     <button @click=${() => this._toggleCollapse()}>
                       ${this.isCollapsed ? ExpandFullIcon() : ExpandCloseIcon()}
-                      <affine-tooltip>
+                      <nexio-tooltip>
                         ${this.isCollapsed ? 'Expand' : 'Collapse'}
-                      </affine-tooltip>
+                      </nexio-tooltip>
                     </button>
                     <button @click=${() => this._handleCopy(changedContent)}>
                       ${CopyIcon()}
-                      <affine-tooltip>Copy</affine-tooltip>
+                      <nexio-tooltip>Copy</nexio-tooltip>
                     </button>
                     <button
                       @click=${() => this._handleApply(op, updates)}

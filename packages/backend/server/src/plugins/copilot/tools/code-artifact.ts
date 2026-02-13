@@ -6,12 +6,7 @@ import type { PromptService } from '../prompt';
 import type { CopilotProviderFactory } from '../providers';
 import { toolError } from './error';
 const logger = new Logger('CodeArtifactTool');
-/**
- * A copilot tool that produces a completely self-contained HTML artifact.
- * The returned HTML must include <style> and <script> tags directly so that
- * it can be saved as a single .html file and opened in any browser with no
- * external dependencies.
- */
+
 export const createCodeArtifactTool = (
   promptService: PromptService,
   factory: CopilotProviderFactory
@@ -20,13 +15,9 @@ export const createCodeArtifactTool = (
     description:
       'Generate a single-file HTML snippet (with inline <style> and <script>) that accomplishes the requested functionality. The final HTML should be runnable when saved as an .html file and opened in a browser. Do NOT reference external resources (CSS, JS, images) except through data URIs.',
     inputSchema: z.object({
-      /**
-       * The <title> text that will appear in the browser tab.
-       */
+      
       title: z.string().describe('The title of the HTML page'),
-      /**
-       * The optimized user prompt
-       */
+     
       userPrompt: z
         .string()
         .describe(

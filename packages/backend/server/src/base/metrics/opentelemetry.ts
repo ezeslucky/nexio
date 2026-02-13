@@ -75,7 +75,7 @@ export abstract class BaseOpentelemetryOptionsFactory {
         ],
       }),
       instrumentations: this.getInstractions(),
-      serviceName: 'affine-cloud',
+      serviceName: 'nexio-cloud',
     };
   }
 }

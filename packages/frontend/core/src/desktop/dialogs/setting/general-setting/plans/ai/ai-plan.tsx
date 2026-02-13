@@ -1,6 +1,6 @@
-import { Button } from '@affine/component';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { i18nTime, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -31,13 +31,13 @@ export const AIPlan = () => {
   }
 
   const billingTip = subscription?.nextBillAt
-    ? t['com.affine.payment.ai.billing-tip.next-bill-at']({
+    ? t['com.nexio.payment.ai.billing-tip.next-bill-at']({
         due: i18nTime(subscription.nextBillAt, {
           absolute: { accuracy: 'day' },
         }),
       })
     : subscription?.canceledAt && subscription.end
-      ? t['com.affine.payment.ai.billing-tip.end-at']({
+      ? t['com.nexio.payment.ai.billing-tip.end-at']({
           end: i18nTime(subscription.end, {
             absolute: { accuracy: 'day' },
           }),
@@ -48,8 +48,8 @@ export const AIPlan = () => {
     <AIPlanLayout
       caption={
         subscription
-          ? t['com.affine.payment.ai.pricing-plan.caption-purchased']()
-          : t['com.affine.payment.ai.pricing-plan.caption-free']()
+          ? t['com.nexio.payment.ai.pricing-plan.caption-purchased']()
+          : t['com.nexio.payment.ai.pricing-plan.caption-free']()
       }
       actionButtons={
         isLoggedIn ? (
@@ -67,9 +67,9 @@ export const AIPlan = () => {
                 className={styles.purchaseButton}
                 displayedFrequency="monthly"
               />
-              <a href="https://ai.affine.pro" target="_blank" rel="noreferrer">
+              <a href="https://ai.nexio.pro" target="_blank" rel="noreferrer">
                 <Button className={styles.learnAIButton}>
-                  {t['com.affine.payment.ai.pricing-plan.learn']()}
+                  {t['com.nexio.payment.ai.pricing-plan.learn']()}
                 </Button>
               </a>
             </>

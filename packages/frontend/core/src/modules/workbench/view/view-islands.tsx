@@ -1,38 +1,5 @@
-/**
- * # View Islands
- *
- * This file defines some components that allow each UI area to be defined inside each View route as shown below,
- * and the Workbench is responsible for rendering these areas into their containers.
- *
- * ```tsx
- * const MyView = () => {
- *   return <>
- *     <ViewHeader>
- *       ...
- *     </ViewHeader>
- *     <ViewBody>
- *       ...
- *     </ViewBody>
- *     <ViewSidebarTab tabId="my-tab" icon={<MyIcon />}>
- *       ...
- *     </ViewSidebarTab>
- *   </>
- * }
- *
- * const viewRoute = [
- *   {
- *     path: '/my-view',
- *     component: MyView,
- *   }
- * ]
- * ```
- *
- * Each Island is divided into `Target` and `Provider`.
- * The `Provider` wraps the content to be rendered, while the `Target` is placed where it needs to be rendered.
- * Then you get a view portal.
- */
 
-import { createIsland, type Island } from '@affine/core/utils/island';
+import { createIsland, type Island } from '@nexio/core/utils/island';
 import { useLiveData, useService } from '@toeverything/infra';
 import type React from 'react';
 import {

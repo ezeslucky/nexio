@@ -16,7 +16,7 @@ export const serverTimingAndCache = (
     const serverTiming = res.getHeader('Server-Timing') as string | undefined;
     const serverTimingValue = `${
       serverTiming ? `${serverTiming}, ` : ''
-    }affine-server;dur=${costInMilliseconds}`;
+    }nexio-server;dur=${costInMilliseconds}`;
 
     res.setHeader('Server-Timing', serverTimingValue);
   });

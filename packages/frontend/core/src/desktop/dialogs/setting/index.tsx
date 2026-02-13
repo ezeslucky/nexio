@@ -1,21 +1,21 @@
-import { Loading, Scrollable } from '@affine/component';
-import { WorkspaceDetailSkeleton } from '@affine/component/setting-components';
-import type { ModalProps } from '@affine/component/ui/modal';
-import { Modal } from '@affine/component/ui/modal';
+import { Loading, Scrollable } from '@nexio/component';
+import { WorkspaceDetailSkeleton } from '@nexio/component/setting-components';
+import type { ModalProps } from '@nexio/component/ui/modal';
+import { Modal } from '@nexio/component/ui/modal';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
-import type { DialogComponentProps } from '@affine/core/modules/dialogs';
+} from '@nexio/core/modules/cloud';
+import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
 import type {
   SettingTab,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs/constant';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { createIsland, type Island } from '@affine/core/utils/island';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs/constant';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { createIsland, type Island } from '@nexio/core/utils/island';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { Trans } from '@nexio/i18n';
 import { ContactWithUsIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';
@@ -34,7 +34,7 @@ import { AccountSetting } from './account-setting';
 import { GeneralSetting } from './general-setting';
 import { IssueFeedbackModal } from './issue-feedback-modal';
 import { SettingSidebar } from './setting-sidebar';
-import { StarAFFiNEModal } from './star-affine-modal';
+import { StarNEXIOModal } from './star-nexio-modal';
 import * as style from './style.css';
 import {
   SubPageContext,
@@ -141,15 +141,15 @@ const SettingModalInner = ({
     [setSettingState]
   );
   const [openIssueFeedbackModal, setOpenIssueFeedbackModal] = useState(false);
-  const [openStarAFFiNEModal, setOpenStarAFFiNEModal] = useState(false);
+  const [openStarNEXIOModal, setOpenStarNEXIOModal] = useState(false);
 
   const handleOpenIssueFeedbackModal = useCallback(() => {
     setOpenIssueFeedbackModal(true);
   }, [setOpenIssueFeedbackModal]);
 
-  const handleOpenStarAFFiNEModal = useCallback(() => {
-    setOpenStarAFFiNEModal(true);
-  }, [setOpenStarAFFiNEModal]);
+  const handleOpenStarNEXIOModal = useCallback(() => {
+    setOpenStarNEXIOModal(true);
+  }, [setOpenStarNEXIOModal]);
 
   const addSubPageIsland = useCallback(() => {
     const island = createIsland();
@@ -230,12 +230,12 @@ const SettingModalInner = ({
               <div className={style.footer}>
                 <ContactWithUsIcon fontSize={16} />
                 <Trans
-                  i18nKey={'com.affine.settings.suggestion-2'}
+                  i18nKey={'com.nexio.settings.suggestion-2'}
                   components={{
                     1: (
                       <span
                         className={style.link}
-                        onClick={handleOpenStarAFFiNEModal}
+                        onClick={handleOpenStarNEXIOModal}
                       />
                     ),
                     2: (
@@ -247,9 +247,9 @@ const SettingModalInner = ({
                   }}
                 />
               </div>
-              <StarAFFiNEModal
-                open={openStarAFFiNEModal}
-                setOpen={setOpenStarAFFiNEModal}
+              <StarNEXIOModal
+                open={openStarNEXIOModal}
+                setOpen={setOpenStarNEXIOModal}
               />
               <IssueFeedbackModal
                 open={openIssueFeedbackModal}

@@ -48,7 +48,7 @@ export const ImportPage = ({
       <span>
         NEXIO will gradually support more and more file types for import.&nbsp;
         <a
-          href="https://community.affine.pro/c/feature-requests/import-export"
+          href="https://community.nexio.pro/c/feature-requests/import-export"
           target="_blank"
           rel="noreferrer"
         >

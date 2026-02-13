@@ -1,5 +1,5 @@
 {
-  "name": "@affine/playstore-auto-bump",
+  "name": "@nexio/playstore-auto-bump",
   "version": "0.22.4",
   "private": true,
   "type": "module",
@@ -9,8 +9,8 @@
     "bump": "r ./index.ts"
   },
   "dependencies": {
-    "@affine-tools/cli": "workspace:*",
-    "@affine-tools/utils": "workspace:*",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
     "@googleapis/androidpublisher": "^31.0.0",
     "typescript": "^5.7.2"
   },

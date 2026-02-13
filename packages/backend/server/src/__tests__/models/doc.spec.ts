@@ -37,7 +37,7 @@ let workspace: Workspace;
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   workspace = await t.context.workspace.create(user.id);
 });
@@ -215,7 +215,7 @@ test('should upsert a doc', async t => {
 
   // update snapshot's editorId
   const otherUser = await t.context.user.create({
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
   });
   const newSnapshot = {
     ...snapshot,
@@ -257,7 +257,7 @@ test('should get a doc authors', async t => {
 
   // update snapshot's editorId
   const otherUser = await t.context.user.create({
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
   });
   const newSnapshot = {
     ...snapshot,

@@ -1,11 +1,11 @@
 {
-  "name": "@types/affine__env",
+  "name": "@types/nexio__env",
   "private": true,
   "types": "./__all.d.ts",
   "type": "module",
   "dependencies": {
-    "@affine/env": "workspace:*",
-    "@blocksuite/affine": "workspace:*"
+    "@nexio/env": "workspace:*",
+    "@blocksuite/nexio": "workspace:*"
   },
   "version": "0.22.4"
 }

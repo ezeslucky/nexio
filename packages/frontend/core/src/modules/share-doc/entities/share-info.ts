@@ -1,4 +1,4 @@
-import type { GetWorkspacePageByIdQuery, PublicDocMode } from '@affine/graphql';
+import type { GetWorkspacePageByIdQuery, PublicDocMode } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

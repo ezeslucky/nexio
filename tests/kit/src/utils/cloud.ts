@@ -1,13 +1,13 @@
 import { createRequire } from 'node:module';
 
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { Package } from '@affine-tools/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
+import { Package } from '@nexio-tools/utils/workspace';
 import { faker } from '@faker-js/faker';
 import { hash } from '@node-rs/argon2';
 import type { BrowserContext, Cookie, Page } from '@playwright/test';
@@ -54,7 +54,7 @@ const cloudUserSchema = z.object({
   password: z.string(),
 });
 
-const server = new Package('@affine/server');
+const server = new Package('@nexio/server');
 const require = createRequire(server.srcPath.join('index.ts').toFileUrl());
 
 export const runPrisma = async <T>(
@@ -64,7 +64,7 @@ export const runPrisma = async <T>(
   const client = new PrismaClient({
     datasourceUrl:
       process.env.DATABASE_URL ||
-      'postgresql://affine:affine@localhost:5432/affine',
+      'postgresql://nexio:nexio@localhost:5432/nexio',
   });
   await client.$connect();
   try {
@@ -165,7 +165,7 @@ export async function switchDefaultChatModel(model: string) {
   await runPrisma(async client => {
     const promptId = await client.aiPrompt
       .findFirst({
-        where: { name: 'Chat With Orbit AI' },
+        where: { name: 'Chat With NEXIO AI' },
         select: { id: true },
       })
       .then(f => f!.id);
@@ -307,8 +307,8 @@ export async function loginUserDirectly(
 export async function enableCloudWorkspace(page: Page) {
   await clickSideBarSettingButton(page);
   await page.getByTestId('workspace-setting:preference').click();
-  await page.getByTestId('publish-enable-affine-cloud-button').click();
-  await page.getByTestId('confirm-enable-affine-cloud-button').click();
+  await page.getByTestId('publish-enable-nexio-cloud-button').click();
+  await page.getByTestId('confirm-enable-nexio-cloud-button').click();
   // wait for upload and delete local workspace
   await page.waitForTimeout(2000);
   await waitForAllPagesLoad(page);
@@ -322,8 +322,8 @@ export async function enableCloudWorkspaceFromShareButton(page: Page) {
   await shareMenuButton.click();
   await expect(page.getByTestId('local-share-menu')).toBeVisible();
 
-  await page.getByTestId('share-menu-enable-affine-cloud-button').click();
-  await page.getByTestId('confirm-enable-affine-cloud-button').click();
+  await page.getByTestId('share-menu-enable-nexio-cloud-button').click();
+  await page.getByTestId('confirm-enable-nexio-cloud-button').click();
   // wait for upload and delete local workspace
   await page.waitForTimeout(2000);
   await waitForEditorLoad(page);

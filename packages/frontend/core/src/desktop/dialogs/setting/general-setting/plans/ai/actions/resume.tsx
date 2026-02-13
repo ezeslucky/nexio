@@ -3,12 +3,12 @@ import {
   type ButtonProps,
   notify,
   useConfirmModal,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { SingleSelectCheckSolidIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -34,16 +34,16 @@ export const AIResume = (btnProps: ButtonProps) => {
     }
 
     openConfirmModal({
-      title: t['com.affine.payment.ai.action.resume.confirm.title'](),
+      title: t['com.nexio.payment.ai.action.resume.confirm.title'](),
       description:
-        t['com.affine.payment.ai.action.resume.confirm.description'](),
+        t['com.nexio.payment.ai.action.resume.confirm.description'](),
       confirmText:
-        t['com.affine.payment.ai.action.resume.confirm.confirm-text'](),
+        t['com.nexio.payment.ai.action.resume.confirm.confirm-text'](),
       confirmButtonOptions: {
         variant: 'primary',
       },
       cancelText:
-        t['com.affine.payment.ai.action.resume.confirm.cancel-text'](),
+        t['com.nexio.payment.ai.action.resume.confirm.cancel-text'](),
       onConfirm: async () => {
         setIsMutating(true);
         await subscription.resumeSubscription(
@@ -60,9 +60,9 @@ export const AIResume = (btnProps: ButtonProps) => {
           icon: <SingleSelectCheckSolidIcon />,
           iconColor: cssVar('processingColor'),
           title:
-            t['com.affine.payment.ai.action.resume.confirm.notify.title'](),
+            t['com.nexio.payment.ai.action.resume.confirm.notify.title'](),
           message:
-            t['com.affine.payment.ai.action.resume.confirm.notify.msg'](),
+            t['com.nexio.payment.ai.action.resume.confirm.notify.msg'](),
         });
         setIdempotencyKey(nanoid());
       },
@@ -76,7 +76,7 @@ export const AIResume = (btnProps: ButtonProps) => {
       variant="primary"
       {...btnProps}
     >
-      {t['com.affine.payment.ai.action.resume.button-label']()}
+      {t['com.nexio.payment.ai.action.resume.button-label']()}
     </Button>
   );
 };

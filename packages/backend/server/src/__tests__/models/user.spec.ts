@@ -32,15 +32,15 @@ test.after(async t => {
 
 test('should create a new user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
-  t.is(user.email, 'test@affine.pro');
+  t.is(user.email, 'test@nexio.pro');
 
-  const user2 = await t.context.user.getUserByEmail('test@affine.pro');
+  const user2 = await t.context.user.getUserByEmail('test@nexio.pro');
 
   t.not(user2, null);
-  t.is(user2!.email, 'test@affine.pro');
+  t.is(user2!.email, 'test@nexio.pro');
 });
 
 test('should trigger user.created event', async t => {
@@ -49,7 +49,7 @@ test('should trigger user.created event', async t => {
   event.on('user.created', spy);
 
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   t.true(spy.calledOnceWithExactly(user));
@@ -57,7 +57,7 @@ test('should trigger user.created event', async t => {
 
 test('should sign in user with password', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     password: 'password',
   });
 
@@ -70,19 +70,19 @@ test('should sign in user with password', async t => {
 
 test('should update an user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const user2 = await t.context.user.update(user.id, {
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
   });
 
-  t.is(user2.email, 'test2@affine.pro');
+  t.is(user2.email, 'test2@nexio.pro');
 });
 
 test('should update password', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     password: 'password',
   });
 
@@ -97,10 +97,10 @@ test('should update password', async t => {
 
 test('should not update email to an existing one', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const user2 = await t.context.user.create({
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
   });
 
   await t.throwsAsync(
@@ -120,11 +120,11 @@ test('should trigger user.updated event', async t => {
   event.on('user.updated', spy);
 
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const updatedUser = await t.context.user.update(user.id, {
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
     name: 'new name',
   });
 
@@ -133,7 +133,7 @@ test('should trigger user.updated event', async t => {
 
 test('should get user by id', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const user2 = await t.context.user.get(user.id);
@@ -144,7 +144,7 @@ test('should get user by id', async t => {
 
 test('should get public user by id', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const publicUser = await t.context.user.getPublicUser(user.id);
@@ -157,7 +157,7 @@ test('should get public user by id', async t => {
 
 test('should get public user by email', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const publicUser = await t.context.user.getPublicUserByEmail(user.email);
@@ -170,7 +170,7 @@ test('should get public user by email', async t => {
 
 test('should get workspace user by id', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const workspaceUser = await t.context.user.getWorkspaceUser(user.id);
@@ -183,7 +183,7 @@ test('should get workspace user by id', async t => {
 
 test('should get user by email', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   const user2 = await t.context.user.getUserByEmail(user.email);
@@ -194,24 +194,24 @@ test('should get user by email', async t => {
 
 test('should ignore case when getting user by email', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
-  const user2 = await t.context.user.getUserByEmail('TEST@affine.pro');
+  const user2 = await t.context.user.getUserByEmail('TEST@nexio.pro');
 
   t.not(user2, null);
   t.is(user2!.id, user.id);
 });
 
 test('should return null for non existing user', async t => {
-  const user = await t.context.user.getUserByEmail('test@affine.pro');
+  const user = await t.context.user.getUserByEmail('test@nexio.pro');
 
   t.is(user, null);
 });
 
 test('should fulfill user', async t => {
   let user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     registered: false,
   });
 
@@ -223,7 +223,7 @@ test('should fulfill user', async t => {
   t.is(user.registered, true);
   t.not(user.emailVerifiedAt, null);
 
-  const user2 = await t.context.user.fulfill('test2@affine.pro');
+  const user2 = await t.context.user.fulfill('test2@nexio.pro');
 
   t.is(user2.registered, true);
   t.not(user2.emailVerifiedAt, null);
@@ -236,12 +236,12 @@ test('should trigger user.updated event when fulfilling user', async t => {
   event.on('user.created', createSpy);
   event.on('user.updated', updateSpy);
 
-  const user2 = await t.context.user.fulfill('test2@affine.pro');
+  const user2 = await t.context.user.fulfill('test2@nexio.pro');
 
   t.true(createSpy.calledOnceWithExactly(user2));
 
   let user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     registered: false,
   });
 
@@ -252,7 +252,7 @@ test('should trigger user.updated event when fulfilling user', async t => {
 
 test('should delete user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 
   await t.context.user.delete(user.id);
@@ -268,7 +268,7 @@ test('should trigger user.deleted event', async t => {
   event.on('user.deleted', spy);
 
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const workspace = await t.context.models.workspace.create(user.id);
 
@@ -288,7 +288,7 @@ test('should paginate users', async t => {
     Array.from({ length: 100 }).map((_, i) =>
       t.context.user.create({
         name: `test-paginate-${i}`,
-        email: `test-paginate-${i}@affine.pro`,
+        email: `test-paginate-${i}@nexio.pro`,
         createdAt: new Date(now + i),
         disabled: i % 2 === 0,
       })
@@ -299,14 +299,14 @@ test('should paginate users', async t => {
   t.is(users.length, 10);
   t.deepEqual(
     users.map(user => user.email),
-    Array.from({ length: 10 }).map((_, i) => `test-paginate-${i}@affine.pro`)
+    Array.from({ length: 10 }).map((_, i) => `test-paginate-${i}@nexio.pro`)
   );
 });
 
 // #region disabled user
 test('should not get disabled user by default', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     disabled: true,
   });
 
@@ -327,7 +327,7 @@ test('should not get disabled user by default', async t => {
 
 test('should get disabled user `withDisabled`', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     disabled: true,
   });
 
@@ -342,11 +342,11 @@ test('should get disabled user `withDisabled`', async t => {
 
 test('should not be able to update email to disabled user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     disabled: false,
   });
   const user2 = await t.context.user.create({
-    email: 'test2@affine.pro',
+    email: 'test2@nexio.pro',
     disabled: true,
   });
 
@@ -362,7 +362,7 @@ test('should not be able to update email to disabled user', async t => {
 
 test('should ban user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const event = t.context.module.get(EventBus);
   const spy = Sinon.spy();
@@ -377,7 +377,7 @@ test('should ban user', async t => {
 
 test('should enable user', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
     disabled: true,
   });
 
@@ -395,7 +395,7 @@ test('should enable user', async t => {
 
 test('should create, get, update, delete connected account', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const connectedAccount = await t.context.user.createConnectedAccount({
     userId: user.id,

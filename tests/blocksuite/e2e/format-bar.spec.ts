@@ -68,7 +68,7 @@ test('should format quick bar show when select text', async ({ page }) => {
   // Even not any button is clicked, the format quick bar should't be hidden
   await expect(formatBar).toBeVisible();
 
-  const noteEl = page.locator('affine-note');
+  const noteEl = page.locator('nexio-note');
   const { x, y } = await getBoundingBox(noteEl);
   await page.mouse.click(x + 100, y + 20);
   await expect(formatBar).not.toBeVisible();
@@ -81,9 +81,9 @@ test('should format quick bar show when clicking drag handle', async ({
   await initEmptyParagraphState(page);
   await initThreeParagraphs(page);
 
-  const locator = page.locator('affine-paragraph').first();
+  const locator = page.locator('nexio-paragraph').first();
   await locator.hover();
-  const dragHandle = page.locator('.affine-drag-handle-grabber');
+  const dragHandle = page.locator('.nexio-drag-handle-grabber');
   const dragHandleRect = await dragHandle.boundingBox();
   if (!dragHandleRect) {
     throw new Error('dragHandleRect is not found');
@@ -255,7 +255,7 @@ test('should format quick bar be able to change background color', async ({
   // TODO(@fundon): these recent settings should be added to the dropdown menu.
   // await expect(highlight.highlightBtn).toHaveAttribute(
   //   'data-last-used',
-  //   'var(--affine-text-highlight-foreground-red)'
+  //   'var(--nexio-text-highlight-foreground-red)'
   // );
 
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
@@ -322,7 +322,7 @@ test('should format quick bar be able to link text', async ({
   await expect(linkBtn).not.toHaveAttribute('active', '');
   await linkBtn.click();
 
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).toBeVisible();
 
   const url = 'https://www.example.com';
@@ -334,7 +334,7 @@ test('should format quick bar be able to link text', async ({
     `${testInfo.title}_init.json`
   );
 
-  const linkLocator = page.locator('affine-link a');
+  const linkLocator = page.locator('nexio-link a');
   await expect(linkLocator).toHaveAttribute('href', url);
 
   await focusRichTextEnd(page);
@@ -450,7 +450,7 @@ test('should format bar follow scroll', async ({ page }) => {
   // should format bar follow scroll after transform text type
   await scrollToTop(page);
   await assertLocatorVisible(page, formatBar);
-  await updateBlockType(page, 'affine:list', 'bulleted');
+  await updateBlockType(page, 'nexio:list', 'bulleted');
   await scrollToBottom(page);
   await assertLocatorVisible(page, formatBar, false);
 });
@@ -461,12 +461,12 @@ test('should format quick bar position correct at the start of second line', asy
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('nexio:note', {}, rootId);
     const text = new window.$blocksuite.store.Text('a'.repeat(100));
-    const paragraphId = doc.addBlock('affine:paragraph', { text }, note);
+    const paragraphId = doc.addBlock('nexio:paragraph', { text }, note);
     return paragraphId;
   });
   // await focusRichText(page);
@@ -534,7 +534,7 @@ test('should format quick bar work in single block selection', async ({
     { x: 0, y: 0 }
   );
   const blockSelections = page
-    .locator('affine-block-selection')
+    .locator('nexio-block-selection')
     .locator('visible=true');
   await expect(blockSelections).toHaveCount(1);
 
@@ -557,7 +557,7 @@ test('should format quick bar work in single block selection', async ({
     `${testInfo.title}.json`
   );
 
-  const noteEl = page.locator('affine-note');
+  const noteEl = page.locator('nexio-note');
   const { x, y, width, height } = await getBoundingBox(noteEl);
   await page.mouse.click(x + width / 2, y + height / 2);
   await expect(formatBar).not.toBeVisible();
@@ -578,7 +578,7 @@ test('should format quick bar work in multiple block selection', async ({
     { x: 0, y: 0 }
   );
   const blockSelections = page
-    .locator('affine-block-selection')
+    .locator('nexio-block-selection')
     .locator('visible=true');
   await expect(blockSelections).toHaveCount(3);
 
@@ -597,7 +597,7 @@ test('should format quick bar work in multiple block selection', async ({
     `${testInfo.title}.json`
   );
 
-  const noteEl = page.locator('affine-note');
+  const noteEl = page.locator('nexio-note');
   const { x, y, width, height } = await getBoundingBox(noteEl);
   await page.mouse.click(x + width / 2, y + height / 2);
   await expect(formatBarController.formatBar).not.toBeVisible();
@@ -618,7 +618,7 @@ test('should format quick bar with block selection works when update block type'
     { x: 0, y: 0 }
   );
   const blockSelections = page
-    .locator('affine-block-selection')
+    .locator('nexio-block-selection')
     .locator('visible=true');
   await expect(blockSelections).toHaveCount(3);
 
@@ -641,7 +641,7 @@ test('should format quick bar with block selection works when update block type'
   await expect(formatBarController.formatBar).toBeVisible();
   await expect(blockSelections).toHaveCount(3);
 
-  const noteEl = page.locator('affine-note');
+  const noteEl = page.locator('nexio-note');
   const { x, y, width, height } = await getBoundingBox(noteEl);
   await page.mouse.click(x + width / 2, y + height / 2);
   await expect(formatBarController.formatBar).not.toBeVisible();
@@ -707,17 +707,17 @@ test('should format bar style active correctly', async ({ page }) => {
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('nexio:note', {}, rootId);
     const delta = [
       { insert: '1', attributes: { bold: true, italic: true } },
       { insert: '2', attributes: { bold: true, underline: true } },
       { insert: '3', attributes: { bold: true, code: true } },
     ];
     const text = new window.$blocksuite.store.Text(delta as DeltaInsert[]);
-    doc.addBlock('affine:paragraph', { text }, note);
+    doc.addBlock('nexio:paragraph', { text }, note);
   });
 
   const { boldBtn, codeBtn, underlineBtn } = getFormatBar(page);
@@ -766,8 +766,8 @@ test('should the database action icon show correctly', async ({ page }) => {
 
   await focusRichText(page, 2);
   await pressEnter(page);
-  await updateBlockType(page, 'affine:code');
-  const codeBlock = page.locator('affine-code');
+  await updateBlockType(page, 'nexio:code');
+  const codeBlock = page.locator('nexio-code');
   const codeBox = await codeBlock.boundingBox();
   if (!codeBox) throw new Error('Missing code block box');
 
@@ -802,9 +802,9 @@ test('should convert to database work', async ({ page }) => {
   );
   const databaseAction = page.getByTestId('convert-to-database');
   await databaseAction.click();
-  const database = page.locator('affine-database');
+  const database = page.locator('nexio-database');
   await expect(database).toBeVisible();
-  const rows = page.locator('.affine-database-block-row');
+  const rows = page.locator('.nexio-database-block-row');
   expect(await rows.count()).toBe(3);
 });
 
@@ -830,7 +830,7 @@ test('should show format-quick-bar and select all text of the block when triple 
 
   await assertRichTextInlineRange(page, 0, 0, 5);
 
-  const noteEl = page.locator('affine-note');
+  const noteEl = page.locator('nexio-note');
   const { x, y, width, height } = await getBoundingBox(noteEl);
   await page.mouse.click(x + width / 2, y + height / 2);
 
@@ -861,17 +861,17 @@ test('should update the format quick bar state when there is a change in keyboar
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('nexio:note', {}, rootId);
     const delta = [
       { insert: '1', attributes: { bold: true } },
       { insert: '2', attributes: { bold: true } },
       { insert: '3', attributes: { bold: false } },
     ];
     const text = new window.$blocksuite.store.Text(delta as DeltaInsert[]);
-    doc.addBlock('affine:paragraph', { text }, note);
+    doc.addBlock('nexio:paragraph', { text }, note);
   });
   await focusTitle(page);
   await pressArrowDown(page);
@@ -936,7 +936,7 @@ test('create linked doc from block selection with format bar', async ({
   await waitNextFrame(page, 200);
 
   const blockSelections = page
-    .locator('affine-block-selection')
+    .locator('nexio-block-selection')
     .locator('visible=true');
   await expect(blockSelections).toHaveCount(2);
 
@@ -944,7 +944,7 @@ test('create linked doc from block selection with format bar', async ({
   expect(await createLinkedDocBtn.isVisible()).toBe(true);
   await createLinkedDocBtn.click();
 
-  const linkedDocBlock = page.locator('affine-embed-linked-doc-block');
+  const linkedDocBlock = page.locator('nexio-embed-linked-doc-block');
   await expect(linkedDocBlock).toHaveCount(1);
 
   const linkedDocBox = await linkedDocBlock.boundingBox();
@@ -961,7 +961,7 @@ test('create linked doc from block selection with format bar', async ({
     `${testInfo.title}.json`
   );
 
-  const paragraph = page.locator('affine-paragraph');
+  const paragraph = page.locator('nexio-paragraph');
   await expect(paragraph).toHaveCount(3);
 });
 

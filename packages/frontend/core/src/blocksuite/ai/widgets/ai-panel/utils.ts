@@ -1,5 +1,5 @@
-import { isInsidePageEditor } from '@blocksuite/affine/shared/utils';
-import type { EditorHost } from '@blocksuite/affine/std';
+import { isInsidePageEditor } from '@blocksuite/nexio/shared/utils';
+import type { EditorHost } from '@blocksuite/nexio/std';
 
 import type { AIItemGroupConfig } from '../../components/ai-item/types';
 import { mergeStreamContent } from '../../utils/stream-objects';

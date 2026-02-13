@@ -1,30 +1,30 @@
-import { Button, Loading, notify, useConfirmModal } from '@affine/component';
+import { Button, Loading, notify, useConfirmModal } from '@nexio/component';
 import {
   InviteTeamMemberModal,
   type InviteTeamMemberModalProps,
   MemberLimitModal,
-} from '@affine/component/member-components';
-import { SettingRow } from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { Upload } from '@affine/core/components/pure/file-upload';
+} from '@nexio/component/member-components';
+import { SettingRow } from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { Upload } from '@nexio/core/components/pure/file-upload';
 import {
   ServerService,
   SubscriptionService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   WorkspaceMembersService,
   WorkspacePermissionService,
-} from '@affine/core/modules/permissions';
-import { WorkspaceQuotaService } from '@affine/core/modules/quota';
-import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { emailRegex } from '@affine/core/utils/email-regex';
-import { UserFriendlyError } from '@affine/error';
-import type { WorkspaceInviteLinkExpireTime } from '@affine/graphql';
-import { ServerDeploymentType, SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/permissions';
+import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
+import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { emailRegex } from '@nexio/core/utils/email-regex';
+import { UserFriendlyError } from '@nexio/error';
+import type { WorkspaceInviteLinkExpireTime } from '@nexio/graphql';
+import { ServerDeploymentType, SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ExportIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
@@ -122,8 +122,8 @@ export const CloudWorkspaceMembersPanel = ({
       setIdempotencyKey(nanoid());
       closeConfirmModal();
       notify.success({
-        title: t['com.affine.payment.resume.success.title'](),
-        message: t['com.affine.payment.resume.success.team.message'](),
+        title: t['com.nexio.payment.resume.success.title'](),
+        message: t['com.nexio.payment.resume.success.team.message'](),
       });
     } catch (err) {
       const error = UserFriendlyError.fromAny(err);
@@ -138,15 +138,15 @@ export const CloudWorkspaceMembersPanel = ({
   const openInviteModal = useCallback(() => {
     if (isTeam && workspaceSubscription?.canceledAt) {
       openConfirmModal({
-        title: t['com.affine.payment.member.team.retry-payment.title'](),
+        title: t['com.nexio.payment.member.team.retry-payment.title'](),
         description:
           t[
-            `com.affine.payment.member.team.disabled-subscription.${isOwner ? 'owner' : 'admin'}.description`
+            `com.nexio.payment.member.team.disabled-subscription.${isOwner ? 'owner' : 'admin'}.description`
           ](),
         confirmText:
           t[
             isOwner
-              ? 'com.affine.payment.member.team.disabled-subscription.resume-subscription'
+              ? 'com.nexio.payment.member.team.disabled-subscription.resume-subscription'
               : 'Got it'
           ](),
         cancelText: t['Cancel'](),
@@ -215,7 +215,7 @@ export const CloudWorkspaceMembersPanel = ({
       }, []);
       if (results) {
         notify({
-          title: t['com.affine.payment.member.team.invite.notify.title']({
+          title: t['com.nexio.payment.member.team.invite.notify.title']({
             successCount: (
               uniqueEmails.length - unSuccessInvites.length
             ).toString(),
@@ -256,18 +256,18 @@ export const CloudWorkspaceMembersPanel = ({
     if (!workspaceQuota) return null;
 
     if (isTeam) {
-      return <span>{t['com.affine.payment.member.team.description']()}</span>;
+      return <span>{t['com.nexio.payment.member.team.description']()}</span>;
     }
     return (
       <span>
-        {t['com.affine.payment.member.description2']()}
+        {t['com.nexio.payment.member.description2']()}
         {hasPaymentFeature && isOwner ? (
           <div
             className={styles.goUpgradeWrapper}
             onClick={handleUpgradeConfirm}
           >
             <span className={styles.goUpgrade}>
-              {t['com.affine.payment.member.description.choose-plan']()}
+              {t['com.nexio.payment.member.description.choose-plan']()}
             </span>
           </div>
         ) : null}
@@ -358,7 +358,7 @@ const NotifyMessage = ({
 
   return (
     <div>
-      {t['com.affine.payment.member.team.invite.notify.fail-message']()}
+      {t['com.nexio.payment.member.team.invite.notify.fail-message']()}
       {unSuccessInvites.map((email, index) => (
         <div key={`${index}:${email}`}>{email}</div>
       ))}
@@ -373,7 +373,7 @@ export const MembersPanelFallback = () => {
     <>
       <SettingRow
         name={t['Members']()}
-        desc={t['com.affine.payment.member.description2']()}
+        desc={t['com.nexio.payment.member.description2']()}
       />
       <div className={styles.membersPanel}>
         <MemberListFallback memberCount={1} />
@@ -401,7 +401,7 @@ const MemberListFallback = ({ memberCount }: { memberCount?: number }) => {
       className={styles.membersFallback}
     >
       <Loading size={20} />
-      <span>{t['com.affine.settings.member.loading']()}</span>
+      <span>{t['com.nexio.settings.member.loading']()}</span>
     </div>
   );
 };
@@ -416,7 +416,7 @@ const ImportCSV = ({ onImport }: { onImport: (file: File) => void }) => {
         prefix={<ExportIcon />}
         variant="secondary"
       >
-        {t['com.affine.payment.member.team.invite.import-csv']()}
+        {t['com.nexio.payment.member.team.invite.import-csv']()}
       </Button>
     </Upload>
   );

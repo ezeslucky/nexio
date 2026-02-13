@@ -1,4 +1,4 @@
-import type { DNDData } from '@affine/component';
+import type { DNDData } from '@nexio/component';
 
 export type AffineDNDEntity =
   | {
@@ -22,7 +22,7 @@ export type AffineDNDEntity =
       id: string;
     };
 
-export interface AffineDNDData extends DNDData {
+export interface NexioDNDData extends DNDData {
   draggable: {
     entity?: AffineDNDEntity;
     from?:

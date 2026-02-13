@@ -1,15 +1,15 @@
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/nexio-shared/adapters';
 
 export const blockTagMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
-  flavour: 'affine:page/affine:note/*',
+  flavour: 'nexio:page/nexio:note/*',
   toMatch: () => false,
   fromMatch: o => {
     const block = o.node;
     const parent = o.parent;
-    if (block.type === 'block' && parent?.node.flavour === 'affine:note') {
+    if (block.type === 'block' && parent?.node.flavour === 'nexio:note') {
       return true;
     }
     return false;

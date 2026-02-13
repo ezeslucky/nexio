@@ -4,20 +4,20 @@ import {
   MenuSub,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { Guard } from '@affine/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { DocsService } from '@affine/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { preventDefault } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { Guard } from '@nexio/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { DocsService } from '@nexio/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { preventDefault } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   DuplicateIcon,
@@ -75,12 +75,12 @@ export const useNavigationPanelDocNodeOperations = (
       return;
     }
     openConfirmModal({
-      title: t['com.affine.moveToTrash.title'](),
-      description: t['com.affine.moveToTrash.confirmModal.description']({
+      title: t['com.nexio.moveToTrash.title'](),
+      description: t['com.nexio.moveToTrash.confirmModal.description']({
         title: docRecord.title$.value,
       }),
-      confirmText: t['com.affine.moveToTrash.confirmModal.confirm'](),
-      cancelText: t['com.affine.moveToTrash.confirmModal.cancel'](),
+      confirmText: t['com.nexio.moveToTrash.confirmModal.confirm'](),
+      cancelText: t['com.nexio.moveToTrash.confirmModal.cancel'](),
       confirmButtonOptions: {
         variant: 'error',
       },
@@ -89,7 +89,7 @@ export const useNavigationPanelDocNodeOperations = (
         track.$.navigationPanel.docs.deleteDoc({
           control: 'button',
         });
-        toast(t['com.affine.toastMessage.movedTrash']());
+        toast(t['com.nexio.toastMessage.movedTrash']());
       },
     });
   }, [docRecord, openConfirmModal, t]);
@@ -217,7 +217,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
               </DocFrameScope>
             }
           >
-            <span>{t['com.affine.page-properties.page-info.view']()}</span>
+            <span>{t['com.nexio.page-properties.page-info.view']()}</span>
           </MenuSub>
         ),
       },
@@ -231,7 +231,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleAddLinkedPage}
                 disabled={!canEdit}
               >
-                {t['com.affine.page-operation.add-linked-page']()}
+                {t['com.nexio.page-operation.add-linked-page']()}
               </MenuItem>
             )}
           </Guard>
@@ -241,7 +241,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 98,
         view: (
           <MenuItem prefixIcon={<DuplicateIcon />} onClick={handleDuplicate}>
-            {t['com.affine.header.option.duplicate']()}
+            {t['com.nexio.header.option.duplicate']()}
           </MenuItem>
         ),
       },
@@ -249,7 +249,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<OpenInNewIcon />} onClick={handleOpenInNewTab}>
-            {t['com.affine.workbench.tab.page-menu-open']()}
+            {t['com.nexio.workbench.tab.page-menu-open']()}
           </MenuItem>
         ),
       },
@@ -261,8 +261,8 @@ export const useNavigationPanelDocNodeOperationsMenu = (
             onClick={handleToggleFavoriteDoc}
           >
             {favorite
-              ? t['com.affine.favoritePageOperation.remove']()
-              : t['com.affine.favoritePageOperation.add']()}
+              ? t['com.nexio.favoritePageOperation.remove']()
+              : t['com.nexio.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -281,7 +281,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleMoveToTrash}
                 disabled={!canMoveToTrash}
               >
-                {t['com.affine.moveToTrash.title']()}
+                {t['com.nexio.moveToTrash.title']()}
               </MenuItem>
             )}
           </Guard>

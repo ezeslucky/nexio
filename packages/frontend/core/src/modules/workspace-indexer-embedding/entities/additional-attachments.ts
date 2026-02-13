@@ -1,5 +1,5 @@
-import type { WorkspaceService } from '@affine/core/modules/workspace';
-import type { PaginationInput } from '@affine/graphql';
+import type { WorkspaceService } from '@nexio/core/modules/workspace';
+import type { PaginationInput } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

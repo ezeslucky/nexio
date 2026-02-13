@@ -4,10 +4,10 @@ import {
   MenuItem,
   type MenuProps,
   Scrollable,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { inferOpenMode } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { inferOpenMode } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
 import {
   DualLinkIcon,
   InformationIcon,

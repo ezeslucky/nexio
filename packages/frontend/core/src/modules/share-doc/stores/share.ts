@@ -1,9 +1,9 @@
-import type { PublicDocMode } from '@affine/graphql';
+import type { PublicDocMode } from '@nexio/graphql';
 import {
   getWorkspacePageByIdQuery,
   publishPageMutation,
   revokePublicPageMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { WorkspaceServerService } from '../../cloud';

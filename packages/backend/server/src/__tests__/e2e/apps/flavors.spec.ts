@@ -1,4 +1,4 @@
-import { getCurrentUserQuery } from '@affine/graphql';
+import { getCurrentUserQuery } from '@nexio/graphql';
 
 import { createApp } from '../create-app';
 import { e2e } from '../test';

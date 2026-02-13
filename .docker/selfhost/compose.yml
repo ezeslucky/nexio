@@ -1,8 +1,8 @@
-name: affine
+name: nexio
 services:
-  affine:
-    image: ghcr.io/toeverything/affine:${AFFINE_REVISION:-stable}
-    container_name: affine_server
+  nexio:
+    image: ghcr.io/toeverything/nexio:${nexio_REVISION:-stable}
+    container_name: nexio_server
     ports:
       - '${PORT:-3010}:3010'
     depends_on:
@@ -10,34 +10,34 @@ services:
         condition: service_healthy
       postgres:
         condition: service_healthy
-      affine_migration:
+      nexio_migration:
         condition: service_completed_successfully
     volumes:
       # custom configurations
-      - ${UPLOAD_LOCATION}:/root/.affine/storage
-      - ${CONFIG_LOCATION}:/root/.affine/config
+      - ${UPLOAD_LOCATION}:/root/.nexio/storage
+      - ${CONFIG_LOCATION}:/root/.nexio/config
     env_file:
       - .env
     environment:
       - REDIS_SERVER_HOST=redis
-      - DATABASE_URL=postgresql://${DB_USERNAME}:${DB_PASSWORD}@postgres:5432/${DB_DATABASE:-affine}
-      - AFFINE_INDEXER_ENABLED=false
+      - DATABASE_URL=postgresql://${DB_USERNAME}:${DB_PASSWORD}@postgres:5432/${DB_DATABASE:-nexio}
+      - nexio_INDEXER_ENABLED=false
     restart: unless-stopped
 
-  affine_migration:
-    image: ghcr.io/toeverything/affine:${AFFINE_REVISION:-stable}
-    container_name: affine_migration_job
+  nexio_migration:
+    image: ghcr.io/toeverything/nexio:${nexio_REVISION:-stable}
+    container_name: nexio_migration_job
     volumes:
       # custom configurations
-      - ${UPLOAD_LOCATION}:/root/.affine/storage
-      - ${CONFIG_LOCATION}:/root/.affine/config
+      - ${UPLOAD_LOCATION}:/root/.nexio/storage
+      - ${CONFIG_LOCATION}:/root/.nexio/config
     command: ['sh', '-c', 'node ./scripts/self-host-predeploy.js']
     env_file:
       - .env
     environment:
       - REDIS_SERVER_HOST=redis
-      - DATABASE_URL=postgresql://${DB_USERNAME}:${DB_PASSWORD}@postgres:5432/${DB_DATABASE:-affine}
-      - AFFINE_INDEXER_ENABLED=false
+      - DATABASE_URL=postgresql://${DB_USERNAME}:${DB_PASSWORD}@postgres:5432/${DB_DATABASE:-nexio}
+      - nexio_INDEXER_ENABLED=false
     depends_on:
       postgres:
         condition: service_healthy
@@ -46,7 +46,7 @@ services:
 
   redis:
     image: redis
-    container_name: affine_redis
+    container_name: nexio_redis
     healthcheck:
       test: ['CMD', 'redis-cli', '--raw', 'incr', 'ping']
       interval: 10s
@@ -56,20 +56,20 @@ services:
 
   postgres:
     image: pgvector/pgvector:pg16
-    container_name: affine_postgres
+    container_name: nexio_postgres
     volumes:
       - ${DB_DATA_LOCATION}:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
-      POSTGRES_DB: ${DB_DATABASE:-affine}
+      POSTGRES_DB: ${DB_DATABASE:-nexio}
       POSTGRES_INITDB_ARGS: '--data-checksums'
       # you better set a password for you database
       # or you may add 'POSTGRES_HOST_AUTH_METHOD=trust' to ignore postgres security policy
       POSTGRES_HOST_AUTH_METHOD: trust
     healthcheck:
       test:
-        ['CMD', 'pg_isready', '-U', "${DB_USERNAME}", '-d', "${DB_DATABASE:-affine}"]
+        ['CMD', 'pg_isready', '-U', "${DB_USERNAME}", '-d', "${DB_DATABASE:-nexio}"]
       interval: 10s
       timeout: 5s
       retries: 5

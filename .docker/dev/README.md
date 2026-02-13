@@ -8,14 +8,14 @@
 
 ```bash
 # the root ca file will be located at `./.docker/dev/certs/ca`
-yarn affine cert --install
+yarn nexio cert --install
 ```
 
 ### 2. Generate domain certs
 
 ```bash
 # certificates will be located at `./.docker/dev/certs/${domain}`
-yarn affine cert --domain affine.localhost
+yarn nexio cert --domain nexio.localhost
 ```
 
 ### 3. Enable nginx service in compose.yml

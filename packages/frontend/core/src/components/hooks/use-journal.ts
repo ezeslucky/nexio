@@ -1,13 +1,13 @@
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import { DocsService } from '@nexio/core/modules/doc';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import {
   JOURNAL_DATE_FORMAT,
   JournalService,
   type MaybeDate,
-} from '@affine/core/modules/journal';
-import type { WorkbenchOpenOptions } from '@affine/core/modules/workbench/entities/workbench';
-import { i18nTime } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/journal';
+import type { WorkbenchOpenOptions } from '@nexio/core/modules/workbench/entities/workbench';
+import { i18nTime } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useService, useServices } from '@toeverything/infra';
 import dayjs from 'dayjs';
 import { useCallback, useMemo } from 'react';

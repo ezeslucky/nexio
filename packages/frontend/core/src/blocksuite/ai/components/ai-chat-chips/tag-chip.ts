@@ -1,7 +1,7 @@
-import type { TagMeta } from '@affine/core/components/page-list';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import type { TagMeta } from '@nexio/core/components/page-list';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

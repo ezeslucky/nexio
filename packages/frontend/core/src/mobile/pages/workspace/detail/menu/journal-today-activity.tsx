@@ -1,14 +1,14 @@
-import { MenuItem, MenuSeparator, MobileMenuSub } from '@affine/component';
-import { sortPagesByDate } from '@affine/core/desktop/pages/workspace/detail-page/tabs/journal';
+import { MenuItem, MenuSeparator, MobileMenuSub } from '@nexio/component';
+import { sortPagesByDate } from '@nexio/core/desktop/pages/workspace/detail-page/tabs/journal';
 import {
   type DocRecord,
   DocService,
   DocsService,
-} from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { JournalService } from '@nexio/core/modules/journal';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { HistoryIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import dayjs from 'dayjs';
@@ -44,8 +44,8 @@ const ActivityBlock = ({
 
   const title =
     name === 'created'
-      ? t['com.affine.journal.created-today']()
-      : t['com.affine.journal.updated-today']();
+      ? t['com.nexio.journal.created-today']()
+      : t['com.nexio.journal.updated-today']();
   return (
     <>
       <div className={styles.title}>{title}</div>
@@ -56,8 +56,8 @@ const ActivityBlock = ({
       ) : (
         <div className={styles.empty}>
           {name === 'created'
-            ? t['com.affine.journal.daily-count-created-empty-tips']()
-            : t['com.affine.journal.daily-count-updated-empty-tips']()}
+            ? t['com.nexio.journal.daily-count-created-empty-tips']()
+            : t['com.nexio.journal.daily-count-updated-empty-tips']()}
         </div>
       )}
     </>
@@ -120,9 +120,9 @@ export const JournalTodayActivityMenuItem = ({
           prefixIcon: <HistoryIcon />,
         }}
         items={<TodaysActivity date={journalDate} />}
-        title={t['com.affine.m.selector.journal-menu.today-activity']()}
+        title={t['com.nexio.m.selector.journal-menu.today-activity']()}
       >
-        {t['com.affine.m.selector.journal-menu.today-activity']()}
+        {t['com.nexio.m.selector.journal-menu.today-activity']()}
       </MobileMenuSub>
       {suffix}
     </>

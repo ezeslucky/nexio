@@ -231,7 +231,7 @@ test('should paginate workspace user roles', async t => {
   const users = await db.user.createManyAndReturn({
     data: Array.from({ length: 200 }, (_, i) => ({
       name: `u${i}`,
-      email: `${randomBytes(10).toString('hex')}@affine.pro`,
+      email: `${randomBytes(10).toString('hex')}@nexio.pro`,
     })),
   });
 

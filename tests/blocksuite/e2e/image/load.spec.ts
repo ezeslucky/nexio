@@ -16,10 +16,10 @@ async function initMockImage(page: Page) {
   await page.evaluate(sourceId => {
     const { doc } = window;
     doc.captureSync();
-    const rootId = doc.addBlock('affine:page');
-    const noteId = doc.addBlock('affine:note', {}, rootId);
+    const rootId = doc.addBlock('nexio:page');
+    const noteId = doc.addBlock('nexio:note', {}, rootId);
     doc.addBlock(
-      'affine:image',
+      'nexio:image',
       {
         sourceId,
         width: 200,
@@ -66,7 +66,7 @@ test('image loading but failed', async ({ page }) => {
   await initMockImage(page);
 
   const title = page.locator(
-    '.affine-image-fallback-card .affine-image-fallback-card-title-text'
+    '.nexio-image-fallback-card .nexio-image-fallback-card-title-text'
   );
 
   await expect(title).toHaveText('Image');
@@ -74,7 +74,7 @@ test('image loading but failed', async ({ page }) => {
   await page.waitForTimeout(3 * timeout);
 
   const desc = page.locator(
-    '.affine-image-fallback-card .affine-image-fallback-card-description'
+    '.nexio-image-fallback-card .nexio-image-fallback-card-description'
   );
 
   await expect(desc).toContainText('Image not found');
@@ -125,14 +125,14 @@ test('image loading but success', async ({ page }) => {
   await initMockImage(page);
 
   const title = page.locator(
-    '.affine-image-fallback-card .affine-image-fallback-card-title-text'
+    '.nexio-image-fallback-card .nexio-image-fallback-card-title-text'
   );
 
   await expect(title).toHaveText('Image');
 
   await page.waitForTimeout(3 * timeout);
 
-  const img = page.locator('.affine-image-container img');
+  const img = page.locator('.nexio-image-container img');
   await expect(img).toBeVisible();
   const src = await img.getAttribute('src');
   expect(src).toBeDefined();
@@ -157,7 +157,7 @@ test('image loaded successfully', async ({ page }) => {
 
   await page.waitForTimeout(1000);
 
-  const img = page.locator('.affine-image-container img');
+  const img = page.locator('.nexio-image-container img');
   await expect(img).toBeVisible();
   const src = await img.getAttribute('src');
   expect(src).toBeDefined();

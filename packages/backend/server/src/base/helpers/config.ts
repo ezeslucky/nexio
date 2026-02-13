@@ -11,7 +11,7 @@ declare global {
 defineModuleConfig('crypto', {
   privateKey: {
     desc: 'The private key for used by the crypto module to create signed tokens or encrypt data.',
-    env: 'AFFINE_PRIVATE_KEY',
+    env: 'NEXIO_PRIVATE_KEY',
     default: '',
     schema: { type: 'string' },
   },

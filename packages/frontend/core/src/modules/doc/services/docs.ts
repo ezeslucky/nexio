@@ -1,14 +1,14 @@
-import { DebugLogger } from '@affine/debug';
-import { Unreachable } from '@affine/env/constant';
-import { replaceIdMiddleware } from '@blocksuite/affine/shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import type { DeltaInsert } from '@blocksuite/affine/store';
-import { Slice, Text, Transformer } from '@blocksuite/affine/store';
+import { DebugLogger } from '@nexio/debug';
+import { Unreachable } from '@nexio/env/constant';
+import { replaceIdMiddleware } from '@blocksuite/nexio/shared/adapters';
+import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
+import type { DeltaInsert } from '@blocksuite/nexio/store';
+import { Slice, Text, Transformer } from '@blocksuite/nexio/store';
 import { ObjectPool, Service } from '@toeverything/infra';
 import { combineLatest, map } from 'rxjs';
 
 import { initDocFromProps } from '../../../blocksuite/initialization';
-import { getAFFiNEWorkspaceSchema } from '../../workspace';
+import { getNEXIOWorkspaceSchema } from '../../workspace';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
 import { DocCreated, DocInitialized } from '../events';
@@ -30,12 +30,7 @@ export class DocsService extends Service {
     },
   });
 
-  /**
-   * Get all property values of a property, used for search
-   *
-   * Results may include docs in trash or deleted docs
-   * Legacy property data such as old `journal` will not be included in the values
-   */
+  
   propertyValues$(propertyKey: string) {
     return combineLatest([
       this.store.watchDocIds(),
@@ -191,11 +186,11 @@ export class DocsService extends Service {
           },
         },
       },
-    ] as DeltaInsert<AffineTextAttributes>[]);
-    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('affine:note');
+    ] as DeltaInsert<NexioTextAttributes>[]);
+    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('nexio:note');
     frame &&
       doc.blockSuiteDoc.addBlock(
-        'affine:paragraph' as never, // TODO(eyhn): fix type
+        'nexio:paragraph' as never, // TODO(eyhn): fix type
         { text },
         frame.id
       );
@@ -240,7 +235,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNEXIOWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {
@@ -340,7 +335,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNEXIOWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {

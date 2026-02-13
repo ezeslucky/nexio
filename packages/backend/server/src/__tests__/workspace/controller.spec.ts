@@ -31,7 +31,7 @@ test.before(async t => {
 
   const db = app.get(PrismaClient);
 
-  t.context.u1 = await app.signupV1('u1@affine.pro');
+  t.context.u1 = await app.signupV1('u1@nexio.pro');
   t.context.db = db;
   t.context.app = app;
   t.context.storage = app.get(WorkspaceBlobStorage);

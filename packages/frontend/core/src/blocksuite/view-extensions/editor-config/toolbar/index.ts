@@ -1,15 +1,15 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   generateUrl,
   type UseSharingUrl,
-} from '@affine/core/components/hooks/affine/use-share-url';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { EditorService } from '@affine/core/modules/editor';
-import type { EditorSettingExt } from '@affine/core/modules/editor-setting/entities/editor-setting';
-import { copyLinkToBlockStdScopeClipboard } from '@affine/core/utils/clipboard';
-import { I18n, i18nTime } from '@affine/i18n';
-import { track } from '@affine/track';
-import { BookmarkBlockComponent } from '@blocksuite/affine/blocks/bookmark';
+} from '@nexio/core/components/hooks/nexio/use-share-url';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { EditorService } from '@nexio/core/modules/editor';
+import type { EditorSettingExt } from '@nexio/core/modules/editor-setting/entities/editor-setting';
+import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
+import { I18n, i18nTime } from '@nexio/i18n';
+import { track } from '@nexio/track';
+import { BookmarkBlockComponent } from '@blocksuite/nexio/blocks/bookmark';
 import {
   EmbedFigmaBlockComponent,
   EmbedGithubBlockComponent,
@@ -17,35 +17,35 @@ import {
   EmbedLoomBlockComponent,
   EmbedYoutubeBlockComponent,
   getDocContentWithMaxLength,
-} from '@blocksuite/affine/blocks/embed';
+} from '@blocksuite/nexio/blocks/embed';
 import {
   EmbedLinkedDocBlockComponent,
   EmbedSyncedDocBlockComponent,
-} from '@blocksuite/affine/blocks/embed-doc';
-import { SurfaceRefBlockComponent } from '@blocksuite/affine/blocks/surface-ref';
-import { toggleEmbedCardEditModal } from '@blocksuite/affine/components/embed-card-modal';
-import { notifyLinkedDocClearedAliases } from '@blocksuite/affine/components/notification';
-import { isPeekable, peek } from '@blocksuite/affine/components/peek';
-import { toast } from '@blocksuite/affine/components/toast';
+} from '@blocksuite/nexio/blocks/embed-doc';
+import { SurfaceRefBlockComponent } from '@blocksuite/nexio/blocks/surface-ref';
+import { toggleEmbedCardEditModal } from '@blocksuite/nexio/components/embed-card-modal';
+import { notifyLinkedDocClearedAliases } from '@blocksuite/nexio/components/notification';
+import { isPeekable, peek } from '@blocksuite/nexio/components/peek';
+import { toast } from '@blocksuite/nexio/components/toast';
 import {
   EditorChevronDown,
   type MenuContext,
   type MenuItemGroup,
-} from '@blocksuite/affine/components/toolbar';
-import { watch } from '@blocksuite/affine/global/lit';
+} from '@blocksuite/nexio/components/toolbar';
+import { watch } from '@blocksuite/nexio/global/lit';
 import {
-  AffineReference,
+  NexioReference,
   toggleReferencePopup,
-} from '@blocksuite/affine/inlines/reference';
+} from '@blocksuite/nexio/inlines/reference';
 import {
   BookmarkBlockModel,
   EmbedIframeBlockModel,
   EmbedLinkedDocModel,
   EmbedSyncedDocModel,
   SurfaceRefBlockSchema,
-} from '@blocksuite/affine/model';
-import { getSelectedModelsCommand } from '@blocksuite/affine/shared/commands';
-import { ImageSelection } from '@blocksuite/affine/shared/selection';
+} from '@blocksuite/nexio/model';
+import { getSelectedModelsCommand } from '@blocksuite/nexio/shared/commands';
+import { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import {
   ActionPlacement,
   CitationProvider,
@@ -60,18 +60,18 @@ import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
   UserProvider,
-} from '@blocksuite/affine/shared/services';
-import { matchModels } from '@blocksuite/affine/shared/utils';
+} from '@blocksuite/nexio/shared/services';
+import { matchModels } from '@blocksuite/nexio/shared/utils';
 import {
   BlockFlavourIdentifier,
   BlockSelection,
   TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import {
   GfxBlockElementModel,
   GfxPrimitiveElementModel,
-} from '@blocksuite/affine/std/gfx';
-import type { ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/gfx';
+import type { ExtensionType } from '@blocksuite/nexio/store';
 import {
   CopyAsImgaeIcon,
   CopyIcon,
@@ -374,7 +374,7 @@ function createToolbarMoreMenuConfigV2(baseUrl?: string) {
                 return value.name;
               });
               const user = computed(() => {
-                return I18n.t('com.affine.page.toolbar.created_by', {
+                return I18n.t('com.nexio.page.toolbar.created_by', {
                   name: name.value,
                 });
               });
@@ -488,7 +488,7 @@ function createOpenDocActions(
   target:
     | EmbedLinkedDocBlockComponent
     | EmbedSyncedDocBlockComponent
-    | AffineReference
+    | NexioReference
     | SurfaceRefBlockComponent,
   isSameDoc: boolean,
   actions = openDocActions.map(
@@ -601,7 +601,7 @@ function createSurfaceRefToolbarConfig(baseUrl?: string): ToolbarModuleConfig {
             .map(action => {
               if (action.id.endsWith('open-in-active-view')) {
                 action.label =
-                  I18n['com.affine.peek-view-controls.open-doc-in-edgeless']();
+                  I18n['com.nexio.peek-view-controls.open-doc-in-edgeless']();
               }
               return action;
             });
@@ -713,7 +713,7 @@ function renderOpenDocMenu(
   target:
     | EmbedLinkedDocBlockComponent
     | EmbedSyncedDocBlockComponent
-    | AffineReference,
+    | NexioReference,
   isSameDoc: boolean
 ) {
   const actions = createOpenDocActions(ctx, target, isSameDoc).map(action => ({
@@ -731,13 +731,13 @@ function renderOpenDocMenu(
   return html`${keyed(
     target,
     html`
-      <affine-open-doc-dropdown-menu
+      <nexio-open-doc-dropdown-menu
         .actions=${actions}
         .context=${ctx}
         .openDocMode$=${openDocMode}
         .updateOpenDocMode=${updateOpenDocMode}
       >
-      </affine-open-doc-dropdown-menu>
+      </nexio-open-doc-dropdown-menu>
     `
   )}`;
 }
@@ -875,7 +875,7 @@ const inlineReferenceToolbarConfig = {
           icon: CopyIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineReference)) return;
+            if (!(target instanceof NexioReference)) return;
 
             const { pageId, params } = target.referenceInfo;
 
@@ -904,7 +904,7 @@ const inlineReferenceToolbarConfig = {
           icon: EditIcon(),
           run(ctx) {
             const target = ctx.message$.peek()?.element;
-            if (!(target instanceof AffineReference)) return;
+            if (!(target instanceof NexioReference)) return;
 
             // Clears
             ctx.reset();
@@ -982,62 +982,62 @@ export const createCustomToolbarExtension = (
 ): ExtensionType[] => {
   return [
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:*'),
+      id: BlockFlavourIdentifier('custom:nexio:*'),
       config: createToolbarMoreMenuConfigV2(baseUrl),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:bookmark'),
+      id: BlockFlavourIdentifier('custom:nexio:bookmark'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:bookmark'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:bookmark'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-figma'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-figma'),
       config: createExternalLinkableToolbarConfig(EmbedFigmaBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-figma'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-figma'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-github'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-github'),
       config: createExternalLinkableToolbarConfig(EmbedGithubBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-github'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-github'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-loom'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-loom'),
       config: createExternalLinkableToolbarConfig(EmbedLoomBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-loom'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-loom'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-youtube'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-youtube'),
       config: createExternalLinkableToolbarConfig(EmbedYoutubeBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-youtube'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-youtube'),
       config: createExternalLinkableToolbarConfig(BookmarkBlockComponent),
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-linked-doc'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-linked-doc'),
       config: {
         actions: [
           embedLinkedDocToolbarConfig.actions,
@@ -1047,7 +1047,7 @@ export const createCustomToolbarExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-linked-doc'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-linked-doc'),
       config: {
         actions: [
           embedLinkedDocToolbarConfig.actions,
@@ -1060,7 +1060,7 @@ export const createCustomToolbarExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-synced-doc'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-synced-doc'),
       config: {
         actions: [
           embedSyncedDocToolbarConfig.actions,
@@ -1070,7 +1070,7 @@ export const createCustomToolbarExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-synced-doc'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-synced-doc'),
       config: {
         actions: [
           // the open actions are provided by the header of embed-edgeless-synced-doc-block
@@ -1083,7 +1083,7 @@ export const createCustomToolbarExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:reference'),
+      id: BlockFlavourIdentifier('custom:nexio:reference'),
       config: {
         actions: [
           {
@@ -1091,7 +1091,7 @@ export const createCustomToolbarExtension = (
             id: 'A.open-doc',
             content(ctx) {
               const target = ctx.message$.peek()?.element;
-              if (!(target instanceof AffineReference)) return null;
+              if (!(target instanceof NexioReference)) return null;
 
               return renderOpenDocMenu(
                 settings,
@@ -1107,12 +1107,12 @@ export const createCustomToolbarExtension = (
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:embed-iframe'),
+      id: BlockFlavourIdentifier('custom:nexio:embed-iframe'),
       config: embedIframeToolbarConfig,
     }),
 
     ToolbarModuleExtension({
-      id: BlockFlavourIdentifier('custom:affine:surface:embed-iframe'),
+      id: BlockFlavourIdentifier('custom:nexio:surface:embed-iframe'),
       config: {
         actions: [embedIframeToolbarConfig.actions].flat(),
 

@@ -1,21 +1,21 @@
-import { DNDContext } from '@affine/component';
-import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
-import { workbenchRoutes } from '@affine/core/desktop/workbench-router';
+import { DNDContext } from '@nexio/component';
+import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
+import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
 import {
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { DndService } from '@affine/core/modules/dnd/services';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { OpenInAppGuard } from '@affine/core/modules/open-in-app';
+} from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { DndService } from '@nexio/core/modules/dnd/services';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { OpenInAppGuard } from '@nexio/core/modules/open-in-app';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNEXIOWorkspaceSchema,
   type Workspace,
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+} from '@nexio/core/modules/workspace';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import {
   FrameworkScope,
   LiveData,
@@ -34,7 +34,7 @@ import {
 import { map } from 'rxjs';
 import * as _Y from 'yjs';
 
-import { AffineErrorBoundary } from '../../../components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '../../../components/nexio/nexio-error-boundary';
 import { WorkbenchRoot } from '../../../modules/workbench';
 import { AppContainer } from '../../components/app-container';
 import { PageNotFound } from '../404';
@@ -54,7 +54,7 @@ declare global {
   // oxlint-disable-next-line no-var
   var Y: typeof _Y;
   interface WindowEventMap {
-    'affine:workspace:change': CustomEvent<{ id: string }>;
+    'nexio:workspace:change': CustomEvent<{ id: string }>;
   }
 }
 
@@ -207,9 +207,9 @@ export const Component = (): ReactElement => {
     }
     return (
       <FrameworkScope scope={server?.scope}>
-        <AffineOtherPageLayout>
+        <NexioOtherPageLayout>
           <PageNotFound noPermission />
-        </AffineOtherPageLayout>
+        </NexioOtherPageLayout>
       </FrameworkScope>
     );
   }
@@ -274,7 +274,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
       // for debug purpose
       window.currentWorkspace = workspace ?? undefined;
       window.dispatchEvent(
-        new CustomEvent('affine:workspace:change', {
+        new CustomEvent('nexio:workspace:change', {
           detail: {
             id: workspace.id,
           },
@@ -283,7 +283,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
       window.exportWorkspaceSnapshot = async (docs?: string[]) => {
         await ZipTransformer.exportDocs(
           workspace.docCollection,
-          getAFFiNEWorkspaceSchema(),
+          getNEXIOWorkspaceSchema(),
           Array.from(workspace.docCollection.docs.values())
             .filter(doc => (docs ? docs.includes(doc.id) : true))
             .map(doc => doc.getStore())
@@ -299,7 +299,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
             const blob = new Blob([file], { type: 'application/zip' });
             const newDocs = await ZipTransformer.importDocs(
               workspace.docCollection,
-              getAFFiNEWorkspaceSchema(),
+              getNEXIOWorkspaceSchema(),
               blob
             );
             console.log(
@@ -349,11 +349,11 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
     <FrameworkScope scope={workspace.scope}>
       <DNDContextProvider>
         <OpenInAppGuard>
-          <AffineErrorBoundary height="100vh">
+          <NexioErrorBoundary height="100vh">
             <WorkspaceLayout>
               <WorkbenchRoot />
             </WorkspaceLayout>
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
         </OpenInAppGuard>
       </DNDContextProvider>
     </FrameworkScope>

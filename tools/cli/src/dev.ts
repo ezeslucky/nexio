@@ -1,4 +1,4 @@
-import type { PackageName } from '@affine-tools/utils/workspace';
+import type { PackageName } from '@nexio-tools/utils/workspace';
 
 import { Option, PackageSelectorCommand } from './command';
 
@@ -6,14 +6,14 @@ export class DevCommand extends PackageSelectorCommand {
   static override paths = [['dev'], ['d']];
 
   protected override availablePackages: PackageName[] = [
-    '@affine/web',
-    '@affine/server',
-    '@affine/electron',
-    '@affine/electron-renderer',
-    '@affine/mobile',
-    '@affine/ios',
-    '@affine/android',
-    '@affine/admin',
+    '@nexio/web',
+    '@nexio/server',
+    '@nexio/electron',
+    '@nexio/electron-renderer',
+    '@nexio/mobile',
+    '@nexio/ios',
+    '@nexio/android',
+    '@nexio/admin',
   ];
 
   protected deps = Option.Boolean('--deps', {

@@ -15,16 +15,7 @@ import type { WorkspacePermissionService } from '../../permissions';
 import type { WorkspaceService } from '../../workspace';
 import type { DocCreatedByUpdatedBySyncStore } from '../stores/doc-created-by-updated-by-sync';
 
-/**
- * This service is used to sync createdBy and updatedBy data from the cloud to local doc properties.
- *
- * # When sync is needed
- *
- * 1. When the user is an owner or admin
- * 2. When the root doc sync is complete
- * 3. When a doc is missing createdBy data
- * 4. When workspace has not been marked as `DocCreatedByUpdatedBySynced`
- */
+
 export class DocCreatedByUpdatedBySyncService extends Service {
   constructor(
     private readonly workspaceService: WorkspaceService,

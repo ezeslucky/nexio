@@ -1,4 +1,4 @@
-import { useThemeColorV2 } from '@affine/component';
+import { useThemeColorV2 } from '@nexio/component';
 
 import { AppTabs } from '../../../components';
 import { AllDocsHeader, TagList } from '../../../views';

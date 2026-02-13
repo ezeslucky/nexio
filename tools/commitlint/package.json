@@ -1,5 +1,5 @@
 {
-  "name": "@affine/commitlint-config",
+  "name": "@nexio/commitlint-config",
   "version": "0.22.4",
   "private": true,
   "devDependencies": {

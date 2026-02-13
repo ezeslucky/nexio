@@ -1,20 +1,20 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace.js';
-import type { SurfaceBlockModel } from '@blocksuite/affine/blocks/surface';
+import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace.js';
+import type { SurfaceBlockModel } from '@blocksuite/nexio/blocks/surface';
 import {
   MindmapStyleFour,
   MindmapStyleOne,
   MindmapStyleThree,
   MindmapStyleTwo,
-} from '@blocksuite/affine/gfx/mindmap';
-import type { ServiceProvider } from '@blocksuite/affine/global/di';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
+} from '@blocksuite/nexio/gfx/mindmap';
+import type { ServiceProvider } from '@blocksuite/nexio/global/di';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
 import {
   type MindmapElementModel,
   MindmapStyle,
-} from '@blocksuite/affine/model';
-import { MarkdownAdapter } from '@blocksuite/affine/shared/adapters';
-import { BlockStdScope, type EditorHost } from '@blocksuite/affine/std';
-import { Schema, type Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import { MarkdownAdapter } from '@blocksuite/nexio/shared/adapters';
+import { BlockStdScope, type EditorHost } from '@blocksuite/nexio/std';
+import { Schema, type Store } from '@blocksuite/nexio/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';
@@ -67,14 +67,14 @@ export class MiniMindmapPreview extends WithDisposable(LitElement) {
 
     .template-item {
       box-sizing: border-box;
-      border: 2px solid var(--affine-border-color);
+      border: 2px solid var(--nexio-border-color);
       border-radius: 4px;
       padding: 4px 6px;
     }
 
     .template-item.active,
     .template-item:hover {
-      border-color: var(--affine-brand-color);
+      border-color: var(--nexio-brand-color);
     }
 
     .template-item > svg {
@@ -107,8 +107,8 @@ export class MiniMindmapPreview extends WithDisposable(LitElement) {
     collection.meta.initialize();
     const doc = collection.createDoc('doc:home').getStore();
     doc.load();
-    const rootId = doc.addBlock('affine:page', {});
-    const surfaceId = doc.addBlock('affine:surface', {}, rootId);
+    const rootId = doc.addBlock('nexio:page', {});
+    const surfaceId = doc.addBlock('nexio:surface', {}, rootId);
     const surface = doc.getModelById(surfaceId) as SurfaceBlockModel;
     doc.resetHistory();
 
@@ -174,7 +174,7 @@ export class MiniMindmapPreview extends WithDisposable(LitElement) {
       <div
         style=${styleMap({
           height: this.height + 'px',
-          border: '1px solid var(--affine-border-color)',
+          border: '1px solid var(--nexio-border-color)',
           borderRadius: '4px',
         })}
       >

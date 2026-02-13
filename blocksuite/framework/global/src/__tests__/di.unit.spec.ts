@@ -211,7 +211,7 @@ describe('di', () => {
     const editorScope = createScope('editor', pageScope);
 
     class System {
-      appName = 'affine';
+      appName = 'nexio';
     }
 
     container.add(System);
@@ -248,13 +248,13 @@ describe('di', () => {
 
     const workspace = container.provider(workspaceScope, root);
     expect(workspace.get(Workspace).name).toEqual('workspace');
-    expect(workspace.get(System).appName).toEqual('affine');
+    expect(workspace.get(System).appName).toEqual('nexio');
     expect(() => root.get(Page)).toThrowError(ServiceNotFoundError);
 
     const page = container.provider(pageScope, workspace);
     expect(page.get(Page).name).toEqual('page');
     expect(page.get(Workspace).name).toEqual('workspace');
-    expect(page.get(System).appName).toEqual('affine');
+    expect(page.get(System).appName).toEqual('nexio');
 
     const editor = container.provider(editorScope, page);
     expect(editor.get(Editor).name).toEqual('editor');

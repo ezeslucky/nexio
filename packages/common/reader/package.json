@@ -1,5 +1,5 @@
 {
-  "name": "@affine/reader",
+  "name": "@nexio/reader",
   "type": "module",
   "version": "0.22.4",
   "private": true,
@@ -18,10 +18,10 @@
     "yjs": "^13.6.21"
   },
   "devDependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "vitest": "3.1.3"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/nexio": "workspace:*"
   }
 }

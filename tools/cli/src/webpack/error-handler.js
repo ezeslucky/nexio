@@ -15,7 +15,7 @@
       '.gue .p2{color:#7A7A7A;line-height:22px;}',
       '</style>',
       '<div class="gue">',
-      '<img src="https://cdn.affine.pro/error.png" />',
+      '<img src="https://cdn.nexio.pro/error.png" />',
       '<div>',
       '<p class="p1">Unsupported Environment</p>',
       '<p class="p2">',

@@ -1,29 +1,29 @@
-import { EditorLoading } from '@affine/component/page-detail-skeleton';
+import { EditorLoading } from '@nexio/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
   PageEditor,
-} from '@affine/core/blocksuite/editors';
-import { ServerService } from '@affine/core/modules/cloud';
+} from '@nexio/core/blocksuite/editors';
+import { ServerService } from '@nexio/core/modules/cloud';
 import {
   EditorSettingService,
   fontStyleOptions,
-} from '@affine/core/modules/editor-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import track from '@affine/track';
-import { appendParagraphCommand } from '@blocksuite/affine/blocks/paragraph';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { IS_LINUX } from '@blocksuite/affine/global/env';
-import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+} from '@nexio/core/modules/editor-setting';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import track from '@nexio/track';
+import { appendParagraphCommand } from '@blocksuite/nexio/blocks/paragraph';
+import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { IS_LINUX } from '@blocksuite/nexio/global/env';
+import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
-import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
-import type { BlockStdScope, EditorHost } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/adapters';
+import { focusBlockEnd } from '@blocksuite/nexio/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/nexio/shared/utils';
+import type { BlockStdScope, EditorHost } from '@blocksuite/nexio/std';
+import type { Store } from '@blocksuite/nexio/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -35,7 +35,7 @@ import type { DefaultOpenProperty } from '../../components/properties';
 import { BlocksuiteDocEditor, BlocksuiteEdgelessEditor } from './lit-adaper';
 import * as styles from './styles.css';
 
-export interface AffineEditorContainer extends HTMLElement {
+export interface NexioEditorContainer extends HTMLElement {
   page: Store;
   doc: Store;
   docTitle: DocTitle;
@@ -54,7 +54,7 @@ export interface EditorProps extends HTMLAttributes<HTMLDivElement> {
   readonly?: boolean;
   defaultOpenProperty?: DefaultOpenProperty;
   // on Editor ready
-  onEditorReady?: (editor: AffineEditorContainer) => (() => void) | void;
+  onEditorReady?: (editor: NexioEditorContainer) => (() => void) | void;
 }
 
 const BlockSuiteEditorImpl = ({
@@ -83,10 +83,8 @@ const BlockSuiteEditorImpl = ({
     }))
   );
 
-  /**
-   * mimic an AffineEditorContainer using proxy
-   */
-  const affineEditorContainerProxy = useMemo(() => {
+  
+  const nexioEditorContainerProxy = useMemo(() => {
     const api = {
       get page() {
         return page;
@@ -144,14 +142,14 @@ const BlockSuiteEditorImpl = ({
         }
         return undefined;
       },
-    }) as AffineEditorContainer;
+    }) as NexioEditorContainer;
 
     return proxy;
   }, [mode, page]);
 
   const handleClickPageModeBlank = useCallback(() => {
     if (shared || readonly || page.readonly) return;
-    const std = affineEditorContainerProxy.host?.std;
+    const std = nexioEditorContainerProxy.host?.std;
     if (!std) {
       return;
     }
@@ -160,7 +158,7 @@ const BlockSuiteEditorImpl = ({
       const lastBlock = note.lastChild();
       if (
         lastBlock &&
-        lastBlock.flavour === 'affine:paragraph' &&
+        lastBlock.flavour === 'nexio:paragraph' &&
         lastBlock.text?.length === 0
       ) {
         const focusBlock = std.view.getBlock(lastBlock.id) ?? undefined;
@@ -173,7 +171,7 @@ const BlockSuiteEditorImpl = ({
     }
 
     std.command.exec(appendParagraphCommand);
-  }, [affineEditorContainerProxy.host?.std, page, readonly, shared]);
+  }, [nexioEditorContainerProxy.host?.std, page, readonly, shared]);
 
   useEffect(() => {
     const editorContainer = rootRef.current;
@@ -181,8 +179,8 @@ const BlockSuiteEditorImpl = ({
       const handleMiddleClick = (e: MouseEvent) => {
         if (
           e.target instanceof HTMLElement &&
-          (e.target.closest('affine-reference') ||
-            e.target.closest('affine-link'))
+          (e.target.closest('nexio-reference') ||
+            e.target.closest('nexio-link'))
         ) {
           return;
         }
@@ -209,7 +207,7 @@ const BlockSuiteEditorImpl = ({
   }, [enableMiddleClickPaste]);
 
   useEffect(() => {
-    const editor = affineEditorContainerProxy;
+    const editor = nexioEditorContainerProxy;
     globalThis.currentEditor = editor;
     const disposableGroup = new DisposableGroup();
     let canceled = false;
@@ -240,7 +238,7 @@ const BlockSuiteEditorImpl = ({
       canceled = true;
       disposableGroup.dispose();
     };
-  }, [affineEditorContainerProxy, onEditorReady, page, server]);
+  }, [nexioEditorContainerProxy, onEditorReady, page, server]);
 
   return (
     <div
@@ -253,7 +251,7 @@ const BlockSuiteEditorImpl = ({
         className
       )}
       style={style}
-      data-affine-editor-container
+      data-nexio-editor-container
       ref={rootRef}
     >
       {mode === 'page' ? (
@@ -365,7 +363,7 @@ export const BlockSuiteEditor = (props: EditorProps) => {
   }, [loadStartTime, props.page, workspaceService]);
 
   return (
-    <Slot style={{ '--affine-font-family': fontFamily } as CSSProperties}>
+    <Slot style={{ '--nexio-font-family': fontFamily } as CSSProperties}>
       {isLoading ? (
         <EditorLoading longerLoading={longerLoading} />
       ) : (

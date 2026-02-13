@@ -1,4 +1,4 @@
-import { SafeArea, Skeleton } from '@affine/component';
+import { SafeArea, Skeleton } from '@nexio/component';
 
 import { WorkspaceSelector } from '../workspace-selector';
 

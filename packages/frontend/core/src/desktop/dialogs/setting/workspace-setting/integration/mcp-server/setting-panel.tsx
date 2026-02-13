@@ -1,9 +1,9 @@
-import { Button, ErrorMessage, notify, Skeleton } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { AccessTokenService, ServerService } from '@affine/core/modules/cloud';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
+import { Button, ErrorMessage, notify, Skeleton } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { AccessTokenService, ServerService } from '@nexio/core/modules/cloud';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
@@ -21,8 +21,8 @@ const McpServerSettingHeader = ({ action }: { action?: ReactNode }) => {
   return (
     <IntegrationSettingHeader
       icon={<img src={MCPIcon} />}
-      name={t['com.affine.integration.mcp-server.name']()}
-      desc={t['com.affine.integration.mcp-server.desc']()}
+      name={t['com.nexio.integration.mcp-server.name']()}
+      desc={t['com.nexio.integration.mcp-server.desc']()}
       action={action}
     />
   );
@@ -48,10 +48,10 @@ const McpServerSetting = () => {
       ? JSON.stringify(
           {
             mcpServers: {
-              [`${workspaceName} - AFFiNE`]: {
+              [`${workspaceName} - nexio`]: {
                 type: 'streamable-http',
                 url: `${serverService.server.baseUrl}/api/workspaces/${workspaceService.workspace.id}/mcp`,
-                note: 'Read docs from AFFiNE workspace',
+                note: 'Read docs from nexio workspace',
                 headers: {
                   Authorization: `Bearer ${mcpAccessToken.token}`,
                 },

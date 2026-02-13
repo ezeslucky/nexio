@@ -21,20 +21,7 @@ import type {
   WhereCondition,
 } from '../types';
 
-/**
- * Yjs Adapter for AFFiNE ORM
- *
- * Structure:
- *
- * Each table is a YDoc instance
- *
- * Table(YDoc)
- *   Key(string): Row(YMap)({
- *     FieldA(string): Value(Primitive)
- *     FieldB(string): Value(Primitive)
- *     FieldC(string): Value(Primitive)
- *   })
- */
+
 @HookAdapter()
 export class YjsTableAdapter implements TableAdapter {
   private readonly deleteFlagKey = '$$DELETED';

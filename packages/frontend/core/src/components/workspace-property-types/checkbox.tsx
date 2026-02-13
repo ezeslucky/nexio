@@ -1,6 +1,6 @@
-import { Checkbox, MenuItem, PropertyValue } from '@affine/component';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { useI18n } from '@affine/i18n';
+import { Checkbox, MenuItem, PropertyValue } from '@nexio/component';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { useI18n } from '@nexio/i18n';
 import { CheckBoxCheckLinearIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
@@ -111,8 +111,8 @@ export const CheckboxGroupHeader = ({
   const t = useI18n();
   const text =
     groupId === 'true'
-      ? t['com.affine.all-docs.group.is-checked']()
-      : t['com.affine.all-docs.group.is-not-checked']();
+      ? t['com.nexio.all-docs.group.is-checked']()
+      : t['com.nexio.all-docs.group.is-not-checked']();
   return (
     <PlainTextDocGroupHeader docCount={docCount} groupId={groupId}>
       {text}

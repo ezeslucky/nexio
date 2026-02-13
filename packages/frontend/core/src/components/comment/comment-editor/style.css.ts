@@ -20,8 +20,8 @@ export const container = style({
     },
   },
   vars: {
-    '--affine-paragraph-margin': '0',
-    '--affine-font-base': '14px',
+    '--nexio-paragraph-margin': '0',
+    '--nexio-font-base': '14px',
   },
 });
 
@@ -32,12 +32,12 @@ export const footer = style({
   paddingBottom: 8,
 });
 
-globalStyle(`${container} .affine-page-root-block-container`, {
+globalStyle(`${container} .nexio-page-root-block-container`, {
   padding: '8px 0',
   minHeight: '32px',
 });
 
-globalStyle(`${container} .affine-paragraph-rich-text-wrapper`, {
+globalStyle(`${container} .nexio-paragraph-rich-text-wrapper`, {
   margin: 0,
 });
 

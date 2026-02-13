@@ -1,4 +1,4 @@
-import type { Store, Workspace } from '@blocksuite/affine/store';
+import type { Store, Workspace } from '@blocksuite/nexio/store';
 
 import { createTestApp } from './app';
 

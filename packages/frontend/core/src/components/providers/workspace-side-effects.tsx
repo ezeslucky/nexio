@@ -1,39 +1,39 @@
-import { toast } from '@affine/component';
+import { toast } from '@nexio/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
-} from '@affine/component/global-loading';
+} from '@nexio/component/global-loading';
 import {
   AIProvider,
   CopilotClient,
   setupAIProvider,
-} from '@affine/core/blocksuite/ai';
-import { useRegisterFindInPageCommands } from '@affine/core/components/hooks/affine/use-register-find-in-page-commands';
-import { useRegisterWorkspaceCommands } from '@affine/core/components/hooks/use-register-workspace-commands';
-import { OverCapacityNotification } from '@affine/core/components/over-capacity';
+} from '@nexio/core/blocksuite/ai';
+import { useRegisterFindInPageCommands } from '@nexio/core/components/hooks/nexio/use-register-find-in-page-commands';
+import { useRegisterWorkspaceCommands } from '@nexio/core/components/hooks/use-register-workspace-commands';
+import { OverCapacityNotification } from '@nexio/core/components/over-capacity';
 import {
   AuthService,
   EventSourceService,
   FetchService,
   GraphQLService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   GlobalDialogService,
   WorkspaceDialogService,
-} from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useRegisterNavigationCommands } from '@affine/core/modules/navigation/view/use-register-navigation-commands';
-import { QuickSearchContainer } from '@affine/core/modules/quicksearch';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+} from '@nexio/core/modules/dialogs';
+import { DocsService } from '@nexio/core/modules/doc';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useRegisterNavigationCommands } from '@nexio/core/modules/navigation/view/use-register-navigation-commands';
+import { QuickSearchContainer } from '@nexio/core/modules/quicksearch';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNEXIOWorkspaceSchema,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
+import type { DocMode } from '@blocksuite/nexio/model';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import {
   effect,
   fromPromise,
@@ -71,7 +71,7 @@ export const WorkspaceSideEffects = () => {
           throwIfAborted(abort);
           const [doc] = await ZipTransformer.importDocs(
             currentWorkspace.docCollection,
-            getAFFiNEWorkspaceSchema(),
+            getNEXIOWorkspaceSchema(),
             templateBlob
           );
           if (doc) {
@@ -94,7 +94,7 @@ export const WorkspaceSideEffects = () => {
           }),
           catchError(err => {
             console.error(err);
-            toast(t['com.affine.ai.template-insert.failed']());
+            toast(t['com.nexio.ai.template-insert.failed']());
             return EMPTY;
           }),
           finalize(() => {

@@ -5,7 +5,7 @@ import {
   type ServerConfigQuery,
   serverConfigQuery,
   ServerFeature,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 export type ServerConfigType = ServerConfigQuery['serverConfig'] &

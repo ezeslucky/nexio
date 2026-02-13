@@ -1,5 +1,5 @@
-import { Text, type Workspace } from '@blocksuite/affine/store';
-import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import { Text, type Workspace } from '@blocksuite/nexio/store';
+import { MarkdownTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import { getTestStoreManager } from '@blocksuite/integration-test/store';
 
 import type { InitFn } from './utils.js';
@@ -20,14 +20,14 @@ export const preset: InitFn = async (collection: Workspace, id: string) => {
   let noteId: string;
   if (!hasDoc) {
     // Add root block and surface block at root level
-    const rootId = store.addBlock('affine:page', {
+    const rootId = store.addBlock('nexio:page', {
       title: new Text('BlockSuite Playground'),
     });
-    store.addBlock('affine:surface', {}, rootId);
+    store.addBlock('nexio:surface', {}, rootId);
 
     // Add note block inside root block
     noteId = store.addBlock(
-      'affine:note',
+      'nexio:note',
       { xywh: '[0, 100, 800, 640]' },
       rootId
     );

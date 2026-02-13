@@ -10,8 +10,10 @@ const rootDir = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
   plugins: [
+    //@ts-ignore
     vanillaExtractPlugin(),
     // https://github.com/vitejs/vite-plugin-react-swc/issues/85#issuecomment-2003922124
+    //@ts-ignore
     swc.vite({
       jsc: {
         preserveAllComments: true,
@@ -40,7 +42,7 @@ export default defineConfig({
     alias: {
       // prevent tests using two different sources of yjs
       yjs: resolve(rootDir, 'node_modules/yjs'),
-      '@affine/core': fileURLToPath(
+      '@nexio/core': fileURLToPath(
         new URL('./packages/frontend/core/src', import.meta.url)
       ),
     },

@@ -1,5 +1,5 @@
-import { notify } from '@affine/component';
-import { UserFriendlyError } from '@affine/error';
+import { notify } from '@nexio/component';
+import { UserFriendlyError } from '@nexio/error';
 import type { PropsWithChildren, ReactNode } from 'react';
 import { useCallback } from 'react';
 import type { SWRConfiguration } from 'swr';

@@ -1,7 +1,7 @@
 import crypto from 'node:crypto';
 import { setTimeout } from 'node:timers/promises';
 
-import { Package } from '@affine-tools/utils/workspace';
+import { Package } from '@nexio-tools/utils/workspace';
 import { expect, type Page } from '@playwright/test';
 import fs from 'fs-extra';
 import type { ElectronApplication } from 'playwright';
@@ -10,7 +10,7 @@ import { _electron as electron } from 'playwright';
 import { test as base, testResultDir } from './playwright';
 import { removeWithRetry } from './utils/utils';
 
-const electronRoot = new Package('@affine/electron').path;
+const electronRoot = new Package('@nexio/electron').path;
 
 function generateUUID() {
   return crypto.randomUUID();
@@ -121,7 +121,7 @@ export const test = base.extend<{
         electronRoot.join('package.json').value
       );
       // overwrite the app name
-      packageJson.name = '@affine/electron-test-' + id;
+      packageJson.name = '@nexio/electron-test-' + id;
       // overwrite the path to the main script
       packageJson.main = './main.js';
       // write to the cloned dist

@@ -6,15 +6,15 @@ globalStyle('*', {
 });
 
 globalStyle('body', {
-  color: 'var(--affine-text-primary-color)',
-  fontFamily: 'var(--affine-font-family)',
-  fontSize: 'var(--affine-font-base)',
-  lineHeight: 'var(--affine-font-height)',
-  backgroundColor: 'var(--affine-background-primary-color)',
+  color: 'var(--nexio-text-primary-color)',
+  fontFamily: 'var(--nexio-font-family)',
+  fontSize: 'var(--nexio-font-base)',
+  lineHeight: 'var(--nexio-font-height)',
+  backgroundColor: 'var(--nexio-background-primary-color)',
 });
 
 globalStyle('.docs-story', {
-  backgroundColor: 'var(--affine-background-primary-color)',
+  backgroundColor: 'var(--nexio-background-primary-color)',
 });
 
 globalStyle('body.sb-main-fullscreen', {

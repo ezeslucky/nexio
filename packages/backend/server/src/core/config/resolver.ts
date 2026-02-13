@@ -75,12 +75,12 @@ export class ServerConfigResolver {
       name:
         this.config.server.name ??
         (env.selfhosted
-          ? 'AFFiNE Selfhosted Cloud'
+          ? 'NEXIO Selfhosted Cloud'
           : env.namespaces.canary
-            ? 'AFFiNE Canary Cloud'
+            ? 'NEXIO Canary Cloud'
             : env.namespaces.beta
-              ? 'AFFiNE Beta Cloud'
-              : 'AFFiNE Cloud'),
+              ? 'NEXIO Beta Cloud'
+              : 'NEXIO Cloud'),
       version: env.version,
       baseUrl: this.url.requestBaseUrl,
       type: env.DEPLOYMENT_TYPE,
@@ -119,7 +119,7 @@ export class ServerConfigResolver {
     }
 
     const channel = RELEASE_CHANNEL_MAP.get(env.NAMESPACE) ?? 'stable';
-    const url = `https://affine.pro/api/worker/releases?channel=${channel}`;
+    const url = `https://nexio.pro/api/worker/releases?channel=${channel}`;
 
     try {
       const response = await fetch(url, {
@@ -132,7 +132,7 @@ export class ServerConfigResolver {
 
       if (!response.ok) {
         this.logger.error(
-          'failed to fetch affine releases',
+          'failed to fetch nexio releases',
           await response.text()
         );
         return null;
@@ -156,7 +156,7 @@ export class ServerConfigResolver {
         publishedAt: new Date(latest.published_at),
       };
     } catch (e) {
-      this.logger.error('failed to fetch affine releases', e);
+      this.logger.error('failed to fetch nexio releases', e);
       return null;
     }
   }

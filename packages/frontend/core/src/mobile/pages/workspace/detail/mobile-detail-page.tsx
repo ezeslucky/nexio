@@ -1,32 +1,32 @@
-import { useThemeColorV2 } from '@affine/component';
-import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useGuard } from '@affine/core/components/guard';
-import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { PageDetailEditor } from '@affine/core/components/page-detail-editor';
-import { DetailPageWrapper } from '@affine/core/desktop/pages/workspace/detail-page/detail-page-wrapper';
-import { PageHeader } from '@affine/core/mobile/components';
-import { useGlobalEvent } from '@affine/core/mobile/hooks/use-global-events';
-import { AIButtonService } from '@affine/core/modules/ai-button';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DocService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { EditorService } from '@affine/core/modules/editor';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { i18nTime } from '@affine/i18n';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { useThemeColorV2 } from '@nexio/component';
+import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { useGuard } from '@nexio/core/components/guard';
+import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
+import { DetailPageWrapper } from '@nexio/core/desktop/pages/workspace/detail-page/detail-page-wrapper';
+import { PageHeader } from '@nexio/core/mobile/components';
+import { useGlobalEvent } from '@nexio/core/mobile/hooks/use-global-events';
+import { AIButtonService } from '@nexio/core/modules/ai-button';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { DocService } from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { EditorService } from '@nexio/core/modules/editor';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { JournalService } from '@nexio/core/modules/journal';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { i18nTime } from '@nexio/i18n';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import {
   FrameworkScope,
   useLiveData,
@@ -131,7 +131,7 @@ const DetailPageImpl = () => {
   const server = useService(ServerService).server;
 
   const onLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       // provide image proxy endpoint to blocksuite
       const imageProxyUrl = new URL(
         BUILD_CONFIG.imageProxyUrl,
@@ -196,15 +196,15 @@ const DetailPageImpl = () => {
           data-mode={mode}
           ref={scrollViewportRef}
           className={clsx(
-            'affine-page-viewport',
-            styles.affineDocViewport,
+            'nexio-page-viewport',
+            styles.nexioDocViewport,
             styles.editorContainer
           )}
         >
           {/* Add a key to force rerender when page changed, to avoid error boundary persisting. */}
-          <AffineErrorBoundary key={doc.id} className={styles.errorBoundary}>
+          <NexioErrorBoundary key={doc.id} className={styles.errorBoundary}>
             <PageDetailEditor onLoad={onLoad} readonly={readonly} />
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
         </div>
       </div>
     </FrameworkScope>

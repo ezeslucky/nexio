@@ -1,14 +1,14 @@
-import { notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { ConfirmModal } from '@affine/component/ui/modal';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { notify } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { ConfirmModal } from '@nexio/component/ui/modal';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import {
   WorkspaceService,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -104,11 +104,11 @@ export const DeleteLeaveWorkspace = ({
         name={
           <span style={{ color: cssVarV2('status/error') }}>
             {isOwner
-              ? t['com.affine.workspaceDelete.title']()
-              : t['com.affine.deleteLeaveWorkspace.leave']()}
+              ? t['com.nexio.workspaceDelete.title']()
+              : t['com.nexio.deleteLeaveWorkspace.leave']()}
           </span>
         }
-        desc={t['com.affine.deleteLeaveWorkspace.description']()}
+        desc={t['com.nexio.deleteLeaveWorkspace.description']()}
         style={{ cursor: 'pointer' }}
         onClick={onLeaveOrDelete}
         data-testid="delete-workspace-button"
@@ -125,11 +125,11 @@ export const DeleteLeaveWorkspace = ({
       ) : (
         <ConfirmModal
           open={showLeave}
-          cancelText={t['com.affine.confirmModal.button.cancel']()}
+          cancelText={t['com.nexio.confirmModal.button.cancel']()}
           onConfirm={onDeleteConfirm}
           onOpenChange={setShowLeave}
-          title={`${t['com.affine.deleteLeaveWorkspace.leave']()}?`}
-          description={t['com.affine.deleteLeaveWorkspace.leaveDescription']()}
+          title={`${t['com.nexio.deleteLeaveWorkspace.leave']()}?`}
+          description={t['com.nexio.deleteLeaveWorkspace.leaveDescription']()}
           confirmText={t['Leave']()}
           confirmButtonOptions={{
             variant: 'error',

@@ -1,5 +1,5 @@
-import type { SubscriptionQuery, SubscriptionRecurring } from '@affine/graphql';
-import { SubscriptionPlan } from '@affine/graphql';
+import type { SubscriptionQuery, SubscriptionRecurring } from '@nexio/graphql';
+import { SubscriptionPlan } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

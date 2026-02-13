@@ -1,14 +1,14 @@
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import {
   GlobalDialogService,
   WorkspaceDialogService,
-} from '@affine/core/modules/dialogs';
-import { I18nService } from '@affine/core/modules/i18n';
-import { UrlService } from '@affine/core/modules/url';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs';
+import { I18nService } from '@nexio/core/modules/i18n';
+import { UrlService } from '@nexio/core/modules/url';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import {
   useService,
   useServiceOptional,
@@ -21,24 +21,24 @@ import { useEffect } from 'react';
 import { usePageHelper } from '../../blocksuite/block-suite-page-list/utils';
 import {
   PreconditionStrategy,
-  registerAffineCommand,
-  registerAffineCreationCommands,
-  registerAffineHelpCommands,
-  registerAffineLanguageCommands,
-  registerAffineLayoutCommands,
-  registerAffineNavigationCommands,
-  registerAffineSettingsCommands,
-  registerAffineUpdatesCommands,
+  registerNexioCommand,
+  registerNexioCreationCommands,
+  registerNexioHelpCommands,
+  registerNexioLanguageCommands,
+  registerNexioLayoutCommands,
+  registerNexioNavigationCommands,
+  registerNexioSettingsCommands,
+  registerNexioUpdatesCommands,
 } from '../../commands';
 import { EditorSettingService } from '../../modules/editor-setting';
 import { CMDKQuickSearchService } from '../../modules/quicksearch/services/cmdk';
 import { useNavigateHelper } from './use-navigate-helper';
 
 function registerCMDKCommand(service: CMDKQuickSearchService) {
-  return registerAffineCommand({
-    id: 'affine:show-quick-search',
+  return registerNexioCommand({
+    id: 'nexio:show-quick-search',
     preconditionStrategy: PreconditionStrategy.Never,
-    category: 'affine:general',
+    category: 'nexio:general',
     keyBinding: {
       binding: '$mod+K',
     },
@@ -89,13 +89,13 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [cMDKQuickSearchService]);
 
-  // register AffineUpdatesCommands
+  // register nexioUpdatesCommands
   useEffect(() => {
     if (!quitAndInstall) {
       return;
     }
 
-    const unsub = registerAffineUpdatesCommands({
+    const unsub = registerNexioUpdatesCommands({
       store,
       t,
       quitAndInstall,
@@ -106,9 +106,9 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [quitAndInstall, store, t]);
 
-  // register AffineNavigationCommands
+  // register NexioNavigationCommands
   useEffect(() => {
-    const unsub = registerAffineNavigationCommands({
+    const unsub = registerNexioNavigationCommands({
       t,
       docCollection: currentWorkspace.docCollection,
       navigationHelper,
@@ -129,9 +129,9 @@ export function useRegisterWorkspaceCommands() {
     workbenchService,
   ]);
 
-  // register AffineSettingsCommands
+  // register nexioSettingsCommands
   useEffect(() => {
-    const unsub = registerAffineSettingsCommands({
+    const unsub = registerNexioSettingsCommands({
       store,
       t,
       theme,
@@ -144,7 +144,7 @@ export function useRegisterWorkspaceCommands() {
   }, [editorSettingService, store, t, theme]);
 
   useEffect(() => {
-    const unsub = registerAffineLanguageCommands({
+    const unsub = registerNexioLanguageCommands({
       i18n,
       t,
     });
@@ -154,18 +154,18 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [i18n, t]);
 
-  // register AffineLayoutCommands
+  // register nexioLayoutCommands
   useEffect(() => {
-    const unsub = registerAffineLayoutCommands({ t, appSidebarService });
+    const unsub = registerNexioLayoutCommands({ t, appSidebarService });
 
     return () => {
       unsub();
     };
   }, [appSidebarService, store, t]);
 
-  // register AffineCreationCommands
+  // register nexioCreationCommands
   useEffect(() => {
-    const unsub = registerAffineCreationCommands({
+    const unsub = registerNexioCreationCommands({
       globalDialogService,
       pageHelper: pageHelper,
       t,
@@ -176,9 +176,9 @@ export function useRegisterWorkspaceCommands() {
     };
   }, [store, pageHelper, t, globalDialogService]);
 
-  // register AffineHelpCommands
+  // register nexioHelpCommands
   useEffect(() => {
-    const unsub = registerAffineHelpCommands({
+    const unsub = registerNexioHelpCommands({
       t,
       urlService,
       workspaceDialogService,

@@ -1,0 +1,70 @@
+import { BlockSelection } from '@blocksuite/nexio-components/block-selection';
+import { BlockZeroWidth } from '@blocksuite/nexio-components/block-zero-width';
+import { effects as componentCaptionEffects } from '@blocksuite/nexio-components/caption';
+import { effects as componentCardStyleDropdownMenuEffects } from '@blocksuite/nexio-components/card-style-dropdown-menu';
+import { effects as componentCitationEffects } from '@blocksuite/nexio-components/citation';
+import { effects as componentColorPickerEffects } from '@blocksuite/nexio-components/color-picker';
+import { effects as componentContextMenuEffects } from '@blocksuite/nexio-components/context-menu';
+import { effects as componentDatePickerEffects } from '@blocksuite/nexio-components/date-picker';
+import { effects as componentDropIndicatorEffects } from '@blocksuite/nexio-components/drop-indicator';
+import { effects as componentEdgelessLineStylesEffects } from '@blocksuite/nexio-components/edgeless-line-styles-panel';
+import { effects as componentEdgelessLineWidthEffects } from '@blocksuite/nexio-components/edgeless-line-width-panel';
+import { effects as componentEdgelessShapeColorPickerEffects } from '@blocksuite/nexio-components/edgeless-shape-color-picker';
+import { effects as componentEmbedCardModalEffects } from '@blocksuite/nexio-components/embed-card-modal';
+import { FilterableListComponent } from '@blocksuite/nexio-components/filterable-list';
+import { effects as componentHighlightDropdownMenuEffects } from '@blocksuite/nexio-components/highlight-dropdown-menu';
+import { IconButton } from '@blocksuite/nexio-components/icon-button';
+import { effects as componentLinkPreviewEffects } from '@blocksuite/nexio-components/link-preview';
+import { effects as componentLinkedDocTitleEffects } from '@blocksuite/nexio-components/linked-doc-title';
+import { effects as componentOpenDocDropdownMenuEffects } from '@blocksuite/nexio-components/open-doc-dropdown-menu';
+import { effects as componentPortalEffects } from '@blocksuite/nexio-components/portal';
+import { effects as componentResourceEffects } from '@blocksuite/nexio-components/resource';
+import { effects as componentSizeDropdownMenuEffects } from '@blocksuite/nexio-components/size-dropdown-menu';
+import { effects as componentSliderEffects } from '@blocksuite/nexio-components/slider';
+import { SmoothCorner } from '@blocksuite/nexio-components/smooth-corner';
+import { effects as componentToggleButtonEffects } from '@blocksuite/nexio-components/toggle-button';
+import { ToggleSwitch } from '@blocksuite/nexio-components/toggle-switch';
+import { effects as componentToolbarEffects } from '@blocksuite/nexio-components/toolbar';
+import { effects as componentTooltipContentWithShortcutEffects } from '@blocksuite/nexio-components/tooltip-content-with-shortcut';
+import { effects as componentViewDropdownMenuEffects } from '@blocksuite/nexio-components/view-dropdown-menu';
+import { effects as richTextEffects } from '@blocksuite/nexio-rich-text/effects';
+import { effects as dataViewEffects } from '@blocksuite/data-view/effects';
+import { effects as stdEffects } from '@blocksuite/std/effects';
+
+export function effects() {
+  stdEffects();
+
+  dataViewEffects();
+  richTextEffects();
+
+  componentCaptionEffects();
+  componentContextMenuEffects();
+  componentDatePickerEffects();
+  componentPortalEffects();
+  componentToolbarEffects();
+  componentDropIndicatorEffects();
+  componentToggleButtonEffects();
+  componentColorPickerEffects();
+  componentEmbedCardModalEffects();
+  componentLinkPreviewEffects();
+  componentLinkedDocTitleEffects();
+  componentCardStyleDropdownMenuEffects();
+  componentCitationEffects();
+  componentHighlightDropdownMenuEffects();
+  componentViewDropdownMenuEffects();
+  componentTooltipContentWithShortcutEffects();
+  componentSizeDropdownMenuEffects();
+  componentSliderEffects();
+  componentEdgelessLineWidthEffects();
+  componentEdgelessLineStylesEffects();
+  componentEdgelessShapeColorPickerEffects();
+  componentOpenDocDropdownMenuEffects();
+  componentResourceEffects();
+
+  customElements.define('icon-button', IconButton);
+  customElements.define('smooth-corner', SmoothCorner);
+  customElements.define('toggle-switch', ToggleSwitch);
+  customElements.define('nexio-filterable-list', FilterableListComponent);
+  customElements.define('block-zero-width', BlockZeroWidth);
+  customElements.define('nexio-block-selection', BlockSelection);
+}

@@ -3,10 +3,7 @@ import http from 'node:https';
 import { HttpExecutor } from 'builder-util-runtime';
 import type { ClientRequest } from 'electron';
 
-/**
- * For testing and same as:
- * https://github.com/electron-userland/electron-builder/blob/master/packages/electron-updater/src/electronHttpExecutor.ts
- */
+
 export class MockedHttpExecutor extends HttpExecutor<ClientRequest> {
   createRequest(
     options: any,

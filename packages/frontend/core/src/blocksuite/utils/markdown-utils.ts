@@ -1,5 +1,5 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
 import {
   defaultImageProxyMiddleware,
   embedSyncedDocMiddleware,
@@ -7,13 +7,13 @@ import {
   pasteMiddleware,
   PlainTextAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import {
   BlockStdScope,
   type EditorHost,
   type TextRangePoint,
   TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import type {
   BlockModel,
   BlockSnapshot,
@@ -22,8 +22,8 @@ import type {
   SliceSnapshot,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
-import { toDraftModel, Transformer } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
+import { toDraftModel, Transformer } from '@blocksuite/nexio/store';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../manager/store';
@@ -162,7 +162,7 @@ export const markdownToSnapshot = async (
         type: 'slice',
         content: [
           pageSnapshot.blocks.children.find(
-            b => b.flavour === 'affine:note'
+            b => b.flavour === 'nexio:note'
           ) as BlockSnapshot,
         ],
         workspaceId: payload.workspaceId,
@@ -242,9 +242,9 @@ export async function replaceFromMarkdown(
 export async function markDownToDoc(
   answer: string,
   middlewares?: TransformerMiddleware[],
-  affineFeatureFlagService?: FeatureFlagService
+  nexioFeatureFlagService?: FeatureFlagService
 ) {
-  const { collection, std } = getMarkdownWorkspace(affineFeatureFlagService);
+  const { collection, std } = getMarkdownWorkspace(nexioFeatureFlagService);
 
   const transformer = new Transformer({
     schema: std.store.schema,

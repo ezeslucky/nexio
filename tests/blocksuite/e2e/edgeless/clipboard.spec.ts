@@ -181,7 +181,7 @@ test.describe('pasting URLs', () => {
     });
 
     await expect(
-      page.locator('affine-embed-edgeless-github-block')
+      page.locator('nexio-embed-edgeless-github-block')
     ).toBeVisible();
   });
 
@@ -206,11 +206,11 @@ test.describe('pasting URLs', () => {
     });
 
     await expect(
-      page.locator('affine-embed-edgeless-linked-doc-block')
+      page.locator('nexio-embed-edgeless-linked-doc-block')
     ).toBeVisible();
 
     await expect(
-      page.locator('.affine-embed-linked-doc-content-title')
+      page.locator('.nexio-embed-linked-doc-content-title')
     ).toHaveText('doc title');
   });
 
@@ -227,7 +227,7 @@ test.describe('pasting URLs', () => {
     await waitNextFrame(page);
 
     await pasteContent(page, {
-      'text/plain': 'https://affine.pro',
+      'text/plain': 'https://nexio.pro',
     });
 
     await expect(page.locator('bookmark-card')).toBeVisible();

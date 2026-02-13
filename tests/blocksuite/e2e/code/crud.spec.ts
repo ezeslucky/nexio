@@ -39,9 +39,9 @@ test('use debug menu can create code block', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page);
-  await updateBlockType(page, 'affine:code');
+  await updateBlockType(page, 'nexio:code');
 
-  const locator = page.locator('affine-code');
+  const locator = page.locator('nexio-code');
   await expect(locator).toBeVisible();
 });
 
@@ -85,7 +85,7 @@ test('use markdown syntax with trailing characters can create code block', async
   await type(page, '```JavaScript');
   await type(page, ' ');
 
-  const locator = page.locator('affine-code');
+  const locator = page.locator('nexio-code');
   await expect(locator).toBeVisible();
 });
 
@@ -131,7 +131,7 @@ test('use more than three backticks can not create code block', async ({
   await type(page, '`````');
   await type(page, ' ');
 
-  const codeBlockLocator = page.locator('affine-code');
+  const codeBlockLocator = page.locator('nexio-code');
   await expect(codeBlockLocator).toBeHidden();
   const inlineCodelocator = page.getByText('```');
   await expect(inlineCodelocator).toBeVisible();
@@ -145,7 +145,7 @@ test('use shortcut can create code block', async ({ page }) => {
   await focusRichText(page);
   await createCodeBlock(page);
 
-  const locator = page.locator('affine-code');
+  const locator = page.locator('nexio-code');
   await expect(locator).toBeVisible();
 });
 
@@ -162,7 +162,7 @@ test('change code language can work', async ({ page }, testInfo) => {
 
   await type(page, 'rust');
   await page.click(
-    '.affine-filterable-list > .items-container > icon-button:nth-child(1)'
+    '.nexio-filterable-list > .items-container > icon-button:nth-child(1)'
   );
   await expect(locator).toBeHidden();
 
@@ -198,7 +198,7 @@ test('duplicate code block', async ({ page }, testInfo) => {
   await expect(langLocator).toBeVisible();
   await type(page, 'rust');
   await page.click(
-    '.affine-filterable-list > .items-container > icon-button:nth-child(1)'
+    '.nexio-filterable-list > .items-container > icon-button:nth-child(1)'
   );
 
   // add text
@@ -330,7 +330,7 @@ test('toggle code block line number can work', async ({ page }) => {
   await initEmptyCodeBlockState(page);
   await focusRichText(page);
 
-  const lineNumber = page.locator('affine-code .line-number');
+  const lineNumber = page.locator('nexio-code .line-number');
 
   await expect(lineNumber).toBeVisible();
 
@@ -362,8 +362,8 @@ test('code block toolbar widget can appear and disappear during mousemove', asyn
   await initEmptyCodeBlockState(page);
   await focusRichText(page);
 
-  const position = await page.locator('affine-code').boundingBox();
-  if (!position) throw new Error('Failed to get affine code position');
+  const position = await page.locator('nexio-code').boundingBox();
+  if (!position) throw new Error('Failed to get nexio code position');
   await page.mouse.move(position.x, position.y);
 
   const locator = page.locator('.code-toolbar-container');
@@ -489,7 +489,7 @@ test('auto scroll horizontally when typing', async ({ page }) => {
   }
 
   const richTextScrollLeft1 = await page.evaluate(() => {
-    const richText = document.querySelector('affine-code rich-text');
+    const richText = document.querySelector('nexio-code rich-text');
     if (!richText) {
       throw new Error('Failed to get rich text');
     }
@@ -502,7 +502,7 @@ test('auto scroll horizontally when typing', async ({ page }) => {
   await type(page, 'aa');
 
   const richTextScrollLeft2 = await page.evaluate(() => {
-    const richText = document.querySelector('affine-code rich-text');
+    const richText = document.querySelector('nexio-code rich-text');
     if (!richText) {
       throw new Error('Failed to get rich text');
     }
@@ -609,7 +609,7 @@ test('format text in code block', async ({ page }, testInfo) => {
     `${testInfo.title}_init.json`
   );
 
-  const line = page.locator('affine-code rich-text v-line > div');
+  const line = page.locator('nexio-code rich-text v-line > div');
   expect(await line.innerText()).toBe('const aaa = 1000;');
 
   const { boldBtn, linkBtn } = getFormatBar(page);
@@ -633,7 +633,7 @@ test('format text in code block', async ({ page }, testInfo) => {
   await type(page, 'https://www.baidu.com');
   await pressEnter(page);
 
-  const linkLocator = page.locator('[data-block-id="3"] affine-link a');
+  const linkLocator = page.locator('[data-block-id="3"] nexio-link a');
   expect(await linkLocator.count()).toBe(3);
   await expect(linkLocator.nth(0)).toHaveAttribute(
     'href',

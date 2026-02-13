@@ -1,6 +1,6 @@
-import { Checkbox, MenuItem, MenuSub } from '@affine/component';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Checkbox, MenuItem, MenuSub } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useCallback } from 'react';
 
 import { type QuickAction, quickActions } from '../quick-actions.constants';
@@ -41,7 +41,7 @@ export const QuickActionsConfig = ({
         );
       })}
     >
-      {t['com.affine.all-docs.quick-actions']()}
+      {t['com.nexio.all-docs.quick-actions']()}
     </MenuSub>
   );
 };

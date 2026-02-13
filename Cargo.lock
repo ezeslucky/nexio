@@ -37,7 +37,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_common"
+name = "nexio_common"
 version = "0.1.0"
 dependencies = [
  "cc",
@@ -72,7 +72,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_media_capture"
+name = "nexio_media_capture"
 version = "0.0.0"
 dependencies = [
  "block2",
@@ -98,11 +98,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_mobile_native"
+name = "nexio_mobile_native"
 version = "0.0.0"
 dependencies = [
- "affine_common",
- "affine_nbstore",
+ "nexio_common",
+ "nexio_nbstore",
  "anyhow",
  "base64-simd",
  "chrono",
@@ -115,13 +115,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_native"
+name = "nexio_native"
 version = "0.0.0"
 dependencies = [
- "affine_common",
- "affine_media_capture",
- "affine_nbstore",
- "affine_sqlite_v1",
+ "nexio_common",
+ "nexio_media_capture",
+ "nexio_nbstore",
+ "nexio_sqlite_v1",
  "napi",
  "napi-build",
  "napi-derive",
@@ -131,10 +131,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_nbstore"
+name = "nexio_nbstore"
 version = "0.0.0"
 dependencies = [
- "affine_schema",
+ "nexio_schema",
  "anyhow",
  "chrono",
  "dotenvy",
@@ -148,17 +148,17 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_schema"
+name = "nexio_schema"
 version = "0.0.0"
 dependencies = [
  "sqlx",
 ]
 
 [[package]]
-name = "affine_server_native"
+name = "nexio_server_native"
 version = "1.0.0"
 dependencies = [
- "affine_common",
+ "nexio_common",
  "chrono",
  "file-format",
  "infer",
@@ -176,10 +176,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "affine_sqlite_v1"
+name = "nexio_sqlite_v1"
 version = "0.0.0"
 dependencies = [
- "affine_schema",
+ "nexio_schema",
  "anyhow",
  "chrono",
  "dotenvy",

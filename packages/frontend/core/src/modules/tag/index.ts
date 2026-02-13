@@ -1,6 +1,6 @@
 export { Tag } from './entities/tag';
 export {
-  affineLabelToDatabaseTagColor,
+  nexioLabelToDatabaseTagColor,
   databaseTagColorToAffineLabel,
 } from './entities/utils';
 export { TagService } from './service/tag';

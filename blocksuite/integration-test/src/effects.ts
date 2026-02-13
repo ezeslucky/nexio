@@ -1,7 +1,7 @@
-import '@blocksuite/affine/effects';
+import '@blocksuite/nexio/effects';
 
-import { TestAffineEditorContainer } from './editors/index.js';
+import { TestNexioEditorContainer } from './editors/index.js';
 
 export function effects() {
-  customElements.define('affine-editor-container', TestAffineEditorContainer);
+  customElements.define('affine-editor-container', TestNexioEditorContainer);
 }

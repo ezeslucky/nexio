@@ -1,4 +1,4 @@
-name: affine_dev_services
+name: nexio_dev_services
 services:
   postgres:
     env_file:
@@ -59,7 +59,7 @@ services:
   #     - ${ES_PORT:-9200}:9200
   #   environment:
   #     - node.name=es01
-  #     - cluster.name=affine-dev
+  #     - cluster.name=nexio-dev
   #     - discovery.type=single-node
   #     - bootstrap.memory_lock=true
   #     - xpack.security.enabled=false
@@ -75,7 +75,7 @@ services:
   #     test:
   #       [
   #         "CMD-SHELL",
-  #         "curl -s http://localhost:9200 | grep -q 'affine-dev'",
+  #         "curl -s http://localhost:9200 | grep -q 'nexio-dev'",
   #       ]
   #     interval: 10s
   #     timeout: 10s

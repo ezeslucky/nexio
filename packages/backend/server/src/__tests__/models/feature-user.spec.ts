@@ -22,7 +22,7 @@ test.before(async t => {
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   t.context.u1 = await t.context.module.get(UserModel).create({
-    email: 'u1@affine.pro',
+    email: 'u1@nexio.pro',
     registered: true,
   });
 });
@@ -131,7 +131,7 @@ test('should use pro plan as free for selfhost instance', async t => {
 
   const models = module.get(Models);
   const u1 = await models.user.create({
-    email: 'u1@affine.pro',
+    email: 'u1@nexio.pro',
     registered: true,
   });
 

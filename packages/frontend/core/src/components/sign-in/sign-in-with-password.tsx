@@ -1,22 +1,22 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { Button } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/component/auth-components';
+import { Button } from '@nexio/component/ui/button';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   AuthService,
   CaptchaService,
   ServerService,
-} from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { Unreachable } from '@affine/env/constant';
-import { ServerDeploymentType } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
+import { Unreachable } from '@nexio/env/constant';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useState } from 'react';
@@ -67,8 +67,8 @@ export const SignInWithPasswordStep = ({
   useEffect(() => {
     if (loginStatus === 'authenticated') {
       notify.success({
-        title: t['com.affine.auth.toast.title.signed-in'](),
-        message: t['com.affine.auth.toast.message.signed-in'](),
+        title: t['com.nexio.auth.toast.title.signed-in'](),
+        message: t['com.nexio.auth.toast.message.signed-in'](),
       });
     }
     onAuthenticated?.(loginStatus);
@@ -110,27 +110,27 @@ export const SignInWithPasswordStep = ({
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.affine.auth.sign.in']()}
+        title={t['com.nexio.auth.sign.in']()}
         subTitle={serverName}
       />
 
       <AuthContent>
         <AuthInput
-          label={t['com.affine.settings.email']()}
+          label={t['com.nexio.settings.email']()}
           disabled={true}
           value={email}
         />
         <AuthInput
           autoFocus
           data-testid="password-input"
-          label={t['com.affine.auth.password']()}
+          label={t['com.nexio.auth.password']()}
           value={password}
           type="password"
           onChange={useCallback((value: string) => {
             setPassword(value);
           }, [])}
           error={passwordError}
-          errorHint={t['com.affine.auth.password.error']()}
+          errorHint={t['com.nexio.auth.password.error']()}
           onEnter={onSignIn}
         />
         {!isSelfhosted && (
@@ -140,7 +140,7 @@ export const SignInWithPasswordStep = ({
               className={styles.linkButton}
               onClick={sendMagicLink}
             >
-              {t['com.affine.auth.sign.auth.code.send-email.sign-in']()}
+              {t['com.nexio.auth.sign.auth.code.send-email.sign-in']()}
             </a>
           </div>
         )}
@@ -153,7 +153,7 @@ export const SignInWithPasswordStep = ({
           disabled={isLoading || (!verifyToken && needCaptcha)}
           onClick={onSignIn}
         >
-          {t['com.affine.auth.sign.in']()}
+          {t['com.nexio.auth.sign.in']()}
         </Button>
       </AuthContent>
       <AuthFooter>

@@ -25,5 +25,5 @@ export default function ChangeEmail(props: ChangeEmailProps) {
 }
 
 ChangeEmail.PreviewProps = {
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

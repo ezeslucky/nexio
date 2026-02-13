@@ -22,12 +22,12 @@ const mobileUAString =
 
 function initTestStaticFiles(staticPath: string) {
   const files = {
-    'selfhost.html': `<!DOCTYPE html><html><body>Orbit</body><script src="main.a.js"/></html>`,
-    'main.a.js': `const name = 'orbit'`,
-    'admin/selfhost.html': `<!DOCTYPE html><html><body>Orbit Admin</body><script src="/admin/main.b.js"/></html>`,
-    'admin/main.b.js': `const name = 'orbit-admin'`,
-    'mobile/selfhost.html': `<!DOCTYPE html><html><body>Orbit mobile</body><script src="/mobile/main.c.js"/></html>`,
-    'mobile/main.c.js': `const name = 'orbit-mobile'`,
+    'selfhost.html': `<!DOCTYPE html><html><body>NEXIO</body><script src="main.a.js"/></html>`,
+    'main.a.js': `const name = 'nexio'`,
+    'admin/selfhost.html': `<!DOCTYPE html><html><body>NEXIO Admin</body><script src="/admin/main.b.js"/></html>`,
+    'admin/main.b.js': `const name = 'nexio-admin'`,
+    'mobile/selfhost.html': `<!DOCTYPE html><html><body>NEXIO mobile</body><script src="/mobile/main.c.js"/></html>`,
+    'mobile/main.c.js': `const name = 'nexio-mobile'`,
   };
 
   for (const [filename, content] of Object.entries(files)) {
@@ -94,39 +94,39 @@ test('should always return static asset files', async t => {
   let res = await request(t.context.app.getHttpServer())
     .get('/main.a.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine'");
+  t.is(res.text, "const name = 'nexio'");
 
   res = await request(t.context.app.getHttpServer())
     .get('/main.b.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine-admin'");
+  t.is(res.text, "const name = 'nexio-admin'");
 
   res = await request(t.context.app.getHttpServer())
     .get('/main.c.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine-mobile'");
+  t.is(res.text, "const name = 'nexio-mobile'");
 
   await t.context.db.user.create({
     data: {
       name: 'test',
-      email: 'test@affine.pro',
+      email: 'test@nexio.pro',
     },
   });
 
   res = await request(t.context.app.getHttpServer())
     .get('/main.a.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine'");
+  t.is(res.text, "const name = 'nexio'");
 
   res = await request(t.context.app.getHttpServer())
     .get('/main.b.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine-admin'");
+  t.is(res.text, "const name = 'nexio-admin'");
 
   res = await request(t.context.app.getHttpServer())
     .get('/main.c.js')
     .expect(200);
-  t.is(res.text, "const name = 'affine-mobile'");
+  t.is(res.text, "const name = 'nexio-mobile'");
 });
 
 test('should be able to call apis', async t => {
@@ -160,7 +160,7 @@ test('should allow visiting all pages if initialized', async t => {
   await t.context.db.user.create({
     data: {
       name: 'test',
-      email: 'test@affine.pro',
+      email: 'test@nexio.pro',
     },
   });
 
@@ -178,14 +178,14 @@ test('should allow visiting setup page if not initialized', async t => {
     .get('/admin/setup')
     .expect(200);
 
-  t.true(res.text.includes('AFFiNE Admin'));
+  t.true(res.text.includes('NEXIO Admin'));
 });
 
 test('should redirect to admin if initialized', async t => {
   await t.context.db.user.create({
     data: {
       name: 'test',
-      email: 'test@affine.pro',
+      email: 'test@nexio.pro',
     },
   });
 
@@ -201,7 +201,7 @@ test.skip('should return web assets if visited by mobile', async t => {
   await t.context.db.user.create({
     data: {
       name: 'test',
-      email: 'test@affine.pro',
+      email: 'test@nexio.pro',
     },
   });
 

@@ -3,8 +3,6 @@ import type { LitElement } from 'lit';
 import { DisposableGroup } from '../disposable/index.js';
 import type { Constructor } from '../utils/types.js';
 
-// See https://lit.dev/docs/composition/mixins/#mixins-in-typescript
-// This definition should be exported, see https://github.com/microsoft/TypeScript/issues/30355#issuecomment-839834550
 export declare class DisposableClass {
   protected _disposables: DisposableGroup;
 

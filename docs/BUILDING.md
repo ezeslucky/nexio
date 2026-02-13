@@ -1,4 +1,4 @@
-# Building AFFiNE Web
+# Building NEXIO Web
 
 > **Warning**:
 >
@@ -17,7 +17,7 @@
 
 ## Prerequisites
 
-AFFiNE client has both **Node.js** & **Rust** toolchains.
+NEXIO client has both **Node.js** & **Rust** toolchains.
 
 ### Install Node.js
 
@@ -87,13 +87,13 @@ This could take a while if you build it for the first time.
 Note: use `strip` from system instead of `binutils` if you are running MacOS. [see problem here](https://github.com/ezeslucky/nexio/discussions/2840)
 
 ```sh
-yarn affine @affine/native build
+yarn nexio @nexio/native build
 ```
 
 ### Build Server Dependencies
 
 ```sh
-yarn affine @affine/server-native build
+yarn nexio @nexio/server-native build
 ```
 
 ## Testing
@@ -114,7 +114,7 @@ yarn test
 ### E2E Test
 
 ```shell
-# there are `affine-local`, `affine-migration`, `affine-local`, `affine-prototype` e2e tests,
+# there are `nexio-local`, `nexio-migration`, `nexio-local`, `nexio-prototype` e2e tests,
 #   which are run under different situations.
-yarn workspace @affine-test/affine-local e2e
+yarn workspace @nexio-test/nexio-local e2e
 ```

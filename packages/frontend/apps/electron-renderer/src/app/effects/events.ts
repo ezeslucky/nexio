@@ -1,11 +1,11 @@
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { SettingTab } from '@affine/core/modules/dialogs/constant';
-import { DocsService } from '@affine/core/modules/doc';
-import { JournalService } from '@affine/core/modules/journal';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { apis, events } from '@affine/electron-api';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
+import { DocsService } from '@nexio/core/modules/doc';
+import { JournalService } from '@nexio/core/modules/journal';
+import { LifecycleService } from '@nexio/core/modules/lifecycle';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { apis, events } from '@nexio/electron-api';
 import type { FrameworkProvider } from '@toeverything/infra';
 
 import { setupRecordingEvents } from './recording';

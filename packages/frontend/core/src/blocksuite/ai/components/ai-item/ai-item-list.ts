@@ -1,11 +1,11 @@
-import { createLitPortal } from '@blocksuite/affine/components/portal';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ThemeProvider } from '@blocksuite/affine/shared/services';
+import { createLitPortal } from '@blocksuite/nexio/components/portal';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ThemeProvider } from '@blocksuite/nexio/shared/services';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
@@ -31,9 +31,9 @@ export class AIItemList extends WithDisposable(LitElement) {
       display: flex;
       padding: 4px calc(var(--item-padding, 8px) + 4px);
       align-items: center;
-      color: var(--affine-text-secondary-color);
+      color: var(--nexio-text-secondary-color);
       text-align: justify;
-      font-size: var(--affine-font-xs);
+      font-size: var(--nexio-font-xs);
       font-style: normal;
       font-weight: 500;
       line-height: 20px;

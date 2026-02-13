@@ -40,10 +40,10 @@ export type AIActionAnswer = {
   streamObjects?: StreamObject[];
 };
 
-export interface AffineAIPanelWidgetConfig {
+export interface NexioAIPanelWidgetConfig {
   answerRenderer: (
     answer: string,
-    state?: AffineAIPanelState
+    state?: NexioAIPanelState
   ) => TemplateResult<1> | typeof nothing;
   generateAnswer?: (props: {
     input: string;
@@ -63,7 +63,7 @@ export interface AffineAIPanelWidgetConfig {
   copy?: CopyConfig;
 }
 
-export type AffineAIPanelState =
+export type NexioAIPanelState =
   | 'hidden'
   | 'input'
   | 'generating'

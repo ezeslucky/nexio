@@ -33,7 +33,7 @@ let user: User;
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   user = await t.context.models.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
 });
 

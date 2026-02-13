@@ -1,7 +1,7 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type EditorHost } from '@blocksuite/affine/std';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { type EditorHost } from '@blocksuite/nexio/std';
 import { InformationIcon, ToggleDownIcon } from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import { baseTheme } from '@toeverything/theme';
@@ -39,7 +39,7 @@ export class AIErrorWrapper extends SignalWatcher(WithDisposable(LitElement)) {
           'clig' off,
           'liga' off;
         /* light/sm */
-        font-size: var(--affine-font-sm);
+        font-size: var(--nexio-font-sm);
         font-style: normal;
         font-weight: 400;
         line-height: 22px; /* 157.143% */
@@ -100,7 +100,7 @@ export class AIErrorWrapper extends SignalWatcher(WithDisposable(LitElement)) {
         border-radius: 8px;
         border: 1px solid ${unsafeCSSVarV2('button/innerBlackBorder')};
         padding: 4px 12px;
-        font-size: var(--affine-font-xs);
+        font-size: var(--nexio-font-xs);
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
@@ -155,9 +155,9 @@ export class AIErrorWrapper extends SignalWatcher(WithDisposable(LitElement)) {
         >
           ${this.actionText}
           ${this.actionTooltip
-            ? html`<affine-tooltip tip-position="top">
+            ? html`<nexio-tooltip tip-position="top">
                 ${this.actionTooltip}
-              </affine-tooltip>`
+              </nexio-tooltip>`
             : nothing}
         </span>
       </div>
@@ -188,7 +188,7 @@ export class AIErrorWrapper extends SignalWatcher(WithDisposable(LitElement)) {
 
 const PaymentRequiredErrorRenderer = (host?: EditorHost | null) => html`
   <ai-error-wrapper
-    .text=${"You've reached the current usage cap for AFFiNE AI. You can subscribe to AFFiNE AI(with free 7-day-trial) to continue the AI experience!"}
+    .text=${"You've reached the current usage cap for NEXIO AI. You can subscribe to NEXIO AI(with free 7-day-trial) to continue the AI experience!"}
     .actionText=${'Upgrade'}
     .onClick=${() => AIProvider.slots.requestUpgradePlan.next({ host })}
   ></ai-error-wrapper>
@@ -196,7 +196,7 @@ const PaymentRequiredErrorRenderer = (host?: EditorHost | null) => html`
 
 const LoginRequiredErrorRenderer = (host?: EditorHost | null) => html`
   <ai-error-wrapper
-    .text=${'You need to login to AFFiNE Cloud to continue using AFFiNE AI.'}
+    .text=${'You need to login to NEXIO Cloud to continue using NEXIO AI.'}
     .actionText=${'Login'}
     .onClick=${() => AIProvider.slots.requestLogin.next({ host })}
   ></ai-error-wrapper>

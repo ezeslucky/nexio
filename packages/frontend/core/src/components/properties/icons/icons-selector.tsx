@@ -1,6 +1,6 @@
-import { Menu, Scrollable } from '@affine/component';
-import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
-import { useI18n } from '@affine/i18n';
+import { Menu, Scrollable } from '@nexio/component';
+import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
+import { useI18n } from '@nexio/i18n';
 import { chunk } from 'lodash-es';
 
 import {
@@ -28,7 +28,7 @@ const IconsSelectorPanel = ({
   return (
     <Scrollable.Root>
       <div role="heading" className={styles.menuHeader}>
-        {t['com.affine.page-properties.icons']()}
+        {t['com.nexio.page-properties.icons']()}
       </div>
       <Scrollable.Viewport className={styles.iconsContainerScrollable}>
         <div className={styles.iconsContainer}>

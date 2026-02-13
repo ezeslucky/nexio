@@ -1,5 +1,5 @@
 {
-  "name": "@affine/server",
+  "name": "@nexio/server",
   "private": true,
   "version": "0.22.4",
   "description": "Affine Node.js server",
@@ -8,7 +8,7 @@
     "run-test": "./scripts/run-test.ts"
   },
   "scripts": {
-    "build": "affine bundle -p @affine/server",
+    "build": "affine bundle -p @nexio/server",
     "dev": "nodemon ./src/index.ts",
     "dev:mail": "email dev -d src/mails",
     "test": "ava --concurrency 1 --serial",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@affine/reader": "workspace:*",
-    "@affine/server-native": "workspace:*",
+    "@nexio/server-native": "workspace:*",
     "@ai-sdk/anthropic": "^2.0.1",
     "@ai-sdk/google": "^2.0.4",
     "@ai-sdk/google-vertex": "^3.0.5",
@@ -124,9 +124,9 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
-    "@affine-tools/utils": "workspace:*",
-    "@affine/graphql": "workspace:*",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
+    "@nexio/graphql": "workspace:*",
     "@faker-js/faker": "^10.0.0",
     "@nestjs/swagger": "^11.2.0",
     "@nestjs/testing": "patch:@nestjs/testing@npm%3A10.4.15#~/.yarn/patches/@nestjs-testing-npm-10.4.15-d591a1705a.patch",

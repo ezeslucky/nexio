@@ -2,9 +2,9 @@ import {
   type DropTargetDropEvent,
   type DropTargetOptions,
   useDropTarget,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
 
 import { EmptyNodeChildren } from '../../layouts/empty-node-children';
 import { draggedOverHighlight } from './empty.css';
@@ -13,8 +13,8 @@ export const FolderEmpty = ({
   canDrop,
   onDrop,
 }: {
-  onDrop?: (data: DropTargetDropEvent<AffineDNDData>) => void;
-  canDrop?: DropTargetOptions<AffineDNDData>['canDrop'];
+  onDrop?: (data: DropTargetDropEvent<NexioDNDData>) => void;
+  canDrop?: DropTargetOptions<NexioDNDData>['canDrop'];
 }) => {
   const { dropTargetRef } = useDropTarget(
     () => ({
@@ -27,7 +27,7 @@ export const FolderEmpty = ({
   const t = useI18n();
   return (
     <EmptyNodeChildren ref={dropTargetRef} className={draggedOverHighlight}>
-      {t['com.affine.rootAppSidebar.organize.empty-folder']()}
+      {t['com.nexio.rootAppSidebar.organize.empty-folder']()}
     </EmptyNodeChildren>
   );
 };

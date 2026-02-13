@@ -1,5 +1,5 @@
-import type { EdgelessTextBlockComponent } from '@blocksuite/affine/blocks/edgeless-text';
-import { Bound } from '@blocksuite/affine/global/gfx';
+import type { EdgelessTextBlockComponent } from '@blocksuite/nexio/blocks/edgeless-text';
+import { Bound } from '@blocksuite/nexio/global/gfx';
 import { expect, type Page } from '@playwright/test';
 
 import {
@@ -83,10 +83,10 @@ test.describe('edgeless text block', () => {
     await pressEnter(page);
     await type(page, 'ccc');
 
-    await assertBlockFlavour(page, 4, 'affine:edgeless-text');
-    await assertBlockFlavour(page, 5, 'affine:paragraph');
-    await assertBlockFlavour(page, 6, 'affine:paragraph');
-    await assertBlockFlavour(page, 7, 'affine:paragraph');
+    await assertBlockFlavour(page, 4, 'nexio:edgeless-text');
+    await assertBlockFlavour(page, 5, 'nexio:paragraph');
+    await assertBlockFlavour(page, 6, 'nexio:paragraph');
+    await assertBlockFlavour(page, 7, 'nexio:paragraph');
     await assertBlockChildrenIds(page, '4', ['5', '6', '7']);
     await assertBlockTextContent(page, 5, 'aaa');
     await assertBlockTextContent(page, 6, 'bbb');
@@ -235,12 +235,12 @@ test.describe('edgeless text block', () => {
       delay: 100,
     });
     await waitNextFrame(page);
-    let block = page.locator('affine-edgeless-text[data-block-id="4"]');
+    let block = page.locator('nexio-edgeless-text[data-block-id="4"]');
     expect(await block.isVisible()).toBe(true);
     await page.mouse.click(0, 0);
     expect(await block.isVisible()).toBe(false);
 
-    block = page.locator('affine-edgeless-text[data-block-id="6"]');
+    block = page.locator('nexio-edgeless-text[data-block-id="6"]');
     expect(await block.isVisible()).not.toBe(true);
     await page.mouse.dblclick(130, 140, {
       delay: 100,
@@ -340,7 +340,7 @@ test.describe('edgeless text block', () => {
     await assertEdgelessTextModelRect(page, '4', new Bound(-25, -25, 128, 56));
     selectedRect = await getEdgelessSelectedRect(page);
     let textRect = await page
-      .locator('affine-edgeless-text[data-block-id="4"]')
+      .locator('nexio-edgeless-text[data-block-id="4"]')
       .boundingBox();
     expect(selectedRect).not.toBeNull();
     expect(selectedRect.width).toBeCloseTo(textRect!.width);
@@ -366,7 +366,7 @@ test.describe('edgeless text block', () => {
     await assertEdgelessTextModelRect(page, '4', new Bound(-25, -25, 83, 80));
     selectedRect = await getEdgelessSelectedRect(page);
     textRect = await page
-      .locator('affine-edgeless-text[data-block-id="4"]')
+      .locator('nexio-edgeless-text[data-block-id="4"]')
       .boundingBox();
     expect(selectedRect).not.toBeNull();
     expect(selectedRect.width).toBeCloseTo(textRect!.width);
@@ -395,7 +395,7 @@ test.describe('edgeless text block', () => {
       `${testInfo.title}_add_linked_doc.json`
     );
 
-    await page.locator('affine-reference').hover();
+    await page.locator('nexio-reference').hover();
     await page.getByLabel('Switch view').click();
     await page.getByTestId('link-to-card').click();
     await autoFit(page);
@@ -463,8 +463,8 @@ test.describe('edgeless text block', () => {
     await waitNextFrame(page);
     await type(page, 'aaaa\nbbbb\ncccc');
 
-    const edgelessText = page.locator('affine-edgeless-text');
-    const paragraph = page.locator('affine-edgeless-text affine-paragraph');
+    const edgelessText = page.locator('nexio-edgeless-text');
+    const paragraph = page.locator('nexio-edgeless-text nexio-paragraph');
 
     expect(await edgelessText.count()).toBe(1);
     expect(await paragraph.count()).toBe(3);
@@ -505,7 +505,7 @@ test.describe('edgeless text block', () => {
       1
     );
 
-    await page.locator('affine-latex-node').click();
+    await page.locator('nexio-latex-node').click();
     await waitNextFrame(page);
     await type(page, 'ccc');
     const menu = page.locator('latex-editor-menu');
@@ -524,7 +524,7 @@ test.describe('edgeless text block', () => {
       1
     );
 
-    await page.locator('affine-latex-node').click();
+    await page.locator('nexio-latex-node').click();
     await page.locator('.latex-editor-hint').click();
     await type(page, 'sss');
     await assertRichTextInlineDeltas(
@@ -610,11 +610,11 @@ test('press backspace at the start of first line when edgeless text exist', asyn
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    doc.addBlock('affine:surface', {}, rootId);
-    doc.addBlock('affine:note', {}, rootId);
+    doc.addBlock('nexio:surface', {}, rootId);
+    doc.addBlock('nexio:note', {}, rootId);
 
     // do not add paragraph block
 
@@ -637,7 +637,7 @@ test('press backspace at the start of first line when edgeless text exist', asyn
     `${testInfo.title}_note_empty.json`
   );
 
-  await page.locator('.affine-page-root-block-container').click();
+  await page.locator('.nexio-page-root-block-container').click();
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
     `${testInfo.title}_note_not_empty.json`
   );
@@ -659,7 +659,7 @@ test('undo/redo should work when changing text color', async ({ page }) => {
   await pressEscape(page, 3);
   await waitNextFrame(page);
 
-  const edgelessText = page.locator('affine-edgeless-text');
+  const edgelessText = page.locator('nexio-edgeless-text');
   await edgelessText.click();
 
   const getTextColor = async () => {

@@ -14,7 +14,7 @@ export const test = baseTest.extend<{
   page: async ({ page }, use) => {
     await page.goto('/');
     await expect(
-      page.locator('.affine-page-viewport[data-mode="page"]')
+      page.locator('.nexio-page-viewport[data-mode="page"]')
     ).toBeVisible({
       timeout: 30 * 1000,
     });

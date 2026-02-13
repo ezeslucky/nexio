@@ -9,19 +9,19 @@ export async function createDevUsers(models: Models) {
     workspaceFeatures?: WorkspaceFeatureName[];
   }[] = [
     {
-      email: 'dev@affine.pro',
+      email: 'dev@nexio.pro',
       name: 'Dev User',
       password: 'dev',
       features: ['free_plan_v1', 'unlimited_copilot', 'administrator'],
     },
     {
-      email: 'pro@affine.pro',
+      email: 'pro@nexio.pro',
       name: 'Pro User',
       password: 'pro',
       features: ['pro_plan_v1', 'unlimited_copilot', 'administrator'],
     },
     {
-      email: 'team@affine.pro',
+      email: 'team@nexio.pro',
       name: 'Team User',
       password: 'team',
       features: ['pro_plan_v1', 'unlimited_copilot', 'administrator'],

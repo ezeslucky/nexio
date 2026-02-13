@@ -120,7 +120,7 @@ export function getRequestIdFromHost(host: ArgumentsHost) {
 }
 
 export function getClientVersionFromRequest(req: Request) {
-  let version = req.headers['x-affine-version'];
+  let version = req.headers['x-nexio-version'];
   if (Array.isArray(version)) {
     version = version[0];
   }

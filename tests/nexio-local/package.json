@@ -1,0 +1,16 @@
+{
+  "name": "@nexio-test/nexio-local",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "e2e": "yarn playwright test"
+  },
+  "devDependencies": {
+    "@nexio-test/kit": "workspace:*",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
+    "@playwright/test": "=1.52.0",
+    "webpack": "^5.98.0"
+  },
+  "version": "0.22.4"
+}

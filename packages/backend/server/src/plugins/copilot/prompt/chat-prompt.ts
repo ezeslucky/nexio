@@ -1,4 +1,4 @@
-import { type Tokenizer } from '@affine/server-native';
+import { type Tokenizer } from '@nexio/server-native';
 import { Logger } from '@nestjs/common';
 import { AiPrompt } from '@prisma/client';
 import Mustache from 'mustache';
@@ -129,12 +129,12 @@ export class ChatPrompt {
       html,
     } = params;
     return {
-      'affine::date': new Date().toLocaleDateString(),
-      'affine::language': language || 'same language as the user query',
-      'affine::timezone': timezone || 'no preference',
-      'affine::hasDocsRef': Array.isArray(docs) && docs.length > 0,
-      'affine::hasFilesRef': Array.isArray(files) && files.length > 0,
-      'affine::hasSelected': !!selectedMarkdown || !!selectedSnapshot || !!html,
+      'nexio::date': new Date().toLocaleDateString(),
+      'nexio::language': language || 'same language as the user query',
+      'nexio::timezone': timezone || 'no preference',
+      'nexio::hasDocsRef': Array.isArray(docs) && docs.length > 0,
+      'nexio::hasFilesRef': Array.isArray(files) && files.length > 0,
+      'nexio::hasSelected': !!selectedMarkdown || !!selectedSnapshot || !!html,
     };
   }
 
@@ -147,7 +147,7 @@ export class ChatPrompt {
     this.checkParams(params, sessionId);
 
     const { attachments: attach, ...restParams } = Object.fromEntries(
-      Object.entries(params).filter(([k]) => !k.startsWith('affine::'))
+      Object.entries(params).filter(([k]) => !k.startsWith('nexio::'))
     );
     const paramsAttach = Array.isArray(attach) ? attach : [];
 

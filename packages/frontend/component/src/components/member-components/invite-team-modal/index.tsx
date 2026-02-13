@@ -1,9 +1,9 @@
-import { emailRegex } from '@affine/component/auth-components';
+import { emailRegex } from '@nexio/component/auth-components';
 import type {
   InviteLink,
   WorkspaceInviteLinkExpireTime,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useCallback, useEffect, useState } from 'react';
 
 import { ConfirmModal } from '../../../ui/modal';
@@ -79,8 +79,8 @@ export const InviteTeamMemberModal = ({
       width={480}
       open={open}
       onOpenChange={setOpen}
-      title={t['com.affine.payment.member.team.invite.title']()}
-      cancelText={t['com.affine.inviteModal.button.cancel']()}
+      title={t['com.nexio.payment.member.team.invite.title']()}
+      cancelText={t['com.nexio.inviteModal.button.cancel']()}
       cancelButtonOptions={{
         variant: 'secondary',
       }}
@@ -92,8 +92,8 @@ export const InviteTeamMemberModal = ({
       }}
       confirmText={
         inviteMethod === 'email'
-          ? t['com.affine.payment.member.team.invite.send-invites']()
-          : t['com.affine.payment.member.team.invite.done']()
+          ? t['com.nexio.payment.member.team.invite.send-invites']()
+          : t['com.nexio.payment.member.team.invite.done']()
       }
       confirmButtonOptions={{
         loading: isMutating,

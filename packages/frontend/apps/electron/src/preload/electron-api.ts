@@ -8,19 +8,19 @@ import { Subject } from 'rxjs';
 import { z } from 'zod';
 
 import {
-  AFFINE_API_CHANNEL_NAME,
-  AFFINE_EVENT_CHANNEL_NAME,
+  NEXIO_API_CHANNEL_NAME,
+  NEXIO_EVENT_CHANNEL_NAME,
   type ExposedMeta,
   type HelperToRenderer,
   type RendererToHelper,
 } from '../shared/type';
 
 type Schema =
-  | 'affine'
-  | 'affine-canary'
-  | 'affine-beta'
-  | 'affine-internal'
-  | 'affine-dev';
+  | 'nexio'
+  | 'nexio-canary'
+  | 'nexio-beta'
+  | 'nexio-internal'
+  | 'nexio-dev';
 
 // todo: remove duplicated codes
 const ReleaseTypeSchema = z.enum(['stable', 'beta', 'canary', 'internal']);
@@ -28,8 +28,8 @@ const envBuildType = (process.env.BUILD_TYPE || 'canary').trim().toLowerCase();
 const buildType = ReleaseTypeSchema.parse(envBuildType);
 const isDev = process.env.NODE_ENV === 'development';
 let scheme =
-  buildType === 'stable' ? 'affine' : (`affine-${envBuildType}` as Schema);
-scheme = isDev ? 'affine-dev' : scheme;
+  buildType === 'stable' ? 'nexio' : (`nexio-${envBuildType}` as Schema);
+scheme = isDev ? 'nexio-dev' : scheme;
 
 export const appInfo = {
   electron: true,
@@ -64,7 +64,7 @@ function getMainAPIs() {
           name,
           (...args: any[]) => {
             return ipcRenderer.invoke(
-              AFFINE_API_CHANNEL_NAME,
+              NEXIO_API_CHANNEL_NAME,
               channel,
               ...args
             );
@@ -84,7 +84,7 @@ function getMainAPIs() {
     // channel -> callback[]
     const listenersMap = new Map<string, ((...args: any[]) => void)[]>();
 
-    ipcRenderer.on(AFFINE_EVENT_CHANNEL_NAME, (_event, channel, ...args) => {
+    ipcRenderer.on(NEXIO_EVENT_CHANNEL_NAME, (_event, channel, ...args) => {
       if (typeof channel !== 'string') {
         console.error('invalid ipc event', channel);
         return;

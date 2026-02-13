@@ -1,30 +1,30 @@
 import type {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import type { SubscriptionService } from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { PeekViewService } from '@affine/core/modules/peek-view';
-import type { AppThemeService } from '@affine/core/modules/theme';
-import type { WorkbenchService } from '@affine/core/modules/workbench';
+} from '@nexio/core/modules/ai-button';
+import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
+import type { SubscriptionService } from '@nexio/core/modules/cloud';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { PeekViewService } from '@nexio/core/modules/peek-view';
+import type { AppThemeService } from '@nexio/core/modules/theme';
+import type { WorkbenchService } from '@nexio/core/modules/workbench';
 import type {
   ContextEmbedStatus,
   CopilotChatHistoryFragment,
   UpdateChatSessionInput,
-} from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type NotificationService } from '@blocksuite/affine/shared/services';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
+} from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { type NotificationService } from '@blocksuite/nexio/shared/services';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType, Store } from '@blocksuite/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { keyed } from 'lit/directives/keyed.js';
 
-import { AffineIcon } from '../_common/icons';
+import { NexioIcon } from '../_common/icons';
 import type { SearchMenuConfig } from '../components/ai-chat-add-context';
 import type { DocDisplayConfig } from '../components/ai-chat-chips';
 import type { ChatContextValue } from '../components/ai-chat-content';
@@ -74,8 +74,8 @@ export class ChatPanel extends SignalWatcher(
 
       .chat-loading-title {
         font-weight: 600;
-        font-size: var(--affine-font-sm);
-        color: var(--affine-text-secondary-color);
+        font-size: var(--nexio-font-sm);
+        color: var(--nexio-text-secondary-color);
       }
     }
   `;
@@ -108,16 +108,16 @@ export class ChatPanel extends SignalWatcher(
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
-  accessor affineWorkbenchService!: WorkbenchService;
+  accessor nexioWorkbenchService!: WorkbenchService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -160,8 +160,8 @@ export class ChatPanel extends SignalWatcher(
   }
 
   private readonly getSessionIdFromUrl = () => {
-    if (this.affineWorkbenchService) {
-      const { workbench } = this.affineWorkbenchService;
+    if (this.nexioWorkbenchService) {
+      const { workbench } = this.nexioWorkbenchService;
       const location = workbench.location$.value;
       const searchParams = new URLSearchParams(location.search);
       const sessionId = searchParams.get('sessionId');
@@ -226,7 +226,7 @@ export class ChatPanel extends SignalWatcher(
     const sessionId = await AIProvider.session?.createSession({
       docId: this.doc.id,
       workspaceId: this.doc.workspace.id,
-      promptName: 'Chat With AFFiNE AI',
+      promptName: 'Chat With NEXIO AI',
       reuseLatestChat: false,
       ...options,
     });
@@ -299,8 +299,8 @@ export class ChatPanel extends SignalWatcher(
         return;
       }
       await this.openSession(sessionId);
-    } else if (this.affineWorkbenchService) {
-      const { workbench } = this.affineWorkbenchService;
+    } else if (this.nexioWorkbenchService) {
+      const { workbench } = this.nexioWorkbenchService;
       if (this.session?.pinned) {
         workbench.open(`/${docId}`, { at: 'active' });
       } else {
@@ -410,9 +410,9 @@ export class ChatPanel extends SignalWatcher(
     if (!this.isInitialized) {
       return html`<div class="chat-loading-container">
         <div class="chat-loading">
-          ${AffineIcon('var(--affine-icon-secondary)')}
+          ${NexioIcon('var(--nexio-icon-secondary)')}
           <div class="chat-loading-title">
-            <span> AFFiNE AI is loading history... </span>
+            <span> NEXIO AI is loading history... </span>
           </div>
         </div>
       </div>`;
@@ -429,9 +429,9 @@ export class ChatPanel extends SignalWatcher(
         .searchMenuConfig=${this.searchMenuConfig}
         .docDisplayConfig=${this.docDisplayConfig}
         .extensions=${this.extensions}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
-        .affineThemeService=${this.affineThemeService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+        .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
+        .nexioThemeService=${this.nexioThemeService}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .session=${this.session}
@@ -456,9 +456,9 @@ export class ChatPanel extends SignalWatcher(
           .searchMenuConfig=${this.searchMenuConfig}
           .docDisplayConfig=${this.docDisplayConfig}
           .extensions=${this.extensions}
-          .affineFeatureFlagService=${this.affineFeatureFlagService}
-          .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
-          .affineThemeService=${this.affineThemeService}
+          .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+          .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
+          .nexioThemeService=${this.nexioThemeService}
           .notificationService=${this.notificationService}
           .aiDraftService=${this.aiDraftService}
           .aiToolsConfigService=${this.aiToolsConfigService}

@@ -1,19 +1,19 @@
-import type { RadioItem } from '@affine/component';
-import { RadioGroup, Switch } from '@affine/component';
+import type { RadioItem } from '@nexio/component';
+import { RadioGroup, Switch } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { LanguageMenu } from '@affine/core/components/affine/language-menu';
-import { TraySettingService } from '@affine/core/modules/editor-setting/services/tray-settings';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { LanguageMenu } from '@nexio/core/components/nexio/language-menu';
+import { TraySettingService } from '@nexio/core/modules/editor-setting/services/tray-settings';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';
 
-import { useAppSettingHelper } from '../../../../../components/hooks/affine/use-app-setting-helper';
+import { useAppSettingHelper } from '../../../../../components/hooks/nexio/use-app-setting-helper';
 import { OpenInAppLinksMenu } from './links';
 import { settingWrapper } from './style.css';
 import { ThemeEditorSetting } from './theme-editor-setting';
@@ -22,17 +22,17 @@ export const getThemeOptions = (t: ReturnType<typeof useI18n>) =>
   [
     {
       value: 'system',
-      label: t['com.affine.themeSettings.system'](),
+      label: t['com.nexio.themeSettings.system'](),
       testId: 'system-theme-trigger',
     },
     {
       value: 'light',
-      label: t['com.affine.themeSettings.light'](),
+      label: t['com.nexio.themeSettings.light'](),
       testId: 'light-theme-trigger',
     },
     {
       value: 'dark',
-      label: t['com.affine.themeSettings.dark'](),
+      label: t['com.nexio.themeSettings.dark'](),
       testId: 'dark-theme-trigger',
     },
   ] satisfies RadioItem[];
@@ -66,11 +66,11 @@ const MenubarSetting = () => {
   return (
     <SettingWrapper
       id="menubar"
-      title={t['com.affine.appearanceSettings.menubar.title']()}
+      title={t['com.nexio.appearanceSettings.menubar.title']()}
     >
       <SettingRow
-        name={t['com.affine.appearanceSettings.menubar.toggle']()}
-        desc={t['com.affine.appearanceSettings.menubar.description']()}
+        name={t['com.nexio.appearanceSettings.menubar.toggle']()}
+        desc={t['com.nexio.appearanceSettings.menubar.description']()}
       >
         <Switch
           checked={enabled}
@@ -93,20 +93,20 @@ export const AppearanceSettings = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.affine.appearanceSettings.title']()}
-        subtitle={t['com.affine.appearanceSettings.subtitle']()}
+        title={t['com.nexio.appearanceSettings.title']()}
+        subtitle={t['com.nexio.appearanceSettings.subtitle']()}
       />
 
-      <SettingWrapper title={t['com.affine.appearanceSettings.theme.title']()}>
+      <SettingWrapper title={t['com.nexio.appearanceSettings.theme.title']()}>
         <SettingRow
-          name={t['com.affine.appearanceSettings.color.title']()}
-          desc={t['com.affine.appearanceSettings.color.description']()}
+          name={t['com.nexio.appearanceSettings.color.title']()}
+          desc={t['com.nexio.appearanceSettings.color.description']()}
         >
           <ThemeSettings />
         </SettingRow>
         <SettingRow
-          name={t['com.affine.appearanceSettings.language.title']()}
-          desc={t['com.affine.appearanceSettings.language.description']()}
+          name={t['com.nexio.appearanceSettings.language.title']()}
+          desc={t['com.nexio.appearanceSettings.language.description']()}
         >
           <div className={settingWrapper}>
             <LanguageMenu />
@@ -114,8 +114,8 @@ export const AppearanceSettings = () => {
         </SettingRow>
         {BUILD_CONFIG.isElectron ? (
           <SettingRow
-            name={t['com.affine.appearanceSettings.clientBorder.title']()}
-            desc={t['com.affine.appearanceSettings.clientBorder.description']()}
+            name={t['com.nexio.appearanceSettings.clientBorder.title']()}
+            desc={t['com.nexio.appearanceSettings.clientBorder.description']()}
             data-testid="client-border-style-trigger"
           >
             <Switch
@@ -128,10 +128,10 @@ export const AppearanceSettings = () => {
       </SettingWrapper>
 
       {BUILD_CONFIG.isWeb && !environment.isMobile ? (
-        <SettingWrapper title={t['com.affine.setting.appearance.links']()}>
+        <SettingWrapper title={t['com.nexio.setting.appearance.links']()}>
           <SettingRow
-            name={t['com.affine.setting.appearance.open-in-app']()}
-            desc={t['com.affine.setting.appearance.open-in-app.hint']()}
+            name={t['com.nexio.setting.appearance.open-in-app']()}
+            desc={t['com.nexio.setting.appearance.open-in-app.hint']()}
             data-testid="open-in-app-links-trigger"
           >
             <OpenInAppLinksMenu />
@@ -140,13 +140,13 @@ export const AppearanceSettings = () => {
       ) : null}
 
       <SettingWrapper
-        title={t['com.affine.appearanceSettings.sidebar.title']()}
+        title={t['com.nexio.appearanceSettings.sidebar.title']()}
       >
         {BUILD_CONFIG.isElectron ? (
           <SettingRow
-            name={t['com.affine.appearanceSettings.noisyBackground.title']()}
+            name={t['com.nexio.appearanceSettings.noisyBackground.title']()}
             desc={t[
-              'com.affine.appearanceSettings.noisyBackground.description'
+              'com.nexio.appearanceSettings.noisyBackground.description'
             ]()}
           >
             <Switch
@@ -159,9 +159,9 @@ export const AppearanceSettings = () => {
         ) : null}
         {BUILD_CONFIG.isElectron && environment.isMacOs && (
           <SettingRow
-            name={t['com.affine.appearanceSettings.translucentUI.title']()}
+            name={t['com.nexio.appearanceSettings.translucentUI.title']()}
             desc={t[
-              'com.affine.appearanceSettings.translucentUI.description'
+              'com.nexio.appearanceSettings.translucentUI.description'
             ]()}
           >
             <Switch
@@ -174,10 +174,10 @@ export const AppearanceSettings = () => {
         )}
         <SettingRow
           name={t[
-            'com.affine.appearanceSettings.showLinkedDocInSidebar.title'
+            'com.nexio.appearanceSettings.showLinkedDocInSidebar.title'
           ]()}
           desc={t[
-            'com.affine.appearanceSettings.showLinkedDocInSidebar.description'
+            'com.nexio.appearanceSettings.showLinkedDocInSidebar.description'
           ]()}
         >
           <Switch

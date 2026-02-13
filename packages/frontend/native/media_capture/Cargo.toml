@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name    = "affine_media_capture"
+name    = "nexio_media_capture"
 version = "0.0.0"
 
 [lib]

@@ -1,10 +1,10 @@
-import type { InlineEditProps } from '@affine/component';
-import { InlineEdit } from '@affine/component';
-import { useGuard } from '@affine/core/components/guard';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocService, DocsService } from '@affine/core/modules/doc';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { track } from '@affine/track';
+import type { InlineEditProps } from '@nexio/component';
+import { InlineEdit } from '@nexio/component';
+import { useGuard } from '@nexio/core/components/guard';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { DocService, DocsService } from '@nexio/core/modules/doc';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';

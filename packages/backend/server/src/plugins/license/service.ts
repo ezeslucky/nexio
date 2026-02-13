@@ -171,7 +171,7 @@ export class LicenseService {
       throw new WorkspaceLicenseAlreadyExists();
     }
 
-    const data = await this.fetchAffinePro<License>(
+    const data = await this.fetchNEXIOPro<License>(
       `/api/team/licenses/${licenseKey}/activate`,
       {
         method: 'POST',
@@ -241,13 +241,13 @@ export class LicenseService {
   }
 
   async deactivateTeamLicense(license: InstalledLicense) {
-    await this.fetchAffinePro(`/api/team/licenses/${license.key}/deactivate`, {
+    await this.fetchNEXIOPro(`/api/team/licenses/${license.key}/deactivate`, {
       method: 'POST',
     });
   }
 
   async updateTeamRecurring(key: string, recurring: SubscriptionRecurring) {
-    await this.fetchAffinePro(`/api/team/licenses/${key}/recurring`, {
+    await this.fetchNEXIOPro(`/api/team/licenses/${key}/recurring`, {
       method: 'POST',
       body: JSON.stringify({
         recurring,
@@ -266,7 +266,7 @@ export class LicenseService {
       throw new LicenseNotFound();
     }
 
-    return this.fetchAffinePro<{ url: string }>(
+    return this.fetchNEXIOPro<{ url: string }>(
       `/api/team/licenses/${license.key}/create-customer-portal`,
       {
         method: 'POST',
@@ -298,7 +298,7 @@ export class LicenseService {
     }
 
     const count = await this.models.workspaceUser.chargedCount(workspaceId);
-    await this.fetchAffinePro(`/api/team/licenses/${license.key}/seats`, {
+    await this.fetchNEXIOPro(`/api/team/licenses/${license.key}/seats`, {
       method: 'POST',
       body: JSON.stringify({
         seats: count,
@@ -353,7 +353,7 @@ export class LicenseService {
 
   private async revalidateRecurringLicense(license: InstalledLicense) {
     try {
-      const res = await this.fetchAffinePro<License>(
+      const res = await this.fetchNEXIOPro<License>(
         `/api/team/licenses/${license.key}/health`,
         {
           headers: {
@@ -402,12 +402,12 @@ export class LicenseService {
     }
   }
 
-  private async fetchAffinePro<T = any>(
+  private async fetchNEXIOPro<T = any>(
     path: string,
     init?: RequestInit
   ): Promise<T & { res: Response }> {
     const endpoint =
-      process.env.AFFINE_PRO_SERVER_ENDPOINT ?? 'https://app.affine.pro';
+      process.env.NEXIO_PRO_SERVER_ENDPOINT ?? 'https://app.nexio.pro';
 
     try {
       const res = await fetch(endpoint + path, {
@@ -436,7 +436,7 @@ export class LicenseService {
       throw new InternalServerError(
         e instanceof Error
           ? e.message
-          : 'Failed to contact with https://app.affine.pro'
+          : 'Failed to contact with https://app.nexio.pro'
       );
     }
   }
@@ -477,9 +477,9 @@ export class LicenseService {
   }
 
   private decryptWorkspaceTeamLicense(workspaceId: string, buf: Buffer) {
-    if (!this.crypto.AFFiNEProPublicKey) {
+    if (!this.crypto.NEXIOProPublicKey) {
       throw new InternalServerError(
-        'License public key is not loaded. Please contact with Affine support.'
+        'License public key is not loaded. Please contact with NEXIO support.'
       );
     }
 
@@ -491,7 +491,7 @@ export class LicenseService {
     verifier.update(iv);
     verifier.update(payloadStr);
     const valid = verifier.verify(
-      this.crypto.AFFiNEProPublicKey,
+      this.crypto.NEXIOProPublicKey,
       signature,
       'hex'
     );
@@ -514,7 +514,7 @@ export class LicenseService {
     if (new Date(parseResult.data.expiresAt) < new Date()) {
       throw new InvalidLicenseToActivate({
         reason:
-          'License file has expired. Please contact with Affine support to fetch a latest one.',
+          'License file has expired. Please contact with NEXIO support to fetch a latest one.',
       });
     }
 
@@ -528,9 +528,9 @@ export class LicenseService {
   }
 
   private decryptLicense(buf: Buffer) {
-    if (!this.crypto.AFFiNEProLicenseAESKey) {
+    if (!this.crypto.NEXIOProLicenseAESKey) {
       throw new InternalServerError(
-        'License AES key is not loaded. Please contact with Affine support.'
+        'License AES key is not loaded. Please contact with NEXIO support.'
       );
     }
 
@@ -550,7 +550,7 @@ export class LicenseService {
 
       const decipher = createDecipheriv(
         'aes-256-gcm',
-        this.crypto.AFFiNEProLicenseAESKey,
+        this.crypto.NEXIOProLicenseAESKey,
         iv,
         {
           authTagLength,

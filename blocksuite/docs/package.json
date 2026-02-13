@@ -15,7 +15,7 @@
     "build": "typedoc"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/nexio": "workspace:*"
   },
   "version": "0.22.4"
 }

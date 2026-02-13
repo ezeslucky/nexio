@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { GetWorkspaceConfigQuery, InviteLink } from '@affine/graphql';
+import { DebugLogger } from '@nexio/debug';
+import type { GetWorkspaceConfigQuery, InviteLink } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

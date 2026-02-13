@@ -4,11 +4,11 @@ import {
   RadioGroup,
   type RadioItem,
   Slider,
-} from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
+} from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
+import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
 import {
   ConnectorMode,
   DefaultTheme,
@@ -19,8 +19,8 @@ import {
   PointStyle,
   StrokeStyle,
   TextAlign,
-} from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
@@ -64,12 +64,12 @@ export const ConnectorSettings = () => {
     () => [
       {
         value: ConnecterStyle.General,
-        label: t['com.affine.settings.editorSettings.edgeless.style.general'](),
+        label: t['com.nexio.settings.editorSettings.edgeless.style.general'](),
       },
       {
         value: ConnecterStyle.Scribbled,
         label:
-          t['com.affine.settings.editorSettings.edgeless.style.scribbled'](),
+          t['com.nexio.settings.editorSettings.edgeless.style.scribbled'](),
       },
     ],
     [t]
@@ -93,21 +93,21 @@ export const ConnectorSettings = () => {
         value: ConnectorMode.Orthogonal as any,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.connecter.connector-shape.elbowed'
+            'com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.elbowed'
           ](),
       },
       {
         value: ConnectorMode.Curve as any,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.connecter.connector-shape.curve'
+            'com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.curve'
           ](),
       },
       {
         value: ConnectorMode.Straight as any,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.connecter.connector-shape.straight'
+            'com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.straight'
           ](),
       },
     ],
@@ -128,12 +128,12 @@ export const ConnectorSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.affine.settings.editorSettings.edgeless.note.border.solid'](),
+          t['com.nexio.settings.editorSettings.edgeless.note.border.solid'](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.affine.settings.editorSettings.edgeless.note.border.dash'](),
+          t['com.nexio.settings.editorSettings.edgeless.note.border.dash'](),
       },
     ],
     [t]
@@ -219,21 +219,21 @@ export const ConnectorSettings = () => {
         value: TextAlign.Left,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.left'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.left'
           ](),
       },
       {
         value: TextAlign.Center,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.center'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.center'
           ](),
       },
       {
         value: TextAlign.Right,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.right'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.right'
           ](),
       },
     ],
@@ -365,14 +365,14 @@ export const ConnectorSettings = () => {
   return (
     <>
       <EdgelessSnapshot
-        title={t['com.affine.settings.editorSettings.edgeless.connecter']()}
+        title={t['com.nexio.settings.editorSettings.edgeless.connecter']()}
         docName="connector"
         keyName="connector"
         getElements={getElements}
       />
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.color'
+          'com.nexio.settings.editorSettings.edgeless.connecter.color'
         ]()}
         desc={''}
       >
@@ -391,7 +391,7 @@ export const ConnectorSettings = () => {
         ) : null}
       </SettingRow>
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.style']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.style']()}
         desc={''}
       >
         <RadioGroup
@@ -404,7 +404,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.connector-shape'
+          'com.nexio.settings.editorSettings.edgeless.connecter.connector-shape'
         ]()}
         desc={''}
       >
@@ -418,7 +418,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.border-style'
+          'com.nexio.settings.editorSettings.edgeless.connecter.border-style'
         ]()}
         desc={''}
       >
@@ -432,7 +432,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.border-thickness'
+          'com.nexio.settings.editorSettings.edgeless.connecter.border-thickness'
         ]()}
         desc={''}
       >
@@ -447,7 +447,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.start-endpoint'
+          'com.nexio.settings.editorSettings.edgeless.connecter.start-endpoint'
         ]()}
         desc={''}
       >
@@ -462,7 +462,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.connecter.end-endpoint'
+          'com.nexio.settings.editorSettings.edgeless.connecter.end-endpoint'
         ]()}
         desc={''}
       >
@@ -477,7 +477,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.shape.text-color'
+          'com.nexio.settings.editorSettings.edgeless.shape.text-color'
         ]()}
         desc={''}
       >
@@ -497,7 +497,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-family'
+          'com.nexio.settings.editorSettings.edgeless.text.font-family'
         ]()}
         desc={''}
       >
@@ -512,7 +512,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.shape.font-size'
+          'com.nexio.settings.editorSettings.edgeless.shape.font-size'
         ]()}
         desc={''}
       >
@@ -527,7 +527,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-style'
+          'com.nexio.settings.editorSettings.edgeless.text.font-style'
         ]()}
         desc={''}
       >
@@ -542,7 +542,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-weight'
+          'com.nexio.settings.editorSettings.edgeless.text.font-weight'
         ]()}
         desc={''}
       >
@@ -557,7 +557,7 @@ export const ConnectorSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.shape.text-alignment'
+          'com.nexio.settings.editorSettings.edgeless.shape.text-alignment'
         ]()}
         desc={''}
       >

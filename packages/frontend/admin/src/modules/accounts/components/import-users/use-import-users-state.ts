@@ -1,4 +1,4 @@
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useCallback, useState } from 'react';
 import { toast } from 'sonner';
 

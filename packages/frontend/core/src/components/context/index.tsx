@@ -1,16 +1,16 @@
-import { ConfirmModalProvider, PromptModalProvider } from '@affine/component';
-import { ProviderComposer } from '@affine/component/provider-composer';
-import { ThemeProvider } from '@affine/core/components/theme-provider';
+import { ConfirmModalProvider, PromptModalProvider } from '@nexio/component';
+import { ProviderComposer } from '@nexio/component/provider-composer';
+import { ThemeProvider } from '@nexio/core/components/theme-provider';
 import type { createStore } from 'jotai';
 import { Provider } from 'jotai';
 import type { PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
-export type AffineContextProps = PropsWithChildren<{
+export type NexioContextProps = PropsWithChildren<{
   store?: ReturnType<typeof createStore>;
 }>;
 
-export function AffineContext(props: AffineContextProps) {
+export function NexioContext(props: NexioContextProps) {
   return (
     <ProviderComposer
       contexts={useMemo(

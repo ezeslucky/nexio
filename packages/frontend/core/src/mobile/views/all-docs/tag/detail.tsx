@@ -1,13 +1,13 @@
-import { Wrapper } from '@affine/component';
-import { EmptyDocs } from '@affine/core/components/affine/empty';
+import { Wrapper } from '@nexio/component';
+import { EmptyDocs } from '@nexio/core/components/nexio/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import { Page } from '@affine/core/mobile/components/page';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import type { Tag } from '@affine/core/modules/tag';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import { Page } from '@nexio/core/mobile/components/page';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import type { Tag } from '@nexio/core/modules/tag';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useState } from 'react';
 

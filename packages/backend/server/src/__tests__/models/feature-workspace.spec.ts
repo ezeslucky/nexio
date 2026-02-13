@@ -27,7 +27,7 @@ test.before(async t => {
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   const u1 = await t.context.module.get(UserModel).create({
-    email: 'u1@affine.pro',
+    email: 'u1@nexio.pro',
     registered: true,
   });
 

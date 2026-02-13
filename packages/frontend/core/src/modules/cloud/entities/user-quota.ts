@@ -1,4 +1,4 @@
-import type { QuotaQuery } from '@affine/graphql';
+import type { QuotaQuery } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

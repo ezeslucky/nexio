@@ -3,10 +3,10 @@ import { Request } from 'express';
 
 import { getClientVersionFromRequest } from '../request';
 
-test('should get client version from x-affine-version header', t => {
+test('should get client version from x-nexio-version header', t => {
   const req = {
     headers: {
-      'x-affine-version': '0.22.2',
+      'x-nexio-version': '0.22.2',
     },
   } as unknown as Request;
 
@@ -14,14 +14,14 @@ test('should get client version from x-affine-version header', t => {
 
   const req2 = {
     headers: {
-      'x-affine-version': ['0.22.2', '0.23.0-beta.2'],
+      'x-nexio-version': ['0.22.2', '0.23.0-beta.2'],
     },
   } as unknown as Request;
 
   t.is(getClientVersionFromRequest(req2), '0.22.2');
 });
 
-test('should not get client version from x-affine-version header', t => {
+test('should not get client version from x-nexio-version header', t => {
   const req = {
     headers: {
       'user-agent':

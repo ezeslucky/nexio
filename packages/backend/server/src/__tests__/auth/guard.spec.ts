@@ -45,7 +45,7 @@ test.before(async t => {
   });
 
   auth = app.get(AuthService);
-  u1 = await auth.signUp('u1@affine.pro', '1');
+  u1 = await auth.signUp('u1@nexio.pro', '1');
 
   const models = app.get(Models);
   const session = await models.session.createSession();

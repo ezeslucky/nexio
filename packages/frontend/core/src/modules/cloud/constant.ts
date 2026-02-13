@@ -2,7 +2,7 @@ import {
   OAuthProviderType,
   ServerDeploymentType,
   ServerFeature,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import type { ServerConfig, ServerMetadata } from './types';
 
@@ -10,13 +10,13 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
   environment.isSelfHosted
     ? [
         {
-          id: 'affine-cloud',
+          id: 'nexio-cloud',
           baseUrl: location.origin,
           // selfhosted baseUrl is `location.origin`
           // this is ok for web app, but not for desktop app
           // since we never build desktop app in selfhosted mode, so it's fine
           config: {
-            serverName: 'Affine Selfhost',
+            serverName: 'Nexio Selfhost',
             features: [],
             oauthProviders: [],
             type: ServerDeploymentType.Selfhosted,
@@ -32,12 +32,12 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
     : BUILD_CONFIG.debug
       ? [
           {
-            id: 'affine-cloud',
+            id: 'nexio-cloud',
             baseUrl: BUILD_CONFIG.isElectron
               ? 'http://localhost:8080'
               : location.origin,
             config: {
-              serverName: 'Affine Cloud',
+              serverName: 'Nexio Cloud',
               features: [
                 ServerFeature.Indexer,
                 ServerFeature.Copilot,
@@ -50,7 +50,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                 OAuthProviderType.Google,
                 OAuthProviderType.Apple,
               ],
-              type: ServerDeploymentType.Affine,
+              type: ServerDeploymentType.Nexio,
               credentialsRequirement: {
                 password: {
                   minLength: 8,
@@ -63,14 +63,14 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
       : BUILD_CONFIG.appBuildType === 'stable'
         ? [
             {
-              id: 'affine-cloud',
+              id: 'nexio-cloud',
               baseUrl: BUILD_CONFIG.isNative
                 ? BUILD_CONFIG.isIOS
-                  ? 'https://apple.getaffineapp.com'
-                  : 'https://app.affine.pro'
+                  ? 'https://apple.getnexioapp.com'
+                  : 'https://app.nexio.pro'
                 : location.origin,
               config: {
-                serverName: 'Affine Cloud',
+                serverName: 'Nexio Cloud',
                 features: [
                   ServerFeature.Indexer,
                   ServerFeature.Copilot,
@@ -83,7 +83,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                   OAuthProviderType.Google,
                   OAuthProviderType.Apple,
                 ],
-                type: ServerDeploymentType.Affine,
+                type: ServerDeploymentType.Nexio,
                 credentialsRequirement: {
                   password: {
                     minLength: 8,
@@ -96,14 +96,14 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
         : BUILD_CONFIG.appBuildType === 'beta'
           ? [
               {
-                id: 'affine-cloud',
+                id: 'nexio-cloud',
                 baseUrl: BUILD_CONFIG.isNative
                   ? BUILD_CONFIG.isIOS
-                    ? 'https://apple.getaffineapp.com'
-                    : 'https://insider.affine.pro'
+                    ? 'https://apple.getnexioapp.com'
+                    : 'https://insider.nexio.pro'
                   : location.origin,
                 config: {
-                  serverName: 'Affine Cloud',
+                  serverName: 'Nexio Cloud',
                   features: [
                     ServerFeature.Indexer,
                     ServerFeature.Copilot,
@@ -116,7 +116,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                     OAuthProviderType.Google,
                     OAuthProviderType.Apple,
                   ],
-                  type: ServerDeploymentType.Affine,
+                  type: ServerDeploymentType.Nexio,
                   credentialsRequirement: {
                     password: {
                       minLength: 8,
@@ -129,10 +129,10 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
           : BUILD_CONFIG.appBuildType === 'internal'
             ? [
                 {
-                  id: 'affine-cloud',
-                  baseUrl: 'https://insider.affine.pro',
+                  id: 'nexio-cloud',
+                  baseUrl: 'https://insider.nexio.pro',
                   config: {
-                    serverName: 'Affine Cloud',
+                    serverName: 'Nexio Cloud',
                     features: [
                       ServerFeature.Indexer,
                       ServerFeature.Copilot,
@@ -145,7 +145,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                       OAuthProviderType.Google,
                       OAuthProviderType.Apple,
                     ],
-                    type: ServerDeploymentType.Affine,
+                    type: ServerDeploymentType.Nexio,
                     credentialsRequirement: {
                       password: {
                         minLength: 8,
@@ -158,12 +158,12 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
             : BUILD_CONFIG.appBuildType === 'canary'
               ? [
                   {
-                    id: 'affine-cloud',
+                    id: 'nexio-cloud',
                     baseUrl: BUILD_CONFIG.isNative
-                      ? 'https://affine.fail'
+                      ? 'https://nexio.fail'
                       : location.origin,
                     config: {
-                      serverName: 'Affine Cloud',
+                      serverName: 'Nexio Cloud',
                       features: [
                         ServerFeature.Indexer,
                         ServerFeature.Copilot,
@@ -176,7 +176,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                         OAuthProviderType.Google,
                         OAuthProviderType.Apple,
                       ],
-                      type: ServerDeploymentType.Affine,
+                      type: ServerDeploymentType.Nexio,
                       credentialsRequirement: {
                         password: {
                           minLength: 8,

@@ -1,1 +1,1 @@
-export const AFFINE_EDGELESS_COPILOT_WIDGET = 'affine-edgeless-copilot-widget';
+export const NEXIO_EDGELESS_COPILOT_WIDGET = 'nexio-edgeless-copilot-widget';

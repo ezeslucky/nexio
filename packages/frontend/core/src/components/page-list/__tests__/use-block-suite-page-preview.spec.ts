@@ -3,9 +3,9 @@
  */
 import 'fake-indexeddb/auto';
 
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { type Store, Text } from '@blocksuite/affine/store';
-import { TestWorkspace } from '@blocksuite/affine/store/test';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { type Store, Text } from '@blocksuite/nexio/store';
+import { TestWorkspace } from '@blocksuite/nexio/store/test';
 import { renderHook } from '@testing-library/react';
 import { useAtomValue } from 'jotai';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
@@ -27,11 +27,11 @@ beforeEach(async () => {
   const initPage = async (page: Store) => {
     page.load();
     expect(page).not.toBeNull();
-    const pageBlockId = page.addBlock('affine:page', {
+    const pageBlockId = page.addBlock('nexio:page', {
       title: new Text(''),
     });
-    const frameId = page.addBlock('affine:note', {}, pageBlockId);
-    page.addBlock('affine:paragraph', {}, frameId);
+    const frameId = page.addBlock('nexio:note', {}, pageBlockId);
+    page.addBlock('nexio:paragraph', {}, frameId);
   };
   const store = docCollection.createDoc('page0').getStore({ extensions });
   await initPage(store);
@@ -44,11 +44,11 @@ describe('useBlockSuitePagePreview', () => {
       throw new Error('Page not found');
     }
     const id = page.addBlock(
-      'affine:paragraph',
+      'nexio:paragraph',
       {
         text: new Text('Hello, world!'),
       },
-      page.getModelsByFlavour('affine:note')[0].id
+      page.getModelsByFlavour('nexio:note')[0].id
     );
     const hook = renderHook(() => useAtomValue(useBlockSuitePagePreview(page)));
     expect(hook.result.current).toBe('Hello, world!');
@@ -61,11 +61,11 @@ describe('useBlockSuitePagePreview', () => {
 
     // Insert before
     page.addBlock(
-      'affine:paragraph',
+      'nexio:paragraph',
       {
         text: new Text('First block!'),
       },
-      page.getModelsByFlavour('affine:note')[0].id,
+      page.getModelsByFlavour('nexio:note')[0].id,
       0
     );
     await new Promise(resolve => setTimeout(resolve, 100));

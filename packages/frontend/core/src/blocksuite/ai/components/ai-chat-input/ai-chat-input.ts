@@ -1,16 +1,16 @@
 import type {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import type { SubscriptionService } from '@affine/core/modules/cloud';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@nexio/core/modules/ai-button';
+import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
+import type { SubscriptionService } from '@nexio/core/modules/cloud';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { ArrowUpBigIcon, CloseIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
@@ -77,7 +77,7 @@ export class AIChatInput extends SignalWatcher(
 
     .chat-panel-input {
       --input-border-width: 0.5px;
-      --input-border-color: var(--affine-v2-layer-insideBorder-border);
+      --input-border-color: var(--nexio-v2-layer-insideBorder-border);
       --border-shadow: 0px 0px 0px var(--input-border-width)
         var(--input-border-color);
       display: flex;
@@ -90,7 +90,7 @@ export class AIChatInput extends SignalWatcher(
       min-height: 94px;
       box-sizing: border-box;
       transition: box-shadow 0.23s ease;
-      background-color: var(--affine-v2-input-background);
+      background-color: var(--nexio-v2-input-background);
 
       &[data-independent-mode='true'] {
         padding: 12px;
@@ -104,7 +104,7 @@ export class AIChatInput extends SignalWatcher(
         font-size: 14px;
         font-weight: 400;
         line-height: 22px;
-        color: var(--affine-text-secondary-color);
+        color: var(--nexio-text-secondary-color);
         position: relative;
 
         div {
@@ -122,8 +122,8 @@ export class AIChatInput extends SignalWatcher(
           width: 16px;
           height: 16px;
           border-radius: 4px;
-          border: 1px solid var(--affine-border-color);
-          background-color: var(--affine-white);
+          border: 1px solid var(--nexio-border-color);
+          background-color: var(--nexio-white);
         }
       }
 
@@ -141,7 +141,7 @@ export class AIChatInput extends SignalWatcher(
         position: absolute;
         left: 0;
         top: 0;
-        background: var(--affine-quote-color);
+        background: var(--nexio-quote-color);
         border-radius: 18px;
       }
     }
@@ -210,10 +210,10 @@ export class AIChatInput extends SignalWatcher(
         margin: 0;
         border: none;
         line-height: 22px;
-        font-size: var(--affine-font-sm);
+        font-size: var(--nexio-font-sm);
         font-weight: 400;
-        font-family: var(--affine-font-family);
-        color: var(--affine-text-primary-color);
+        font-family: var(--nexio-font-family);
+        color: var(--nexio-text-primary-color);
         box-sizing: border-box;
         resize: none;
         overflow-y: scroll;
@@ -243,8 +243,8 @@ export class AIChatInput extends SignalWatcher(
       textarea::placeholder {
         font-size: 14px;
         font-weight: 400;
-        font-family: var(--affine-font-family);
-        color: var(--affine-v2-text-placeholder);
+        font-family: var(--nexio-font-family);
+        color: var(--nexio-v2-text-placeholder);
       }
 
       textarea:focus {
@@ -254,7 +254,7 @@ export class AIChatInput extends SignalWatcher(
 
     .chat-panel-input[data-if-focused='true'] {
       --input-border-width: 1px;
-      --input-border-color: var(--affine-v2-layer-insideBorder-primaryBorder);
+      --input-border-color: var(--nexio-v2-layer-insideBorder-primaryBorder);
       user-select: none;
     }
 
@@ -267,15 +267,15 @@ export class AIChatInput extends SignalWatcher(
       flex-shrink: 0;
       border-radius: 50%;
       font-size: 20px;
-      background: var(--affine-v2-icon-activated);
-      color: var(--affine-v2-layer-pureWhite);
+      background: var(--nexio-v2-icon-activated);
+      color: var(--nexio-v2-layer-pureWhite);
       border: none;
       padding: 0;
       cursor: pointer;
     }
     .chat-panel-send[aria-disabled='true'] {
       cursor: not-allowed;
-      background: var(--affine-v2-button-disable);
+      background: var(--nexio-v2-button-disable);
     }
     .chat-panel-stop {
       cursor: pointer;
@@ -287,7 +287,7 @@ export class AIChatInput extends SignalWatcher(
       align-items: center;
       border-radius: 50%;
       font-size: 24px;
-      color: var(--affine-v2-icon-activated);
+      color: var(--nexio-v2-icon-activated);
       border: none;
       padding: 0;
       background: transparent;
@@ -366,7 +366,7 @@ export class AIChatInput extends SignalWatcher(
   accessor aiToolsConfigService!: AIToolsConfigService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -700,7 +700,7 @@ export class AIChatInput extends SignalWatcher(
       }
 
       const enableSendDetailedObject =
-        this.affineFeatureFlagService.flags.enable_send_detailed_object_to_ai
+        this.nexioFeatureFlagService.flags.enable_send_detailed_object_to_ai
           .value;
 
       const modelId = this.aiModelService.modelId.value;

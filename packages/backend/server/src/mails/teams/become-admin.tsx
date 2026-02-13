@@ -34,5 +34,5 @@ export default function TeamBecomeAdmin(props: TeamBecomeAdminProps) {
 TeamBecomeAdmin.PreviewProps = {
   workspace: TEST_WORKSPACE,
   role: 'admin',
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

@@ -1,4 +1,4 @@
-import type { Tag } from '@affine/core/modules/tag';
+import type { Tag } from '@nexio/core/modules/tag';
 
 import { TagDetailHeader } from './detail-header';
 

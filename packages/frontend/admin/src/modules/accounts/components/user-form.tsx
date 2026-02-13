@@ -1,9 +1,9 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { Switch } from '@affine/admin/components/ui/switch';
-import type { FeatureType } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Input } from '@nexio/admin/components/ui/input';
+import { Label } from '@nexio/admin/components/ui/label';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { Switch } from '@nexio/admin/components/ui/switch';
+import type { FeatureType } from '@nexio/graphql';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { ChevronRightIcon } from 'lucide-react';
 import type { ChangeEvent } from 'react';

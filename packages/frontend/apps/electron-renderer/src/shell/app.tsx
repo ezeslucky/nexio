@@ -1,17 +1,17 @@
-import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
-import { WindowsAppControls } from '@affine/core/components/pure/header/windows-app-controls';
-import { ThemeProvider } from '@affine/core/components/theme-provider';
-import { configureElectronStateStorageImpls } from '@affine/core/desktop/storage';
-import { configureAppSidebarModule } from '@affine/core/modules/app-sidebar';
-import { ShellAppSidebarFallback } from '@affine/core/modules/app-sidebar/views';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
+import { WindowsAppControls } from '@nexio/core/components/pure/header/windows-app-controls';
+import { ThemeProvider } from '@nexio/core/components/theme-provider';
+import { configureElectronStateStorageImpls } from '@nexio/core/desktop/storage';
+import { configureAppSidebarModule } from '@nexio/core/modules/app-sidebar';
+import { ShellAppSidebarFallback } from '@nexio/core/modules/app-sidebar/views';
 import {
   AppTabsHeader,
   configureAppTabsHeaderModule,
-} from '@affine/core/modules/app-tabs-header';
-import { configureDesktopApiModule } from '@affine/core/modules/desktop-api';
-import { configureI18nModule, I18nProvider } from '@affine/core/modules/i18n';
-import { configureStorageModule } from '@affine/core/modules/storage';
-import { configureAppThemeModule } from '@affine/core/modules/theme';
+} from '@nexio/core/modules/app-tabs-header';
+import { configureDesktopApiModule } from '@nexio/core/modules/desktop-api';
+import { configureI18nModule, I18nProvider } from '@nexio/core/modules/i18n';
+import { configureStorageModule } from '@nexio/core/modules/storage';
+import { configureAppThemeModule } from '@nexio/core/modules/theme';
 import { Framework, FrameworkRoot } from '@toeverything/infra';
 
 import * as styles from './app.css';

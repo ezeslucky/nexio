@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This tutorial will walk you through the codebase of AFFiNE. It is intended for new contributors to AFFiNE.
+This tutorial will walk you through the codebase of NEXIO. It is intended for new contributors to NEXIO.
 
 ## Building the project
 
@@ -21,9 +21,9 @@ The codebase is organized as follows:
 - `tools/` contains tools to help developing or CI, not used in production.
 - `tests/` contains testings across different libraries, including e2e testings and integration testings.
 
-### `@affine/env`
+### `@nexio/env`
 
-Environment setup for AFFiNE client side.
+Environment setup for NEXIO client side.
 
 It includes the global constants, browser and system check.
 
@@ -36,20 +36,20 @@ This package should be imported at the very beginning of the entry point.
 
 For the workspace API, see [types.ts](../../packages/frontend/workspace/src/type.ts).
 
-### `@affine/component`
+### `@nexio/component`
 
-The UI component library for AFFiNE.
+The UI component library for NEXIO.
 
 Each component should be a standalone component which can be used in any context, like the Storybook.
 
 ## Debugging Environments
 
-### `@affine/env`
+### `@nexio/env`
 
 ```shell
 yarn dev
 ```
 
-### `@affine/electron`
+### `@nexio/electron`
 
 See [building desktop client app](../building-desktop-client-app.md).

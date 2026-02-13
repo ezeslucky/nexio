@@ -1,8 +1,8 @@
-import type { DeepPartial } from '@blocksuite/affine/global/utils';
+import type { DeepPartial } from '@blocksuite/nexio/global/utils';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/affine/shared/utils';
+} from '@blocksuite/nexio/shared/utils';
 import { Entity, LiveData } from '@toeverything/infra';
 import { isObject, merge } from 'lodash-es';
 import type { Observable } from 'rxjs';

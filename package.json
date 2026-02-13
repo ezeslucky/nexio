@@ -1,5 +1,5 @@
 {
-  "name": "@affine/monorepo",
+  "name": "@nexio/monorepo",
   "version": "0.22.4",
   "private": true,
   "author": "toeverything",
@@ -19,10 +19,10 @@
     "node": "<23.0.0"
   },
   "scripts": {
-    "affine": "r affine.ts",
-    "af": "r affine.ts",
-    "dev": "yarn affine dev",
-    "build": "yarn affine build",
+    "nexio": "r nexio.ts",
+    "af": "r nexio.ts",
+    "dev": "yarn nexio dev",
+    "build": "yarn nexio build",
     "lint:eslint": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" eslint --report-unused-disable-directives-severity=off . --cache",
     "lint:eslint:fix": "yarn lint:eslint --fix --fix-type problem,suggestion,layout",
     "lint:prettier": "prettier --ignore-unknown --cache --check .",
@@ -34,7 +34,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc -b tsconfig.json --verbose",
-    "postinstall": "yarn affine init && yarn husky"
+    "postinstall": "yarn nexio init && yarn husky"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown --cache",
@@ -50,7 +50,7 @@
     ]
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
+    "@nexio-tools/cli": "workspace:*",
     "@capacitor/cli": "^7.0.0",
     "@eslint/js": "^9.16.0",
     "@faker-js/faker": "^10.0.0",

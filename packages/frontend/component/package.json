@@ -1,5 +1,5 @@
 {
-  "name": "@affine/component",
+  "name": "@nexio/component",
   "private": true,
   "type": "module",
   "main": "./src/index.ts",
@@ -14,17 +14,17 @@
     "build:storybook": "storybook build"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "*",
+    "@blocksuite/nexio": "*",
     "@swc/core": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "dependencies": {
-    "@affine/debug": "workspace:*",
-    "@affine/electron-api": "workspace:*",
-    "@affine/error": "workspace:*",
-    "@affine/graphql": "workspace:*",
-    "@affine/i18n": "workspace:*",
+    "@nexio/debug": "workspace:*",
+    "@nexio/electron-api": "workspace:*",
+    "@nexio/error": "workspace:*",
+    "@nexio/graphql": "workspace:*",
+    "@nexio/i18n": "workspace:*",
     "@atlaskit/pragmatic-drag-and-drop": "^1.4.0",
     "@atlaskit/pragmatic-drag-and-drop-hitbox": "^1.0.3",
     "@blocksuite/icons": "^2.2.17",
@@ -71,8 +71,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@affine-tools/utils": "workspace:*",
-    "@blocksuite/affine": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@chromatic-com/storybook": "^4.0.0",
     "@storybook/react": "^9.0.0",
     "@storybook/react-vite": "^9.0.0",

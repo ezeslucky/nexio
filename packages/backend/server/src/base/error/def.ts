@@ -377,7 +377,7 @@ export const USER_FRIENDLY_ERRORS = {
   },
   early_access_required: {
     type: 'action_forbidden',
-    message: `You don't have early access permission. Visit https://community.affine.pro/c/insider-general/ for more information.`,
+    message: `You don't have early access permission. Visit https://community.nexio.pro/c/insider-general/ for more information.`,
   },
   sign_up_forbidden: {
     type: 'action_forbidden',

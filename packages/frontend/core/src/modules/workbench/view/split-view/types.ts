@@ -1,4 +1,4 @@
-import type { AffineDNDEntity } from '@affine/core/types/dnd';
+import type { AffineDNDEntity } from '@nexio/core/types/dnd';
 
 export const allowedSplitViewEntityTypes: Set<AffineDNDEntity['type']> =
   new Set(['doc', 'collection', 'tag']);

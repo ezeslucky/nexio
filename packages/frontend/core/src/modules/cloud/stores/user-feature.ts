@@ -1,4 +1,4 @@
-import { getUserFeaturesQuery } from '@affine/graphql';
+import { getUserFeaturesQuery } from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { GraphQLService } from '../services/graphql';

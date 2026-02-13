@@ -3,19 +3,19 @@ import {
   Button,
   Tooltip,
   useConfirmModal,
-} from '@affine/component';
-import { AudioPlayer } from '@affine/component/ui/audio-player';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useSeekTime } from '@affine/core/components/hooks/use-seek-time';
-import { CurrentServerScopeProvider } from '@affine/core/components/providers/current-server-scope';
-import { PublicUserLabel } from '@affine/core/modules/cloud/views/public-user';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import type { AudioAttachmentBlock } from '@affine/core/modules/media/entities/audio-attachment-block';
-import { AudioAttachmentService } from '@affine/core/modules/media/services/audio-attachment';
-import { Trans, useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
+} from '@nexio/component';
+import { AudioPlayer } from '@nexio/component/ui/audio-player';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useSeekTime } from '@nexio/core/components/hooks/use-seek-time';
+import { CurrentServerScopeProvider } from '@nexio/core/components/providers/current-server-scope';
+import { PublicUserLabel } from '@nexio/core/modules/cloud/views/public-user';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/audio-attachment-block';
+import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
+import { Trans, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import { ResetIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
@@ -96,13 +96,13 @@ const AttachmentAudioPlayer = ({ block }: { block: AudioAttachmentBlock }) => {
 
     if (!block.transcriptionJob.currentUserId) {
       confirmModal.openConfirmModal({
-        title: t['com.affine.ai.login-required.dialog-title'](),
-        description: t['com.affine.ai.login-required.dialog-content'](),
-        confirmText: t['com.affine.ai.login-required.dialog-confirm'](),
+        title: t['com.nexio.ai.login-required.dialog-title'](),
+        description: t['com.nexio.ai.login-required.dialog-content'](),
+        confirmText: t['com.nexio.ai.login-required.dialog-confirm'](),
         confirmButtonOptions: {
           variant: 'primary',
         },
-        cancelText: t['com.affine.ai.login-required.dialog-cancel'](),
+        cancelText: t['com.nexio.ai.login-required.dialog-cancel'](),
         onConfirm: () => {
           globalDialogService.open('sign-in', {});
         },
@@ -119,9 +119,9 @@ const AttachmentAudioPlayer = ({ block }: { block: AudioAttachmentBlock }) => {
     setPreflightChecking(false);
     if (result?.error === 'created-by-others') {
       confirmModal.openConfirmModal({
-        title: t['com.affine.audio.transcribe.non-owner.confirm.title'](),
+        title: t['com.nexio.audio.transcribe.non-owner.confirm.title'](),
         description: (
-          <Trans i18nKey="com.affine.audio.transcribe.non-owner.confirm.message">
+          <Trans i18nKey="com.nexio.audio.transcribe.non-owner.confirm.message">
             Please contact <PublicUserLabel id={result.userId} /> to upgrade AI
             rights or resend the attachment.
           </Trans>
@@ -173,13 +173,13 @@ const AttachmentAudioPlayer = ({ block }: { block: AudioAttachmentBlock }) => {
         onClick={handleNotesClick}
       >
         {transcribing
-          ? t['com.affine.audio.transcribing']()
-          : t['com.affine.audio.notes']()}
+          ? t['com.nexio.audio.transcribing']()
+          : t['com.nexio.audio.notes']()}
       </Button>
     );
     if (transcribing) {
       return (
-        <Tooltip content={t['com.affine.audio.transcribing']()}>
+        <Tooltip content={t['com.nexio.audio.transcribing']()}>
           {inner}
         </Tooltip>
       );

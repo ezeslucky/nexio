@@ -18,8 +18,8 @@ import {
 } from '@node-rs/argon2';
 
 import {
-  AFFINE_PRO_LICENSE_AES_KEY,
-  AFFINE_PRO_PUBLIC_KEY,
+  NEXIO_PRO_LICENSE_AES_KEY,
+  NEXIO_PRO_PUBLIC_KEY,
 } from '../../native';
 import { Config } from '../config';
 import { OnEvent } from '../event';
@@ -61,13 +61,13 @@ export class CryptoHelper implements OnModuleInit {
     };
   };
 
-  AFFiNEProPublicKey: Buffer | null = null;
-  AFFiNEProLicenseAESKey: Buffer | null = null;
+  NEXIOProPublicKey: Buffer | null = null;
+  NEXIOProLicenseAESKey: Buffer | null = null;
 
   onModuleInit() {
     if (env.selfhosted) {
-      this.AFFiNEProPublicKey = this.loadAFFiNEProPublicKey();
-      this.AFFiNEProLicenseAESKey = this.loadAFFiNEProLicenseAESKey();
+      this.NEXIOProPublicKey = this.loadNEXIOProPublicKey();
+      this.NEXIOProLicenseAESKey = this.loadNEXIOProLicenseAESKey();
     }
   }
 
@@ -189,31 +189,31 @@ export class CryptoHelper implements OnModuleInit {
     return createHash('sha256').update(data).digest();
   }
 
-  private loadAFFiNEProPublicKey() {
-    if (AFFINE_PRO_PUBLIC_KEY) {
-      return Buffer.from(AFFINE_PRO_PUBLIC_KEY);
+  private loadNEXIOProPublicKey() {
+    if (NEXIO_PRO_PUBLIC_KEY) {
+      return Buffer.from(NEXIO_PRO_PUBLIC_KEY);
     } else {
-      this.logger.warn('AFFINE_PRO_PUBLIC_KEY is not set at compile time.');
+      this.logger.warn('NEXIO_PRO_PUBLIC_KEY is not set at compile time.');
     }
 
-    if (!env.prod && process.env.AFFiNE_PRO_PUBLIC_KEY) {
-      return Buffer.from(process.env.AFFiNE_PRO_PUBLIC_KEY);
+    if (!env.prod && process.env.NEXIO_PRO_PUBLIC_KEY) {
+      return Buffer.from(process.env.NEXIO_PRO_PUBLIC_KEY);
     }
 
     return null;
   }
 
-  private loadAFFiNEProLicenseAESKey() {
-    if (AFFINE_PRO_LICENSE_AES_KEY) {
-      return this.sha256(AFFINE_PRO_LICENSE_AES_KEY);
+  private loadNEXIOProLicenseAESKey() {
+    if (NEXIO_PRO_LICENSE_AES_KEY) {
+      return this.sha256(NEXIO_PRO_LICENSE_AES_KEY);
     } else {
       this.logger.warn(
-        'AFFINE_PRO_LICENSE_AES_KEY is not set at compile time.'
+        'NEXIO_PRO_LICENSE_AES_KEY is not set at compile time.'
       );
     }
 
-    if (!env.prod && process.env.AFFiNE_PRO_LICENSE_AES_KEY) {
-      return this.sha256(process.env.AFFiNE_PRO_LICENSE_AES_KEY);
+    if (!env.prod && process.env.NEXIO_PRO_LICENSE_AES_KEY) {
+      return this.sha256(process.env.NEXIO_PRO_LICENSE_AES_KEY);
     }
 
     return null;

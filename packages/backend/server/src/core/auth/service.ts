@@ -38,8 +38,8 @@ export class AuthService implements OnApplicationBootstrap {
     path: '/',
     secure: this.config.server.https,
   };
-  static readonly sessionCookieName = 'affine_session';
-  static readonly userCookieName = 'affine_user_id';
+  static readonly sessionCookieName = 'nexio_session';
+  static readonly userCookieName = 'nexio_user_id';
 
   constructor(
     private readonly config: Config,

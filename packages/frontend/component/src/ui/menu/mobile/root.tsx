@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
@@ -182,7 +182,7 @@ export const MobileMenu = ({
                   }}
                   prefixStyle={{ width: 24, height: 24 }}
                 >
-                  {sub.title || t['com.affine.backButton']()}
+                  {sub.title || t['com.nexio.backButton']()}
                 </Button>
                 <Scrollable.Root>
                   <Scrollable.Viewport className={styles.scrollArea}>

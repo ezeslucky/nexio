@@ -4,8 +4,8 @@ import { createHash } from 'node:crypto';
 import fsp from 'node:fs/promises';
 import path from 'node:path';
 
-// Should not load @affine/native for unsupported platforms
-import type { ShareableContent as ShareableContentType } from '@affine/native';
+// Should not load @nexio/native for unsupported platforms
+import type { ShareableContent as ShareableContentType } from '@nexio/native';
 import { app, systemPreferences } from 'electron';
 import fs from 'fs-extra';
 import { debounce } from 'lodash-es';
@@ -96,9 +96,9 @@ const recordings = new Map<number, Recording>();
 export const recordingStatus$ = recordingStateMachine.status$;
 
 function createAppGroup(processGroupId: number): AppGroupInfo | undefined {
-  // MUST require dynamically to avoid loading @affine/native for unsupported platforms
+  // MUST require dynamically to avoid loading @nexio/native for unsupported platforms
   const SC: typeof ShareableContentType =
-    require('@affine/native').ShareableContent;
+    require('@nexio/native').ShareableContent;
   const groupProcess = SC?.applicationWithProcessId(processGroupId);
   if (!groupProcess) {
     return;
@@ -290,9 +290,9 @@ export function createRecording(status: RecordingStatus) {
     }
   }
 
-  // MUST require dynamically to avoid loading @affine/native for unsupported platforms
+  // MUST require dynamically to avoid loading @nexio/native for unsupported platforms
   const SC: typeof ShareableContentType =
-    require('@affine/native').ShareableContent;
+    require('@nexio/native').ShareableContent;
 
   const stream = status.app
     ? SC.tapAudio(status.app.processId, tapAudioSamples)
@@ -399,8 +399,8 @@ function getAllApps(): TappableAppInfo[] {
     return [];
   }
 
-  // MUST require dynamically to avoid loading @affine/native for unsupported platforms
-  const { ShareableContent } = require('@affine/native') as {
+  // MUST require dynamically to avoid loading @nexio/native for unsupported platforms
+  const { ShareableContent } = require('@nexio/native') as {
     ShareableContent: typeof ShareableContentType;
   };
 
@@ -427,7 +427,7 @@ function getAllApps(): TappableAppInfo[] {
     (v): v is TappableAppInfo =>
       v !== null &&
       !v.bundleIdentifier.startsWith('com.apple') &&
-      !v.bundleIdentifier.startsWith('pro.affine') &&
+      !v.bundleIdentifier.startsWith('pro.nexio') &&
       v.processId !== process.pid
   );
   return filteredApps;
@@ -438,7 +438,7 @@ type Subscriber = {
 };
 
 function setupMediaListeners() {
-  const ShareableContent = require('@affine/native').ShareableContent;
+  const ShareableContent = require('@nexio/native').ShareableContent;
   applications$.next(getAllApps());
   subscribers.push(
     interval(3000).subscribe(() => {
@@ -502,7 +502,7 @@ function askForScreenRecordingPermission() {
     return false;
   }
   try {
-    const ShareableContent = require('@affine/native').ShareableContent;
+    const ShareableContent = require('@nexio/native').ShareableContent;
     // this will trigger the permission prompt
     new ShareableContent();
     return true;
@@ -519,7 +519,7 @@ export function setupRecordingFeature() {
   }
 
   try {
-    const ShareableContent = require('@affine/native').ShareableContent;
+    const ShareableContent = require('@nexio/native').ShareableContent;
     if (!shareableContent) {
       shareableContent = new ShareableContent();
       setupMediaListeners();

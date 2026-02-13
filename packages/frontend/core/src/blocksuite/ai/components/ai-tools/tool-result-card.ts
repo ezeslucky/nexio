@@ -1,7 +1,7 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { DEFAULT_IMAGE_PROXY_ENDPOINT } from '@blocksuite/affine-shared/consts';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { DEFAULT_IMAGE_PROXY_ENDPOINT } from '@blocksuite/nexio-shared/consts';
 import { ToggleDownIcon, ToolIcon } from '@blocksuite/icons/lit';
 import { type Signal } from '@preact/signals-core';
 import { css, html, nothing, type TemplateResult } from 'lit';

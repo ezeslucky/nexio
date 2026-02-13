@@ -1,17 +1,10 @@
-// TODO(@forehalo):
-//   Because of the `@affine/server` package can't import directly from workspace packages,
-//   this is a temporary solution to get the block suite data(title, description) from given yjs binary or yjs doc.
-//   The logic is mainly copied from
-//     - packages/frontend/core/src/modules/docs-search/worker/in-worker.ts
-//     - packages/frontend/core/src/components/page-list/use-block-suite-page-preview.ts
-//   and it's better to be provided by blocksuite
 
 // eslint-disable-next-line @typescript-eslint/no-restricted-imports -- import from bundle
 import {
   parsePageDoc as parseDocToMarkdown,
   readAllBlocksFromDoc,
   readAllDocIdsFromRootDoc,
-} from '@affine/reader/dist';
+} from '@nexio/reader/dist';
 import { applyUpdate, Array as YArray, Doc as YDoc, Map as YMap } from 'yjs';
 
 export interface PageDocContent {
@@ -25,17 +18,17 @@ export interface WorkspaceDocContent {
 }
 
 type KnownFlavour =
-  | 'affine:page'
-  | 'affine:note'
-  | 'affine:surface'
-  | 'affine:paragraph'
-  | 'affine:list'
-  | 'affine:code'
-  | 'affine:image'
-  | 'affine:attachment'
-  | 'affine:transcription'
-  | 'affine:callout'
-  | 'affine:table';
+  | 'nexio:page'
+  | 'nexio:note'
+  | 'nexio:surface'
+  | 'nexio:paragraph'
+  | 'nexio:list'
+  | 'nexio:code'
+  | 'nexio:image'
+  | 'nexio:attachment'
+  | 'nexio:transcription'
+  | 'nexio:callout'
+  | 'nexio:table';
 
 export function parseWorkspaceDoc(doc: YDoc): WorkspaceDocContent | null {
   // not a workspace doc
@@ -80,7 +73,7 @@ export function parsePageDoc(
   let root: YMap<any> | null = null;
   for (const block of blocks.values()) {
     const flavour = block.get('sys:flavour') as KnownFlavour;
-    if (flavour === 'affine:page') {
+    if (flavour === 'nexio:page') {
       content.title = block.get('prop:title') as string;
       root = block;
     }
@@ -111,21 +104,21 @@ export function parsePageDoc(
     const flavour = block.get('sys:flavour') as KnownFlavour;
 
     switch (flavour) {
-      case 'affine:page':
-      case 'affine:note': {
+      case 'nexio:page':
+      case 'nexio:note': {
         pushChildren(block);
         break;
       }
-      case 'affine:attachment':
-      case 'affine:transcription':
-      case 'affine:callout': {
+      case 'nexio:attachment':
+      case 'nexio:transcription':
+      case 'nexio:callout': {
         // only extract text in full content mode
         if (summaryLenNeeded === -1) {
           pushChildren(block);
         }
         break;
       }
-      case 'affine:table': {
+      case 'nexio:table': {
         // only extract text in full content mode
         if (summaryLenNeeded === -1) {
           const contents: string[] = [...block.keys()]
@@ -140,9 +133,9 @@ export function parsePageDoc(
         }
         break;
       }
-      case 'affine:paragraph':
-      case 'affine:list':
-      case 'affine:code': {
+      case 'nexio:paragraph':
+      case 'nexio:list':
+      case 'nexio:code': {
         pushChildren(block);
         const text = block.get('prop:text');
         if (!text) {

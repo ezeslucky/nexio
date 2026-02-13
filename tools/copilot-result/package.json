@@ -1,5 +1,5 @@
 {
-  "name": "@affine/copilot-result",
+  "name": "@nexio/copilot-result",
   "version": "0.22.4",
   "type": "module",
   "main": "index.js",

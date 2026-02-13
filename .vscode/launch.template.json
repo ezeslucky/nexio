@@ -8,8 +8,8 @@
       "runtimeExecutable": "yarn",
       "cwd": "${workspaceFolder}",
       "runtimeArgs": [
-        "affine",
-        "@affine/server",
+        "nexio",
+        "@nexio/server",
         "dev"
       ]
     },
@@ -20,8 +20,8 @@
       "runtimeExecutable": "yarn",
       "cwd": "${workspaceFolder}",
       "runtimeArgs": [
-        "affine",
-        "@affine/web",
+        "nexio",
+        "@nexio/web",
         "dev"
       ]
     },

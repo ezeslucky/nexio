@@ -1,13 +1,13 @@
 /* eslint-disable rxjs/finnish */
 
-import { PropertyValue } from '@affine/component';
-import { type TagLike, TagsInlineEditor } from '@affine/core/components/tags';
-import { TagService } from '@affine/core/modules/tag';
+import { PropertyValue } from '@nexio/component';
+import { type TagLike, TagsInlineEditor } from '@nexio/core/components/tags';
+import { TagService } from '@nexio/core/modules/tag';
 import {
-  affineLabelToDatabaseTagColor,
+  nexioLabelToDatabaseTagColor,
   databaseTagColorToV2,
-} from '@affine/core/modules/tag/entities/utils';
-import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+} from '@nexio/core/modules/tag/entities/utils';
+import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
 import type { SelectTag } from '@blocksuite/data-view';
 import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
@@ -166,7 +166,7 @@ const BlocksuiteDatabaseSelector = ({
 
   const onCreateTag = useCallback(
     (name: string, color: string) => {
-      // bs database uses --affine-tag-xxx colors
+      
       const newTag = {
         id: nanoid(),
         name: name,
@@ -203,7 +203,7 @@ const BlocksuiteDatabaseSelector = ({
   const tagColors = useMemo(() => {
     return tagService.tagColors.map(([name, color]) => ({
       id: name,
-      value: affineLabelToDatabaseTagColor(color),
+      value: nexioLabelToDatabaseTagColor(color),
       name,
     }));
   }, [tagService.tagColors]);
@@ -212,7 +212,7 @@ const BlocksuiteDatabaseSelector = ({
     (tagId: string, property: string, value: string) => {
       adapter.updateTag(selectCell, dataSource, tagId, old => {
         if (property === 'color') {
-          value = affineLabelToDatabaseTagColor(value);
+          value = nexioLabelToDatabaseTagColor(value);
         }
         return {
           ...old,

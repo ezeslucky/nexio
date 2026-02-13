@@ -1,17 +1,17 @@
-import { Scrollable } from '@affine/component';
-import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
-import { type AIChatParams, AIProvider } from '@affine/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useGuard } from '@affine/core/components/guard';
-import { PageNotFound } from '@affine/core/desktop/pages/404';
-import { EditorService } from '@affine/core/modules/editor';
-import { DebugLogger } from '@affine/debug';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { Bound } from '@blocksuite/affine/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import { Scrollable } from '@nexio/component';
+import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
+import { type AIChatParams, AIProvider } from '@nexio/core/blocksuite/ai';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { useGuard } from '@nexio/core/components/guard';
+import { PageNotFound } from '@nexio/core/desktop/pages/404';
+import { EditorService } from '@nexio/core/modules/editor';
+import { DebugLogger } from '@nexio/debug';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { Bound } from '@blocksuite/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import {
   FrameworkScope,
   useLiveData,
@@ -32,13 +32,13 @@ const logger = new DebugLogger('doc-peek-view');
 
 // Lazy load BlockSuiteEditor to break circular dependency
 const BlockSuiteEditor = lazy(() =>
-  import('@affine/core/blocksuite/block-suite-editor').then(module => ({
+  import('@nexio/core/blocksuite/block-suite-editor').then(module => ({
     default: module.BlockSuiteEditor,
   }))
 );
 
 function fitViewport(
-  editor: AffineEditorContainer,
+  editor: NexioEditorContainer,
   xywh?: `[${number},${number},${number},${number}]`
 ) {
   try {
@@ -90,7 +90,7 @@ function DocPeekPreviewEditor({
   const isInTrash = useLiveData(doc.record.trash$);
 
   const handleOnEditorReady = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       const disposableGroup = new DisposableGroup();
       const refNodeSlots =
         editorContainer.std.getOptional(RefNodeSlotsProvider);
@@ -158,10 +158,10 @@ function DocPeekPreviewEditor({
   const readonly = !canEdit || isInTrash;
 
   return (
-    <AffineErrorBoundary>
+    <NexioErrorBoundary>
       <Scrollable.Root>
         <Scrollable.Viewport
-          className={clsx('affine-page-viewport', styles.affineDocViewport)}
+          className={clsx('nexio-page-viewport', styles.nexioDocViewport)}
         >
           <Suspense fallback={<PageDetailLoading />}>
             <BlockSuiteEditor
@@ -183,7 +183,7 @@ function DocPeekPreviewEditor({
           openOutlinePanel={openOutlinePanel}
         />
       ) : null}
-    </AffineErrorBoundary>
+    </NexioErrorBoundary>
   );
 }
 

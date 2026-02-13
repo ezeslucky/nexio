@@ -1,5 +1,5 @@
-import { IconButton } from '@affine/component';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
+import { IconButton } from '@nexio/component';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
 import { RightSidebarIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { Suspense, useCallback } from 'react';
@@ -79,11 +79,11 @@ export const RouteContainer = () => {
         )}
       </div>
 
-      <AffineErrorBoundary>
+      <NexioErrorBoundary>
         <Suspense>
           <Outlet />
         </Suspense>
-      </AffineErrorBoundary>
+      </NexioErrorBoundary>
       <ViewBodyTarget viewId={view.id} className={styles.viewBodyContainer} />
     </div>
   );

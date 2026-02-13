@@ -1,8 +1,8 @@
-import { NavigationPanelTreeRoot } from '@affine/core/desktop/components/navigation-panel';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { TagService } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { NavigationPanelTreeRoot } from '@nexio/core/desktop/components/navigation-panel';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { TagService } from '@nexio/core/modules/tag';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { AddTagIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo, useState } from 'react';
@@ -16,8 +16,8 @@ export const TagDesc = ({ input }: { input: string }) => {
   const t = useI18n();
 
   return input
-    ? t['com.affine.m.explorer.tag.new-tip-not-empty']({ value: input })
-    : t['com.affine.m.explorer.tag.new-tip-empty']();
+    ? t['com.nexio.m.explorer.tag.new-tip-not-empty']({ value: input })
+    : t['com.nexio.m.explorer.tag.new-tip-empty']();
 };
 
 export const NavigationPanelTags = () => {
@@ -44,7 +44,7 @@ export const NavigationPanelTags = () => {
   return (
     <CollapsibleSection
       path={path}
-      title={t['com.affine.rootAppSidebar.tags']()}
+      title={t['com.nexio.rootAppSidebar.tags']()}
     >
       <NavigationPanelTreeRoot>
         {tags.map(tag => (
@@ -59,7 +59,7 @@ export const NavigationPanelTags = () => {
           data-testid="navigation-panel-add-tag-button"
           onClick={() => setShowNewTagDialog(true)}
           label={t[
-            'com.affine.rootAppSidebar.explorer.tag-section-add-tooltip'
+            'com.nexio.rootAppSidebar.explorer.tag-section-add-tooltip'
           ]()}
         />
         <TagRenameDialog

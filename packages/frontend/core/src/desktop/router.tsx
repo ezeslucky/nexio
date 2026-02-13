@@ -7,7 +7,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 
-import { AffineErrorComponent } from '../components/affine/affine-error-boundary/affine-error-fallback';
+import { NexioErrorComponent } from '../components/nexio/nexio-error-boundary/nexio-error-fallback';
 import { NavigateContext } from '../components/hooks/use-navigate-helper';
 import { RootWrapper } from './pages/root';
 
@@ -31,7 +31,7 @@ export function RootRouter() {
 export const topLevelRoutes = [
   {
     element: <RootRouter />,
-    errorElement: <AffineErrorComponent />,
+    errorElement: <NexioErrorComponent />,
     children: [
       {
         path: '/',

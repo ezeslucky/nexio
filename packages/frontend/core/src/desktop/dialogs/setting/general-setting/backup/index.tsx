@@ -6,17 +6,17 @@ import {
   notify,
   Skeleton,
   useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   Pagination,
   SettingHeader,
-} from '@affine/component/setting-components';
-import { Avatar } from '@affine/component/ui/avatar';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { BackupService } from '@affine/core/modules/backup/services';
-import { i18nTime, useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component/setting-components';
+import { Avatar } from '@nexio/component/ui/avatar';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { BackupService } from '@nexio/core/modules/backup/services';
+import { i18nTime, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   DeleteIcon,
   LocalWorkspaceIcon,
@@ -32,7 +32,7 @@ const Empty = () => {
   const t = useI18n();
   return (
     <div className={styles.empty}>
-      {t['com.affine.settings.workspace.backup.empty']()}
+      {t['com.nexio.settings.workspace.backup.empty']()}
     </div>
   );
 };
@@ -86,12 +86,12 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
       return;
     }
     notify.success({
-      title: t['com.affine.settings.workspace.backup.import.success'](),
+      title: t['com.nexio.settings.workspace.backup.import.success'](),
       actions: [
         {
           key: 'open',
           label:
-            t['com.affine.settings.workspace.backup.import.success.action'](),
+            t['com.nexio.settings.workspace.backup.import.success.action'](),
           onClick: () => {
             jumpToPage(workspaceId, 'all');
           },
@@ -106,13 +106,13 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
   const handleDelete = useCallback(
     (backupWorkspaceId: string) => {
       openConfirmModal({
-        title: t['com.affine.workspaceDelete.title'](),
-        children: t['com.affine.settings.workspace.backup.delete.warning'](),
+        title: t['com.nexio.workspaceDelete.title'](),
+        children: t['com.nexio.settings.workspace.backup.delete.warning'](),
         onConfirm: async () => {
           track.$.settingsPanel.archivedWorkspaces.deleteArchivedWorkspace();
           await backupService.deleteBackupWorkspace(backupWorkspaceId);
           notify.success({
-            title: t['com.affine.settings.workspace.backup.delete.success'](),
+            title: t['com.nexio.settings.workspace.backup.delete.success'](),
           });
         },
         confirmText: t['Confirm'](),
@@ -140,7 +140,7 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
         </div>
       </div>
       <div className={styles.listItemRightLabel}>
-        {t['com.affine.settings.workspace.backup.delete-at']({
+        {t['com.nexio.settings.workspace.backup.delete-at']({
           date: i18nTime(item.updatedAt, {
             absolute: {
               accuracy: 'day',
@@ -166,7 +166,7 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
                 prefixIcon={<LocalWorkspaceIcon />}
                 onClick={handleImport}
               >
-                {t['com.affine.settings.workspace.backup.import']()}
+                {t['com.nexio.settings.workspace.backup.import']()}
               </MenuItem>
               <MenuItem
                 prefixIcon={<DeleteIcon />}
@@ -247,8 +247,8 @@ export const BackupSettingPanel = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.affine.settings.workspace.backup']()}
-        subtitle={t['com.affine.settings.workspace.backup.subtitle']()}
+        title={t['com.nexio.settings.workspace.backup']()}
+        subtitle={t['com.nexio.settings.workspace.backup.subtitle']()}
         data-testid="backup-title"
       />
       {isEmpty ? (

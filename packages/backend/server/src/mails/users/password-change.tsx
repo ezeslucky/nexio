@@ -20,5 +20,5 @@ export default function ChangePassword(props: ChangePasswordProps) {
 }
 
 ChangePassword.PreviewProps = {
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

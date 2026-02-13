@@ -1,9 +1,4 @@
-// type A = {};
-// type B = { prop?: string };
-// type C = { prop: string };
-// type TestA = MakeOptionalIfEmpty<A>;  // void | {}
-// type TestB = MakeOptionalIfEmpty<B>;  // void | { prop?: string }
-// type TestC = MakeOptionalIfEmpty<C>;  // { prop: string }
+
 import type { BlockStdScope } from '../scope/std-scope.js';
 import type { cmdSymbol } from './consts.js';
 

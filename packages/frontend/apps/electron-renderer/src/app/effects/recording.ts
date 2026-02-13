@@ -1,13 +1,13 @@
-import type { DocProps } from '@affine/core/blocksuite/initialization';
-import { DocsService } from '@affine/core/modules/doc';
-import { AudioAttachmentService } from '@affine/core/modules/media/services/audio-attachment';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { DebugLogger } from '@affine/debug';
-import { apis, events } from '@affine/electron-api';
-import { i18nTime } from '@affine/i18n';
-import track from '@affine/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
-import type { BlobEngine } from '@blocksuite/affine/sync';
+import type { DocProps } from '@nexio/core/blocksuite/initialization';
+import { DocsService } from '@nexio/core/modules/doc';
+import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { DebugLogger } from '@nexio/debug';
+import { apis, events } from '@nexio/electron-api';
+import { i18nTime } from '@nexio/i18n';
+import track from '@nexio/track';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { BlobEngine } from '@blocksuite/nexio/sync';
 import type { FrameworkProvider } from '@toeverything/infra';
 
 import { getCurrentWorkspace, isAiEnabled } from './utils';
@@ -67,7 +67,7 @@ export function setupRecordingEvents(frameworkProvider: FrameworkProvider) {
 
                 // add size and sourceId to the attachment later
                 const attachmentId = doc.addBlock(
-                  'affine:attachment',
+                  'nexio:attachment',
                   {
                     name: attachmentName,
                     type: 'audio/opus',

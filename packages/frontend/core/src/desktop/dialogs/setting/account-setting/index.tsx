@@ -1,19 +1,19 @@
-import { FlexWrapper, Input, notify } from '@affine/component';
+import { FlexWrapper, Input, notify } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { Avatar } from '@affine/component/ui/avatar';
-import { Button } from '@affine/component/ui/button';
-import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
-import { Upload } from '@affine/core/components/pure/file-upload';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/setting-components';
+import { Avatar } from '@nexio/component/ui/avatar';
+import { Button } from '@nexio/component/ui/button';
+import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
+import { Upload } from '@nexio/core/components/pure/file-upload';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ArrowRightSmallIcon, CameraIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
@@ -103,20 +103,20 @@ export const AvatarAndName = () => {
 
   return (
     <SettingRow
-      name={t['com.affine.settings.profile']()}
-      desc={t['com.affine.settings.profile.message']()}
+      name={t['com.nexio.settings.profile']()}
+      desc={t['com.nexio.settings.profile.message']()}
       spreadCol={false}
     >
       <FlexWrapper style={{ margin: '12px 0 24px 0' }} alignItems="center">
         <UserAvatar />
 
         <div className={styles.profileInputWrapper}>
-          <label>{t['com.affine.settings.profile.name']()}</label>
+          <label>{t['com.nexio.settings.profile.name']()}</label>
           <FlexWrapper alignItems="center">
             <Input
               defaultValue={input}
               data-testid="user-name-input"
-              placeholder={t['com.affine.settings.profile.placeholder']()}
+              placeholder={t['com.nexio.settings.profile.placeholder']()}
               maxLength={64}
               minLength={0}
               style={{ width: 280, height: 32 }}
@@ -131,7 +131,7 @@ export const AvatarAndName = () => {
                   marginLeft: '12px',
                 }}
               >
-                {t['com.affine.editCollection.save']()}
+                {t['com.nexio.editCollection.save']()}
               </Button>
             ) : null}
           </FlexWrapper>
@@ -160,7 +160,7 @@ const StoragePanel = ({
 
   return (
     <SettingRow
-      name={t['com.affine.storage.title']()}
+      name={t['com.nexio.storage.title']()}
       desc=""
       spreadCol={false}
     >
@@ -211,30 +211,30 @@ export const AccountSetting = ({
   return (
     <>
       <SettingHeader
-        title={t['com.affine.setting.account']()}
-        subtitle={t['com.affine.setting.account.message']()}
+        title={t['com.nexio.setting.account']()}
+        subtitle={t['com.nexio.setting.account.message']()}
         data-testid="account-title"
       />
       <AvatarAndName />
       <SettingWrapper>
         <SettingRow
-          name={t['com.affine.settings.email']()}
+          name={t['com.nexio.settings.email']()}
           desc={account.email}
         >
           <Button onClick={onChangeEmail}>
             {account.info?.emailVerified
-              ? t['com.affine.settings.email.action.change']()
-              : t['com.affine.settings.email.action.verify']()}
+              ? t['com.nexio.settings.email.action.change']()
+              : t['com.nexio.settings.email.action.verify']()}
           </Button>
         </SettingRow>
         <SettingRow
-          name={t['com.affine.settings.password']()}
-          desc={t['com.affine.settings.password.message']()}
+          name={t['com.nexio.settings.password']()}
+          desc={t['com.nexio.settings.password.message']()}
         >
           <Button onClick={onPasswordButtonClick}>
             {account.info?.hasPassword
-              ? t['com.affine.settings.password.action.change']()
-              : t['com.affine.settings.password.action.set']()}
+              ? t['com.nexio.settings.password.action.change']()
+              : t['com.nexio.settings.password.action.set']()}
           </Button>
         </SettingRow>
         <StoragePanel onChangeSettingState={onChangeSettingState} />
@@ -243,7 +243,7 @@ export const AccountSetting = ({
         )}
         <SettingRow
           name={t[`Sign out`]()}
-          desc={t['com.affine.setting.sign.out.message']()}
+          desc={t['com.nexio.setting.sign.out.message']()}
           style={{ cursor: 'pointer' }}
           data-testid="sign-out-button"
           onClick={openSignOutModal}

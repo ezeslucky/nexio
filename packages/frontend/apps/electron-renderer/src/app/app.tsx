@@ -1,9 +1,9 @@
-import { AffineContext } from '@affine/core/components/context';
-import { WindowsAppControls } from '@affine/core/components/pure/header/windows-app-controls';
-import { AppContainer } from '@affine/core/desktop/components/app-container';
-import { router } from '@affine/core/desktop/router';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import createEmotionCache from '@affine/core/utils/create-emotion-cache';
+import { NexioContext } from '@nexio/core/components/context';
+import { WindowsAppControls } from '@nexio/core/components/pure/header/windows-app-controls';
+import { AppContainer } from '@nexio/core/desktop/components/app-container';
+import { router } from '@nexio/core/desktop/router';
+import { I18nProvider } from '@nexio/core/modules/i18n';
+import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
 import { CacheProvider } from '@emotion/react';
 import { FrameworkRoot, getCurrentStore } from '@toeverything/infra';
 import { Suspense } from 'react';
@@ -45,7 +45,7 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <CacheProvider value={cache}>
           <I18nProvider>
-            <AffineContext store={getCurrentStore()}>
+            <NexioContext store={getCurrentStore()}>
               <DesktopThemeSync />
               <DesktopLanguageSync />
               <RouterProvider
@@ -58,7 +58,7 @@ export function App() {
                   <WindowsAppControls />
                 </div>
               )}
-            </AffineContext>
+            </NexioContext>
           </I18nProvider>
         </CacheProvider>
       </FrameworkRoot>

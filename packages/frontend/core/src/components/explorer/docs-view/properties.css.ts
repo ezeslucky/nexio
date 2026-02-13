@@ -1,14 +1,7 @@
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
-// export const root = style({
-//   display: 'flex',
-//   gap: 8,
-//   justifyContent: 'flex-end',
-//   minWidth: 0,
-//   flexGrow: 1,
-//   flexShrink: 0,
-// });
+
 export const stackContainer = style({
   display: 'flex',
   gap: 8,

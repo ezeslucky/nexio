@@ -1,19 +1,19 @@
-import { uniReactRoot } from '@affine/component';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { AiLoginRequiredModal } from '@affine/core/components/affine/auth/ai-login-required';
-import { SWRConfigProvider } from '@affine/core/components/providers/swr-config-provider';
-import { WorkspaceSideEffects } from '@affine/core/components/providers/workspace-side-effects';
+import { uniReactRoot } from '@nexio/component';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { AiLoginRequiredModal } from '@nexio/core/components/nexio/auth/ai-login-required';
+import { SWRConfigProvider } from '@nexio/core/components/providers/swr-config-provider';
+import { WorkspaceSideEffects } from '@nexio/core/components/providers/workspace-side-effects';
 import {
   DefaultServerService,
   WorkspaceServerService,
-} from '@affine/core/modules/cloud';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { PeekViewManagerModal } from '@affine/core/modules/peek-view';
+} from '@nexio/core/modules/cloud';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { PeekViewManagerModal } from '@nexio/core/modules/peek-view';
 import type {
   Workspace,
   WorkspaceMetadata,
-} from '@affine/core/modules/workspace';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workspace';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
 import {
   FrameworkScope,
   LiveData,
@@ -44,7 +44,7 @@ declare global {
   // oxlint-disable-next-line no-var
   var importWorkspaceSnapshot: () => Promise<void>;
   interface WindowEventMap {
-    'affine:workspace:change': CustomEvent<{ id: string }>;
+    'nexio:workspace:change': CustomEvent<{ id: string }>;
   }
 }
 
@@ -76,7 +76,7 @@ export const WorkspaceLayout = ({
       // for debug purpose
       window.currentWorkspace = workspace ?? undefined;
       window.dispatchEvent(
-        new CustomEvent('affine:workspace:change', {
+        new CustomEvent('nexio:workspace:change', {
           detail: {
             id: workspace.id,
           },
@@ -136,7 +136,7 @@ export const WorkspaceLayout = ({
   return (
     <FrameworkScope scope={workspaceServer?.scope}>
       <FrameworkScope scope={workspace.scope}>
-        <AffineErrorBoundary height="100dvh">
+        <NexioErrorBoundary height="100dvh">
           <SWRConfigProvider>
             <WorkspaceDialogs />
 
@@ -147,7 +147,7 @@ export const WorkspaceLayout = ({
             <WorkspaceSideEffects />
             {children}
           </SWRConfigProvider>
-        </AffineErrorBoundary>
+        </NexioErrorBoundary>
       </FrameworkScope>
     </FrameworkScope>
   );

@@ -1,14 +1,14 @@
-import { Container } from '@blocksuite/affine/global/di';
+import { Container } from '@blocksuite/nexio/global/di';
 import type {
   AttachmentBlockModel,
   BookmarkBlockModel,
   EmbedBlockModel,
   ImageBlockModel,
   TableBlockModel,
-} from '@blocksuite/affine/model';
-import { AffineSchemas } from '@blocksuite/affine/schemas';
-import { MarkdownAdapter } from '@blocksuite/affine/shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
+} from '@blocksuite/nexio/model';
+import { NexioSchemas } from '@blocksuite/nexio/schemas';
+import { MarkdownAdapter } from '@blocksuite/nexio/shared/adapters';
+import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
 import {
   createYProxy,
   type DeltaInsert,
@@ -17,7 +17,7 @@ import {
   Transformer,
   type TransformerMiddleware,
   type YBlock,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { uniq } from 'lodash-es';
 import {
   Array as YArray,
@@ -29,7 +29,7 @@ import {
 import { getStoreManager } from './bs-store';
 
 const blocksuiteSchema = new Schema();
-blocksuiteSchema.register([...AffineSchemas]);
+blocksuiteSchema.register([...NexioSchemas]);
 
 export interface BlockDocumentInfo {
   docId: string;
@@ -51,11 +51,11 @@ export interface BlockDocumentInfo {
 }
 
 const bookmarkFlavours = new Set([
-  'affine:bookmark',
-  'affine:embed-youtube',
-  'affine:embed-figma',
-  'affine:embed-github',
-  'affine:embed-loom',
+  'nexio:bookmark',
+  'nexio:embed-youtube',
+  'nexio:embed-figma',
+  'nexio:embed-github',
+  'nexio:embed-loom',
 ]);
 
 function generateMarkdownPreviewBuilder(
@@ -175,7 +175,7 @@ function generateMarkdownPreviewBuilder(
       );
 
       // reach the root block. do not count it.
-      if (!currentBlock || currentBlock.flavour !== 'affine:list') {
+      if (!currentBlock || currentBlock.flavour !== 'nexio:list') {
         break;
       }
       parentBlockCount++;
@@ -199,7 +199,7 @@ function generateMarkdownPreviewBuilder(
 
   const generateDatabaseMarkdownPreview = (block: BlockDocumentInfo) => {
     const isDatabaseBlock = (block: BlockDocumentInfo) => {
-      return block.flavour === 'affine:database';
+      return block.flavour === 'nexio:database';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -234,7 +234,7 @@ function generateMarkdownPreviewBuilder(
     const isImageModel = (
       model: DraftModel | null
     ): model is DraftModel<ImageBlockModel> => {
-      return model?.flavour === 'affine:image';
+      return model?.flavour === 'nexio:image';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -261,8 +261,8 @@ function generateMarkdownPreviewBuilder(
       model: DraftModel | null
     ): model is DraftModel<EmbedBlockModel> => {
       return (
-        model?.flavour === 'affine:embed-linked-doc' ||
-        model?.flavour === 'affine:embed-synced-doc'
+        model?.flavour === 'nexio:embed-linked-doc' ||
+        model?.flavour === 'nexio:embed-synced-doc'
       );
     };
 
@@ -307,7 +307,7 @@ function generateMarkdownPreviewBuilder(
     const isAttachmentModel = (
       model: DraftModel | null
     ): model is DraftModel<AttachmentBlockModel> => {
-      return model?.flavour === 'affine:attachment';
+      return model?.flavour === 'nexio:attachment';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -322,7 +322,7 @@ function generateMarkdownPreviewBuilder(
     const isTableModel = (
       model: DraftModel | null
     ): model is DraftModel<TableBlockModel> => {
-      return model?.flavour === 'affine:table';
+      return model?.flavour === 'nexio:table';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -343,48 +343,48 @@ function generateMarkdownPreviewBuilder(
     let markdown: string | null = null;
 
     if (
-      flavour === 'affine:paragraph' ||
-      flavour === 'affine:list' ||
-      flavour === 'affine:code'
+      flavour === 'nexio:paragraph' ||
+      flavour === 'nexio:list' ||
+      flavour === 'nexio:code'
     ) {
       const draftModel = yblockToDraftModal(block.yblock);
       markdown =
-        block.parentFlavour === 'affine:database'
+        block.parentFlavour === 'nexio:database'
           ? generateDatabaseMarkdownPreview(block)
           : ((draftModel ? await markdownAdapter.fromBlock(draftModel) : null)
               ?.file ?? null);
 
       if (markdown) {
-        if (flavour === 'affine:code') {
+        if (flavour === 'nexio:code') {
           markdown = trimCodeBlock(markdown);
-        } else if (flavour === 'affine:paragraph') {
+        } else if (flavour === 'nexio:paragraph') {
           markdown = trimParagraph(markdown);
         }
       }
-    } else if (flavour === 'affine:database') {
+    } else if (flavour === 'nexio:database') {
       markdown = generateDatabaseMarkdownPreview(block);
     } else if (
-      flavour === 'affine:embed-linked-doc' ||
-      flavour === 'affine:embed-synced-doc'
+      flavour === 'nexio:embed-linked-doc' ||
+      flavour === 'nexio:embed-synced-doc'
     ) {
       markdown = generateEmbedMarkdownPreview(block);
-    } else if (flavour === 'affine:attachment') {
+    } else if (flavour === 'nexio:attachment') {
       markdown = generateAttachmentMarkdownPreview(block);
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'nexio:image') {
       markdown = generateImageMarkdownPreview(block);
-    } else if (flavour === 'affine:surface' || flavour === 'affine:page') {
+    } else if (flavour === 'nexio:surface' || flavour === 'nexio:page') {
       // skip
-    } else if (flavour === 'affine:latex') {
+    } else if (flavour === 'nexio:latex') {
       markdown = generateLatexMarkdownPreview(block);
     } else if (bookmarkFlavours.has(flavour)) {
       markdown = generateBookmarkMarkdownPreview(block);
-    } else if (flavour === 'affine:table') {
+    } else if (flavour === 'nexio:table') {
       markdown = generateTableMarkdownPreview(block);
     } else {
       console.warn(`unknown flavour: ${flavour}`);
     }
 
-    if (markdown && flavour === 'affine:list') {
+    if (markdown && flavour === 'nexio:list') {
       const blockDepth = getListDepth(block);
       markdown = indentMarkdown(markdown, Math.max(0, blockDepth));
     }
@@ -504,7 +504,7 @@ export async function readAllBlocksFromDoc({
   for (const block of blocks.values()) {
     const flavour = block.get('sys:flavour')?.toString();
     const blockId = block.get('sys:id')?.toString();
-    if (flavour === 'affine:page' && blockId) {
+    if (flavour === 'nexio:page' && blockId) {
       rootBlockId = blockId;
     }
   }
@@ -545,7 +545,7 @@ export async function readAllBlocksFromDoc({
 
     const flavour = block.get('sys:flavour')?.toString();
     const parentFlavour = parentBlock?.get('sys:flavour')?.toString();
-    const noteBlock = nearestByFlavour(blockId, 'affine:note');
+    const noteBlock = nearestByFlavour(blockId, 'nexio:note');
 
     // display mode:
     // - both: page and edgeless -> fallback to page
@@ -572,13 +572,13 @@ export async function readAllBlocksFromDoc({
       additional: { displayMode, noteBlockId },
     };
 
-    if (flavour === 'affine:page') {
+    if (flavour === 'nexio:page') {
       docTitle = block.get('prop:title').toString();
       blockDocuments.push({ ...commonBlockProps, content: docTitle });
     } else if (
-      flavour === 'affine:paragraph' ||
-      flavour === 'affine:list' ||
-      flavour === 'affine:code'
+      flavour === 'nexio:paragraph' ||
+      flavour === 'nexio:list' ||
+      flavour === 'nexio:code'
     ) {
       const text = block.get('prop:text') as YText;
 
@@ -586,7 +586,7 @@ export async function readAllBlocksFromDoc({
         continue;
       }
 
-      const deltas: DeltaInsert<AffineTextAttributes>[] = text.toDelta();
+      const deltas: DeltaInsert<NexioTextAttributes>[] = text.toDelta();
       const refs = uniq(
         deltas
           .flatMap(delta => {
@@ -608,7 +608,7 @@ export async function readAllBlocksFromDoc({
       );
 
       const databaseName =
-        flavour === 'affine:paragraph' && parentFlavour === 'affine:database' // if block is a database row
+        flavour === 'nexio:paragraph' && parentFlavour === 'nexio:database' // if block is a database row
           ? parentBlock?.get('prop:title')?.toString()
           : undefined;
 
@@ -633,8 +633,8 @@ export async function readAllBlocksFromDoc({
         maxSummaryLength -= text.length;
       }
     } else if (
-      flavour === 'affine:embed-linked-doc' ||
-      flavour === 'affine:embed-synced-doc'
+      flavour === 'nexio:embed-linked-doc' ||
+      flavour === 'nexio:embed-synced-doc'
     ) {
       const pageId = block.get('prop:pageId');
       if (typeof pageId === 'string') {
@@ -648,7 +648,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:attachment') {
+    } else if (flavour === 'nexio:attachment') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -659,7 +659,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'nexio:image') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -670,7 +670,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'affine:surface') {
+    } else if (flavour === 'nexio:surface') {
       const texts = [];
 
       const elementsObj = block.get('prop:elements');
@@ -705,7 +705,7 @@ export async function readAllBlocksFromDoc({
         parentFlavour,
         parentBlockId,
       });
-    } else if (flavour === 'affine:database') {
+    } else if (flavour === 'nexio:database') {
       const texts = [];
       const columnsObj = block.get('prop:columns');
       const databaseTitle = block.get('prop:title');
@@ -749,12 +749,12 @@ export async function readAllBlocksFromDoc({
           databaseName: databaseTitle?.toString(),
         },
       });
-    } else if (flavour === 'affine:latex') {
+    } else if (flavour === 'nexio:latex') {
       blockDocuments.push({
         ...commonBlockProps,
         content: block.get('prop:latex')?.toString() ?? '',
       });
-    } else if (flavour === 'affine:table') {
+    } else if (flavour === 'nexio:table') {
       const contents = Array.from<string>(block.keys())
         .map(key => {
           if (key.startsWith('prop:cells.') && key.endsWith('.text')) {
@@ -781,13 +781,13 @@ export async function readAllBlocksFromDoc({
     if (block.ref?.length) {
       const target = block;
 
-      // should only generate the markdown preview belong to the same affine:note
-      const noteBlock = nearestByFlavour(block.blockId, 'affine:note');
+      // should only generate the markdown preview belong to the same nexio:note
+      const noteBlock = nearestByFlavour(block.blockId, 'nexio:note');
 
       const sameNoteBlocks = noteBlock
         ? blockDocuments.filter(
             candidate =>
-              nearestByFlavour(candidate.blockId, 'affine:note') === noteBlock
+              nearestByFlavour(candidate.blockId, 'nexio:note') === noteBlock
           )
         : [];
 

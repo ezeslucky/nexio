@@ -1,6 +1,6 @@
-import { MenuItem, MenuSeparator, MenuSub } from '@affine/component';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { MenuItem, MenuSeparator, MenuSub } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   ExportIcon,
   ExportToHtmlIcon,
@@ -61,7 +61,7 @@ export const PrintMenuItems = ({
       className={className}
       type="pdf"
       icon={<PrinterIcon />}
-      label={t['com.affine.export.print']()}
+      label={t['com.nexio.export.print']()}
     />
   );
 };

@@ -1,4 +1,4 @@
-import { UserPlanButton } from '@affine/core/components/affine/auth/user-plan-button';
+import { UserPlanButton } from '@nexio/core/components/nexio/auth/user-plan-button';
 import type { SyntheticEvent } from 'react';
 
 import * as styles from './index.css';

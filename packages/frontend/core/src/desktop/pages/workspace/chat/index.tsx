@@ -1,32 +1,32 @@
-import { observeResize, useConfirmModal } from '@affine/component';
-import { CopilotClient } from '@affine/core/blocksuite/ai';
+import { observeResize, useConfirmModal } from '@nexio/component';
+import { CopilotClient } from '@nexio/core/blocksuite/ai';
 import {
   AIChatContent,
   type ChatContextValue,
-} from '@affine/core/blocksuite/ai/components/ai-chat-content';
-import type { ChatStatus } from '@affine/core/blocksuite/ai/components/ai-chat-messages';
-import { AIChatToolbar } from '@affine/core/blocksuite/ai/components/ai-chat-toolbar';
-import type { PromptKey } from '@affine/core/blocksuite/ai/provider/prompt';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import { NotificationServiceImpl } from '@affine/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@affine/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+} from '@nexio/core/blocksuite/ai/components/ai-chat-content';
+import type { ChatStatus } from '@nexio/core/blocksuite/ai/components/ai-chat-messages';
+import { AIChatToolbar } from '@nexio/core/blocksuite/ai/components/ai-chat-toolbar';
+import type { PromptKey } from '@nexio/core/blocksuite/ai/provider/prompt';
+import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
+import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
+import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
+import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
 import {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import { AIModelService } from '@affine/core/modules/ai-button/services/models';
+} from '@nexio/core/modules/ai-button';
+import { AIModelService } from '@nexio/core/modules/ai-button/services/models';
 import {
   EventSourceService,
   FetchService,
   GraphQLService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { AppThemeService } from '@affine/core/modules/theme';
+} from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { PeekViewService } from '@nexio/core/modules/peek-view';
+import { AppThemeService } from '@nexio/core/modules/theme';
 import {
   ViewBody,
   ViewHeader,
@@ -34,11 +34,11 @@ import {
   ViewService,
   ViewTitle,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { Workspace } from '@blocksuite/affine/store';
+} from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { BlockStdScope } from '@blocksuite/nexio/std';
+import type { Workspace } from '@blocksuite/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { useFramework, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
@@ -120,7 +120,7 @@ export const Component = () => {
       }
       const sessionId = await client.createSession({
         workspaceId,
-        promptName: 'Chat With AFFiNE AI' satisfies PromptKey,
+        promptName: 'Chat With nexio AI' satisfies PromptKey,
         reuseLatestChat: false,
         ...options,
       });
@@ -221,12 +221,12 @@ export const Component = () => {
     content.networkSearchConfig = networkSearchConfig;
     content.reasoningConfig = reasoningConfig;
     content.onContextChange = onContextChange;
-    content.affineFeatureFlagService = framework.get(FeatureFlagService);
-    content.affineWorkspaceDialogService = framework.get(
+    content.nexioFeatureFlagService = framework.get(FeatureFlagService);
+    content.nexioWorkspaceDialogService = framework.get(
       WorkspaceDialogService
     );
     content.peekViewService = framework.get(PeekViewService);
-    content.affineThemeService = framework.get(AppThemeService);
+    content.nexioThemeService = framework.get(AppThemeService);
     content.notificationService = new NotificationServiceImpl(
       confirmModal.closeConfirmModal,
       confirmModal.openConfirmModal

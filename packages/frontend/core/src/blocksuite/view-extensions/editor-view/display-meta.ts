@@ -1,15 +1,15 @@
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import type { Container } from '@blocksuite/affine/global/di';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import type { Container } from '@blocksuite/nexio/global/di';
 import type {
   DocDisplayMetaExtension,
   DocDisplayMetaParams,
-} from '@blocksuite/affine/shared/services';
-import { DocDisplayMetaProvider } from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
+import { DocDisplayMetaProvider } from '@blocksuite/nexio/shared/services';
 import {
   createSignalFromObservable,
   referenceToNode,
-} from '@blocksuite/affine/shared/utils';
-import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/shared/utils';
+import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/nexio/std';
 import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { type FrameworkProvider } from '@toeverything/infra';
@@ -30,7 +30,7 @@ export function buildDocDisplayMetaExtension(framework: FrameworkProvider) {
     });
   }
 
-  class AffineDocDisplayMetaService
+  class NexioDocDisplayMetaService
     extends LifeCycleWatcher
     implements DocDisplayMetaExtension
   {
@@ -94,5 +94,5 @@ export function buildDocDisplayMetaExtension(framework: FrameworkProvider) {
     }
   }
 
-  return AffineDocDisplayMetaService;
+  return NexioDocDisplayMetaService;
 }

@@ -2,13 +2,13 @@
 import {
   CanvasRenderer,
   type SurfaceBlockModel,
-} from '@blocksuite/affine/blocks/surface';
-import { fitContent } from '@blocksuite/affine/gfx/shape';
-import type { Bound } from '@blocksuite/affine/global/gfx';
-import type { Color, ShapeElementModel } from '@blocksuite/affine/model';
-import { ThemeProvider } from '@blocksuite/affine/shared/services';
-import { BlockComponent } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/blocks/surface';
+import { fitContent } from '@blocksuite/nexio/gfx/shape';
+import type { Bound } from '@blocksuite/nexio/global/gfx';
+import type { Color, ShapeElementModel } from '@blocksuite/nexio/model';
+import { ThemeProvider } from '@blocksuite/nexio/shared/services';
+import { BlockComponent } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 
@@ -142,17 +142,17 @@ export class MindmapSurfaceBlock extends BlockComponent<SurfaceBlockModel> {
   override render() {
     return html`
       <style>
-        .affine-mini-mindmap-surface {
+        .nexio-mini-mindmap-surface {
           width: 100%;
           height: 100%;
         }
       </style>
-      <div class="affine-mini-mindmap-surface">
+      <div class="nexio-mini-mindmap-surface">
         <!-- attach cavnas later in renderer -->
       </div>
     `;
   }
 
-  @query('.affine-mini-mindmap-surface')
+  @query('.nexio-mini-mindmap-surface')
   accessor editorContainer!: HTMLDivElement;
 }

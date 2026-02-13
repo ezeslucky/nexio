@@ -1,6 +1,6 @@
-import { AIStarIconWithAnimation } from '@blocksuite/affine/components/icons';
-import { createLitPortal } from '@blocksuite/affine/components/portal';
-import { type EditorHost, TextSelection } from '@blocksuite/affine/std';
+import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
+import { createLitPortal } from '@blocksuite/nexio/components/portal';
+import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { html, type TemplateResult } from 'lit';
 
@@ -23,7 +23,7 @@ import {
   selectAboveBlocks,
 } from '../utils/selection-utils';
 import { mergeStreamObjects } from '../utils/stream-objects';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type {
   AIActionAnswer,
   AINetworkSearchConfig,
@@ -181,7 +181,7 @@ function actionToGenerateAnswer<T extends keyof BlockSuitePresets.AIActions>(
  * Currently, only support text action
  */
 function updateAIPanelConfig<T extends keyof BlockSuitePresets.AIActions>(
-  aiPanel: AffineAIPanelWidget,
+  aiPanel: nexioAIPanelWidget,
   id: T,
   generatingIcon: TemplateResult<1>,
   variants?: Omit<
@@ -229,7 +229,7 @@ export function actionToHandler<T extends keyof BlockSuitePresets.AIActions>(
     if (!block) return;
     if (
       blocks.length === 1 &&
-      block.model.flavour === 'affine:image' &&
+      block.model.flavour === 'nexio:image' &&
       id === 'createImage'
     ) {
       // if only one image block is selected, and the action is createImage

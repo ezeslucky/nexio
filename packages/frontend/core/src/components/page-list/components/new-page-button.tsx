@@ -1,7 +1,7 @@
-import { DropdownButton, Menu } from '@affine/component';
-import { BlockCard } from '@affine/component/card/block-card';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { DropdownButton, Menu } from '@nexio/component';
+import { BlockCard } from '@nexio/component/card/block-card';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { EdgelessIcon, ImportIcon, PageIcon } from '@blocksuite/icons/rc';
 import type { MouseEvent, PropsWithChildren } from 'react';
 import { useCallback, useState } from 'react';
@@ -32,16 +32,16 @@ export const CreateNewPagePopup = ({
       }}
     >
       <BlockCard
-        title={t['com.affine.new.page-mode']()}
-        desc={t['com.affine.write_with_a_blank_page']()}
+        title={t['com.nexio.new.page-mode']()}
+        desc={t['com.nexio.write_with_a_blank_page']()}
         right={<PageIcon width={20} height={20} />}
         onClick={createNewPage}
         onAuxClick={createNewPage}
         data-testid="new-page-button-in-all-page"
       />
       <BlockCard
-        title={t['com.affine.new_edgeless']()}
-        desc={t['com.affine.draw_with_a_blank_whiteboard']()}
+        title={t['com.nexio.new_edgeless']()}
+        desc={t['com.nexio.draw_with_a_blank_whiteboard']()}
         right={<EdgelessIcon width={20} height={20} />}
         onClick={createNewEdgeless}
         onAuxClick={createNewEdgeless}
@@ -49,8 +49,8 @@ export const CreateNewPagePopup = ({
       />
       {importFile ? (
         <BlockCard
-          title={t['com.affine.new_import']()}
-          desc={t['com.affine.import_file']()}
+          title={t['com.nexio.new_import']()}
+          desc={t['com.nexio.import_file']()}
           right={<ImportIcon width={20} height={20} />}
           onClick={importFile}
           data-testid="import-button-in-all-page"

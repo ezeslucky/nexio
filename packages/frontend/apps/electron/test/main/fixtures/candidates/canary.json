@@ -6,53 +6,53 @@
     "published_at": "2024-08-29T08:20:54Z",
     "assets": [
       {
-        "name": "affine-0.17.0-canary.7-canary-linux-x64.appimage",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-linux-x64.appimage",
+        "name": "nexio-0.17.0-canary.7-canary-linux-x64.appimage",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-linux-x64.appimage",
         "size": 181990592
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-linux-x64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-linux-x64.zip",
+        "name": "nexio-0.17.0-canary.7-canary-linux-x64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-linux-x64.zip",
         "size": 180105256
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-macos-arm64.dmg",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-macos-arm64.dmg",
+        "name": "nexio-0.17.0-canary.7-canary-macos-arm64.dmg",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-macos-arm64.dmg",
         "size": 170556866
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-macos-arm64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-macos-arm64.zip",
+        "name": "nexio-0.17.0-canary.7-canary-macos-arm64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-macos-arm64.zip",
         "size": 170382513
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-macos-x64.dmg",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-macos-x64.dmg",
+        "name": "nexio-0.17.0-canary.7-canary-macos-x64.dmg",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-macos-x64.dmg",
         "size": 176815834
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-macos-x64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-macos-x64.zip",
+        "name": "nexio-0.17.0-canary.7-canary-macos-x64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-macos-x64.zip",
         "size": 176948223
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-windows-x64.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-windows-x64.exe",
+        "name": "nexio-0.17.0-canary.7-canary-windows-x64.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-windows-x64.exe",
         "size": 182557416
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-windows-x64.nsis.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-windows-x64.nsis.exe",
+        "name": "nexio-0.17.0-canary.7-canary-windows-x64.nsis.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-windows-x64.nsis.exe",
         "size": 133493672
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-windows-arm64.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-windows-arm64.exe",
+        "name": "nexio-0.17.0-canary.7-canary-windows-arm64.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-windows-arm64.exe",
         "size": 182557416
       },
       {
-        "name": "affine-0.17.0-canary.7-canary-windows-arm64.nsis.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/affine-0.17.0-canary.7-canary-windows-arm64.nsis.exe",
+        "name": "nexio-0.17.0-canary.7-canary-windows-arm64.nsis.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.17.0-canary.7/nexio-0.17.0-canary.7-canary-windows-arm64.nsis.exe",
         "size": 133493672
       },
       {

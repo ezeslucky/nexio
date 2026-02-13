@@ -1,9 +1,9 @@
-import { type MenuRef, PropertyValue } from '@affine/component';
-import { PublicUserLabel } from '@affine/core/modules/cloud/views/public-user';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { type DocRecord, DocService } from '@affine/core/modules/doc';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { type MenuRef, PropertyValue } from '@nexio/component';
+import { PublicUserLabel } from '@nexio/core/modules/cloud/views/public-user';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { type DocRecord, DocService } from '@nexio/core/modules/doc';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { type ReactNode, useCallback, useEffect, useMemo, useRef } from 'react';
@@ -15,13 +15,13 @@ import * as styles from './created-updated-by.css';
 
 const CreatedUsernameTip = ({ userName }: { userName: string }) => {
   const i18n = useI18n();
-  return i18n.t('com.affine.page-properties.property.createdBy.tip', {
+  return i18n.t('com.nexio.page-properties.property.createdBy.tip', {
     userName,
   });
 };
 const UpdatedUsernameTip = ({ userName }: { userName: string }) => {
   const i18n = useI18n();
-  return i18n.t('com.affine.page-properties.property.updatedBy.tip', {
+  return i18n.t('com.nexio.page-properties.property.updatedBy.tip', {
     userName,
   });
 };
@@ -65,14 +65,14 @@ const NoRecordValue = () => {
   const t = useI18n();
   return (
     <span>
-      {t['com.affine.page-properties.property-user-avatar-no-record']()}
+      {t['com.nexio.page-properties.property-user-avatar-no-record']()}
     </span>
   );
 };
 
 const LocalUserValue = () => {
   const t = useI18n();
-  return <span>{t['com.affine.page-properties.local-user']()}</span>;
+  return <span>{t['com.nexio.page-properties.local-user']()}</span>;
 };
 
 export const CreatedByValue = () => {
@@ -154,7 +154,7 @@ export const CreatedByUpdatedByFilterValue = ({
     <MemberSelectorInline
       placeholder={
         <span style={{ color: cssVarV2('text/placeholder') }}>
-          {t['com.affine.filter.empty']()}
+          {t['com.nexio.filter.empty']()}
         </span>
       }
       selected={selected}

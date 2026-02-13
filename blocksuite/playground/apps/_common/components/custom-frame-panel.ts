@@ -1,6 +1,6 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { TestNexioEditorContainer } from '@blocksuite/integration-test';
 import { effect } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
@@ -12,8 +12,8 @@ export class CustomFramePanel extends WithDisposable(ShadowlessElement) {
       position: absolute;
       top: 0;
       right: 0;
-      border: 1px solid var(--affine-border-color, #e3e2e4);
-      background-color: var(--affine-background-primary-color);
+      border: 1px solid var(--nexio-border-color, #e3e2e4);
+      background-color: var(--nexio-background-primary-color);
       height: 100vh;
       width: 320px;
       box-sizing: border-box;
@@ -23,9 +23,9 @@ export class CustomFramePanel extends WithDisposable(ShadowlessElement) {
   `;
 
   private _renderPanel() {
-    return html`<affine-frame-panel
+    return html`<nexio-frame-panel
       .host=${this.editor.std.host}
-    ></affine-frame-panel>`;
+    ></nexio-frame-panel>`;
   }
 
   override connectedCallback(): void {
@@ -59,7 +59,7 @@ export class CustomFramePanel extends WithDisposable(ShadowlessElement) {
   private accessor _show = false;
 
   @property({ attribute: false })
-  accessor editor!: TestAffineEditorContainer;
+  accessor editor!: TestNexioEditorContainer;
 }
 
 declare global {

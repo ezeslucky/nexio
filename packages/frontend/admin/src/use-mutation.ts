@@ -4,7 +4,7 @@ import type {
   QueryResponse,
   QueryVariables,
   RecursiveMaybeFields,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import type { GraphQLError } from 'graphql';
 import { useMemo } from 'react';
 import type { Key } from 'swr';
@@ -23,7 +23,7 @@ import { gqlFetcher } from './use-query';
  * @example
  *
  * ```ts
- * import { someMutation } from '@affine/graphql'
+ * import { someMutation } from '@nexio/graphql'
  *
  * const { trigger } = useMutation({
  *  mutation: someMutation,

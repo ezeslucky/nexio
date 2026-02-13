@@ -35,9 +35,9 @@ export const appIconMap = {
 
 export const appNames = {
   stable: 'AFFiNE',
-  canary: 'AFFiNE Canary',
-  beta: 'AFFiNE Beta',
-  internal: 'AFFiNE Internal',
+  canary: 'NEXIO Canary',
+  beta: 'NEXIO Beta',
+  internal: 'NEXIO Internal',
 } satisfies Record<Channel, string>;
 
 export const appSchemaUrl = z.custom<string>(

@@ -1,15 +1,15 @@
-import { AIStarIconWithAnimation } from '@blocksuite/affine/components/icons';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { AiIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
 import type { ChatStatus } from '../ai-chat-messages';
 
-const AffineAvatarIcon = AiIcon({
+const NexioAvatarIcon = AiIcon({
   width: '20px',
   height: '20px',
-  style: 'color: var(--affine-primary-color)',
+  style: 'color: var(--nexio-primary-color)',
 });
 
 export class AssistantAvatar extends ShadowlessElement {
@@ -27,8 +27,8 @@ export class AssistantAvatar extends ShadowlessElement {
   protected override render() {
     return html`${this.status === 'transmitting'
       ? AIStarIconWithAnimation
-      : AffineAvatarIcon}
-    AFFiNE AI`;
+      : NexioAvatarIcon}
+    NEXIO AI`;
   }
 }
 

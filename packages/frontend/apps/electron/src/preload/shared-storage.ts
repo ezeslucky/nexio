@@ -2,17 +2,17 @@ import { MemoryMemento } from '@toeverything/infra';
 import { ipcRenderer } from 'electron';
 
 import {
-  AFFINE_API_CHANNEL_NAME,
-  AFFINE_EVENT_CHANNEL_NAME,
+  NEXIO_API_CHANNEL_NAME,
+  NEXIO_EVENT_CHANNEL_NAME,
 } from '../shared/type';
 
 // Load persisted data from main process synchronously at preload time
 const initialGlobalState = ipcRenderer.sendSync(
-  AFFINE_API_CHANNEL_NAME,
+  NEXIO_API_CHANNEL_NAME,
   'sharedStorage:getAllGlobalState'
 );
 const initialGlobalCache = ipcRenderer.sendSync(
-  AFFINE_API_CHANNEL_NAME,
+  NEXIO_API_CHANNEL_NAME,
   'sharedStorage:getAllGlobalCache'
 );
 
@@ -20,7 +20,7 @@ const initialGlobalCache = ipcRenderer.sendSync(
 const CLIENT_ID: string = Math.random().toString(36).slice(2);
 
 function invokeWithCatch(key: string, ...args: any[]) {
-  ipcRenderer.invoke(AFFINE_API_CHANNEL_NAME, key, ...args).catch(err => {
+  ipcRenderer.invoke(NEXIO_API_CHANNEL_NAME, key, ...args).catch(err => {
     console.error(`Failed to invoke ${key}`, err);
   });
 }
@@ -36,7 +36,7 @@ function createSharedStorageApi(
 ) {
   const memory = new MemoryMemento();
   memory.setAll(init);
-  ipcRenderer.on(AFFINE_EVENT_CHANNEL_NAME, (_event, channel, updates) => {
+  ipcRenderer.on(NEXIO_EVENT_CHANNEL_NAME, (_event, channel, updates) => {
     if (channel === `sharedStorage:${event}`) {
       for (const [key, raw] of Object.entries(updates)) {
         // support both legacy plain value and new { v, r, s } structure

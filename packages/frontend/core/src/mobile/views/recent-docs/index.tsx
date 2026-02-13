@@ -1,5 +1,5 @@
-import { useBlockSuiteDocMeta } from '@affine/core/components/hooks/use-block-suite-page-meta';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useBlockSuiteDocMeta } from '@nexio/core/components/hooks/use-block-suite-page-meta';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 

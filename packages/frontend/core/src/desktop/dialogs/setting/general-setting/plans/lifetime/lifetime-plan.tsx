@@ -1,7 +1,7 @@
-import { Button } from '@affine/component';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { SignUpAction, Upgrade } from '../plan-card';
@@ -25,22 +25,22 @@ export const LifetimePlan = () => {
   return (
     <BelieverCard type={1}>
       <div className={styles.caption1}>
-        {t['com.affine.payment.lifetime.caption-1']()}
+        {t['com.nexio.payment.lifetime.caption-1']()}
       </div>
 
       <div className={styles.title}>
-        {t['com.affine.payment.lifetime.title']()}
+        {t['com.nexio.payment.lifetime.title']()}
       </div>
 
       <div className={styles.price}>{readableLifetimePrice}</div>
 
       {!loggedIn ? (
         <SignUpAction className={styles.purchase}>
-          {t['com.affine.payment.sign-up-free']()}
+          {t['com.nexio.payment.sign-up-free']()}
         </SignUpAction>
       ) : isBeliever ? (
         <Button className={styles.purchase} size="default" disabled>
-          {t['com.affine.payment.lifetime.purchased']()}
+          {t['com.nexio.payment.lifetime.purchased']()}
         </Button>
       ) : (
         <Upgrade
@@ -48,13 +48,13 @@ export const LifetimePlan = () => {
           recurring={SubscriptionRecurring.Lifetime}
           plan={SubscriptionPlan.Pro}
         >
-          {t['com.affine.payment.lifetime.purchase']()}
+          {t['com.nexio.payment.lifetime.purchase']()}
         </Upgrade>
       )}
 
       <div className={styles.caption2}>
         <Trans
-          i18nKey="com.affine.payment.lifetime.caption-2"
+          i18nKey="com.nexio.payment.lifetime.caption-2"
           components={{
             a: <a className={styles.userPolicyLink} href="#" />,
           }}

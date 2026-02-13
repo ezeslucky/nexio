@@ -1,6 +1,6 @@
-import { IconButton } from '@affine/component';
-import { NotificationCountService } from '@affine/core/modules/notification';
-import { track } from '@affine/track';
+import { IconButton } from '@nexio/component';
+import { NotificationCountService } from '@nexio/core/modules/notification';
+import { track } from '@nexio/track';
 import { SidebarIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

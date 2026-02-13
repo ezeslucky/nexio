@@ -33,7 +33,7 @@ export class VersionGuardProvider
 
     const { req } = getRequestResponseFromContext(context);
 
-    const version = req.headers['x-affine-version'] as string | undefined;
+    const version = req.headers['x-nexio-version'] as string | undefined;
 
     return this.version.checkVersion(version);
   }

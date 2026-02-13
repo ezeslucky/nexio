@@ -1,19 +1,19 @@
-import { Button, usePromptModal } from '@affine/component';
+import { Button, usePromptModal } from '@nexio/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
-import { Filters } from '@affine/core/components/filter';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import type { ExplorerDisplayPreference } from '@nexio/core/components/explorer/types';
+import { Filters } from '@nexio/core/components/filter';
 import {
   CollectionService,
   PinnedCollectionService,
-} from '@affine/core/modules/collection';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import type { FilterParams } from '@affine/core/modules/collection-rules/types';
-import { WorkspaceLocalState } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import type { FilterParams } from '@nexio/core/modules/collection-rules/types';
+import { WorkspaceLocalState } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -298,14 +298,14 @@ export const AllPage = () => {
       setTempFilters(null);
     } else {
       openPromptModal({
-        title: t['com.affine.editCollection.saveCollection'](),
-        label: t['com.affine.editCollectionName.name'](),
+        title: t['com.nexio.editCollection.saveCollection'](),
+        label: t['com.nexio.editCollectionName.name'](),
         inputOptions: {
-          placeholder: t['com.affine.editCollectionName.name.placeholder'](),
+          placeholder: t['com.nexio.editCollectionName.name.placeholder'](),
         },
-        children: t['com.affine.editCollectionName.createTips'](),
-        confirmText: t['com.affine.editCollection.save'](),
-        cancelText: t['com.affine.editCollection.button.cancel'](),
+        children: t['com.nexio.editCollectionName.createTips'](),
+        confirmText: t['com.nexio.editCollection.save'](),
+        cancelText: t['com.nexio.editCollection.button.cancel'](),
         confirmButtonOptions: {
           variant: 'primary',
         },

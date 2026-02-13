@@ -17,8 +17,8 @@ resolver = "3"
 edition = "2024"
 
 [workspace.dependencies]
-affine_common          = { path = "./packages/common/native" }
-affine_nbstore         = { path = "./packages/frontend/native/nbstore" }
+nexio_common          = { path = "./packages/common/native" }
+nexio_nbstore         = { path = "./packages/frontend/native/nbstore" }
 ahash                  = "0.8"
 anyhow                 = "1"
 arbitrary              = { version = "1.3", features = ["derive"] }
@@ -126,5 +126,5 @@ opt-level     = 3
 strip         = "symbols"
 
 # android uniffi bindgen requires symbols
-[profile.release.package.affine_mobile_native]
+[profile.release.package.nexio_mobile_native]
 strip         = "none"

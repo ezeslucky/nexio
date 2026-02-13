@@ -1,12 +1,12 @@
-import { Input } from '@affine/admin/components/ui/input';
+import { Input } from '@nexio/admin/components/ui/input';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@affine/admin/components/ui/select';
-import { Switch } from '@affine/admin/components/ui/switch';
+} from '@nexio/admin/components/ui/select';
+import { Switch } from '@nexio/admin/components/ui/switch';
 import { useCallback } from 'react';
 
 import { Textarea } from '../../components/ui/textarea';

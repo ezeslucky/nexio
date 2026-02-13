@@ -1,10 +1,10 @@
-import { notify } from '@affine/component';
-import { useDowngradeNotify } from '@affine/core/components/affine/subscription-landing/notify';
-import { getDowngradeQuestionnaireLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { notify } from '@nexio/component';
+import { useDowngradeNotify } from '@nexio/core/components/nexio/subscription-landing/notify';
+import { getDowngradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import type { PropsWithChildren } from 'react';
@@ -247,8 +247,8 @@ export const TeamResumeAction = ({
       setIdempotencyKey(nanoid());
       onOpenChange(false);
       notify.success({
-        title: t['com.affine.payment.resume.success.title'](),
-        message: t['com.affine.payment.resume.success.team.message'](),
+        title: t['com.nexio.payment.resume.success.title'](),
+        message: t['com.nexio.payment.resume.success.team.message'](),
       });
     } finally {
       setIsMutating(false);

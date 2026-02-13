@@ -119,9 +119,9 @@ export const FunctionalityModules = [
 ];
 
 export class AppModuleBuilder {
-  private readonly modules: AFFiNEModule[] = [];
+  private readonly modules: NEXIOModule[] = [];
 
-  use(...modules: AFFiNEModule[]): this {
+  use(...modules: NEXIOModule[]): this {
     modules.forEach(m => {
       this.modules.push(m);
     });
@@ -129,7 +129,7 @@ export class AppModuleBuilder {
     return this;
   }
 
-  useIf(predicator: () => boolean, ...modules: AFFiNEModule[]): this {
+  useIf(predicator: () => boolean, ...modules: NEXIOModule[]): this {
     if (predicator()) {
       this.use(...modules);
     }

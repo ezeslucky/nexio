@@ -3,7 +3,7 @@ import {
   getDocRolePermissionsQuery,
   type GetWorkspaceRolePermissionsQuery,
   getWorkspaceRolePermissionsQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { WorkspaceServerService } from '../../cloud';

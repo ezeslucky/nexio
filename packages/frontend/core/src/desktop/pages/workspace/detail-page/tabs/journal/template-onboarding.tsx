@@ -1,8 +1,8 @@
-import { Button, IconButton, Menu } from '@affine/component';
-import { GlobalStateService } from '@affine/core/modules/storage';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { TemplateListMenuContentScrollable } from '@affine/core/modules/template-doc/view/template-list-menu';
-import { useI18n } from '@affine/i18n';
+import { Button, IconButton, Menu } from '@nexio/component';
+import { GlobalStateService } from '@nexio/core/modules/storage';
+import { TemplateDocService } from '@nexio/core/modules/template-doc';
+import { TemplateListMenuContentScrollable } from '@nexio/core/modules/template-doc/view/template-list-menu';
+import { useI18n } from '@nexio/i18n';
 import { CloseIcon, TemplateIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
@@ -70,7 +70,7 @@ export const JournalTemplateOnboarding = () => {
     >
       <div className={styles.card} data-animation-played={animationPlayed}>
         <p className={styles.title}>
-          {t['com.affine.template-journal-onboarding.title']()}
+          {t['com.nexio.template-journal-onboarding.title']()}
         </p>
         <Menu
           contentOptions={{ className: styles.menu, align: 'end' }}
@@ -81,7 +81,7 @@ export const JournalTemplateOnboarding = () => {
           }
         >
           <Button variant="primary" prefix={<TemplateIcon />}>
-            {t['com.affine.template-journal-onboarding.select']()}
+            {t['com.nexio.template-journal-onboarding.select']()}
           </Button>
         </Menu>
         <JournalPaper />

@@ -137,12 +137,12 @@ test('select all should work for multiple notes in doc mode', async ({
   await selectAllByKeyboard(page);
   await selectAllByKeyboard(page);
   await selectAllByKeyboard(page);
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(n);
 });
 
 async function clickListIcon(page: Page, i = 0) {
-  const locator = page.locator('.affine-list-block__prefix').nth(i);
+  const locator = page.locator('.nexio-list-block__prefix').nth(i);
   await locator.click({
     force: true,
     position: {
@@ -236,7 +236,7 @@ test('selection on heavy page', async ({ page }) => {
     {
       beforeMouseUp: async () => {
         const rect = await page
-          .locator('.affine-page-dragging-area')
+          .locator('.nexio-page-dragging-area')
           .evaluate(element => element.getBoundingClientRect());
         assertAlmostEqual(rect.x, first.x - 1, 1);
         assertAlmostEqual(rect.y, first.y - 1, 1);
@@ -245,7 +245,7 @@ test('selection on heavy page', async ({ page }) => {
       },
     }
   );
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(5);
 });
 
@@ -335,7 +335,7 @@ test('should keep selection state when scrolling backward', async ({
   await assertRichTexts(page, data);
 
   const [, container, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -343,7 +343,7 @@ test('should keep selection state when scrolling backward', async ({
     viewport.scrollTo(0, distance);
 
     const container = viewport.querySelector(
-      '.affine-block-children-container'
+      '.nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -376,14 +376,14 @@ test('should keep selection state when scrolling backward', async ({
   );
 
   const scrollTop = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     return viewport.scrollTop;
   });
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(3 + 5 + 3);
   expect(scrollTop).toBe(0);
 });
@@ -411,13 +411,13 @@ test('should keep selection state when scrolling forward', async ({ page }) => {
   await assertRichTexts(page, data);
 
   const [viewport, container, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     const container = viewport.querySelector(
-      '.affine-block-children-container'
+      '.nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -451,13 +451,13 @@ test('should keep selection state when scrolling forward', async ({ page }) => {
   );
 
   const scrollTop = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     return viewport.scrollTop;
   });
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(3 + 5 + 3);
   // See https://jestjs.io/docs/expect#tobeclosetonumber-numdigits
   // Math.abs(scrollTop - distance) < Math.pow(10, -1 * -0.01)/2 = 0.511646496140377
@@ -489,14 +489,14 @@ test('should keep selection state when scrolling backward with the scroll wheel'
   await assertRichTexts(page, data);
 
   const [last, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     viewport.scrollTo(0, distance);
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -531,10 +531,10 @@ test('should keep selection state when scrolling backward with the scroll wheel'
   );
 
   // get count with scroll wheel
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
   const scrollTop0 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -544,7 +544,7 @@ test('should keep selection state when scrolling backward with the scroll wheel'
   await page.mouse.move(0, 0);
 
   await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -568,7 +568,7 @@ test('should keep selection state when scrolling backward with the scroll wheel'
   // get count with moving mouse
   const count1 = await rects.count();
   const scrollTop1 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -605,13 +605,13 @@ test('should keep selection state when scrolling forward with the scroll wheel',
   await assertRichTexts(page, data);
 
   const [first, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -645,10 +645,10 @@ test('should keep selection state when scrolling forward with the scroll wheel',
   );
 
   // get count with scroll wheel
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
   const scrollTop0 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -658,7 +658,7 @@ test('should keep selection state when scrolling forward with the scroll wheel',
   await page.mouse.move(0, 0);
 
   await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -681,7 +681,7 @@ test('should keep selection state when scrolling forward with the scroll wheel',
   // get count with moving mouse
   const count1 = await rects.count();
   const scrollTop1 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -712,14 +712,14 @@ test('should not clear selected rects when clicking on scrollbar', async ({
   await type(page, '321');
 
   const [viewport, first, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     viewport.scrollTo(0, distance / 2);
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -749,10 +749,10 @@ test('should not clear selected rects when clicking on scrollbar', async ({
     }
   );
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
   const scrollTop0 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -763,7 +763,7 @@ test('should not clear selected rects when clicking on scrollbar', async ({
 
   const count1 = await rects.count();
   const scrollTop1 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -795,14 +795,14 @@ test('should not clear selected rects when scrolling the wheel', async ({
   await type(page, '321');
 
   const [viewport, first, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     viewport.scrollTo(0, distance / 2);
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -832,7 +832,7 @@ test('should not clear selected rects when scrolling the wheel', async ({
     }
   );
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
 
   await page.mouse.wheel(viewport.right, -distance / 4);
@@ -847,11 +847,11 @@ test('should not clear selected rects when scrolling the wheel', async ({
   await waitNextFrame(page);
 
   const count2 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
-    const rects = viewport.querySelectorAll('affine-block-selection');
+    const rects = viewport.querySelectorAll('nexio-block-selection');
     const visibleRects = Array.from(rects).filter(rect => {
       const display = window.getComputedStyle(rect).display;
       return display !== 'none';
@@ -881,14 +881,14 @@ test('should refresh selected rects when resizing the window/viewport', async ({
   await type(page, '321');
 
   const [viewport, first, distance] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const distance = viewport.scrollHeight - viewport.clientHeight;
     viewport.scrollTo(0, distance / 2);
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -918,10 +918,10 @@ test('should refresh selected rects when resizing the window/viewport', async ({
     }
   );
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
   const scrollTop0 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -944,7 +944,7 @@ test('should refresh selected rects when resizing the window/viewport', async ({
 
   const count1 = await rects.count();
   const scrollTop1 = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
@@ -984,7 +984,7 @@ test('should clear block selection before native selection', async ({
     }
   );
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   const count0 = await rects.count();
 
   await dragBetweenIndices(
@@ -1019,12 +1019,12 @@ test('should not be misaligned when the editor container has padding or margin',
 
   // `123`, `789`
   const [first, last] = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport');
+    const viewport = document.querySelector('.nexio-page-viewport');
     if (!viewport) {
       throw new Error();
     }
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     if (!container) {
       throw new Error();
@@ -1052,7 +1052,7 @@ test('should not be misaligned when the editor container has padding or margin',
     }
   );
 
-  const rects = page.locator('affine-block-selection').locator('visible=true');
+  const rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(3);
 });
 
@@ -1075,7 +1075,7 @@ test('undo should clear block selection', async ({ page }) => {
 
   await redoByKeyboard(page);
   const selectedBlocks = page
-    .locator('affine-block-selection')
+    .locator('nexio-block-selection')
     .locator('visible=true');
   await expect(selectedBlocks).toHaveCount(1);
 
@@ -1134,13 +1134,13 @@ test('should show toolbar of image on block selection', async ({ page }) => {
   await initImageState(page);
   await activeEmbed(page);
 
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
 
   await expect(toolbar).toBeHidden();
 
   await pressEnter(page);
 
-  const imageRect = await page.locator('affine-image').boundingBox();
+  const imageRect = await page.locator('nexio-image').boundingBox();
   if (!imageRect) {
     throw new Error();
   }
@@ -1161,7 +1161,7 @@ test('should show toolbar of image on block selection', async ({ page }) => {
 
   await expect(toolbar).toBeVisible();
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(1);
 });
 
@@ -1197,7 +1197,7 @@ test('should select blocks when pressing escape', async ({ page }) => {
   await focusRichText(page, 2);
   await page.keyboard.press('Escape');
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(1);
   await page.keyboard.press('Escape');
 
@@ -1209,7 +1209,7 @@ test('should select blocks when pressing escape', async ({ page }) => {
 
   await page.keyboard.press('Escape');
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(1);
 });
 
@@ -1222,12 +1222,12 @@ test('should un-select blocks when pressing escape', async ({ page }) => {
   await focusRichText(page, 2);
   await pressEscape(page);
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(1);
 
   await pressEscape(page);
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(0);
 
   await focusRichText(page, 2);
@@ -1236,12 +1236,12 @@ test('should un-select blocks when pressing escape', async ({ page }) => {
   await pressSpace(page);
   await clickListIcon(page, 0);
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(1);
 
   await pressEscape(page);
   await expect(
-    page.locator('affine-block-selection').locator('visible=true')
+    page.locator('nexio-block-selection').locator('visible=true')
   ).toHaveCount(0);
 });
 
@@ -1290,9 +1290,9 @@ test('should scroll page properly by wheel after inserting a new block and selec
   await type(page, 'new block');
 
   const lastBlockId = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport')!;
+    const viewport = document.querySelector('.nexio-page-viewport')!;
     const container = viewport.querySelector(
-      'affine-note .affine-block-children-container'
+      'nexio-note .nexio-block-children-container'
     );
     const last = container!.lastElementChild as HTMLElement;
     if (!last) {
@@ -1306,7 +1306,7 @@ test('should scroll page properly by wheel after inserting a new block and selec
 
   async function getViewportScrollTop() {
     return page.evaluate(() => {
-      const viewport = document.querySelector('.affine-page-viewport');
+      const viewport = document.querySelector('.nexio-page-viewport');
       if (!viewport) {
         throw new Error();
       }
@@ -1321,7 +1321,7 @@ test('should scroll page properly by wheel after inserting a new block and selec
 
   // scroll to end by wheel
   const distanceToEnd = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport')!;
+    const viewport = document.querySelector('.nexio-page-viewport')!;
     return viewport.scrollHeight - viewport.clientHeight;
   });
   await page.mouse.wheel(0, distanceToEnd * 2);
@@ -1347,7 +1347,7 @@ test('should not select parent block when dragging area only intersects with chi
   await page.mouse.move(coord.x + 20, coord.y + 50, { steps: 20 });
   await page.mouse.up();
 
-  let rects = page.locator('affine-block-selection').locator('visible=true');
+  let rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(2);
 
   // indent children blocks
@@ -1363,7 +1363,7 @@ test('should not select parent block when dragging area only intersects with chi
   await page.mouse.move(secondCoord.x + 100, secondCoord.y + 10, { steps: 20 });
   await page.mouse.up();
 
-  rects = page.locator('affine-block-selection').locator('visible=true');
+  rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(1);
 });
 
@@ -1378,7 +1378,7 @@ test('scroll should update dragging area and select blocks when dragging', async
   // eslint-disable-next-line sonarjs/no-identical-functions
   async function getViewportScrollTop() {
     return page.evaluate(() => {
-      const viewport = document.querySelector('.affine-page-viewport');
+      const viewport = document.querySelector('.nexio-page-viewport');
       if (!viewport) {
         throw new Error();
       }
@@ -1399,12 +1399,12 @@ test('scroll should update dragging area and select blocks when dragging', async
   await page.mouse.move(coord.x + 100, coord.y + 10, { steps: 40 });
   await waitNextFrame(page, 300);
 
-  let rects = page.locator('affine-block-selection').locator('visible=true');
+  let rects = page.locator('nexio-block-selection').locator('visible=true');
   expect(await rects.count()).toBeGreaterThan(0);
 
   // scroll to end by wheel
   const distanceToEnd = await page.evaluate(() => {
-    const viewport = document.querySelector('.affine-page-viewport')!;
+    const viewport = document.querySelector('.nexio-page-viewport')!;
     return viewport.scrollHeight - viewport.clientHeight;
   });
   await page.mouse.wheel(0, distanceToEnd * 2);
@@ -1413,6 +1413,6 @@ test('scroll should update dragging area and select blocks when dragging', async
 
   await page.mouse.up();
 
-  rects = page.locator('affine-block-selection').locator('visible=true');
+  rects = page.locator('nexio-block-selection').locator('visible=true');
   await expect(rects).toHaveCount(3);
 });

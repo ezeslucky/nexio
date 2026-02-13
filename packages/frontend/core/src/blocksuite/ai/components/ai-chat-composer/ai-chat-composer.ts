@@ -3,10 +3,10 @@ import './ai-chat-composer-tip';
 import type {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import type { SubscriptionService } from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+} from '@nexio/core/modules/ai-button';
+import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
+import type { SubscriptionService } from '@nexio/core/modules/cloud';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import type {
   ContextEmbedStatus,
   ContextWorkspaceEmbeddingStatus,
@@ -14,15 +14,15 @@ import type {
   CopilotContextBlob,
   CopilotContextDoc,
   CopilotContextFile,
-} from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { uuidv4 } from '@blocksuite/affine/store';
+} from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { uuidv4 } from '@blocksuite/nexio/store';
 import type {
   FeatureFlagService,
   NotificationService,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio-shared/services';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 
@@ -70,7 +70,7 @@ export class AIChatComposer extends SignalWatcher(
       display: flex;
       flex-direction: column;
       gap: 4px;
-      color: var(--affine-text-secondary-color);
+      color: var(--nexio-text-secondary-color);
       font-size: 12px;
       user-select: none;
     }
@@ -129,7 +129,7 @@ export class AIChatComposer extends SignalWatcher(
   accessor portalContainer: HTMLElement | null = null;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -141,7 +141,7 @@ export class AIChatComposer extends SignalWatcher(
   accessor aiToolsConfigService!: AIToolsConfigService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor subscriptionService!: SubscriptionService;
@@ -197,7 +197,7 @@ export class AIChatComposer extends SignalWatcher(
         .reasoningConfig=${this.reasoningConfig}
         .docDisplayConfig=${this.docDisplayConfig}
         .searchMenuConfig=${this.searchMenuConfig}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
         .aiDraftService=${this.aiDraftService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .notificationService=${this.notificationService}

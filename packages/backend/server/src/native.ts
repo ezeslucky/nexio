@@ -1,4 +1,4 @@
-import serverNativeModule, { type Tokenizer } from '@affine/server-native';
+import serverNativeModule, { type Tokenizer } from '@nexio/server-native';
 
 export const mergeUpdatesInApplyWay = serverNativeModule.mergeUpdatesInApplyWay;
 
@@ -40,6 +40,6 @@ export function getTokenEncoder(model?: string | null): Tokenizer | null {
 export const getMime = serverNativeModule.getMime;
 export const parseDoc = serverNativeModule.parseDoc;
 export const htmlSanitize = serverNativeModule.htmlSanitize;
-export const AFFINE_PRO_PUBLIC_KEY = serverNativeModule.AFFINE_PRO_PUBLIC_KEY;
-export const AFFINE_PRO_LICENSE_AES_KEY =
-  serverNativeModule.AFFINE_PRO_LICENSE_AES_KEY;
+export const NEXIO_PRO_PUBLIC_KEY = serverNativeModule.NEXIO_PRO_PUBLIC_KEY;
+export const NEXIO_PRO_LICENSE_AES_KEY =
+  serverNativeModule.NEXIO_PRO_LICENSE_AES_KEY;

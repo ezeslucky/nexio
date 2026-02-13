@@ -1,4 +1,4 @@
-import { indexerAggregateQuery, SearchTable } from '@affine/graphql';
+import { indexerAggregateQuery, SearchTable } from '@nexio/graphql';
 
 import { IndexerService } from '../../../plugins/indexer/service';
 import { Mockers } from '../../mocks';
@@ -20,7 +20,7 @@ e2e('should aggregate by docId', async t => {
         docId: 'doc-0',
         workspaceId: workspace.id,
         content: 'test1 hello world top2',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         blockId: 'block-0',
         createdByUserId: owner.id,
         updatedByUserId: owner.id,
@@ -31,7 +31,7 @@ e2e('should aggregate by docId', async t => {
         docId: 'doc-0',
         workspaceId: workspace.id,
         content: 'test2 hello hello top3',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         blockId: 'block-1',
         createdByUserId: owner.id,
         updatedByUserId: owner.id,
@@ -42,7 +42,7 @@ e2e('should aggregate by docId', async t => {
         docId: 'doc-0',
         workspaceId: workspace.id,
         content: 'test3 hello title top1',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         blockId: 'block-2',
         createdByUserId: owner.id,
         updatedByUserId: owner.id,
@@ -53,7 +53,7 @@ e2e('should aggregate by docId', async t => {
         docId: 'doc-1',
         workspaceId: workspace.id,
         content: 'test4 hello world',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         blockId: 'block-3',
         refDocId: 'doc-0',
         ref: ['{"foo": "bar1"}'],
@@ -66,7 +66,7 @@ e2e('should aggregate by docId', async t => {
         docId: 'doc-2',
         workspaceId: workspace.id,
         content: 'test5 hello',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         blockId: 'block-4',
         refDocId: 'doc-0',
         ref: ['{"foo": "bar2"}'],
@@ -119,7 +119,7 @@ e2e('should aggregate by docId', async t => {
                     // @ts-expect-error allow to use string as enum
                     type: 'match',
                     field: 'flavour',
-                    match: 'affine:page',
+                    match: 'nexio:page',
                   },
                 },
               ],

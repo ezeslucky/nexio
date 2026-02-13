@@ -1,13 +1,13 @@
-import { IconButton } from '@affine/component';
-import { DocService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { useInsidePeekView } from '@affine/core/modules/peek-view/view/modal-container';
-import { extractEmojiIcon } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import { Bound } from '@blocksuite/affine/global/gfx';
-import { type NoteBlockModel } from '@blocksuite/affine/model';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import { IconButton } from '@nexio/component';
+import { DocService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { useInsidePeekView } from '@nexio/core/modules/peek-view/view/modal-container';
+import { extractEmojiIcon } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
+import { Bound } from '@blocksuite/nexio/global/gfx';
+import { type NoteBlockModel } from '@blocksuite/nexio/model';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import {
   ExpandFullIcon,
   ToggleDownIcon,
@@ -87,7 +87,7 @@ const EdgelessNoteToggleButton = ({ note }: { note: NoteBlockModel }) => {
       <IconButton
         className={styles.button}
         size={styles.iconSize}
-        tooltip={t['com.affine.editor.edgeless-note-header.fold-page-block']()}
+        tooltip={t['com.nexio.editor.edgeless-note-header.fold-page-block']()}
         data-testid="edgeless-note-toggle-button"
         onClick={toggle}
       >
@@ -118,7 +118,7 @@ const OpenInPageButton = () => {
     <IconButton
       className={styles.button}
       size={styles.iconSize}
-      tooltip={t['com.affine.editor.edgeless-note-header.open-in-page']()}
+      tooltip={t['com.nexio.editor.edgeless-note-header.open-in-page']()}
       data-testid="edgeless-note-view-in-page-button"
       onClick={openInPage}
     >

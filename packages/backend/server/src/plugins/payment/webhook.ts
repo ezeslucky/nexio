@@ -5,12 +5,7 @@ import { OnEvent } from '../../base';
 import { SubscriptionService } from './service';
 import { StripeFactory } from './stripe';
 
-/**
- * Stripe webhook events sent in random order, and may be even sent more than once.
- *
- * A good way to avoid events sequence issue is fetch the latest object data regarding that event,
- * and all following operations only depend on the latest state instead of the one in event data.
- */
+
 @Injectable()
 export class StripeWebhook {
   constructor(

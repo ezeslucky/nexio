@@ -18,7 +18,7 @@ import { AggregateQueryDSL, ElasticsearchProvider } from '../../providers';
 import { blockMapping, docMapping, SearchTable } from '../../tables';
 
 const test =
-  process.env.AFFINE_INDEXER_SEARCH_PROVIDER === 'elasticsearch'
+  process.env.NEXIO_INDEXER_SEARCH_PROVIDER === 'elasticsearch'
     ? _test
     : _test.skip;
 
@@ -38,7 +38,7 @@ _test.before(async () => {
             type: SearchProviderType.Elasticsearch,
             endpoint: 'http://localhost:9200',
             username: 'elastic',
-            password: 'affine',
+            password: 'nexio',
           },
         },
       }),
@@ -63,7 +63,7 @@ _test.before(async () => {
         doc_id: randomUUID(),
         block_id: randomUUID(),
         content: `hello world on search title, ${randomUUID()}`,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),
@@ -110,7 +110,7 @@ _test.before(async () => {
         doc_id: 'docId2',
         block_id: 'blockId8',
         content:
-          'title8 hello hello hello hello hello hello hello hello hello hello, hello hello hello hello hello hello hello hello some link https://linear.app/affine-design/issue/AF-1379/slash-commands-%E6%BF%80%E6%B4%BB%E6%8F%92%E5%85%A5-link-%E7%9A%84%E5%BC%B9%E7%AA%97%E9%87%8C%EF%BC%8C%E8%BE%93%E5%85%A5%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E4%B8%8D%E5%BA%94%E8%AF%A5%E7%9B%B4%E6%8E%A5%E5%AF%B9%E9%93%BE%E6%8E%A5%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D%E6%90%9C%E7%B4%A2',
+          'title8 hello hello hello hello hello hello hello hello hello hello, hello hello hello hello hello hello hello hello some link https://linear.app/nexio-design/issue/AF-1379/slash-commands-%E6%BF%80%E6%B4%BB%E6%8F%92%E5%85%A5-link-%E7%9A%84%E5%BC%B9%E7%AA%97%E9%87%8C%EF%BC%8C%E8%BE%93%E5%85%A5%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E4%B8%8D%E5%BA%94%E8%AF%A5%E7%9B%B4%E6%8E%A5%E5%AF%B9%E9%93%BE%E6%8E%A5%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D%E6%90%9C%E7%B4%A2',
         flavour: 'flavour8',
         ref_doc_id: 'docId1',
         ref: [
@@ -128,9 +128,9 @@ _test.before(async () => {
       },
       {
         workspace_id: 'workspaceId1',
-        doc_id: 'docId2-affine',
+        doc_id: 'docId2-nexio',
         block_id: 'blockId8',
-        content: 'AFFiNE 是一个基于云端的笔记应用',
+        content: 'NEXIO 是一个基于云端的笔记应用',
         flavour: 'flavour8',
         ref_doc_id: 'docId1',
         ref: [
@@ -218,7 +218,7 @@ test('should write document work', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),
@@ -238,7 +238,7 @@ test('should write document work', async t => {
   });
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
   });
   t.deepEqual(result.nodes[0]._source, {
@@ -254,7 +254,7 @@ test('should write document work', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         ref_doc_id: 'docId2',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -276,7 +276,7 @@ test('should write document work', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
     ref_doc_id: ['docId2'],
   });
@@ -289,7 +289,7 @@ test('should write document work', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         // ref_doc_id: 'docId2',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -311,7 +311,7 @@ test('should write document work', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
   });
 });
@@ -326,7 +326,7 @@ test('should handle ref_doc_id as string[]', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         ref_doc_id: 'docId2',
         ref: '{"foo": "bar"}',
         created_by_user_id: user.id,
@@ -349,7 +349,7 @@ test('should handle ref_doc_id as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
     ref_doc_id: ['docId2'],
     ref: ['{"foo": "bar"}'],
@@ -370,7 +370,7 @@ test('should handle ref_doc_id as string[]', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         ref_doc_id: ['docId2', 'docId3'],
         ref: ['{"foo": "bar"}', '{"foo": "baz"}'],
         created_by_user_id: user.id,
@@ -393,7 +393,7 @@ test('should handle ref_doc_id as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
     ref_doc_id: ['docId2', 'docId3'],
     ref: ['{"foo": "bar"}', '{"foo": "baz"}'],
@@ -416,7 +416,7 @@ test('should handle content as string[]', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         ref_doc_id: 'docId2',
         ref: '{"foo": "bar"}',
         created_by_user_id: user.id,
@@ -439,7 +439,7 @@ test('should handle content as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello world'],
     ref_doc_id: ['docId2'],
     ref: ['{"foo": "bar"}'],
@@ -459,7 +459,7 @@ test('should handle content as string[]', async t => {
         workspace_id: workspace.id,
         doc_id: docId,
         content: ['hello', 'world 2'],
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         ref_doc_id: 'docId2',
         ref: '{"foo": "bar"}',
         created_by_user_id: user.id,
@@ -482,7 +482,7 @@ test('should handle content as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     content: ['hello', 'world 2'],
     ref_doc_id: ['docId2'],
     ref: ['{"foo": "bar"}'],
@@ -507,7 +507,7 @@ test('should handle blob as string[]', async t => {
         doc_id: docId,
         block_id: blockId,
         content: '',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         blob: 'blob1',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -529,7 +529,7 @@ test('should handle blob as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     blob: ['blob1'],
     content: [''],
   });
@@ -548,7 +548,7 @@ test('should handle blob as string[]', async t => {
         doc_id: docId,
         block_id: blockId,
         content: '',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         blob: ['blob1', 'blob2'],
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -570,7 +570,7 @@ test('should handle blob as string[]', async t => {
 
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     blob: ['blob1', 'blob2'],
     content: [''],
   });
@@ -588,7 +588,7 @@ test('should handle blob as string[]', async t => {
         doc_id: docId,
         block_id: blockId,
         content: '',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         blob: ['blob3'],
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -608,7 +608,7 @@ test('should handle blob as string[]', async t => {
   });
   t.is(result.nodes.length, 1);
   t.deepEqual(result.nodes[0].fields, {
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
     blob: ['blob3'],
     content: [''],
   });
@@ -630,29 +630,29 @@ test('should batch write bugfix', async t => {
         doc_id: 'a',
         block_id: 'b1',
         content: '2025-05-26',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         additional: '{"displayMode":"edgeless"}',
         created_by_user_id: '46ce597c-098a-4c61-a106-ce79827ec1de',
         updated_by_user_id: '46ce597c-098a-4c61-a106-ce79827ec1de',
         created_at: '2025-05-26T05:16:23.128Z',
         updated_at: '2025-05-26T05:15:53.091Z',
-        flavour_indexed: 'affine:page',
+        flavour_indexed: 'nexio:page',
       },
       {
         workspace_id: workspaceId,
         doc_id: 'a',
         block_id: 'b2',
         content: '',
-        flavour: 'affine:surface',
-        parent_flavour: 'affine:page',
+        flavour: 'nexio:surface',
+        parent_flavour: 'nexio:page',
         parent_block_id: 'TcOGF6HSa7',
         additional: '',
         created_by_user_id: '46ce597c-098a-4c61-a106-ce79827ec1de',
         updated_by_user_id: '46ce597c-098a-4c61-a106-ce79827ec1de',
         created_at: '2025-05-26T05:16:23.128Z',
         updated_at: '2025-05-26T05:15:53.091Z',
-        flavour_indexed: 'affine:surface',
-        parent_flavour_indexed: 'affine:page',
+        flavour_indexed: 'nexio:surface',
+        parent_flavour_indexed: 'nexio:page',
         parent_block_id_indexed: 'TcOGF6HSa7',
       },
     ],
@@ -775,7 +775,7 @@ test('should search block table query match url work', async t => {
     query: {
       match: {
         content:
-          'https://linear.app/affine-design/issue/AF-1379/slash-commands-%E6%BF%80%E6%B4%BB%E6%8F%92%E5%85%A5-link-%E7%9A%84%E5%BC%B9%E7%AA%97%E9%87%8C%EF%BC%8C%E8%BE%93%E5%85%A5%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E4%B8%8D%E5%BA%94%E8%AF%A5%E7%9B%B4%E6%8E%A5%E5%AF%B9%E9%93%BE%E6%8E%A5%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D%E6%90%9C%E7%B4%A2',
+          'https://linear.app/nexio-design/issue/AF-1379/slash-commands-%E6%BF%80%E6%B4%BB%E6%8F%92%E5%85%A5-link-%E7%9A%84%E5%BC%B9%E7%AA%97%E9%87%8C%EF%BC%8C%E8%BE%93%E5%85%A5%E9%93%BE%E6%8E%A5%E4%B9%8B%E5%90%8E%E4%B8%8D%E5%BA%94%E8%AF%A5%E7%9B%B4%E6%8E%A5%E5%AF%B9%E9%93%BE%E6%8E%A5%E8%BF%9B%E8%A1%8C%E5%88%86%E8%AF%8D%E6%90%9C%E7%B4%A2',
       },
     },
     fields: [
@@ -892,7 +892,7 @@ test('should search doc table query title match cjk work', async t => {
       {
         workspace_id: workspaceId,
         doc_id: 'doc-0',
-        title: 'AFFiNE 是一个基于云端的笔记应用',
+        title: 'NEXIO 是一个基于云端的笔记应用',
       },
     ],
     {
@@ -961,7 +961,7 @@ test('should search doc table query title.autocomplete work', async t => {
       {
         workspace_id: workspaceId,
         doc_id: docId,
-        title: 'AFFiNE 是一个基于云端的笔记应用',
+        title: 'NEXIO 是一个基于云端的笔记应用',
       },
     ],
     {
@@ -1015,8 +1015,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId1',
         content: 'hello world on search title blockId1',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId1',
         ref_doc_id: refDocId1,
         ref: '{"docId":"docId1","mode":"page"}',
@@ -1031,8 +1031,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId1-not-matched',
         content: 'hello world on search title blockId1-not-matched',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database1',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database1',
         parent_block_id: 'parentBlockId1',
         ref_doc_id: refDocId1,
         ref: '{"docId":"docId1","mode":"page"}',
@@ -1047,8 +1047,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId-all',
         content: 'hello world on search title blockId-all',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId2',
         ref_doc_id: [
           refDocId2,
@@ -1077,8 +1077,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId1-2',
         content: 'hello world on search title blockId1-2',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId2',
         ref_doc_id: [refDocId1, refDocId2],
         ref: [
@@ -1096,8 +1096,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId2-1',
         content: 'hello world on search title blockId2-1',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId2',
         ref_doc_id: [refDocId2, refDocId1],
         ref: [
@@ -1115,8 +1115,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId3-2-1-4',
         content: 'hello world on search title blockId3-2-1-4',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId2',
         ref_doc_id: [refDocId3, refDocId2, refDocId1, refDocId4],
         ref: [
@@ -1135,8 +1135,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: refDocId1,
         block_id: 'blockId3',
         content: 'hello world on search title blockId3',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId3',
         ref_doc_id: refDocId1,
         ref: '{"docId":"docId1","mode":"page"}',
@@ -1151,8 +1151,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId4',
         content: 'hello world on search title blockId4',
-        flavour: 'affine:page',
-        parent_flavour: 'affine:database',
+        flavour: 'nexio:page',
+        parent_flavour: 'nexio:database',
         parent_block_id: 'parentBlockId4',
         ref_doc_id: refDocId10,
         ref: '{"docId":"docId2","mode":"page"}',
@@ -1167,8 +1167,8 @@ test('should search query match ref_doc_id work', async t => {
         doc_id: docId,
         block_id: 'blockId1-text',
         content: 'hello world on search title blockId1-text',
-        flavour: 'affine:text',
-        parent_flavour: 'affine:text',
+        flavour: 'nexio:text',
+        parent_flavour: 'nexio:text',
         parent_block_id: 'parentBlockId1',
         ref_doc_id: refDocId1,
         ref: '{"docId":"docId1","mode":"page"}',
@@ -1196,7 +1196,7 @@ test('should search query match ref_doc_id work', async t => {
             bool: {
               must: [
                 {
-                  term: { parent_flavour: { value: 'affine:database' } },
+                  term: { parent_flavour: { value: 'nexio:database' } },
                 },
                 {
                   // https://www.elastic.co/docs/reference/elasticsearch/mapping-reference/array
@@ -1243,7 +1243,7 @@ test('should search query match ref_doc_id work', async t => {
             bool: {
               must: [
                 {
-                  term: { parent_flavour: { value: 'affine:database' } },
+                  term: { parent_flavour: { value: 'nexio:database' } },
                 },
                 {
                   term: { ref_doc_id: { value: refDocId10 } },
@@ -1433,7 +1433,7 @@ test('should not return not exists field:ref_doc_id', async t => {
         doc_id: docId,
         block_id: blockId,
         content: 'hello world on search title blockId1-text',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),
@@ -1557,7 +1557,7 @@ test('should aggregate query work', async t => {
                       {
                         term: {
                           flavour: {
-                            value: 'affine:page',
+                            value: 'nexio:page',
                             boost: 1.5,
                           },
                         },
@@ -1643,7 +1643,7 @@ test('should aggregate query return top score first', async t => {
         doc_id: 'doc-0',
         block_id: 'block-0',
         content: `0.15 - week.1进度`,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         additional: '{"displayMode":"edgeless"}',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
@@ -1655,7 +1655,7 @@ test('should aggregate query return top score first', async t => {
         doc_id: 'doc-10',
         block_id: 'block-10-1',
         content: 'Example 1',
-        flavour: 'affine:paragraph',
+        flavour: 'nexio:paragraph',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),
@@ -1666,7 +1666,7 @@ test('should aggregate query return top score first', async t => {
         doc_id: 'doc-10',
         block_id: 'block-10-2',
         content: 'Single substitution format 1',
-        flavour: 'affine:paragraph',
+        flavour: 'nexio:paragraph',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),
@@ -1711,7 +1711,7 @@ test('should aggregate query return top score first', async t => {
                       {
                         term: {
                           flavour: {
-                            value: 'affine:page',
+                            value: 'nexio:page',
                             boost: 1.5,
                           },
                         },
@@ -1811,7 +1811,7 @@ test('should delete by query work', async t => {
         doc_id: docId,
         block_id: 'block-0',
         content: `hello world on search title block-0`,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         created_by_user_id: user.id,
         updated_by_user_id: user.id,
         created_at: new Date(),

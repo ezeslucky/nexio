@@ -1,18 +1,18 @@
-import { SurfaceBlockSchema } from '@blocksuite/affine/blocks/surface';
-import { ConnectorElementRendererExtension } from '@blocksuite/affine/gfx/connector';
+import { SurfaceBlockSchema } from '@blocksuite/nexio/blocks/surface';
+import { ConnectorElementRendererExtension } from '@blocksuite/nexio/gfx/connector';
 import {
   MindmapElementRendererExtension,
   MindMapView,
-} from '@blocksuite/affine/gfx/mindmap';
-import { ShapeElementRendererExtension } from '@blocksuite/affine/gfx/shape';
-import { TextElementRendererExtension } from '@blocksuite/affine/gfx/text';
-import { RootBlockSchema } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/gfx/mindmap';
+import { ShapeElementRendererExtension } from '@blocksuite/nexio/gfx/shape';
+import { TextElementRendererExtension } from '@blocksuite/nexio/gfx/text';
+import { RootBlockSchema } from '@blocksuite/nexio/model';
 import {
   DocModeService,
   ThemeService,
-} from '@blocksuite/affine/shared/services';
-import { BlockViewExtension, FlavourExtension } from '@blocksuite/affine/std';
-import type { BlockSchema, ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import { BlockViewExtension, FlavourExtension } from '@blocksuite/nexio/std';
+import type { BlockSchema, ExtensionType } from '@blocksuite/nexio/store';
 import { literal } from 'lit/static-html.js';
 import type { z } from 'zod';
 
@@ -22,13 +22,13 @@ import { MindmapSurfaceBlockService } from './surface-service.js';
 export const MiniMindmapSpecs: ExtensionType[] = [
   DocModeService,
   ThemeService,
-  FlavourExtension('affine:page'),
+  FlavourExtension('nexio:page'),
   MindmapService,
-  BlockViewExtension('affine:page', literal`mini-mindmap-root-block`),
-  FlavourExtension('affine:surface'),
+  BlockViewExtension('nexio:page', literal`mini-mindmap-root-block`),
+  FlavourExtension('nexio:surface'),
   MindMapView,
   MindmapSurfaceBlockService,
-  BlockViewExtension('affine:surface', literal`mini-mindmap-surface-block`),
+  BlockViewExtension('nexio:surface', literal`mini-mindmap-surface-block`),
   TextElementRendererExtension,
   MindmapElementRendererExtension,
   ShapeElementRendererExtension,

@@ -1,8 +1,8 @@
-import { Checkbox, notify, useDndMonitor } from '@affine/component';
-import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Checkbox, notify, useDndMonitor } from '@nexio/component';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useSetAtom } from 'jotai';
@@ -89,7 +89,7 @@ export const SplitView = ({
   const t = useI18n();
   const hideFolderWarningRef = useRef(false);
 
-  useDndMonitor<AffineDNDData>(() => {
+  useDndMonitor<NexioDNDData>(() => {
     return {
       canMonitor(data) {
         if (!BUILD_CONFIG.isElectron) {
@@ -165,7 +165,7 @@ export const SplitView = ({
           return;
         }
 
-        const dropTarget = candidate.data as AffineDNDData['draggable']['from'];
+        const dropTarget = candidate.data as NexioDNDData['draggable']['from'];
         const entity = data.source.data.entity;
         const from = data.source.data.from;
 
