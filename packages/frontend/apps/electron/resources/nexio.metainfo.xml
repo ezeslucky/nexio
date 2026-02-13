@@ -5,12 +5,12 @@
   <summary>Productivity and note-taking app</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT AND LicenseRef-proprietary=https://github.com/ezeslucky/nexio/blob/canary/LICENSE</project_license>
-  <url type="homepage">https://affine.pro</url>
+  <url type="homepage">https://nexio.pro</url>
   <url type="bugtracker">https://github.com/ezeslucky/nexio/issues</url>
-  <url type="help">https://docs.affine.pro/docs</url>
+  <url type="help">https://docs.nexio.pro/docs</url>
   <url type="vcs-browser">https://github.com/ezeslucky/nexio</url>
-  <url type="contribute">https://docs.affine.pro/docs/contributing</url>
-  <developer id="pro.affine.app">
+  <url type="contribute">https://docs.nexio.pro/docs/contributing</url>
+  <developer id="pro.nexio.app">
     <name>nexio</name>
   </developer>
   <content_rating type="oars-1.1"/>
@@ -29,7 +29,7 @@
     <internet>always</internet>
   </recommends>
   <provides>
-    <mediatype>x-scheme-handler/affine</mediatype>
+    <mediatype>x-scheme-handler/nexio</mediatype>
   </provides>
   <supports>
     <control>pointing</control>
@@ -48,18 +48,18 @@
       <li>AI partner helps you better write, draw and plan. Let you think bigger, create faster, work smarter in anytime, anywhere</li>
     </ul>
   </description>
-  <launchable type="desktop-id">affine.desktop</launchable>
+  <launchable type="desktop-id">nexio.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image>https://affine.pro/overview/Write.jpg</image>
+      <image>https://nexio.pro/overview/Write.jpg</image>
       <caption>Document writing interface with block-based editing</caption>
     </screenshot>
     <screenshot>
-      <image>https://affine.pro/overview/Draw.jpg</image>
+      <image>https://nexio.pro/overview/Draw.jpg</image>
       <caption>Whiteboard drawing and visualization capabilities</caption>
     </screenshot>
     <screenshot>
-      <image>https://affine.pro/overview/Plan.jpg</image>
+      <image>https://nexio.pro/overview/Plan.jpg</image>
       <caption>Project planning and task management view</caption>
     </screenshot>
   </screenshots>
