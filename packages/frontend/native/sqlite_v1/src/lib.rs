@@ -74,7 +74,7 @@ impl SqliteConnection {
         .map_err(anyhow::Error::from)?;
     };
     let mut connection = self.pool.acquire().await.map_err(anyhow::Error::from)?;
-    sqlx::query(affine_schema::v1::SCHEMA)
+    sqlx::query(nexio_schema::v1::SCHEMA)
       .execute(connection.as_mut())
       .await
       .map_err(anyhow::Error::from)?;

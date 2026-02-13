@@ -53,5 +53,5 @@ export default function TeamWorkspaceUpgraded(
 TeamWorkspaceUpgraded.PreviewProps = {
   workspace: TEST_WORKSPACE,
   isOwner: true,
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

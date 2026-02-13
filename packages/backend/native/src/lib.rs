@@ -54,8 +54,8 @@ pub fn merge_updates_in_apply_way(updates: Vec<Buffer>) -> Result<Buffer> {
 }
 
 #[napi]
-pub const AFFINE_PRO_PUBLIC_KEY: Option<&'static str> = std::option_env!("AFFINE_PRO_PUBLIC_KEY");
+pub const NEXIO_PRO_PUBLIC_KEY: Option<&'static str> = std::option_env!("NEXIO_PRO_PUBLIC_KEY");
 
 #[napi]
-pub const AFFINE_PRO_LICENSE_AES_KEY: Option<&'static str> =
-  std::option_env!("AFFINE_PRO_LICENSE_AES_KEY");
+pub const NEXIO_PRO_LICENSE_AES_KEY: Option<&'static str> =
+  std::option_env!("NEXIO_PRO_LICENSE_AES_KEY");

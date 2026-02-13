@@ -37,7 +37,7 @@ test.after.always(async t => {
 test('should create a workspace', async t => {
   const { app } = t.context;
 
-  await app.signupV1('u1@affine.pro');
+  await app.signupV1('u1@nexio.pro');
   const workspace = await createWorkspace(app);
 
   t.is(typeof workspace.id, 'string', 'workspace.id is not a string');
@@ -45,7 +45,7 @@ test('should create a workspace', async t => {
 
 test('should be able to publish workspace', async t => {
   const { app } = t.context;
-  await app.signupV1('u1@affine.pro');
+  await app.signupV1('u1@nexio.pro');
   const workspace = await createWorkspace(app);
   const isPublic = await updateWorkspace(app, workspace.id, true);
 
@@ -58,7 +58,7 @@ test('should be able to publish workspace', async t => {
 
 test('should visit public page', async t => {
   const { app } = t.context;
-  await app.signupV1('u1@affine.pro');
+  await app.signupV1('u1@nexio.pro');
 
   const workspace = await createWorkspace(app);
   const share = await publishDoc(app, workspace.id, 'doc1');
@@ -104,7 +104,7 @@ test('should visit public page', async t => {
 test('should not be able to public not permitted doc', async t => {
   const { app } = t.context;
 
-  await app.signupV1('u2@affine.pro');
+  await app.signupV1('u2@nexio.pro');
 
   await t.throwsAsync(publishDoc(app, 'not_exists_ws', 'doc2'), {
     message:
@@ -119,8 +119,8 @@ test('should not be able to public not permitted doc', async t => {
 
 test('should be able to get workspace doc', async t => {
   const { app } = t.context;
-  const u1 = await app.signupV1('u1@affine.pro');
-  const u2 = await app.signupV1('u2@affine.pro');
+  const u1 = await app.signupV1('u1@nexio.pro');
+  const u2 = await app.signupV1('u2@nexio.pro');
 
   await app.switchUser(u1.id);
   const workspace = await createWorkspace(app);
@@ -167,7 +167,7 @@ test('should be able to get workspace doc', async t => {
 
 test('should be able to get public workspace doc', async t => {
   const { app } = t.context;
-  await app.signupV1('u1@affine.pro');
+  await app.signupV1('u1@nexio.pro');
 
   const workspace = await createWorkspace(app);
   const isPublic = await updateWorkspace(app, workspace.id, true);

@@ -61,7 +61,7 @@ test('add new bulleted list', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page, 0);
-  await updateBlockType(page, 'affine:list', 'bulleted');
+  await updateBlockType(page, 'nexio:list', 'bulleted');
   await focusRichText(page, 0);
   await type(page, 'aa');
   await pressEnter(page);
@@ -77,18 +77,18 @@ test('add new todo list', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page, 0);
-  await updateBlockType(page, 'affine:list', 'todo');
+  await updateBlockType(page, 'nexio:list', 'todo');
   await focusRichText(page, 0);
 
   await type(page, 'aa');
   await assertRichTexts(page, ['aa']);
 
-  const checkBox = page.locator('.affine-list-block__prefix');
-  await expect(page.locator('.affine-list--checked')).toHaveCount(0);
+  const checkBox = page.locator('.nexio-list-block__prefix');
+  await expect(page.locator('.nexio-list--checked')).toHaveCount(0);
   await checkBox.click();
-  await expect(page.locator('.affine-list--checked')).toHaveCount(1);
+  await expect(page.locator('.nexio-list--checked')).toHaveCount(1);
   await checkBox.click();
-  await expect(page.locator('.affine-list--checked')).toHaveCount(0);
+  await expect(page.locator('.nexio-list--checked')).toHaveCount(0);
 });
 
 test('add new toggle list', async ({ page }) => {
@@ -96,7 +96,7 @@ test('add new toggle list', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page, 0);
-  await updateBlockType(page, 'affine:list', 'toggle');
+  await updateBlockType(page, 'nexio:list', 'toggle');
   await focusRichText(page, 0);
   await type(page, 'top');
   await pressTab(page);
@@ -135,12 +135,12 @@ test('convert to numbered list block', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page, 0); // created 0, 1, 2
-  await updateBlockType(page, 'affine:list', 'bulleted'); // replaced 2 to 3
+  await updateBlockType(page, 'nexio:list', 'bulleted'); // replaced 2 to 3
   await waitNextFrame(page);
-  await updateBlockType(page, 'affine:list', 'numbered');
+  await updateBlockType(page, 'nexio:list', 'numbered');
   await focusRichText(page, 0);
 
-  const listSelector = '.affine-list-rich-text-wrapper';
+  const listSelector = '.nexio-list-rich-text-wrapper';
   const bulletIconSelector = `${listSelector} > div`;
   await assertTextContent(page, bulletIconSelector, /1\./);
 
@@ -220,10 +220,10 @@ test('insert new list block by enter', async ({ page }) => {
   await type(page, 'world');
   await assertRichTexts(page, ['', 'hello', 'world', '']);
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:list',
-    'affine:list',
-    'affine:list',
-    'affine:list',
+    'nexio:list',
+    'nexio:list',
+    'nexio:list',
+    'nexio:list',
   ]);
 });
 
@@ -232,18 +232,18 @@ test('delete at start of list block', async ({ page }) => {
   await focusRichText(page, 1);
   await page.keyboard.press('Backspace');
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:list',
-    'affine:paragraph',
-    'affine:list',
+    'nexio:list',
+    'nexio:paragraph',
+    'nexio:list',
   ]);
   await waitNextFrame(page, 200);
   await assertRichTextInlineRange(page, 1, 0, 0);
 
   await undoByClick(page);
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:list',
-    'affine:list',
-    'affine:list',
+    'nexio:list',
+    'nexio:list',
+    'nexio:list',
   ]);
   await waitNextFrame(page);
   //FIXME: it just failed in playwright
@@ -653,9 +653,9 @@ test.describe('toggle list', () => {
     await initEmptyParagraphState(page);
     await initThreeLists(page);
     const toggleIcon = page.locator('.toggle-icon');
-    const prefixes = page.locator('.affine-list-block__prefix');
+    const prefixes = page.locator('.nexio-list-block__prefix');
     const listChildren = page
-      .locator('[data-block-id="4"] .affine-block-children-container')
+      .locator('[data-block-id="4"] .nexio-block-children-container')
       .nth(0);
     const parentPrefix = prefixes.nth(1);
 
@@ -701,7 +701,7 @@ test.describe('toggle list', () => {
 
     const toggleIcon = page.locator('.toggle-icon');
     const listChildren = page
-      .locator('[data-block-id="4"] .affine-block-children-container')
+      .locator('[data-block-id="4"] .nexio-block-children-container')
       .nth(0);
 
     expect(await getPageSnapshot(page, true)).toMatchSnapshot(
@@ -732,7 +732,7 @@ test.describe('toggle list', () => {
     await initThreeLists(page);
     const toggleIcon = page.locator('.toggle-icon');
 
-    const prefixes = page.locator('.affine-list-block__prefix');
+    const prefixes = page.locator('.nexio-list-block__prefix');
     const parentPrefix = prefixes.nth(1);
 
     expect(await isToggleIconVisible(toggleIcon)).toBe(false);
@@ -752,9 +752,9 @@ test.describe('readonly', () => {
     await initEmptyParagraphState(page);
     await initThreeLists(page);
     const toggleIcon = page.locator('.toggle-icon');
-    const prefixes = page.locator('.affine-list-block__prefix');
+    const prefixes = page.locator('.nexio-list-block__prefix');
     const listChildren = page
-      .locator('[data-block-id="4"] .affine-block-children-container')
+      .locator('[data-block-id="4"] .nexio-block-children-container')
       .nth(0);
     const parentPrefix = prefixes.nth(1);
 
@@ -797,23 +797,23 @@ test.describe('readonly', () => {
     await initEmptyParagraphState(page);
     await focusRichText(page);
 
-    const checkBox = page.locator('.affine-list-block__prefix');
+    const checkBox = page.locator('.nexio-list-block__prefix');
 
     {
       await type(page, '[] todo');
       await switchReadonly(page);
-      await expect(page.locator('.affine-list--checked')).toHaveCount(0);
+      await expect(page.locator('.nexio-list--checked')).toHaveCount(0);
       await checkBox.click();
-      await expect(page.locator('.affine-list--checked')).toHaveCount(0);
+      await expect(page.locator('.nexio-list--checked')).toHaveCount(0);
     }
 
     {
       await switchReadonly(page, false);
       await checkBox.click();
       await switchReadonly(page);
-      await expect(page.locator('.affine-list--checked')).toHaveCount(1);
+      await expect(page.locator('.nexio-list--checked')).toHaveCount(1);
       await checkBox.click();
-      await expect(page.locator('.affine-list--checked')).toHaveCount(1);
+      await expect(page.locator('.nexio-list--checked')).toHaveCount(1);
     }
   });
 
@@ -825,7 +825,7 @@ test.describe('readonly', () => {
 
     const toggleIcon = page.locator('.toggle-icon');
     const listChildren = page
-      .locator('[data-block-id="5"] .affine-block-children-container')
+      .locator('[data-block-id="5"] .nexio-block-children-container')
       .nth(0);
 
     await expect(listChildren).toBeVisible();

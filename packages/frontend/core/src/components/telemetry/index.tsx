@@ -1,4 +1,4 @@
-import { enableAutoTrack, mixpanel, sentry } from '@affine/track';
+import { enableAutoTrack, mixpanel, sentry } from '@nexio/track';
 import { appSettingAtom } from '@toeverything/infra';
 import { useAtomValue } from 'jotai/react';
 import { useEffect } from 'react';

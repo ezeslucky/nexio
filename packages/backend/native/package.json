@@ -1,5 +1,5 @@
 {
-  "name": "@affine/server-native",
+  "name": "@nexio/server-native",
   "version": "0.22.4",
   "engines": {
     "node": ">= 10.16.0 < 11 || >= 11.8.0"

@@ -29,11 +29,11 @@ test.afterEach.always(async t => {
 
 test('change email', async t => {
   const { app } = t.context;
-  const u1Email = 'u1@affine.pro';
-  const u2Email = 'u2@affine.pro';
+  const u1Email = 'u1@nexio.pro';
+  const u2Email = 'u2@nexio.pro';
 
   const user = await app.signupV1(u1Email);
-  await sendChangeEmail(app, u1Email, 'affine.pro');
+  await sendChangeEmail(app, u1Email, 'nexio.pro');
 
   const changeMail = app.mails.last('ChangeEmail');
 
@@ -53,7 +53,7 @@ test('change email', async t => {
     app,
     changeEmailToken as string,
     u2Email,
-    'affine.pro'
+    'nexio.pro'
   );
 
   const verifyMail = app.mails.last('VerifyChangeEmail');
@@ -91,10 +91,10 @@ test('change email', async t => {
 
 test('set and change password', async t => {
   const { app } = t.context;
-  const u1Email = 'u1@affine.pro';
+  const u1Email = 'u1@nexio.pro';
 
   const u1 = await app.signupV1(u1Email);
-  await sendSetPasswordEmail(app, u1Email, 'affine.pro');
+  await sendSetPasswordEmail(app, u1Email, 'nexio.pro');
 
   const setPasswordMail = app.mails.last('ChangePassword');
   const link = new URL(setPasswordMail.props.url);

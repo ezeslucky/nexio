@@ -1,5 +1,5 @@
-import type { SurfaceRefBlockComponent } from '@blocksuite/affine/blocks/surface-ref';
-import { AffineReference } from '@blocksuite/affine/inlines/reference';
+import type { SurfaceRefBlockComponent } from '@blocksuite/nexio/blocks/surface-ref';
+import { NexioReference } from '@blocksuite/nexio/inlines/reference';
 import type {
   AttachmentBlockModel,
   DocMode,
@@ -7,9 +7,9 @@ import type {
   EmbedSyncedDocModel,
   ImageBlockModel,
   SurfaceRefBlockModel,
-} from '@blocksuite/affine/model';
-import type { BlockComponent, EditorHost } from '@blocksuite/affine/std';
-import type { Block, BlockModel } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { BlockComponent, EditorHost } from '@blocksuite/nexio/std';
+import type { Block, BlockModel } from '@blocksuite/nexio/store';
 import { Entity, LiveData } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 import { firstValueFrom, map, race } from 'rxjs';
@@ -36,7 +36,7 @@ export type DocReferenceInfo = {
 export type PeekViewElement =
   | HTMLElement
   | BlockComponent
-  | AffineReference
+  | NexioReference
   | HTMLAnchorElement
   | Block;
 
@@ -91,37 +91,37 @@ export type ActivePeekView = {
 const isEmbedLinkedDocModel = (
   blockModel: BlockModel
 ): blockModel is EmbedLinkedDocModel => {
-  return blockModel.flavour === 'affine:embed-linked-doc';
+  return blockModel.flavour === 'nexio:embed-linked-doc';
 };
 
 const isEmbedSyncedDocModel = (
   blockModel: BlockModel
 ): blockModel is EmbedSyncedDocModel => {
-  return blockModel.flavour === 'affine:embed-synced-doc';
+  return blockModel.flavour === 'nexio:embed-synced-doc';
 };
 
 const isImageBlockModel = (
   blockModel: BlockModel
 ): blockModel is ImageBlockModel => {
-  return blockModel.flavour === 'affine:image';
+  return blockModel.flavour === 'nexio:image';
 };
 
 const isAttachmentBlockModel = (
   blockModel: BlockModel
 ): blockModel is AttachmentBlockModel => {
-  return blockModel.flavour === 'affine:attachment';
+  return blockModel.flavour === 'nexio:attachment';
 };
 
 const isSurfaceRefModel = (
   blockModel: BlockModel
 ): blockModel is SurfaceRefBlockModel => {
-  return blockModel.flavour === 'affine:surface-ref';
+  return blockModel.flavour === 'nexio:surface-ref';
 };
 
 const isAIChatBlockModel = (
   blockModel: BlockModel
 ): blockModel is AIChatBlockModel => {
-  return blockModel.flavour === 'affine:embed-ai-chat';
+  return blockModel.flavour === 'nexio:embed-ai-chat';
 };
 
 function resolvePeekInfoFromPeekTarget(
@@ -138,7 +138,7 @@ function resolvePeekInfoFromPeekTarget(
   const element = peekTarget.element;
 
   if (element) {
-    if (element instanceof AffineReference) {
+    if (element instanceof NexioReference) {
       const referenceInfo = element.referenceInfo;
       if (referenceInfo) {
         const { pageId: docId, params } = referenceInfo;

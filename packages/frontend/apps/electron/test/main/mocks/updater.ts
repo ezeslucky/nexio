@@ -11,10 +11,7 @@ import { BaseUpdater } from 'electron-updater/out/BaseUpdater';
 
 import { MockedHttpExecutor } from './http-executor';
 
-/**
- * For testing, like:
- * https://github.com/electron-userland/electron-builder/blob/master/packages/electron-updater/src/MacUpdater.ts
- */
+
 export class MockedUpdater extends BaseUpdater {
   httpExecutor: MockedHttpExecutor;
 

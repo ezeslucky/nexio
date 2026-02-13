@@ -1,7 +1,5 @@
 // eslint-disable no-var-requires
 
-// Should not load @affine/native for unsupported platforms
-
 import path from 'node:path';
 
 import { shell } from 'electron';

@@ -1,6 +1,6 @@
-import { type DropTargetDropEvent, useDropTarget } from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+import { type DropTargetDropEvent, useDropTarget } from '@nexio/component';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
 
 import { EmptyNodeChildren } from '../../layouts/empty-node-children';
 
@@ -8,10 +8,10 @@ export const Empty = ({
   onDrop,
   noAccessible = false,
 }: {
-  onDrop: (data: DropTargetDropEvent<AffineDNDData>) => void;
+  onDrop: (data: DropTargetDropEvent<NexioDNDData>) => void;
   noAccessible?: boolean;
 }) => {
-  const { dropTargetRef } = useDropTarget<AffineDNDData>(
+  const { dropTargetRef } = useDropTarget<NexioDNDData>(
     () => ({
       onDrop,
     }),
@@ -22,8 +22,8 @@ export const Empty = ({
   return (
     <EmptyNodeChildren ref={dropTargetRef}>
       {noAccessible
-        ? t['com.affine.share-menu.option.permission.no-access']()
-        : t['com.affine.rootAppSidebar.docs.no-subdoc']()}
+        ? t['com.nexio.share-menu.option.permission.no-access']()
+        : t['com.nexio.rootAppSidebar.docs.no-subdoc']()}
     </EmptyNodeChildren>
   );
 };

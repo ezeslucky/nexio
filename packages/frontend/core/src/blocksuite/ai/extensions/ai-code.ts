@@ -1,5 +1,5 @@
-import { AffineCodeToolbarWidget } from '@blocksuite/affine/blocks/code';
-import { LifeCycleWatcher } from '@blocksuite/affine/std';
+import { NexioCodeToolbarWidget } from '@blocksuite/nexio/blocks/code';
+import { LifeCycleWatcher } from '@blocksuite/nexio/std';
 
 import { setupCodeToolbarAIEntry } from '../entries/code-toolbar/setup-code-toolbar';
 
@@ -14,7 +14,7 @@ export class AICodeBlockWatcher extends LifeCycleWatcher {
         return;
       }
       const component = payload.view;
-      if (component instanceof AffineCodeToolbarWidget) {
+      if (component instanceof NexioCodeToolbarWidget) {
         setupCodeToolbarAIEntry(component);
       }
     });

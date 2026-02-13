@@ -1,10 +1,10 @@
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { AffineErrorComponent } from '@affine/core/components/affine/affine-error-boundary/affine-error-fallback';
-import { PageNotFound } from '@affine/core/desktop/pages/404';
-import { SharePage } from '@affine/core/desktop/pages/workspace/share/share-page';
-import { workbenchRoutes } from '@affine/core/mobile/workbench-router';
-import { ServersService } from '@affine/core/modules/cloud';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { NexioErrorComponent } from '@nexio/core/components/nexio/nexio-error-boundary/nexio-error-fallback';
+import { PageNotFound } from '@nexio/core/desktop/pages/404';
+import { SharePage } from '@nexio/core/desktop/pages/workspace/share/share-page';
+import { workbenchRoutes } from '@nexio/core/mobile/workbench-router';
+import { ServersService } from '@nexio/core/modules/cloud';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { FrameworkScope, useLiveData, useServices } from '@toeverything/infra';
 import {
   lazy as reactLazy,
@@ -31,11 +31,11 @@ type Route = { Component: React.ComponentType };
  **/
 const MobileRouteContainer = ({ route }: { route: Route }) => {
   return (
-    <AffineErrorBoundary>
+    <NexioErrorBoundary>
       <Suspense>
         <route.Component />
       </Suspense>
-    </AffineErrorBoundary>
+    </NexioErrorBoundary>
   );
 };
 
@@ -60,7 +60,7 @@ const warpedRoutes = workbenchRoutes.map((originalRoute: RouteObject) => {
     Component: () => {
       return <MobileRouteContainer route={route} />;
     },
-    errorElement: <AffineErrorComponent />,
+    errorElement: <NexioErrorComponent />,
   };
 });
 

@@ -1,8 +1,8 @@
-import { RadioGroup, type RadioItem } from '@affine/component';
-import type { AllPageFilterOption } from '@affine/core/components/atoms';
-import { allPageFilterSelectAtom } from '@affine/core/components/atoms';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+import { RadioGroup, type RadioItem } from '@nexio/component';
+import type { AllPageFilterOption } from '@nexio/core/components/atoms';
+import { allPageFilterSelectAtom } from '@nexio/core/components/atoms';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { useAtom } from 'jotai';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -51,13 +51,13 @@ export const WorkspaceModeFilterTab = ({
         () => [
           {
             value: 'docs',
-            label: t['com.affine.docs.header'](),
+            label: t['com.nexio.docs.header'](),
             testId: 'workspace-docs-button',
             className: styles.filterTab,
           },
           {
             value: 'collections',
-            label: t['com.affine.collections.header'](),
+            label: t['com.nexio.collections.header'](),
             testId: 'workspace-collections-button',
             className: styles.filterTab,
           },

@@ -42,10 +42,10 @@ let workspace: Workspace;
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   owner = await t.context.models.user.create({
-    email: `${randomUUID()}@affine.pro`,
+    email: `${randomUUID()}@nexio.pro`,
   });
   member = await t.context.models.user.create({
-    email: `${randomUUID()}@affine.pro`,
+    email: `${randomUUID()}@nexio.pro`,
   });
   workspace = await t.context.models.workspace.create(owner.id);
 });

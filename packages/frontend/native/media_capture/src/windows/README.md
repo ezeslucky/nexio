@@ -15,7 +15,7 @@ This module provides Windows-specific audio recording functionality using the Wi
 The `MicrophoneListener` class provides real-time monitoring of microphone usage:
 
 ```typescript
-import { MicrophoneListener } from '@affine/native';
+import { MicrophoneListener } from '@nexio/native';
 
 const listener = new MicrophoneListener((isRunning: boolean, processName: string) => {
   console.log(`Microphone ${isRunning ? 'started' : 'stopped'} by ${processName}`);

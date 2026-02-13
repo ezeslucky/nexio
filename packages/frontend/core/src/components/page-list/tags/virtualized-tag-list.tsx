@@ -1,6 +1,6 @@
-import type { Tag } from '@affine/core/modules/tag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { Trans } from '@affine/i18n';
+import type { Tag } from '@nexio/core/modules/tag';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { Trans } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
@@ -104,10 +104,10 @@ export const VirtualizedTagList = ({
         open={showFloatingToolbar}
         content={
           <Trans
-            i18nKey="com.affine.tag.toolbar.selected"
+            i18nKey="com.nexio.tag.toolbar.selected"
             count={selectedTagIds.length}
           >
-            <div style={{ color: 'var(--affine-text-secondary-color)' }}>
+            <div style={{ color: 'var(--nexio-text-secondary-color)' }}>
               {{ count: selectedTagIds.length } as any}
             </div>
             selected

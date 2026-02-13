@@ -1,4 +1,4 @@
-import type { UserFriendlyError } from '@affine/error';
+import type { UserFriendlyError } from '@nexio/error';
 import type { HTMLAttributes, ReactNode } from 'react';
 
 import type { ButtonProps } from '../button';

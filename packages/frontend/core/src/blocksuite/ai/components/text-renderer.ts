@@ -1,28 +1,28 @@
-import { createReactComponentFromLit } from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewProvider } from '@blocksuite/affine/components/peek';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import type { ColorScheme } from '@blocksuite/affine/model';
+import { createReactComponentFromLit } from '@nexio/component';
+import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { PeekViewProvider } from '@blocksuite/nexio/components/peek';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import type { ColorScheme } from '@blocksuite/nexio/model';
 import {
   codeBlockWrapMiddleware,
   defaultImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
+} from '@blocksuite/nexio/shared/adapters';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
 import {
   BlockStdScope,
   BlockViewIdentifier,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import type {
   ExtensionType,
   Query,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import type { Signal } from '@preact/signals-core';
 import {
   darkCssVariablesV2,
@@ -37,7 +37,7 @@ import React from 'react';
 import { filter } from 'rxjs/operators';
 
 import { markDownToDoc } from '../../utils';
-import type { AffineAIPanelState } from '../widgets/ai-panel/type';
+import type { NexioAIPanelState } from '../widgets/ai-panel/type';
 
 export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
   const manager = getViewManager().config.init().value;
@@ -46,8 +46,8 @@ export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
     {
       setup: di => {
         di.override(
-          BlockViewIdentifier('affine:page'),
-          () => literal`affine-page-root`
+          BlockViewIdentifier('nexio:page'),
+          () => literal`nexio-page-root`
         );
       },
     },
@@ -57,39 +57,39 @@ export const getCustomPageEditorBlockSpecs: () => ExtensionType[] = () => {
 const customHeadingStyles = css`
   .custom-heading {
     .h1 {
-      font-size: calc(var(--affine-font-h-1) - 2px);
+      font-size: calc(var(--nexio-font-h-1) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 6px);
+        font-size: calc(var(--nexio-font-base) + 6px);
       }
     }
     .h2 {
-      font-size: calc(var(--affine-font-h-2) - 2px);
+      font-size: calc(var(--nexio-font-h-2) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 4px);
+        font-size: calc(var(--nexio-font-base) + 4px);
       }
     }
     .h3 {
-      font-size: calc(var(--affine-font-h-3) - 2px);
+      font-size: calc(var(--nexio-font-h-3) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) + 2px);
+        font-size: calc(var(--nexio-font-base) + 2px);
       }
     }
     .h4 {
-      font-size: calc(var(--affine-font-h-4) - 2px);
+      font-size: calc(var(--nexio-font-h-4) - 2px);
       code {
-        font-size: var(--affine-font-base);
+        font-size: var(--nexio-font-base);
       }
     }
     .h5 {
-      font-size: calc(var(--affine-font-h-5) - 2px);
+      font-size: calc(var(--nexio-font-h-5) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) - 2px);
+        font-size: calc(var(--nexio-font-base) - 2px);
       }
     }
     .h6 {
-      font-size: calc(var(--affine-font-h-6) - 2px);
+      font-size: calc(var(--nexio-font-h-6) - 2px);
       code {
-        font-size: calc(var(--affine-font-base) - 4px);
+        font-size: calc(var(--nexio-font-base) - 4px);
       }
     }
   }
@@ -100,7 +100,7 @@ export type TextRendererOptions = {
   extensions?: ExtensionType[];
   additionalMiddlewares?: TransformerMiddleware[];
   testId?: string;
-  affineFeatureFlagService?: FeatureFlagService;
+  nexioFeatureFlagService?: FeatureFlagService;
   theme?: Signal<ColorScheme>;
 };
 
@@ -109,26 +109,26 @@ export class TextRenderer extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    .ai-answer-text-editor.affine-page-viewport {
+    .ai-answer-text-editor.nexio-page-viewport {
       background: transparent;
-      font-family: var(--affine-font-family);
+      font-family: var(--nexio-font-family);
       margin-top: 0;
       margin-bottom: 0;
     }
 
-    .ai-answer-text-editor .affine-page-root-block-container {
+    .ai-answer-text-editor .nexio-page-root-block-container {
       padding: 0;
       margin: 0;
-      line-height: var(--affine-line-height);
+      line-height: var(--nexio-line-height);
       color: ${unsafeCSSVarV2('text/primary')};
       font-weight: 400;
     }
 
     .ai-answer-text-editor {
-      .affine-note-block-container {
-        > .affine-block-children-container {
-          > :first-child:not(affine-callout),
-          > :first-child:not(affine-callout) * {
+      .nexio-note-block-container {
+        > .nexio-block-children-container {
+          > :first-child:not(nexio-callout),
+          > :first-child:not(nexio-callout) * {
             margin-top: 0 !important;
           }
           > :last-child,
@@ -138,13 +138,13 @@ export class TextRenderer extends SignalWatcher(
         }
       }
 
-      .affine-paragraph-block-container {
+      .nexio-paragraph-block-container {
         line-height: 22px;
 
         .h6 {
           padding-left: 16px;
           color: ${unsafeCSSVarV2('text/link')};
-          font-size: var(--affine-font-base);
+          font-size: var(--nexio-font-base);
 
           .toggle-icon {
             transform: translateX(0);
@@ -170,7 +170,7 @@ export class TextRenderer extends SignalWatcher(
       border-radius: 20px;
     }
     .text-renderer-container.show-scrollbar:hover::-webkit-scrollbar-thumb {
-      background-color: var(--affine-black-30);
+      background-color: var(--nexio-black-30);
     }
     .text-renderer-container.show-scrollbar::-webkit-scrollbar-corner {
       display: none;
@@ -193,14 +193,14 @@ export class TextRenderer extends SignalWatcher(
     }
 
     .text-renderer-container[data-app-theme='dark'] {
-      .ai-answer-text-editor .affine-page-root-block-container {
-        color: ${unsafeCSS(darkCssVariablesV2['--affine-v2-text-primary'])};
+      .ai-answer-text-editor .nexio-page-root-block-container {
+        color: ${unsafeCSS(darkCssVariablesV2['--nexio-v2-text-primary'])};
       }
     }
 
     .text-renderer-container[data-app-theme='light'] {
-      .ai-answer-text-editor .affine-page-root-block-container {
-        color: ${unsafeCSS(lightCssVariablesV2['--affine-v2-text-primary'])};
+      .ai-answer-text-editor .nexio-page-root-block-container {
+        color: ${unsafeCSS(lightCssVariablesV2['--nexio-v2-text-primary'])};
       }
     }
 
@@ -225,19 +225,19 @@ export class TextRenderer extends SignalWatcher(
   private readonly _query: Query = {
     mode: 'strict',
     match: [
-      'affine:page',
-      'affine:note',
-      'affine:table',
-      'affine:surface',
-      'affine:paragraph',
-      'affine:callout',
-      'affine:code',
-      'affine:list',
-      'affine:divider',
-      'affine:latex',
-      'affine:bookmark',
-      'affine:attachment',
-      'affine:embed-linked-doc',
+      'nexio:page',
+      'nexio:note',
+      'nexio:table',
+      'nexio:surface',
+      'nexio:paragraph',
+      'nexio:callout',
+      'nexio:code',
+      'nexio:list',
+      'nexio:divider',
+      'nexio:latex',
+      'nexio:bookmark',
+      'nexio:attachment',
+      'nexio:embed-linked-doc',
     ].map(flavour => ({ flavour, viewType: 'display' })),
   };
 
@@ -278,7 +278,7 @@ export class TextRenderer extends SignalWatcher(
         markDownToDoc(
           latestAnswer,
           middlewares,
-          this.options.affineFeatureFlagService
+          this.options.nexioFeatureFlagService
         )
           .then(doc => {
             this.disposeDoc();
@@ -352,7 +352,7 @@ export class TextRenderer extends SignalWatcher(
       >
         ${keyed(
           this._doc,
-          html`<div class="ai-answer-text-editor affine-page-viewport">
+          html`<div class="ai-answer-text-editor nexio-page-viewport">
             ${this._host}
           </div>`
         )}
@@ -403,11 +403,11 @@ export class TextRenderer extends SignalWatcher(
   accessor options!: TextRendererOptions;
 
   @property({ attribute: false })
-  accessor state: AffineAIPanelState | undefined = undefined;
+  accessor state: NexioAIPanelState | undefined = undefined;
 }
 
 export const createTextRenderer = (options: TextRendererOptions) => {
-  return (answer: string, state?: AffineAIPanelState) => {
+  return (answer: string, state?: NexioAIPanelState) => {
     return html`<text-renderer
       contenteditable="false"
       .answer=${answer}

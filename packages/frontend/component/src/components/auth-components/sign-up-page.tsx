@@ -1,5 +1,5 @@
-import type { PasswordLimitsFragment } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import type { PasswordLimitsFragment } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 
@@ -13,12 +13,12 @@ export const SignUpPage: FC<{
   user: { email?: string };
   onSetPassword: (password: string) => Promise<void>;
   openButtonText?: string;
-  onOpenAffine: () => void;
+  onOpenNexio: () => void;
 }> = ({
   passwordLimits,
   user: { email },
   onSetPassword: propsOnSetPassword,
-  onOpenAffine,
+  onOpenNexio,
   openButtonText,
 }) => {
   const t = useI18n();
@@ -30,7 +30,7 @@ export const SignUpPage: FC<{
         .then(() => setHasSetUp(true))
         .catch(e =>
           notify.error({
-            title: t['com.affine.auth.password.set-failed'](),
+            title: t['com.nexio.auth.password.set-failed'](),
             message: String(e),
           })
         );
@@ -45,15 +45,15 @@ export const SignUpPage: FC<{
     <AuthPageContainer
       title={
         hasSetUp
-          ? t['com.affine.auth.sign.up.success.title']()
-          : t['com.affine.auth.page.sent.email.title']()
+          ? t['com.nexio.auth.sign.up.success.title']()
+          : t['com.nexio.auth.page.sent.email.title']()
       }
       subtitle={
         hasSetUp ? (
-          t['com.affine.auth.sign.up.success.subtitle']()
+          t['com.nexio.auth.sign.up.success.subtitle']()
         ) : (
           <>
-            {t['com.affine.auth.page.sent.email.subtitle']({
+            {t['com.nexio.auth.page.sent.email.subtitle']({
               min: String(passwordLimits.minLength),
               max: String(passwordLimits.maxLength),
             })}
@@ -63,8 +63,8 @@ export const SignUpPage: FC<{
       }
     >
       {hasSetUp ? (
-        <Button variant="primary" size="large" onClick={onOpenAffine}>
-          {openButtonText ?? t['com.affine.auth.open.affine']()}
+        <Button variant="primary" size="large" onClick={onOpenNexio}>
+          {openButtonText ?? t['com.nexio.auth.open.nexio']()}
         </Button>
       ) : (
         <SetPassword

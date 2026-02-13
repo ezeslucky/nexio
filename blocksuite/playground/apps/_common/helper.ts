@@ -1,4 +1,4 @@
-import { TestWorkspace } from '@blocksuite/affine/store/test';
+import { TestWorkspace } from '@blocksuite/nexio/store/test';
 import { getTestStoreManager } from '@blocksuite/integration-test/store';
 
 export function createEmptyDoc() {
@@ -12,10 +12,10 @@ export function createEmptyDoc() {
     doc,
     init() {
       doc.load();
-      const rootId = store.addBlock('affine:page', {});
-      store.addBlock('affine:surface', {}, rootId);
-      const noteId = store.addBlock('affine:note', {}, rootId);
-      store.addBlock('affine:paragraph', {}, noteId);
+      const rootId = store.addBlock('nexio:page', {});
+      store.addBlock('nexio:surface', {}, rootId);
+      const noteId = store.addBlock('nexio:note', {}, rootId);
+      store.addBlock('nexio:paragraph', {}, noteId);
       return store;
     },
   };

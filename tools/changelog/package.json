@@ -1,5 +1,5 @@
 {
-  "name": "@affine/changelog",
+  "name": "@nexio/changelog",
   "version": "0.22.4",
   "type": "module",
   "main": "index.js",

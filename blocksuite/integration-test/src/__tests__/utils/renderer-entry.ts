@@ -1,11 +1,11 @@
-import { ImageLayoutHandlerExtension } from '@blocksuite/affine/blocks/image';
-import { ListLayoutHandlerExtension } from '@blocksuite/affine/blocks/list';
-import { ParagraphLayoutHandlerExtension } from '@blocksuite/affine/blocks/paragraph';
+import { ImageLayoutHandlerExtension } from '@blocksuite/nexio/blocks/image';
+import { ListLayoutHandlerExtension } from '@blocksuite/nexio/blocks/list';
+import { ParagraphLayoutHandlerExtension } from '@blocksuite/nexio/blocks/paragraph';
 import {
   TurboRendererConfigFactory,
   ViewportTurboRendererExtension,
   ViewportTurboRendererIdentifier,
-} from '@blocksuite/affine/gfx/turbo-renderer';
+} from '@blocksuite/nexio/gfx/turbo-renderer';
 
 import { addSampleNotes } from './doc-generator.js';
 import { createPainterWorker, setupEditor } from './setup.js';

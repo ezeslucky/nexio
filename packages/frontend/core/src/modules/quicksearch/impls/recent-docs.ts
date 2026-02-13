@@ -9,7 +9,7 @@ import type { QuickSearchItem } from '../types/item';
 const group = {
   id: 'recent-docs',
   label: {
-    i18nKey: 'com.affine.cmdk.affine.category.affine.recent',
+    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.recent',
   },
   score: 15,
 } as QuickSearchGroup;

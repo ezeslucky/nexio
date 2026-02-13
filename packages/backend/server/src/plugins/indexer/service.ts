@@ -409,7 +409,7 @@ export class IndexerService {
           {
             type: SearchQueryType.match,
             field: 'flavour',
-            match: 'affine:attachment',
+            match: 'nexio:attachment',
           },
           {
             type: SearchQueryType.boolean,
@@ -484,7 +484,7 @@ export class IndexerService {
                     query: {
                       type: SearchQueryType.match,
                       field: 'flavour',
-                      match: 'affine:page',
+                      match: 'nexio:page',
                     },
                   },
                 ],
@@ -540,7 +540,7 @@ export class IndexerService {
       let title = '';
 
       // hit title block
-      if (flavour === 'affine:page') {
+      if (flavour === 'nexio:page') {
         title = content;
       } else {
         // hit content block, missing title
@@ -922,24 +922,7 @@ export class IndexerService {
         });
       }
 
-      // {
-      //   type: 'boost',
-      //   boost: 1.5,
-      //   query: {
-      //     type: 'match',
-      //     field: 'flavour',
-      //     match: 'affine:page',
-      //   },
-      // }
-      // to
-      // {
-      //   "match": {
-      //     "flavour": {
-      //       "query": "affine:page",
-      //       "boost": 1.5
-      //     }
-      //   }
-      // }
+     
       return this.#parseQuery(
         table,
         {

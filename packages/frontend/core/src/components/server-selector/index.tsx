@@ -4,8 +4,8 @@ import {
   type MenuProps,
   MenuTrigger,
   Tooltip,
-} from '@affine/component';
-import type { Server } from '@affine/core/modules/cloud';
+} from '@nexio/component';
+import type { Server } from '@nexio/core/modules/cloud';
 import { useMemo } from 'react';
 
 import { triggerStyle } from './style.css';

@@ -1,5 +1,5 @@
 {
-  "name": "@affine/electron",
+  "name": "@nexio/electron",
   "private": true,
   "version": "0.22.4",
   "main": "./dist/main.js",
@@ -8,7 +8,7 @@
     "url": "https://github.com/ezeslucky/nexio",
     "type": "git"
   },
-  "description": "AFFiNE Desktop App",
+  "description": "NEXIO Desktop App",
   "homepage": "https://github.com/ezeslucky/nexio",
   "exports": {
     "./helper/exposed": "./src/helper/exposed.ts",
@@ -32,10 +32,10 @@
     "make-nsis": "node ./scripts/make-nsis.ts"
   },
   "devDependencies": {
-    "@affine-tools/utils": "workspace:*",
-    "@affine/i18n": "workspace:*",
-    "@affine/native": "workspace:*",
-    "@affine/nbstore": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
+    "@nexio/i18n": "workspace:*",
+    "@nexio/native": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/core": "^7.6.0",
     "@electron-forge/core-utils": "^7.6.0",
@@ -88,9 +88,9 @@
   "build": {
     "protocols": [
       {
-        "name": "affine",
+        "name": "nexio",
         "schemes": [
-          "affine"
+          "nexio"
         ]
       }
     ]

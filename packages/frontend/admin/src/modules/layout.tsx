@@ -1,10 +1,10 @@
 import {
   ResizablePanel,
   ResizablePanelGroup,
-} from '@affine/admin/components/ui/resizable';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { TooltipProvider } from '@affine/admin/components/ui/tooltip';
-import { cn } from '@affine/admin/utils';
+} from '@nexio/admin/components/ui/resizable';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { TooltipProvider } from '@nexio/admin/components/ui/tooltip';
+import { cn } from '@nexio/admin/utils';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { AlignJustifyIcon } from 'lucide-react';
 import type { PropsWithChildren, ReactNode, RefObject } from 'react';

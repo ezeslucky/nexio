@@ -11,7 +11,7 @@ import { highlighter } from '../utils/highlighter';
 const group = {
   id: 'collections',
   label: {
-    i18nKey: 'com.affine.cmdk.affine.category.affine.collections',
+    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.collections',
   },
   score: 10,
 } as QuickSearchGroup;

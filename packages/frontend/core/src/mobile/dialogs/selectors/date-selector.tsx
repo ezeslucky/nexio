@@ -1,7 +1,7 @@
-import { DatePicker, Menu } from '@affine/component';
-import type { DialogComponentProps } from '@affine/core/modules/dialogs';
-import type { WORKSPACE_DIALOG_SCHEMA } from '@affine/core/modules/dialogs/constant';
-import { useI18n } from '@affine/i18n';
+import { DatePicker, Menu } from '@nexio/component';
+import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
+import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
@@ -59,9 +59,9 @@ export const DateSelectorDialog = ({
       }
       items={
         <DatePicker
-          weekDays={t['com.affine.calendar-date-picker.week-days']()}
-          monthNames={t['com.affine.calendar-date-picker.month-names']()}
-          todayLabel={t['com.affine.calendar-date-picker.today']()}
+          weekDays={t['com.nexio.calendar-date-picker.week-days']()}
+          monthNames={t['com.nexio.calendar-date-picker.month-names']()}
+          todayLabel={t['com.nexio.calendar-date-picker.today']()}
           value={selectedDate}
           onChange={handleSelect}
         />

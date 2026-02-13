@@ -1,4 +1,4 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine/model';
+import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
 import { expect } from '@playwright/test';
 
 import { enterPlaygroundRoom } from '../utils/actions';
@@ -23,9 +23,9 @@ test.describe('embed-synced-doc render', () => {
       { chain: true }
     );
 
-    expect(await page.locator('affine-embed-synced-doc-block').count()).toBe(2);
-    expect(await page.locator('affine-paragraph').count()).toBe(2);
-    expect(await page.locator('affine-embed-synced-doc-card').count()).toBe(1);
+    expect(await page.locator('nexio-embed-synced-doc-block').count()).toBe(2);
+    expect(await page.locator('nexio-paragraph').count()).toBe(2);
+    expect(await page.locator('nexio-embed-synced-doc-card').count()).toBe(1);
     expect(await page.locator('editor-host').count()).toBe(2);
   });
 
@@ -35,11 +35,11 @@ test.describe('embed-synced-doc render', () => {
       { title: 'Doc 2', content: 'Hello from Doc 2' },
     ]);
 
-    const locator = page.locator('affine-embed-synced-doc-block');
+    const locator = page.locator('nexio-embed-synced-doc-block');
     await expect(locator).toBeVisible();
     await locator.click();
 
-    const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+    const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
     const openMenu = toolbar.getByRole('button', { name: 'Open doc' });
     await openMenu.click();
 
@@ -49,11 +49,11 @@ test.describe('embed-synced-doc render', () => {
     await page.evaluate(async embedDocId => {
       const { collection } = window;
       const doc2 = collection.getDoc(embedDocId)!.getStore();
-      const [noteBlock] = doc2!.getBlocksByFlavour('affine:note');
+      const [noteBlock] = doc2!.getBlocksByFlavour('nexio:note');
       const noteId = noteBlock.id;
 
       const databaseId = doc2.addBlock(
-        'affine:database',
+        'nexio:database',
         {
           title: new window.$blocksuite.store.Text('Database 1'),
         },
@@ -72,11 +72,11 @@ test.describe('embed-synced-doc render', () => {
     });
 
     const databaseFirstCell = page.locator(
-      '.affine-database-column-header.database-row'
+      '.nexio-database-column-header.database-row'
     );
     await databaseFirstCell.click({ force: true });
     const selectedCount = await page
-      .locator('.affine-embed-synced-doc-container.selected')
+      .locator('.nexio-embed-synced-doc-container.selected')
       .count();
     expect(selectedCount).toBe(1);
   });

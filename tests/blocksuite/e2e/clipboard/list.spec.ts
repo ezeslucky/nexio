@@ -109,7 +109,7 @@ test('copy a nested list by clicking button, the clipboard data should be comple
   };
   await pasteContent(page, clipData);
 
-  const rootListBound = await page.locator('affine-list').first().boundingBox();
+  const rootListBound = await page.locator('nexio-list').first().boundingBox();
   if (!rootListBound) {
     throw new Error('rootListBound is not found');
   }
@@ -360,7 +360,7 @@ test(scoped`cut should work for multi-block selection`, async ({ page }) => {
   await selectAllByKeyboard(page);
   await selectAllByKeyboard(page);
   await cutByKeyboard(page);
-  await page.locator('.affine-page-viewport').click();
+  await page.locator('.nexio-page-viewport').click();
   await waitNextFrame(page);
   await assertText(page, '');
 });
@@ -441,13 +441,13 @@ test(scoped`should copy and paste of database work`, async ({ page }) => {
   let pageJson = await getPageSnapshot(page, false);
   let note = (pageJson as BlockSnapshot).children[0];
   const database = note.children[0];
-  expect(database.flavour).toBe('affine:database');
+  expect(database.flavour).toBe('nexio:database');
 
   await undoByKeyboard(page);
 
   pageJson = await getPageSnapshot(page, false);
   note = (pageJson as BlockSnapshot).children[0];
-  const db = note.children.find(child => child.flavour === 'affine:database');
+  const db = note.children.find(child => child.flavour === 'nexio:database');
   expect(db).toBeDefined();
 });
 

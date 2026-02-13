@@ -91,7 +91,7 @@ test('should deleteByQuery work', async t => {
         docId: docId1,
         blockId: randomUUID(),
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -102,7 +102,7 @@ test('should deleteByQuery work', async t => {
         docId: docId2,
         blockId: randomUUID(),
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -206,7 +206,7 @@ test('should write throw error when field type wrong', async t => {
         createdAt: new Date(),
         updatedAt: new Date(),
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         // @ts-expect-error test error
         refDocId: 123,
       },
@@ -228,7 +228,7 @@ test('should write block with array content work', async t => {
         docId,
         blockId,
         content: ['hello', 'world'],
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -411,7 +411,7 @@ test('should parse boost query work', async t => {
       query: {
         type: SearchQueryType.match,
         field: 'flavour',
-        match: 'affine:page',
+        match: 'nexio:page',
       },
     },
     options: {
@@ -430,7 +430,7 @@ test('should parse match query work', async t => {
     query: {
       type: SearchQueryType.match,
       field: 'flavour',
-      match: 'affine:page',
+      match: 'nexio:page',
     },
     options: {
       fields: [
@@ -486,7 +486,7 @@ test('should parse boolean query work', async t => {
               query: {
                 type: 'match',
                 field: 'flavour',
-                match: 'affine:page',
+                match: 'nexio:page',
               },
             },
           ],
@@ -701,7 +701,7 @@ test('should search with exists query work', async t => {
         updatedByUserId: user.id,
         createdAt: new Date(),
         updatedAt: new Date(),
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         parentBlockId: 'blockId2',
       },
       {
@@ -713,9 +713,9 @@ test('should search with exists query work', async t => {
         updatedByUserId: user.id,
         createdAt: new Date(),
         updatedAt: new Date('2025-04-24T00:00:00.000Z'),
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         refDocId: [docId1],
-        ref: ['{"type": "affine:page", "id": "docId1"}'],
+        ref: ['{"type": "nexio:page", "id": "docId1"}'],
       },
       {
         workspaceId: workspace.id,
@@ -726,11 +726,11 @@ test('should search with exists query work', async t => {
         updatedByUserId: user.id,
         createdAt: new Date(),
         updatedAt: new Date(),
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         refDocId: [docId2, docId1],
         ref: [
-          '{"type": "affine:page", "id": "docId2"}',
-          '{"type": "affine:page", "id": "docId1"}',
+          '{"type": "nexio:page", "id": "docId2"}',
+          '{"type": "nexio:page", "id": "docId1"}',
         ],
       },
     ],
@@ -782,14 +782,14 @@ test('should search with exists query work', async t => {
     blockId: ['blockId3'],
     refDocId: [docId2, docId1],
     ref: [
-      '{"type": "affine:page", "id": "docId2"}',
-      '{"type": "affine:page", "id": "docId1"}',
+      '{"type": "nexio:page", "id": "docId2"}',
+      '{"type": "nexio:page", "id": "docId1"}',
     ],
   });
   t.deepEqual(result.nodes[1].fields, {
     blockId: ['blockId2'],
     refDocId: [docId1],
-    ref: ['{"type": "affine:page", "id": "docId1"}'],
+    ref: ['{"type": "nexio:page", "id": "docId1"}'],
   });
 
   const result2 = await indexerService.search({
@@ -937,7 +937,7 @@ test('should search with bool must multiple conditions query work', async t => {
       // ref to docId1, ignore current docId1
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId1,
         blockId: blockId1,
         refDocId: [docId1],
@@ -951,7 +951,7 @@ test('should search with bool must multiple conditions query work', async t => {
       // ref to docId1, docId2, ignore current docId1
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId1,
         blockId: blockId2,
         refDocId: [docId1, docId2],
@@ -965,14 +965,14 @@ test('should search with bool must multiple conditions query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId2,
         blockId: blockId3,
         refDocId: [docId1, docId2],
         ref: ['{"foo": "bar1"}', '{"foo": "bar2"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId1',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -983,14 +983,14 @@ test('should search with bool must multiple conditions query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId2,
         blockId: blockId4,
         refDocId: [docId1],
         ref: ['{"foo": "bar1"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId2',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1001,14 +1001,14 @@ test('should search with bool must multiple conditions query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: blockId5,
         refDocId: [docId2, docId1, docId3],
         ref: ['{"foo": "bar2"}', '{"foo": "bar1"}', '{"foo": "bar3"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId3',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1019,7 +1019,7 @@ test('should search with bool must multiple conditions query work', async t => {
       // not matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: 'blockId6',
         refDocId: [docId2, docId3],
@@ -1033,7 +1033,7 @@ test('should search with bool must multiple conditions query work', async t => {
       // not matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: 'blockId7',
         content: 'hello world, this is a title',
@@ -1045,14 +1045,14 @@ test('should search with bool must multiple conditions query work', async t => {
       // not matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId2,
         blockId: 'blockId8',
         refDocId: [docId1],
         ref: ['{"foo": "bar1"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId2',
-        parentFlavour: 'affine:text',
+        parentFlavour: 'nexio:text',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1080,7 +1080,7 @@ test('should search with bool must multiple conditions query work', async t => {
         {
           type: SearchQueryType.match,
           field: 'parentFlavour',
-          match: 'affine:database',
+          match: 'nexio:database',
         },
         // Ignore if it is a link to the current document.
         {
@@ -1194,7 +1194,7 @@ test('should aggregate work', async t => {
     [
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId1,
         blockId: blockId3,
         content: 'hello world, this is a title',
@@ -1205,7 +1205,7 @@ test('should aggregate work', async t => {
       },
       {
         workspaceId: workspace.id,
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         docId: docId1,
         blockId: blockId1,
         content: 'hello world, this is a block',
@@ -1216,7 +1216,7 @@ test('should aggregate work', async t => {
       },
       {
         workspaceId: workspace.id,
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         docId: docId1,
         blockId: randomUUID(),
         content: 'this is a block',
@@ -1227,7 +1227,7 @@ test('should aggregate work', async t => {
       },
       {
         workspaceId: workspace.id,
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         docId: docId2,
         blockId: blockId2,
         content: 'hello world, this is a test block',
@@ -1239,7 +1239,7 @@ test('should aggregate work', async t => {
       // not match
       {
         workspaceId: workspace.id,
-        flavour: 'affine:database',
+        flavour: 'nexio:database',
         docId: docId2,
         blockId: randomUUID(),
         content: 'this is a test block',
@@ -1290,7 +1290,7 @@ test('should aggregate work', async t => {
                   query: {
                     type: SearchQueryType.match,
                     field: 'flavour',
-                    match: 'affine:page',
+                    match: 'nexio:page',
                   },
                 },
               ],
@@ -1311,13 +1311,13 @@ test('should aggregate work', async t => {
   t.is(result.buckets.length, 2);
   t.deepEqual(result.buckets[0].key, docId1);
   t.is(result.buckets[0].count, 2);
-  // match affine:page first
+  // match nexio:page first
   t.deepEqual(result.buckets[0].hits.nodes[0].fields, {
     workspaceId: [workspace.id],
     docId: [docId1],
     blockId: [blockId3],
     content: ['hello world, this is a title'],
-    flavour: ['affine:page'],
+    flavour: ['nexio:page'],
   });
   t.deepEqual(result.buckets[0].hits.nodes[0].highlights, {
     content: ['<b>hello</b> world, this is a title'],
@@ -1331,7 +1331,7 @@ test('should aggregate work', async t => {
     docId: [docId1],
     blockId: [blockId1],
     content: ['hello world, this is a block'],
-    flavour: ['affine:text'],
+    flavour: ['nexio:text'],
   });
   t.deepEqual(result.buckets[0].hits.nodes[1].highlights, {
     content: ['<b>hello</b> world, this is a block'],
@@ -1347,7 +1347,7 @@ test('should aggregate work', async t => {
     docId: [docId2],
     blockId: [blockId2],
     content: ['hello world, this is a test block'],
-    flavour: ['affine:text'],
+    flavour: ['nexio:text'],
   });
   t.deepEqual(result.buckets[1].hits.nodes[0].highlights, {
     content: ['<b>hello</b> world, this is a test block'],
@@ -1373,7 +1373,7 @@ test('should aggregate with bool must_not query work', async t => {
       // ref to docId1, ignore current docId1
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId1,
         blockId: blockId1,
         refDocId: [docId1],
@@ -1387,7 +1387,7 @@ test('should aggregate with bool must_not query work', async t => {
       // ref to docId1, docId2, ignore current docId1
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId1,
         blockId: blockId2,
         refDocId: [docId1, docId2],
@@ -1401,14 +1401,14 @@ test('should aggregate with bool must_not query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId2,
         blockId: blockId3,
         refDocId: [docId1, docId2],
         ref: ['{"foo": "bar1"}', '{"foo": "bar2"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId1',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1419,14 +1419,14 @@ test('should aggregate with bool must_not query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId2,
         blockId: blockId4,
         refDocId: [docId1],
         ref: ['{"foo": "bar1"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId2',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1437,14 +1437,14 @@ test('should aggregate with bool must_not query work', async t => {
       // matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: blockId5,
         refDocId: [docId2, docId1, docId3],
         ref: ['{"foo": "bar2"}', '{"foo": "bar1"}', '{"foo": "bar3"}'],
         content: 'hello world, this is a title',
         parentBlockId: 'parentBlockId3',
-        parentFlavour: 'affine:database',
+        parentFlavour: 'nexio:database',
         additional: '{"foo": "bar3"}',
         markdownPreview: 'hello world, this is a title',
         createdByUserId: user.id,
@@ -1455,7 +1455,7 @@ test('should aggregate with bool must_not query work', async t => {
       // not matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: 'blockId6',
         refDocId: [docId2, docId3],
@@ -1469,7 +1469,7 @@ test('should aggregate with bool must_not query work', async t => {
       // not matched
       {
         workspaceId: workspace.id,
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: docId3,
         blockId: 'blockId7',
         content: 'hello world, this is a title',
@@ -1635,7 +1635,7 @@ test('should delete workspace work', async t => {
         docId: docId1,
         blockId: randomUUID(),
         content: 'hello world',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -1755,7 +1755,7 @@ test('should delete doc work', async t => {
         docId: docId1,
         blockId: randomUUID(),
         content: 'hello world',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -1766,7 +1766,7 @@ test('should delete doc work', async t => {
         docId: docId2,
         blockId: randomUUID(),
         content: 'hello world',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date(),
@@ -2087,7 +2087,7 @@ test('should index doc work', async t => {
           type: SearchQueryType.match,
           field: 'content',
           match:
-            'For developers or installations guides, please go to AFFiNE Doc',
+            'For developers or installations guides, please go to NEXIO Doc',
         },
       ],
     },
@@ -2148,7 +2148,7 @@ test('should search blob names work', async t => {
         workspaceId,
         blob: blobId1,
         content: 'blob1 name.txt',
-        flavour: 'affine:attachment',
+        flavour: 'nexio:attachment',
         docId: randomUUID(),
         blockId: randomUUID(),
         createdByUserId: user.id,
@@ -2160,7 +2160,7 @@ test('should search blob names work', async t => {
         workspaceId,
         blob: blobId2,
         content: 'blob2 name.md',
-        flavour: 'affine:attachment',
+        flavour: 'nexio:attachment',
         docId: randomUUID(),
         blockId: randomUUID(),
         createdByUserId: user.id,
@@ -2172,7 +2172,7 @@ test('should search blob names work', async t => {
         workspaceId,
         blob: blobId3,
         content: 'blob3 name.docx',
-        flavour: 'affine:attachment',
+        flavour: 'nexio:attachment',
         docId: randomUUID(),
         blockId: randomUUID(),
         createdByUserId: user.id,
@@ -2185,7 +2185,7 @@ test('should search blob names work', async t => {
         workspaceId,
         blob: blobId3,
         content: 'mock blob3 content',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         docId: randomUUID(),
         blockId: randomUUID(),
         createdByUserId: user.id,
@@ -2247,7 +2247,7 @@ test('should search docs by keyword work', async t => {
         docId: docId1,
         blockId: 'block1',
         content: 'hello world',
-        flavour: 'affine:page',
+        flavour: 'nexio:page',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date('2025-06-20T00:00:00.000Z'),
@@ -2258,7 +2258,7 @@ test('should search docs by keyword work', async t => {
         docId: docId2,
         blockId: 'block2',
         content: 'hello world 2',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date('2025-06-20T00:00:01.000Z'),
@@ -2269,7 +2269,7 @@ test('should search docs by keyword work', async t => {
         docId: docId3,
         blockId: 'block3',
         content: 'hello world 3',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date('2025-06-20T00:00:02.000Z'),
@@ -2280,7 +2280,7 @@ test('should search docs by keyword work', async t => {
         docId: docId4,
         blockId: 'block4',
         content: 'hello world 4',
-        flavour: 'affine:text',
+        flavour: 'nexio:text',
         createdByUserId: user.id,
         updatedByUserId: user.id,
         createdAt: new Date('2025-06-20T00:00:03.000Z'),

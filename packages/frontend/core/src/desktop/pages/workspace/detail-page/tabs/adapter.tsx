@@ -1,13 +1,13 @@
-import { ServerService } from '@affine/core/modules/cloud';
-import { AdapterPanel } from '@blocksuite/affine/fragments/adapter-panel';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { AdapterPanel } from '@blocksuite/nexio/fragments/adapter-panel';
 import {
   customImageProxyMiddleware,
   docLinkBaseURLMiddlewareBuilder,
   embedSyncedDocMiddleware,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { TransformerMiddleware } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/adapters';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { TransformerMiddleware } from '@blocksuite/nexio/store';
 import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useRef } from 'react';
 

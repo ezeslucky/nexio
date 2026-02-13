@@ -1,4 +1,4 @@
-import { oauthProvidersQuery } from '@affine/graphql';
+import { oauthProvidersQuery } from '@nexio/graphql';
 
 import { ConfigModule } from '../../../base/config';
 import { createApp, e2e, TestingApp } from '../test';
@@ -41,7 +41,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-affine-version': '0.22.0',
+        'x-nexio-version': '0.22.0',
       },
     },
   });
@@ -51,7 +51,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-affine-version': '0.23.0-beta.1',
+        'x-nexio-version': '0.23.0-beta.1',
       },
     },
   });
@@ -62,7 +62,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-affine-version': '2025.6.29-canary.93',
+        'x-nexio-version': '2025.6.29-canary.93',
       },
     },
   });
@@ -86,7 +86,7 @@ e2e('should not return apple oauth provider in version < 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-affine-version': '0.21.0',
+        'x-nexio-version': '0.21.0',
       },
     },
   });
@@ -101,7 +101,7 @@ e2e(
       query: oauthProvidersQuery,
       context: {
         headers: {
-          'x-affine-version': 'mock-invalid-version',
+          'x-nexio-version': 'mock-invalid-version',
         },
       },
     });

@@ -1,4 +1,4 @@
-import { Trans, useI18n } from '@affine/i18n';
+import { Trans, useI18n } from '@nexio/i18n';
 import clsx from 'clsx';
 import { useCallback } from 'react';
 
@@ -31,16 +31,16 @@ export const EditorLoading = ({
         <div className={styles.content} data-longer-loading={true}>
           <div>
             <div className={styles.text} data-longer-loading={true}>
-              {t['com.affine.error.loading-timeout-error']()}
+              {t['com.nexio.error.loading-timeout-error']()}
             </div>
             <div className={styles.text} data-longer-loading={true}>
               <Trans
-                i18nKey="com.affine.error.contact-us"
+                i18nKey="com.nexio.error.contact-us"
                 components={{
                   1: (
                     <a
-                      style={{ color: 'var(--affine-primary-color)' }}
-                      href="https://community.affine.pro"
+                      style={{ color: 'var(--nexio-primary-color)' }}
+                      href="https://community.nexio.pro"
                       target="__blank"
                     />
                   ),
@@ -63,17 +63,17 @@ export const EditorLoading = ({
             onClick={reloadPage}
             variant="primary"
           >
-            {t['com.affine.error.reload']()}
+            {t['com.nexio.error.reload']()}
           </Button>
         </div>
       ) : (
         <div className={styles.content}>
           <div className={styles.title}>
             <Loading size={20} className={styles.loadingIcon} />
-            {t['com.affine.loading']()}
+            {t['com.nexio.loading']()}
           </div>
           <div className={styles.text}>
-            {t['com.affine.loading.description']()}
+            {t['com.nexio.loading.description']()}
           </div>
         </div>
       )}

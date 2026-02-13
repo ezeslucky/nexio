@@ -21,5 +21,5 @@ export default function VerifyChangeEmail(props: VerifyChangeEmailProps) {
 }
 
 VerifyChangeEmail.PreviewProps = {
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

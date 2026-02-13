@@ -50,7 +50,7 @@ test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   await t.context.copilotSession.createPrompt('prompt-name', 'gpt-5-mini');
   user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   workspace = await t.context.workspace.create(user.id);
   sessionId = await t.context.copilotSession.create({

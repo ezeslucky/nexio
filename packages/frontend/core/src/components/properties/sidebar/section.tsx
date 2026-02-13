@@ -1,5 +1,5 @@
-import { IconButton } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { IconButton } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import { ToggleRightIcon } from '@blocksuite/icons/rc';
 import { Trigger as CollapsibleTrigger } from '@radix-ui/react-collapsible';
 
@@ -10,7 +10,7 @@ export const WorkspacePropertyListSidebarSection = () => {
   return (
     <div className={styles.headerRoot}>
       <span className={styles.headerTitle}>
-        {t['com.affine.propertySidebar.property-list.section']()}
+        {t['com.nexio.propertySidebar.property-list.section']()}
       </span>
       <CollapsibleTrigger asChild>
         <IconButton>
@@ -26,7 +26,7 @@ export const AddWorkspacePropertySidebarSection = () => {
   return (
     <div className={styles.headerRoot}>
       <span className={styles.headerTitle}>
-        {t['com.affine.propertySidebar.add-more.section']()}
+        {t['com.nexio.propertySidebar.add-more.section']()}
       </span>
       <CollapsibleTrigger asChild>
         <IconButton>

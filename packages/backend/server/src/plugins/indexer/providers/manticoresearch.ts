@@ -307,23 +307,7 @@ export class ManticoresearchProvider extends ElasticsearchProvider {
       let value = query.term[field];
       if (typeof value === 'object' && 'value' in value) {
         if ('boost' in value) {
-          // {
-          //   term: {
-          //     flavour: {
-          //       value: 'affine:page',
-          //       boost: 1.5,
-          //     },
-          //   },
-          // }
-          // to
-          // {
-          //   match: {
-          //     flavour_indexed: {
-          //       query: 'affine:page',
-          //       boost: 1.5,
-          //     },
-          //   },
-          // }
+        
           if (SupportIndexedAttributes.includes(field)) {
             field = `${field}_indexed`;
           }

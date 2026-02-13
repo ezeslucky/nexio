@@ -5,13 +5,13 @@ import { type HTMLAttributes, useState } from 'react';
 import { Button } from '../button';
 import { RadioGroup, type RadioItem } from '../radio';
 import * as styles from './icon-picker.css';
-import { AffineIconPicker } from './picker/affine-icon/affine-icon-picker';
+import { NexioIconPicker } from './picker/nexio-icon/nexio-icon-picker';
 import { EmojiPicker } from './picker/emoji/emoji-picker';
 import { type IconData, IconType } from './type';
 
 const panels: Array<RadioItem> = [
   { value: 'Emoji', className: styles.headerNavItem },
-  { value: 'Icons', className: styles.headerNavItem },
+  { value: 'Nexio Icons', className: styles.headerNavItem },
 ];
 
 export const IconPicker = ({
@@ -62,9 +62,9 @@ export const IconPicker = ({
             }}
           />
         ) : activePanel === 'Icons' ? (
-          <AffineIconPicker
+          <NexioIconPicker
             onSelect={(icon, color) => {
-              onSelect?.({ type: IconType.AffineIcon, name: icon, color });
+              onSelect?.({ type: IconType.NexioIcon, name: icon, color });
             }}
           />
         ) : null}

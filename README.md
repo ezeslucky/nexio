@@ -1,9 +1,9 @@
 <!--  nvm use 20
-yarn run affine @affine/server prisma migrate deploy
+yarn run affine @nexio/server prisma migrate deploy
 nvm use 20
 export NODE_OPTIONS="--max-old-space-size=24576"
 
-yarn run affine dev -p @affine/server
+yarn run affine dev -p @nexio/server
 
 
 

@@ -6,43 +6,43 @@
     "published_at": "2024-11-13T07:43:22Z",
     "assets": [
       {
-        "name": "affine-0.18.0-stable-linux-x64.appimage",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-linux-x64.appimage",
+        "name": "nexio-0.18.0-stable-linux-x64.appimage",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-linux-x64.appimage",
         "size": 178308288
       },
       {
-        "name": "affine-0.18.0-stable-linux-x64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-linux-x64.zip",
+        "name": "nexio-0.18.0-stable-linux-x64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-linux-x64.zip",
         "size": 176405078
       },
       {
-        "name": "affine-0.18.0-stable-macos-arm64.dmg",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-macos-arm64.dmg",
+        "name": "nexio-0.18.0-stable-macos-arm64.dmg",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-macos-arm64.dmg",
         "size": 168093091
       },
       {
-        "name": "affine-0.18.0-stable-macos-arm64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-macos-arm64.zip",
+        "name": "nexio-0.18.0-stable-macos-arm64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-macos-arm64.zip",
         "size": 167540517
       },
       {
-        "name": "affine-0.18.0-stable-macos-x64.dmg",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-macos-x64.dmg",
+        "name": "nexio-0.18.0-stable-macos-x64.dmg",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-macos-x64.dmg",
         "size": 175029125
       },
       {
-        "name": "affine-0.18.0-stable-macos-x64.zip",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-macos-x64.zip",
+        "name": "nexio-0.18.0-stable-macos-x64.zip",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-macos-x64.zip",
         "size": 174752343
       },
       {
-        "name": "affine-0.18.0-stable-windows-x64.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-windows-x64.exe",
+        "name": "nexio-0.18.0-stable-windows-x64.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-windows-x64.exe",
         "size": 177757416
       },
       {
-        "name": "affine-0.18.0-stable-windows-x64.nsis.exe",
-        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/affine-0.18.0-stable-windows-x64.nsis.exe",
+        "name": "nexio-0.18.0-stable-windows-x64.nsis.exe",
+        "url": "https://github.com/ezeslucky/nexio/releases/download/v0.18.0/nexio-0.18.0-stable-windows-x64.nsis.exe",
         "size": 130302976
       },
       {

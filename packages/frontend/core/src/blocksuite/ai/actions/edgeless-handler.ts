@@ -1,5 +1,5 @@
-import { splitElements } from '@blocksuite/affine/blocks/root';
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
+import { splitElements } from '@blocksuite/nexio/blocks/root';
+import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
 import {
   CodeBlockModel,
   EdgelessTextBlockModel,
@@ -9,14 +9,14 @@ import {
   NoteBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine/model';
-import { matchModels } from '@blocksuite/affine/shared/utils';
-import type { EditorHost } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/model';
+import { matchModels } from '@blocksuite/nexio/shared/utils';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/affine/std/gfx';
-import { type BlockModel, Slice } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/gfx';
+import { type BlockModel, Slice } from '@blocksuite/nexio/store';
 import type { TemplateResult } from 'lit';
 
 import { getContentFromSlice } from '../../utils';
@@ -36,7 +36,7 @@ import {
   getSelectedNoteAnchor,
   getSelections,
 } from '../utils/selection-utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type {
   AIActionAnswer,
   AINetworkSearchConfig,
@@ -313,7 +313,7 @@ function actionToGeneration<T extends keyof BlockSuitePresets.AIActions>(
 function updateEdgelessAIPanelConfig<
   T extends keyof BlockSuitePresets.AIActions,
 >(
-  aiPanel: AffineAIPanelWidget,
+  aiPanel: NexioAIPanelWidget,
   edgelessCopilot: EdgelessCopilotWidget,
   id: T,
   generatingIcon: TemplateResult<1>,

@@ -1,11 +1,11 @@
-import { Skeleton } from '@affine/component';
-import { useGuard } from '@affine/core/components/guard';
-import { DocService } from '@affine/core/modules/doc';
+import { Skeleton } from '@nexio/component';
+import { useGuard } from '@nexio/core/components/guard';
+import { DocService } from '@nexio/core/modules/doc';
 import {
   DocGrantedUsersService,
   type GrantedUser,
-} from '@affine/core/modules/permissions';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/permissions';
+import { useI18n } from '@nexio/i18n';
 import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
@@ -52,7 +52,7 @@ export const MemberManagement = ({
     <div className={styles.containerStyle}>
       <div className={styles.headerStyle} onClick={onClickBack}>
         <ArrowLeftBigIcon className={styles.iconStyle} />
-        {t['com.affine.share-menu.member-management.header']({
+        {t['com.nexio.share-menu.member-management.header']({
           memberCount: grantedUserCount?.toString() || '??',
         })}
       </div>
@@ -74,7 +74,7 @@ export const MemberManagement = ({
             className={styles.addCollaboratorsStyle}
             onClick={onClickInvite}
           >
-            {t['com.affine.share-menu.member-management.add-collaborators']()}
+            {t['com.nexio.share-menu.member-management.add-collaborators']()}
           </span>
         ) : null}
       </div>

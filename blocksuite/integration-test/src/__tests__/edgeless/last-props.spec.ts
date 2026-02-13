@@ -1,5 +1,5 @@
-import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
+import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
+import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
 import {
   type BrushElementModel,
   type ConnectorElementModel,
@@ -16,8 +16,8 @@ import {
   type ShapeElementModel,
   ShapeType,
   type TextElementModel,
-} from '@blocksuite/affine/model';
-import { EditPropsStore } from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/model';
+import { EditPropsStore } from '@blocksuite/nexio/shared/services';
 import type { BlockStdScope } from '@blocksuite/std';
 import { beforeEach, describe, expect, test } from 'vitest';
 
@@ -249,7 +249,7 @@ describe('apply last props', () => {
   });
 
   test('note', () => {
-    const id = service.crud.addBlock('affine:note', {}, doc.root!.id);
+    const id = service.crud.addBlock('nexio:note', {}, doc.root!.id);
     if (!id) {
       throw new Error('id is not found');
     }
@@ -265,7 +265,7 @@ describe('apply last props', () => {
       },
     });
 
-    const id2 = service.crud.addBlock('affine:note', {}, doc.root!.id);
+    const id2 = service.crud.addBlock('nexio:note', {}, doc.root!.id);
     if (!id2) {
       throw new Error('id2 is not found');
     }
@@ -278,7 +278,7 @@ describe('apply last props', () => {
 
   test('frame', () => {
     const surface = getSurfaceBlock(doc);
-    const id = service.crud.addBlock('affine:frame', {}, surface!.id);
+    const id = service.crud.addBlock('nexio:frame', {}, surface!.id);
     if (!id) {
       throw new Error('id is not found');
     }
@@ -288,7 +288,7 @@ describe('apply last props', () => {
       background: DefaultTheme.StrokeColorShortMap.Purple,
     });
 
-    const id2 = service.crud.addBlock('affine:frame', {}, surface!.id);
+    const id2 = service.crud.addBlock('nexio:frame', {}, surface!.id);
     if (!id2) {
       throw new Error('id2 is not found');
     }
@@ -300,7 +300,7 @@ describe('apply last props', () => {
       background: { normal: '#def4e740' },
     });
 
-    const id3 = service.crud.addBlock('affine:frame', {}, surface!.id);
+    const id3 = service.crud.addBlock('nexio:frame', {}, surface!.id);
     if (!id3) {
       throw new Error('id3 is not found');
     }
@@ -310,7 +310,7 @@ describe('apply last props', () => {
       background: { light: '#a381aa23', dark: '#6e907452' },
     });
 
-    const id4 = service.crud.addBlock('affine:frame', {}, surface!.id);
+    const id4 = service.crud.addBlock('nexio:frame', {}, surface!.id);
     if (!id4) {
       throw new Error('id4 is not found');
     }

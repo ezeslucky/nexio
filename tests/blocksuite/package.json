@@ -1,12 +1,12 @@
 {
-  "name": "@affine-test/blocksuite",
+  "name": "@nexio-test/blocksuite",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "yarn playwright test"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@blocksuite/integration-test": "workspace:*",
     "@playwright/test": "=1.52.0",
     "@toeverything/theme": "^1.1.16",

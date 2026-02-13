@@ -1,3 +1,3 @@
-# @affine/error
+# @nexio/error
 
 Orbit error handler utilities

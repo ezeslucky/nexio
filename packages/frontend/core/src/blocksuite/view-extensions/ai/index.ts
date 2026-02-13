@@ -1,21 +1,21 @@
-import { toolbarAIEntryConfig } from '@affine/core/blocksuite/ai';
-import { AIChatBlockSpec } from '@affine/core/blocksuite/ai/blocks';
-import { AITranscriptionBlockSpec } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
-import { edgelessToolbarAIEntryConfig } from '@affine/core/blocksuite/ai/entries/edgeless';
-import { imageToolbarAIEntryConfig } from '@affine/core/blocksuite/ai/entries/image-toolbar/setup-image-toolbar';
-import { AICodeBlockWatcher } from '@affine/core/blocksuite/ai/extensions/ai-code';
-import { getAIEdgelessRootWatcher } from '@affine/core/blocksuite/ai/extensions/ai-edgeless-root';
-import { getAIPageRootWatcher } from '@affine/core/blocksuite/ai/extensions/ai-page-root';
-import { AiSlashMenuConfigExtension } from '@affine/core/blocksuite/ai/extensions/ai-slash-menu';
-import { CopilotTool } from '@affine/core/blocksuite/ai/tool/copilot-tool';
-import { aiPanelWidget } from '@affine/core/blocksuite/ai/widgets/ai-panel/ai-panel';
-import { edgelessCopilotWidget } from '@affine/core/blocksuite/ai/widgets/edgeless-copilot';
+import { toolbarAIEntryConfig } from '@nexio/core/blocksuite/ai';
+import { AIChatBlockSpec } from '@nexio/core/blocksuite/ai/blocks';
+import { AITranscriptionBlockSpec } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
+import { edgelessToolbarAIEntryConfig } from '@nexio/core/blocksuite/ai/entries/edgeless';
+import { imageToolbarAIEntryConfig } from '@nexio/core/blocksuite/ai/entries/image-toolbar/setup-image-toolbar';
+import { AICodeBlockWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-code';
+import { getAIEdgelessRootWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-edgeless-root';
+import { getAIPageRootWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-page-root';
+import { AiSlashMenuConfigExtension } from '@nexio/core/blocksuite/ai/extensions/ai-slash-menu';
+import { CopilotTool } from '@nexio/core/blocksuite/ai/tool/copilot-tool';
+import { aiPanelWidget } from '@nexio/core/blocksuite/ai/widgets/ai-panel/ai-panel';
+import { edgelessCopilotWidget } from '@nexio/core/blocksuite/ai/widgets/edgeless-copilot';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
-import { ToolbarModuleExtension } from '@blocksuite/affine/shared/services';
-import { BlockFlavourIdentifier } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/ext-loader';
+import { ToolbarModuleExtension } from '@blocksuite/nexio/shared/services';
+import { BlockFlavourIdentifier } from '@blocksuite/nexio/std';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 
@@ -36,7 +36,7 @@ const optionsSchema = z.object({
 type AIViewOptions = z.infer<typeof optionsSchema>;
 
 export class AIViewExtension extends ViewExtensionProvider<AIViewOptions> {
-  override name = 'affine-ai-view-extension';
+  override name = 'nexio-ai-view-extension';
 
   override schema = optionsSchema;
 
@@ -53,7 +53,7 @@ export class AIViewExtension extends ViewExtensionProvider<AIViewOptions> {
       .register(AICodeBlockWatcher)
       .register(
         ToolbarModuleExtension({
-          id: BlockFlavourIdentifier('custom:affine:image'),
+          id: BlockFlavourIdentifier('custom:nexio:image'),
           config: imageToolbarAIEntryConfig(),
         })
       );
@@ -63,7 +63,7 @@ export class AIViewExtension extends ViewExtensionProvider<AIViewOptions> {
         aiPanelWidget,
         AiSlashMenuConfigExtension(),
         ToolbarModuleExtension({
-          id: BlockFlavourIdentifier('custom:affine:note'),
+          id: BlockFlavourIdentifier('custom:nexio:note'),
           config: toolbarAIEntryConfig(),
         }),
       ]);
@@ -75,7 +75,7 @@ export class AIViewExtension extends ViewExtensionProvider<AIViewOptions> {
         getAIEdgelessRootWatcher(framework),
         // In note
         ToolbarModuleExtension({
-          id: BlockFlavourIdentifier('custom:affine:surface:*'),
+          id: BlockFlavourIdentifier('custom:nexio:surface:*'),
           config: edgelessToolbarAIEntryConfig(),
         }),
       ]);

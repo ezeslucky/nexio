@@ -55,6 +55,6 @@ export const databaseTagColorToV2 = (color: string) => {
   return tagToChipColorMap[color] || color;
 };
 
-export const affineLabelToDatabaseTagColor = (color: string) => {
+export const nexioLabelToDatabaseTagColor = (color: string) => {
   return paletteLineToChipMap[color] || color;
 };

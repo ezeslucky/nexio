@@ -1,6 +1,6 @@
-import type { SurfaceBlockModel } from '@blocksuite/affine/blocks/surface';
-import { AffineSchemas } from '@blocksuite/affine/schemas';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import type { SurfaceBlockModel } from '@blocksuite/nexio/blocks/surface';
+import { NexioSchemas } from '@blocksuite/nexio/schemas';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import type { PointLocation } from '@blocksuite/global/gfx';
 import { Schema } from '@blocksuite/store';
 import { beforeEach, expect, test } from 'vitest';
@@ -29,7 +29,7 @@ const skipFields = new Set(['_lastXYWH']);
 const snapshotTest = async (snapshotUrl: string, elementsCount: number) => {
   const transformer = ZipTransformer;
   const schema = new Schema();
-  schema.register(AffineSchemas);
+  schema.register(NexioSchemas);
 
   const snapshotFile = await fetch(snapshotUrl)
     .then(res => res.blob())
@@ -52,7 +52,7 @@ const snapshotTest = async (snapshotUrl: string, elementsCount: number) => {
   await wait();
 
   const surface = newDoc.getModelsByFlavour(
-    'affine:surface'
+    'nexio:surface'
   )[0] as SurfaceBlockModel;
   const surfaceElements = [...surface['_elementModels']].map(
     ([_, { model }]) => model

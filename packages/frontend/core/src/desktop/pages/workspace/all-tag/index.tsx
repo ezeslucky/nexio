@@ -1,12 +1,12 @@
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   TagListHeader,
   VirtualizedTagList,
-} from '@affine/core/components/page-list/tags';
-import { CreateOrEditTag } from '@affine/core/components/page-list/tags/create-tag';
-import type { TagMeta } from '@affine/core/components/page-list/types';
-import { TagService, useDeleteTagConfirmModal } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/components/page-list/tags';
+import { CreateOrEditTag } from '@nexio/core/components/page-list/tags/create-tag';
+import type { TagMeta } from '@nexio/core/components/page-list/types';
+import { TagService, useDeleteTagConfirmModal } from '@nexio/core/modules/tag';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 

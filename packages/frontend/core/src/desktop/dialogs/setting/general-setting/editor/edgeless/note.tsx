@@ -4,18 +4,18 @@ import {
   RadioGroup,
   type RadioItem,
   Slider,
-} from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
 import {
   createEnumMap,
   DefaultTheme,
   NoteShadow,
   NoteShadowMap,
   StrokeStyle,
-} from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
@@ -59,26 +59,26 @@ export const NoteSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.affine.settings.editorSettings.edgeless.note.border.solid'](),
+          t['com.nexio.settings.editorSettings.edgeless.note.border.solid'](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.affine.settings.editorSettings.edgeless.note.border.dash'](),
+          t['com.nexio.settings.editorSettings.edgeless.note.border.dash'](),
       },
       {
         value: StrokeStyle.None,
         label:
-          t['com.affine.settings.editorSettings.edgeless.note.border.none'](),
+          t['com.nexio.settings.editorSettings.edgeless.note.border.none'](),
       },
     ],
     [t]
   );
 
-  const { borderStyle } = settings['affine:note'].edgeless.style;
+  const { borderStyle } = settings['nexio:note'].edgeless.style;
   const setBorderStyle = useCallback(
     (value: StrokeStyle) => {
-      editorSetting.set('affine:note', {
+      editorSetting.set('nexio:note', {
         edgeless: {
           style: {
             borderStyle: value,
@@ -89,10 +89,10 @@ export const NoteSettings = () => {
     [editorSetting]
   );
 
-  const { borderSize } = settings['affine:note'].edgeless.style;
+  const { borderSize } = settings['nexio:note'].edgeless.style;
   const setBorderSize = useCallback(
     (value: number[]) => {
-      editorSetting.set('affine:note', {
+      editorSetting.set('nexio:note', {
         edgeless: {
           style: {
             borderSize: value[0],
@@ -104,10 +104,10 @@ export const NoteSettings = () => {
   );
 
   const backgroundItems = useMemo(() => {
-    const { background } = settings['affine:note'];
+    const { background } = settings['nexio:note'];
     return palettes.map(({ key, value, resolvedValue }) => {
       const handler = () => {
-        editorSetting.set('affine:note', { background: value });
+        editorSetting.set('nexio:note', { background: value });
       };
       const isSelected = isEqual(background, value);
       return (
@@ -124,10 +124,10 @@ export const NoteSettings = () => {
   }, [editorSetting, settings, palettes]);
 
   const cornerItems = useMemo(() => {
-    const { borderRadius } = settings['affine:note'].edgeless.style;
+    const { borderRadius } = settings['nexio:note'].edgeless.style;
     return CORNER_SIZE.map(({ name, value }) => {
       const handler = () => {
-        editorSetting.set('affine:note', {
+        editorSetting.set('nexio:note', {
           edgeless: {
             style: {
               borderRadius: value,
@@ -145,10 +145,10 @@ export const NoteSettings = () => {
   }, [editorSetting, settings]);
 
   const shadowItems = useMemo(() => {
-    const { shadowType } = settings['affine:note'].edgeless.style;
+    const { shadowType } = settings['nexio:note'].edgeless.style;
     return Object.entries(NoteShadow).map(([name, value]) => {
       const handler = () => {
-        editorSetting.set('affine:note', {
+        editorSetting.set('nexio:note', {
           edgeless: {
             style: {
               shadowType: value,
@@ -166,26 +166,26 @@ export const NoteSettings = () => {
   }, [editorSetting, settings]);
 
   const currentColor = useMemo(() => {
-    const { background } = settings['affine:note'];
+    const { background } = settings['nexio:note'];
     return getCurrentColor(background);
   }, [getCurrentColor, settings]);
 
   const getElements = useCallback((doc: Store) => {
-    return doc.getBlocksByFlavour('affine:note') || [];
+    return doc.getBlocksByFlavour('nexio:note') || [];
   }, []);
 
   return (
     <>
       <EdgelessSnapshot
-        title={t['com.affine.settings.editorSettings.edgeless.note']()}
+        title={t['com.nexio.settings.editorSettings.edgeless.note']()}
         docName="note"
-        keyName="affine:note"
+        keyName="nexio:note"
         getElements={getElements}
         height={240}
       />
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.note.background'
+          'com.nexio.settings.editorSettings.edgeless.note.background'
         ]()}
         desc={''}
       >
@@ -204,7 +204,7 @@ export const NoteSettings = () => {
         ) : null}
       </SettingRow>
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.note.corners']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.note.corners']()}
         desc={''}
       >
         <DropdownMenu
@@ -213,7 +213,7 @@ export const NoteSettings = () => {
             <MenuTrigger className={menuTrigger}>
               {
                 CornerSizeMap[
-                  settings['affine:note'].edgeless.style
+                  settings['nexio:note'].edgeless.style
                     .borderRadius as CornerSize
                 ]
               }
@@ -222,20 +222,20 @@ export const NoteSettings = () => {
         />
       </SettingRow>
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.note.shadow']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.note.shadow']()}
         desc={''}
       >
         <DropdownMenu
           items={shadowItems}
           trigger={
             <MenuTrigger className={menuTrigger}>
-              {NoteShadowMap[settings['affine:note'].edgeless.style.shadowType]}
+              {NoteShadowMap[settings['nexio:note'].edgeless.style.shadowType]}
             </MenuTrigger>
           }
         />
       </SettingRow>
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.note.border']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.note.border']()}
         desc={''}
       >
         <RadioGroup
@@ -248,7 +248,7 @@ export const NoteSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.note.border-thickness'
+          'com.nexio.settings.editorSettings.edgeless.note.border-thickness'
         ]()}
         desc={''}
       >

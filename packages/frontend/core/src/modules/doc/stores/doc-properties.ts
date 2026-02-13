@@ -91,7 +91,7 @@ export class DocPropertiesStore extends Store {
 
   private getLegacyDocProperties(id: string) {
     return this.workspaceService.workspace.rootYDoc
-      .getMap<any>('affine:workspace-properties')
+      .getMap<any>('nexio:workspace-properties')
       .get('pageProperties')
       ?.get(id)
       ?.toJSON() as LegacyDocProperties | undefined;
@@ -100,7 +100,7 @@ export class DocPropertiesStore extends Store {
   private watchLegacyDocProperties(id: string) {
     return yjsGetPath(
       this.workspaceService.workspace.rootYDoc.getMap<any>(
-        'affine:workspace-properties'
+        'nexio:workspace-properties'
       ),
       `pageProperties.${id}`
     ).pipe(

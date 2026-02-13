@@ -168,7 +168,7 @@ export class SpaceSyncGateway
 
   selectAdapter(client: Socket, spaceType: SpaceType): SyncSocketAdapter {
     let adapters: Record<SpaceType, SyncSocketAdapter> = (client as any)
-      .affineSyncAdapters;
+      .nexioSyncAdapters;
 
     if (!adapters) {
       const workspace = new WorkspaceSyncAdapter(
@@ -181,7 +181,7 @@ export class SpaceSyncGateway
       const userspace = new UserspaceSyncAdapter(client, this.userspace);
 
       adapters = { workspace, userspace };
-      (client as any).affineSyncAdapters = adapters;
+      (client as any).nexioSyncAdapters = adapters;
     }
 
     return adapters[spaceType];

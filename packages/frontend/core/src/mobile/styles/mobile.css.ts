@@ -17,10 +17,10 @@ globalStyle('body', {
   minHeight: '100dvh',
   overflowY: 'unset',
 });
-globalStyle('body:has(>#app-tabs):not(:has(affine-keyboard-toolbar))', {
+globalStyle('body:has(>#app-tabs):not(:has(nexio-keyboard-toolbar))', {
   paddingBottom: globalVars.appTabSafeArea,
 });
-globalStyle('body:has(affine-keyboard-toolbar)', {
+globalStyle('body:has(nexio-keyboard-toolbar)', {
   paddingBottom: `calc(${globalVars.appKeyboardStaticHeight} + 46px)`,
 });
 globalStyle('body:has(>#app-tabs) edgeless-toolbar-widget', {

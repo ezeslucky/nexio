@@ -25,8 +25,8 @@ test.after.always(async () => {
 test('should clean expired user sessions', async t => {
   const auth = m.get(AuthService);
   const job = m.get(AuthCronJob);
-  const user1 = await auth.signUp('u1@affine.pro', '1');
-  const user2 = await auth.signUp('u2@affine.pro', '1');
+  const user1 = await auth.signUp('u1@nexio.pro', '1');
+  const user2 = await auth.signUp('u2@nexio.pro', '1');
   await auth.createUserSession(user1.id);
   await auth.createUserSession(user2.id);
   let userSessions = await db.userSession.findMany();

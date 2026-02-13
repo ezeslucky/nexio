@@ -11,7 +11,7 @@ export class AppController {
   info() {
     return {
       compatibility: env.version,
-      message: `AFFiNE ${env.version} Server`,
+      message: `NEXIO ${env.version} Server`,
       type: env.DEPLOYMENT_TYPE,
       flavor: env.FLAVOR,
     };

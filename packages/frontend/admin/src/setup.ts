@@ -1,1 +1,1 @@
-import '@affine/core/bootstrap/browser';
+import '@nexio/core/bootstrap/browser';

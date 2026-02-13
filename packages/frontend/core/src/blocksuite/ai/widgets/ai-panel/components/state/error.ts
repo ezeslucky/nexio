@@ -1,5 +1,5 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import type { EditorHost } from '@blocksuite/affine/std';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -38,9 +38,9 @@ export class AIPanelError extends WithDisposable(LitElement) {
         align-self: stretch;
         .answer-label {
           align-self: stretch;
-          color: var(--affine-text-secondary-color);
+          color: var(--nexio-text-secondary-color);
           /* light/xsMedium */
-          font-size: var(--affine-font-xs);
+          font-size: var(--nexio-font-xs);
           font-style: normal;
           font-weight: 500;
           line-height: 20px; /* 166.667% */
@@ -48,12 +48,12 @@ export class AIPanelError extends WithDisposable(LitElement) {
       }
       .error-info {
         align-self: stretch;
-        color: var(--affine-error-color, #eb4335);
+        color: var(--nexio-error-color, #eb4335);
         font-feature-settings:
           'clig' off,
           'liga' off;
         /* light/sm */
-        font-size: var(--affine-font-sm);
+        font-size: var(--nexio-font-sm);
         font-style: normal;
         font-weight: 400;
         line-height: 22px; /* 157.143% */
@@ -78,11 +78,11 @@ export class AIPanelError extends WithDisposable(LitElement) {
         align-items: center;
         gap: 4px;
         border-radius: 8px;
-        border: 1px solid var(--affine-border-color);
-        background: var(--affine-white);
-        color: var(--affine-text-primary-color);
+        border: 1px solid var(--nexio-border-color);
+        background: var(--nexio-white);
+        color: var(--nexio-text-primary-color);
         /* light/xsMedium */
-        font-size: var(--affine-font-xs);
+        font-size: var(--nexio-font-xs);
         font-style: normal;
         font-weight: 500;
         line-height: 20px; /* 166.667% */
@@ -91,9 +91,9 @@ export class AIPanelError extends WithDisposable(LitElement) {
         cursor: pointer;
       }
       .action-button.primary {
-        border: 1px solid var(--affine-black-10);
-        background: var(--affine-primary-color);
-        color: var(--affine-pure-white);
+        border: 1px solid var(--nexio-black-10);
+        background: var(--nexio-primary-color);
+        color: var(--nexio-pure-white);
       }
       .action-button > span {
         display: flex;
@@ -102,7 +102,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
         padding: 0 4px;
       }
       .action-button:not(.primary):hover {
-        background: var(--affine-hover-color);
+        background: var(--nexio-hover-color);
       }
     }
 
@@ -120,8 +120,8 @@ export class AIPanelError extends WithDisposable(LitElement) {
 
     .response-list-container ai-item-list {
       --item-padding: 4px;
-      --item-icon-color: var(--affine-icon-secondary);
-      --item-icon-hover-color: var(--affine-icon-color);
+      --item-icon-color: var(--nexio-icon-secondary);
+      --item-icon-hover-color: var(--nexio-icon-color);
     }
   `;
 
@@ -146,7 +146,7 @@ export class AIPanelError extends WithDisposable(LitElement) {
           AIErrorType.Unauthorized,
           () =>
             html` <div class="error-info">
-                You need to login to AFFiNE Cloud to continue using AFFiNE AI.
+                You need to login to NEXIO Cloud to continue using NEXIO AI.
               </div>
               <div class="action-button-group">
                 <div @click=${this.config.cancel} class="action-button">
@@ -161,8 +161,8 @@ export class AIPanelError extends WithDisposable(LitElement) {
           AIErrorType.PaymentRequired,
           () =>
             html` <div class="error-info">
-                You've reached the current usage cap for AFFiNE AI. You can
-                subscribe to AFFiNE AI(with free 7-day-trial) to continue the AI
+                You've reached the current usage cap for NEXIO AI. You can
+                subscribe to NEXIO AI(with free 7-day-trial) to continue the AI
                 experience!
               </div>
               <div class="action-button-group">
@@ -184,9 +184,9 @@ export class AIPanelError extends WithDisposable(LitElement) {
         const error = tip
           ? html`<span class="error-tip">
               An error occurred
-              <affine-tooltip tip-position="bottom-start">
+              <nexio-tooltip tip-position="bottom-start">
                 ${tip}
-              </affine-tooltip>
+              </nexio-tooltip>
             </span>`
           : 'An error occurred';
         return html`

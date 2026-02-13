@@ -5,7 +5,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@affine/admin/components/ui/table';
+} from '@nexio/admin/components/ui/table';
 import type {
   ColumnDef,
   ColumnFiltersState,

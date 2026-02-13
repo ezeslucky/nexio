@@ -1,7 +1,5 @@
 import { cssVar } from '@toeverything/theme';
-// Credits to sonner
-// License on the MIT
-// https://github.com/emilkowalski/sonner/blob/5cb703edc108a23fd74979235c2f3c4005edd2a7/src/styles.css
+
 import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
 export const notificationCenterViewportStyle = style({
   position: 'fixed',

@@ -1,7 +1,7 @@
-import { MiniAudioPlayer } from '@affine/component/ui/audio-player';
-import { AudioMediaManagerService } from '@affine/core/modules/media';
-import type { AudioAttachmentBlock } from '@affine/core/modules/media/entities/audio-attachment-block';
-import { AudioAttachmentService } from '@affine/core/modules/media/services/audio-attachment';
+import { MiniAudioPlayer } from '@nexio/component/ui/audio-player';
+import { AudioMediaManagerService } from '@nexio/core/modules/media';
+import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/audio-attachment-block';
+import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { combineLatest, debounceTime, map, of } from 'rxjs';

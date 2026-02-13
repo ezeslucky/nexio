@@ -1,6 +1,6 @@
-import { Button } from '@affine/component';
-import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
+import { Trans, useI18n } from '@nexio/i18n';
 import { DualLinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
@@ -26,11 +26,11 @@ export const MeetingsWelcomePage = () => {
     <div className={styles.root}>
       <div className={styles.titleWrapper}>
         <div className={styles.title}>
-          {t['com.affine.settings.meetings.setting.welcome']()}
+          {t['com.nexio.settings.meetings.setting.welcome']()}
           <div className={styles.beta}>Beta</div>
         </div>
         <div className={styles.subtitle}>
-          {t['com.affine.settings.meetings.setting.prompt']()}
+          {t['com.nexio.settings.meetings.setting.prompt']()}
         </div>
       </div>
       <div className={styles.meetingAppsWrapper}>
@@ -41,7 +41,7 @@ export const MeetingsWelcomePage = () => {
         <div className={styles.hints}>
           <Trans
             className={styles.hints}
-            i18nKey="com.affine.settings.meetings.setting.welcome.hints"
+            i18nKey="com.nexio.settings.meetings.setting.welcome.hints"
             components={{
               strong: <strong />,
               ul: <ul />,
@@ -54,12 +54,12 @@ export const MeetingsWelcomePage = () => {
             target="_blank"
             rel="noreferrer"
           >
-            {t['com.affine.settings.meetings.setting.welcome.learn-more']()}
+            {t['com.nexio.settings.meetings.setting.welcome.learn-more']()}
             <DualLinkIcon className={styles.linkIcon} />
           </a>
           <div className={styles.betaFreePrompt}>
             <Trans
-              i18nKey="com.affine.settings.meetings.setting.prompt.2"
+              i18nKey="com.nexio.settings.meetings.setting.prompt.2"
               components={{
                 strong: <strong />,
               }}
@@ -72,7 +72,7 @@ export const MeetingsWelcomePage = () => {
           className={styles.getStartedButton}
         >
           {t[
-            'com.affine.settings.workspace.experimental-features.get-started'
+            'com.nexio.settings.workspace.experimental-features.get-started'
           ]()}
         </Button>
       </div>

@@ -1,10 +1,10 @@
-import { Divider, Tooltip } from '@affine/component';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { Divider, Tooltip } from '@nexio/component';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import {
   useLiveData,
   useService,
@@ -71,13 +71,13 @@ const TeamItem = memo(({ workspaces, badgeText }: TeamItemProps) => {
 
   const displayName =
     workspaces.length > 1
-      ? t['com.affine.workspace.cloud.account.team.multi']()
+      ? t['com.nexio.workspace.cloud.account.team.multi']()
       : workspaces[0].profile.profile$.value?.name || 'Team';
 
   const tooltipContent =
     workspaces.length > 1
-      ? t['com.affine.workspace.cloud.account.team.tips-2']()
-      : t['com.affine.workspace.cloud.account.team.tips-1']();
+      ? t['com.nexio.workspace.cloud.account.team.tips-2']()
+      : t['com.nexio.workspace.cloud.account.team.tips-1']();
 
   return (
     <Tooltip content={tooltipContent}>
@@ -152,13 +152,13 @@ export const TeamList = memo(() => {
       {teamWorkspaces.ownerWorkspaces.length > 0 && (
         <TeamItem
           workspaces={teamWorkspaces.ownerWorkspaces}
-          badgeText={t['com.affine.workspace.cloud.account.team.owner']()}
+          badgeText={t['com.nexio.workspace.cloud.account.team.owner']()}
         />
       )}
       {teamWorkspaces.memberWorkspaces.length > 0 && (
         <TeamItem
           workspaces={teamWorkspaces.memberWorkspaces}
-          badgeText={t['com.affine.workspace.cloud.account.team.member']()}
+          badgeText={t['com.nexio.workspace.cloud.account.team.member']()}
         />
       )}
       <Divider />

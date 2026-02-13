@@ -21,7 +21,7 @@ function createTestOptions() {
 }
 
 const TestCustomNoteBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-block-video',
+  flavour: 'nexio:note-block-video',
   props: internal => ({
     text: internal.Text(),
   }),
@@ -29,7 +29,7 @@ const TestCustomNoteBlockSchema = defineBlockSchema({
     version: 1,
     role: 'content',
     tag: literal`affine-note-block-video`,
-    parent: ['affine:note'],
+    parent: ['nexio:note'],
   },
 });
 
@@ -38,7 +38,7 @@ const TestCustomNoteBlockSchemaExtension = BlockSchemaExtension(
 );
 
 const TestInvalidNoteBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-invalid-block-video',
+  flavour: 'nexio:note-invalid-block-video',
   props: internal => ({
     text: internal.Text(),
   }),
@@ -46,7 +46,7 @@ const TestInvalidNoteBlockSchema = defineBlockSchema({
     version: 1,
     role: 'content',
     tag: literal`affine-invalid-note-block-video`,
-    parent: ['affine:note'],
+    parent: ['nexio:note'],
   },
 });
 
@@ -55,11 +55,11 @@ const TestInvalidNoteBlockSchemaExtension = BlockSchemaExtension(
 );
 
 const TestRoleBlockSchema = defineBlockSchema({
-  flavour: 'affine:note-block-role-test',
+  flavour: 'nexio:note-block-role-test',
   metadata: {
     version: 1,
     role: 'content',
-    parent: ['affine:note'],
+    parent: ['nexio:note'],
     children: ['@test'],
   },
   props: internal => ({
@@ -111,11 +111,11 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
-    const paragraphId = doc.addBlock('affine:paragraph', {}, noteId);
+    const rootId = doc.addBlock('nexio:page', {});
+    const noteId = doc.addBlock('nexio:note', {}, rootId);
+    const paragraphId = doc.addBlock('nexio:paragraph', {}, noteId);
 
-    doc.addBlock('affine:note', {});
+    doc.addBlock('nexio:note', {});
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -125,7 +125,7 @@ describe('schema', () => {
 
     consoleMock.mockClear();
     // add paragraph to root should throw
-    doc.addBlock('affine:paragraph', {}, rootId);
+    doc.addBlock('nexio:paragraph', {}, rootId);
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -134,9 +134,9 @@ describe('schema', () => {
     });
 
     consoleMock.mockClear();
-    doc.addBlock('affine:note', {}, rootId);
-    doc.addBlock('affine:paragraph', {}, noteId);
-    doc.addBlock('affine:paragraph', {}, paragraphId);
+    doc.addBlock('nexio:note', {}, rootId);
+    doc.addBlock('nexio:paragraph', {}, noteId);
+    doc.addBlock('nexio:paragraph', {}, paragraphId);
     expect(consoleMock).not.toBeCalled();
   });
 
@@ -145,13 +145,13 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
+    const rootId = doc.addBlock('nexio:page', {});
+    const noteId = doc.addBlock('nexio:note', {}, rootId);
 
-    doc.addBlock('affine:note-block-video', {}, noteId);
+    doc.addBlock('nexio:note-block-video', {}, noteId);
     expect(consoleMock).not.toBeCalled();
 
-    doc.addBlock('affine:note-invalid-block-video', {}, noteId);
+    doc.addBlock('nexio:note-invalid-block-video', {}, noteId);
     expect(consoleMock.mock.calls[0]).toSatisfy((call: unknown[]) => {
       return typeof call[0] === 'string';
     });
@@ -165,12 +165,12 @@ describe('schema', () => {
       .spyOn(console, 'error')
       .mockImplementation(() => undefined);
     const doc = createTestDoc();
-    const rootId = doc.addBlock('affine:page', {});
-    const noteId = doc.addBlock('affine:note', {}, rootId);
-    const roleId = doc.addBlock('affine:note-block-role-test', {}, noteId);
+    const rootId = doc.addBlock('nexio:page', {});
+    const noteId = doc.addBlock('nexio:note', {}, rootId);
+    const roleId = doc.addBlock('nexio:note-block-role-test', {}, noteId);
 
-    doc.addBlock('affine:paragraph', {}, roleId);
-    doc.addBlock('affine:paragraph', {}, roleId);
+    doc.addBlock('nexio:paragraph', {}, roleId);
+    doc.addBlock('nexio:paragraph', {}, roleId);
 
     expect(consoleMock.mock.calls[1]).toSatisfy((call: unknown[]) => {
       return call[0] instanceof SchemaValidateError;

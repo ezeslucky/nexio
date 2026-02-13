@@ -12,12 +12,7 @@ import {
   FeatureType,
 } from './common';
 
-// TODO(@forehalo):
-//   `version` column in `features` table will deprecated because it's makes the whole system complicated without any benefits.
-//   It was brought to introduce a version control for features, but the version controlling is not and will not actually needed.
-//   It even makes things harder when a new version of an existing feature is released.
-//   We have to manually update all the users and workspaces binding to the latest version, which are thousands of handreds.
-//   This is a huge burden for us and we should remove it.
+
 @Injectable()
 export class FeatureModel extends BaseModel {
   async get<T extends FeatureName>(name: T) {

@@ -1,17 +1,17 @@
-import { Button } from '@affine/admin/components/ui/button';
-import type { CarouselApi } from '@affine/admin/components/ui/carousel';
+import { Button } from '@nexio/admin/components/ui/button';
+import type { CarouselApi } from '@nexio/admin/components/ui/carousel';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@affine/admin/components/ui/carousel';
-import { validateEmailAndPassword } from '@affine/admin/utils';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/admin/components/ui/carousel';
+import { validateEmailAndPassword } from '@nexio/admin/utils';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { affineFetch } from '../../fetch-utils';
+import { nexioFetch } from '../../fetch-utils';
 import { useRevalidateServerConfig, useServerConfig } from '../common';
 import { CreateAdmin } from './create-admin';
 
@@ -31,7 +31,7 @@ const Welcome = () => {
         Welcome to NEXIO
       </h1>
       <p className="mt-5 font-semibold text-xl max-lg:px-4 max-lg:text-lg">
-        Configure your Self Host AFFiNE with a few simple settings.
+        Configure your Self Host NEXIO with a few simple settings.
       </p>
     </div>
   );
@@ -96,7 +96,7 @@ export const Form = () => {
 
   const createAdmin = useCallback(async () => {
     try {
-      const createResponse = await affineFetch('/api/setup/create-admin-user', {
+      const createResponse = await nexioFetch('/api/setup/create-admin-user', {
         method: 'POST',
         body: JSON.stringify({
           email: emailValue,

@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/affine/std';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import { captureException } from '@sentry/react';
 import { BehaviorSubject, Subject } from 'rxjs';
 
@@ -55,14 +55,7 @@ export type ActionEventType =
   | 'result:discard'
   | 'result:retry';
 
-/**
- * AI provider for the block suite
- *
- * To use it, downstream (affine) has to provide AI actions implementation,
- * user info etc
- *
- * TODO: breakdown into different parts?
- */
+
 export class AIProvider {
   static get slots() {
     return AIProvider.instance.slots;

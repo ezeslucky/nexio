@@ -4,30 +4,30 @@ import {
   observeIntersection,
   Skeleton,
   useLitPortalFactory,
-} from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
+} from '@nexio/component';
+import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import {
   patchReferenceRenderer,
   type ReferenceReactRenderer,
-} from '@affine/core/blocksuite/view-extensions/editor-view/reference-renderer';
-import { useGuard } from '@affine/core/components/guard';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { DocService } from '@affine/core/modules/doc';
+} from '@nexio/core/blocksuite/view-extensions/editor-view/reference-renderer';
+import { useGuard } from '@nexio/core/components/guard';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
+import { DocService } from '@nexio/core/modules/doc';
 import {
   type Backlink,
   DocLinksService,
   type Link,
-} from '@affine/core/modules/doc-link';
-import { toDocSearchParams } from '@affine/core/modules/navigation/utils';
-import { GlobalSessionStateService } from '@affine/core/modules/storage';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/doc-link';
+import { toDocSearchParams } from '@nexio/core/modules/navigation/utils';
+import { GlobalSessionStateService } from '@nexio/core/modules/storage';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type {
   ExtensionType,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
@@ -48,9 +48,9 @@ import {
 } from 'react';
 
 import {
-  AffinePageReference,
-  AffineSharedPageReference,
-} from '../../components/affine/reference-link';
+  NexioPageReference,
+  NexioSharedPageReference,
+} from '../../components/nexio/reference-link';
 import { LitTextRenderer } from '../ai/components/text-renderer';
 import * as styles from './bi-directional-link-panel.css';
 
@@ -154,7 +154,7 @@ const usePreviewExtensions = () => {
 
       if (workspaceService.workspace.openOptions.isSharedMode) {
         return (
-          <AffineSharedPageReference
+          <NexioSharedPageReference
             docCollection={workspaceService.workspace.docCollection}
             pageId={pageId}
             params={params}
@@ -162,7 +162,7 @@ const usePreviewExtensions = () => {
         );
       }
 
-      return <AffinePageReference pageId={pageId} params={params} />;
+      return <NexioPageReference pageId={pageId} params={params} />;
     };
   }, [workspaceService]);
 
@@ -251,7 +251,7 @@ export const BacklinkGroups = () => {
           <CollapsibleSection
             key={linkGroup.docId}
             title={
-              <AffinePageReference
+              <NexioPageReference
                 pageId={linkGroup.docId}
                 onClick={() => {
                   track.doc.biDirectionalLinksPanel.backlinkTitle.navigate();
@@ -317,7 +317,7 @@ const BacklinkLinks = () => {
   return (
     <div className={styles.linksContainer} ref={containerRef}>
       <div className={styles.linksTitles}>
-        {t['com.affine.page-properties.backlinks']()}{' '}
+        {t['com.nexio.page-properties.backlinks']()}{' '}
         {backlinkCount !== undefined ? `· ${backlinkCount}` : ''}
       </div>
       <BacklinkGroups />
@@ -338,7 +338,7 @@ export const LinkPreview = ({
   if (!canAccess) {
     return (
       <span className={styles.notFound}>
-        {t['com.affine.share-menu.option.permission.no-access']()}
+        {t['com.nexio.share-menu.option.permission.no-access']()}
       </span>
     );
   }
@@ -353,8 +353,8 @@ export const LinkPreview = ({
         searchParams.set('mode', displayMode);
 
         let blockId = link.blockId;
-        if (link.parentFlavour === 'affine:database' && link.parentBlockId) {
-          // if parentBlockFlavour is 'affine:database',
+        if (link.parentFlavour === 'nexio:database' && link.parentBlockId) {
+          // if parentBlockFlavour is 'nexio:database',
           // we will fallback to the database block instead
           blockId = link.parentBlockId;
         } else if (displayMode === 'edgeless' && link.noteBlockId) {
@@ -387,7 +387,7 @@ export const LinkPreview = ({
             {edgelessLink ? (
               <>
                 [Edgeless]
-                <AffinePageReference
+                <NexioPageReference
                   key={link.blockId}
                   pageId={linkGroup.docId}
                   params={searchParams}
@@ -438,8 +438,8 @@ export const BiDirectionalLinkPanel = () => {
         <div className={styles.title}>Bi-Directional Links</div>
         <Button className={styles.showButton} onClick={handleClickShow}>
           {show
-            ? t['com.affine.editor.bi-directional-link-panel.hide']()
-            : t['com.affine.editor.bi-directional-link-panel.show']()}
+            ? t['com.nexio.editor.bi-directional-link-panel.hide']()
+            : t['com.nexio.editor.bi-directional-link-panel.show']()}
         </Button>
       </div>
 
@@ -450,7 +450,7 @@ export const BiDirectionalLinkPanel = () => {
           <BacklinkLinks />
           <div className={styles.linksContainer}>
             <div className={styles.linksTitles}>
-              {t['com.affine.page-properties.outgoing-links']()} ·{' '}
+              {t['com.nexio.page-properties.outgoing-links']()} ·{' '}
               {links.length}
             </div>
             {links.map((link, i) => (
@@ -458,7 +458,7 @@ export const BiDirectionalLinkPanel = () => {
                 key={`${link.docId}-${link.params?.toString()}-${i}`}
                 className={styles.link}
               >
-                <AffinePageReference pageId={link.docId} params={link.params} />
+                <NexioPageReference pageId={link.docId} params={link.params} />
               </div>
             ))}
           </div>

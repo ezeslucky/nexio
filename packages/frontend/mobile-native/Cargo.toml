@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name    = "affine_mobile_native"
+name    = "nexio_mobile_native"
 version = "0.0.0"
 
 [lib]
@@ -12,11 +12,11 @@ name = "uniffi-bindgen"
 path = "uniffi-bindgen.rs"
 
 [features]
-use-as-lib = ["affine_nbstore/use-as-lib"]
+use-as-lib = ["nexio_nbstore/use-as-lib"]
 
 [dependencies]
-affine_common  = { workspace = true }
-affine_nbstore = { workspace = true }
+nexio_common  = { workspace = true }
+nexio_nbstore = { workspace = true }
 anyhow         = { workspace = true }
 base64-simd    = { workspace = true }
 chrono         = { workspace = true }

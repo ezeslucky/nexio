@@ -101,12 +101,12 @@ update_ios_marketing_version() {
 new_version=$1
 ios_new_version=${IOS_APP_VERSION:-$new_version}
 
-update_app_version_in_helm_charts ".github/helm/affine/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/graphql/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/sync/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/renderer/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/doc/Chart.yaml" "$new_version"
+update_app_version_in_helm_charts ".github/helm/nexio/Chart.yaml" "$new_version"
+update_app_version_in_helm_charts ".github/helm/nexio/charts/graphql/Chart.yaml" "$new_version"
+update_app_version_in_helm_charts ".github/helm/nexio/charts/sync/Chart.yaml" "$new_version"
+update_app_version_in_helm_charts ".github/helm/nexio/charts/renderer/Chart.yaml" "$new_version"
+update_app_version_in_helm_charts ".github/helm/nexio/charts/doc/Chart.yaml" "$new_version"
 
-update_app_stream_version "packages/frontend/apps/electron/resources/affine.metainfo.xml" "$new_version"
+update_app_stream_version "packages/frontend/apps/electron/resources/nexio.metainfo.xml" "$new_version"
 
 update_ios_marketing_version "packages/frontend/apps/ios/App/App.xcodeproj/project.pbxproj" "$new_version"

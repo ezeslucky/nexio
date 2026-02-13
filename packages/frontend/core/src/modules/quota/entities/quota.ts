@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { WorkspaceQuotaQuery } from '@affine/graphql';
+import { DebugLogger } from '@nexio/debug';
+import type { WorkspaceQuotaQuery } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,
@@ -20,7 +20,7 @@ import type { WorkspaceQuotaStore } from '../stores/quota';
 
 type QuotaType = WorkspaceQuotaQuery['workspace']['quota'];
 
-const logger = new DebugLogger('affine:workspace-permission');
+const logger = new DebugLogger('nexio:workspace-permission');
 
 export class WorkspaceQuota extends Entity {
   quota$ = new LiveData<QuotaType | null>(null);

@@ -7,14 +7,14 @@ export const docEditorRoot = style({
   flexDirection: 'column',
 });
 
-export const affineDocViewport = style({
+export const nexioDocViewport = style({
   height: '100%',
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
   paddingBottom: '100px',
 });
-export const affineEdgelessDocViewport = style({
+export const nexioEdgelessDocViewport = style({
   height: '100%',
   flex: 1,
 });
@@ -24,7 +24,7 @@ export const docContainer = style({
   selectors: ['generating', 'finished', 'error'].reduce<
     NonNullable<StyleRule['selectors']>
   >((rules, state) => {
-    rules[`&:has(affine-ai-panel-widget[data-state='${state}'])`] = {
+    rules[`&:has(nexio-ai-panel-widget[data-state='${state}'])`] = {
       paddingBottom: '980px',
     };
     return rules;

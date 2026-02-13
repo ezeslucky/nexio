@@ -36,5 +36,5 @@ export default function TeamBecomeCollaborator(
 TeamBecomeCollaborator.PreviewProps = {
   workspace: TEST_WORKSPACE,
   role: 'admin',
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

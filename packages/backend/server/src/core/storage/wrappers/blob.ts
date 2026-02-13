@@ -33,11 +33,11 @@ export class WorkspaceBlobStorage {
   private provider!: StorageProvider;
 
   get config() {
-    return this.AFFiNEConfig.storages.blob;
+    return this.NEXIOConfig.storages.blob;
   }
 
   constructor(
-    private readonly AFFiNEConfig: Config,
+    private readonly NEXIOConfig: Config,
     private readonly event: EventBus,
     private readonly storageFactory: StorageProviderFactory,
     private readonly models: Models,

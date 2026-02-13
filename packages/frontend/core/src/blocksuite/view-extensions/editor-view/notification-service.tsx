@@ -7,11 +7,11 @@ import {
   type ToastOptions,
   toReactNode,
   type useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   NotificationExtension,
   type NotificationService,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 
 export class NotificationServiceImpl implements NotificationService {
   constructor(
@@ -111,7 +111,7 @@ export class NotificationServiceImpl implements NotificationService {
       throw new Error('Invalid notification accent');
     }
 
-    const toAffineNotificationActions = (
+    const toNexioNotificationActions = (
       actions: (typeof notification)['actions']
     ): Notification['actions'] => {
       if (!actions) return undefined;
@@ -129,7 +129,7 @@ export class NotificationServiceImpl implements NotificationService {
       {
         title: toReactNode(notification.title),
         message: toReactNode(notification.message),
-        actions: toAffineNotificationActions(notification.actions),
+        actions: toNexioNotificationActions(notification.actions),
         onDismiss: notification.onClose,
       },
       {

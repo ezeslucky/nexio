@@ -1,6 +1,6 @@
-import { showAILoginRequiredAtom } from '@affine/core/components/affine/auth/ai-login-required';
-import type { AIToolsConfig } from '@affine/core/modules/ai-button';
-import type { UserFriendlyError } from '@affine/error';
+import { showAILoginRequiredAtom } from '@nexio/core/components/nexio/auth/ai-login-required';
+import type { AIToolsConfig } from '@nexio/core/modules/ai-button';
+import type { UserFriendlyError } from '@nexio/error';
 import {
   addContextBlobMutation,
   addContextCategoryMutation,
@@ -31,7 +31,7 @@ import {
   removeContextFileMutation,
   type RequestOptions,
   updateCopilotSessionMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { getCurrentStore } from '@toeverything/infra';
 
 import {

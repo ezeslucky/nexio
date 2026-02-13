@@ -1,7 +1,7 @@
-import { mixpanel, track } from '@affine/track';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { GfxPrimitiveElementModel } from '@blocksuite/affine/std/gfx';
-import type { BlockModel } from '@blocksuite/affine/store';
+import { mixpanel, track } from '@nexio/track';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { GfxPrimitiveElementModel } from '@blocksuite/nexio/std/gfx';
+import type { BlockModel } from '@blocksuite/nexio/store';
 import { lowerCase, omit } from 'lodash-es';
 import type { Subject } from 'rxjs';
 
@@ -77,7 +77,7 @@ const trackAction = ({
 };
 
 const inferPageMode = (host: EditorHost) => {
-  return host.querySelector('affine-page-root') ? 'doc' : 'edgeless';
+  return host.querySelector('nexio-page-root') ? 'doc' : 'edgeless';
 };
 
 const defaultActionOptions = [
@@ -121,13 +121,13 @@ function inferObjectType(event: BlocksuiteActionEvent) {
     return 'draw object';
   } else if (models.every(isBlockModel)) {
     const flavour = models[0].flavour;
-    if (flavour === 'affine:note') {
+    if (flavour === 'nexio:note') {
       return 'note';
     } else if (
-      ['affine:paragraph', 'affine:list', 'affine:code'].includes(flavour)
+      ['nexio:paragraph', 'nexio:list', 'nexio:code'].includes(flavour)
     ) {
       return 'text';
-    } else if (flavour === 'affine:image') {
+    } else if (flavour === 'nexio:image') {
       return 'image';
     }
   }

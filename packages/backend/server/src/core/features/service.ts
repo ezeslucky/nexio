@@ -3,7 +3,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Config } from '../../base';
 import { Models } from '../../models';
 
-const STAFF = ['@toeverything.info', '@affine.pro'];
+const STAFF = ['@toeverything.info', '@nexio.pro'];
 
 export enum EarlyAccessType {
   App = 'app',

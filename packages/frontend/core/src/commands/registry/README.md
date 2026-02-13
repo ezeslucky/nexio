@@ -1,4 +1,4 @@
-# AFFiNE Command Abstractions
+# NEXIO Command Abstractions
 
 This package contains the command abstractions for the AFFiNE framework to be used for CMD-K.
 

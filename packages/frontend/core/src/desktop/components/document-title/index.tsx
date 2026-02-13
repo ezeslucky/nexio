@@ -1,5 +1,5 @@
-import { NotificationCountService } from '@affine/core/modules/notification';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { NotificationCountService } from '@nexio/core/modules/notification';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -12,10 +12,10 @@ export const DocumentTitle = () => {
 
   useEffect(() => {
     const prefix = notificationCount > 0 ? `(${notificationCount}) ` : '';
-    document.title = prefix + (viewTitle ? `${viewTitle} · AFFiNE` : 'AFFiNE');
+    document.title = prefix + (viewTitle ? `${viewTitle} · NEXIO` : 'NEXIO');
 
     return () => {
-      document.title = 'AFFiNE';
+      document.title = 'NEXIO';
     };
   }, [notificationCount, viewTitle]);
 

@@ -1,5 +1,5 @@
-import { AttachmentViewer } from '@affine/core/blocksuite/attachment-viewer';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
+import { AttachmentViewer } from '@nexio/core/blocksuite/attachment-viewer';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import { useMemo } from 'react';
 
 import { useEditor } from '../utils';

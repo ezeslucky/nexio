@@ -1,21 +1,21 @@
-import { IconButton, notify, toast, useConfirmModal } from '@affine/component';
+import { IconButton, notify, toast, useConfirmModal } from '@nexio/component';
 import {
   MenuSeparator,
   MenuSub,
   MobileMenu,
   MobileMenuItem,
-} from '@affine/component/ui/menu';
-import { useFavorite } from '@affine/core/blocksuite/block-suite-header/favorite';
-import { Guard, useGuard } from '@affine/core/components/guard';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { DocInfoSheet } from '@affine/core/mobile/components';
-import { MobileTocMenu } from '@affine/core/mobile/components/toc-menu';
-import { DocService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { preventDefault } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/ui/menu';
+import { useFavorite } from '@nexio/core/blocksuite/block-suite-header/favorite';
+import { Guard, useGuard } from '@nexio/core/components/guard';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { DocInfoSheet } from '@nexio/core/mobile/components';
+import { MobileTocMenu } from '@nexio/core/mobile/components/toc-menu';
+import { DocService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { preventDefault } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   EdgelessIcon,
@@ -65,12 +65,12 @@ export const PageHeaderMenuButton = () => {
     notify.success({
       title:
         primaryMode === 'page'
-          ? t['com.affine.toastMessage.defaultMode.edgeless.title']()
-          : t['com.affine.toastMessage.defaultMode.page.title'](),
+          ? t['com.nexio.toastMessage.defaultMode.edgeless.title']()
+          : t['com.nexio.toastMessage.defaultMode.page.title'](),
       message:
         primaryMode === 'page'
-          ? t['com.affine.toastMessage.defaultMode.edgeless.message']()
-          : t['com.affine.toastMessage.defaultMode.page.message'](),
+          ? t['com.nexio.toastMessage.defaultMode.edgeless.message']()
+          : t['com.nexio.toastMessage.defaultMode.page.message'](),
     });
   }, [primaryMode, editorService, t]);
 
@@ -96,12 +96,12 @@ export const PageHeaderMenuButton = () => {
       return;
     }
     openConfirmModal({
-      title: t['com.affine.moveToTrash.title'](),
-      description: t['com.affine.moveToTrash.confirmModal.description']({
+      title: t['com.nexio.moveToTrash.title'](),
+      description: t['com.nexio.moveToTrash.confirmModal.description']({
         title: doc.title$.value,
       }),
-      confirmText: t['com.affine.moveToTrash.confirmModal.confirm'](),
-      cancelText: t['com.affine.moveToTrash.confirmModal.cancel'](),
+      confirmText: t['com.nexio.moveToTrash.confirmModal.confirm'](),
+      cancelText: t['com.nexio.moveToTrash.confirmModal.cancel'](),
       confirmButtonOptions: {
         variant: 'error',
       },
@@ -110,7 +110,7 @@ export const PageHeaderMenuButton = () => {
         track.$.navigationPanel.docs.deleteDoc({
           control: 'button',
         });
-        toast(t['com.affine.toastMessage.movedTrash']());
+        toast(t['com.nexio.toastMessage.movedTrash']());
         // navigate back
         history.back();
       },
@@ -128,8 +128,8 @@ export const PageHeaderMenuButton = () => {
         disabled={!canEdit}
       >
         {primaryMode === 'page'
-          ? t['com.affine.editorDefaultMode.edgeless']()
-          : t['com.affine.editorDefaultMode.page']()}
+          ? t['com.nexio.editorDefaultMode.edgeless']()
+          : t['com.nexio.editorDefaultMode.page']()}
       </MobileMenuItem>
       <MobileMenuItem
         data-testid="editor-option-menu-favorite"
@@ -137,8 +137,8 @@ export const PageHeaderMenuButton = () => {
         prefixIcon={<IsFavoriteIcon favorite={favorite} />}
       >
         {favorite
-          ? t['com.affine.favoritePageOperation.remove']()
-          : t['com.affine.favoritePageOperation.add']()}
+          ? t['com.nexio.favoritePageOperation.remove']()
+          : t['com.nexio.favoritePageOperation.add']()}
       </MobileMenuItem>
       <MenuSeparator />
       <MenuSub
@@ -149,10 +149,10 @@ export const PageHeaderMenuButton = () => {
         title={title ?? t['unnamed']()}
         items={<DocInfoSheet docId={docId} />}
       >
-        <span>{t['com.affine.page-properties.page-info.view']()}</span>
+        <span>{t['com.nexio.page-properties.page-info.view']()}</span>
       </MenuSub>
       <MobileMenu
-        title={t['com.affine.header.menu.toc']()}
+        title={t['com.nexio.header.menu.toc']()}
         items={
           <div className={styles.outlinePanel}>
             <MobileTocMenu editor={editorContainer?.host ?? null} />
@@ -160,7 +160,7 @@ export const PageHeaderMenuButton = () => {
         }
       >
         <MobileMenuItem prefixIcon={<TocIcon />} onClick={preventDefault}>
-          <span>{t['com.affine.header.option.view-toc']()}</span>
+          <span>{t['com.nexio.header.option.view-toc']()}</span>
         </MobileMenuItem>
       </MobileMenu>
       <JournalConflictsMenuItem />
@@ -172,7 +172,7 @@ export const PageHeaderMenuButton = () => {
             disabled={!canMoveToTrash}
             onSelect={handleMoveToTrash}
           >
-            {t['com.affine.moveToTrash.title']()}
+            {t['com.nexio.moveToTrash.title']()}
           </MobileMenuItem>
         )}
       </Guard>

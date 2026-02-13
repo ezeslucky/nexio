@@ -1,36 +1,36 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine/blocks/surface';
+import { EdgelessCRUDIdentifier } from '@blocksuite/nexio/blocks/surface';
 import {
   Bound,
   getCommonBoundWithRotation,
   type SerializedXYWH,
-} from '@blocksuite/affine/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+} from '@blocksuite/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import {
   type DocMode,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import {
   getFirstBlockCommand,
   getLastBlockCommand,
   getSelectedBlocksCommand,
-} from '@blocksuite/affine/shared/commands';
-import type { ImageSelection } from '@blocksuite/affine/shared/selection';
+} from '@blocksuite/nexio/shared/commands';
+import type { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import {
   DocModeProvider,
   EditPropsStore,
   NotificationProvider,
   TelemetryProvider,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   type BlockComponent,
   type BlockSelection,
   type BlockStdScope,
   type EditorHost,
   type TextSelection,
-} from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   BlockIcon,
   EdgelessIcon,
@@ -162,7 +162,7 @@ function addAIChatBlock(
   const { store } = host;
   const surfaceBlock = store
     .getAllModels()
-    .find(block => block.flavour === 'affine:surface');
+    .find(block => block.flavour === 'nexio:surface');
   if (!surfaceBlock) {
     return;
   }
@@ -174,7 +174,7 @@ function addAIChatBlock(
   const y = viewportCenter.y - height / 2;
   const bound = new Bound(x, y, width, height);
   const aiChatBlockId = store.addBlock(
-    'affine:embed-ai-chat',
+    'nexio:embed-ai-chat',
     {
       xywh: bound.serialize(),
       messages: JSON.stringify(messages),
@@ -277,7 +277,7 @@ export const PAGE_INSERT = {
       const [_, { firstBlock: noteBlock }] = host.command.exec(
         getFirstBlockCommand,
         {
-          flavour: 'affine:note',
+          flavour: 'nexio:note',
         }
       );
 
@@ -456,7 +456,7 @@ const ADD_TO_EDGELESS_AS_NOTE = {
       props.xywh = newBound.serialize();
     }
 
-    const id = store.addBlock('affine:note', props, store.root?.id);
+    const id = store.addBlock('nexio:note', props, store.root?.id);
 
     await insertFromMarkdown(host, content, store, id, 0);
 
@@ -479,9 +479,9 @@ export const SAVE_AS_DOC = {
     const doc = host.store.workspace.createDoc();
     const newDoc = doc.getStore();
     newDoc.load();
-    const rootId = newDoc.addBlock('affine:page');
-    newDoc.addBlock('affine:surface', {}, rootId);
-    const noteId = newDoc.addBlock('affine:note', {}, rootId);
+    const rootId = newDoc.addBlock('nexio:page');
+    newDoc.addBlock('nexio:surface', {}, rootId);
+    const noteId = newDoc.addBlock('nexio:note', {}, rootId);
 
     host.std.getOptional(RefNodeSlotsProvider)?.docLinkClicked.next({
       pageId: newDoc.id,
@@ -523,7 +523,7 @@ const CREATE_AS_LINKED_DOC = {
     const { store } = host;
     const surfaceBlock = store
       .getAllModels()
-      .find(block => block.flavour === 'affine:surface');
+      .find(block => block.flavour === 'nexio:surface');
     if (!surfaceBlock) {
       return false;
     }
@@ -537,9 +537,9 @@ const CREATE_AS_LINKED_DOC = {
     // Create a new doc and add the content to it
     const newDoc = host.store.workspace.createDoc().getStore();
     newDoc.load();
-    const rootId = newDoc.addBlock('affine:page');
-    newDoc.addBlock('affine:surface', {}, rootId);
-    const noteId = newDoc.addBlock('affine:note', {}, rootId);
+    const rootId = newDoc.addBlock('nexio:page');
+    newDoc.addBlock('nexio:surface', {}, rootId);
+    const noteId = newDoc.addBlock('nexio:note', {}, rootId);
     await insertFromMarkdown(host, content, newDoc, noteId, 0);
 
     const gfx = host.std.get(GfxControllerIdentifier);
@@ -566,7 +566,7 @@ const CREATE_AS_LINKED_DOC = {
     }
 
     host.std.get(EdgelessCRUDIdentifier).addBlock(
-      'affine:embed-linked-doc',
+      'nexio:embed-linked-doc',
       {
         xywh: `[${x}, ${y}, ${width}, ${height}]`,
         style: 'vertical',

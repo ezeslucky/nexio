@@ -1,10 +1,10 @@
-import { IconButton, Menu } from '@affine/component';
+import { IconButton, Menu } from '@nexio/component';
 import {
   CollectionRulesService,
   type FilterParams,
-} from '@affine/core/modules/collection-rules';
-import { ShareDocsListService } from '@affine/core/modules/share-doc';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection-rules';
+import { ShareDocsListService } from '@nexio/core/modules/share-doc';
+import { Trans, useI18n } from '@nexio/i18n';
 import { FilterIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';
@@ -16,7 +16,7 @@ import {
 import { DocsExplorer } from '../../explorer/docs-view/docs-list';
 import { Filters } from '../../filter';
 import { AddFilterMenu } from '../../filter/add-filter';
-import { AffineShapeIcon } from '..';
+import { NexioShapeIcon } from '..';
 import { SelectorLayout } from '../selector/selector-layout';
 import * as styles from './select-page.css';
 
@@ -155,7 +155,7 @@ export const SelectPage = memo(function SelectPage({
 
   return (
     <SelectorLayout
-      searchPlaceholder={t['com.affine.editCollection.search.placeholder']()}
+      searchPlaceholder={t['com.nexio.editCollection.search.placeholder']()}
       selectedCount={selectedDocIds.length}
       onSearch={setSearchText}
       onClear={clearSelected}
@@ -167,7 +167,7 @@ export const SelectPage = memo(function SelectPage({
         <div className={styles.pagesTabContent}>
           {header ?? (
             <div style={{ fontSize: 12, lineHeight: '20px', fontWeight: 600 }}>
-              {t['com.affine.selectPage.title']()}
+              {t['com.nexio.selectPage.title']()}
             </div>
           )}
           {filters.length === 0 ? (
@@ -210,7 +210,7 @@ export const EmptyList = ({ search }: { search?: string }) => {
         flex: 1,
       }}
     >
-      <AffineShapeIcon />
+      <NexioShapeIcon />
       <div
         style={{
           margin: '18px 0',
@@ -219,17 +219,17 @@ export const EmptyList = ({ search }: { search?: string }) => {
           fontWeight: 600,
         }}
       >
-        {t['com.affine.selectPage.empty']()}
+        {t['com.nexio.selectPage.empty']()}
       </div>
       {search ? (
         <div
           className={styles.ellipsis}
           style={{ maxWidth: 300, fontSize: 15, lineHeight: '24px' }}
         >
-          <Trans i18nKey="com.affine.selectPage.empty.tips" values={{ search }}>
+          <Trans i18nKey="com.nexio.selectPage.empty.tips" values={{ search }}>
             No page titles contain
             <span
-              style={{ fontWeight: 600, color: 'var(--affine-primary-color)' }}
+              style={{ fontWeight: 600, color: 'var(--nexio-primary-color)' }}
             >
               search
             </span>

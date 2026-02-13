@@ -1,13 +1,13 @@
-import { Switch } from '@affine/component';
+import { Switch } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServerService } from '@affine/core/modules/cloud';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
+import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 export const AiSetting = () => {
@@ -35,11 +35,11 @@ export const AiSetting = () => {
 
   return (
     <SettingWrapper
-      title={t['com.affine.settings.workspace.affine-ai.title']()}
+      title={t['com.nexio.settings.workspace.nexio-ai.title']()}
     >
       <SettingRow
-        name={t['com.affine.settings.workspace.affine-ai.label']()}
-        desc={t['com.affine.settings.workspace.affine-ai.description']()}
+        name={t['com.nexio.settings.workspace.nexio-ai.label']()}
+        desc={t['com.nexio.settings.workspace.nexio-ai.description']()}
       >
         <Switch
           checked={!!workspaceEnableAi}

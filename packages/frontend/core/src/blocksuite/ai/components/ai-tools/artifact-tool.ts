@@ -1,8 +1,8 @@
-import { LoadingIcon } from '@blocksuite/affine/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { ColorScheme } from '@blocksuite/affine/model';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+import { LoadingIcon } from '@blocksuite/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { ColorScheme } from '@blocksuite/nexio/model';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import type { Signal } from '@preact/signals-core';
 import {
   css,
@@ -32,12 +32,12 @@ export abstract class ArtifactTool<
       margin: 8px 0;
       padding: 10px 0;
 
-      .affine-embed-linked-doc-block {
+      .nexio-embed-linked-doc-block {
         box-shadow: ${unsafeCSSVar('buttonShadow')};
         cursor: pointer;
       }
 
-      .affine-embed-linked-doc-block:hover {
+      .nexio-embed-linked-doc-block:hover {
         background-color: ${unsafeCSSVarV2('layer/background/hoverOverlay')};
       }
     }
@@ -141,19 +141,19 @@ export abstract class ArtifactTool<
         class="artifact-tool-card ${className ?? ''}"
         @click=${this.onCardClick}
       >
-        <div class="affine-embed-linked-doc-block horizontal">
-          <div class="affine-embed-linked-doc-content">
-            <div class="affine-embed-linked-doc-content-title">
-              <div class="affine-embed-linked-doc-content-title-icon">
+        <div class="nexio-embed-linked-doc-block horizontal">
+          <div class="nexio-embed-linked-doc-content">
+            <div class="nexio-embed-linked-doc-content-title">
+              <div class="nexio-embed-linked-doc-content-title-icon">
                 ${resolvedIcon}
               </div>
-              <div class="affine-embed-linked-doc-content-title-text">
+              <div class="nexio-embed-linked-doc-content-title-text">
                 ${title}
               </div>
             </div>
           </div>
           ${banner
-            ? html`<div class="affine-embed-linked-doc-banner">${banner}</div>`
+            ? html`<div class="nexio-embed-linked-doc-banner">${banner}</div>`
             : nothing}
         </div>
       </div>

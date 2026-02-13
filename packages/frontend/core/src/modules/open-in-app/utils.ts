@@ -1,9 +1,9 @@
-import { channelToScheme } from '@affine/core/utils';
-import { DebugLogger } from '@affine/debug';
+import { channelToScheme } from '@nexio/core/utils';
+import { DebugLogger } from '@nexio/debug';
 
 const logger = new DebugLogger('open-in-app');
 
-// return an AFFiNE app's url to be opened in desktop app
+
 export const getOpenUrlInDesktopAppLink = (
   url: string,
   newTab = true,

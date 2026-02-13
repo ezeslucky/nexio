@@ -1,20 +1,20 @@
-import { FlexWrapper } from '@affine/component';
-import { EmptyCollectionDetail } from '@affine/core/components/affine/empty/collection-detail';
+import { FlexWrapper } from '@nexio/component';
+import { EmptyCollectionDetail } from '@nexio/core/components/nexio/empty/collection-detail';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import type { ExplorerDisplayPreference } from '@nexio/core/components/explorer/types';
 import {
   type Collection,
   CollectionService,
-} from '@affine/core/modules/collection';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
@@ -192,7 +192,7 @@ const Placeholder = ({ collection }: { collection: Collection }) => {
             display: 'flex',
             alignItems: 'center',
             gap: 8,
-            fontSize: 'var(--affine-font-xs)',
+            fontSize: 'var(--nexio-font-xs)',
           }}
         >
           <div
@@ -201,23 +201,23 @@ const Placeholder = ({ collection }: { collection: Collection }) => {
               alignItems: 'center',
               gap: 4,
               cursor: 'pointer',
-              color: 'var(--affine-text-secondary-color)',
+              color: 'var(--nexio-text-secondary-color)',
               ['WebkitAppRegion' as string]: 'no-drag',
             }}
             onClick={handleJumpToCollections}
           >
             <ViewLayersIcon
-              style={{ color: 'var(--affine-icon-color)' }}
+              style={{ color: 'var(--nexio-icon-color)' }}
               fontSize={14}
             />
-            {t['com.affine.collection.allCollections']()}
+            {t['com.nexio.collection.allCollections']()}
             <div>/</div>
           </div>
           <div
             data-testid="collection-name"
             style={{
               fontWeight: 600,
-              color: 'var(--affine-text-primary-color)',
+              color: 'var(--nexio-text-primary-color)',
               ['WebkitAppRegion' as string]: 'no-drag',
             }}
           >

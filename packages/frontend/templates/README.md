@@ -1,13 +1,13 @@
-# @affine/templates
+# @nexio/templates
 
-Manages template files for use in AFFiNE. For now we only support onboarding templates.
+Manages template files for use in NEXIO. For now we only support onboarding templates.
 
 ## How to update
 
 Before we offer a better solution, to update the onboarding templates:
 
-1. run AFFiNE core locally (dev mode)
-2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@blocksuite/affine/blocks/root'; window.ZipTransformer = ZipTransformer;`
+1. run NEXIO core locally (dev mode)
+2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@blocksuite/nexio/blocks/root'; window.ZipTransformer = ZipTransformer;`
 3. run the following script
    ```js
    (async () => {
@@ -20,7 +20,7 @@ Before we offer a better solution, to update the onboarding templates:
      const url = URL.createObjectURL(zipblob);
      const a = document.createElement('a');
      a.setAttribute('href', url);
-     a.setAttribute('download', `${currentWorkspace.id}.affine.zip`);
+     a.setAttribute('download', `${currentWorkspace.id}.nexio.zip`);
      a.click();
      a.remove();
      URL.revokeObjectURL(url);

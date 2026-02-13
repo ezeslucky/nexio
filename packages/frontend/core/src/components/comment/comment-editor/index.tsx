@@ -1,15 +1,15 @@
-import { IconButton, notify, toast } from '@affine/component';
-import { LitDocEditor, type PageEditor } from '@affine/core/blocksuite/editors';
-import { SnapshotHelper } from '@affine/core/modules/comment/services/snapshot-helper';
-import type { CommentAttachment } from '@affine/core/modules/comment/types';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { downloadResourceWithUrl } from '@affine/core/utils/resource';
-import { DebugLogger } from '@affine/debug';
-import { getAttachmentFileIconRC } from '@blocksuite/affine/components/icons';
-import { type RichText, selectTextModel } from '@blocksuite/affine/rich-text';
-import { ViewportElementExtension } from '@blocksuite/affine/shared/services';
-import { openFilesWith } from '@blocksuite/affine/shared/utils';
-import { type DocSnapshot, nanoid, Store } from '@blocksuite/affine/store';
+import { IconButton, notify, toast } from '@nexio/component';
+import { LitDocEditor, type PageEditor } from '@nexio/core/blocksuite/editors';
+import { SnapshotHelper } from '@nexio/core/modules/comment/services/snapshot-helper';
+import type { CommentAttachment } from '@nexio/core/modules/comment/types';
+import { PeekViewService } from '@nexio/core/modules/peek-view';
+import { downloadResourceWithUrl } from '@nexio/core/utils/resource';
+import { DebugLogger } from '@nexio/debug';
+import { getAttachmentFileIconRC } from '@blocksuite/nexio/components/icons';
+import { type RichText, selectTextModel } from '@blocksuite/nexio/rich-text';
+import { ViewportElementExtension } from '@blocksuite/nexio/shared/services';
+import { openFilesWith } from '@blocksuite/nexio/shared/utils';
+import { type DocSnapshot, nanoid, Store } from '@blocksuite/nexio/store';
 import {
   ArrowUpBigIcon,
   AttachmentIcon,
@@ -29,7 +29,7 @@ import {
   useState,
 } from 'react';
 
-import { useAsyncCallback } from '../../hooks/affine-async-hooks';
+import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
 import { getCommentEditorViewManager } from './specs';
 import * as styles from './style.css';
 

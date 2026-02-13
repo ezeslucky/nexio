@@ -1,4 +1,4 @@
-import type { DocMode } from '@affine/graphql';
+import type { DocMode } from '@nexio/graphql';
 import { Service } from '@toeverything/infra';
 
 import type { NotificationStore } from '../stores/notification';

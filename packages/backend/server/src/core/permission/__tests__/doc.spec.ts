@@ -26,7 +26,7 @@ test.before(async () => {
 
 test.beforeEach(async () => {
   await module.initTestingDB();
-  user = await models.user.create({ email: 'u1@affine.pro' });
+  user = await models.user.create({ email: 'u1@nexio.pro' });
   ws = await models.workspace.create(user.id);
 });
 
@@ -45,7 +45,7 @@ test('should get null role', async t => {
 });
 
 test('should return null if workspace role is not accepted', async t => {
-  const u2 = await models.user.create({ email: 'u2@affine.pro' });
+  const u2 = await models.user.create({ email: 'u2@nexio.pro' });
   await models.workspaceUser.set(ws.id, u2.id, WorkspaceRole.Collaborator, {
     status: WorkspaceMemberStatus.UnderReview,
   });
@@ -162,7 +162,7 @@ test('should assert action', async t => {
     )
   );
 
-  const u2 = await models.user.create({ email: 'u2@affine.pro' });
+  const u2 = await models.user.create({ email: 'u2@nexio.pro' });
 
   await t.throwsAsync(
     ac.assert(

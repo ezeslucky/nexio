@@ -1,6 +1,6 @@
-import { Divider, IconButton } from '@affine/component';
-import { SettingHeader } from '@affine/component/setting-components';
-import { useI18n } from '@affine/i18n';
+import { Divider, IconButton } from '@nexio/component';
+import { SettingHeader } from '@nexio/component/setting-components';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightBigIcon, ArrowUpSmallIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
@@ -20,11 +20,11 @@ export const SeeAllLink = () => {
   return (
     <a
       className={styles.allPlansLink}
-      href="https://affine.pro/pricing"
+      href="https://nexio.pro/pricing"
       target="_blank"
       rel="noopener noreferrer"
     >
-      {t['com.affine.payment.see-all-plans']()}
+      {t['com.nexio.payment.see-all-plans']()}
       {<ArrowRightBigIcon width="16" height="16" />}
     </a>
   );
@@ -78,7 +78,7 @@ export const PlanLayout = ({ cloud, ai }: PlanLayoutProps) => {
       {/* TODO(@catsjuice): SettingHeader component shouldn't have margin itself  */}
       <SettingHeader
         style={{ marginBottom: '0px' }}
-        title={t['com.affine.payment.title']()}
+        title={t['com.nexio.payment.title']()}
       />
       {ai ? (
         <>
@@ -101,7 +101,7 @@ export interface PlanCardProps {
   scrollRef?: React.RefObject<HTMLDivElement>;
 }
 export const CloudPlanLayout = ({
-  title = 'AFFiNE Cloud',
+  title = 'NEXIO Cloud',
   caption,
   select,
   toggle,
@@ -111,7 +111,7 @@ export const CloudPlanLayout = ({
 }: PlanCardProps) => {
   return (
     <PricingCollapsible title={title} caption={caption}>
-      <div className={styles.affineCloudHeader}>
+      <div className={styles.nexioCloudHeader}>
         <div>{select}</div>
         <div>{toggle}</div>
       </div>

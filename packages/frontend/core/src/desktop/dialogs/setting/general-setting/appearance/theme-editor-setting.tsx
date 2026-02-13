@@ -1,9 +1,9 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { ThemeEditorService } from '@affine/core/modules/theme-editor';
-import { UrlService } from '@affine/core/modules/url';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
+import { UrlService } from '@nexio/core/modules/url';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -31,8 +31,8 @@ export const ThemeEditorSetting = () => {
 
   return (
     <SettingRow
-      name={t['com.affine.appearanceSettings.customize-theme.title']()}
-      desc={t['com.affine.appearanceSettings.customize-theme.description']()}
+      name={t['com.nexio.appearanceSettings.customize-theme.title']()}
+      desc={t['com.nexio.appearanceSettings.customize-theme.description']()}
     >
       <div style={{ display: 'flex', gap: 16 }}>
         {modified ? (
@@ -48,11 +48,11 @@ export const ThemeEditorSetting = () => {
             variant="secondary"
             prefix={<DeleteIcon />}
           >
-            {t['com.affine.appearanceSettings.customize-theme.reset']()}
+            {t['com.nexio.appearanceSettings.customize-theme.reset']()}
           </Button>
         ) : null}
         <Button onClick={open}>
-          {t['com.affine.appearanceSettings.customize-theme.open']()}
+          {t['com.nexio.appearanceSettings.customize-theme.open']()}
         </Button>
       </div>
     </SettingRow>

@@ -7,7 +7,7 @@ import {
 import { PrismaClient } from '@prisma/client';
 
 import { FunctionalityModules } from '../app.module';
-import { AFFiNELogger, EventBus, JobQueue } from '../base';
+import { NEXIOLogger, EventBus, JobQueue } from '../base';
 import { createFactory, MockEventBus, MockJobQueue } from './mocks';
 import { TEST_LOG_LEVEL } from './utils';
 
@@ -45,7 +45,7 @@ export async function createModule(
 
   const module = (await builder.compile()) as TestingModule;
 
-  const logger = new AFFiNELogger();
+  const logger = new NEXIOLogger();
   // we got a lot smoking tests try to break nestjs
   // can't tolerate the noisy logs
   logger.setLogLevels([TEST_LOG_LEVEL]);

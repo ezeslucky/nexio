@@ -1,9 +1,9 @@
-import { IconButton } from '@affine/component';
-import { useSharingUrl } from '@affine/core/components/hooks/affine/use-share-url';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { type DocMode } from '@blocksuite/affine/model';
+import { IconButton } from '@nexio/component';
+import { useSharingUrl } from '@nexio/core/components/hooks/nexio/use-share-url';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { type DocMode } from '@blocksuite/nexio/model';
 import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';
@@ -31,7 +31,7 @@ export const DocInfoButton = ({
     <IconButton
       className={styles.button}
       size={styles.iconSize}
-      tooltip={t['com.affine.page-properties.page-info.view']()}
+      tooltip={t['com.nexio.page-properties.page-info.view']()}
       data-testid={dataTestId}
       onClick={onClick}
     >
@@ -70,7 +70,7 @@ export const CopyLinkButton = ({
     <IconButton
       className={styles.button}
       size={styles.iconSize}
-      tooltip={t['com.affine.share-menu.copy']()}
+      tooltip={t['com.nexio.share-menu.copy']()}
       data-testid={dataTestId}
       onClick={copyLink}
     >

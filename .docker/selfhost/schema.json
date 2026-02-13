@@ -20,7 +20,7 @@
       "properties": {
         "privateKey": {
           "type": "string",
-          "description": "The private key for used by the crypto module to create signed tokens or encrypt data.\n@default \"\"\n@environment `AFFINE_PRIVATE_KEY`",
+          "description": "The private key for used by the crypto module to create signed tokens or encrypt data.\n@default \"\"\n@environment `NEXIO_PRIVATE_KEY`",
           "default": ""
         }
       }
@@ -197,8 +197,8 @@
       "properties": {
         "SMTP.name": {
           "type": "string",
-          "description": "Name of the email server (e.g. your domain name)\n@default \"AFFiNE Server\"\n@environment `MAILER_SERVERNAME`",
-          "default": "AFFiNE Server"
+          "description": "Name of the email server (e.g. your domain name)\n@default \"NEXIO Server\"\n@environment `MAILER_SERVERNAME`",
+          "default": "NEXIO Server"
         },
         "SMTP.host": {
           "type": "string",
@@ -222,7 +222,7 @@
         },
         "SMTP.sender": {
           "type": "string",
-          "description": "Sender of all the emails (e.g. \"AFFiNE Team <noreply@affine.pro>\")\n@default \"\"\n@environment `MAILER_SENDER`",
+          "description": "Sender of all the emails (e.g. \"NEXIO Team <noreply@nexio.pro>\")\n@default \"\"\n@environment `MAILER_SENDER`",
           "default": ""
         },
         "SMTP.ignoreTLS": {
@@ -237,8 +237,8 @@
         },
         "fallbackSMTP.name": {
           "type": "string",
-          "description": "Name of the fallback email server (e.g. your domain name)\n@default \"AFFiNE Server\"",
-          "default": "AFFiNE Server"
+          "description": "Name of the fallback email server (e.g. your domain name)\n@default \"NEXIO Server\"",
+          "default": "NEXIO Server"
         },
         "fallbackSMTP.host": {
           "type": "string",
@@ -262,7 +262,7 @@
         },
         "fallbackSMTP.sender": {
           "type": "string",
-          "description": "Sender of all the emails (e.g. \"AFFiNE Team <noreply@affine.pro>\")\n@default \"\"",
+          "description": "Sender of all the emails (e.g. \"NEXIO Team <noreply@nexio.pro>\")\n@default \"\"",
           "default": ""
         },
         "fallbackSMTP.ignoreTLS": {
@@ -299,7 +299,7 @@
         },
         "avatar.storage": {
           "type": "object",
-          "description": "The config of storage for user avatars.\n@default {\"provider\":\"fs\",\"bucket\":\"avatars\",\"config\":{\"path\":\"~/.affine/storage\"}}",
+          "description": "The config of storage for user avatars.\n@default {\"provider\":\"fs\",\"bucket\":\"avatars\",\"config\":{\"path\":\"~/.nexio/storage\"}}",
           "oneOf": [
             {
               "type": "object",
@@ -414,13 +414,13 @@
             "provider": "fs",
             "bucket": "avatars",
             "config": {
-              "path": "~/.affine/storage"
+              "path": "~/.nexio/storage"
             }
           }
         },
         "blob.storage": {
           "type": "object",
-          "description": "The config of storage for all uploaded blobs(images, videos, etc.).\n@default {\"provider\":\"fs\",\"bucket\":\"blobs\",\"config\":{\"path\":\"~/.affine/storage\"}}",
+          "description": "The config of storage for all uploaded blobs(images, videos, etc.).\n@default {\"provider\":\"fs\",\"bucket\":\"blobs\",\"config\":{\"path\":\"~/.nexio/storage\"}}",
           "oneOf": [
             {
               "type": "object",
@@ -535,7 +535,7 @@
             "provider": "fs",
             "bucket": "blobs",
             "config": {
-              "path": "~/.affine/storage"
+              "path": "~/.nexio/storage"
             }
           }
         }
@@ -573,21 +573,21 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "A recognizable name for the server. Will be shown when connected with AFFiNE Desktop.\n@default undefined"
+          "description": "A recognizable name for the server. Will be shown when connected with NEXIO Desktop.\n@default undefined"
         },
         "externalUrl": {
           "type": "string",
-          "description": "Base url of AFFiNE server, used for generating external urls.\nDefault to be `[server.protocol]://[server.host][:server.port]` if not specified.\n    \n@default \"\"\n@environment `AFFINE_SERVER_EXTERNAL_URL`",
+          "description": "Base url of NEXIO server, used for generating external urls.\nDefault to be `[server.protocol]://[server.host][:server.port]` if not specified.\n    \n@default \"\"\n@environment `NEXIO_SERVER_EXTERNAL_URL`",
           "default": ""
         },
         "https": {
           "type": "boolean",
-          "description": "Whether the server is hosted on a ssl enabled domain (https://).\n@default false\n@environment `AFFINE_SERVER_HTTPS`",
+          "description": "Whether the server is hosted on a ssl enabled domain (https://).\n@default false\n@environment `NEXIO_SERVER_HTTPS`",
           "default": false
         },
         "host": {
           "type": "string",
-          "description": "Where the server get deployed(FQDN).\n@default \"localhost\"\n@environment `AFFINE_SERVER_HOST`",
+          "description": "Where the server get deployed(FQDN).\n@default \"localhost\"\n@environment `NEXIO_SERVER_HOST`",
           "default": "localhost"
         },
         "hosts": {
@@ -597,12 +597,12 @@
         },
         "port": {
           "type": "number",
-          "description": "Which port the server will listen on.\n@default 3010\n@environment `AFFINE_SERVER_PORT`",
+          "description": "Which port the server will listen on.\n@default 3010\n@environment `NEXIO_SERVER_PORT`",
           "default": 3010
         },
         "path": {
           "type": "string",
-          "description": "Subpath where the server get deployed if there is one.(e.g. /affine)\n@default \"\"\n@environment `AFFINE_SERVER_SUB_PATH`",
+          "description": "Subpath where the server get deployed if there is one.(e.g. /nexio)\n@default \"\"\n@environment `NEXIO_SERVER_SUB_PATH`",
           "default": ""
         }
       }
@@ -679,7 +679,7 @@
       "properties": {
         "enabled": {
           "type": "boolean",
-          "description": "Whether to enable the copilot plugin. <br> Document: <a href=\"https://docs.affine.pro/self-host-affine/administer/ai\" target=\"_blank\">https://docs.affine.pro/self-host-affine/administer/ai</a>\n@default false",
+          "description": "Whether to enable the copilot plugin. <br> Document: <a href=\"https://docs.nexio.pro/self-host-nexio/administer/ai\" target=\"_blank\">https://docs.nexio.pro/self-host-nexio/administer/ai</a>\n@default false",
           "default": false
         },
         "scenarios": {
@@ -830,7 +830,7 @@
         },
         "storage": {
           "type": "object",
-          "description": "The config for the storage provider.\n@default {\"provider\":\"fs\",\"bucket\":\"copilot\",\"config\":{\"path\":\"~/.affine/storage\"}}",
+          "description": "The config for the storage provider.\n@default {\"provider\":\"fs\",\"bucket\":\"copilot\",\"config\":{\"path\":\"~/.nexio/storage\"}}",
           "oneOf": [
             {
               "type": "object",
@@ -945,7 +945,7 @@
             "provider": "fs",
             "bucket": "copilot",
             "config": {
-              "path": "~/.affine/storage"
+              "path": "~/.nexio/storage"
             }
           }
         }
@@ -957,32 +957,32 @@
       "properties": {
         "enabled": {
           "type": "boolean",
-          "description": "Enable indexer plugin\n@default false\n@environment `AFFINE_INDEXER_ENABLED`",
+          "description": "Enable indexer plugin\n@default false\n@environment `NEXIO_INDEXER_ENABLED`",
           "default": false
         },
         "provider.type": {
           "type": "string",
-          "description": "Indexer search service provider name\n@default \"manticoresearch\"\n@environment `AFFINE_INDEXER_SEARCH_PROVIDER`",
+          "description": "Indexer search service provider name\n@default \"manticoresearch\"\n@environment `NEXIO_INDEXER_SEARCH_PROVIDER`",
           "default": "manticoresearch"
         },
         "provider.endpoint": {
           "type": "string",
-          "description": "Indexer search service endpoint\n@default \"http://localhost:9308\"\n@environment `AFFINE_INDEXER_SEARCH_ENDPOINT`",
+          "description": "Indexer search service endpoint\n@default \"http://localhost:9308\"\n@environment `NEXIO_INDEXER_SEARCH_ENDPOINT`",
           "default": "http://localhost:9308"
         },
         "provider.apiKey": {
           "type": "string",
-          "description": "Indexer search service api key. Optional for elasticsearch\n@default \"\"\n@environment `AFFINE_INDEXER_SEARCH_API_KEY`\n@link https://www.elastic.co/guide/server/current/api-key.html",
+          "description": "Indexer search service api key. Optional for elasticsearch\n@default \"\"\n@environment `NEXIO_INDEXER_SEARCH_API_KEY`\n@link https://www.elastic.co/guide/server/current/api-key.html",
           "default": ""
         },
         "provider.username": {
           "type": "string",
-          "description": "Indexer search service auth username, if not set, basic auth will be disabled. Optional for elasticsearch\n@default \"\"\n@environment `AFFINE_INDEXER_SEARCH_USERNAME`\n@link https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html",
+          "description": "Indexer search service auth username, if not set, basic auth will be disabled. Optional for elasticsearch\n@default \"\"\n@environment `NEXIO_INDEXER_SEARCH_USERNAME`\n@link https://www.elastic.co/guide/en/elasticsearch/reference/current/http-clients.html",
           "default": ""
         },
         "provider.password": {
           "type": "string",
-          "description": "Indexer search service auth password, if not set, basic auth will be disabled. Optional for elasticsearch\n@default \"\"\n@environment `AFFINE_INDEXER_SEARCH_PASSWORD`",
+          "description": "Indexer search service auth password, if not set, basic auth will be disabled. Optional for elasticsearch\n@default \"\"\n@environment `NEXIO_INDEXER_SEARCH_PASSWORD`",
           "default": ""
         },
         "autoIndex.batchSize": {

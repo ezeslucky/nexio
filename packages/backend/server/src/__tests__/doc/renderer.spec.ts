@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { Package } from '@affine-tools/utils/workspace';
+import { Package } from '@nexio-tools/utils/workspace';
 import type { INestApplication } from '@nestjs/common';
 import type { TestFn } from 'ava';
 import ava from 'ava';
@@ -18,20 +18,20 @@ const mobileUAString =
 
 function initTestStaticFiles(staticPath: string) {
   const files = {
-    'main.a.js': `const name = 'affine'`,
+    'main.a.js': `const name = 'nexio'`,
     'assets-manifest.json': JSON.stringify({
       js: ['main.a.js'],
       css: [],
-      publicPath: 'https://app.affine.pro/',
+      publicPath: 'https://app.nexio.pro/',
       gitHash: '',
       description: '',
     }),
-    'admin/main.b.js': `const name = 'affine-admin'`,
-    'mobile/main.c.js': `const name = 'affine-mobile'`,
+    'admin/main.b.js': `const name = 'nexio-admin'`,
+    'mobile/main.c.js': `const name = 'nexio-mobile'`,
     'mobile/assets-manifest.json': JSON.stringify({
       js: ['main.c.js'],
       css: [],
-      publicPath: 'https://app.affine.pro/',
+      publicPath: 'https://app.nexio.pro/',
       gitHash: '',
       description: '',
     }),
@@ -45,7 +45,7 @@ function initTestStaticFiles(staticPath: string) {
 }
 
 test.before(async t => {
-  const staticPath = new Package('@affine/server').join('static').value;
+  const staticPath = new Package('@nexio/server').join('static').value;
   initTestStaticFiles(staticPath);
 
   const app = await createTestingApp();
@@ -64,7 +64,7 @@ test('should render correct html', async t => {
 
   t.true(
     res.text.includes(
-      `<script src="https://app.affine.pro/main.a.js" crossorigin></script>`
+      `<script src="https://app.nexio.pro/main.a.js" crossorigin></script>`
     )
   );
 });
@@ -78,7 +78,7 @@ test.skip('should render correct mobile html', async t => {
 
   t.true(
     res.text.includes(
-      `<script src="https://app.affine.pro/main.c.js" crossorigin></script>`
+      `<script src="https://app.nexio.pro/main.c.js" crossorigin></script>`
     )
   );
 });

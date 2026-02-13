@@ -1,18 +1,18 @@
-import '@affine/core/bootstrap/electron';
+import '@nexio/core/bootstrap/electron';
 
-import { apis } from '@affine/electron-api';
-import { broadcastChannelStorages } from '@affine/nbstore/broadcast-channel';
-import { cloudStorages } from '@affine/nbstore/cloud';
-import { idbStoragesIndexerOnly } from '@affine/nbstore/idb';
-import { bindNativeDBApis, sqliteStorages } from '@affine/nbstore/sqlite';
+import { apis } from '@nexio/electron-api';
+import { broadcastChannelStorages } from '@nexio/nbstore/broadcast-channel';
+import { cloudStorages } from '@nexio/nbstore/cloud';
+import { idbStoragesIndexerOnly } from '@nexio/nbstore/idb';
+import { bindNativeDBApis, sqliteStorages } from '@nexio/nbstore/sqlite';
 import {
   bindNativeDBV1Apis,
   sqliteV1Storages,
-} from '@affine/nbstore/sqlite/v1';
+} from '@nexio/nbstore/sqlite/v1';
 import {
   StoreManagerConsumer,
   type WorkerManagerOps,
-} from '@affine/nbstore/worker/consumer';
+} from '@nexio/nbstore/worker/consumer';
 import { OpConsumer } from '@toeverything/infra/op';
 
 // oxlint-disable-next-line no-non-null-assertion

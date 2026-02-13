@@ -3,7 +3,7 @@ import type {
   NoteBlockModel,
   ParagraphProps,
   RootBlockProps,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/nexio-model';
 import type { Store } from '@blocksuite/store';
 import type { Page } from '@playwright/test';
 /**
@@ -41,15 +41,15 @@ export async function initEmbedSyncedDocState(
         ).getStore();
         store.load();
 
-        const rootId = store.addBlock('affine:page', {
+        const rootId = store.addBlock('nexio:page', {
           title: new Text(title),
         } satisfies Partial<RootBlockProps>);
 
-        store.addBlock('affine:surface', {}, rootId);
+        store.addBlock('nexio:surface', {}, rootId);
 
-        const noteId = store.addBlock('affine:note', {}, rootId);
+        const noteId = store.addBlock('nexio:note', {}, rootId);
         store.addBlock(
-          'affine:paragraph',
+          'nexio:paragraph',
           {
             text: new Text(content),
           } satisfies Partial<ParagraphProps>,
@@ -59,7 +59,7 @@ export async function initEmbedSyncedDocState(
 
       const getVisibleNote = (store: Store) => {
         const note = store
-          .getModelsByFlavour('affine:note')
+          .getModelsByFlavour('nexio:note')
           .find((note): note is NoteBlockModel => {
             return (
               note instanceof NoteBlockModel &&
@@ -78,7 +78,7 @@ export async function initEmbedSyncedDocState(
       );
 
       const { NoteBlockModel, NoteDisplayMode } =
-        window.$blocksuite.affineModel;
+        window.$blocksuite.nexioModel;
 
       let prevId = window.doc.id;
       for (let index = 1; index < docIds.length; index++) {
@@ -96,13 +96,13 @@ export async function initEmbedSyncedDocState(
           throw new Error(`Note not found in ${docId}`);
         }
 
-        const surface = store.getModelsByFlavour('affine:surface')[0];
+        const surface = store.getModelsByFlavour('nexio:surface')[0];
         if (!surface) {
           throw new Error(`Surface not found in ${docId}`);
         }
 
         store.addBlock(
-          'affine:embed-synced-doc',
+          'nexio:embed-synced-doc',
           {
             pageId: docId,
             xywh: '[0, 100, 370, 100]',

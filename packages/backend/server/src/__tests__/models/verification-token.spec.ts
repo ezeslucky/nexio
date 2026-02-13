@@ -35,12 +35,12 @@ test('should be able to create token', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   t.truthy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 });
@@ -49,7 +49,7 @@ test('should be able to get token', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   t.truthy(await verificationToken.get(TokenType.SignIn, token));
@@ -61,7 +61,7 @@ test('should be able to get token and keep work', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   t.truthy(await verificationToken.get(TokenType.SignIn, token, true));
@@ -73,13 +73,13 @@ test('should fail the verification if the token is invalid', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   // wrong type
   t.falsy(
     await verificationToken.verify(TokenType.ChangeEmail, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 
@@ -89,7 +89,7 @@ test('should fail the verification if the token is invalid', async t => {
   // wrong credential
   t.falsy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'wrong@affine.pro',
+      credential: 'wrong@nexio.pro',
     })
   );
 });
@@ -98,7 +98,7 @@ test('should fail if the token expired', async t => {
   const { verificationToken, db } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   await db.verificationToken.updateMany({
@@ -109,7 +109,7 @@ test('should fail if the token expired', async t => {
 
   t.falsy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 });
@@ -128,19 +128,19 @@ test('should be able to verify only once', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   t.truthy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 
   // will be invalid after the first time of verification
   t.falsy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 });
@@ -149,33 +149,33 @@ test('should be able to verify and keep work', async t => {
   const { verificationToken } = t.context;
   const token = await verificationToken.create(
     TokenType.SignIn,
-    'user@affine.pro'
+    'user@nexio.pro'
   );
 
   t.truthy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
       keep: true,
     })
   );
 
   t.truthy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 
   // will be invalid without keep
   t.falsy(
     await verificationToken.verify(TokenType.SignIn, token, {
-      credential: 'user@affine.pro',
+      credential: 'user@nexio.pro',
     })
   );
 });
 
 test('should cleanup expired tokens', async t => {
   const { verificationToken, db } = t.context;
-  await verificationToken.create(TokenType.SignIn, 'user@affine.pro');
+  await verificationToken.create(TokenType.SignIn, 'user@nexio.pro');
 
   await db.verificationToken.updateMany({
     data: {

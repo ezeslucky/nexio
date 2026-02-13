@@ -1,14 +1,14 @@
-import { Button } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { appIconMap } from '@affine/core/utils';
+import { Button } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { appIconMap } from '@nexio/core/utils';
 import {
   createStreamEncoder,
   encodeRawBufferToOpus,
   type OpusStreamEncoder,
-} from '@affine/core/utils/opus-encoding';
-import { apis, events } from '@affine/electron-api';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/utils/opus-encoding';
+import { apis, events } from '@nexio/electron-api';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useEffect, useMemo, useState } from 'react';
 
 import * as styles from './styles.css';
@@ -65,22 +65,22 @@ export function Recording() {
       return null;
     }
     if (status.status === 'new') {
-      return t['com.affine.recording.new']();
+      return t['com.nexio.recording.new']();
     } else if (status.status === 'create-block-success') {
-      return t['com.affine.recording.success.prompt']();
+      return t['com.nexio.recording.success.prompt']();
     } else if (status.status === 'create-block-failed') {
-      return t['com.affine.recording.failed.prompt']();
+      return t['com.nexio.recording.failed.prompt']();
     } else if (
       status.status === 'recording' ||
       status.status === 'ready' ||
       status.status === 'stopped'
     ) {
       if (status.appName) {
-        return t['com.affine.recording.recording']({
+        return t['com.nexio.recording.recording']({
           appName: status.appName,
         });
       } else {
-        return t['com.affine.recording.recording.unnamed']();
+        return t['com.nexio.recording.recording.unnamed']();
       }
     }
     return null;
@@ -232,21 +232,21 @@ export function Recording() {
       return (
         <>
           <Button variant="plain" onClick={handleDismiss}>
-            {t['com.affine.recording.dismiss']()}
+            {t['com.nexio.recording.dismiss']()}
           </Button>
           <Button
             onClick={handleStartRecording}
             variant="primary"
             prefix={<div className={styles.recordingIcon} />}
           >
-            {t['com.affine.recording.start']()}
+            {t['com.nexio.recording.start']()}
           </Button>
         </>
       );
     } else if (status.status === 'recording') {
       return (
         <Button variant="error" onClick={handleStopRecording}>
-          {t['com.affine.recording.stop']()}
+          {t['com.nexio.recording.stop']()}
         </Button>
       );
     } else if (status.status === 'stopped' || status.status === 'ready') {
@@ -261,17 +261,17 @@ export function Recording() {
     } else if (status.status === 'create-block-success') {
       return (
         <Button variant="primary" onClick={handleDismiss}>
-          {t['com.affine.recording.success.button']()}
+          {t['com.nexio.recording.success.button']()}
         </Button>
       );
     } else if (status.status === 'create-block-failed') {
       return (
         <>
           <Button variant="plain" onClick={handleDismiss}>
-            {t['com.affine.recording.dismiss']()}
+            {t['com.nexio.recording.dismiss']()}
           </Button>
           <Button variant="error" onClick={handleOpenFile}>
-            {t['com.affine.recording.failed.button']()}
+            {t['com.nexio.recording.failed.button']()}
           </Button>
         </>
       );
@@ -292,7 +292,7 @@ export function Recording() {
 
   return (
     <div className={styles.root}>
-      <img className={styles.affineIcon} src={appIcon} alt="NEXIO" />
+      <img className={styles.nexioIcon} src={appIcon} alt="NEXIO" />
       <div className={styles.text}>{textElement}</div>
       <div className={styles.controls}>{controlsElement}</div>
     </div>

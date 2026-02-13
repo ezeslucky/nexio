@@ -1,6 +1,6 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { ToolIcon } from '@blocksuite/icons/lit';
 import { css, html, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';

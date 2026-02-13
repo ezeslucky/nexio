@@ -1,8 +1,8 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { useMutation } from '@affine/admin/use-mutation';
-import { notify } from '@affine/component';
-import type { UserFriendlyError } from '@affine/error';
-import { sendTestEmailMutation } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { useMutation } from '@nexio/admin/use-mutation';
+import { notify } from '@nexio/component';
+import type { UserFriendlyError } from '@nexio/error';
+import { sendTestEmailMutation } from '@nexio/graphql';
 import { useCallback } from 'react';
 
 import type { AppConfig } from '../config';

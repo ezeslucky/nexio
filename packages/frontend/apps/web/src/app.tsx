@@ -1,19 +1,19 @@
-import { AffineContext } from '@affine/core/components/context';
-import { AppContainer } from '@affine/core/desktop/components/app-container';
-import { router } from '@affine/core/desktop/router';
-import { configureCommonModules } from '@affine/core/modules';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
+import { NexioContext } from '@nexio/core/components/context';
+import { AppContainer } from '@nexio/core/desktop/components/app-container';
+import { router } from '@nexio/core/desktop/router';
+import { configureCommonModules } from '@nexio/core/modules';
+import { I18nProvider } from '@nexio/core/modules/i18n';
+import { LifecycleService } from '@nexio/core/modules/lifecycle';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { configureBrowserWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import createEmotionCache from '@affine/core/utils/create-emotion-cache';
-import { getWorkerUrl } from '@affine/env/worker';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
+} from '@nexio/core/modules/storage';
+import { PopupWindowProvider } from '@nexio/core/modules/url';
+import { configureBrowserWorkbenchModule } from '@nexio/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
+import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
+import { getWorkerUrl } from '@nexio/env/worker';
+import { StoreManagerClient } from '@nexio/nbstore/worker/client';
 import { CacheProvider } from '@emotion/react';
 import { Framework, FrameworkRoot, getCurrentStore } from '@toeverything/infra';
 import { OpClient } from '@toeverything/infra/op';
@@ -31,7 +31,7 @@ if (
   localStorage.getItem('disableSharedWorker') !== 'true'
 ) {
   const worker = new SharedWorker(workerUrl, {
-    name: 'affine-shared-worker',
+    name: 'nexio-shared-worker',
   });
   storeManagerClient = new StoreManagerClient(new OpClient(worker.port));
 } else {
@@ -98,13 +98,13 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <CacheProvider value={cache}>
           <I18nProvider>
-            <AffineContext store={getCurrentStore()}>
+            <NexioContext store={getCurrentStore()}>
               <RouterProvider
                 fallbackElement={<AppContainer fallback />}
                 router={router}
                 future={future}
               />
-            </AffineContext>
+            </NexioContext>
           </I18nProvider>
         </CacheProvider>
       </FrameworkRoot>

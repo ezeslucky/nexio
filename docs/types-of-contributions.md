@@ -1,6 +1,6 @@
 # Types of contributions :memo:
 
-You can contribute to AFFiNE in several ways. This repo is a place to discuss and collaborate on AFFiNE!
+You can contribute to NEXIO in several ways. This repo is a place to discuss and collaborate on NEXIO!
 
 ### :mega: Discussions
 
@@ -26,4 +26,4 @@ You may be able to find additional help and information on our social media plat
 
 ### :earth_asia: Translations
 
-AFFiNE is internationalized and available in multiple languages. The source content in this repository is written in English. We integrate with an external localization platform to work with the community in localizing the English content. You can find more info on our community page, in our [i18n General Space ](https://community.affine.pro/c/i18n-general).
+NEXIO is internationalized and available in multiple languages. The source content in this repository is written in English. We integrate with an external localization platform to work with the community in localizing the English content. You can find more info on our community page

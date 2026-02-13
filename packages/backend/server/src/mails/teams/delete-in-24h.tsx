@@ -47,5 +47,5 @@ export default function TeamDeleteIn24Hours(props: TeamDeleteIn24HoursProps) {
 TeamDeleteIn24Hours.PreviewProps = {
   workspace: TEST_WORKSPACE,
   deletionDate: new Date('2025-01-31T00:00:00Z'),
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

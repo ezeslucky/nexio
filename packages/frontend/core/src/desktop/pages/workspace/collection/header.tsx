@@ -1,9 +1,9 @@
-import { FlexWrapper } from '@affine/component';
-import { ExplorerDisplayMenuButton } from '@affine/core/components/explorer/display-menu';
-import { ViewToggle } from '@affine/core/components/explorer/display-menu/view-toggle';
-import { ExplorerNavigation } from '@affine/core/components/explorer/header/navigation';
-import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
-import { Header } from '@affine/core/components/pure/header';
+import { FlexWrapper } from '@nexio/component';
+import { ExplorerDisplayMenuButton } from '@nexio/core/components/explorer/display-menu';
+import { ViewToggle } from '@nexio/core/components/explorer/display-menu/view-toggle';
+import { ExplorerNavigation } from '@nexio/core/components/explorer/header/navigation';
+import type { ExplorerDisplayPreference } from '@nexio/core/components/explorer/types';
+import { Header } from '@nexio/core/components/pure/header';
 
 export const CollectionDetailHeader = ({
   displayPreference,

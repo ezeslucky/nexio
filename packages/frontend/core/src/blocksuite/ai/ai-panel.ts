@@ -1,17 +1,17 @@
-import { AINetworkSearchService } from '@affine/core/modules/ai-button/services/network-search';
-import { Bound } from '@blocksuite/affine/global/gfx';
+import { AINetworkSearchService } from '@nexio/core/modules/ai-button/services/network-search';
+import { Bound } from '@blocksuite/nexio/global/gfx';
 import {
   ImageBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import {
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/affine/shared/utils';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/shared/utils';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { ThemeProvider } from '@blocksuite/nexio-shared/services';
 import {
   ChatWithAiIcon,
   DeleteIcon,
@@ -44,8 +44,8 @@ import { AIContext } from './utils/context';
 import { findNoteBlockModel } from './utils/edgeless';
 import { copyTextAnswer } from './utils/editor-actions';
 import { getSelections } from './utils/selection-utils';
-import type { AffineAIPanelWidget } from './widgets/ai-panel/ai-panel';
-import type { AffineAIPanelWidgetConfig } from './widgets/ai-panel/type';
+import type { NexioAIPanelWidget } from './widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidgetConfig } from './widgets/ai-panel/type';
 
 function asCaption<T extends keyof BlockSuitePresets.AIActions>(
   host: EditorHost,
@@ -104,7 +104,7 @@ function createNewNote(host: EditorHost): AIItemConfig {
       doc.transact(() => {
         if (!doc.root || !panel.answer) return;
         const noteBlockId = doc.addBlock(
-          'affine:note',
+          'nexio:note',
           {
             xywh: newBound.serialize(),
             displayMode: NoteDisplayMode.EdgelessOnly,
@@ -141,7 +141,7 @@ function createNewNote(host: EditorHost): AIItemConfig {
 }
 
 function buildPageResponseConfig<T extends keyof BlockSuitePresets.AIActions>(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   id: T,
   ctx: AIContext
 ) {
@@ -228,7 +228,7 @@ function buildPageResponseConfig<T extends keyof BlockSuitePresets.AIActions>(
   ];
 }
 
-export function buildErrorResponseConfig(panel: AffineAIPanelWidget) {
+export function buildErrorResponseConfig(panel: NexioAIPanelWidget) {
   return [
     {
       name: '',
@@ -258,7 +258,7 @@ export function buildErrorResponseConfig(panel: AffineAIPanelWidget) {
 }
 
 export function buildFinishConfig<T extends keyof BlockSuitePresets.AIActions>(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   id: T,
   ctx: AIContext
 ) {
@@ -268,7 +268,7 @@ export function buildFinishConfig<T extends keyof BlockSuitePresets.AIActions>(
   };
 }
 
-export function buildErrorConfig(panel: AffineAIPanelWidget) {
+export function buildErrorConfig(panel: NexioAIPanelWidget) {
   return {
     upgrade: () => {
       AIProvider.slots.requestUpgradePlan.next({ host: panel.host });
@@ -291,7 +291,7 @@ export function buildGeneratingConfig(generatingIcon?: TemplateResult<1>) {
   };
 }
 
-export function buildCopyConfig(panel: AffineAIPanelWidget) {
+export function buildCopyConfig(panel: NexioAIPanelWidget) {
   return {
     allowed: true,
     onCopy: () => {
@@ -301,9 +301,9 @@ export function buildCopyConfig(panel: AffineAIPanelWidget) {
 }
 
 export function buildAIPanelConfig(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   framework: FrameworkProvider
-): AffineAIPanelWidgetConfig {
+): NexioAIPanelWidgetConfig {
   const ctx = new AIContext();
   const searchService = framework.get(AINetworkSearchService);
   return {

@@ -20,5 +20,5 @@ export default function SetPassword(props: SetPasswordProps) {
 }
 
 SetPassword.PreviewProps = {
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

@@ -260,10 +260,10 @@ test('format list to h1', async ({ page }) => {
   await initEmptyParagraphState(page);
 
   await focusRichText(page, 0);
-  await updateBlockType(page, 'affine:list', 'bulleted');
+  await updateBlockType(page, 'nexio:list', 'bulleted');
   await type(page, 'aa');
   await focusRichText(page, 0);
-  await updateBlockType(page, 'affine:paragraph', 'h1');
+  await updateBlockType(page, 'nexio:paragraph', 'h1');
   await assertRichTextModelType(page, 'h1');
   await undoByClick(page);
   await assertRichTextModelType(page, 'bulleted');
@@ -368,13 +368,13 @@ test('should support ctrl/cmd+shift+l convert to linked doc', async ({
   await waitNextFrame(page);
   await page.keyboard.press(`${SHORT_KEY}+${SHIFT_KEY}+l`);
 
-  const linkedDocCard = page.locator('affine-embed-linked-doc-block');
+  const linkedDocCard = page.locator('nexio-embed-linked-doc-block');
   await expect(linkedDocCard).toBeVisible();
 
-  const title = page.locator('.affine-embed-linked-doc-content-title-text');
+  const title = page.locator('.nexio-embed-linked-doc-content-title-text');
   expect(await title.innerText()).toBe('Untitled');
 
-  const noteContent = page.locator('.affine-embed-linked-doc-content-note');
+  const noteContent = page.locator('.nexio-embed-linked-doc-content-note');
   expect(await noteContent.innerText()).toBe('123');
 });
 

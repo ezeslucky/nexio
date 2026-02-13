@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { Readable } from 'node:stream';
 
-import { ProjectRoot } from '@affine-tools/utils/path';
+import { ProjectRoot } from '@nexio-tools/utils/path';
 import { PrismaClient } from '@prisma/client';
 import type { TestFn } from 'ava';
 import ava from 'ava';
@@ -194,7 +194,7 @@ test.beforeEach(async t => {
   Sinon.restore();
   const { auth, prompt } = t.context;
   await prompt.onApplicationBootstrap();
-  const user = await auth.signUp(`test-${randomUUID()}@affine.pro`, '123456');
+  const user = await auth.signUp(`test-${randomUUID()}@nexio.pro`, '123456');
   userId = user.id;
   promptName = randomUUID().replaceAll('-', '');
 });
@@ -290,7 +290,7 @@ test('should be able to render listed prompt', async t => {
     content: 'links:\n{{#links}}- {{.}}\n{{/links}}',
   };
   const params = {
-    links: ['https://affine.pro', 'https://github.com/ezeslucky/nexio'],
+    links: ['https://nexio.pro', 'https://github.com/ezeslucky/nexio'],
   };
 
   await prompt.set(promptName, 'test', [msg]);
@@ -298,7 +298,7 @@ test('should be able to render listed prompt', async t => {
 
   t.is(
     testPrompt?.finish(params).pop()?.content,
-    'links:\n- https://affine.pro\n- https://github.com/ezeslucky/nexio\n',
+    'links:\n- https://nexio.pro\n- https://github.com/ezeslucky/nexio\n',
     'should render the prompt'
   );
 });
@@ -436,7 +436,7 @@ test('should be able to fork chat session', async t => {
   });
   t.not(sessionId, forkedSessionId1, 'should fork a new session');
 
-  const newUser = await auth.signUp('darksky.1@affine.pro', '123456');
+  const newUser = await auth.signUp('darksky.1@nexio.pro', '123456');
   const forkedSessionId2 = await session.fork({
     userId: newUser.id,
     sessionId,
@@ -606,7 +606,7 @@ test('should be able to generate with message id', async t => {
 
     const message = await session.createMessage({
       sessionId,
-      attachments: ['https://affine.pro/example.jpg'],
+      attachments: ['https://nexio.pro/example.jpg'],
     });
 
     await s.pushByMessageId(message);
@@ -617,7 +617,7 @@ test('should be able to generate with message id', async t => {
       // system prompt
       undefined,
       // user prompt
-      ['https://affine.pro/example.jpg'],
+      ['https://nexio.pro/example.jpg'],
     ]);
   }
 
@@ -1102,7 +1102,7 @@ test('should be able to run text executor', async t => {
   {
     const ret = await wrapAsyncIter(
       executor.next(nodeData, {
-        attachments: ['https://affine.pro/example.jpg'],
+        attachments: ['https://nexio.pro/example.jpg'],
       })
     );
 
@@ -1116,7 +1116,7 @@ test('should be able to run text executor', async t => {
     );
     t.deepEqual(
       textStream.lastCall.args[1][0].params?.attachments,
-      ['https://affine.pro/example.jpg'],
+      ['https://nexio.pro/example.jpg'],
       'should pass attachments to provider'
     );
   }
@@ -1165,7 +1165,7 @@ test('should be able to run image executor', async t => {
   {
     const ret = await wrapAsyncIter(
       executor.next(nodeData, {
-        attachments: ['https://affine.pro/example.jpg'],
+        attachments: ['https://nexio.pro/example.jpg'],
       })
     );
 
@@ -1182,7 +1182,7 @@ test('should be able to run image executor', async t => {
     );
     t.deepEqual(
       imageStream.lastCall.args[1][0].params?.attachments,
-      ['https://affine.pro/example.jpg'],
+      ['https://nexio.pro/example.jpg'],
       'should pass attachments to provider'
     );
   }

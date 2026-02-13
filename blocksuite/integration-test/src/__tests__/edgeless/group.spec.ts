@@ -1,10 +1,10 @@
-import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
+import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
 import {
   type GroupElementModel,
   LayoutType,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
-import type { MindmapElementModel } from '@blocksuite/affine-model';
+} from '@blocksuite/nexio/model';
+import type { MindmapElementModel } from '@blocksuite/nexio-model';
 import { beforeEach, describe, expect, test } from 'vitest';
 import * as Y from 'yjs';
 

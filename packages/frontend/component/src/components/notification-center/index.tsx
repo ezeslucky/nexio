@@ -1,8 +1,5 @@
-// Credits to sonner
-// License on the MIT
-// https://github.com/emilkowalski/sonner/blob/5cb703edc108a23fd74979235c2f3c4005edd2a7/src/index.tsx
 
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 import { CloseIcon, InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import * as Toast from '@radix-ui/react-toast';
 import clsx from 'clsx';
@@ -239,7 +236,7 @@ function NotificationCard(props: NotificationCardProps): ReactNode {
       data-index={index}
       data-front={isFront}
       data-expanded={expand}
-      data-testid="affine-notification"
+      data-testid="nexio-notification"
       onMouseEnter={() => {
         setExpand(true);
       }}
@@ -310,7 +307,7 @@ function NotificationCard(props: NotificationCardProps): ReactNode {
               onClick={onClickAction}
             >
               {notification.actionLabel ??
-                t['com.affine.keyboardShortcuts.undo']()}
+                t['com.nexio.keyboardShortcuts.undo']()}
             </div>
           )}
           {notification.multimedia ? null : (
@@ -322,8 +319,8 @@ function NotificationCard(props: NotificationCardProps): ReactNode {
                 color:
                   notification.theme !== 'light' &&
                   notification.theme !== 'default'
-                    ? 'var(--affine-pure-white)'
-                    : 'var(--affine-text-primary-color)',
+                    ? 'var(--nexio-pure-white)'
+                    : 'var(--nexio-text-primary-color)',
               }}
             >
               <CloseIcon onClick={onClickRemove} />
@@ -345,14 +342,14 @@ function NotificationCard(props: NotificationCardProps): ReactNode {
               <rect
                 width="100%"
                 height="4"
-                fill="var(--affine-hover-color)"
+                fill="var(--nexio-hover-color)"
                 rx="2"
                 ry="2"
               />
               <rect
                 width="0%"
                 height="4"
-                fill="var(--affine-primary-color)"
+                fill="var(--nexio-primary-color)"
                 rx="2"
                 ry="2"
               >
@@ -376,7 +373,7 @@ function NotificationCard(props: NotificationCardProps): ReactNode {
 }
 
 /**
- * @deprecated use `import { NotificationCenter } from '@affine/component'` instead
+ * @deprecated use `import { NotificationCenter } from '@nexio/component'` instead
  */
 export function NotificationCenter(): ReactNode {
   const notifications = useAtomValue(notificationsAtom);

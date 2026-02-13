@@ -1,12 +1,12 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { SubscriptionService } from '@affine/core/modules/cloud';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
 import {
   SubscriptionPlan,
   SubscriptionRecurring,
   SubscriptionStatus,
-} from '@affine/graphql';
-import { type I18nString, i18nTime, Trans, useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { type I18nString, i18nTime, Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -16,12 +16,12 @@ import { PaymentMethodUpdater } from './payment-method';
 import * as styles from './style.css';
 
 const DescriptionI18NKey = {
-  Basic: 'com.affine.payment.billing-setting.current-plan.description',
+  Basic: 'com.nexio.payment.billing-setting.current-plan.description',
   Monthly:
-    'com.affine.payment.billing-setting.current-plan.description.monthly',
-  Yearly: 'com.affine.payment.billing-setting.current-plan.description.yearly',
+    'com.nexio.payment.billing-setting.current-plan.description.monthly',
+  Yearly: 'com.nexio.payment.billing-setting.current-plan.description.yearly',
   Lifetime:
-    'com.affine.payment.billing-setting.current-plan.description.lifetime',
+    'com.nexio.payment.billing-setting.current-plan.description.lifetime',
 } as const satisfies { [key: string]: I18nString };
 
 const getMessageKey = (
@@ -68,7 +68,7 @@ export const ProPlanCard = ({
           spreadCol={false}
           name={
             <CardNameLabelRow
-              cardName={t['com.affine.payment.billing-setting.current-plan']()}
+              cardName={t['com.nexio.payment.billing-setting.current-plan']()}
               status={proSubscription?.status}
             />
           }
@@ -103,8 +103,8 @@ export const ProPlanCard = ({
         <span className={styles.billingFrequency}>
           /
           {currentRecurring === SubscriptionRecurring.Monthly
-            ? t['com.affine.payment.billing-setting.month']()
-            : t['com.affine.payment.billing-setting.year']()}
+            ? t['com.nexio.payment.billing-setting.month']()
+            : t['com.nexio.payment.billing-setting.year']()}
         </span>
       </p>
     </div>
@@ -119,19 +119,19 @@ const CloudExpirationInfo = () => {
   let text = '';
 
   if (subscription?.status === SubscriptionStatus.PastDue) {
-    text = t['com.affine.payment.billing-tip.past-due']({
+    text = t['com.nexio.payment.billing-tip.past-due']({
       due: i18nTime(subscription.nextBillAt, {
         absolute: { accuracy: 'day' },
       }),
     });
   } else if (subscription?.nextBillAt) {
-    text = t['com.affine.payment.billing-setting.renew-date.description']({
+    text = t['com.nexio.payment.billing-setting.renew-date.description']({
       renewDate: i18nTime(subscription.nextBillAt, {
         absolute: { accuracy: 'day' },
       }),
     });
   } else if (subscription?.end) {
-    text = t['com.affine.payment.billing-setting.due-date.description']({
+    text = t['com.nexio.payment.billing-setting.due-date.description']({
       dueDate: i18nTime(subscription.end, {
         absolute: { accuracy: 'day' },
       }),
@@ -176,8 +176,8 @@ const PlanAction = ({
         onClick={gotoPlansSetting}
       >
         {plan === SubscriptionPlan.Pro
-          ? t['com.affine.payment.billing-setting.change-plan']()
-          : t['com.affine.payment.billing-setting.upgrade']()}
+          ? t['com.nexio.payment.billing-setting.change-plan']()
+          : t['com.nexio.payment.billing-setting.upgrade']()}
       </Button>
       {subscriptionStatus === SubscriptionStatus.PastDue ? (
         <PaymentMethodUpdater

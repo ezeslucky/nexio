@@ -1,32 +1,32 @@
-import { Button, IconButton, Modal } from '@affine/component';
-import { IconType } from '@affine/component';
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { Button, IconButton, Modal } from '@nexio/component';
+import { IconType } from '@nexio/component';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import {
   type DialogComponentProps,
   GlobalDialogService,
   type WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import { OrganizeService } from '@affine/core/modules/organize';
-import { UrlService } from '@affine/core/modules/url';
+} from '@nexio/core/modules/dialogs';
+import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
+import { OrganizeService } from '@nexio/core/modules/organize';
+import { UrlService } from '@nexio/core/modules/url';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNEXIOWorkspaceSchema,
   type WorkspaceMetadata,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
-import { DebugLogger } from '@affine/debug';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import { openFilesWith } from '@blocksuite/affine/shared/utils';
-import type { Workspace } from '@blocksuite/affine/store';
+} from '@nexio/core/modules/workspace';
+import { DebugLogger } from '@nexio/debug';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
+import { openFilesWith } from '@blocksuite/nexio/shared/utils';
+import type { Workspace } from '@blocksuite/nexio/store';
 import {
   HtmlTransformer,
   MarkdownTransformer,
   NotionHtmlTransformer,
   ZipTransformer,
-} from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/nexio/widgets/linked-doc';
 import {
   ExportToHtmlIcon,
   ExportToMarkdownIcon,
@@ -186,8 +186,8 @@ type ImportType =
   | 'notion'
   | 'snapshot'
   | 'html'
-  | 'dotaffinefile';
-type AcceptType = 'Markdown' | 'Zip' | 'Html' | 'Skip'; // Skip is used for dotaffinefile
+  | 'dotnexiofile';
+type AcceptType = 'Markdown' | 'Zip' | 'Html' | 'Skip'; // Skip is used for dotnexiofile
 type Status = 'idle' | 'importing' | 'success' | 'error';
 type ImportResult = {
   docIds: string[];
@@ -201,7 +201,7 @@ type ImportConfig = {
   importFunction: (
     docCollection: Workspace,
     files: File[],
-    handleImportAffineFile: () => Promise<WorkspaceMetadata | undefined>,
+    handleImportNexioFile: () => Promise<WorkspaceMetadata | undefined>,
     organizeService?: OrganizeService,
     explorerIconService?: ExplorerIconService
   ) => Promise<ImportResult>;
@@ -210,7 +210,7 @@ type ImportConfig = {
 const importOptions = [
   {
     key: 'markdown',
-    label: 'com.affine.import.markdown-files',
+    label: 'com.nexio.import.markdown-files',
     prefixIcon: (
       <ExportToMarkdownIcon
         color={cssVarV2('icon/primary')}
@@ -223,20 +223,20 @@ const importOptions = [
   },
   {
     key: 'markdownZip',
-    label: 'com.affine.import.markdown-with-media-files',
+    label: 'com.nexio.import.markdown-with-media-files',
     prefixIcon: (
       <ZipIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.affine.import.markdown-with-media-files.tooltip',
+    suffixTooltip: 'com.nexio.import.markdown-with-media-files.tooltip',
     testId: 'editor-option-menu-import-markdown-with-media',
     type: 'markdownZip' as ImportType,
   },
   {
     key: 'html',
-    label: 'com.affine.import.html-files',
+    label: 'com.nexio.import.html-files',
     prefixIcon: (
       <ExportToHtmlIcon
         color={cssVarV2('icon/primary')}
@@ -247,47 +247,47 @@ const importOptions = [
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.affine.import.html-files.tooltip',
+    suffixTooltip: 'com.nexio.import.html-files.tooltip',
     testId: 'editor-option-menu-import-html',
     type: 'html' as ImportType,
   },
   {
     key: 'notion',
-    label: 'com.affine.import.notion',
+    label: 'com.nexio.import.notion',
     prefixIcon: <NotionIcon color={cssVar('black')} width={20} height={20} />,
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.affine.import.notion.tooltip',
+    suffixTooltip: 'com.nexio.import.notion.tooltip',
     testId: 'editor-option-menu-import-notion',
     type: 'notion' as ImportType,
   },
   {
     key: 'snapshot',
-    label: 'com.affine.import.snapshot',
+    label: 'com.nexio.import.snapshot',
     prefixIcon: (
       <PageIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.affine.import.snapshot.tooltip',
+    suffixTooltip: 'com.nexio.import.snapshot.tooltip',
     testId: 'editor-option-menu-import-snapshot',
     type: 'snapshot' as ImportType,
   },
   BUILD_CONFIG.isElectron
     ? {
-        key: 'dotaffinefile',
-        label: 'com.affine.import.dotaffinefile',
+        key: 'dotnexiofile',
+        label: 'com.nexio.import.dotnexiofile',
         prefixIcon: (
           <SaveIcon color={cssVarV2('icon/primary')} width={20} height={20} />
         ),
         suffixIcon: (
           <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
         ),
-        suffixTooltip: 'com.affine.import.dotaffinefile.tooltip',
-        testId: 'editor-option-menu-import-dotaffinefile',
-        type: 'dotaffinefile' as ImportType,
+        suffixTooltip: 'com.nexio.import.dotnexiofile.tooltip',
+        testId: 'editor-option-menu-import-dotnexiofile',
+        type: 'dotnexiofile' as ImportType,
       }
     : null,
 ].filter(v => v !== null);
@@ -298,7 +298,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
     importFunction: async (
       docCollection,
       files,
-      _handleImportAffineFile,
+      _handleImportNexioFile,
       _organizeService,
       _explorerIconService
     ) => {
@@ -308,7 +308,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await MarkdownTransformer.importMarkdownToDoc({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNEXIOWorkspaceSchema(),
           markdown: text,
           fileName,
           extensions: getStoreManager().config.init().value.get('store'),
@@ -325,7 +325,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
     importFunction: async (
       docCollection,
       files,
-      _handleImportAffineFile,
+      _handleImportNexioFile,
       _organizeService,
       _explorerIconService
     ) => {
@@ -335,7 +335,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       }
       const docIds = await MarkdownTransformer.importMarkdownZip({
         collection: docCollection,
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNEXIOWorkspaceSchema(),
         imported: file,
         extensions: getStoreManager().config.init().value.get('store'),
       });
@@ -349,7 +349,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
     importFunction: async (
       docCollection,
       files,
-      _handleImportAffineFile,
+      _handleImportNexioFile,
       _organizeService,
       _explorerIconService
     ) => {
@@ -359,7 +359,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await HtmlTransformer.importHTMLToDoc({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNEXIOWorkspaceSchema(),
           extensions: getStoreManager().config.init().value.get('store'),
           html: text,
           fileName,
@@ -376,7 +376,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
     importFunction: async (
       docCollection,
       files,
-      _handleImportAffineFile,
+      _handleImportNexioFile,
       organizeService,
       explorerIconService
     ) => {
@@ -387,7 +387,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       const { entryId, pageIds, isWorkspaceFile, folderHierarchy } =
         await NotionHtmlTransformer.importNotionZip({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNEXIOWorkspaceSchema(),
           imported: file,
           extensions: getStoreManager().config.init().value.get('store'),
         });
@@ -437,7 +437,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
     importFunction: async (
       docCollection,
       files,
-      _handleImportAffineFile,
+      _handleImportNexioFile,
       _organizeService,
       _explorerIconService
     ) => {
@@ -448,7 +448,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       const docIds = (
         await ZipTransformer.importDocs(
           docCollection,
-          getAFFiNEWorkspaceSchema(),
+          getNEXIOWorkspaceSchema(),
           file
         )
       )
@@ -460,16 +460,16 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       };
     },
   },
-  dotaffinefile: {
+  dotnexiofile: {
     fileOptions: { acceptType: 'Skip', multiple: false },
     importFunction: async (
       _,
       __,
-      handleImportAffineFile,
+      handleImportNexioFile,
       _organizeService,
       _explorerIconService
     ) => {
-      await handleImportAffineFile();
+      await handleImportNexioFile();
       return {
         docIds: [],
         entryId: undefined,
@@ -546,7 +546,7 @@ const ImportOptions = ({
         )}
       </div>
       <div className={style.importModalTip}>
-        {t['com.affine.import.modal.tip']()}{' '}
+        {t['com.nexio.import.modal.tip']()}{' '}
         <a
           className={style.link}
           href={BUILD_CONFIG.discordUrl}
@@ -566,10 +566,10 @@ const ImportingStatus = () => {
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.affine.import.status.importing.title']()}
+        {t['com.nexio.import.status.importing.title']()}
       </div>
       <p className={style.importStatusContent}>
-        {t['com.affine.import.status.importing.message']()}
+        {t['com.nexio.import.status.importing.message']()}
       </p>
     </>
   );
@@ -580,10 +580,10 @@ const SuccessStatus = ({ onComplete }: { onComplete: () => void }) => {
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.affine.import.status.success.title']()}
+        {t['com.nexio.import.status.success.title']()}
       </div>
       <p className={style.importStatusContent}>
-        {t['com.affine.import.status.success.message']()}{' '}
+        {t['com.nexio.import.status.success.message']()}{' '}
         <a
           className={style.link}
           href={BUILD_CONFIG.discordUrl}
@@ -615,7 +615,7 @@ const ErrorStatus = ({
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.affine.import.status.failed.title']()}
+        {t['com.nexio.import.status.failed.title']()}
       </div>
       <p className={style.importStatusContent}>
         {error || 'Unknown error occurred'}
@@ -676,7 +676,7 @@ export const ImportDialog = ({
     [jumpToPage]
   );
 
-  const handleImportAffineFile = useMemo(() => {
+  const handleImportNexioFile = useMemo(() => {
     return async () => {
       track.$.navigationPanel.workspaceList.createWorkspace({
         control: 'import',
@@ -709,7 +709,7 @@ export const ImportDialog = ({
 
         if (!files || (files.length === 0 && acceptType !== 'Skip')) {
           throw new Error(
-            t['com.affine.import.status.failed.message.no-file-selected']()
+            t['com.nexio.import.status.failed.message.no-file-selected']()
           );
         }
 
@@ -725,7 +725,7 @@ export const ImportDialog = ({
           await importConfig.importFunction(
             docCollection,
             files,
-            handleImportAffineFile,
+            handleImportNexioFile,
             organizeService,
             explorerIconService
           );
@@ -758,7 +758,7 @@ export const ImportDialog = ({
     [
       docCollection,
       explorerIconService,
-      handleImportAffineFile,
+      handleImportNexioFile,
       organizeService,
       t,
     ]

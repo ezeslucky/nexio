@@ -1,7 +1,7 @@
 import debug from 'debug';
 type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
-const SESSION_KEY = 'affine:debug';
+const SESSION_KEY = 'nexio:debug';
 
 if (typeof window !== 'undefined') {
   // enable debug logs if the URL search string contains `debug`

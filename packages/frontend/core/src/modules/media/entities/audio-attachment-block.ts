@@ -1,15 +1,15 @@
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
-} from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
-import { insertFromMarkdown } from '@affine/core/blocksuite/utils';
-import { encodeAudioBlobToOpusSlices } from '@affine/core/utils/opus-encoding';
-import { DebugLogger } from '@affine/debug';
-import { AiJobStatus } from '@affine/graphql';
-import track from '@affine/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import { type DeltaInsert, Text } from '@blocksuite/affine/store';
+} from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
+import { insertFromMarkdown } from '@nexio/core/blocksuite/utils';
+import { encodeAudioBlobToOpusSlices } from '@nexio/core/utils/opus-encoding';
+import { DebugLogger } from '@nexio/debug';
+import { AiJobStatus } from '@nexio/graphql';
+import track from '@nexio/track';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
+import { type DeltaInsert, Text } from '@blocksuite/nexio/store';
 import { computed } from '@preact/signals-core';
 import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -114,7 +114,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
     if (!transcriptionBlockProps) {
       // transcription block is not created yet, we need to create it
       this.props.store.addBlock(
-        'affine:transcription',
+        'nexio:transcription',
         {
           transcription: {},
         },
@@ -180,14 +180,14 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       collapsed: boolean = false
     ) => {
       const calloutId = this.props.store.addBlock(
-        'affine:callout',
+        'nexio:callout',
         {
           emoji,
         },
         this.transcriptionBlock$.value?.id
       );
       this.props.store.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         {
           type: 'h6',
           collapsed,
@@ -211,7 +211,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           color = colorOptions[speakerToColors.size % colorOptions.length];
           speakerToColors.set(segment.speaker, color);
         }
-        const deltaInserts: DeltaInsert<AffineTextAttributes>[] = [
+        const deltaInserts: DeltaInsert<NexioTextAttributes>[] = [
           {
             insert: sanitizeText(segment.start + ' ' + segment.speaker),
             attributes: {
@@ -224,7 +224,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           },
         ];
         this.props.store.addBlock(
-          'affine:paragraph',
+          'nexio:paragraph',
           {
             text: new Text(deltaInserts),
           },

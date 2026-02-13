@@ -2,8 +2,8 @@ import {
   InsideModalContext,
   ModalConfigContext,
   Scrollable,
-} from '@affine/component';
-import { PageHeader } from '@affine/core/mobile/components';
+} from '@nexio/component';
+import { PageHeader } from '@nexio/core/mobile/components';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { animate } from 'animejs';

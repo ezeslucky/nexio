@@ -11,6 +11,6 @@
     { "path": "../infra" },
     { "path": "../error" },
     { "path": "../graphql" },
-    { "path": "../../../blocksuite/affine/all" }
+    { "path": "../../../blocksuite/nexio/all" }
   ]
 }

@@ -1,7 +1,7 @@
-import { I18n } from '@affine/i18n';
+import { I18n } from '@nexio/i18n';
 import { ipcMain } from 'electron';
 
-import { AFFINE_API_CHANNEL_NAME } from '../shared/type';
+import { NEXIO_API_CHANNEL_NAME } from '../shared/type';
 import { clipboardHandlers } from './clipboard';
 import { configStorageHandlers } from './config-storage';
 import { findInPageHandlers } from './find-in-page';
@@ -87,7 +87,7 @@ export const registerHandlers = () => {
     return result;
   };
 
-  ipcMain.handle(AFFINE_API_CHANNEL_NAME, async (e, ...args: any[]) => {
+  ipcMain.handle(NEXIO_API_CHANNEL_NAME, async (e, ...args: any[]) => {
     try {
       return await handleIpcMessage(e, ...args);
     } catch (error) {
@@ -96,7 +96,7 @@ export const registerHandlers = () => {
     }
   });
 
-  ipcMain.on(AFFINE_API_CHANNEL_NAME, (e, ...args: any[]) => {
+  ipcMain.on(NEXIO_API_CHANNEL_NAME, (e, ...args: any[]) => {
     handleIpcMessage(e, ...args)
       .then(ret => {
         e.returnValue = ret;

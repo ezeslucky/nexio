@@ -1,10 +1,10 @@
 {
-  "name": "@affine-tools/cli",
+  "name": "@nexio-tools/cli",
   "version": "0.22.4",
   "type": "module",
   "private": true,
   "bin": {
-    "affine": "./bin/cli.js",
+    "nexio": "./bin/cli.js",
     "r": "./bin/runner.js"
   },
   "exports": {
@@ -12,10 +12,10 @@
     "./bundle": "./src/bundle.ts"
   },
   "scripts": {
-    "affine": "r ./src/affine.ts"
+    "nexio": "r ./src/nexio.ts"
   },
   "dependencies": {
-    "@affine-tools/utils": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
     "@aws-sdk/client-s3": "^3.709.0",
     "@clack/core": "^0.4.0",
     "@clack/prompts": "^0.10.0",

@@ -1,6 +1,6 @@
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import type { IndexerSyncState } from '@affine/nbstore';
-import type { ReferenceParams } from '@blocksuite/affine/model';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import type { IndexerSyncState } from '@nexio/nbstore';
+import type { ReferenceParams } from '@blocksuite/nexio/model';
 import { fromPromise, LiveData, Service } from '@toeverything/infra';
 import { isEmpty, omit } from 'lodash-es';
 import { map, type Observable, of, switchMap } from 'rxjs';
@@ -85,7 +85,7 @@ export class DocsSearchService extends Service {
                   query: {
                     type: 'match',
                     field: 'flavour',
-                    match: 'affine:page',
+                    match: 'nexio:page',
                   },
                 },
               ],
@@ -121,7 +121,7 @@ export class DocsSearchService extends Service {
 
           for (const bucket of buckets) {
             const firstMatchFlavour = bucket.hits.nodes[0]?.fields.flavour;
-            if (firstMatchFlavour === 'affine:page') {
+            if (firstMatchFlavour === 'nexio:page') {
               // is title match
               const blockContent = bucket.hits.nodes[1]?.highlights.content[0]; // try to get block content
               result.push({
@@ -247,7 +247,7 @@ export class DocsSearchService extends Service {
             {
               type: 'match',
               field: 'parentFlavour',
-              match: 'affine:database',
+              match: 'nexio:database',
             },
           ],
         },

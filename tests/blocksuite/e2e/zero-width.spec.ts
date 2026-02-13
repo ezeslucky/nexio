@@ -12,7 +12,7 @@ const embedUrl = 'https://github.com/toeverything/blocksuite/pull/7217';
 
 test.beforeEach(async ({ page }) => {
   await page.route(
-    'https://affine-worker.toeverything.workers.dev/api/worker/link-preview',
+    'https://nexio-worker.toeverything.workers.dev/api/worker/link-preview',
     async route => {
       await route.fulfill({
         json: {},
@@ -26,14 +26,14 @@ test(
   async ({ page }) => {
     await enterPlaygroundRoom(page);
     await initEmptyCodeBlockState(page);
-    const codeComponent = page.locator('affine-code');
+    const codeComponent = page.locator('nexio-code');
     const rect = await codeComponent.boundingBox();
     if (!rect) {
       throw new Error('code-block not found');
     }
     // click the zero width
     await page.mouse.click(rect.x + 20, rect.y + rect.height + 8);
-    await assertBlockFlavour(page, '3', 'affine:paragraph');
+    await assertBlockFlavour(page, '3', 'nexio:paragraph');
   }
 );
 
@@ -43,14 +43,14 @@ test(
     await enterPlaygroundRoom(page);
     await page.evaluate(() => {
       const { doc } = window;
-      const rootId = doc.addBlock('affine:page', {
+      const rootId = doc.addBlock('nexio:page', {
         title: new window.$blocksuite.store.Text(),
       });
-      const note = doc.addBlock('affine:note', {}, rootId);
-      doc.addBlock('affine:code', {}, note);
-      doc.addBlock('affine:paragraph', {}, note);
+      const note = doc.addBlock('nexio:note', {}, rootId);
+      doc.addBlock('nexio:code', {}, note);
+      doc.addBlock('nexio:paragraph', {}, note);
     });
-    const codeComponent = page.locator('affine-code');
+    const codeComponent = page.locator('nexio-code');
     const codeComponentrect = await codeComponent.boundingBox();
     if (!codeComponentrect) {
       throw new Error('code-block not found');
@@ -70,27 +70,27 @@ test(
     await page.evaluate(
       async ({ bookMarkUrl, embedUrl }) => {
         const { doc } = window;
-        const rootId = doc.addBlock('affine:page', {
+        const rootId = doc.addBlock('nexio:page', {
           title: new window.$blocksuite.store.Text(),
         });
-        const note = doc.addBlock('affine:note', {}, rootId);
-        doc.addBlock('affine:code', {}, note);
-        doc.addBlock('affine:divider', {}, note);
-        doc.addBlock('affine:bookmark', { url: bookMarkUrl }, note);
+        const note = doc.addBlock('nexio:note', {}, rootId);
+        doc.addBlock('nexio:code', {}, note);
+        doc.addBlock('nexio:divider', {}, note);
+        doc.addBlock('nexio:bookmark', { url: bookMarkUrl }, note);
         await new Promise(res => setTimeout(res, 200));
-        const pageRoot = document.querySelector('affine-page-root');
+        const pageRoot = document.querySelector('nexio-page-root');
         if (!pageRoot) throw new Error('Cannot find doc page');
         const imageBlob = await fetch(
           `${location.origin}/test-card-1.png`
         ).then(response => response.blob());
         const storage = doc.blobSync;
         const sourceId = await storage.set(imageBlob);
-        doc.addBlock('affine:image', { sourceId }, note);
-        doc.addBlock('affine:embed-github', { url: embedUrl }, note);
+        doc.addBlock('nexio:image', { sourceId }, note);
+        doc.addBlock('nexio:embed-github', { url: embedUrl }, note);
       },
       { bookMarkUrl, embedUrl }
     );
-    const codeComponent = page.locator('affine-code');
+    const codeComponent = page.locator('nexio-code');
     const codeComponentrect = await codeComponent.boundingBox();
     if (!codeComponentrect) {
       throw new Error('code-block not found');
@@ -99,9 +99,9 @@ test(
       codeComponentrect.x + 20,
       codeComponentrect.y + codeComponentrect.height + 8
     );
-    await assertBlockFlavour(page, '7', 'affine:paragraph');
+    await assertBlockFlavour(page, '7', 'nexio:paragraph');
 
-    const dividerComponent = page.locator('affine-divider');
+    const dividerComponent = page.locator('nexio-divider');
     const dividerComponentRect = await dividerComponent.boundingBox();
     if (!dividerComponentRect) {
       throw new Error('divider-block not found');
@@ -110,9 +110,9 @@ test(
       dividerComponentRect.x + 20,
       dividerComponentRect.y + dividerComponentRect.height + 8
     );
-    await assertBlockFlavour(page, '8', 'affine:paragraph');
+    await assertBlockFlavour(page, '8', 'nexio:paragraph');
 
-    const bookmarkComponent = page.locator('affine-bookmark');
+    const bookmarkComponent = page.locator('nexio-bookmark');
     const bookmarkComponentRect = await bookmarkComponent.boundingBox();
     if (!bookmarkComponentRect) {
       throw new Error('bookmark-block not found');
@@ -121,17 +121,17 @@ test(
       bookmarkComponentRect.x + 20,
       bookmarkComponentRect.y + bookmarkComponentRect.height + 8
     );
-    await assertBlockFlavour(page, '9', 'affine:paragraph');
+    await assertBlockFlavour(page, '9', 'nexio:paragraph');
 
     await page.evaluate(() => {
-      const viewport = document.querySelector('.affine-page-viewport');
+      const viewport = document.querySelector('.nexio-page-viewport');
       if (!viewport) {
         throw new Error();
       }
       viewport.scrollTo(0, 600);
     });
 
-    const imageComponent = page.locator('affine-image');
+    const imageComponent = page.locator('nexio-image');
     const imageComponentRect = await imageComponent.boundingBox();
     if (!imageComponentRect) {
       throw new Error('image-block not found');
@@ -140,6 +140,6 @@ test(
       imageComponentRect.x + 20,
       imageComponentRect.y + imageComponentRect.height + 8
     );
-    await assertBlockFlavour(page, '10', 'affine:paragraph');
+    await assertBlockFlavour(page, '10', 'nexio:paragraph');
   }
 );

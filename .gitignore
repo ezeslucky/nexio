@@ -74,7 +74,7 @@ target
 *.node
 tsconfig.node.tsbuildinfo
 lib
-affine.db
+nexio.db
 apps/web/next-routes.conf
 .nx
 

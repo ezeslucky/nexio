@@ -1,10 +1,10 @@
 import {
   getDateFromUrl,
   JournalPlaceholder,
-} from '@affine/core/desktop/pages/workspace/journals';
-import { JournalService } from '@affine/core/modules/journal';
-import { ViewService, WorkbenchService } from '@affine/core/modules/workbench';
-import { i18nTime } from '@affine/i18n';
+} from '@nexio/core/desktop/pages/workspace/journals';
+import { JournalService } from '@nexio/core/modules/journal';
+import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
+import { i18nTime } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import dayjs from 'dayjs';

@@ -1,31 +1,31 @@
-import { useConfirmModal } from '@affine/component';
-import { AIProvider, ChatPanel } from '@affine/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { NotificationServiceImpl } from '@affine/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@affine/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+import { useConfirmModal } from '@nexio/component';
+import { AIProvider, ChatPanel } from '@nexio/core/blocksuite/ai';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
+import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
+import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
+import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
 import {
   AIDraftService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { AppThemeService } from '@affine/core/modules/theme';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
-import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
+} from '@nexio/core/modules/ai-button';
+import { AIModelService } from '@nexio/core/modules/ai-button/services/models';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { PeekViewService } from '@nexio/core/modules/peek-view';
+import { AppThemeService } from '@nexio/core/modules/theme';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
 import { useFramework, useService } from '@toeverything/infra';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import * as styles from './chat.css';
 
 export interface SidebarTabProps {
-  editor: AffineEditorContainer | null;
+  editor: NexioEditorContainer | null;
   onLoad?: ((component: HTMLElement) => void) | null;
 }
 
@@ -92,14 +92,14 @@ export const EditorChatPanel = forwardRef(function EditorChatPanel(
       chatPanelRef.current.reasoningConfig = reasoningConfig;
       chatPanelRef.current.playgroundConfig = playgroundConfig;
       chatPanelRef.current.extensions = specs;
-      chatPanelRef.current.affineFeatureFlagService =
+      chatPanelRef.current.nexioFeatureFlagService =
         framework.get(FeatureFlagService);
-      chatPanelRef.current.affineWorkspaceDialogService = framework.get(
+      chatPanelRef.current.nexioWorkspaceDialogService = framework.get(
         WorkspaceDialogService
       );
-      chatPanelRef.current.affineWorkbenchService =
+      chatPanelRef.current.nexioWorkbenchService =
         framework.get(WorkbenchService);
-      chatPanelRef.current.affineThemeService = framework.get(AppThemeService);
+      chatPanelRef.current.nexioThemeService = framework.get(AppThemeService);
       chatPanelRef.current.peekViewService = framework.get(PeekViewService);
       chatPanelRef.current.notificationService = new NotificationServiceImpl(
         confirmModal.closeConfirmModal,

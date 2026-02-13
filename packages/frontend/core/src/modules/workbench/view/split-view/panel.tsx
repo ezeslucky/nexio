@@ -4,10 +4,10 @@ import {
   shallowUpdater,
   useDraggable,
   useDropTarget,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   CloseIcon,
   ExpandFullIcon,
@@ -134,8 +134,8 @@ export const SplitViewPanel = memo(function SplitViewPanel({
     };
   }, [size, order]);
 
-  const { dropTargetRef } = useDropTarget<AffineDNDData>(() => {
-    const handleDrag = (data: DropTargetDragEvent<AffineDNDData>) => {
+  const { dropTargetRef } = useDropTarget<NexioDNDData>(() => {
+    const handleDrag = (data: DropTargetDragEvent<NexioDNDData>) => {
       // only the first view has left edge
       const edge = data.closestEdge as 'left' | 'right';
       const switchEdge = edge === 'left' && !isFirst;
@@ -168,7 +168,7 @@ export const SplitViewPanel = memo(function SplitViewPanel({
     };
   }, [index, isFirst, order, setDraggingOverView, view, views]);
 
-  const { dragRef } = useDraggable<AffineDNDData>(() => {
+  const { dragRef } = useDraggable<NexioDNDData>(() => {
     return {
       data: () => {
         return {

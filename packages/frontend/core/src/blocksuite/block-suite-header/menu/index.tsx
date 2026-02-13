@@ -1,29 +1,29 @@
-import { notify, toast, useConfirmModal } from '@affine/component';
+import { notify, toast, useConfirmModal } from '@nexio/component';
 import {
   Menu,
   MenuItem,
   MenuSeparator,
   MenuSub,
-} from '@affine/component/ui/menu';
-import { PageHistoryModal } from '@affine/core/components/affine/page-history-modal';
-import { useGuard } from '@affine/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useExportPage } from '@affine/core/components/hooks/affine/use-export-page';
-import { Export, MoveToTrash } from '@affine/core/components/page-list';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { useDetailPageHeaderResponsive } from '@affine/core/desktop/pages/workspace/detail-page/use-header-responsive';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { EditorService } from '@affine/core/modules/editor';
-import { OpenInAppService } from '@affine/core/modules/open-in-app/services';
-import { GuardService } from '@affine/core/modules/permissions';
-import { ShareMenuContent } from '@affine/core/modules/share-menu';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
-import type { Store } from '@blocksuite/affine/store';
+} from '@nexio/component/ui/menu';
+import { PageHistoryModal } from '@nexio/core/components/nexio/page-history-modal';
+import { useGuard } from '@nexio/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
+import { useExportPage } from '@nexio/core/components/hooks/nexio/use-export-page';
+import { Export, MoveToTrash } from '@nexio/core/components/page-list';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { useDetailPageHeaderResponsive } from '@nexio/core/desktop/pages/workspace/detail-page/use-header-responsive';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { EditorService } from '@nexio/core/modules/editor';
+import { OpenInAppService } from '@nexio/core/modules/open-in-app/services';
+import { GuardService } from '@nexio/core/modules/permissions';
+import { ShareMenuContent } from '@nexio/core/modules/share-menu';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   DuplicateIcon,
   EdgelessIcon,
@@ -197,11 +197,11 @@ const PageHeaderMenuItem = ({
   const handleOpenTrashModal = useCallback(() => {
     track.$.header.docOptions.deleteDoc();
     openConfirmModal({
-      title: t['com.affine.moveToTrash.confirmModal.title'](),
-      description: t['com.affine.moveToTrash.confirmModal.description']({
+      title: t['com.nexio.moveToTrash.confirmModal.title'](),
+      description: t['com.nexio.moveToTrash.confirmModal.description']({
         title: editorService.editor.doc.title$.value || t['Untitled'](),
       }),
-      cancelText: t['com.affine.confirmModal.button.cancel'](),
+      cancelText: t['com.nexio.confirmModal.button.cancel'](),
       confirmText: t.Delete(),
       confirmButtonOptions: {
         variant: 'error',
@@ -209,7 +209,7 @@ const PageHeaderMenuItem = ({
       onConfirm: async () => {
         const canTrash = await guardService.can('Doc_Trash', pageId);
         if (!canTrash) {
-          toast(t['com.affine.no-permission']());
+          toast(t['com.nexio.no-permission']());
           return;
         }
         editorService.editor.doc.moveToTrash();
@@ -232,12 +232,12 @@ const PageHeaderMenuItem = ({
     notify.success({
       title:
         primaryMode === 'page'
-          ? t['com.affine.toastMessage.defaultMode.edgeless.title']()
-          : t['com.affine.toastMessage.defaultMode.page.title'](),
+          ? t['com.nexio.toastMessage.defaultMode.edgeless.title']()
+          : t['com.nexio.toastMessage.defaultMode.page.title'](),
       message:
         primaryMode === 'page'
-          ? t['com.affine.toastMessage.defaultMode.edgeless.message']()
-          : t['com.affine.toastMessage.defaultMode.page.message'](),
+          ? t['com.nexio.toastMessage.defaultMode.edgeless.message']()
+          : t['com.nexio.toastMessage.defaultMode.page.message'](),
     });
   }, [primaryMode, editorService, t]);
 
@@ -312,7 +312,7 @@ const PageHeaderMenuItem = ({
               <ShareMenuContent
                 workspaceMetadata={workspace.meta}
                 currentPage={page}
-                onEnableAffineCloud={() =>
+                onEnableNexioCloud={() =>
                   confirmEnableCloud(workspace, {
                     openPageId: page.id,
                   })
@@ -327,7 +327,7 @@ const PageHeaderMenuItem = ({
             onOpenChange: handleShareMenuOpenChange,
           }}
         >
-          {t['com.affine.share-menu.shareButton']()}
+          {t['com.nexio.share-menu.shareButton']()}
         </MenuSub>
       ) : null}
       <MenuSeparator />
@@ -361,8 +361,8 @@ const PageHeaderMenuItem = ({
         disabled={!canEdit}
       >
         {primaryMode === 'page'
-          ? t['com.affine.editorDefaultMode.edgeless']()
-          : t['com.affine.editorDefaultMode.page']()}
+          ? t['com.nexio.editorDefaultMode.edgeless']()
+          : t['com.nexio.editorDefaultMode.page']()}
       </MenuItem>
       <MenuItem
         data-testid="editor-option-menu-favorite"
@@ -370,8 +370,8 @@ const PageHeaderMenuItem = ({
         prefixIcon={<IsFavoriteIcon favorite={favorite} />}
       >
         {favorite
-          ? t['com.affine.favoritePageOperation.remove']()
-          : t['com.affine.favoritePageOperation.add']()}
+          ? t['com.nexio.favoritePageOperation.remove']()
+          : t['com.nexio.favoritePageOperation.add']()}
       </MenuItem>
       <MenuSeparator />
       <MenuItem
@@ -379,7 +379,7 @@ const PageHeaderMenuItem = ({
         data-testid="editor-option-menu-open-in-new-tab"
         onSelect={handleOpenInNewTab}
       >
-        {t['com.affine.workbench.tab.page-menu-open']()}
+        {t['com.nexio.workbench.tab.page-menu-open']()}
       </MenuItem>
       {BUILD_CONFIG.isElectron && (
         <MenuItem
@@ -387,7 +387,7 @@ const PageHeaderMenuItem = ({
           data-testid="editor-option-menu-open-in-split-new"
           onSelect={handleOpenInSplitView}
         >
-          {t['com.affine.workbench.split-view.page-menu-open']()}
+          {t['com.nexio.workbench.split-view.page-menu-open']()}
         </MenuItem>
       )}
 
@@ -397,7 +397,7 @@ const PageHeaderMenuItem = ({
         data-testid="editor-option-menu-info"
         onSelect={openInfoModal}
       >
-        {t['com.affine.page-properties.page-info.view']()}
+        {t['com.nexio.page-properties.page-info.view']()}
       </MenuItem>
       {currentMode === 'page' ? (
         <MenuItem
@@ -405,7 +405,7 @@ const PageHeaderMenuItem = ({
           data-testid="editor-option-toc"
           onSelect={openOutlinePanel}
         >
-          {t['com.affine.header.option.view-toc']()}
+          {t['com.nexio.header.option.view-toc']()}
         </MenuItem>
       ) : (
         <MenuItem
@@ -413,7 +413,7 @@ const PageHeaderMenuItem = ({
           data-testid="editor-option-frame"
           onSelect={openAllFrames}
         >
-          {t['com.affine.header.option.view-frame']()}
+          {t['com.nexio.header.option.view-frame']()}
         </MenuItem>
       )}
       <MenuItem
@@ -421,7 +421,7 @@ const PageHeaderMenuItem = ({
         data-testid="editor-option-menu-history"
         onSelect={openHistoryModal}
       >
-        {t['com.affine.history.view-history-version']()}
+        {t['com.nexio.history.view-history-version']()}
       </MenuItem>
       <MenuSeparator />
       {!isJournal && (
@@ -430,7 +430,7 @@ const PageHeaderMenuItem = ({
           data-testid="editor-option-menu-duplicate"
           onSelect={handleDuplicate}
         >
-          {t['com.affine.header.option.duplicate']()}
+          {t['com.nexio.header.option.duplicate']()}
         </MenuItem>
       )}
       <MenuItem
@@ -453,7 +453,7 @@ const PageHeaderMenuItem = ({
           data-testid="editor-option-menu-link"
           onSelect={onOpenInDesktop}
         >
-          {t['com.affine.header.option.open-in-desktop']()}
+          {t['com.nexio.header.option.open-in-desktop']()}
         </MenuItem>
       ) : null}
     </>

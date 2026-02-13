@@ -1,6 +1,6 @@
-import { useThemeColorV2 } from '@affine/component';
-import { CollectionService } from '@affine/core/modules/collection';
-import { GlobalContextService } from '@affine/core/modules/global-context';
+import { useThemeColorV2 } from '@nexio/component';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';

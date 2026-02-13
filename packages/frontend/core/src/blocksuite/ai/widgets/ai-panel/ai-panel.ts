@@ -1,24 +1,24 @@
-import { ColorScheme } from '@blocksuite/affine/model';
+import { ColorScheme } from '@blocksuite/nexio/model';
 import {
   DocModeProvider,
   NotificationProvider,
   ThemeProvider,
   ToolbarFlag,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { unsafeCSSVar } from '@blocksuite/affine/shared/theme';
+} from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
 import {
   getPageRootByElement,
   stopPropagation,
-} from '@blocksuite/affine/shared/utils';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/affine/std/inline';
-import type { BaseSelection } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/utils';
+import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/nexio/std/inline';
+import type { BaseSelection } from '@blocksuite/nexio/store';
 import {
-  AFFINE_VIEWPORT_OVERLAY_WIDGET,
-  type AffineViewportOverlayWidget,
-} from '@blocksuite/affine/widgets/viewport-overlay';
+  NEXIO_VIEWPORT_OVERLAY_WIDGET,
+  type NexioViewportOverlayWidget,
+} from '@blocksuite/nexio/widgets/viewport-overlay';
 import {
   autoPlacement,
   autoUpdate,
@@ -38,21 +38,21 @@ import { literal, unsafeStatic } from 'lit/static-html.js';
 import { type AIError } from '../../provider';
 import type { AIPanelGenerating } from './components/index.js';
 import type {
-  AffineAIPanelState,
-  AffineAIPanelWidgetConfig,
+  NexioAIPanelState,
+  NexioAIPanelWidgetConfig,
   AIActionAnswer,
 } from './type.js';
 import { mergeAIActionAnswer } from './utils';
-export const AFFINE_AI_PANEL_WIDGET = 'affine-ai-panel-widget';
+export const NEXIO_AI_PANEL_WIDGET = 'nexio-ai-panel-widget';
 
-export class AffineAIPanelWidget extends WidgetComponent {
+export class NexioAIPanelWidget extends WidgetComponent {
   static override styles = css`
     :host {
       display: flex;
       outline: none;
       border-radius: var(--8, 8px);
       border: 1px solid;
-      border-color: ${unsafeCSSVar('--affine-border-color')};
+      border-color: ${unsafeCSSVar('--nexio-border-color')};
       background: ${unsafeCSSVar('backgroundOverlayPanelColor')};
       box-shadow: ${unsafeCSSVar('overlayShadow')};
 
@@ -63,23 +63,23 @@ export class AffineAIPanelWidget extends WidgetComponent {
       left: 0;
       overflow-y: auto;
       scrollbar-width: none !important;
-      z-index: var(--affine-z-index-popover);
-      --affine-font-family: var(--affine-font-sans-family);
+      z-index: var(--nexio-z-index-popover);
+      --nexio-font-family: var(--nexio-font-sans-family);
     }
 
     :host([data-app-theme='light']) {
       background: ${unsafeCSS(
-        lightCssVariables['--affine-background-overlay-panel-color']
+        lightCssVariables['--nexio-background-overlay-panel-color']
       )};
-      border-color: ${unsafeCSS(lightCssVariables['--affine-border-color'])};
-      box-shadow: ${unsafeCSS(lightCssVariables['--affine-overlay-shadow'])};
+      border-color: ${unsafeCSS(lightCssVariables['--nexio-border-color'])};
+      box-shadow: ${unsafeCSS(lightCssVariables['--nexio-overlay-shadow'])};
     }
     :host([data-app-theme='dark']) {
       background: ${unsafeCSS(
-        darkCssVariables['--affine-background-overlay-panel-color']
+        darkCssVariables['--nexio-background-overlay-panel-color']
       )};
-      border-color: ${unsafeCSS(darkCssVariables['--affine-border-color'])};
-      box-shadow: ${unsafeCSS(darkCssVariables['--affine-overlay-shadow'])};
+      border-color: ${unsafeCSS(darkCssVariables['--nexio-border-color'])};
+      box-shadow: ${unsafeCSS(darkCssVariables['--nexio-overlay-shadow'])};
     }
 
     .ai-panel-container {
@@ -286,7 +286,7 @@ export class AffineAIPanelWidget extends WidgetComponent {
     }
   };
 
-  setState = (state: AffineAIPanelState, reference: Element) => {
+  setState = (state: NexioAIPanelState, reference: Element) => {
     this.state = state;
     this._autoUpdatePosition(reference);
   };
@@ -358,9 +358,9 @@ export class AffineAIPanelWidget extends WidgetComponent {
     const rootId = this.host.store.root?.id;
     return rootId
       ? (this.host.view.getWidget(
-          AFFINE_VIEWPORT_OVERLAY_WIDGET,
+          NEXIO_VIEWPORT_OVERLAY_WIDGET,
           rootId
-        ) as AffineViewportOverlayWidget)
+        ) as NexioViewportOverlayWidget)
       : null;
   }
 
@@ -370,7 +370,7 @@ export class AffineAIPanelWidget extends WidgetComponent {
     //    child paragraph
     {
       const childrenContainer = reference.querySelector(
-        '.affine-block-children-container'
+        '.nexio-block-children-container'
       );
       if (childrenContainer && childrenContainer.previousElementSibling) {
         reference = childrenContainer.previousElementSibling;
@@ -612,20 +612,20 @@ export class AffineAIPanelWidget extends WidgetComponent {
   }
 
   @property({ attribute: false })
-  accessor config: AffineAIPanelWidgetConfig | null = null;
+  accessor config: NexioAIPanelWidgetConfig | null = null;
 
   @query('ai-panel-generating')
   accessor generatingElement: AIPanelGenerating | null = null;
 
   @property()
-  accessor state: AffineAIPanelState = 'hidden';
+  accessor state: NexioAIPanelState = 'hidden';
 
   @property({ attribute: 'data-app-theme', reflect: true })
   accessor appTheme: ColorScheme = ColorScheme.Light;
 }
 
 export const aiPanelWidget = WidgetViewExtension(
-  'affine:page',
-  AFFINE_AI_PANEL_WIDGET,
-  literal`${unsafeStatic(AFFINE_AI_PANEL_WIDGET)}`
+  'nexio:page',
+  NEXIO_AI_PANEL_WIDGET,
+  literal`${unsafeStatic(NEXIO_AI_PANEL_WIDGET)}`
 );

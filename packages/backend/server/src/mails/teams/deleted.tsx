@@ -25,7 +25,7 @@ export default function TeamWorkspaceDeleted(props: TeamWorkspaceDeletedProps) {
           undone.
         </P>
         <P>
-          Thank you for your support of AFFiNE. We hope to see you again in the
+          Thank you for your support of NEXIO. We hope to see you again in the
           future.
         </P>
       </Content>

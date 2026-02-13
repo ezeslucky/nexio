@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 
 import { DocCard, type DocCardProps } from '../../components';
 import {
@@ -18,7 +18,7 @@ export interface SearchResultsProps {
 const Empty = () => {
   const t = useI18n();
   return (
-    <div className={styles.empty}>{t['com.affine.mobile.search.empty']()}</div>
+    <div className={styles.empty}>{t['com.nexio.mobile.search.empty']()}</div>
   );
 };
 

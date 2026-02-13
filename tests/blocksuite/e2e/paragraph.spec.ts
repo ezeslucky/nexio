@@ -242,10 +242,10 @@ test('insert new paragraph block by enter', async ({ page }) => {
   await type(page, 'world');
   await assertRichTexts(page, ['', 'hello', 'world', '']);
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:paragraph',
-    'affine:paragraph',
-    'affine:paragraph',
-    'affine:paragraph',
+    'nexio:paragraph',
+    'nexio:paragraph',
+    'nexio:paragraph',
+    'nexio:paragraph',
   ]);
 });
 
@@ -264,8 +264,8 @@ test('split paragraph block by enter', async ({ page }) => {
   await pressEnter(page);
   await assertRichTexts(page, ['he', 'llo']);
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:paragraph',
-    'affine:paragraph',
+    'nexio:paragraph',
+    'nexio:paragraph',
   ]);
   await assertRichTextInlineRange(page, 1, 0, 0);
 
@@ -299,8 +299,8 @@ test('split paragraph block with selected text by enter', async ({ page }) => {
   await pressEnter(page);
   await assertRichTexts(page, ['he', 'o']);
   await assertBlockChildrenFlavours(page, '1', [
-    'affine:paragraph',
-    'affine:paragraph',
+    'nexio:paragraph',
+    'nexio:paragraph',
   ]);
   await assertRichTextInlineRange(page, 1, 0, 0);
 
@@ -603,15 +603,15 @@ test('switch between paragraph types', async ({ page }) => {
   await focusRichText(page);
   await type(page, 'hello');
 
-  const selector = '.affine-paragraph-rich-text-wrapper';
+  const selector = '.nexio-paragraph-rich-text-wrapper';
 
-  await updateBlockType(page, 'affine:paragraph', 'h1');
+  await updateBlockType(page, 'nexio:paragraph', 'h1');
   await assertClassName(page, selector, /h1/);
 
-  await updateBlockType(page, 'affine:paragraph', 'h2');
+  await updateBlockType(page, 'nexio:paragraph', 'h2');
   await assertClassName(page, selector, /h2/);
 
-  await updateBlockType(page, 'affine:paragraph', 'h3');
+  await updateBlockType(page, 'nexio:paragraph', 'h3');
   await assertClassName(page, selector, /h3/);
 
   await undoByClick(page);
@@ -630,7 +630,7 @@ test('delete at start of paragraph block', async ({ page }) => {
   await pressEnter(page);
   await type(page, 'a');
 
-  await updateBlockType(page, 'affine:paragraph', 'h1');
+  await updateBlockType(page, 'nexio:paragraph', 'h1');
   await focusRichText(page, 1);
   await assertBlockType(page, '2', 'text');
   await assertBlockType(page, '3', 'h1');
@@ -666,7 +666,7 @@ test('delete at start of paragraph immediately following list', async ({
 
   // text -> bulleted
   await focusRichText(page, 1);
-  await updateBlockType(page, 'affine:list', 'bulleted');
+  await updateBlockType(page, 'nexio:list', 'bulleted');
   await assertBlockType(page, '2', 'text');
   await assertBlockType(page, '4', 'bulleted');
   await pressBackspace(page, 2);
@@ -685,7 +685,7 @@ test('delete at start of paragraph immediately following list', async ({
 
   // text -> numbered
   await focusRichText(page, 1);
-  await updateBlockType(page, 'affine:list', 'numbered');
+  await updateBlockType(page, 'nexio:list', 'numbered');
   await assertBlockType(page, '2', 'text');
   await assertBlockType(page, '6', 'numbered');
   await pressBackspace(page, 2);
@@ -704,7 +704,7 @@ test('delete at start of paragraph immediately following list', async ({
 
   // text -> todo
   await focusRichText(page, 1);
-  await updateBlockType(page, 'affine:list', 'todo');
+  await updateBlockType(page, 'nexio:list', 'todo');
   await assertBlockType(page, '2', 'text');
   await assertBlockType(page, '8', 'todo');
   await pressBackspace(page, 2);
@@ -866,19 +866,19 @@ test('press arrow down should move caret to the start of line', async ({
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('nexio:note', {}, rootId);
     doc.addBlock(
-      'affine:paragraph',
+      'nexio:paragraph',
       {
         text: new window.$blocksuite.store.Text('0'.repeat(100)),
       },
       note
     );
     doc.addBlock(
-      'affine:paragraph',
+      'nexio:paragraph',
       {
         text: new window.$blocksuite.store.Text('1'),
       },
@@ -901,18 +901,18 @@ test('press arrow up in the second line should move caret to the first line', as
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
+    const note = doc.addBlock('nexio:note', {}, rootId);
     const delta = Array.from({ length: 150 }, (_, i) => {
       return i % 2 === 0
         ? { insert: 'i', attributes: { italic: true } }
         : { insert: 'b', attributes: { bold: true } };
     }) as DeltaInsert[];
     const text = new window.$blocksuite.store.Text(delta);
-    doc.addBlock('affine:paragraph', { text }, note);
-    doc.addBlock('affine:paragraph', {}, note);
+    doc.addBlock('nexio:paragraph', { text }, note);
+    doc.addBlock('nexio:paragraph', {}, note);
   });
 
   // Focus the empty paragraph
@@ -953,15 +953,15 @@ test('press arrow down in indent line should not move caret to the start of line
   await enterPlaygroundRoom(page);
   await page.evaluate(() => {
     const { doc } = window;
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    const note = doc.addBlock('affine:note', {}, rootId);
-    const p1 = doc.addBlock('affine:paragraph', {}, note);
-    const p2 = doc.addBlock('affine:paragraph', {}, p1);
-    doc.addBlock('affine:paragraph', {}, p2);
+    const note = doc.addBlock('nexio:note', {}, rootId);
+    const p1 = doc.addBlock('nexio:paragraph', {}, note);
+    const p2 = doc.addBlock('nexio:paragraph', {}, p1);
+    doc.addBlock('nexio:paragraph', {}, p2);
     doc.addBlock(
-      'affine:paragraph',
+      'nexio:paragraph',
       {
         text: new window.$blocksuite.store.Text('0'),
       },
@@ -996,7 +996,7 @@ test('should placeholder works', async ({ page }) => {
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);
   await focusRichText(page);
-  const placeholder = page.locator('.affine-paragraph-placeholder.visible');
+  const placeholder = page.locator('.nexio-paragraph-placeholder.visible');
   await expect(placeholder).toBeVisible();
   await expect(placeholder).toHaveCount(1);
   await expect(placeholder).toContainText("Type '/' for commands");
@@ -1006,11 +1006,11 @@ test('should placeholder works', async ({ page }) => {
   await pressBackspace(page);
 
   await expect(placeholder).toBeVisible();
-  await updateBlockType(page, 'affine:paragraph', 'h1');
+  await updateBlockType(page, 'nexio:paragraph', 'h1');
 
   await expect(placeholder).toBeVisible();
   await expect(placeholder).toHaveText('Heading 1');
-  await updateBlockType(page, 'affine:paragraph', 'text');
+  await updateBlockType(page, 'nexio:paragraph', 'text');
   await focusRichText(page, 0);
   await expect(placeholder).toBeVisible();
   await expect(placeholder).toContainText("Type '/' for commands");
@@ -1035,7 +1035,7 @@ test('should placeholder not show when multiple blocks are selected', async ({
   // ←
   await page.mouse.move(coord.x + 20, coord.y + 50, { steps: 20 });
   await page.mouse.up();
-  const placeholder = page.locator('.affine-paragraph-placeholder.visible');
+  const placeholder = page.locator('.nexio-paragraph-placeholder.visible');
   await expect(placeholder).toBeHidden();
 });
 
@@ -1044,12 +1044,12 @@ test.describe('press ArrowDown when cursor is at the last line of a block', () =
     await enterPlaygroundRoom(page);
     await page.evaluate(() => {
       const { doc } = window;
-      const rootId = doc.addBlock('affine:page', {
+      const rootId = doc.addBlock('nexio:page', {
         title: new window.$blocksuite.store.Text(),
       });
-      const note = doc.addBlock('affine:note', {}, rootId);
+      const note = doc.addBlock('nexio:note', {}, rootId);
       doc.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         {
           text: new window.$blocksuite.store.Text(
             'This is the 2nd last block.'
@@ -1058,7 +1058,7 @@ test.describe('press ArrowDown when cursor is at the last line of a block', () =
         note
       );
       doc.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         {
           text: new window.$blocksuite.store.Text('This is the last block.'),
         },
@@ -1215,15 +1215,15 @@ test('delete at the start of paragraph (multiple notes)', async ({ page }) => {
   await page.evaluate(() => {
     const { doc } = window;
 
-    const rootId = doc.addBlock('affine:page', {
+    const rootId = doc.addBlock('nexio:page', {
       title: new window.$blocksuite.store.Text(),
     });
-    doc.addBlock('affine:surface', {}, rootId);
+    doc.addBlock('nexio:surface', {}, rootId);
 
     ['123', '456'].forEach(text => {
-      const noteId = doc.addBlock('affine:note', {}, rootId);
+      const noteId = doc.addBlock('nexio:note', {}, rootId);
       doc.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         {
           text: new window.$blocksuite.store.Text(text),
         },
@@ -1327,9 +1327,9 @@ test.describe('readonly mode', () => {
     await focusRichText(page);
 
     await pressEnter(page);
-    await updateBlockType(page, 'affine:paragraph', 'h1');
+    await updateBlockType(page, 'nexio:paragraph', 'h1');
 
-    const placeholder = page.locator('.affine-paragraph-placeholder.visible');
+    const placeholder = page.locator('.nexio-paragraph-placeholder.visible');
 
     await switchReadonly(page);
     await focusRichText(page, 0);

@@ -1,6 +1,6 @@
 use std::hint::black_box;
 
-use affine_common::hashcash::Stamp;
+use nexio_common::hashcash::Stamp;
 use criterion::{criterion_group, criterion_main, BenchmarkId, Criterion};
 
 fn bench_hashcash(c: &mut Criterion) {

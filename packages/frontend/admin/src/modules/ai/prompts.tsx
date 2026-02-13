@@ -1,6 +1,6 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Separator } from '@affine/admin/components/ui/separator';
-import type { CopilotPromptMessageRole } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import type { CopilotPromptMessageRole } from '@nexio/graphql';
 import { useCallback, useState } from 'react';
 
 import { useRightPanel } from '../panel/context';

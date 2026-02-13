@@ -65,7 +65,7 @@ export const collapsibleHeaderCaption = style({
   color: cssVar('textSecondaryColor'),
 });
 
-export const affineCloudHeader = style({
+export const nexioCloudHeader = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

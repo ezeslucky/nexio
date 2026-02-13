@@ -1,8 +1,8 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
-import { clipboardConfigs } from '@blocksuite/affine/foundation/clipboard';
-import { defaultImageProxyMiddleware } from '@blocksuite/affine/shared/adapters';
-import { replaceSelectedTextWithBlocksCommand } from '@blocksuite/affine/shared/commands';
-import { isInsideEdgelessEditor } from '@blocksuite/affine/shared/utils';
+import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
+import { clipboardConfigs } from '@blocksuite/nexio/foundation/clipboard';
+import { defaultImageProxyMiddleware } from '@blocksuite/nexio/shared/adapters';
+import { replaceSelectedTextWithBlocksCommand } from '@blocksuite/nexio/shared/commands';
+import { isInsideEdgelessEditor } from '@blocksuite/nexio/shared/utils';
 import {
   type BlockComponent,
   BlockSelection,
@@ -11,12 +11,12 @@ import {
   type EditorHost,
   SurfaceSelection,
   type TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import {
   type BlockModel,
   type BlockSnapshot,
   Slice,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { Doc as YDoc } from 'yjs';
 
 import {
@@ -24,11 +24,11 @@ import {
   markDownToDoc,
   markdownToSnapshot,
 } from '../../utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 
 const getNoteId = (blockElement: BlockComponent) => {
   let element = blockElement;
-  while (element.flavour !== 'affine:note') {
+  while (element.flavour !== 'nexio:note') {
     if (!element.parentComponent) {
       break;
     }
@@ -129,9 +129,9 @@ export const replace = async (
       const fragment = fragmentDoc.getStore();
       fragmentDoc.load();
 
-      const rootId = fragment.addBlock('affine:page');
-      fragment.addBlock('affine:surface', {}, rootId);
-      const noteId = fragment.addBlock('affine:note', {}, rootId);
+      const rootId = fragment.addBlock('nexio:page');
+      fragment.addBlock('nexio:surface', {}, rootId);
+      const noteId = fragment.addBlock('nexio:note', {}, rootId);
 
       const { snapshot, transformer } = await markdownToSnapshot(
         content,
@@ -141,7 +141,7 @@ export const replace = async (
 
       if (snapshot) {
         const blockSnapshots = (
-          snapshot.content[0].flavour === 'affine:note'
+          snapshot.content[0].flavour === 'nexio:note'
             ? snapshot.content[0].children
             : snapshot.content
         ) as BlockSnapshot[];
@@ -187,7 +187,7 @@ export const replace = async (
   }
 };
 
-export const copyTextAnswer = async (panel: AffineAIPanelWidget) => {
+export const copyTextAnswer = async (panel: NexioAIPanelWidget) => {
   if (!panel.answer) {
     return false;
   }
@@ -197,7 +197,7 @@ export const copyTextAnswer = async (panel: AffineAIPanelWidget) => {
 export const copyText = async (text: string) => {
   const previewDoc = await markDownToDoc(text, [defaultImageProxyMiddleware]);
   const models = previewDoc
-    .getBlocksByFlavour('affine:note')
+    .getBlocksByFlavour('nexio:note')
     .map(b => b.model)
     .flatMap(model => model.children);
   const slice = Slice.fromModels(previewDoc, models);

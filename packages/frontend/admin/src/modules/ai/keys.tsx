@@ -1,7 +1,7 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Input } from '@nexio/admin/components/ui/input';
+import { Label } from '@nexio/admin/components/ui/label';
+import { Separator } from '@nexio/admin/components/ui/separator';
 import { useState } from 'react';
 
 export function Keys() {

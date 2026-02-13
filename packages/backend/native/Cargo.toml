@@ -1,13 +1,13 @@
 [package]
 edition = "2021"
-name    = "affine_server_native"
+name    = "nexio_server_native"
 version = "1.0.0"
 
 [lib]
 crate-type = ["cdylib"]
 
 [dependencies]
-affine_common = { workspace = true, features = ["doc-loader"] }
+nexio_common = { workspace = true, features = ["doc-loader"] }
 chrono        = { workspace = true }
 file-format   = { workspace = true }
 infer         = { workspace = true }

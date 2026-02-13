@@ -4,7 +4,7 @@ import { SkipThrottle, Throttle as RawThrottle } from '@nestjs/throttler';
 import { ThrottlerType } from './config';
 
 export type Throttlers = 'default' | 'strict' | 'authenticated';
-export const THROTTLER_PROTECTED = 'affine_throttler:protected';
+export const THROTTLER_PROTECTED = 'nexio_throttler:protected';
 
 /**
  * Choose what throttler to use

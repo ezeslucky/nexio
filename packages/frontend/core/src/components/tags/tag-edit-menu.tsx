@@ -5,8 +5,8 @@ import {
   type MenuProps,
   MenuSeparator,
   Scrollable,
-} from '@affine/component';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon, DoneIcon, TagsIcon } from '@blocksuite/icons/rc';
 import type { MouseEventHandler, PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -81,7 +81,7 @@ const DesktopTagEditMenu = ({
                 jumpToTag(tag.id);
               }}
             >
-              {t['com.affine.page-properties.tags.open-tags-page']()}
+              {t['com.nexio.page-properties.tags.open-tags-page']()}
             </MenuItem>
           ) : null}
           <MenuSeparator />

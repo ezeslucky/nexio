@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import { type LoaderFunction, Navigate, useLoaderData } from 'react-router-dom';
 
 const trustedDomain = [
@@ -10,7 +10,7 @@ const trustedDomain = [
   'youtube.com',
   't.me',
   'reddit.com',
-  'affine.pro',
+  'nexio.pro',
 ];
 
 const logger = new DebugLogger('redirect_proxy');

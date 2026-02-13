@@ -62,11 +62,11 @@ test('should passthrough if version check is not enabled', async t => {
 
   t.is(res.status, 200);
 
-  res = await app.GET('/guarded/test').set('x-affine-version', '0.20.0');
+  res = await app.GET('/guarded/test').set('x-nexio-version', '0.20.0');
 
   t.is(res.status, 200);
 
-  res = await app.GET('/guarded/test').set('x-affine-version', 'invalid');
+  res = await app.GET('/guarded/test').set('x-nexio-version', 'invalid');
 
   t.is(res.status, 200);
   t.true(spy.notCalled);
@@ -82,17 +82,17 @@ test('should passthrough is version range is invalid', async t => {
     },
   });
 
-  let res = await app.GET('/guarded/test').set('x-affine-version', 'invalid');
+  let res = await app.GET('/guarded/test').set('x-nexio-version', 'invalid');
 
   t.is(res.status, 200);
 });
 
 test('should pass if client version is allowed', async t => {
-  let res = await app.GET('/guarded/test').set('x-affine-version', '0.20.0');
+  let res = await app.GET('/guarded/test').set('x-nexio-version', '0.20.0');
 
   t.is(res.status, 200);
 
-  res = await app.GET('/guarded/test').set('x-affine-version', '0.21.0');
+  res = await app.GET('/guarded/test').set('x-nexio-version', '0.21.0');
 
   t.is(res.status, 200);
 
@@ -104,7 +104,7 @@ test('should pass if client version is allowed', async t => {
     },
   });
 
-  res = await app.GET('/guarded/test').set('x-affine-version', '0.19.0');
+  res = await app.GET('/guarded/test').set('x-nexio-version', '0.19.0');
 
   t.is(res.status, 200);
 });
@@ -118,7 +118,7 @@ test('should fail if client version is not set or invalid', async t => {
     'Unsupported client with version [unset_or_invalid], required version is [>=0.20.0].'
   );
 
-  res = await app.GET('/guarded/test').set('x-affine-version', 'invalid');
+  res = await app.GET('/guarded/test').set('x-nexio-version', 'invalid');
 
   t.is(res.status, 403);
   t.is(
@@ -136,7 +136,7 @@ test('should tell upgrade if client version is lower than allowed', async t => {
     },
   });
 
-  let res = await app.GET('/guarded/test').set('x-affine-version', '0.20.0');
+  let res = await app.GET('/guarded/test').set('x-nexio-version', '0.20.0');
 
   t.is(res.status, 403);
   t.is(
@@ -154,7 +154,7 @@ test('should tell downgrade if client version is higher than allowed', async t =
     },
   });
 
-  let res = await app.GET('/guarded/test').set('x-affine-version', '0.23.0');
+  let res = await app.GET('/guarded/test').set('x-nexio-version', '0.23.0');
 
   t.is(res.status, 403);
   t.is(
@@ -174,18 +174,18 @@ test('should test prerelease version', async t => {
 
   let res = await app
     .GET('/guarded/test')
-    .set('x-affine-version', '0.19.0-canary.1');
+    .set('x-nexio-version', '0.19.0-canary.1');
 
   // 0.19.0-canary.1 is lower than 0.19.0 obviously
   t.is(res.status, 403);
 
   res = await app
     .GET('/guarded/test')
-    .set('x-affine-version', '0.20.0-canary.1');
+    .set('x-nexio-version', '0.20.0-canary.1');
 
   t.is(res.status, 200);
 
-  res = await app.GET('/guarded/test').set('x-affine-version', '0.20.0-beta.2');
+  res = await app.GET('/guarded/test').set('x-nexio-version', '0.20.0-beta.2');
 
   t.is(res.status, 200);
 });

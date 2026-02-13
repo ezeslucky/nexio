@@ -1,4 +1,4 @@
-import { Text, type Workspace } from '@blocksuite/affine/store';
+import { Text, type Workspace } from '@blocksuite/nexio/store';
 
 import type { InitFn } from './utils.js';
 
@@ -9,16 +9,16 @@ export const empty: InitFn = (collection: Workspace, id: string) => {
 
   doc.load(() => {
     // Add root block and surface block at root level
-    const rootId = store.addBlock('affine:page', {
+    const rootId = store.addBlock('nexio:page', {
       title: new Text(),
     });
 
-    store.addBlock('affine:surface', {}, rootId);
+    store.addBlock('nexio:surface', {}, rootId);
 
     // Add note block inside root block
-    const noteId = store.addBlock('affine:note', {}, rootId);
+    const noteId = store.addBlock('nexio:note', {}, rootId);
     // Add paragraph block inside note block
-    store.addBlock('affine:paragraph', {}, noteId);
+    store.addBlock('nexio:paragraph', {}, noteId);
   });
 
   store.resetHistory();

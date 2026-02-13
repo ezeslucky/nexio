@@ -31,7 +31,7 @@ test.before(async t => {
 
 test.beforeEach(async t => {
   await t.context.m.initTestingDB();
-  t.context.u1 = await t.context.auth.signUp('u1@affine.pro', '1');
+  t.context.u1 = await t.context.auth.signUp('u1@nexio.pro', '1');
 });
 
 test.after.always(async t => {
@@ -41,16 +41,16 @@ test.after.always(async t => {
 test('should be able to sign in by password', async t => {
   const { auth } = t.context;
 
-  const signedInUser = await auth.signIn('u1@affine.pro', '1');
+  const signedInUser = await auth.signIn('u1@nexio.pro', '1');
 
-  t.is(signedInUser.email, 'u1@affine.pro');
+  t.is(signedInUser.email, 'u1@nexio.pro');
 });
 
 test('should throw if user not found', async t => {
   const { auth } = t.context;
 
-  await t.throwsAsync(() => auth.signIn('u2@affine.pro', '1'), {
-    message: 'Wrong user email or password: u2@affine.pro',
+  await t.throwsAsync(() => auth.signIn('u2@nexio.pro', '1'), {
+    message: 'Wrong user email or password: u2@nexio.pro',
   });
 });
 
@@ -58,11 +58,11 @@ test('should throw if password not set', async t => {
   const { models, auth } = t.context;
 
   await models.user.create({
-    email: 'u2@affine.pro',
+    email: 'u2@nexio.pro',
     name: 'u2',
   });
 
-  await t.throwsAsync(() => auth.signIn('u2@affine.pro', '1'), {
+  await t.throwsAsync(() => auth.signIn('u2@nexio.pro', '1'), {
     message:
       'You are trying to sign in by a different method than you signed up with.',
   });
@@ -71,44 +71,44 @@ test('should throw if password not set', async t => {
 test('should throw if password not match', async t => {
   const { auth } = t.context;
 
-  await t.throwsAsync(() => auth.signIn('u1@affine.pro', '2'), {
-    message: 'Wrong user email or password: u1@affine.pro',
+  await t.throwsAsync(() => auth.signIn('u1@nexio.pro', '2'), {
+    message: 'Wrong user email or password: u1@nexio.pro',
   });
 });
 
 test('should be able to change password', async t => {
   const { auth, u1 } = t.context;
 
-  let signedInU1 = await auth.signIn('u1@affine.pro', '1');
+  let signedInU1 = await auth.signIn('u1@nexio.pro', '1');
   t.is(signedInU1.email, u1.email);
 
-  await auth.changePassword(u1.id, 'hello world affine');
+  await auth.changePassword(u1.id, 'hello world nexio');
 
   await t.throwsAsync(
-    () => auth.signIn('u1@affine.pro', '1' /* old password */),
+    () => auth.signIn('u1@nexio.pro', '1' /* old password */),
     {
-      message: 'Wrong user email or password: u1@affine.pro',
+      message: 'Wrong user email or password: u1@nexio.pro',
     }
   );
 
-  signedInU1 = await auth.signIn('u1@affine.pro', 'hello world affine');
+  signedInU1 = await auth.signIn('u1@nexio.pro', 'hello world nexio');
   t.is(signedInU1.email, u1.email);
 });
 
 test('should be able to change email', async t => {
   const { auth, u1 } = t.context;
 
-  let signedInU1 = await auth.signIn('u1@affine.pro', '1');
+  let signedInU1 = await auth.signIn('u1@nexio.pro', '1');
   t.is(signedInU1.email, u1.email);
 
-  await auth.changeEmail(u1.id, 'u2@affine.pro');
+  await auth.changeEmail(u1.id, 'u2@nexio.pro');
 
-  await t.throwsAsync(() => auth.signIn('u1@affine.pro' /* old email */, '1'), {
-    message: 'Wrong user email or password: u1@affine.pro',
+  await t.throwsAsync(() => auth.signIn('u1@nexio.pro' /* old email */, '1'), {
+    message: 'Wrong user email or password: u1@nexio.pro',
   });
 
-  signedInU1 = await auth.signIn('u2@affine.pro', '1');
-  t.is(signedInU1.email, 'u2@affine.pro');
+  signedInU1 = await auth.signIn('u2@nexio.pro', '1');
+  t.is(signedInU1.email, 'u2@nexio.pro');
 });
 
 // Tests for Session
@@ -161,7 +161,7 @@ test('should not return expired session', async t => {
 test('should be able to sign in different user in a same session', async t => {
   const { auth, u1 } = t.context;
 
-  const u2 = await auth.signUp('u2@affine.pro', '1');
+  const u2 = await auth.signUp('u2@nexio.pro', '1');
 
   const session = await auth.createSession();
 
@@ -188,7 +188,7 @@ test('should be able to sign in different user in a same session', async t => {
 test('should be able to signout multi accounts session', async t => {
   const { auth, u1 } = t.context;
 
-  const u2 = await auth.signUp('u2@affine.pro', '1');
+  const u2 = await auth.signUp('u2@nexio.pro', '1');
 
   const session = await auth.createSession();
 

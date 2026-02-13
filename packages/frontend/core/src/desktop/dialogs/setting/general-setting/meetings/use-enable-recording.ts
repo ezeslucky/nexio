@@ -1,8 +1,8 @@
-import { useConfirmModal } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { useConfirmModal } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useService } from '@toeverything/infra';
 
 export const useEnableRecording = () => {
@@ -21,23 +21,23 @@ export const useEnableRecording = () => {
       } catch {
         confirmModal.openConfirmModal({
           title:
-            t['com.affine.settings.meetings.record.permission-modal.title'](),
+            t['com.nexio.settings.meetings.record.permission-modal.title'](),
           description:
             t[
-              'com.affine.settings.meetings.record.permission-modal.description'
+              'com.nexio.settings.meetings.record.permission-modal.description'
             ](),
           onConfirm: async () => {
             await meetingSettingsService.showRecordingPermissionSetting(
               'screen'
             );
           },
-          cancelText: t['com.affine.recording.dismiss'](),
+          cancelText: t['com.nexio.recording.dismiss'](),
           confirmButtonOptions: {
             variant: 'primary',
           },
           confirmText:
             t[
-              'com.affine.settings.meetings.record.permission-modal.open-setting'
+              'com.nexio.settings.meetings.record.permission-modal.open-setting'
             ](),
         });
       }

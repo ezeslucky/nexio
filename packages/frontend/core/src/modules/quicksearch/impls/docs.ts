@@ -1,4 +1,4 @@
-import { ServerFeature } from '@affine/graphql';
+import { ServerFeature } from '@nexio/graphql';
 import { SearchIcon } from '@blocksuite/icons/rc';
 import {
   effect,
@@ -64,7 +64,7 @@ export class DocsQuickSearchSession
     source: 'docs',
     label: {
       title: {
-        i18nKey: 'com.affine.quicksearch.search-locally',
+        i18nKey: 'com.nexio.quicksearch.search-locally',
       },
     },
     score: 1000,
@@ -127,8 +127,8 @@ export class DocsQuickSearchSession
                     id: 'docs',
                     label: {
                       i18nKey: this.searchLocally
-                        ? 'com.affine.quicksearch.group.searchfor-locally'
-                        : 'com.affine.quicksearch.group.searchfor',
+                        ? 'com.nexio.quicksearch.group.searchfor-locally'
+                        : 'com.nexio.quicksearch.group.searchfor',
                       options: { query: truncate(query) },
                     },
                     score: 5,

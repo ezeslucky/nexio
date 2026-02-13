@@ -1,5 +1,5 @@
-import { Button } from '@affine/component/ui/button';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component/ui/button';
+import { useI18n } from '@nexio/i18n';
 import type { ChangeEvent, PropsWithChildren } from 'react';
 import { useRef } from 'react';
 

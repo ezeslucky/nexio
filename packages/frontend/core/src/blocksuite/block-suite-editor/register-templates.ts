@@ -1,9 +1,9 @@
-import { builtInTemplates as builtInEdgelessTemplates } from '@affine/templates/edgeless';
-import { builtInTemplates as builtInStickersTemplates } from '@affine/templates/stickers';
+import { builtInTemplates as builtInEdgelessTemplates } from '@nexio/templates/edgeless';
+import { builtInTemplates as builtInStickersTemplates } from '@nexio/templates/stickers';
 import {
   EdgelessTemplatePanel,
   type TemplateManager,
-} from '@blocksuite/affine/gfx/template';
+} from '@blocksuite/nexio/gfx/template';
 
 export function registerTemplates() {
   EdgelessTemplatePanel.templates.extend(

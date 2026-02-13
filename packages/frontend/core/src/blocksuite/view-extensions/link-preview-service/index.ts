@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 
@@ -11,16 +11,16 @@ const optionsSchema = z.object({
   framework: z.instanceof(FrameworkProvider).optional(),
 });
 
-type AffineLinkPreviewViewOptions = z.infer<typeof optionsSchema>;
+type NexioLinkPreviewViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineLinkPreviewExtension extends ViewExtensionProvider<AffineLinkPreviewViewOptions> {
-  override name = 'affine-link-preview-extension';
+export class NexioLinkPreviewExtension extends ViewExtensionProvider<NexioLinkPreviewViewOptions> {
+  override name = 'nexio-link-preview-extension';
 
   override schema = optionsSchema;
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineLinkPreviewViewOptions
+    options?: NexioLinkPreviewViewOptions
   ) {
     super.setup(context, options);
     if (!options?.framework) {

@@ -1,9 +1,9 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 // @ts-expect-error upstream type is wrong
 import { createKeybindingsHandler } from 'tinykeys';
 
-import type { AffineCommand, AffineCommandOptions } from './command';
-import { createAffineCommand } from './command';
+import type { NexioCommand, NexioCommandOptions } from './command';
+import { createNexioCommand } from './command';
 
 const commandLogger = new DebugLogger('command:registry');
 
@@ -45,15 +45,15 @@ const bindKeys = (
   };
 };
 
-export const AffineCommandRegistry = new (class {
-  readonly commands: Map<string, AffineCommand> = new Map();
+export const NexioCommandRegistry = new (class {
+  readonly commands: Map<string, NexioCommand> = new Map();
 
-  register(options: AffineCommandOptions) {
+  register(options: NexioCommandOptions) {
     if (this.commands.has(options.id)) {
       commandLogger.warn(`Command ${options.id} already registered.`);
       return () => {};
     }
-    const command = createAffineCommand(options);
+    const command = createNexioCommand(options);
     this.commands.set(command.id, command);
 
     let unsubKb: (() => void) | undefined;
@@ -88,7 +88,7 @@ export const AffineCommandRegistry = new (class {
     };
   }
 
-  get(id: string): AffineCommand | undefined {
+  get(id: string): NexioCommand | undefined {
     if (!this.commands.has(id)) {
       commandLogger.warn(`Command ${id} not registered.`);
       return undefined;
@@ -96,11 +96,11 @@ export const AffineCommandRegistry = new (class {
     return this.commands.get(id);
   }
 
-  getAll(): AffineCommand[] {
+  getAll(): NexioCommand[] {
     return Array.from(this.commands.values());
   }
 })();
 
-export function registerAffineCommand(options: AffineCommandOptions) {
-  return AffineCommandRegistry.register(options);
+export function registerNexioCommand(options: NexioCommandOptions) {
+  return NexioCommandRegistry.register(options);
 }

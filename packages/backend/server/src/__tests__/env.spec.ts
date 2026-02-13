@@ -37,7 +37,7 @@ test('should read NODE_ENV', t => {
 test('should read NAMESPACE', t => {
   t.deepEqual(
     ['dev', 'beta', 'production'].map(envVal => {
-      process.env.AFFINE_ENV = envVal;
+      process.env.NEXIO_ENV = envVal;
       const env = new Env();
       return env.NAMESPACE;
     }),
@@ -45,19 +45,19 @@ test('should read NAMESPACE', t => {
   );
 
   t.throws(() => {
-    process.env.AFFINE_ENV = 'unknown';
+    process.env.NEXIO_ENV = 'unknown';
     new Env();
   });
 });
 
 test('should read DEPLOYMENT_TYPE', t => {
   t.deepEqual(
-    ['affine', 'selfhosted'].map(envVal => {
+    ['nexio', 'selfhosted'].map(envVal => {
       process.env.DEPLOYMENT_TYPE = envVal;
       const env = new Env();
       return env.DEPLOYMENT_TYPE;
     }),
-    ['affine', 'selfhosted']
+    ['nexio', 'selfhosted']
   );
 
   t.throws(() => {
@@ -137,26 +137,26 @@ test('should tell selfhosted correctly', t => {
   process.env.DEPLOYMENT_TYPE = 'selfhosted';
   t.true(new Env().selfhosted);
 
-  process.env.DEPLOYMENT_TYPE = 'affine';
+  process.env.DEPLOYMENT_TYPE = 'nexio';
   t.false(new Env().selfhosted);
 });
 
 test('should tell namespaces correctly', t => {
-  process.env.AFFINE_ENV = 'dev';
+  process.env.NEXIO_ENV = 'dev';
   t.deepEqual(new Env().namespaces, {
     canary: true,
     beta: false,
     production: false,
   });
 
-  process.env.AFFINE_ENV = 'beta';
+  process.env.NEXIO_ENV = 'beta';
   t.deepEqual(new Env().namespaces, {
     canary: false,
     beta: true,
     production: false,
   });
 
-  process.env.AFFINE_ENV = 'production';
+  process.env.NEXIO_ENV = 'production';
   t.deepEqual(new Env().namespaces, {
     canary: false,
     beta: false,

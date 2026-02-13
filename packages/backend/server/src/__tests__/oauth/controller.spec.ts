@@ -38,7 +38,7 @@ test.before(async t => {
           },
         },
         server: {
-          hosts: ['localhost', 'test.affine.dev'],
+          hosts: ['localhost', 'test.nexio.dev'],
           https: true,
         },
       }),
@@ -56,7 +56,7 @@ test.before(async t => {
 test.beforeEach(async t => {
   Sinon.restore();
   await t.context.app.initTestingDB();
-  t.context.u1 = await t.context.auth.signUp('u1@affine.pro', '1');
+  t.context.u1 = await t.context.auth.signUp('u1@nexio.pro', '1');
 });
 
 test.after.always(async t => {
@@ -99,7 +99,7 @@ test('should be able to redirect to oauth provider with multiple hosts', async t
 
   const res = await app
     .POST('/api/oauth/preflight')
-    .set('host', 'test.affine.dev')
+    .set('host', 'test.nexio.dev')
     .send({ provider: 'Google' })
     .expect(HttpStatus.OK);
 
@@ -112,7 +112,7 @@ test('should be able to redirect to oauth provider with multiple hosts', async t
   t.is(redirect.searchParams.get('client_id'), 'google-client-id');
   t.is(
     redirect.searchParams.get('redirect_uri'),
-    'https://test.affine.dev/oauth/callback'
+    'https://test.nexio.dev/oauth/callback'
   );
   t.is(redirect.searchParams.get('response_type'), 'code');
   t.is(redirect.searchParams.get('prompt'), 'select_account');
@@ -131,7 +131,7 @@ test('should be able to redirect to oauth provider with client_nonce', async t =
 
   const res = await app
     .POST('/api/oauth/preflight')
-    .send({ provider: 'Google', client: 'affine', client_nonce: '1234567890' })
+    .send({ provider: 'Google', client: 'nexio', client_nonce: '1234567890' })
     .expect(HttpStatus.OK);
 
   const { url } = res.body;
@@ -151,7 +151,7 @@ test('should be able to redirect to oauth provider with client_nonce', async t =
   // state should be a json string
   const state = JSON.parse(redirect.searchParams.get('state')!);
   t.is(state.provider, 'Google');
-  t.is(state.client, 'affine');
+  t.is(state.client, 'nexio');
   t.falsy(state.clientNonce);
   t.truthy(state.state);
 });
@@ -343,7 +343,7 @@ function mockOAuthProvider(
 test('should be able to sign up with oauth', async t => {
   const { app, db } = t.context;
 
-  mockOAuthProvider(app, 'u2@affine.pro');
+  mockOAuthProvider(app, 'u2@nexio.pro');
 
   await app
     .POST('/api/oauth/callback')
@@ -353,7 +353,7 @@ test('should be able to sign up with oauth', async t => {
   const sessionUser = await currentUser(app);
 
   t.truthy(sessionUser);
-  t.is(sessionUser!.email, 'u2@affine.pro');
+  t.is(sessionUser!.email, 'u2@nexio.pro');
 
   const user = await db.user.findFirst({
     select: {
@@ -361,12 +361,12 @@ test('should be able to sign up with oauth', async t => {
       connectedAccounts: true,
     },
     where: {
-      email: 'u2@affine.pro',
+      email: 'u2@nexio.pro',
     },
   });
 
   t.truthy(user);
-  t.is(user!.email, 'u2@affine.pro');
+  t.is(user!.email, 'u2@nexio.pro');
   t.is(user!.connectedAccounts[0].providerAccountId, '1');
 });
 
@@ -374,7 +374,7 @@ test('should be able to sign up with oauth and client_nonce', async t => {
   const { app, db } = t.context;
 
   const clientNonce = randomUUID();
-  const userEmail = `${clientNonce}@affine.pro`;
+  const userEmail = `${clientNonce}@nexio.pro`;
   mockOAuthProvider(app, userEmail, clientNonce);
 
   await app
@@ -406,7 +406,7 @@ test('should throw if client_nonce is invalid', async t => {
   const { app } = t.context;
 
   const clientNonce = randomUUID();
-  const userEmail = `${clientNonce}@affine.pro`;
+  const userEmail = `${clientNonce}@nexio.pro`;
   mockOAuthProvider(app, userEmail, clientNonce);
 
   await app
@@ -441,7 +441,7 @@ test('should not throw if account registered', async t => {
 test('should be able to fullfil user with oauth sign in', async t => {
   const { app, models } = t.context;
 
-  const u3 = await app.createUser('u3@affine.pro');
+  const u3 = await app.createUser('u3@nexio.pro');
 
   mockOAuthProvider(app, u3.email);
 

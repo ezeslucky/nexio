@@ -1,7 +1,7 @@
 import type {
   StoreClient,
   WorkerInitOptions,
-} from '@affine/nbstore/worker/client';
+} from '@nexio/nbstore/worker/client';
 import { createIdentifier } from '@toeverything/infra';
 
 export interface NbstoreProvider {

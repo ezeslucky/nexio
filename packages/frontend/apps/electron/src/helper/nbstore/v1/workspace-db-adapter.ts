@@ -1,4 +1,4 @@
-import type { SpaceType } from '@affine/nbstore';
+import type { SpaceType } from '@nexio/nbstore';
 import { AsyncLock } from '@toeverything/infra/utils';
 import { Subject } from 'rxjs';
 import { applyUpdate, Doc as YDoc } from 'yjs';

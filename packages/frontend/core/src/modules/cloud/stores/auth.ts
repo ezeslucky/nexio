@@ -3,7 +3,7 @@ import {
   removeAvatarMutation,
   updateUserProfileMutation,
   uploadAvatarMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { GlobalState } from '../../storage';

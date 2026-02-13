@@ -1,12 +1,12 @@
 import '../../style.css';
 
-import * as databaseBlocks from '@blocksuite/affine/blocks/database';
-import * as noteBlocks from '@blocksuite/affine/blocks/note';
-import * as globalUtils from '@blocksuite/affine/global/utils';
-import * as services from '@blocksuite/affine/shared/services';
-import * as blockStd from '@blocksuite/affine/std';
-import * as store from '@blocksuite/affine/store';
-import * as affineModel from '@blocksuite/affine-model';
+import * as databaseBlocks from '@blocksuite/nexio/blocks/database';
+import * as noteBlocks from '@blocksuite/nexio/blocks/note';
+import * as globalUtils from '@blocksuite/nexio/global/utils';
+import * as services from '@blocksuite/nexio/shared/services';
+import * as blockStd from '@blocksuite/nexio/std';
+import * as store from '@blocksuite/nexio/store';
+import * as nexioModel from '@blocksuite/nexio-model';
 import * as editor from '@blocksuite/integration-test';
 import { effects as itEffects } from '@blocksuite/integration-test/effects';
 import { getTestStoreManager } from '@blocksuite/integration-test/store';
@@ -46,7 +46,7 @@ async function main() {
         services,
         editor,
         blockStd: blockStd,
-        affineModel: affineModel,
+        nexioModel: nexioModel,
       }),
     });
     await prepareTestApp(collection);

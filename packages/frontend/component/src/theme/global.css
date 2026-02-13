@@ -169,7 +169,7 @@ legend {
   background-color: unset;
   outline: 0;
   border: 0;
-  font-size: var(--affine-font-base);
+  font-size: var(--nexio-font-base);
   font-family: inherit;
   font-feature-settings: 'calt' 0;
 }
@@ -190,7 +190,7 @@ input {
   outline: medium;
   /*Remove the default yellow border on mouse click*/
   background-color: transparent;
-  caret-color: var(--affine-primary-color);
+  caret-color: var(--nexio-primary-color);
 }
 
 input:-webkit-autofill {
@@ -239,18 +239,18 @@ editor-host *::-webkit-scrollbar {
   padding: 0;
 }
 
-.affine-default-page-block-title-container {
+.nexio-default-page-block-title-container {
   margin-top: 40px;
   margin-bottom: 40px;
   transition: margin-top 0.2s;
 }
 
-.affine-default-page-block-container {
+.nexio-default-page-block-container {
   transition: max-width 0.2s;
   min-width: 550px;
 }
 
-affine-block-hub {
+nexio-block-hub {
   position: unset !important;
 }
 
@@ -259,7 +259,7 @@ affine-block-hub {
 }
 
 @media (max-width: 768px) {
-  .affine-default-page-block-title-container {
+  .nexio-default-page-block-title-container {
     margin-top: 24px;
   }
 
@@ -285,7 +285,7 @@ body,
  * A hack to make the anchor wrapper not affect the layout of the page.
  */
 [data-lit-react-wrapper],
-affine-lit-template-wrapper {
+nexio-lit-template-wrapper {
   display: contents;
 }
 
@@ -311,7 +311,7 @@ math {
 /* AI Block Diff */
 .ai-block-diff-deleted {
   background-color: var(
-    --affine-v2-aI-applyDeleteHighlight,
+    --nexio-v2-aI-applyDeleteHighlight,
     #ffeaea
   ) !important;
   border-radius: 4px !important;
@@ -319,6 +319,6 @@ math {
   margin-bottom: 10px !important;
 }
 
-.ai-block-diff-deleted .affine-block-component {
+.ai-block-diff-deleted .nexio-block-component {
   margin: 0 !important;
 }

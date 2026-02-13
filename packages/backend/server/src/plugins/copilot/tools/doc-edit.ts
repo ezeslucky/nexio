@@ -72,10 +72,10 @@ Important Instructions:
 - When deleting content, only use the format <!-- delete block_id=xxx -->, and only for valid block_id present in the original <code> content.
 - Each top-level list item should be a block. Like this:
   \`\`\`markdown
-  <!-- block_id=001 flavour=affine:list -->
+  <!-- block_id=001 flavour=nexio:list -->
   * Item 1
     * SubItem 1
-  <!-- block_id=002 flavour=affine:list -->
+  <!-- block_id=002 flavour=nexio:list -->
   1. Item 1
     1. SubItem 1
   \`\`\`

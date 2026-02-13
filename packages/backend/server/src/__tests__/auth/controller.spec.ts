@@ -39,7 +39,7 @@ test.after.always(async t => {
 test('should be able to sign in with credential', async t => {
   const { app } = t.context;
 
-  const u1 = await app.createUser('u1@affine.pro');
+  const u1 = await app.createUser('u1@nexio.pro');
 
   await app
     .POST('/api/auth/sign-in')
@@ -53,7 +53,7 @@ test('should be able to sign in with credential', async t => {
 test('should be able to sign in with email', async t => {
   const { app } = t.context;
 
-  const u1 = await app.createUser('u1@affine.pro');
+  const u1 = await app.createUser('u1@nexio.pro');
 
   const res = await app
     .POST('/api/auth/sign-in')
@@ -80,13 +80,13 @@ test('should be able to sign up with email', async t => {
 
   const res = await app
     .POST('/api/auth/sign-in')
-    .send({ email: 'u2@affine.pro' })
+    .send({ email: 'u2@nexio.pro' })
     .expect(200);
 
-  t.is(res.body.email, 'u2@affine.pro');
+  t.is(res.body.email, 'u2@nexio.pro');
   const signUpMail = app.mails.last('SignUp');
 
-  t.is(signUpMail.to, 'u2@affine.pro');
+  t.is(signUpMail.to, 'u2@nexio.pro');
 
   const url = new URL(signUpMail.props.url);
   const email = url.searchParams.get('email');
@@ -95,7 +95,7 @@ test('should be able to sign up with email', async t => {
   await app.POST('/api/auth/magic-link').send({ email, token }).expect(201);
 
   const session = await currentUser(app);
-  t.is(session?.email, 'u2@affine.pro');
+  t.is(session?.email, 'u2@nexio.pro');
 });
 
 test('should not be able to sign in if email is invalid', async t => {
@@ -112,7 +112,7 @@ test('should not be able to sign in if email is invalid', async t => {
 test('should not be able to sign in if forbidden', async t => {
   const { app, auth } = t.context;
 
-  const u1 = await app.createUser('u1@affine.pro');
+  const u1 = await app.createUser('u1@nexio.pro');
   const canSignInStub = Sinon.stub(auth, 'canSignIn').resolves(false);
 
   await app
@@ -127,7 +127,7 @@ test('should not be able to sign in if forbidden', async t => {
 test('should be able to sign out', async t => {
   const { app } = t.context;
 
-  const u1 = await app.createUser('u1@affine.pro');
+  const u1 = await app.createUser('u1@nexio.pro');
 
   await app
     .POST('/api/auth/sign-in')
@@ -144,7 +144,7 @@ test('should be able to sign out', async t => {
 test('should be able to correct user id cookie', async t => {
   const { app } = t.context;
 
-  const u1 = await app.signupV1('u1@affine.pro');
+  const u1 = await app.signupV1('u1@nexio.pro');
 
   const req = app.GET('/api/auth/session');
   let cookies = req.get('cookie') as unknown as string[];
@@ -161,8 +161,8 @@ test('should be able to correct user id cookie', async t => {
 test('should be able to sign in another account in one session', async t => {
   const { app } = t.context;
 
-  const u1 = await app.createUser('u1@affine.pro');
-  const u2 = await app.createUser('u2@affine.pro');
+  const u1 = await app.createUser('u1@nexio.pro');
+  const u2 = await app.createUser('u2@nexio.pro');
 
   // sign in u1
   const res = await app
@@ -209,8 +209,8 @@ test('should be able to sign in another account in one session', async t => {
 test('should be able to sign out multiple accounts in one session', async t => {
   const { app } = t.context;
 
-  const u1 = await app.signupV1('u1@affine.pro');
-  const u2 = await app.signupV1('u2@affine.pro');
+  const u1 = await app.signupV1('u1@nexio.pro');
+  const u2 = await app.signupV1('u2@nexio.pro');
 
   // sign out u2
   await app.GET(`/api/auth/sign-out?user_id=${u2.id}`).expect(200);
@@ -317,7 +317,7 @@ test('should not be able to sign in if token is invalid', async t => {
 
   const res = await app
     .POST('/api/auth/magic-link')
-    .send({ email: 'u1@affine.pro', token: 'invalid' })
+    .send({ email: 'u1@nexio.pro', token: 'invalid' })
     .expect(400);
 
   t.is(res.body.message, 'An invalid email token provided.');

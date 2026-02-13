@@ -1,8 +1,8 @@
 import {
   PreconditionStrategy,
-  registerAffineCommand,
-} from '@affine/core/commands';
-import { track } from '@affine/track';
+  registerNexioCommand,
+} from '@nexio/core/commands';
+import { track } from '@nexio/track';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
@@ -14,9 +14,9 @@ export function useRegisterNavigationCommands() {
     const unsubs: Array<() => void> = [];
 
     unsubs.push(
-      registerAffineCommand({
-        id: 'affine:shortcut-history-go-back',
-        category: 'affine:general',
+      registerNexioCommand({
+        id: 'nexio:shortcut-history-go-back',
+        category: 'nexio:general',
         preconditionStrategy: PreconditionStrategy.Never,
         icon: 'none',
         label: 'go back',
@@ -31,9 +31,9 @@ export function useRegisterNavigationCommands() {
       })
     );
     unsubs.push(
-      registerAffineCommand({
-        id: 'affine:shortcut-history-go-forward',
-        category: 'affine:general',
+      registerNexioCommand({
+        id: 'nexio:shortcut-history-go-forward',
+        category: 'nexio:general',
         preconditionStrategy: PreconditionStrategy.Never,
         icon: 'none',
         label: 'go forward',

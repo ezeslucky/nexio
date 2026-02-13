@@ -1,6 +1,6 @@
-import { buttonVariants } from '@affine/admin/components/ui/button';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { cn } from '@affine/admin/utils';
+import { buttonVariants } from '@nexio/admin/components/ui/button';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { cn } from '@nexio/admin/utils';
 import {
   AlbumIcon,
   ChevronRightIcon,
@@ -31,18 +31,18 @@ const links = [
     label: 'Report an Issue',
   },
   {
-    href: 'https://docs.affine.pro/docs/self-host-affine',
+    href: 'https://docs.nexio.pro/docs/self-host-nexio',
     icon: <AlbumIcon size={20} />,
     label: 'Self-host Document',
   },
   {
-    href: 'https://affine.pro/pricing/?type=selfhost#table',
+    href: 'https://nexio.pro/pricing/?type=selfhost#table',
     icon: <UploadCloudIcon size={20} />,
     label: 'Upgrade to Team',
   },
 ];
 
-export function AboutAFFiNE() {
+export function AboutNEXIO() {
   return (
     <div className="flex flex-col h-full gap-3 py-5 px-6 w-full">
       <div className="flex items-center">

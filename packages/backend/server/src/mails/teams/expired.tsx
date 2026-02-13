@@ -38,5 +38,5 @@ export default function TeamExpired(props: TeamExpiredProps) {
 TeamExpired.PreviewProps = {
   workspace: TEST_WORKSPACE,
   expirationDate: new Date('2025-01-01T00:00:00Z'),
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

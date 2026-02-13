@@ -40,7 +40,7 @@ let workspace: Workspace;
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   workspace = await t.context.workspace.create(user.id);
 });

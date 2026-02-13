@@ -8,7 +8,7 @@ import { ListObjectsMetadata } from '../providers';
 import { FsStorageProvider } from '../providers/fs';
 
 const config = {
-  path: join(process.cwd(), 'node_modules', '.cache/affine-test-storage'),
+  path: join(process.cwd(), 'node_modules', '.cache/nexio-test-storage'),
 };
 
 function createProvider() {

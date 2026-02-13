@@ -1,13 +1,13 @@
 [package]
 edition = "2021"
-name    = "affine_sqlite_v1"
+name    = "nexio_sqlite_v1"
 version = "0.0.0"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-affine_schema = { path = "../schema" }
+nexio_schema = { path = "../schema" }
 anyhow        = { workspace = true }
 chrono        = { workspace = true }
 napi          = { workspace = true }
@@ -16,7 +16,7 @@ sqlx          = { workspace = true, default-features = false, features = ["chron
 tokio         = { workspace = true, features = ["full"] }
 
 [build-dependencies]
-affine_schema = { path = "../schema" }
+nexio_schema = { path = "../schema" }
 dotenvy       = { workspace = true }
 napi-build    = { workspace = true }
 sqlx          = { workspace = true, default-features = false, features = ["chrono", "json", "macros", "migrate", "runtime-tokio", "sqlite", "tls-rustls"] }

@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
-import { Path, ProjectRoot } from '@affine-tools/utils/path';
+import { Path, ProjectRoot } from '@nexio-tools/utils/path';
 import { Repository } from '@napi-rs/simple-git';
 import HTMLPlugin from 'html-webpack-plugin';
 import { once } from 'lodash-es';
@@ -25,11 +25,11 @@ export const getPublicPath = (BUILD_CONFIG: BUILD_CONFIG_TYPE) => {
 
   switch (BUILD_TYPE) {
     case 'stable':
-      return 'https://prod.affineassets.com/';
+      return 'https://prod.nexioassets.com/';
     case 'beta':
-      return 'https://beta.affineassets.com/';
+      return 'https://beta.nexioassets.com/';
     default:
-      return 'https://dev.affineassets.com/';
+      return 'https://dev.nexioassets.com/';
   }
 };
 

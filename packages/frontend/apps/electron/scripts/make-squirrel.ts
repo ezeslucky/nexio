@@ -15,10 +15,8 @@ import {
   ROOT,
 } from './make-env.js';
 
-const log = debug('affine:make-squirrel');
+const log = debug('nexio:make-squirrel');
 
-// taking from https://github.com/electron/forge/blob/main/packages/maker/squirrel/src/MakerSquirrel.ts
-// it was for forge's maker, but can be used standalone as well
 async function make() {
   const appName = productName;
   const makeDir = path.resolve(ROOT, 'out', buildType, 'make');
@@ -45,7 +43,7 @@ async function make() {
     outputDirectory: outPath,
     iconUrl: iconUrl,
     setupIcon: icoPath,
-    loadingGif: path.resolve(ROOT, './resources/icons/affine_installing.gif'),
+    loadingGif: path.resolve(ROOT, './resources/icons/nexio_installing.gif'),
   };
 
   await createWindowsInstaller(winstallerConfig);

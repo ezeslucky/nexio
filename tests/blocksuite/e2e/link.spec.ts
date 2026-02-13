@@ -40,21 +40,21 @@ test('basic link', async ({ page }, testInfo) => {
   await pressCreateLinkShortCut(page);
   await page.mouse.move(0, 0);
 
-  const createLinkPopoverLocator = page.locator('.affine-link-popover.create');
+  const createLinkPopoverLocator = page.locator('.nexio-link-popover.create');
   await expect(createLinkPopoverLocator).toBeVisible();
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).toBeVisible();
   await type(page, link);
   await pressEnter(page);
   await expect(createLinkPopoverLocator).not.toBeVisible();
 
-  const linkLocator = page.locator('affine-link a');
+  const linkLocator = page.locator('nexio-link a');
   await expect(linkLocator).toHaveAttribute('href', link);
 
   // clear text selection
   await page.keyboard.press('ArrowLeft');
 
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   // Hover link
   await expect(toolbar).not.toBeVisible();
   await linkLocator.hover();
@@ -68,7 +68,7 @@ test('basic link', async ({ page }, testInfo) => {
   const editLinkBtn = toolbar.getByTestId('edit');
   await editLinkBtn.click();
 
-  const editLinkPopoverLocator = page.locator('.affine-link-edit-popover');
+  const editLinkPopoverLocator = page.locator('.nexio-link-edit-popover');
   await expect(editLinkPopoverLocator).toBeVisible();
   // workaround to make tab key work as expected
   await editLinkPopoverLocator.click({
@@ -80,7 +80,7 @@ test('basic link', async ({ page }, testInfo) => {
   await type(page, link2);
   await page.keyboard.press('Tab');
   await pressEnter(page);
-  const link2Locator = page.locator('affine-link a');
+  const link2Locator = page.locator('nexio-link a');
 
   await expect(link2Locator).toHaveAttribute('href', link2);
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
@@ -104,15 +104,15 @@ test('add link when dragging from empty line', async ({ page }) => {
   await pressCreateLinkShortCut(page);
   await page.mouse.move(0, 0);
 
-  const createLinkPopoverLocator = page.locator('.affine-link-popover.create');
+  const createLinkPopoverLocator = page.locator('.nexio-link-popover.create');
   await expect(createLinkPopoverLocator).toBeVisible();
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).toBeVisible();
   await type(page, link);
   await pressEnter(page);
   await expect(createLinkPopoverLocator).not.toBeVisible();
 
-  const linkLocator = page.locator('affine-link a');
+  const linkLocator = page.locator('nexio-link a');
   await expect(linkLocator).toHaveAttribute('href', link);
 });
 
@@ -120,17 +120,17 @@ async function createLinkBlock(page: Page, str: string, link: string) {
   const id = await page.evaluate(
     ([str, link]) => {
       const { doc } = window;
-      const rootId = doc.addBlock('affine:page', {
+      const rootId = doc.addBlock('nexio:page', {
         title: new window.$blocksuite.store.Text('title'),
       });
-      const noteId = doc.addBlock('affine:note', {}, rootId);
+      const noteId = doc.addBlock('nexio:note', {}, rootId);
 
       const text = new window.$blocksuite.store.Text([
         { insert: 'Hello' },
         { insert: str, attributes: { link } },
       ]);
       const id = doc.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         { type: 'text', text: text },
         noteId
       );
@@ -174,7 +174,7 @@ test('readonly mode should not trigger toolbar', async ({ page }) => {
   const linkLocator = page.locator(`text="${linkText}"`);
 
   // Hover link
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   await linkLocator.hover();
   await expect(toolbar).toBeVisible();
 
@@ -194,7 +194,7 @@ test('readonly mode should not trigger toolbar', async ({ page }) => {
   await pressCreateLinkShortCut(page);
 
   await expect(toolbar).not.toBeVisible();
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).not.toBeVisible();
 });
 
@@ -234,11 +234,11 @@ test('should keyboard work in link popover', async ({ page }) => {
 
   await dragBetweenIndices(page, [0, 0], [0, 8]);
   await pressCreateLinkShortCut(page);
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await assertKeyboardWorkInInput(page, linkPopoverInput);
   await page.mouse.click(500, 500);
 
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   const linkLocator = page.locator(`text="${linkText}"`);
 
   await focusRichText(page);
@@ -251,15 +251,15 @@ test('should keyboard work in link popover', async ({ page }) => {
   const editLinkBtn = toolbar.getByTestId('edit');
   await editLinkBtn.click();
 
-  const editLinkPopover = page.locator('.affine-link-edit-popover');
+  const editLinkPopover = page.locator('.nexio-link-edit-popover');
   await expect(editLinkPopover).toBeVisible();
 
   const editTextInput = editLinkPopover.locator(
-    '.affine-edit-area.text .affine-edit-input'
+    '.nexio-edit-area.text .nexio-edit-input'
   );
   await assertKeyboardWorkInInput(page, editTextInput);
   const editLinkInput = editLinkPopover.locator(
-    '.affine-edit-area.link .affine-edit-input'
+    '.nexio-edit-area.link .nexio-edit-input'
   );
   await assertKeyboardWorkInInput(page, editLinkInput);
 });
@@ -273,7 +273,7 @@ test('link bar should not be appear when the range is collapsed', async ({
   await type(page, 'aaa');
 
   await pressCreateLinkShortCut(page);
-  const linkPopoverLocator = page.locator('.affine-link-popover');
+  const linkPopoverLocator = page.locator('.nexio-link-popover');
   await expect(linkPopoverLocator).not.toBeVisible();
 
   await dragBetweenIndices(page, [0, 0], [0, 3]);
@@ -312,13 +312,13 @@ test('create link with paste', async ({ page }, testInfo) => {
   await dragBetweenIndices(page, [0, 0], [0, 3]);
   await pressCreateLinkShortCut(page);
 
-  const createLinkPopoverLocator = page.locator('.affine-link-popover.create');
-  const confirmBtn = createLinkPopoverLocator.locator('.affine-confirm-button');
+  const createLinkPopoverLocator = page.locator('.nexio-link-popover.create');
+  const confirmBtn = createLinkPopoverLocator.locator('.nexio-confirm-button');
 
   await expect(createLinkPopoverLocator).toBeVisible();
   await expect(confirmBtn).toHaveAttribute('disabled');
 
-  await type(page, 'affine.pro');
+  await type(page, 'nexio.pro');
   await expect(confirmBtn).not.toHaveAttribute('disabled');
   await selectAllByKeyboard(page);
   await cutByKeyboard(page);
@@ -351,9 +351,9 @@ test('convert link to card', async ({ page }, testInfo) => {
   await setSelection(page, 3, 1, 3, 9);
   await pressCreateLinkShortCut(page);
   await waitNextFrame(page);
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   await expect(toolbar).toBeVisible();
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).toBeVisible();
   await type(page, link);
   await pressEnter(page);
@@ -363,7 +363,7 @@ test('convert link to card', async ({ page }, testInfo) => {
     `${testInfo.title}.json`
   );
 
-  const linkLocator = page.locator('affine-link a');
+  const linkLocator = page.locator('nexio-link a');
 
   await linkLocator.hover();
   await waitNextFrame(page);
@@ -403,9 +403,9 @@ test('convert link to embed', async ({ page }, testInfo) => {
   await setSelection(page, 3, 1, 3, 9);
   await pressCreateLinkShortCut(page);
   await waitNextFrame(page);
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   await expect(toolbar).toBeVisible();
-  const linkPopoverInput = page.locator('.affine-link-popover-input');
+  const linkPopoverInput = page.locator('.nexio-link-popover-input');
   await expect(linkPopoverInput).toBeVisible();
   await type(page, link);
   await pressEnter(page);
@@ -415,7 +415,7 @@ test('convert link to embed', async ({ page }, testInfo) => {
     `${testInfo.title}.json`
   );
 
-  const linkLocator = page.locator('affine-link a');
+  const linkLocator = page.locator('nexio-link a');
 
   await linkLocator.hover();
   await waitNextFrame(page);

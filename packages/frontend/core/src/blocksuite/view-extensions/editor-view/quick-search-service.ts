@@ -1,29 +1,29 @@
-import { DocsService } from '@affine/core/modules/doc';
+import { DocsService } from '@nexio/core/modules/doc';
 import {
   CreationQuickSearchSession,
   DocsQuickSearchSession,
   LinksQuickSearchSession,
   QuickSearchService,
   RecentDocsQuickSearchSession,
-} from '@affine/core/modules/quicksearch';
-import { ExternalLinksQuickSearchSession } from '@affine/core/modules/quicksearch/impls/external-links';
-import { JournalsQuickSearchSession } from '@affine/core/modules/quicksearch/impls/journals';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/quicksearch';
+import { ExternalLinksQuickSearchSession } from '@nexio/core/modules/quicksearch/impls/external-links';
+import { JournalsQuickSearchSession } from '@nexio/core/modules/quicksearch/impls/journals';
+import { track } from '@nexio/track';
 import {
   BookmarkSlashMenuConfigIdentifier,
   insertLinkByQuickSearchCommand,
-} from '@blocksuite/affine/blocks/bookmark';
-import { LinkedDocSlashMenuConfigIdentifier } from '@blocksuite/affine/blocks/embed-doc';
-import type { ServiceIdentifier } from '@blocksuite/affine/global/di';
+} from '@blocksuite/nexio/blocks/bookmark';
+import { LinkedDocSlashMenuConfigIdentifier } from '@blocksuite/nexio/blocks/embed-doc';
+import type { ServiceIdentifier } from '@blocksuite/nexio/global/di';
 import {
   QuickSearchExtension,
   type QuickSearchResult,
-} from '@blocksuite/affine/shared/services';
-import { type ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import { type ExtensionType } from '@blocksuite/nexio/store';
 import type {
   SlashMenuConfig,
   SlashMenuItem,
-} from '@blocksuite/affine/widgets/slash-menu';
+} from '@blocksuite/nexio/widgets/slash-menu';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { pick } from 'lodash-es';
 
@@ -106,10 +106,10 @@ export function patchQuickSearchService(framework: FrameworkProvider) {
           },
           {
             label: {
-              i18nKey: 'com.affine.cmdk.insert-links',
+              i18nKey: 'com.nexio.cmdk.insert-links',
             },
             placeholder: {
-              i18nKey: 'com.affine.cmdk.docs.placeholder',
+              i18nKey: 'com.nexio.cmdk.docs.placeholder',
             },
           }
         )
@@ -157,12 +157,12 @@ export function patchQuickSearchService(framework: FrameworkProvider) {
                 const flavour = type?.flavour;
                 if (!flavour) return;
 
-                if (flavour === 'affine:bookmark') {
+                if (flavour === 'nexio:bookmark') {
                   track.doc.editor.slashMenu.bookmark();
                   return;
                 }
 
-                if (flavour === 'affine:embed-linked-doc') {
+                if (flavour === 'nexio:embed-linked-doc') {
                   track.doc.editor.slashMenu.linkDoc({
                     control: 'linkDoc',
                   });

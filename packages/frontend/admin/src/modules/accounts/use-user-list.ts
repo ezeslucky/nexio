@@ -1,5 +1,5 @@
-import { useQuery } from '@affine/admin/use-query';
-import { listUsersQuery } from '@affine/graphql';
+import { useQuery } from '@nexio/admin/use-query';
+import { listUsersQuery } from '@nexio/graphql';
 import { useState } from 'react';
 
 export const useUserList = () => {

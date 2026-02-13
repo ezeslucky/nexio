@@ -4,14 +4,14 @@ import {
   Menu,
   MenuItem,
   PropertyValue,
-} from '@affine/component';
-import { MobileJournalConflictList } from '@affine/core/mobile/pages/workspace/detail/menu/journal-conflicts';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { DocService } from '@affine/core/modules/doc';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { i18nTime, useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { MobileJournalConflictList } from '@nexio/core/mobile/pages/workspace/detail/menu/journal-conflicts';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { DocService } from '@nexio/core/modules/doc';
+import { JournalService } from '@nexio/core/modules/journal';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -134,9 +134,9 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
             }}
             items={
               <DatePicker
-                weekDays={t['com.affine.calendar-date-picker.week-days']()}
-                monthNames={t['com.affine.calendar-date-picker.month-names']()}
-                todayLabel={t['com.affine.calendar-date-picker.today']()}
+                weekDays={t['com.nexio.calendar-date-picker.week-days']()}
+                monthNames={t['com.nexio.calendar-date-picker.month-names']()}
+                todayLabel={t['com.nexio.calendar-date-picker.today']()}
                 value={selectedDate}
                 onChange={handleDateSelect}
               />
@@ -163,7 +163,7 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
                 className={styles.duplicateTag}
                 onClick={stopPropagation}
               >
-                {t['com.affine.page-properties.property.journal-duplicated']()}
+                {t['com.nexio.page-properties.property.journal-duplicated']()}
               </div>
             </Menu>
           ) : (
@@ -172,7 +172,7 @@ export const JournalValue = ({ readonly }: PropertyValueProps) => {
               className={styles.duplicateTag}
               onClick={handleOpenDuplicate}
             >
-              {t['com.affine.page-properties.property.journal-duplicated']()}
+              {t['com.nexio.page-properties.property.journal-duplicated']()}
             </div>
           )
         ) : null}
@@ -247,8 +247,8 @@ export const JournalGroupHeader = ({ groupId, docCount }: GroupHeaderProps) => {
   const t = useI18n();
   const text =
     groupId === 'true'
-      ? t['com.affine.all-docs.group.is-journal']()
-      : t['com.affine.all-docs.group.is-not-journal']();
+      ? t['com.nexio.all-docs.group.is-journal']()
+      : t['com.nexio.all-docs.group.is-not-journal']();
   return (
     <PlainTextDocGroupHeader groupId={groupId} docCount={docCount}>
       {text}

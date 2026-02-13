@@ -1,18 +1,18 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
-import type { SubscriptionService } from '@affine/core/modules/cloud';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
+import type { SubscriptionService } from '@nexio/core/modules/cloud';
 import {
   type CopilotChatHistoryFragment,
   SubscriptionStatus,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine/components/context-menu';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/components/context-menu';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   AiOutlineIcon,
   ArrowDownSmallIcon,
@@ -35,7 +35,7 @@ export class ChatInputPreference extends SignalWatcher(
       display: flex;
       align-items: center;
       padding: 0px 4px;
-      color: var(--affine-v2-icon-primary);
+      color: var(--nexio-v2-icon-primary);
       transition: all 0.23s ease;
       border-radius: 4px;
       background: transparent;
@@ -43,7 +43,7 @@ export class ChatInputPreference extends SignalWatcher(
       cursor: pointer;
     }
     .chat-input-preference-trigger:hover {
-      background-color: var(--affine-v2-layer-background-hoverOverlay);
+      background-color: var(--nexio-v2-layer-background-hoverOverlay);
     }
     .chat-input-preference-trigger-label {
       font-size: 14px;
@@ -174,7 +174,7 @@ export class ChatInputPreference extends SignalWatcher(
               select: () => {
                 if (model.isPro && !isSubscribed) {
                   this.notificationService.toast(
-                    `Pro models require an AFFiNE AI subscription.`
+                    `Pro models require an NEXIO AI subscription.`
                   );
                   return;
                 }

@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import {
   createWorkspaceMutation,
   deleteWorkspaceMutation,
@@ -7,34 +7,34 @@ import {
   Permission,
   ServerDeploymentType,
   ServerFeature,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import type {
   BlobStorage,
   DocStorage,
   ListedBlobRecord,
-} from '@affine/nbstore';
-import { CloudBlobStorage, StaticCloudDocStorage } from '@affine/nbstore/cloud';
+} from '@nexio/nbstore';
+import { CloudBlobStorage, StaticCloudDocStorage } from '@nexio/nbstore/cloud';
 import {
   IndexedDBBlobStorage,
   IndexedDBBlobSyncStorage,
   IndexedDBDocStorage,
   IndexedDBDocSyncStorage,
-} from '@affine/nbstore/idb';
+} from '@nexio/nbstore/idb';
 import {
   IndexedDBV1BlobStorage,
   IndexedDBV1DocStorage,
-} from '@affine/nbstore/idb/v1';
+} from '@nexio/nbstore/idb/v1';
 import {
   SqliteBlobStorage,
   SqliteBlobSyncStorage,
   SqliteDocStorage,
   SqliteDocSyncStorage,
-} from '@affine/nbstore/sqlite';
+} from '@nexio/nbstore/sqlite';
 import {
   SqliteV1BlobStorage,
   SqliteV1DocStorage,
-} from '@affine/nbstore/sqlite/v1';
-import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
+} from '@nexio/nbstore/sqlite/v1';
+import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
 import {
   catchErrorInto,
   effect,

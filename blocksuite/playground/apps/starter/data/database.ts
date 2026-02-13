@@ -1,13 +1,13 @@
 import {
   DatabaseBlockDataSource,
   databaseBlockProperties,
-} from '@blocksuite/affine/blocks/database';
+} from '@blocksuite/nexio/blocks/database';
 import {
   type DatabaseBlockModel,
   type ListType,
   type ParagraphType,
-} from '@blocksuite/affine/model';
-import { Text, type Workspace } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import { Text, type Workspace } from '@blocksuite/nexio/store';
 import { groupTraitKey } from '@blocksuite/data-view';
 import { propertyPresets } from '@blocksuite/data-view/property-presets';
 import { viewPresets } from '@blocksuite/data-view/view-presets';
@@ -20,21 +20,21 @@ export const database: InitFn = (collection: Workspace, id: string) => {
 
   doc.load(() => {
     // Add root block and surface block at root level
-    const rootId = store.addBlock('affine:page', {
+    const rootId = store.addBlock('nexio:page', {
       title: new Text('BlockSuite Playground'),
     });
-    store.addBlock('affine:surface', {}, rootId);
+    store.addBlock('nexio:surface', {}, rootId);
 
     // Add note block inside root block
-    const noteId = store.addBlock('affine:note', {}, rootId);
-    const pId = store.addBlock('affine:paragraph', {}, noteId);
+    const noteId = store.addBlock('nexio:note', {}, rootId);
+    const pId = store.addBlock('nexio:paragraph', {}, noteId);
     const model = store.getModelById(pId);
     if (!model) {
       throw new Error('model is not found');
     }
     const addDatabase = (title: string, group = true) => {
       const databaseId = store.addBlock(
-        'affine:database',
+        'nexio:database',
         {
           columns: [],
           cells: {},
@@ -79,7 +79,7 @@ export const database: InitFn = (collection: Workspace, id: string) => {
       ];
       paragraphTypes.forEach(type => {
         const id = store.addBlock(
-          'affine:paragraph',
+          'nexio:paragraph',
           { type: type, text: new Text(`Paragraph type ${type}`) },
           databaseId
         );
@@ -95,7 +95,7 @@ export const database: InitFn = (collection: Workspace, id: string) => {
 
       listTypes.forEach(type => {
         const id = store.addBlock(
-          'affine:list',
+          'nexio:list',
           { type: type, text: new Text(`List type ${type}`) },
           databaseId
         );
@@ -108,11 +108,11 @@ export const database: InitFn = (collection: Workspace, id: string) => {
         }
       });
       // Add a paragraph after database
-      store.addBlock('affine:paragraph', {}, noteId);
-      store.addBlock('affine:paragraph', {}, noteId);
-      store.addBlock('affine:paragraph', {}, noteId);
-      store.addBlock('affine:paragraph', {}, noteId);
-      store.addBlock('affine:paragraph', {}, noteId);
+      store.addBlock('nexio:paragraph', {}, noteId);
+      store.addBlock('nexio:paragraph', {}, noteId);
+      store.addBlock('nexio:paragraph', {}, noteId);
+      store.addBlock('nexio:paragraph', {}, noteId);
+      store.addBlock('nexio:paragraph', {}, noteId);
       datasource.viewManager.viewAdd(viewPresets.kanbanViewMeta.type);
 
       store.resetHistory();

@@ -1,11 +1,11 @@
-import { Skeleton } from '@affine/component';
+import { Skeleton } from '@nexio/component';
 import {
   SettingHeader,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/setting-components';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
@@ -28,15 +28,15 @@ export const BillingSettings = ({
   return (
     <>
       <SettingHeader
-        title={t['com.affine.payment.billing-setting.title']()}
-        subtitle={t['com.affine.payment.billing-setting.subtitle']()}
+        title={t['com.nexio.payment.billing-setting.title']()}
+        subtitle={t['com.nexio.payment.billing-setting.subtitle']()}
       />
       <SettingWrapper
-        title={t['com.affine.payment.billing-setting.information']()}
+        title={t['com.nexio.payment.billing-setting.information']()}
       >
         <SubscriptionSettings onChangeSettingState={onChangeSettingState} />
       </SettingWrapper>
-      <SettingWrapper title={t['com.affine.payment.billing-setting.history']()}>
+      <SettingWrapper title={t['com.nexio.payment.billing-setting.history']()}>
         <BillingHistory />
       </SettingWrapper>
     </>
@@ -105,7 +105,7 @@ const SubscriptionSettingSkeleton = () => {
   const t = useI18n();
   return (
     <SettingWrapper
-      title={t['com.affine.payment.billing-setting.information']()}
+      title={t['com.nexio.payment.billing-setting.information']()}
     >
       <div className={styles.subscriptionSettingSkeleton}>
         <Skeleton variant="rounded" height="104px" />

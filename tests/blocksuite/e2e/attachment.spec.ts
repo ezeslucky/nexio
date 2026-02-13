@@ -49,12 +49,12 @@ const FILE_PATH = path.resolve(
 );
 
 function getAttachment(page: Page) {
-  const attachment = page.locator('affine-attachment');
-  const loading = attachment.locator('.affine-attachment-card.loading');
-  const toolbar = page.locator('affine-toolbar-widget editor-toolbar');
+  const attachment = page.locator('nexio-attachment');
+  const loading = attachment.locator('.nexio-attachment-card.loading');
+  const toolbar = page.locator('nexio-toolbar-widget editor-toolbar');
   const switchViewButton = toolbar.getByRole('button', { name: 'Switch view' });
   const renameBtn = toolbar.getByRole('button', { name: 'Rename' });
-  const renameInput = page.locator('.affine-attachment-rename-container input');
+  const renameInput = page.locator('.nexio-attachment-rename-container input');
 
   const insertAttachment = async () => {
     await page.evaluate(() => {
@@ -83,7 +83,7 @@ function getAttachment(page: Page) {
   };
 
   const getName = () =>
-    attachment.locator('.affine-attachment-content-title-text').innerText();
+    attachment.locator('.nexio-attachment-content-title-text').innerText();
 
   return {
     // locators
@@ -101,7 +101,7 @@ function getAttachment(page: Page) {
     waitLoading: () => loading.waitFor({ state: 'hidden' }),
     getName,
     getSize: () =>
-      attachment.locator('.affine-attachment-content-info').innerText(),
+      attachment.locator('.nexio-attachment-content-info').innerText(),
 
     turnToEmbed: async () => {
       await expect(switchViewButton).toBeVisible();
@@ -167,7 +167,7 @@ test('should undo/redo works for attachment', async ({ page }, testInfo) => {
   );
 
   await undoByKeyboard(page);
-  await page.locator('affine-attachment').waitFor({ state: 'detached' });
+  await page.locator('nexio-attachment').waitFor({ state: 'detached' });
 
   // The loading/error state should not be restored after undo
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
@@ -291,7 +291,7 @@ test(`support dragging attachment block directly`, async ({
     `${testInfo.title}_1.json`
   );
 
-  const attachmentBlock = page.locator('affine-attachment');
+  const attachmentBlock = page.locator('nexio-attachment');
   const rect = await attachmentBlock.boundingBox();
   if (!rect) {
     throw new Error('image not found');
@@ -322,7 +322,7 @@ test(`support dragging attachment block directly`, async ({
   await page.mouse.move(rect.x + 40, rect.y + rect.height + 80, { steps: 20 });
   await page.mouse.up();
 
-  const rects = page.locator('.affine-attachment-container.focused');
+  const rects = page.locator('.nexio-attachment-container.focused');
   await expect(rects).toHaveCount(1);
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
     `${testInfo.title}_3.json`
@@ -397,9 +397,9 @@ test('indent attachment block to paragraph', async ({ page }) => {
   await waitLoading();
 
   await assertBlockChildrenIds(page, '1', ['2', '4']);
-  await assertBlockFlavour(page, '1', 'affine:note');
-  await assertBlockFlavour(page, '2', 'affine:paragraph');
-  await assertBlockFlavour(page, '4', 'affine:attachment');
+  await assertBlockFlavour(page, '1', 'nexio:note');
+  await assertBlockFlavour(page, '2', 'nexio:paragraph');
+  await assertBlockFlavour(page, '4', 'nexio:attachment');
 
   await focusRichText(page);
   await pressArrowDown(page);
@@ -425,9 +425,9 @@ test('indent attachment block to list', async ({ page }) => {
   await waitLoading();
 
   await assertBlockChildrenIds(page, '1', ['3', '5']);
-  await assertBlockFlavour(page, '1', 'affine:note');
-  await assertBlockFlavour(page, '3', 'affine:list');
-  await assertBlockFlavour(page, '5', 'affine:attachment');
+  await assertBlockFlavour(page, '1', 'nexio:note');
+  await assertBlockFlavour(page, '3', 'nexio:list');
+  await assertBlockFlavour(page, '5', 'nexio:attachment');
 
   await focusRichText(page);
   await pressArrowDown(page);
@@ -459,5 +459,5 @@ test('attachment can be dragged from note to surface top level block', async ({
   await dragBlockToPoint(page, '4', { x: 200, y: 200 });
 
   await waitNextFrame(page);
-  await assertParentBlockFlavour(page, '4', 'affine:surface');
+  await assertParentBlockFlavour(page, '4', 'nexio:surface');
 });

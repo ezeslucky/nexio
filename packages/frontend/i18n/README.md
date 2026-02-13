@@ -6,7 +6,7 @@
 - Replace literal text with translation keys
 
 ```tsx
-import { useI18n, LOCALES } from '@affine/i18n';
+import { useI18n, LOCALES } from '@nexio/i18n';
 // src/resources/en.json
 // {
 //     'Text': 'some text',
@@ -61,7 +61,7 @@ export TOLGEE_API_KEY=tgpak_XXXXXXX
 
 ## References
 
-- [AFFiNE | Tolgee](https://i18n.affine.pro/)
+- [NEXIO | Tolgee](https://i18n.nexio.pro/)
 - [Tolgee Documentation](https://tolgee.io/docs/)
 - [i18next](https://www.i18next.com/)
 - [react-i18next](https://react.i18next.com/)

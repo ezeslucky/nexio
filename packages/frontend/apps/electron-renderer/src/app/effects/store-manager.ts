@@ -1,6 +1,6 @@
-import { NbstoreProvider } from '@affine/core/modules/storage';
-import { apis } from '@affine/electron-api';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
+import { NbstoreProvider } from '@nexio/core/modules/storage';
+import { apis } from '@nexio/electron-api';
+import { StoreManagerClient } from '@nexio/nbstore/worker/client';
 import type { Framework } from '@toeverything/infra';
 import { OpClient } from '@toeverything/infra/op';
 import { v4 as uuid } from 'uuid';
@@ -32,7 +32,7 @@ function createStoreManagerClient() {
   window.addEventListener('message', handleMessage);
 
   // oxlint-disable-next-line no-non-null-assertion
-  apis!.worker.connectWorker('affine-shared-worker', portId).catch(err => {
+  apis!.worker.connectWorker('nexio-shared-worker', portId).catch(err => {
     console.error('failed to connect worker', err);
   });
 

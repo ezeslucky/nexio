@@ -1,11 +1,11 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import type { Path } from '@affine-tools/utils/path';
+import type { Path } from '@nexio-tools/utils/path';
 import {
   type Package,
   Workspace,
   yarnList,
-} from '@affine-tools/utils/workspace';
+} from '@nexio-tools/utils/workspace';
 import { applyEdits, modify } from 'jsonc-parser';
 import { type BuiltInParserName, format } from 'prettier';
 
@@ -30,7 +30,7 @@ export class InitCommand extends Command {
       [this.workspace.join('tsconfig.json'), this.genProjectTsConfig, 'json'],
       [
         this.workspace
-          .getPackage('@affine-tools/utils')
+          .getPackage('@nexio-tools/utils')
           .join('src/workspace.gen.ts'),
         this.genWorkspaceInfo,
         'typescript',
@@ -118,7 +118,7 @@ export class InitCommand extends Command {
     //   currently electron-api => electron => nbstore => electron-api
     //   this is a circular dependency, we need to fix it
     //   basically, the electron app don't need to use nbstore for exposing js bridge apis
-    if (pkg.name === '@affine/electron-api') {
+    if (pkg.name === '@nexio/electron-api') {
       return prev;
     }
 

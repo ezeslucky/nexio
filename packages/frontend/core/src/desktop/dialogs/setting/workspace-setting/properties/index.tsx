@@ -1,12 +1,12 @@
-import { Button, Menu } from '@affine/component';
-import { SettingHeader } from '@affine/component/setting-components';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspacePropertyManager } from '@affine/core/components/properties/manager';
-import { CreatePropertyMenuItems } from '@affine/core/components/properties/menu/create-doc-property';
-import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { Trans, useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Button, Menu } from '@nexio/component';
+import { SettingHeader } from '@nexio/component/setting-components';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
+import { WorkspacePropertyManager } from '@nexio/core/components/properties/manager';
+import { CreatePropertyMenuItems } from '@nexio/core/components/properties/menu/create-doc-property';
+import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { Trans, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { FrameworkScope, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
@@ -37,7 +37,7 @@ const WorkspaceSettingPropertiesMain = () => {
       <div className={styles.listHeader}>
         <Menu items={<CreatePropertyMenuItems onCreated={onCreated} />}>
           <Button variant="primary">
-            {t['com.affine.settings.workspace.properties.add_property']()}
+            {t['com.nexio.settings.workspace.properties.add_property']()}
           </Button>
         </Menu>
       </div>
@@ -59,13 +59,13 @@ export const WorkspaceSettingProperties = () => {
   return (
     <FrameworkScope scope={workspace.scope}>
       <SettingHeader
-        title={t['com.affine.settings.workspace.properties.header.title']()}
+        title={t['com.nexio.settings.workspace.properties.header.title']()}
         subtitle={
           <Trans
             values={{
               name: title,
             }}
-            i18nKey="com.affine.settings.workspace.properties.header.subtitle"
+            i18nKey="com.nexio.settings.workspace.properties.header.subtitle"
           >
             Manage workspace <strong>name</strong> properties
           </Trans>

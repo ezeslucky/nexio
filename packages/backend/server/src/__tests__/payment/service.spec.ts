@@ -134,7 +134,7 @@ const sub: Stripe.Subscription = {
   // @ts-expect-error stub
   customer: {
     id: 'cus_1',
-    email: 'u1@affine.pro',
+    email: 'u1@nexio.pro',
   },
   items: {
     object: 'list',
@@ -235,7 +235,7 @@ test.before(async t => {
 test.beforeEach(async t => {
   const { db, app, stripe } = t.context;
   await t.context.app.initTestingDB();
-  t.context.u1 = await app.get(AuthService).signUp('u1@affine.pro', '1');
+  t.context.u1 = await app.get(AuthService).signUp('u1@nexio.pro', '1');
 
   app.get(ConfigFactory).override({
     payment: {
@@ -1143,7 +1143,7 @@ const lifetimeInvoice: Stripe.Invoice = {
   amount_paid: 49900,
   total: 49900,
   customer: 'cus_1',
-  customer_email: 'u1@affine.pro',
+  customer_email: 'u1@nexio.pro',
   currency: 'usd',
   status: 'paid',
   lines: {
@@ -1162,7 +1162,7 @@ const onetimeMonthlyInvoice: Stripe.Invoice = {
   amount_paid: 799,
   total: 799,
   customer: 'cus_1',
-  customer_email: 'u1@affine.pro',
+  customer_email: 'u1@nexio.pro',
   currency: 'usd',
   status: 'paid',
   lines: {
@@ -1181,7 +1181,7 @@ const onetimeYearlyInvoice: Stripe.Invoice = {
   amount_paid: 8100,
   total: 8100,
   customer: 'cus_1',
-  customer_email: 'u1@affine.pro',
+  customer_email: 'u1@nexio.pro',
   currency: 'usd',
   status: 'paid',
   lines: {

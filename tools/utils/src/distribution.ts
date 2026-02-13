@@ -4,26 +4,26 @@ export const PackageToDistribution = new Map<
   PackageName,
   BUILD_CONFIG_TYPE['distribution']
 >([
-  ['@affine/admin', 'admin'],
-  ['@affine/web', 'web'],
-  ['@affine/electron-renderer', 'desktop'],
-  ['@affine/electron', 'desktop'],
-  ['@affine/mobile', 'mobile'],
-  ['@affine/ios', 'ios'],
-  ['@affine/android', 'android'],
+  ['@nexio/admin', 'admin'],
+  ['@nexio/web', 'web'],
+  ['@nexio/electron-renderer', 'desktop'],
+  ['@nexio/electron', 'desktop'],
+  ['@nexio/mobile', 'mobile'],
+  ['@nexio/ios', 'ios'],
+  ['@nexio/android', 'android'],
 ]);
 
 export const AliasToPackage = new Map<string, PackageName>([
-  ['admin', '@affine/admin'],
-  ['web', '@affine/web'],
-  ['electron', '@affine/electron'],
-  ['desktop', '@affine/electron-renderer'],
-  ['renderer', '@affine/electron-renderer'],
-  ['mobile', '@affine/mobile'],
-  ['ios', '@affine/ios'],
-  ['android', '@affine/android'],
-  ['server', '@affine/server'],
-  ['gql', '@affine/graphql'],
+  ['admin', '@nexio/admin'],
+  ['web', '@nexio/web'],
+  ['electron', '@nexio/electron'],
+  ['desktop', '@nexio/electron-renderer'],
+  ['renderer', '@nexio/electron-renderer'],
+  ['mobile', '@nexio/mobile'],
+  ['ios', '@nexio/ios'],
+  ['android', '@nexio/android'],
+  ['server', '@nexio/server'],
+  ['gql', '@nexio/graphql'],
   ...PackageList.map(
     pkg => [pkg.name.split('/').pop()!, pkg.name] as [string, PackageName]
   ),

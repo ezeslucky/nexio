@@ -1,16 +1,16 @@
-import { Button, IconButton, Menu, MenuItem, MenuSub } from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { TemplateListMenuContentScrollable } from '@affine/core/modules/template-doc/view/template-list-menu';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { inferOpenMode } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import { Button, IconButton, Menu, MenuItem, MenuSub } from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { DocsService } from '@nexio/core/modules/doc';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { TemplateDocService } from '@nexio/core/modules/template-doc';
+import { TemplateListMenuContentScrollable } from '@nexio/core/modules/template-doc/view/template-list-menu';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { inferOpenMode } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
+import type { DocMode } from '@blocksuite/nexio/model';
 import {
   ArrowDownSmallIcon,
   EdgelessIcon,

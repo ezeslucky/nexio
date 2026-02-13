@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import type { Dict, OverridedMixpanel } from 'mixpanel-browser';
 import mixpanelBrowser from 'mixpanel-browser';
 
@@ -15,7 +15,7 @@ function createMixpanel() {
     mixpanelBrowser.init(BUILD_CONFIG.MIXPANEL_TOKEN || '', {
       track_pageview: true,
       persistence: 'localStorage',
-      api_host: 'https://telemetry.affine.run',
+      api_host: 'https://telemetry.nexio.run',
       ignore_dnt: true,
     });
     mixpanel = mixpanelBrowser;

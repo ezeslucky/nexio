@@ -37,7 +37,7 @@ async function create() {
 
 test('should set doc owner', async t => {
   const workspace = await create();
-  const user = await models.user.create({ email: 'u1@affine.pro' });
+  const user = await models.user.create({ email: 'u1@nexio.pro' });
   const docId = 'fake-doc-id';
 
   await models.docUser.setOwner(workspace.id, docId, user.id);
@@ -47,8 +47,8 @@ test('should set doc owner', async t => {
 });
 
 test('should transfer doc owner', async t => {
-  const user = await models.user.create({ email: 'u1@affine.pro' });
-  const user2 = await models.user.create({ email: 'u2@affine.pro' });
+  const user = await models.user.create({ email: 'u1@nexio.pro' });
+  const user2 = await models.user.create({ email: 'u2@nexio.pro' });
   const workspace = await create();
   const docId = 'fake-doc-id';
 
@@ -64,7 +64,7 @@ test('should transfer doc owner', async t => {
 
 test('should set doc user role', async t => {
   const workspace = await create();
-  const user = await models.user.create({ email: 'u1@affine.pro' });
+  const user = await models.user.create({ email: 'u1@nexio.pro' });
   const docId = 'fake-doc-id';
 
   await models.docUser.set(workspace.id, docId, user.id, DocRole.Manager);
@@ -75,7 +75,7 @@ test('should set doc user role', async t => {
 
 test('should not allow setting doc owner through setDocUserRole', async t => {
   const workspace = await create();
-  const user = await models.user.create({ email: 'u1@affine.pro' });
+  const user = await models.user.create({ email: 'u1@nexio.pro' });
   const docId = 'fake-doc-id';
 
   await t.throwsAsync(
@@ -86,7 +86,7 @@ test('should not allow setting doc owner through setDocUserRole', async t => {
 
 test('should delete doc user role', async t => {
   const workspace = await create();
-  const user = await models.user.create({ email: 'u1@affine.pro' });
+  const user = await models.user.create({ email: 'u1@nexio.pro' });
   const docId = 'fake-doc-id';
 
   await models.docUser.set(workspace.id, docId, user.id, DocRole.Manager);
@@ -103,7 +103,7 @@ test('should paginate doc user roles', async t => {
     data: Array.from({ length: 200 }, (_, i) => ({
       id: String(i),
       name: `u${i}`,
-      email: `${i}@affine.pro`,
+      email: `${i}@nexio.pro`,
     })),
   });
 
@@ -145,8 +145,8 @@ test('should count doc user roles', async t => {
   const workspace = await create();
   const docId = 'fake-doc-id';
   const users = await Promise.all([
-    models.user.create({ email: 'u1@affine.pro' }),
-    models.user.create({ email: 'u2@affine.pro' }),
+    models.user.create({ email: 'u1@nexio.pro' }),
+    models.user.create({ email: 'u2@nexio.pro' }),
   ]);
 
   await Promise.all(

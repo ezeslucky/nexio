@@ -1,11 +1,3 @@
-# Y-Octo
-
-[![test](https://github.com/toeverything/y-octo/actions/workflows/y-octo.yml/badge.svg)](https://github.com/toeverything/y-octo/actions/workflows/y-octo.yml)
-[![docs]](https://docs.rs/y-octo/latest/y_octo)
-[![crates]](https://crates.io/crates/y-octo)
-[![codecov]](https://codecov.io/gh/toeverything/y-octo)
-
-Y-Octo is a high-performance CRDT implementation compatible with [yjs].
 
 ## Introduction
 
@@ -15,9 +7,6 @@ Y-Octo also has interoperability and binary compatibility with [yjs]. Developers
 
 ## Who are using
 
-<a href="https://affine.pro"><img src="./assets/affine.svg" /></a>
-
-[AFFiNE](https://affine.pro) is using y-octo in production. There are [Electron](https://affine.pro/download) app and [Node.js server](https://github.com/ezeslucky/nexio/tree/canary/packages/backend/native) using y-octo in production.
 
 <a href="https://www.mysc.app/"><img src="https://www.mysc.app/images/logo_blk.webp" width="120px" /></a>
 
@@ -54,47 +43,3 @@ Y-Octo also has interoperability and binary compatibility with [yjs]. Developers
   - ✅ Yjs update v1 encoding.
   - 🚧 Yjs update v2 encoding.
 
-## Testing & Linting
-
-Put everything to the test! We've established various test suites, but we're continually striving to enhance our coverage：
-
-- Rust Tests
-  - Unit tests
-  - [Loom](https://docs.rs/loom/latest/loom/) multi-threading tests
-  - [Miri](https://github.com/rust-lang/miri) undefined behavior tests
-  - [Address Sanitizer](https://doc.rust-lang.org/beta/unstable-book/compiler-flags/sanitizer.html) memory error detections
-  - [Fuzzing](https://github.com/rust-fuzz/cargo-fuzz) fuzzing tests
-- Node Tests
-- Smoke Tests
-- Eslint, Clippy
-
-## Related projects
-
-- [OctoBase]: The open-source embedded database based on Y-Octo.
-- [yjs]: Shared data types for building collaborative software in web.
-
-## Maintainers
-
-- [DarkSky](https://github.com/darkskygit)
-- [liuyi](https://github.com/forehalo)
-- [LongYinan](https://github.com/Brooooooklyn)
-
-## Why not [yrs](https://github.com/y-crdt/y-crdt/)
-
-See [Why we're not using yrs](./y-octo-utils/yrs-is-unsafe/README.md)
-
-## License
-
-Y-Octo are [MIT licensed].
-
-[codecov]: https://codecov.io/gh/toeverything/y-octo/graph/badge.svg?token=9AQY5Q1BYH
-[crates]: https://img.shields.io/crates/v/y-octo.svg
-[docs]: https://img.shields.io/docsrs/y-octo.svg
-[test]: https://github.com/toeverything/y-octo/actions/workflows/y-octo.yml/badge.svg
-[yjs]: https://github.com/yjs/yjs
-[Address Sanitizer]: https://github.com/toeverything/y-octo/actions/workflows/y-octo-asan.yml/badge.svg
-[Memory Leak Detect]: https://github.com/toeverything/y-octo/actions/workflows/y-octo-memory-test.yml/badge.svg
-[OctoBase]: https://github.com/toeverything/octobase
-[BlockSuite]: https://github.com/toeverything/blocksuite
-[AFFiNE]: https://github.com/ezeslucky/nexio
-[MIT licensed]: ./LICENSE

@@ -2,8 +2,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@affine/admin/components/ui/avatar';
-import { FeatureType } from '@affine/graphql';
+} from '@nexio/admin/components/ui/avatar';
+import { FeatureType } from '@nexio/graphql';
 import {
   AccountIcon,
   EmailIcon,

@@ -1,7 +1,7 @@
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import type { Workspace } from '@affine/core/modules/workspace';
-import { track } from '@affine/track';
-import type { Store } from '@blocksuite/affine/store';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
+import type { Workspace } from '@nexio/core/modules/workspace';
+import { track } from '@nexio/track';
+import type { Store } from '@blocksuite/nexio/store';
 import { useCallback } from 'react';
 
 import { ShareMenu } from './share-menu';
@@ -25,7 +25,7 @@ export const SharePageButton = ({ workspace, page }: SharePageModalProps) => {
     <ShareMenu
       workspaceMetadata={workspace.meta}
       currentPage={page}
-      onEnableAffineCloud={() =>
+      onEnableNexioCloud={() =>
         confirmEnableCloud(workspace, {
           openPageId: page.id,
         })

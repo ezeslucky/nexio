@@ -1,12 +1,12 @@
-import type { SerializedXYWH } from '@blocksuite/affine/global/gfx';
+import type { SerializedXYWH } from '@blocksuite/nexio/global/gfx';
 import {
   Boxed,
   nanoid,
   native2Y,
   Text,
   type Workspace,
-} from '@blocksuite/affine/store';
-import { DEFAULT_ROUGHNESS } from '@blocksuite/affine-model';
+} from '@blocksuite/nexio/store';
+import { DEFAULT_ROUGHNESS } from '@blocksuite/nexio-model';
 import type * as Y from 'yjs';
 
 import type { InitFn } from './utils.js';
@@ -31,9 +31,9 @@ function createShapes(count: number): Record<string, unknown> {
         shapeType: SHAPE_TYPES[Math.floor(Math.random() * 40) % 4],
         radius: 0,
         filled: false,
-        fillColor: '--affine-palette-shape-yellow',
+        fillColor: '--nexio-palette-shape-yellow',
         strokeWidth: 4,
-        strokeColor: '--affine-palette-line-yellow',
+        strokeColor: '--nexio-palette-line-yellow',
         strokeStyle: 'solid',
         roughness: DEFAULT_ROUGHNESS,
       },
@@ -54,14 +54,14 @@ export const heavyWhiteboard: InitFn = (collection: Workspace, id: string) => {
   const store = doc.getStore();
   doc.load(() => {
     // Add root block and surface block at root level
-    const rootId = store.addBlock('affine:page', {
+    const rootId = store.addBlock('nexio:page', {
       title: new Text(),
     });
 
     const surfaceBlocks = enableShapes ? createShapes(count) : {};
 
     store.addBlock(
-      'affine:surface',
+      'nexio:surface',
       {
         elements: new Boxed(native2Y(surfaceBlocks, { deep: false })) as Boxed<
           Y.Map<Y.Map<unknown>>
@@ -76,7 +76,7 @@ export const heavyWhiteboard: InitFn = (collection: Workspace, id: string) => {
       const x = Math.random() * RANGE - RANGE / 2;
       const y = Math.random() * RANGE - RANGE / 2;
       const noteId = store.addBlock(
-        'affine:note',
+        'nexio:note',
         {
           xywh: `[${x}, ${y}, 100, 50]` as SerializedXYWH,
         },
@@ -84,7 +84,7 @@ export const heavyWhiteboard: InitFn = (collection: Workspace, id: string) => {
       );
       // Add paragraph block inside note block
       store.addBlock(
-        'affine:paragraph',
+        'nexio:paragraph',
         {
           text: new Text('Note #' + i),
         },

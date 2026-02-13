@@ -1,31 +1,31 @@
 import {
   EdgelessClipboardController,
   splitElements,
-} from '@blocksuite/affine/blocks/root';
+} from '@blocksuite/nexio/blocks/root';
 import {
   getSurfaceBlock,
   type SurfaceBlockComponent,
-} from '@blocksuite/affine/blocks/surface';
-import { DatabaseBlockModel, ImageBlockModel } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/blocks/surface';
+import { DatabaseBlockModel, ImageBlockModel } from '@blocksuite/nexio/model';
 import {
   getBlockSelectionsCommand,
   getImageSelectionsCommand,
   getSelectedBlocksCommand,
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/affine/shared/commands';
-import { matchModels } from '@blocksuite/affine/shared/utils';
-import { type EditorHost, TextSelection } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/shared/commands';
+import { matchModels } from '@blocksuite/nexio/shared/utils';
+import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/std/gfx';
 import {
   type BlockModel,
   type DraftModel,
   Slice,
   toDraftModel,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 
 import { getContentFromSlice } from '../../utils';
 import type { CopilotTool } from '../tool/copilot-tool';
@@ -82,7 +82,7 @@ export function getSelectedModels(editorHost: EditorHost) {
 }
 
 export function traverse(model: DraftModel, drafts: DraftModel[]) {
-  const isDatabase = model.flavour === 'affine:database';
+  const isDatabase = model.flavour === 'nexio:database';
   const children = isDatabase
     ? model.children
     : model.children.filter(child => {
@@ -132,7 +132,7 @@ export async function selectAboveBlocks(editorHost: EditorHost, num = 10) {
 
   let noteModel: BlockModel | null = lastLeafModel;
   let lastRootModel: BlockModel | null = null;
-  while (noteModel && noteModel.flavour !== 'affine:note') {
+  while (noteModel && noteModel.flavour !== 'nexio:note') {
     lastRootModel = noteModel;
     noteModel = editorHost.store.getParent(noteModel);
   }
@@ -184,7 +184,7 @@ export function getSurfaceElementFromEditor(editor: EditorHost) {
 
   const surfaceId = surfaceModel.id;
   const surfaceElement = editor.querySelector(
-    `affine-surface[data-block-id="${surfaceId}"]`
+    `nexio-surface[data-block-id="${surfaceId}"]`
   ) as SurfaceBlockComponent;
   if (!surfaceElement) return null;
 
@@ -254,7 +254,7 @@ export const getSelectedAttachments = async (host: EditorHost) => {
 };
 
 export const getSelectedNoteAnchor = (host: EditorHost, id: string) => {
-  return host.querySelector(`affine-edgeless-note[data-block-id="${id}"]`);
+  return host.querySelector(`nexio-edgeless-note[data-block-id="${id}"]`);
 };
 
 export function getCopilotSelectedElems(host: EditorHost): GfxModel[] {

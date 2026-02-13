@@ -5,8 +5,8 @@
 yarn install
 
 # Build Server Dependencies
-yarn affine @affine/server-native build
-yarn affine @affine/reader build
+yarn nexio @nexio/server-native build
+yarn nexio @nexio/reader build
 
 # Create database
-yarn affine @affine/server prisma migrate reset -f
+yarn nexio @nexio/server prisma migrate reset -f

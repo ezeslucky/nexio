@@ -1,4 +1,4 @@
-import { DocRole, type GetPageGrantedUsersListQuery } from '@affine/graphql';
+import { DocRole, type GetPageGrantedUsersListQuery } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

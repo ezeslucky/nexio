@@ -1,13 +1,13 @@
-import { getWorkerUrl } from '@affine/env/worker';
-import { CodeLayoutHandlerExtension } from '@blocksuite/affine/blocks/code';
-import { ImageLayoutHandlerExtension } from '@blocksuite/affine/blocks/image';
-import { ListLayoutHandlerExtension } from '@blocksuite/affine/blocks/list';
-import { NoteLayoutHandlerExtension } from '@blocksuite/affine/blocks/note';
-import { ParagraphLayoutHandlerExtension } from '@blocksuite/affine/blocks/paragraph';
+import { getWorkerUrl } from '@nexio/env/worker';
+import { CodeLayoutHandlerExtension } from '@blocksuite/nexio/blocks/code';
+import { ImageLayoutHandlerExtension } from '@blocksuite/nexio/blocks/image';
+import { ListLayoutHandlerExtension } from '@blocksuite/nexio/blocks/list';
+import { NoteLayoutHandlerExtension } from '@blocksuite/nexio/blocks/note';
+import { ParagraphLayoutHandlerExtension } from '@blocksuite/nexio/blocks/paragraph';
 import {
   TurboRendererConfigFactory,
   ViewportTurboRendererExtension,
-} from '@blocksuite/affine/gfx/turbo-renderer';
+} from '@blocksuite/nexio/gfx/turbo-renderer';
 
 function createPainterWorker() {
   const worker = new Worker(getWorkerUrl('turbo-painter'));

@@ -1,8 +1,8 @@
 import {
   DatabaseBlockDataSource,
   ExternalGroupByConfigProvider,
-} from '@blocksuite/affine/blocks/database';
-import type { ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/blocks/database';
+import type { ExtensionType } from '@blocksuite/nexio/store';
 
 import { groupByConfigList } from '../../database-block/group-by';
 import { propertiesPresets } from '../../database-block/properties';

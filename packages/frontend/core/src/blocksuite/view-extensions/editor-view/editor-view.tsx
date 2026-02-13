@@ -1,16 +1,16 @@
-import type { ConfirmModalProps, ElementOrFactory } from '@affine/component';
+import type { ConfirmModalProps, ElementOrFactory } from '@nexio/component';
 import {
-  AffinePageReference,
-  AffineSharedPageReference,
-} from '@affine/core/components/affine/reference-link';
-import { DocService, DocsService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+  NexioPageReference,
+  NexioSharedPageReference,
+} from '@nexio/core/components/nexio/reference-link';
+import { DocService, DocsService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 import { z } from 'zod';
@@ -48,10 +48,10 @@ const optionsSchema = z.object({
   scope: z.enum(['doc', 'workspace']).optional(),
 });
 
-export type AffineEditorViewOptions = z.infer<typeof optionsSchema>;
+export type NexioEditorViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEditorViewOptions> {
-  override name = 'affine-editor-view';
+export class NexioEditorViewExtension extends ViewExtensionProvider<NexioEditorViewOptions> {
+  override name = 'nexio-editor-view';
 
   override schema = optionsSchema;
 
@@ -72,7 +72,7 @@ export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEdito
 
       if (workspaceService.workspace.openOptions.isSharedMode) {
         return (
-          <AffineSharedPageReference
+          <NexioSharedPageReference
             docCollection={workspaceService.workspace.docCollection}
             pageId={pageId}
             params={params}
@@ -82,14 +82,14 @@ export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEdito
       }
 
       return (
-        <AffinePageReference pageId={pageId} params={params} title={title} />
+        <NexioPageReference pageId={pageId} params={params} title={title} />
       );
     };
   };
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineEditorViewOptions
+    options?: NexioEditorViewOptions
   ) {
     super.setup(context, options);
     if (!options) {

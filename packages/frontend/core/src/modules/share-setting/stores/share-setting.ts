@@ -1,9 +1,9 @@
-import type { WorkspaceServerService } from '@affine/core/modules/cloud';
+import type { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import {
   getWorkspaceConfigQuery,
   setEnableAiMutation,
   setEnableUrlPreviewMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 export class WorkspaceShareSettingStore extends Store {

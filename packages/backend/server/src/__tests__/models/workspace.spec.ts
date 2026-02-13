@@ -35,7 +35,7 @@ test.after(async t => {
 
 test('should create a new workspace, default to private', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const workspace = await t.context.workspace.create(user.id);
   t.truthy(workspace.id);
@@ -53,7 +53,7 @@ test('should get null for non-exist workspace', async t => {
 
 test('should update workspace', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const workspace = await t.context.workspace.create(user.id);
   const data = {
@@ -72,7 +72,7 @@ test('should update workspace', async t => {
 
 test('should delete workspace', async t => {
   const user = await t.context.user.create({
-    email: 'test@affine.pro',
+    email: 'test@nexio.pro',
   });
   const workspace = await t.context.workspace.create(user.id);
   await t.context.workspace.delete(workspace.id);

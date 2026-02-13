@@ -1,5 +1,5 @@
-import { Progress, PropertyValue } from '@affine/component';
-import { ConfigModal } from '@affine/core/components/mobile';
+import { Progress, PropertyValue } from '@nexio/component';
+import { ConfigModal } from '@nexio/core/components/mobile';
 import { ProgressIcon } from '@blocksuite/icons/rc';
 import type { LiveData } from '@toeverything/infra';
 import { useLiveData } from '@toeverything/infra';

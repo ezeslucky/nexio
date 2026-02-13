@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/affine/model';
-import type { DocMeta } from '@blocksuite/affine/store';
+import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMeta } from '@blocksuite/nexio/store';
 import {
   Store,
   yjsGetPath,

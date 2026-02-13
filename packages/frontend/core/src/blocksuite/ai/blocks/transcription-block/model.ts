@@ -2,9 +2,9 @@ import {
   BlockModel,
   BlockSchemaExtension,
   defineBlockSchema,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 
-export const TranscriptionBlockFlavour = 'affine:transcription';
+export const TranscriptionBlockFlavour = 'nexio:transcription';
 
 const defaultProps: TranscriptionBlockProps = {
   transcription: {},
@@ -18,8 +18,8 @@ export const TranscriptionBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'attachment-viewer',
-    parent: ['affine:attachment'],
-    children: ['affine:callout'],
+    parent: ['nexio:attachment'],
+    children: ['nexio:callout'],
   },
   toModel: () => new TranscriptionBlockModel(),
 });

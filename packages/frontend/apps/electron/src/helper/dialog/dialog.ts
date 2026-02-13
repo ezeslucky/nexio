@@ -1,7 +1,7 @@
 import { parse } from 'node:path';
 
-import { DocStorage, ValidationResult } from '@affine/native';
-import { parseUniversalId } from '@affine/nbstore';
+import { DocStorage, ValidationResult } from '@nexio/native';
+import { parseUniversalId } from '@nexio/nbstore';
 import fs from 'fs-extra';
 import { nanoid } from 'nanoid';
 
@@ -63,7 +63,7 @@ export function setFakeDialogResult(result: FakeDialogResult | undefined) {
   }
 }
 
-const extension = 'affine';
+const extension = 'nexio';
 
 function getDefaultDBFileName(name: string, id: string) {
   const fileName = `${name}_${id}.${extension}`;
@@ -162,20 +162,7 @@ export async function selectDBFileLocation(): Promise<SelectDBFileLocationResult
   }
 }
 
-/**
- * This function is called when the user clicks the "Load" button in the "Load Workspace" dialog.
- *
- * It will
- * - symlink the source db file to a new workspace id to app-data
- * - return the new workspace id
- *
- * eg, it will create a new folder in app-data:
- * <app-data>/<app-name>/<workspaces|userspaces>/<peer>/<workspace-id>/storage.db
- *
- * On the renderer side, after the UI got a new workspace id, it will
- * update the local workspace id list and then connect to it.
- *
- */
+
 export async function loadDBFile(
   dbFilePath?: string
 ): Promise<LoadDBFileResult> {
@@ -199,10 +186,10 @@ export async function loadDBFile(
           {
             name: 'SQLite Database',
             // do we want to support other file format?
-            extensions: ['db', 'affine'],
+            extensions: ['db', 'nexio'],
           },
         ],
-        message: 'Load Workspace from a AFFiNE file',
+        message: 'Load Workspace from a NEXIO file',
       }));
     const originalPath = ret.filePaths?.[0];
     if (ret.canceled || !originalPath) {
@@ -252,7 +239,7 @@ async function cpV1DBFile(
   originalPath: string,
   workspaceId: string
 ): Promise<LoadDBFileResult> {
-  const { SqliteConnection } = await import('@affine/native');
+  const { SqliteConnection } = await import('@nexio/native');
 
   const validationResult = await SqliteConnection.validate(originalPath);
 

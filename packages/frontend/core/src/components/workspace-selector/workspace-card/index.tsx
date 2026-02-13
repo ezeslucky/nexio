@@ -1,15 +1,15 @@
-import { Button, notify, Skeleton, Tooltip } from '@affine/component';
-import { Loading } from '@affine/component/ui/loading';
-import { useSystemOnline } from '@affine/core/components/hooks/use-system-online';
-import { useWorkspace } from '@affine/core/components/hooks/use-workspace';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import { Button, notify, Skeleton, Tooltip } from '@nexio/component';
+import { Loading } from '@nexio/component/ui/loading';
+import { useSystemOnline } from '@nexio/core/components/hooks/use-system-online';
+import { useWorkspace } from '@nexio/core/components/hooks/use-workspace';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import {
   type WorkspaceMetadata,
   type WorkspaceProfileInfo,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
+import { useI18n } from '@nexio/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,
@@ -28,7 +28,7 @@ import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 
-import { useAsyncCallback } from '../../hooks/affine-async-hooks';
+import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
 import { useCatchEventCallback } from '../../hooks/use-catch-event-hook';
 import { useNavigateHelper } from '../../hooks/use-navigate-helper';
 import { WorkspaceAvatar } from '../../workspace-avatar';
@@ -120,10 +120,10 @@ const useSyncEngineSyncProgress = (meta: WorkspaceMetadata) => {
     content = 'Sync disconnected due to unexpected issues, reconnecting.';
   } else if (syncing) {
     content =
-      `Syncing with AFFiNE Cloud` +
+      `Syncing with NEXIO Cloud` +
       (progress ? ` (${Math.floor(progress * 100)}%)` : '');
   } else {
-    content = 'Synced with AFFiNE Cloud';
+    content = 'Synced with NEXIO Cloud';
   }
 
   const CloudWorkspaceSyncStatus = () => {
@@ -378,13 +378,13 @@ export const WorkspaceCard = forwardRef<
         <div className={styles.suffixIcons}>
           {hideCollaborationIcon || information?.isOwner ? null : (
             <Tooltip
-              content={t['com.affine.settings.workspace.state.joined']()}
+              content={t['com.nexio.settings.workspace.state.joined']()}
             >
               <CollaborationIcon className={styles.collaborationIcon} />
             </Tooltip>
           )}
           {hideTeamWorkspaceIcon || !information?.isTeam ? null : (
-            <Tooltip content={t['com.affine.settings.workspace.state.team']()}>
+            <Tooltip content={t['com.nexio.settings.workspace.state.team']()}>
               <TeamWorkspaceIcon className={styles.collaborationIcon} />
             </Tooltip>
           )}

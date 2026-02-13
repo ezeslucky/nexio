@@ -1,5 +1,5 @@
 {
-  "name": "@affine/error",
+  "name": "@nexio/error",
   "version": "0.22.4",
   "private": true,
   "type": "module",
@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "peerDependencies": {
-    "@affine/graphql": "workspace:*",
+    "@nexio/graphql": "workspace:*",
     "graphql": "^16.9.0"
   },
   "devDependencies": {

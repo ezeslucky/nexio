@@ -35,5 +35,5 @@ export default function InvitationAccepted(props: InvitationAcceptedProps) {
 InvitationAccepted.PreviewProps = {
   user: TEST_USER,
   workspace: TEST_WORKSPACE,
-  url: 'https://app.affine.pro',
+  url: 'https://app.nexio.pro',
 };

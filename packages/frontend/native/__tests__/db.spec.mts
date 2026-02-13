@@ -6,7 +6,7 @@ import { SqliteConnection, ValidationResult } from '../index';
 
 test('db validate', async t => {
   const path = fileURLToPath(
-    new URL('./fixtures/test01.affine', import.meta.url)
+    new URL('./fixtures/test01.nexio', import.meta.url)
   );
   const result = await SqliteConnection.validate(path);
   t.is(result, ValidationResult.MissingVersionColumn);

@@ -3,10 +3,10 @@ import {
   MenuTrigger,
   RadioGroup,
   type RadioItem,
-} from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
 import {
   DefaultTheme,
   FontFamily,
@@ -14,8 +14,8 @@ import {
   FontStyle,
   FontWeightMap,
   TextAlign,
-} from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
@@ -42,31 +42,31 @@ export const TextSettings = () => {
         value: TextAlign.Left,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.left'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.left'
           ](),
       },
       {
         value: TextAlign.Center,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.center'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.center'
           ](),
       },
       {
         value: TextAlign.Right,
         label:
           t[
-            'com.affine.settings.editorSettings.edgeless.text.alignment.right'
+            'com.nexio.settings.editorSettings.edgeless.text.alignment.right'
           ](),
       },
     ],
     [t]
   );
 
-  const { textAlign } = settings['affine:edgeless-text'];
+  const { textAlign } = settings['nexio:edgeless-text'];
   const setTextAlign = useCallback(
     (value: TextAlign) => {
-      editorSetting.set('affine:edgeless-text', {
+      editorSetting.set('nexio:edgeless-text', {
         textAlign: value,
       });
     },
@@ -74,10 +74,10 @@ export const TextSettings = () => {
   );
 
   const colorItems = useMemo(() => {
-    const { color } = settings['affine:edgeless-text'];
+    const { color } = settings['nexio:edgeless-text'];
     return palettes.map(({ key, value, resolvedValue }) => {
       const handler = () => {
-        editorSetting.set('affine:edgeless-text', { color: value });
+        editorSetting.set('nexio:edgeless-text', { color: value });
       };
       const isSelected = isEqual(color, value);
       return (
@@ -94,10 +94,10 @@ export const TextSettings = () => {
   }, [editorSetting, settings, palettes]);
 
   const fontFamilyItems = useMemo(() => {
-    const { fontFamily } = settings['affine:edgeless-text'];
+    const { fontFamily } = settings['nexio:edgeless-text'];
     return Object.entries(FontFamily).map(([name, value]) => {
       const handler = () => {
-        editorSetting.set('affine:edgeless-text', { fontFamily: value });
+        editorSetting.set('nexio:edgeless-text', { fontFamily: value });
       };
       const isSelected = fontFamily === value;
       return (
@@ -109,10 +109,10 @@ export const TextSettings = () => {
   }, [editorSetting, settings]);
 
   const fontStyleItems = useMemo(() => {
-    const { fontStyle } = settings['affine:edgeless-text'];
+    const { fontStyle } = settings['nexio:edgeless-text'];
     return Object.entries(FontStyle).map(([name, value]) => {
       const handler = () => {
-        editorSetting.set('affine:edgeless-text', { fontStyle: value });
+        editorSetting.set('nexio:edgeless-text', { fontStyle: value });
       };
       const isSelected = fontStyle === value;
       return (
@@ -124,10 +124,10 @@ export const TextSettings = () => {
   }, [editorSetting, settings]);
 
   const fontWeightItems = useMemo(() => {
-    const { fontWeight } = settings['affine:edgeless-text'];
+    const { fontWeight } = settings['nexio:edgeless-text'];
     return sortedFontWeightEntries.map(([name, value]) => {
       const handler = () => {
-        editorSetting.set('affine:edgeless-text', { fontWeight: value });
+        editorSetting.set('nexio:edgeless-text', { fontWeight: value });
       };
       const isSelected = fontWeight === value;
       return (
@@ -139,24 +139,24 @@ export const TextSettings = () => {
   }, [editorSetting, settings]);
 
   const currentColor = useMemo(() => {
-    const { color } = settings['affine:edgeless-text'];
+    const { color } = settings['nexio:edgeless-text'];
     return getCurrentColor(color);
   }, [getCurrentColor, settings]);
 
   const getElements = useCallback((doc: Store) => {
-    return doc.getBlocksByFlavour('affine:edgeless-text') || [];
+    return doc.getBlocksByFlavour('nexio:edgeless-text') || [];
   }, []);
 
   return (
     <>
       <EdgelessSnapshot
-        title={t['com.affine.settings.editorSettings.edgeless.text']()}
+        title={t['com.nexio.settings.editorSettings.edgeless.text']()}
         docName="text"
-        keyName="affine:edgeless-text"
+        keyName="nexio:edgeless-text"
         getElements={getElements}
       />
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.text.color']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.text.color']()}
         desc={''}
       >
         {currentColor ? (
@@ -175,7 +175,7 @@ export const TextSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-family'
+          'com.nexio.settings.editorSettings.edgeless.text.font-family'
         ]()}
         desc={''}
       >
@@ -183,14 +183,14 @@ export const TextSettings = () => {
           items={fontFamilyItems}
           trigger={
             <MenuTrigger className={menuTrigger}>
-              {FontFamilyMap[settings['affine:edgeless-text'].fontFamily]}
+              {FontFamilyMap[settings['nexio:edgeless-text'].fontFamily]}
             </MenuTrigger>
           }
         />
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-style'
+          'com.nexio.settings.editorSettings.edgeless.text.font-style'
         ]()}
         desc={''}
       >
@@ -198,14 +198,14 @@ export const TextSettings = () => {
           items={fontStyleItems}
           trigger={
             <MenuTrigger className={menuTrigger}>
-              {String(settings['affine:edgeless-text'].fontStyle)}
+              {String(settings['nexio:edgeless-text'].fontStyle)}
             </MenuTrigger>
           }
         />
       </SettingRow>
       <SettingRow
         name={t[
-          'com.affine.settings.editorSettings.edgeless.text.font-weight'
+          'com.nexio.settings.editorSettings.edgeless.text.font-weight'
         ]()}
         desc={''}
       >
@@ -213,13 +213,13 @@ export const TextSettings = () => {
           items={fontWeightItems}
           trigger={
             <MenuTrigger className={menuTrigger}>
-              {FontWeightMap[settings['affine:edgeless-text'].fontWeight]}
+              {FontWeightMap[settings['nexio:edgeless-text'].fontWeight]}
             </MenuTrigger>
           }
         />
       </SettingRow>
       <SettingRow
-        name={t['com.affine.settings.editorSettings.edgeless.text.alignment']()}
+        name={t['com.nexio.settings.editorSettings.edgeless.text.alignment']()}
         desc={''}
       >
         <RadioGroup

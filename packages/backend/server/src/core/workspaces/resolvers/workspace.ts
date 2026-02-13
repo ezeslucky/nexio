@@ -12,7 +12,7 @@ import GraphQLUpload from 'graphql-upload/GraphQLUpload.mjs';
 
 import type { FileUpload } from '../../../base';
 import {
-  AFFiNELogger,
+  NEXIOLogger,
   registerObjectType,
   SpaceAccessDenied,
   SpaceNotFound,
@@ -83,7 +83,7 @@ export class WorkspaceResolver {
     private readonly quota: QuotaService,
     private readonly models: Models,
     private readonly workspaceService: WorkspaceService,
-    private readonly logger: AFFiNELogger
+    private readonly logger: NEXIOLogger
   ) {
     logger.setContext(WorkspaceResolver.name);
   }

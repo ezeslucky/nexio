@@ -1,5 +1,5 @@
 {
-  "name": "@affine/track",
+  "name": "@nexio/track",
   "type": "module",
   "private": true,
   "version": "0.22.4",
@@ -7,7 +7,7 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@affine/debug": "workspace:*",
+    "@nexio/debug": "workspace:*",
     "@sentry/react": "^9.2.0",
     "mixpanel-browser": "^2.56.0",
     "react-router-dom": "6.30.0"

@@ -1,6 +1,6 @@
-import { SettingHeader } from '@affine/component/setting-components';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { SettingHeader } from '@nexio/component/setting-components';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { type ReactNode, useCallback, useMemo, useState } from 'react';
 
@@ -34,12 +34,12 @@ export const IntegrationSetting = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.affine.integration.integrations']()}
+        title={t['com.nexio.integration.integrations']()}
         subtitle={
           <>
-            {t['com.affine.integration.setting.description']()}
+            {t['com.nexio.integration.setting.description']()}
             {/* <br /> */}
-            {/* <a>{t['Learn how to develop a integration for AFFiNE']()}</a> */}
+            {/* <a>{t['Learn how to develop a integration for nexio']()}</a> */}
           </>
         }
       />
@@ -97,7 +97,7 @@ const IntegrationSettingPage = ({
 
   return (
     <SubPageProvider
-      backText={t['com.affine.integration.integrations']()}
+      backText={t['com.nexio.integration.integrations']()}
       island={island}
       open={open}
       onClose={onClose}

@@ -1,6 +1,6 @@
-import { shallowEqual } from '@affine/component';
-import type { CollectionMeta } from '@affine/core/modules/collection';
-import { useI18n } from '@affine/i18n';
+import { shallowEqual } from '@nexio/component';
+import type { CollectionMeta } from '@nexio/core/modules/collection';
+import { useI18n } from '@nexio/i18n';
 import { ToggleRightIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
 import { selectAtom } from 'jotai/utils';
 import type { MouseEventHandler } from 'react';
@@ -94,8 +94,8 @@ export const ItemGroupHeader = memo(function ItemGroupHeader<
       <button className={styles.selectAllButton} onClick={onSelectAll}>
         {t[
           allSelected
-            ? 'com.affine.page.group-header.clear'
-            : 'com.affine.page.group-header.select-all'
+            ? 'com.nexio.page.group-header.clear'
+            : 'com.nexio.page.group-header.select-all'
         ]()}
       </button>
     </div>

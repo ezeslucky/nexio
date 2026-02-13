@@ -1,12 +1,12 @@
-import { DebugLogger } from '@affine/debug';
-import { setupGlobal } from '@affine/env/global';
+import { DebugLogger } from '@nexio/debug';
+import { setupGlobal } from '@nexio/env/global';
 import { atom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { atomEffect } from 'jotai-effect';
 
 setupGlobal();
 
-const logger = new DebugLogger('affine:settings');
+const logger = new DebugLogger('nexio:settings');
 
 export type AppSetting = {
   clientBorder: boolean;
@@ -23,7 +23,7 @@ export const windowFrameStyleOptions: AppSetting['windowFrameStyle'][] = [
   'NativeTitleBar',
 ];
 
-export const APP_SETTINGS_STORAGE_KEY = 'affine-settings';
+export const APP_SETTINGS_STORAGE_KEY = 'nexio-settings';
 const appSettingBaseAtom = atomWithStorage<AppSetting>(
   APP_SETTINGS_STORAGE_KEY,
   {
@@ -50,7 +50,7 @@ const appSettingEffect = atomEffect(get => {
   // some values in settings should be synced into electron side
   if (BUILD_CONFIG.isElectron) {
     logger.debug('sync settings to electron', settings);
-    // this api type in @affine/electron-api, but it is circular dependency this package, use any here
+    // this api type in @nexio/electron-api, but it is circular dependency this package, use any here
     (window as any).__apis?.updater
       .setConfig({
         autoCheckUpdate: settings.autoCheckUpdate,

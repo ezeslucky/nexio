@@ -1,11 +1,11 @@
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
-import type { ImageSelection } from '@blocksuite/affine/shared/selection';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import type { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import type {
   BlockSelection,
   EditorHost,
   TextSelection,
-} from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
@@ -38,21 +38,21 @@ export class ChatActionList extends LitElement {
       padding: 4px 18px;
       box-sizing: border-box;
       border-radius: 8px;
-      border: 1px solid var(--affine-border-color);
-      background-color: var(--affine-white-10);
+      border: 1px solid var(--nexio-border-color);
+      background-color: var(--nexio-white-10);
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 4px;
-      font-size: var(--affine-font-sm);
+      font-size: var(--nexio-font-sm);
       font-weight: 500;
-      color: var(--affine-text-primary-color);
+      color: var(--nexio-text-primary-color);
       cursor: pointer;
       user-select: none;
       line-height: 22px;
     }
     .action svg {
-      color: var(--affine-icon-color);
+      color: var(--nexio-icon-color);
     }
   `;
 

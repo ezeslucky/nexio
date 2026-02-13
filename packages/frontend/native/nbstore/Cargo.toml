@@ -1,6 +1,6 @@
 [package]
 edition = "2021"
-name    = "affine_nbstore"
+name    = "nexio_nbstore"
 version = "0.0.0"
 
 [lib]
@@ -10,7 +10,7 @@ crate-type = ["cdylib", "rlib"]
 use-as-lib = ["napi-derive/noop", "napi/noop"]
 
 [dependencies]
-affine_schema = { path = "../schema" }
+nexio_schema = { path = "../schema" }
 anyhow        = { workspace = true }
 chrono        = { workspace = true }
 napi          = { workspace = true }
@@ -23,7 +23,7 @@ tokio         = { workspace = true, features = ["full"] }
 uniffi = { workspace = true }
 
 [build-dependencies]
-affine_schema = { path = "../schema" }
+nexio_schema = { path = "../schema" }
 dotenvy       = { workspace = true }
 napi-build    = { workspace = true }
 sqlx          = { workspace = true, default-features = false, features = ["chrono", "json", "macros", "migrate", "runtime-tokio", "sqlite", "tls-rustls"] }

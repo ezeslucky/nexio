@@ -51,6 +51,6 @@ declare type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
 };
 
-declare type AFFiNEModule =
+declare type NEXIOModule =
   | import('@nestjs/common').Type
   | import('@nestjs/common').DynamicModule;

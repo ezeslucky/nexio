@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 import type { ReactNode } from 'react';
 
 import { PricingCollapsible } from '../layout';
@@ -16,20 +16,20 @@ export const AIPlanLayout = ({
   billingTip,
 }: AIPlanLayoutProps) => {
   const t = useI18n();
-  const title = t['com.affine.payment.ai.pricing-plan.title']();
+  const title = t['com.nexio.payment.ai.pricing-plan.title']();
 
   return (
     <PricingCollapsible title={title} caption={caption}>
       <div className={styles.card}>
         <div className={styles.titleBlock}>
           <section className={styles.titleCaption1}>
-            {t['com.affine.payment.ai.pricing-plan.title-caption-1']()}
+            {t['com.nexio.payment.ai.pricing-plan.title-caption-1']()}
           </section>
           <section className={styles.title}>
-            {t['com.affine.payment.ai.pricing-plan.title']()}
+            {t['com.nexio.payment.ai.pricing-plan.title']()}
           </section>
           <section className={styles.titleCaption2}>
-            {t['com.affine.payment.ai.pricing-plan.title-caption-2']()}
+            {t['com.nexio.payment.ai.pricing-plan.title-caption-2']()}
           </section>
         </div>
 

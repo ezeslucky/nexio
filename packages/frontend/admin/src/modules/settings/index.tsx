@@ -1,5 +1,5 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { ScrollArea } from '@affine/admin/components/ui/scroll-area';
+import { Button } from '@nexio/admin/components/ui/button';
+import { ScrollArea } from '@nexio/admin/components/ui/scroll-area';
 import { get } from 'lodash-es';
 import { CheckIcon } from 'lucide-react';
 import { useCallback } from 'react';

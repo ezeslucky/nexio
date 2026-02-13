@@ -1,14 +1,14 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { AppThemeService } from '@affine/core/modules/theme';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type NotificationService } from '@blocksuite/affine/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { AppThemeService } from '@nexio/core/modules/theme';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { type NotificationService } from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType, Store } from '@blocksuite/nexio/store';
 import { CenterPeekIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -29,7 +29,7 @@ export class AIChatPanelTitle extends SignalWatcher(
 ) {
   static override styles = css`
     .ai-chat-panel-title {
-      background: var(--affine-background-primary-color);
+      background: var(--nexio-background-primary-color);
       position: relative;
       padding: 8px var(--h-padding, 16px);
       width: 100%;
@@ -42,13 +42,13 @@ export class AIChatPanelTitle extends SignalWatcher(
       svg {
         width: 18px;
         height: 18px;
-        color: var(--affine-text-secondary-color);
+        color: var(--nexio-text-secondary-color);
       }
 
       .chat-panel-title-text {
         font-size: 14px;
         font-weight: 500;
-        color: var(--affine-text-secondary-color);
+        color: var(--nexio-text-secondary-color);
       }
 
       .chat-panel-playground {
@@ -95,13 +95,13 @@ export class AIChatPanelTitle extends SignalWatcher(
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -145,10 +145,10 @@ export class AIChatPanelTitle extends SignalWatcher(
         .searchMenuConfig=${this.searchMenuConfig}
         .docDisplayConfig=${this.docDisplayConfig}
         .extensions=${this.extensions}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
-        .affineThemeService=${this.affineThemeService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+        .nexioThemeService=${this.nexioThemeService}
         .notificationService=${this.notificationService}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
+        .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
         .aiToolsConfigService=${this.aiToolsConfigService}
       ></playground-content>
     `;
@@ -167,7 +167,7 @@ export class AIChatPanelTitle extends SignalWatcher(
             ? html`<span data-testid="chat-panel-embedding-progress"
                 >Embedding ${done}/${total}</span
               >`
-            : 'AFFiNE AI'}
+            : 'NEXIO AI'}
         </div>
         ${this.playgroundConfig.visible.value
           ? html`

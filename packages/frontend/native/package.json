@@ -1,10 +1,10 @@
 {
-  "name": "@affine/native",
+  "name": "@nexio/native",
   "private": true,
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "binaryName": "affine",
+    "binaryName": "nexio",
     "targets": [
       "x86_64-apple-darwin",
       "x86_64-unknown-linux-gnu",
@@ -38,8 +38,8 @@
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "build": "napi build -p affine_native --platform --release",
-    "build:debug": "napi build -p affine_native --platform",
+    "build": "napi build -p nexio_native --platform --release",
+    "build:debug": "napi build -p nexio_native --platform",
     "universal": "napi universal",
     "test": "ava",
     "version": "napi version"

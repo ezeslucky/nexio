@@ -1,11 +1,11 @@
-import { EnterIcon } from '@blocksuite/affine/components/icons';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { stopPropagation } from '@blocksuite/affine/shared/utils';
+import { EnterIcon } from '@blocksuite/nexio/components/icons';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { stopPropagation } from '@blocksuite/nexio/shared/utils';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
@@ -28,17 +28,17 @@ export class AISubItemList extends WithDisposable(LitElement) {
       min-width: 240px;
       max-height: 320px;
       overflow-y: auto;
-      background: var(--affine-background-overlay-panel-color);
-      box-shadow: var(--affine-shadow-2);
+      background: var(--nexio-background-overlay-panel-color);
+      box-shadow: var(--nexio-shadow-2);
       border-radius: 8px;
-      z-index: var(--affine-z-index-popover);
+      z-index: var(--nexio-z-index-popover);
       font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
-      color: var(--affine-text-primary-color);
+      color: var(--nexio-text-primary-color);
       text-align: justify;
       font-feature-settings:
         'clig' off,
         'liga' off;
-      font-size: var(--affine-font-sm);
+      font-size: var(--nexio-font-sm);
       font-style: normal;
       font-weight: 400;
       line-height: 22px;

@@ -84,7 +84,7 @@ export const DesktopMenu = ({
             )}
             sideOffset={4}
             align="start"
-            style={{ zIndex: 'var(--affine-z-index-popover)', ...contentStyle }}
+            style={{ zIndex: 'var(--nexio-z-index-popover)', ...contentStyle }}
             {...otherContentOptions}
           >
             {items}

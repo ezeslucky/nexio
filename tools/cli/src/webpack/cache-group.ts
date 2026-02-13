@@ -3,7 +3,6 @@ function testPackageName(regexp: RegExp): (module: any) => boolean {
     module.nameForCondition && regexp.test(module.nameForCondition());
 }
 
-// https://hackernoon.com/the-100-correct-way-to-split-your-chunks-with-webpack-f8a9df5b7758
 export const productionCacheGroups = {
   i18n: {
     test: /frontend[\\/]i18n[\\/]/,

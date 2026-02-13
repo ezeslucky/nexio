@@ -48,9 +48,9 @@ Please refer to `Build Native Dependencies` section in [BUILDING.md](./BUILDING.
 On Mac & Linux
 
 ```shell
-BUILD_TYPE=canary yarn affine @affine/electron build
+BUILD_TYPE=canary yarn nexio @nexio/electron build
 
-BUILD_TYPE=canary yarn affine @affine/electron generate-assets
+BUILD_TYPE=canary yarn nexio @nexio/electron generate-assets
 ```
 
 On Windows (powershell)
@@ -94,7 +94,7 @@ yarn install
 Note: you need to comment out `osxSign` and `osxNotarize` in `forge.config.js` to skip signing and notarizing the app.
 
 ```shell
-BUILD_TYPE=canary SKIP_WEB_BUILD=1 HOIST_NODE_MODULES=1 yarn affine @affine/electron make
+BUILD_TYPE=canary SKIP_WEB_BUILD=1 HOIST_NODE_MODULES=1 yarn nexio @nexio/electron make
 ```
 
 #### Windows
@@ -105,16 +105,16 @@ Making the windows installer is a bit different. Right now we provide two instal
 $env:BUILD_TYPE="canary"
 $env:SKIP_WEB_BUILD=1
 $env:HOIST_NODE_MODULES=1
-yarn affine @affine/electron package
-yarn affine @affine/electron make-squirrel
-yarn affine @affine/electron make-nsis
+yarn nexio @nexio/electron package
+yarn nexio @nexio/electron make-squirrel
+yarn nexio @nexio/electron make-nsis
 ```
 
 Once the build is complete, you can find the paths to the binaries in the terminal output.
 
 ```
 Finished 2 bundles at:
-  › Artifacts available at: <affine-repo>/packages/frontend/apps/electron/out/canary/make
+  › Artifacts available at: <nexio-repo>/packages/frontend/apps/electron/out/canary/make
 ```
 
 ## CI
