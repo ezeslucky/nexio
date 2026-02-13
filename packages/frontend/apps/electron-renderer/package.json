@@ -8,6 +8,8 @@
     "dev": "nexio bundle --dev"
   },
   "dependencies": {
+    "@blocksuite/nexio": "workspace:*",
+    "@emotion/react": "^11.14.0",
     "@nexio/component": "workspace:*",
     "@nexio/core": "workspace:*",
     "@nexio/debug": "workspace:*",
@@ -15,8 +17,6 @@
     "@nexio/i18n": "workspace:*",
     "@nexio/nbstore": "workspace:*",
     "@nexio/track": "workspace:*",
-    "@blocksuite/nexio": "workspace:*",
-    "@emotion/react": "^11.14.0",
     "@sentry/react": "^9.2.0",
     "@toeverything/infra": "workspace:*",
     "@toeverything/theme": "^1.1.16",

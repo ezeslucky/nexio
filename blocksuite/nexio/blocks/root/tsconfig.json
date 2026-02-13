@@ -7,6 +7,8 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../data-view" },
+    { "path": "../../../framework/global" },
     { "path": "../attachment" },
     { "path": "../bookmark" },
     { "path": "../database" },
@@ -33,8 +35,6 @@
     { "path": "../../shared" },
     { "path": "../../widgets/edgeless-selected-rect" },
     { "path": "../../widgets/edgeless-toolbar" },
-    { "path": "../../data-view" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

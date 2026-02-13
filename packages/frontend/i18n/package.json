@@ -18,8 +18,8 @@
     "url": "git+https://github.com/ezeslucky/nexio.git"
   },
   "dependencies": {
-    "@nexio/debug": "workspace:*",
     "@magic-works/i18n-codegen": "^0.6.1",
+    "@nexio/debug": "workspace:*",
     "dayjs": "^1.11.13",
     "i18next": "^25.0.0",
     "react": "^19.0.0",

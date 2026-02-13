@@ -10,6 +10,8 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
+    "@blocksuite/data-view": "workspace:*",
+    "@blocksuite/global": "workspace:*",
     "@blocksuite/nexio-block-attachment": "workspace:*",
     "@blocksuite/nexio-block-bookmark": "workspace:*",
     "@blocksuite/nexio-block-callout": "workspace:*",
@@ -74,8 +76,6 @@
     "@blocksuite/nexio-widget-slash-menu": "workspace:*",
     "@blocksuite/nexio-widget-toolbar": "workspace:*",
     "@blocksuite/nexio-widget-viewport-overlay": "workspace:*",
-    "@blocksuite/data-view": "workspace:*",
-    "@blocksuite/global": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@blocksuite/store": "workspace:*",
     "@blocksuite/sync": "workspace:*",

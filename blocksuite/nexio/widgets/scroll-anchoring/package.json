@@ -10,10 +10,10 @@
   "author": "toeverything",
   "license": "MIT",
   "dependencies": {
+    "@blocksuite/global": "workspace:*",
     "@blocksuite/nexio-ext-loader": "workspace:*",
     "@blocksuite/nexio-model": "workspace:*",
     "@blocksuite/nexio-shared": "workspace:*",
-    "@blocksuite/global": "workspace:*",
     "@blocksuite/std": "workspace:*",
     "@preact/signals-core": "^1.8.0",
     "@toeverything/theme": "^1.1.16",

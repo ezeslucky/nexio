@@ -2,9 +2,47 @@
 // DO NOT MODIFY THIS FILE MANUALLY
 export const PackageList = [
   {
+    location: 'blocksuite/docs',
+    name: '@blocksuite/bs-docs',
+    workspaceDependencies: ['blocksuite/nexio/all'],
+  },
+  {
+    location: 'blocksuite/framework/global',
+    name: '@blocksuite/global',
+    workspaceDependencies: [],
+  },
+  {
+    location: 'blocksuite/framework/std',
+    name: '@blocksuite/std',
+    workspaceDependencies: [
+      'blocksuite/framework/global',
+      'blocksuite/framework/store',
+    ],
+  },
+  {
+    location: 'blocksuite/framework/store',
+    name: '@blocksuite/store',
+    workspaceDependencies: [
+      'blocksuite/framework/global',
+      'blocksuite/framework/sync',
+    ],
+  },
+  {
+    location: 'blocksuite/framework/sync',
+    name: '@blocksuite/sync',
+    workspaceDependencies: ['blocksuite/framework/global'],
+  },
+  {
+    location: 'blocksuite/integration-test',
+    name: '@blocksuite/integration-test',
+    workspaceDependencies: ['blocksuite/nexio/all'],
+  },
+  {
     location: 'blocksuite/nexio/all',
     name: '@blocksuite/nexio',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
       'blocksuite/nexio/blocks/bookmark',
       'blocksuite/nexio/blocks/callout',
@@ -69,8 +107,6 @@ export const PackageList = [
       'blocksuite/nexio/widgets/slash-menu',
       'blocksuite/nexio/widgets/toolbar',
       'blocksuite/nexio/widgets/viewport-overlay',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
       'blocksuite/framework/sync',
@@ -80,13 +116,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/attachment',
     name: '@blocksuite/nexio-block-attachment',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -95,6 +131,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/bookmark',
     name: '@blocksuite/nexio-block-bookmark',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
       'blocksuite/nexio/blocks/embed-doc',
       'blocksuite/nexio/blocks/surface',
@@ -103,7 +140,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -112,6 +148,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/callout',
     name: '@blocksuite/nexio-block-callout',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/preset',
@@ -119,7 +156,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -128,6 +164,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/code',
     name: '@blocksuite/nexio-block-code',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/gfx/turbo-renderer',
@@ -139,7 +176,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -148,14 +184,14 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/data-view',
     name: '@blocksuite/nexio-block-data-view',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/database',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -164,6 +200,8 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/database',
     name: '@blocksuite/nexio-block-database',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/preset',
@@ -173,8 +211,6 @@ export const PackageList = [
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/drag-handle',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -183,12 +219,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/divider',
     name: '@blocksuite/nexio-block-divider',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -197,6 +233,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/edgeless-text',
     name: '@blocksuite/nexio-block-edgeless-text',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -206,7 +243,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -215,6 +251,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/embed',
     name: '@blocksuite/nexio-block-embed',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -224,7 +261,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -233,6 +269,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/embed-doc',
     name: '@blocksuite/nexio-block-embed-doc',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -242,7 +279,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -251,6 +287,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/frame',
     name: '@blocksuite/nexio-block-frame',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -259,7 +296,6 @@ export const PackageList = [
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
       'blocksuite/nexio/widgets/frame-title',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -268,6 +304,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/image',
     name: '@blocksuite/nexio-block-image',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -276,7 +313,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -285,6 +321,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/latex',
     name: '@blocksuite/nexio-block-latex',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -293,7 +330,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -302,6 +338,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/list',
     name: '@blocksuite/nexio-block-list',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/gfx/turbo-renderer',
@@ -309,7 +346,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -318,6 +354,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/note',
     name: '@blocksuite/nexio-block-note',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -329,7 +366,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -338,6 +374,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/paragraph',
     name: '@blocksuite/nexio-block-paragraph',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/gfx/turbo-renderer',
@@ -345,7 +382,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -354,6 +390,8 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/root',
     name: '@blocksuite/nexio-block-root',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
       'blocksuite/nexio/blocks/bookmark',
       'blocksuite/nexio/blocks/database',
@@ -380,8 +418,6 @@ export const PackageList = [
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-selected-rect',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -390,12 +426,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/surface',
     name: '@blocksuite/nexio-block-surface',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -404,6 +440,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/surface-ref',
     name: '@blocksuite/nexio-block-surface-ref',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -412,7 +449,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -421,6 +457,8 @@ export const PackageList = [
     location: 'blocksuite/nexio/blocks/table',
     name: '@blocksuite/nexio-block-table',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/preset',
@@ -428,8 +466,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/slash-menu',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -438,9 +474,9 @@ export const PackageList = [
     location: 'blocksuite/nexio/components',
     name: '@blocksuite/nexio-components',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
       'blocksuite/framework/sync',
@@ -450,9 +486,9 @@ export const PackageList = [
     location: 'blocksuite/nexio/data-view',
     name: '@blocksuite/data-view',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -469,12 +505,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/foundation',
     name: '@blocksuite/nexio-foundation',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -483,11 +519,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/fragments/adapter-panel',
     name: '@blocksuite/nexio-fragment-adapter-panel',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -496,6 +532,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/fragments/doc-title',
     name: '@blocksuite/nexio-fragment-doc-title',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -503,7 +540,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -512,6 +548,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/fragments/frame-panel',
     name: '@blocksuite/nexio-fragment-frame-panel',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -519,7 +556,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -528,6 +564,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/fragments/outline',
     name: '@blocksuite/nexio-fragment-outline',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -535,7 +572,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -544,6 +580,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/brush',
     name: '@blocksuite/nexio-gfx-brush',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -551,7 +588,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -560,6 +596,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/connector',
     name: '@blocksuite/nexio-gfx-connector',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -568,7 +605,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -577,6 +613,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/group',
     name: '@blocksuite/nexio-gfx-group',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -585,7 +622,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -594,6 +630,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/link',
     name: '@blocksuite/nexio-gfx-link',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/bookmark',
       'blocksuite/nexio/blocks/embed',
       'blocksuite/nexio/blocks/surface',
@@ -604,7 +641,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -613,6 +649,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/mindmap',
     name: '@blocksuite/nexio-gfx-mindmap',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
       'blocksuite/nexio/blocks/edgeless-text',
       'blocksuite/nexio/blocks/image',
@@ -627,7 +664,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -636,6 +672,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/note',
     name: '@blocksuite/nexio-gfx-note',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
       'blocksuite/nexio/blocks/bookmark',
       'blocksuite/nexio/blocks/image',
@@ -646,7 +683,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -655,6 +691,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/pointer',
     name: '@blocksuite/nexio-gfx-pointer',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -662,7 +699,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -671,6 +707,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/shape',
     name: '@blocksuite/nexio-gfx-shape',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -679,7 +716,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -688,6 +724,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/template',
     name: '@blocksuite/nexio-gfx-template',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -696,7 +733,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -705,6 +741,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/gfx/text',
     name: '@blocksuite/nexio-gfx-text',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -712,7 +749,6 @@ export const PackageList = [
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-toolbar',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -730,11 +766,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/comment',
     name: '@blocksuite/nexio-inline-comment',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -743,12 +779,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/footnote',
     name: '@blocksuite/nexio-inline-footnote',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/reference',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -757,13 +793,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/latex',
     name: '@blocksuite/nexio-inline-latex',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/reference',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -772,12 +808,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/link',
     name: '@blocksuite/nexio-inline-link',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/reference',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -786,11 +822,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/mention',
     name: '@blocksuite/nexio-inline-mention',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -799,6 +835,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/preset',
     name: '@blocksuite/nexio-inline-preset',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/inlines/comment',
@@ -810,7 +847,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -819,11 +855,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/inlines/reference',
     name: '@blocksuite/nexio-inline-reference',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -841,10 +877,10 @@ export const PackageList = [
     location: 'blocksuite/nexio/rich-text',
     name: '@blocksuite/nexio-rich-text',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -853,8 +889,8 @@ export const PackageList = [
     location: 'blocksuite/nexio/shared',
     name: '@blocksuite/nexio-shared',
     workspaceDependencies: [
-      'blocksuite/nexio/model',
       'blocksuite/framework/global',
+      'blocksuite/nexio/model',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -863,6 +899,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/drag-handle',
     name: '@blocksuite/nexio-widget-drag-handle',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/callout',
       'blocksuite/nexio/blocks/embed',
       'blocksuite/nexio/blocks/list',
@@ -873,7 +910,6 @@ export const PackageList = [
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -882,13 +918,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/edgeless-auto-connect',
     name: '@blocksuite/nexio-widget-edgeless-auto-connect',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -896,13 +932,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/edgeless-dragging-area',
     name: '@blocksuite/nexio-widget-edgeless-dragging-area',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -910,6 +946,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/edgeless-selected-rect',
     name: '@blocksuite/nexio-widget-edgeless-selected-rect',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/blocks/surface',
@@ -920,7 +957,6 @@ export const PackageList = [
       'blocksuite/nexio/gfx/text',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -928,13 +964,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/edgeless-toolbar',
     name: '@blocksuite/nexio-widget-edgeless-toolbar',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -942,12 +978,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/edgeless-zoom-toolbar',
     name: '@blocksuite/nexio-widget-edgeless-zoom-toolbar',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -955,13 +991,13 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/frame-title',
     name: '@blocksuite/nexio-widget-frame-title',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -969,6 +1005,8 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/keyboard-toolbar',
     name: '@blocksuite/nexio-widget-keyboard-toolbar',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
       'blocksuite/nexio/blocks/database',
       'blocksuite/nexio/blocks/embed',
@@ -990,8 +1028,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/nexio/data-view',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -1000,6 +1036,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/linked-doc',
     name: '@blocksuite/nexio-widget-linked-doc',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/image',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
@@ -1007,7 +1044,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -1016,6 +1052,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/note-slicer',
     name: '@blocksuite/nexio-widget-note-slicer',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
@@ -1023,7 +1060,6 @@ export const PackageList = [
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
       'blocksuite/nexio/widgets/edgeless-selected-rect',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -1031,11 +1067,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/page-dragging-area',
     name: '@blocksuite/nexio-widget-page-dragging-area',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -1044,12 +1080,12 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/remote-selection',
     name: '@blocksuite/nexio-widget-remote-selection',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -1057,10 +1093,10 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/scroll-anchoring',
     name: '@blocksuite/nexio-widget-scroll-anchoring',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -1068,11 +1104,11 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/slash-menu',
     name: '@blocksuite/nexio-widget-slash-menu',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/rich-text',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
       'blocksuite/framework/store',
     ],
@@ -1081,6 +1117,7 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/toolbar',
     name: '@blocksuite/nexio-widget-toolbar',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/blocks/database',
       'blocksuite/nexio/blocks/surface',
       'blocksuite/nexio/blocks/table',
@@ -1088,7 +1125,6 @@ export const PackageList = [
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
   },
@@ -1096,60 +1132,24 @@ export const PackageList = [
     location: 'blocksuite/nexio/widgets/viewport-overlay',
     name: '@blocksuite/nexio-widget-viewport-overlay',
     workspaceDependencies: [
+      'blocksuite/framework/global',
       'blocksuite/nexio/components',
       'blocksuite/nexio/ext-loader',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
       'blocksuite/framework/std',
     ],
-  },
-  {
-    location: 'blocksuite/docs',
-    name: '@blocksuite/bs-docs',
-    workspaceDependencies: ['blocksuite/nexio/all'],
-  },
-  {
-    location: 'blocksuite/framework/global',
-    name: '@blocksuite/global',
-    workspaceDependencies: [],
-  },
-  {
-    location: 'blocksuite/framework/std',
-    name: '@blocksuite/std',
-    workspaceDependencies: [
-      'blocksuite/framework/global',
-      'blocksuite/framework/store',
-    ],
-  },
-  {
-    location: 'blocksuite/framework/store',
-    name: '@blocksuite/store',
-    workspaceDependencies: [
-      'blocksuite/framework/global',
-      'blocksuite/framework/sync',
-    ],
-  },
-  {
-    location: 'blocksuite/framework/sync',
-    name: '@blocksuite/sync',
-    workspaceDependencies: ['blocksuite/framework/global'],
-  },
-  {
-    location: 'blocksuite/integration-test',
-    name: '@blocksuite/integration-test',
-    workspaceDependencies: ['blocksuite/nexio/all'],
   },
   {
     location: 'blocksuite/playground',
     name: '@blocksuite/playground',
     workspaceDependencies: [
+      'blocksuite/nexio/data-view',
+      'blocksuite/integration-test',
       'blocksuite/nexio/all',
       'blocksuite/nexio/components',
       'blocksuite/nexio/model',
       'blocksuite/nexio/shared',
-      'blocksuite/nexio/data-view',
-      'blocksuite/integration-test',
     ],
   },
   {
@@ -1213,9 +1213,9 @@ export const PackageList = [
     workspaceDependencies: [
       'packages/common/reader',
       'packages/common/infra',
+      'blocksuite/nexio/all',
       'packages/common/error',
       'packages/common/graphql',
-      'blocksuite/nexio/all',
     ],
   },
   {
@@ -1255,6 +1255,7 @@ export const PackageList = [
     location: 'packages/frontend/apps/electron-renderer',
     name: '@nexio/electron-renderer',
     workspaceDependencies: [
+      'blocksuite/nexio/all',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/debug',
@@ -1262,7 +1263,6 @@ export const PackageList = [
       'packages/frontend/i18n',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'blocksuite/nexio/all',
       'packages/common/infra',
       'tools/utils',
     ],
@@ -1289,14 +1289,20 @@ export const PackageList = [
       'packages/common/error',
       'packages/common/graphql',
       'packages/frontend/i18n',
-      'tools/utils',
       'blocksuite/nexio/all',
+      'tools/utils',
     ],
   },
   {
     location: 'packages/frontend/core',
     name: '@nexio/core',
     workspaceDependencies: [
+      'blocksuite/framework/global',
+      'blocksuite/nexio/all',
+      'blocksuite/nexio/blocks/root',
+      'blocksuite/nexio/components',
+      'blocksuite/nexio/shared',
+      'blocksuite/framework/std',
       'packages/frontend/component',
       'packages/common/debug',
       'packages/frontend/electron-api',
@@ -1308,12 +1314,6 @@ export const PackageList = [
       'packages/common/reader',
       'packages/frontend/templates',
       'packages/frontend/track',
-      'blocksuite/nexio/all',
-      'blocksuite/nexio/blocks/root',
-      'blocksuite/nexio/components',
-      'blocksuite/nexio/shared',
-      'blocksuite/framework/global',
-      'blocksuite/framework/std',
       'packages/common/infra',
       'blocksuite/nexio/ext-loader',
     ],
@@ -1358,6 +1358,23 @@ export const PackageList = [
     workspaceDependencies: ['packages/common/debug'],
   },
   {
+    location: 'tests/blocksuite',
+    name: '@nexio-test/blocksuite',
+    workspaceDependencies: [
+      'blocksuite/integration-test',
+      'blocksuite/nexio/all',
+    ],
+  },
+  {
+    location: 'tests/kit',
+    name: '@nexio-test/kit',
+    workspaceDependencies: [
+      'blocksuite/nexio/all',
+      'tools/utils',
+      'packages/common/infra',
+    ],
+  },
+  {
     location: 'tests/nexio-cloud',
     name: '@nexio-test/nexio-cloud',
     workspaceDependencies: ['tests/kit'],
@@ -1388,23 +1405,6 @@ export const PackageList = [
     workspaceDependencies: ['tests/kit'],
   },
   {
-    location: 'tests/blocksuite',
-    name: '@nexio-test/blocksuite',
-    workspaceDependencies: [
-      'blocksuite/nexio/all',
-      'blocksuite/integration-test',
-    ],
-  },
-  {
-    location: 'tests/kit',
-    name: '@nexio-test/kit',
-    workspaceDependencies: [
-      'tools/utils',
-      'blocksuite/nexio/all',
-      'packages/common/infra',
-    ],
-  },
-  {
     location: 'tools/@types/build-config',
     name: '@types/build-config',
     workspaceDependencies: [],
@@ -1412,7 +1412,7 @@ export const PackageList = [
   {
     location: 'tools/@types/env',
     name: '@types/nexio__env',
-    workspaceDependencies: ['packages/common/env', 'blocksuite/nexio/all'],
+    workspaceDependencies: ['blocksuite/nexio/all', 'packages/common/env'],
   },
   {
     location: 'tools/changelog',
@@ -1447,6 +1447,12 @@ export const PackageList = [
 ];
 
 export type PackageName =
+  | '@blocksuite/bs-docs'
+  | '@blocksuite/global'
+  | '@blocksuite/std'
+  | '@blocksuite/store'
+  | '@blocksuite/sync'
+  | '@blocksuite/integration-test'
   | '@blocksuite/nexio'
   | '@blocksuite/nexio-block-attachment'
   | '@blocksuite/nexio-block-bookmark'
@@ -1513,12 +1519,6 @@ export type PackageName =
   | '@blocksuite/nexio-widget-slash-menu'
   | '@blocksuite/nexio-widget-toolbar'
   | '@blocksuite/nexio-widget-viewport-overlay'
-  | '@blocksuite/bs-docs'
-  | '@blocksuite/global'
-  | '@blocksuite/std'
-  | '@blocksuite/store'
-  | '@blocksuite/sync'
-  | '@blocksuite/integration-test'
   | '@blocksuite/playground'
   | '@nexio/docs'
   | '@nexio/server-native'
@@ -1544,14 +1544,14 @@ export type PackageName =
   | '@nexio/routes'
   | '@nexio/templates'
   | '@nexio/track'
+  | '@nexio-test/blocksuite'
+  | '@nexio-test/kit'
   | '@nexio-test/nexio-cloud'
   | '@nexio-test/nexio-cloud-copilot'
   | '@nexio-test/nexio-desktop'
   | '@nexio-test/nexio-desktop-cloud'
   | '@nexio-test/nexio-local'
   | '@nexio-test/nexio-mobile'
-  | '@nexio-test/blocksuite'
-  | '@nexio-test/kit'
   | '@types/build-config'
   | '@types/nexio__env'
   | '@nexio/changelog'

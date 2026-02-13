@@ -32,8 +32,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@nexio/templates": "workspace:*",
     "@emotion/react": "^11.14.0",
+    "@nexio/templates": "workspace:*",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@types/react": "^19.0.1",

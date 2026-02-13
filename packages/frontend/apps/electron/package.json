@@ -32,10 +32,6 @@
     "make-nsis": "node ./scripts/make-nsis.ts"
   },
   "devDependencies": {
-    "@nexio-tools/utils": "workspace:*",
-    "@nexio/i18n": "workspace:*",
-    "@nexio/native": "workspace:*",
-    "@nexio/nbstore": "workspace:*",
     "@electron-forge/cli": "^7.6.0",
     "@electron-forge/core": "^7.6.0",
     "@electron-forge/core-utils": "^7.6.0",
@@ -47,6 +43,10 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.6.0",
     "@electron-forge/plugin-fuses": "^7.8.2",
     "@electron-forge/shared-types": "^7.6.0",
+    "@nexio-tools/utils": "workspace:*",
+    "@nexio/i18n": "workspace:*",
+    "@nexio/native": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
     "@pengx17/electron-forge-maker-appimage": "^1.2.1",
     "@sentry/electron": "^7.0.0",
     "@sentry/esbuild-plugin": "^3.0.0",
