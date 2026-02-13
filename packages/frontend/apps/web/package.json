@@ -9,13 +9,13 @@
     "dev": "nexio bundle --dev"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
     "@nexio/component": "workspace:*",
     "@nexio/core": "workspace:*",
     "@nexio/env": "workspace:*",
     "@nexio/i18n": "workspace:*",
     "@nexio/nbstore": "workspace:*",
     "@nexio/track": "workspace:*",
-    "@emotion/react": "^11.14.0",
     "@sentry/react": "^9.2.0",
     "@toeverything/infra": "workspace:*",
     "react": "^19.0.0",

@@ -16,8 +16,8 @@
     "./worker": "./src/worker.ts"
   },
   "peerDependencies": {
-    "@nexio/templates": "workspace:*",
-    "@blocksuite/nexio": "workspace:*"
+    "@blocksuite/nexio": "workspace:*",
+    "@nexio/templates": "workspace:*"
   },
   "dependencies": {
     "zod": "^3.24.1"

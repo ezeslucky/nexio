@@ -8,8 +8,8 @@
     "dev:server": "tsx --env-file=.env --watch server/main.ts"
   },
   "dependencies": {
-    "@nexio/native": "workspace:*",
     "@google/generative-ai": "^0.24.0",
+    "@nexio/native": "workspace:*",
     "@tailwindcss/vite": "^4.0.6",
     "@types/express": "^5.0.0",
     "@types/lodash-es": "^4.17.12",
