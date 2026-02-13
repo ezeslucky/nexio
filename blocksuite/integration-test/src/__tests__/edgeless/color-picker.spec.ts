@@ -41,11 +41,11 @@ describe('theme service', () => {
     const themeService = edgeless.gfx.std.get(ThemeProvider);
     expect(themeService.theme).toBe(ColorScheme.Light);
 
-    expect(themeService.generateColorProperty('--affine-hover-color')).toBe(
-      'var(--affine-hover-color)'
+    expect(themeService.generateColorProperty('--nexio-hover-color')).toBe(
+      'var(--nexio-hover-color)'
     );
 
-    expect(themeService.generateColorProperty('--affine-transparent')).toBe(
+    expect(themeService.generateColorProperty('--nexio-transparent')).toBe(
       'transparent'
     );
 
@@ -73,17 +73,17 @@ describe('theme service', () => {
     const themeService = edgeless.gfx.std.get(ThemeProvider);
     expect(themeService.theme).toBe(ColorScheme.Light);
 
-    expect(themeService.getColorValue('--affine-transparent')).toBe(
-      '--affine-transparent'
+    expect(themeService.getColorValue('--nexio-transparent')).toBe(
+      '--nexio-transparent'
     );
     expect(
-      themeService.getColorValue('--affine-transparent', 'transparent', true)
+      themeService.getColorValue('--nexio-transparent', 'transparent', true)
     ).toBe('transparent');
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--nexio-hover-color', 'transparent', true)
     ).toBe('rgba(0, 0, 0, 0.04)');
     expect(
-      themeService.getColorValue('--affine-tooltip', undefined, true)
+      themeService.getColorValue('--nexio-tooltip', undefined, true)
     ).toBe('rgba(0, 0, 0, 1)');
 
     expect(
@@ -104,10 +104,10 @@ describe('theme service', () => {
     expect(themeService.theme).toBe(ColorScheme.Dark);
 
     expect(
-      themeService.getColorValue('--affine-hover-color', 'transparent', true)
+      themeService.getColorValue('--nexio-hover-color', 'transparent', true)
     ).toEqual('rgba(255, 255, 255, 0.1)');
     expect(
-      themeService.getColorValue('--affine-tooltip', undefined, true)
+      themeService.getColorValue('--nexio-tooltip', undefined, true)
     ).toEqual('rgba(234, 234, 234, 1)'); // #eaeaea
   });
 });

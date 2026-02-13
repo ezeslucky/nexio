@@ -1,6 +1,6 @@
 import { SettingRow } from '@nexio/component/setting-components';
 import { Button } from '@nexio/component/ui/button';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import {
   type Workspace,
   WorkspaceService,
@@ -48,12 +48,12 @@ export const EnableCloudPanel = ({
       spreadCol={false}
       style={{
         padding: '10px',
-        background: 'var(--affine-background-secondary-color)',
+        background: 'var(--nexio-background-secondary-color)',
         marginTop: '24px',
       }}
     >
       <Button
-        data-testid="publish-enable-affine-cloud-button"
+        data-testid="publish-enable-nexio-cloud-button"
         variant="primary"
         onClick={confirmEnableCloudAndClose}
         style={{ marginTop: '12px' }}

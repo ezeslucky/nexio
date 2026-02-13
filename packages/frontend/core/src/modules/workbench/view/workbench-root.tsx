@@ -1,5 +1,5 @@
 import { ResizePanel } from '@nexio/component/resize-panel';
-import { NexioErrorComponent } from '@nexio/core/components/affine/affine-error-boundary/affine-error-fallback';
+import { NexioErrorComponent } from '@nexio/core/components/nexio/nexio-error-boundary/nexio-error-fallback';
 import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
 import {
   appSettingAtom,

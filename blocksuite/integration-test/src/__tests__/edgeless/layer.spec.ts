@@ -227,7 +227,7 @@ test('blocks should rerender when their z-index changed', async () => {
   const assertBlocksContent = () => {
     const blocks = Array.from(
       document.querySelectorAll(
-        'affine-edgeless-root gfx-viewport > [data-block-id]'
+        'nexio-edgeless-root gfx-viewport > [data-block-id]'
       )
     );
 
@@ -471,7 +471,7 @@ describe('group related functionality', () => {
     ).toBe(0);
 
     const topCanvas = edgeless.querySelector(
-      'affine-surface canvas'
+      'nexio-surface canvas'
     ) as HTMLCanvasElement;
 
     expect(

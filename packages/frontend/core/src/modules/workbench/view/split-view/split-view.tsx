@@ -1,5 +1,5 @@
 import { Checkbox, notify, useDndMonitor } from '@nexio/component';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
@@ -130,7 +130,7 @@ export const SplitView = ({
                 message: (
                   <div className={styles.folderWarningMessage}>
                     <p>
-                      {t['com.affine.split-view-folder-warning.description']()}
+                      {t['com.nexio.split-view-folder-warning.description']()}
                     </p>
                     <p>
                       <Checkbox

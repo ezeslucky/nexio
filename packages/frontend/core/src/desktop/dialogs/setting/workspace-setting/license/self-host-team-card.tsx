@@ -1,6 +1,6 @@
 import { Button, ConfirmModal, Input, Modal, notify } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useMutation } from '@nexio/core/components/hooks/use-mutation';
 import {
@@ -67,7 +67,7 @@ export const SelfHostTeamCard = () => {
         <div>
           <p>
             {t[
-              'com.affine.settings.workspace.license.self-host-team.team.description'
+              'com.nexio.settings.workspace.license.self-host-team.team.description'
             ]({
               expirationDate: new Date(
                 license?.expiredAt || 0
@@ -81,7 +81,7 @@ export const SelfHostTeamCard = () => {
           {isOneTimePurchase ? (
             <p>
               <Trans
-                i18nKey="com.affine.settings.workspace.license.self-host-team.team.license"
+                i18nKey="com.nexio.settings.workspace.license.self-host-team.team.license"
                 components={{ 1: <strong /> }}
               />
             </p>
@@ -90,7 +90,7 @@ export const SelfHostTeamCard = () => {
       );
     }
     return t[
-      'com.affine.settings.workspace.license.self-host-team.free.description'
+      'com.nexio.settings.workspace.license.self-host-team.free.description'
     ]({
       memberCount: workspaceQuota?.humanReadable.memberLimit || '10',
     });
@@ -118,7 +118,7 @@ export const SelfHostTeamCard = () => {
           revalidate();
           notify.success({
             title:
-              t['com.affine.settings.workspace.license.activate-success'](),
+              t['com.nexio.settings.workspace.license.activate-success'](),
           });
         })
         .catch(e => {
@@ -146,7 +146,7 @@ export const SelfHostTeamCard = () => {
         revalidate();
         notify.success({
           title:
-            t['com.affine.settings.workspace.license.deactivate-success'](),
+            t['com.nexio.settings.workspace.license.deactivate-success'](),
         });
       })
       .catch(e => {
@@ -181,7 +181,7 @@ export const SelfHostTeamCard = () => {
             <SettingRow
               spreadCol={false}
               name={t[
-                `com.affine.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
+                `com.nexio.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
               ]()}
               desc={description}
             />
@@ -193,7 +193,7 @@ export const SelfHostTeamCard = () => {
           >
             <span className={styles.seat}>
               {t[
-                'com.affine.settings.workspace.license.self-host-team.seats'
+                'com.nexio.settings.workspace.license.self-host-team.seats'
               ]()}
             </span>
             <span>
@@ -215,7 +215,7 @@ export const SelfHostTeamCard = () => {
               onClick={handleOpenUploadModal}
             >
               {t[
-                'com.affine.settings.workspace.license.self-host-team.upload-license-file'
+                'com.nexio.settings.workspace.license.self-host-team.upload-license-file'
               ]()}
             </Button>
           ) : null}
@@ -225,7 +225,7 @@ export const SelfHostTeamCard = () => {
             onClick={handleClick}
           >
             {t[
-              `com.affine.settings.workspace.license.self-host-team.${isTeam ? 'deactivate-license' : 'use-purchased-key'}`
+              `com.nexio.settings.workspace.license.self-host-team.${isTeam ? 'deactivate-license' : 'use-purchased-key'}`
             ]()}
           </Button>
         </div>
@@ -312,10 +312,10 @@ const ActionModal = ({
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.affine.settings.workspace.license.deactivate-modal.title`
+          `com.nexio.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={t[
-          'com.affine.settings.workspace.license.deactivate-modal.description-license'
+          'com.nexio.settings.workspace.license.deactivate-modal.description-license'
         ]()}
         cancelText={t['Cancel']()}
         cancelButtonOptions={{
@@ -340,11 +340,11 @@ const ActionModal = ({
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.affine.settings.workspace.license.deactivate-modal.title`
+          `com.nexio.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={
           <Trans
-            i18nKey="com.affine.settings.workspace.license.deactivate-modal.description"
+            i18nKey="com.nexio.settings.workspace.license.deactivate-modal.description"
             components={{
               1: <strong />,
             }}
@@ -359,7 +359,7 @@ const ActionModal = ({
             disabled={isMutating}
           >
             {t[
-              'com.affine.settings.workspace.license.deactivate-modal.manage-payment'
+              'com.nexio.settings.workspace.license.deactivate-modal.manage-payment'
             ]()}
           </Button>
           <div className={styles.rightActions}>
@@ -380,9 +380,9 @@ const ActionModal = ({
       width={480}
       open={open}
       onOpenChange={handleOpenChange}
-      title={t['com.affine.settings.workspace.license.activate-modal.title']()}
+      title={t['com.nexio.settings.workspace.license.activate-modal.title']()}
       description={t[
-        'com.affine.settings.workspace.license.activate-modal.description'
+        'com.nexio.settings.workspace.license.activate-modal.description'
       ]()}
       cancelText={t['Cancel']()}
       cancelButtonOptions={{
@@ -410,11 +410,11 @@ const ActionModal = ({
       />
       <span className={styles.tips}>
         <Trans
-          i18nKey="com.affine.settings.workspace.license.activate-modal.tips"
+          i18nKey="com.nexio.settings.workspace.license.activate-modal.tips"
           components={{
             1: (
               <a
-                href="https://affine.pro/pricing/?type=selfhost#table"
+                href="https://nexio.pro/pricing/?type=selfhost#table"
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: cssVarV2('text/link') }}

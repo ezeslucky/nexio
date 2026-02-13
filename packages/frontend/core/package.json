@@ -16,7 +16,7 @@
     "@nexio/graphql": "workspace:*",
     "@nexio/i18n": "workspace:*",
     "@nexio/nbstore": "workspace:*",
-    "@affine/reader": "workspace:*",
+    "@nexio/reader": "workspace:*",
     "@nexio/templates": "workspace:*",
     "@nexio/track": "workspace:*",
     "@blocksuite/nexio": "workspace:*",

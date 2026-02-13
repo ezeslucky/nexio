@@ -111,7 +111,7 @@ function getOpacity(elementModel: SurfaceElementModel) {
  *     Create a function that implements the rendering logic for your element.
  *     This function will receive the element's model, the target HTMLElement, and the DomRenderer instance.
  *     Signature: `(model: MyCustomElementModel, domElement: HTMLElement, renderer: DomRenderer) => void;`
- *     Example: `shapeDomRenderer` in `blocksuite/affine/gfx/shape/src/element-renderer/shape-dom/index.ts`.
+ *     Example: `shapeDomRenderer` in `blocksuite/nexio/gfx/shape/src/element-renderer/shape-dom/index.ts`.
  *     In this function, you'll apply styles and attributes to the `domElement` based on the `model`.
  *
  * 2.  **Create the Renderer Extension**:
@@ -121,14 +121,14 @@ function getOpacity(elementModel: SurfaceElementModel) {
  *     Import your renderer function (from step 1).
  *     Use the factory to create your extension:
  *     `export const MyCustomElementDomRendererExtension = DomElementRendererExtension('my-custom-element', myCustomElementRendererFn);`
- *     Example: `ShapeDomRendererExtension` in `blocksuite/affine/gfx/shape/src/element-renderer/shape-dom.ts`.
+ *     Example: `ShapeDomRendererExtension` in `blocksuite/nexio/gfx/shape/src/element-renderer/shape-dom.ts`.
  *
  * 3.  **Register the Extension**:
  *     In your application setup where BlockSuite services and view extensions are registered (e.g., a `ViewExtensionProvider`
  *     or a central DI configuration place), import your new extension (from step 2) and register it with the
  *     dependency injection container.
  *     Example: `context.register(MyCustomElementDomRendererExtension);`
- *     As seen with `ShapeDomRendererExtension` being registered in `blocksuite/affine/gfx/shape/src/view.ts`.
+ *     As seen with `ShapeDomRendererExtension` being registered in `blocksuite/nexio/gfx/shape/src/view.ts`.
  *
  * 4.  **Core Infrastructure (Provided by DomRenderer System)**:
  *     -   `DomElementRenderer` (type): The function signature for renderers, defined in

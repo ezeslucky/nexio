@@ -329,28 +329,28 @@ const SplitViewMenu = ({
   const CloseItem =
     views.length > 1 ? (
       <MenuItem prefixIcon={<CloseIcon />} onClick={handleClose}>
-        {t['com.affine.workbench.split-view-menu.close']()}
+        {t['com.nexio.workbench.split-view-menu.close']()}
       </MenuItem>
     ) : null;
 
   const MoveLeftItem =
     viewIndex > 0 && views.length > 1 ? (
       <MenuItem onClick={handleMoveLeft} prefixIcon={<InsertRightIcon />}>
-        {t['com.affine.workbench.split-view-menu.move-left']()}
+        {t['com.nexio.workbench.split-view-menu.move-left']()}
       </MenuItem>
     ) : null;
 
   const FullScreenItem =
     views.length > 1 ? (
       <MenuItem onClick={handleCloseOthers} prefixIcon={<ExpandFullIcon />}>
-        {t['com.affine.workbench.split-view-menu.keep-this-one']()}
+        {t['com.nexio.workbench.split-view-menu.keep-this-one']()}
       </MenuItem>
     ) : null;
 
   const MoveRightItem =
     viewIndex < views.length - 1 ? (
       <MenuItem onClick={handleMoveRight} prefixIcon={<InsertLeftIcon />}>
-        {t['com.affine.workbench.split-view-menu.move-right']()}
+        {t['com.nexio.workbench.split-view-menu.move-right']()}
       </MenuItem>
     ) : null;
   return (

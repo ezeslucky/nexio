@@ -1,29 +1,29 @@
 import { z } from 'zod';
 
 export const appSchemes = z.enum([
-  'affine',
-  'affine-canary',
-  'affine-beta',
-  'affine-internal',
-  'affine-dev',
+  'nexio',
+  'nexio-canary',
+  'nexio-beta',
+  'nexio-internal',
+  'nexio-dev',
 ]);
 
 export type Scheme = z.infer<typeof appSchemes>;
 export type Channel = 'stable' | 'canary' | 'beta' | 'internal';
 
 export const schemeToChannel = {
-  affine: 'stable',
-  'affine-canary': 'canary',
-  'affine-beta': 'beta',
-  'affine-internal': 'internal',
-  'affine-dev': 'canary', // dev does not have a dedicated app. use canary as the placeholder.
+  nexio: 'stable',
+  'nexio-canary': 'canary',
+  'nexio-beta': 'beta',
+  'nexio-internal': 'internal',
+  'nexio-dev': 'canary', // dev does not have a dedicated app. use canary as the placeholder.
 } as Record<Scheme, Channel>;
 
 export const channelToScheme = {
-  stable: 'affine',
-  canary: BUILD_CONFIG.debug ? 'affine-dev' : 'affine-canary',
-  beta: 'affine-beta',
-  internal: 'affine-internal',
+  stable: 'nexio',
+  canary: BUILD_CONFIG.debug ? 'nexio-dev' : 'nexio-canary',
+  beta: 'nexio-beta',
+  internal: 'nexio-internal',
 } as Record<Channel, Scheme>;
 
 export const appIconMap = {
@@ -34,7 +34,7 @@ export const appIconMap = {
 } satisfies Record<Channel, string>;
 
 export const appNames = {
-  stable: 'AFFiNE',
+  stable: 'NEXIO',
   canary: 'NEXIO Canary',
   beta: 'NEXIO Beta',
   internal: 'NEXIO Internal',

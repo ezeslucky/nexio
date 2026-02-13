@@ -26,7 +26,7 @@ export class ServerConfigStore extends Store {
       context: {
         signal: abortSignal,
         headers: {
-          'x-affine-version': BUILD_CONFIG.appVersion,
+          'x-nexio-version': BUILD_CONFIG.appVersion,
         },
       },
     });
@@ -36,7 +36,7 @@ export class ServerConfigStore extends Store {
         context: {
           signal: abortSignal,
           headers: {
-            'x-affine-version': BUILD_CONFIG.appVersion,
+            'x-nexio-version': BUILD_CONFIG.appVersion,
           },
         },
       });

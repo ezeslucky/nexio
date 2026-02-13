@@ -49,7 +49,7 @@ export const Footer = () => {
           <td>Copyright</td>
           <td>
             <Img
-              src="https://cdn.affine.pro/mail/2023-8-9/copyright.png"
+              src="https://cdn.nexio.pro/mail/2023-8-9/copyright.png"
               alt="copyright"
               height="14px"
               style={{ verticalAlign: 'middle', margin: '0 4px' }}

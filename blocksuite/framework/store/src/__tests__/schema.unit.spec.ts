@@ -28,7 +28,7 @@ const TestCustomNoteBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'content',
-    tag: literal`affine-note-block-video`,
+    tag: literal`nexio-note-block-video`,
     parent: ['nexio:note'],
   },
 });
@@ -45,7 +45,7 @@ const TestInvalidNoteBlockSchema = defineBlockSchema({
   metadata: {
     version: 1,
     role: 'content',
-    tag: literal`affine-invalid-note-block-video`,
+    tag: literal`nexio-invalid-note-block-video`,
     parent: ['nexio:note'],
   },
 });
@@ -70,7 +70,7 @@ const TestRoleBlockSchema = defineBlockSchema({
 const TestRoleBlockSchemaExtension = BlockSchemaExtension(TestRoleBlockSchema);
 
 const TestParagraphBlockSchema = defineBlockSchema({
-  flavour: 'affine:test-paragraph',
+  flavour: 'nexio:test-paragraph',
   metadata: {
     version: 1,
     role: 'test',
@@ -177,10 +177,10 @@ describe('schema', () => {
     });
 
     consoleMock.mockClear();
-    doc.addBlock('affine:test-paragraph', {}, roleId);
-    doc.addBlock('affine:test-paragraph', {}, roleId);
+    doc.addBlock('nexio:test-paragraph', {}, roleId);
+    doc.addBlock('nexio:test-paragraph', {}, roleId);
     expect(consoleMock).not.toBeCalled();
 
-    expect(doc.getBlocksByFlavour('affine:test-paragraph')).toHaveLength(2);
+    expect(doc.getBlocksByFlavour('nexio:test-paragraph')).toHaveLength(2);
   });
 });

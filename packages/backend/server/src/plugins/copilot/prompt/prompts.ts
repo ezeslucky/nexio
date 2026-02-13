@@ -245,7 +245,7 @@ const workflows: Prompt[] = [
       modelName: 'stabilityai/stable-diffusion-xl-base-1.0',
       loras: [
         {
-          path: 'https://models.affine.pro/fal/sketch_for_art_examination.safetensors',
+          path: 'https://models.nexio.pro/fal/sketch_for_art_examination.safetensors',
         },
       ],
       requireContent: false,
@@ -286,7 +286,7 @@ const workflows: Prompt[] = [
       modelName: 'stabilityai/stable-diffusion-xl-base-1.0',
       loras: [
         {
-          path: 'https://models.affine.pro/fal/Clay_AFFiNEAI_SDXL1_CLAYMATION.safetensors',
+          path: 'https://models.nexio.pro/fal/Clay_NEXIOAI_SDXL1_CLAYMATION.safetensors',
         },
       ],
       requireContent: false,
@@ -368,7 +368,7 @@ const workflows: Prompt[] = [
       modelName: 'stabilityai/stable-diffusion-xl-base-1.0',
       loras: [
         {
-          path: 'https://models.affine.pro/fal/pixel-art-xl-v1.1.safetensors',
+          path: 'https://models.nexio.pro/fal/pixel-art-xl-v1.1.safetensors',
         },
       ],
       requireContent: false,

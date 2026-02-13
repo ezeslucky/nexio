@@ -1,9 +1,9 @@
 <!--  nvm use 20
-yarn run affine @nexio/server prisma migrate deploy
+yarn run nexio @nexio/server prisma migrate deploy
 nvm use 20
 export NODE_OPTIONS="--max-old-space-size=24576"
 
-yarn run affine dev -p @nexio/server
+yarn run nexio dev -p @nexio/server
 
 
 
@@ -19,9 +19,9 @@ export GENERATE_SOURCEMAP=false
 export CI=true
 echo $NODE_OPTIONS
 
-yarn run affine dev -p @affine/web
+yarn run nexio dev -p @nexio/web
 
 
-docker start affine-postgres
+docker start nexio-postgres
 
  -->

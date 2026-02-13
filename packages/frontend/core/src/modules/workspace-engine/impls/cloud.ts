@@ -75,13 +75,13 @@ import { WorkspaceImpl } from '../../workspace/impls/workspace';
 import { getWorkspaceProfileWorker } from './out-worker';
 
 const getCloudWorkspaceCacheKey = (serverId: string) => {
-  if (serverId === 'affine-cloud') {
+  if (serverId === 'nexio-cloud') {
     return 'cloud-workspace:'; // FOR BACKWARD COMPATIBILITY
   }
   return `selfhosted-workspace-${serverId}:`;
 };
 
-const logger = new DebugLogger('affine:cloud-workspace-flavour-provider');
+const logger = new DebugLogger('nexio:cloud-workspace-flavour-provider');
 
 class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   private readonly authService: AuthService;
@@ -318,7 +318,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   ): Promise<WorkspaceProfileInfo | undefined> {
     // get information from both cloud and local storage
 
-    // we use affine 'static' storage here, which use http protocol, no need to websocket.
+    // we use nexio 'static' storage here, which use http protocol, no need to websocket.
     const cloudStorage = new StaticCloudDocStorage({
       id: id,
       serverBaseUrl: this.server.serverMetadata.baseUrl,
@@ -425,7 +425,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   }
 
   onWorkspaceInitialized(workspace: Workspace): void {
-    // bind the workspace to the affine cloud server
+    // bind the workspace to the nexio cloud server
     workspace.scope.get(WorkspaceServerService).bindServer(this.server);
   }
 

@@ -25,7 +25,7 @@ export function isEdgelessTextBlock(
   return (
     !!element &&
     'flavour' in element &&
-    element.flavour === 'affine:edgeless-text'
+    element.flavour === 'nexio:edgeless-text'
   );
 }
 

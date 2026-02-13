@@ -227,7 +227,7 @@ describe('apply last props', () => {
 
   test('edgeless-text', () => {
     const surface = getSurfaceBlock(doc);
-    const id = service.crud.addBlock('affine:edgeless-text', {}, surface!.id);
+    const id = service.crud.addBlock('nexio:edgeless-text', {}, surface!.id);
     if (!id) {
       throw new Error('id is not found');
     }
@@ -239,7 +239,7 @@ describe('apply last props', () => {
       fontFamily: FontFamily.OrelegaOne,
     });
 
-    const id2 = service.crud.addBlock('affine:edgeless-text', {}, surface!.id);
+    const id2 = service.crud.addBlock('nexio:edgeless-text', {}, surface!.id);
     if (!id2) {
       throw new Error('id2 is not found');
     }

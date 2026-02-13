@@ -33,10 +33,10 @@ describe('frame', () => {
 
     const getFrameTitle = (frameId: string) => {
       const frameTitleWidget = service.std.view.getWidget(
-        'affine-frame-title-widget',
+        'nexio-frame-title-widget',
         frameId
       ) as NexioFrameTitleWidget | null;
-      return frameTitleWidget?.shadowRoot?.querySelector('affine-frame-title');
+      return frameTitleWidget?.shadowRoot?.querySelector('nexio-frame-title');
     };
 
     const frameTitle = getFrameTitle(frame);

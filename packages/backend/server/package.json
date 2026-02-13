@@ -2,13 +2,13 @@
   "name": "@nexio/server",
   "private": true,
   "version": "0.22.4",
-  "description": "Affine Node.js server",
+  "description": "Nexio Node.js server",
   "type": "module",
   "bin": {
     "run-test": "./scripts/run-test.ts"
   },
   "scripts": {
-    "build": "affine bundle -p @nexio/server",
+    "build": "nexio bundle -p @nexio/server",
     "dev": "nodemon ./src/index.ts",
     "dev:mail": "email dev -d src/mails",
     "test": "ava --concurrency 1 --serial",
@@ -26,7 +26,7 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@affine/reader": "workspace:*",
+    "@nexio/reader": "workspace:*",
     "@nexio/server-native": "workspace:*",
     "@ai-sdk/anthropic": "^2.0.1",
     "@ai-sdk/google": "^2.0.4",
@@ -164,9 +164,9 @@
     ],
     "env": {
       "NODE_ENV": "development",
-      "AFFINE_ENV": "dev",
-      "AFFINE_SERVER_EXTERNAL_URL": "http://localhost:8080",
-      "DEBUG": "affine:*",
+      "NEXIO_ENV": "dev",
+      "NEXIO_SERVER_EXTERNAL_URL": "http://localhost:8080",
+      "DEBUG": "nexio:*",
       "FORCE_COLOR": true,
       "DEBUG_COLORS": true
     },

@@ -44,6 +44,6 @@ export const sidebarBodyNoSelection = style({
   overflow: 'hidden',
   justifyContent: 'center',
   userSelect: 'none',
-  color: cssVar('--affine-text-secondary-color'),
+  color: cssVar('--nexio-text-secondary-color'),
   alignItems: 'center',
 });
