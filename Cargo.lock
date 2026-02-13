@@ -37,160 +37,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "nexio_common"
-version = "0.1.0"
-dependencies = [
- "cc",
- "chrono",
- "criterion2",
- "docx-parser",
- "infer",
- "path-ext",
- "pdf-extract",
- "rand 0.9.1",
- "rayon",
- "readability",
- "serde_json",
- "sha3",
- "strum_macros",
- "text-splitter",
- "thiserror 2.0.12",
- "tiktoken-rs",
- "tree-sitter",
- "tree-sitter-c",
- "tree-sitter-c-sharp",
- "tree-sitter-cpp",
- "tree-sitter-go",
- "tree-sitter-java",
- "tree-sitter-javascript",
- "tree-sitter-kotlin-ng",
- "tree-sitter-python",
- "tree-sitter-rust",
- "tree-sitter-scala",
- "tree-sitter-typescript",
- "url",
-]
-
-[[package]]
-name = "nexio_media_capture"
-version = "0.0.0"
-dependencies = [
- "block2",
- "core-foundation",
- "coreaudio-rs 0.12.1",
- "cpal",
- "criterion2",
- "crossbeam-channel",
- "dispatch2",
- "libc",
- "napi",
- "napi-build",
- "napi-derive",
- "objc2",
- "objc2-foundation",
- "rubato",
- "screencapturekit",
- "symphonia",
- "thiserror 2.0.12",
- "uuid",
- "windows 0.61.3",
- "windows-core 0.61.2",
-]
-
-[[package]]
-name = "nexio_mobile_native"
-version = "0.0.0"
-dependencies = [
- "nexio_common",
- "nexio_nbstore",
- "anyhow",
- "base64-simd",
- "chrono",
- "homedir",
- "objc2",
- "objc2-foundation",
- "sqlx",
- "thiserror 2.0.12",
- "uniffi",
-]
-
-[[package]]
-name = "nexio_native"
-version = "0.0.0"
-dependencies = [
- "nexio_common",
- "nexio_media_capture",
- "nexio_nbstore",
- "nexio_sqlite_v1",
- "napi",
- "napi-build",
- "napi-derive",
- "once_cell",
- "sqlx",
- "tokio",
-]
-
-[[package]]
-name = "nexio_nbstore"
-version = "0.0.0"
-dependencies = [
- "nexio_schema",
- "anyhow",
- "chrono",
- "dotenvy",
- "napi",
- "napi-build",
- "napi-derive",
- "sqlx",
- "thiserror 2.0.12",
- "tokio",
- "uniffi",
-]
-
-[[package]]
-name = "nexio_schema"
-version = "0.0.0"
-dependencies = [
- "sqlx",
-]
-
-[[package]]
-name = "nexio_server_native"
-version = "1.0.0"
-dependencies = [
- "nexio_common",
- "chrono",
- "file-format",
- "infer",
- "mimalloc",
- "napi",
- "napi-build",
- "napi-derive",
- "rand 0.9.1",
- "rayon",
- "sha3",
- "tiktoken-rs",
- "tokio",
- "v_htmlescape",
- "y-octo",
-]
-
-[[package]]
-name = "nexio_sqlite_v1"
-version = "0.0.0"
-dependencies = [
- "nexio_schema",
- "anyhow",
- "chrono",
- "dotenvy",
- "napi",
- "napi-build",
- "napi-derive",
- "sqlx",
- "tokio",
-]
-
-[[package]]
 name = "ahash"
 version = "0.8.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2597,6 +2443,160 @@ name = "new_debug_unreachable"
 version = "1.0.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "650eef8c711430f1a879fdd01d4745a7deea475becfb90269c06775983bbf086"
+
+[[package]]
+name = "nexio_common"
+version = "0.1.0"
+dependencies = [
+ "cc",
+ "chrono",
+ "criterion2",
+ "docx-parser",
+ "infer",
+ "path-ext",
+ "pdf-extract",
+ "rand 0.9.1",
+ "rayon",
+ "readability",
+ "serde_json",
+ "sha3",
+ "strum_macros",
+ "text-splitter",
+ "thiserror 2.0.12",
+ "tiktoken-rs",
+ "tree-sitter",
+ "tree-sitter-c",
+ "tree-sitter-c-sharp",
+ "tree-sitter-cpp",
+ "tree-sitter-go",
+ "tree-sitter-java",
+ "tree-sitter-javascript",
+ "tree-sitter-kotlin-ng",
+ "tree-sitter-python",
+ "tree-sitter-rust",
+ "tree-sitter-scala",
+ "tree-sitter-typescript",
+ "url",
+]
+
+[[package]]
+name = "nexio_media_capture"
+version = "0.0.0"
+dependencies = [
+ "block2",
+ "core-foundation",
+ "coreaudio-rs 0.12.1",
+ "cpal",
+ "criterion2",
+ "crossbeam-channel",
+ "dispatch2",
+ "libc",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "objc2",
+ "objc2-foundation",
+ "rubato",
+ "screencapturekit",
+ "symphonia",
+ "thiserror 2.0.12",
+ "uuid",
+ "windows 0.61.3",
+ "windows-core 0.61.2",
+]
+
+[[package]]
+name = "nexio_mobile_native"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "base64-simd",
+ "chrono",
+ "homedir",
+ "nexio_common",
+ "nexio_nbstore",
+ "objc2",
+ "objc2-foundation",
+ "sqlx",
+ "thiserror 2.0.12",
+ "uniffi",
+]
+
+[[package]]
+name = "nexio_native"
+version = "0.0.0"
+dependencies = [
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "nexio_common",
+ "nexio_media_capture",
+ "nexio_nbstore",
+ "nexio_sqlite_v1",
+ "once_cell",
+ "sqlx",
+ "tokio",
+]
+
+[[package]]
+name = "nexio_nbstore"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "dotenvy",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "nexio_schema",
+ "sqlx",
+ "thiserror 2.0.12",
+ "tokio",
+ "uniffi",
+]
+
+[[package]]
+name = "nexio_schema"
+version = "0.0.0"
+dependencies = [
+ "sqlx",
+]
+
+[[package]]
+name = "nexio_server_native"
+version = "1.0.0"
+dependencies = [
+ "chrono",
+ "file-format",
+ "infer",
+ "mimalloc",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "nexio_common",
+ "rand 0.9.1",
+ "rayon",
+ "sha3",
+ "tiktoken-rs",
+ "tokio",
+ "v_htmlescape",
+ "y-octo",
+]
+
+[[package]]
+name = "nexio_sqlite_v1"
+version = "0.0.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "dotenvy",
+ "napi",
+ "napi-build",
+ "napi-derive",
+ "nexio_schema",
+ "sqlx",
+ "tokio",
+]
 
 [[package]]
 name = "nix"

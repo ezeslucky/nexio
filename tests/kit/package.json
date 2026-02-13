@@ -11,8 +11,8 @@
     "./bs/*": "./src/bs/*.ts"
   },
   "devDependencies": {
-    "@nexio-tools/utils": "workspace:*",
     "@blocksuite/nexio": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
     "@node-rs/argon2": "^2.0.2",
     "@playwright/test": "=1.52.0",
     "@toeverything/infra": "workspace:*",
