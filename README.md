@@ -1,3 +1,7 @@
+# NEXIO 
+Is a next-generation all-in-one workspace and knowledge operating system that unifies wikis, knowledge management, presentations, and digital assets into a single platform — built to outperform tools like Notion and Miro.
+
+
 <!--  nvm use 20
 yarn run nexio @nexio/server prisma migrate deploy
 nvm use 20
