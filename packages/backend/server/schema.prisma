@@ -755,7 +755,7 @@ model Subscription {
   iapStore             IapStore? @map("iap_store")
   // revenuecat entitlement name like "Pro" / "AI"
   rcEntitlement        String?   @map("rc_entitlement") @db.VarChar
-  // revenuecat product id like "app.affine.pro.Annual"
+  // revenuecat product id like "app.nexio.pro.Annual"
   rcProductId          String?   @map("rc_product_id") @db.VarChar
   // external reference, appstore originalTransactionId or play purchaseToken
   rcExternalRef        String?   @map("rc_external_ref") @db.VarChar

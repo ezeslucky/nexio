@@ -38,7 +38,7 @@ BEGIN -- check if pgvector extension is installed
         error_message := 'pgvector extension not found.' || E'\n' ||
         '****************************************************************************' || E'\n' ||
         '*                                                                          *' || E'\n' ||
-        '*   NOTICE: From AFFiNE 0.20 onwards, the copilot module will depend       *' || E'\n' ||
+        '*   NOTICE: From NEXIO 0.20 onwards, the copilot module will depend       *' || E'\n' ||
         '*           on pgvector.                                                   *' || E'\n' ||
         '*                                                                          *' || E'\n' ||
         '*   1. If you are using the official PostgreSQL Docker container,          *' || E'\n' ||

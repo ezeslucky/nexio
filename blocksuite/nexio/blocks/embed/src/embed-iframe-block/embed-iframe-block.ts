@@ -446,7 +446,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
 
   override renderBlock() {
     const containerClasses = classMap({
-      'affine-embed-iframe-block-container': true,
+      'nexio-embed-iframe-block-container': true,
       ...this.selectedStyle$?.value,
       'in-surface': this.inSurface,
     });
@@ -455,7 +455,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
     });
 
     const overlayClasses = classMap({
-      'affine-embed-iframe-block-overlay': true,
+      'nexio-embed-iframe-block-overlay': true,
       show: this.showOverlay$.value,
     });
 
@@ -494,6 +494,6 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
 
   override accessor selectedStyle = SelectedStyle.Border;
 
-  @query('.affine-embed-iframe-block-container')
+  @query('.nexio-embed-iframe-block-container')
   accessor _blockContainer: HTMLElement | null = null;
 }

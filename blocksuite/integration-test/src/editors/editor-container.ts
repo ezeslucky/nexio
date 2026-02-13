@@ -17,7 +17,7 @@ export class TestNexioEditorContainer extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
-    .affine-page-viewport {
+    .nexio-page-viewport {
       position: relative;
       display: flex;
       flex-direction: column;
@@ -25,21 +25,21 @@ export class TestNexioEditorContainer extends SignalWatcher(
       overflow-y: auto;
       container-name: viewport;
       container-type: inline-size;
-      font-family: var(--affine-font-family);
+      font-family: var(--nexio-font-family);
     }
-    .affine-page-viewport * {
+    .nexio-page-viewport * {
       box-sizing: border-box;
     }
 
     @media print {
-      .affine-page-viewport {
+      .nexio-page-viewport {
         height: auto;
       }
     }
 
     .playground-page-editor-container {
       flex-grow: 1;
-      font-family: var(--affine-font-family);
+      font-family: var(--nexio-font-family);
       display: block;
     }
 
@@ -54,8 +54,8 @@ export class TestNexioEditorContainer extends SignalWatcher(
     }
 
     .edgeless-editor-container {
-      font-family: var(--affine-font-family);
-      background: var(--affine-background-primary-color);
+      font-family: var(--nexio-font-family);
+      background: var(--nexio-background-primary-color);
       display: block;
       height: 100%;
       position: relative;
@@ -72,7 +72,7 @@ export class TestNexioEditorContainer extends SignalWatcher(
       }
     }
 
-    .affine-edgeless-viewport {
+    .nexio-edgeless-viewport {
       display: block;
       height: 100%;
       position: relative;
@@ -187,8 +187,8 @@ export class TestNexioEditorContainer extends SignalWatcher(
         <div
           data-theme=${mode === 'page' ? appTheme : edgelessTheme}
           class=${mode === 'page'
-            ? 'affine-page-viewport'
-            : 'affine-edgeless-viewport'}
+            ? 'nexio-page-viewport'
+            : 'nexio-edgeless-viewport'}
         >
           ${when(
             mode === 'page',
@@ -216,6 +216,6 @@ export class TestNexioEditorContainer extends SignalWatcher(
 
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-editor-container': TestNexioEditorContainer;
+    'nexio-editor-container': TestNexioEditorContainer;
   }
 }

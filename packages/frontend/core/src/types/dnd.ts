@@ -1,6 +1,6 @@
 import type { DNDData } from '@nexio/component';
 
-export type AffineDNDEntity =
+export type NexioDNDEntity =
   | {
       type: 'doc';
       id: string;
@@ -24,7 +24,7 @@ export type AffineDNDEntity =
 
 export interface NexioDNDData extends DNDData {
   draggable: {
-    entity?: AffineDNDEntity;
+    entity?: NexioDNDEntity;
     from?:
       | {
           at: 'navigation-panel:organize:folder-node';

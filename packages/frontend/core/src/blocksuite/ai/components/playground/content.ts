@@ -38,9 +38,9 @@ export class PlaygroundContent extends SignalWatcher(
       .playground-chat-item {
         flex: 1;
         min-width: 0;
-        border: 1px solid var(--affine-border-color);
+        border: 1px solid var(--nexio-border-color);
         border-radius: 8px;
-        background: var(--affine-background-primary-color);
+        background: var(--nexio-background-primary-color);
         overflow: hidden;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.2s ease;
@@ -85,10 +85,10 @@ export class PlaygroundContent extends SignalWatcher(
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -348,8 +348,8 @@ export class PlaygroundContent extends SignalWatcher(
                 .searchMenuConfig=${this.searchMenuConfig}
                 .docDisplayConfig=${this.docDisplayConfig}
                 .extensions=${this.extensions}
-                .affineFeatureFlagService=${this.affineFeatureFlagService}
-                .affineThemeService=${this.affineThemeService}
+                .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+                .nexioThemeService=${this.nexioThemeService}
                 .notificationService=${this.notificationService}
                 .aiToolsConfigService=${this.aiToolsConfigService}
                 .addChat=${this.addChat}

@@ -61,11 +61,11 @@ const Empty = () => {
     <div className={styles.empty}>
       <InformationIcon className={styles.emptyIcon} />
       <span className={styles.emptyText}>
-        {t['com.affine.template-list.empty']()}
+        {t['com.nexio.template-list.empty']()}
       </span>
       <div className={styles.space} />
       <a
-        href="https://affine.pro/blog/how-to-use-template"
+        href="https://nexio.pro/blog/how-to-use-template"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.link}
@@ -169,7 +169,7 @@ export const TemplateListMenuAdd = () => {
       onClick={createNewTemplate}
       onAuxClick={createNewTemplate}
     >
-      {t['com.affine.template-list.create-new']()}
+      {t['com.nexio.template-list.create-new']()}
     </MenuItem>
   );
 };

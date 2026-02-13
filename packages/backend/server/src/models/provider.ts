@@ -1,1 +1,1 @@
-export const MODELS_SYMBOL = Symbol('AFFINE_MODELS');
+export const MODELS_SYMBOL = Symbol('NEXIO_MODELS');

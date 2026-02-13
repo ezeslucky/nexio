@@ -86,8 +86,8 @@ import { registerMiniMindmapBlocks } from './mini-mindmap';
 import { AIChatBlockPeekView } from './peek-view/chat-block-peek-view';
 import { DateTime } from './peek-view/date-time';
 import {
-  AFFINE_AI_PANEL_WIDGET,
-  AffineAIPanelWidget,
+  NEXIO_AI_PANEL_WIDGET,
+  NexioAIPanelWidget,
 } from './widgets/ai-panel/ai-panel';
 import {
   AIPanelAnswer,
@@ -99,22 +99,22 @@ import {
 import { AIFinishTip } from './widgets/ai-panel/components/finish-tip';
 import { GeneratingPlaceholder } from './widgets/ai-panel/components/generating-placeholder';
 import {
-  AFFINE_BLOCK_DIFF_WIDGET_FOR_BLOCK,
-  AffineBlockDiffWidgetForBlock,
+  NEXIO_BLOCK_DIFF_WIDGET_FOR_BLOCK,
+  NexioBlockDiffWidgetForBlock,
 } from './widgets/block-diff/block';
 import { BlockDiffOptions } from './widgets/block-diff/options';
 import {
-  AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE,
-  AffineBlockDiffWidgetForPage,
+  NEXIO_BLOCK_DIFF_WIDGET_FOR_PAGE,
+  NexioBlockDiffWidgetForPage,
 } from './widgets/block-diff/page';
 import {
-  AFFINE_BLOCK_DIFF_PLAYGROUND,
-  AFFINE_BLOCK_DIFF_PLAYGROUND_MODAL,
+  NEXIO_BLOCK_DIFF_PLAYGROUND,
+  NEXIO_BLOCK_DIFF_PLAYGROUND_MODAL,
   BlockDiffPlayground,
   BlockDiffPlaygroundModal,
 } from './widgets/block-diff/playground';
 import {
-  AFFINE_EDGELESS_COPILOT_WIDGET,
+  NEXIO_EDGELESS_COPILOT_WIDGET,
   EdgelessCopilotWidget,
 } from './widgets/edgeless-copilot';
 import { EdgelessCopilotPanel } from './widgets/edgeless-copilot-panel';
@@ -175,10 +175,10 @@ export function registerAIEffects() {
   customElements.define('ai-chat-block-peek-view', AIChatBlockPeekView);
   customElements.define('date-time', DateTime);
   customElements.define(
-    'affine-edgeless-ai-chat',
+    'nexio-edgeless-ai-chat',
     EdgelessAIChatBlockComponent
   );
-  customElements.define('affine-ai-chat', AIChatBlockComponent);
+  customElements.define('nexio-ai-chat', AIChatBlockComponent);
   customElements.define('ai-chat-block-message', AIChatBlockMessage);
   customElements.define('ai-chat-block-messages', AIChatBlockMessages);
   customElements.define(
@@ -210,9 +210,9 @@ export function registerAIEffects() {
   customElements.define('chat-message-assistant', ChatMessageAssistant);
   customElements.define('chat-message-user', ChatMessageUser);
   customElements.define('ai-block-diff-options', BlockDiffOptions);
-  customElements.define(AFFINE_BLOCK_DIFF_PLAYGROUND, BlockDiffPlayground);
+  customElements.define(NEXIO_BLOCK_DIFF_PLAYGROUND, BlockDiffPlayground);
   customElements.define(
-    AFFINE_BLOCK_DIFF_PLAYGROUND_MODAL,
+    NEXIO_BLOCK_DIFF_PLAYGROUND_MODAL,
     BlockDiffPlaygroundModal
   );
 
@@ -231,15 +231,15 @@ export function registerAIEffects() {
   customElements.define('artifact-preview-panel', ArtifactPreviewPanel);
   customElements.define('doc-edit-tool', DocEditTool);
 
-  customElements.define(AFFINE_AI_PANEL_WIDGET, AffineAIPanelWidget);
-  customElements.define(AFFINE_EDGELESS_COPILOT_WIDGET, EdgelessCopilotWidget);
+  customElements.define(NEXIO_AI_PANEL_WIDGET, NexioAIPanelWidget);
+  customElements.define(NEXIO_EDGELESS_COPILOT_WIDGET, EdgelessCopilotWidget);
   customElements.define(
-    AFFINE_BLOCK_DIFF_WIDGET_FOR_BLOCK,
-    AffineBlockDiffWidgetForBlock
+    NEXIO_BLOCK_DIFF_WIDGET_FOR_BLOCK,
+    NexioBlockDiffWidgetForBlock
   );
   customElements.define(
-    AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE,
-    AffineBlockDiffWidgetForPage
+    NEXIO_BLOCK_DIFF_WIDGET_FOR_PAGE,
+    NexioBlockDiffWidgetForPage
   );
 
   customElements.define('edgeless-copilot-panel', EdgelessCopilotPanel);

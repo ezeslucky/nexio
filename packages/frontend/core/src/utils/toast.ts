@@ -15,7 +15,7 @@ export const toast = (message: string, options?: ToastOptions) => {
 declare global {
   // global Events
   interface WindowEventMap {
-    'affine-toast:emit': CustomEvent<{
+    'nexio-toast:emit': CustomEvent<{
       message: string;
     }>;
   }

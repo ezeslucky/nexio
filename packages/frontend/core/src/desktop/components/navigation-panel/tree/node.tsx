@@ -358,7 +358,7 @@ export const NavigationPanelTreeNode = ({
                         onClick={() => setRenaming(true)}
                         disabled={!can}
                       >
-                        {t['com.affine.menu.rename']()}
+                        {t['com.nexio.menu.rename']()}
                       </MenuItem>
                     )}
                   </Guard>
@@ -369,7 +369,7 @@ export const NavigationPanelTreeNode = ({
                     prefixIcon={<EditIcon />}
                     onClick={() => setRenaming(true)}
                   >
-                    {t['com.affine.menu.rename']()}
+                    {t['com.nexio.menu.rename']()}
                   </MenuItem>
                 ),
               }

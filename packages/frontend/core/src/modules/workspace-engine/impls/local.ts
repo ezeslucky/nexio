@@ -43,9 +43,9 @@ import type {
 import { WorkspaceImpl } from '../../workspace/impls/workspace';
 import { getWorkspaceProfileWorker } from './out-worker';
 
-export const LOCAL_WORKSPACE_LOCAL_STORAGE_KEY = 'affine-local-workspace';
+export const LOCAL_WORKSPACE_LOCAL_STORAGE_KEY = 'nexio-local-workspace';
 const LOCAL_WORKSPACE_CHANGED_BROADCAST_CHANNEL_KEY =
-  'affine-local-workspace-changed';
+  'nexio-local-workspace-changed';
 
 const logger = new DebugLogger('local-workspace');
 

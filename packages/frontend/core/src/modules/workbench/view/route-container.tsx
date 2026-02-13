@@ -1,5 +1,5 @@
 import { IconButton } from '@nexio/component';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { RightSidebarIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { Suspense, useCallback } from 'react';

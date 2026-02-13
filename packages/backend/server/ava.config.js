@@ -21,11 +21,11 @@ export default {
   require: preludes,
   environmentVariables: {
     NODE_ENV: 'test',
-    DEPLOYMENT_TYPE: 'affine',
+    DEPLOYMENT_TYPE: 'nexio',
     MAILER_HOST: '0.0.0.0',
     MAILER_PORT: '1025',
-    MAILER_USER: 'noreply@toeverything.info',
-    MAILER_PASSWORD: 'affine',
-    MAILER_SENDER: 'noreply@toeverything.info',
+    MAILER_USER: 'aurobindolife888@gmail.com',
+    MAILER_PASSWORD: 'nexio',
+    MAILER_SENDER: 'aurobindolife888@gmail.com',
   },
 };

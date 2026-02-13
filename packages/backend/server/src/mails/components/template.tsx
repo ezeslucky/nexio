@@ -214,10 +214,10 @@ export function Template(props: PropsWithChildren) {
           }}
         >
           <Section>
-            <Link href="https://affine.pro">
+            <Link href="https://nexio.pro">
               <Img
-                src="https://cdn.affine.pro/mail/2023-8-9/affine-logo.png"
-                alt="AFFiNE logo"
+                src="https://cdn.nexio.pro/mail/2023-8-9/nexio-logo.png"
+                alt="nexio logo"
                 height="32px"
               />
             </Link>
