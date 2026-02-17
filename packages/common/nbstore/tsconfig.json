@@ -9,8 +9,8 @@
   "references": [
     { "path": "../reader" },
     { "path": "../infra" },
+    { "path": "../../../blocksuite/nexio/all" },
     { "path": "../error" },
-    { "path": "../graphql" },
-    { "path": "../../../blocksuite/nexio/all" }
+    { "path": "../graphql" }
   ]
 }

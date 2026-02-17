@@ -7,6 +7,7 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../framework/global" },
     { "path": "../../blocks/surface" },
     { "path": "../../components" },
     { "path": "../../ext-loader" },
@@ -15,7 +16,6 @@
     { "path": "../../rich-text" },
     { "path": "../../shared" },
     { "path": "../../widgets/edgeless-toolbar" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

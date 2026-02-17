@@ -8,6 +8,8 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../data-view" },
+    { "path": "../../../framework/global" },
     { "path": "../../components" },
     { "path": "../../ext-loader" },
     { "path": "../../inlines/preset" },
@@ -15,8 +17,6 @@
     { "path": "../../rich-text" },
     { "path": "../../shared" },
     { "path": "../../widgets/slash-menu" },
-    { "path": "../../data-view" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

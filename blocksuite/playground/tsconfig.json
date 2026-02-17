@@ -8,11 +8,11 @@
   },
   "include": ["./apps", "./examples"],
   "references": [
+    { "path": "../nexio/data-view" },
+    { "path": "../integration-test" },
     { "path": "../nexio/all" },
     { "path": "../nexio/components" },
     { "path": "../nexio/model" },
-    { "path": "../nexio/shared" },
-    { "path": "../nexio/data-view" },
-    { "path": "../integration-test" }
+    { "path": "../nexio/shared" }
   ]
 }

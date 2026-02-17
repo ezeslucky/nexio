@@ -4,10 +4,6 @@ export declare class Tokenizer {
   count(content: string, allowedSpecial?: Array<string> | undefined | null): number
 }
 
-export const NEXIO_PRO_LICENSE_AES_KEY: string | undefined | null
-
-export const NEXIO_PRO_PUBLIC_KEY: string | undefined | null
-
 export interface Chunk {
   index: number
   content: string
@@ -26,6 +22,10 @@ export declare function htmlSanitize(input: string): string
 export declare function mergeUpdatesInApplyWay(updates: Array<Buffer>): Buffer
 
 export declare function mintChallengeResponse(resource: string, bits?: number | undefined | null): Promise<string>
+
+export const NEXIO_PRO_LICENSE_AES_KEY: string | undefined | null
+
+export const NEXIO_PRO_PUBLIC_KEY: string | undefined | null
 
 export interface ParsedDoc {
   name: string

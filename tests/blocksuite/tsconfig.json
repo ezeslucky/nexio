@@ -7,7 +7,7 @@
   },
   "include": ["e2e"],
   "references": [
-    { "path": "../../blocksuite/nexio/all" },
-    { "path": "../../blocksuite/integration-test" }
+    { "path": "../../blocksuite/integration-test" },
+    { "path": "../../blocksuite/nexio/all" }
   ]
 }

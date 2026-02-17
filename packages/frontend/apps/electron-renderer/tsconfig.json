@@ -8,6 +8,7 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../../blocksuite/nexio/all" },
     { "path": "../../component" },
     { "path": "../../core" },
     { "path": "../../../common/debug" },
@@ -15,7 +16,6 @@
     { "path": "../../i18n" },
     { "path": "../../../common/nbstore" },
     { "path": "../../track" },
-    { "path": "../../../../blocksuite/nexio/all" },
     { "path": "../../../common/infra" },
     { "path": "../../../../tools/utils" }
   ]

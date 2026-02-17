@@ -33,6 +33,7 @@
     "@ai-sdk/openai-compatible": "^1.0.5",
     "@ai-sdk/perplexity": "^2.0.1",
     "@apollo/server": "^4.11.3",
+    "@as-integrations/express5": "^1.1.2",
     "@aws-sdk/client-s3": "^3.779.0",
     "@aws-sdk/s3-request-presigner": "^3.779.0",
     "@fal-ai/serverless-client": "^0.15.0",
