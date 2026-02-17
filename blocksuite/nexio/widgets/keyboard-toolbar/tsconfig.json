@@ -7,6 +7,8 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../data-view" },
+    { "path": "../../../framework/global" },
     { "path": "../../blocks/attachment" },
     { "path": "../../blocks/database" },
     { "path": "../../blocks/embed" },
@@ -28,8 +30,6 @@
     { "path": "../../model" },
     { "path": "../../rich-text" },
     { "path": "../../shared" },
-    { "path": "../../data-view" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

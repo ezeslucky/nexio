@@ -7,12 +7,12 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../framework/global" },
     { "path": "../../components" },
     { "path": "../../ext-loader" },
     { "path": "../reference" },
     { "path": "../../model" },
     { "path": "../../shared" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

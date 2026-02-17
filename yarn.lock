@@ -407,6 +407,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@as-integrations/express5@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "@as-integrations/express5@npm:1.1.2"
+  peerDependencies:
+    "@apollo/server": ^4.0.0 || ^5.0.0
+    express: ^5.0.0
+  checksum: 10/6a414d523306d6f614f20b106cf8dec8d8f282c7bc6e47a2661186554a4275983ce5fea9a29e50eda4600fe3a22564534bffcdee134c3057adbe8096bf5a78eb
+  languageName: node
+  linkType: hard
+
 "@atlaskit/pragmatic-drag-and-drop-auto-scroll@npm:^2.1.0":
   version: 2.1.5
   resolution: "@atlaskit/pragmatic-drag-and-drop-auto-scroll@npm:2.1.5"
@@ -9828,6 +9838,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/monorepo@workspace:."
   dependencies:
+    "@as-integrations/express5": "npm:^1.1.2"
     "@capacitor/cli": "npm:^7.0.0"
     "@eslint/js": "npm:^9.16.0"
     "@faker-js/faker": "npm:^10.0.0"
@@ -9980,6 +9991,7 @@ __metadata:
     "@ai-sdk/openai-compatible": "npm:^1.0.5"
     "@ai-sdk/perplexity": "npm:^2.0.1"
     "@apollo/server": "npm:^4.11.3"
+    "@as-integrations/express5": "npm:^1.1.2"
     "@aws-sdk/client-s3": "npm:^3.779.0"
     "@aws-sdk/s3-request-presigner": "npm:^3.779.0"
     "@faker-js/faker": "npm:^10.0.0"

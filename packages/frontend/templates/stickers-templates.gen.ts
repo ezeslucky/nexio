@@ -404,26 +404,26 @@ import stickerCover199 from './stickers/Cheeky Piggies/Cover/Thumbs Up.svg';
 import stickerContent199 from './stickers/Cheeky Piggies/Content/Thumbs Up.svg';
 import stickerCover200 from './stickers/Cheeky Piggies/Cover/What_.svg';
 import stickerContent200 from './stickers/Cheeky Piggies/Content/What_.svg';
-import stickerCover201 from './stickers/Contorted Stickers/Cover/NEXIO.svg';
-import stickerContent201 from './stickers/Contorted Stickers/Content/NEXIO.svg';
-import stickerCover202 from './stickers/Contorted Stickers/Cover/AI.svg';
-import stickerContent202 from './stickers/Contorted Stickers/Content/AI.svg';
-import stickerCover203 from './stickers/Contorted Stickers/Cover/Cat.svg';
-import stickerContent203 from './stickers/Contorted Stickers/Content/Cat.svg';
-import stickerCover204 from './stickers/Contorted Stickers/Cover/Closed.svg';
-import stickerContent204 from './stickers/Contorted Stickers/Content/Closed.svg';
-import stickerCover205 from './stickers/Contorted Stickers/Cover/Eyes.svg';
-import stickerContent205 from './stickers/Contorted Stickers/Content/Eyes.svg';
-import stickerCover206 from './stickers/Contorted Stickers/Cover/Fire.svg';
-import stickerContent206 from './stickers/Contorted Stickers/Content/Fire.svg';
-import stickerCover207 from './stickers/Contorted Stickers/Cover/Info.svg';
-import stickerContent207 from './stickers/Contorted Stickers/Content/Info.svg';
-import stickerCover208 from './stickers/Contorted Stickers/Cover/King.svg';
-import stickerContent208 from './stickers/Contorted Stickers/Content/King.svg';
-import stickerCover209 from './stickers/Contorted Stickers/Cover/Love Face.svg';
-import stickerContent209 from './stickers/Contorted Stickers/Content/Love Face.svg';
-import stickerCover210 from './stickers/Contorted Stickers/Cover/Love.svg';
-import stickerContent210 from './stickers/Contorted Stickers/Content/Love.svg';
+import stickerCover201 from './stickers/Contorted Stickers/Cover/AI.svg';
+import stickerContent201 from './stickers/Contorted Stickers/Content/AI.svg';
+import stickerCover202 from './stickers/Contorted Stickers/Cover/Cat.svg';
+import stickerContent202 from './stickers/Contorted Stickers/Content/Cat.svg';
+import stickerCover203 from './stickers/Contorted Stickers/Cover/Closed.svg';
+import stickerContent203 from './stickers/Contorted Stickers/Content/Closed.svg';
+import stickerCover204 from './stickers/Contorted Stickers/Cover/Eyes.svg';
+import stickerContent204 from './stickers/Contorted Stickers/Content/Eyes.svg';
+import stickerCover205 from './stickers/Contorted Stickers/Cover/Fire.svg';
+import stickerContent205 from './stickers/Contorted Stickers/Content/Fire.svg';
+import stickerCover206 from './stickers/Contorted Stickers/Cover/Info.svg';
+import stickerContent206 from './stickers/Contorted Stickers/Content/Info.svg';
+import stickerCover207 from './stickers/Contorted Stickers/Cover/King.svg';
+import stickerContent207 from './stickers/Contorted Stickers/Content/King.svg';
+import stickerCover208 from './stickers/Contorted Stickers/Cover/Love Face.svg';
+import stickerContent208 from './stickers/Contorted Stickers/Content/Love Face.svg';
+import stickerCover209 from './stickers/Contorted Stickers/Cover/Love.svg';
+import stickerContent209 from './stickers/Contorted Stickers/Content/Love.svg';
+import stickerCover210 from './stickers/Contorted Stickers/Cover/NEXIO.svg';
+import stickerContent210 from './stickers/Contorted Stickers/Content/NEXIO.svg';
 import stickerCover211 from './stickers/Contorted Stickers/Cover/Notice.svg';
 import stickerContent211 from './stickers/Contorted Stickers/Content/Notice.svg';
 import stickerCover212 from './stickers/Contorted Stickers/Cover/Pin.svg';
@@ -438,26 +438,26 @@ import stickerCover216 from './stickers/Paper/Cover/+1.svg';
 import stickerContent216 from './stickers/Paper/Content/+1.svg';
 import stickerCover217 from './stickers/Paper/Cover/A lot of question.svg';
 import stickerContent217 from './stickers/Paper/Content/A lot of question.svg';
-import stickerCover218 from './stickers/Paper/Cover/NEXIO AI.svg';
-import stickerContent218 from './stickers/Paper/Content/NEXIO AI.svg';
-import stickerCover219 from './stickers/Paper/Cover/Arrow.svg';
-import stickerContent219 from './stickers/Paper/Content/Arrow.svg';
-import stickerCover220 from './stickers/Paper/Cover/Atention.svg';
-import stickerContent220 from './stickers/Paper/Content/Atention.svg';
-import stickerCover221 from './stickers/Paper/Cover/Blue Screen.svg';
-import stickerContent221 from './stickers/Paper/Content/Blue Screen.svg';
-import stickerCover222 from './stickers/Paper/Cover/Boom.svg';
-import stickerContent222 from './stickers/Paper/Content/Boom.svg';
-import stickerCover223 from './stickers/Paper/Cover/Cool.svg';
-import stickerContent223 from './stickers/Paper/Content/Cool.svg';
-import stickerCover224 from './stickers/Paper/Cover/Dino.svg';
-import stickerContent224 from './stickers/Paper/Content/Dino.svg';
-import stickerCover225 from './stickers/Paper/Cover/Histogram.svg';
-import stickerContent225 from './stickers/Paper/Content/Histogram.svg';
-import stickerCover226 from './stickers/Paper/Cover/Local First.svg';
-import stickerContent226 from './stickers/Paper/Content/Local First.svg';
-import stickerCover227 from './stickers/Paper/Cover/Medal.svg';
-import stickerContent227 from './stickers/Paper/Content/Medal.svg';
+import stickerCover218 from './stickers/Paper/Cover/Arrow.svg';
+import stickerContent218 from './stickers/Paper/Content/Arrow.svg';
+import stickerCover219 from './stickers/Paper/Cover/Atention.svg';
+import stickerContent219 from './stickers/Paper/Content/Atention.svg';
+import stickerCover220 from './stickers/Paper/Cover/Blue Screen.svg';
+import stickerContent220 from './stickers/Paper/Content/Blue Screen.svg';
+import stickerCover221 from './stickers/Paper/Cover/Boom.svg';
+import stickerContent221 from './stickers/Paper/Content/Boom.svg';
+import stickerCover222 from './stickers/Paper/Cover/Cool.svg';
+import stickerContent222 from './stickers/Paper/Content/Cool.svg';
+import stickerCover223 from './stickers/Paper/Cover/Dino.svg';
+import stickerContent223 from './stickers/Paper/Content/Dino.svg';
+import stickerCover224 from './stickers/Paper/Cover/Histogram.svg';
+import stickerContent224 from './stickers/Paper/Content/Histogram.svg';
+import stickerCover225 from './stickers/Paper/Cover/Local First.svg';
+import stickerContent225 from './stickers/Paper/Content/Local First.svg';
+import stickerCover226 from './stickers/Paper/Cover/Medal.svg';
+import stickerContent226 from './stickers/Paper/Content/Medal.svg';
+import stickerCover227 from './stickers/Paper/Cover/NEXIO AI.svg';
+import stickerContent227 from './stickers/Paper/Content/NEXIO AI.svg';
 import stickerCover228 from './stickers/Paper/Cover/Notice.svg';
 import stickerContent228 from './stickers/Paper/Content/Notice.svg';
 import stickerCover229 from './stickers/Paper/Cover/Pin.svg';
@@ -1753,64 +1753,64 @@ const templates = {
         hash: "JqWfcP9Q0kGE4wDuVZCi4lW2U7O15trpL--fdNrRJvQ=",
       }),],
 "Contorted Stickers": [     buildStickerTemplate({
-        name: "NEXIO",
+        name: "AI",
         cover: stickerCover201,
         content: stickerContent201,
-        hash: "i3piAMnoD4STQnEjTrAe_ZRdwHcD34n-sJZY8IN1blg=",
-      }),
-     buildStickerTemplate({
-        name: "AI",
-        cover: stickerCover202,
-        content: stickerContent202,
         hash: "VZJPB8ZBVtiZ-m04KNtlguY_t9VLx4itHILIQ3l1MRw=",
       }),
      buildStickerTemplate({
         name: "Cat",
-        cover: stickerCover203,
-        content: stickerContent203,
+        cover: stickerCover202,
+        content: stickerContent202,
         hash: "IS6xbnAo5WXDRxnP98UBkdOP2Zt2luQXEojcLfnfsR4=",
       }),
      buildStickerTemplate({
         name: "Closed",
-        cover: stickerCover204,
-        content: stickerContent204,
+        cover: stickerCover203,
+        content: stickerContent203,
         hash: "wzrJyCiyflFnyvvHdH2XONsuwbuw119wiFCekvopsmQ=",
       }),
      buildStickerTemplate({
         name: "Eyes",
-        cover: stickerCover205,
-        content: stickerContent205,
+        cover: stickerCover204,
+        content: stickerContent204,
         hash: "eT4Nbl90OC9ivTjRBmEabaWqjdmITjCgOtTJNSJu1SU=",
       }),
      buildStickerTemplate({
         name: "Fire",
-        cover: stickerCover206,
-        content: stickerContent206,
+        cover: stickerCover205,
+        content: stickerContent205,
         hash: "cQnt7T9qxI5-It-reeo3E4XVA3HA89L2myi1k2EJfn8=",
       }),
      buildStickerTemplate({
         name: "Info",
-        cover: stickerCover207,
-        content: stickerContent207,
+        cover: stickerCover206,
+        content: stickerContent206,
         hash: "kwKlgzVYNRk4AyOJs3Xtyt0vMWovo-7BfEqaWndDInM=",
       }),
      buildStickerTemplate({
         name: "King",
-        cover: stickerCover208,
-        content: stickerContent208,
+        cover: stickerCover207,
+        content: stickerContent207,
         hash: "W-RCNTaadPNEI9OALAGHqv1cGmYD1y7KxIRGLsbr-DM=",
       }),
      buildStickerTemplate({
         name: "Love Face",
-        cover: stickerCover209,
-        content: stickerContent209,
+        cover: stickerCover208,
+        content: stickerContent208,
         hash: "51B1S9eZ1rgxT-zG5npI_5l1sGss6dTVYiyut5fNPrs=",
       }),
      buildStickerTemplate({
         name: "Love",
+        cover: stickerCover209,
+        content: stickerContent209,
+        hash: "fK5Bk7hxwSEHuNQ2WfO-ysII_T20z37P1JvLf00ocUQ=",
+      }),
+     buildStickerTemplate({
+        name: "NEXIO",
         cover: stickerCover210,
         content: stickerContent210,
-        hash: "fK5Bk7hxwSEHuNQ2WfO-ysII_T20z37P1JvLf00ocUQ=",
+        hash: "i3piAMnoD4STQnEjTrAe_ZRdwHcD34n-sJZY8IN1blg=",
       }),
      buildStickerTemplate({
         name: "Notice",
@@ -1855,64 +1855,64 @@ const templates = {
         hash: "yKPa7vqOxC6rh-e0SVdlp0RwMWQ9mzDKTtE5g2UnHGk=",
       }),
      buildStickerTemplate({
-        name: "NEXIO AI",
+        name: "Arrow",
         cover: stickerCover218,
         content: stickerContent218,
-        hash: "FwBs2WApEGkiFmu1XR4fHZ_7fOlSsSBdYEyGs2lDeLk=",
-      }),
-     buildStickerTemplate({
-        name: "Arrow",
-        cover: stickerCover219,
-        content: stickerContent219,
         hash: "evuSkommPr7PBAWCioYDRQpKPZGoY6izIGev2C8Xdt0=",
       }),
      buildStickerTemplate({
         name: "Atention",
-        cover: stickerCover220,
-        content: stickerContent220,
+        cover: stickerCover219,
+        content: stickerContent219,
         hash: "Lmvftjmkw5oQEyZ2VP6eTohbXgQyEtNWKkrg9AbDknI=",
       }),
      buildStickerTemplate({
         name: "Blue Screen",
-        cover: stickerCover221,
-        content: stickerContent221,
+        cover: stickerCover220,
+        content: stickerContent220,
         hash: "30OHymd5x-3zr_5KxQm3DzVfxyWWAf0QnmfHpIOoLzQ=",
       }),
      buildStickerTemplate({
         name: "Boom",
-        cover: stickerCover222,
-        content: stickerContent222,
+        cover: stickerCover221,
+        content: stickerContent221,
         hash: "mpTlbN8fJWJUMlHcCCrQuzKTK844-F9YuebgR0kgJa8=",
       }),
      buildStickerTemplate({
         name: "Cool",
-        cover: stickerCover223,
-        content: stickerContent223,
+        cover: stickerCover222,
+        content: stickerContent222,
         hash: "3OujPx_YOY1MTqmgrbWaNDJlJeoLNvTWw96gW22rxps=",
       }),
      buildStickerTemplate({
         name: "Dino",
-        cover: stickerCover224,
-        content: stickerContent224,
+        cover: stickerCover223,
+        content: stickerContent223,
         hash: "j13ZqHGUnVdGW3_1uWw_sFYeHj1SFoNsi5JwrTvpC-k=",
       }),
      buildStickerTemplate({
         name: "Histogram",
-        cover: stickerCover225,
-        content: stickerContent225,
+        cover: stickerCover224,
+        content: stickerContent224,
         hash: "A1oGPUmv-Ypb-W7_jPgpSsVGA71J8njyr9f-97UnJQg=",
       }),
      buildStickerTemplate({
         name: "Local First",
-        cover: stickerCover226,
-        content: stickerContent226,
+        cover: stickerCover225,
+        content: stickerContent225,
         hash: "LFIRZK4TswzJvThRO2Vch_aqfY2UZ6kjAyAEsQS-hHM=",
       }),
      buildStickerTemplate({
         name: "Medal",
+        cover: stickerCover226,
+        content: stickerContent226,
+        hash: "cMIe6PYQLi0s9ryW3fbiXA9ACs3YsQFDtKjlfliXTC8=",
+      }),
+     buildStickerTemplate({
+        name: "NEXIO AI",
         cover: stickerCover227,
         content: stickerContent227,
-        hash: "cMIe6PYQLi0s9ryW3fbiXA9ACs3YsQFDtKjlfliXTC8=",
+        hash: "FwBs2WApEGkiFmu1XR4fHZ_7fOlSsSBdYEyGs2lDeLk=",
       }),
      buildStickerTemplate({
         name: "Notice",

@@ -191,7 +191,9 @@ export function useNEXIOI18N(): {
       * `If enabled, the data in this workspace will be backed up and synchronised via NEXIO Cloud.`
       */
     ["Enable NEXIO Cloud Description"](): string;
-    
+    /**
+      * `The following functions rely on NEXIO Cloud. All data is stored on the current device. You can enable NEXIO Cloud for this workspace to keep data in sync with the cloud.`
+      */
     ["Enable cloud hint"](): string;
     /**
       * `Full Backup`
@@ -480,7 +482,7 @@ export function useNEXIOI18N(): {
       */
     Sync(): string;
     /**
-      * `Synced with nexio Cloud`
+      * `Synced with NEXIO Cloud`
       */
     ["Synced with NEXIO Cloud"](): string;
     /**
@@ -624,7 +626,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.AboutNexio.autoDownloadUpdate.title"](): string;
     /**
-      * `View the nexio Changelog.`
+      * `View the NEXIO Changelog.`
       */
     ["com.nexio.AboutNexio.changelog.description"](): string;
     /**
@@ -668,7 +670,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.AboutNexio.checkUpdate.subtitle.error"](): string;
     /**
-      * `You've got the latest version of nexio.`
+      * `You've got the latest version of NEXIO.`
       */
     ["com.nexio.AboutNexio.checkUpdate.subtitle.latest"](): string;
     /**
@@ -690,7 +692,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.AboutNexio.community.title"](): string;
     /**
-      * `nexio community`
+      * `NEXIO community`
       */
     ["com.nexio.AboutNexio.contact.community"](): string;
     /**
@@ -714,11 +716,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.AboutNexio.legal.tos"](): string;
     /**
-      * `Information about nexio`
+      * `Information about NEXIO`
       */
     ["com.nexio.AboutNexio.subtitle"](): string;
     /**
-      * `About nexio`
+      * `About NEXIO`
       */
     ["com.nexio.AboutNexio.title"](): string;
     /**
@@ -754,15 +756,15 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai-onboarding.general.1.description"](): string;
     /**
-      * `Meet nexio AI`
+      * `Meet NEXIO AI`
       */
     ["com.nexio.ai-onboarding.general.1.title"](): string;
     /**
-      * `Answer questions, draft docs, visualize ideas - nexio AI can save you time at every possible step. Powered by GPT's most powerful model.`
+      * `Answer questions, draft docs, visualize ideas - NEXIO AI can save you time at every possible step. Powered by GPT's most powerful model.`
       */
     ["com.nexio.ai-onboarding.general.2.description"](): string;
     /**
-      * `Chat with nexio AI`
+      * `Chat with NEXIO AI`
       */
     ["com.nexio.ai-onboarding.general.2.title"](): string;
     /**
@@ -770,7 +772,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai-onboarding.general.3.description"](): string;
     /**
-      * `Edit inline with nexio AI`
+      * `Edit inline with NEXIO AI`
       */
     ["com.nexio.ai-onboarding.general.3.title"](): string;
     /**
@@ -782,7 +784,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai-onboarding.general.4.title"](): string;
     /**
-      * `nexio AI is ready`
+      * `NEXIO AI is ready`
       */
     ["com.nexio.ai-onboarding.general.5.title"](): string;
     /**
@@ -826,7 +828,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai-onboarding.local.message"](): string;
     /**
-      * `Meet nexio AI`
+      * `Meet NEXIO AI`
       */
     ["com.nexio.ai-onboarding.local.title"](): string;
     /**
@@ -834,7 +836,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai-scroll-tip.tag"](): string;
     /**
-      * `Meet nexio AI`
+      * `Meet NEXIO AI`
       */
     ["com.nexio.ai-scroll-tip.title"](): string;
     /**
@@ -854,7 +856,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.ai.login-required.dialog-confirm"](): string;
     /**
-      * `To use nexio AI, please sign in to your nexio Cloud account.`
+      * `To use NEXIO AI, please sign in to your NEXIO Cloud account.`
       */
     ["com.nexio.ai.login-required.dialog-content"](): string;
     /**
@@ -918,7 +920,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.appearanceSettings.color.title"](): string;
     /**
-      * `Edit all nexio theme variables here`
+      * `Edit all NEXIO theme variables here`
       */
     ["com.nexio.appearanceSettings.customize-theme.description"](): string;
     /**
@@ -974,7 +976,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.appearanceSettings.sidebar.title"](): string;
     /**
-      * `Customize your nexio appearance`
+      * `Customize your NEXIO appearance`
       */
     ["com.nexio.appearanceSettings.subtitle"](): string;
     /**
@@ -986,7 +988,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.appearanceSettings.menubar.toggle"](): string;
     /**
-      * `Display the menubar app in the tray for quick access to nexio or meeting recordings.`
+      * `Display the menubar app in the tray for quick access to NEXIO or meeting recordings.`
       */
     ["com.nexio.appearanceSettings.menubar.description"](): string;
     /**
@@ -1024,7 +1026,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.change.email.page.subtitle"](): string;
     /**
-      * `Congratulations! You have successfully updated the email address associated with your nexio Cloud account.`
+      * `Congratulations! You have successfully updated the email address associated with your NEXIO Cloud account.`
       */
     ["com.nexio.auth.change.email.page.success.subtitle"](): string;
     /**
@@ -1044,7 +1046,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.later"](): string;
     /**
-      * `Open nexio`
+      * `Open NEXIO`
       */
     ["com.nexio.auth.open.nexio"](): string;
     /**
@@ -1076,7 +1078,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.open.nexio.doc.edit-settings"](): string;
     /**
-      * `Requires nexio desktop app version 0.18 or later.`
+      * `Requires NEXIO desktop app version 0.18 or later.`
       */
     ["com.nexio.auth.open.nexio.doc.footer-text"](): string;
     /**
@@ -1115,7 +1117,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.reset.password.page.success"](): string;
     /**
-      * `Reset your nexio Cloud password`
+      * `Reset your NEXIO Cloud password`
       */
     ["com.nexio.auth.reset.password.page.title"](): string;
     /**
@@ -1169,7 +1171,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.sent.change.password.hint"](): string;
     /**
-      * `Your password has been updated! You can sign in nexio Cloud with new password!`
+      * `Your password has been updated! You can sign in NEXIO Cloud with new password!`
       */
     ["com.nexio.auth.sent.reset.password.success.message"](): string;
     /**
@@ -1177,7 +1179,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.sent.set.password.hint"](): string;
     /**
-      * `Your password has saved! You can sign in nexio Cloud with email and password!`
+      * `Your password has saved! You can sign in NEXIO Cloud with email and password!`
       */
     ["com.nexio.auth.sent.set.password.success.message"](): string;
     /**
@@ -1216,7 +1218,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.set.password.page.success"](): string;
     /**
-      * `Set your nexio Cloud password`
+      * `Set your NEXIO Cloud password`
       */
     ["com.nexio.auth.set.password.page.title"](): string;
     /**
@@ -1314,7 +1316,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.sign.up.sent.email.subtitle"](): string;
     /**
-      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the nexio app.`
+      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the NEXIO app.`
       */
     ["com.nexio.auth.sign.up.success.subtitle"](): string;
     /**
@@ -1322,7 +1324,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.sign.up.success.title"](): string;
     /**
-      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the nexio app.`
+      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the NEXIO app.`
       */
     ["com.nexio.auth.signed.success.subtitle"](): string;
     /**
@@ -1334,7 +1336,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.auth.toast.message.failed"](): string;
     /**
-      * `You have been signed in, start to sync your data with nexio Cloud!`
+      * `You have been signed in, start to sync your data with NEXIO Cloud!`
       */
     ["com.nexio.auth.toast.message.signed-in"](): string;
     /**
@@ -1360,7 +1362,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.banner.local-warning"](): string;
     /**
-      * `nexio Cloud`
+      * `NEXIO Cloud`
       */
     ["com.nexio.brand.nexioCloud"](): string;
     /**
@@ -1376,11 +1378,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.calendar-date-picker.week-days"](): string;
     /**
-      * `Host by nexio.Pro, Save, sync, and backup all your data.`
+      * `Host by NEXIO.Pro, Save, sync, and backup all your data.`
       */
     ["com.nexio.cloud-scroll-tip.caption"](): string;
     /**
-      * `nexio Cloud`
+      * `NEXIO Cloud`
       */
     ["com.nexio.cloud-scroll-tip.title"](): string;
     /**
@@ -2028,7 +2030,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.error.refetch"](): string;
     /**
-      * `Reload nexio`
+      * `Reload NEXIO`
       */
     ["com.nexio.error.reload"](): string;
     /**
@@ -2260,15 +2262,15 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.history-vision.tips-modal.cancel"](): string;
     /**
-      * `Enable nexio Cloud`
+      * `Enable NEXIO Cloud`
       */
     ["com.nexio.history-vision.tips-modal.confirm"](): string;
     /**
-      * `The current workspace is a local workspace, and we do not support version history for it at the moment. You can enable nexio Cloud. This will sync the workspace with the Cloud, allowing you to use this feature.`
+      * `The current workspace is a local workspace, and we do not support version history for it at the moment. You can enable NEXIO Cloud. This will sync the workspace with the Cloud, allowing you to use this feature.`
       */
     ["com.nexio.history-vision.tips-modal.description"](): string;
     /**
-      * `History vision needs nexio Cloud`
+      * `History vision needs NEXIO Cloud`
       */
     ["com.nexio.history-vision.tips-modal.title"](): string;
     /**
@@ -2370,7 +2372,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.import_file"](): string;
     /**
-      * `nexio workspace data`
+      * `NEXIO workspace data`
       */
     ["com.nexio.import.nexio-workspace-data"](): string;
     /**
@@ -2410,7 +2412,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.import.snapshot"](): string;
     /**
-      * `Import your nexio workspace and page snapshot file.`
+      * `Import your NEXIO workspace and page snapshot file.`
       */
     ["com.nexio.import.snapshot.tooltip"](): string;
     /**
@@ -2418,7 +2420,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.import.dotnexiofile"](): string;
     /**
-      * `Import your nexio db file (.nexio)`
+      * `Import your NEXIO db file (.nexio)`
       */
     ["com.nexio.import.dotnexiofile.tooltip"](): string;
     /**
@@ -2442,7 +2444,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.import.status.importing.title"](): string;
     /**
-      * `Your document has been imported successfully, thank you for choosing nexio. Any questions please feel free to feedback to us`
+      * `Your document has been imported successfully, thank you for choosing NEXIO. Any questions please feel free to feedback to us`
       */
     ["com.nexio.import.status.success.message"](): string;
     /**
@@ -2798,7 +2800,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.mobile.sign-in.skip.hint"](): string;
     /**
-      * `Start nexio without an account`
+      * `Start NEXIO without an account`
       */
     ["com.nexio.mobile.sign-in.skip.link"](): string;
     /**
@@ -2844,11 +2846,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.multi-tab.new-tab"](): string;
     /**
-      * `Enabling nexio Cloud allows you to synchronise and backup data, as well as support multi-user collaboration and content publishing.`
+      * `Enabling NEXIO Cloud allows you to synchronise and backup data, as well as support multi-user collaboration and content publishing.`
       */
     ["com.nexio.nameWorkspace.nexio-cloud.description"](): string;
     /**
-      * `Sync across devices with nexio Cloud`
+      * `Sync across devices with NEXIO Cloud`
       */
     ["com.nexio.nameWorkspace.nexio-cloud.title"](): string;
     /**
@@ -2908,7 +2910,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.notFoundPage.title"](): string;
     /**
-      * `nexio Community`
+      * `NEXIO Community`
       */
     ["com.nexio.other-page.nav.nexio-community"](): string;
     /**
@@ -2928,7 +2930,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.other-page.nav.official-website"](): string;
     /**
-      * `Open nexio`
+      * `Open NEXIO`
       */
     ["com.nexio.other-page.nav.open-nexio"](): string;
     /**
@@ -3156,7 +3158,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.page-properties.property.select.tooltips"](): string;
     /**
-      * `Enter a link to websites or nexio docs. Useful for connecting to external resources and referencing internal docs.`
+      * `Enter a link to websites or NEXIO docs. Useful for connecting to external resources and referencing internal docs.`
       */
     ["com.nexio.page-properties.property.link.tooltips"](): string;
     /**
@@ -3302,7 +3304,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.pageMode.page"](): string;
     /**
-      * `Congratulations on your successful purchase of nexio AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within nexio AI, dramatically enhancing your productivity.`
+      * `Congratulations on your successful purchase of NEXIO AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within NEXIO AI, dramatically enhancing your productivity.`
       */
     ["com.nexio.payment.ai-upgrade-success-page.text"](): string;
     /**
@@ -3314,7 +3316,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.action.cancel.button-label"](): string;
     /**
-      * `Keep nexio AI`
+      * `Keep NEXIO AI`
       */
     ["com.nexio.payment.ai.action.cancel.confirm.cancel-text"](): string;
     /**
@@ -3322,7 +3324,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.action.cancel.confirm.confirm-text"](): string;
     /**
-      * `If you end your subscription now, you can still use nexio AI until the end of this billing period.`
+      * `If you end your subscription now, you can still use NEXIO AI until the end of this billing period.`
       */
     ["com.nexio.payment.ai.action.cancel.confirm.description"](): string;
     /**
@@ -3346,7 +3348,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.action.resume.confirm.confirm-text"](): string;
     /**
-      * `Are you sure you want to resume the subscription for nexio AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
+      * `Are you sure you want to resume the subscription for NEXIO AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
       */
     ["com.nexio.payment.ai.action.resume.confirm.description"](): string;
     /**
@@ -3410,13 +3412,13 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.benefit.g3-3"](): string;
     /**
-      * `You have purchased nexio AI. The expiration date is {{end}}.`
+      * `You have purchased NEXIO AI. The expiration date is {{end}}.`
       */
     ["com.nexio.payment.ai.billing-tip.end-at"](options: {
         readonly end: string;
     }): string;
     /**
-      * `You have purchased nexio AI. The next payment date is {{due}}.`
+      * `You have purchased NEXIO AI. The next payment date is {{due}}.`
       */
     ["com.nexio.payment.ai.billing-tip.next-bill-at"](options: {
         readonly due: string;
@@ -3432,15 +3434,15 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.pricing-plan.caption-free"](): string;
     /**
-      * `You have purchased nexio AI`
+      * `You have purchased NEXIO AI`
       */
     ["com.nexio.payment.ai.pricing-plan.caption-purchased"](): string;
     /**
-      * `Learn about nexio AI`
+      * `Learn about NEXIO AI`
       */
     ["com.nexio.payment.ai.pricing-plan.learn"](): string;
     /**
-      * `nexio AI`
+      * `NEXIO AI`
       */
     ["com.nexio.payment.ai.pricing-plan.title"](): string;
     /**
@@ -3456,11 +3458,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.ai.subscribe.billed-annually"](): string;
     /**
-      * `You have purchased nexio AI.`
+      * `You have purchased NEXIO AI.`
       */
     ["com.nexio.payment.ai.usage-description-purchased"](): string;
     /**
-      * `nexio AI usage`
+      * `NEXIO AI usage`
       */
     ["com.nexio.payment.ai.usage-title"](): string;
     /**
@@ -3531,7 +3533,7 @@ export function useNEXIOI18N(): {
         readonly capacity: string;
     }): string;
     /**
-      * `nexio AI`
+      * `NEXIO AI`
       */
     ["com.nexio.payment.billing-setting.ai-plan"](): string;
     /**
@@ -3547,7 +3549,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.billing-setting.believer.price-caption"](): string;
     /**
-      * `nexio Cloud`
+      * `NEXIO Cloud`
       */
     ["com.nexio.payment.billing-setting.believer.title"](): string;
     /**
@@ -3563,7 +3565,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.billing-setting.change-plan"](): string;
     /**
-      * `nexio Cloud`
+      * `NEXIO Cloud`
       */
     ["com.nexio.payment.billing-setting.current-plan"](): string;
     /**
@@ -3657,7 +3659,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.billing-setting.year"](): string;
     /**
-      * `Please tell us more about your use case, to make nexio better.`
+      * `Please tell us more about your use case, to make NEXIO better.`
       */
     ["com.nexio.payment.billing-type-form.description"](): string;
     /**
@@ -3751,7 +3753,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.cloud.pricing-plan.select.caption"](): string;
     /**
-      * `Hosted by nexio.Pro`
+      * `Hosted by NEXIO.Pro`
       */
     ["com.nexio.payment.cloud.pricing-plan.select.title"](): string;
     /**
@@ -3773,7 +3775,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.cloud.pro.benefit.g1"](): string;
     /**
-      * `Everything in nexio FOSS & Basic.`
+      * `Everything in NEXIO FOSS & Basic.`
       */
     ["com.nexio.payment.cloud.pro.benefit.g1-1"](): string;
     /**
@@ -3831,7 +3833,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.cloud.team-workspace.benefit.g1"](): string;
     /**
-      * `Everything in nexio Pro.`
+      * `Everything in NEXIO Pro.`
       */
     ["com.nexio.payment.cloud.team-workspace.benefit.g1-1"](): string;
     /**
@@ -3895,7 +3897,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.downgrade"](): string;
     /**
-      * `We'd like to hear more about where we fall short, so that we can make nexio better.`
+      * `We'd like to hear more about where we fall short, so that we can make NEXIO better.`
       */
     ["com.nexio.payment.downgraded-notify.content"](): string;
     /**
@@ -3939,7 +3941,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.dynamic-benefit-5"](): string;
     /**
-      * `Everything in nexio Pro`
+      * `Everything in NEXIO Pro`
       */
     ["com.nexio.payment.lifetime.benefit-1"](): string;
     /**
@@ -3953,7 +3955,7 @@ export function useNEXIOI18N(): {
         readonly capacity: string;
     }): string;
     /**
-      * `Dedicated Discord support with nexio makers`
+      * `Dedicated Discord support with NEXIO makers`
       */
     ["com.nexio.payment.lifetime.benefit-4"](): string;
     /**
@@ -4298,11 +4300,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.modal.downgrade.cancel"](): string;
     /**
-      * `You can still use nexio Cloud Pro until the end of this billing period :)`
+      * `You can still use NEXIO Cloud Pro until the end of this billing period :)`
       */
     ["com.nexio.payment.modal.downgrade.caption"](): string;
     /**
-      * `Keep nexio Cloud Pro`
+      * `Keep NEXIO Cloud Pro`
       */
     ["com.nexio.payment.modal.downgrade.confirm"](): string;
     /**
@@ -4400,7 +4402,7 @@ export function useNEXIOI18N(): {
         readonly plan: string;
     }): string;
     /**
-      * `This is the pricing plans of nexio Cloud. You can sign up or sign in to your account first.`
+      * `This is the pricing plans of NEXIO Cloud. You can sign up or sign in to your account first.`
       */
     ["com.nexio.payment.subtitle-not-signed-in"](): string;
     /**
@@ -4434,7 +4436,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.redeem-code"](): string;
     /**
-      * `We'd like to hear more about your use case, so that we can make nexio better.`
+      * `We'd like to hear more about your use case, so that we can make NEXIO better.`
       */
     ["com.nexio.payment.upgrade-success-notify.content"](): string;
     /**
@@ -4454,7 +4456,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.upgrade-success-notify.title"](): string;
     /**
-      * `Congratulations! Your nexio account has been successfully upgraded to a Pro account.`
+      * `Congratulations! Your NEXIO account has been successfully upgraded to a Pro account.`
       */
     ["com.nexio.payment.upgrade-success-page.text"](): string;
     /**
@@ -4470,7 +4472,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.license-success.title"](): string;
     /**
-      * `Thank you for purchasing the nexio self-hosted license.`
+      * `Thank you for purchasing the NEXIO self-hosted license.`
       */
     ["com.nexio.payment.license-success.text-1"](): string;
     /**
@@ -4478,7 +4480,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.payment.license-success.hint"](): string;
     /**
-      * `Open nexio`
+      * `Open NEXIO`
       */
     ["com.nexio.payment.license-success.open-nexio"](): string;
     /**
@@ -4910,7 +4912,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.setting.account.message"](): string;
     /**
-      * `Sync with nexio Cloud`
+      * `Sync with NEXIO Cloud`
       */
     ["com.nexio.setting.sign.message"](): string;
     /**
@@ -4962,7 +4964,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.setting.appearance.links"](): string;
     /**
-      * `Open nexio links`
+      * `Open NEXIO links`
       */
     ["com.nexio.setting.appearance.open-in-app"](): string;
     /**
@@ -4982,11 +4984,11 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.setting.appearance.open-in-app.open-in-web"](): string;
     /**
-      * `Open nexio links`
+      * `Open NEXIO links`
       */
     ["com.nexio.setting.appearance.open-in-app.title"](): string;
     /**
-      * `Open this doc in nexio app`
+      * `Open this doc in NEXIO app`
       */
     ["com.nexio.open-in-app.card.title"](): string;
     /**
@@ -5270,7 +5272,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.editorSettings.general"](): string;
     /**
-      * `Enable the powerful AI assistant, nexio AI.`
+      * `Enable the powerful AI assistant, NEXIO AI.`
       */
     ["com.nexio.settings.editorSettings.general.ai.description"](): string;
     /**
@@ -5298,7 +5300,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.editorSettings.general.ai.enable.title"](): string;
     /**
-      * `nexio AI`
+      * `NEXIO AI`
       */
     ["com.nexio.settings.editorSettings.general.ai.title"](): string;
     /**
@@ -5470,7 +5472,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.email.action.verify"](): string;
     /**
-      * `Enable nexio Cloud to collaborate with others`
+      * `Enable NEXIO Cloud to collaborate with others`
       */
     ["com.nexio.settings.member-tooltip"](): string;
     /**
@@ -5659,7 +5661,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.meetings.record.permission-modal.title"](): string;
     /**
-      * `nexio will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
+      * `NEXIO will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
       */
     ["com.nexio.settings.meetings.record.permission-modal.description"](): string;
     /**
@@ -5939,7 +5941,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.experimental-features.enable-meetings.name"](): string;
     /**
-      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in nexio settings.`
+      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in NEXIO settings.`
       */
     ["com.nexio.settings.workspace.experimental-features.enable-meetings.description"](): string;
     /**
@@ -6145,7 +6147,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
     /**
-      * `If you encounter any issues, contact support@toeverything.info.`
+      * `If you encounter any issues, contact aurobindolife888@gmail.com .`
       */
     ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
     /**
@@ -6201,7 +6203,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.state.local"](): string;
     /**
-      * `Sync with nexio Cloud`
+      * `Sync with NEXIO Cloud`
       */
     ["com.nexio.settings.workspace.state.sync-nexio-cloud"](): string;
     /**
@@ -6277,7 +6279,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.storage.subtitle"](): string;
     /**
-      * `Enable nexio Cloud to publish this workspace`
+      * `Enable NEXIO Cloud to publish this workspace`
       */
     ["com.nexio.settings.workspace.publish-tooltip"](): string;
     /**
@@ -6293,15 +6295,15 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.sharing.url-preview.title"](): string;
     /**
-      * `nexio AI`
+      * `NEXIO AI`
       */
     ["com.nexio.settings.workspace.nexio-ai.title"](): string;
     /**
-      * `Allow nexio AI Assistant`
+      * `Allow NEXIO AI Assistant`
       */
     ["com.nexio.settings.workspace.nexio-ai.label"](): string;
     /**
-      * `Allow workspace members to use nexio AI features. This setting doesn't affect billing. Workspace members use nexio AI through their personal accounts.`
+      * `Allow workspace members to use NEXIO AI features. This setting doesn't affect billing. Workspace members use NEXIO AI through their personal accounts.`
       */
     ["com.nexio.settings.workspace.nexio-ai.description"](): string;
     /**
@@ -6352,7 +6354,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.indexer-embedding.title"](): string;
     /**
-      * `Manage nexio indexing and nexio AI Embedding for local content processing`
+      * `Manage NEXIO indexing and NEXIO AI Embedding for local content processing`
       */
     ["com.nexio.settings.workspace.indexer-embedding.description"](): string;
     /**
@@ -6705,7 +6707,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.share-page.footer.create-with"](): string;
     /**
-      * `Empower your sharing with nexio Cloud: One-click doc sharing`
+      * `Empower your sharing with NEXIO Cloud: One-click doc sharing`
       */
     ["com.nexio.share-page.footer.description"](): string;
     /**
@@ -6789,7 +6791,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.storage.plan"](): string;
     /**
-      * `nexio Cloud storage`
+      * `NEXIO Cloud storage`
       */
     ["com.nexio.storage.title"](): string;
     /**
@@ -7117,7 +7119,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.workspace.cloud.auth"](): string;
     /**
-      * `Sync with nexio Cloud`
+      * `Sync with NEXIO Cloud`
       */
     ["com.nexio.workspace.cloud.description"](): string;
     /**
@@ -7931,15 +7933,15 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.integration.web-clipper.name"](): string;
     /**
-      * `Import web pages to nexio`
+      * `Import web pages to NEXIO`
       */
     ["com.nexio.integration.web-clipper.desc"](): string;
     /**
-      * `Elevate your nexio experience with diverse add-ons and seamless integrations.`
+      * `Elevate your NEXIO experience with diverse add-ons and seamless integrations.`
       */
     ["com.nexio.integration.setting.description"](): string;
     /**
-      * `Learn how to develop a integration for nexio`
+      * `Learn how to develop a integration for NEXIO`
       */
     ["com.nexio.integration.setting.learn"](): string;
     /**
@@ -7947,7 +7949,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.integration.readwise.name"](): string;
     /**
-      * `Manually import your content to nexio from Readwise`
+      * `Manually import your content to NEXIO from Readwise`
       */
     ["com.nexio.integration.readwise.desc"](): string;
     /**
@@ -7987,7 +7989,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.integration.readwise.disconnect.title"](): string;
     /**
-      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in nexio?`
+      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in NEXIO?`
       */
     ["com.nexio.integration.readwise.disconnect.desc"](): string;
     /**
@@ -9062,7 +9064,7 @@ function createComponent(i18nKey: string) {
 }
 export const TypedTrans: {
     /**
-      * `Go to <a>{{link}}</a> for learn more details about nexio AI.`
+      * `Go to <a>{{link}}</a> for learn more details about NEXIO AI.`
       */
     ["com.nexio.ai-onboarding.general.5.description"]: ComponentType<TypedTransProps<{
         readonly link: string;
@@ -9075,14 +9077,14 @@ export const TypedTrans: {
     ["com.nexio.ai-onboarding.general.privacy"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
-    /**23
-      * `Opening <1>nexio</1> app now`
+    /**
+      * `Opening <1>NEXIO</1> app now`
       */
     ["com.nexio.auth.open.nexio.prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `This doc is now opened in <1>nexio</1> app`
+      * `This doc is now opened in <1>NEXIO</1> app`
       */
     ["com.nexio.auth.open.nexio.open-doc-prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
@@ -9102,20 +9104,20 @@ export const TypedTrans: {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `The Self-Hosted instance is not hosted or deployed by nexio. Your data will be stored on these instances.  <1>Learn more about Self-Host details.</1>`
+      * `The Self-Hosted instance is not hosted or deployed by NEXIO. Your data will be stored on these instances.  <1>Learn more about Self-Host details.</1>`
       */
     ["com.nexio.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to nexio's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
+      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to NEXIO's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
       */
     ["com.nexio.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `This demo is limited. <1>Download the nexio Client</1> for the latest features and Performance.`
+      * `This demo is limited. <1>Download the NEXIO Client</1> for the latest features and Performance.`
       */
     ["com.nexio.banner.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
@@ -9412,7 +9414,7 @@ export const TypedTrans: {
         li: JSX.Element;
     }>>;
     /**
-      * `Utilize the meeting notes and AI summarization features provided by nexio. <1>Discuss more in the community</1>.`
+      * `Utilize the meeting notes and AI summarization features provided by NEXIO. <1>Discuss more in the community</1>.`
       */
     ["com.nexio.settings.meetings.enable.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
@@ -9430,7 +9432,7 @@ export const TypedTrans: {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `If you encounter any issues, contact support@toeverything.info. No license yet? <1>Click to purchase</1>.`
+      * `If you encounter any issues, contact aurobindolife888@gmail.com . No license yet? <1>Click to purchase</1>.`
       */
     ["com.nexio.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
@@ -9657,7 +9659,7 @@ export const TypedTrans: {
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `Import your Readwise highlights to nexio. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
+      * `Import your Readwise highlights to NEXIO. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
       */
     ["com.nexio.integration.readwise.connect.desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
         br: JSX.Element;

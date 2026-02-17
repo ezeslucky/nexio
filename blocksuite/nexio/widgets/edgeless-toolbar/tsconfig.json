@@ -7,13 +7,13 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../framework/global" },
     { "path": "../../blocks/surface" },
     { "path": "../../components" },
     { "path": "../../ext-loader" },
     { "path": "../../model" },
     { "path": "../../rich-text" },
     { "path": "../../shared" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" }
   ]
 }

@@ -7,6 +7,7 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../framework/global" },
     { "path": "../../blocks/callout" },
     { "path": "../../blocks/embed" },
     { "path": "../../blocks/list" },
@@ -17,7 +18,6 @@
     { "path": "../../ext-loader" },
     { "path": "../../model" },
     { "path": "../../shared" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]

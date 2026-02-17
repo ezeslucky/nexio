@@ -7,6 +7,7 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../framework/global" },
     { "path": "../embed" },
     { "path": "../surface" },
     { "path": "../../components" },
@@ -18,7 +19,6 @@
     { "path": "../../rich-text" },
     { "path": "../../shared" },
     { "path": "../../widgets/slash-menu" },
-    { "path": "../../../framework/global" },
     { "path": "../../../framework/std" },
     { "path": "../../../framework/store" }
   ]
