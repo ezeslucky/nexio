@@ -29,6 +29,10 @@ export NODE_OPTIONS="--max-old-space-size=12288"
 yarn nexio build -p @nexio/web --deps --wait-deps
 
 
+yarn nexio build -p @nexio/electron --deps --wait-deps
+
+yarn nexio build -p @nexio/admin --deps --wait-deps
+
 
 yarn run nexio dev -p @nexio/web
 

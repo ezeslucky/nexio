@@ -3,7 +3,7 @@ import { autoUpdater as defaultAutoUpdater } from 'electron-updater';
 
 import { buildType } from '../config';
 import { logger } from '../logger';
-import { NEXIOUpdateProvider } from '../nexio-update-provider;
+import { NEXIOUpdateProvider } from './nexio-update-provider';
 import { updaterSubjects } from './event';
 import { WindowsUpdater } from './windows-updater';
 
