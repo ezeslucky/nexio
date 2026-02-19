@@ -24,6 +24,12 @@ export GENERATE_SOURCEMAP=false
 export CI=true
 echo $NODE_OPTIONS
 
+nvm use 20 
+export NODE_OPTIONS="--max-old-space-size=12288" 
+yarn nexio build -p @nexio/web --deps --wait-deps
+
+
+
 yarn run nexio dev -p @nexio/web
 
 
