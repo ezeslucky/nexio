@@ -2,7 +2,7 @@ import { Switch } from '@nexio/component';
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { Trans, useI18n } from '@nexio/i18n';
-import { NEXIOIcon } from '@blocksuite/icons/rc';
+import {  AfFiNeIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import {
   type ReactNode,
@@ -72,7 +72,7 @@ const proBenefits: BenefitsGetter = t => ({
   [t['com.nexio.payment.cloud.pro.benefit.g1']()]: [
     {
       title: t['com.nexio.payment.cloud.pro.benefit.g1-1'](),
-      icon: <NEXIOIcon />,
+      icon: < AfFiNeIcon />,
     },
     ...([2, 3, 4, 5, 7, 8] as const).map(i => ({
       title: t[`com.nexio.payment.cloud.pro.benefit.g1-${i}`](),
@@ -84,7 +84,7 @@ const teamBenefits: BenefitsGetter = t => ({
   [t['com.nexio.payment.cloud.team-workspace.benefit.g1']()]: [
     {
       title: t['com.nexio.payment.cloud.team-workspace.benefit.g1-1'](),
-      icon: <NEXIOIcon />,
+      icon: < AfFiNeIcon />,
     },
     ...([2, 3, 4, 5, 6] as const).map(i => ({
       title: t[`com.nexio.payment.cloud.team-workspace.benefit.g1-${i}`](),

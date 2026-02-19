@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { NEXIOIcon, DoneIcon } from '@blocksuite/icons/rc';
+import { AfFiNeIcon, DoneIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 
@@ -14,7 +14,7 @@ export const BelieverBenefits = ({
   return (
     <ul className={clsx(benefits, className)} {...attrs}>
       <li className={li}>
-        <NEXIOIcon />
+        <AfFiNeIcon />
         <span>{t['com.nexio.payment.lifetime.benefit-1']()}</span>
       </li>
 

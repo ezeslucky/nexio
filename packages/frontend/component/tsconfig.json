@@ -19,5 +19,8 @@
     { "path": "../i18n" },
     { "path": "../../../blocksuite/nexio/all" },
     { "path": "../../../tools/utils" }
-  ]
+  ],
+  "paths": {
+    "@assets/*": ["assets/*"]
+  }
 }
