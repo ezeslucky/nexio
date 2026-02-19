@@ -298,7 +298,9 @@ export function createHTMLTargetConfig(
         }),
     ]),
     //#endregion
-
+performance: {
+  hints: false,
+},
     stats: { errorDetails: true },
 
     //#region optimization

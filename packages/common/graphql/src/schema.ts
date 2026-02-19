@@ -63,6 +63,7 @@ export interface AddContextDocInput {
 }
 
 export interface AddContextFileInput {
+  /** @deprecated Never used */
   blobId?: InputMaybe<Scalars['String']['input']>;
   contextId: Scalars['String']['input'];
 }
@@ -601,6 +602,7 @@ export interface CopilotWorkspaceIgnoredDocTypeEdge {
 }
 
 export interface CreateChatMessageInput {
+  /** @deprecated use blobs */
   attachments?: InputMaybe<Array<Scalars['String']['input']>>;
   blob?: InputMaybe<Scalars['Upload']['input']>;
   blobs?: InputMaybe<Array<Scalars['Upload']['input']>>;
@@ -622,6 +624,7 @@ export interface CreateChatSessionInput {
 export interface CreateCheckoutSessionInput {
   args?: InputMaybe<Scalars['JSONObject']['input']>;
   coupon?: InputMaybe<Scalars['String']['input']>;
+  /** @deprecated not required anymore */
   idempotencyKey?: InputMaybe<Scalars['String']['input']>;
   plan?: InputMaybe<SubscriptionPlan>;
   recurring?: InputMaybe<SubscriptionRecurring>;
@@ -2484,7 +2487,7 @@ export interface ServerConfigType {
 }
 
 export enum ServerDeploymentType {
-  Nexio = 'Nexio',
+  NEXIO = 'NEXIO',
   Selfhosted = 'Selfhosted',
 }
 
