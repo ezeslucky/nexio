@@ -1,7 +1,7 @@
 import { SettingHeader } from '@nexio/component/setting-components';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { type ReactNode, useCallback, useMemo, useState } from 'react';
 
 import { SubPageProvider, useSubPageIsland } from '../../sub-page';

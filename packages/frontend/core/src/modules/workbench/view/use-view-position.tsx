@@ -1,4 +1,4 @@
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import type { View } from '../entities/view';

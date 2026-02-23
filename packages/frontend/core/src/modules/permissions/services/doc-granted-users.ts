@@ -8,7 +8,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { EMPTY, exhaustMap, tap } from 'rxjs';
 
 import type { DocService } from '../../doc';

@@ -13,7 +13,7 @@ import {
   useService,
   useServiceOptional,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useStore } from 'jotai';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';

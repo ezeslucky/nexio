@@ -32,7 +32,7 @@ import {
   type RequestOptions,
   updateCopilotSessionMutation,
 } from '@nexio/graphql';
-import { getCurrentStore } from '@toeverything/infra';
+import { getCurrentStore } from '@ezeslucky/infra';
 
 import {
   GeneralNetworkError,

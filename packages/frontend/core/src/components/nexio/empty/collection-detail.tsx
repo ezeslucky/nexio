@@ -2,7 +2,7 @@ import type { Collection } from '@nexio/core/modules/collection';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { AllDocsIcon, FilterIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { ActionButton } from './action-button';

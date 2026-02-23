@@ -5,7 +5,7 @@ import { router } from '@nexio/core/desktop/router';
 import { I18nProvider } from '@nexio/core/modules/i18n';
 import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
 import { CacheProvider } from '@emotion/react';
-import { FrameworkRoot, getCurrentStore } from '@toeverything/infra';
+import { FrameworkRoot, getCurrentStore } from '@ezeslucky/infra';
 import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 

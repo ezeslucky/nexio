@@ -1,6 +1,6 @@
 import { DocsService } from '@nexio/core/modules/doc';
 import type { DocMeta, Workspace } from '@blocksuite/nexio/store';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { useAsyncCallback } from './nexio-async-hooks';

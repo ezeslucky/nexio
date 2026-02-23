@@ -9,7 +9,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
 import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { DeleteLeaveWorkspace } from './delete-leave-workspace';

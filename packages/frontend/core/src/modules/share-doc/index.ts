@@ -1,7 +1,7 @@
 export { ShareDocsListService } from './services/share-docs-list';
 export { ShareInfoService } from './services/share-info';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { WorkspaceServerService } from '../cloud';
 import { DocScope, DocService } from '../doc';

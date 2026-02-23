@@ -6,7 +6,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace';
 import { type DocMode } from '@blocksuite/nexio/model';
 import type { Workspace } from '@blocksuite/nexio/store';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 export const usePageHelper = (docCollection: Workspace) => {

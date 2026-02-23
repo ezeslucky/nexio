@@ -1,7 +1,7 @@
 export { WorkspaceQuotaService } from './services/quota';
 export { QuotaCheck } from './views/quota-check';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { WorkspaceServerService } from '../cloud';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

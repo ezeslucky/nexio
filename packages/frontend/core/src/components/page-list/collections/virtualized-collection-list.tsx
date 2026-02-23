@@ -1,6 +1,6 @@
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { Trans } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import {

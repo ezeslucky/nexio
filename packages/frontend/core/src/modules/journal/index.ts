@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { DocScope, DocService, DocsService } from '../doc';
 import { TemplateDocService } from '../template-doc';

@@ -1,6 +1,6 @@
 import { EmptyCollections } from '@nexio/core/components/nexio/empty';
 import { CollectionService } from '@nexio/core/modules/collection';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { CollectionListItem } from './item';
 import { list } from './styles.css';

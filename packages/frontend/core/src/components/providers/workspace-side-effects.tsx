@@ -41,7 +41,7 @@ import {
   throwIfAborted,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useSetAtom } from 'jotai';
 import { useEffect } from 'react';
 import { catchError, EMPTY, finalize, switchMap, tap, timeout } from 'rxjs';

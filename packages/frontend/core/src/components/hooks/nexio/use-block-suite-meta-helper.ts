@@ -1,7 +1,7 @@
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocsService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';

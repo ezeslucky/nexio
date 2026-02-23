@@ -1,6 +1,6 @@
 import { DebugLogger } from '@nexio/debug';
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import { ObjectPool, Service } from '@toeverything/infra';
+import { ObjectPool, Service } from '@ezeslucky/infra';
 
 import type { Workspace } from '../entities/workspace';
 import { WorkspaceInitialized } from '../events';

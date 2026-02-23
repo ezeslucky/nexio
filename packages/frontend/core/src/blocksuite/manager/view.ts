@@ -37,7 +37,7 @@ import { FoundationViewExtension } from '@blocksuite/nexio/foundation/view';
 import { InlineCommentViewExtension } from '@blocksuite/nexio/inlines/comment';
 import { NexioCanvasTextFonts } from '@blocksuite/nexio/shared/services';
 import { LinkedDocViewExtension } from '@blocksuite/nexio/widgets/linked-doc/view';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 
 type Configure = {

@@ -1,6 +1,6 @@
 import { I18nService } from '@nexio/core/modules/i18n';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import { SettingDropdownSelect } from '../dropdown-select';

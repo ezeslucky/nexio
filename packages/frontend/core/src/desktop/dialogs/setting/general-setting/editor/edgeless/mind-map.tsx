@@ -10,7 +10,7 @@ import { useI18n } from '@nexio/i18n';
 import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
 import { LayoutType, MindmapStyle } from '@blocksuite/nexio/model';
 import type { Store } from '@blocksuite/nexio/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { DropdownMenu } from '../menu';

@@ -9,7 +9,7 @@ import {
   EditPropsStore,
 } from '@blocksuite/nexio/shared/services';
 import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';
 
 import { BlocksuiteEditorJournalDocTitle } from '../../block-suite-editor/journal-doc-title';

@@ -1,7 +1,7 @@
 import { IconPickerServiceIdentifier } from '@blocksuite/nexio/shared/services';
 import { type ExtensionType } from '@blocksuite/nexio/store';
 import type { Container } from '@blocksuite/global/di';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { IconPickerService } from '../../../modules/icon-picker/services/icon-picker';
 

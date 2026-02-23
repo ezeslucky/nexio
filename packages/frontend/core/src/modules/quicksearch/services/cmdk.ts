@@ -1,5 +1,5 @@
 import { track } from '@nexio/track';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { DocsService } from '../../doc';
 import type { WorkbenchService } from '../../workbench';

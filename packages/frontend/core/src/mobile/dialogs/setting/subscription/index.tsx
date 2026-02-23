@@ -2,7 +2,7 @@ import { Button } from '@nexio/component';
 import { AuthService, ServerService } from '@nexio/core/modules/cloud';
 import { NativePaywallService } from '@nexio/core/modules/paywall';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './styles.css';
 

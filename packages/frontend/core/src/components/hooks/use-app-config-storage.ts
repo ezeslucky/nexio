@@ -1,6 +1,6 @@
 import { apis } from '@nexio/electron-api';
-import type { AppConfigSchema } from '@toeverything/infra';
-import { AppConfigStorage, defaultAppConfig } from '@toeverything/infra';
+import type { AppConfigSchema } from '@ezeslucky/infra';
+import { AppConfigStorage, defaultAppConfig } from '@ezeslucky/infra';
 import type { Dispatch } from 'react';
 import { useEffect, useMemo, useState } from 'react';
 

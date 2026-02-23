@@ -1,4 +1,4 @@
-import { LiveData, Store } from '@toeverything/infra';
+import { LiveData, Store } from '@ezeslucky/infra';
 
 import type { WorkspaceDBService } from '../../db';
 import type { TemplateDocSettings } from '../type';

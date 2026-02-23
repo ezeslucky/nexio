@@ -6,7 +6,7 @@ import type {
 } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 

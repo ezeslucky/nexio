@@ -17,7 +17,7 @@ vi.mock('@nexio/core/modules/cloud', () => ({
   DefaultServerService: class {},
 }));
 
-vi.mock('@toeverything/infra', () => {
+vi.mock('@ezeslucky/infra', () => {
   return {
     useService: () => ({ signOut: signOutFn }),
     useServices: () => ({

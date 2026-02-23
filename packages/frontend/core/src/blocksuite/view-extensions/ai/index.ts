@@ -16,7 +16,7 @@ import {
 } from '@blocksuite/nexio/ext-loader';
 import { ToolbarModuleExtension } from '@blocksuite/nexio/shared/services';
 import { BlockFlavourIdentifier } from '@blocksuite/nexio/std';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 
 import {

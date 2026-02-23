@@ -6,7 +6,7 @@ import {
 } from '@nexio/core/components/explorer/context';
 import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
 import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import { Page } from '../../components/page';

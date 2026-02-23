@@ -27,7 +27,7 @@ import {
 import {
   generateFractionalIndexingKeyBetween,
   useService,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { fileTypeFromBuffer, type FileTypeResult } from 'file-type';
 import { nanoid } from 'nanoid';
 import type { ForwardRefRenderFunction, MouseEvent, ReactNode } from 'react';

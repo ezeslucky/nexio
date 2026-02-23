@@ -4,7 +4,7 @@ import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import type { BlobSyncState } from '@nexio/nbstore';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { debounce } from 'lodash-es';
 import { useCallback, useEffect } from 'react';
 

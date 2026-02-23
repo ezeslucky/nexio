@@ -11,7 +11,7 @@ export type { WorkbenchLinkProps } from './view/workbench-link';
 export { WorkbenchLink } from './view/workbench-link';
 export { WorkbenchRoot } from './view/workbench-root';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { DesktopApiService } from '../desktop-api';
 import { PeekViewService } from '../peek-view';

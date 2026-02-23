@@ -80,7 +80,7 @@ import {
   OpenInNewIcon,
 } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';
 import { keyed } from 'lit/directives/keyed.js';

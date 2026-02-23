@@ -40,7 +40,7 @@ import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import { BlockStdScope } from '@blocksuite/nexio/std';
 import type { Workspace } from '@blocksuite/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
-import { useFramework, useService } from '@toeverything/infra';
+import { useFramework, useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

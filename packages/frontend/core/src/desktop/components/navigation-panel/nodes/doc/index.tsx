@@ -26,7 +26,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { NEVER } from 'rxjs';
 

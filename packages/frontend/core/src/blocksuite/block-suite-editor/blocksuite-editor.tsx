@@ -25,7 +25,7 @@ import { getLastNoteBlock } from '@blocksuite/nexio/shared/utils';
 import type { BlockStdScope, EditorHost } from '@blocksuite/nexio/std';
 import type { Store } from '@blocksuite/nexio/store';
 import { Slot } from '@radix-ui/react-slot';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { CSSProperties, HTMLAttributes } from 'react';

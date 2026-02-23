@@ -4,7 +4,7 @@ import {
   updateUserProfileMutation,
   uploadAvatarMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { GlobalState } from '../../storage';
 import type { AuthSessionInfo } from '../entities/session';

@@ -17,7 +17,7 @@ import { Trans, useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import { ResetIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

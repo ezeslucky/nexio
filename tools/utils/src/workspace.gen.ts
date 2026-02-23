@@ -1199,7 +1199,7 @@ export const PackageList = [
   },
   {
     location: 'packages/common/infra',
-    name: '@toeverything/infra',
+    name: '@ezeslucky/infra',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/common/env',
@@ -1211,8 +1211,8 @@ export const PackageList = [
     location: 'packages/common/nbstore',
     name: '@nexio/nbstore',
     workspaceDependencies: [
-      'packages/common/reader',
       'packages/common/infra',
+      'packages/common/reader',
       'blocksuite/nexio/all',
       'packages/common/error',
       'packages/common/graphql',
@@ -1232,23 +1232,23 @@ export const PackageList = [
     location: 'packages/frontend/admin',
     name: '@nexio/admin',
     workspaceDependencies: [
+      'packages/common/infra',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/error',
       'packages/common/graphql',
       'packages/frontend/routes',
-      'packages/common/infra',
     ],
   },
   {
     location: 'packages/frontend/apps/electron',
     name: '@nexio/electron',
     workspaceDependencies: [
+      'packages/common/infra',
       'tools/utils',
       'packages/frontend/i18n',
       'packages/frontend/native',
       'packages/common/nbstore',
-      'packages/common/infra',
     ],
   },
   {
@@ -1256,6 +1256,7 @@ export const PackageList = [
     name: '@nexio/electron-renderer',
     workspaceDependencies: [
       'blocksuite/nexio/all',
+      'packages/common/infra',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/debug',
@@ -1263,7 +1264,6 @@ export const PackageList = [
       'packages/frontend/i18n',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'packages/common/infra',
       'tools/utils',
     ],
   },
@@ -1271,13 +1271,13 @@ export const PackageList = [
     location: 'packages/frontend/apps/web',
     name: '@nexio/web',
     workspaceDependencies: [
+      'packages/common/infra',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/env',
       'packages/frontend/i18n',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'packages/common/infra',
     ],
   },
   {
@@ -1303,6 +1303,7 @@ export const PackageList = [
       'blocksuite/nexio/components',
       'blocksuite/nexio/shared',
       'blocksuite/framework/std',
+      'packages/common/infra',
       'packages/frontend/component',
       'packages/common/debug',
       'packages/frontend/electron-api',
@@ -1314,7 +1315,6 @@ export const PackageList = [
       'packages/common/reader',
       'packages/frontend/templates',
       'packages/frontend/track',
-      'packages/common/infra',
       'blocksuite/nexio/ext-loader',
     ],
   },
@@ -1370,8 +1370,8 @@ export const PackageList = [
     name: '@nexio-test/kit',
     workspaceDependencies: [
       'blocksuite/nexio/all',
-      'tools/utils',
       'packages/common/infra',
+      'tools/utils',
     ],
   },
   {
@@ -1527,7 +1527,7 @@ export type PackageName =
   | '@nexio/env'
   | '@nexio/error'
   | '@nexio/graphql'
-  | '@toeverything/infra'
+  | '@ezeslucky/infra'
   | '@nexio/nbstore'
   | '@nexio/reader'
   | '@y-octo/node'

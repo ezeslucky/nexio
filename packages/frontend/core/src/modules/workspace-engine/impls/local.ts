@@ -26,8 +26,8 @@ import {
   SqliteV1DocStorage,
 } from '@nexio/nbstore/sqlite/v1';
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import type { FrameworkProvider } from '@toeverything/infra';
-import { LiveData, Service } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import { Observable } from 'rxjs';

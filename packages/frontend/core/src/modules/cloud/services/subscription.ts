@@ -1,6 +1,6 @@
 import { type CreateCheckoutSessionInput } from '@nexio/graphql';
 import { mixpanel } from '@nexio/track';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { Subscription } from '../entities/subscription';
 import { SubscriptionPrices } from '../entities/subscription-prices';

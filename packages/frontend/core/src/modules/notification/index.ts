@@ -4,7 +4,7 @@ export { NotificationService } from './services/notification';
 export type { Notification, NotificationBody } from './stores/notification';
 export { NotificationType } from './stores/notification';
 
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import {
   AuthService,

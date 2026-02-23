@@ -1,8 +1,8 @@
 import { Progress, PropertyValue } from '@nexio/component';
 import { ConfigModal } from '@nexio/core/components/mobile';
 import { ProgressIcon } from '@blocksuite/icons/rc';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import type { DatabaseCellRendererProps } from '../../../types';

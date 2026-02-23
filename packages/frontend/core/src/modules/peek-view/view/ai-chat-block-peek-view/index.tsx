@@ -12,7 +12,7 @@ import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { EditorHost } from '@blocksuite/nexio/std';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 export type AIChatBlockPeekViewProps = {

@@ -3,7 +3,7 @@ import {
   registerNexioCommand,
 } from '@nexio/core/commands';
 import { track } from '@nexio/track';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 
 import { NavigatorService } from '../services/navigator';

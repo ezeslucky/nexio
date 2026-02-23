@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { NavigationGestureProvider } from './providers/navigation-gesture';
 import { NavigationGestureService } from './services/navigation-gesture';

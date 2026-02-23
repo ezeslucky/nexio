@@ -13,7 +13,7 @@ import {
   InformationIcon,
   TemplateIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { type DocRecord, DocsService } from '../../doc';

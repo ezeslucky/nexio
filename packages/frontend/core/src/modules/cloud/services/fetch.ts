@@ -1,6 +1,6 @@
 import { DebugLogger } from '@nexio/debug';
 import { UserFriendlyError } from '@nexio/error';
-import { fromPromise, Service } from '@toeverything/infra';
+import { fromPromise, Service } from '@ezeslucky/infra';
 
 import type { ServerService } from './server';
 

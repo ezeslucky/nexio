@@ -1,6 +1,6 @@
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { Workspace as WorkspaceInterface } from '@blocksuite/nexio/store';
-import { Entity, LiveData, yjsGetPath } from '@toeverything/infra';
+import { Entity, LiveData, yjsGetPath } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 import { Doc as YDoc, transact } from 'yjs';
 

@@ -2,7 +2,7 @@ import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/n
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { UrlService } from '@nexio/core/modules/url';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { useCallback } from 'react';
 

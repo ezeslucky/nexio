@@ -10,7 +10,7 @@ import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { useI18n } from '@nexio/i18n';
 import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
 import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 import type { Observable } from 'rxjs';
 

@@ -6,7 +6,7 @@ import { EditorService } from '@nexio/core/modules/editor';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { AiIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import Lottie from 'lottie-react';
 import { useTheme } from 'next-themes';

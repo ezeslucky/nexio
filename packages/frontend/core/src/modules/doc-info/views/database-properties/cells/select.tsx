@@ -10,7 +10,7 @@ import {
 import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
 import type { SelectTag } from '@blocksuite/data-view';
 import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useMemo } from 'react';
 

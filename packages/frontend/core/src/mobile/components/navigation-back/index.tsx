@@ -4,7 +4,7 @@ import {
   useIsInsideModal,
 } from '@nexio/component';
 import { ArrowLeftSmallIcon, CloseIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import { NavigationGestureService } from '../../modules/navigation-gesture';

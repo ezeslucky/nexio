@@ -1,4 +1,4 @@
-import { FrameworkScope, useLiveData } from '@toeverything/infra';
+import { FrameworkScope, useLiveData } from '@ezeslucky/infra';
 import { useLayoutEffect, useMemo } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import {

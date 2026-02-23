@@ -10,7 +10,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import {
   type ReactNode,
   useCallback,

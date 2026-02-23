@@ -1,6 +1,6 @@
 import { DocsService } from '@nexio/core/modules/doc';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';
 

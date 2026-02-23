@@ -33,7 +33,7 @@ import {
   ResetIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';
 

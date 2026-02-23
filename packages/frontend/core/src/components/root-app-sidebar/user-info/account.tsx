@@ -1,6 +1,6 @@
 import { Avatar } from '@nexio/component';
 import { AuthService } from '@nexio/core/modules/cloud';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './index.css';
 

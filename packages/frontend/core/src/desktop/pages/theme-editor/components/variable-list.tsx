@@ -1,6 +1,6 @@
 import { Scrollable } from '@nexio/component';
 import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import type { TreeNode } from '../resource';
 import * as styles from '../theme-editor.css';

@@ -11,7 +11,7 @@ import { GuardService } from '@nexio/core/modules/permissions';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 export const TrashButton = () => {
   const t = useI18n();

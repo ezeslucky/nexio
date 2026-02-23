@@ -1,7 +1,7 @@
 import { createReactComponentFromLit } from '@nexio/component';
 import { LitTranscriptionBlock } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
 import type { TranscriptionBlockModel } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
-import { LiveData, useLiveData } from '@toeverything/infra';
+import { LiveData, useLiveData } from '@ezeslucky/infra';
 import React, { useCallback, useMemo } from 'react';
 
 import * as styles from './transcription-block.css';

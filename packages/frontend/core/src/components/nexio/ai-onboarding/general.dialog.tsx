@@ -5,7 +5,7 @@ import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

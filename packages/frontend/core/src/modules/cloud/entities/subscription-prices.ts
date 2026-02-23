@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { exhaustMap } from 'rxjs';
 
 import type { ServerService } from '../services/server';

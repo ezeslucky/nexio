@@ -7,7 +7,7 @@ import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { track } from '@nexio/track';
 import type { DocMode } from '@blocksuite/nexio/model';
 import type { Workspace } from '@blocksuite/nexio/store';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import {

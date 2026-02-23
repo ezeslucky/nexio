@@ -19,7 +19,7 @@ import {
 import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@blocksuite/nexio/model';
 import { AllDocsIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect, useState } from 'react';
 

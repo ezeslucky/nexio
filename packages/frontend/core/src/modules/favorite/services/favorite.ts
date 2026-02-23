@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import { FavoriteList } from '../entities/favorite-list';
 

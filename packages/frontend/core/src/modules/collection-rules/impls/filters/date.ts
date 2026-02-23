@@ -1,6 +1,6 @@
 import type { DocsService } from '@nexio/core/modules/doc';
 import type { WorkspacePropertyFilter } from '@nexio/core/modules/workspace-property';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 import dayjs, { type Dayjs, isDayjs } from 'dayjs';
 import { map, type Observable } from 'rxjs';
 

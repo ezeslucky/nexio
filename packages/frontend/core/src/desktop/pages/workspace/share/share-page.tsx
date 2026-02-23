@@ -28,7 +28,7 @@ import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
 import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import { type DocMode, DocModes } from '@blocksuite/nexio/model';
 import { Logo1Icon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';

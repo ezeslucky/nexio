@@ -1,6 +1,6 @@
 import { toast, useConfirmModal } from '@nexio/component';
 import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { TagService } from '../service/tag';

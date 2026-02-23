@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@ezeslucky/infra';
 
 export interface PopupWindowProvider {
   

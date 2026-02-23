@@ -3,7 +3,7 @@ import { UrlService } from '@nexio/core/modules/url';
 import type { UpdateMeta } from '@nexio/electron-api';
 import { apis, events } from '@nexio/electron-api';
 import { track } from '@nexio/track';
-import { appSettingAtom, useService } from '@toeverything/infra';
+import { appSettingAtom, useService } from '@ezeslucky/infra';
 import { atom, useAtom, useAtomValue } from 'jotai';
 import { atomWithObservable, atomWithStorage } from 'jotai/utils';
 import { useCallback, useState } from 'react';

@@ -6,7 +6,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import track from '@nexio/track';
 import { EditIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { TabItem } from './tab-item';
 import type { AppTabCustomFCProps } from './type';

@@ -1,4 +1,4 @@
-import { Store, yjsGetPath, yjsObserveDeep } from '@toeverything/infra';
+import { Store, yjsGetPath, yjsObserveDeep } from '@ezeslucky/infra';
 import { differenceBy } from 'lodash-es';
 import { combineLatest, map, switchMap } from 'rxjs';
 import { AbstractType as YAbstractType } from 'yjs';

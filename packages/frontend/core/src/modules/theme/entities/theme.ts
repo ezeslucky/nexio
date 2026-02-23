@@ -1,7 +1,7 @@
 import { ColorScheme } from '@blocksuite/nexio/model';
 import { createSignalFromObservable } from '@blocksuite/nexio-shared/utils';
 import type { Signal } from '@preact/signals-core';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 
 export class AppTheme extends Entity {
   theme$ = new LiveData<string | undefined>(undefined);

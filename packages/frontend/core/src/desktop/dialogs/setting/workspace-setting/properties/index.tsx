@@ -7,7 +7,7 @@ import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { Trans, useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './styles.css';

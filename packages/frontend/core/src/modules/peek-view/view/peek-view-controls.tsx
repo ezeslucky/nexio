@@ -11,7 +11,7 @@ import {
   OpenInNewIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { clsx } from 'clsx';
 import {
   type HTMLAttributes,

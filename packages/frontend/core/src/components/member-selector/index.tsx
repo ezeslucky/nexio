@@ -12,7 +12,7 @@ import {
   MemberSearchService,
 } from '@nexio/core/modules/permissions';
 import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { clamp, debounce } from 'lodash-es';
 import type { KeyboardEvent, ReactNode } from 'react';

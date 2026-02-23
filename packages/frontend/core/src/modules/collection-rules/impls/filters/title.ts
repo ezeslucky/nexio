@@ -1,5 +1,5 @@
 import type { DocsSearchService } from '@nexio/core/modules/docs-search';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 import { map, type Observable } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

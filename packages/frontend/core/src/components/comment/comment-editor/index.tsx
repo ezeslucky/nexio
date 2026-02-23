@@ -16,7 +16,7 @@ import {
   CloseIcon,
 } from '@blocksuite/icons/rc';
 import type { TextSelection } from '@blocksuite/std';
-import { useFramework, useService } from '@toeverything/infra';
+import { useFramework, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import clsx from 'clsx';
 import {

@@ -2,7 +2,7 @@ import type {
   MenubarStateKey,
   MenubarStateSchema,
 } from '@nexio/electron/main/shared-state-schema';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import type { GlobalStateService } from '../../storage';
 

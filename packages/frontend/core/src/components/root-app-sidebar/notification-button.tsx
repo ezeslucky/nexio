@@ -4,7 +4,7 @@ import { NotificationCountService } from '@nexio/core/modules/notification';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { NotificationIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { NotificationList } from '../notification/list';

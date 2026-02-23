@@ -13,7 +13,7 @@ import {
   StoreManagerConsumer,
   type WorkerManagerOps,
 } from '@nexio/nbstore/worker/consumer';
-import { OpConsumer } from '@toeverything/infra/op';
+import { OpConsumer } from '@ezeslucky/infra/op';
 
 // oxlint-disable-next-line no-non-null-assertion
 bindNativeDBApis(apis!.nbstore);

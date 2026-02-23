@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { fileTypeFromBuffer } from 'file-type';
 import { switchMap, tap } from 'rxjs';
 

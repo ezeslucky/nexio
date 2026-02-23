@@ -1,5 +1,5 @@
 import type { DocMode } from '@nexio/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { NotificationStore } from '../stores/notification';
 

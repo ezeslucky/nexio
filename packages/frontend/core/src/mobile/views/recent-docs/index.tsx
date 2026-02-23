@@ -1,6 +1,6 @@
 import { useBlockSuiteDocMeta } from '@nexio/core/components/hooks/use-block-suite-page-meta';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import { DocCard } from '../../components/doc-card';

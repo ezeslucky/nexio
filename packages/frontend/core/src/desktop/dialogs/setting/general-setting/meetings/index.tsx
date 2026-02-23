@@ -21,7 +21,7 @@ import {
   DoneIcon,
   InformationFillDuotoneIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as styles from './styles.css';

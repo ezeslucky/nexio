@@ -9,7 +9,7 @@ import { LanguageMenu } from '@nexio/core/components/nexio/language-menu';
 import { TraySettingService } from '@nexio/core/modules/editor-setting/services/tray-settings';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';
 

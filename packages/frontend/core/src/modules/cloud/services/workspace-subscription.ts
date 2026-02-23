@@ -1,5 +1,5 @@
 import { type CreateCheckoutSessionInput } from '@nexio/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import { WorkspaceSubscription } from '../entities/workspace-subscription';
 import { SubscriptionStore } from '../stores/subscription';

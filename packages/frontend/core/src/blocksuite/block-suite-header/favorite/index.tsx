@@ -3,7 +3,7 @@ import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import { toast } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 export interface FavoriteButtonProps {

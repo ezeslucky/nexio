@@ -5,7 +5,7 @@ import { OpenInAppService } from '@nexio/core/modules/open-in-app';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { Trans, useI18n } from '@nexio/i18n';
 import { CopyIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

@@ -5,7 +5,7 @@ import {
   WorkspaceDialogService,
 } from '@nexio/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { ChangePasswordDialog } from './change-password';
 import { CollectionEditorDialog } from './collection-editor';

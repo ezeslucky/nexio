@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { DocRecord, DocsService } from '../../doc';
 import type { WorkspaceLocalState } from '../../workspace';

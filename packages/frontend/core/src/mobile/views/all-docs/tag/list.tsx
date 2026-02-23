@@ -1,6 +1,6 @@
 import { EmptyTags } from '@nexio/core/components/nexio/empty';
 import { TagService } from '@nexio/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { TagItem } from './item';
 import { list } from './styles.css';

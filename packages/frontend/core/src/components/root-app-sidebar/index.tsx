@@ -25,7 +25,7 @@ import {
   JournalIcon,
   SettingsIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { ReactElement } from 'react';
 import { memo, useCallback } from 'react';
 

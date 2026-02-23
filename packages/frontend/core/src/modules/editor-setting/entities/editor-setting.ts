@@ -3,7 +3,7 @@ import {
   createSignalFromObservable,
   type Signal,
 } from '@blocksuite/nexio/shared/utils';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { isObject, merge } from 'lodash-es';
 import type { Observable } from 'rxjs';
 import { map } from 'rxjs';

@@ -3,7 +3,7 @@ import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
 import { AuthService } from '@nexio/core/modules/cloud';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode } from 'react';
 
 import { UserPlanTag } from '../../../components';

@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import { setElementVars } from '@vanilla-extract/dynamic';
 
 import { globalVars } from '../../../styles/variables.css';

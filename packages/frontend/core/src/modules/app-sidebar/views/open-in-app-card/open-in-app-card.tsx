@@ -6,7 +6,7 @@ import {
 import { appIconMap } from '@nexio/core/utils';
 import { Trans, useI18n } from '@nexio/i18n';
 import { CloseIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './open-in-app-card.css';

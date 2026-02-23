@@ -10,7 +10,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo } from 'react';
 
 import { switchItem } from './style.css';

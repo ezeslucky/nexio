@@ -1,5 +1,5 @@
 import { type Doc, DocsService } from '@nexio/core/modules/doc';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { type PropsWithChildren, useEffect, useState } from 'react';
 
 export const DocFrameScope = ({

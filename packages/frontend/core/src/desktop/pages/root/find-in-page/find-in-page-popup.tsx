@@ -7,7 +7,7 @@ import {
   SearchIcon,
 } from '@blocksuite/icons/rc';
 import * as Popover from '@radix-ui/react-popover';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import {

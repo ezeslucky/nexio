@@ -6,7 +6,7 @@ import {
   type IFileSizeLimitService,
 } from '@blocksuite/nexio/shared/services';
 import { Extension } from '@blocksuite/nexio/store';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function patchFileSizeLimitExtension(framework: FrameworkProvider) {
   const workspaceDialogService = framework.get(WorkspaceDialogService);

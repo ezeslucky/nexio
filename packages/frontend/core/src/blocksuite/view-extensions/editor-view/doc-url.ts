@@ -7,7 +7,7 @@ import {
   GenerateDocUrlExtension,
   ParseDocUrlExtension,
 } from '@blocksuite/nexio/shared/services';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 function patchParseDocUrlExtension(framework: FrameworkProvider) {
   const workspaceService = framework.get(WorkspaceService);

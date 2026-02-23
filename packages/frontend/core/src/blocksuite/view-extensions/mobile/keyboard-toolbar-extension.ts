@@ -9,7 +9,7 @@ import {
 import { LifeCycleWatcher } from '@blocksuite/nexio/std';
 import type { ExtensionType } from '@blocksuite/nexio/store';
 import { batch, signal } from '@preact/signals-core';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function KeyboardToolbarExtension(
   framework: FrameworkProvider

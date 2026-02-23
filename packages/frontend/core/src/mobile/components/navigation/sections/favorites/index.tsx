@@ -5,7 +5,7 @@ import { FavoriteService } from '@nexio/core/modules/favorite';
 import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

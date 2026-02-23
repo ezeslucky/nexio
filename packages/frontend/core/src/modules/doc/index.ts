@@ -6,7 +6,7 @@ export { DocScope } from './scopes/doc';
 export { DocService } from './services/doc';
 export { DocsService } from './services/docs';
 
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { WorkspaceDBService } from '../db/services/db';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

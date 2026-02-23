@@ -1,4 +1,4 @@
-import { createIdentifier, type Memento } from '@toeverything/infra';
+import { createIdentifier, type Memento } from '@ezeslucky/infra';
 
 export interface WorkspaceLocalState extends Memento {}
 export interface WorkspaceLocalCache extends Memento {}

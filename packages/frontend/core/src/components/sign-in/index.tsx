@@ -1,6 +1,6 @@
 import { DefaultServerService, type Server } from '@nexio/core/modules/cloud';
 import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { useState } from 'react';
 
 import { AddSelfhostedStep } from './add-selfhosted';

@@ -12,7 +12,7 @@ import {
   type GfxPrimitiveElementModel,
 } from '@blocksuite/nexio/std/gfx';
 import type { Block, Store } from '@blocksuite/nexio/store';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 import { useCallback, useEffect, useMemo, useRef } from 'react';

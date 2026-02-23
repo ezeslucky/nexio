@@ -5,7 +5,7 @@ import { ServerService } from '@nexio/core/modules/cloud';
 import { DocService } from '@nexio/core/modules/doc';
 import { ShareInfoService } from '@nexio/core/modules/share-doc';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { Suspense, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 

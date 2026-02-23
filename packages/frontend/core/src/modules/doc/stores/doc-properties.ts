@@ -3,7 +3,7 @@ import {
   Store,
   yjsGetPath,
   yjsObserveDeep,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { isNil, omitBy } from 'lodash-es';
 import { combineLatest, map, switchMap } from 'rxjs';
 import { AbstractType as YAbstractType } from 'yjs';

@@ -1,5 +1,5 @@
 import type { Server } from '@nexio/core/modules/cloud';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import semver from 'semver';
 

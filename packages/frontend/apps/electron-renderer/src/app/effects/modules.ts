@@ -18,7 +18,7 @@ import {
 } from '@nexio/core/modules/url';
 import { configureDesktopWorkbenchModule } from '@nexio/core/modules/workbench';
 import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
-import { Framework } from '@toeverything/infra';
+import { Framework } from '@ezeslucky/infra';
 
 export function setupModules() {
   const framework = new Framework();

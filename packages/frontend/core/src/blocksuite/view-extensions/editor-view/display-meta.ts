@@ -12,7 +12,7 @@ import {
 import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/nexio/std';
 import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
-import { type FrameworkProvider } from '@toeverything/infra';
+import { type FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 
 export function buildDocDisplayMetaExtension(framework: FrameworkProvider) {

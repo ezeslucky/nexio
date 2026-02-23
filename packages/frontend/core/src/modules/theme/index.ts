@@ -1,6 +1,6 @@
 export { AppThemeService } from './services/theme';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { AppTheme } from './entities/theme';
 import { AppThemeService } from './services/theme';

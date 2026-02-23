@@ -9,7 +9,7 @@ import {
   parseAudioMediaKey,
   type PlaybackState,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { clamp } from 'lodash-es';
 import { distinctUntilChanged } from 'rxjs';
 

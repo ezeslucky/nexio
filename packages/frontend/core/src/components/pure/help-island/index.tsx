@@ -5,7 +5,7 @@ import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { UrlService } from '@nexio/core/modules/url';
 import { useI18n } from '@nexio/i18n';
 import { CloseIcon, NewIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { ContactIcon, HelpIcon, KeyboardIcon } from './icons';

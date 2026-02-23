@@ -6,7 +6,7 @@ import { INTEGRATION_TYPE_NAME_MAP } from '@nexio/core/modules/integration/const
 import type { IntegrationType } from '@nexio/core/modules/integration/type';
 import { useI18n } from '@nexio/i18n';
 import { IntegrationsIcon, ReadwiseIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
 import { StackProperty } from '../explorer/docs-view/stack-property';

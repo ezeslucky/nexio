@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { getCurrentStore } from '@toeverything/infra';
+import { getCurrentStore } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { Provider } from 'jotai/react';
 import type { FC } from 'react';

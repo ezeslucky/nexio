@@ -1,5 +1,5 @@
 import { ServerDeploymentType } from '@nexio/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { Server } from '../entities/server';
 import type { ServersService } from './servers';

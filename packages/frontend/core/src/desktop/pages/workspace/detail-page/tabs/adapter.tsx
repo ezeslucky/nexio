@@ -8,7 +8,7 @@ import {
 } from '@blocksuite/nexio/shared/adapters';
 import type { EditorHost } from '@blocksuite/nexio/std';
 import type { TransformerMiddleware } from '@blocksuite/nexio/store';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useRef } from 'react';
 
 import * as styles from './adapter.css';

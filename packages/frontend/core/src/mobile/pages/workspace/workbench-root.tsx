@@ -3,7 +3,7 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { ViewRoot } from '@nexio/core/modules/workbench/view/view-root';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 import { type RouteObject, useLocation } from 'react-router-dom';
 

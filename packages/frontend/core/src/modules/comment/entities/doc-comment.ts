@@ -14,7 +14,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import {
   catchError,

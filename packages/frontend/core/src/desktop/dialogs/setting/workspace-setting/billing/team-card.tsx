@@ -7,7 +7,7 @@ import {
 import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
 import { SubscriptionRecurring } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CancelTeamAction } from '../../general-setting/plans/actions';

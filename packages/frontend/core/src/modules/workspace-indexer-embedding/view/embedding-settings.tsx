@@ -11,7 +11,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { ServerFeature } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import type React from 'react';
 import { useCallback, useEffect } from 'react';
 

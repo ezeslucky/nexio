@@ -2,7 +2,7 @@ import type {
   Permission,
   WorkspaceInviteLinkExpireTime,
 } from '@nexio/graphql';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { WorkspaceService } from '../../workspace';
 import { WorkspaceMembers } from '../entities/members';

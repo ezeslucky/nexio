@@ -21,7 +21,7 @@ import {
   TomorrowIcon,
   YesterdayIcon,
 } from '@blocksuite/icons/rc';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';
 

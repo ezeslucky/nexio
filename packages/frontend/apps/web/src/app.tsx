@@ -15,8 +15,8 @@ import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
 import { getWorkerUrl } from '@nexio/env/worker';
 import { StoreManagerClient } from '@nexio/nbstore/worker/client';
 import { CacheProvider } from '@emotion/react';
-import { Framework, FrameworkRoot, getCurrentStore } from '@toeverything/infra';
-import { OpClient } from '@toeverything/infra/op';
+import { Framework, FrameworkRoot, getCurrentStore } from '@ezeslucky/infra';
+import { OpClient } from '@ezeslucky/infra/op';
 import { Suspense } from 'react';
 import { RouterProvider } from 'react-router-dom';
 

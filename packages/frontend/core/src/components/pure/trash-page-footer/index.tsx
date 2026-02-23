@@ -4,7 +4,7 @@ import { DocService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { useAppSettingHelper } from '../../hooks/nexio/use-app-setting-helper';

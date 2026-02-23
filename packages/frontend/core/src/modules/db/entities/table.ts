@@ -1,8 +1,8 @@
 import type {
   Table as OrmTable,
   TableSchemaBuilder,
-} from '@toeverything/infra';
-import { Entity, LiveData } from '@toeverything/infra';
+} from '@ezeslucky/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { distinctUntilChanged, map } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

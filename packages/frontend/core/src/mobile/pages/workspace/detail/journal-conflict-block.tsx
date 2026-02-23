@@ -5,7 +5,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { EditIcon, TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import * as styles from './journal-conflict-block.css';

@@ -1,7 +1,7 @@
 import { Tooltip } from '@nexio/component/ui/tooltip';
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type SyntheticEvent, useEffect } from 'react';
 
 import { ServerService, SubscriptionService } from '../../../modules/cloud';

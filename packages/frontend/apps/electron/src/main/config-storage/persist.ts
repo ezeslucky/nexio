@@ -4,7 +4,7 @@ import path from 'node:path';
 import {
   AppConfigStorage,
   defaultAppConfig,
-} from '@toeverything/infra/app-config-storage';
+} from '@ezeslucky/infra/app-config-storage';
 import { app } from 'electron';
 
 const FILENAME = 'config.json';

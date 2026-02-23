@@ -4,7 +4,7 @@ import { DocService } from '@nexio/core/modules/doc';
 import { ShareMenuContent } from '@nexio/core/modules/share-menu';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { ShareiOsIcon } from '@blocksuite/icons/rc';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@ezeslucky/infra';
 
 import * as styles from './page-header-share-button.css';
 

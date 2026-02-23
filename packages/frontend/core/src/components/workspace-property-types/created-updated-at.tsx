@@ -1,7 +1,7 @@
 import { PropertyValue, Tooltip } from '@nexio/component';
 import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
 import type { GroupHeaderProps } from '../explorer/types';

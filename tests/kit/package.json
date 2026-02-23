@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "@blocksuite/nexio": "workspace:*",
+    "@ezeslucky/infra": "workspace:*",
     "@nexio-tools/utils": "workspace:*",
     "@node-rs/argon2": "^2.0.2",
     "@playwright/test": "=1.52.0",
-    "@toeverything/infra": "workspace:*",
     "express": "^5.0.0",
     "http-proxy-middleware": "^3.0.3"
   },

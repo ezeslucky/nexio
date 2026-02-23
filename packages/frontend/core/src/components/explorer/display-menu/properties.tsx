@@ -2,7 +2,7 @@ import { Button, Divider } from '@nexio/component';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { WorkspacePropertyName } from '../../properties';

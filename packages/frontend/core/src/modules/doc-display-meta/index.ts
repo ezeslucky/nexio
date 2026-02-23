@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { DocsService } from '../doc';
 import { ExplorerIconService } from '../explorer-icon/services/explorer-icon';

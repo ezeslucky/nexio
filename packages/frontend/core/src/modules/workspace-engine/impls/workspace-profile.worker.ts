@@ -1,4 +1,4 @@
-import { type MessageCommunicapable, OpConsumer } from '@toeverything/infra/op';
+import { type MessageCommunicapable, OpConsumer } from '@ezeslucky/infra/op';
 import { applyUpdate, Doc as YDoc } from 'yjs';
 
 import type { WorkerOps } from './worker-ops';

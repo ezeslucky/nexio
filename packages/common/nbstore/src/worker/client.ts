@@ -1,4 +1,4 @@
-import { OpClient, transfer } from '@toeverything/infra/op';
+import { OpClient, transfer } from '@ezeslucky/infra/op';
 import type { Observable } from 'rxjs';
 import { v4 as uuid } from 'uuid';
 

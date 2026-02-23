@@ -12,7 +12,7 @@ import {
   Text,
   Transformer,
 } from '@blocksuite/nexio/store';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 import { Doc as YDoc } from 'yjs';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';

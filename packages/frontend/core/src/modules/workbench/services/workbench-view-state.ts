@@ -1,4 +1,4 @@
-import { createIdentifier, Service } from '@toeverything/infra';
+import { createIdentifier, Service } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 
 import type { DesktopApiService, TabViewsMetaSchema } from '../../desktop-api';

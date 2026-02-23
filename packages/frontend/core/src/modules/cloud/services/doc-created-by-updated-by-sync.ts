@@ -6,7 +6,7 @@ import {
   onStart,
   Service,
   throwIfAborted,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { clamp } from 'lodash-es';
 import { combineLatest, exhaustMap, finalize, map } from 'rxjs';
 

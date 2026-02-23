@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 
 import type { FilterParams, GroupByParams, OrderByParams } from '../types';

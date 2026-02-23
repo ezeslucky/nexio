@@ -3,7 +3,7 @@ import { IntegrationService } from '@nexio/core/modules/integration';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import { PlusIcon, TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { IntegrationCardIcon } from '../card';

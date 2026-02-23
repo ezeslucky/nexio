@@ -45,7 +45,7 @@ import {
   onComplete,
   onStart,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { map, Observable, switchMap, tap } from 'rxjs';
 import {

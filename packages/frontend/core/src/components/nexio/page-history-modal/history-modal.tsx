@@ -15,7 +15,7 @@ import type { Store, Workspace } from '@blocksuite/nexio/store';
 import { CloseIcon, ToggleRightIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import type { DialogContentProps } from '@radix-ui/react-dialog';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { atom, useAtom } from 'jotai';
 import type { PropsWithChildren } from 'react';
 import {

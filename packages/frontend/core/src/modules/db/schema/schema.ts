@@ -5,7 +5,7 @@ import {
   type FieldSchemaBuilder,
   type ORMEntity,
   t,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 
 import type { WorkspacePropertyType } from '../../workspace-property';

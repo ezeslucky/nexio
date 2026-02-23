@@ -4,7 +4,7 @@ import {
   ObjectPool,
   Service,
   YjsDBAdapter,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { Doc as YDoc } from 'yjs';
 
 import type { WorkspaceServerService } from '../../cloud';

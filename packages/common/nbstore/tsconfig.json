@@ -7,8 +7,8 @@
     "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
   },
   "references": [
-    { "path": "../reader" },
     { "path": "../infra" },
+    { "path": "../reader" },
     { "path": "../../../blocksuite/nexio/all" },
     { "path": "../error" },
     { "path": "../graphql" }

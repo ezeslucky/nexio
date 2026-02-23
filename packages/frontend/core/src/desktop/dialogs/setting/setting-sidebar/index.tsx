@@ -9,7 +9,7 @@ import { type WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { Logo1Icon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,

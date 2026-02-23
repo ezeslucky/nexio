@@ -1,6 +1,6 @@
 import { useDropTarget } from '@nexio/component';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useAtomValue } from 'jotai';
 import type { HTMLAttributes } from 'react';
 import { useCallback } from 'react';

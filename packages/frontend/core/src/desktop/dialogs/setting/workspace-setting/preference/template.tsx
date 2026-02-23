@@ -14,7 +14,7 @@ import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { TemplateListMenu } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './template.css';

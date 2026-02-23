@@ -11,7 +11,7 @@ import {
   type Signal,
 } from '@blocksuite/nexio/shared/utils';
 import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/nexio/std';
-import { type FrameworkProvider } from '@toeverything/infra';
+import { type FrameworkProvider } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 import { combineLatest, map } from 'rxjs';
 

@@ -27,7 +27,7 @@ import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { type I18nString, Trans, useI18n } from '@nexio/i18n';
 import { DoneIcon, NewPageIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

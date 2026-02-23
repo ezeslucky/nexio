@@ -10,7 +10,7 @@ import {
   updateDocDefaultRoleMutation,
   updateDocUserRoleMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 export class DocGrantedUsersStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

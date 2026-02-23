@@ -33,7 +33,7 @@ import {
 } from '@nexio/core/modules/system-font-family';
 import { Trans, useI18n } from '@nexio/i18n';
 import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

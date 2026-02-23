@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/components/page-list';
 import { EditorService } from '@nexio/core/modules/editor';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './index.css';
 

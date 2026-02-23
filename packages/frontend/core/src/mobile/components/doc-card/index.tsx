@@ -9,7 +9,7 @@ import {
   type WorkbenchLinkProps,
 } from '@nexio/core/modules/workbench';
 import type { DocMeta } from '@blocksuite/nexio/store';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { forwardRef, type ReactNode, useMemo, useRef } from 'react';
 

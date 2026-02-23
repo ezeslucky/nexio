@@ -1,4 +1,4 @@
-import { LiveData, Store } from '@toeverything/infra';
+import { LiveData, Store } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 
 import type { DocsService } from '../../doc';

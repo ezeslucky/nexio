@@ -10,7 +10,7 @@ import {
 } from '@nexio/core/modules/workbench/view/view-meta';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { CollectionService } from '../../../../modules/collection';

@@ -1,5 +1,5 @@
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { NbstoreProvider } from '../providers/nbstore';
 

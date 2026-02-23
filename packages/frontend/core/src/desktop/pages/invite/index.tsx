@@ -10,7 +10,7 @@ import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks
 import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { UserFriendlyError } from '@nexio/error';
 import { WorkspaceMemberStatus } from '@nexio/graphql';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 

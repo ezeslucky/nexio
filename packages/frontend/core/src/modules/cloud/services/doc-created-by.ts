@@ -1,4 +1,4 @@
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { DocCreated, type DocRecord } from '../../doc';
 import type { DocCreateOptions } from '../../doc/types';

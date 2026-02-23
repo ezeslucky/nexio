@@ -1,4 +1,4 @@
-import type { OpSchema } from '@toeverything/infra/op';
+import type { OpSchema } from '@ezeslucky/infra/op';
 
 import type { PDFMeta, RenderedPage, RenderPageOpts } from './types';
 

@@ -1,7 +1,7 @@
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import { type DocRecord, DocsService } from '@nexio/core/modules/doc';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useContext, useMemo } from 'react';
 

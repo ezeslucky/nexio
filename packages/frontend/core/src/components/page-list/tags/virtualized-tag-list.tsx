@@ -1,7 +1,7 @@
 import type { Tag } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { Trans } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { ListFloatingToolbar } from '../components/list-floating-toolbar';

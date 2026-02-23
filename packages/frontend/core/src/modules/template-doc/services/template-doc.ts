@@ -1,4 +1,4 @@
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import { TemplateDocList } from '../entities/list';
 import { TemplateDocSetting } from '../entities/setting';

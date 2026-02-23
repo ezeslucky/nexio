@@ -1,7 +1,7 @@
 import { useWorkspace } from '@nexio/core/components/hooks/use-workspace';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 
 export const CurrentWorkspaceScopeProvider = ({
   children,

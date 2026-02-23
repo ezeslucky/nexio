@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 
 import type { DocRecord, DocsService } from '../../doc';
 import type { TemplateDocListStore } from '../store/list';

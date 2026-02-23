@@ -7,7 +7,7 @@ import {
 import { WorkspaceSubscriptionService } from '@nexio/core/modules/cloud';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { TeamResumeAction } from '../../general-setting/plans/actions';

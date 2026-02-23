@@ -9,7 +9,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { switchMap, tap, timer } from 'rxjs';
 
 import { AccountChanged, type AuthService } from '../../cloud';

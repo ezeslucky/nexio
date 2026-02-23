@@ -13,7 +13,7 @@ export { WorkspaceScope } from './scopes/workspace';
 export { WorkspaceService } from './services/workspace';
 export { WorkspacesService } from './services/workspaces';
 
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { GlobalCache, GlobalState, NbstoreService } from '../storage';
 import { WorkspaceEngine } from './entities/engine';

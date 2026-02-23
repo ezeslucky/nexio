@@ -2,7 +2,7 @@ import {
   type MessageCommunicapable,
   OpConsumer,
   transfer,
-} from '@toeverything/infra/op';
+} from '@ezeslucky/infra/op';
 import type { Document } from '@toeverything/pdf-viewer';
 import {
   createPDFium,

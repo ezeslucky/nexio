@@ -26,7 +26,7 @@ import {
   MarkdownTransformer,
   ZipTransformer,
 } from '@blocksuite/nexio/widgets/linked-doc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';
 

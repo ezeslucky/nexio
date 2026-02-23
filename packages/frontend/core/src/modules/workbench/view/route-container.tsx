@@ -1,7 +1,7 @@
 import { IconButton } from '@nexio/component';
 import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { RightSidebarIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { Suspense, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 

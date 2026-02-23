@@ -15,7 +15,7 @@ import {
 import { TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
-import { useFramework } from '@toeverything/infra';
+import { useFramework } from '@ezeslucky/infra';
 
 export function useAIChatConfig() {
   const framework = useFramework();

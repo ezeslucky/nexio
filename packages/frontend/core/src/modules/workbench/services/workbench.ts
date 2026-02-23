@@ -1,5 +1,5 @@
 import { mixpanel } from '@nexio/track';
-import { createEvent, Service } from '@toeverything/infra';
+import { createEvent, Service } from '@ezeslucky/infra';
 import { combineLatest, distinctUntilChanged, map, skip } from 'rxjs';
 
 import { Workbench } from '../entities/workbench';

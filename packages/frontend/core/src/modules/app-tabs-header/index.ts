@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { DesktopApiService } from '../desktop-api';
 import { AppTabsHeaderService } from './services/app-tabs-header-service';

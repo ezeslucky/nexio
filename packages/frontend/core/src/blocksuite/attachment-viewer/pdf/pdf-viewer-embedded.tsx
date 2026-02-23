@@ -16,7 +16,7 @@ import {
   AttachmentIcon,
   CenterPeekIcon,
 } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
 import {

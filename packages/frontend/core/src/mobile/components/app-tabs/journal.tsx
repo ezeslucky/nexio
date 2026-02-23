@@ -2,7 +2,7 @@ import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { TabItem } from './tab-item';

@@ -1,5 +1,5 @@
 import type { Store } from '@blocksuite/nexio/store';
-import { Scope } from '@toeverything/infra';
+import { Scope } from '@ezeslucky/infra';
 
 import type { DocRecord } from '../entities/record';
 

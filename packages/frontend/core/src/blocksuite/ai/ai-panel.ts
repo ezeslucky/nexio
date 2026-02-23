@@ -22,7 +22,7 @@ import {
   ReplaceIcon,
   ResetIcon,
 } from '@blocksuite/icons/lit';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 
 import { insertFromMarkdown } from '../utils';

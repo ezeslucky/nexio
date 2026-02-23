@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { map } from 'rxjs';
 
 import type { FolderStore } from '../stores/folder';

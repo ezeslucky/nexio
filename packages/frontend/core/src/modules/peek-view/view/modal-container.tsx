@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { eases, waapi, type WAAPIAnimation } from 'animejs';
 import clsx from 'clsx';
 import {

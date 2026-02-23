@@ -5,7 +5,7 @@ import { configureI18nModule, I18nProvider } from '@nexio/core/modules/i18n';
 import { configureStorageModule } from '@nexio/core/modules/storage';
 import { configureEssentialThemeModule } from '@nexio/core/modules/theme';
 import { appInfo } from '@nexio/electron-api';
-import { Framework, FrameworkRoot } from '@toeverything/infra';
+import { Framework, FrameworkRoot } from '@ezeslucky/infra';
 
 import * as styles from './app.css';
 import { Recording } from './recording';

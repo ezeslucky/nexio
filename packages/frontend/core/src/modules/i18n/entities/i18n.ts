@@ -6,7 +6,7 @@ import {
   type Language,
   SUPPORTED_LANGUAGES,
 } from '@nexio/i18n';
-import { effect, Entity, fromPromise, LiveData } from '@toeverything/infra';
+import { effect, Entity, fromPromise, LiveData } from '@ezeslucky/infra';
 import { catchError, EMPTY, exhaustMap } from 'rxjs';
 
 import type { GlobalCache } from '../../storage';

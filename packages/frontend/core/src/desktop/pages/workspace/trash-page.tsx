@@ -11,7 +11,7 @@ import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import {

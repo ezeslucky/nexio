@@ -5,7 +5,7 @@ import {
   fromPromise,
   LiveData,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import {
   combineLatest,
   exhaustMap,

@@ -1,4 +1,4 @@
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { UserCopilotQuota } from '../entities/user-copilot-quota';
 import { AccountChanged } from '../events/account-changed';

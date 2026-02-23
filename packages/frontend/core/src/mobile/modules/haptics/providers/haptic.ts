@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@ezeslucky/infra';
 
 export interface HapticProvider {
   impact: (options?: { style?: 'HEAVY' | 'LIGHT' | 'MEDIUM' }) => Promise<void>;

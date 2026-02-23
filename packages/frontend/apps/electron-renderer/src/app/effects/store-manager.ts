@@ -1,8 +1,8 @@
 import { NbstoreProvider } from '@nexio/core/modules/storage';
 import { apis } from '@nexio/electron-api';
 import { StoreManagerClient } from '@nexio/nbstore/worker/client';
-import type { Framework } from '@toeverything/infra';
-import { OpClient } from '@toeverything/infra/op';
+import type { Framework } from '@ezeslucky/infra';
+import { OpClient } from '@ezeslucky/infra/op';
 import { v4 as uuid } from 'uuid';
 
 function createStoreManagerClient() {

@@ -20,7 +20,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { DocRole } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

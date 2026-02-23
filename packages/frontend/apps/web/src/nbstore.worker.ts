@@ -8,7 +8,7 @@ import {
   StoreManagerConsumer,
   type WorkerManagerOps,
 } from '@nexio/nbstore/worker/consumer';
-import { type MessageCommunicapable, OpConsumer } from '@toeverything/infra/op';
+import { type MessageCommunicapable, OpConsumer } from '@ezeslucky/infra/op';
 
 const consumer = new StoreManagerConsumer([
   ...idbStorages,

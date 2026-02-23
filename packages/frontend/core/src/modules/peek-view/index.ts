@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { WorkbenchService } from '../workbench';
 import { WorkspaceScope } from '../workspace';

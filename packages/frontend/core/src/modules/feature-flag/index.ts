@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { GlobalStateService } from '../storage';
 import { Flags } from './entities/flags';

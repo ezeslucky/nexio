@@ -6,7 +6,7 @@ import { UrlService } from '@nexio/core/modules/url';
 import { UserFriendlyError } from '@nexio/error';
 import { createCustomerPortalMutation } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 
 import * as styles from './styles.css';
 

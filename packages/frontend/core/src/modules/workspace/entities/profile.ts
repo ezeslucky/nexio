@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { catchError, EMPTY, exhaustMap, tap } from 'rxjs';
 

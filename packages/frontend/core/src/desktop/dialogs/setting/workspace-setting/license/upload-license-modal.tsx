@@ -12,7 +12,7 @@ import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { UserFriendlyError } from '@nexio/error';
 import { Trans, useI18n } from '@nexio/i18n';
 import { CopyIcon, FileIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as styles from './upload-license-modal.css';

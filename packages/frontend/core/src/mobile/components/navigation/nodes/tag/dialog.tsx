@@ -1,7 +1,7 @@
 import { type MenuSubProps, useMobileMenuController } from '@nexio/component';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   createContext,
   type Dispatch,

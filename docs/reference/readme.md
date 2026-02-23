@@ -4,4 +4,4 @@ This document is intended for developers who want to contribute to NEXIO. It con
 
 ### The Infrastructure of NEXIO
 
-see {@link @toeverything/infra!}
+see {@link @ezeslucky/infra!}

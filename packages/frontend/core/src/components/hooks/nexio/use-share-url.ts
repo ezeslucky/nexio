@@ -17,7 +17,7 @@ import {
   GfxBlockElementModel,
   GfxControllerIdentifier,
 } from '@blocksuite/nexio/std/gfx';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 export type UseSharingUrl = {

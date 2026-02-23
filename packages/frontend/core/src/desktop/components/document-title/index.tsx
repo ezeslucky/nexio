@@ -1,6 +1,6 @@
 import { NotificationCountService } from '@nexio/core/modules/notification';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 
 export const DocumentTitle = () => {

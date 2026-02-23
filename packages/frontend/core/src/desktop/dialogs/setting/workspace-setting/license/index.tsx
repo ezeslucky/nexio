@@ -22,7 +22,7 @@ import {
   SubscriptionVariant,
 } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { EnableCloudPanel } from '../preference/enable-cloud';

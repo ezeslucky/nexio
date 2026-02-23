@@ -19,7 +19,7 @@ import {
   LiveData,
   useLiveData,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import {
   type PropsWithChildren,
   useEffect,

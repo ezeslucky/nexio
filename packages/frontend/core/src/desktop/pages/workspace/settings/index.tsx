@@ -1,7 +1,7 @@
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

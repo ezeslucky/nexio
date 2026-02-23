@@ -12,7 +12,7 @@ import {
   subscriptionQuery,
   updateSubscriptionMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { GlobalCache } from '../../storage';
 import type { UrlService } from '../../url';

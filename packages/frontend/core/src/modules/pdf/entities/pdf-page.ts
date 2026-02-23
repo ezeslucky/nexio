@@ -5,7 +5,7 @@ import {
   Entity,
   LiveData,
   mapInto,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { filter, map, switchMap } from 'rxjs';
 
 import type { RenderPageOpts } from '../renderer';

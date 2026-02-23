@@ -1,5 +1,5 @@
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { useRef } from 'react';
 

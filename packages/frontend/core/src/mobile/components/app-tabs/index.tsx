@@ -4,7 +4,7 @@ import {
   WorkbenchLink,
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';

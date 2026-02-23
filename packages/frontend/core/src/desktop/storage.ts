@@ -9,7 +9,7 @@ import {
   ElectronGlobalState,
 } from '@nexio/core/modules/storage/impls/electron';
 import { IDBGlobalState } from '@nexio/core/modules/storage/impls/storage';
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 export function configureElectronStateStorageImpls(framework: Framework) {
   framework.impl(GlobalCache, ElectronGlobalCache, [DesktopApiService]);

@@ -10,7 +10,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import bytes from 'bytes';
 import { tap } from 'rxjs';

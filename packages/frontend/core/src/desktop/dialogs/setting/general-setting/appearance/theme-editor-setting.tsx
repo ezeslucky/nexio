@@ -9,7 +9,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback } from 'react';
 

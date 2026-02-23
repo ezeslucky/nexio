@@ -9,7 +9,7 @@ import {
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { ServersService } from '@nexio/core/modules/cloud';
 import { Trans, useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import {
   type Dispatch,
   type SetStateAction,

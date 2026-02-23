@@ -5,7 +5,7 @@ import { RichText } from '@blocksuite/nexio/rich-text';
 import type { BlockStdScope } from '@blocksuite/nexio/std';
 import type { Store } from '@blocksuite/nexio/store';
 import { TextIcon } from '@blocksuite/icons/rc';
-import { type LiveData, useLiveData } from '@toeverything/infra';
+import { type LiveData, useLiveData } from '@ezeslucky/infra';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import type * as Y from 'yjs';
 

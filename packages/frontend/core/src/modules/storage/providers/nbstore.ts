@@ -2,7 +2,7 @@ import type {
   StoreClient,
   WorkerInitOptions,
 } from '@nexio/nbstore/worker/client';
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@ezeslucky/infra';
 
 export interface NbstoreProvider {
   /**

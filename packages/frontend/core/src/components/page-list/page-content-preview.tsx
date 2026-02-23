@@ -1,5 +1,5 @@
 import { DocSummaryService } from '@nexio/core/modules/doc-summary';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode, useMemo } from 'react';
 
 interface PagePreviewProps {

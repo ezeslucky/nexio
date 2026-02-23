@@ -1,6 +1,6 @@
 import { notify } from '@nexio/component';
 import { I18n } from '@nexio/i18n';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 import type { To } from 'history';
 import { debounce } from 'lodash-es';
 

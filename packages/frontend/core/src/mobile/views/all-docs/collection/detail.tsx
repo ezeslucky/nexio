@@ -12,7 +12,7 @@ import { PageHeader } from '@nexio/core/mobile/components';
 import { Page } from '@nexio/core/mobile/components/page';
 import type { Collection } from '@nexio/core/modules/collection';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import * as styles from './detail.css';

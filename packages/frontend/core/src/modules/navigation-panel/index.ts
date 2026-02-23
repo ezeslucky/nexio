@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { GlobalCache } from '../storage';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

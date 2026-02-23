@@ -1,5 +1,5 @@
 import type { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 import { type Observable, switchMap } from 'rxjs';
 
 import { FilterProvider } from '../../provider';

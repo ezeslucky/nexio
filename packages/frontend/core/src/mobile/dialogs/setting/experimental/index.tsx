@@ -6,7 +6,7 @@ import {
 } from '@nexio/core/modules/feature-flag';
 import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { SettingGroup } from '../group';

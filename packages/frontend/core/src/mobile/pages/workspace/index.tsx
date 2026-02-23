@@ -5,7 +5,7 @@ import { SharePage } from '@nexio/core/desktop/pages/workspace/share/share-page'
 import { workbenchRoutes } from '@nexio/core/mobile/workbench-router';
 import { ServersService } from '@nexio/core/modules/cloud';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
-import { FrameworkScope, useLiveData, useServices } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useServices } from '@ezeslucky/infra';
 import {
   lazy as reactLazy,
   Suspense,

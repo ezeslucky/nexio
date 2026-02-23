@@ -1,4 +1,4 @@
-import { OpConsumer } from '@toeverything/infra/op';
+import { OpConsumer } from '@ezeslucky/infra/op';
 import { Observable } from 'rxjs';
 
 import { type StorageConstructor } from '../impls';
