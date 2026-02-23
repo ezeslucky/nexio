@@ -2,7 +2,7 @@ import { useDraggable } from '@nexio/component';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import type { NexioDNDData, NexioDNDEntity } from '@nexio/core/types/dnd';
 import { inferOpenMode as inferOpenAt } from '@nexio/core/utils';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { type To } from 'history';
 import { forwardRef, type MouseEvent } from 'react';
 

@@ -1,5 +1,5 @@
 import type { DocMode } from '@blocksuite/nexio/model';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { map } from 'rxjs';
 
 import type { DocsStore } from '../stores/docs';

@@ -17,7 +17,7 @@ import { FavoriteService } from '@nexio/core/modules/favorite';
 import { TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useMemo, useState } from 'react';
 

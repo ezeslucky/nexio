@@ -1,7 +1,7 @@
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { SettingsIcon } from '@blocksuite/icons/rc';
-import { appSettingAtom } from '@toeverything/infra';
+import { appSettingAtom } from '@ezeslucky/infra';
 import type { createStore } from 'jotai';
 import type { useTheme } from 'next-themes';
 

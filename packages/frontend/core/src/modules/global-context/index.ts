@@ -1,6 +1,6 @@
 export { GlobalContextService } from './services/global-context';
 
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { GlobalContext } from './entities/global-context';
 import { GlobalContextService } from './services/global-context';

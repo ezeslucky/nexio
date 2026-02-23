@@ -1,6 +1,6 @@
 import { ServerService } from '@nexio/core/modules/cloud';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 export const useEnableAI = () => {
   const featureFlagService = useService(FeatureFlagService);

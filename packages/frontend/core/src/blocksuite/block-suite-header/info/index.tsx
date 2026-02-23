@@ -3,7 +3,7 @@ import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { InformationIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 export const InfoButton = ({ docId }: { docId: string }) => {

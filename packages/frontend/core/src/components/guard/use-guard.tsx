@@ -3,7 +3,7 @@ import {
   GuardService,
   type WorkspacePermissionActions,
 } from '@nexio/core/modules/permissions';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useMemo } from 'react';
 
 export const useGuard = <

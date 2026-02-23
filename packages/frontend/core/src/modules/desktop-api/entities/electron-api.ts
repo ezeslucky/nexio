@@ -1,5 +1,5 @@
 /* oxlint-disable @typescript-eslint/no-non-null-assertion */
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@ezeslucky/infra';
 
 import type { DesktopApiProvider } from '../provider';
 

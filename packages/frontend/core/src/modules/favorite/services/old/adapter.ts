@@ -1,7 +1,7 @@
 // the adapter is to bridge the workspace rootdoc & native js bindings
 import type { WorkspaceService } from '@nexio/core/modules/workspace';
 import { createYProxy } from '@blocksuite/nexio/store';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import { defaultsDeep } from 'lodash-es';
 import { Observable } from 'rxjs';
 import type * as Y from 'yjs';

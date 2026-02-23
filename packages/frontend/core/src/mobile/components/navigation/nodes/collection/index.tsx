@@ -11,7 +11,7 @@ import { ShareDocsListService } from '@nexio/core/modules/share-doc';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import { FilterMinusIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

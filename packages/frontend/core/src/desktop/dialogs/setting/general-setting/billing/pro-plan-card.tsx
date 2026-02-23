@@ -7,7 +7,7 @@ import {
   SubscriptionStatus,
 } from '@nexio/graphql';
 import { type I18nString, i18nTime, Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 
 import { RedeemCode } from '../plans/plan-card';

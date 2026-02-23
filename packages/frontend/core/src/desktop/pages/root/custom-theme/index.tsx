@@ -1,6 +1,6 @@
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 

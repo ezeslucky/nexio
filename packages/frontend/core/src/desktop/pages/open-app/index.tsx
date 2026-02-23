@@ -8,7 +8,7 @@ import {
 } from '@nexio/core/utils/channel';
 import type { GetCurrentUserQuery } from '@nexio/graphql';
 import { getCurrentUserQuery } from '@nexio/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
 

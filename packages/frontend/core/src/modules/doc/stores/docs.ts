@@ -6,7 +6,7 @@ import {
   yjsObserve,
   yjsObserveDeep,
   yjsObservePath,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, switchMap } from 'rxjs';
 import { Array as YArray, Map as YMap, transact } from 'yjs';

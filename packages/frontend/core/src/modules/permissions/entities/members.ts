@@ -8,7 +8,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { map, switchMap, tap } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

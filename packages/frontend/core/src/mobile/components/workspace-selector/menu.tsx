@@ -25,7 +25,7 @@ import {
   SelfhostIcon,
   SignOutIcon,
 } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { type HTMLAttributes, useCallback, useMemo } from 'react';
 

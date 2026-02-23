@@ -3,7 +3,7 @@ import { Menu, MenuItem, MenuSeparator } from '@nexio/component/ui/menu';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useI18n } from '@nexio/i18n';
 import { SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AuthService, SubscriptionService } from '../../../modules/cloud';

@@ -16,7 +16,7 @@ import {
   StrokeStyle,
 } from '@blocksuite/nexio/model';
 import type { Store } from '@blocksuite/nexio/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 

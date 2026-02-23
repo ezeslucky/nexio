@@ -2,7 +2,7 @@ import { Button } from '@nexio/component';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { useI18n } from '@nexio/i18n';
 import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './self-host-team-plan.css';

@@ -13,6 +13,7 @@
     { "path": "../../../blocksuite/nexio/components" },
     { "path": "../../../blocksuite/nexio/shared" },
     { "path": "../../../blocksuite/framework/std" },
+    { "path": "../../common/infra" },
     { "path": "../component" },
     { "path": "../../common/debug" },
     { "path": "../electron-api" },
@@ -23,7 +24,6 @@
     { "path": "../../common/nbstore" },
     { "path": "../../common/reader" },
     { "path": "../track" },
-    { "path": "../../common/infra" },
     { "path": "../../../blocksuite/nexio/ext-loader" }
   ]
 }

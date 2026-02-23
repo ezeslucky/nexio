@@ -4,7 +4,7 @@ import {
   publishPageMutation,
   revokePublicPageMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { WorkspaceServerService } from '../../cloud';
 

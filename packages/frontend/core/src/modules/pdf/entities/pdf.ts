@@ -1,4 +1,4 @@
-import { Entity, LiveData, ObjectPool } from '@toeverything/infra';
+import { Entity, LiveData, ObjectPool } from '@ezeslucky/infra';
 import { catchError, from, map, of, startWith, switchMap } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

@@ -8,7 +8,7 @@ import {
 import type { WorkbenchOpenOptions } from '@nexio/core/modules/workbench/entities/workbench';
 import { i18nTime } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { useService, useServices } from '@toeverything/infra';
+import { useService, useServices } from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import { useCallback, useMemo } from 'react';
 

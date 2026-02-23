@@ -1,6 +1,6 @@
 import type { DocsService } from '@nexio/core/modules/doc';
 import type { ShareDocsListService } from '@nexio/core/modules/share-doc';
-import { onStart, Service } from '@toeverything/infra';
+import { onStart, Service } from '@ezeslucky/infra';
 import { combineLatest, map, type Observable, of } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

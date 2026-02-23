@@ -6,7 +6,7 @@ import {
 } from '@nexio/core/modules/workspace-property';
 import { generateUniqueNameInSequence } from '@nexio/core/utils/unique-name';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import {

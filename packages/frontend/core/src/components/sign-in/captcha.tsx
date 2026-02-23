@@ -1,6 +1,6 @@
 import { CaptchaService } from '@nexio/core/modules/cloud';
 import { Turnstile } from '@marsidev/react-turnstile';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 
 import * as style from './style.css';

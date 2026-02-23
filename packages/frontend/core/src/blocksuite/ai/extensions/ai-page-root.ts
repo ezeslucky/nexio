@@ -1,5 +1,5 @@
 import { LifeCycleWatcher } from '@blocksuite/nexio/std';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { buildAIPanelConfig } from '../ai-panel';
 import { setupSpaceAIEntry } from '../entries/space/setup-space';

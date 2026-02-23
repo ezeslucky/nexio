@@ -14,7 +14,7 @@ import {
   FavoriteIcon,
   PlusIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import { generateExplorerPropertyList } from '../explorer/properties';

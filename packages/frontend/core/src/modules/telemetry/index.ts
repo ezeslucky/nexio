@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { ServersService } from '../cloud';
 import { GlobalContextService } from '../global-context';

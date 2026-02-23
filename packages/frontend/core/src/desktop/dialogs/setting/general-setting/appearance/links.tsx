@@ -4,7 +4,7 @@ import {
   OpenLinkMode,
 } from '@nexio/core/modules/open-in-app';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import * as styles from './links.css';

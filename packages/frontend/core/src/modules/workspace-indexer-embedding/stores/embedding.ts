@@ -11,7 +11,7 @@ import {
   removeWorkspaceEmbeddingIgnoredDocsMutation,
   setEnableDocEmbeddingMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 export class EmbeddingStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

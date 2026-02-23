@@ -7,7 +7,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { exhaustMap, map, tap } from 'rxjs';
 
 import { ServerScope } from '../scopes/server';

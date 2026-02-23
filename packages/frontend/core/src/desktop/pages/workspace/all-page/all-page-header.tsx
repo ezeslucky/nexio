@@ -12,7 +12,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './all-page-header.css';

@@ -1,5 +1,5 @@
 import { mixpanel, sentry } from '@nexio/track';
-import { APP_SETTINGS_STORAGE_KEY } from '@toeverything/infra/atom';
+import { APP_SETTINGS_STORAGE_KEY } from '@ezeslucky/infra/atom';
 
 mixpanel.init();
 sentry.init();

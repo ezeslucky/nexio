@@ -8,7 +8,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { map, tap } from 'rxjs';
 
 import type { AuthService } from '../services/auth';

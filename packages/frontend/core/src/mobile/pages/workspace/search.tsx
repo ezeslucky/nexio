@@ -19,7 +19,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { bodyEmphasized } from '@toeverything/theme/typography';
 import { useCallback, useMemo } from 'react';
 

@@ -6,7 +6,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { LifecycleService } from '@nexio/core/modules/lifecycle';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { apis, events } from '@nexio/electron-api';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { setupRecordingEvents } from './recording';
 import { getCurrentWorkspace } from './utils';

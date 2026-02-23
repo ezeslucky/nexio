@@ -1,4 +1,4 @@
-import { type Memento, wrapMemento } from '@toeverything/infra';
+import { type Memento, wrapMemento } from '@ezeslucky/infra';
 
 import type { GlobalCache, GlobalState } from '../../storage';
 import type {

@@ -1,6 +1,6 @@
 import { BrowserWarning, LocalDemoTips } from '@nexio/component/nexio-banner';
 import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { useEnableCloud } from './hooks/nexio/use-enable-cloud';

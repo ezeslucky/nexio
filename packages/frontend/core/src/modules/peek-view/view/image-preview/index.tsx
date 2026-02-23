@@ -14,7 +14,7 @@ import {
   PlusIcon,
   ViewBarIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { ImgHTMLAttributes, ReactElement } from 'react';
 import {

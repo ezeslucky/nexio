@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import type { DesktopApiService } from '../../desktop-api';
 import type { PeekViewService } from '../../peek-view';

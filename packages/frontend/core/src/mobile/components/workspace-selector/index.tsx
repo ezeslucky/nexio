@@ -1,7 +1,7 @@
 import { MobileMenu } from '@nexio/component';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { track } from '@nexio/track';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@ezeslucky/infra';
 import {
   forwardRef,
   type HTMLAttributes,

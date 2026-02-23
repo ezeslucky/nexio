@@ -54,7 +54,7 @@ import { InlineManagerExtension } from '@blocksuite/nexio/std/inline';
 import { LinkedDocViewExtension } from '@blocksuite/nexio/widgets/linked-doc/view';
 import { ToolbarViewExtension } from '@blocksuite/nexio/widgets/toolbar/view';
 import { ViewportOverlayViewExtension } from '@blocksuite/nexio/widgets/viewport-overlay/view';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 
 import { createCommentLinkedWidgetConfig } from './linked-widget-config';

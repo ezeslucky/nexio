@@ -1,4 +1,4 @@
-import { createORMClient, Entity, YjsDBAdapter } from '@toeverything/infra';
+import { createORMClient, Entity, YjsDBAdapter } from '@ezeslucky/infra';
 import { Doc as YDoc } from 'yjs';
 
 import { USER_DB_SCHEMA, type UserDbSchema } from '../schema';

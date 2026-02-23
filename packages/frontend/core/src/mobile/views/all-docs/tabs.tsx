@@ -2,7 +2,7 @@ import {
   WorkbenchLink,
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './style.css';
 

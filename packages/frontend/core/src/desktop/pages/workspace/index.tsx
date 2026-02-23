@@ -22,7 +22,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {

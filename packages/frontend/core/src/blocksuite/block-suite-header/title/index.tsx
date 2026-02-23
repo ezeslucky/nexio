@@ -5,7 +5,7 @@ import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks
 import { DocService, DocsService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { track } from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 

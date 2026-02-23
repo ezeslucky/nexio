@@ -1,4 +1,4 @@
-import { type LiveData } from '@toeverything/infra';
+import { type LiveData } from '@ezeslucky/infra';
 
 import type { QuickSearchItem } from '../types/item';
 

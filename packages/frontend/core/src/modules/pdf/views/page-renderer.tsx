@@ -1,6 +1,6 @@
 import { observeIntersection } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import { debounce } from 'lodash-es';
 import { forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 

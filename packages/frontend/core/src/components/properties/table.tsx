@@ -27,7 +27,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type React from 'react';
 import { forwardRef, useCallback, useMemo, useState } from 'react';

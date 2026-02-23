@@ -1,6 +1,6 @@
 import type { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import { getWorkspacePublicPagesQuery } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 export class ShareDocsStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

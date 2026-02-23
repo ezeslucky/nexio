@@ -2,7 +2,7 @@ import { ServersService } from '@nexio/core/modules/cloud';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function getCurrentWorkspace(frameworkProvider: FrameworkProvider) {
   const currentWorkspaceId = frameworkProvider

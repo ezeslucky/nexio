@@ -1,6 +1,6 @@
 import { TagItem as TagItemComponent } from '@nexio/core/components/tags';
 import type { Tag } from '@nexio/core/modules/tag';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 
 export interface PageTagsProps {
   tags: Tag[];

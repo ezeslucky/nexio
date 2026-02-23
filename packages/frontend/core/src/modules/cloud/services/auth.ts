@@ -1,7 +1,7 @@
 import { UserFriendlyError } from '@nexio/error';
 import type { OAuthProviderType } from '@nexio/graphql';
 import { track } from '@nexio/track';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, skip } from 'rxjs';
 

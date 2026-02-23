@@ -1,5 +1,5 @@
 import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 

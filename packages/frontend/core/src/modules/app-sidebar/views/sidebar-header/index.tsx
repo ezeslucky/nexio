@@ -1,4 +1,4 @@
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { AppSidebarService } from '../../services/app-sidebar';
 import { navHeaderStyle } from '../index.css';

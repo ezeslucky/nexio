@@ -4,7 +4,7 @@ import {
   exhaustMapWithTrailing,
   fromPromise,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { catchError, distinctUntilChanged, EMPTY, throttleTime } from 'rxjs';
 
 import type { AIButtonProvider } from '../provider/ai-button';

@@ -3,7 +3,7 @@ import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import type { EdgelessDefaultTheme } from '@nexio/core/modules/editor-setting/schema';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { menuTrigger } from '../style.css';

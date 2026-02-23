@@ -3,7 +3,7 @@ import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks
 import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 
 export const useEnableRecording = () => {
   const meetingSettingsService = useService(MeetingSettingsService);

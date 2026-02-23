@@ -8,7 +8,7 @@ import {
   type MediaStats,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { clamp } from 'lodash-es';
 import { mergeMap, switchMap } from 'rxjs';
 

@@ -1,5 +1,5 @@
 import { mixpanel } from '@nexio/track';
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { UserQuota } from '../entities/user-quota';
 import { AccountChanged } from '../events/account-changed';

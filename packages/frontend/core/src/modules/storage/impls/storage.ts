@@ -1,4 +1,4 @@
-import type { AsyncMemento, Memento } from '@toeverything/infra';
+import type { AsyncMemento, Memento } from '@ezeslucky/infra';
 import EventEmitter2 from 'eventemitter2';
 import { type IDBPDatabase, openDB } from 'idb';
 import { Observable } from 'rxjs';

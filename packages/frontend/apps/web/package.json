@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
+    "@ezeslucky/infra": "workspace:*",
     "@nexio/component": "workspace:*",
     "@nexio/core": "workspace:*",
     "@nexio/env": "workspace:*",
@@ -17,14 +18,14 @@
     "@nexio/nbstore": "workspace:*",
     "@nexio/track": "workspace:*",
     "@sentry/react": "^9.2.0",
-    "@toeverything/infra": "workspace:*",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
+    "@types/webpack-env": "^1.18.8",
     "cross-env": "^7.0.3",
     "typescript": "^5.7.2"
   }

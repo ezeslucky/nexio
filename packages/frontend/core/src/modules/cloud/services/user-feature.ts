@@ -1,4 +1,4 @@
-import { OnEvent, Service } from '@toeverything/infra';
+import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { UserFeature } from '../entities/user-feature';
 import { AccountChanged } from '../events/account-changed';

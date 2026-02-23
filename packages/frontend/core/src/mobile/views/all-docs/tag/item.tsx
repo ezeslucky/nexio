@@ -3,7 +3,7 @@ import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import type { Tag } from '@nexio/core/modules/tag';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type MouseEvent, useCallback } from 'react';
 
 import { content, item, prefixIcon, suffixIcon } from './styles.css';

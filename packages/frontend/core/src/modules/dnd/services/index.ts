@@ -14,7 +14,7 @@ import {
 import { BlockStdScope } from '@blocksuite/nexio/std';
 import type { SliceSnapshot } from '@blocksuite/nexio/store';
 import type { DragBlockPayload } from '@blocksuite/nexio/widgets/drag-handle';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { DocsService } from '../../doc';
 import type { EditorSettingService } from '../../editor-setting';

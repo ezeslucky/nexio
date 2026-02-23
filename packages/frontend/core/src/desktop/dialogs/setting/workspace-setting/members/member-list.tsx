@@ -10,7 +10,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
 import { type I18nString, useI18n } from '@nexio/i18n';
 import { MoreVerticalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';
 import { useCallback, useEffect, useMemo, useState } from 'react';

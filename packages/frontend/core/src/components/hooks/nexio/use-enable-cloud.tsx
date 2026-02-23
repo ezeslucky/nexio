@@ -4,7 +4,7 @@ import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import type { Workspace } from '@nexio/core/modules/workspace';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';

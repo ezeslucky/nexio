@@ -1,6 +1,6 @@
 import type { DocMode } from '@blocksuite/nexio/model';
 import type { DocMeta } from '@blocksuite/nexio/store';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 
 import type { DocProperties } from '../../db';
 import type { DocPropertiesStore } from '../stores/doc-properties';

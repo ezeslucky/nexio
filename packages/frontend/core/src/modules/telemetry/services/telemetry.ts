@@ -1,7 +1,7 @@
 import { shallowEqual } from '@nexio/component';
 import { ServerDeploymentType } from '@nexio/graphql';
 import { mixpanel } from '@nexio/track';
-import { LiveData, OnEvent, Service } from '@toeverything/infra';
+import { LiveData, OnEvent, Service } from '@ezeslucky/infra';
 
 import type { AuthAccountInfo, Server, ServersService } from '../../cloud';
 import type { GlobalContextService } from '../../global-context';

@@ -4,7 +4,7 @@ import { AccessTokenService, ServerService } from '@nexio/core/modules/cloud';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode, useEffect, useMemo, useState } from 'react';
 
 import { IntegrationSettingHeader } from '../setting';

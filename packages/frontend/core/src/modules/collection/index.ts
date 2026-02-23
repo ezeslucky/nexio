@@ -5,7 +5,7 @@ export { PinnedCollectionService } from './services/pinned-collection';
 export type { CollectionInfo } from './stores/collection';
 export type { PinnedCollectionRecord } from './stores/pinned-collection';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { CollectionRulesService } from '../collection-rules';
 import { WorkspaceDBService } from '../db';

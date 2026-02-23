@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 import type { FallbackProps } from 'react-error-boundary';
 

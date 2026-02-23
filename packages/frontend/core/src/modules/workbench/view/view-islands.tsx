@@ -1,6 +1,6 @@
 
 import { createIsland, type Island } from '@nexio/core/utils/island';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import type React from 'react';
 import {
   createContext,

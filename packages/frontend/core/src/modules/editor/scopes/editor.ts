@@ -1,4 +1,4 @@
-import { Scope } from '@toeverything/infra';
+import { Scope } from '@ezeslucky/infra';
 
 import type { Editor } from '../entities/editor';
 

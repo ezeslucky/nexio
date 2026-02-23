@@ -1,6 +1,6 @@
 import type { DocMode } from '@blocksuite/nexio/model';
 import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import { DocsService } from '../../doc';
 import {

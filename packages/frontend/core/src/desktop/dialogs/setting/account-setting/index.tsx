@@ -15,7 +15,7 @@ import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { ArrowRightSmallIcon, CameraIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { AuthService, ServerService } from '../../../../modules/cloud';

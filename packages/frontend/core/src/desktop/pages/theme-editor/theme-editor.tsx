@@ -1,6 +1,6 @@
 import { RadioGroup, Scrollable } from '@nexio/component';
 import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { ThemeEmpty } from './components/empty';

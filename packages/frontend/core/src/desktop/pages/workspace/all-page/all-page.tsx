@@ -14,7 +14,7 @@ import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
 import type { FilterParams } from '@nexio/core/modules/collection-rules/types';
 import { WorkspaceLocalState } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import {

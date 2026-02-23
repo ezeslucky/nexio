@@ -1,5 +1,5 @@
 import { enableAutoTrack, mixpanel, sentry } from '@nexio/track';
-import { appSettingAtom } from '@toeverything/infra';
+import { appSettingAtom } from '@ezeslucky/infra';
 import { useAtomValue } from 'jotai/react';
 import { useEffect } from 'react';
 

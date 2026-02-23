@@ -1,4 +1,4 @@
-import { LiveData, Store } from '@toeverything/infra';
+import { LiveData, Store } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { exhaustMap, map } from 'rxjs';
 

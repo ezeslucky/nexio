@@ -5,7 +5,7 @@ import {
   PreconditionStrategy,
 } from '@nexio/core/commands';
 import type { DocMode } from '@blocksuite/nexio/model';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import Fuse from 'fuse.js';
 
 import type { GlobalContextService } from '../../global-context';

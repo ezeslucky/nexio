@@ -9,7 +9,7 @@ import { UrlService } from '@nexio/core/modules/url';
 import { appIconMap, appNames } from '@nexio/core/utils/channel';
 import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
-import { useServices } from '@toeverything/infra';
+import { useServices } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { useAppSettingHelper } from '../../../../../components/hooks/nexio/use-app-setting-helper';

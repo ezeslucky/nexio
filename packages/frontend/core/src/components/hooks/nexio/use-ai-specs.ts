@@ -2,7 +2,7 @@ import { useConfirmModal, useLitPortalFactory } from '@nexio/component';
 import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useFramework, useLiveData, useServices } from '@toeverything/infra';
+import { useFramework, useLiveData, useServices } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 import { useEnableAI } from './use-enable-ai';

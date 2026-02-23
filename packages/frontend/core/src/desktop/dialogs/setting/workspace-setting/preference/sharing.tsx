@@ -8,7 +8,7 @@ import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 export const SharingPanel = () => {
   const workspace = useService(WorkspaceService).workspace;

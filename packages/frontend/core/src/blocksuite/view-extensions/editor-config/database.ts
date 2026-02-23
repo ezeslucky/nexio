@@ -14,7 +14,7 @@ import {
 } from '@blocksuite/nexio/components/context-menu';
 import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
 import { LinkIcon } from '@blocksuite/icons/lit';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function createDatabaseOptionsConfig(framework: FrameworkProvider) {
   return {

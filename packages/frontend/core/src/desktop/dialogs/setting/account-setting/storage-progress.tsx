@@ -1,6 +1,6 @@
 import { Button, ErrorMessage, Skeleton, Tooltip } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo } from 'react';
 

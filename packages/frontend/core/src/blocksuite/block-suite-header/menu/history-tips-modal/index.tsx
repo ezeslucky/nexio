@@ -2,7 +2,7 @@ import { OverlayModal } from '@nexio/component';
 import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import TopSvg from './top-svg';

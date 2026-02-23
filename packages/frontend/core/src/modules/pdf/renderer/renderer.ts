@@ -1,5 +1,5 @@
 import { getWorkerUrl } from '@nexio/env/worker';
-import { OpClient } from '@toeverything/infra/op';
+import { OpClient } from '@ezeslucky/infra/op';
 
 import type { ClientOps } from './ops';
 

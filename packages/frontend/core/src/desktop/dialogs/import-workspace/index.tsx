@@ -8,7 +8,7 @@ import { _addLocalWorkspace } from '@nexio/core/modules/workspace-engine';
 import { DebugLogger } from '@nexio/debug';
 import { apis } from '@nexio/electron-api';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useLayoutEffect, useRef } from 'react';
 
 const logger = new DebugLogger('ImportWorkspaceDialog');

@@ -1,4 +1,4 @@
-import { createEvent } from '@toeverything/infra';
+import { createEvent } from '@ezeslucky/infra';
 
 import type { Doc } from '../entities/doc';
 import type { DocRecord } from '../entities/record';

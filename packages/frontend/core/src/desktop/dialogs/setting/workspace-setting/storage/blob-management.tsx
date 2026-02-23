@@ -13,7 +13,7 @@ import type { ListedBlobRecord } from '@nexio/nbstore';
 import track from '@nexio/track';
 import { getAttachmentFileIcon } from '@blocksuite/nexio/components/icons';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 

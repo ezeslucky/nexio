@@ -1,6 +1,6 @@
 import type { DocsService } from '@nexio/core/modules/doc';
 import type { TagService } from '@nexio/core/modules/tag';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 import { combineLatest, map, type Observable } from 'rxjs';
 
 import type { OrderByProvider } from '../../provider';

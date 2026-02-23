@@ -6,7 +6,7 @@ import {
 import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 
 import type { SettingState } from '../../types';

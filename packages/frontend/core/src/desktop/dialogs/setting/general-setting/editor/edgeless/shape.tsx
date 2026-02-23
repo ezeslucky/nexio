@@ -27,7 +27,7 @@ import {
 } from '@blocksuite/nexio/model';
 import type { EditorHost } from '@blocksuite/nexio/std';
 import type { Store } from '@blocksuite/nexio/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';
 

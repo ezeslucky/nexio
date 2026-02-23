@@ -5,7 +5,7 @@ import type {
 } from '@nexio/nbstore';
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
 import type { Workspace as BSWorkspace } from '@blocksuite/nexio/store';
-import { createIdentifier, type LiveData } from '@toeverything/infra';
+import { createIdentifier, type LiveData } from '@ezeslucky/infra';
 
 import type { WorkspaceProfileInfo } from '../entities/profile';
 import type { Workspace } from '../entities/workspace';

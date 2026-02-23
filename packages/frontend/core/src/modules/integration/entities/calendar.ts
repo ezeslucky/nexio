@@ -1,4 +1,4 @@
-import { Entity, LiveData, ObjectPool } from '@toeverything/infra';
+import { Entity, LiveData, ObjectPool } from '@ezeslucky/infra';
 import { type Dayjs } from 'dayjs';
 import ICAL from 'ical.js';
 import { Observable, switchMap } from 'rxjs';

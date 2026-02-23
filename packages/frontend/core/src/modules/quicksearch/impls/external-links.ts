@@ -1,5 +1,5 @@
 import { LinkIcon } from '@blocksuite/icons/rc';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 
 import { resolveLinkToDoc } from '../../navigation';
 import { isLink } from '../../navigation/utils';

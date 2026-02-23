@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import ICAL from 'ical.js';
 import { EMPTY, mergeMap, switchMap, throttleTime } from 'rxjs';

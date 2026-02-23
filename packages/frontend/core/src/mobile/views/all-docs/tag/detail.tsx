@@ -8,7 +8,7 @@ import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-lis
 import { Page } from '@nexio/core/mobile/components/page';
 import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
 import type { Tag } from '@nexio/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import { TagDetailHeader } from './detail-header';

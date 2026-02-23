@@ -1,5 +1,5 @@
 import type { IconData } from '@nexio/component';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { WorkspaceDBService } from '../../db';
 

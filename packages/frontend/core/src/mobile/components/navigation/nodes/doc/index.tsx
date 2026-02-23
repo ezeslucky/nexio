@@ -16,7 +16,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { chunk } from 'lodash-es';
 
 import type { DocsService } from '../../doc';

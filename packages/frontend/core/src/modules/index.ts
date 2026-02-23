@@ -1,5 +1,5 @@
 import { configureQuotaModule } from '@nexio/core/modules/quota';
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import {
   configureAIButtonModule,

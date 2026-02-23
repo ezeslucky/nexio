@@ -14,7 +14,7 @@ import {
   isGfxGroupCompatibleModel,
 } from '@blocksuite/nexio/std/gfx';
 import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 const snapshotStyle = `
   nexio-edgeless-root .widgets-container,

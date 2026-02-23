@@ -5,7 +5,7 @@ import {
 } from '@nexio/nbstore/idb';
 import { SqliteDocStorage, SqliteDocSyncStorage } from '@nexio/nbstore/sqlite';
 import type { StoreClient } from '@nexio/nbstore/worker/client';
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@ezeslucky/infra';
 
 import type { ServerService } from '../../cloud';
 import type { NbstoreService } from '../../storage';

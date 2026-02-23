@@ -17,7 +17,7 @@ import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/sessi
 import { Unreachable } from '@nexio/env/constant';
 import { ServerDeploymentType } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 

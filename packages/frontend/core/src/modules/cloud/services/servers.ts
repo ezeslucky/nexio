@@ -1,5 +1,5 @@
 import { Unreachable } from '@nexio/env/constant';
-import { LiveData, ObjectPool, Service } from '@toeverything/infra';
+import { LiveData, ObjectPool, Service } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { Observable, switchMap } from 'rxjs';
 

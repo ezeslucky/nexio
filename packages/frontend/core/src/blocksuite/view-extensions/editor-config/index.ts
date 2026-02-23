@@ -3,7 +3,7 @@ import {
   type ViewExtensionContext,
   ViewExtensionProvider,
 } from '@blocksuite/nexio/ext-loader';
-import { FrameworkProvider } from '@toeverything/infra';
+import { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 
 const optionsSchema = z.object({

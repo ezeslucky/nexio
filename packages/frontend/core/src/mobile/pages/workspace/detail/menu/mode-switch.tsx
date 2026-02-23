@@ -6,7 +6,7 @@ import {
 import { EditorService } from '@nexio/core/modules/editor';
 import track from '@nexio/track';
 import type { DocMode } from '@blocksuite/nexio/model';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './mode-switch.css';

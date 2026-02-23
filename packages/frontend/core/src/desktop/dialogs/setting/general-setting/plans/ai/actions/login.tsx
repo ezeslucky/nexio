@@ -1,7 +1,7 @@
 import { Button, type ButtonProps } from '@nexio/component';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 export const AILogin = (btnProps: ButtonProps) => {

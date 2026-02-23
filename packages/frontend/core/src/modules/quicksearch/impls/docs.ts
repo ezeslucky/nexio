@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { truncate } from 'lodash-es';
 import { catchError, EMPTY, map, of, switchMap, tap, throttleTime } from 'rxjs';
 

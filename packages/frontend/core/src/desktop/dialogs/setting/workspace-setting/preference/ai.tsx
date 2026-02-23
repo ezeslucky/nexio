@@ -8,7 +8,7 @@ import { ServerService } from '@nexio/core/modules/cloud';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 export const AiSetting = () => {
   const t = useI18n();

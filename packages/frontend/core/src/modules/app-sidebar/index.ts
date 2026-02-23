@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { GlobalState } from '../storage';
 import { AppSidebar } from './entities/app-sidebar';

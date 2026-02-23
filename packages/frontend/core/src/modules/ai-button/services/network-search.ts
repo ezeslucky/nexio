@@ -2,7 +2,7 @@ import {
   createSignalFromObservable,
   type Signal,
 } from '@blocksuite/nexio/shared/utils';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import type { FeatureFlagService } from '../../feature-flag';
 import type { GlobalStateService } from '../../storage';

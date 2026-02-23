@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import { CalendarIntegration } from '../entities/calendar';
 import { ReadwiseIntegration } from '../entities/readwise';

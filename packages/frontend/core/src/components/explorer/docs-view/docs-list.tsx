@@ -7,7 +7,7 @@ import {
 import { DocsService } from '@nexio/core/modules/doc';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { memo, useCallback, useContext, useEffect, useMemo } from 'react';
 

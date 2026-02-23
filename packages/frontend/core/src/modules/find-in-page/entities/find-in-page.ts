@@ -1,5 +1,5 @@
 import { DebugLogger } from '@nexio/debug';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import {
   debounceTime,
   distinctUntilChanged,

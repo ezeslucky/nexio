@@ -8,7 +8,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { tap } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

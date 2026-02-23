@@ -11,7 +11,7 @@ import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
 import { type DeltaInsert, Text } from '@blocksuite/nexio/store';
 import { computed } from '@preact/signals-core';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 
 import type { WorkspaceService } from '../../workspace';

@@ -1,6 +1,6 @@
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { QuickSearchService } from '../services/quick-search';

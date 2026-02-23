@@ -24,7 +24,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
 

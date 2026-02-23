@@ -1,6 +1,6 @@
 import { ServersService } from '@nexio/core/modules/cloud';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 
 export const CurrentServerScopeProvider = ({

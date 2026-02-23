@@ -12,7 +12,7 @@ import { configureDesktopApiModule } from '@nexio/core/modules/desktop-api';
 import { configureI18nModule, I18nProvider } from '@nexio/core/modules/i18n';
 import { configureStorageModule } from '@nexio/core/modules/storage';
 import { configureAppThemeModule } from '@nexio/core/modules/theme';
-import { Framework, FrameworkRoot } from '@toeverything/infra';
+import { Framework, FrameworkRoot } from '@ezeslucky/infra';
 
 import * as styles from './app.css';
 

@@ -1,7 +1,7 @@
 import { Avatar, Tooltip } from '@nexio/component';
 import { useCurrentServerService } from '@nexio/core/components/providers/current-server-scope';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import {
   type ComponentType,
   type CSSProperties,

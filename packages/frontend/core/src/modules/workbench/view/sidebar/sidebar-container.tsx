@@ -1,4 +1,4 @@
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback } from 'react';
 

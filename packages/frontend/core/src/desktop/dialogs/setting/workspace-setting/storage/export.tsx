@@ -8,7 +8,7 @@ import { useI18n } from '@nexio/i18n';
 import { universalId } from '@nexio/nbstore';
 import track from '@nexio/track';
 import { ExportIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useState } from 'react';
 
 interface ExportPanelProps {

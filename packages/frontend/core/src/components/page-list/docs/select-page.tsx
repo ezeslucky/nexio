@@ -6,7 +6,7 @@ import {
 import { ShareDocsListService } from '@nexio/core/modules/share-doc';
 import { Trans, useI18n } from '@nexio/i18n';
 import { FilterIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';
 
 import {

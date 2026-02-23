@@ -18,8 +18,8 @@
     "./frontend": "./src/frontend/index.ts"
   },
   "dependencies": {
+    "@ezeslucky/infra": "workspace:*",
     "@nexio/reader": "workspace:*",
-    "@toeverything/infra": "workspace:*",
     "eventemitter2": "^6.4.9",
     "graphemer": "^1.4.0",
     "lib0": "^0.2.99",

@@ -1,4 +1,4 @@
-import { effect, fromPromise, Service, smartRetry } from '@toeverything/infra';
+import { effect, fromPromise, Service, smartRetry } from '@ezeslucky/infra';
 import { catchError, EMPTY, Observable, type Subscription, tap } from 'rxjs';
 
 import type { FeatureFlagService } from '../../feature-flag';

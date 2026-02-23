@@ -8,7 +8,7 @@ import type { ReadwiseConfig } from '@nexio/core/modules/integration/type';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
 import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode, useCallback, useMemo, useState } from 'react';
 
 import {

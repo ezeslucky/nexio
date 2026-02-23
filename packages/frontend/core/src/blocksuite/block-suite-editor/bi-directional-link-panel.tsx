@@ -35,7 +35,7 @@ import {
   useFramework,
   useLiveData,
   useServices,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { debounce } from 'lodash-es';
 import {
   Fragment,

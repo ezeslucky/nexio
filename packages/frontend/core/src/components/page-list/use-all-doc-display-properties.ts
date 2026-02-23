@@ -1,5 +1,5 @@
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { useCallback } from 'react';

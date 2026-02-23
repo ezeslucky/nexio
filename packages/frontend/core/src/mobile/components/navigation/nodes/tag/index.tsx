@@ -4,7 +4,7 @@ import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import type { Tag } from '@nexio/core/modules/tag';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

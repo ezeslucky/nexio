@@ -4,7 +4,7 @@ import {
   type AudioMediaKey,
   ObjectPool,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 
 import { AudioAttachmentBlock } from '../entities/audio-attachment-block';
 

@@ -13,7 +13,7 @@ import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/sessi
 import { Unreachable } from '@nexio/env/constant';
 import { UserFriendlyError } from '@nexio/error';
 import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   type Dispatch,
   type SetStateAction,

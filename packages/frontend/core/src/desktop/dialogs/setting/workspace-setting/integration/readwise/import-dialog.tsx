@@ -11,7 +11,7 @@ import { IntegrationService } from '@nexio/core/modules/integration';
 import type { ReadwiseHighlight } from '@nexio/core/modules/integration/type';
 import { i18nTime, Trans, useI18n } from '@nexio/i18n';
 import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   type ChangeEvent,

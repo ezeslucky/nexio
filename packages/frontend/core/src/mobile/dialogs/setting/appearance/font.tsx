@@ -4,7 +4,7 @@ import {
   type FontFamily,
 } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { SettingDropdownSelect } from '../dropdown-select';

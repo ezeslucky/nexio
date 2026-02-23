@@ -4,8 +4,8 @@ import { ConfigModal } from '@nexio/core/components/mobile';
 import { resolveLinkToDoc } from '@nexio/core/modules/navigation';
 import { useI18n } from '@nexio/i18n';
 import { LinkIcon } from '@blocksuite/icons/rc';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import {
   type ChangeEventHandler,
   type KeyboardEvent,

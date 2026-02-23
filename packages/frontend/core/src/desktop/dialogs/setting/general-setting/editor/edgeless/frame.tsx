@@ -4,7 +4,7 @@ import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
 import { DefaultTheme } from '@blocksuite/nexio/model';
 import type { Store } from '@blocksuite/nexio/store';
-import { useFramework, useLiveData } from '@toeverything/infra';
+import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 

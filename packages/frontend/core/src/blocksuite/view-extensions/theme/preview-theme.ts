@@ -14,7 +14,7 @@ import {
   StdIdentifier,
 } from '@blocksuite/nexio/std';
 import type { Container } from '@blocksuite/global/di';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 
 export function getPreviewThemeExtension(framework: FrameworkProvider) {

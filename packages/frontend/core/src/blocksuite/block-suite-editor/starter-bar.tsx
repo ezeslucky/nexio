@@ -20,7 +20,7 @@ import {
   EdgelessIcon,
   TemplateColoredIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   forwardRef,

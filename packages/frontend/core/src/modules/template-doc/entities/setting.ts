@@ -1,4 +1,4 @@
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@ezeslucky/infra';
 
 import type { TemplateDocSettingStore } from '../store/setting';
 

@@ -4,7 +4,7 @@ import {
   listUserAccessTokensQuery,
   revokeUserAccessTokenMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { GraphQLService } from '../services/graphql';
 

@@ -1,5 +1,5 @@
 import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@ezeslucky/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
 

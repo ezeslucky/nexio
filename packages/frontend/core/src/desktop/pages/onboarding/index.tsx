@@ -1,5 +1,5 @@
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 import { redirect } from 'react-router-dom';
 

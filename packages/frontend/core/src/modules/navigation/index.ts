@@ -7,7 +7,7 @@ export {
 } from './utils';
 export { NavigationButtons } from './view/navigation-buttons';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { WorkbenchService } from '../workbench/services/workbench';
 import { WorkspaceScope } from '../workspace';

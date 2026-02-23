@@ -3,7 +3,7 @@ import type { AllPageFilterOption } from '@nexio/core/components/atoms';
 import { allPageFilterSelectAtom } from '@nexio/core/components/atoms';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useAtom } from 'jotai';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

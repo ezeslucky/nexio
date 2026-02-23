@@ -2,7 +2,7 @@ import type {
   MeetingSettingsKey,
   MeetingSettingsSchema,
 } from '@nexio/electron/main/shared-state-schema';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import { defaults } from 'lodash-es';
 
 import { DesktopApiService } from '../../desktop-api';

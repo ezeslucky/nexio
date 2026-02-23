@@ -6,7 +6,7 @@ export {
 export { TagService } from './service/tag';
 export { useDeleteTagConfirmModal } from './view/delete-tag-modal';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { DocsService } from '../doc';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

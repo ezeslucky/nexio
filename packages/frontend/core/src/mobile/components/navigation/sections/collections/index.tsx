@@ -6,7 +6,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { AddCollectionIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';

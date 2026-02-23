@@ -1,6 +1,6 @@
 import { PageHeader } from '@nexio/core/mobile/components';
 import type { Tag } from '@nexio/core/modules/tag';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 
 import * as styles from './detail.css';
 

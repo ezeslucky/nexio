@@ -4,7 +4,7 @@ import {
 } from '@nexio/core/commands';
 import { FindInPageService } from '@nexio/core/modules/find-in-page/services/find-in-page';
 import { track } from '@nexio/track';
-import { useServiceOptional } from '@toeverything/infra';
+import { useServiceOptional } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 
 export function useRegisterFindInPageCommands() {

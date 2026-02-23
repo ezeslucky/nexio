@@ -1,7 +1,7 @@
 import { IconPicker, uniReactRoot } from '@nexio/component';
 // Import the identifier for internal use
 import { type IconPickerService as IIconPickerService } from '@blocksuite/nexio-shared/services';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 // Re-export types from BlockSuite shared services
 export type {

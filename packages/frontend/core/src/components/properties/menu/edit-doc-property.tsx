@@ -8,7 +8,7 @@ import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { Trans, useI18n } from '@nexio/i18n';
 import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   type KeyboardEventHandler,
   type MouseEvent,

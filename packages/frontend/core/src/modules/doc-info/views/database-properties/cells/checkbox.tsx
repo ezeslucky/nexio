@@ -1,6 +1,6 @@
 import { CheckboxValue } from '@nexio/core/components/workspace-property-types/checkbox';
-import type { LiveData } from '@toeverything/infra';
-import { useLiveData } from '@toeverything/infra';
+import type { LiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@ezeslucky/infra';
 
 import type { DatabaseCellRendererProps } from '../../../types';
 

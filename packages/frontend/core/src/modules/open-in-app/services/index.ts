@@ -1,4 +1,4 @@
-import { LiveData, OnEvent, Service } from '@toeverything/infra';
+import { LiveData, OnEvent, Service } from '@ezeslucky/infra';
 
 import { resolveLinkToDoc } from '../../navigation';
 import type { GlobalState } from '../../storage';

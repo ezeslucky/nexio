@@ -2,7 +2,7 @@ import type {
   StoreClient,
   WorkerInitOptions,
 } from '@nexio/nbstore/worker/client';
-import { Entity } from '@toeverything/infra';
+import { Entity } from '@ezeslucky/infra';
 
 import type { FeatureFlagService } from '../../feature-flag';
 import type { NbstoreService } from '../../storage';

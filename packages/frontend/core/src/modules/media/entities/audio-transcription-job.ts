@@ -3,7 +3,7 @@ import type { TranscriptionBlockProps } from '@nexio/core/blocksuite/ai/blocks/t
 import { DebugLogger } from '@nexio/debug';
 import { UserFriendlyError } from '@nexio/error';
 import { AiJobStatus } from '@nexio/graphql';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';
 import { AuthService } from '../../cloud/services/auth';

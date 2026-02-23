@@ -9,7 +9,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useContext, useEffect, useMemo } from 'react';

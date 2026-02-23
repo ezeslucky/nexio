@@ -4,7 +4,7 @@ import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
 import { LongerIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';

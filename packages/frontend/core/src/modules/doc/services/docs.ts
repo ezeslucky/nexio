@@ -4,7 +4,7 @@ import { replaceIdMiddleware } from '@blocksuite/nexio/shared/adapters';
 import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
 import type { DeltaInsert } from '@blocksuite/nexio/store';
 import { Slice, Text, Transformer } from '@blocksuite/nexio/store';
-import { ObjectPool, Service } from '@toeverything/infra';
+import { ObjectPool, Service } from '@ezeslucky/infra';
 import { combineLatest, map } from 'rxjs';
 
 import { initDocFromProps } from '../../../blocksuite/initialization';

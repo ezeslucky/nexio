@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 import { Observable } from 'rxjs';
 
 import type { ClientEvents, DesktopApiService } from '../../desktop-api';

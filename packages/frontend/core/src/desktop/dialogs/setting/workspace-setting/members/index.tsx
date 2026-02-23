@@ -4,7 +4,7 @@ import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-bou
 import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import type { ReactElement } from 'react';
 
 import type { SettingState } from '../../types';

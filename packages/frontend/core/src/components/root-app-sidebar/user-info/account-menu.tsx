@@ -4,7 +4,7 @@ import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { AccountIcon, AdminIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 
 import { useSignOut } from '../../hooks/nexio/use-sign-out';

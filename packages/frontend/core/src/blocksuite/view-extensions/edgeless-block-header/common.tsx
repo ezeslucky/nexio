@@ -5,7 +5,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { type DocMode } from '@blocksuite/nexio/model';
 import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './edgeless-block-header.css';

@@ -8,7 +8,7 @@ import {
 } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { CheckoutSlot } from '../../checkout-slot';

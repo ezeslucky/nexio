@@ -10,7 +10,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { HistoryIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import { type ReactNode, useCallback, useMemo } from 'react';
 

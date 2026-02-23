@@ -4,7 +4,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 export const AppSidebarJournalButton = () => {
   const t = useI18n();

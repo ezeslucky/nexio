@@ -2,7 +2,7 @@ import { Button, Scrollable } from '@nexio/component';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { type Island } from '@nexio/core/utils/island';
 import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { eases, waapi } from 'animejs';
 import clsx from 'clsx';
 import {
@@ -52,7 +52,10 @@ export const SubPageTarget = () => {
   ));
 };
 
-const ease = eases.cubicBezier(0.25, 0.36, 0.24, 0.97);
+// const ease = eases.cubicBezier(0.25, 0.36, 0.24, 0.97);
+// const ease = eases.bezier(0.25, 0.36, 0.24, 0.97);
+const ease = 'cubic-bezier(0.25, 0.36, 0.24, 0.97)';
+
 
 export const SubPageProvider = ({
   island,

@@ -3,7 +3,7 @@ import { SettingRow } from '@nexio/component/setting-components';
 import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionStatus } from '@nexio/graphql';
 import { i18nTime, Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AICancel, AIResume, AISubscribe } from '../plans/ai/actions';

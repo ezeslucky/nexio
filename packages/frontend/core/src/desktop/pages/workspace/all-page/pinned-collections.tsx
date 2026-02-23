@@ -22,7 +22,7 @@ import {
   FilterIcon,
   PlusIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo, useState } from 'react';
 
 import * as styles from './pinned-collections.css';

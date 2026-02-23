@@ -18,7 +18,7 @@ import {
 } from '@blocksuite/icons/rc';
 import type { BlockStdScope } from '@blocksuite/std';
 import { batch } from '@preact/signals-core';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CopyLinkButton, DocInfoButton } from './common';

@@ -1,4 +1,4 @@
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { CollectionService } from '../collection';
 import { DocDisplayMetaService } from '../doc-display-meta';

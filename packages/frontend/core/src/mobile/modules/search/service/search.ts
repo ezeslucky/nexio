@@ -4,7 +4,7 @@ import {
   RecentDocsQuickSearchSession,
   TagsQuickSearchSession,
 } from '@nexio/core/modules/quicksearch';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 export class MobileSearchService extends Service {
   readonly recentDocs = this.framework.createEntity(

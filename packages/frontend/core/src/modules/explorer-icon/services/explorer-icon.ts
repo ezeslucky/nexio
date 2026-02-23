@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import type { ExplorerIconStore, ExplorerType } from '../store/explorer-icon';
 

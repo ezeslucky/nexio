@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { WorkspaceServerService } from '../cloud/services/workspace-server';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

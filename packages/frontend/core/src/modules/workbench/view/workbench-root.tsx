@@ -6,7 +6,7 @@ import {
   FrameworkScope,
   useLiveData,
   useService,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useAtomValue } from 'jotai';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { type RouteObject, useLocation } from 'react-router-dom';

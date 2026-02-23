@@ -29,7 +29,7 @@ import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 

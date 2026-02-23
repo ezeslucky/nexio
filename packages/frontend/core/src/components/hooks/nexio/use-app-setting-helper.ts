@@ -1,5 +1,5 @@
-import type { AppSetting } from '@toeverything/infra';
-import { appSettingAtom } from '@toeverything/infra';
+import type { AppSetting } from '@ezeslucky/infra';
+import { appSettingAtom } from '@ezeslucky/infra';
 import { useAtom } from 'jotai';
 import { useCallback, useMemo } from 'react';
 

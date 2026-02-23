@@ -1,7 +1,7 @@
 import {
   Entity,
   generateFractionalIndexingKeyBetween,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 
 import type { FavoriteSupportTypeUnion } from '../constant';
 import type { FavoriteRecord, FavoriteStore } from '../stores/favorite';

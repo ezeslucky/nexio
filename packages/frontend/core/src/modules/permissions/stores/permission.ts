@@ -1,6 +1,6 @@
 import type { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import { getWorkspaceInfoQuery, leaveWorkspaceMutation } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 import type { WorkspaceLocalState } from '../../workspace';
 

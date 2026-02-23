@@ -2,7 +2,7 @@ import { MiniAudioPlayer } from '@nexio/component/ui/audio-player';
 import { AudioMediaManagerService } from '@nexio/core/modules/media';
 import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/audio-attachment-block';
 import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
-import { LiveData, useLiveData, useService } from '@toeverything/infra';
+import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { combineLatest, debounceTime, map, of } from 'rxjs';
 

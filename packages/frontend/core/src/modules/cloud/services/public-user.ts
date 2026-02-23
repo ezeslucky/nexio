@@ -6,7 +6,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { catchError, EMPTY, exhaustMap, groupBy, mergeMap, tap } from 'rxjs';
 
 import type { PublicUserStore } from '../stores/public-user';

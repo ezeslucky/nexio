@@ -1,6 +1,6 @@
 import './page-detail-editor.css';
 
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 

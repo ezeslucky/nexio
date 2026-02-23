@@ -2,7 +2,7 @@ import { Button, Modal } from '@nexio/component';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { IntegrationService } from '@nexio/core/modules/integration';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './connected.css';

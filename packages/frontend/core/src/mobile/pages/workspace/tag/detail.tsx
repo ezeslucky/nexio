@@ -2,7 +2,7 @@ import { useThemeColorV2 } from '@nexio/component';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { TagService } from '@nexio/core/modules/tag';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

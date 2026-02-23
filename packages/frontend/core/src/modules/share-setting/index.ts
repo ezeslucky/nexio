@@ -1,6 +1,6 @@
 export { WorkspaceShareSettingService } from './services/share-setting';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { WorkspaceServerService } from '../cloud';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

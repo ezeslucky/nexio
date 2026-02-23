@@ -7,7 +7,7 @@ import { CreateOrEditTag } from '@nexio/core/components/page-list/tags/create-ta
 import type { TagMeta } from '@nexio/core/components/page-list/types';
 import { TagService, useDeleteTagConfirmModal } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import {

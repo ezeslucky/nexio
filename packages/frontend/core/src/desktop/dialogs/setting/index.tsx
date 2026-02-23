@@ -17,7 +17,7 @@ import { createIsland, type Island } from '@nexio/core/utils/island';
 import { ServerDeploymentType } from '@nexio/graphql';
 import { Trans } from '@nexio/i18n';
 import { ContactWithUsIcon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { debounce } from 'lodash-es';
 import {
   Suspense,

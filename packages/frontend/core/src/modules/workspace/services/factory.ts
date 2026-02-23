@@ -1,6 +1,6 @@
 import type { BlobStorage, DocStorage } from '@nexio/nbstore';
 import type { Workspace } from '@blocksuite/nexio/store';
-import { Service } from '@toeverything/infra';
+import { Service } from '@ezeslucky/infra';
 
 import type { WorkspaceFlavoursService } from './flavours';
 

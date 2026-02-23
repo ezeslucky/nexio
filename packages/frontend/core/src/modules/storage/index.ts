@@ -12,7 +12,7 @@ export {
 } from './services/global';
 export { NbstoreService } from './services/nbstore';
 
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import {
   IDBGlobalState,

@@ -4,7 +4,7 @@ import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './style.css';
 

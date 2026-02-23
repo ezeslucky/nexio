@@ -9,7 +9,7 @@ import {
   NewIcon,
   ResetIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

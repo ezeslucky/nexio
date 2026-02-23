@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/modules/integration';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo, useState } from 'react';
 
 import { IntegrationSettingToggle } from '../setting';

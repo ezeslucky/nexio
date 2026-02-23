@@ -3,7 +3,7 @@ import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';

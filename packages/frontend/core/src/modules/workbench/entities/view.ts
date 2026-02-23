@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import type { Location, To } from 'history';
 import { isEqual } from 'lodash-es';
 import type { ParseOptions } from 'query-string';

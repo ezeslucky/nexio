@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { ClientSchemeProvider } from './providers/client-schema';
 import { PopupWindowProvider } from './providers/popup-window';

@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/modules/cloud';
 import { UrlService } from '@nexio/core/modules/url';
 import type { CreateCheckoutSessionInput } from '@nexio/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import {
   type PropsWithChildren,

@@ -3,7 +3,7 @@ import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header
 import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
 import { type Doc, DocsService } from '@nexio/core/modules/doc';
-import { FrameworkScope, useService } from '@toeverything/infra';
+import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 
 import { InfoTable } from './info-modal';

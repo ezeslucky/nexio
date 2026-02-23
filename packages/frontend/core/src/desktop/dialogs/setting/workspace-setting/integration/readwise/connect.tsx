@@ -9,7 +9,7 @@ import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks
 import { IntegrationService } from '@nexio/core/modules/integration';
 import { Trans, useI18n } from '@nexio/i18n';
 import { ReadwiseLogoDuotoneIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   type FormEvent,

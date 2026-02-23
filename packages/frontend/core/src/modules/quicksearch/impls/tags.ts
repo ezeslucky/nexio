@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import Fuse from 'fuse.js';
 
 import type { TagService } from '../../tag';

@@ -1,7 +1,7 @@
 import { toDocSearchParams } from '@nexio/core/modules/navigation/utils';
 import { Unreachable } from '@nexio/env/constant';
 import type { ReferenceParams } from '@blocksuite/nexio/model';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import { type To } from 'history';
 import { omit } from 'lodash-es';
 import { nanoid } from 'nanoid';

@@ -6,7 +6,7 @@ import {
 } from '@nexio/core/modules/permissions';
 import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 export const MemberOptions = ({

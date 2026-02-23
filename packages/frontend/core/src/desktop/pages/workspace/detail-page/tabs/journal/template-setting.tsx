@@ -5,7 +5,7 @@ import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { TemplateListMenuContentScrollable } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
 import { DeleteIcon, TemplateIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 

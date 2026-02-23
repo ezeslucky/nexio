@@ -3,7 +3,7 @@ import type { Editor } from '@nexio/core/modules/editor';
 import { EditorsService } from '@nexio/core/modules/editor';
 import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import {
   type PropsWithChildren,
   type ReactNode,

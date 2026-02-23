@@ -4,7 +4,7 @@ import {
   type Signal,
 } from '@blocksuite/nexio/shared/utils';
 import { signal } from '@preact/signals-core';
-import { LiveData, Service } from '@toeverything/infra';
+import { LiveData, Service } from '@ezeslucky/infra';
 
 import type { GraphQLService, SubscriptionService } from '../../cloud';
 import type { GlobalStateService } from '../../storage';

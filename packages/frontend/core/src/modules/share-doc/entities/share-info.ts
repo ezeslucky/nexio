@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { switchMap } from 'rxjs';
 
 import type { DocService } from '../../doc';

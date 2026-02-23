@@ -7,7 +7,7 @@ import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { ToolbarMoreMenuConfigExtension } from '@blocksuite/nexio/components/toolbar';
 import { EditorSettingExtension } from '@blocksuite/nexio/shared/services';
 import type { ExtensionType } from '@blocksuite/store';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function getEditorConfigExtension(
   framework: FrameworkProvider

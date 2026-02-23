@@ -7,10 +7,10 @@
   },
   "include": ["./src"],
   "references": [
+    { "path": "../../../common/infra" },
     { "path": "../../../../tools/utils" },
     { "path": "../../i18n" },
     { "path": "../../native" },
-    { "path": "../../../common/nbstore" },
-    { "path": "../../../common/infra" }
+    { "path": "../../../common/nbstore" }
   ]
 }

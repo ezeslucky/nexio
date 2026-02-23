@@ -4,7 +4,7 @@ import {
   yjsGetPath,
   yjsObserve,
   yjsObserveDeep,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, type Observable, switchMap } from 'rxjs';

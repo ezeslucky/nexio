@@ -3,7 +3,7 @@ import {
   WorkspaceScope,
   WorkspaceService,
 } from '@nexio/core/modules/workspace';
-import { type Framework } from '@toeverything/infra';
+import { type Framework } from '@ezeslucky/infra';
 
 import { AdditionalAttachments } from './entities/additional-attachments';
 import { EmbeddingEnabled } from './entities/embedding-enabled';

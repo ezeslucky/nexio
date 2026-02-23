@@ -4,7 +4,7 @@ import {
   setEnableAiMutation,
   setEnableUrlPreviewMutation,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 
 export class WorkspaceShareSettingStore extends Store {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {

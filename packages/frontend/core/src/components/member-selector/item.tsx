@@ -2,7 +2,7 @@ import { Avatar, Skeleton } from '@nexio/component';
 import { PublicUserService } from '@nexio/core/modules/cloud';
 import { useI18n } from '@nexio/i18n';
 import { CloseIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type MouseEventHandler, useCallback, useEffect } from 'react';
 
 import * as styles from './styles.css';

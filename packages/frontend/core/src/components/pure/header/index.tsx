@@ -1,5 +1,5 @@
 import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { ReactNode } from 'react';
 

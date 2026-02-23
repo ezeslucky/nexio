@@ -5,7 +5,7 @@ import { GraphQLService } from '@nexio/core/modules/cloud';
 import { UserFriendlyError } from '@nexio/error';
 import { verifyEmailMutation } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { type FC, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

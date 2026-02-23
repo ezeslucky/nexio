@@ -6,7 +6,7 @@ import type {
   QueryVariables,
   RecursiveMaybeFields,
 } from '@nexio/graphql';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import type { GraphQLError } from 'graphql';
 import { useMemo } from 'react';
 import type { Key } from 'swr';

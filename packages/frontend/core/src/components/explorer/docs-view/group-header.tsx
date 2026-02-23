@@ -1,7 +1,7 @@
 import { Button, IconButton } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
 import { ToggleRightIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@toeverything/infra';
+import { useLiveData } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {
   type HTMLAttributes,

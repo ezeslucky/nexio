@@ -24,7 +24,7 @@ import type {
   SlashMenuConfig,
   SlashMenuItem,
 } from '@blocksuite/nexio/widgets/slash-menu';
-import type { FrameworkProvider } from '@toeverything/infra';
+import type { FrameworkProvider } from '@ezeslucky/infra';
 import { pick } from 'lodash-es';
 
 export function patchQuickSearchService(framework: FrameworkProvider) {

@@ -19,7 +19,7 @@ import {
 import { Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import type { PropsWithChildren } from 'react';

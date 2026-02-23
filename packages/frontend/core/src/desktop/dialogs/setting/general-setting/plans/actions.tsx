@@ -5,7 +5,7 @@ import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import type { PropsWithChildren } from 'react';
 import { useEffect, useState } from 'react';

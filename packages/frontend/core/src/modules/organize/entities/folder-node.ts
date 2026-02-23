@@ -2,7 +2,7 @@ import {
   Entity,
   generateFractionalIndexingKeyBetween,
   LiveData,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { map, of, switchMap } from 'rxjs';
 
 import type { FolderStore } from '../stores/folder';

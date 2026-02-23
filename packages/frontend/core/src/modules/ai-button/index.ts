@@ -6,7 +6,7 @@ export {
   AIToolsConfigService,
 } from './services/tools-config';
 
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { GraphQLService, ServerScope, SubscriptionService } from '../cloud';
 import { FeatureFlagService } from '../feature-flag';

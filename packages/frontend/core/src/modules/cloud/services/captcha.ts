@@ -6,7 +6,7 @@ import {
   onComplete,
   onStart,
   Service,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { exhaustMap, switchMap, tap } from 'rxjs';
 
 import type { ValidatorProvider } from '../provider/validator';

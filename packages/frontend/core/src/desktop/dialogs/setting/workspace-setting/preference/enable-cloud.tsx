@@ -7,7 +7,7 @@ import {
 } from '@nexio/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 export interface PublishPanelProps {

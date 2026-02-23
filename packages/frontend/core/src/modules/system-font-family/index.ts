@@ -1,4 +1,4 @@
-import type { Framework } from '@toeverything/infra';
+import type { Framework } from '@ezeslucky/infra';
 
 import { SystemFontFamily } from './entities/system-font-family';
 import { SystemFontFamilyService } from './services/system-font-family';

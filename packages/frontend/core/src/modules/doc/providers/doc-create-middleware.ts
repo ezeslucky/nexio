@@ -1,4 +1,4 @@
-import { createIdentifier } from '@toeverything/infra';
+import { createIdentifier } from '@ezeslucky/infra';
 
 import type { DocRecord } from '../entities/record';
 import type { DocCreateOptions } from '../types';

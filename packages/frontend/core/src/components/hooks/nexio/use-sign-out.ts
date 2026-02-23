@@ -7,7 +7,7 @@ import { AuthService, DefaultServerService } from '@nexio/core/modules/cloud';
 import { UserFriendlyError } from '@nexio/error';
 import { ServerFeature } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { useService, useServices } from '@toeverything/infra';
+import { useService, useServices } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';

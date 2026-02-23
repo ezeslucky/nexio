@@ -9,7 +9,7 @@ import {
   readNotificationMutation,
   type UnionNotificationBodyType,
 } from '@nexio/graphql';
-import { Store } from '@toeverything/infra';
+import { Store } from '@ezeslucky/infra';
 import { map } from 'rxjs';
 
 import type { GraphQLService, ServerService } from '../../cloud';

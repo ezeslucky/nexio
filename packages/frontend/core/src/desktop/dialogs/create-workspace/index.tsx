@@ -14,7 +14,7 @@ import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { buildShowcaseWorkspace } from '@nexio/core/utils/first-app-data';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
+import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './index.css';

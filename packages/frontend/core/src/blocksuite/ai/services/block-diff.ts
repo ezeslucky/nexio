@@ -2,7 +2,7 @@ import { parsePageDoc } from '@nexio/reader';
 import { LifeCycleWatcher } from '@blocksuite/nexio/std';
 import { Extension, type Store } from '@blocksuite/nexio/store';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
-import { LiveData } from '@toeverything/infra';
+import { LiveData } from '@ezeslucky/infra';
 import type { Subscription } from 'rxjs';
 
 import { applyPatchToDoc } from '../utils/apply-model/apply-patch-to-doc';

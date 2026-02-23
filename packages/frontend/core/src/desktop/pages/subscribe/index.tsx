@@ -7,7 +7,7 @@ import {
   SubscriptionVariant,
 } from '@nexio/graphql';
 import { track } from '@nexio/track';
-import { effect, fromPromise, useServices } from '@toeverything/infra';
+import { effect, fromPromise, useServices } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

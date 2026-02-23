@@ -32,7 +32,7 @@ import {
   RemoveFolderIcon,
   TagsIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@toeverything/infra';
+import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { difference } from 'lodash-es';
 import { useCallback, useMemo } from 'react';
 

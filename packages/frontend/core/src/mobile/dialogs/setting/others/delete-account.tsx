@@ -6,7 +6,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { Trans, useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

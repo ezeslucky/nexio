@@ -1,4 +1,4 @@
-import { LiveData } from '@toeverything/infra';
+import { LiveData } from '@ezeslucky/infra';
 
 // to share the state between general & edgeless dialog,
 // so that we can avoid showing edgeless dialog when general dialog is opened

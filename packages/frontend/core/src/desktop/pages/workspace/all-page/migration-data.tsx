@@ -2,7 +2,7 @@ import { Button } from '@nexio/component';
 import { DocCreatedByUpdatedBySyncService } from '@nexio/core/modules/cloud';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';
 

@@ -10,7 +10,7 @@ import type {
 } from '@blocksuite/nexio/model';
 import type { BlockComponent, EditorHost } from '@blocksuite/nexio/std';
 import type { Block, BlockModel } from '@blocksuite/nexio/store';
-import { Entity, LiveData } from '@toeverything/infra';
+import { Entity, LiveData } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 import { firstValueFrom, map, race } from 'rxjs';
 

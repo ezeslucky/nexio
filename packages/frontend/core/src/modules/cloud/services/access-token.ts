@@ -8,7 +8,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@toeverything/infra';
+} from '@ezeslucky/infra';
 import { catchError, EMPTY, tap } from 'rxjs';
 
 import { AccountChanged } from '../events/account-changed';

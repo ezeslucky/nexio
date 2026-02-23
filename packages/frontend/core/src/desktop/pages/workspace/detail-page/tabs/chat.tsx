@@ -19,7 +19,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import { DocModeProvider } from '@blocksuite/nexio/shared/services';
 import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
-import { useFramework, useService } from '@toeverything/infra';
+import { useFramework, useService } from '@ezeslucky/infra';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 
 import * as styles from './chat.css';

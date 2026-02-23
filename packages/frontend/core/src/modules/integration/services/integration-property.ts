@@ -1,4 +1,4 @@
-import { type LiveData, Service } from '@toeverything/infra';
+import { type LiveData, Service } from '@ezeslucky/infra';
 
 import type { DocService } from '../../doc';
 import { INTEGRATION_PROPERTY_SCHEMA } from '../constant';

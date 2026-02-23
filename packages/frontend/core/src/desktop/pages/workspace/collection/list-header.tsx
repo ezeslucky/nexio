@@ -13,7 +13,7 @@ import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import type { DocMode } from '@blocksuite/nexio/model';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@toeverything/infra';
+import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import * as styles from './index.css';

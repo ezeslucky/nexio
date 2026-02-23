@@ -4,7 +4,7 @@ import type { CollectionMeta } from '@nexio/core/modules/collection';
 import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useLiveData, useService } from '@ezeslucky/infra';
 import { type MouseEvent, useCallback } from 'react';
 
 import { item, name, prefixIcon, suffixIcon } from './styles.css';

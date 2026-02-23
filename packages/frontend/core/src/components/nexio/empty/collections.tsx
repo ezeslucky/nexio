@@ -4,7 +4,7 @@ import { CollectionService } from '@nexio/core/modules/collection';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useService } from '@toeverything/infra';
+import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 
 import { ActionButton } from './action-button';
