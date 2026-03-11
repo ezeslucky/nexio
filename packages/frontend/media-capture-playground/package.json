@@ -23,8 +23,6 @@
     "fs-extra": "^11.3.0",
     "lodash-es": "^4.17.21",
     "multer": "^2.0.0",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
     "react-markdown": "^10.0.0",
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
@@ -37,5 +35,9 @@
     "@types/fs-extra": "^11",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2"
+  },
+  "peerDependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }

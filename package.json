@@ -2,7 +2,7 @@
   "name": "@nexio/monorepo",
   "version": "0.22.4",
   "private": true,
-  "author": "toeverything",
+  "author": "ezeslucky",
   "license": "MIT",
   "workspaces": [
     ".",
@@ -171,6 +171,8 @@
     "yjs": "patch:yjs@npm%3A13.6.21#~/.yarn/patches/yjs-npm-13.6.21-c9f1f3397c.patch"
   },
   "dependencies": {
-    "@as-integrations/express5": "^1.1.2"
+    "@as-integrations/express5": "^1.1.2",
+    "react": "^19.2.4",
+    "react-dom": "19.2.4"
   }
 }
