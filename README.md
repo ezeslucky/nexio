@@ -10,6 +10,7 @@ export NODE_OPTIONS="--max-old-space-size=24576"
 
 yarn run nexio dev -p @nexio/server
 
+yarn nexio dev -p @nexio/server
 
 
 wab
@@ -42,4 +43,19 @@ docker start nexio-postgres
 docker start postgres
 docker start redis
 
+
+
+DB 
+
+docker run -d \
+  --name nexio-postgres \
+  -e POSTGRES_USER=nexio \
+  -e POSTGRES_PASSWORD=nexio \
+  -e POSTGRES_DB=nexio \
+  -p 5432:5432 \
+  postgres:15
+
+
+  docker ps
+  docker start redis
  -->

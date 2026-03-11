@@ -14,6 +14,8 @@ function mountApp() {
       <Telemetry />
       <App />
     </StrictMode>
+      
+  
   );
 }
 
