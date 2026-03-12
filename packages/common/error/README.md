@@ -1,3 +1,3 @@
 # @nexio/error
 
-Orbit error handler utilities
+Nexio error handler utilities

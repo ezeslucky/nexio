@@ -54,7 +54,7 @@ exports[`should get all docs from root doc work 2`] = `
 
 exports[`should parse page doc work 1`] = `
 {
-  "md": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+  "md": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 
 
@@ -62,9 +62,9 @@ exports[`should parse page doc work 1`] = `
 
 ## Local-first & Real-time collaborative
 
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
-Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 
 
@@ -72,11 +72,11 @@ Orbit is a local-first application upon CRDTs with real-time collaboration suppo
 
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
-We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
-If you want to learn more about the product design of Orbit, here goes the concepts:
+If you want to learn more about the product design of Nexio, here goes the concepts:
 
-To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ## A true canvas for blocks in any form
 
@@ -95,21 +95,21 @@ For more details, please refer to our [RoadMap](https://docs.nexio.pro/docs/core
 
 ## Self Host
 
-Self host Orbit
+Self host Nexio
 
 ||Title|Tag|
 |---|---|---|
-|Orbit Development|Orbit Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Orbit</span>|
-|For developers or installations guides, please go to Orbit Doc|For developers or installations guides, please go to Orbit Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
+|Nexio Development|Nexio Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Nexio</span>|
+|For developers or installations guides, please go to Nexio Doc|For developers or installations guides, please go to Nexio Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
 |Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Trello with their Kanban|Trello with their Kanban|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Remnote & Capacities with their object-based tag system|Remnote & Capacities with their object-based tag system||
 
-## Orbit Development
+## Nexio Development
 
-For developer or installation guides, please go to [Orbit Development](https://docs.nexio.pro/docs/development/quick-start)
+For developer or installation guides, please go to [Nexio Development](https://docs.nexio.pro/docs/development/quick-start)
 
 
 
@@ -120,7 +120,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
         "children": [
           {
             "children": [],
-            "content": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+            "content": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 ",
             "flavour": "nexio:paragraph",
@@ -156,7 +156,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
 ",
             "flavour": "nexio:paragraph",
@@ -165,7 +165,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+            "content": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 ",
             "flavour": "nexio:paragraph",
@@ -217,7 +217,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+            "content": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
 ",
             "flavour": "nexio:paragraph",
@@ -226,7 +226,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "If you want to learn more about the product design of Orbit, here goes the concepts:
+            "content": "If you want to learn more about the product design of Nexio, here goes the concepts:
 
 ",
             "flavour": "nexio:paragraph",
@@ -235,7 +235,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+            "content": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ",
             "flavour": "nexio:paragraph",
@@ -354,7 +354,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "Self host Orbit
+            "content": "Self host Nexio
 
 ",
             "flavour": "nexio:paragraph",
@@ -373,8 +373,8 @@ For developer or installation guides, please go to [Orbit Development](https://d
             "children": [],
             "content": "||Title|Tag|
 |---|---|---|
-|Orbit Development|Orbit Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Orbit</span>|
-|For developers or installations guides, please go to Orbit Doc|For developers or installations guides, please go to Orbit Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
+|Nexio Development|Nexio Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Nexio</span>|
+|For developers or installations guides, please go to Nexio Doc|For developers or installations guides, please go to Nexio Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
 |Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Trello with their Kanban|Trello with their Kanban|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
 |Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
@@ -390,16 +390,16 @@ For developer or installation guides, please go to [Orbit Development](https://d
                 "Title": "Nexio Development
 
 ",
-                "undefined": "Orbit Development
+                "undefined": "Nexio Development
 
 ",
               },
               {
                 "Tag": "<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>",
-                "Title": "For developers or installations guides, please go to Orbit Doc
+                "Title": "For developers or installations guides, please go to Nexio Doc
 
 ",
-                "undefined": "For developers or installations guides, please go to Orbit Doc
+                "undefined": "For developers or installations guides, please go to Nexio Doc
 
 ",
               },
@@ -462,7 +462,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
         "children": [
           {
             "children": [],
-            "content": "## Orbit Development
+            "content": "## Nexio Development
 
 ",
             "flavour": "nexio:paragraph",
@@ -471,7 +471,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
           },
           {
             "children": [],
-            "content": "For developer or installation guides, please go to [Orbit Development](https://docs.nexio.pro/docs/development/quick-start)
+            "content": "For developer or installation guides, please go to [Nexio Development](https://docs.nexio.pro/docs/development/quick-start)
 
 ",
             "flavour": "nexio:paragraph",
@@ -505,7 +505,7 @@ For developer or installation guides, please go to [Orbit Development](https://d
 
 exports[`should parse page doc work with ai editable 1`] = `
 "<!-- block_id=FoPQcAyV_m flavour=nexio:paragraph -->
-Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 <!-- block_id=oz48nn_zp8 flavour=nexio:paragraph -->
 
@@ -517,10 +517,10 @@ Orbit is an open source all in one workspace, an operating system for all the bu
 ## Local-first & Real-time collaborative
 
 <!-- block_id=xCuWdM0VLz flavour=nexio:paragraph -->
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
 <!-- block_id=zElMi0tViK flavour=nexio:paragraph -->
-Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 <!-- block_id=Z4rK0OF9Wk flavour=nexio:paragraph -->
 
@@ -532,13 +532,13 @@ Orbit is a local-first application upon CRDTs with real-time collaboration suppo
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
 <!-- block_id=0H87ypiuv8 flavour=nexio:paragraph -->
-We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
 <!-- block_id=Sp4G1KD0Wn flavour=nexio:paragraph -->
-If you want to learn more about the product design of Orbit, here goes the concepts:
+If you want to learn more about the product design of Nexio, here goes the concepts:
 
 <!-- block_id=RsUhDuEqXa flavour=nexio:paragraph -->
-To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 <!-- block_id=Z2HibKzAr- flavour=nexio:paragraph -->
 ## A true canvas for blocks in any form
@@ -569,11 +569,11 @@ For more details, please refer to our [RoadMap](https://docs.nexio.pro/docs/core
 ## Self Host
 
 <!-- block_id=QVvitesfbj flavour=nexio:paragraph -->
-Self host Orbit
+Self host Nexio
 
 <!-- block_id=U_GoHFD9At flavour=nexio:database placeholder -->
 <!-- block_id=NyHXrMX3R1 flavour=nexio:paragraph -->
-## Orbit Development
+## Nexio Development
 
 <!-- block_id=9-K49otbCv flavour=nexio:paragraph -->
 For developer or installation guides, please go to [NEXIO Development](https://docs.nexio.pro/docs/development/quick-start)
@@ -867,7 +867,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "FoPQcAyV_m",
-      "content": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+      "content": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -876,7 +876,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Orbit is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+        "prop:text": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -963,7 +963,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "xCuWdM0VLz",
-      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -972,7 +972,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Orbit is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -987,7 +987,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "zElMi0tViK",
-      "content": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+      "content": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "RX4CG2zsBk",
@@ -996,7 +996,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Orbit is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+        "prop:text": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -1083,7 +1083,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "0H87ypiuv8",
-      "content": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+      "content": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1092,7 +1092,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We are building Orbit to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+        "prop:text": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -1107,7 +1107,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "Sp4G1KD0Wn",
-      "content": "If you want to learn more about the product design of Orbit, here goes the concepts:",
+      "content": "If you want to learn more about the product design of Nexio, here goes the concepts:",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1116,7 +1116,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "If you want to learn more about the product design of Orbit, here goes the concepts:",
+        "prop:text": "If you want to learn more about the product design of Nexio, here goes the concepts:",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -1131,7 +1131,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "RsUhDuEqXa",
-      "content": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+      "content": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "yGlBdshAqN",
@@ -1140,7 +1140,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "To Shape, not to adapt. Orbit is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+        "prop:text": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",
@@ -1648,7 +1648,7 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "VMx9lHw3TR",
-      "content": "For developers or installations guides, please go to Orbit Doc",
+      "content": "For developers or installations guides, please go to Nexio Doc",
       "docId": "test-doc",
       "flavour": "nexio:paragraph",
       "parentBlockId": "U_GoHFD9At",
@@ -1657,7 +1657,7 @@ exports[`should read doc blocks work 1`] = `
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developers or installations guides, please go to Orbit Doc",
+        "prop:text": "For developers or installations guides, please go to Nexio Doc",
         "prop:type": "text",
         "sys:children": [],
         "sys:flavour": "nexio:paragraph",

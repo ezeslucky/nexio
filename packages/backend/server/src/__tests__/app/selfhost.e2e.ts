@@ -210,7 +210,7 @@ test.skip('should return web assets if visited by mobile', async t => {
     .set('user-agent', mobileUAString)
     .expect(200);
 
-  t.true(res.text.includes('Orbit mobile'));
+  t.true(res.text.includes('Nexio mobile'));
 });
 
 test('should can send maximum size of body', async t => {

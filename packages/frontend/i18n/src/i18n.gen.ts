@@ -9109,9 +9109,7 @@ export const TypedTrans: {
     ["com.nexio.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
-    /**
-      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to NEXIO's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
-      */
+    
     ["com.nexio.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;

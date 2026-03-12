@@ -1,4 +1,4 @@
-# Orbit Blocksuite format YDoc reader
+# Nexio Blocksuite format YDoc reader
 
 ## Usage
 

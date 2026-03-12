@@ -1,4 +1,4 @@
-# Building Orbit Desktop Client App
+# Building Nexio Desktop Client App
 
 > **Warning**:
 >
@@ -31,13 +31,13 @@ We will explain the steps in the following sections.
 
 ## Prerequisites
 
-Before you start building Orbit Desktop Client Application, please following the same steps in [BUILDING#Prerequisites](./BUILDING.md#prerequisites) to install Node.js and Rust.
+Before you start building Nexio Desktop Client Application, please following the same steps in [BUILDING#Prerequisites](./BUILDING.md#prerequisites) to install Node.js and Rust.
 
 On Windows, you must enable symbolic links this code repo. See [#### Windows](./BUILDING.md#Windows).
 
 ## Build, package & make the desktop client app
 
-> repos/Orbit/.github/workflows/release-desktop.yml contains real order to build the desktop client app, but here we will explain the steps in a more detailed way. Up-to date.
+> repos/Nexio/.github/workflows/release-desktop.yml contains real order to build the desktop client app, but here we will explain the steps in a more detailed way. Up-to date.
 
 ### 0. Build the native modules
 

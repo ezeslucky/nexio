@@ -802,10 +802,10 @@ export type EventArgs = {
       | 'New Edgeless'
       | 'Start recording meeting'
       | 'Stop recording'
-      | 'Open Orbit'
-      | 'About Orbit'
+      | 'Open Nexio'
+      | 'About Nexio'
       | 'Meeting Settings'
-      | 'Quit Orbit Completely';
+      | 'Quit Nexio Completely';
   };
   mentionMember: {
     type: 'member' | 'invite' | 'more';
