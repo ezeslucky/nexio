@@ -1044,5 +1044,5 @@ export const TestAssets = {
   Code: `fn euclidean_distance(a: &Vec<f64>, b: &Vec<f64>) -> f64 {\na.iter().zip(b.iter()).map(|(x, y)| (*x - *y).powi(2)).sum::<f64>().sqrt()\n}`,
   TODO: 'The PDF exporting feature in edgeless is flawed, which is not supposed to support rendering content with infinite logical size. We should remove this feature entry to user, but the current "export blob in surface ref" feature should be migrated and kept (which is base on the edgelessToCanvas API, which makes sense for exporting a partial viewport area for the page)',
   NEXIO:
-    'Orbit is a workspace with fully merged docs, whiteboards and databases.Get more things done, your creativity isn’t monotone.',
+    'Nexio is a workspace with fully merged docs, whiteboards and databases.Get more things done, your creativity isn’t monotone.',
 };

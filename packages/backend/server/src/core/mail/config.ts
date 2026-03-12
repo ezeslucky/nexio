@@ -32,7 +32,7 @@ declare global {
 defineModuleConfig('mailer', {
   'SMTP.name': {
     desc: 'Name of the email server (e.g. your domain name)',
-    default: ' Orbit Server',
+    default: ' Nexio Server',
     env: 'MAILER_SERVERNAME',
   },
   'SMTP.host': {
@@ -56,7 +56,7 @@ defineModuleConfig('mailer', {
     env: 'MAILER_PASSWORD',
   },
   'SMTP.sender': {
-    desc: 'Sender of all the emails (e.g. "Orbit Team <noreply@orbit.pro>")',
+    desc: 'Sender of all the emails (e.g. "Nexio Team <noreply@Nexio.pro>")',
     default: '',
     env: 'MAILER_SENDER',
   },
@@ -73,7 +73,7 @@ defineModuleConfig('mailer', {
   },
   'fallbackSMTP.name': {
     desc: 'Name of the fallback email server (e.g. your domain name)',
-    default: 'Orbit Server',
+    default: 'Nexio Server',
   },
   'fallbackSMTP.host': {
     desc: 'Host of the email server (e.g. smtp.gmail.com)',
@@ -92,7 +92,7 @@ defineModuleConfig('mailer', {
     default: '',
   },
   'fallbackSMTP.sender': {
-    desc: 'Sender of all the emails (e.g. " Orbit Team <noreply@orbit.pro>")',
+    desc: 'Sender of all the emails (e.g. " Nexio Team <noreply@Nexio.pro>")',
     default: '',
   },
   'fallbackSMTP.ignoreTLS': {

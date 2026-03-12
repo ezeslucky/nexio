@@ -1,7 +1,7 @@
 name: nexio
 services:
   nexio:
-    image: ghcr.io/toeverything/nexio:${nexio_REVISION:-stable}
+    image: nexio-local
     container_name: nexio_server
     ports:
       - '${PORT:-3010}:3010'
@@ -25,7 +25,7 @@ services:
     restart: unless-stopped
 
   nexio_migration:
-    image: ghcr.io/toeverything/nexio:${nexio_REVISION:-stable}
+    image: nexio-local
     container_name: nexio_migration_job
     volumes:
       # custom configurations

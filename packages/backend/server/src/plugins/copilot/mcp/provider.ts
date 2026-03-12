@@ -23,7 +23,7 @@ export class WorkspaceMcpProvider {
     await this.ac.user(userId).workspace(workspaceId).assert('Workspace.Read');
 
     const server = new McpServer({
-      name: `Orbit MCP Server for Workspace ${workspaceId}`,
+      name: `Nexio MCP Server for Workspace ${workspaceId}`,
       version: '1.0.0',
     });
 
