@@ -27,7 +27,7 @@ corepack enable
 ### 1. Clone and install
 
 ```bash
-git clone <your-fork-or-repo-url> nexio
+git clone https://github.com/ezeslucky/nexio.git 
 cd nexio
 
 # install dependencies for the monorepo
