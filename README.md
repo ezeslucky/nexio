@@ -15,6 +15,136 @@ Is a next-generation all-in-one workspace and knowledge operating system that un
 - **Self‑host and shape your own Nexio**  
   You can fork, self‑host, and customize Nexio to match your workflows. The architecture is designed for extensions and custom blocks, so teams can add their own integrations and building blocks on top of the core experience.
 
+## Architecture Overview
+
+Nexio is a **Yarn v4 + Turborepo monorepo**. At a high level, it’s a web/electron client talking to a TypeScript backend, with a shared “document/block” engine and a few native (Rust) accelerators.
+
+### High-level runtime diagram
+
+```text
+                 ┌──────────────────────────────┐
+                 │      Nexio Client Apps        │
+                 │  - Web: @nexio/web            │
+                 │  - Desktop: Electron app      │
+                 └───────────────┬───────────────┘
+                                 │ HTTP (API)
+                                 v
+                 ┌──────────────────────────────┐
+                 │        Backend Server         │
+                 │     packages/backend/server   │
+                 └───────┬───────────┬───────────┘
+                         │           │
+                         v           v
+                    PostgreSQL      Redis
+                         │
+                         v
+               (optional) Search/Indexer
+        (devcontainer uses Manticore; other setups may vary)
+```
+
+### Runtime ports & URLs (defaults)
+
+- **Backend server**: `http://localhost:3010`
+  - **GraphQL**: `http://localhost:3010/graphql`
+  - **Swagger (dev only)**: `http://localhost:3010/api/docs`
+- **Web dev server**: `http://localhost:8080`
+  - Proxies to backend for `/_` endpoints like `/api`, `/graphql`, and `/socket.io`
+- **Dev services (docker compose)**:
+  - Postgres: `localhost:5432`
+  - Redis: `localhost:6379`
+  - Mailpit UI: `http://localhost:8025` (SMTP: `localhost:1025`)
+  - Manticoresearch: `localhost:9308`
+
+### Monorepo layout (what lives where)
+
+- **Backend**: `packages/backend/server`
+  - TypeScript server (API layer + business logic).
+  - Persists data in PostgreSQL; uses Redis for caching/queues/session-like concerns depending on feature.
+  - Main API surface is GraphQL (`/graphql`), with some REST endpoints where needed.
+  - Some capabilities rely on native bindings built from Rust (see “Native” below).
+
+- **Frontend**
+  - **Web app**: `packages/frontend/apps/web` (workspace `@nexio/web`)
+  - **Electron app**: `packages/frontend/apps/electron`
+  - **Electron renderer**: `packages/frontend/apps/electron-renderer`
+  - The UI and editor experience are built around the shared “block/document” engine (see BlockSuite).
+
+- **Block/document engine**: `blocksuite/**`
+  - Shared editor/document framework and building blocks used by the client apps.
+
+- **Shared/common packages**: `packages/common/**`
+  - Shared utilities and cross-cutting libraries used across backend and frontend.
+  - Notable examples you’ll see referenced in dev docs include `@nexio/reader` and other shared modules.
+
+- **Native (Rust) accelerators**: `packages/frontend/native` and `packages/backend/server-native`
+  - Built via repo scripts (NAPI.rs bindings). These are required for some features and are typically built during setup.
+
+- **Developer tooling**
+  - **Monorepo runner/CLI**: `tools/cli` (invoked as `yarn nexio ...`)
+  - Repo-wide tasks are orchestrated through this runner + Turborepo pipelines.
+
+### Repository structure (tree-style)
+
+```text
+nexio/
+├── packages/                          # 📦 Product code (most workspaces live here)
+│   ├── frontend/
+│   │   ├── apps/                      # 📱 Client applications
+│   │   │   ├── web/                   # 🌐 Web app (workspace: @nexio/web)
+│   │   │   └── electron/              # 🖥️ Desktop app (Electron)
+│   │   ├── core/                      # 🧩 Shared frontend “core” modules
+│   │   ├── routes/                    # 🧭 Route definitions
+│   │   ├── i18n/                      # 🌍 Localization
+│   │   ├── templates/                 # 🧰 Templates/scaffolding
+│   │   └── native/                    # 🦀 Rust/NAPI native bindings (frontend)
+│   ├── backend/
+│   │   ├── server/                    # 🌐 Backend server (workspace: @nexio/server)
+│   │   └── server-native/             # 🦀 Rust/NAPI native bindings (server)
+│   └── common/                        # 🔁 Shared libraries used across repo
+│       ├── reader/                    # 📖 Reader/conversion utilities
+│       ├── graphql/                   # 🔌 Shared GraphQL helpers
+│       └── ...                        # (many more shared packages)
+├── blocksuite/                        # 🧱 Block/document engine and framework
+├── tools/                             # 🛠️ Tooling (includes monorepo CLI)
+│   └── cli/                           # 🧰 `yarn nexio ...` runner
+├── docs/                              # 📚 Project docs (build/dev guides)
+├── tests/                             # 🧪 Test workspaces (unit/E2E/integration)
+├── .github/                           # 🧾 GitHub metadata (funding, etc.)
+└── .docker/                           # 🐳 Dev/selfhost docker compose examples
+```
+
+### Request / data flow (developer mental model)
+
+1. **Browser/Electron hits the web app on `:8080`** in dev.
+2. The dev server **proxies API traffic** (`/graphql`, `/api`, `/socket.io`) to the backend on `:3010`.
+3. The backend uses:
+   - **PostgreSQL** for persistent storage (`DATABASE_URL`)
+   - **Redis** for background jobs/caching/coordination (`REDIS_SERVER_HOST`, etc.)
+   - **Optional indexer/search provider** (e.g. Manticore) when enabled via `NEXIO_INDEXER_*`
+
+### Key configuration knobs (common env vars)
+
+- **Backend**
+  - `NEXIO_SERVER_PORT` (default `3010`)
+  - `DATABASE_URL`
+  - `REDIS_SERVER_HOST`
+- **Frontend/Electron (dev)**
+  - `DEV_SERVER_URL` (Electron points to `http://localhost:8080`)
+  - `SELF_HOSTED=true` (changes dev-server HTML entry)
+
+### Build & task orchestration
+
+- **Package manager**: Yarn (`packageManager: yarn@4.x`)
+- **Orchestration**: Turborepo (`turbo.json`) for `dev`, `build`, lint/typecheck pipelines
+- **Repo runner**: `yarn nexio ...` is the common entrypoint used in docs and scripts
+
+### Infrastructure dependencies (local/dev)
+
+- **PostgreSQL**: primary datastore
+- **Redis**: required for backend dev in the docker-compose based workflow
+- **Indexer/Search (optional)**: used by indexing/search features; the devcontainer compose uses **Manticore**
+- **Mailhog (dev-only)**: referenced in server dev docs for capturing outbound email locally
+
 ## Acknowledgement
 
 “We shape our tools and thereafter our tools shape us.” Nexio is inspired by many pioneers in the knowledge‑work and collaboration space, including:
@@ -102,7 +232,7 @@ Open **two terminals** in the repo root:
 yarn nexio dev -p @nexio/server
 ```
 
-This starts the API on `http://localhost:3011`.
+This starts the API on `http://localhost:3010`.
 
 **Terminal 2 – web app**
 

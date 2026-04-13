@@ -1,31 +1,46 @@
-# --- base image with Node 20 ---
-    FROM node:20-bullseye AS base
-    WORKDIR /app
-    
-    # Enable Yarn via Corepack
-    RUN corepack enable
-    
-    # Copy the whole repo (monorepo needs all workspaces visible)
-    COPY . .
-    
-    # Install dependencies (no --immutable so it can hydrate in container)
-    RUN yarn install
-    
-    # Build server + web for production (adjust if needed)
-    RUN yarn nexio build -p @nexio/server --deps --wait-deps \
-     && yarn nexio build -p @nexio/web --deps --wait-deps
-    
-    # --- runtime image ---
-    FROM node:20-bullseye
-    WORKDIR /app
-    
-    ENV NODE_ENV=production
-    ENV PORT=3010
-    
-    # Copy built app from builder
-    COPY --from=base /app ./
-    
-    EXPOSE 3010
-    
-    # Start the server (adjust if there is a dedicated start script)
-    CMD ["yarn", "nexio", "dev", "-p", "@nexio/server"]
+# ---------- deps layer ----------
+FROM node:20-bullseye-slim AS deps
+WORKDIR /app
+RUN corepack enable
+
+# copy monorepo (workspace deps require full tree)
+COPY . .
+
+# install deps
+RUN yarn install --immutable
+
+
+# ---------- builder layer ----------
+FROM node:20-bullseye-slim AS builder
+WORKDIR /app
+RUN corepack enable
+
+COPY --from=deps /app /app
+
+# build backend + web (+ admin UI used by self-host setup)
+RUN yarn nexio build -p @nexio/server --deps --wait-deps \
+ && yarn nexio build -p @nexio/web --deps --wait-deps \
+ && yarn nexio build -p @nexio/admin --deps --wait-deps
+
+# assemble static assets where the server expects them: /app/static
+RUN rm -rf static \
+ && mkdir -p static/admin \
+ && cp -a packages/frontend/apps/web/dist/. static/ \
+ && cp -a packages/frontend/admin/dist/. static/admin/
+
+
+# ---------- runner layer ----------
+FROM node:20-bullseye-slim AS runner
+WORKDIR /app
+RUN corepack enable
+
+ENV NODE_ENV=production
+ENV NEXIO_SERVER_PORT=3010
+
+# copy built app and deps
+COPY --from=builder /app /app
+
+EXPOSE 3010
+
+# start backend (serves /static via self-host module)
+CMD ["node", "packages/backend/server/dist/main.js"]
