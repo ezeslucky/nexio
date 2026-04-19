@@ -7,8 +7,7 @@ RUN corepack enable
 COPY . .
 
 # install deps
-RUN yarn install --immutable
-
+RUN yarn install --immutable --network-timeout 600000
 
 # ---------- builder layer ----------
 FROM node:20-bullseye-slim AS builder
@@ -17,11 +16,15 @@ RUN corepack enable
 
 COPY --from=deps /app /app
 
+ENV NODE_OPTIONS="--max-old-space-size=2048"
 # build backend + web (+ admin UI used by self-host setup)
-RUN yarn nexio build -p @nexio/server --deps --wait-deps \
- && yarn nexio build -p @nexio/web --deps --wait-deps \
- && yarn nexio build -p @nexio/admin --deps --wait-deps
+# RUN yarn nexio build -p @nexio/server --deps --wait-deps \
+#  && yarn nexio build -p @nexio/web --deps --wait-deps \
+#  && yarn nexio build -p @nexio/admin --deps --wait-deps
 
+RUN yarn nexio build -p @nexio/server --deps \
+ && yarn nexio build -p @nexio/web \
+ && yarn nexio build -p @nexio/admin
 # assemble static assets where the server expects them: /app/static
 RUN rm -rf static \
  && mkdir -p static/admin \
