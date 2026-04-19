@@ -17,6 +17,7 @@ RUN corepack enable
 COPY --from=deps /app /app
 
 ENV NODE_OPTIONS="--max-old-space-size=2048"
+ENV CI=true
 # build backend + web (+ admin UI used by self-host setup)
 # RUN yarn nexio build -p @nexio/server --deps --wait-deps \
 #  && yarn nexio build -p @nexio/web --deps --wait-deps \

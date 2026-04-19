@@ -23,6 +23,7 @@
     "af": "r nexio.ts",
     "dev": "yarn nexio dev",
     "build": "yarn nexio build",
+    "build:all": "yarn nexio build -p @nexio/server --deps && yarn nexio build -p @nexio/web && yarn nexio build -p @nexio/admin",
     "lint:eslint": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" eslint --report-unused-disable-directives-severity=off . --cache",
     "lint:eslint:fix": "yarn lint:eslint --fix --fix-type problem,suggestion,layout",
     "lint:prettier": "prettier --ignore-unknown --cache --check .",
