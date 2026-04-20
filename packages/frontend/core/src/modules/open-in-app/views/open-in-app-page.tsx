@@ -17,6 +17,7 @@ interface OpenAppProps {
   openHereClicked?: (e: MouseEvent) => void;
   mode?: 'auth' | 'open-doc'; // default to 'auth'
 }
+//@ts-ignore
 const channel = BUILD_CONFIG.appBuildType;
 const url =
   'https://nexio.pro/download' + (channel !== 'stable' ? '/beta-canary' : '');
@@ -34,8 +35,9 @@ export const OpenInAppPage = ({
   const openDownloadLink = useCallback(() => {
     open(url, '_blank');
   }, []);
-
+ //@ts-ignore
   const appIcon = appIconMap[channel];
+  //@ts-ignore
   const appName = appNames[channel];
 
   const goToAppearanceSetting = useCallback(

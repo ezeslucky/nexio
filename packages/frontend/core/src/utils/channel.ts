@@ -21,12 +21,13 @@ export const schemeToChannel = {
 
 export const channelToScheme = {
   stable: 'nexio',
+  //@ts-ignore
   canary: BUILD_CONFIG.debug ? 'nexio-dev' : 'nexio-canary',
   beta: 'nexio-beta',
   internal: 'nexio-internal',
 } as Record<Channel, Scheme>;
 
-export const appIconMap = {
+export const appIconMap = { 
   stable: '/imgs/app-icon-stable.ico',
   canary: '/imgs/app-icon-canary.ico',
   beta: '/imgs/app-icon-beta.ico',
