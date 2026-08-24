@@ -1,0 +1,21 @@
+{
+  "publicPath": "https://dev.nexioassets.com/",
+  "js": [
+    "js/runtime.958d3d2f.js",
+    "js/i18n.ac09a4e4.js",
+    "js/i18n-langs.i18n-completenesses.984f2df1.js",
+    "js/npm-rxjs.3abf4877.js",
+    "js/npm-emotion.1c81d8cc.js",
+    "js/npm-react.0729331f.js",
+    "js/npm-jotai.95f03321.js",
+    "js/npm-blocksuite.c1e55ae9.js",
+    "js/vendor.aab75606.js",
+    "js/index.f21f5883.js"
+  ],
+  "css": [
+    "styles.5ad69fae.css",
+    "vendor.2d46a499.css"
+  ],
+  "gitHash": "bed4a1b62",
+  "description": "There can be more than Notion and Miro. NEXIO is a next-gen knowledge base that brings planning, sorting and creating all together."
+}
