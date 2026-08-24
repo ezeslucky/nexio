@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
 // in case that we need to support dark mode later

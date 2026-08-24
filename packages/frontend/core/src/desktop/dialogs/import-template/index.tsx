@@ -20,7 +20,7 @@ import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@canvas/nexio/model';
 import { AllDocsIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as styles from './dialog.css';

@@ -1,6 +1,6 @@
 import { IconButton, Input, Menu, MenuItem } from '@nexio/component';
 import { MoreHorizontalIcon } from '@canvas/icons/rc';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback, useState } from 'react';
 
 import * as styles from '../theme-editor.css';

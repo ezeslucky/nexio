@@ -8,11 +8,11 @@ import { assertBlockChildrenIds, assertBlockFlavour } from './utils/asserts.js';
 import { scoped, test } from './utils/playwright.js';
 
 const bookMarkUrl = 'http://localhost';
-const embedUrl = 'https://github.com/toeverything/blocksuite/pull/7217';
+const embedUrl = 'https://github.com/ezeslucky/canvas/pull/7217';
 
 test.beforeEach(async ({ page }) => {
   await page.route(
-    'https://nexio-worker.toeverything.workers.dev/api/worker/link-preview',
+    'https://nexio-worker.ezeslucky.workers.dev/api/worker/link-preview',
     async route => {
       await route.fulfill({
         json: {},

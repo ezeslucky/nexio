@@ -7,7 +7,7 @@
   },
   "sideEffects": false,
   "keywords": [],
-  "author": "toeverything",
+  "author": "ezeslucky",
   "license": "MIT",
   "dependencies": {
     "@canvas/global": "workspace:*",
@@ -19,7 +19,7 @@
     "@canvas/nexio-shared": "workspace:*",
     "@canvas/std": "workspace:*",
     "@preact/signals-core": "^1.8.0",
-    "@toeverything/theme": "^1.1.16",
+    "@ezeslucky/theme": "^1.1.16",
     "@types/lodash-es": "^4.17.12",
     "lit": "^3.2.0",
     "lodash-es": "^4.17.21",

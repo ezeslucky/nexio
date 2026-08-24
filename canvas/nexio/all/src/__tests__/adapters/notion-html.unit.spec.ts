@@ -1200,7 +1200,7 @@ describe('notion html to snapshot', () => {
 
   describe('image', () => {
     const originalUrl =
-      'https://raw.githubusercontent.com/toeverything/blocksuite/master/assets/logo.svg';
+      'https://raw.githubusercontent.com/ezeslucky/canvas/master/assets/logo.svg';
 
     const imageProxy = DEFAULT_IMAGE_PROXY_ENDPOINT;
     const imageUrl = `${imageProxy}?url=${encodeURIComponent(originalUrl)}`;

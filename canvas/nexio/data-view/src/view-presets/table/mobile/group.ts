@@ -6,7 +6,7 @@ import {
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { PlusIcon } from '@canvas/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

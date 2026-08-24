@@ -365,7 +365,7 @@ test('Before and after switching to Edgeless, the previous zoom ratio and positi
 }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2479',
+    description: 'https://github.com/ezeslucky/canvas/issues/2479',
   });
   await enterPlaygroundRoom(page);
   await initEmptyEdgelessState(page);

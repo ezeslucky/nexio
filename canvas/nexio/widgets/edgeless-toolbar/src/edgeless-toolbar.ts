@@ -28,7 +28,7 @@ import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { ContextProvider } from '@lit/context';
 import { computed } from '@preact/signals-core';
-import { baseTheme, cssVar } from '@toeverything/theme';
+import { baseTheme, cssVar } from '@ezeslucky/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { cache } from 'lit/directives/cache.js';

@@ -16,7 +16,7 @@ import type { Bound } from '@canvas/global/gfx';
 import { WithDisposable } from '@canvas/global/lit';
 import type { BlockComponent } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -1,7 +1,7 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { IS_MOBILE } from '@canvas/global/env';
 import { CloseIcon, SearchIcon } from '@canvas/icons/lit';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, unsafeCSS } from 'lit';
 import { query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

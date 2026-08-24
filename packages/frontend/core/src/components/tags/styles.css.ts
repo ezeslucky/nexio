@@ -1,5 +1,5 @@
-import { cssVar } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVar } from '@ezeslucky/theme';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { globalStyle, style } from '@vanilla-extract/css';
 
 export const tagsInlineEditor = style({

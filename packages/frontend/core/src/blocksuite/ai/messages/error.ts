@@ -4,7 +4,7 @@ import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import { type EditorHost } from '@canvas/nexio/std';
 import { InformationIcon, ToggleDownIcon } from '@canvas/icons/lit';
 import { signal } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 
@@ -214,7 +214,7 @@ const generalErrorText =
 
 const GeneralErrorRenderer = (props: ErrorProps = {}) => {
   const onClick = () => {
-    window.open('mailto:support@toeverything.info', '_blank');
+    window.open('mailto:support@ezeslucky.info', '_blank');
   };
 
   return html`<ai-error-wrapper
@@ -222,7 +222,7 @@ const GeneralErrorRenderer = (props: ErrorProps = {}) => {
     .errorMessage=${props.errorMessage ?? ''}
     .showDetailPanel=${!!props.errorMessage}
     .actionText=${props.actionText ?? 'Contact us'}
-    .actionTooltip=${props.actionTooltip ?? 'support@toeverything.info'}
+    .actionTooltip=${props.actionTooltip ?? 'support@ezeslucky.info'}
     .onClick=${onClick}
   ></ai-error-wrapper>`;
 };

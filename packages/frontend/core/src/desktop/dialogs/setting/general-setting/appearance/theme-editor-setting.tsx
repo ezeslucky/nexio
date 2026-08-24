@@ -10,7 +10,7 @@ import {
   useService,
   useServiceOptional,
 } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback } from 'react';
 
 export const ThemeEditorSetting = () => {

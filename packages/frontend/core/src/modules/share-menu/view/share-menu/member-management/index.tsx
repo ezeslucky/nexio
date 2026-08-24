@@ -4,7 +4,7 @@ import { DocRole } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import clsx from 'clsx';
 import { useEffect, useMemo } from 'react';
 

@@ -7,7 +7,7 @@ import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { AiIcon } from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import Lottie from 'lottie-react';
 import { useTheme } from 'next-themes';
 import { useCallback, useEffect, useMemo, useRef } from 'react';

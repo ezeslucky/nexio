@@ -1522,7 +1522,7 @@
   "com.nexio.settings.workspace.license.self-host": "Selfhosted workspace",
   "com.nexio.settings.workspace.license.self-host-team": "Self-host Team Workspace",
   "com.nexio.settings.workspace.license.self-host-team.team.description": "This license will expire on {{expirationDate}}, with {{leftDays}} days remaining.",
-  "com.nexio.settings.workspace.license.self-host-team.team.license": "Activate using the local key from <1>Toeverything.Inc</1>",
+  "com.nexio.settings.workspace.license.self-host-team.team.license": "Activate using the local key from <1>ezeslucky.Inc</1>",
   "com.nexio.settings.workspace.license.self-host-team.free.description": "Basic version: {{memberCount}} seats. For more, purchase or use activation key.",
   "com.nexio.settings.workspace.license.self-host-team.seats": "Seats",
   "com.nexio.settings.workspace.license.self-host-team.use-purchased-key": "Use purchased key",

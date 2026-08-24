@@ -548,7 +548,7 @@ test('should clean slash string after soft enter', async ({
 }, testInfo) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/1126',
+    description: 'https://github.com/ezeslucky/canvas/issues/1126',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

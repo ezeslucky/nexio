@@ -16,7 +16,7 @@ const env = (
         ? global
         : {}
 ) as Record<string, boolean>;
-const importIdentifier = '__ $BLOCKSUITE_STORE$ __';
+const importIdentifier = '__ $CANVAS_STORE$ __';
 
 if (env[importIdentifier] === true) {
   // https://github.com/yjs/yjs/issues/438

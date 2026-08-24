@@ -48,7 +48,7 @@ const config: PlaywrightTestConfig = {
         DEBUG: 'nexio:*',
         FORCE_COLOR: 'true',
         DEBUG_COLORS: 'true',
-        MAILER_SENDER: 'noreply@toeverything.info',
+        MAILER_SENDER: 'noreply@ezeslucky.info',
       },
       url: 'http://localhost:3010/graphql',
     },

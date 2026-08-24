@@ -1,4 +1,4 @@
-import '@toeverything/theme/style.css';
+import '@ezeslucky/theme/style.css';
 import '@canvas/nexio/gfx/pointer';
 
 import type { EdgelessRootBlockComponent } from '@canvas/nexio/blocks/root';

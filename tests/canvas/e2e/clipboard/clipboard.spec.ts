@@ -328,7 +328,7 @@ test(
 test(scoped`paste parent block`, async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/3153',
+    description: 'https://github.com/ezeslucky/canvas/issues/3153',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

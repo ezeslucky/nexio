@@ -908,7 +908,7 @@ test('format quick bar should not break cursor jumping', async ({ page }) => {
 test('selecting image should not show format bar', async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/4535',
+    description: 'https://github.com/ezeslucky/canvas/issues/4535',
   });
   await enterPlaygroundRoom(page);
   await initImageState(page);

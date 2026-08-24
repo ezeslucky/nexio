@@ -1,5 +1,5 @@
 import { WithDisposable } from '@canvas/global/lit';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

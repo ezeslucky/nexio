@@ -1,6 +1,6 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { baseTheme } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { baseTheme } from '@ezeslucky/theme';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, unsafeCSS } from 'lit';
 
 import {

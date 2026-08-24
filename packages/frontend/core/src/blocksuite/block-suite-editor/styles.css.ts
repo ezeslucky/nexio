@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { style, type StyleRule } from '@vanilla-extract/css';
 
 export const docEditorRoot = style({

@@ -5,7 +5,7 @@ import {
 import type { RootBlockModel } from '@canvas/nexio-model';
 import { WidgetComponent, WidgetViewExtension } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';

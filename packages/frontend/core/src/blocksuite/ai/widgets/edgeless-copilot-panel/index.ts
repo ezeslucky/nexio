@@ -4,7 +4,7 @@ import { scrollbarStyle } from '@canvas/nexio/shared/styles';
 import { unsafeCSSVar } from '@canvas/nexio/shared/theme';
 import { on, stopPropagation } from '@canvas/nexio/shared/utils';
 import type { EditorHost } from '@canvas/nexio/std';
-import { darkCssVariables, lightCssVariables } from '@toeverything/theme';
+import { darkCssVariables, lightCssVariables } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

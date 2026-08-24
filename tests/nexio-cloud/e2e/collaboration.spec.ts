@@ -147,7 +147,7 @@ test('can sync svg between different browsers', async ({ page, browser }) => {
   const image = page.locator('nexio-image');
 
   await page.evaluate(async () => {
-    // https://github.com/toeverything/blocksuite/blob/master/packages/blocks/src/_common/utils/filesys.ts#L20
+    // https://github.com/ezeslucky/canvas/blob/master/packages/blocks/src/_common/utils/filesys.ts#L20
     (window as any).showOpenFilePicker = undefined;
   });
 

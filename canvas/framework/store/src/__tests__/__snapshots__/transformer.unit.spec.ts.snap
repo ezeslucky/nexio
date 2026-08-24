@@ -9,7 +9,7 @@ exports[`model to snapshot 1`] = `
     "items": [
       {
         "content": {
-          "$blocksuite:internal:text$": true,
+          "$canvas:internal:text$": true,
           "delta": [
             {
               "insert": "item 1",
@@ -20,7 +20,7 @@ exports[`model to snapshot 1`] = `
       },
       {
         "content": {
-          "$blocksuite:internal:text$": true,
+          "$canvas:internal:text$": true,
           "delta": [
             {
               "insert": "item 2",
@@ -31,7 +31,7 @@ exports[`model to snapshot 1`] = `
       },
       {
         "content": {
-          "$blocksuite:internal:text$": true,
+          "$canvas:internal:text$": true,
           "delta": [
             {
               "insert": "item 3",
@@ -45,7 +45,7 @@ exports[`model to snapshot 1`] = `
       "color": "red",
     },
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
         {
           "insert": "doc title",

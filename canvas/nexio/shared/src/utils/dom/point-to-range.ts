@@ -47,7 +47,7 @@ export function caretRangeFromPoint(
     return null;
   }
 
-  // See https://github.com/toeverything/blocksuite/issues/1382
+  // See https://github.com/ezeslucky/canvas/issues/1382
   const rangeRects = range?.getClientRects();
   if (
     rangeRects &&

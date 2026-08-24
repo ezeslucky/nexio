@@ -11,7 +11,7 @@ const NEXIO_DOMAINS = [
   'app.nexio.pro', // Stable cloud domain
   'insider.nexio.pro', // Beta/internal cloud domain
   'nexio.fail', // Canary cloud domain
-  'toeverything.app', // Safety measure for potential future use
+  'ezeslucky.app', // Safety measure for potential future use
   'apple.getnexioapp.com', // Cloud domain for Apple app
 ];
 

@@ -3,7 +3,7 @@ authors    = ["DarkSky <darksky2048@gmail.com>"]
 edition    = "2021"
 license    = "MIT"
 name       = "y-octo-node"
-repository = "https://github.com/toeverything/y-octo"
+repository = "https://github.com/ezeslucky/y-octo"
 version    = "0.0.1"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

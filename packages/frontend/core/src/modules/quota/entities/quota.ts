@@ -11,7 +11,7 @@ import {
   onStart,
   smartRetry,
 } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import bytes from 'bytes';
 import { tap } from 'rxjs';
 

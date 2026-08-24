@@ -10,7 +10,7 @@ import type {
 import { CollectionsIcon, WarningIcon } from '@canvas/icons/lit';
 import { computed, signal } from '@preact/signals-core';
 import { Service } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import Fuse, { type FuseResultMatch } from 'fuse.js';
 import { html } from 'lit';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';

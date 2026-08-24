@@ -111,7 +111,7 @@ import {
 } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import type { TemplateResult } from 'lit';
 
 import {

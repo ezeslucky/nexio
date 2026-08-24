@@ -5,7 +5,7 @@ import {
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { useCallback, useEffect } from 'react';

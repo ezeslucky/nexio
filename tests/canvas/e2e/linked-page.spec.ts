@@ -366,7 +366,7 @@ test.describe('reference node', () => {
   }) => {
     test.info().annotations.push({
       type: 'issue',
-      description: 'https://github.com/toeverything/blocksuite/issues/2136',
+      description: 'https://github.com/ezeslucky/canvas/issues/2136',
     });
     await enterPlaygroundRoom(page);
     await initEmptyParagraphState(page);
@@ -625,7 +625,7 @@ test('should [[Selected text]] converted to linked page', async ({
 }, testInfo) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2730',
+    description: 'https://github.com/ezeslucky/canvas/issues/2730',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

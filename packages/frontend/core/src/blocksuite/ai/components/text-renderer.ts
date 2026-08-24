@@ -27,7 +27,7 @@ import type { Signal } from '@preact/signals-core';
 import {
   darkCssVariablesV2,
   lightCssVariablesV2,
-} from '@toeverything/theme/v2';
+} from '@ezeslucky/theme/v2';
 import { css, html, nothing, type PropertyValues, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

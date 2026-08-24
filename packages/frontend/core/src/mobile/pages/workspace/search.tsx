@@ -20,7 +20,7 @@ import {
   useService,
   useServices,
 } from '@ezeslucky/infra';
-import { bodyEmphasized } from '@toeverything/theme/typography';
+import { bodyEmphasized } from '@ezeslucky/theme/typography';
 import { useCallback, useMemo } from 'react';
 
 import {

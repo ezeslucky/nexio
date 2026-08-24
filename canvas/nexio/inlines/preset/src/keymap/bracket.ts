@@ -71,7 +71,7 @@ export const bracketKeymap = (
             .slice(inlineRange.index, inlineRange.index + inlineRange.length);
           if (!isCodeBlock && pair.name === 'square bracket') {
             // [[Selected text]] should automatically be converted to a Linked doc with the title "Selected text".
-            // See https://github.com/toeverything/blocksuite/issues/2730
+            // See https://github.com/ezeslucky/canvas/issues/2730
             const success = tryConvertToLinkedDoc(std, inlineEditor);
             if (success) return true;
           }

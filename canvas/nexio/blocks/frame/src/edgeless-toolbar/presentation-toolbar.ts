@@ -22,7 +22,7 @@ import {
 import type { BlockComponent } from '@canvas/std';
 import type { ToolOptions } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

@@ -1,7 +1,7 @@
 import { ConfirmModal, Input } from '@nexio/component';
 import type { Member } from '@nexio/core/modules/permissions';
 import { useI18n } from '@nexio/i18n';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 
 import * as styles from './styles.css';
 

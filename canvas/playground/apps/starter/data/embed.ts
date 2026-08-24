@@ -30,7 +30,7 @@ export const embed: InitFn = (collection: Workspace, id: string) => {
     store.addBlock(
       'nexio:embed-github',
       {
-        url: 'https://www.github.com/toeverything/blocksuite/pull/5927',
+        url: 'https://www.github.com/ezeslucky/canvas/pull/5927',
         style: 'vertical',
         xywh: '[0, 400, 364, 390]',
       },

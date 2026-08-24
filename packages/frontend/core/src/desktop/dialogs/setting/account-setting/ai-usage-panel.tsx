@@ -9,7 +9,7 @@ import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback, useEffect } from 'react';
 
 import { AIResume, AISubscribe } from '../general-setting/plans/ai/actions';

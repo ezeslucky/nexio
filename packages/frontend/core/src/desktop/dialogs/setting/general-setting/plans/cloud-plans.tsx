@@ -287,7 +287,7 @@ export const CloudPlans = () => {
           You are currently on the {{ currentPlan }} plan. If you have any
           questions, please contact our&nbsp;
           <a
-            href="mailto:support@toeverything.info"
+            href="mailto:support@ezeslucky.info"
             style={{ color: 'var(--nexio-link-color)' }}
           >
             customer support

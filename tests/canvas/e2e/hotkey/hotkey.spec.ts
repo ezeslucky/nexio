@@ -459,7 +459,7 @@ test('Enter key should as expected after setting heading by shortkey', async ({
 }, testInfo) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/4987',
+    description: 'https://github.com/ezeslucky/canvas/issues/4987',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

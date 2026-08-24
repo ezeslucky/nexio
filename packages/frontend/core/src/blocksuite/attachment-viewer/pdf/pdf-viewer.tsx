@@ -20,7 +20,7 @@ import {
   InformationIcon,
 } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import {

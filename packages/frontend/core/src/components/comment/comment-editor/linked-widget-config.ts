@@ -11,7 +11,7 @@ import { UserIcon } from '@canvas/icons/lit';
 import { BLOCK_ID_ATTR, type BlockComponent } from '@canvas/std';
 import { computed } from '@preact/signals-core';
 import type { FrameworkProvider } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import Fuse, { type FuseResultMatch } from 'fuse.js';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

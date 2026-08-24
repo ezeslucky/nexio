@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from '@nexio/admin/components/ui/dropdown-menu';
 import { MoreVerticalIcon } from '@canvas/icons/rc';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { CircleUser } from 'lucide-react';
 import { useCallback } from 'react';
 import { toast } from 'sonner';

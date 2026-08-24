@@ -177,7 +177,7 @@ test.describe('pasting URLs', () => {
     await commonSetup(page);
     await waitNextFrame(page);
     await pasteContent(page, {
-      'text/plain': 'https://github.com/toeverything/blocksuite/pull/7217',
+      'text/plain': 'https://github.com/ezeslucky/canvas/pull/7217',
     });
 
     await expect(

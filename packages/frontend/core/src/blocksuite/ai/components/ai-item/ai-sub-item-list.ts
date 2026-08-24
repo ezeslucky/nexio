@@ -6,7 +6,7 @@ import {
   PropTypes,
   requiredProperties,
 } from '@canvas/nexio/std';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -37,7 +37,7 @@ export type DragEntity = { type: string };
 export type DragFrom = { at: string };
 
 export type DragFromBlockSuite = {
-  at: 'blocksuite-editor';
+  at: 'canvas-editor';
   docId: string;
 };
 

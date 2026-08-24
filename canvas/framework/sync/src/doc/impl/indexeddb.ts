@@ -4,7 +4,7 @@ import { diffUpdate, encodeStateVectorFromUpdate, mergeUpdates } from 'yjs';
 import type { DocSource } from '../source.js';
 
 export const dbVersion = 1;
-export const DEFAULT_DB_NAME = 'blocksuite-local';
+export const DEFAULT_DB_NAME = 'canvas-local';
 
 type UpdateMessage = {
   timestamp: number;

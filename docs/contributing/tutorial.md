@@ -15,7 +15,7 @@ For the debugging purpose, you might need use local OctoBase on port 3000.
 The codebase is organized as follows:
 
 - `packages/` contains all code running in production.
-  - `backend/` contains backend code, more information from <https://github.com/toeverything/OctoBase>.
+  - `backend/` contains backend code, more information from <https://github.com/ezeslucky/OctoBase>.
   - `frontend/` contains frontend code, including the web app, the electron app and business libraries.
   - `common` contains the isomorphic code or basic libraries without business.
 - `tools/` contains tools to help developing or CI, not used in production.

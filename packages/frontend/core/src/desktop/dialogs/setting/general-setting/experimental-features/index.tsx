@@ -101,7 +101,7 @@ const FeedbackIcon = ({ type }: { type: Flag['feedbackType'] }) => {
 
 const feedbackLink: Record<NonNullable<Flag['feedbackType']>, string> = {
   discord: BUILD_CONFIG.discordUrl,
-  email: 'mailto:support@toeverything.info',
+  email: 'mailto:support@ezeslucky.info',
   github: 'https://github.com/ezeslucky/nexio/issues',
 };
 

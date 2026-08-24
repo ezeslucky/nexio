@@ -1,6 +1,6 @@
-import { cssVar } from '@toeverything/theme';
-import { headlineRegular } from '@toeverything/theme/typography';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVar } from '@ezeslucky/theme';
+import { headlineRegular } from '@ezeslucky/theme/typography';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 // content
