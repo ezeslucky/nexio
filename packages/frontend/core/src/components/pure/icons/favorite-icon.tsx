@@ -1,5 +1,5 @@
 import { FavoritedIcon, FavoriteIcon } from '@canvas/icons/rc';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import type { SVGProps } from 'react';
 
 export const IsFavoriteIcon = ({

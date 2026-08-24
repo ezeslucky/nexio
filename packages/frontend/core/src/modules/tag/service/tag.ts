@@ -1,5 +1,5 @@
 import { Service } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 
 import { TagList } from '../entities/tag-list';
 

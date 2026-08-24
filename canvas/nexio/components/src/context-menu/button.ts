@@ -5,7 +5,7 @@ import {
   DoneIcon,
 } from '@canvas/icons/lit';
 import type { ReadonlySignal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, type TemplateResult, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

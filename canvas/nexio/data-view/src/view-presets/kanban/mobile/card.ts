@@ -3,7 +3,7 @@ import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { CenterPeekIcon, MoreHorizontalIcon } from '@canvas/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

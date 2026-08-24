@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 
 import Input from '../../../ui/input';
 import * as styles from './styles.css';

@@ -5,7 +5,7 @@ import { WithDisposable } from '@canvas/global/lit';
 import { type BlockComponent, ShadowlessElement } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { RANGE_SYNC_EXCLUDE_ATTR } from '@canvas/std/inline';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

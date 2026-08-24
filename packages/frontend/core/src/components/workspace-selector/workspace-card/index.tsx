@@ -23,7 +23,7 @@ import {
   UnsyncIcon,
 } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';

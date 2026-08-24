@@ -11,7 +11,7 @@ import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { SingleSelectCheckSolidIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 

@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { globalStyle, style } from '@vanilla-extract/css';
 export const profileInputWrapper = style({
   marginLeft: '20px',

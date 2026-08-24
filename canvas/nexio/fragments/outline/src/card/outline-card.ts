@@ -6,7 +6,7 @@ import { ShadowlessElement } from '@canvas/std';
 import type { BlockModel } from '@canvas/store';
 import { consume, ContextProvider } from '@lit/context';
 import { signal } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { html } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

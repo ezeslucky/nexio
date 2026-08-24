@@ -1,6 +1,6 @@
 import type { BlockSnapshot } from '@canvas/store';
 import { expect } from '@playwright/test';
-import { lightThemeV2 } from '@toeverything/theme/v2';
+import { lightThemeV2 } from '@ezeslucky/theme/v2';
 
 import { initDatabaseColumn } from '../database/actions.js';
 import {
@@ -524,7 +524,7 @@ test(scoped`paste note block with background`, async ({ page }) => {
 test(scoped`copy and paste to selection block selection`, async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2265',
+    description: 'https://github.com/ezeslucky/canvas/issues/2265',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);
@@ -544,7 +544,7 @@ test(
   async ({ page }, testInfo) => {
     test.info().annotations.push({
       type: 'issue',
-      description: 'https://github.com/toeverything/blocksuite/issues/2336',
+      description: 'https://github.com/ezeslucky/canvas/issues/2336',
     });
     await enterPlaygroundRoom(page);
     await initEmptyParagraphState(page);
@@ -586,7 +586,7 @@ test(
 test(scoped`paste from FeiShu list format`, async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2438',
+    description: 'https://github.com/ezeslucky/canvas/issues/2438',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);
@@ -617,7 +617,7 @@ test(scoped`paste from FeiShu list format`, async ({ page }) => {
 test(scoped`paste in list format`, async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2281',
+    description: 'https://github.com/ezeslucky/canvas/issues/2281',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

@@ -1,4 +1,4 @@
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, unsafeCSS } from 'lit';
 
 export const fontBaseStyle = (container: string) => css`

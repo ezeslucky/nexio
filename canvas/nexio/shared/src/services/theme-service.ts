@@ -12,7 +12,7 @@ import {
   type NexioCssVariables,
   combinedDarkCssVariables,
   combinedLightCssVariables,
-} from '@toeverything/theme';
+} from '@ezeslucky/theme';
 
 import { isInsideEdgelessEditor } from '../utils/dom';
 

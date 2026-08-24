@@ -9420,7 +9420,7 @@ export const TypedTrans: {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `Activate using the local key from <1>Toeverything.Inc</1>`
+      * `Activate using the local key from <1>ezeslucky.Inc</1>`
       */
     ["com.nexio.settings.workspace.license.self-host-team.team.license"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;

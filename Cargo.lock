@@ -1195,7 +1195,7 @@ dependencies = [
 [[package]]
 name = "docx-parser"
 version = "0.1.1"
-source = "git+https://github.com/toeverything/docx-parser#278ba3eeb29bbf1ee7958b02436e4402af61859b"
+source = "git+https://github.com/ezeslucky/docx-parser#278ba3eeb29bbf1ee7958b02436e4402af61859b"
 dependencies = [
  "base64",
  "clap",
@@ -2926,7 +2926,7 @@ checksum = "1e91099d4268b0e11973f036e885d652fb0b21fedcf69738c627f94db6a44f42"
 [[package]]
 name = "pdf-extract"
 version = "0.8.2"
-source = "git+https://github.com/toeverything/pdf-extract?branch=darksky%2Fimprove-font-decoding#040751a61aba51e7a28217b758c18db4415c3ee4"
+source = "git+https://github.com/ezeslucky/pdf-extract?branch=darksky%2Fimprove-font-decoding#040751a61aba51e7a28217b758c18db4415c3ee4"
 dependencies = [
  "adobe-cmap-parser",
  "cff-parser",

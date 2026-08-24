@@ -10,7 +10,7 @@ import {
   ZOOM_STEP,
 } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import clamp from 'lodash-es/clamp';

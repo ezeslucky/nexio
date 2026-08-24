@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.22.4",
   "main": "./dist/main.js",
-  "author": "toeverything",
+  "author": "ezeslucky",
   "repository": {
     "url": "https://github.com/ezeslucky/nexio",
     "type": "git"

@@ -1,7 +1,7 @@
 import { Input } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
 import { SearchIcon } from '@canvas/icons/rc';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 
 import * as styles from './styles.css';
 

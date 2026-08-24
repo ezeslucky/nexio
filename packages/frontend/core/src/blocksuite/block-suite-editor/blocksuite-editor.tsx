@@ -26,7 +26,7 @@ import type { BlockStdScope, EditorHost } from '@canvas/nexio/std';
 import type { Store } from '@canvas/nexio/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import clsx from 'clsx';
 import type { CSSProperties, HTMLAttributes } from 'react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

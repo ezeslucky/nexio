@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { style } from '@vanilla-extract/css';
 const HANDLE_SIZE = 24;
 export const container = style({

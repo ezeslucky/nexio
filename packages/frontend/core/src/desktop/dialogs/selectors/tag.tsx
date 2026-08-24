@@ -18,7 +18,7 @@ import { TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback, useMemo, useState } from 'react';
 
 const FavoriteOperation = ({ tag }: { tag: ListItem }) => {

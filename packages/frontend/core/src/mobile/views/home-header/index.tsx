@@ -11,7 +11,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { NotificationIcon, SettingsIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import clsx from 'clsx';
 import { useCallback, useRef, useState } from 'react';
 

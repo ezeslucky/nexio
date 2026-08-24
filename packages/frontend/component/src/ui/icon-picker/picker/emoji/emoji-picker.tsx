@@ -1,5 +1,5 @@
 import { SearchIcon } from '@canvas/icons/rc';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { useCallback, useState } from 'react';
 
 import { IconButton } from '../../../button';

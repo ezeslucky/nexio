@@ -56,7 +56,7 @@ const FIGMA_URL = 'https://www.figma.com/design/JuXs6uOAICwf4I4tps0xKZ123';
 
 test.beforeEach(async ({ page }) => {
   await page.route(
-    'https://nexio-worker.toeverything.workers.dev/api/worker/link-preview',
+    'https://nexio-worker.ezeslucky.workers.dev/api/worker/link-preview',
     async route => {
       await route.fulfill({
         json: {},

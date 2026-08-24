@@ -148,7 +148,7 @@ test('should forwardDelete works when delete multi characters', async ({
 }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/3122',
+    description: 'https://github.com/ezeslucky/canvas/issues/3122',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);
@@ -163,7 +163,7 @@ test('should forwardDelete works when delete multi characters', async ({
 test('should drag multiple block and input text works', async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2982',
+    description: 'https://github.com/ezeslucky/canvas/issues/2982',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { createVar, style } from '@vanilla-extract/css';
 export const hoverMaxWidth = createVar();
 export const root = style({

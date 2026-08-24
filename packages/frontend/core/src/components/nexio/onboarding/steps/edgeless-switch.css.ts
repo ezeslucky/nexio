@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { globalStyle, keyframes, style } from '@vanilla-extract/css';
 
 import { onboardingVars } from '../style.css';

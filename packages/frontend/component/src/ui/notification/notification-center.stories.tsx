@@ -1,6 +1,6 @@
 import { SingleSelectCheckSolidIcon } from '@canvas/icons/rc';
 import type { StoryFn } from '@storybook/react';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { type HTMLAttributes, useState } from 'react';
 
 import { Button } from '../button';

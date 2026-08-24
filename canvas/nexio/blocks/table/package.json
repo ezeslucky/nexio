@@ -7,7 +7,7 @@
   },
   "sideEffects": false,
   "keywords": [],
-  "author": "toeverything",
+  "author": "ezeslucky",
   "license": "MIT",
   "dependencies": {
     "@atlaskit/pragmatic-drag-and-drop": "^1.4.0",

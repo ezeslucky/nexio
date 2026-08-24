@@ -1,4 +1,4 @@
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { style } from '@vanilla-extract/css';
 export const divider = style({
   marginTop: '2px',

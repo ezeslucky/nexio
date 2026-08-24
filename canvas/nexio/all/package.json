@@ -7,7 +7,7 @@
   },
   "sideEffects": false,
   "keywords": [],
-  "author": "toeverything",
+  "author": "ezeslucky",
   "license": "MIT",
   "dependencies": {
     "@canvas/data-view": "workspace:*",

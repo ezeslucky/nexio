@@ -18,7 +18,7 @@ import {
   PublishIcon,
 } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import {
   type Dispatch,
   type SetStateAction,

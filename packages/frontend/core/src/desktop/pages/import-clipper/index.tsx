@@ -16,7 +16,7 @@ import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import { AllDocsIcon } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
 import * as styles from './style.css';

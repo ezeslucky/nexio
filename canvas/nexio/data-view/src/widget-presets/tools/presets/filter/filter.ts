@@ -2,7 +2,7 @@ import { popupTargetFromElement } from '@canvas/nexio-components/context-menu';
 import { IS_MOBILE } from '@canvas/global/env';
 import { FilterIcon } from '@canvas/icons/lit';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { css, html, nothing } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

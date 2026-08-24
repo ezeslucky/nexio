@@ -12,7 +12,7 @@ import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
 import { type DeltaInsert, Text } from '@canvas/nexio/store';
 import { computed } from '@preact/signals-core';
 import { Entity, LiveData } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 
 import type { WorkspaceService } from '../../workspace';
 import type { AudioMediaManagerService } from '../services/audio-media-manager';

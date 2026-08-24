@@ -1,4 +1,4 @@
-import { type NexioThemeKeyV2, cssVarV2 } from '@toeverything/theme/v2';
+import { type NexioThemeKeyV2, cssVarV2 } from '@ezeslucky/theme/v2';
 import { clamp } from 'lodash-es';
 import { useCallback, useEffect, useRef } from 'react';
 

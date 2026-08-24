@@ -245,7 +245,7 @@ const tempImageMap = new Map<
  * Similarly, when converting from an attachment block to an image block,
  * we need to save the attachment's name.
  *
- * See also https://github.com/toeverything/blocksuite/pull/4583#pullrequestreview-1610662677
+ * See also https://github.com/ezeslucky/canvas/pull/4583#pullrequestreview-1610662677
  *
  * @internal
  */

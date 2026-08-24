@@ -149,7 +149,7 @@ export class Clipboard extends LifeCycleWatcher {
     doc: Store,
     parent?: string,
     index?: number,
-    type = 'BLOCKSUITE/SNAPSHOT'
+    type = 'CANVAS/SNAPSHOT'
   ) => {
     const items = {
       [type]: await this._getClipboardItem(slice, type),
@@ -256,7 +256,7 @@ export class Clipboard extends LifeCycleWatcher {
     }
     const json = JSON.parse(
       lz.decompressFromEncodedURIComponent(
-        dom.dataset.blocksuiteSnapshot as string
+        dom.dataset.canvasSnapshot as string
       )
     );
     return json;
@@ -314,7 +314,7 @@ export class Clipboard extends LifeCycleWatcher {
     if (hasInnerHTML || isEmpty) {
       const type = 'text/html';
       const snapshot = lz.compressToEncodedURIComponent(JSON.stringify(items));
-      const html = `<div data-blocksuite-snapshot='${snapshot}'>${innerHTML}</div>`;
+      const html = `<div data-canvas-snapshot='${snapshot}'>${innerHTML}</div>`;
       clipboardItems[type] = new Blob([html], { type });
     }
 

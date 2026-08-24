@@ -274,7 +274,7 @@ export function createHTMLTargetConfig(
         new WebpackS3Plugin(),
       !buildConfig.debug &&
         process.env.PERFSEE_TOKEN &&
-        new PerfseePlugin({ project: 'nexio-toeverything' }),
+        new PerfseePlugin({ project: 'nexio-ezeslucky' }),
       process.env.SENTRY_AUTH_TOKEN &&
         process.env.SENTRY_ORG &&
         process.env.SENTRY_PROJECT &&

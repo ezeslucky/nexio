@@ -2,7 +2,7 @@ import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { useEffect, useMemo } from 'react';
 
 import * as style from './style.css';

@@ -1137,7 +1137,7 @@ test('should add HTTP protocol into link automatically', async ({ page }) => {
 
   await page.keyboard.type('github.com');
   await page.keyboard.type('/');
-  await page.keyboard.type('toeverything');
+  await page.keyboard.type('ezeslucky');
   await page.keyboard.type('/');
   await page.keyboard.type('nexio');
 

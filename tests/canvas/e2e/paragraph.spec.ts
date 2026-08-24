@@ -69,10 +69,10 @@ test('init paragraph by page title enter at last', async ({ page }) => {
   await assertTitle(page, 'hello');
   await assertRichTexts(page, ['world', '']);
 
-  //#region Fixes: https://github.com/toeverything/blocksuite/issues/1007
+  //#region Fixes: https://github.com/ezeslucky/canvas/issues/1007
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/1007',
+    description: 'https://github.com/ezeslucky/canvas/issues/1007',
   });
   await page.keyboard.press('ArrowLeft');
   await focusTitle(page);
@@ -1248,7 +1248,7 @@ test('arrow up/down navigation within and across paragraphs containing different
 }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/5155',
+    description: 'https://github.com/ezeslucky/canvas/issues/5155',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);
@@ -1296,7 +1296,7 @@ test('select divider using delete keyboard from prev/next paragraph', async ({
 }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/4547',
+    description: 'https://github.com/ezeslucky/canvas/issues/4547',
   });
 
   await enterPlaygroundRoom(page);

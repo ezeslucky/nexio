@@ -5,7 +5,7 @@ import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { type ReactNode, useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';

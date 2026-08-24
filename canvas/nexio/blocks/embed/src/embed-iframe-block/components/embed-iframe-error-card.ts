@@ -9,7 +9,7 @@ import { WithDisposable } from '@canvas/global/lit';
 import { EditIcon, InformationIcon, ResetIcon } from '@canvas/icons/lit';
 import type { BlockStdScope } from '@canvas/std';
 import { flip, offset } from '@floating-ui/dom';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

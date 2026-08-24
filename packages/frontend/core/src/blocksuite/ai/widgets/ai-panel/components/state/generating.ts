@@ -4,7 +4,7 @@ import {
 } from '@canvas/nexio/components/icons';
 import { WithDisposable } from '@canvas/nexio/global/lit';
 import type { ColorScheme } from '@canvas/nexio/model';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

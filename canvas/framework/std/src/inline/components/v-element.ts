@@ -67,7 +67,7 @@ export class VElement<
           ErrorCode.InlineEditorError,
           `The length of embed node should only be 1.
           This seems to be an internal issue with inline editor.
-          Please go to https://github.com/toeverything/blocksuite/issues
+          Please go to https://github.com/ezeslucky/canvas/issues
           to report it.`
         );
       }

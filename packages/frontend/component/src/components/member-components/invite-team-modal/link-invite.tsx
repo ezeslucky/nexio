@@ -4,8 +4,8 @@ import {
 } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { CloseIcon } from '@canvas/icons/rc';
-import { cssVar } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVar } from '@ezeslucky/theme';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { useCallback, useMemo, useState } from 'react';
 
 import { Button, IconButton } from '../../../ui/button';

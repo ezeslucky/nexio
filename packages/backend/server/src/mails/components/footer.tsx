@@ -55,7 +55,7 @@ export const Footer = () => {
               style={{ verticalAlign: 'middle', margin: '0 4px' }}
             />
           </td>
-          <td>2023-{new Date().getUTCFullYear()} ToEverything</td>
+          <td>2023-{new Date().getUTCFullYear()} ezeslucky</td>
         </Row>
       </Section>
     </Container>

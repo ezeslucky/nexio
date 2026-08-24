@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 
 export const multiSelectStyle = css({
   display: 'flex',

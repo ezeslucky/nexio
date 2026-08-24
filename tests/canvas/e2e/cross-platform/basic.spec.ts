@@ -344,7 +344,7 @@ test(
   async ({ page }) => {
     test.info().annotations.push({
       type: 'issue',
-      description: 'https://github.com/toeverything/blocksuite/issues/2138',
+      description: 'https://github.com/ezeslucky/canvas/issues/2138',
     });
     await enterPlaygroundRoom(page);
     await initEmptyParagraphState(page);
@@ -360,7 +360,7 @@ test(
 test(scoped`delete emoji in the middle of the text`, async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/2138',
+    description: 'https://github.com/ezeslucky/canvas/issues/2138',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

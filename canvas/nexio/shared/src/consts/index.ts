@@ -71,11 +71,11 @@ export const EMBED_BLOCK_MODEL_LIST = [
 ] as const;
 
 export const DEFAULT_IMAGE_PROXY_ENDPOINT =
-  'https://nexio-worker.toeverything.workers.dev/api/worker/image-proxy';
+  'https://nexio-worker.ezeslucky.workers.dev/api/worker/image-proxy';
 
 // https://github.com/ezeslucky/nexio-workers/tree/main/packages/link-preview
 export const DEFAULT_LINK_PREVIEW_ENDPOINT =
-  'https://nexio-worker.toeverything.workers.dev/api/worker/link-preview';
+  'https://nexio-worker.ezeslucky.workers.dev/api/worker/link-preview';
 
 // This constant is used to ignore tags when exporting using html2canvas
 export const CANVAS_EXPORT_IGNORE_TAGS = [

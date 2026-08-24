@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 
 import { DEFAULT_COLUMN_TITLE_HEIGHT } from '../../../../consts';
 

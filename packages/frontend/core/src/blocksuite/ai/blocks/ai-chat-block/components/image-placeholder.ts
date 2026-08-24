@@ -1,4 +1,4 @@
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, type TemplateResult, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

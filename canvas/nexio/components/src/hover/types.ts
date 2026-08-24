@@ -48,7 +48,7 @@ export type HoverOptions = {
      *
      * The transition event is not reliable, and it may not be triggered in some cases.
      *
-     * See also https://github.com/w3c/csswg-drafts/issues/3043 https://github.com/toeverything/blocksuite/pull/7248/files#r1631375330
+     * See also https://github.com/w3c/csswg-drafts/issues/3043 https://github.com/ezeslucky/canvas/pull/7248/files#r1631375330
      *
      * Take a look at solutions from other projects: https://floating-ui.com/docs/useTransition#duration
      */

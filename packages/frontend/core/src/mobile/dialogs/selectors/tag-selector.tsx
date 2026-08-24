@@ -6,7 +6,7 @@ import type {
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { useMemo } from 'react';
 
 import { GenericSelector } from './generic-selector';

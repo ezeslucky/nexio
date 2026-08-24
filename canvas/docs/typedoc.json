@@ -19,7 +19,7 @@
   "entryPointStrategy": "packages",
   "includeVersion": false,
   "logLevel": "Error",
-  "name": "BlockSuite API Documentation",
+  "name": "Canvas API Documentation",
   "navigation": {
     "includeCategories": true
   },

@@ -66,7 +66,7 @@ export class EventService<TextAttributes extends BaseTextAttributes> {
     if (
       event.inputType.startsWith('delete') &&
       (isInEmbedGap(range.commonAncestorContainer) ||
-        // https://github.com/toeverything/blocksuite/issues/5381
+        // https://github.com/ezeslucky/canvas/issues/5381
         isInEmptyLine(range.commonAncestorContainer)) &&
       inlineRange.length === 0 &&
       inlineRange.index > 0

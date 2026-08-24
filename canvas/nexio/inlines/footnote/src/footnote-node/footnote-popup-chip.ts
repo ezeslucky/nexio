@@ -1,5 +1,5 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import {
   css,
   html,

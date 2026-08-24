@@ -16,7 +16,7 @@ import {
 } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { consume } from '@lit/context';
-import { themeToVar } from '@toeverything/theme/v2';
+import { themeToVar } from '@ezeslucky/theme/v2';
 import { LitElement } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

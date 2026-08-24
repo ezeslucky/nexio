@@ -1,6 +1,6 @@
 import { PlusIcon } from '@canvas/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { html, unsafeCSS } from 'lit';
 
 export class NewRecordPreview extends ShadowlessElement {

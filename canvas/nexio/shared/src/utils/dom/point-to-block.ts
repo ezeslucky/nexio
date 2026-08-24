@@ -260,8 +260,8 @@ export function getClosestBlockComponentByElement(
  * Returns rect of the block element.
  *
  * Compatible with Safari!
- * https://github.com/toeverything/blocksuite/issues/902
- * https://github.com/toeverything/blocksuite/pull/1121
+ * https://github.com/ezeslucky/canvas/issues/902
+ * https://github.com/ezeslucky/canvas/pull/1121
  */
 export function getRectByBlockComponent(element: Element | BlockComponent) {
   if (!isDatabase(element)) element = element.firstElementChild ?? element;

@@ -16,7 +16,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import {
   DEFAULT_NOTE_HEIGHT,
   DEFAULT_NOTE_WIDTH,
-} from '../utils/bs-alternative.js';
+} from './bs-alternative.js';
 import {
   getCanvasElementsCount,
   getConnectorPath,

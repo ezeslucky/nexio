@@ -92,7 +92,7 @@ test('use markdown syntax with trailing characters can create code block', async
 test('support ```[lang] to add code block with language', async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/1314',
+    description: 'https://github.com/ezeslucky/canvas/issues/1314',
   });
 
   await enterPlaygroundRoom(page);
@@ -460,7 +460,7 @@ test('multi-line indent', async ({ page }) => {
 test('should bracket complete works in code block', async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/1800',
+    description: 'https://github.com/ezeslucky/canvas/issues/1800',
   });
   await enterPlaygroundRoom(page);
   await initEmptyCodeBlockState(page);

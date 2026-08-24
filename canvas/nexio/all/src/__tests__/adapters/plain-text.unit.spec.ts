@@ -595,10 +595,10 @@ describe('snapshot to plain text', () => {
       {
         name: 'embed github',
         flavour: 'nexio:embed-github',
-        url: 'https://github.com/toeverything/blocksuite/pull/66666',
+        url: 'https://github.com/ezeslucky/canvas/pull/66666',
         title: 'example github pr title',
         plainText:
-          '[example github pr title](https://github.com/toeverything/blocksuite/pull/66666)\n',
+          '[example github pr title](https://github.com/ezeslucky/canvas/pull/66666)\n',
       },
       {
         name: 'embed figma',

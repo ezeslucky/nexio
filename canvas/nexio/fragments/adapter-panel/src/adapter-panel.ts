@@ -10,7 +10,7 @@ import {
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { provide } from '@lit/context';
 import { effect, signal } from '@preact/signals-core';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, type PropertyValues, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

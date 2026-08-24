@@ -19,7 +19,7 @@ import {
 } from '@canvas/std/inline';
 import type { DeltaInsert } from '@canvas/store';
 import { flip, offset, shift } from '@floating-ui/dom';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit-html/directives/class-map.js';

@@ -5,7 +5,7 @@ import {
 } from '@canvas/nexio/shared/services';
 import { scrollbarStyle } from '@canvas/nexio/shared/styles';
 import { type EditorHost } from '@canvas/nexio/std';
-import { cssVar } from '@toeverything/theme';
+import { cssVar } from '@ezeslucky/theme';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

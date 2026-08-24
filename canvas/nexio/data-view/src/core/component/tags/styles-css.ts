@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@toeverything/theme';
-import { cssVarV2 } from '@toeverything/theme/v2';
+import { baseTheme } from '@ezeslucky/theme';
+import { cssVarV2 } from '@ezeslucky/theme/v2';
 
 export const tagSelectContainerStyle = css({
   position: 'absolute',

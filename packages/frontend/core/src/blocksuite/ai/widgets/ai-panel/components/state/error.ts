@@ -1,6 +1,6 @@
 import { WithDisposable } from '@canvas/nexio/global/lit';
 import type { EditorHost } from '@canvas/nexio/std';
-import { baseTheme } from '@toeverything/theme';
+import { baseTheme } from '@ezeslucky/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';
@@ -198,8 +198,8 @@ export class AIPanelError extends WithDisposable(LitElement) {
           <div class="error-info">
             ${error}. Please try again later. If this issue persists, please let
             us know at
-            <a href="mailto:support@toeverything.info">
-              support@toeverything.info
+            <a href="mailto:support@ezeslucky.info">
+              support@ezeslucky.info
             </a>
           </div>
         `;

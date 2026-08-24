@@ -1,4 +1,4 @@
-# If you would like to crawl NEXIO public workspace contact us via developer@toeverything.info
+# If you would like to crawl NEXIO public workspace contact us via developer@ezeslucky.info
 
 User-agent: *
 Allow: /

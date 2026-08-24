@@ -99,7 +99,7 @@ export const whenHover = (
     element.addEventListener('mouseleave', onHoverChange, {
       // Please refrain use `capture: true` here.
       // It will cause the `mouseleave` trigger incorrectly when the pointer is still within the element.
-      // The issue is detailed in https://github.com/toeverything/blocksuite/issues/6241
+      // The issue is detailed in https://github.com/ezeslucky/canvas/issues/6241
       //
       // The `mouseleave` does not **bubble**.
       // This means that `mouseleave` is fired when the pointer has exited the element and all of its descendants,

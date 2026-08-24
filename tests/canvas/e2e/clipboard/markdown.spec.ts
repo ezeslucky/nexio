@@ -135,7 +135,7 @@ test(
   async ({ page }) => {
     test.info().annotations.push({
       type: 'issue',
-      description: 'https://github.com/toeverything/blocksuite/issues/2855',
+      description: 'https://github.com/ezeslucky/canvas/issues/2855',
     });
     await enterPlaygroundRoom(page);
     await initEmptyParagraphState(page);

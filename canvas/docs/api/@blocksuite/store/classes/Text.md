@@ -13,10 +13,10 @@ It provides useful methods to manipulate the text content.
 
 ```ts
 const text = new Text('Hello, world!');
-text.insert(' blocksuite', 7);
+text.insert(' canvas', 7);
 text.delete(7, 1);
 text.format(7, 1, { bold: true });
-text.join(new Text(' blocksuite'));
+text.join(new Text(' canvas'));
 text.split(7, 1);
 ```
 
@@ -84,7 +84,7 @@ The delta to apply.
 
 ```ts
 const text = new Text('Hello, world!');
-text.applyDelta([{insert: ' blocksuite', attributes: { bold: true }}]);
+text.applyDelta([{insert: ' canvas', attributes: { bold: true }}]);
 ```
 
 ***
@@ -212,7 +212,7 @@ The index to insert.
 
 ```ts
 const text = new Text('Hello, world!');
-text.insert(' blocksuite', 7);
+text.insert(' canvas', 7);
 ```
 
 ***
@@ -239,7 +239,7 @@ The other text to join.
 
 ```ts
 const text = new Text('Hello, world!');
-const other = new Text(' blocksuite');
+const other = new Text(' canvas');
 text.join(other);
 ```
 
@@ -285,7 +285,7 @@ The attributes to replace.
 
 ```ts
 const text = new Text('Hello, world!');
-text.replace(7, 1, ' blocksuite');
+text.replace(7, 1, ' canvas');
 ```
 
 ***

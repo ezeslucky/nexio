@@ -1,8 +1,8 @@
-**BlockSuite API Documentation**
+**Canvas API Documentation**
 
 ***
 
-# BlockSuite API Documentation
+# Canvas API Documentation
 
 ## Packages
 

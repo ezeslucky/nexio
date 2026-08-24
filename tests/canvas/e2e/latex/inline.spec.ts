@@ -141,7 +141,7 @@ test('latex editor', async ({ page }) => {
   await type(page, '$$ ');
   expect(await latexEditorLine.isVisible()).toBeTruthy();
   // test cursor movement works as expected
-  // https://github.com/toeverything/blocksuite/pull/8368
+  // https://github.com/ezeslucky/canvas/pull/8368
   await type(page, 'ababababababababababababababababababababababababab');
   expect(await latexEditorLine.innerText()).toBe(
     'ababababababababababababababababababababababababab'
