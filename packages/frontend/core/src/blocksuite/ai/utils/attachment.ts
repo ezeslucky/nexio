@@ -1,6 +1,6 @@
-import { AttachmentBlockModel } from '@blocksuite/nexio/model';
-import type { BlockModel } from '@blocksuite/nexio/store';
-import type { GfxModel } from '@blocksuite/std/gfx';
+import { AttachmentBlockModel } from '@canvas/nexio/model';
+import type { BlockModel } from '@canvas/nexio/store';
+import type { GfxModel } from '@canvas/std/gfx';
 
 export function isAttachment(
   model: GfxModel | BlockModel

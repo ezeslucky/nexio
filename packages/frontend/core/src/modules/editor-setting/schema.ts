@@ -1,4 +1,4 @@
-import { GeneralSettingSchema } from '@blocksuite/nexio/shared/services';
+import { GeneralSettingSchema } from '@canvas/nexio/shared/services';
 import { z } from 'zod';
 
 export const BSEditorSettingSchema = GeneralSettingSchema;

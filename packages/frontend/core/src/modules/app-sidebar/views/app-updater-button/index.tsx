@@ -8,7 +8,7 @@ import {
   DownloadIcon,
   NewIcon,
   ResetIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';

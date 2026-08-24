@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { SignOutIcon } from '@blocksuite/icons/rc';
+import { SignOutIcon } from '@canvas/icons/rc';
 import type { JSX } from 'react';
 
 import { Avatar } from '../../ui/avatar';

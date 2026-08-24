@@ -1,9 +1,9 @@
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/nexio/blocks/surface';
-import { Bound } from '@blocksuite/nexio/global/gfx';
-import type { BlockStdScope } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/blocks/surface';
+import { Bound } from '@canvas/nexio/global/gfx';
+import type { BlockStdScope } from '@canvas/nexio/std';
 
 import {
   type AIChatBlockModel,

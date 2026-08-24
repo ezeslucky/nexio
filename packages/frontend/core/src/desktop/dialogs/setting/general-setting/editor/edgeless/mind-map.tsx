@@ -7,9 +7,9 @@ import {
 import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
-import { LayoutType, MindmapStyle } from '@blocksuite/nexio/model';
-import type { Store } from '@blocksuite/nexio/store';
+import { getSurfaceBlock } from '@canvas/nexio/blocks/surface';
+import { LayoutType, MindmapStyle } from '@canvas/nexio/model';
+import type { Store } from '@canvas/nexio/store';
 import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

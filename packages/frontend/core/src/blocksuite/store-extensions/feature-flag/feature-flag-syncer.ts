@@ -2,8 +2,8 @@ import {
   NEXIO_FLAGS,
   type FeatureFlagService,
 } from '@nexio/core/modules/feature-flag';
-import { FeatureFlagService as BSFeatureFlagService } from '@blocksuite/nexio/shared/services';
-import { type ExtensionType, StoreExtension } from '@blocksuite/nexio/store';
+import { FeatureFlagService as BSFeatureFlagService } from '@canvas/nexio/shared/services';
+import { type ExtensionType, StoreExtension } from '@canvas/nexio/store';
 
 export function getFeatureFlagSyncer(
   featureFlagService: FeatureFlagService

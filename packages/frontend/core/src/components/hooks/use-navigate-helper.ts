@@ -1,7 +1,7 @@
 import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
 import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import { getOpenUrlInDesktopAppLink } from '@nexio/core/modules/open-in-app';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { nanoid } from 'nanoid';
 import { createContext, useCallback, useContext, useMemo } from 'react';
 import type { NavigateFunction, NavigateOptions } from 'react-router-dom';

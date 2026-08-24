@@ -11,7 +11,7 @@ import { AIModelService } from '@nexio/core/modules/ai-button/services/models';
 import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 import { useFramework } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 

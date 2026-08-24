@@ -1,11 +1,11 @@
-import { CodeBlockPreviewIdentifier } from '@blocksuite/nexio/blocks/code';
-import { addImages } from '@blocksuite/nexio/blocks/image';
-import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
-import { LoadingIcon } from '@blocksuite/nexio/components/icons';
-import { addTree } from '@blocksuite/nexio/gfx/mindmap';
-import { fitContent } from '@blocksuite/nexio/gfx/shape';
-import { createTemplateJob } from '@blocksuite/nexio/gfx/template';
-import { Bound } from '@blocksuite/nexio/global/gfx';
+import { CodeBlockPreviewIdentifier } from '@canvas/nexio/blocks/code';
+import { addImages } from '@canvas/nexio/blocks/image';
+import { getSurfaceBlock } from '@canvas/nexio/blocks/surface';
+import { LoadingIcon } from '@canvas/nexio/components/icons';
+import { addTree } from '@canvas/nexio/gfx/mindmap';
+import { fitContent } from '@canvas/nexio/gfx/shape';
+import { createTemplateJob } from '@canvas/nexio/gfx/template';
+import { Bound } from '@canvas/nexio/global/gfx';
 import {
   EDGELESS_TEXT_BLOCK_MIN_HEIGHT,
   EDGELESS_TEXT_BLOCK_MIN_WIDTH,
@@ -14,22 +14,22 @@ import {
   type MindmapElementModel,
   NoteDisplayMode,
   type ShapeElementModel,
-} from '@blocksuite/nexio/model';
-import { TelemetryProvider } from '@blocksuite/nexio/shared/services';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import { Text } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import { TelemetryProvider } from '@canvas/nexio/shared/services';
+import type { EditorHost } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import { Text } from '@canvas/nexio/store';
 import {
   NEXIO_TOOLBAR_WIDGET,
   type NexioToolbarWidget,
-} from '@blocksuite/nexio/widgets/toolbar';
+} from '@canvas/nexio/widgets/toolbar';
 import {
   ChatWithAiIcon,
   DeleteIcon,
   InsertBleowIcon as InsertBelowIcon,
   PenIcon,
   ResetIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { html, type TemplateResult } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

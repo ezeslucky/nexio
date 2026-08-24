@@ -1,5 +1,5 @@
 import { AuthService } from '@nexio/core/modules/cloud';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { ImportTemplateButton } from './import-template';

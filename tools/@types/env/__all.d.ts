@@ -1,7 +1,7 @@
 import '@nexio/env/constant';
-import '@blocksuite/nexio/global/types'
+import '@canvas/nexio/global/types'
 
-declare module '@blocksuite/nexio/store' {
+declare module '@canvas/nexio/store' {
   interface DocMeta {
     /**
      * @deprecated

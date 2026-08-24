@@ -3,7 +3,7 @@ import { MenuItem } from '@nexio/core/modules/app-sidebar/views';
 import { NotificationCountService } from '@nexio/core/modules/notification';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { NotificationIcon } from '@blocksuite/icons/rc';
+import { NotificationIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

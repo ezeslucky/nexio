@@ -22,7 +22,7 @@ import {
   MoreHorizontalIcon,
   SelfhostIcon,
   SignOutIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import {
   FrameworkScope,
   useLiveData,

@@ -1,16 +1,16 @@
 import { CopilotTool } from '@nexio/core/blocksuite/ai/tool/copilot-tool';
-import { EdgelessLegacySlotIdentifier } from '@blocksuite/nexio/blocks/surface';
+import { EdgelessLegacySlotIdentifier } from '@canvas/nexio/blocks/surface';
 import {
   Bound,
   getCommonBoundWithRotation,
-} from '@blocksuite/nexio/global/gfx';
-import type { RootBlockModel } from '@blocksuite/nexio/model';
+} from '@canvas/nexio/global/gfx';
+import type { RootBlockModel } from '@canvas/nexio/model';
 import {
   MOUSE_BUTTON,
   requestConnectedFrame,
-} from '@blocksuite/nexio/shared/utils';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/shared/utils';
+import { WidgetComponent, WidgetViewExtension } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import {
   autoPlacement,
   autoUpdate,

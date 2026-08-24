@@ -32,8 +32,8 @@ import {
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
-import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import type { DocMode } from '@canvas/nexio/model';
+import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
 import {
   effect,
   fromPromise,

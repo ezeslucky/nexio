@@ -1,4 +1,4 @@
-import type { UserService } from '@blocksuite/nexio-shared/services';
+import type { UserService } from '@canvas/nexio-shared/services';
 import { useEffect } from 'react';
 
 import { useSignalValue } from '../../../modules/doc-info/utils';

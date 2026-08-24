@@ -1,7 +1,7 @@
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace';
 import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
-import type { DocSnapshot, Store } from '@blocksuite/nexio/store';
-import { Transformer } from '@blocksuite/nexio/store';
+import type { DocSnapshot, Store } from '@canvas/nexio/store';
+import { Transformer } from '@canvas/nexio/store';
 import { Doc as YDoc } from 'yjs';
 export const getCollection = (() => {
   let collection: WorkspaceImpl | null = null;

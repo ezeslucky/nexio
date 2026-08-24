@@ -1,5 +1,5 @@
-import keywords from '@blocksuite/icons/keywords/en.json';
-import * as allIcons from '@blocksuite/icons/rc';
+import keywords from '@canvas/icons/keywords/en.json';
+import * as allIcons from '@canvas/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { startTransition, useCallback, useEffect, useState } from 'react';
 

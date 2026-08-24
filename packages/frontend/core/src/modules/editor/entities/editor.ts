@@ -1,18 +1,18 @@
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import type { DefaultOpenProperty } from '@nexio/core/components/properties';
-import { PresentTool } from '@blocksuite/nexio/blocks/frame';
-import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
-import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
-import { findCommentedTexts } from '@blocksuite/nexio/inlines/comment';
-import type { DocMode, ReferenceParams } from '@blocksuite/nexio/model';
-import { HighlightSelection } from '@blocksuite/nexio/shared/selection';
+import { PresentTool } from '@canvas/nexio/blocks/frame';
+import { DefaultTool } from '@canvas/nexio/blocks/surface';
+import type { DocTitle } from '@canvas/nexio/fragments/doc-title';
+import { findCommentedTexts } from '@canvas/nexio/inlines/comment';
+import type { DocMode, ReferenceParams } from '@canvas/nexio/model';
+import { HighlightSelection } from '@canvas/nexio/shared/selection';
 import {
   DocModeProvider,
   findCommentedBlocks,
   findCommentedElements,
-} from '@blocksuite/nexio/shared/services';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import type { InlineEditor } from '@blocksuite/std/inline';
+} from '@canvas/nexio/shared/services';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import type { InlineEditor } from '@canvas/std/inline';
 import { effect } from '@preact/signals-core';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import { defaults, isEqual, omit } from 'lodash-es';

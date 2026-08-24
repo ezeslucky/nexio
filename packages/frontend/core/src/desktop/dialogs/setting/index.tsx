@@ -16,7 +16,7 @@ import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { createIsland, type Island } from '@nexio/core/utils/island';
 import { ServerDeploymentType } from '@nexio/graphql';
 import { Trans } from '@nexio/i18n';
-import { ContactWithUsIcon } from '@blocksuite/icons/rc';
+import { ContactWithUsIcon } from '@canvas/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { debounce } from 'lodash-es';
 import {

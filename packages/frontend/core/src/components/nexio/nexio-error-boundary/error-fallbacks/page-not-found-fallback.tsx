@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import type { Workspace } from '@blocksuite/nexio/store';
+import type { Workspace } from '@canvas/nexio/store';
 import { useCallback } from 'react';
 
 import {

@@ -9,7 +9,7 @@ import type { EditorSettingExt } from '@nexio/core/modules/editor-setting/entiti
 import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
 import { I18n, i18nTime } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { BookmarkBlockComponent } from '@blocksuite/nexio/blocks/bookmark';
+import { BookmarkBlockComponent } from '@canvas/nexio/blocks/bookmark';
 import {
   EmbedFigmaBlockComponent,
   EmbedGithubBlockComponent,
@@ -17,35 +17,35 @@ import {
   EmbedLoomBlockComponent,
   EmbedYoutubeBlockComponent,
   getDocContentWithMaxLength,
-} from '@blocksuite/nexio/blocks/embed';
+} from '@canvas/nexio/blocks/embed';
 import {
   EmbedLinkedDocBlockComponent,
   EmbedSyncedDocBlockComponent,
-} from '@blocksuite/nexio/blocks/embed-doc';
-import { SurfaceRefBlockComponent } from '@blocksuite/nexio/blocks/surface-ref';
-import { toggleEmbedCardEditModal } from '@blocksuite/nexio/components/embed-card-modal';
-import { notifyLinkedDocClearedAliases } from '@blocksuite/nexio/components/notification';
-import { isPeekable, peek } from '@blocksuite/nexio/components/peek';
-import { toast } from '@blocksuite/nexio/components/toast';
+} from '@canvas/nexio/blocks/embed-doc';
+import { SurfaceRefBlockComponent } from '@canvas/nexio/blocks/surface-ref';
+import { toggleEmbedCardEditModal } from '@canvas/nexio/components/embed-card-modal';
+import { notifyLinkedDocClearedAliases } from '@canvas/nexio/components/notification';
+import { isPeekable, peek } from '@canvas/nexio/components/peek';
+import { toast } from '@canvas/nexio/components/toast';
 import {
   EditorChevronDown,
   type MenuContext,
   type MenuItemGroup,
-} from '@blocksuite/nexio/components/toolbar';
-import { watch } from '@blocksuite/nexio/global/lit';
+} from '@canvas/nexio/components/toolbar';
+import { watch } from '@canvas/nexio/global/lit';
 import {
   NexioReference,
   toggleReferencePopup,
-} from '@blocksuite/nexio/inlines/reference';
+} from '@canvas/nexio/inlines/reference';
 import {
   BookmarkBlockModel,
   EmbedIframeBlockModel,
   EmbedLinkedDocModel,
   EmbedSyncedDocModel,
   SurfaceRefBlockSchema,
-} from '@blocksuite/nexio/model';
-import { getSelectedModelsCommand } from '@blocksuite/nexio/shared/commands';
-import { ImageSelection } from '@blocksuite/nexio/shared/selection';
+} from '@canvas/nexio/model';
+import { getSelectedModelsCommand } from '@canvas/nexio/shared/commands';
+import { ImageSelection } from '@canvas/nexio/shared/selection';
 import {
   ActionPlacement,
   CitationProvider,
@@ -60,25 +60,25 @@ import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
   UserProvider,
-} from '@blocksuite/nexio/shared/services';
-import { matchModels } from '@blocksuite/nexio/shared/utils';
+} from '@canvas/nexio/shared/services';
+import { matchModels } from '@canvas/nexio/shared/utils';
 import {
   BlockFlavourIdentifier,
   BlockSelection,
   TextSelection,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import {
   GfxBlockElementModel,
   GfxPrimitiveElementModel,
-} from '@blocksuite/nexio/std/gfx';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std/gfx';
+import type { ExtensionType } from '@canvas/nexio/store';
 import {
   CopyAsImgaeIcon,
   CopyIcon,
   EditIcon,
   LinkIcon,
   OpenInNewIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { computed } from '@preact/signals-core';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';

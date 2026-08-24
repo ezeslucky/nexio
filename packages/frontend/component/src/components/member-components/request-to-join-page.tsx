@@ -7,7 +7,7 @@ import {
   WorkspaceMemberStatus,
 } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { SignOutIcon } from '@blocksuite/icons/rc';
+import { SignOutIcon } from '@canvas/icons/rc';
 
 import { Avatar } from '../../ui/avatar';
 import { Button, IconButton } from '../../ui/button';

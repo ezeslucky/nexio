@@ -1,4 +1,4 @@
-import { InformationIcon } from '@blocksuite/icons/lit';
+import { InformationIcon } from '@canvas/icons/lit';
 import type { PropertyValues, TemplateResult } from 'lit';
 import { css, html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';

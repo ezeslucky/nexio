@@ -1,5 +1,5 @@
-import { MobileOutlineMenu } from '@blocksuite/nexio/fragments/outline';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import { MobileOutlineMenu } from '@canvas/nexio/fragments/outline';
+import type { EditorHost } from '@canvas/nexio/std';
 import { useCallback, useRef } from 'react';
 
 export const MobileTocMenu = ({ editor }: { editor: EditorHost | null }) => {

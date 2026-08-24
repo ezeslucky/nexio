@@ -1,5 +1,5 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

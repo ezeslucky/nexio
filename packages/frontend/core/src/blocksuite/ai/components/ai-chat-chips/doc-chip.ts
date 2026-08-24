@@ -1,6 +1,6 @@
 import track from '@nexio/track';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import { Signal } from '@preact/signals-core';
 import { html, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';

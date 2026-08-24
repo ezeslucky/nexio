@@ -4,7 +4,7 @@ import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { EditIcon, TodayIcon } from '@blocksuite/icons/rc';
+import { EditIcon, TodayIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 

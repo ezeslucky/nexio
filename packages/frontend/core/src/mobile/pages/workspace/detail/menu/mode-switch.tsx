@@ -5,7 +5,7 @@ import {
 } from '@nexio/component';
 import { EditorService } from '@nexio/core/modules/editor';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

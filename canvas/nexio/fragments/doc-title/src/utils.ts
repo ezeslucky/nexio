@@ -1,0 +1,11 @@
+import type { EditorHost } from '@canvas/std';
+
+import type { DocTitle } from './doc-title';
+
+export function getDocTitleByEditorHost(
+  editorHost: EditorHost
+): DocTitle | null {
+  const docViewport = editorHost.closest('.nexio-page-viewport');
+  if (!docViewport) return null;
+  return docViewport.querySelector('doc-title');
+}

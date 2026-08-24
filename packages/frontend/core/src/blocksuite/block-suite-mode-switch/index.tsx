@@ -4,8 +4,8 @@ import { EditorService } from '@nexio/core/modules/editor';
 import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
-import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@canvas/nexio/model';
+import { EdgelessIcon, PageIcon } from '@canvas/icons/rc';
 import {
   useLiveData,
   useService,

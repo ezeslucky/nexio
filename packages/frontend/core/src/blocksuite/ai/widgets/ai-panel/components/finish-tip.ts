@@ -2,10 +2,10 @@ import {
   AIDoneIcon,
   CopyIcon,
   WarningIcon,
-} from '@blocksuite/nexio/components/icons';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { NotificationProvider } from '@blocksuite/nexio/shared/services';
-import type { EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/components/icons';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { NotificationProvider } from '@canvas/nexio/shared/services';
+import type { EditorHost } from '@canvas/nexio/std';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';

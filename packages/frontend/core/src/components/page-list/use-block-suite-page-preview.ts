@@ -1,4 +1,4 @@
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import type { Atom } from 'jotai';
 import { atom } from 'jotai';
 

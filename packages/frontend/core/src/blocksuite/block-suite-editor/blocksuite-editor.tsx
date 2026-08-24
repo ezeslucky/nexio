@@ -11,19 +11,19 @@ import {
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import track from '@nexio/track';
-import { appendParagraphCommand } from '@blocksuite/nexio/blocks/paragraph';
-import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
-import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
-import { IS_LINUX } from '@blocksuite/nexio/global/env';
-import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
+import { appendParagraphCommand } from '@canvas/nexio/blocks/paragraph';
+import type { DocTitle } from '@canvas/nexio/fragments/doc-title';
+import { DisposableGroup } from '@canvas/nexio/global/disposable';
+import { IS_LINUX } from '@canvas/nexio/global/env';
+import type { DocMode, RootBlockModel } from '@canvas/nexio/model';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/nexio/shared/adapters';
-import { focusBlockEnd } from '@blocksuite/nexio/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/nexio/shared/utils';
-import type { BlockStdScope, EditorHost } from '@blocksuite/nexio/std';
-import type { Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/adapters';
+import { focusBlockEnd } from '@canvas/nexio/shared/commands';
+import { getLastNoteBlock } from '@canvas/nexio/shared/utils';
+import type { BlockStdScope, EditorHost } from '@canvas/nexio/std';
+import type { Store } from '@canvas/nexio/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';

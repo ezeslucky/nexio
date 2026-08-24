@@ -1,9 +1,9 @@
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { Container } from '@blocksuite/nexio/global/di';
+import { Container } from '@canvas/nexio/global/di';
 import {
   customImageProxyMiddleware,
   MarkdownAdapter,
-} from '@blocksuite/nexio/shared/adapters';
+} from '@canvas/nexio/shared/adapters';
 import {
   type BlockModel,
   type DocSnapshot,
@@ -11,7 +11,7 @@ import {
   type Store,
   Text,
   Transformer,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import { Service } from '@ezeslucky/infra';
 import { Doc as YDoc } from 'yjs';
 

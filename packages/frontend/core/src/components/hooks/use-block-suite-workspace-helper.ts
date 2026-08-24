@@ -1,4 +1,4 @@
-import type { Store, Workspace } from '@blocksuite/nexio/store';
+import type { Store, Workspace } from '@canvas/nexio/store';
 import { useMemo } from 'react';
 
 export function useDocCollectionHelper(docCollection: Workspace) {

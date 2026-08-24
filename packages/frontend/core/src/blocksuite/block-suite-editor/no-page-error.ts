@@ -1,4 +1,4 @@
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import type { Doc as YDoc, Map as YMap } from 'yjs';
 
 /**

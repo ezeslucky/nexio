@@ -1,7 +1,7 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { CloseIcon, PlusIcon } from '@blocksuite/icons/lit';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { CloseIcon, PlusIcon } from '@canvas/icons/lit';
 import { css, html, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 

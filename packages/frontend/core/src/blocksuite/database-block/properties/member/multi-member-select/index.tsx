@@ -3,7 +3,7 @@ import {
   type ExistedUserInfo,
   type UserListService,
   type UserService,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
 import clsx from 'clsx';
 import {

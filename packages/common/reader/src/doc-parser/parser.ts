@@ -1,4 +1,4 @@
-import type { ColumnDataType } from '@blocksuite/nexio/model';
+import type { ColumnDataType } from '@canvas/nexio/model';
 import { Array as YArray, type Map as YMap, type Text as YText } from 'yjs';
 
 import { deltaToMd, getConverters } from './delta-to-md';

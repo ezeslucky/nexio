@@ -1,4 +1,4 @@
-import { type CellDataType } from '@blocksuite/nexio/model';
+import { type CellDataType } from '@canvas/nexio/model';
 import { type Doc as YDoc, type Map as YMap } from 'yjs';
 
 export interface WorkspacePage {

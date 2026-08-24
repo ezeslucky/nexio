@@ -3,8 +3,8 @@ import type {
   NoteBlockModel,
   ParagraphProps,
   RootBlockProps,
-} from '@blocksuite/nexio-model';
-import type { Store } from '@blocksuite/store';
+} from '@canvas/nexio-model';
+import type { Store } from '@canvas/store';
 import type { Page } from '@playwright/test';
 /**
  * using page.evaluate to init the embed synced doc state

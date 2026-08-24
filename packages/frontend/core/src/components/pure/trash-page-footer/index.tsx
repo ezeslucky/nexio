@@ -3,7 +3,7 @@ import { ConfirmModal } from '@nexio/component/ui/modal';
 import { DocService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
+import { DeleteIcon, ResetIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

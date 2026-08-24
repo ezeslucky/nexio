@@ -36,8 +36,8 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { isNewTabTrigger } from '@nexio/core/utils';
 import { ServerFeature } from '@nexio/graphql';
 import track from '@nexio/track';
-import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { DisposableGroup } from '@canvas/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
 import {
   AiIcon,
   CommentIcon,
@@ -46,7 +46,7 @@ import {
   PropertyIcon,
   TocIcon,
   TodayIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import {
   FrameworkScope,
   useLiveData,

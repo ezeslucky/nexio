@@ -18,7 +18,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { DocRole, WorkspaceMemberStatus } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
+import { ArrowLeftBigIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';

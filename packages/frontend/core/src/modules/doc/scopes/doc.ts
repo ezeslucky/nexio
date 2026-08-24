@@ -1,4 +1,4 @@
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import { Scope } from '@ezeslucky/infra';
 
 import type { DocRecord } from '../entities/record';

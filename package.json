@@ -6,7 +6,7 @@
   "license": "MIT",
   "workspaces": [
     ".",
-    "blocksuite/**/*",
+    "canvas/**/*",
     "packages/*/*",
     "packages/common/y-octo/node",
     "packages/frontend/apps/*",

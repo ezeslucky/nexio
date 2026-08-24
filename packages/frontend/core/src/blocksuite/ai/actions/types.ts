@@ -16,9 +16,9 @@ import type {
   StreamObject,
   UpdateChatSessionInput,
 } from '@nexio/graphql';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import type { GfxModel } from '@blocksuite/nexio/std/gfx';
-import type { BlockModel } from '@blocksuite/nexio/store';
+import type { EditorHost } from '@canvas/nexio/std';
+import type { GfxModel } from '@canvas/nexio/std/gfx';
+import type { BlockModel } from '@canvas/nexio/store';
 
 import type { AIEmbeddingStatus } from '../provider';
 import type { PromptKey } from '../provider/prompt';

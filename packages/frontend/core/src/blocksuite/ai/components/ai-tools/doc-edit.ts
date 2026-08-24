@@ -1,9 +1,9 @@
 import track from '@nexio/track';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
-import { LoadingIcon } from '@blocksuite/nexio-components/icons';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { type EditorHost, ShadowlessElement } from '@canvas/nexio/std';
+import { LoadingIcon } from '@canvas/nexio-components/icons';
+import type { NotificationService } from '@canvas/nexio-shared/services';
 import {
   CloseIcon,
   CopyIcon,
@@ -12,7 +12,7 @@ import {
   ExpandFullIcon,
   PenIcon as EditIcon,
   PenIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

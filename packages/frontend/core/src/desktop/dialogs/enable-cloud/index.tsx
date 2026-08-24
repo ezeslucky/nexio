@@ -14,7 +14,7 @@ import {
 } from '@nexio/core/modules/dialogs';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { CloudWorkspaceIcon } from '@blocksuite/icons/rc';
+import { CloudWorkspaceIcon } from '@canvas/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

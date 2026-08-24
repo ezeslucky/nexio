@@ -3,7 +3,7 @@ import { MobileFeatureFlagControl } from '@nexio/core/blocksuite/view-extensions
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
+} from '@canvas/nexio/ext-loader';
 import { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 

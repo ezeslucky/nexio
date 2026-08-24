@@ -1,5 +1,5 @@
 import { type IconData, IconRenderer, IconType } from '@nexio/component';
-import * as litIcons from '@blocksuite/icons/lit';
+import * as litIcons from '@canvas/icons/lit';
 import { html } from 'lit';
 
 export const getDocIconComponent = (icon: IconData) => {

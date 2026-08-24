@@ -11,8 +11,8 @@ import { useI18n } from '@nexio/i18n';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/nexio/blocks/surface';
-import type { ShapeElementModel, ShapeName } from '@blocksuite/nexio/model';
+} from '@canvas/nexio/blocks/surface';
+import type { ShapeElementModel, ShapeName } from '@canvas/nexio/model';
 import {
   DefaultTheme,
   FontFamily,
@@ -24,9 +24,9 @@ import {
   ShapeType,
   StrokeStyle,
   TextAlign,
-} from '@blocksuite/nexio/model';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import type { Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import type { EditorHost } from '@canvas/nexio/std';
+import type { Store } from '@canvas/nexio/store';
 import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';

@@ -23,7 +23,7 @@ import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import {
   DuplicateIcon,
   EdgelessIcon,
@@ -38,7 +38,7 @@ import {
   ShareIcon,
   SplitViewIcon,
   TocIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import {
   useLiveData,
   useService,

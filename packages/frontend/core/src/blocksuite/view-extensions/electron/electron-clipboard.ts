@@ -1,5 +1,5 @@
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { NativeClipboardExtension } from '@blocksuite/nexio/shared/services';
+import { NativeClipboardExtension } from '@canvas/nexio/shared/services';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function patchForClipboardInElectron(framework: FrameworkProvider) {

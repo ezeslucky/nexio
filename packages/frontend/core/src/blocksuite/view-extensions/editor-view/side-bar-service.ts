@@ -1,5 +1,5 @@
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { SidebarExtension } from '@blocksuite/nexio/shared/services';
+import { SidebarExtension } from '@canvas/nexio/shared/services';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function patchSideBarService(framework: FrameworkProvider) {

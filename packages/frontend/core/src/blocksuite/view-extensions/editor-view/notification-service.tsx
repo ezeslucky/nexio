@@ -11,7 +11,7 @@ import {
 import {
   NotificationExtension,
   type NotificationService,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 
 export class NotificationServiceImpl implements NotificationService {
   constructor(

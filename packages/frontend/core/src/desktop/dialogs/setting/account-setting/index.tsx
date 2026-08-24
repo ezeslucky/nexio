@@ -14,7 +14,7 @@ import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ArrowRightSmallIcon, CameraIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallIcon, CameraIcon } from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 

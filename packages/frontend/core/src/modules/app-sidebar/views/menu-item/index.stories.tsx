@@ -1,4 +1,4 @@
-import { SettingsIcon } from '@blocksuite/icons/rc';
+import { SettingsIcon } from '@canvas/icons/rc';
 import type { Meta, StoryFn } from '@storybook/react';
 import { useState } from 'react';
 

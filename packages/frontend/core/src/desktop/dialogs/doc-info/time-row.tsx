@@ -1,7 +1,7 @@
 import { PropertyName, PropertyRoot, PropertyValue } from '@nexio/component';
 import { DocsService } from '@nexio/core/modules/doc';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import { DateTimeIcon } from '@blocksuite/icons/rc';
+import { DateTimeIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { ConfigType } from 'dayjs';

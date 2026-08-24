@@ -15,7 +15,7 @@ import {
   ArrowUpSmallIcon,
   AttachmentIcon,
   CenterPeekIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';

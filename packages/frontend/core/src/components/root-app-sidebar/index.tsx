@@ -17,14 +17,14 @@ import { CMDKQuickSearchService } from '@nexio/core/modules/quicksearch/services
 import type { Workspace } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import {
   AiOutlineIcon,
   AllDocsIcon,
   ImportIcon,
   JournalIcon,
   SettingsIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { ReactElement } from 'react';
 import { memo, useCallback } from 'react';

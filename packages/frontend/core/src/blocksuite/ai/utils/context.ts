@@ -1,6 +1,6 @@
-import type { SerializedXYWH } from '@blocksuite/nexio/global/gfx';
-import type { MindmapStyle } from '@blocksuite/nexio/model';
-import type { GfxModel } from '@blocksuite/nexio/std/gfx';
+import type { SerializedXYWH } from '@canvas/nexio/global/gfx';
+import type { MindmapStyle } from '@canvas/nexio/model';
+import type { GfxModel } from '@canvas/nexio/std/gfx';
 
 import type { TemplateImage } from '../slides/template';
 

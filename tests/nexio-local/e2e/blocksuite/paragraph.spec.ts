@@ -13,7 +13,7 @@ import {
   type,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
-import type { ParagraphBlockComponent } from '@blocksuite/nexio-block-paragraph';
+import type { ParagraphBlockComponent } from '@canvas/nexio-block-paragraph';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

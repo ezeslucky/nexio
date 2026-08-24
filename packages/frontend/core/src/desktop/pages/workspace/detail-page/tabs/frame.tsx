@@ -1,5 +1,5 @@
-import { FramePanel } from '@blocksuite/nexio/fragments/frame-panel';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import { FramePanel } from '@canvas/nexio/fragments/frame-panel';
+import type { EditorHost } from '@canvas/nexio/std';
 import { useCallback, useEffect, useRef } from 'react';
 
 import * as styles from './frame.css';

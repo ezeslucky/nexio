@@ -22,7 +22,7 @@ import {
   FolderIcon,
   PlusIcon,
   SplitViewIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

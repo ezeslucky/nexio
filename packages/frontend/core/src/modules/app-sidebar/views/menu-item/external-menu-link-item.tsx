@@ -1,4 +1,4 @@
-import { DualLinkIcon } from '@blocksuite/icons/rc';
+import { DualLinkIcon } from '@canvas/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import type { ReactElement, SVGAttributes } from 'react';
 import type { To } from 'react-router-dom';

@@ -27,8 +27,8 @@ import track from '@nexio/track';
 import type {
   ExtensionType,
   TransformerMiddleware,
-} from '@blocksuite/nexio/store';
-import { ToggleDownIcon } from '@blocksuite/icons/rc';
+} from '@canvas/nexio/store';
+import { ToggleDownIcon } from '@canvas/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
   LiveData,

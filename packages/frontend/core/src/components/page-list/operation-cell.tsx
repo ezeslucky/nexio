@@ -18,7 +18,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { DocMeta } from '@blocksuite/nexio/store';
+import type { DocMeta } from '@canvas/nexio/store';
 import {
   DeleteIcon,
   DeletePermanentlyIcon,
@@ -32,7 +32,7 @@ import {
   PlusIcon,
   ResetIcon,
   SplitViewIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';

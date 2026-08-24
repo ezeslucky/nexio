@@ -37,8 +37,8 @@
     "packages/frontend/native/index.js",
     "packages/frontend/apps/android/App/**",
     "packages/frontend/apps/ios/App/**",
-    "tests/blocksuite/snapshots",
-    "blocksuite/docs/api/**",
+    "tests/canvas/snapshots",
+    "canvas/docs/api/**",
     "packages/frontend/admin/src/config.json",
     "**/test-docs.json",
     "**/test-blocks.json"
@@ -226,7 +226,7 @@
       }
     },
     {
-      "files": ["blocksuite/**/*.ts"],
+      "files": ["canvas/**/*.ts"],
       "rules": {
         "eslint/eqeqeq": "off",
         "typescript/no-non-null-assertion": "off",
@@ -234,7 +234,7 @@
       }
     },
     {
-      "files": ["tests/blocksuite/**/*.ts"],
+      "files": ["tests/canvas/**/*.ts"],
       "rules": {
         "typescript/ban-ts-comment": "off",
         "unicorn/prefer-dom-node-dataset": "off",

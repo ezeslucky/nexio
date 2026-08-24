@@ -1,16 +1,16 @@
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { Tooltip } from '@blocksuite/nexio/components/tooltip';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { noop } from '@blocksuite/nexio/global/utils';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { createButtonPopper } from '@blocksuite/nexio/shared/utils';
+import { Tooltip } from '@canvas/nexio/components/tooltip';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { noop } from '@canvas/nexio/global/utils';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { createButtonPopper } from '@canvas/nexio/shared/utils';
 import type {
   BlockSelection,
   EditorHost,
   TextSelection,
-} from '@blocksuite/nexio/std';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
-import { CopyIcon, MoreHorizontalIcon, ResetIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/std';
+import type { NotificationService } from '@canvas/nexio-shared/services';
+import { CopyIcon, MoreHorizontalIcon, ResetIcon } from '@canvas/icons/lit';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

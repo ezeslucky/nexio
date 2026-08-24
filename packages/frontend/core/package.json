@@ -8,13 +8,13 @@
     "./bootstrap": "./src/bootstrap/index.ts"
   },
   "dependencies": {
-    "@blocksuite/global": "workspace:*",
-    "@blocksuite/icons": "^2.2.17",
-    "@blocksuite/nexio": "workspace:*",
-    "@blocksuite/nexio-block-root": "workspace:*",
-    "@blocksuite/nexio-components": "workspace:*",
-    "@blocksuite/nexio-shared": "workspace:*",
-    "@blocksuite/std": "workspace:*",
+    "@canvas/global": "workspace:*",
+    "@canvas/icons": "^2.2.17",
+    "@canvas/nexio": "workspace:*",
+    "@canvas/nexio-block-root": "workspace:*",
+    "@canvas/nexio-components": "workspace:*",
+    "@canvas/nexio-shared": "workspace:*",
+    "@canvas/std": "workspace:*",
     "@dotlottie/player-component": "^2.7.12",
     "@emotion/cache": "^11.14.0",
     "@emotion/css": "^11.13.5",
@@ -97,7 +97,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@blocksuite/nexio-ext-loader": "workspace:*",
+    "@canvas/nexio-ext-loader": "workspace:*",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.1.0",
     "@types/animejs": "^3.1.12",

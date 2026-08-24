@@ -4,8 +4,8 @@
 import 'fake-indexeddb/auto';
 
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { type Store, Text } from '@blocksuite/nexio/store';
-import { TestWorkspace } from '@blocksuite/nexio/store/test';
+import { type Store, Text } from '@canvas/nexio/store';
+import { TestWorkspace } from '@canvas/nexio/store/test';
 import { renderHook } from '@testing-library/react';
 import { useAtomValue } from 'jotai';
 import { beforeEach, describe, expect, test, vi } from 'vitest';

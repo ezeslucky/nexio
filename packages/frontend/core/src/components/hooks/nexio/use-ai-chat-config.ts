@@ -14,7 +14,7 @@ import {
 } from '@nexio/core/modules/search-menu/services';
 import { TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
+import { createSignalFromObservable } from '@canvas/nexio/shared/utils';
 import { useFramework } from '@ezeslucky/infra';
 
 export function useAIChatConfig() {

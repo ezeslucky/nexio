@@ -1,4 +1,4 @@
-import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
+import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 

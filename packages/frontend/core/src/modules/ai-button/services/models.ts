@@ -2,7 +2,7 @@ import { getPromptModelsQuery, SubscriptionStatus } from '@nexio/graphql';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/nexio/shared/utils';
+} from '@canvas/nexio/shared/utils';
 import { signal } from '@preact/signals-core';
 import { LiveData, Service } from '@ezeslucky/infra';
 

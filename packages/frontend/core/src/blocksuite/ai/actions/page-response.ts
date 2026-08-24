@@ -1,28 +1,28 @@
-import { CodeBlockPreviewIdentifier } from '@blocksuite/nexio/blocks/code';
-import { addSiblingImageBlocks } from '@blocksuite/nexio/blocks/image';
+import { CodeBlockPreviewIdentifier } from '@canvas/nexio/blocks/code';
+import { addSiblingImageBlocks } from '@canvas/nexio/blocks/image';
 import {
   getSurfaceBlock,
   SurfaceBlockModel,
-} from '@blocksuite/nexio/blocks/surface';
-import { fitContent } from '@blocksuite/nexio/gfx/shape';
-import { createTemplateJob } from '@blocksuite/nexio/gfx/template';
+} from '@canvas/nexio/blocks/surface';
+import { fitContent } from '@canvas/nexio/gfx/shape';
+import { createTemplateJob } from '@canvas/nexio/gfx/template';
 import {
   Bound,
   getCommonBound,
   type XYWH,
-} from '@blocksuite/nexio/global/gfx';
+} from '@canvas/nexio/global/gfx';
 import type {
   MindmapElementModel,
   ShapeElementModel,
-} from '@blocksuite/nexio/model';
-import { TelemetryProvider } from '@blocksuite/nexio/shared/services';
-import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/model';
+import { TelemetryProvider } from '@canvas/nexio/shared/services';
+import { type EditorHost, TextSelection } from '@canvas/nexio/std';
 import {
   GfxBlockElementModel,
   type GfxModel,
   LayerManager,
-} from '@blocksuite/nexio/std/gfx';
-import { type BlockProps, Text } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std/gfx';
+import { type BlockProps, Text } from '@canvas/nexio/store';
 import * as Y from 'yjs';
 
 import { getAIPanelWidget } from '../utils/ai-widgets';

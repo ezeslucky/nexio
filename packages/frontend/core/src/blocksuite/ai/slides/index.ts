@@ -1,7 +1,7 @@
-import { createTemplateJob } from '@blocksuite/nexio/gfx/template';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import type { BlockSnapshot } from '@blocksuite/nexio/store';
+import { createTemplateJob } from '@canvas/nexio/gfx/template';
+import type { EditorHost } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import type { BlockSnapshot } from '@canvas/nexio/store';
 
 import { markdownToSnapshot } from '../../utils';
 import { getSurfaceElementFromEditor } from '../utils/selection-utils';

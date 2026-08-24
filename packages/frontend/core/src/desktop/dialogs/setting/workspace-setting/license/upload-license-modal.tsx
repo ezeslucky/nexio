@@ -11,7 +11,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { UserFriendlyError } from '@nexio/error';
 import { Trans, useI18n } from '@nexio/i18n';
-import { CopyIcon, FileIcon } from '@blocksuite/icons/rc';
+import { CopyIcon, FileIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 

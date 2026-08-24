@@ -67,9 +67,9 @@ Nexio is a **Yarn v4 + Turborepo monorepo**. At a high level, it’s a web/elect
   - **Web app**: `packages/frontend/apps/web` (workspace `@nexio/web`)
   - **Electron app**: `packages/frontend/apps/electron`
   - **Electron renderer**: `packages/frontend/apps/electron-renderer`
-  - The UI and editor experience are built around the shared “block/document” engine (see BlockSuite).
+  - The UI and editor experience are built around the shared “block/document” engine (see Canvas).
 
-- **Block/document engine**: `blocksuite/**`
+- **Block/document engine**: `canvas/**`
   - Shared editor/document framework and building blocks used by the client apps.
 
 - **Shared/common packages**: `packages/common/**`
@@ -104,7 +104,7 @@ nexio/
 │       ├── reader/                    # 📖 Reader/conversion utilities
 │       ├── graphql/                   # 🔌 Shared GraphQL helpers
 │       └── ...                        # (many more shared packages)
-├── blocksuite/                        # 🧱 Block/document engine and framework
+├── canvas/                        # 🧱 Block/document engine and framework
 ├── tools/                             # 🛠️ Tooling (includes monorepo CLI)
 │   └── cli/                           # 🧰 `yarn nexio ...` runner
 ├── docs/                              # 📚 Project docs (build/dev guides)

@@ -1,20 +1,20 @@
 import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace.js';
-import type { SurfaceBlockModel } from '@blocksuite/nexio/blocks/surface';
+import type { SurfaceBlockModel } from '@canvas/nexio/blocks/surface';
 import {
   MindmapStyleFour,
   MindmapStyleOne,
   MindmapStyleThree,
   MindmapStyleTwo,
-} from '@blocksuite/nexio/gfx/mindmap';
-import type { ServiceProvider } from '@blocksuite/nexio/global/di';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+} from '@canvas/nexio/gfx/mindmap';
+import type { ServiceProvider } from '@canvas/nexio/global/di';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import {
   type MindmapElementModel,
   MindmapStyle,
-} from '@blocksuite/nexio/model';
-import { MarkdownAdapter } from '@blocksuite/nexio/shared/adapters';
-import { BlockStdScope, type EditorHost } from '@blocksuite/nexio/std';
-import { Schema, type Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import { MarkdownAdapter } from '@canvas/nexio/shared/adapters';
+import { BlockStdScope, type EditorHost } from '@canvas/nexio/std';
+import { Schema, type Store } from '@canvas/nexio/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

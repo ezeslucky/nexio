@@ -1,13 +1,13 @@
 import type { TagMeta } from '@nexio/core/components/page-list';
 import { UserFriendlyError } from '@nexio/error';
 import { I18n } from '@nexio/i18n';
-import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
-import type { DocMeta } from '@blocksuite/nexio/store';
+import { createSignalFromObservable } from '@canvas/nexio/shared/utils';
+import type { DocMeta } from '@canvas/nexio/store';
 import type {
   LinkedMenuGroup,
   LinkedMenuItem,
-} from '@blocksuite/nexio/widgets/linked-doc';
-import { CollectionsIcon, WarningIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/widgets/linked-doc';
+import { CollectionsIcon, WarningIcon } from '@canvas/icons/lit';
 import { computed, signal } from '@preact/signals-core';
 import { Service } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';

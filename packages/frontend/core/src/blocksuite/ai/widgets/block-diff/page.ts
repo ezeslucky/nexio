@@ -1,12 +1,12 @@
 import { track } from '@nexio/track';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
+import { WidgetComponent, WidgetViewExtension } from '@canvas/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,
   CloseIcon,
   DoneIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';

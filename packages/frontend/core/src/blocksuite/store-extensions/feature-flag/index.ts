@@ -3,7 +3,7 @@ import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
+} from '@canvas/nexio/ext-loader';
 import { z } from 'zod';
 
 const optionsSchema = z.object({

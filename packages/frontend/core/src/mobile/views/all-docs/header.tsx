@@ -1,5 +1,5 @@
 import { IconButton, MobileMenu, SafeArea } from '@nexio/component';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import { MoreHorizontalIcon } from '@canvas/icons/rc';
 
 import { header, headerContent, headerSpace } from './style.css';
 import { AllDocsTabs } from './tabs';

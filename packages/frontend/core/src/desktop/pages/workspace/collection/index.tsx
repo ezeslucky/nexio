@@ -15,7 +15,7 @@ import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import { ViewLayersIcon } from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

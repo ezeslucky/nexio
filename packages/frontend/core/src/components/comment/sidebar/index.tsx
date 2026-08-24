@@ -23,8 +23,8 @@ import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import type { DocSnapshot, Store } from '@blocksuite/nexio/store';
-import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import type { DocSnapshot, Store } from '@canvas/nexio/store';
+import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@canvas/icons/rc';
 import {
   useLiveData,
   useService,

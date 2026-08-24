@@ -3,7 +3,7 @@ import type {
   WorkspaceInviteLinkExpireTime,
 } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { EmailIcon, LinkIcon } from '@blocksuite/icons/rc';
+import { EmailIcon, LinkIcon } from '@canvas/icons/rc';
 
 import { RadioGroup } from '../../../ui/radio';
 import { EmailInvite } from './email-invite';

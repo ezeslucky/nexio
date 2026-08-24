@@ -1,7 +1,7 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ThemeProvider } from '@blocksuite/nexio/shared/services';
-import { BlockStdScope, ShadowlessElement } from '@blocksuite/nexio/std';
-import type { ExtensionType, Store } from '@blocksuite/nexio/store';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ThemeProvider } from '@canvas/nexio/shared/services';
+import { BlockStdScope, ShadowlessElement } from '@canvas/nexio/std';
+import type { ExtensionType, Store } from '@canvas/nexio/store';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { guard } from 'lit/directives/guard.js';

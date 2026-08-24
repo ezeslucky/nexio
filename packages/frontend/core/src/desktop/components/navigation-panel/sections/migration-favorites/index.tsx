@@ -3,7 +3,7 @@ import { DocsService } from '@nexio/core/modules/doc';
 import { MigrationFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import { Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { BroomIcon, HelpIcon } from '@blocksuite/icons/rc';
+import { BroomIcon, HelpIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

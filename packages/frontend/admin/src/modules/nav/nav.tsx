@@ -1,6 +1,6 @@
 import { buttonVariants } from '@nexio/admin/components/ui/button';
 import { cn } from '@nexio/admin/utils';
-import { AccountIcon, SelfhostIcon } from '@blocksuite/icons/rc';
+import { AccountIcon, SelfhostIcon } from '@canvas/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { NavLink } from 'react-router-dom';
 

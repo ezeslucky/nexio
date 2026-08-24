@@ -1,5 +1,5 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/std';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/std';
 import {
   css,
   html,

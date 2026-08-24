@@ -13,7 +13,7 @@ import {
   TagIcon,
   TemplateIcon,
   TitleIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 
 import type { GroupHeaderProps } from '../explorer/types';
 import { DateFilterMethod } from '../workspace-property-types';

@@ -1,7 +1,7 @@
 import { Divider, IconButton } from '@nexio/component';
 import { SettingHeader } from '@nexio/component/setting-components';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightBigIcon, ArrowUpSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowRightBigIcon, ArrowUpSmallIcon } from '@canvas/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import {

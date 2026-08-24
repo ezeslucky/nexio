@@ -1,7 +1,7 @@
 import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import type { Workspace } from '@nexio/core/modules/workspace';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import { useCallback } from 'react';
 
 import { ShareMenu } from './share-menu';

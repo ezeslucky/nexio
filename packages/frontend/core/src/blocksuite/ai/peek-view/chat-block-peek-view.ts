@@ -14,15 +14,15 @@ import {
   CanvasElementType,
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/nexio/blocks/surface';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/nexio/ext-loader';
-import { ConnectorMode } from '@blocksuite/nexio/model';
+} from '@canvas/nexio/blocks/surface';
+import { ViewExtensionManagerIdentifier } from '@canvas/nexio/ext-loader';
+import { ConnectorMode } from '@canvas/nexio/model';
 import {
   DocModeProvider,
   NotificationProvider,
   TelemetryProvider,
-} from '@blocksuite/nexio/shared/services';
-import type { EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/services';
+import type { EditorHost } from '@canvas/nexio/std';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -1,7 +1,7 @@
 import { parsePageDoc } from '@nexio/reader';
-import { LifeCycleWatcher } from '@blocksuite/nexio/std';
-import { Extension, type Store } from '@blocksuite/nexio/store';
-import { type Container, createIdentifier } from '@blocksuite/global/di';
+import { LifeCycleWatcher } from '@canvas/nexio/std';
+import { Extension, type Store } from '@canvas/nexio/store';
+import { type Container, createIdentifier } from '@canvas/global/di';
 import { LiveData } from '@ezeslucky/infra';
 import type { Subscription } from 'rxjs';
 

@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/nexio/model';
-import type { DocMeta } from '@blocksuite/nexio/store';
+import type { DocMode } from '@canvas/nexio/model';
+import type { DocMeta } from '@canvas/nexio/store';
 import { Entity, LiveData } from '@ezeslucky/infra';
 
 import type { DocProperties } from '../../db';

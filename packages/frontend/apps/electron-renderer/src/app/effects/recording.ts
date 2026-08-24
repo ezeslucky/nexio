@@ -6,8 +6,8 @@ import { DebugLogger } from '@nexio/debug';
 import { apis, events } from '@nexio/electron-api';
 import { i18nTime } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
-import type { BlobEngine } from '@blocksuite/nexio/sync';
+import type { AttachmentBlockModel } from '@canvas/nexio/model';
+import type { BlobEngine } from '@canvas/nexio/sync';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { getCurrentWorkspace, isAiEnabled } from './utils';

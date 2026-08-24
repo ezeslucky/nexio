@@ -1,10 +1,10 @@
-import { createLitPortal } from '@blocksuite/nexio/components/portal';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { createLitPortal } from '@canvas/nexio/components/portal';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import {
   BlockSelection,
   type EditorHost,
   TextSelection,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

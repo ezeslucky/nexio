@@ -1,7 +1,7 @@
-import { ImageBlockModel } from '@blocksuite/nexio/model';
-import { FetchUtils } from '@blocksuite/nexio/shared/adapters';
-import type { BlockModel } from '@blocksuite/nexio/store';
-import type { GfxModel } from '@blocksuite/std/gfx';
+import { ImageBlockModel } from '@canvas/nexio/model';
+import { FetchUtils } from '@canvas/nexio/shared/adapters';
+import type { BlockModel } from '@canvas/nexio/store';
+import type { GfxModel } from '@canvas/std/gfx';
 
 export async function fetchImageToFile(
   url: string,

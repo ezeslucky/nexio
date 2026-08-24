@@ -1,4 +1,4 @@
-import type { DocMeta, Workspace } from '@blocksuite/nexio/store';
+import type { DocMeta, Workspace } from '@canvas/nexio/store';
 import type { Atom } from 'jotai';
 import { atom, useAtomValue } from 'jotai';
 

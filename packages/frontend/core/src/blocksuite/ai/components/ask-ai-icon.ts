@@ -1,5 +1,5 @@
-import { AIStarIcon } from '@blocksuite/nexio/components/icons';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { AIStarIcon } from '@canvas/nexio/components/icons';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

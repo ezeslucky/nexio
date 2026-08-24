@@ -1,4 +1,4 @@
-import type { BlockStdScope } from '@blocksuite/std';
+import type { BlockStdScope } from '@canvas/std';
 import { ObjectPool, Service } from '@ezeslucky/infra';
 
 import { DocCommentEntity } from '../entities/doc-comment';

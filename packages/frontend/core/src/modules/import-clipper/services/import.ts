@@ -1,5 +1,5 @@
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { MarkdownTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import { MarkdownTransformer } from '@canvas/nexio/widgets/linked-doc';
 import { Service } from '@ezeslucky/infra';
 
 import { DocsService } from '../../doc';

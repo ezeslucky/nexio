@@ -7,13 +7,13 @@ import {
   pasteMiddleware,
   PlainTextAdapter,
   titleMiddleware,
-} from '@blocksuite/nexio/shared/adapters';
+} from '@canvas/nexio/shared/adapters';
 import {
   BlockStdScope,
   type EditorHost,
   type TextRangePoint,
   TextSelection,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import type {
   BlockModel,
   BlockSnapshot,
@@ -22,8 +22,8 @@ import type {
   SliceSnapshot,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/nexio/store';
-import { toDraftModel, Transformer } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
+import { toDraftModel, Transformer } from '@canvas/nexio/store';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../manager/store';

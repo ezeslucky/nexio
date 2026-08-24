@@ -1,8 +1,8 @@
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { ColorScheme } from '@blocksuite/nexio/model';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import type { ColorScheme } from '@canvas/nexio/model';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
 import type { Signal } from '@preact/signals-core';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';

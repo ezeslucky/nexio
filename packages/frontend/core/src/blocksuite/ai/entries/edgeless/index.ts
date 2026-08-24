@@ -1,9 +1,9 @@
-import { noop } from '@blocksuite/nexio/global/utils';
-import type { DocMode } from '@blocksuite/nexio/model';
+import { noop } from '@canvas/nexio/global/utils';
+import type { DocMode } from '@canvas/nexio/model';
 import {
   ActionPlacement,
   type ToolbarModuleConfig,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import { html } from 'lit';
 
 import type { AIItemGroupConfig } from '../../components/ai-item/types';

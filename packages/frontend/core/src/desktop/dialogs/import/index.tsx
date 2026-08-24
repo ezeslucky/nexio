@@ -19,14 +19,14 @@ import {
 import { DebugLogger } from '@nexio/debug';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { openFilesWith } from '@blocksuite/nexio/shared/utils';
-import type { Workspace } from '@blocksuite/nexio/store';
+import { openFilesWith } from '@canvas/nexio/shared/utils';
+import type { Workspace } from '@canvas/nexio/store';
 import {
   HtmlTransformer,
   MarkdownTransformer,
   NotionHtmlTransformer,
   ZipTransformer,
-} from '@blocksuite/nexio/widgets/linked-doc';
+} from '@canvas/nexio/widgets/linked-doc';
 import {
   ExportToHtmlIcon,
   ExportToMarkdownIcon,
@@ -35,7 +35,7 @@ import {
   PageIcon,
   SaveIcon,
   ZipIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';

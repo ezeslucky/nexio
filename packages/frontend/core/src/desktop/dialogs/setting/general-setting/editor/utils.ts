@@ -4,7 +4,7 @@ import {
   FontWeight,
   type Palette,
   resolveColor,
-} from '@blocksuite/nexio/model';
+} from '@canvas/nexio/model';
 import { isEqual } from 'lodash-es';
 import { useTheme } from 'next-themes';
 

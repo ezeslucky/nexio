@@ -1,4 +1,4 @@
-import { LifeCycleWatcher } from '@blocksuite/nexio/std';
+import { LifeCycleWatcher } from '@canvas/nexio/std';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { buildAIPanelConfig } from '../ai-panel';

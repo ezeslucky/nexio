@@ -3,7 +3,7 @@ import { builtInTemplates as builtInStickersTemplates } from '@nexio/templates/s
 import {
   EdgelessTemplatePanel,
   type TemplateManager,
-} from '@blocksuite/nexio/gfx/template';
+} from '@canvas/nexio/gfx/template';
 
 export function registerTemplates() {
   EdgelessTemplatePanel.templates.extend(

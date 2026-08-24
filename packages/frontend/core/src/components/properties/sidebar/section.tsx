@@ -1,6 +1,6 @@
 import { IconButton } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { ToggleRightIcon } from '@blocksuite/icons/rc';
+import { ToggleRightIcon } from '@canvas/icons/rc';
 import { Trigger as CollapsibleTrigger } from '@radix-ui/react-collapsible';
 
 import * as styles from './section.css';

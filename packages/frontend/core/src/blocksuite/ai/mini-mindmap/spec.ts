@@ -1,18 +1,18 @@
-import { SurfaceBlockSchema } from '@blocksuite/nexio/blocks/surface';
-import { ConnectorElementRendererExtension } from '@blocksuite/nexio/gfx/connector';
+import { SurfaceBlockSchema } from '@canvas/nexio/blocks/surface';
+import { ConnectorElementRendererExtension } from '@canvas/nexio/gfx/connector';
 import {
   MindmapElementRendererExtension,
   MindMapView,
-} from '@blocksuite/nexio/gfx/mindmap';
-import { ShapeElementRendererExtension } from '@blocksuite/nexio/gfx/shape';
-import { TextElementRendererExtension } from '@blocksuite/nexio/gfx/text';
-import { RootBlockSchema } from '@blocksuite/nexio/model';
+} from '@canvas/nexio/gfx/mindmap';
+import { ShapeElementRendererExtension } from '@canvas/nexio/gfx/shape';
+import { TextElementRendererExtension } from '@canvas/nexio/gfx/text';
+import { RootBlockSchema } from '@canvas/nexio/model';
 import {
   DocModeService,
   ThemeService,
-} from '@blocksuite/nexio/shared/services';
-import { BlockViewExtension, FlavourExtension } from '@blocksuite/nexio/std';
-import type { BlockSchema, ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/services';
+import { BlockViewExtension, FlavourExtension } from '@canvas/nexio/std';
+import type { BlockSchema, ExtensionType } from '@canvas/nexio/store';
 import { literal } from 'lit/static-html.js';
 import type { z } from 'zod';
 

@@ -1,5 +1,5 @@
-import { FeatureFlagService } from '@blocksuite/nexio/shared/services';
-import { type BlockStdScope, LifeCycleWatcher } from '@blocksuite/nexio/std';
+import { FeatureFlagService } from '@canvas/nexio/shared/services';
+import { type BlockStdScope, LifeCycleWatcher } from '@canvas/nexio/std';
 
 export class MobileFeatureFlagControl extends LifeCycleWatcher {
   static override key = 'mobile-patches';

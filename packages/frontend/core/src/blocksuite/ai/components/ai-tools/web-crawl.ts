@@ -1,6 +1,6 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { WebIcon } from '@blocksuite/icons/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { WebIcon } from '@canvas/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,5 +1,5 @@
 import { ServerFeature } from '@nexio/graphql';
-import { SearchIcon } from '@blocksuite/icons/rc';
+import { SearchIcon } from '@canvas/icons/rc';
 import {
   effect,
   Entity,

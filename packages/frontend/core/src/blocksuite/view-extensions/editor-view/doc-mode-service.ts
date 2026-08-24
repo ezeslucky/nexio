@@ -1,11 +1,11 @@
 import type { DocService, DocsService } from '@nexio/core/modules/doc';
 import type { EditorService } from '@nexio/core/modules/editor';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import {
   DocModeExtension,
   type DocModeProvider,
-} from '@blocksuite/nexio/shared/services';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/services';
+import type { ExtensionType } from '@canvas/nexio/store';
 
 export function patchDocModeService(
   docService: DocService,

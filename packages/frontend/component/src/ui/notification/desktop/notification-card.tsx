@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { CloseIcon, InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
+import { CloseIcon, InformationFillDuotoneIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { useCallback } from 'react';
 

@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/components/hooks/use-navigate-helper';
 import { AuthService } from '@nexio/core/modules/cloud';
 import { useI18n } from '@nexio/i18n';
-import { AiIcon } from '@blocksuite/icons/rc';
+import { AiIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo, useRef } from 'react';

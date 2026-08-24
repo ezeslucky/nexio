@@ -1,5 +1,5 @@
 import { PropertyValue } from '@nexio/component';
-import { DualLinkIcon } from '@blocksuite/icons/rc';
+import { DualLinkIcon } from '@canvas/icons/rc';
 
 import { IntegrationTypeIcon } from '../icon';
 import * as styles from './styles.css';

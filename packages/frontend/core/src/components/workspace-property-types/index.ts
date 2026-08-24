@@ -18,7 +18,7 @@ import {
   TemplateIcon,
   TextIcon,
   TodayIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 
 import type { DocListPropertyProps, GroupHeaderProps } from '../explorer/types';
 import type { PropertyValueProps } from '../properties/types';

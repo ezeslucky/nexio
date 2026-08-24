@@ -216,7 +216,7 @@ export default tseslint.config(
     files: [
       'packages/**/*.{ts,tsx}',
       'tools/**/*.{ts,tsx}',
-      'blocksuite/**/*.{ts,tsx}',
+      'canvas/**/*.{ts,tsx}',
     ],
     rules: {
       '@typescript-eslint/no-floating-promises': [
@@ -316,15 +316,15 @@ export default tseslint.config(
   {
     files: [
       'packages/frontend/apps/electron/scripts/**/*',
-      'tests/blocksuite/**/*.{ts,tsx}',
-      'blocksuite/**/__tests__/**/*.{ts,tsx}',
+      'tests/canvas/**/*.{ts,tsx}',
+      'canvas/**/__tests__/**/*.{ts,tsx}',
     ],
     rules: {
       'import-x/no-extraneous-dependencies': 'off',
     },
   },
   {
-    files: ['blocksuite/**/*.{ts,tsx}'],
+    files: ['canvas/**/*.{ts,tsx}'],
     rules: {
       'rxjs/finnish': 'off',
     },

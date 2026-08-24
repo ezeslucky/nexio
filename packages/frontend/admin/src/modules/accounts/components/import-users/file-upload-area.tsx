@@ -1,5 +1,5 @@
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { UploadIcon } from '@blocksuite/icons/rc';
+import { UploadIcon } from '@canvas/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   type ChangeEvent,

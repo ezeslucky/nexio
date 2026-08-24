@@ -16,7 +16,7 @@
     "./worker": "./src/worker.ts"
   },
   "peerDependencies": {
-    "@blocksuite/nexio": "workspace:*",
+    "@canvas/nexio": "workspace:*",
     "@nexio/templates": "workspace:*"
   },
   "dependencies": {

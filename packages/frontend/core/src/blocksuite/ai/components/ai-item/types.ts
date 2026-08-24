@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/nexio/model';
-import type { Chain, EditorHost, InitCommandCtx } from '@blocksuite/nexio/std';
+import type { DocMode } from '@canvas/nexio/model';
+import type { Chain, EditorHost, InitCommandCtx } from '@canvas/nexio/std';
 import type { TemplateResult } from 'lit';
 
 export interface AIItemGroupConfig {

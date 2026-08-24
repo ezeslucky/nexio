@@ -1,12 +1,12 @@
 import { type CommentChangeAction, DocMode } from '@nexio/graphql';
 import { track } from '@nexio/track';
-import { InlineCommentManager } from '@blocksuite/nexio/inlines/comment';
+import { InlineCommentManager } from '@canvas/nexio/inlines/comment';
 import type {
   BaseSelection,
   DocSnapshot,
   Store,
-} from '@blocksuite/nexio/store';
-import type { BlockStdScope } from '@blocksuite/std';
+} from '@canvas/nexio/store';
+import type { BlockStdScope } from '@canvas/std';
 import {
   effect,
   Entity,

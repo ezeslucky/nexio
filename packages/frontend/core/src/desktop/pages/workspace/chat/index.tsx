@@ -36,9 +36,9 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
-import { BlockStdScope } from '@blocksuite/nexio/std';
-import type { Workspace } from '@blocksuite/nexio/store';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+import { BlockStdScope } from '@canvas/nexio/std';
+import type { Workspace } from '@canvas/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { useFramework, useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';

@@ -3,7 +3,7 @@ import {
   CheckBoxCheckLinearIcon,
   PenIcon,
   TextIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useMemo } from 'react';
 
 import * as styles from './ai-plan.css';

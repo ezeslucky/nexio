@@ -1,22 +1,22 @@
-import { CodeBlockHighlighter } from '@blocksuite/nexio/blocks/code';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ColorScheme } from '@blocksuite/nexio/model';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { type BlockStdScope } from '@blocksuite/nexio/std';
+import { CodeBlockHighlighter } from '@canvas/nexio/blocks/code';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ColorScheme } from '@canvas/nexio/model';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { type BlockStdScope } from '@canvas/nexio/std';
 import {
   type BlockSnapshot,
   nanoid,
   type SliceSnapshot,
   Text,
-} from '@blocksuite/nexio/store';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio/store';
+import type { NotificationService } from '@canvas/nexio-shared/services';
 import {
   CodeBlockIcon,
   CopyIcon,
   DownloadIcon,
   PageIcon,
   ToolIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { effect, signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';

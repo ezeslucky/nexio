@@ -1,4 +1,4 @@
-import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
+import { FavoritedIcon, FavoriteIcon } from '@canvas/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import type { SVGProps } from 'react';
 

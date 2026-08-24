@@ -6,7 +6,7 @@ import {
 } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { TemplateIcon } from '@blocksuite/icons/rc';
+import { TemplateIcon } from '@canvas/icons/rc';
 import { useCallback, useState } from 'react';
 
 export const TemplateDocEntrance = () => {

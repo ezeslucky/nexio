@@ -8,10 +8,10 @@ import { useGuard } from '@nexio/core/components/guard';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { EditorService } from '@nexio/core/modules/editor';
 import { DebugLogger } from '@nexio/debug';
-import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
-import { Bound } from '@blocksuite/nexio/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { DisposableGroup } from '@canvas/nexio/global/disposable';
+import { Bound } from '@canvas/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import {
   FrameworkScope,
   useLiveData,

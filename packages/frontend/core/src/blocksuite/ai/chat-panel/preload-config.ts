@@ -4,7 +4,7 @@ import {
   MindmapIcon,
   PenIcon,
   SendIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 
 import { AIProvider } from '../provider/ai-provider.js';
 import completeWritingWithAI from './templates/completeWritingWithAI.zip';

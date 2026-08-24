@@ -11,7 +11,7 @@ import { DebugLogger } from '@nexio/debug';
 import type { ListHistoryQuery } from '@nexio/graphql';
 import { listHistoryQuery, recoverDocMutation } from '@nexio/graphql';
 import { i18nTime } from '@nexio/i18n';
-import type { Workspace } from '@blocksuite/nexio/store';
+import type { Workspace } from '@canvas/nexio/store';
 import { useService } from '@ezeslucky/infra';
 import { useEffect, useMemo } from 'react';
 import useSWRImmutable from 'swr/immutable';

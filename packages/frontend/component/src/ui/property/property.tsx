@@ -3,7 +3,7 @@ import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,
   ToggleDownIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import clsx from 'clsx';
 import {

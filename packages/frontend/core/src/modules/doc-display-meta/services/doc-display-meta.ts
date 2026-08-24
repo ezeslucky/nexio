@@ -9,7 +9,7 @@ import {
   TodayIcon as LitTodayIcon,
   TomorrowIcon as LitTomorrowIcon,
   YesterdayIcon as LitYesterdayIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import {
   AliasIcon,
   BlockLinkIcon,
@@ -20,7 +20,7 @@ import {
   TodayIcon,
   TomorrowIcon,
   YesterdayIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { LiveData, Service } from '@ezeslucky/infra';
 import type { Dayjs } from 'dayjs';
 import dayjs from 'dayjs';

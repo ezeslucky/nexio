@@ -24,9 +24,9 @@ import { useInsidePeekView } from '@nexio/core/modules/peek-view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { ServerFeature } from '@nexio/graphql';
 import track from '@nexio/track';
-import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
-import type { DocMode } from '@blocksuite/nexio/model';
-import type { Store } from '@blocksuite/nexio/store';
+import type { DocTitle } from '@canvas/nexio/fragments/doc-title';
+import type { DocMode } from '@canvas/nexio/model';
+import type { Store } from '@canvas/nexio/store';
 import {
   useFramework,
   useLiveData,

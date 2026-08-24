@@ -1,5 +1,5 @@
 import { IconButton, Input, Menu, MenuItem } from '@nexio/component';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import { MoreHorizontalIcon } from '@canvas/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useState } from 'react';
 

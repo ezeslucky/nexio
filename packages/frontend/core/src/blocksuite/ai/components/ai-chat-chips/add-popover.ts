@@ -2,12 +2,12 @@ import { toast } from '@nexio/component';
 import type { TagMeta } from '@nexio/core/components/page-list';
 import type { CollectionMeta } from '@nexio/core/modules/collection';
 import track, { type EventArgs } from '@nexio/track';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { openFilesWith } from '@blocksuite/nexio/shared/utils';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import type { DocMeta } from '@blocksuite/nexio/store';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { openFilesWith } from '@canvas/nexio/shared/utils';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import type { DocMeta } from '@canvas/nexio/store';
 import {
   CollectionsIcon,
   ImageIcon,
@@ -15,7 +15,7 @@ import {
   SearchIcon,
   TagsIcon,
   UploadIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { Signal } from '@preact/signals-core';
 import { css, html, type TemplateResult } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

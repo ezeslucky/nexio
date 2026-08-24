@@ -4,8 +4,8 @@ import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
 import { DocsService } from '@nexio/core/modules/doc';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace';
-import { type DocMode } from '@blocksuite/nexio/model';
-import type { Workspace } from '@blocksuite/nexio/store';
+import { type DocMode } from '@canvas/nexio/model';
+import type { Workspace } from '@canvas/nexio/store';
 import { useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
@@ -66,7 +66,7 @@ export const usePageHelper = (docCollection: Workspace) => {
   const importFileAndOpen = useMemo(
     () => async () => {
       const { showImportModal } = await import(
-        '@blocksuite/nexio/widgets/linked-doc'
+        '@canvas/nexio/widgets/linked-doc'
       );
       const { promise, resolve, reject } =
         Promise.withResolvers<

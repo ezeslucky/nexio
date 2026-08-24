@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 
 import {
   NEXIO_AI_PANEL_WIDGET,

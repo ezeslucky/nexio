@@ -1,4 +1,4 @@
-import { ToggleRightIcon } from '@blocksuite/icons/rc';
+import { ToggleRightIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { type ForwardedRef, forwardRef, type PropsWithChildren } from 'react';
 

@@ -1,7 +1,7 @@
 import { Button } from '@nexio/component/ui/button';
 import { EditorService } from '@nexio/core/modules/editor';
 import { useI18n } from '@nexio/i18n';
-import { PresentationIcon } from '@blocksuite/icons/rc';
+import { PresentationIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './styles.css';

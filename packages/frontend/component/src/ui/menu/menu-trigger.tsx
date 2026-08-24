@@ -1,4 +1,4 @@
-import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowDownSmallIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { forwardRef, type Ref } from 'react';
 

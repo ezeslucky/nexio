@@ -1,9 +1,9 @@
 import './action-wrapper';
 import '../../messages/slides-renderer';
 
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import { html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

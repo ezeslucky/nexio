@@ -1,6 +1,6 @@
-import { getAttachmentFileIcon } from '@blocksuite/nexio/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { getAttachmentFileIcon } from '@canvas/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 

@@ -9,7 +9,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { UserFriendlyError } from '@nexio/error';
 import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
 import { type I18nString, useI18n } from '@nexio/i18n';
-import { MoreVerticalIcon } from '@blocksuite/icons/rc';
+import { MoreVerticalIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';

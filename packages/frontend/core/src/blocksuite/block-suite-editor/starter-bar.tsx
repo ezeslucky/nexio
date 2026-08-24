@@ -13,13 +13,13 @@ import {
 } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { PageRootBlockComponent } from '@blocksuite/nexio/blocks/root';
-import type { Store } from '@blocksuite/nexio/store';
+import { PageRootBlockComponent } from '@canvas/nexio/blocks/root';
+import type { Store } from '@canvas/nexio/store';
 import {
   AiIcon,
   EdgelessIcon,
   TemplateColoredIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {

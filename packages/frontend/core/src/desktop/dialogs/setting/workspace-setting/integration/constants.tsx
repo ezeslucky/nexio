@@ -1,6 +1,6 @@
 import { IntegrationTypeIcon } from '@nexio/core/modules/integration';
 import type { I18nString } from '@nexio/i18n';
-import { Logo1Icon, TodayIcon } from '@blocksuite/icons/rc';
+import { Logo1Icon, TodayIcon } from '@canvas/icons/rc';
 import type { ReactNode } from 'react';
 
 import { CalendarSettingPanel } from './calendar/setting-panel';

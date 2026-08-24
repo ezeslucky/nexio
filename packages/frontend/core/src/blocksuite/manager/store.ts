@@ -1,7 +1,7 @@
 import { AIStoreExtension } from '@nexio/core/blocksuite/store-extensions/ai';
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { StoreExtensionManager } from '@blocksuite/nexio/ext-loader';
-import { getInternalStoreExtensions } from '@blocksuite/nexio/extensions/store';
+import { StoreExtensionManager } from '@canvas/nexio/ext-loader';
+import { getInternalStoreExtensions } from '@canvas/nexio/extensions/store';
 
 import { FeatureFlagStoreExtension } from '../store-extensions/feature-flag';
 

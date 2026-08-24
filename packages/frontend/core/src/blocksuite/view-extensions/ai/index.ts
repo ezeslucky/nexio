@@ -13,9 +13,9 @@ import { edgelessCopilotWidget } from '@nexio/core/blocksuite/ai/widgets/edgeles
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
-import { ToolbarModuleExtension } from '@blocksuite/nexio/shared/services';
-import { BlockFlavourIdentifier } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/ext-loader';
+import { ToolbarModuleExtension } from '@canvas/nexio/shared/services';
+import { BlockFlavourIdentifier } from '@canvas/nexio/std';
 import { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 

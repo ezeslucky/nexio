@@ -1,4 +1,4 @@
-import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
+import type { DocMode, RootBlockModel } from '@canvas/nexio/model';
 import { Entity } from '@ezeslucky/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';

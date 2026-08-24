@@ -2,11 +2,11 @@ import {
   EditorHostKey,
   propertyType,
   t,
-} from '@blocksuite/nexio/blocks/database';
+} from '@canvas/nexio/blocks/database';
 import {
   UserListProvider,
   UserProvider,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import zod from 'zod';
 
 export const createdByColumnType = propertyType('created-by');

@@ -1,8 +1,8 @@
-import { LoadingIcon } from '@blocksuite/nexio/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { ColorScheme } from '@blocksuite/nexio/model';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
+import { LoadingIcon } from '@canvas/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import type { ColorScheme } from '@canvas/nexio/model';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import type { Signal } from '@preact/signals-core';
 import {
   css,

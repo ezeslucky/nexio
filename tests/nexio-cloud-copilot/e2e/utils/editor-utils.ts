@@ -10,12 +10,12 @@ import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
 } from '@nexio-test/kit/utils/page-logic';
-import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
+import type { EdgelessRootBlockComponent } from '@canvas/nexio/blocks/root';
 import type {
   MindmapElementModel,
   ShapeElementModel,
-} from '@blocksuite/nexio-model';
-import type { GfxModel } from '@blocksuite/std/gfx';
+} from '@canvas/nexio-model';
+import type { GfxModel } from '@canvas/std/gfx';
 import { type Page } from '@playwright/test';
 export class EditorUtils {
   public static async focusToEditor(page: Page) {

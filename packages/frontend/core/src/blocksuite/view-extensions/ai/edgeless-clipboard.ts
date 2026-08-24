@@ -1,6 +1,6 @@
 import { AIChatBlockSchema } from '@nexio/core/blocksuite/ai/blocks';
-import { EdgelessClipboardConfig } from '@blocksuite/nexio/blocks/surface';
-import type { BlockSnapshot } from '@blocksuite/nexio/store';
+import { EdgelessClipboardConfig } from '@canvas/nexio/blocks/surface';
+import type { BlockSnapshot } from '@canvas/nexio/store';
 
 export class EdgelessClipboardAIChatConfig extends EdgelessClipboardConfig {
   static override readonly key = AIChatBlockSchema.model.flavour;

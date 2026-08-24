@@ -8,7 +8,7 @@ import {
   ProgressIcon,
   SingleSelectIcon,
   TextIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 
 import type { DatabaseCellRendererProps } from '../../types';
 import { CheckboxCell } from './cells/checkbox';

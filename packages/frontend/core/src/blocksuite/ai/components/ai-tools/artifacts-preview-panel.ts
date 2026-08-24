@@ -1,7 +1,7 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { EmptyIcon } from '@blocksuite/icons/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { EmptyIcon } from '@canvas/icons/lit';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';
 

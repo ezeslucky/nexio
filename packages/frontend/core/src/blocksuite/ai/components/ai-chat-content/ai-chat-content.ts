@@ -13,10 +13,10 @@ import type {
   ContextEmbedStatus,
   CopilotChatHistoryFragment,
 } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { type EditorHost, ShadowlessElement } from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
+import type { NotificationService } from '@canvas/nexio-shared/services';
 import { type Signal } from '@preact/signals-core';
 import { css, html, type PropertyValues, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';

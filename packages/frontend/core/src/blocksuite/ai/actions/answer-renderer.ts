@@ -1,6 +1,6 @@
-import type { MindmapElementModel } from '@blocksuite/nexio/model';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ThemeProvider } from '@blocksuite/nexio-shared/services';
+import type { MindmapElementModel } from '@canvas/nexio/model';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ThemeProvider } from '@canvas/nexio-shared/services';
 
 import { createAIScrollableTextRenderer } from '../components/ai-scrollable-text-renderer';
 import {

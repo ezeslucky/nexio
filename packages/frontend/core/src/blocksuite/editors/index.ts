@@ -1,5 +1,5 @@
 import { createReactComponentFromLit } from '@nexio/component';
-import { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
+import { DocTitle } from '@canvas/nexio/fragments/doc-title';
 import React from 'react';
 
 import { EdgelessEditor } from './edgeless-editor';

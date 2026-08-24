@@ -9,10 +9,10 @@ import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/nexio/components/context-menu';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio/components/context-menu';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import type { NotificationService } from '@canvas/nexio-shared/services';
 import {
   AiOutlineIcon,
   ArrowDownSmallIcon,
@@ -21,8 +21,8 @@ import {
   LockIcon,
   ThinkingIcon,
   WebIcon,
-} from '@blocksuite/icons/lit';
-import { ShadowlessElement } from '@blocksuite/std';
+} from '@canvas/icons/lit';
+import { ShadowlessElement } from '@canvas/std';
 import { computed } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

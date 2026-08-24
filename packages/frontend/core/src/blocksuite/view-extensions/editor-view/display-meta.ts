@@ -1,16 +1,16 @@
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import type { Container } from '@blocksuite/nexio/global/di';
+import type { Container } from '@canvas/nexio/global/di';
 import type {
   DocDisplayMetaExtension,
   DocDisplayMetaParams,
-} from '@blocksuite/nexio/shared/services';
-import { DocDisplayMetaProvider } from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
+import { DocDisplayMetaProvider } from '@canvas/nexio/shared/services';
 import {
   createSignalFromObservable,
   referenceToNode,
-} from '@blocksuite/nexio/shared/utils';
-import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/nexio/std';
-import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/shared/utils';
+import { LifeCycleWatcher, StdIdentifier } from '@canvas/nexio/std';
+import { LinkedPageIcon, PageIcon } from '@canvas/icons/lit';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { type FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';

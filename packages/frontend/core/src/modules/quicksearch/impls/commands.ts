@@ -4,7 +4,7 @@ import {
   type CommandCategory,
   PreconditionStrategy,
 } from '@nexio/core/commands';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import Fuse from 'fuse.js';
 

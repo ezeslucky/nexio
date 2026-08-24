@@ -1,19 +1,19 @@
 import { AppThemeService } from '@nexio/core/modules/theme';
-import { ColorScheme } from '@blocksuite/nexio/model';
+import { ColorScheme } from '@canvas/nexio/model';
 import {
   type ThemeExtension,
   ThemeExtensionIdentifier,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/nexio/shared/utils';
+} from '@canvas/nexio/shared/utils';
 import {
   type BlockStdScope,
   LifeCycleWatcher,
   StdIdentifier,
-} from '@blocksuite/nexio/std';
-import type { Container } from '@blocksuite/global/di';
+} from '@canvas/nexio/std';
+import type { Container } from '@canvas/global/di';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { Observable } from 'rxjs';
 

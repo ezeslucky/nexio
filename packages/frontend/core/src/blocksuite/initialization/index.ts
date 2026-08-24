@@ -4,9 +4,9 @@ import {
   type NoteProps,
   type ParagraphProps,
   type RootBlockProps,
-} from '@blocksuite/nexio/model';
-import type { SurfaceBlockProps } from '@blocksuite/nexio/std/gfx';
-import { type Store, Text } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import type { SurfaceBlockProps } from '@canvas/nexio/std/gfx';
+import { type Store, Text } from '@canvas/nexio/store';
 
 export interface DocProps {
   page?: Partial<RootBlockProps>;

@@ -1,7 +1,7 @@
 import type { I18n } from '@nexio/core/modules/i18n';
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { SettingsIcon } from '@blocksuite/icons/rc';
+import { SettingsIcon } from '@canvas/icons/rc';
 
 import { registerNexioCommand } from './registry';
 

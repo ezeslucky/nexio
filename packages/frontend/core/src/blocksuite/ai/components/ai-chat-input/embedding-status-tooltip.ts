@@ -1,6 +1,6 @@
 import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { SignalWatcher } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
+import { SignalWatcher } from '@canvas/nexio/global/lit';
+import { unsafeCSSVar } from '@canvas/nexio/shared/theme';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { debounce } from 'lodash-es';

@@ -1,12 +1,12 @@
 import {
   type GfxCommonBlockProps,
   GfxCompatible,
-} from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/std/gfx';
 import {
   BlockModel,
   BlockSchemaExtension,
   defineBlockSchema,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 
 type AIChatProps = {
   messages: string; // JSON string of ChatMessage[]

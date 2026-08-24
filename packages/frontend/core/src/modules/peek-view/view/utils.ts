@@ -1,5 +1,5 @@
 import type { DefaultOpenProperty } from '@nexio/core/components/properties';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 

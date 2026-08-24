@@ -1,28 +1,28 @@
 import { createReactComponentFromLit } from '@nexio/component';
 import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { PeekViewProvider } from '@blocksuite/nexio/components/peek';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
-import type { ColorScheme } from '@blocksuite/nexio/model';
+import { PeekViewProvider } from '@canvas/nexio/components/peek';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+import type { ColorScheme } from '@canvas/nexio/model';
 import {
   codeBlockWrapMiddleware,
   defaultImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/nexio/shared/adapters';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+} from '@canvas/nexio/shared/adapters';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import {
   BlockStdScope,
   BlockViewIdentifier,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import type {
   ExtensionType,
   Query,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import type { Signal } from '@preact/signals-core';
 import {
   darkCssVariablesV2,

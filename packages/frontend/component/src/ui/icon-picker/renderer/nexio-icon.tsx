@@ -1,4 +1,4 @@
-import * as allIcons from '@blocksuite/icons/rc';
+import * as allIcons from '@canvas/icons/rc';
 import type { SVGProps } from 'react';
 
 export const NexioIconRenderer = ({

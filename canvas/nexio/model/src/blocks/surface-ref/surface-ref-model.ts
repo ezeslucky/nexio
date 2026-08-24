@@ -1,0 +1,34 @@
+import {
+  BlockModel,
+  BlockSchemaExtension,
+  defineBlockSchema,
+} from '@canvas/store';
+
+export type SurfaceRefProps = {
+  reference: string;
+  caption: string;
+  refFlavour: string;
+  comments?: Record<string, boolean>;
+};
+
+export const SurfaceRefBlockSchema = defineBlockSchema({
+  flavour: 'nexio:surface-ref',
+  props: (): SurfaceRefProps => ({
+    reference: '',
+    caption: '',
+    refFlavour: '',
+    comments: undefined,
+  }),
+  metadata: {
+    version: 1,
+    role: 'content',
+    parent: ['nexio:note', 'nexio:paragraph', 'nexio:list'],
+  },
+  toModel: () => new SurfaceRefBlockModel(),
+});
+
+export const SurfaceRefBlockSchemaExtension = BlockSchemaExtension(
+  SurfaceRefBlockSchema
+);
+
+export class SurfaceRefBlockModel extends BlockModel<SurfaceRefProps> {}

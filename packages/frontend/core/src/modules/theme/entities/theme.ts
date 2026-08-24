@@ -1,5 +1,5 @@
-import { ColorScheme } from '@blocksuite/nexio/model';
-import { createSignalFromObservable } from '@blocksuite/nexio-shared/utils';
+import { ColorScheme } from '@canvas/nexio/model';
+import { createSignalFromObservable } from '@canvas/nexio-shared/utils';
 import type { Signal } from '@preact/signals-core';
 import { Entity, LiveData } from '@ezeslucky/infra';
 

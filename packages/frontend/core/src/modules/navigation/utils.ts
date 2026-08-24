@@ -1,5 +1,5 @@
 import { channelToScheme } from '@nexio/core/utils';
-import type { ReferenceParams } from '@blocksuite/nexio/model';
+import type { ReferenceParams } from '@canvas/nexio/model';
 import { isNil, pick, pickBy } from 'lodash-es';
 import type { ParsedQuery, ParseOptions } from 'query-string';
 import queryString from 'query-string';

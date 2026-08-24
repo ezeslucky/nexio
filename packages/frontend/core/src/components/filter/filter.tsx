@@ -1,5 +1,5 @@
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import { CloseIcon } from '@blocksuite/icons/rc';
+import { CloseIcon } from '@canvas/icons/rc';
 
 import { PropertyFilterCondition } from './conditions/property';
 import { SystemFilterCondition } from './conditions/system';

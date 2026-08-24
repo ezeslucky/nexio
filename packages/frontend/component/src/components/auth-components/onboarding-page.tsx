@@ -1,4 +1,4 @@
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { useMemo, useState } from 'react';
 import type { Location } from 'react-router-dom';

@@ -1,5 +1,5 @@
-import { RootBlockSchema } from '@blocksuite/nexio/model';
-import { BlockService } from '@blocksuite/nexio/std';
+import { RootBlockSchema } from '@canvas/nexio/model';
+import { BlockService } from '@canvas/nexio/std';
 import { Subject } from 'rxjs';
 
 export class MindmapService extends BlockService {

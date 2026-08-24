@@ -8,7 +8,7 @@ import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { UserFriendlyError } from '@nexio/error';
 import { Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useState } from 'react';

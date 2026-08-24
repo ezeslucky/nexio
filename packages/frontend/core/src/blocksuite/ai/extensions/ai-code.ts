@@ -1,5 +1,5 @@
-import { NexioCodeToolbarWidget } from '@blocksuite/nexio/blocks/code';
-import { LifeCycleWatcher } from '@blocksuite/nexio/std';
+import { NexioCodeToolbarWidget } from '@canvas/nexio/blocks/code';
+import { LifeCycleWatcher } from '@canvas/nexio/std';
 
 import { setupCodeToolbarAIEntry } from '../entries/code-toolbar/setup-code-toolbar';
 

@@ -2,7 +2,7 @@ import { IconButton, notify } from '@nexio/component';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import {
   CloseIcon,
   ExpandFullIcon,
@@ -10,7 +10,7 @@ import {
   LinkIcon,
   OpenInNewIcon,
   SplitViewIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { clsx } from 'clsx';
 import {

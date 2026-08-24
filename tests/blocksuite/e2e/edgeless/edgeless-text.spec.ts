@@ -1,5 +1,5 @@
-import type { EdgelessTextBlockComponent } from '@blocksuite/nexio/blocks/edgeless-text';
-import { Bound } from '@blocksuite/nexio/global/gfx';
+import type { EdgelessTextBlockComponent } from '@canvas/nexio/blocks/edgeless-text';
+import { Bound } from '@canvas/nexio/global/gfx';
 import { expect, type Page } from '@playwright/test';
 
 import {

@@ -1,0 +1,21 @@
+{
+  "name": "@canvas/bs-docs",
+  "description": "Canvas documentation",
+  "private": true,
+  "keywords": [],
+  "author": "ezeslucky",
+  "repository": "ezeslucky/canvas",
+  "license": "MPL-2.0",
+  "type": "module",
+  "devDependencies": {
+    "typedoc": "^0.28.0",
+    "typedoc-plugin-markdown": "^4.5.0"
+  },
+  "scripts": {
+    "build": "typedoc"
+  },
+  "dependencies": {
+    "@canvas/nexio": "workspace:*"
+  },
+  "version": "0.22.4"
+}

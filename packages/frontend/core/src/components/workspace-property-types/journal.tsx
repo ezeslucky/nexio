@@ -12,7 +12,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import { TodayIcon } from '@blocksuite/icons/rc';
+import { TodayIcon } from '@canvas/icons/rc';
 import {
   useLiveData,
   useService,

@@ -1,7 +1,7 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ThemeProvider } from '@blocksuite/nexio-shared/services';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ThemeProvider } from '@canvas/nexio-shared/services';
 import {
   ArrowDownBigIcon as ArrowDownIcon,
   ArrowUpBigIcon as ArrowUpIcon,
@@ -20,7 +20,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

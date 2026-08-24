@@ -1,4 +1,4 @@
-import { IS_MAC } from '@blocksuite/global/env';
+import { IS_MAC } from '@canvas/global/env';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

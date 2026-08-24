@@ -1,17 +1,17 @@
 import { AINetworkSearchService } from '@nexio/core/modules/ai-button/services/network-search';
-import { Bound } from '@blocksuite/nexio/global/gfx';
+import { Bound } from '@canvas/nexio/global/gfx';
 import {
   ImageBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/nexio/model';
+} from '@canvas/nexio/model';
 import {
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/nexio/shared/utils';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import { ThemeProvider } from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio/shared/utils';
+import type { EditorHost } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import { ThemeProvider } from '@canvas/nexio-shared/services';
 import {
   ChatWithAiIcon,
   DeleteIcon,
@@ -21,7 +21,7 @@ import {
   PenIcon,
   ReplaceIcon,
   ResetIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 

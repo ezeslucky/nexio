@@ -1,12 +1,12 @@
 import { IconButton, Menu, MenuItem } from '@nexio/component';
-import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { AttachmentBlockModel } from '@canvas/nexio/model';
 import {
   //EditIcon,
   LocalDataIcon,
   MoreHorizontalIcon,
   ZoomDownIcon,
   ZoomUpIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { useState } from 'react';
 

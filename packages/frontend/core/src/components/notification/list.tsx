@@ -36,7 +36,7 @@ import {
   MoreHorizontalIcon,
   NotificationIcon,
   PageIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {

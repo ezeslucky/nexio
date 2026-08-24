@@ -1,9 +1,9 @@
-import '@blocksuite/nexio/effects';
+import '@canvas/nexio/effects';
 
-import type { IVec, XYWH } from '@blocksuite/nexio/global/gfx';
-import type { CodeBlockComponent } from '@blocksuite/nexio-block-code';
-import type { ParagraphBlockComponent } from '@blocksuite/nexio-block-paragraph';
-import type { BlockComponent } from '@blocksuite/std';
+import type { IVec, XYWH } from '@canvas/nexio/global/gfx';
+import type { CodeBlockComponent } from '@canvas/nexio-block-code';
+import type { ParagraphBlockComponent } from '@canvas/nexio-block-paragraph';
+import type { BlockComponent } from '@canvas/std';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 const EDGELESS_TOOLBAR_WIDGET = 'edgeless-toolbar-widget';

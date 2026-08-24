@@ -1,10 +1,10 @@
 import { PropertyValue } from '@nexio/component';
 import { ConfigModal } from '@nexio/core/components/mobile';
-import { DefaultInlineManagerExtension } from '@blocksuite/nexio/inlines/preset';
-import { RichText } from '@blocksuite/nexio/rich-text';
-import type { BlockStdScope } from '@blocksuite/nexio/std';
-import type { Store } from '@blocksuite/nexio/store';
-import { TextIcon } from '@blocksuite/icons/rc';
+import { DefaultInlineManagerExtension } from '@canvas/nexio/inlines/preset';
+import { RichText } from '@canvas/nexio/rich-text';
+import type { BlockStdScope } from '@canvas/nexio/std';
+import type { Store } from '@canvas/nexio/store';
+import { TextIcon } from '@canvas/icons/rc';
 import { type LiveData, useLiveData } from '@ezeslucky/infra';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import type * as Y from 'yjs';

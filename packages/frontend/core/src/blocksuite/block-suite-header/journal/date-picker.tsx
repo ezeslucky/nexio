@@ -5,7 +5,7 @@ import {
   JournalService,
 } from '@nexio/core/modules/journal';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import { useCallback, useEffect, useRef, useState } from 'react';

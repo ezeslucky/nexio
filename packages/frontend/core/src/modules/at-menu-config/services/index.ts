@@ -7,27 +7,27 @@ import {
 } from '@nexio/graphql';
 import { I18n, i18nTime } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
-import { DocModeProvider } from '@blocksuite/nexio/shared/services';
-import type { NexioInlineEditor } from '@blocksuite/nexio/shared/types';
+import type { DocMode } from '@canvas/nexio/model';
+import { DocModeProvider } from '@canvas/nexio/shared/services';
+import type { NexioInlineEditor } from '@canvas/nexio/shared/types';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type EditorHost,
-} from '@blocksuite/nexio/std';
-import type { DocMeta } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std';
+import type { DocMeta } from '@canvas/nexio/store';
 import {
   type LinkedMenuGroup,
   type LinkedMenuItem,
   type LinkedWidgetConfig,
   LinkedWidgetUtils,
-} from '@blocksuite/nexio/widgets/linked-doc';
+} from '@canvas/nexio/widgets/linked-doc';
 import {
   DateTimeIcon,
   NewXxxEdgelessIcon,
   NewXxxPageIcon,
   UserIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { computed, Signal } from '@preact/signals-core';
 import { Service } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';

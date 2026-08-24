@@ -1,4 +1,4 @@
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { Entity, LiveData, MemoryMemento } from '@ezeslucky/infra';
 
 export class GlobalContext extends Entity {

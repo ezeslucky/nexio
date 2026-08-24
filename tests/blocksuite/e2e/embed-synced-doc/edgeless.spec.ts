@@ -1,5 +1,5 @@
-import type { NexioReference } from '@blocksuite/nexio/inlines/reference';
-import type { EmbedSyncedDocBlockProps } from '@blocksuite/nexio/model';
+import type { NexioReference } from '@canvas/nexio/inlines/reference';
+import type { EmbedSyncedDocBlockProps } from '@canvas/nexio/model';
 import { expect, type Page } from '@playwright/test';
 
 import { clickView } from '../utils/actions/click.js';

@@ -1,5 +1,5 @@
 import type { Server } from '@nexio/core/modules/cloud';
-import { CloudWorkspaceIcon } from '@blocksuite/icons/rc';
+import { CloudWorkspaceIcon } from '@canvas/icons/rc';
 
 import { ServerSelector } from '../../server-selector';
 import * as styles from './enable-cloud.css';

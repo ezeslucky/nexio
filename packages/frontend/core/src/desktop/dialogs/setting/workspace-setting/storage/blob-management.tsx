@@ -11,8 +11,8 @@ import { BlobManagementService } from '@nexio/core/modules/blob-management/servi
 import { useI18n } from '@nexio/i18n';
 import type { ListedBlobRecord } from '@nexio/nbstore';
 import track from '@nexio/track';
-import { getAttachmentFileIcon } from '@blocksuite/nexio/components/icons';
-import { DeleteIcon } from '@blocksuite/icons/rc';
+import { getAttachmentFileIcon } from '@canvas/nexio/components/icons';
+import { DeleteIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';

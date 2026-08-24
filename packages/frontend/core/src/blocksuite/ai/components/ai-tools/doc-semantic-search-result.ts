@@ -1,7 +1,7 @@
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
-import { WithDisposable } from '@blocksuite/global/lit';
-import { AiEmbeddingIcon, PageIcon } from '@blocksuite/icons/lit';
-import { ShadowlessElement } from '@blocksuite/std';
+import { WithDisposable } from '@canvas/global/lit';
+import { AiEmbeddingIcon, PageIcon } from '@canvas/icons/lit';
+import { ShadowlessElement } from '@canvas/std';
 import type { Signal } from '@preact/signals-core';
 import { html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

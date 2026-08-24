@@ -1,0 +1,11 @@
+[**BlockSuite API Documentation**](../../../../README.md)
+
+***
+
+[BlockSuite API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [gfx](../README.md) / SURFACE\_TEXT\_UNIQ\_IDENTIFIER
+
+# Variable: SURFACE\_TEXT\_UNIQ\_IDENTIFIER
+
+> `const` **SURFACE\_TEXT\_UNIQ\_IDENTIFIER**: `"nexio:surface:text"` = `'nexio:surface:text'`
+
+Used for text field

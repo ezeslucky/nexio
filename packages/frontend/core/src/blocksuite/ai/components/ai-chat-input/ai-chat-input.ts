@@ -6,12 +6,12 @@ import type { AIModelService } from '@nexio/core/modules/ai-button/services/mode
 import type { SubscriptionService } from '@nexio/core/modules/cloud';
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
-import { ArrowUpBigIcon, CloseIcon } from '@blocksuite/icons/lit';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import type { NotificationService } from '@canvas/nexio-shared/services';
+import { ArrowUpBigIcon, CloseIcon } from '@canvas/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

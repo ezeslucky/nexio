@@ -1,7 +1,7 @@
 import { Skeleton } from '@nexio/component';
 import { AttachmentViewerView } from '@nexio/core/blocksuite/attachment-viewer';
 import { type Doc, DocsService } from '@nexio/core/modules/doc';
-import { type AttachmentBlockModel } from '@blocksuite/nexio/model';
+import { type AttachmentBlockModel } from '@canvas/nexio/model';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactElement, useLayoutEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

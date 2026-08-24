@@ -1,6 +1,6 @@
 import type { Tag } from '@nexio/core/modules/tag';
 import { TagService } from '@nexio/core/modules/tag';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import { MoreHorizontalIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 

@@ -1,13 +1,13 @@
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace';
-import { getEmbedLinkedDocIcons } from '@blocksuite/nexio/blocks/embed-doc';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
-import type { ColorScheme } from '@blocksuite/nexio/model';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { MarkdownTransformer } from '@blocksuite/nexio/widgets/linked-doc';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
-import { CopyIcon, PageIcon, ToolIcon } from '@blocksuite/icons/lit';
-import type { BlockStdScope } from '@blocksuite/std';
+import { getEmbedLinkedDocIcons } from '@canvas/nexio/blocks/embed-doc';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+import type { ColorScheme } from '@canvas/nexio/model';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { MarkdownTransformer } from '@canvas/nexio/widgets/linked-doc';
+import type { NotificationService } from '@canvas/nexio-shared/services';
+import { CopyIcon, PageIcon, ToolIcon } from '@canvas/icons/lit';
+import type { BlockStdScope } from '@canvas/std';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

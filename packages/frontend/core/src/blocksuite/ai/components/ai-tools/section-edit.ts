@@ -1,22 +1,22 @@
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { ColorScheme } from '@blocksuite/nexio/model';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import type { ColorScheme } from '@canvas/nexio/model';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import {
   type BlockSelection,
   type EditorHost,
   ShadowlessElement,
   type TextSelection,
-} from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
-import { isInsidePageEditor } from '@blocksuite/nexio-shared/utils';
+} from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
+import type { NotificationService } from '@canvas/nexio-shared/services';
+import { isInsidePageEditor } from '@canvas/nexio-shared/utils';
 import {
   CopyIcon,
   InsertBleowIcon,
   LinkedPageIcon,
   PageIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

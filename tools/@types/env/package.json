@@ -4,7 +4,7 @@
   "types": "./__all.d.ts",
   "type": "module",
   "dependencies": {
-    "@blocksuite/nexio": "workspace:*",
+    "@canvas/nexio": "workspace:*",
     "@nexio/env": "workspace:*"
   },
   "version": "0.22.4"

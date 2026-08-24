@@ -2,15 +2,15 @@ import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
 import type { AppThemeService } from '@nexio/core/modules/theme';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { isInsidePageEditor } from '@blocksuite/nexio/shared/utils';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { isInsidePageEditor } from '@canvas/nexio/shared/utils';
 import {
   type BlockStdScope,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
-import type { NotificationService } from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
+import type { NotificationService } from '@canvas/nexio-shared/services';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

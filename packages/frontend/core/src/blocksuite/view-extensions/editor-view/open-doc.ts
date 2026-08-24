@@ -4,13 +4,13 @@ import {
   type OpenDocConfig,
   type OpenDocConfigItem,
   OpenDocExtension,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import {
   CenterPeekIcon,
   ExpandFullIcon,
   OpenInNewIcon,
   SplitViewIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 
 type OpenDocAction = OpenDocConfigItem & {
   enabled: boolean;

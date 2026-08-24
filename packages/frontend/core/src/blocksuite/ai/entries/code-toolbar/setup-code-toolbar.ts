@@ -8,8 +8,8 @@ const buttonOptions: AskAIButtonOptions = {
   panelWidth: 240,
 };
 
-import type { NexioCodeToolbarWidget } from '@blocksuite/nexio/blocks/code';
-import { BlockSelection } from '@blocksuite/nexio/std';
+import type { NexioCodeToolbarWidget } from '@canvas/nexio/blocks/code';
+import { BlockSelection } from '@canvas/nexio/std';
 
 import { buildAICodeItemGroups } from '../../_common/config';
 import type { AskAIButtonOptions } from '../../components/ask-ai-button';

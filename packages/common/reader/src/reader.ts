@@ -1,14 +1,14 @@
-import { Container } from '@blocksuite/nexio/global/di';
+import { Container } from '@canvas/nexio/global/di';
 import type {
   AttachmentBlockModel,
   BookmarkBlockModel,
   EmbedBlockModel,
   ImageBlockModel,
   TableBlockModel,
-} from '@blocksuite/nexio/model';
-import { NexioSchemas } from '@blocksuite/nexio/schemas';
-import { MarkdownAdapter } from '@blocksuite/nexio/shared/adapters';
-import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
+} from '@canvas/nexio/model';
+import { NexioSchemas } from '@canvas/nexio/schemas';
+import { MarkdownAdapter } from '@canvas/nexio/shared/adapters';
+import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
 import {
   createYProxy,
   type DeltaInsert,
@@ -17,7 +17,7 @@ import {
   Transformer,
   type TransformerMiddleware,
   type YBlock,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import { uniq } from 'lodash-es';
 import {
   Array as YArray,

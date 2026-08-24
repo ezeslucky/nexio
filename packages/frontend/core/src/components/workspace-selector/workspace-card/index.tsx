@@ -21,7 +21,7 @@ import {
   SettingsIcon,
   TeamWorkspaceIcon,
   UnsyncIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';

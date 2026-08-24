@@ -1,4 +1,4 @@
-import type { PropertyMetaConfig } from '@blocksuite/nexio/blocks/database';
+import type { PropertyMetaConfig } from '@canvas/nexio/blocks/database';
 
 import { createdByPropertyConfig } from './created-by/view';
 import { filePropertyConfig } from './file/view';

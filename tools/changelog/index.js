@@ -117,7 +117,7 @@ const pkgJsonPath = 'packages/frontend/core/package.json';
 
 const content = await readFile(join(rootDir, pkgJsonPath), 'utf8');
 const { dependencies } = JSON.parse(content);
-const blocksuiteVersion = dependencies['@blocksuite/nexio'];
+const blocksuiteVersion = dependencies['@canvas/nexio'];
 
 const prevCommit = repo.findCommit(PREV_VERSION);
 
@@ -137,7 +137,7 @@ const previousPkgJson = JSON.parse(
   Buffer.from(previousPkgJsonBlob.content()).toString('utf8')
 );
 const previousBlocksuiteVersion =
-  previousPkgJson.dependencies['@blocksuite/nexio'];
+  previousPkgJson.dependencies['@canvas/nexio'];
 
 if (blocksuiteVersion !== previousBlocksuiteVersion) {
   const blockSuiteRepo = new Repository(

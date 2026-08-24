@@ -8,8 +8,8 @@ import { NexioPageReference } from '@nexio/core/components/nexio/reference-link'
 import { DocService } from '@nexio/core/modules/doc';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { useI18n } from '@nexio/i18n';
-import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
-import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
+import { DatabaseTableViewIcon, PageIcon } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 import type { Observable } from 'rxjs';

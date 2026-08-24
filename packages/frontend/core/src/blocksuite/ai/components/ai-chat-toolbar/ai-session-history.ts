@@ -1,9 +1,9 @@
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { DeleteIcon } from '@blocksuite/icons/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { DeleteIcon } from '@canvas/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 
