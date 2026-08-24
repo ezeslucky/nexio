@@ -7,7 +7,7 @@ Manages template files for use in NEXIO. For now we only support onboarding temp
 Before we offer a better solution, to update the onboarding templates:
 
 1. run NEXIO core locally (dev mode)
-2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@blocksuite/nexio/blocks/root'; window.ZipTransformer = ZipTransformer;`
+2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@canvas/nexio/blocks/root'; window.ZipTransformer = ZipTransformer;`
 3. run the following script
    ```js
    (async () => {

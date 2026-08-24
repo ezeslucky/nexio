@@ -2,15 +2,15 @@ import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
 import type { AppThemeService } from '@nexio/core/modules/theme';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import {
   DocModeProvider,
   type FeatureFlagService,
   type NotificationService,
-} from '@blocksuite/nexio/shared/services';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
-import type { BaseSelection, ExtensionType } from '@blocksuite/nexio/store';
-import { ArrowDownBigIcon as ArrowDownIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/shared/services';
+import { type EditorHost, ShadowlessElement } from '@canvas/nexio/std';
+import type { BaseSelection, ExtensionType } from '@canvas/nexio/store';
+import { ArrowDownBigIcon as ArrowDownIcon } from '@canvas/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

@@ -5,7 +5,7 @@ import {
   LinkIcon,
   ReadwiseLogoDuotoneIcon,
   TextIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import type { SVGProps } from 'react';
 
 import type { IntegrationProperty, IntegrationType } from './type';

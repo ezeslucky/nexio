@@ -19,7 +19,7 @@ import { DocDatabaseBacklinkInfo } from '@nexio/core/modules/doc-info';
 import { DocLinksService } from '@nexio/core/modules/doc-link';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { useI18n } from '@nexio/i18n';
-import { PlusIcon } from '@blocksuite/icons/rc';
+import { PlusIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 

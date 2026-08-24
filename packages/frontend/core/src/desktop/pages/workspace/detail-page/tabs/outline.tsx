@@ -1,5 +1,5 @@
-import { OutlinePanel } from '@blocksuite/nexio/fragments/outline';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import { OutlinePanel } from '@canvas/nexio/fragments/outline';
+import type { EditorHost } from '@canvas/nexio/std';
 import { useCallback, useEffect, useRef } from 'react';
 
 import * as styles from './outline.css';

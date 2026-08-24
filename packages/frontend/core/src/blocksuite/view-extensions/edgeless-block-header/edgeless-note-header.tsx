@@ -5,14 +5,14 @@ import { useInsidePeekView } from '@nexio/core/modules/peek-view/view/modal-cont
 import { extractEmojiIcon } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { Bound } from '@blocksuite/nexio/global/gfx';
-import { type NoteBlockModel } from '@blocksuite/nexio/model';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { Bound } from '@canvas/nexio/global/gfx';
+import { type NoteBlockModel } from '@canvas/nexio/model';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import {
   ExpandFullIcon,
   ToggleDownIcon,
   ToggleRightIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

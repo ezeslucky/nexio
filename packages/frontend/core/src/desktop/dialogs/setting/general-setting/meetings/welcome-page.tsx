@@ -1,7 +1,7 @@
 import { Button } from '@nexio/component';
 import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
 import { Trans, useI18n } from '@nexio/i18n';
-import { DualLinkIcon } from '@blocksuite/icons/rc';
+import { DualLinkIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { useCallback } from 'react';

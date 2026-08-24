@@ -1,14 +1,14 @@
 import '../declare-test-window.js';
 
-import type { DatabaseBlockModel, ListType } from '@blocksuite/nexio/model';
-import type { RichText } from '@blocksuite/nexio/rich-text';
+import type { DatabaseBlockModel, ListType } from '@canvas/nexio/model';
+import type { RichText } from '@canvas/nexio/rich-text';
 import type {
   InlineRange,
   InlineRootElement,
-} from '@blocksuite/nexio/std/inline';
-import type { BlockModel } from '@blocksuite/nexio/store';
-import { uuidv4 } from '@blocksuite/nexio/store';
-import type { TestNexioEditorContainer } from '@blocksuite/integration-test';
+} from '@canvas/nexio/std/inline';
+import type { BlockModel } from '@canvas/nexio/store';
+import { uuidv4 } from '@canvas/nexio/store';
+import type { TestNexioEditorContainer } from '@canvas/integration-test';
 import type { ConsoleMessage, Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 import stringify from 'json-stable-stringify';

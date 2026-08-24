@@ -1,8 +1,8 @@
-import { CodeBlockPreviewExtension } from '@blocksuite/nexio/blocks/code';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { CodeBlockModel } from '@blocksuite/nexio/model';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/std';
+import { CodeBlockPreviewExtension } from '@canvas/nexio/blocks/code';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import type { CodeBlockModel } from '@canvas/nexio/model';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/std';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

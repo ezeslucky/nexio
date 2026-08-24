@@ -1,4 +1,4 @@
-import type { DocsPropertiesMeta } from '@blocksuite/nexio/store';
+import type { DocsPropertiesMeta } from '@canvas/nexio/store';
 import {
   LiveData,
   Store,

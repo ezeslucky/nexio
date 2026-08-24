@@ -11,7 +11,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
-import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
+import { MoreHorizontalIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { type HTMLProps, useCallback, useState } from 'react';

@@ -2,13 +2,13 @@
 import {
   CanvasRenderer,
   type SurfaceBlockModel,
-} from '@blocksuite/nexio/blocks/surface';
-import { fitContent } from '@blocksuite/nexio/gfx/shape';
-import type { Bound } from '@blocksuite/nexio/global/gfx';
-import type { Color, ShapeElementModel } from '@blocksuite/nexio/model';
-import { ThemeProvider } from '@blocksuite/nexio/shared/services';
-import { BlockComponent } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/blocks/surface';
+import { fitContent } from '@canvas/nexio/gfx/shape';
+import type { Bound } from '@canvas/nexio/global/gfx';
+import type { Color, ShapeElementModel } from '@canvas/nexio/model';
+import { ThemeProvider } from '@canvas/nexio/shared/services';
+import { BlockComponent } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 

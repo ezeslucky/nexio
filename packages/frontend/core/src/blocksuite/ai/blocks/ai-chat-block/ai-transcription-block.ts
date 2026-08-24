@@ -1,6 +1,6 @@
 import type { TranscriptionBlockModel } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
-import { BlockComponent, BlockViewExtension } from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+import { BlockComponent, BlockViewExtension } from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
 import { css, type PropertyValues } from 'lit';
 import { property } from 'lit/decorators.js';
 import { literal } from 'lit/static-html.js';

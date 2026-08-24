@@ -1,5 +1,5 @@
 import type { MemberSearchService } from '@nexio/core/modules/permissions';
-import { UserListServiceExtension } from '@blocksuite/nexio/shared/services';
+import { UserListServiceExtension } from '@canvas/nexio/shared/services';
 
 export function patchUserListExtensions(memberSearch: MemberSearchService) {
   return UserListServiceExtension({

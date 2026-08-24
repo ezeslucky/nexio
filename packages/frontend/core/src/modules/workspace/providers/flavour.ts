@@ -4,7 +4,7 @@ import type {
   ListedBlobRecord,
 } from '@nexio/nbstore';
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import type { Workspace as BSWorkspace } from '@blocksuite/nexio/store';
+import type { Workspace as BSWorkspace } from '@canvas/nexio/store';
 import { createIdentifier, type LiveData } from '@ezeslucky/infra';
 
 import type { WorkspaceProfileInfo } from '../entities/profile';

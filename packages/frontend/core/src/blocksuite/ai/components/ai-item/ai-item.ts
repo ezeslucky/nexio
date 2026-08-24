@@ -1,11 +1,11 @@
-import { ArrowRightIcon, EnterIcon } from '@blocksuite/nexio/components/icons';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ColorScheme } from '@blocksuite/nexio/model';
+import { ArrowRightIcon, EnterIcon } from '@canvas/nexio/components/icons';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { ColorScheme } from '@canvas/nexio/model';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 

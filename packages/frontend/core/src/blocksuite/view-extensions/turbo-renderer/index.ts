@@ -1,7 +1,7 @@
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
+} from '@canvas/nexio/ext-loader';
 import { z } from 'zod';
 
 import { turboRendererExtension } from './turbo-renderer';

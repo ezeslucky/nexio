@@ -9,7 +9,7 @@ import {
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
-import type { Store } from '@blocksuite/nexio/store';
+import type { Store } from '@canvas/nexio/store';
 import type { Page } from '@playwright/test';
 
 declare global {

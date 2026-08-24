@@ -5,17 +5,17 @@ import type { CommentAttachment } from '@nexio/core/modules/comment/types';
 import { PeekViewService } from '@nexio/core/modules/peek-view';
 import { downloadResourceWithUrl } from '@nexio/core/utils/resource';
 import { DebugLogger } from '@nexio/debug';
-import { getAttachmentFileIconRC } from '@blocksuite/nexio/components/icons';
-import { type RichText, selectTextModel } from '@blocksuite/nexio/rich-text';
-import { ViewportElementExtension } from '@blocksuite/nexio/shared/services';
-import { openFilesWith } from '@blocksuite/nexio/shared/utils';
-import { type DocSnapshot, nanoid, Store } from '@blocksuite/nexio/store';
+import { getAttachmentFileIconRC } from '@canvas/nexio/components/icons';
+import { type RichText, selectTextModel } from '@canvas/nexio/rich-text';
+import { ViewportElementExtension } from '@canvas/nexio/shared/services';
+import { openFilesWith } from '@canvas/nexio/shared/utils';
+import { type DocSnapshot, nanoid, Store } from '@canvas/nexio/store';
 import {
   ArrowUpBigIcon,
   AttachmentIcon,
   CloseIcon,
-} from '@blocksuite/icons/rc';
-import type { TextSelection } from '@blocksuite/std';
+} from '@canvas/icons/rc';
+import type { TextSelection } from '@canvas/std';
 import { useFramework, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import clsx from 'clsx';

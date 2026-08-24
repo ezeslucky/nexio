@@ -4,11 +4,11 @@ import {
   createIcon,
   type DataViewCellLifeCycle,
   EditorHostKey,
-} from '@blocksuite/nexio/blocks/database';
+} from '@canvas/nexio/blocks/database';
 import {
   UserProvider,
   type UserService,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import { css } from '@emotion/css';
 import {
   forwardRef,

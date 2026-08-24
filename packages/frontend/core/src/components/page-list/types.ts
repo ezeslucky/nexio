@@ -1,5 +1,5 @@
 import type { CollectionMeta } from '@nexio/core/modules/collection';
-import type { DocMeta, Workspace } from '@blocksuite/nexio/store';
+import type { DocMeta, Workspace } from '@canvas/nexio/store';
 import type { JSX, PropsWithChildren, ReactNode } from 'react';
 import type { To } from 'react-router-dom';
 

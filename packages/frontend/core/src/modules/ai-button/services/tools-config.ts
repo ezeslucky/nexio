@@ -1,7 +1,7 @@
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/nexio/shared/utils';
+} from '@canvas/nexio/shared/utils';
 import { LiveData, Service } from '@ezeslucky/infra';
 import { map } from 'rxjs';
 

@@ -1,31 +1,31 @@
 import {
   EdgelessClipboardController,
   splitElements,
-} from '@blocksuite/nexio/blocks/root';
+} from '@canvas/nexio/blocks/root';
 import {
   getSurfaceBlock,
   type SurfaceBlockComponent,
-} from '@blocksuite/nexio/blocks/surface';
-import { DatabaseBlockModel, ImageBlockModel } from '@blocksuite/nexio/model';
+} from '@canvas/nexio/blocks/surface';
+import { DatabaseBlockModel, ImageBlockModel } from '@canvas/nexio/model';
 import {
   getBlockSelectionsCommand,
   getImageSelectionsCommand,
   getSelectedBlocksCommand,
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/nexio/shared/commands';
-import { matchModels } from '@blocksuite/nexio/shared/utils';
-import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/commands';
+import { matchModels } from '@canvas/nexio/shared/utils';
+import { type EditorHost, TextSelection } from '@canvas/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/std/gfx';
 import {
   type BlockModel,
   type DraftModel,
   Slice,
   toDraftModel,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 
 import { getContentFromSlice } from '../../utils';
 import type { CopilotTool } from '../tool/copilot-tool';

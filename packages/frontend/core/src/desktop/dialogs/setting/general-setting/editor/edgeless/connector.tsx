@@ -8,7 +8,7 @@ import {
 import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
+import { getSurfaceBlock } from '@canvas/nexio/blocks/surface';
 import {
   ConnectorMode,
   DefaultTheme,
@@ -19,8 +19,8 @@ import {
   PointStyle,
   StrokeStyle,
   TextAlign,
-} from '@blocksuite/nexio/model';
-import type { Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import type { Store } from '@canvas/nexio/store';
 import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';

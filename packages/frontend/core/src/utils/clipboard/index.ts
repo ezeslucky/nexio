@@ -1,4 +1,4 @@
-import { type Clipboard as BlockStdScopeClipboard } from '@blocksuite/nexio/std';
+import { type Clipboard as BlockStdScopeClipboard } from '@canvas/nexio/std';
 
 import { fakeCopyAction } from './fake';
 

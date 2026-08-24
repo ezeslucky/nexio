@@ -1,4 +1,4 @@
-import { LoadingIcon } from '@blocksuite/nexio/components/icons';
+import { LoadingIcon } from '@canvas/nexio/components/icons';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

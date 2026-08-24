@@ -1,6 +1,6 @@
 import { IconButton } from '@nexio/component/ui/button';
 import { Menu, MenuItem } from '@nexio/component/ui/menu';
-import { CloseIcon, PropertyIcon } from '@blocksuite/icons/rc';
+import { CloseIcon, PropertyIcon } from '@canvas/icons/rc';
 import { useState } from 'react';
 
 import * as styles from './index.css';

@@ -13,7 +13,7 @@ import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { TemplateListMenu } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon } from '@blocksuite/icons/rc';
+import { DeleteIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

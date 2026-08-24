@@ -3,7 +3,7 @@ import { TranscriptionBlockSchemaExtension } from '@nexio/core/blocksuite/ai/blo
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
+} from '@canvas/nexio/ext-loader';
 
 export class AIStoreExtension extends StoreExtensionProvider {
   override name = 'nexio-store-extensions';

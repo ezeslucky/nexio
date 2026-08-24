@@ -1,13 +1,13 @@
-import { SurfaceBlockModel } from '@blocksuite/nexio/blocks/surface';
+import { SurfaceBlockModel } from '@canvas/nexio/blocks/surface';
 import {
   MindmapElementModel,
   NoteBlockModel,
   RootBlockModel,
   type ShapeElementModel,
-} from '@blocksuite/nexio/model';
-import { matchModels } from '@blocksuite/nexio/shared/utils';
-import type { BlockComponent } from '@blocksuite/nexio/std';
-import type { GfxModel } from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/model';
+import { matchModels } from '@canvas/nexio/shared/utils';
+import type { BlockComponent } from '@canvas/nexio/std';
+import type { GfxModel } from '@canvas/nexio/std/gfx';
 
 export function mindMapToMarkdown(mindmap: MindmapElementModel) {
   let markdownStr = '';

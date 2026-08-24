@@ -1,4 +1,4 @@
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 
 import type { WorkspaceMetadata } from '../workspace';
 

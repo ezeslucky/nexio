@@ -7,7 +7,7 @@ import type { Workspace } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { universalId } from '@nexio/nbstore';
 import track from '@nexio/track';
-import { ExportIcon } from '@blocksuite/icons/rc';
+import { ExportIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useState } from 'react';
 

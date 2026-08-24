@@ -1,0 +1,34 @@
+{
+  "name": "@canvas/nexio-model",
+  "description": "Models for BlockSuite in Nexio.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "toeverything",
+  "license": "MIT",
+  "dependencies": {
+    "@canvas/global": "workspace:*",
+    "@canvas/std": "workspace:*",
+    "@canvas/store": "workspace:*",
+    "@toeverything/theme": "^1.1.16",
+    "@types/lodash-es": "^4.17.12",
+    "fractional-indexing": "^3.2.0",
+    "lodash-es": "^4.17.21",
+    "rxjs": "^7.8.1",
+    "yjs": "^13.6.21",
+    "zod": "^3.23.8"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src",
+    "dist",
+    "!src/__tests__",
+    "!dist/__tests__"
+  ],
+  "version": "0.22.4"
+}

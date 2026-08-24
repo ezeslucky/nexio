@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 import { captureException } from '@sentry/react';
 import { BehaviorSubject, Subject } from 'rxjs';
 

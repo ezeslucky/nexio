@@ -1,6 +1,6 @@
 import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import type { IndexerSyncState } from '@nexio/nbstore';
-import type { ReferenceParams } from '@blocksuite/nexio/model';
+import type { ReferenceParams } from '@canvas/nexio/model';
 import { fromPromise, LiveData, Service } from '@ezeslucky/infra';
 import { isEmpty, omit } from 'lodash-es';
 import { map, type Observable, of, switchMap } from 'rxjs';

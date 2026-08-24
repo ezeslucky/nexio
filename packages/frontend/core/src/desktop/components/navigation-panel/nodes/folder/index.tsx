@@ -31,7 +31,7 @@ import {
   PlusThickIcon,
   RemoveFolderIcon,
   TagsIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { difference } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';

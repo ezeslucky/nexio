@@ -1,7 +1,7 @@
-import { createLitPortal } from '@blocksuite/nexio/components/portal';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { PlusIcon } from '@blocksuite/icons/lit';
+import { createLitPortal } from '@canvas/nexio/components/portal';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { PlusIcon } from '@canvas/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';

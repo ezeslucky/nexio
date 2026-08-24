@@ -3,7 +3,7 @@ import { MemberSearchService } from '@nexio/core/modules/permissions';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/nexio/ext-loader';
+} from '@canvas/nexio/ext-loader';
 import { FrameworkProvider } from '@ezeslucky/infra';
 import { z } from 'zod';
 

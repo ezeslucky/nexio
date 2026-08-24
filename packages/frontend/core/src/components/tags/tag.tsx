@@ -1,4 +1,4 @@
-import { CloseIcon } from '@blocksuite/icons/rc';
+import { CloseIcon } from '@canvas/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { type MouseEventHandler, useCallback } from 'react';

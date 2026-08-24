@@ -1,4 +1,4 @@
-import type { Workspace } from '@blocksuite/nexio/store';
+import type { Workspace } from '@canvas/nexio/store';
 import { nanoid } from 'nanoid';
 import type { Map as YMap } from 'yjs';
 import { Doc as YDoc } from 'yjs';

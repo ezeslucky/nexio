@@ -1,4 +1,4 @@
-import { AiIcon, FrameIcon, TocIcon, TodayIcon } from '@blocksuite/icons/rc';
+import { AiIcon, FrameIcon, TocIcon, TodayIcon } from '@canvas/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useState } from 'react';

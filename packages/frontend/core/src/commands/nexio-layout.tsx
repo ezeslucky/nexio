@@ -1,6 +1,6 @@
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { SidebarIcon } from '@blocksuite/icons/rc';
+import { SidebarIcon } from '@canvas/icons/rc';
 
 import type { AppSidebarService } from '../modules/app-sidebar';
 import { registerNexioCommand } from './registry';

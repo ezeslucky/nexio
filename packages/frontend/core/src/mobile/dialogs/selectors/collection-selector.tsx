@@ -5,7 +5,7 @@ import type {
   WORKSPACE_DIALOG_SCHEMA,
 } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import { ViewLayersIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';

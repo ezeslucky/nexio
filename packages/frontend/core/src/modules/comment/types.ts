@@ -1,10 +1,10 @@
 import type { CommentChangeAction, PublicUserType } from '@nexio/graphql';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import type {
   BaseSelection,
   DocSnapshot,
   Store,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 
 export type CommentId = string;
 

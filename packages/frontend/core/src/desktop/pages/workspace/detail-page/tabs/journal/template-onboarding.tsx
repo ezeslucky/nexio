@@ -3,7 +3,7 @@ import { GlobalStateService } from '@nexio/core/modules/storage';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { TemplateListMenuContentScrollable } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
-import { CloseIcon, TemplateIcon } from '@blocksuite/icons/rc';
+import { CloseIcon, TemplateIcon } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { useTheme } from 'next-themes';
 import { memo, useCallback, useEffect, useMemo, useRef } from 'react';

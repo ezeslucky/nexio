@@ -14,11 +14,11 @@ import type {
   CopilotChatHistoryFragment,
   UpdateChatSessionInput,
 } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { type NotificationService } from '@blocksuite/nexio/shared/services';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import type { ExtensionType, Store } from '@blocksuite/nexio/store';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { type NotificationService } from '@canvas/nexio/shared/services';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import type { ExtensionType, Store } from '@canvas/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

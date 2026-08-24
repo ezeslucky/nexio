@@ -1,5 +1,5 @@
-import { Bound } from '@blocksuite/nexio/global/gfx';
-import { nanoid } from '@blocksuite/nexio/store';
+import { Bound } from '@canvas/nexio/global/gfx';
+import { nanoid } from '@canvas/nexio/store';
 
 import { AIProvider } from '../provider';
 

@@ -1,4 +1,4 @@
-import { WriterInfoServiceExtension } from '@blocksuite/nexio/shared/services';
+import { WriterInfoServiceExtension } from '@canvas/nexio/shared/services';
 import { OnEvent, Service } from '@ezeslucky/infra';
 
 import { type Workspace, WorkspaceInitialized } from '../../workspace';

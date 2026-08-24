@@ -5,7 +5,7 @@ import {
 } from '@nexio/component';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
-import { FavoriteIcon } from '@blocksuite/icons/rc';
+import { FavoriteIcon } from '@canvas/icons/rc';
 
 import { NavigationPanelEmptySection } from '../../layouts/empty-section';
 import { DropEffect } from '../../tree';

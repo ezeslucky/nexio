@@ -1,9 +1,9 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { ThemeProvider } from '@blocksuite/nexio/shared/services';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
-import { on, stopPropagation } from '@blocksuite/nexio/shared/utils';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { ThemeProvider } from '@canvas/nexio/shared/services';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { unsafeCSSVar } from '@canvas/nexio/shared/theme';
+import { on, stopPropagation } from '@canvas/nexio/shared/utils';
+import type { EditorHost } from '@canvas/nexio/std';
 import { darkCssVariables, lightCssVariables } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,16 +1,16 @@
 import './declare-test-window.js';
 
-import type { EdgelessNoteBackground } from '@blocksuite/nexio/blocks/note';
-import type { NoteBlockModel, RootBlockModel } from '@blocksuite/nexio/model';
-import type { RichText } from '@blocksuite/nexio/rich-text';
-import type { NexioInlineEditor } from '@blocksuite/nexio/shared/types';
+import type { EdgelessNoteBackground } from '@canvas/nexio/blocks/note';
+import type { NoteBlockModel, RootBlockModel } from '@canvas/nexio/model';
+import type { RichText } from '@canvas/nexio/rich-text';
+import type { NexioInlineEditor } from '@canvas/nexio/shared/types';
 import type {
   BlockComponent,
   EditorHost,
   TextSelection,
-} from '@blocksuite/nexio/std';
-import type { InlineRootElement } from '@blocksuite/nexio/std/inline';
-import type { BlockModel } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std';
+import type { InlineRootElement } from '@canvas/nexio/std/inline';
+import type { BlockModel } from '@canvas/nexio/store';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 import {

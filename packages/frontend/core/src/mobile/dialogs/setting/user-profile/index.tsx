@@ -2,7 +2,7 @@ import { Avatar } from '@nexio/component';
 import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
 import { AuthService } from '@nexio/core/modules/cloud';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
-import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode } from 'react';
 

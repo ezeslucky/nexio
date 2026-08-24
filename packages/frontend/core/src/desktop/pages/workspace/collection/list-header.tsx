@@ -11,8 +11,8 @@ import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@canvas/nexio/model';
+import { ViewLayersIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

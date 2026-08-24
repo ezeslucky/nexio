@@ -1,5 +1,5 @@
-import type { ReferenceParams } from '@blocksuite/nexio/model';
-import { BlockLinkIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
+import type { ReferenceParams } from '@canvas/nexio/model';
+import { BlockLinkIcon, EdgelessIcon, PageIcon } from '@canvas/icons/rc';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import { omit, truncate } from 'lodash-es';
 

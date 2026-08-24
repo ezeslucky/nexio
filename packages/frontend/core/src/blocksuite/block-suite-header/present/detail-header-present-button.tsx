@@ -1,6 +1,6 @@
 import { IconButton } from '@nexio/component';
 import { EditorService } from '@nexio/core/modules/editor';
-import { PresentationIcon } from '@blocksuite/icons/rc';
+import { PresentationIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 
 export const DetailPageHeaderPresentButton = () => {

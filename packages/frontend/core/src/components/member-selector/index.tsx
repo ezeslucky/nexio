@@ -11,7 +11,7 @@ import {
   type Member,
   MemberSearchService,
 } from '@nexio/core/modules/permissions';
-import { DoneIcon } from '@blocksuite/icons/rc';
+import { DoneIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { clamp, debounce } from 'lodash-es';

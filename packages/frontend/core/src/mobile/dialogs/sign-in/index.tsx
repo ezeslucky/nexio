@@ -4,7 +4,7 @@ import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
 } from '@nexio/core/modules/dialogs';
-import { CloseIcon } from '@blocksuite/icons/rc';
+import { CloseIcon } from '@canvas/icons/rc';
 import { cssVarV2 } from '@toeverything/theme/v2';
 
 import { MobileSignInPanel } from '../../components/sign-in';

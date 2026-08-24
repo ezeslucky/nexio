@@ -1,4 +1,4 @@
-import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { AttachmentBlockModel } from '@canvas/nexio/model';
 
 export type AttachmentType = 'pdf' | 'image' | 'audio' | 'video' | 'unknown';
 

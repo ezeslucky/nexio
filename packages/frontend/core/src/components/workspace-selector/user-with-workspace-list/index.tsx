@@ -6,7 +6,7 @@ import { type WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { ServerFeature } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
+import { Logo1Icon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

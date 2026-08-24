@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/nexio/model';
-import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import type { DocMode } from '@canvas/nexio/model';
+import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
 import { Service } from '@ezeslucky/infra';
 
 import { DocsService } from '../../doc';

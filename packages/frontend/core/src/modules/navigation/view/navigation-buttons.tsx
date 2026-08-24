@@ -1,6 +1,6 @@
 import { IconButton } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 

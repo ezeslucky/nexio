@@ -3,9 +3,9 @@ import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { stopPropagation } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
-import { EmbedSyncedDocBlockComponent } from '@blocksuite/nexio/blocks/embed-doc';
-import { isPeekable, peek } from '@blocksuite/nexio/components/peek';
-import type { EmbedSyncedDocModel } from '@blocksuite/nexio-model';
+import { EmbedSyncedDocBlockComponent } from '@canvas/nexio/blocks/embed-doc';
+import { isPeekable, peek } from '@canvas/nexio/components/peek';
+import type { EmbedSyncedDocModel } from '@canvas/nexio-model';
 import {
   ArrowDownSmallIcon,
   CenterPeekIcon,
@@ -15,8 +15,8 @@ import {
   SplitViewIcon,
   ToggleDownIcon,
   ToggleRightIcon,
-} from '@blocksuite/icons/rc';
-import type { BlockStdScope } from '@blocksuite/std';
+} from '@canvas/icons/rc';
+import type { BlockStdScope } from '@canvas/std';
 import { batch } from '@preact/signals-core';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';

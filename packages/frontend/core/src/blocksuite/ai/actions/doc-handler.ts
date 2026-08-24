@@ -1,6 +1,6 @@
-import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
-import { createLitPortal } from '@blocksuite/nexio/components/portal';
-import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
+import { AIStarIconWithAnimation } from '@canvas/nexio/components/icons';
+import { createLitPortal } from '@canvas/nexio/components/portal';
+import { type EditorHost, TextSelection } from '@canvas/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { html, type TemplateResult } from 'lit';
 

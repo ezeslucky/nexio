@@ -1,43 +1,43 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/nexio/blocks/surface';
+import { EdgelessCRUDIdentifier } from '@canvas/nexio/blocks/surface';
 import {
   Bound,
   getCommonBoundWithRotation,
   type SerializedXYWH,
-} from '@blocksuite/nexio/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+} from '@canvas/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
 import {
   type DocMode,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/nexio/model';
+} from '@canvas/nexio/model';
 import {
   getFirstBlockCommand,
   getLastBlockCommand,
   getSelectedBlocksCommand,
-} from '@blocksuite/nexio/shared/commands';
-import type { ImageSelection } from '@blocksuite/nexio/shared/selection';
+} from '@canvas/nexio/shared/commands';
+import type { ImageSelection } from '@canvas/nexio/shared/selection';
 import {
   DocModeProvider,
   EditPropsStore,
   NotificationProvider,
   TelemetryProvider,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import {
   type BlockComponent,
   type BlockSelection,
   type BlockStdScope,
   type EditorHost,
   type TextSelection,
-} from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import type { Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import type { Store } from '@canvas/nexio/store';
 import {
   BlockIcon,
   EdgelessIcon,
   InsertBleowIcon as InsertBelowIcon,
   LinkedPageIcon,
   PageIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import type { TemplateResult } from 'lit';
 
 import { insertFromMarkdown } from '../../utils';

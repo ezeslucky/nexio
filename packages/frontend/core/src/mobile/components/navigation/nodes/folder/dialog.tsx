@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { EditIcon } from '@blocksuite/icons/rc';
+import { EditIcon } from '@canvas/icons/rc';
 
 import type { RenameDialogProps, RenameSubMenuProps } from '../../../rename';
 import { RenameDialog, RenameSubMenu } from '../../../rename';

@@ -4,19 +4,19 @@ import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { SerializedXYWH } from '@blocksuite/nexio/global/gfx';
-import { type DocMode } from '@blocksuite/nexio/model';
+import type { SerializedXYWH } from '@canvas/nexio/global/gfx';
+import { type DocMode } from '@canvas/nexio/model';
 import {
   getBlockSelectionsCommand,
   getImageSelectionsCommand,
   getSelectedModelsCommand,
   getTextSelectionCommand,
-} from '@blocksuite/nexio/shared/commands';
-import { type EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/commands';
+import { type EditorHost } from '@canvas/nexio/std';
 import {
   GfxBlockElementModel,
   GfxControllerIdentifier,
-} from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/std/gfx';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

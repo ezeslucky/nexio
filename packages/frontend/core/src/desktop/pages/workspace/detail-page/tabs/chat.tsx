@@ -16,9 +16,9 @@ import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { PeekViewService } from '@nexio/core/modules/peek-view';
 import { AppThemeService } from '@nexio/core/modules/theme';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
-import { DocModeProvider } from '@blocksuite/nexio/shared/services';
-import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+import { DocModeProvider } from '@canvas/nexio/shared/services';
+import { createSignalFromObservable } from '@canvas/nexio/shared/utils';
 import { useFramework, useService } from '@ezeslucky/infra';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 

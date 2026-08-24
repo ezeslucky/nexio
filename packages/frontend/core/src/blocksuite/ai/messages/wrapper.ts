@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

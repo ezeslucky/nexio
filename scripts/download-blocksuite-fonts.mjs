@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { NexioCanvasTextFonts } from '@blocksuite/nexio/shared/services';
+import { NexioCanvasTextFonts } from '@canvas/nexio/shared/services';
 
 const fontPath = join(
   fileURLToPath(import.meta.url),

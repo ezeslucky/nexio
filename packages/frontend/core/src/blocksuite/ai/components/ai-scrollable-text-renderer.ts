@@ -1,6 +1,6 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import type { PropertyValues } from 'lit';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';

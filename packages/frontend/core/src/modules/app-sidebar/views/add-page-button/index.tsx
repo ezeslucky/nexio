@@ -10,14 +10,14 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import {
   ArrowDownSmallIcon,
   EdgelessIcon,
   PageIcon,
   PlusIcon,
   TemplateIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type React from 'react';

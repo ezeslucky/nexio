@@ -1,7 +1,7 @@
 import { Divider, MenuItem } from '@nexio/component';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
-import { PlusIcon } from '@blocksuite/icons/rc';
+import { PlusIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

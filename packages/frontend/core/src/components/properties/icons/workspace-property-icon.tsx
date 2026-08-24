@@ -1,5 +1,5 @@
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
-import * as icons from '@blocksuite/icons/rc';
+import * as icons from '@canvas/icons/rc';
 import type { SVGProps } from 'react';
 
 import {

@@ -4,8 +4,8 @@ import {
   type GroupRenderProps,
   t,
   ungroups,
-} from '@blocksuite/nexio/blocks/database';
-import type { UserService } from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio/blocks/database';
+import type { UserService } from '@canvas/nexio-shared/services';
 
 import { useMemberInfo } from '../hooks/use-member-info';
 import {

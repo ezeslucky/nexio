@@ -15,8 +15,8 @@ import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/au
 import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
 import { Trans, useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
-import { ResetIcon } from '@blocksuite/icons/rc';
+import type { AttachmentBlockModel } from '@canvas/nexio/model';
+import { ResetIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useState } from 'react';

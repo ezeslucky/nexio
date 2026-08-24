@@ -1,5 +1,5 @@
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import { WarningIcon } from '@blocksuite/icons/rc';
+import { WarningIcon } from '@canvas/icons/rc';
 import { useEffect } from 'react';
 
 import { Condition } from './condition';

@@ -6,7 +6,7 @@ import { UserFriendlyError } from '@nexio/error';
 import {
   type NexioUserInfo,
   UserServiceExtension,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 
 export function patchUserExtensions(
   publicUserService: PublicUserService,

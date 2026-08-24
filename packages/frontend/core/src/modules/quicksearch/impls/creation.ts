@@ -1,5 +1,5 @@
-import type { DocMode } from '@blocksuite/nexio/model';
-import { NewXxxEdgelessIcon, NewXxxPageIcon } from '@blocksuite/icons/rc';
+import type { DocMode } from '@canvas/nexio/model';
+import { NewXxxEdgelessIcon, NewXxxPageIcon } from '@canvas/icons/rc';
 import { Entity, LiveData } from '@ezeslucky/infra';
 
 import type { QuickSearchSession } from '../providers/quick-search-provider';

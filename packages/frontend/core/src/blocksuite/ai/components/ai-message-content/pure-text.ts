@@ -1,5 +1,5 @@
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

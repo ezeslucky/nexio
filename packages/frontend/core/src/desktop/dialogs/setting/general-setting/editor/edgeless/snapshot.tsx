@@ -2,16 +2,16 @@ import { Skeleton } from '@nexio/component';
 import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import type { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import { EdgelessCRUDIdentifier } from '@blocksuite/nexio/blocks/surface';
-import { Bound } from '@blocksuite/nexio/global/gfx';
-import { ViewportElementExtension } from '@blocksuite/nexio/shared/services';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { BlockStdScope } from '@blocksuite/nexio/std';
+import { EdgelessCRUDIdentifier } from '@canvas/nexio/blocks/surface';
+import { Bound } from '@canvas/nexio/global/gfx';
+import { ViewportElementExtension } from '@canvas/nexio/shared/services';
+import type { EditorHost } from '@canvas/nexio/std';
+import { BlockStdScope } from '@canvas/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxPrimitiveElementModel,
-} from '@blocksuite/nexio/std/gfx';
-import type { Block, Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std/gfx';
+import type { Block, Store } from '@canvas/nexio/store';
 import { useFramework } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';

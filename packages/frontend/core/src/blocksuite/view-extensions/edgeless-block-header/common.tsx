@@ -3,8 +3,8 @@ import { useSharingUrl } from '@nexio/core/components/hooks/nexio/use-share-url'
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { type DocMode } from '@blocksuite/nexio/model';
-import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
+import { type DocMode } from '@canvas/nexio/model';
+import { InformationIcon, LinkIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

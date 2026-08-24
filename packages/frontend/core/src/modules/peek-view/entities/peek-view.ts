@@ -1,5 +1,5 @@
-import type { SurfaceRefBlockComponent } from '@blocksuite/nexio/blocks/surface-ref';
-import { NexioReference } from '@blocksuite/nexio/inlines/reference';
+import type { SurfaceRefBlockComponent } from '@canvas/nexio/blocks/surface-ref';
+import { NexioReference } from '@canvas/nexio/inlines/reference';
 import type {
   AttachmentBlockModel,
   DocMode,
@@ -7,9 +7,9 @@ import type {
   EmbedSyncedDocModel,
   ImageBlockModel,
   SurfaceRefBlockModel,
-} from '@blocksuite/nexio/model';
-import type { BlockComponent, EditorHost } from '@blocksuite/nexio/std';
-import type { Block, BlockModel } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import type { BlockComponent, EditorHost } from '@canvas/nexio/std';
+import type { Block, BlockModel } from '@canvas/nexio/store';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 import { firstValueFrom, map, race } from 'rxjs';

@@ -1,9 +1,9 @@
 /**
  * @vitest-environment happy-dom
  */
-import { getInternalStoreExtensions } from '@blocksuite/nexio/extensions/store';
-import { StoreExtensionManager } from '@blocksuite/nexio-ext-loader';
-import { createNexioTemplate } from '@blocksuite/nexio-shared/test-utils';
+import { getInternalStoreExtensions } from '@canvas/nexio/extensions/store';
+import { StoreExtensionManager } from '@canvas/nexio-ext-loader';
+import { createNexioTemplate } from '@canvas/nexio-shared/test-utils';
 import { describe, expect, it } from 'vitest';
 
 import { applyPatchToDoc } from '../../../../blocksuite/ai/utils/apply-model/apply-patch-to-doc';

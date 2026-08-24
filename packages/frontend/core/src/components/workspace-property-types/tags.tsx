@@ -4,7 +4,7 @@ import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { type Tag, TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { TagsIcon } from '@blocksuite/icons/rc';
+import { TagsIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useEffect, useMemo, useRef } from 'react';

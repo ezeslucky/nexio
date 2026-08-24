@@ -5,8 +5,8 @@ import { PeekViewService } from '@nexio/core/modules/peek-view/services/peek-vie
 import { useInsidePeekView } from '@nexio/core/modules/peek-view/view/modal-container';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { track } from '@nexio/track';
-import type { DocMode } from '@blocksuite/nexio/model';
-import type { Workspace } from '@blocksuite/nexio/store';
+import type { DocMode } from '@canvas/nexio/model';
+import type { Workspace } from '@canvas/nexio/store';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';

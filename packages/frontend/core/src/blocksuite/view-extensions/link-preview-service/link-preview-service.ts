@@ -1,12 +1,12 @@
-import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '@blocksuite/nexio/shared/consts';
+import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '@canvas/nexio/shared/consts';
 import {
   LinkPreviewCacheIdentifier,
   type LinkPreviewCacheProvider,
   LinkPreviewService,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/nexio/shared/services';
-import { type ExtensionType } from '@blocksuite/nexio/store';
-import type { Container } from '@blocksuite/global/di';
+} from '@canvas/nexio/shared/services';
+import { type ExtensionType } from '@canvas/nexio/store';
+import type { Container } from '@canvas/global/di';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { ServerService } from '../../../modules/cloud/services/server';

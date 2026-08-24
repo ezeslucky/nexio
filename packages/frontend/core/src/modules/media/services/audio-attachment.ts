@@ -1,4 +1,4 @@
-import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { AttachmentBlockModel } from '@canvas/nexio/model';
 import {
   attachmentBlockAudioMediaKey,
   type AudioMediaKey,

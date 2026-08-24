@@ -1,5 +1,5 @@
 import { generateUrl } from '@nexio/core/components/hooks/nexio/use-share-url';
-import { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import { AttachmentBlockModel } from '@canvas/nexio/model';
 import {
   attachmentBlockAudioMediaKey,
   type AudioMediaDescriptor,

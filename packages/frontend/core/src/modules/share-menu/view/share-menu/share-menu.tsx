@@ -9,8 +9,8 @@ import { ShareInfoService } from '@nexio/core/modules/share-doc';
 import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { ServerDeploymentType, SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import type { Store } from '@blocksuite/nexio/store';
-import { LockIcon, PublishIcon } from '@blocksuite/icons/rc';
+import type { Store } from '@canvas/nexio/store';
+import { LockIcon, PublishIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   forwardRef,

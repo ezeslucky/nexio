@@ -5,7 +5,7 @@ import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { EditorService } from '@nexio/core/modules/editor';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { AiIcon } from '@blocksuite/icons/rc';
+import { AiIcon } from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import Lottie from 'lottie-react';

@@ -2,7 +2,7 @@ import type { CheckboxProps } from '@nexio/component';
 import { Checkbox } from '@nexio/component';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { useI18n } from '@nexio/i18n';
-import { MultiSelectIcon } from '@blocksuite/icons/rc';
+import { MultiSelectIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import { selectAtom } from 'jotai/utils';
 import type { MouseEventHandler } from 'react';

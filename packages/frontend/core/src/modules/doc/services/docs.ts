@@ -1,9 +1,9 @@
 import { DebugLogger } from '@nexio/debug';
 import { Unreachable } from '@nexio/env/constant';
-import { replaceIdMiddleware } from '@blocksuite/nexio/shared/adapters';
-import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
-import type { DeltaInsert } from '@blocksuite/nexio/store';
-import { Slice, Text, Transformer } from '@blocksuite/nexio/store';
+import { replaceIdMiddleware } from '@canvas/nexio/shared/adapters';
+import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
+import type { DeltaInsert } from '@canvas/nexio/store';
+import { Slice, Text, Transformer } from '@canvas/nexio/store';
 import { ObjectPool, Service } from '@ezeslucky/infra';
 import { combineLatest, map } from 'rxjs';
 

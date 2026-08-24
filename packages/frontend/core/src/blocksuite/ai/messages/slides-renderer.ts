@@ -1,8 +1,8 @@
 import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/nexio/ext-loader';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { BlockStdScope, type EditorHost } from '@blocksuite/nexio/std';
-import type { Store } from '@blocksuite/nexio/store';
+import { ViewExtensionManagerIdentifier } from '@canvas/nexio/ext-loader';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { BlockStdScope, type EditorHost } from '@canvas/nexio/std';
+import type { Store } from '@canvas/nexio/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { createRef, type Ref, ref } from 'lit/directives/ref.js';

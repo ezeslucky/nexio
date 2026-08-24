@@ -1,8 +1,8 @@
 import { Divider, Loading, toast } from '@nexio/component';
 import { Button, IconButton } from '@nexio/component/ui/button';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import type { ImageBlockModel } from '@blocksuite/nexio/model';
-import type { BlockModel, Workspace } from '@blocksuite/nexio/store';
+import type { ImageBlockModel } from '@canvas/nexio/model';
+import type { BlockModel, Workspace } from '@canvas/nexio/store';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
@@ -13,7 +13,7 @@ import {
   MinusIcon,
   PlusIcon,
   ViewBarIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { ImgHTMLAttributes, ReactElement } from 'react';

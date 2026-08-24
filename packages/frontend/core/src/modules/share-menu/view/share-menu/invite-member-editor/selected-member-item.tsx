@@ -1,5 +1,5 @@
 import type { Member } from '@nexio/core/modules/permissions';
-import { CloseIcon } from '@blocksuite/icons/rc';
+import { CloseIcon } from '@canvas/icons/rc';
 import { type MouseEventHandler, useCallback } from 'react';
 
 import * as styles from './selected-member-item.css';

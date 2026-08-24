@@ -3,7 +3,7 @@ import {
   type DocMeta,
   type DocsPropertiesMeta,
   type WorkspaceMeta,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import { Subject } from 'rxjs';
 import type * as Y from 'yjs';
 

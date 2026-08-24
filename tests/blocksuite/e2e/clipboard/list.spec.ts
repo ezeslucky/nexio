@@ -1,4 +1,4 @@
-import type { BlockSnapshot } from '@blocksuite/store';
+import type { BlockSnapshot } from '@canvas/store';
 import { expect } from '@playwright/test';
 import { lightThemeV2 } from '@toeverything/theme/v2';
 

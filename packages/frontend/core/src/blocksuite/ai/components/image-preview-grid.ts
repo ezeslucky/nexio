@@ -1,5 +1,5 @@
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { CloseIcon } from '@blocksuite/icons/lit';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { CloseIcon } from '@canvas/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -1,6 +1,6 @@
 
 import { useI18n } from '@nexio/i18n';
-import { CloseIcon, InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
+import { CloseIcon, InformationFillDuotoneIcon } from '@canvas/icons/rc';
 import * as Toast from '@radix-ui/react-toast';
 import clsx from 'clsx';
 import { useAtom, useAtomValue, useSetAtom } from 'jotai';

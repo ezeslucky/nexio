@@ -1,14 +1,14 @@
 import type { ReactToLit } from '@nexio/component';
 import { JournalService } from '@nexio/core/modules/journal';
-import { EmbedSyncedDocConfigExtension } from '@blocksuite/nexio/blocks/embed-doc';
-import { NoteConfigExtension } from '@blocksuite/nexio/blocks/note';
-import { EDGELESS_BLOCK_CHILD_PADDING } from '@blocksuite/nexio/blocks/root';
-import { Bound, Vec } from '@blocksuite/nexio/global/gfx';
+import { EmbedSyncedDocConfigExtension } from '@canvas/nexio/blocks/embed-doc';
+import { NoteConfigExtension } from '@canvas/nexio/blocks/note';
+import { EDGELESS_BLOCK_CHILD_PADDING } from '@canvas/nexio/blocks/root';
+import { Bound, Vec } from '@canvas/nexio/global/gfx';
 import {
   DocModeProvider,
   EditPropsStore,
-} from '@blocksuite/nexio/shared/services';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+} from '@canvas/nexio/shared/services';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';
 

@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 
 import type { EdgelessCopilotWidget } from '../widgets/edgeless-copilot';
 import { NEXIO_EDGELESS_COPILOT_WIDGET } from '../widgets/edgeless-copilot/constant';

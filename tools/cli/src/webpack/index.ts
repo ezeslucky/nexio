@@ -128,7 +128,7 @@ export function createHTMLTargetConfig(
         {
           test: /\.js$/,
           enforce: 'pre',
-          include: /@blocksuite/,
+          include: /@canvas/,
           use: ['source-map-loader'],
         },
         {
@@ -415,7 +415,7 @@ export function createWorkerTargetConfig(
         {
           test: /\.js$/,
           enforce: 'pre',
-          include: /@blocksuite/,
+          include: /@canvas/,
           use: ['source-map-loader'],
         },
         {
@@ -548,7 +548,7 @@ export function createNodeTargetConfig(
         {
           test: /\.js$/,
           enforce: 'pre',
-          include: /@blocksuite/,
+          include: /@canvas/,
           use: ['source-map-loader'],
         },
         {

@@ -6,7 +6,7 @@ import {
   type GetStoreOptions,
   StoreContainer,
   type YBlock,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import { Awareness } from 'y-protocols/awareness.js';
 import * as Y from 'yjs';
 

@@ -10,10 +10,10 @@ import type { NexioDNDData } from '@nexio/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
-} from '@blocksuite/nexio/shared/services';
-import { BlockStdScope } from '@blocksuite/nexio/std';
-import type { SliceSnapshot } from '@blocksuite/nexio/store';
-import type { DragBlockPayload } from '@blocksuite/nexio/widgets/drag-handle';
+} from '@canvas/nexio/shared/services';
+import { BlockStdScope } from '@canvas/nexio/std';
+import type { SliceSnapshot } from '@canvas/nexio/store';
+import type { DragBlockPayload } from '@canvas/nexio/widgets/drag-handle';
 import { Service } from '@ezeslucky/infra';
 
 import type { DocsService } from '../../doc';

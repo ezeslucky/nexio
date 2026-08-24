@@ -15,14 +15,14 @@ import type {
   CopilotContextDoc,
   CopilotContextFile,
 } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { uuidv4 } from '@blocksuite/nexio/store';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import type { EditorHost } from '@canvas/nexio/std';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { uuidv4 } from '@canvas/nexio/store';
 import type {
   FeatureFlagService,
   NotificationService,
-} from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio-shared/services';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

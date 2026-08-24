@@ -1,11 +1,11 @@
 import '../../components/ask-ai-button';
 
-import { ImageBlockComponent } from '@blocksuite/nexio/blocks/image';
+import { ImageBlockComponent } from '@canvas/nexio/blocks/image';
 import {
   ActionPlacement,
   type ToolbarModuleConfig,
-} from '@blocksuite/nexio/shared/services';
-import { BlockSelection } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/services';
+import { BlockSelection } from '@canvas/nexio/std';
 import { html } from 'lit';
 
 import { buildAIImageItemGroups } from '../../_common/config';

@@ -2,7 +2,7 @@ import { DropdownButton, Menu } from '@nexio/component';
 import { BlockCard } from '@nexio/component/card/block-card';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { EdgelessIcon, ImportIcon, PageIcon } from '@blocksuite/icons/rc';
+import { EdgelessIcon, ImportIcon, PageIcon } from '@canvas/icons/rc';
 import type { MouseEvent, PropsWithChildren } from 'react';
 import { useCallback, useState } from 'react';
 

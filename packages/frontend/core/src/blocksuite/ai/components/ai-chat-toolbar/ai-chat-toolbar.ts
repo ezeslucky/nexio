@@ -1,15 +1,15 @@
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { createLitPortal } from '@blocksuite/nexio/components/portal';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { NotificationService } from '@blocksuite/nexio/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { createLitPortal } from '@canvas/nexio/components/portal';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import type { NotificationService } from '@canvas/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
 import {
   ArrowDownSmallIcon,
   PinedIcon,
   PinIcon,
   PlusIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';

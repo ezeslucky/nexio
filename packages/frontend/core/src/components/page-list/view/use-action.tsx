@@ -1,6 +1,6 @@
 import type { Collection } from '@nexio/core/modules/collection';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon, FilterIcon } from '@blocksuite/icons/rc';
+import { DeleteIcon, FilterIcon } from '@canvas/icons/rc';
 import type { ReactNode } from 'react';
 import { useMemo } from 'react';
 

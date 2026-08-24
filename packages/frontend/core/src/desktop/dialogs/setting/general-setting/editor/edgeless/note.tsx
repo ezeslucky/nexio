@@ -14,8 +14,8 @@ import {
   NoteShadow,
   NoteShadowMap,
   StrokeStyle,
-} from '@blocksuite/nexio/model';
-import type { Store } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/model';
+import type { Store } from '@canvas/nexio/store';
 import { useFramework, useLiveData } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';

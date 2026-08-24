@@ -1,4 +1,4 @@
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import { map } from 'rxjs';
 

@@ -17,7 +17,7 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { TodayIcon } from '@blocksuite/icons/rc';
+import { TodayIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import type { Location } from 'history';

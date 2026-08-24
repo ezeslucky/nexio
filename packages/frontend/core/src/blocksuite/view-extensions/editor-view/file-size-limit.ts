@@ -1,11 +1,11 @@
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import track from '@nexio/track';
-import type { Container } from '@blocksuite/nexio/global/di';
+import type { Container } from '@canvas/nexio/global/di';
 import {
   FileSizeLimitProvider,
   type IFileSizeLimitService,
-} from '@blocksuite/nexio/shared/services';
-import { Extension } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/services';
+import { Extension } from '@canvas/nexio/store';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function patchFileSizeLimitExtension(framework: FrameworkProvider) {

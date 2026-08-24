@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/modules/collection-rules';
 import { ShareDocsListService } from '@nexio/core/modules/share-doc';
 import { Trans, useI18n } from '@nexio/i18n';
-import { FilterIcon } from '@blocksuite/icons/rc';
+import { FilterIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';
 

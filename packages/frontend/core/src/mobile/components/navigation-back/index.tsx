@@ -3,7 +3,7 @@ import {
   type IconButtonProps,
   useIsInsideModal,
 } from '@nexio/component';
-import { ArrowLeftSmallIcon, CloseIcon } from '@blocksuite/icons/rc';
+import { ArrowLeftSmallIcon, CloseIcon } from '@canvas/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo } from 'react';
 

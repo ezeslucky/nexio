@@ -2,7 +2,7 @@ import { Switch } from '@nexio/component';
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { Trans, useI18n } from '@nexio/i18n';
-import {  AfFiNeIcon } from '@blocksuite/icons/rc';
+import {  AfFiNeIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import {
   type ReactNode,

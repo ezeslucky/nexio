@@ -3,17 +3,17 @@ import { isMindmapChild, isMindMapRoot } from '@nexio/core/blocksuite/ai';
 import { EditorService } from '@nexio/core/modules/editor';
 import { apis } from '@nexio/electron-api';
 import { I18n } from '@nexio/i18n';
-import type { MenuContext } from '@blocksuite/nexio/components/toolbar';
-import { Bound, getCommonBound } from '@blocksuite/nexio/global/gfx';
-import type { BlockStdScope } from '@blocksuite/nexio/std';
+import type { MenuContext } from '@canvas/nexio/components/toolbar';
+import { Bound, getCommonBound } from '@canvas/nexio/global/gfx';
+import type { BlockStdScope } from '@canvas/nexio/std';
 import {
   type GfxBlockElementModel,
   GfxControllerIdentifier,
   type GfxModel,
   GfxPrimitiveElementModel,
   isGfxGroupCompatibleModel,
-} from '@blocksuite/nexio/std/gfx';
-import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/std/gfx';
+import { CopyAsImgaeIcon } from '@canvas/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 const snapshotStyle = `

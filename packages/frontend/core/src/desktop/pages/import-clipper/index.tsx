@@ -14,7 +14,7 @@ import {
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { AllDocsIcon } from '@blocksuite/icons/rc';
+import { AllDocsIcon } from '@canvas/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect, useRef, useState } from 'react';

@@ -1,4 +1,4 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import { css, html, LitElement } from 'lit';
 
 export class AIPanelDivider extends WithDisposable(LitElement) {

@@ -1,8 +1,3 @@
-// One-time fix: many blocksuite/* workspace packages call "tsc" directly in
-// their build script but never declare "typescript" as a dependency, so Yarn
-// Berry can't resolve the binary when run from inside that workspace.
-// This walks the repo, finds every package.json with `"build": "tsc"`,
-// and adds "typescript" to its devDependencies if missing.
 
 const fs = require("fs");
 const path = require("path");

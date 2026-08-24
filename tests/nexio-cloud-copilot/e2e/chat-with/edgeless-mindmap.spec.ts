@@ -1,5 +1,5 @@
-import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
-import type { GfxModel } from '@blocksuite/std/gfx';
+import type { EdgelessRootBlockComponent } from '@canvas/nexio/blocks/root';
+import type { GfxModel } from '@canvas/std/gfx';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

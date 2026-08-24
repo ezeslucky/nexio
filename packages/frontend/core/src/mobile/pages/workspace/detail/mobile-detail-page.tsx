@@ -21,12 +21,12 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { i18nTime } from '@nexio/i18n';
-import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { DisposableGroup } from '@canvas/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/nexio/shared/adapters';
+} from '@canvas/nexio/shared/adapters';
 import {
   FrameworkScope,
   useLiveData,

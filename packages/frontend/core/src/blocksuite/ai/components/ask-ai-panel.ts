@@ -1,10 +1,10 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { WithDisposable } from '@canvas/nexio/global/lit';
 import {
   DocModeProvider,
   ThemeProvider,
-} from '@blocksuite/nexio/shared/services';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { type EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/services';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { type EditorHost } from '@canvas/nexio/std';
 import { cssVar } from '@toeverything/theme';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

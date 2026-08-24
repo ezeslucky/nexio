@@ -1,5 +1,5 @@
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowDownSmallIcon } from '@canvas/icons/rc';
 import clsx from 'clsx';
 import React, { type SVGAttributes } from 'react';
 import type { To } from 'react-router-dom';

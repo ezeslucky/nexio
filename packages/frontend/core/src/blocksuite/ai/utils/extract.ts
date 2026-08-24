@@ -1,5 +1,5 @@
 import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
-import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
+import { getSurfaceBlock } from '@canvas/nexio/blocks/surface';
 import {
   DatabaseBlockModel,
   EmbedLinkedDocModel,
@@ -7,30 +7,30 @@ import {
   ImageBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/nexio/model';
+} from '@canvas/nexio/model';
 import {
   embedSyncedDocMiddleware,
   MarkdownAdapter,
   titleMiddleware,
-} from '@blocksuite/nexio/shared/adapters';
+} from '@canvas/nexio/shared/adapters';
 import {
   getImageSelectionsCommand,
   getSelectedBlocksCommand,
-} from '@blocksuite/nexio/shared/commands';
-import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/commands';
+import { DocModeProvider } from '@canvas/nexio/shared/services';
 import {
   getBlockProps,
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/nexio/shared/utils';
-import { BlockStdScope, type EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/shared/utils';
+import { BlockStdScope, type EditorHost } from '@canvas/nexio/std';
 import {
   GfxControllerIdentifier,
   GfxPrimitiveElementModel,
-} from '@blocksuite/nexio/std/gfx';
-import type { BlockModel, DocSnapshot, Store } from '@blocksuite/nexio/store';
-import { Slice, toDraftModel } from '@blocksuite/nexio/store';
-import { getElementProps } from '@blocksuite/nexio-block-root';
+} from '@canvas/nexio/std/gfx';
+import type { BlockModel, DocSnapshot, Store } from '@canvas/nexio/store';
+import { Slice, toDraftModel } from '@canvas/nexio/store';
+import { getElementProps } from '@canvas/nexio-block-root';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../../manager/store';

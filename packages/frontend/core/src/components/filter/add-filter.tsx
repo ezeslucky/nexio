@@ -13,7 +13,7 @@ import {
   CloudWorkspaceIcon,
   FavoriteIcon,
   PlusIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo } from 'react';
 

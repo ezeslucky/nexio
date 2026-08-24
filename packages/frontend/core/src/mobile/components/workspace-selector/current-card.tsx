@@ -3,7 +3,7 @@ import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-inf
 import { WorkspaceAvatar } from '@nexio/core/components/workspace-avatar';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
-import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowDownSmallIcon } from '@canvas/icons/rc';
 import { useServiceOptional } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { forwardRef, type HTMLAttributes } from 'react';

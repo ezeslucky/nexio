@@ -1,9 +1,9 @@
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { type NotificationService } from '@blocksuite/nexio/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import type { Store } from '@blocksuite/nexio/store';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { type NotificationService } from '@canvas/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import type { Store } from '@canvas/nexio/store';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

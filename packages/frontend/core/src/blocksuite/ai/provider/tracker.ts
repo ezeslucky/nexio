@@ -1,7 +1,7 @@
 import { mixpanel, track } from '@nexio/track';
-import type { EditorHost } from '@blocksuite/nexio/std';
-import type { GfxPrimitiveElementModel } from '@blocksuite/nexio/std/gfx';
-import type { BlockModel } from '@blocksuite/nexio/store';
+import type { EditorHost } from '@canvas/nexio/std';
+import type { GfxPrimitiveElementModel } from '@canvas/nexio/std/gfx';
+import type { BlockModel } from '@canvas/nexio/store';
 import { lowerCase, omit } from 'lodash-es';
 import type { Subject } from 'rxjs';
 

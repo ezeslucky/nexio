@@ -1,0 +1,7 @@
+{
+  // exists for easier extending in canvas packages
+  "extends": "../tsconfig.web.json",
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}

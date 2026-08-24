@@ -1,4 +1,4 @@
-import { ArrowRightSmallPlusIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallPlusIcon } from '@canvas/icons/rc';
 import { Slot } from '@radix-ui/react-slot';
 import { type MouseEvent, useCallback, useEffect, useId, useMemo } from 'react';
 

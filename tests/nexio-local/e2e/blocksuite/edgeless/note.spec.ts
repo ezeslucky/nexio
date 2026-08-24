@@ -29,9 +29,9 @@ import {
   type,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
-import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
-import type { IVec } from '@blocksuite/nexio/global/gfx';
-import type { NoteBlockModel } from '@blocksuite/nexio/model';
+import type { EdgelessRootBlockComponent } from '@canvas/nexio/blocks/root';
+import type { IVec } from '@canvas/nexio/global/gfx';
+import type { NoteBlockModel } from '@canvas/nexio/model';
 import { expect, type Page } from '@playwright/test';
 
 const title = 'Edgeless Note Header Test';

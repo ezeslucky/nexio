@@ -7,7 +7,7 @@ import {
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { Trans, useI18n } from '@nexio/i18n';
-import { DeleteIcon, InvisibleIcon, ViewIcon } from '@blocksuite/icons/rc';
+import { DeleteIcon, InvisibleIcon, ViewIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   type KeyboardEventHandler,

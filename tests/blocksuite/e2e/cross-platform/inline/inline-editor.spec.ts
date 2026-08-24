@@ -1,5 +1,5 @@
-import type { InlineEditor, InlineRange } from '@blocksuite/nexio/std/inline';
-import type { DeltaInsert } from '@blocksuite/nexio/store';
+import type { InlineEditor, InlineRange } from '@canvas/nexio/std/inline';
+import type { DeltaInsert } from '@canvas/nexio/store';
 import { expect, type Page, test } from '@playwright/test';
 
 import { press } from '../../database/actions.js';

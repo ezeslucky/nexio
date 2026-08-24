@@ -1,24 +1,24 @@
-import { ColorScheme } from '@blocksuite/nexio/model';
+import { ColorScheme } from '@canvas/nexio/model';
 import {
   DocModeProvider,
   NotificationProvider,
   ThemeProvider,
   ToolbarFlag,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/nexio/shared/services';
-import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
+} from '@canvas/nexio/shared/services';
+import { unsafeCSSVar } from '@canvas/nexio/shared/theme';
 import {
   getPageRootByElement,
   stopPropagation,
-} from '@blocksuite/nexio/shared/utils';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
-import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
-import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/nexio/std/inline';
-import type { BaseSelection } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/utils';
+import { WidgetComponent, WidgetViewExtension } from '@canvas/nexio/std';
+import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import { RANGE_SYNC_EXCLUDE_ATTR } from '@canvas/nexio/std/inline';
+import type { BaseSelection } from '@canvas/nexio/store';
 import {
   NEXIO_VIEWPORT_OVERLAY_WIDGET,
   type NexioViewportOverlayWidget,
-} from '@blocksuite/nexio/widgets/viewport-overlay';
+} from '@canvas/nexio/widgets/viewport-overlay';
 import {
   autoPlacement,
   autoUpdate,

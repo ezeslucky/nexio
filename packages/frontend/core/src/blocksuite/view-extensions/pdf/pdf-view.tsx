@@ -1,12 +1,12 @@
 import type { ReactToLit } from '@nexio/component';
 import { AttachmentEmbedPreview } from '@nexio/core/blocksuite/attachment-viewer/attachment-embed-preview';
-import { AttachmentEmbedConfigIdentifier } from '@blocksuite/nexio/blocks/attachment';
-import { Bound } from '@blocksuite/nexio/global/gfx';
+import { AttachmentEmbedConfigIdentifier } from '@canvas/nexio/blocks/attachment';
+import { Bound } from '@canvas/nexio/global/gfx';
 import {
   EMBED_CARD_HEIGHT,
   EMBED_CARD_WIDTH,
-} from '@blocksuite/nexio/shared/consts';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/consts';
+import type { ExtensionType } from '@canvas/nexio/store';
 
 export function patchForPDFEmbedView(reactToLit: ReactToLit): ExtensionType {
   return {

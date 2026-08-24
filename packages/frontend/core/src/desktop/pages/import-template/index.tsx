@@ -1,5 +1,5 @@
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 import { useService } from '@ezeslucky/infra';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';

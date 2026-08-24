@@ -20,7 +20,7 @@ import {
   ArrowRightSmallIcon,
   DoneIcon,
   InformationFillDuotoneIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

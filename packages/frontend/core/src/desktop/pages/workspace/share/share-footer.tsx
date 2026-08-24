@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
+import { ArrowRightBigIcon } from '@canvas/icons/rc';
 
 import * as styles from './share-footer.css';
 

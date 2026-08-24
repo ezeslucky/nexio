@@ -1,4 +1,4 @@
-import type { DeltaInsert } from '@blocksuite/store';
+import type { DeltaInsert } from '@canvas/store';
 import { expect } from '@playwright/test';
 
 import {

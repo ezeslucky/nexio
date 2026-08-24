@@ -1,9 +1,9 @@
 import './ask-ai-panel';
 
-import { HoverController } from '@blocksuite/nexio/components/hover';
-import { createLitPortal } from '@blocksuite/nexio/components/portal';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { type EditorHost } from '@blocksuite/nexio/std';
+import { HoverController } from '@canvas/nexio/components/hover';
+import { createLitPortal } from '@canvas/nexio/components/portal';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { type EditorHost } from '@canvas/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';

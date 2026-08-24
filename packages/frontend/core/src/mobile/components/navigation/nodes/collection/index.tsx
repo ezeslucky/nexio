@@ -10,7 +10,7 @@ import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { ShareDocsListService } from '@nexio/core/modules/share-doc';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { FilterMinusIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
+import { FilterMinusIcon, ViewLayersIcon } from '@canvas/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

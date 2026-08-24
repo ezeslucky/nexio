@@ -4,9 +4,9 @@ import {
 } from '@nexio/core/blocksuite/view-extensions/editor-config/toolbar';
 import { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import { ToolbarMoreMenuConfigExtension } from '@blocksuite/nexio/components/toolbar';
-import { EditorSettingExtension } from '@blocksuite/nexio/shared/services';
-import type { ExtensionType } from '@blocksuite/store';
+import { ToolbarMoreMenuConfigExtension } from '@canvas/nexio/components/toolbar';
+import { EditorSettingExtension } from '@canvas/nexio/shared/services';
+import type { ExtensionType } from '@canvas/store';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function getEditorConfigExtension(

@@ -1,13 +1,13 @@
 import {
   EdgelessClipboardController,
   splitElements,
-} from '@blocksuite/nexio/blocks/root';
-import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
+} from '@canvas/nexio/blocks/root';
+import { AIStarIconWithAnimation } from '@canvas/nexio/components/icons';
 import {
   MindmapElementModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/nexio/model';
+} from '@canvas/nexio/model';
 import {
   CommentIcon,
   ExplainIcon,
@@ -24,7 +24,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 
 import {
   AIImageIconWithAnimation,

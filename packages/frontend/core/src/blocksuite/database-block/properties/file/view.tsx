@@ -8,16 +8,16 @@ import {
   createIcon,
   type DataViewCellLifeCycle,
   EditorHostKey,
-} from '@blocksuite/nexio/blocks/database';
-import { openFilesWith } from '@blocksuite/nexio/shared/utils';
-import type { BlobEngine } from '@blocksuite/nexio/sync';
+} from '@canvas/nexio/blocks/database';
+import { openFilesWith } from '@canvas/nexio/shared/utils';
+import type { BlobEngine } from '@canvas/nexio/sync';
 import {
   DeleteIcon,
   DownloadIcon,
   FileIcon,
   MoreHorizontalIcon,
   PlusIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import {
   computed,
   type ReadonlySignal,

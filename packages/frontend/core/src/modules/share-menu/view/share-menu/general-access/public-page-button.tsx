@@ -9,7 +9,7 @@ import {
   LockIcon,
   SingleSelectCheckSolidIcon,
   ViewIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';

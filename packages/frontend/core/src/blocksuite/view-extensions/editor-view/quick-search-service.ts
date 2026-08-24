@@ -12,18 +12,18 @@ import { track } from '@nexio/track';
 import {
   BookmarkSlashMenuConfigIdentifier,
   insertLinkByQuickSearchCommand,
-} from '@blocksuite/nexio/blocks/bookmark';
-import { LinkedDocSlashMenuConfigIdentifier } from '@blocksuite/nexio/blocks/embed-doc';
-import type { ServiceIdentifier } from '@blocksuite/nexio/global/di';
+} from '@canvas/nexio/blocks/bookmark';
+import { LinkedDocSlashMenuConfigIdentifier } from '@canvas/nexio/blocks/embed-doc';
+import type { ServiceIdentifier } from '@canvas/nexio/global/di';
 import {
   QuickSearchExtension,
   type QuickSearchResult,
-} from '@blocksuite/nexio/shared/services';
-import { type ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/services';
+import { type ExtensionType } from '@canvas/nexio/store';
 import type {
   SlashMenuConfig,
   SlashMenuItem,
-} from '@blocksuite/nexio/widgets/slash-menu';
+} from '@canvas/nexio/widgets/slash-menu';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import { pick } from 'lodash-es';
 

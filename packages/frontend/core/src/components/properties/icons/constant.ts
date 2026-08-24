@@ -1,4 +1,4 @@
-import type * as icons from '@blocksuite/icons/rc';
+import type * as icons from '@canvas/icons/rc';
 
 // assume all exports in icons are icon Components
 type LibIconComponentName = keyof typeof icons;

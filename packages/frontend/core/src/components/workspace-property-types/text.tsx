@@ -1,7 +1,7 @@
 import { Input, PropertyValue } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { useI18n } from '@nexio/i18n';
-import { TextIcon, TextTypeIcon } from '@blocksuite/icons/rc';
+import { TextIcon, TextTypeIcon } from '@canvas/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {

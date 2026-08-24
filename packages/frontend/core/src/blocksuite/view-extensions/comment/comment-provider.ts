@@ -1,22 +1,22 @@
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { getSelectedBlocksCommand } from '@blocksuite/nexio/shared/commands';
-import type { CommentProvider } from '@blocksuite/nexio/shared/services';
-import { CommentProviderIdentifier } from '@blocksuite/nexio/shared/services';
-import type { BlockStdScope } from '@blocksuite/nexio/std';
-import { StdIdentifier } from '@blocksuite/nexio/std';
-import type { BaseSelection, ExtensionType } from '@blocksuite/nexio/store';
-import { ImageSelection } from '@blocksuite/nexio-shared/selection';
-import { type Container } from '@blocksuite/global/di';
+import { getSelectedBlocksCommand } from '@canvas/nexio/shared/commands';
+import type { CommentProvider } from '@canvas/nexio/shared/services';
+import { CommentProviderIdentifier } from '@canvas/nexio/shared/services';
+import type { BlockStdScope } from '@canvas/nexio/std';
+import { StdIdentifier } from '@canvas/nexio/std';
+import type { BaseSelection, ExtensionType } from '@canvas/nexio/store';
+import { ImageSelection } from '@canvas/nexio-shared/selection';
+import { type Container } from '@canvas/global/di';
 import {
   BlockSelection,
   SurfaceSelection,
   TextSelection,
-} from '@blocksuite/std';
+} from '@canvas/std';
 import {
   GfxBlockElementModel,
   GfxControllerIdentifier,
   GfxPrimitiveElementModel,
-} from '@blocksuite/std/gfx';
+} from '@canvas/std/gfx';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 import { DocCommentManagerService } from '../../../modules/comment/services/doc-comment-manager';

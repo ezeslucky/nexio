@@ -1,13 +1,13 @@
-import { AIStarIcon } from '@blocksuite/nexio/components/icons';
-import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import { AIStarIcon } from '@canvas/nexio/components/icons';
+import { DocModeProvider } from '@canvas/nexio/shared/services';
 import {
   type SlashMenuActionItem,
   SlashMenuConfigExtension,
   type SlashMenuContext,
   type SlashMenuItem,
   type SlashMenuSubMenu,
-} from '@blocksuite/nexio/widgets/slash-menu';
-import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/widgets/slash-menu';
+import { MoreHorizontalIcon } from '@canvas/icons/lit';
 import { html } from 'lit';
 
 import { pageAIGroups } from '../_common/config';

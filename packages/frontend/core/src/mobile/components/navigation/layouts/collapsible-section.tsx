@@ -1,5 +1,5 @@
 import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
-import { ToggleRightIcon } from '@blocksuite/icons/rc';
+import { ToggleRightIcon } from '@canvas/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';

@@ -1,0 +1,25 @@
+import {
+  type StoreExtensionContext,
+  StoreExtensionProvider,
+} from '@canvas/nexio-ext-loader';
+import {
+  EmbedLinkedDocBlockSchemaExtension,
+  EmbedSyncedDocBlockSchemaExtension,
+} from '@canvas/nexio-model';
+
+import { EmbedLinkedDocBlockAdapterExtensions } from './embed-linked-doc-block/adapters/extension';
+import { EmbedSyncedDocBlockAdapterExtensions } from './embed-synced-doc-block/adapters/extension';
+
+export class EmbedDocStoreExtension extends StoreExtensionProvider {
+  override name = 'nexio-embed-doc-block';
+
+  override setup(context: StoreExtensionContext) {
+    super.setup(context);
+    context.register([
+      EmbedSyncedDocBlockSchemaExtension,
+      EmbedLinkedDocBlockSchemaExtension,
+    ]);
+    context.register(EmbedLinkedDocBlockAdapterExtensions);
+    context.register(EmbedSyncedDocBlockAdapterExtensions);
+  }
+}

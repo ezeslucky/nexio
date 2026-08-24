@@ -21,7 +21,7 @@ import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
+import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@canvas/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
   useLiveData,

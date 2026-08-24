@@ -1,6 +1,6 @@
-import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
-import { ShadowlessElement } from '@blocksuite/nexio/std';
-import { AiIcon } from '@blocksuite/icons/lit';
+import { AIStarIconWithAnimation } from '@canvas/nexio/components/icons';
+import { ShadowlessElement } from '@canvas/nexio/std';
+import { AiIcon } from '@canvas/icons/lit';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 

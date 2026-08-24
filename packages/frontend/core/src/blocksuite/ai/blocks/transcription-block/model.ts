@@ -2,7 +2,7 @@ import {
   BlockModel,
   BlockSchemaExtension,
   defineBlockSchema,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 
 export const TranscriptionBlockFlavour = 'nexio:transcription';
 

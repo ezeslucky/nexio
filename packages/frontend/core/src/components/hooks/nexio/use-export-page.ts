@@ -8,24 +8,24 @@ import { EditorService } from '@nexio/core/modules/editor';
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace/global-schema';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ExportManager } from '@blocksuite/nexio/blocks/surface';
+import { ExportManager } from '@canvas/nexio/blocks/surface';
 import {
   docLinkBaseURLMiddleware,
   embedSyncedDocMiddleware,
   HtmlAdapterFactoryIdentifier,
   MarkdownAdapterFactoryIdentifier,
   titleMiddleware,
-} from '@blocksuite/nexio/shared/adapters';
-import { printToPdf } from '@blocksuite/nexio/shared/utils';
-import type { BlockStdScope } from '@blocksuite/nexio/std';
-import { type Store, Transformer } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/adapters';
+import { printToPdf } from '@canvas/nexio/shared/utils';
+import type { BlockStdScope } from '@canvas/nexio/std';
+import { type Store, Transformer } from '@canvas/nexio/store';
 import {
   createAssetsArchive,
   download,
   HtmlTransformer,
   MarkdownTransformer,
   ZipTransformer,
-} from '@blocksuite/nexio/widgets/linked-doc';
+} from '@canvas/nexio/widgets/linked-doc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';

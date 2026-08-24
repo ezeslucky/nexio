@@ -3,10 +3,10 @@ import {
   ImageBlockModel,
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/nexio/model';
-import { getSelectedModelsCommand } from '@blocksuite/nexio/shared/commands';
-import { matchModels } from '@blocksuite/nexio/shared/utils';
-import type { Chain, InitCommandCtx } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/model';
+import { getSelectedModelsCommand } from '@canvas/nexio/shared/commands';
+import { matchModels } from '@canvas/nexio/shared/utils';
+import type { Chain, InitCommandCtx } from '@canvas/nexio/std';
 import {
   CommentIcon,
   DoneIcon,
@@ -23,7 +23,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@blocksuite/icons/lit';
+} from '@canvas/icons/lit';
 
 import { actionToHandler } from '../actions/doc-handler';
 import {

@@ -1,4 +1,4 @@
-import { ViewLayersIcon } from '@blocksuite/icons/rc';
+import { ViewLayersIcon } from '@canvas/icons/rc';
 import { Entity, LiveData } from '@ezeslucky/infra';
 import Fuse from 'fuse.js';
 

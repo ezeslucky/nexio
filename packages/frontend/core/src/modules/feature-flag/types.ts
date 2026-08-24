@@ -1,4 +1,4 @@
-import type { BlockSuiteFlags } from '@blocksuite/nexio/shared/services';
+import type { BlockSuiteFlags } from '@canvas/nexio/shared/services';
 
 type FeedbackType = 'discord' | 'email' | 'github';
 

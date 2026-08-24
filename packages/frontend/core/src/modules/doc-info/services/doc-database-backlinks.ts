@@ -1,5 +1,5 @@
-import { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
-import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
+import { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
+import type { DatabaseBlockModel } from '@canvas/nexio/model';
 import { LiveData, Service } from '@ezeslucky/infra';
 import { isEqual } from 'lodash-es';
 import { combineLatest, distinctUntilChanged, map, Observable } from 'rxjs';

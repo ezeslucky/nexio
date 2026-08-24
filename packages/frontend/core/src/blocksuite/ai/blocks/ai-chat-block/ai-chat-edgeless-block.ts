@@ -1,6 +1,6 @@
-import { Bound, clamp } from '@blocksuite/nexio/global/gfx';
-import { toGfxBlockComponent } from '@blocksuite/nexio/std';
-import { GfxViewInteractionExtension } from '@blocksuite/std/gfx';
+import { Bound, clamp } from '@canvas/nexio/global/gfx';
+import { toGfxBlockComponent } from '@canvas/nexio/std';
+import { GfxViewInteractionExtension } from '@canvas/std/gfx';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

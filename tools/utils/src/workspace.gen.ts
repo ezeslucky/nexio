@@ -3,17 +3,17 @@
 export const PackageList = [
   {
     location: 'blocksuite/docs',
-    name: '@blocksuite/bs-docs',
+    name: '@canvas/bs-docs',
     workspaceDependencies: ['blocksuite/nexio/all'],
   },
   {
     location: 'blocksuite/framework/global',
-    name: '@blocksuite/global',
+    name: '@canvas/global',
     workspaceDependencies: [],
   },
   {
     location: 'blocksuite/framework/std',
-    name: '@blocksuite/std',
+    name: '@canvas/std',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/store',
@@ -21,7 +21,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/framework/store',
-    name: '@blocksuite/store',
+    name: '@canvas/store',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/sync',
@@ -29,17 +29,17 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/framework/sync',
-    name: '@blocksuite/sync',
+    name: '@canvas/sync',
     workspaceDependencies: ['blocksuite/framework/global'],
   },
   {
     location: 'blocksuite/integration-test',
-    name: '@blocksuite/integration-test',
+    name: '@canvas/integration-test',
     workspaceDependencies: ['blocksuite/nexio/all'],
   },
   {
     location: 'blocksuite/nexio/all',
-    name: '@blocksuite/nexio',
+    name: '@canvas/nexio',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -114,7 +114,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/attachment',
-    name: '@blocksuite/nexio-block-attachment',
+    name: '@canvas/nexio-block-attachment',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -129,7 +129,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/bookmark',
-    name: '@blocksuite/nexio-block-bookmark',
+    name: '@canvas/nexio-block-bookmark',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
@@ -146,7 +146,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/callout',
-    name: '@blocksuite/nexio-block-callout',
+    name: '@canvas/nexio-block-callout',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -162,7 +162,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/code',
-    name: '@blocksuite/nexio-block-code',
+    name: '@canvas/nexio-block-code',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -182,7 +182,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/data-view',
-    name: '@blocksuite/nexio-block-data-view',
+    name: '@canvas/nexio-block-data-view',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -198,7 +198,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/database',
-    name: '@blocksuite/nexio-block-database',
+    name: '@canvas/nexio-block-database',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -217,7 +217,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/divider',
-    name: '@blocksuite/nexio-block-divider',
+    name: '@canvas/nexio-block-divider',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -231,7 +231,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/edgeless-text',
-    name: '@blocksuite/nexio-block-edgeless-text',
+    name: '@canvas/nexio-block-edgeless-text',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -249,7 +249,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/embed',
-    name: '@blocksuite/nexio-block-embed',
+    name: '@canvas/nexio-block-embed',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -267,7 +267,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/embed-doc',
-    name: '@blocksuite/nexio-block-embed-doc',
+    name: '@canvas/nexio-block-embed-doc',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
@@ -285,7 +285,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/frame',
-    name: '@blocksuite/nexio-block-frame',
+    name: '@canvas/nexio-block-frame',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -302,7 +302,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/image',
-    name: '@blocksuite/nexio-block-image',
+    name: '@canvas/nexio-block-image',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -319,7 +319,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/latex',
-    name: '@blocksuite/nexio-block-latex',
+    name: '@canvas/nexio-block-latex',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -336,7 +336,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/list',
-    name: '@blocksuite/nexio-block-list',
+    name: '@canvas/nexio-block-list',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -352,7 +352,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/note',
-    name: '@blocksuite/nexio-block-note',
+    name: '@canvas/nexio-block-note',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/embed',
@@ -372,7 +372,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/paragraph',
-    name: '@blocksuite/nexio-block-paragraph',
+    name: '@canvas/nexio-block-paragraph',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -388,7 +388,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/root',
-    name: '@blocksuite/nexio-block-root',
+    name: '@canvas/nexio-block-root',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -424,7 +424,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/surface',
-    name: '@blocksuite/nexio-block-surface',
+    name: '@canvas/nexio-block-surface',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -438,7 +438,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/surface-ref',
-    name: '@blocksuite/nexio-block-surface-ref',
+    name: '@canvas/nexio-block-surface-ref',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
@@ -455,7 +455,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/blocks/table',
-    name: '@blocksuite/nexio-block-table',
+    name: '@canvas/nexio-block-table',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -472,7 +472,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/components',
-    name: '@blocksuite/nexio-components',
+    name: '@canvas/nexio-components',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/model',
@@ -484,7 +484,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/data-view',
-    name: '@blocksuite/data-view',
+    name: '@canvas/data-view',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -495,7 +495,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/ext-loader',
-    name: '@blocksuite/nexio-ext-loader',
+    name: '@canvas/nexio-ext-loader',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/store',
@@ -503,7 +503,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/foundation',
-    name: '@blocksuite/nexio-foundation',
+    name: '@canvas/nexio-foundation',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -517,7 +517,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/fragments/adapter-panel',
-    name: '@blocksuite/nexio-fragment-adapter-panel',
+    name: '@canvas/nexio-fragment-adapter-panel',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -530,7 +530,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/fragments/doc-title',
-    name: '@blocksuite/nexio-fragment-doc-title',
+    name: '@canvas/nexio-fragment-doc-title',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
@@ -546,7 +546,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/fragments/frame-panel',
-    name: '@blocksuite/nexio-fragment-frame-panel',
+    name: '@canvas/nexio-fragment-frame-panel',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
@@ -562,7 +562,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/fragments/outline',
-    name: '@blocksuite/nexio-fragment-outline',
+    name: '@canvas/nexio-fragment-outline',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -578,7 +578,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/brush',
-    name: '@blocksuite/nexio-gfx-brush',
+    name: '@canvas/nexio-gfx-brush',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -594,7 +594,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/connector',
-    name: '@blocksuite/nexio-gfx-connector',
+    name: '@canvas/nexio-gfx-connector',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -611,7 +611,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/group',
-    name: '@blocksuite/nexio-gfx-group',
+    name: '@canvas/nexio-gfx-group',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -628,7 +628,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/link',
-    name: '@blocksuite/nexio-gfx-link',
+    name: '@canvas/nexio-gfx-link',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/bookmark',
@@ -647,7 +647,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/mindmap',
-    name: '@blocksuite/nexio-gfx-mindmap',
+    name: '@canvas/nexio-gfx-mindmap',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
@@ -670,7 +670,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/note',
-    name: '@blocksuite/nexio-gfx-note',
+    name: '@canvas/nexio-gfx-note',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/attachment',
@@ -689,7 +689,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/pointer',
-    name: '@blocksuite/nexio-gfx-pointer',
+    name: '@canvas/nexio-gfx-pointer',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -705,7 +705,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/shape',
-    name: '@blocksuite/nexio-gfx-shape',
+    name: '@canvas/nexio-gfx-shape',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -722,7 +722,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/template',
-    name: '@blocksuite/nexio-gfx-template',
+    name: '@canvas/nexio-gfx-template',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -739,7 +739,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/text',
-    name: '@blocksuite/nexio-gfx-text',
+    name: '@canvas/nexio-gfx-text',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -755,7 +755,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/gfx/turbo-renderer',
-    name: '@blocksuite/nexio-gfx-turbo-renderer',
+    name: '@canvas/nexio-gfx-turbo-renderer',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/std',
@@ -764,7 +764,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/comment',
-    name: '@blocksuite/nexio-inline-comment',
+    name: '@canvas/nexio-inline-comment',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/ext-loader',
@@ -777,7 +777,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/footnote',
-    name: '@blocksuite/nexio-inline-footnote',
+    name: '@canvas/nexio-inline-footnote',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -791,7 +791,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/latex',
-    name: '@blocksuite/nexio-inline-latex',
+    name: '@canvas/nexio-inline-latex',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -806,7 +806,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/link',
-    name: '@blocksuite/nexio-inline-link',
+    name: '@canvas/nexio-inline-link',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -820,7 +820,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/mention',
-    name: '@blocksuite/nexio-inline-mention',
+    name: '@canvas/nexio-inline-mention',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -833,7 +833,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/preset',
-    name: '@blocksuite/nexio-inline-preset',
+    name: '@canvas/nexio-inline-preset',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -853,7 +853,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/inlines/reference',
-    name: '@blocksuite/nexio-inline-reference',
+    name: '@canvas/nexio-inline-reference',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -866,7 +866,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/model',
-    name: '@blocksuite/nexio-model',
+    name: '@canvas/nexio-model',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/framework/std',
@@ -875,7 +875,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/rich-text',
-    name: '@blocksuite/nexio-rich-text',
+    name: '@canvas/nexio-rich-text',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -887,7 +887,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/shared',
-    name: '@blocksuite/nexio-shared',
+    name: '@canvas/nexio-shared',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/model',
@@ -897,7 +897,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/drag-handle',
-    name: '@blocksuite/nexio-widget-drag-handle',
+    name: '@canvas/nexio-widget-drag-handle',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/callout',
@@ -916,7 +916,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/edgeless-auto-connect',
-    name: '@blocksuite/nexio-widget-edgeless-auto-connect',
+    name: '@canvas/nexio-widget-edgeless-auto-connect',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -930,7 +930,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/edgeless-dragging-area',
-    name: '@blocksuite/nexio-widget-edgeless-dragging-area',
+    name: '@canvas/nexio-widget-edgeless-dragging-area',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -944,7 +944,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/edgeless-selected-rect',
-    name: '@blocksuite/nexio-widget-edgeless-selected-rect',
+    name: '@canvas/nexio-widget-edgeless-selected-rect',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/frame',
@@ -962,7 +962,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/edgeless-toolbar',
-    name: '@blocksuite/nexio-widget-edgeless-toolbar',
+    name: '@canvas/nexio-widget-edgeless-toolbar',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -976,7 +976,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/edgeless-zoom-toolbar',
-    name: '@blocksuite/nexio-widget-edgeless-zoom-toolbar',
+    name: '@canvas/nexio-widget-edgeless-zoom-toolbar',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -989,7 +989,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/frame-title',
-    name: '@blocksuite/nexio-widget-frame-title',
+    name: '@canvas/nexio-widget-frame-title',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -1003,7 +1003,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/keyboard-toolbar',
-    name: '@blocksuite/nexio-widget-keyboard-toolbar',
+    name: '@canvas/nexio-widget-keyboard-toolbar',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/framework/global',
@@ -1034,7 +1034,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/linked-doc',
-    name: '@blocksuite/nexio-widget-linked-doc',
+    name: '@canvas/nexio-widget-linked-doc',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/image',
@@ -1050,7 +1050,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/note-slicer',
-    name: '@blocksuite/nexio-widget-note-slicer',
+    name: '@canvas/nexio-widget-note-slicer',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/note',
@@ -1065,7 +1065,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/page-dragging-area',
-    name: '@blocksuite/nexio-widget-page-dragging-area',
+    name: '@canvas/nexio-widget-page-dragging-area',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -1078,7 +1078,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/remote-selection',
-    name: '@blocksuite/nexio-widget-remote-selection',
+    name: '@canvas/nexio-widget-remote-selection',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/surface',
@@ -1091,7 +1091,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/scroll-anchoring',
-    name: '@blocksuite/nexio-widget-scroll-anchoring',
+    name: '@canvas/nexio-widget-scroll-anchoring',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/ext-loader',
@@ -1102,7 +1102,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/slash-menu',
-    name: '@blocksuite/nexio-widget-slash-menu',
+    name: '@canvas/nexio-widget-slash-menu',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -1115,7 +1115,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/toolbar',
-    name: '@blocksuite/nexio-widget-toolbar',
+    name: '@canvas/nexio-widget-toolbar',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/blocks/database',
@@ -1130,7 +1130,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/nexio/widgets/viewport-overlay',
-    name: '@blocksuite/nexio-widget-viewport-overlay',
+    name: '@canvas/nexio-widget-viewport-overlay',
     workspaceDependencies: [
       'blocksuite/framework/global',
       'blocksuite/nexio/components',
@@ -1142,7 +1142,7 @@ export const PackageList = [
   },
   {
     location: 'blocksuite/playground',
-    name: '@blocksuite/playground',
+    name: '@canvas/playground',
     workspaceDependencies: [
       'blocksuite/nexio/data-view',
       'blocksuite/integration-test',
@@ -1447,79 +1447,79 @@ export const PackageList = [
 ];
 
 export type PackageName =
-  | '@blocksuite/bs-docs'
-  | '@blocksuite/global'
-  | '@blocksuite/std'
-  | '@blocksuite/store'
-  | '@blocksuite/sync'
-  | '@blocksuite/integration-test'
-  | '@blocksuite/nexio'
-  | '@blocksuite/nexio-block-attachment'
-  | '@blocksuite/nexio-block-bookmark'
-  | '@blocksuite/nexio-block-callout'
-  | '@blocksuite/nexio-block-code'
-  | '@blocksuite/nexio-block-data-view'
-  | '@blocksuite/nexio-block-database'
-  | '@blocksuite/nexio-block-divider'
-  | '@blocksuite/nexio-block-edgeless-text'
-  | '@blocksuite/nexio-block-embed'
-  | '@blocksuite/nexio-block-embed-doc'
-  | '@blocksuite/nexio-block-frame'
-  | '@blocksuite/nexio-block-image'
-  | '@blocksuite/nexio-block-latex'
-  | '@blocksuite/nexio-block-list'
-  | '@blocksuite/nexio-block-note'
-  | '@blocksuite/nexio-block-paragraph'
-  | '@blocksuite/nexio-block-root'
-  | '@blocksuite/nexio-block-surface'
-  | '@blocksuite/nexio-block-surface-ref'
-  | '@blocksuite/nexio-block-table'
-  | '@blocksuite/nexio-components'
-  | '@blocksuite/data-view'
-  | '@blocksuite/nexio-ext-loader'
-  | '@blocksuite/nexio-foundation'
-  | '@blocksuite/nexio-fragment-adapter-panel'
-  | '@blocksuite/nexio-fragment-doc-title'
-  | '@blocksuite/nexio-fragment-frame-panel'
-  | '@blocksuite/nexio-fragment-outline'
-  | '@blocksuite/nexio-gfx-brush'
-  | '@blocksuite/nexio-gfx-connector'
-  | '@blocksuite/nexio-gfx-group'
-  | '@blocksuite/nexio-gfx-link'
-  | '@blocksuite/nexio-gfx-mindmap'
-  | '@blocksuite/nexio-gfx-note'
-  | '@blocksuite/nexio-gfx-pointer'
-  | '@blocksuite/nexio-gfx-shape'
-  | '@blocksuite/nexio-gfx-template'
-  | '@blocksuite/nexio-gfx-text'
-  | '@blocksuite/nexio-gfx-turbo-renderer'
-  | '@blocksuite/nexio-inline-comment'
-  | '@blocksuite/nexio-inline-footnote'
-  | '@blocksuite/nexio-inline-latex'
-  | '@blocksuite/nexio-inline-link'
-  | '@blocksuite/nexio-inline-mention'
-  | '@blocksuite/nexio-inline-preset'
-  | '@blocksuite/nexio-inline-reference'
-  | '@blocksuite/nexio-model'
-  | '@blocksuite/nexio-rich-text'
-  | '@blocksuite/nexio-shared'
-  | '@blocksuite/nexio-widget-drag-handle'
-  | '@blocksuite/nexio-widget-edgeless-auto-connect'
-  | '@blocksuite/nexio-widget-edgeless-dragging-area'
-  | '@blocksuite/nexio-widget-edgeless-selected-rect'
-  | '@blocksuite/nexio-widget-edgeless-toolbar'
-  | '@blocksuite/nexio-widget-edgeless-zoom-toolbar'
-  | '@blocksuite/nexio-widget-frame-title'
-  | '@blocksuite/nexio-widget-keyboard-toolbar'
-  | '@blocksuite/nexio-widget-linked-doc'
-  | '@blocksuite/nexio-widget-note-slicer'
-  | '@blocksuite/nexio-widget-page-dragging-area'
-  | '@blocksuite/nexio-widget-remote-selection'
-  | '@blocksuite/nexio-widget-scroll-anchoring'
-  | '@blocksuite/nexio-widget-slash-menu'
-  | '@blocksuite/nexio-widget-toolbar'
-  | '@blocksuite/nexio-widget-viewport-overlay'
-  | '@blocksuite/playground'
+  | '@canvas/bs-docs'
+  | '@canvas/global'
+  | '@canvas/std'
+  | '@canvas/store'
+  | '@canvas/sync'
+  | '@canvas/integration-test'
+  | '@canvas/nexio'
+  | '@canvas/nexio-block-attachment'
+  | '@canvas/nexio-block-bookmark'
+  | '@canvas/nexio-block-callout'
+  | '@canvas/nexio-block-code'
+  | '@canvas/nexio-block-data-view'
+  | '@canvas/nexio-block-database'
+  | '@canvas/nexio-block-divider'
+  | '@canvas/nexio-block-edgeless-text'
+  | '@canvas/nexio-block-embed'
+  | '@canvas/nexio-block-embed-doc'
+  | '@canvas/nexio-block-frame'
+  | '@canvas/nexio-block-image'
+  | '@canvas/nexio-block-latex'
+  | '@canvas/nexio-block-list'
+  | '@canvas/nexio-block-note'
+  | '@canvas/nexio-block-paragraph'
+  | '@canvas/nexio-block-root'
+  | '@canvas/nexio-block-surface'
+  | '@canvas/nexio-block-surface-ref'
+  | '@canvas/nexio-block-table'
+  | '@canvas/nexio-components'
+  | '@canvas/data-view'
+  | '@canvas/nexio-ext-loader'
+  | '@canvas/nexio-foundation'
+  | '@canvas/nexio-fragment-adapter-panel'
+  | '@canvas/nexio-fragment-doc-title'
+  | '@canvas/nexio-fragment-frame-panel'
+  | '@canvas/nexio-fragment-outline'
+  | '@canvas/nexio-gfx-brush'
+  | '@canvas/nexio-gfx-connector'
+  | '@canvas/nexio-gfx-group'
+  | '@canvas/nexio-gfx-link'
+  | '@canvas/nexio-gfx-mindmap'
+  | '@canvas/nexio-gfx-note'
+  | '@canvas/nexio-gfx-pointer'
+  | '@canvas/nexio-gfx-shape'
+  | '@canvas/nexio-gfx-template'
+  | '@canvas/nexio-gfx-text'
+  | '@canvas/nexio-gfx-turbo-renderer'
+  | '@canvas/nexio-inline-comment'
+  | '@canvas/nexio-inline-footnote'
+  | '@canvas/nexio-inline-latex'
+  | '@canvas/nexio-inline-link'
+  | '@canvas/nexio-inline-mention'
+  | '@canvas/nexio-inline-preset'
+  | '@canvas/nexio-inline-reference'
+  | '@canvas/nexio-model'
+  | '@canvas/nexio-rich-text'
+  | '@canvas/nexio-shared'
+  | '@canvas/nexio-widget-drag-handle'
+  | '@canvas/nexio-widget-edgeless-auto-connect'
+  | '@canvas/nexio-widget-edgeless-dragging-area'
+  | '@canvas/nexio-widget-edgeless-selected-rect'
+  | '@canvas/nexio-widget-edgeless-toolbar'
+  | '@canvas/nexio-widget-edgeless-zoom-toolbar'
+  | '@canvas/nexio-widget-frame-title'
+  | '@canvas/nexio-widget-keyboard-toolbar'
+  | '@canvas/nexio-widget-linked-doc'
+  | '@canvas/nexio-widget-note-slicer'
+  | '@canvas/nexio-widget-page-dragging-area'
+  | '@canvas/nexio-widget-remote-selection'
+  | '@canvas/nexio-widget-scroll-anchoring'
+  | '@canvas/nexio-widget-slash-menu'
+  | '@canvas/nexio-widget-toolbar'
+  | '@canvas/nexio-widget-viewport-overlay'
+  | '@canvas/playground'
   | '@nexio/docs'
   | '@nexio/server-native'
   | '@nexio/server'

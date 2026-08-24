@@ -4,7 +4,7 @@ import '../blocksuite/block-suite-editor';
 import { DebugLogger } from '@nexio/debug';
 import { DEFAULT_WORKSPACE_NAME } from '@nexio/env/constant';
 import onboardingUrl from '@nexio/templates/onboarding.zip';
-import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
 
 import { DocsService } from '../modules/doc';
 import { OrganizeService } from '../modules/organize';

@@ -1362,32 +1362,32 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/bs-docs@workspace:blocksuite/docs":
+"@canvas/bs-docs@workspace:canvas/docs":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/bs-docs@workspace:blocksuite/docs"
+  resolution: "@canvas/bs-docs@workspace:canvas/docs"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     typedoc: "npm:^0.28.0"
     typedoc-plugin-markdown: "npm:^4.5.0"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/data-view@workspace:*, @blocksuite/data-view@workspace:blocksuite/nexio/data-view":
+"@canvas/data-view@workspace:*, @canvas/data-view@workspace:canvas/nexio/data-view":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/data-view@workspace:blocksuite/nexio/data-view"
+  resolution: "@canvas/data-view@workspace:canvas/nexio/data-view"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@emotion/css": "npm:^11.13.5"
     "@emotion/hash": "npm:^0.9.2"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     clsx: "npm:^2.1.1"
     date-fns: "npm:^4.0.0"
@@ -1400,9 +1400,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/global@workspace:*, @blocksuite/global@workspace:blocksuite/framework/global":
+"@canvas/global@workspace:*, @canvas/global@workspace:canvas/framework/global":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/global@workspace:blocksuite/framework/global"
+  resolution: "@canvas/global@workspace:canvas/framework/global"
   dependencies:
     "@preact/signals-core": "npm:^1.8.0"
     lib0: "npm:^0.2.97"
@@ -1413,9 +1413,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/icons@npm:^2.2.17":
+"@canvas/icons@npm:^2.2.17":
   version: 2.2.17
-  resolution: "@blocksuite/icons@npm:2.2.17"
+  resolution: "@canvas/icons@npm:2.2.17"
   peerDependencies:
     "@types/react": ^18.0.25
     change-case: 4.1.2
@@ -1430,17 +1430,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/integration-test@workspace:*, @blocksuite/integration-test@workspace:blocksuite/integration-test":
+"@canvas/integration-test@workspace:*, @canvas/integration-test@workspace:canvas/integration-test":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/integration-test@workspace:blocksuite/integration-test"
+  resolution: "@canvas/integration-test@workspace:canvas/integration-test"
   dependencies:
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.3"
     "@lottiefiles/dotlottie-wc": "npm:^0.5.0"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@vanilla-extract/css": "npm:^1.17.0"
     "@vanilla-extract/vite-plugin": "npm:^5.0.0"
     lit: "npm:^3.2.0"
@@ -1454,24 +1454,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-attachment@workspace:*, @blocksuite/nexio-block-attachment@workspace:blocksuite/nexio/blocks/attachment":
+"@canvas/nexio-block-attachment@workspace:*, @canvas/nexio-block-attachment@workspace:canvas/nexio/blocks/attachment":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-attachment@workspace:blocksuite/nexio/blocks/attachment"
+  resolution: "@canvas/nexio-block-attachment@workspace:canvas/nexio/blocks/attachment"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     file-type: "npm:^21.0.0"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1480,25 +1480,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-bookmark@workspace:*, @blocksuite/nexio-block-bookmark@workspace:blocksuite/nexio/blocks/bookmark":
+"@canvas/nexio-block-bookmark@workspace:*, @canvas/nexio-block-bookmark@workspace:canvas/nexio/blocks/bookmark":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-bookmark@workspace:blocksuite/nexio/blocks/bookmark"
+  resolution: "@canvas/nexio-block-bookmark@workspace:canvas/nexio/blocks/bookmark"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-embed-doc": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-embed-doc": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
     rxjs: "npm:^7.8.1"
@@ -1508,27 +1508,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-callout@workspace:*, @blocksuite/nexio-block-callout@workspace:blocksuite/nexio/blocks/callout":
+"@canvas/nexio-block-callout@workspace:*, @canvas/nexio-block-callout@workspace:canvas/nexio/blocks/callout":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-callout@workspace:blocksuite/nexio/blocks/callout"
+  resolution: "@canvas/nexio-block-callout@workspace:canvas/nexio/blocks/callout"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@emoji-mart/data": "npm:^1.2.1"
     "@emotion/css": "npm:^11.13.5"
     "@floating-ui/dom": "npm:^1.6.10"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     emoji-mart: "npm:^5.6.0"
     lit: "npm:^3.2.0"
@@ -1538,29 +1538,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-code@workspace:*, @blocksuite/nexio-block-code@workspace:blocksuite/nexio/blocks/code":
+"@canvas/nexio-block-code@workspace:*, @canvas/nexio-block-code@workspace:canvas/nexio/blocks/code":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-code@workspace:blocksuite/nexio/blocks/code"
+  resolution: "@canvas/nexio-block-code@workspace:canvas/nexio/blocks/code"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-inline-comment": "workspace:*"
-    "@blocksuite/nexio-inline-latex": "workspace:*"
-    "@blocksuite/nexio-inline-link": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-inline-comment": "workspace:*"
+    "@canvas/nexio-inline-latex": "workspace:*"
+    "@canvas/nexio-inline-link": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1570,25 +1570,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-data-view@workspace:*, @blocksuite/nexio-block-data-view@workspace:blocksuite/nexio/blocks/data-view":
+"@canvas/nexio-block-data-view@workspace:*, @canvas/nexio-block-data-view@workspace:canvas/nexio/blocks/data-view":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-data-view@workspace:blocksuite/nexio/blocks/data-view"
+  resolution: "@canvas/nexio-block-data-view@workspace:canvas/nexio/blocks/data-view"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-database": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-database": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1597,29 +1597,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-database@workspace:*, @blocksuite/nexio-block-database@workspace:blocksuite/nexio/blocks/database":
+"@canvas/nexio-block-database@workspace:*, @canvas/nexio-block-database@workspace:canvas/nexio/blocks/database":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-database@workspace:blocksuite/nexio/blocks/database"
+  resolution: "@canvas/nexio-block-database@workspace:canvas/nexio/blocks/database"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-drag-handle": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-drag-handle": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@emotion/css": "npm:^11.13.5"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     date-fns: "npm:^4.0.0"
     lit: "npm:^3.2.0"
@@ -1630,22 +1630,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-divider@workspace:*, @blocksuite/nexio-block-divider@workspace:blocksuite/nexio/blocks/divider":
+"@canvas/nexio-block-divider@workspace:*, @canvas/nexio-block-divider@workspace:canvas/nexio/blocks/divider":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-divider@workspace:blocksuite/nexio/blocks/divider"
+  resolution: "@canvas/nexio-block-divider@workspace:canvas/nexio/blocks/divider"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1654,27 +1654,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-edgeless-text@workspace:*, @blocksuite/nexio-block-edgeless-text@workspace:blocksuite/nexio/blocks/edgeless-text":
+"@canvas/nexio-block-edgeless-text@workspace:*, @canvas/nexio-block-edgeless-text@workspace:canvas/nexio/blocks/edgeless-text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-edgeless-text@workspace:blocksuite/nexio/blocks/edgeless-text"
+  resolution: "@canvas/nexio-block-edgeless-text@workspace:canvas/nexio/blocks/edgeless-text"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
     rxjs: "npm:^7.8.1"
@@ -1682,27 +1682,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-embed-doc@workspace:*, @blocksuite/nexio-block-embed-doc@workspace:blocksuite/nexio/blocks/embed-doc":
+"@canvas/nexio-block-embed-doc@workspace:*, @canvas/nexio-block-embed-doc@workspace:canvas/nexio/blocks/embed-doc":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-embed-doc@workspace:blocksuite/nexio/blocks/embed-doc"
+  resolution: "@canvas/nexio-block-embed-doc@workspace:canvas/nexio/blocks/embed-doc"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -1714,27 +1714,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-embed@workspace:*, @blocksuite/nexio-block-embed@workspace:blocksuite/nexio/blocks/embed":
+"@canvas/nexio-block-embed@workspace:*, @canvas/nexio-block-embed@workspace:canvas/nexio/blocks/embed":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-embed@workspace:blocksuite/nexio/blocks/embed"
+  resolution: "@canvas/nexio-block-embed@workspace:canvas/nexio/blocks/embed"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -1746,26 +1746,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-frame@workspace:*, @blocksuite/nexio-block-frame@workspace:blocksuite/nexio/blocks/frame":
+"@canvas/nexio-block-frame@workspace:*, @canvas/nexio-block-frame@workspace:canvas/nexio/blocks/frame":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-frame@workspace:blocksuite/nexio/blocks/frame"
+  resolution: "@canvas/nexio-block-frame@workspace:canvas/nexio/blocks/frame"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/nexio-widget-frame-title": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/nexio-widget-frame-title": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1775,26 +1775,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-image@workspace:*, @blocksuite/nexio-block-image@workspace:blocksuite/nexio/blocks/image":
+"@canvas/nexio-block-image@workspace:*, @canvas/nexio-block-image@workspace:canvas/nexio/blocks/image":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-image@workspace:blocksuite/nexio/blocks/image"
+  resolution: "@canvas/nexio-block-image@workspace:canvas/nexio/blocks/image"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     file-type: "npm:^21.0.0"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1803,26 +1803,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-latex@workspace:*, @blocksuite/nexio-block-latex@workspace:blocksuite/nexio/blocks/latex":
+"@canvas/nexio-block-latex@workspace:*, @canvas/nexio-block-latex@workspace:canvas/nexio/blocks/latex":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-latex@workspace:blocksuite/nexio/blocks/latex"
+  resolution: "@canvas/nexio-block-latex@workspace:canvas/nexio/blocks/latex"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-latex": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-latex": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/katex": "npm:^0.16.7"
     "@types/mdast": "npm:^4.0.4"
     katex: "npm:^0.16.11"
@@ -1834,25 +1834,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-list@workspace:*, @blocksuite/nexio-block-list@workspace:blocksuite/nexio/blocks/list":
+"@canvas/nexio-block-list@workspace:*, @canvas/nexio-block-list@workspace:canvas/nexio/blocks/list":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-list@workspace:blocksuite/nexio/blocks/list"
+  resolution: "@canvas/nexio-block-list@workspace:canvas/nexio/blocks/list"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1862,28 +1862,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-note@workspace:*, @blocksuite/nexio-block-note@workspace:blocksuite/nexio/blocks/note":
+"@canvas/nexio-block-note@workspace:*, @canvas/nexio-block-note@workspace:canvas/nexio/blocks/note":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-note@workspace:blocksuite/nexio/blocks/note"
+  resolution: "@canvas/nexio-block-note@workspace:canvas/nexio/blocks/note"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-fragment-doc-title": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-fragment-doc-title": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     "@types/mdast": "npm:^4.0.4"
     "@vanilla-extract/css": "npm:^1.17.0"
@@ -1895,24 +1895,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-paragraph@workspace:*, @blocksuite/nexio-block-paragraph@workspace:blocksuite/nexio/blocks/paragraph":
+"@canvas/nexio-block-paragraph@workspace:*, @canvas/nexio-block-paragraph@workspace:canvas/nexio/blocks/paragraph":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-paragraph@workspace:blocksuite/nexio/blocks/paragraph"
+  resolution: "@canvas/nexio-block-paragraph@workspace:canvas/nexio/blocks/paragraph"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/mdast": "npm:^4.0.4"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -1921,45 +1921,45 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-root@workspace:*, @blocksuite/nexio-block-root@workspace:blocksuite/nexio/blocks/root":
+"@canvas/nexio-block-root@workspace:*, @canvas/nexio-block-root@workspace:canvas/nexio/blocks/root":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-root@workspace:blocksuite/nexio/blocks/root"
+  resolution: "@canvas/nexio-block-root@workspace:canvas/nexio/blocks/root"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-attachment": "workspace:*"
-    "@blocksuite/nexio-block-bookmark": "workspace:*"
-    "@blocksuite/nexio-block-database": "workspace:*"
-    "@blocksuite/nexio-block-edgeless-text": "workspace:*"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-paragraph": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-brush": "workspace:*"
-    "@blocksuite/nexio-gfx-connector": "workspace:*"
-    "@blocksuite/nexio-gfx-group": "workspace:*"
-    "@blocksuite/nexio-gfx-mindmap": "workspace:*"
-    "@blocksuite/nexio-gfx-note": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-gfx-shape": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-selected-rect": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-attachment": "workspace:*"
+    "@canvas/nexio-block-bookmark": "workspace:*"
+    "@canvas/nexio-block-database": "workspace:*"
+    "@canvas/nexio-block-edgeless-text": "workspace:*"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-paragraph": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-brush": "workspace:*"
+    "@canvas/nexio-gfx-connector": "workspace:*"
+    "@canvas/nexio-gfx-group": "workspace:*"
+    "@canvas/nexio-gfx-mindmap": "workspace:*"
+    "@canvas/nexio-gfx-note": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-gfx-shape": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-selected-rect": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     dompurify: "npm:^3.2.4"
     html2canvas: "npm:^1.4.1"
@@ -1972,26 +1972,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-surface-ref@workspace:*, @blocksuite/nexio-block-surface-ref@workspace:blocksuite/nexio/blocks/surface-ref":
+"@canvas/nexio-block-surface-ref@workspace:*, @canvas/nexio-block-surface-ref@workspace:canvas/nexio/blocks/surface-ref":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-surface-ref@workspace:blocksuite/nexio/blocks/surface-ref"
+  resolution: "@canvas/nexio-block-surface-ref@workspace:canvas/nexio/blocks/surface-ref"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fractional-indexing: "npm:^3.2.0"
     lit: "npm:^3.2.0"
@@ -2002,21 +2002,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-surface@workspace:*, @blocksuite/nexio-block-surface@workspace:blocksuite/nexio/blocks/surface":
+"@canvas/nexio-block-surface@workspace:*, @canvas/nexio-block-surface@workspace:canvas/nexio/blocks/surface":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-surface@workspace:blocksuite/nexio/blocks/surface"
+  resolution: "@canvas/nexio-block-surface@workspace:canvas/nexio/blocks/surface"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fractional-indexing: "npm:^3.2.0"
     html2canvas: "npm:^1.4.1"
@@ -2031,23 +2031,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-table@workspace:*, @blocksuite/nexio-block-table@workspace:blocksuite/nexio/blocks/table":
+"@canvas/nexio-block-table@workspace:*, @canvas/nexio-block-table@workspace:canvas/nexio/blocks/table":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-table@workspace:blocksuite/nexio/blocks/table"
+  resolution: "@canvas/nexio-block-table@workspace:canvas/nexio/blocks/table"
   dependencies:
     "@atlaskit/pragmatic-drag-and-drop": "npm:^1.4.0"
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@emotion/css": "npm:^11.13.5"
     "@floating-ui/dom": "npm:^1.6.13"
     "@preact/signals-core": "npm:^1.8.0"
@@ -2058,22 +2058,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-components@workspace:*, @blocksuite/nexio-components@workspace:blocksuite/nexio/components":
+"@canvas/nexio-components@workspace:*, @canvas/nexio-components@workspace:canvas/nexio/components":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-components@workspace:blocksuite/nexio/components"
+  resolution: "@canvas/nexio-components@workspace:canvas/nexio/components"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
-    "@blocksuite/sync": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
+    "@canvas/sync": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@lottiefiles/dotlottie-wc": "npm:^0.5.0"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/hast": "npm:^3.0.4"
     "@types/katex": "npm:^0.16.7"
     "@types/lodash-es": "npm:^4.17.12"
@@ -2092,34 +2092,34 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-ext-loader@workspace:*, @blocksuite/nexio-ext-loader@workspace:blocksuite/nexio/ext-loader":
+"@canvas/nexio-ext-loader@workspace:*, @canvas/nexio-ext-loader@workspace:canvas/nexio/ext-loader":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-ext-loader@workspace:blocksuite/nexio/ext-loader"
+  resolution: "@canvas/nexio-ext-loader@workspace:canvas/nexio/ext-loader"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/store": "workspace:*"
     vitest: "npm:3.1.3"
     zod: "npm:^3.23.8"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-foundation@workspace:*, @blocksuite/nexio-foundation@workspace:blocksuite/nexio/foundation":
+"@canvas/nexio-foundation@workspace:*, @canvas/nexio-foundation@workspace:canvas/nexio/foundation":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-foundation@workspace:blocksuite/nexio/foundation"
+  resolution: "@canvas/nexio-foundation@workspace:canvas/nexio/foundation"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2129,46 +2129,46 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-adapter-panel@workspace:*, @blocksuite/nexio-fragment-adapter-panel@workspace:blocksuite/nexio/fragments/adapter-panel":
+"@canvas/nexio-fragment-adapter-panel@workspace:*, @canvas/nexio-fragment-adapter-panel@workspace:canvas/nexio/fragments/adapter-panel":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-adapter-panel@workspace:blocksuite/nexio/fragments/adapter-panel"
+  resolution: "@canvas/nexio-fragment-adapter-panel@workspace:canvas/nexio/fragments/adapter-panel"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-doc-title@workspace:*, @blocksuite/nexio-fragment-doc-title@workspace:blocksuite/nexio/fragments/doc-title":
+"@canvas/nexio-fragment-doc-title@workspace:*, @canvas/nexio-fragment-doc-title@workspace:canvas/nexio/fragments/doc-title":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-doc-title@workspace:blocksuite/nexio/fragments/doc-title"
+  resolution: "@canvas/nexio-fragment-doc-title@workspace:canvas/nexio/fragments/doc-title"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
     rxjs: "npm:^7.8.1"
@@ -2176,25 +2176,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-frame-panel@workspace:*, @blocksuite/nexio-fragment-frame-panel@workspace:blocksuite/nexio/fragments/frame-panel":
+"@canvas/nexio-fragment-frame-panel@workspace:*, @canvas/nexio-fragment-frame-panel@workspace:canvas/nexio/fragments/frame-panel":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-frame-panel@workspace:blocksuite/nexio/fragments/frame-panel"
+  resolution: "@canvas/nexio-fragment-frame-panel@workspace:canvas/nexio/fragments/frame-panel"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2204,25 +2204,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-outline@workspace:*, @blocksuite/nexio-fragment-outline@workspace:blocksuite/nexio/fragments/outline":
+"@canvas/nexio-fragment-outline@workspace:*, @canvas/nexio-fragment-outline@workspace:canvas/nexio/fragments/outline":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-outline@workspace:blocksuite/nexio/fragments/outline"
+  resolution: "@canvas/nexio-fragment-outline@workspace:canvas/nexio/fragments/outline"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-fragment-doc-title": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-fragment-doc-title": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@vanilla-extract/css": "npm:^1.17.0"
     lit: "npm:^3.2.0"
     minimatch: "npm:^10.0.1"
@@ -2231,24 +2231,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-brush@workspace:*, @blocksuite/nexio-gfx-brush@workspace:blocksuite/nexio/gfx/brush":
+"@canvas/nexio-gfx-brush@workspace:*, @canvas/nexio-gfx-brush@workspace:canvas/nexio/gfx/brush":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-brush@workspace:blocksuite/nexio/gfx/brush"
+  resolution: "@canvas/nexio-gfx-brush@workspace:canvas/nexio/gfx/brush"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2259,25 +2259,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-connector@workspace:*, @blocksuite/nexio-gfx-connector@workspace:blocksuite/nexio/gfx/connector":
+"@canvas/nexio-gfx-connector@workspace:*, @canvas/nexio-gfx-connector@workspace:canvas/nexio/gfx/connector":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-connector@workspace:blocksuite/nexio/gfx/connector"
+  resolution: "@canvas/nexio-gfx-connector@workspace:canvas/nexio/gfx/connector"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2288,25 +2288,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-group@workspace:*, @blocksuite/nexio-gfx-group@workspace:blocksuite/nexio/gfx/group":
+"@canvas/nexio-gfx-group@workspace:*, @canvas/nexio-gfx-group@workspace:canvas/nexio/gfx/group":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-group@workspace:blocksuite/nexio/gfx/group"
+  resolution: "@canvas/nexio-gfx-group@workspace:canvas/nexio/gfx/group"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2317,27 +2317,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-link@workspace:*, @blocksuite/nexio-gfx-link@workspace:blocksuite/nexio/gfx/link":
+"@canvas/nexio-gfx-link@workspace:*, @canvas/nexio-gfx-link@workspace:canvas/nexio/gfx/link":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-link@workspace:blocksuite/nexio/gfx/link"
+  resolution: "@canvas/nexio-gfx-link@workspace:canvas/nexio/gfx/link"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-bookmark": "workspace:*"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-bookmark": "workspace:*"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2348,31 +2348,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-mindmap@workspace:*, @blocksuite/nexio-gfx-mindmap@workspace:blocksuite/nexio/gfx/mindmap":
+"@canvas/nexio-gfx-mindmap@workspace:*, @canvas/nexio-gfx-mindmap@workspace:canvas/nexio/gfx/mindmap":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-mindmap@workspace:blocksuite/nexio/gfx/mindmap"
+  resolution: "@canvas/nexio-gfx-mindmap@workspace:canvas/nexio/gfx/mindmap"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-attachment": "workspace:*"
-    "@blocksuite/nexio-block-edgeless-text": "workspace:*"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-connector": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-gfx-shape": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-attachment": "workspace:*"
+    "@canvas/nexio-block-edgeless-text": "workspace:*"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-connector": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-gfx-shape": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2384,27 +2384,27 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-note@workspace:*, @blocksuite/nexio-gfx-note@workspace:blocksuite/nexio/gfx/note":
+"@canvas/nexio-gfx-note@workspace:*, @canvas/nexio-gfx-note@workspace:canvas/nexio/gfx/note":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-note@workspace:blocksuite/nexio/gfx/note"
+  resolution: "@canvas/nexio-gfx-note@workspace:canvas/nexio/gfx/note"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-attachment": "workspace:*"
-    "@blocksuite/nexio-block-bookmark": "workspace:*"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-attachment": "workspace:*"
+    "@canvas/nexio-block-bookmark": "workspace:*"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2415,24 +2415,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-pointer@workspace:*, @blocksuite/nexio-gfx-pointer@workspace:blocksuite/nexio/gfx/pointer":
+"@canvas/nexio-gfx-pointer@workspace:*, @canvas/nexio-gfx-pointer@workspace:canvas/nexio/gfx/pointer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-pointer@workspace:blocksuite/nexio/gfx/pointer"
+  resolution: "@canvas/nexio-gfx-pointer@workspace:canvas/nexio/gfx/pointer"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2443,25 +2443,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-shape@workspace:*, @blocksuite/nexio-gfx-shape@workspace:blocksuite/nexio/gfx/shape":
+"@canvas/nexio-gfx-shape@workspace:*, @canvas/nexio-gfx-shape@workspace:canvas/nexio/gfx/shape":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-shape@workspace:blocksuite/nexio/gfx/shape"
+  resolution: "@canvas/nexio-gfx-shape@workspace:canvas/nexio/gfx/shape"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2472,26 +2472,26 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-template@workspace:*, @blocksuite/nexio-gfx-template@workspace:blocksuite/nexio/gfx/template":
+"@canvas/nexio-gfx-template@workspace:*, @canvas/nexio-gfx-template@workspace:canvas/nexio/gfx/template":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-template@workspace:blocksuite/nexio/gfx/template"
+  resolution: "@canvas/nexio-gfx-template@workspace:canvas/nexio/gfx/template"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2502,24 +2502,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-text@workspace:*, @blocksuite/nexio-gfx-text@workspace:blocksuite/nexio/gfx/text":
+"@canvas/nexio-gfx-text@workspace:*, @canvas/nexio-gfx-text@workspace:canvas/nexio/gfx/text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-text@workspace:blocksuite/nexio/gfx/text"
+  resolution: "@canvas/nexio-gfx-text@workspace:canvas/nexio/gfx/text"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2530,31 +2530,31 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-turbo-renderer@workspace:*, @blocksuite/nexio-gfx-turbo-renderer@workspace:blocksuite/nexio/gfx/turbo-renderer":
+"@canvas/nexio-gfx-turbo-renderer@workspace:*, @canvas/nexio-gfx-turbo-renderer@workspace:canvas/nexio/gfx/turbo-renderer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-turbo-renderer@workspace:blocksuite/nexio/gfx/turbo-renderer"
+  resolution: "@canvas/nexio-gfx-turbo-renderer@workspace:canvas/nexio/gfx/turbo-renderer"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     rxjs: "npm:^7.8.1"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-comment@workspace:*, @blocksuite/nexio-inline-comment@workspace:blocksuite/nexio/inlines/comment":
+"@canvas/nexio-inline-comment@workspace:*, @canvas/nexio-inline-comment@workspace:canvas/nexio/inlines/comment":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-comment@workspace:blocksuite/nexio/inlines/comment"
+  resolution: "@canvas/nexio-inline-comment@workspace:canvas/nexio/inlines/comment"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.15"
+    "@ezeslucky/theme": "npm:^1.1.15"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lit-html: "npm:^3.2.1"
@@ -2566,23 +2566,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-footnote@workspace:*, @blocksuite/nexio-inline-footnote@workspace:blocksuite/nexio/inlines/footnote":
+"@canvas/nexio-inline-footnote@workspace:*, @canvas/nexio-inline-footnote@workspace:canvas/nexio/inlines/footnote":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-footnote@workspace:blocksuite/nexio/inlines/footnote"
+  resolution: "@canvas/nexio-inline-footnote@workspace:canvas/nexio/inlines/footnote"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     collapse-white-space: "npm:^2.1.0"
     date-fns: "npm:^4.0.0"
@@ -2596,24 +2596,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-latex@workspace:*, @blocksuite/nexio-inline-latex@workspace:blocksuite/nexio/inlines/latex":
+"@canvas/nexio-inline-latex@workspace:*, @canvas/nexio-inline-latex@workspace:canvas/nexio/inlines/latex":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-latex@workspace:blocksuite/nexio/inlines/latex"
+  resolution: "@canvas/nexio-inline-latex@workspace:canvas/nexio/inlines/latex"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/hast": "npm:^3.0.4"
     "@types/katex": "npm:^0.16.7"
     "@types/lodash-es": "npm:^4.17.12"
@@ -2631,23 +2631,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-link@workspace:*, @blocksuite/nexio-inline-link@workspace:blocksuite/nexio/inlines/link":
+"@canvas/nexio-inline-link@workspace:*, @canvas/nexio-inline-link@workspace:canvas/nexio/inlines/link":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-link@workspace:blocksuite/nexio/inlines/link"
+  resolution: "@canvas/nexio-inline-link@workspace:canvas/nexio/inlines/link"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     collapse-white-space: "npm:^2.1.0"
     date-fns: "npm:^4.0.0"
@@ -2660,22 +2660,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-mention@workspace:*, @blocksuite/nexio-inline-mention@workspace:blocksuite/nexio/inlines/mention":
+"@canvas/nexio-inline-mention@workspace:*, @canvas/nexio-inline-mention@workspace:canvas/nexio/inlines/mention":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-mention@workspace:blocksuite/nexio/inlines/mention"
+  resolution: "@canvas/nexio-inline-mention@workspace:canvas/nexio/inlines/mention"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     collapse-white-space: "npm:^2.1.0"
     date-fns: "npm:^4.0.0"
@@ -2688,29 +2688,29 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-preset@workspace:*, @blocksuite/nexio-inline-preset@workspace:blocksuite/nexio/inlines/preset":
+"@canvas/nexio-inline-preset@workspace:*, @canvas/nexio-inline-preset@workspace:canvas/nexio/inlines/preset":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-preset@workspace:blocksuite/nexio/inlines/preset"
+  resolution: "@canvas/nexio-inline-preset@workspace:canvas/nexio/inlines/preset"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-comment": "workspace:*"
-    "@blocksuite/nexio-inline-footnote": "workspace:*"
-    "@blocksuite/nexio-inline-latex": "workspace:*"
-    "@blocksuite/nexio-inline-link": "workspace:*"
-    "@blocksuite/nexio-inline-mention": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-comment": "workspace:*"
+    "@canvas/nexio-inline-footnote": "workspace:*"
+    "@canvas/nexio-inline-latex": "workspace:*"
+    "@canvas/nexio-inline-link": "workspace:*"
+    "@canvas/nexio-inline-mention": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/hast": "npm:^3.0.4"
     "@types/katex": "npm:^0.16.7"
     "@types/lodash-es": "npm:^4.17.12"
@@ -2729,22 +2729,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-reference@workspace:*, @blocksuite/nexio-inline-reference@workspace:blocksuite/nexio/inlines/reference":
+"@canvas/nexio-inline-reference@workspace:*, @canvas/nexio-inline-reference@workspace:canvas/nexio/inlines/reference":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-reference@workspace:blocksuite/nexio/inlines/reference"
+  resolution: "@canvas/nexio-inline-reference@workspace:canvas/nexio/inlines/reference"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     collapse-white-space: "npm:^2.1.0"
     date-fns: "npm:^4.0.0"
@@ -2757,14 +2757,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-model@workspace:*, @blocksuite/nexio-model@workspace:blocksuite/nexio/model":
+"@canvas/nexio-model@workspace:*, @canvas/nexio-model@workspace:canvas/nexio/model":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-model@workspace:blocksuite/nexio/model"
+  resolution: "@canvas/nexio-model@workspace:canvas/nexio/model"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@canvas/global": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fractional-indexing: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2774,21 +2774,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-rich-text@workspace:*, @blocksuite/nexio-rich-text@workspace:blocksuite/nexio/rich-text":
+"@canvas/nexio-rich-text@workspace:*, @canvas/nexio-rich-text@workspace:canvas/nexio/rich-text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-rich-text@workspace:blocksuite/nexio/rich-text"
+  resolution: "@canvas/nexio-rich-text@workspace:canvas/nexio/rich-text"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     collapse-white-space: "npm:^2.1.0"
     date-fns: "npm:^4.0.0"
@@ -2801,19 +2801,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-shared@workspace:*, @blocksuite/nexio-shared@workspace:blocksuite/nexio/shared":
+"@canvas/nexio-shared@workspace:*, @canvas/nexio-shared@workspace:canvas/nexio/shared":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-shared@workspace:blocksuite/nexio/shared"
+  resolution: "@canvas/nexio-shared@workspace:canvas/nexio/shared"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/bytes": "npm:^3.1.5"
     "@types/hast": "npm:^3.0.4"
     "@types/lodash-es": "npm:^4.17.12"
@@ -2851,28 +2851,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-drag-handle@workspace:*, @blocksuite/nexio-widget-drag-handle@workspace:blocksuite/nexio/widgets/drag-handle":
+"@canvas/nexio-widget-drag-handle@workspace:*, @canvas/nexio-widget-drag-handle@workspace:canvas/nexio/widgets/drag-handle":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-drag-handle@workspace:blocksuite/nexio/widgets/drag-handle"
+  resolution: "@canvas/nexio-widget-drag-handle@workspace:canvas/nexio/widgets/drag-handle"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-callout": "workspace:*"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-list": "workspace:*"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-paragraph": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-callout": "workspace:*"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-list": "workspace:*"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-paragraph": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2882,91 +2882,91 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-auto-connect@workspace:*, @blocksuite/nexio-widget-edgeless-auto-connect@workspace:blocksuite/nexio/widgets/edgeless-auto-connect":
+"@canvas/nexio-widget-edgeless-auto-connect@workspace:*, @canvas/nexio-widget-edgeless-auto-connect@workspace:canvas/nexio/widgets/edgeless-auto-connect":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-auto-connect@workspace:blocksuite/nexio/widgets/edgeless-auto-connect"
+  resolution: "@canvas/nexio-widget-edgeless-auto-connect@workspace:canvas/nexio/widgets/edgeless-auto-connect"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-dragging-area@workspace:*, @blocksuite/nexio-widget-edgeless-dragging-area@workspace:blocksuite/nexio/widgets/edgeless-dragging-area":
+"@canvas/nexio-widget-edgeless-dragging-area@workspace:*, @canvas/nexio-widget-edgeless-dragging-area@workspace:canvas/nexio/widgets/edgeless-dragging-area":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-dragging-area@workspace:blocksuite/nexio/widgets/edgeless-dragging-area"
+  resolution: "@canvas/nexio-widget-edgeless-dragging-area@workspace:canvas/nexio/widgets/edgeless-dragging-area"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
     yjs: "npm:^13.6.21"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-selected-rect@workspace:*, @blocksuite/nexio-widget-edgeless-selected-rect@workspace:blocksuite/nexio/widgets/edgeless-selected-rect":
+"@canvas/nexio-widget-edgeless-selected-rect@workspace:*, @canvas/nexio-widget-edgeless-selected-rect@workspace:canvas/nexio/widgets/edgeless-selected-rect":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-selected-rect@workspace:blocksuite/nexio/widgets/edgeless-selected-rect"
+  resolution: "@canvas/nexio-widget-edgeless-selected-rect@workspace:canvas/nexio/widgets/edgeless-selected-rect"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-gfx-connector": "workspace:*"
-    "@blocksuite/nexio-gfx-shape": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-gfx-connector": "workspace:*"
+    "@canvas/nexio-gfx-shape": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
     yjs: "npm:^13.6.21"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-toolbar@workspace:blocksuite/nexio/widgets/edgeless-toolbar":
+"@canvas/nexio-widget-edgeless-toolbar@workspace:*, @canvas/nexio-widget-edgeless-toolbar@workspace:canvas/nexio/widgets/edgeless-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-toolbar@workspace:blocksuite/nexio/widgets/edgeless-toolbar"
+  resolution: "@canvas/nexio-widget-edgeless-toolbar@workspace:canvas/nexio/widgets/edgeless-toolbar"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2974,21 +2974,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:blocksuite/nexio/widgets/edgeless-zoom-toolbar":
+"@canvas/nexio-widget-edgeless-zoom-toolbar@workspace:*, @canvas/nexio-widget-edgeless-zoom-toolbar@workspace:canvas/nexio/widgets/edgeless-zoom-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:blocksuite/nexio/widgets/edgeless-zoom-toolbar"
+  resolution: "@canvas/nexio-widget-edgeless-zoom-toolbar@workspace:canvas/nexio/widgets/edgeless-zoom-toolbar"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -2996,59 +2996,59 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-frame-title@workspace:*, @blocksuite/nexio-widget-frame-title@workspace:blocksuite/nexio/widgets/frame-title":
+"@canvas/nexio-widget-frame-title@workspace:*, @canvas/nexio-widget-frame-title@workspace:canvas/nexio/widgets/frame-title":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-frame-title@workspace:blocksuite/nexio/widgets/frame-title"
+  resolution: "@canvas/nexio-widget-frame-title@workspace:canvas/nexio/widgets/frame-title"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-keyboard-toolbar@workspace:*, @blocksuite/nexio-widget-keyboard-toolbar@workspace:blocksuite/nexio/widgets/keyboard-toolbar":
+"@canvas/nexio-widget-keyboard-toolbar@workspace:*, @canvas/nexio-widget-keyboard-toolbar@workspace:canvas/nexio/widgets/keyboard-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-keyboard-toolbar@workspace:blocksuite/nexio/widgets/keyboard-toolbar"
+  resolution: "@canvas/nexio-widget-keyboard-toolbar@workspace:canvas/nexio/widgets/keyboard-toolbar"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-attachment": "workspace:*"
-    "@blocksuite/nexio-block-database": "workspace:*"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-block-latex": "workspace:*"
-    "@blocksuite/nexio-block-list": "workspace:*"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-paragraph": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-block-surface-ref": "workspace:*"
-    "@blocksuite/nexio-block-table": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-fragment-doc-title": "workspace:*"
-    "@blocksuite/nexio-inline-latex": "workspace:*"
-    "@blocksuite/nexio-inline-link": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-attachment": "workspace:*"
+    "@canvas/nexio-block-database": "workspace:*"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-block-latex": "workspace:*"
+    "@canvas/nexio-block-list": "workspace:*"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-paragraph": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-block-surface-ref": "workspace:*"
+    "@canvas/nexio-block-table": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-fragment-doc-title": "workspace:*"
+    "@canvas/nexio-inline-latex": "workspace:*"
+    "@canvas/nexio-inline-link": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fflate: "npm:^0.8.2"
     lit: "npm:^3.2.0"
@@ -3057,24 +3057,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-linked-doc@workspace:*, @blocksuite/nexio-widget-linked-doc@workspace:blocksuite/nexio/widgets/linked-doc":
+"@canvas/nexio-widget-linked-doc@workspace:*, @canvas/nexio-widget-linked-doc@workspace:canvas/nexio/widgets/linked-doc":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-linked-doc@workspace:blocksuite/nexio/widgets/linked-doc"
+  resolution: "@canvas/nexio-widget-linked-doc@workspace:canvas/nexio/widgets/linked-doc"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fflate: "npm:^0.8.2"
     lit: "npm:^3.2.0"
@@ -3084,44 +3084,44 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-note-slicer@workspace:*, @blocksuite/nexio-widget-note-slicer@workspace:blocksuite/nexio/widgets/note-slicer":
+"@canvas/nexio-widget-note-slicer@workspace:*, @canvas/nexio-widget-note-slicer@workspace:canvas/nexio/widgets/note-slicer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-note-slicer@workspace:blocksuite/nexio/widgets/note-slicer"
+  resolution: "@canvas/nexio-widget-note-slicer@workspace:canvas/nexio/widgets/note-slicer"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-selected-rect": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-edgeless-selected-rect": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
     yjs: "npm:^13.6.21"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-page-dragging-area@workspace:*, @blocksuite/nexio-widget-page-dragging-area@workspace:blocksuite/nexio/widgets/page-dragging-area":
+"@canvas/nexio-widget-page-dragging-area@workspace:*, @canvas/nexio-widget-page-dragging-area@workspace:canvas/nexio/widgets/page-dragging-area":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-page-dragging-area@workspace:blocksuite/nexio/widgets/page-dragging-area"
+  resolution: "@canvas/nexio-widget-page-dragging-area@workspace:canvas/nexio/widgets/page-dragging-area"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     fflate: "npm:^0.8.2"
     lit: "npm:^3.2.0"
@@ -3130,20 +3130,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-remote-selection@workspace:*, @blocksuite/nexio-widget-remote-selection@workspace:blocksuite/nexio/widgets/remote-selection":
+"@canvas/nexio-widget-remote-selection@workspace:*, @canvas/nexio-widget-remote-selection@workspace:canvas/nexio/widgets/remote-selection":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-remote-selection@workspace:blocksuite/nexio/widgets/remote-selection"
+  resolution: "@canvas/nexio-widget-remote-selection@workspace:canvas/nexio/widgets/remote-selection"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -3151,37 +3151,37 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-scroll-anchoring@workspace:*, @blocksuite/nexio-widget-scroll-anchoring@workspace:blocksuite/nexio/widgets/scroll-anchoring":
+"@canvas/nexio-widget-scroll-anchoring@workspace:*, @canvas/nexio-widget-scroll-anchoring@workspace:canvas/nexio/widgets/scroll-anchoring":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-scroll-anchoring@workspace:blocksuite/nexio/widgets/scroll-anchoring"
+  resolution: "@canvas/nexio-widget-scroll-anchoring@workspace:canvas/nexio/widgets/scroll-anchoring"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     lit: "npm:^3.2.0"
     rxjs: "npm:^7.8.1"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-slash-menu@workspace:*, @blocksuite/nexio-widget-slash-menu@workspace:blocksuite/nexio/widgets/slash-menu":
+"@canvas/nexio-widget-slash-menu@workspace:*, @canvas/nexio-widget-slash-menu@workspace:canvas/nexio/widgets/slash-menu":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-slash-menu@workspace:blocksuite/nexio/widgets/slash-menu"
+  resolution: "@canvas/nexio-widget-slash-menu@workspace:canvas/nexio/widgets/slash-menu"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -3189,23 +3189,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-toolbar@workspace:*, @blocksuite/nexio-widget-toolbar@workspace:blocksuite/nexio/widgets/toolbar":
+"@canvas/nexio-widget-toolbar@workspace:*, @canvas/nexio-widget-toolbar@workspace:canvas/nexio/widgets/toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-toolbar@workspace:blocksuite/nexio/widgets/toolbar"
+  resolution: "@canvas/nexio-widget-toolbar@workspace:canvas/nexio/widgets/toolbar"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-block-database": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-block-table": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-block-database": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-block-table": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -3213,20 +3213,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-viewport-overlay@workspace:*, @blocksuite/nexio-widget-viewport-overlay@workspace:blocksuite/nexio/widgets/viewport-overlay":
+"@canvas/nexio-widget-viewport-overlay@workspace:*, @canvas/nexio-widget-viewport-overlay@workspace:canvas/nexio/widgets/viewport-overlay":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-viewport-overlay@workspace:blocksuite/nexio/widgets/viewport-overlay"
+  resolution: "@canvas/nexio-widget-viewport-overlay@workspace:canvas/nexio/widgets/viewport-overlay"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@floating-ui/dom": "npm:^1.6.13"
     "@preact/signals-core": "npm:^1.8.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     lit: "npm:^3.2.0"
     lodash-es: "npm:^4.17.21"
@@ -3234,79 +3234,79 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio@workspace:*, @blocksuite/nexio@workspace:blocksuite/nexio/all":
+"@canvas/nexio@workspace:*, @canvas/nexio@workspace:canvas/nexio/all":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio@workspace:blocksuite/nexio/all"
+  resolution: "@canvas/nexio@workspace:canvas/nexio/all"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/nexio-block-attachment": "workspace:*"
-    "@blocksuite/nexio-block-bookmark": "workspace:*"
-    "@blocksuite/nexio-block-callout": "workspace:*"
-    "@blocksuite/nexio-block-code": "workspace:*"
-    "@blocksuite/nexio-block-data-view": "workspace:*"
-    "@blocksuite/nexio-block-database": "workspace:*"
-    "@blocksuite/nexio-block-divider": "workspace:*"
-    "@blocksuite/nexio-block-edgeless-text": "workspace:*"
-    "@blocksuite/nexio-block-embed": "workspace:*"
-    "@blocksuite/nexio-block-embed-doc": "workspace:*"
-    "@blocksuite/nexio-block-frame": "workspace:*"
-    "@blocksuite/nexio-block-image": "workspace:*"
-    "@blocksuite/nexio-block-latex": "workspace:*"
-    "@blocksuite/nexio-block-list": "workspace:*"
-    "@blocksuite/nexio-block-note": "workspace:*"
-    "@blocksuite/nexio-block-paragraph": "workspace:*"
-    "@blocksuite/nexio-block-root": "workspace:*"
-    "@blocksuite/nexio-block-surface": "workspace:*"
-    "@blocksuite/nexio-block-surface-ref": "workspace:*"
-    "@blocksuite/nexio-block-table": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-foundation": "workspace:*"
-    "@blocksuite/nexio-fragment-adapter-panel": "workspace:*"
-    "@blocksuite/nexio-fragment-doc-title": "workspace:*"
-    "@blocksuite/nexio-fragment-frame-panel": "workspace:*"
-    "@blocksuite/nexio-fragment-outline": "workspace:*"
-    "@blocksuite/nexio-gfx-brush": "workspace:*"
-    "@blocksuite/nexio-gfx-connector": "workspace:*"
-    "@blocksuite/nexio-gfx-group": "workspace:*"
-    "@blocksuite/nexio-gfx-link": "workspace:*"
-    "@blocksuite/nexio-gfx-mindmap": "workspace:*"
-    "@blocksuite/nexio-gfx-note": "workspace:*"
-    "@blocksuite/nexio-gfx-pointer": "workspace:*"
-    "@blocksuite/nexio-gfx-shape": "workspace:*"
-    "@blocksuite/nexio-gfx-template": "workspace:*"
-    "@blocksuite/nexio-gfx-text": "workspace:*"
-    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*"
-    "@blocksuite/nexio-inline-comment": "workspace:*"
-    "@blocksuite/nexio-inline-footnote": "workspace:*"
-    "@blocksuite/nexio-inline-latex": "workspace:*"
-    "@blocksuite/nexio-inline-link": "workspace:*"
-    "@blocksuite/nexio-inline-mention": "workspace:*"
-    "@blocksuite/nexio-inline-preset": "workspace:*"
-    "@blocksuite/nexio-inline-reference": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-rich-text": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/nexio-widget-drag-handle": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-auto-connect": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-dragging-area": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-selected-rect": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-toolbar": "workspace:*"
-    "@blocksuite/nexio-widget-edgeless-zoom-toolbar": "workspace:*"
-    "@blocksuite/nexio-widget-frame-title": "workspace:*"
-    "@blocksuite/nexio-widget-keyboard-toolbar": "workspace:*"
-    "@blocksuite/nexio-widget-linked-doc": "workspace:*"
-    "@blocksuite/nexio-widget-note-slicer": "workspace:*"
-    "@blocksuite/nexio-widget-page-dragging-area": "workspace:*"
-    "@blocksuite/nexio-widget-remote-selection": "workspace:*"
-    "@blocksuite/nexio-widget-scroll-anchoring": "workspace:*"
-    "@blocksuite/nexio-widget-slash-menu": "workspace:*"
-    "@blocksuite/nexio-widget-toolbar": "workspace:*"
-    "@blocksuite/nexio-widget-viewport-overlay": "workspace:*"
-    "@blocksuite/std": "workspace:*"
-    "@blocksuite/store": "workspace:*"
-    "@blocksuite/sync": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/nexio-block-attachment": "workspace:*"
+    "@canvas/nexio-block-bookmark": "workspace:*"
+    "@canvas/nexio-block-callout": "workspace:*"
+    "@canvas/nexio-block-code": "workspace:*"
+    "@canvas/nexio-block-data-view": "workspace:*"
+    "@canvas/nexio-block-database": "workspace:*"
+    "@canvas/nexio-block-divider": "workspace:*"
+    "@canvas/nexio-block-edgeless-text": "workspace:*"
+    "@canvas/nexio-block-embed": "workspace:*"
+    "@canvas/nexio-block-embed-doc": "workspace:*"
+    "@canvas/nexio-block-frame": "workspace:*"
+    "@canvas/nexio-block-image": "workspace:*"
+    "@canvas/nexio-block-latex": "workspace:*"
+    "@canvas/nexio-block-list": "workspace:*"
+    "@canvas/nexio-block-note": "workspace:*"
+    "@canvas/nexio-block-paragraph": "workspace:*"
+    "@canvas/nexio-block-root": "workspace:*"
+    "@canvas/nexio-block-surface": "workspace:*"
+    "@canvas/nexio-block-surface-ref": "workspace:*"
+    "@canvas/nexio-block-table": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-foundation": "workspace:*"
+    "@canvas/nexio-fragment-adapter-panel": "workspace:*"
+    "@canvas/nexio-fragment-doc-title": "workspace:*"
+    "@canvas/nexio-fragment-frame-panel": "workspace:*"
+    "@canvas/nexio-fragment-outline": "workspace:*"
+    "@canvas/nexio-gfx-brush": "workspace:*"
+    "@canvas/nexio-gfx-connector": "workspace:*"
+    "@canvas/nexio-gfx-group": "workspace:*"
+    "@canvas/nexio-gfx-link": "workspace:*"
+    "@canvas/nexio-gfx-mindmap": "workspace:*"
+    "@canvas/nexio-gfx-note": "workspace:*"
+    "@canvas/nexio-gfx-pointer": "workspace:*"
+    "@canvas/nexio-gfx-shape": "workspace:*"
+    "@canvas/nexio-gfx-template": "workspace:*"
+    "@canvas/nexio-gfx-text": "workspace:*"
+    "@canvas/nexio-gfx-turbo-renderer": "workspace:*"
+    "@canvas/nexio-inline-comment": "workspace:*"
+    "@canvas/nexio-inline-footnote": "workspace:*"
+    "@canvas/nexio-inline-latex": "workspace:*"
+    "@canvas/nexio-inline-link": "workspace:*"
+    "@canvas/nexio-inline-mention": "workspace:*"
+    "@canvas/nexio-inline-preset": "workspace:*"
+    "@canvas/nexio-inline-reference": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-rich-text": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/nexio-widget-drag-handle": "workspace:*"
+    "@canvas/nexio-widget-edgeless-auto-connect": "workspace:*"
+    "@canvas/nexio-widget-edgeless-dragging-area": "workspace:*"
+    "@canvas/nexio-widget-edgeless-selected-rect": "workspace:*"
+    "@canvas/nexio-widget-edgeless-toolbar": "workspace:*"
+    "@canvas/nexio-widget-edgeless-zoom-toolbar": "workspace:*"
+    "@canvas/nexio-widget-frame-title": "workspace:*"
+    "@canvas/nexio-widget-keyboard-toolbar": "workspace:*"
+    "@canvas/nexio-widget-linked-doc": "workspace:*"
+    "@canvas/nexio-widget-note-slicer": "workspace:*"
+    "@canvas/nexio-widget-page-dragging-area": "workspace:*"
+    "@canvas/nexio-widget-remote-selection": "workspace:*"
+    "@canvas/nexio-widget-scroll-anchoring": "workspace:*"
+    "@canvas/nexio-widget-slash-menu": "workspace:*"
+    "@canvas/nexio-widget-toolbar": "workspace:*"
+    "@canvas/nexio-widget-viewport-overlay": "workspace:*"
+    "@canvas/std": "workspace:*"
+    "@canvas/store": "workspace:*"
+    "@canvas/sync": "workspace:*"
     "@vanilla-extract/vite-plugin": "npm:^5.0.0"
     msw: "npm:^2.8.4"
     rxjs: "npm:^7.8.1"
@@ -3314,22 +3314,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/playground@workspace:blocksuite/playground":
+"@canvas/playground@workspace:canvas/playground":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/playground@workspace:blocksuite/playground"
+  resolution: "@canvas/playground@workspace:canvas/playground"
   dependencies:
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/integration-test": "workspace:*"
-    "@blocksuite/nexio": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-model": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
+    "@canvas/data-view": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/integration-test": "workspace:*"
+    "@canvas/nexio": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-model": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@shoelace-style/shoelace": "npm:2.20.1"
-    "@toeverything/pdf-viewer": "npm:^0.1.1"
-    "@toeverything/pdfium": "npm:^0.1.1"
-    "@toeverything/y-indexeddb": "npm:0.10.0-canary.9"
+    "@ezeslucky/pdf-viewer": "npm:^0.1.1"
+    "@ezeslucky/pdfium": "npm:^0.1.1"
+    "@ezeslucky/y-indexeddb": "npm:0.10.0-canary.9"
     "@tweakpane/core": "npm:^2.0.4"
     "@types/katex": "npm:^0.16.7"
     "@types/micromatch": "npm:^4.0.9"
@@ -3354,15 +3354,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/std@workspace:*, @blocksuite/std@workspace:blocksuite/framework/std":
+"@canvas/std@workspace:*, @canvas/std@workspace:canvas/framework/std":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/std@workspace:blocksuite/framework/std"
+  resolution: "@canvas/std@workspace:canvas/framework/std"
   dependencies:
     "@atlaskit/pragmatic-drag-and-drop": "npm:^1.4.0"
     "@atlaskit/pragmatic-drag-and-drop-auto-scroll": "npm:^2.1.0"
     "@atlaskit/pragmatic-drag-and-drop-hitbox": "npm:^1.0.3"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/store": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/store": "workspace:*"
     "@lit/context": "npm:^1.1.2"
     "@preact/signals-core": "npm:^1.8.0"
     "@types/hast": "npm:^3.0.4"
@@ -3383,12 +3383,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/store@workspace:*, @blocksuite/store@workspace:blocksuite/framework/store":
+"@canvas/store@workspace:*, @canvas/store@workspace:canvas/framework/store":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/store@workspace:blocksuite/framework/store"
+  resolution: "@canvas/store@workspace:canvas/framework/store"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/sync": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/sync": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@types/lodash.clonedeep": "npm:^4.5.9"
     "@types/lodash.ismatch": "npm:^4.4.9"
@@ -3408,11 +3408,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/sync@workspace:*, @blocksuite/sync@workspace:blocksuite/framework/sync":
+"@canvas/sync@workspace:*, @canvas/sync@workspace:canvas/framework/sync":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/sync@workspace:blocksuite/framework/sync"
+  resolution: "@canvas/sync@workspace:canvas/framework/sync"
   dependencies:
-    "@blocksuite/global": "workspace:*"
+    "@canvas/global": "workspace:*"
     "@types/lodash-es": "npm:^4.17.12"
     idb: "npm:^8.0.0"
     idb-keyval: "npm:^6.2.1"
@@ -9159,14 +9159,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nexio-test/blocksuite@workspace:tests/blocksuite":
+"@nexio-test/canvas@workspace:tests/canvas":
   version: 0.0.0-use.local
-  resolution: "@nexio-test/blocksuite@workspace:tests/blocksuite"
+  resolution: "@nexio-test/canvas@workspace:tests/canvas"
   dependencies:
-    "@blocksuite/integration-test": "workspace:*"
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/integration-test": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@playwright/test": "npm:=1.52.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     json-stable-stringify: "npm:^1.2.1"
     rxjs: "npm:^7.8.1"
   languageName: unknown
@@ -9176,7 +9176,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio-test/kit@workspace:tests/kit"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@ezeslucky/infra": "workspace:*"
     "@nexio-tools/utils": "workspace:*"
     "@node-rs/argon2": "npm:^2.0.2"
@@ -9319,7 +9319,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/admin@workspace:packages/frontend/admin"
   dependencies:
-    "@blocksuite/icons": "npm:^2.2.17"
+    "@canvas/icons": "npm:^2.2.17"
     "@ezeslucky/infra": "workspace:*"
     "@nexio/component": "workspace:*"
     "@nexio/core": "workspace:*"
@@ -9355,7 +9355,7 @@ __metadata:
     "@radix-ui/react-tooltip": "npm:^1.1.5"
     "@sentry/react": "npm:^9.2.0"
     "@tanstack/react-table": "npm:^8.20.5"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/lodash-es": "npm:^4.17.12"
     class-variance-authority: "npm:^0.7.1"
     clsx: "npm:^2.1.1"
@@ -9412,8 +9412,8 @@ __metadata:
   dependencies:
     "@atlaskit/pragmatic-drag-and-drop": "npm:^1.4.0"
     "@atlaskit/pragmatic-drag-and-drop-hitbox": "npm:^1.0.3"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio": "workspace:*"
     "@chromatic-com/storybook": "npm:^4.0.0"
     "@emotion/react": "npm:^11.14.0"
     "@emotion/styled": "npm:^11.14.0"
@@ -9442,7 +9442,7 @@ __metadata:
     "@storybook/react-vite": "npm:^9.0.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/bytes": "npm:^3.1.5"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
@@ -9476,7 +9476,7 @@ __metadata:
     vitest: "npm:3.1.3"
     zod: "npm:^3.24.1"
   peerDependencies:
-    "@blocksuite/nexio": "*"
+    "@canvas/nexio": "*"
     "@swc/core": ^1.0.0
     react: 19.2.4
     react-dom: 19.2.4
@@ -9498,14 +9498,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/core@workspace:packages/frontend/core"
   dependencies:
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/nexio": "workspace:*"
-    "@blocksuite/nexio-block-root": "workspace:*"
-    "@blocksuite/nexio-components": "workspace:*"
-    "@blocksuite/nexio-ext-loader": "workspace:*"
-    "@blocksuite/nexio-shared": "workspace:*"
-    "@blocksuite/std": "workspace:*"
+    "@canvas/global": "workspace:*"
+    "@canvas/icons": "npm:^2.2.17"
+    "@canvas/nexio": "workspace:*"
+    "@canvas/nexio-block-root": "workspace:*"
+    "@canvas/nexio-components": "workspace:*"
+    "@canvas/nexio-ext-loader": "workspace:*"
+    "@canvas/nexio-shared": "workspace:*"
+    "@canvas/std": "workspace:*"
     "@dotlottie/player-component": "npm:^2.7.12"
     "@emotion/cache": "npm:^11.14.0"
     "@emotion/css": "npm:^11.13.5"
@@ -9537,8 +9537,8 @@ __metadata:
     "@sentry/react": "npm:^9.2.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
-    "@toeverything/pdf-viewer": "npm:^0.1.1"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/pdf-viewer": "npm:^0.1.1"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/animejs": "npm:^3.1.12"
     "@types/bytes": "npm:^3.1.5"
     "@types/image-blob-reduce": "npm:^4.1.4"
@@ -9633,7 +9633,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/electron-renderer@workspace:packages/frontend/apps/electron-renderer"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@emotion/react": "npm:^11.14.0"
     "@ezeslucky/infra": "workspace:*"
     "@nexio-tools/utils": "workspace:*"
@@ -9645,7 +9645,7 @@ __metadata:
     "@nexio/nbstore": "workspace:*"
     "@nexio/track": "workspace:*"
     "@sentry/react": "npm:^9.2.0"
-    "@toeverything/theme": "npm:^1.1.16"
+    "@ezeslucky/theme": "npm:^1.1.16"
     "@types/react": "npm:^19.0.1"
     "@types/react-dom": "npm:^19.0.2"
     "@types/webpack-env": "npm:^1.18.8"
@@ -9730,7 +9730,7 @@ __metadata:
     vitest: "npm:3.1.3"
     zod: "npm:^3.24.1"
   peerDependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@nexio/templates": "workspace:*"
   languageName: unknown
   linkType: soft
@@ -9888,7 +9888,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/nbstore@workspace:packages/common/nbstore"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@ezeslucky/infra": "workspace:*"
     "@nexio/error": "workspace:*"
     "@nexio/graphql": "workspace:*"
@@ -9907,7 +9907,7 @@ __metadata:
     y-protocols: "npm:^1.0.6"
     yjs: "npm:^13.6.21"
   peerDependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@nexio/error": "workspace:*"
     "@nexio/graphql": "workspace:*"
     idb: ^8.0.0
@@ -9931,12 +9931,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@nexio/reader@workspace:packages/common/reader"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     lodash-es: "npm:^4.17.21"
     vitest: "npm:3.1.3"
     yjs: "npm:^13.6.21"
   peerDependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -15752,40 +15752,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@toeverything/pdf-viewer-types@npm:0.1.1":
+"@ezeslucky/pdf-viewer-types@npm:0.1.1":
   version: 0.1.1
-  resolution: "@toeverything/pdf-viewer-types@npm:0.1.1"
+  resolution: "@ezeslucky/pdf-viewer-types@npm:0.1.1"
   checksum: 10/cd7e7785097924778899febaaffecb893451aa9eb0117a5b28047004f788efb6ec1facab74e93d6ac3464033d9a4ad57f09f83c6f45ab3ebf67ceedf2180fd23
   languageName: node
   linkType: hard
 
-"@toeverything/pdf-viewer@npm:^0.1.1":
+"@ezeslucky/pdf-viewer@npm:^0.1.1":
   version: 0.1.1
-  resolution: "@toeverything/pdf-viewer@npm:0.1.1"
+  resolution: "@ezeslucky/pdf-viewer@npm:0.1.1"
   dependencies:
-    "@toeverything/pdf-viewer-types": "npm:0.1.1"
-    "@toeverything/pdfium": "npm:0.1.1"
+    "@ezeslucky/pdf-viewer-types": "npm:0.1.1"
+    "@ezeslucky/pdfium": "npm:0.1.1"
   checksum: 10/7fc4ac3156504467517ed4d99d5ba5ccd3beae0759464a6a9a3a62f2fc09acff44fbee9c2451cc437d97313c51746a631fb0d367b365f19469079588ba7c5ce0
   languageName: node
   linkType: hard
 
-"@toeverything/pdfium@npm:0.1.1, @toeverything/pdfium@npm:^0.1.1":
+"@ezeslucky/pdfium@npm:0.1.1, @ezeslucky/pdfium@npm:^0.1.1":
   version: 0.1.1
-  resolution: "@toeverything/pdfium@npm:0.1.1"
+  resolution: "@ezeslucky/pdfium@npm:0.1.1"
   checksum: 10/3d832eaef3ea4aba142561ed8529e216ed739026e7680e5d4fcd05d56fdd458a06273d6b18f1dbc0af9edcc538fa6fd0246757ebb4957a048a8d69bbf579549a
   languageName: node
   linkType: hard
 
-"@toeverything/theme@npm:^1.1.15, @toeverything/theme@npm:^1.1.16":
+"@ezeslucky/theme@npm:^1.1.15, @ezeslucky/theme@npm:^1.1.16":
   version: 1.1.23
-  resolution: "@toeverything/theme@npm:1.1.23"
+  resolution: "@ezeslucky/theme@npm:1.1.23"
   checksum: 10/b89eaf1865b811bc4e81a5005a7cc57038846fd10277fc65a5d170dd17482acc396118e77811f1cdf3378271b6183bd6d6fe7349640c907bb6d348801f77be61
   languageName: node
   linkType: hard
 
-"@toeverything/y-indexeddb@npm:0.10.0-canary.9":
+"@ezeslucky/y-indexeddb@npm:0.10.0-canary.9":
   version: 0.10.0-canary.9
-  resolution: "@toeverything/y-indexeddb@npm:0.10.0-canary.9"
+  resolution: "@ezeslucky/y-indexeddb@npm:0.10.0-canary.9"
   dependencies:
     idb: "npm:^7.1.1"
     nanoid: "npm:^5.0.1"
@@ -16826,7 +16826,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@types/nexio__env@workspace:tools/@types/env"
   dependencies:
-    "@blocksuite/nexio": "workspace:*"
+    "@canvas/nexio": "workspace:*"
     "@nexio/env": "workspace:*"
   languageName: unknown
   linkType: soft

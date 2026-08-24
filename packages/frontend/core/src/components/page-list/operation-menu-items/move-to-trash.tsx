@@ -1,7 +1,7 @@
 import type { ConfirmModalProps, MenuItemProps } from '@nexio/component';
 import { ConfirmModal, MenuItem } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon } from '@blocksuite/icons/rc';
+import { DeleteIcon } from '@canvas/icons/rc';
 
 export const MoveToTrash = (props: MenuItemProps) => {
   const t = useI18n();

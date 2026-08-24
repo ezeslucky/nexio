@@ -1,7 +1,7 @@
 import type { ReactToLit } from '@nexio/component';
 import { AttachmentEmbedPreview } from '@nexio/core/blocksuite/attachment-viewer/attachment-embed-preview';
-import { AttachmentEmbedConfigIdentifier } from '@blocksuite/nexio/blocks/attachment';
-import type { ExtensionType } from '@blocksuite/store';
+import { AttachmentEmbedConfigIdentifier } from '@canvas/nexio/blocks/attachment';
+import type { ExtensionType } from '@canvas/store';
 
 export function patchForAudioEmbedView(reactToLit: ReactToLit): ExtensionType {
   return {

@@ -13,8 +13,8 @@ export default defineConfig({
   snapshotPathTemplate: 'snapshots/{testFilePath}/{arg}{ext}',
   webServer: {
     command: process.env.CI
-      ? 'yarn workspace @blocksuite/playground run preview'
-      : 'yarn workspace @blocksuite/playground run dev',
+      ? 'yarn workspace @canvas/playground run preview'
+      : 'yarn workspace @canvas/playground run dev',
     reuseExistingServer: !process.env.CI,
     env: {
       COVERAGE: process.env.COVERAGE ?? '',

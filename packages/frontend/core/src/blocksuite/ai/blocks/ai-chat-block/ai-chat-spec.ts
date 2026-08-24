@@ -1,5 +1,5 @@
-import { BlockViewExtension } from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+import { BlockViewExtension } from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
 import { literal } from 'lit/static-html.js';
 
 export const AIChatBlockSpec: ExtensionType[] = [

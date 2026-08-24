@@ -5,7 +5,7 @@ import {
   ArrowUpSmallIcon,
   CloseIcon,
   SearchIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import * as Popover from '@radix-ui/react-popover';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';

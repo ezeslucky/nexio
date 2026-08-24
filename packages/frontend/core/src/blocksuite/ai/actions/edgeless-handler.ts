@@ -1,5 +1,5 @@
-import { splitElements } from '@blocksuite/nexio/blocks/root';
-import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
+import { splitElements } from '@canvas/nexio/blocks/root';
+import { DefaultTool } from '@canvas/nexio/blocks/surface';
 import {
   CodeBlockModel,
   EdgelessTextBlockModel,
@@ -9,14 +9,14 @@ import {
   NoteBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/nexio/model';
-import { matchModels } from '@blocksuite/nexio/shared/utils';
-import type { EditorHost } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/model';
+import { matchModels } from '@canvas/nexio/shared/utils';
+import type { EditorHost } from '@canvas/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/nexio/std/gfx';
-import { type BlockModel, Slice } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/std/gfx';
+import { type BlockModel, Slice } from '@canvas/nexio/store';
 import type { TemplateResult } from 'lit';
 
 import { getContentFromSlice } from '../../utils';

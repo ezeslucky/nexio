@@ -34,7 +34,7 @@ export const productionCacheGroups = {
   },
   blocksuite: {
     name: `npm-blocksuite`,
-    test: testPackageName(/[\\/]node_modules[\\/](@blocksuite)[\\/]/),
+    test: testPackageName(/[\\/]node_modules[\\/](@canvas)[\\/]/),
     priority: 200,
     enforce: true,
   },

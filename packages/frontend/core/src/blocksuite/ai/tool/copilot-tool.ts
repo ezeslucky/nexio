@@ -1,17 +1,17 @@
 /* oxlint-disable @typescript-eslint/no-non-null-assertion */
-import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
-import { IS_MAC } from '@blocksuite/nexio/global/env';
+import { DefaultTool } from '@canvas/nexio/blocks/surface';
+import { IS_MAC } from '@canvas/nexio/global/env';
 import {
   Bound,
   getCommonBoundWithRotation,
-} from '@blocksuite/nexio/global/gfx';
-import type { PointerEventState } from '@blocksuite/nexio/std';
+} from '@canvas/nexio/global/gfx';
+import type { PointerEventState } from '@canvas/nexio/std';
 import {
   BaseTool,
   type GfxModel,
   MouseButton,
-} from '@blocksuite/nexio/std/gfx';
-import { on } from '@blocksuite/nexio-shared/utils';
+} from '@canvas/nexio/std/gfx';
+import { on } from '@canvas/nexio-shared/utils';
 import { isEqual } from 'lodash-es';
 import { Subject } from 'rxjs';
 

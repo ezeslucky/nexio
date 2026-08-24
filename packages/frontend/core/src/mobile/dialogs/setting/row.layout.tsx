@@ -1,5 +1,5 @@
 import { ConfigModal } from '@nexio/core/components/mobile';
-import { DualLinkIcon } from '@blocksuite/icons/rc';
+import { DualLinkIcon } from '@canvas/icons/rc';
 import type { PropsWithChildren, ReactNode } from 'react';
 
 import * as styles from './style.css';

@@ -1,8 +1,8 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
-import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
-import { type EditorHost } from '@blocksuite/nexio/std';
-import { InformationIcon, ToggleDownIcon } from '@blocksuite/icons/lit';
+import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
+import { scrollbarStyle } from '@canvas/nexio/shared/styles';
+import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
+import { type EditorHost } from '@canvas/nexio/std';
+import { InformationIcon, ToggleDownIcon } from '@canvas/icons/lit';
 import { signal } from '@preact/signals-core';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';

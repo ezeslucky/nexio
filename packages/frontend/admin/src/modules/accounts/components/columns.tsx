@@ -10,7 +10,7 @@ import {
   EmailWarningIcon,
   LockIcon,
   UnlockIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import type { ColumnDef } from '@tanstack/react-table';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {

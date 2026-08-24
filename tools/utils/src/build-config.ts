@@ -41,7 +41,7 @@ export function getBuildConfig(
 
         appBuildType: 'stable' as const,
         appVersion: pkg.version,
-        // editorVersion: pkg.dependencies['@blocksuite/nexio'],
+        // editorVersion: pkg.dependencies['@canvas/nexio'],
         editorVersion: pkg.version,
         githubUrl: 'https://github.com/ezeslucky/nexio',
         changelogUrl: 'https://nexio.pro/what-is-new',

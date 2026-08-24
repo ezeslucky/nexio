@@ -1,4 +1,4 @@
-import { SidebarIcon } from '@blocksuite/icons/rc';
+import { SidebarIcon } from '@canvas/icons/rc';
 import { CheckIcon, XIcon } from 'lucide-react';
 
 import { Button } from '../components/ui/button';

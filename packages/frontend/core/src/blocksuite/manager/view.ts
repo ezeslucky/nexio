@@ -25,18 +25,18 @@ import { TurboRendererViewExtension } from '@nexio/core/blocksuite/view-extensio
 import { PeekViewService } from '@nexio/core/modules/peek-view';
 import { DebugLogger } from '@nexio/debug';
 import { mixpanel } from '@nexio/track';
-import { DatabaseViewExtension } from '@blocksuite/nexio/blocks/database/view';
-import { ParagraphViewExtension } from '@blocksuite/nexio/blocks/paragraph/view';
+import { DatabaseViewExtension } from '@canvas/nexio/blocks/database/view';
+import { ParagraphViewExtension } from '@canvas/nexio/blocks/paragraph/view';
 import type {
   PeekOptions,
   PeekViewService as BSPeekViewService,
-} from '@blocksuite/nexio/components/peek';
-import { ViewExtensionManager } from '@blocksuite/nexio/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/nexio/extensions/view';
-import { FoundationViewExtension } from '@blocksuite/nexio/foundation/view';
-import { InlineCommentViewExtension } from '@blocksuite/nexio/inlines/comment';
-import { NexioCanvasTextFonts } from '@blocksuite/nexio/shared/services';
-import { LinkedDocViewExtension } from '@blocksuite/nexio/widgets/linked-doc/view';
+} from '@canvas/nexio/components/peek';
+import { ViewExtensionManager } from '@canvas/nexio/ext-loader';
+import { getInternalViewExtensions } from '@canvas/nexio/extensions/view';
+import { FoundationViewExtension } from '@canvas/nexio/foundation/view';
+import { InlineCommentViewExtension } from '@canvas/nexio/inlines/comment';
+import { NexioCanvasTextFonts } from '@canvas/nexio/shared/services';
+import { LinkedDocViewExtension } from '@canvas/nexio/widgets/linked-doc/view';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 

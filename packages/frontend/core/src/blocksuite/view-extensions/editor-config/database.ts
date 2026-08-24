@@ -11,9 +11,9 @@ import { track } from '@nexio/track';
 import {
   menu,
   type MenuOptions,
-} from '@blocksuite/nexio/components/context-menu';
-import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
-import { LinkIcon } from '@blocksuite/icons/lit';
+} from '@canvas/nexio/components/context-menu';
+import type { DatabaseBlockModel } from '@canvas/nexio/model';
+import { LinkIcon } from '@canvas/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function createDatabaseOptionsConfig(framework: FrameworkProvider) {

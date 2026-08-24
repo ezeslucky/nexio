@@ -15,7 +15,7 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
-import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
 import {
   FrameworkScope,
   LiveData,

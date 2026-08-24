@@ -1,5 +1,5 @@
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import type { EditorHost } from '@canvas/nexio/std';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

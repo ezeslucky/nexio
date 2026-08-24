@@ -1,4 +1,4 @@
-import type { RichTextCell } from '@blocksuite/nexio/blocks/database';
+import type { RichTextCell } from '@canvas/nexio/blocks/database';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 import {

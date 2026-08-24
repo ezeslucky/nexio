@@ -1,6 +1,6 @@
-import { Peekable } from '@blocksuite/nexio/components/peek';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/nexio/ext-loader';
-import { BlockComponent } from '@blocksuite/nexio/std';
+import { Peekable } from '@canvas/nexio/components/peek';
+import { ViewExtensionManagerIdentifier } from '@canvas/nexio/ext-loader';
+import { BlockComponent } from '@canvas/nexio/std';
 import { computed } from '@preact/signals-core';
 import { html } from 'lit';
 

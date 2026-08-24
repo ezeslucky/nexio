@@ -3,7 +3,7 @@ import type { OrderByParams } from '@nexio/core/modules/collection-rules/types';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { SortDownIcon, SortUpIcon } from '@blocksuite/icons/rc';
+import { SortDownIcon, SortUpIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';

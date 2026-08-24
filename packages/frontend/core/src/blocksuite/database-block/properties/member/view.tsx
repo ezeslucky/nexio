@@ -5,13 +5,13 @@ import {
   createIcon,
   type DataViewCellLifeCycle,
   EditorHostKey,
-} from '@blocksuite/nexio/blocks/database';
+} from '@canvas/nexio/blocks/database';
 import {
   UserListProvider,
   type UserListService,
   UserProvider,
   type UserService,
-} from '@blocksuite/nexio/shared/services';
+} from '@canvas/nexio/shared/services';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import {
   forwardRef,

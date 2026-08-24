@@ -1,9 +1,9 @@
 import type { TextRendererOptions } from '@nexio/core/blocksuite/ai/components/text-renderer';
-import type { EditorHost } from '@blocksuite/nexio/std';
+import type { EditorHost } from '@canvas/nexio/std';
 import {
   NotificationProvider,
   ThemeProvider,
-} from '@blocksuite/nexio-shared/services';
+} from '@canvas/nexio-shared/services';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -1,7 +1,7 @@
 import type { ReactToLit } from '@nexio/component';
-import type { NexioReference } from '@blocksuite/nexio/inlines/reference';
-import { ReferenceNodeConfigExtension } from '@blocksuite/nexio/inlines/reference';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+import type { NexioReference } from '@canvas/nexio/inlines/reference';
+import { ReferenceNodeConfigExtension } from '@canvas/nexio/inlines/reference';
+import type { ExtensionType } from '@canvas/nexio/store';
 
 export type ReferenceReactRenderer = (
   reference: NexioReference

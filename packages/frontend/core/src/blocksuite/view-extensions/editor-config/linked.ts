@@ -1,5 +1,5 @@
 import { AtMenuConfigService } from '@nexio/core/modules/at-menu-config/services';
-import type { LinkedWidgetConfig } from '@blocksuite/nexio/widgets/linked-doc';
+import type { LinkedWidgetConfig } from '@canvas/nexio/widgets/linked-doc';
 import { type FrameworkProvider } from '@ezeslucky/infra';
 
 export function createLinkedWidgetConfig(

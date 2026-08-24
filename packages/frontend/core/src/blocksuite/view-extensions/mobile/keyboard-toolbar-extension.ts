@@ -1,13 +1,13 @@
 import { VirtualKeyboardProvider } from '@nexio/core/mobile/modules/virtual-keyboard';
 import { globalVars } from '@nexio/core/mobile/styles/variables.css';
-import type { Container } from '@blocksuite/nexio/global/di';
-import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import type { Container } from '@canvas/nexio/global/di';
+import { DisposableGroup } from '@canvas/nexio/global/disposable';
 import {
   VirtualKeyboardProvider as BSVirtualKeyboardProvider,
   type VirtualKeyboardProviderWithAction,
-} from '@blocksuite/nexio/shared/services';
-import { LifeCycleWatcher } from '@blocksuite/nexio/std';
-import type { ExtensionType } from '@blocksuite/nexio/store';
+} from '@canvas/nexio/shared/services';
+import { LifeCycleWatcher } from '@canvas/nexio/std';
+import type { ExtensionType } from '@canvas/nexio/store';
 import { batch, signal } from '@preact/signals-core';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 

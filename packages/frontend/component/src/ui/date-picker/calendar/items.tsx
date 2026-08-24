@@ -1,4 +1,4 @@
-import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { ArrowLeftSmallIcon, ArrowRightSmallIcon } from '@canvas/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import type { HTMLAttributes, PropsWithChildren, ReactNode } from 'react';

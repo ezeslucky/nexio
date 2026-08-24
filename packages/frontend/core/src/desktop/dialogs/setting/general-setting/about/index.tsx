@@ -8,7 +8,7 @@ import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
 import { UrlService } from '@nexio/core/modules/url';
 import { appIconMap, appNames } from '@nexio/core/utils/channel';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
+import { ArrowRightSmallIcon, OpenInNewIcon } from '@canvas/icons/rc';
 import { useServices } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

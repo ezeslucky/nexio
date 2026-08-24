@@ -3,7 +3,7 @@ import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { AddTagIcon } from '@blocksuite/icons/rc';
+import { AddTagIcon } from '@canvas/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo, useState } from 'react';
 

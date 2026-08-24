@@ -8,7 +8,7 @@
     "dev": "nexio bundle --dev"
   },
   "dependencies": {
-    "@blocksuite/nexio": "workspace:*",
+    "@canvas/nexio": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@ezeslucky/infra": "workspace:*",
     "@nexio/component": "workspace:*",

@@ -1,4 +1,4 @@
-import { WarningIcon } from '@blocksuite/icons/rc';
+import { WarningIcon } from '@canvas/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import type { FC } from 'react';

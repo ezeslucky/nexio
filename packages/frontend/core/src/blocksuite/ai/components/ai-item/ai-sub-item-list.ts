@@ -1,11 +1,11 @@
-import { EnterIcon } from '@blocksuite/nexio/components/icons';
-import { WithDisposable } from '@blocksuite/nexio/global/lit';
-import { stopPropagation } from '@blocksuite/nexio/shared/utils';
+import { EnterIcon } from '@canvas/nexio/components/icons';
+import { WithDisposable } from '@canvas/nexio/global/lit';
+import { stopPropagation } from '@canvas/nexio/shared/utils';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/nexio/std';
+} from '@canvas/nexio/std';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

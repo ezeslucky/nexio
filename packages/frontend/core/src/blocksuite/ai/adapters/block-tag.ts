@@ -1,7 +1,7 @@
 import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/nexio-shared/adapters';
+} from '@canvas/nexio-shared/adapters';
 
 export const blockTagMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
   flavour: 'nexio:page/nexio:note/*',

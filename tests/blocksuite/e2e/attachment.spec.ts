@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { sleep } from '@blocksuite/global/utils';
+import { sleep } from '@canvas/global/utils';
 import { expect, type Page } from '@playwright/test';
 
 import { dragBlockToPoint, popImageMoreMenu } from './utils/actions/drag.js';

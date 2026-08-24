@@ -2,7 +2,7 @@ import { TagService } from '@nexio/core/modules/tag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
-import { AllDocsIcon } from '@blocksuite/icons/rc';
+import { AllDocsIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { type MouseEvent, useCallback } from 'react';
 

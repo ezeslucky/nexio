@@ -3,7 +3,7 @@ import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { LongerIcon } from '@blocksuite/icons/rc';
+import { LongerIcon } from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

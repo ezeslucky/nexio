@@ -1,9 +1,9 @@
-import type { NexioTextAttributes } from '@blocksuite/nexio/shared/types';
+import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
 import {
   type DeltaInsert,
   Text,
   type Workspace,
-} from '@blocksuite/nexio/store';
+} from '@canvas/nexio/store';
 import { useCallback } from 'react';
 
 export function useReferenceLinkHelper(docCollection: Workspace) {

@@ -1,6 +1,6 @@
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { Container } from '@blocksuite/nexio/global/di';
-import { TestWorkspace } from '@blocksuite/nexio/store/test';
+import { Container } from '@canvas/nexio/global/di';
+import { TestWorkspace } from '@canvas/nexio/store/test';
 import { describe, expect, test } from 'vitest';
 
 import { markdownToMindmap } from '../mindmap-preview.js';

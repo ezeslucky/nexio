@@ -16,7 +16,7 @@ import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,
   PublishIcon,
-} from '@blocksuite/icons/rc';
+} from '@canvas/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { cssVar } from '@toeverything/theme';
 import {

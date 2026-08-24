@@ -1,7 +1,7 @@
 import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
 import { EditorModeSwitch } from '@nexio/core/blocksuite/block-suite-mode-switch';
 import ShareHeaderRightItem from '@nexio/core/components/cloud/share-header-right-item';
-import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@canvas/nexio/model';
 
 import * as styles from './share-header.css';
 

@@ -1,7 +1,7 @@
 import { AIChatBlockSchema } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/model';
 import { TranscriptionBlockSchema } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
-import { NexioSchemas } from '@blocksuite/nexio/schemas';
-import { Schema } from '@blocksuite/nexio/store';
+import { NexioSchemas } from '@canvas/nexio/schemas';
+import { Schema } from '@canvas/nexio/store';
 
 let _schema: Schema | null = null;
 export function getNEXIOWorkspaceSchema() {

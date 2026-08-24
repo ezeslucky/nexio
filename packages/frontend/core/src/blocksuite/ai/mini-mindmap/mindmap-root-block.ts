@@ -1,5 +1,5 @@
-import type { RootBlockModel } from '@blocksuite/nexio/model';
-import { BlockComponent } from '@blocksuite/nexio/std';
+import type { RootBlockModel } from '@canvas/nexio/model';
+import { BlockComponent } from '@canvas/nexio/std';
 import { html } from 'lit';
 
 export class MindmapRootBlock extends BlockComponent<RootBlockModel> {

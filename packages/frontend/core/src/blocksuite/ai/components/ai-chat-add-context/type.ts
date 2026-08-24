@@ -3,7 +3,7 @@ import type {
   SearchDocMenuAction,
   SearchTagMenuAction,
 } from '@nexio/core/modules/search-menu/services';
-import type { LinkedMenuGroup } from '@blocksuite/nexio/widgets/linked-doc';
+import type { LinkedMenuGroup } from '@canvas/nexio/widgets/linked-doc';
 
 export interface SearchMenuConfig {
   getDocMenuGroup: (

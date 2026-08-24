@@ -1,4 +1,4 @@
-import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
+import type { DatabaseBlockModel } from '@canvas/nexio/model';
 import { expect } from '@playwright/test';
 
 import { enterPlaygroundRoom } from '../utils/actions';

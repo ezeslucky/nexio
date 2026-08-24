@@ -6,7 +6,7 @@ import {
 } from '@nexio/admin/components/ui/accordion';
 import { buttonVariants } from '@nexio/admin/components/ui/button';
 import { cn } from '@nexio/admin/utils';
-import { SettingsIcon } from '@blocksuite/icons/rc';
+import { SettingsIcon } from '@canvas/icons/rc';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
 import { cssVarV2 } from '@toeverything/theme/v2';
