@@ -1,6 +1,6 @@
 import { toReactNode } from '@nexio/component';
-import { AIChatBlockPeekViewTemplate } from '@nexio/core/blocksuite/ai';
-import type { AIChatBlockModel } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/model/ai-chat-model';
+import { AIChatBlockPeekViewTemplate } from '@nexio/core/canvas/ai';
+import type { AIChatBlockModel } from '@nexio/core/canvas/ai/blocks/ai-chat-block/model/ai-chat-model';
 import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
 import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
 import {

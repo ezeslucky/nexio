@@ -29,10 +29,10 @@ import { useSetAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';
 
 import { pageHistoryModalAtom } from '../../atoms/page-history';
-import { useBlockSuiteMetaHelper } from './use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from './use-block-suite-meta-helper';
 import { useExportPage } from './use-export-page';
 
-export function useRegisterBlocksuiteEditorCommands(
+export function useRegisterCanvasEditorCommands(
   editor: Editor,
   active: boolean
 ) {
@@ -66,7 +66,7 @@ export function useRegisterBlocksuiteEditorCommands(
     workspaceDialogService.open('doc-info', { docId });
   }, [docId, workspaceDialogService]);
 
-  const { duplicate } = useBlockSuiteMetaHelper();
+  const { duplicate } = useCanvasMetaHelper();
   const exportHandler = useExportPage();
   const { openConfirmModal } = useConfirmModal();
   const onClickDelete = useCallback(() => {

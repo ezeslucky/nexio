@@ -1,5 +1,5 @@
-import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
-import { EditorModeSwitch } from '@nexio/core/blocksuite/block-suite-mode-switch';
+import { CanvasHeaderTitle } from '@nexio/core/canvas/block-suite-header/title';
+import { EditorModeSwitch } from '@nexio/core/canvas/block-suite-mode-switch';
 import ShareHeaderRightItem from '@nexio/core/components/cloud/share-header-right-item';
 import type { DocMode } from '@canvas/nexio/model';
 
@@ -20,7 +20,7 @@ export function ShareHeader({
   return (
     <div className={styles.header}>
       <EditorModeSwitch />
-      <BlocksuiteHeaderTitle />
+      <CanvasHeaderTitle />
       <div className={styles.spacer} />
       <ShareHeaderRightItem
         publishMode={publishMode}

@@ -1,4 +1,4 @@
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { NavigationPanelTreeRoot } from '@nexio/core/desktop/components/navigation-panel';
 import type { FavoriteSupportTypeUnion } from '@nexio/core/modules/favorite';
 import { FavoriteService } from '@nexio/core/modules/favorite';

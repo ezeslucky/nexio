@@ -18,7 +18,7 @@ import { useStore } from 'jotai';
 import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 
-import { usePageHelper } from '../../blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '../../canvas/block-suite-page-list/utils';
 import {
   PreconditionStrategy,
   registerNexioCommand,

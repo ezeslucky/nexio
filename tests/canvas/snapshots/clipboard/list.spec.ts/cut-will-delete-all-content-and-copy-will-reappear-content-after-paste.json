@@ -14,7 +14,7 @@
                 "collapsed": false,
                 "order": null,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "2"
@@ -36,7 +36,7 @@
                 "collapsed": false,
                 "order": null,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "3"
@@ -56,7 +56,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "1"
@@ -78,7 +78,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "4"
@@ -120,7 +120,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

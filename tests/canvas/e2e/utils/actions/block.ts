@@ -10,7 +10,7 @@ export async function updateBlockType(
   await page.evaluate(
     ([flavour, type]) => {
       window.host.std.command.exec(
-        window.$blocksuite.blocks.note.updateBlockType,
+        window.$canvas.blocks.note.updateBlockType,
         {
           flavour,
           props: {

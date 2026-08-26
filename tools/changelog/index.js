@@ -21,7 +21,7 @@ const {
   PREV_VERSION,
   DEPLOYMENT,
   FLAVOR,
-  BLOCKSUITE_REPO_PATH,
+  CANVAS_REPO_PATH,
 } = process.env;
 
 const slack = new WebClient(SLACK_BOT_TOKEN);
@@ -112,12 +112,12 @@ async function getChangeLog(repo, previousCommit, currentCommit) {
     .replaceAll('</samp>', '');
 }
 
-let blockSuiteChangelog = '';
+let canvasChangelog = '';
 const pkgJsonPath = 'packages/frontend/core/package.json';
 
 const content = await readFile(join(rootDir, pkgJsonPath), 'utf8');
 const { dependencies } = JSON.parse(content);
-const blocksuiteVersion = dependencies['@canvas/nexio'];
+const canvasVersion = dependencies['@canvas/nexio'];
 
 const prevCommit = repo.findCommit(PREV_VERSION);
 
@@ -136,20 +136,20 @@ const previousPkgJsonBlob = prevCommit
 const previousPkgJson = JSON.parse(
   Buffer.from(previousPkgJsonBlob.content()).toString('utf8')
 );
-const previousBlocksuiteVersion =
+const previousCanvasVersion =
   previousPkgJson.dependencies['@canvas/nexio'];
 
-if (blocksuiteVersion !== previousBlocksuiteVersion) {
-  const blockSuiteRepo = new Repository(
-    BLOCKSUITE_REPO_PATH ?? join(rootDir, '..', 'blocksuite')
+if (canvasVersion !== previousCanvasVersion) {
+  const canvasRepo = new Repository(
+    CANVAS_REPO_PATH ?? join(rootDir, '..', 'canvas')
   );
   console.log(
-    `Blocksuite ${previousBlocksuiteVersion} -> ${blocksuiteVersion}`
+    `Canvas ${previousCanvasVersion} -> ${canvasVersion}`
   );
-  blockSuiteChangelog = await getChangeLog(
-    blockSuiteRepo,
-    previousBlocksuiteVersion,
-    blocksuiteVersion
+  canvasChangelog = await getChangeLog(
+    canvasRepo,
+    previousCanvasVersion,
+    canvasVersion
   );
 }
 
@@ -166,12 +166,12 @@ let changelogMessage = `${messageHead}
 ${await getChangeLog(repo, PREV_VERSION)}
 `;
 
-if (blockSuiteChangelog) {
+if (canvasChangelog) {
   changelogMessage += `
 
-# Blocksuite Changelog
+# Canvas Changelog
 
-${blockSuiteChangelog}`;
+${canvasChangelog}`;
 }
 
 const { ok } = await slack.chat.postMessage({

@@ -40,7 +40,7 @@ export const SplitView = ({
   const { appSettings } = useAppSettingHelper();
   const workbench = useService(WorkbenchService).workbench;
 
-  // workaround: blocksuite's lit host element has an issue on remounting.
+  // workaround: canvas's lit host element has an issue on remounting.
   // we do not want the view to change its render ordering here after reordering
   // instead we use a local state to store the views + its order to avoid remounting
   const [localViewsState, setLocalViewsState] = useState<View[]>(views);

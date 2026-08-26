@@ -587,7 +587,7 @@ export async function assertBlockTypes(page: Page, blockTypes: string[]) {
   expect(actual).toEqual(blockTypes);
 }
 
-type MimeType = 'text/plain' | 'blocksuite/x-c+w' | 'text/html';
+type MimeType = 'text/plain' | 'canvas/x-c+w' | 'text/html';
 
 export function assertClipItems(_page: Page, _key: MimeType, _value: unknown) {
   // FIXME: use original clipboard API

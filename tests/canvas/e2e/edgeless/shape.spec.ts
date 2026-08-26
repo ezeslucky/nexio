@@ -654,7 +654,7 @@ test.describe('shape hit test', () => {
     await enterPlaygroundRoom(page);
     await page.evaluate(() => {
       window.doc
-        .get(window.$blocksuite.services.FeatureFlagService)
+        .get(window.$canvas.services.FeatureFlagService)
         .setFlag('enable_edgeless_text', false);
     });
     await initEmptyEdgelessState(page);

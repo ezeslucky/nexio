@@ -1,6 +1,6 @@
 import { Button, IconButton, Modal } from '@nexio/component';
 import { IconType } from '@nexio/component';
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/canvas/manager/store';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import {

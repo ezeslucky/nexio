@@ -1,5 +1,5 @@
 import { Button, IconButton, Menu, MenuItem, MenuSub } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocsService } from '@nexio/core/modules/doc';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';

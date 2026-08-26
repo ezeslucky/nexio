@@ -4,8 +4,8 @@ import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 
-import type { NexioEditorContainer } from '../blocksuite/block-suite-editor';
-import { BlockSuiteEditor } from '../blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '../canvas/block-suite-editor';
+import { CanvasEditor } from '../canvas/block-suite-editor';
 import { DocService } from '../modules/doc';
 import { EditorService } from '../modules/editor';
 import { EditorSettingService } from '../modules/editor-setting';
@@ -50,18 +50,18 @@ export const PageDetailEditor = ({
     : settings.fullWidthLayout;
 
   useEffect(() => {
-    editor.doc.blockSuiteDoc.readonly = readonly ?? false;
+    editor.doc.canvasDoc.readonly = readonly ?? false;
   }, [editor, readonly]);
 
   return (
-    <BlockSuiteEditor
+    <CanvasEditor
       className={clsx(styles.editor, {
         'full-screen': !isSharedMode && fullWidthLayout,
         'is-public': isSharedMode,
       })}
       mode={mode}
       defaultOpenProperty={defaultOpenProperty}
-      page={editor.doc.blockSuiteDoc}
+      page={editor.doc.canvasDoc}
       shared={isSharedMode}
       readonly={readonly}
       onEditorReady={onLoad}

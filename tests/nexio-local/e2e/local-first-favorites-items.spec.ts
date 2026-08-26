@@ -5,7 +5,7 @@ import {
   clickNewPageButton,
   clickPageMoreActions,
   createLinkedPage,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
@@ -17,8 +17,8 @@ test('Show favorite items in sidebar', async ({ page, workspace }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to favorite');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to favorite');
   const newPageId = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   const cell = getPageByTitle(page, 'this is a new page to favorite');
@@ -43,8 +43,8 @@ test('Show favorite reference in sidebar', async ({ page, workspace }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to favorite');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to favorite');
 
   // goes to main content
   await page.keyboard.press('Enter', { delay: 50 });
@@ -87,8 +87,8 @@ test("Deleted page's reference will not be shown in sidebar", async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to favorite');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to favorite');
 
   const newPageId = getCurrentDocIdFromUrl(page);
 
@@ -154,7 +154,7 @@ test('Add new favorite page via sidebar', async ({ page }) => {
   await waitForEmptyEditor(page);
 
   // enter random page title
-  await getBlockSuiteEditorTitle(page).fill('this is a new fav page');
+  await getCanvasEditorTitle(page).fill('this is a new fav page');
   // check if the page title is shown in the favorite list
   const favItem = page
     .getByTestId('navigation-panel-favorites')

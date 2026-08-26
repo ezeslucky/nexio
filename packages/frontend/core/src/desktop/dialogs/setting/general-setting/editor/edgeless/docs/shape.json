@@ -2,7 +2,7 @@
   "type": "page",
   "meta": {
     "id": "UpLwaWKe8S9s8krsxi3A8",
-    "title": "BlockSuite Playground",
+    "title": "Canvas Playground",
     "createDate": 1725435317986,
     "tags": []
   },
@@ -13,10 +13,10 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": [
           {
-            "insert": "BlockSuite Playground"
+            "insert": "Canvas Playground"
           }
         ]
       }
@@ -35,7 +35,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -59,7 +59,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -83,7 +83,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -107,7 +107,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -131,7 +131,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -159,7 +159,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Shapes"

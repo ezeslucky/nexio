@@ -1,7 +1,7 @@
 import { useConfirmModal } from '@nexio/component';
-import { AIProvider, ChatPanel } from '@nexio/core/blocksuite/ai';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
+import { AIProvider, ChatPanel } from '@nexio/core/canvas/ai';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
+import { NotificationServiceImpl } from '@nexio/core/canvas/view-extensions/editor-view/notification-service';
 import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
 import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
 import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';

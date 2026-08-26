@@ -7,7 +7,7 @@ import {
 } from '@nexio-test/kit/utils/cloud';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { clickUserInfoCard } from '@nexio-test/kit/utils/setting';
@@ -55,14 +55,14 @@ test.skip('can collaborate with other user and name should display when editing'
   await waitForEditorLoad(page2);
   await page2.goto(currentUrl);
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.pressSequentially('TEST TITLE', {
       delay: 50,
     });
   }
   await page2.waitForTimeout(200);
   {
-    const title = getBlockSuiteEditorTitle(page2);
+    const title = getCanvasEditorTitle(page2);
     await expect(title).toHaveText('TEST TITLE');
     const typingPromise = (async () => {
       await page.keyboard.press('Enter', { delay: 50 });
@@ -87,7 +87,7 @@ test.skip('can collaborate with other user and name should display when editing'
   await page.keyboard.press('Escape', {
     delay: 50,
   });
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.focus();
   await page.keyboard.press('ArrowDown', { delay: 50 });
   {
@@ -151,7 +151,7 @@ test('can sync svg between different browsers', async ({ page, browser }) => {
     (window as any).showOpenFilePicker = undefined;
   });
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });

@@ -2,7 +2,7 @@
   "type": "page",
   "meta": {
     "id": "IWDwzafoLh",
-    "title": "BlockSuite Playground",
+    "title": "Canvas Playground",
     "createDate": 1725541560333,
     "tags": []
   },
@@ -13,10 +13,10 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": [
           {
-            "insert": "BlockSuite Playground"
+            "insert": "Canvas Playground"
           }
         ]
       }
@@ -35,7 +35,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -67,7 +67,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -99,7 +99,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -131,7 +131,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -163,7 +163,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -195,7 +195,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -227,7 +227,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 16,
               "maxWidth": false,
               "padding": [10, 20],
@@ -251,7 +251,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 16,
               "maxWidth": false,
               "padding": [10, 20],
@@ -413,7 +413,7 @@
               "xywh": "[30.80080405395168,20.987504771361614,71.2421875,56]",
               "index": "aE",
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontStyle": "normal",
               "fontWeight": "400",
               "textAlign": "left",
@@ -430,7 +430,7 @@
                 "props": {
                   "type": "text",
                   "text": {
-                    "$blocksuite:internal:text$": true,
+                    "$canvas:internal:text$": true,
                     "delta": [
                       {
                         "insert": "Others"
@@ -449,7 +449,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

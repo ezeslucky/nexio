@@ -48,7 +48,7 @@ const useLoadDoc = (pageId: string) => {
 
   useEffect(() => {
     if (doc && isInTrash) {
-      doc.blockSuiteDoc.readonly = true;
+      doc.canvasDoc.readonly = true;
     }
   }, [doc, isInTrash]);
 

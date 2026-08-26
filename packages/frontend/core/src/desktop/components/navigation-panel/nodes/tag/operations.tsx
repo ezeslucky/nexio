@@ -1,5 +1,5 @@
 import { IconButton, MenuItem, MenuSeparator, toast } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import { DocsService } from '@nexio/core/modules/doc';
 import { FavoriteService } from '@nexio/core/modules/favorite';

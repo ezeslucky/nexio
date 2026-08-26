@@ -3,7 +3,7 @@ import path from 'node:path';
 import type { apis } from '@nexio/electron-api';
 import { test } from '@nexio-test/kit/electron';
 import {
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -38,7 +38,7 @@ test('export then add', async ({ page, appInfo, workspace }) => {
   await clickNewPageButton(page);
   const w = await workspace.current();
 
-  await getBlockSuiteEditorTitle(page).fill('test1');
+  await getCanvasEditorTitle(page).fill('test1');
 
   await page.getByTestId('slider-bar-workspace-setting-button').click();
   await expect(page.getByTestId('setting-modal')).toBeVisible();
@@ -118,7 +118,7 @@ test('delete workspace and then restore it from backup', async ({ page }) => {
   //#region 2. create a page in the new workspace (will verify later if it is successfully recovered)
   await clickNewPageButton(page);
 
-  await getBlockSuiteEditorTitle(page).fill('test1');
+  await getCanvasEditorTitle(page).fill('test1');
   //#endregion
 
   //#region 3. delete the workspace

@@ -3,7 +3,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
@@ -15,7 +15,7 @@ test.skip('New a page ,then open it and export html', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
+  await getCanvasEditorTitle(page).click();
   await page
     .getByPlaceholder('Title')
     .fill('this is a new page to export html content');
@@ -49,7 +49,7 @@ test.skip('New a page ,then open it and export markdown', async ({
   workspace,
 }) => {
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
+  await getCanvasEditorTitle(page).click();
   await page
     .getByPlaceholder('Title')
     .fill('this is a new page to export markdown content');

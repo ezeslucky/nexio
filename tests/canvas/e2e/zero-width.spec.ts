@@ -44,7 +44,7 @@ test(
     await page.evaluate(() => {
       const { doc } = window;
       const rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
       const note = doc.addBlock('nexio:note', {}, rootId);
       doc.addBlock('nexio:code', {}, note);
@@ -71,7 +71,7 @@ test(
       async ({ bookMarkUrl, embedUrl }) => {
         const { doc } = window;
         const rootId = doc.addBlock('nexio:page', {
-          title: new window.$blocksuite.store.Text(),
+          title: new window.$canvas.store.Text(),
         });
         const note = doc.addBlock('nexio:note', {}, rootId);
         doc.addBlock('nexio:code', {}, note);

@@ -60,7 +60,7 @@ export const getPagePreviewText = (page: Store) => {
 
 const emptyAtom = atom<string>('');
 
-export function useBlockSuitePagePreview(page: Store | null): Atom<string> {
+export function useCanvasPagePreview(page: Store | null): Atom<string> {
   if (page === null) {
     return emptyAtom;
   } else if (weakMap.has(page)) {

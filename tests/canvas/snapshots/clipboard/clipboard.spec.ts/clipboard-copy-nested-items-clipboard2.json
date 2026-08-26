@@ -13,7 +13,7 @@
         "props": {
           "type": "text",
           "text": {
-            "$blocksuite:internal:text$": true,
+            "$canvas:internal:text$": true,
             "delta": [
               {
                 "insert": "hi"
@@ -32,7 +32,7 @@
         "props": {
           "type": "text",
           "text": {
-            "$blocksuite:internal:text$": true,
+            "$canvas:internal:text$": true,
             "delta": [
               {
                 "insert": "j"

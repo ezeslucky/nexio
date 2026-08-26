@@ -10,7 +10,7 @@
           "props": {
             "collapsed": false,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "123"
@@ -32,7 +32,7 @@
               "props": {
                 "collapsed": false,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "789"
@@ -52,7 +52,7 @@
               "props": {
                 "collapsed": false,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "012"
@@ -70,7 +70,7 @@
           "props": {
             "collapsed": false,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "456"
@@ -90,7 +90,7 @@
           "props": {
             "collapsed": false,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "345"
@@ -132,7 +132,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

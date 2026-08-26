@@ -1,4 +1,4 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/canvas/manager/store';
 import { Container } from '@canvas/nexio/global/di';
 import {
   customImageProxyMiddleware,

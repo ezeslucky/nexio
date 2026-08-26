@@ -14,7 +14,7 @@ import { Entity, LiveData } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 import { firstValueFrom, map, race } from 'rxjs';
 
-import type { AIChatBlockModel } from '../../../blocksuite/ai/blocks';
+import type { AIChatBlockModel } from '../../../canvas/ai/blocks';
 import { resolveLinkToDoc } from '../../navigation';
 import type { WorkbenchService } from '../../workbench';
 import type { ImagePreviewData } from '../view/image-preview';

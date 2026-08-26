@@ -4,7 +4,7 @@ import { locateToolbar } from '@nexio-test/kit/utils/editor';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
 } from '@nexio-test/kit/utils/page-logic';
@@ -45,7 +45,7 @@ test('attachment preview should be shown', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
 
@@ -83,7 +83,7 @@ test('attachment preview can be expanded', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
 
@@ -124,7 +124,7 @@ test('should preview PDF in embed view', async ({ page }) => {
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.type('PDF preview');
 
@@ -240,7 +240,7 @@ test('should sync name in pdf embed view', async ({ page }) => {
   await waitForEditorLoad(page);
   await enablePDFEmbedView(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
 
@@ -295,7 +295,7 @@ test('should enable pointer event in pdf viewer', async ({ page }) => {
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.type('PDF preview');
 
@@ -353,7 +353,7 @@ test('should re-render pdf viewer', async ({ page }) => {
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
 
   await page.keyboard.press('Enter');
@@ -394,7 +394,7 @@ test('should display status when an error is thrown in peek view', async ({
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
 
   await page.keyboard.press('Enter');
@@ -427,7 +427,7 @@ test('should display 404 when attachment is not found', async ({ page }) => {
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
 
   await page.keyboard.press('Enter');

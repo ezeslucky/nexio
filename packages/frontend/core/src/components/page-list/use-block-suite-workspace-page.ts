@@ -3,7 +3,7 @@ import { DisposableGroup } from '@canvas/nexio/global/disposable';
 import type { Store, Workspace } from '@canvas/nexio/store';
 import { useEffect, useState } from 'react';
 
-const logger = new DebugLogger('useBlockSuiteWorkspacePage');
+const logger = new DebugLogger('useCanvasWorkspacePage');
 
 export function useDocCollectionPage(
   docCollection: Workspace,

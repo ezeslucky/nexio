@@ -1,5 +1,5 @@
 import { test } from '@nexio-test/kit/mobile';
-import { getBlockSuiteEditorTitle } from '@nexio-test/kit/utils/page-logic';
+import { getCanvasEditorTitle } from '@nexio-test/kit/utils/page-logic';
 import { getCurrentDocIdFromUrl } from '@nexio-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
@@ -13,7 +13,7 @@ test('Create new doc in favorites', async ({ page }) => {
   await newButton.tap();
 
   // const testTitleText = 'Test Favorited Doc';
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await expect(title).toBeVisible();
   // TODO(@CatsJuice): Mobile editor is not ready yet
   // await title.fill(testTitleText);

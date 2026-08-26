@@ -8,7 +8,7 @@ import { useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 
 import { useAppSettingHelper } from '../../hooks/nexio/use-app-setting-helper';
-import { useBlockSuiteMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
 import { useNavigateHelper } from '../../../components/hooks/use-navigate-helper';
 import { toast } from '../../../utils';
 import * as styles from './styles.css';
@@ -20,7 +20,7 @@ export const TrashPageFooter = () => {
   const t = useI18n();
   const { appSettings } = useAppSettingHelper();
   const { jumpToPage } = useNavigateHelper();
-  const { restoreFromTrash } = useBlockSuiteMetaHelper();
+  const { restoreFromTrash } = useCanvasMetaHelper();
   const [open, setOpen] = useState(false);
   const hintText = t['com.nexio.cmdk.nexio.editor.trash-footer-hint']();
 

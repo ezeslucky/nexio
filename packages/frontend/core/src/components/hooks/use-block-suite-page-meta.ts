@@ -4,16 +4,16 @@ import { useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 
 import { useAsyncCallback } from './nexio-async-hooks';
-import { useAllBlockSuiteDocMeta } from './use-all-block-suite-page-meta';
+import { useAllCanvasDocMeta } from './use-all-block-suite-page-meta';
 import { useJournalInfoHelper } from './use-journal';
 
 /**
  * Get pageMetas excluding journal pages without updatedDate
- * If you want to get all pageMetas, use `useAllBlockSuitePageMeta` instead
+ * If you want to get all pageMetas, use `useAllCanvasPageMeta` instead
  * @returns
  */
-export function useBlockSuiteDocMeta(docCollection: Workspace) {
-  const pageMetas = useAllBlockSuiteDocMeta(docCollection);
+export function useCanvasDocMeta(docCollection: Workspace) {
+  const pageMetas = useAllCanvasDocMeta(docCollection);
   const { isPageJournal } = useJournalInfoHelper();
   return useMemo(
     () =>

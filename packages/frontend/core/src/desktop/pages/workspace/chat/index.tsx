@@ -1,14 +1,14 @@
 import { observeResize, useConfirmModal } from '@nexio/component';
-import { CopilotClient } from '@nexio/core/blocksuite/ai';
+import { CopilotClient } from '@nexio/core/canvas/ai';
 import {
   AIChatContent,
   type ChatContextValue,
-} from '@nexio/core/blocksuite/ai/components/ai-chat-content';
-import type { ChatStatus } from '@nexio/core/blocksuite/ai/components/ai-chat-messages';
-import { AIChatToolbar } from '@nexio/core/blocksuite/ai/components/ai-chat-toolbar';
-import type { PromptKey } from '@nexio/core/blocksuite/ai/provider/prompt';
-import { getViewManager } from '@nexio/core/blocksuite/manager/view';
-import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
+} from '@nexio/core/canvas/ai/components/ai-chat-content';
+import type { ChatStatus } from '@nexio/core/canvas/ai/components/ai-chat-messages';
+import { AIChatToolbar } from '@nexio/core/canvas/ai/components/ai-chat-toolbar';
+import type { PromptKey } from '@nexio/core/canvas/ai/provider/prompt';
+import { getViewManager } from '@nexio/core/canvas/manager/view';
+import { NotificationServiceImpl } from '@nexio/core/canvas/view-extensions/editor-view/notification-service';
 import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
 import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
 import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
@@ -114,7 +114,7 @@ export const Component = () => {
   } = useAIChatConfig();
 
   const createSession = useCallback(
-    async (options: Partial<BlockSuitePresets.AICreateSessionOptions> = {}) => {
+    async (options: Partial<CanvasPresets.AICreateSessionOptions> = {}) => {
       if (currentSession) {
         return currentSession;
       }

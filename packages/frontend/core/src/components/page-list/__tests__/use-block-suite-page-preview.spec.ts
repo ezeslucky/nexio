@@ -3,14 +3,14 @@
  */
 import 'fake-indexeddb/auto';
 
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/canvas/manager/store';
 import { type Store, Text } from '@canvas/nexio/store';
 import { TestWorkspace } from '@canvas/nexio/store/test';
 import { renderHook } from '@testing-library/react';
 import { useAtomValue } from 'jotai';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { useBlockSuitePagePreview } from '../use-block-suite-page-preview';
+import { useCanvasPagePreview } from '../use-block-suite-page-preview';
 let docCollection: TestWorkspace;
 
 const extensions = getStoreManager().config.init().value.get('store');
@@ -37,7 +37,7 @@ beforeEach(async () => {
   await initPage(store);
 });
 
-describe('useBlockSuitePagePreview', () => {
+describe('useCanvasPagePreview', () => {
   test('basic', async () => {
     const page = docCollection.getDoc('page0')?.getStore();
     if (!page) {
@@ -50,7 +50,7 @@ describe('useBlockSuitePagePreview', () => {
       },
       page.getModelsByFlavour('nexio:note')[0].id
     );
-    const hook = renderHook(() => useAtomValue(useBlockSuitePagePreview(page)));
+    const hook = renderHook(() => useAtomValue(useCanvasPagePreview(page)));
     expect(hook.result.current).toBe('Hello, world!');
     page.transact(() => {
       page.getModelById(id)!.text!.insert('Test', 0);

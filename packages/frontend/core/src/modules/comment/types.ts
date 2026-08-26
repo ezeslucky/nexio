@@ -45,7 +45,7 @@ export interface DocCommentReply extends BaseComment {
 }
 
 export type DocCommentContent = {
-  snapshot: DocSnapshot; // blocksuite snapshot
+  snapshot: DocSnapshot; // Canvas snapshot
   attachments?: CommentAttachment[];
   mode?: DocMode;
   preview?: string; // text preview of the target

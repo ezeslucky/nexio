@@ -2,7 +2,7 @@ import { test } from '@nexio-test/kit/playwright';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -62,8 +62,8 @@ const createAndPinCollection = async (
   // fixme: remove this timeout. looks like an issue with useBindWorkbenchToBrowserRouter?
   await page.waitForTimeout(500);
 
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('test page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('test page');
 
   await page.getByTestId('all-pages').click();
 
@@ -144,8 +144,8 @@ test('edit collection', async ({ page }) => {
 test('add collection from sidebar', async ({ page }) => {
   await removeOnboardingPages(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('test page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('test page');
   await page.getByTestId('all-pages').click();
   const cell = await getPageByTitle(page, 'test page');
   await expect(cell).toBeVisible();

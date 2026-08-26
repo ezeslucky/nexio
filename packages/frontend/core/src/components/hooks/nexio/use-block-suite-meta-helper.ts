@@ -6,7 +6,7 @@ import { useCallback } from 'react';
 
 import { useNavigateHelper } from '../use-navigate-helper';
 
-export function useBlockSuiteMetaHelper() {
+export function useCanvasMetaHelper() {
   const workspace = useService(WorkspaceService).workspace;
   const { openPage } = useNavigateHelper();
   const docsService = useService(DocsService);

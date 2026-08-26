@@ -12,7 +12,7 @@ import {
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEmptyEditor,
 } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
@@ -25,7 +25,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Replaces attachment', () => {
   test('should replace attachment in page', async ({ page }) => {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
 
@@ -87,7 +87,7 @@ test.describe('Replaces attachment', () => {
   test('should fall back to card view when file type does not support embed view', async ({
     page,
   }) => {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
 

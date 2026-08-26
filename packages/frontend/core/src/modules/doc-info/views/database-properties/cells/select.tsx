@@ -143,7 +143,7 @@ const adapter = {
   },
 };
 
-const BlocksuiteDatabaseSelector = ({
+const CanvasDatabaseSelector = ({
   cell,
   dataSource,
   rowId,
@@ -258,7 +258,7 @@ export const SelectCell = ({
   );
   return (
     <PropertyValue isEmpty={isEmpty} className={styles.container}>
-      <BlocksuiteDatabaseSelector
+      <CanvasDatabaseSelector
         cell={cell}
         dataSource={dataSource}
         rowId={rowId}
@@ -280,7 +280,7 @@ export const MultiSelectCell = ({
   );
   return (
     <PropertyValue isEmpty={isEmpty} className={styles.container}>
-      <BlocksuiteDatabaseSelector
+      <CanvasDatabaseSelector
         cell={cell}
         dataSource={dataSource}
         rowId={rowId}

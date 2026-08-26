@@ -43,7 +43,7 @@ export async function clickNewPageButton(page: Page, title?: string) {
   });
   await waitForEmptyEditor(page);
   if (title) {
-    await getBlockSuiteEditorTitle(page).fill(title);
+    await getCanvasEditorTitle(page).fill(title);
   }
 }
 
@@ -51,7 +51,7 @@ export async function waitForEmptyEditor(page: Page) {
   await expect(page.locator('.doc-title-container-empty')).toBeVisible();
 }
 
-export function getBlockSuiteEditorTitle(page: Page) {
+export function getCanvasEditorTitle(page: Page) {
   return page.locator('doc-title .inline-editor').nth(0);
 }
 

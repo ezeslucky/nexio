@@ -3,7 +3,7 @@ import { withCtrlOrMeta } from '@nexio-test/kit/utils/keyboard';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
@@ -24,7 +24,7 @@ test('back and forward buttons', async ({ page }) => {
 
   await clickNewPageButton(page);
   await waitForEditorLoad(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.fill('test1');
 
   await clickSideBarAllPageButton(page);
@@ -41,5 +41,5 @@ test('back and forward buttons', async ({ page }) => {
   await historyShortcut(page, 'goBack');
 
   await waitForEditorLoad(page);
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test1');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test1');
 });

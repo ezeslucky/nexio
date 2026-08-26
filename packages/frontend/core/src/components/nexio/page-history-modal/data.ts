@@ -155,7 +155,7 @@ export const usePageHistory = (
   return data ?? undefined;
 };
 
-// workspace id + page id + timestamp + snapshot -> Page (to be used for rendering in blocksuite editor)
+// workspace id + page id + timestamp + snapshot -> Page (to be used for rendering in canvas editor)
 export const useSnapshotPage = (
   docCollection: Workspace,
   pageDocId: string,

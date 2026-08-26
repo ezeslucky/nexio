@@ -8,7 +8,7 @@ import {
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
@@ -40,7 +40,7 @@ test('should keep color on custom color button', async ({ page }) => {
 
   await waitForEditorLoad(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await expect(title).toContainText('Getting Started');
 
   await clickEdgelessModeButton(page);

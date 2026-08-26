@@ -1,5 +1,5 @@
 import { Skeleton } from '@nexio/component';
-import { AttachmentViewerView } from '@nexio/core/blocksuite/attachment-viewer';
+import { AttachmentViewerView } from '@nexio/core/canvas/attachment-viewer';
 import { type Doc, DocsService } from '@nexio/core/modules/doc';
 import { type AttachmentBlockModel } from '@canvas/nexio/model';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
@@ -32,8 +32,8 @@ const useLoadAttachment = (pageId: string, attachmentId: string) => {
 
     setDoc(doc);
 
-    if (!doc.blockSuiteDoc.ready) {
-      doc.blockSuiteDoc.load();
+    if (!doc.canvasDoc.ready) {
+      doc.canvasDoc.load();
     }
     const dispose = doc.addPriorityLoad(10);
 
@@ -41,7 +41,7 @@ const useLoadAttachment = (pageId: string, attachmentId: string) => {
       .waitForSyncReady()
       .then(() => {
         const model =
-          doc.blockSuiteDoc.getModelById<AttachmentBlockModel>(attachmentId);
+          doc.canvasDoc.getModelById<AttachmentBlockModel>(attachmentId);
         setModel(model);
       })
       .catch(console.error)

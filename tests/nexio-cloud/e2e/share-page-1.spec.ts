@@ -8,7 +8,7 @@ import {
 import { clickEdgelessModeButton } from '@nexio-test/kit/utils/editor';
 import { importImage } from '@nexio-test/kit/utils/image';
 import {
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
@@ -36,7 +36,7 @@ test('can enable share page', async ({ page, browser }) => {
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -58,7 +58,7 @@ test('can enable share page', async ({ page, browser }) => {
     const page2 = await context.newPage();
     await page2.goto(url);
     await waitForEditorLoad(page2);
-    const title = getBlockSuiteEditorTitle(page2);
+    const title = getCanvasEditorTitle(page2);
     await expect(title).toContainText('TEST TITLE');
     await expect(page2.locator('nexio-paragraph').first()).toContainText(
       'TEST CONTENT'
@@ -76,7 +76,7 @@ test('share page should have toc', async ({ page, browser }) => {
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -135,7 +135,7 @@ test('append paragraph should be disabled in shared mode', async ({
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -180,7 +180,7 @@ test('share page with default edgeless', async ({ page, browser }) => {
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -225,7 +225,7 @@ test('image preview should be shown', async ({ page, browser }) => {
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importImage(page, 'large-image.png');

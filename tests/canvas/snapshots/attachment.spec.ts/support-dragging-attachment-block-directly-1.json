@@ -53,7 +53,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

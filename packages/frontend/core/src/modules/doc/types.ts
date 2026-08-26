@@ -1,4 +1,4 @@
-import type { DocProps } from '@nexio/core/blocksuite/initialization';
+import type { DocProps } from '@nexio/core/canvas/initialization';
 import type { DocMode } from '@canvas/nexio/model';
 
 export interface DocCreateOptions {

@@ -33,8 +33,8 @@ export async function initEmbedSyncedDocState(
         title: string,
         content: string
       ) => {
-        const { collection, $blocksuite } = window;
-        const Text = $blocksuite.store.Text;
+        const { collection, $canvas } = window;
+        const Text = $canvas.store.Text;
 
         const store = (
           collection.getDoc(docId) ?? collection.createDoc(docId)
@@ -78,7 +78,7 @@ export async function initEmbedSyncedDocState(
       );
 
       const { NoteBlockModel, NoteDisplayMode } =
-        window.$blocksuite.nexioModel;
+        window.$canvas.nexioModel;
 
       let prevId = window.doc.id;
       for (let index = 1; index < docIds.length; index++) {

@@ -321,7 +321,7 @@ test('drag a favourite page into note on page mode', async ({ page }) => {
     .locator(`[data-testid="navigation-panel-doc-${pageId}"]`);
   await expect(item).toBeVisible();
 
-  // drag item into blocksuite editor
+  // drag item into canvas editor
   await dragTo(
     page,
     item,
@@ -347,7 +347,7 @@ test('drag a favourite page into canvas on edgeless mode', async ({ page }) => {
   await clickNewPageButton(page, 'edgeless page');
   await clickEdgelessModeButton(page);
 
-  // drag item into blocksuite editor
+  // drag item into canvas editor
   await dragTo(page, item, page.locator('nexio-edgeless-root').first());
 
   const embedDoc = page.locator('nexio-embed-edgeless-synced-doc-block');

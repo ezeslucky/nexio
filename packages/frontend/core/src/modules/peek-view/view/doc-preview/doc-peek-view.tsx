@@ -1,8 +1,8 @@
 import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import { type AIChatParams, AIProvider } from '@nexio/core/blocksuite/ai';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
+import { type AIChatParams, AIProvider } from '@nexio/core/canvas/ai';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
+import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
 import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
@@ -30,10 +30,10 @@ import * as styles from './doc-peek-view.css';
 
 const logger = new DebugLogger('doc-peek-view');
 
-// Lazy load BlockSuiteEditor to break circular dependency
-const BlockSuiteEditor = lazy(() =>
-  import('@nexio/core/blocksuite/block-suite-editor').then(module => ({
-    default: module.BlockSuiteEditor,
+// Lazy load CanvasEditor to break circular dependency
+const CanvasEditor = lazy(() =>
+  import('@nexio/core/canvas/block-suite-editor').then(module => ({
+    default: module.CanvasEditor,
   }))
 );
 
@@ -164,10 +164,10 @@ function DocPeekPreviewEditor({
           className={clsx('nexio-page-viewport', styles.nexioDocViewport)}
         >
           <Suspense fallback={<PageDetailLoading />}>
-            <BlockSuiteEditor
+            <CanvasEditor
               className={styles.editor}
               mode={mode}
-              page={doc.blockSuiteDoc}
+              page={doc.canvasDoc}
               readonly={readonly}
               onEditorReady={handleOnEditorReady}
               defaultOpenProperty={defaultOpenProperty}

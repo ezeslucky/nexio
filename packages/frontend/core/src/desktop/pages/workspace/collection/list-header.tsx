@@ -1,5 +1,5 @@
 import { Button, useConfirmModal } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { PageListNewPageButton } from '@nexio/core/components/page-list';
 import {
   type Collection,

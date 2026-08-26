@@ -5909,7 +5909,7 @@ export function useNEXIOI18N(): {
       */
     ["com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.name"](): string;
     /**
-      * `Once enabled, users can import and export blocksuite snapshots.`
+      * `Once enabled, users can import and export canvas snapshots.`
       */
     ["com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.description"](): string;
     /**

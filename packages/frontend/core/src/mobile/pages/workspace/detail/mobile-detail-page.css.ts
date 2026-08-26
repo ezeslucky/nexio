@@ -62,7 +62,7 @@ export const editorContainer = style({
   flex: 1,
   zIndex: 0,
 });
-// brings styles of .nexio-page-viewport from blocksuite
+// brings styles of .nexio-page-viewport from canvas
 export const nexioDocViewport = style({
   display: 'flex',
   flexDirection: 'column',

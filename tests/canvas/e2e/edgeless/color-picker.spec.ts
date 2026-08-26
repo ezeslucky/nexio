@@ -368,7 +368,7 @@ test.describe('basic functions', () => {
     rgba = parseStringToRgba('transparent');
     expect(rgba).toEqual({ r: 1, g: 1, b: 1, a: 0 });
 
-    rgba = parseStringToRgba('--blocksuite-transparent');
+    rgba = parseStringToRgba('--canvas-transparent');
     expect(rgba).toEqual({ r: 1, g: 1, b: 1, a: 0 });
 
     rgba = parseStringToRgba('--nexio-palette-transparent');

@@ -1,9 +1,9 @@
 import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import type { AIChatParams, ChatPanel } from '@nexio/core/blocksuite/ai';
-import { AIProvider } from '@nexio/core/blocksuite/ai';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
+import type { AIChatParams, ChatPanel } from '@nexio/core/canvas/ai';
+import { AIProvider } from '@nexio/core/canvas/ai';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
+import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
 import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 // import { PageAIOnboarding } from '@nexio/core/components/nexio/ai-onboarding';
 import { GlobalPageHistoryModal } from '@nexio/core/components/nexio/page-history-modal';
@@ -11,8 +11,8 @@ import { CommentSidebar } from '@nexio/core/components/comment/sidebar';
 import { useGuard } from '@nexio/core/components/guard';
 import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
-import { useRegisterBlocksuiteEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-canvas-editor-commands';
-import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
+import { useRegisterCanvasEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-canvas-editor-commands';
+import { useActiveCanvasEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
 import { WorkspacePropertySidebar } from '@nexio/core/components/properties/sidebar';
 import { TrashPageFooter } from '@nexio/core/components/pure/trash-page-footer';
@@ -106,7 +106,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
 
   const isActiveView = useIsActiveView();
   // TODO(@eyhn): remove jotai here
-  const [_, setActiveBlockSuiteEditor] = useActiveBlocksuiteEditor();
+  const [_, setActiveCanvasEditor] = useActiveCanvasEditor();
 
   const enableAI = useEnableAI();
 
@@ -125,9 +125,9 @@ const DetailPageImpl = memo(function DetailPageImpl() {
 
   useEffect(() => {
     if (isActiveView) {
-      setActiveBlockSuiteEditor(editorContainer);
+      setActiveCanvasEditor(editorContainer);
     }
-  }, [editorContainer, isActiveView, setActiveBlockSuiteEditor]);
+  }, [editorContainer, isActiveView, setActiveCanvasEditor]);
 
   useEffect(() => {
     const disposables: Subscription[] = [];
@@ -182,7 +182,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
     return;
   }, [globalContext, isActiveView, isInTrash]);
 
-  useRegisterBlocksuiteEditorCommands(editor, isActiveView);
+  useRegisterCanvasEditorCommands(editor, isActiveView);
 
   const onLoad = useCallback(
     (editorContainer: NexioEditorContainer) => {
@@ -294,7 +294,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
     <FrameworkScope scope={editor.scope}>
       <ViewHeader>
         <DetailPageHeader
-          page={doc.blockSuiteDoc}
+          page={doc.CanvasDoc}
           workspace={workspace}
           onDragging={setDragging}
         />

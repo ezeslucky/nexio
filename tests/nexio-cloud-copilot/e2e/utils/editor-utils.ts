@@ -8,7 +8,7 @@ import {
 } from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
 } from '@nexio-test/kit/utils/page-logic';
 import type { EdgelessRootBlockComponent } from '@canvas/nexio/blocks/root';
 import type {
@@ -19,7 +19,7 @@ import type { GfxModel } from '@canvas/std/gfx';
 import { type Page } from '@playwright/test';
 export class EditorUtils {
   public static async focusToEditor(page: Page) {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.focus();
     await page.keyboard.press('Enter');
   }

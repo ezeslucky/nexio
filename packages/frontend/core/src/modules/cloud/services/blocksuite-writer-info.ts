@@ -6,10 +6,10 @@ import type { DocImpl } from '../../workspace/impls/doc';
 import type { WorkspaceServerService } from './workspace-server';
 
 /**
- * This service is used to set the writer info for the blocksuite editor.
+ * This service is used to set the writer info for the Canvas editor.
  */
 @OnEvent(WorkspaceInitialized, i => i.onWorkspaceInitialized)
-export class BlocksuiteWriterInfoService extends Service {
+export class CanvasWriterInfoService extends Service {
   constructor(private readonly workspaceServerService: WorkspaceServerService) {
     super();
   }

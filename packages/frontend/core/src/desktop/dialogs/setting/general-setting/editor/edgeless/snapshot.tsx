@@ -1,5 +1,5 @@
 import { Skeleton } from '@nexio/component';
-import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import { getViewManager } from '@nexio/core/canvas/manager/view';
 import type { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { EdgelessCRUDIdentifier } from '@canvas/nexio/blocks/surface';

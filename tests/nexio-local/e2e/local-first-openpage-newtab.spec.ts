@@ -2,7 +2,7 @@ import { test } from '@nexio-test/kit/playwright';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEditorLoad,
@@ -14,8 +14,8 @@ test('click btn new page and open in tab', async ({ page, workspace }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page');
   const newPageUrl = page.url();
   const newPageId = getCurrentDocIdFromUrl(page);
 
@@ -47,7 +47,7 @@ test('switch between new page and all page', async ({ page }) => {
   await expect(cell).toBeVisible();
 
   await cell.click();
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText(title);
+  await expect(getCanvasEditorTitle(page)).toHaveText(title);
 
   await page.getByTestId('all-pages').click();
   await expect(cell).toBeVisible();
@@ -89,8 +89,8 @@ test('ctrl click embedded doc link and open in new tab', async ({ page }) => {
   await openHomePage(page);
   await clickNewPageButton(page);
 
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page');
   const newPageUrl = page.url();
 
   await clickNewPageButton(page);

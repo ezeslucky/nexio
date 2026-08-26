@@ -23,8 +23,8 @@ export class DocDatabaseBacklinksService extends Service {
 
   private async ensureDocLoaded(docId: string) {
     const docRef = this.docsService.open(docId);
-    if (!docRef.doc.blockSuiteDoc.ready) {
-      docRef.doc.blockSuiteDoc.load();
+    if (!docRef.doc.canvasDoc.ready) {
+      docRef.doc.canvasDoc.load();
     }
     const disposePriorityLoad = docRef.doc.addPriorityLoad(10);
     await docRef.doc.waitForSyncReady();
@@ -81,7 +81,7 @@ export class DocDatabaseBacklinksService extends Service {
         if (disposed) {
           return;
         }
-        const maybeDatabaseBlock = docRef.doc.blockSuiteDoc.getBlock(
+        const maybeDatabaseBlock = docRef.doc.canvasDoc.getBlock(
           backlink.databaseBlockId
         );
         if (maybeDatabaseBlock?.flavour === 'nexio:database') {

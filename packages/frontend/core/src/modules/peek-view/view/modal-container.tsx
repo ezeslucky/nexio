@@ -34,7 +34,7 @@ const contentOptions: Dialog.DialogContentProps = {
   },
   onEscapeKeyDown: e => {
     // prevent closing the modal when pressing escape key by default
-    // this is because radix-ui register the escape key event on the document using capture, which is not possible to prevent in blocksuite
+    // this is because radix-ui register the escape key event on the document using capture, which is not possible to prevent in canvas
     e.preventDefault();
   },
 };

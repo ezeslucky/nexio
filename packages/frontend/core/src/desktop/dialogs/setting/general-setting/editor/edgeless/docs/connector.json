@@ -13,7 +13,7 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": []
       }
     },
@@ -39,7 +39,7 @@
                   "light": "#000000"
                 },
                 "fontSize": 16,
-                "fontFamily": "blocksuite:surface:Inter",
+                "fontFamily": "canvas:surface:Inter",
                 "fontWeight": "400",
                 "fontStyle": "normal",
                 "textAlign": "center"
@@ -79,7 +79,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

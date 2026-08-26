@@ -4,7 +4,7 @@ import {
   DocExplorerContext,
 } from '@nexio/core/components/explorer/context';
 import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
 import { Header } from '@nexio/core/components/pure/header';
 import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
@@ -44,7 +44,7 @@ export const TrashPage = () => {
   const globalContextService = useService(GlobalContextService);
   const permissionService = useService(WorkspacePermissionService);
 
-  const { restoreFromTrash, permanentlyDeletePage } = useBlockSuiteMetaHelper();
+  const { restoreFromTrash, permanentlyDeletePage } = useCanvasMetaHelper();
   const isActiveView = useIsActiveView();
   const { openConfirmModal } = useConfirmModal();
 

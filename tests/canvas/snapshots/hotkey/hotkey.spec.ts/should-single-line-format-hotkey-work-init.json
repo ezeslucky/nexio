@@ -10,7 +10,7 @@
           "props": {
             "collapsed": false,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "h"
@@ -64,7 +64,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

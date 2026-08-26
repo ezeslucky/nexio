@@ -210,7 +210,7 @@ test('duplicate code block', async ({ page }, testInfo) => {
   // add a caption
   await codeBlockController.codeBlock.hover();
   await codeBlockController.captionButton.click();
-  await type(page, 'BlockSuite');
+  await type(page, 'Canvas');
   await pressEnter(page);
   await pressBackspace(page); // remove paragraph
   await waitNextFrame(page, 100);
@@ -293,7 +293,7 @@ test('add caption works', async ({ page }, testInfo) => {
   const codeBlockController = getCodeBlock(page);
   await codeBlockController.codeBlock.hover();
   await codeBlockController.captionButton.click();
-  await type(page, 'BlockSuite');
+  await type(page, 'Canvas');
   await pressEnter(page);
   await waitNextFrame(page, 100);
 

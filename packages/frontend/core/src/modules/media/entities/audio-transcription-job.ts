@@ -1,5 +1,5 @@
 import { shallowEqual } from '@nexio/component';
-import type { TranscriptionBlockProps } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
+import type { TranscriptionBlockProps } from '@nexio/core/canvas/ai/blocks/transcription-block/model';
 import { DebugLogger } from '@nexio/debug';
 import { UserFriendlyError } from '@nexio/error';
 import { AiJobStatus } from '@nexio/graphql';

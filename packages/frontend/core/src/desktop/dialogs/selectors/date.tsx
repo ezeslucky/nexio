@@ -6,7 +6,7 @@ import { cssVarV2 } from '@ezeslucky/theme/v2';
 import { useCallback, useState } from 'react';
 
 /**
- * A global date selector popover, mainly used in blocksuite editor
+ * A global date selector popover, mainly used in canvas editor
  */
 export const DateSelectorDialog = ({
   close,

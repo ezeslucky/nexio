@@ -1,4 +1,4 @@
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
 import type { DefaultOpenProperty } from '@nexio/core/components/properties';
 import { PresentTool } from '@canvas/nexio/blocks/frame';
 import { DefaultTool } from '@canvas/nexio/blocks/surface';

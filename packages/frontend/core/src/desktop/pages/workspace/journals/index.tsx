@@ -3,7 +3,7 @@ import {
   WeekDatePicker,
   type WeekDatePickerHandle,
 } from '@nexio/component';
-import { BlocksuiteEditorJournalDocTitleUI } from '@nexio/core/blocksuite/block-suite-editor/journal-doc-title';
+import { CanvasEditorJournalDocTitleUI } from '@nexio/core/canvas/block-suite-editor/journal-doc-title';
 import {
   JOURNAL_DATE_FORMAT,
   JournalService,
@@ -53,7 +53,7 @@ export const JournalPlaceholder = ({ dateString }: { dateString: string }) => {
   return (
     <div className={styles.body} data-mobile={BUILD_CONFIG.isMobileEdition}>
       <div className={styles.content}>
-        <BlocksuiteEditorJournalDocTitleUI
+        <CanvasEditorJournalDocTitleUI
           date={dateString}
           overrideClassName={styles.docTitleContainer}
         />

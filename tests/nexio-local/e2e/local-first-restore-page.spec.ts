@@ -2,7 +2,7 @@ import { test } from '@nexio-test/kit/playwright';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEditorLoad,
@@ -17,8 +17,8 @@ test('New a page , then delete it in all pages, restore it', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to restore');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to restore');
   const newPageId = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   const cell = await getPageByTitle(page, 'this is a new page to restore');

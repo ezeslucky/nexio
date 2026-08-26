@@ -12,7 +12,7 @@ import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';
 
-import { BlocksuiteEditorJournalDocTitle } from '../../block-suite-editor/journal-doc-title';
+import { CanvasEditorJournalDocTitle } from '../../block-suite-editor/journal-doc-title';
 import { EdgelessEmbedSyncedDocHeader } from './edgeless-embed-synced-doc-header';
 import { EdgelessNoteHeader } from './edgeless-note-header';
 
@@ -29,7 +29,7 @@ export function patchForEdgelessNoteConfig(
       const isJournal = !!journalService.journalDate$(note.store.id).value;
       if (isJournal) {
         return reactToLit(
-          <BlocksuiteEditorJournalDocTitle page={note.store} />
+          <CanvasEditorJournalDocTitle page={note.store} />
         );
       } else {
         return html`<doc-title .doc=${note.store}></doc-title>`;

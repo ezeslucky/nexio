@@ -5,7 +5,7 @@
   "version": 2,
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": []
     }
   },
@@ -43,7 +43,7 @@
           "props": {
             "type": "bulleted",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "C"
@@ -63,7 +63,7 @@
               "props": {
                 "type": "bulleted",
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "D"
@@ -84,7 +84,7 @@
               "props": {
                 "type": "bulleted",
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "E"
@@ -104,7 +104,7 @@
                   "props": {
                     "type": "bulleted",
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "F"
@@ -125,7 +125,7 @@
                   "props": {
                     "type": "bulleted",
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "G"
@@ -148,7 +148,7 @@
               "props": {
                 "type": "bulleted",
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "B"
@@ -171,7 +171,7 @@
           "props": {
             "type": "bulleted",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "A"

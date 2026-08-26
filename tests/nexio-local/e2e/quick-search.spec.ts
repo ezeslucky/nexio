@@ -10,7 +10,7 @@ import {
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
@@ -46,7 +46,7 @@ const commandsIsVisible = async (page: Page, label: string) => {
 async function assertTitle(page: Page, text: string) {
   const edgeless = page.locator('nexio-edgeless-root');
   if (!edgeless) {
-    const locator = getBlockSuiteEditorTitle(page);
+    const locator = getCanvasEditorTitle(page);
     const actual = await locator.inputValue();
     expect(actual).toBe(text);
   }
@@ -99,7 +99,7 @@ async function assertResultList(page: Page, texts: string[]) {
 async function titleIsFocused(page: Page) {
   const edgeless = page.locator('nexio-edgeless-root');
   if (!edgeless) {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await expect(title).toBeVisible();
     await expect(title).toBeFocused();
   }
@@ -264,7 +264,7 @@ test('assert the recent browse pages are on the recent list', async ({
   await clickNewPageButton(page);
   await waitForEditorLoad(page);
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.waitForTimeout(200);
     await title.pressSequentially('sgtokidoki', { delay: 100 });
@@ -277,7 +277,7 @@ test('assert the recent browse pages are on the recent list', async ({
   await addNewPage.click();
   await waitForEditorLoad(page);
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.waitForTimeout(200);
     await title.pressSequentially('theliquidhorse', { delay: 100 });
@@ -290,7 +290,7 @@ test('assert the recent browse pages are on the recent list', async ({
   await addNewPage.click();
   await waitForEditorLoad(page);
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.waitForTimeout(200);
     await title.pressSequentially('battlekot', { delay: 100 });
@@ -318,7 +318,7 @@ test('assert the recent browse pages are on the recent list', async ({
   }
   await waitForEditorLoad(page);
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.waitForTimeout(200);
     await title.pressSequentially('nexio is the best', { delay: 100 });
@@ -338,8 +338,8 @@ test('can use cmdk to export png', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to export');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to export');
   await openQuickSearchByShortcut(page);
   const [download] = await Promise.all([
     page.waitForEvent('download'),
@@ -352,8 +352,8 @@ test('can use cmdk to delete page and restore it', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to delete');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to delete');
   await openQuickSearchByShortcut(page);
   await selectItem(page, 'Move to trash');
   await page.getByTestId('confirm-modal-confirm').click();
@@ -373,8 +373,8 @@ test('can use cmdk to search page content and scroll to it, then the block will 
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill(
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill(
     'this is a new page to search for content'
   );
   for (let i = 0; i < 30; i++) {
@@ -415,8 +415,8 @@ test('Create a new page with special characters in the title and search for this
   await waitForEditorLoad(page);
 
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill(specialTitle);
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill(specialTitle);
   await openQuickSearchByShortcut(page);
 
   await insertInputText(page, specialTitle);
@@ -443,8 +443,8 @@ test('disable quick search when the link-popup is visitable', async ({
   await withCtrlOrMeta(page, () => page.keyboard.press('k'));
   await expect(quickSearch).toBeHidden();
 
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill(specialTitle);
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill(specialTitle);
   await page.keyboard.press('Enter', { delay: 10 });
   await page.keyboard.insertText('1234567890');
   await page.getByText('1234567890').dblclick();

@@ -611,7 +611,7 @@ test('press backspace at the start of first line when edgeless text exist', asyn
   await page.evaluate(() => {
     const { doc } = window;
     const rootId = doc.addBlock('nexio:page', {
-      title: new window.$blocksuite.store.Text(),
+      title: new window.$canvas.store.Text(),
     });
     doc.addBlock('nexio:surface', {}, rootId);
     doc.addBlock('nexio:note', {}, rootId);

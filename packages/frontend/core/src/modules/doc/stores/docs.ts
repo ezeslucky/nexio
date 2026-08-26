@@ -22,7 +22,7 @@ export class DocsStore extends Store {
     super();
   }
 
-  getBlockSuiteDoc(id: string) {
+  getCanvasDoc(id: string) {
     return (
       this.workspaceService.workspace.docCollection
         .getDoc(id)
@@ -30,7 +30,7 @@ export class DocsStore extends Store {
     );
   }
 
-  getBlocksuiteCollection() {
+  getCanvasCollection() {
     return this.workspaceService.workspace.docCollection;
   }
 

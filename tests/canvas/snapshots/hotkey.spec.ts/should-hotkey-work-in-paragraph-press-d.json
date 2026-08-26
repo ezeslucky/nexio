@@ -5,7 +5,7 @@
   "version": 2,
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": []
     }
   },
@@ -42,7 +42,7 @@
           "props": {
             "type": "text",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "hello"
@@ -69,7 +69,7 @@
           "props": {
             "type": "text",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": []
             },
             "collapsed": false

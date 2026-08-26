@@ -2,7 +2,7 @@ import { test } from '@nexio-test/kit/playwright';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -28,8 +28,8 @@ test('click btn bew page and find it in all pages', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page');
   await page.getByTestId('all-pages').click();
   const cell = getPageByTitle(page, 'this is a new page');
   await expect(cell).toBeVisible();

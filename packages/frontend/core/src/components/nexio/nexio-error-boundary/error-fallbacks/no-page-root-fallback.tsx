@@ -1,4 +1,4 @@
-import { NoPageRootError } from '@nexio/core/blocksuite/block-suite-editor/no-page-error';
+import { NoPageRootError } from '@nexio/core/canvas/block-suite-editor/no-page-error';
 import { useI18n } from '@nexio/i18n';
 
 import { ContactUS, ErrorDetail } from '../error-basic/error-detail';

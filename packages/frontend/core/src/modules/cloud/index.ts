@@ -60,7 +60,7 @@ import { ValidatorProvider } from './provider/validator';
 import { ServerScope } from './scopes/server';
 import { InvitationService } from './services/invitation';
 import { AuthService } from './services/auth';
-import { BlocksuiteWriterInfoService } from './services/blocksuite-writer-info';
+import { CanvasWriterInfoService } from './services/canvas-writer-info';
 import { CaptchaService } from './services/captcha';
 import { CloudDocMetaService } from './services/cloud-doc-meta';
 import { DefaultServerService } from './services/default-server';
@@ -195,7 +195,7 @@ export function configureCloudModule(framework: Framework) {
     .entity(WorkspaceInvoices, [WorkspaceService, WorkspaceServerService])
     .service(SelfhostLicenseService, [SelfhostLicenseStore, WorkspaceService])
     .store(SelfhostLicenseStore, [WorkspaceServerService])
-    .service(BlocksuiteWriterInfoService, [WorkspaceServerService])
+    .service(CanvasWriterInfoService, [WorkspaceServerService])
     .service(DocCreatedByUpdatedBySyncService, [
       WorkspaceService,
       DocsService,

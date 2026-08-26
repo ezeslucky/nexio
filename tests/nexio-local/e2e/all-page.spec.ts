@@ -5,7 +5,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getAllPage,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForAllPagesLoad,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -24,7 +24,7 @@ test('all page can create new page', async ({ page }) => {
   await waitForEditorLoad(page);
   await clickSideBarAllPageButton(page);
   await clickNewPageButton();
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.fill('this is a new page');
   await clickSideBarAllPageButton(page);
   const cell = page.getByRole('cell', { name: 'this is a new page' });

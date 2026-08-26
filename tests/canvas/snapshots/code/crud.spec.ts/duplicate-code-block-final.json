@@ -8,10 +8,10 @@
           "flavour": "nexio:code",
           "id": "2",
           "props": {
-            "caption": "BlockSuite",
+            "caption": "Canvas",
             "language": "rust",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "let a: u8 = 7"
@@ -29,10 +29,10 @@
           "flavour": "nexio:code",
           "id": "4",
           "props": {
-            "caption": "BlockSuite",
+            "caption": "Canvas",
             "language": "rust",
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "let a: u8 = 7"
@@ -74,7 +74,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }
