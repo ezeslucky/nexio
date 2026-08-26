@@ -6,7 +6,7 @@ import type { FrameworkProvider } from '@ezeslucky/infra';
 import { IconPickerService } from '../../../modules/icon-picker/services/icon-picker';
 
 /**
- * Patch the icon picker service to make it available in BlockSuite
+ * Patch the icon picker service to make it available in Canvas
  * @param framework
  * @returns
  */

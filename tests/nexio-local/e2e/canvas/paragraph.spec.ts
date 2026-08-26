@@ -96,7 +96,7 @@ test('basic heading collapsed', async ({ page }) => {
   // fold h1 aaa
   await a.hover();
   await page.waitForTimeout(100);
-  await a.locator('blocksuite-toggle-button .toggle-icon').click();
+  await a.locator('canvas-toggle-button .toggle-icon').click();
   expect(await a.isVisible()).toBeTruthy();
   expect(await b.isVisible()).toBeFalsy();
   expect(await c.isVisible()).toBeFalsy();
@@ -113,7 +113,7 @@ test('basic heading collapsed', async ({ page }) => {
   // fold h2 ccc
   await c.hover();
   await page.waitForTimeout(100);
-  await c.locator('blocksuite-toggle-button .toggle-icon').click();
+  await c.locator('canvas-toggle-button .toggle-icon').click();
   expect(await a.isVisible()).toBeTruthy();
   expect(await b.isVisible()).toBeTruthy();
   expect(await c.isVisible()).toBeTruthy();
@@ -130,7 +130,7 @@ test('basic heading collapsed', async ({ page }) => {
   // fold h3 eee
   await e.hover();
   await page.waitForTimeout(100);
-  await e.locator('blocksuite-toggle-button .toggle-icon').click();
+  await e.locator('canvas-toggle-button .toggle-icon').click();
   expect(await a.isVisible()).toBeTruthy();
   expect(await b.isVisible()).toBeTruthy();
   expect(await c.isVisible()).toBeTruthy();
@@ -147,7 +147,7 @@ test('basic heading collapsed', async ({ page }) => {
   // fold h2 ggg
   await g.hover();
   await page.waitForTimeout(100);
-  await g.locator('blocksuite-toggle-button .toggle-icon').click();
+  await g.locator('canvas-toggle-button .toggle-icon').click();
   expect(await a.isVisible()).toBeTruthy();
   expect(await b.isVisible()).toBeTruthy();
   expect(await c.isVisible()).toBeTruthy();
@@ -209,7 +209,7 @@ test('add new heading when press enter at the end of collapsed heading', async (
   expect(await paragraph.nth(1).isVisible()).toBeTruthy();
   await paragraph
     .nth(0)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click();
   expect(await paragraph.nth(1).isVisible()).toBeFalsy();
 
@@ -236,7 +236,7 @@ test('unfold collapsed heading when some block indented to be its child', async 
   const paragraph = page.locator('nexio-note nexio-paragraph');
   await paragraph
     .nth(0)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click();
   expect(await paragraph.nth(1).isVisible()).toBeFalsy();
   await paragraph.nth(2).click();
@@ -252,7 +252,7 @@ test('unfold collapsed heading when its siblings changed to text type from headi
   const paragraph = page.locator('nexio-note nexio-paragraph');
   await paragraph
     .nth(0)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click();
   expect(await paragraph.nth(1).isVisible()).toBeFalsy();
   await paragraph.nth(2).click();
@@ -313,7 +313,7 @@ test('also move children when dedent collapsed heading', async ({ page }) => {
   expect(await subParagraph.nth(1).isVisible()).toBeTruthy();
   await subParagraph
     .nth(0)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click();
   expect(await subParagraph.nth(1).isVisible()).toBeFalsy();
 
@@ -342,7 +342,7 @@ test('also move children when dedent collapsed heading', async ({ page }) => {
   expect(await paragraph.nth(2).isVisible()).toBeFalsy();
   await paragraph
     .nth(1)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click({
       position: {
         x: 5,
@@ -381,7 +381,7 @@ test('also move collapsed siblings when indent collapsed heading', async ({
   expect(await paragraph.nth(2).isVisible()).toBeTruthy();
   await paragraph
     .nth(1)
-    .locator('blocksuite-toggle-button .toggle-icon')
+    .locator('canvas-toggle-button .toggle-icon')
     .click();
   expect(await paragraph.nth(2).isVisible()).toBeFalsy();
   await paragraph.nth(1).click();
@@ -443,7 +443,7 @@ test('unfold collapsed heading when its other blocks indented to be its sibling'
           block.model.props.text.toString() === 'ccc'
       )
   ).toBeTruthy();
-  await paragraph.locator('blocksuite-toggle-button .toggle-icon').click();
+  await paragraph.locator('canvas-toggle-button .toggle-icon').click();
   expect(await paragraph.nth(2).isVisible()).toBeFalsy();
 
   await paragraph.nth(3).click(); // ddd

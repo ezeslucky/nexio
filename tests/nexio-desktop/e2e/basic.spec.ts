@@ -1,7 +1,7 @@
 import { test } from '@nexio-test/kit/electron';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
 } from '@nexio-test/kit/utils/page-logic';
 import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
 import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
@@ -24,7 +24,7 @@ test('app sidebar router forward/back', async ({ page }) => {
   // create pages
   await page.waitForTimeout(500);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.focus();
   await title.pressSequentially('test1', {
     delay: 100,
@@ -42,20 +42,20 @@ test('app sidebar router forward/back', async ({ page }) => {
   await title.pressSequentially('test3', {
     delay: 100,
   });
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test3');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test3');
 
   await page.click('[data-testid="app-navigation-button-back"]');
   await page.click('[data-testid="app-navigation-button-back"]');
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test1');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test1');
   await page.click('[data-testid="app-navigation-button-forward"]');
   await page.click('[data-testid="app-navigation-button-forward"]');
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test3');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test3');
   await historyShortcut(page, 'goBack');
   await historyShortcut(page, 'goBack');
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test1');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test1');
   await historyShortcut(page, 'goForward');
   await historyShortcut(page, 'goForward');
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('test3');
+  await expect(getCanvasEditorTitle(page)).toHaveText('test3');
 });
 
 test('clientBorder value should disable by default on window', async ({

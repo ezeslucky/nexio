@@ -8,7 +8,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForAllPagesLoad,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -62,7 +62,7 @@ test('default to edgeless by editor header items', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page, 'this is a new page');
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   expect(await title.textContent()).toBe('this is a new page');
 
   await clickPageMoreActions(page);

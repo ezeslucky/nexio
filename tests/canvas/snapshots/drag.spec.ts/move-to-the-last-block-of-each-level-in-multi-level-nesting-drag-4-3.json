@@ -14,7 +14,7 @@
                 "collapsed": false,
                 "order": null,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "D"
@@ -38,7 +38,7 @@
                     "collapsed": false,
                     "order": null,
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "F"
@@ -60,7 +60,7 @@
                     "collapsed": false,
                     "order": null,
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "G"
@@ -82,7 +82,7 @@
                     "collapsed": false,
                     "order": null,
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "A"
@@ -104,7 +104,7 @@
                     "collapsed": false,
                     "order": null,
                     "text": {
-                      "$blocksuite:internal:text$": true,
+                      "$canvas:internal:text$": true,
                       "delta": [
                         {
                           "insert": "B"
@@ -124,7 +124,7 @@
                 "collapsed": false,
                 "order": null,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "E"
@@ -144,7 +144,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "C"
@@ -186,7 +186,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

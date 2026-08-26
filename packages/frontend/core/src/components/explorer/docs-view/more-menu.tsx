@@ -24,7 +24,7 @@ import {
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useContext } from 'react';
 
-import { useBlockSuiteMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
 import { IsFavoriteIcon } from '../../pure/icons';
 import { DocExplorerContext } from '../context';
 
@@ -122,7 +122,7 @@ const SplitView = ({ docId }: DocOperationProps) => {
  * Duplicate Operation
  */
 const Duplicate = ({ docId }: DocOperationProps) => {
-  const { duplicate } = useBlockSuiteMetaHelper();
+  const { duplicate } = useCanvasMetaHelper();
   const t = useI18n();
 
   const onDuplicate = useCallback(() => {

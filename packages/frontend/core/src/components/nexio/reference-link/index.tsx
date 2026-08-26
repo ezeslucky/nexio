@@ -193,7 +193,7 @@ export function NexioSharedPageReference({
       // update refresh key
       setRefreshKey(nanoid());
 
-      // Prevent blocksuite link clicked behavior
+      // Prevent canvas link clicked behavior
       e.stopPropagation();
 
       return;

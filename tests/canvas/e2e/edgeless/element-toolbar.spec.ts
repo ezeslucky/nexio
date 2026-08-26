@@ -42,18 +42,18 @@ test('tooltip should be hidden after clicking on button', async ({ page }) => {
   const modeBtn = toolbar.getByRole('button', { name: 'Mode' });
 
   await modeBtn.hover();
-  await expect(page.locator('.blocksuite-portal')).toBeVisible();
+  await expect(page.locator('.canvas-portal')).toBeVisible();
 
   await modeBtn.click();
-  await expect(page.locator('.blocksuite-portal')).toBeHidden();
+  await expect(page.locator('.canvas-portal')).toBeHidden();
   await expect(page.locator('note-display-mode-panel')).toBeVisible();
 
   await modeBtn.click();
-  await expect(page.locator('.blocksuite-portal')).toBeVisible();
+  await expect(page.locator('.canvas-portal')).toBeVisible();
   await expect(page.locator('note-display-mode-panel')).toBeHidden();
 
   await modeBtn.click();
-  await expect(page.locator('.blocksuite-portal')).toBeHidden();
+  await expect(page.locator('.canvas-portal')).toBeHidden();
   await expect(page.locator('note-display-mode-panel')).toBeVisible();
 
   const colorBtn = toolbar.getByRole('button', {
@@ -61,10 +61,10 @@ test('tooltip should be hidden after clicking on button', async ({ page }) => {
   });
 
   await colorBtn.hover();
-  await expect(page.locator('.blocksuite-portal')).toBeVisible();
+  await expect(page.locator('.canvas-portal')).toBeVisible();
 
   await colorBtn.click();
-  await expect(page.locator('.blocksuite-portal')).toBeHidden();
+  await expect(page.locator('.canvas-portal')).toBeHidden();
   await expect(page.locator('note-display-mode-panel')).toBeHidden();
   await expect(page.locator('edgeless-color-panel')).toBeVisible();
 });

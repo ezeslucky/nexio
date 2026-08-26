@@ -6,7 +6,7 @@ import {
 } from '@nexio-test/kit/utils/cloud';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
@@ -48,7 +48,7 @@ test.describe('comments', () => {
     await waitForEditorLoad(page);
 
     // Add title and content
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await title.fill('Test Comment Document');
 

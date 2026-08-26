@@ -1,8 +1,8 @@
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
-} from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
-import { insertFromMarkdown } from '@nexio/core/blocksuite/utils';
+} from '@nexio/core/canvas/ai/blocks/transcription-block/model';
+import { insertFromMarkdown } from '@nexio/core/canvas/utils';
 import { encodeAudioBlobToOpusSlices } from '@nexio/core/utils/opus-encoding';
 import { DebugLogger } from '@nexio/debug';
 import { AiJobStatus } from '@nexio/graphql';

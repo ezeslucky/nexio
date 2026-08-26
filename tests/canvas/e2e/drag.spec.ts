@@ -627,7 +627,7 @@ test.fixme(
       const { doc } = window;
 
       const rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
       doc.addBlock('nexio:surface', {}, rootId);
 
@@ -636,7 +636,7 @@ test.fixme(
         doc.addBlock(
           'nexio:paragraph',
           {
-            text: new window.$blocksuite.store.Text(text),
+            text: new window.$canvas.store.Text(text),
           },
           noteId
         );

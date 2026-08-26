@@ -1,7 +1,7 @@
 import { Scrollable, uniReactRoot } from '@nexio/component';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
-import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
+import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
+import { useActiveCanvasEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
 import { AppContainer } from '@nexio/core/desktop/components/app-container';
@@ -126,8 +126,8 @@ const SharePageInner = ({
   const [page, setPage] = useState<Doc | null>(null);
   const [editor, setEditor] = useState<Editor | null>(null);
   const [noPermission, setNoPermission] = useState(false);
-  const [editorContainer, setActiveBlocksuiteEditor] =
-    useActiveBlocksuiteEditor();
+  const [editorContainer, setActiveCanvasEditor] =
+    useActiveCanvasEditor();
 
   useEffect(() => {
     // create a workspace for share page
@@ -166,12 +166,12 @@ const SharePageInner = ({
       .waitForDocLoaded(workspace.id)
       .then(async () => {
         const { doc } = workspace.scope.get(DocsService).open(docId);
-        doc.blockSuiteDoc.load();
-        doc.blockSuiteDoc.readonly = true;
+        doc.canvasDoc.load();
+        doc.canvasDoc.readonly = true;
 
         await workspace.engine.doc.waitForDocLoaded(docId);
 
-        if (!doc.blockSuiteDoc.root) {
+        if (!doc.canvasDoc.root) {
           throw new Error('Doc is empty');
         }
 
@@ -206,7 +206,7 @@ const SharePageInner = ({
 
   const onEditorLoad = useCallback(
     (editorContainer: NexioEditorContainer) => {
-      setActiveBlocksuiteEditor(editorContainer);
+      setActiveCanvasEditor(editorContainer);
       if (!editor) {
         return;
       }
@@ -237,7 +237,7 @@ const SharePageInner = ({
         unbind();
       };
     },
-    [editor, setActiveBlocksuiteEditor, jumpToPageBlock, openPage, workspaceId]
+    [editor, setActiveCanvasEditor, jumpToPageBlock, openPage, workspaceId]
   );
 
   if (noPermission) {

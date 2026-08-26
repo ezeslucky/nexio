@@ -1477,7 +1477,7 @@
   "com.nexio.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.name": "Mobile Linked Doc Widget",
   "com.nexio.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.description": "Enables the mobile linked doc menu.",
   "com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.name": "Enable Snapshot Import Export",
-  "com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.description": "Once enabled, users can import and export blocksuite snapshots.",
+  "com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.description": "Once enabled, users can import and export canvas snapshots.",
   "com.nexio.settings.workspace.experimental-features.enable-mobile-edgeless-editing.name": "Enable Edgeless Editing",
   "com.nexio.settings.workspace.experimental-features.enable-mobile-edgeless-editing.description": "Once enabled, users can edit edgeless canvas.",
   "com.nexio.settings.workspace.experimental-features.enable-pdf-embed-preview.name": "PDF embed preview",

@@ -5,9 +5,9 @@ import {
   toast,
   useConfirmModal,
 } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { Guard } from '@nexio/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
@@ -64,7 +64,7 @@ export const useNavigationPanelDocNodeOperations = (
     }, [docId, compatibleFavoriteItemsAdapter])
   );
 
-  const { duplicate } = useBlockSuiteMetaHelper();
+  const { duplicate } = useCanvasMetaHelper();
   const handleDuplicate = useCallback(() => {
     duplicate(docId, true);
     track.$.navigationPanel.docs.createDoc();

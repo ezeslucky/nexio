@@ -5,7 +5,7 @@ import { atom, useAtomValue } from 'jotai';
 const weakMap = new WeakMap<Workspace, Atom<DocMeta[]>>();
 
 // this hook is extracted from './use-block-suite-page-meta.ts' to avoid circular dependency
-export function useAllBlockSuiteDocMeta(docCollection: Workspace): DocMeta[] {
+export function useAllCanvasDocMeta(docCollection: Workspace): DocMeta[] {
   if (!weakMap.has(docCollection)) {
     const baseAtom = atom<DocMeta[]>([...docCollection.meta.docMetas]);
     weakMap.set(docCollection, baseAtom);

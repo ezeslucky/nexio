@@ -1,5 +1,5 @@
 import { type MenuProps } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { ExplorerDisplayMenuButton } from '@nexio/core/components/explorer/display-menu';
 import { ViewToggle } from '@nexio/core/components/explorer/display-menu/view-toggle';
 import type { DocListItemView } from '@nexio/core/components/explorer/docs-view/doc-list-item';

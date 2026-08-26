@@ -1,9 +1,9 @@
 import { useThemeColorV2 } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
 import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
-import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
+import { useActiveCanvasEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
 import { DetailPageWrapper } from '@nexio/core/desktop/pages/workspace/detail-page/detail-page-wrapper';
@@ -87,11 +87,11 @@ const DetailPageImpl = () => {
   );
 
   // TODO(@eyhn): remove jotai here
-  const [_, setActiveBlockSuiteEditor] = useActiveBlocksuiteEditor();
+  const [_, setActiveCanvasEditor] = useActiveCanvasEditor();
 
   useEffect(() => {
-    setActiveBlockSuiteEditor(editorContainer);
-  }, [editorContainer, setActiveBlockSuiteEditor]);
+    setActiveCanvasEditor(editorContainer);
+  }, [editorContainer, setActiveCanvasEditor]);
 
   useEffect(() => {
     globalContext.docId.set(doc.id);
@@ -132,7 +132,7 @@ const DetailPageImpl = () => {
 
   const onLoad = useCallback(
     (editorContainer: NexioEditorContainer) => {
-      // provide image proxy endpoint to blocksuite
+      // provide image proxy endpoint to canvas
       const imageProxyUrl = new URL(
         BUILD_CONFIG.imageProxyUrl,
         server.baseUrl
@@ -145,7 +145,7 @@ const DetailPageImpl = () => {
         .get(ImageProxyService)
         .setImageProxyURL(imageProxyUrl);
 
-      // provide page mode and updated date to blocksuite
+      // provide page mode and updated date to canvas
       const refNodeService =
         editorContainer.std.getOptional(RefNodeSlotsProvider);
       const disposable = new DisposableGroup();

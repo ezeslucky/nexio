@@ -1,4 +1,4 @@
-// packages/frontend/core/src/blocksuite/ai/hooks/useChatPanelConfig.ts
+// packages/frontend/core/src/canvas/ai/hooks/useChatPanelConfig.ts
 import { AINetworkSearchService } from '@nexio/core/modules/ai-button/services/network-search';
 import { AIPlaygroundService } from '@nexio/core/modules/ai-button/services/playground';
 import { AIReasoningService } from '@nexio/core/modules/ai-button/services/reasoning';

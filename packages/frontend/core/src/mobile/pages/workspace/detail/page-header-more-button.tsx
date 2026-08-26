@@ -5,7 +5,7 @@ import {
   MobileMenu,
   MobileMenuItem,
 } from '@nexio/component/ui/menu';
-import { useFavorite } from '@nexio/core/blocksuite/block-suite-header/favorite';
+import { useFavorite } from '@nexio/core/canvas/block-suite-header/favorite';
 import { Guard, useGuard } from '@nexio/core/components/guard';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import { DocInfoSheet } from '@nexio/core/mobile/components';

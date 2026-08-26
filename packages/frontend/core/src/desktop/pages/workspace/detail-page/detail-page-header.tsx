@@ -5,14 +5,14 @@ import {
   observeResize,
   useDraggable,
 } from '@nexio/component';
-import { FavoriteButton } from '@nexio/core/blocksuite/block-suite-header/favorite';
-import { InfoButton } from '@nexio/core/blocksuite/block-suite-header/info';
-import { JournalWeekDatePicker } from '@nexio/core/blocksuite/block-suite-header/journal/date-picker';
-import { JournalTodayButton } from '@nexio/core/blocksuite/block-suite-header/journal/today-button';
-import { PageHeaderMenuButton } from '@nexio/core/blocksuite/block-suite-header/menu';
-import { DetailPageHeaderPresentButton } from '@nexio/core/blocksuite/block-suite-header/present/detail-header-present-button';
-import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
-import { EditorModeSwitch } from '@nexio/core/blocksuite/block-suite-mode-switch';
+import { FavoriteButton } from '@nexio/core/canvas/block-suite-header/favorite';
+import { InfoButton } from '@nexio/core/canvas/block-suite-header/info';
+import { JournalWeekDatePicker } from '@nexio/core/canvas/block-suite-header/journal/date-picker';
+import { JournalTodayButton } from '@nexio/core/canvas/block-suite-header/journal/today-button';
+import { PageHeaderMenuButton } from '@nexio/core/canvas/block-suite-header/menu';
+import { DetailPageHeaderPresentButton } from '@nexio/core/canvas/block-suite-header/present/detail-header-present-button';
+import { CanvasHeaderTitle } from '@nexio/core/canvas/block-suite-header/title';
+import { EditorModeSwitch } from '@nexio/core/canvas/block-suite-mode-switch';
 import { useRegisterCopyLinkCommands } from '@nexio/core/components/hooks/nexio/use-register-copy-link-commands';
 import { HeaderDivider } from '@nexio/core/components/pure/header';
 import { DocService } from '@nexio/core/modules/doc';
@@ -158,7 +158,7 @@ export function NormalPageHeader({ page, workspace }: PageHeaderProps) {
       <ViewTitle title={title} />
       <ViewIcon icon={currentMode ?? 'page'} />
       <EditorModeSwitch />
-      <BlocksuiteHeaderTitle inputHandleRef={titleInputHandleRef} />
+      <CanvasHeaderTitle inputHandleRef={titleInputHandleRef} />
       <TemplateMark />
       <div className={styles.iconButtonContainer}>
         {hideCollect ? null : (

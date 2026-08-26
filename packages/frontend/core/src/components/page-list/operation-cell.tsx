@@ -6,7 +6,7 @@ import {
   useConfirmModal,
   usePromptModal,
 } from '@nexio/component';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { DocsService } from '@nexio/core/modules/doc';
@@ -79,17 +79,17 @@ const PageOperationCellMenuItem = ({
   const currentWorkspace = workspaceService.workspace;
   const favourite = useLiveData(favAdapter.isFavorite$(page.id, 'doc'));
   const workbench = workbenchService.workbench;
-  const { duplicate } = useBlockSuiteMetaHelper();
+  const { duplicate } = useCanvasMetaHelper();
   const docRecord = useLiveData(useService(DocsService).list.doc$(page.id));
-  const blocksuiteDoc = currentWorkspace.docCollection.getDoc(page.id);
+  const canvasDoc = currentWorkspace.docCollection.getDoc(page.id);
 
   const workspaceDialogService = useService(WorkspaceDialogService);
   const onOpenInfoModal = useCallback(() => {
-    if (blocksuiteDoc?.id) {
+    if (canvasDoc?.id) {
       track.$.docInfoPanel.$.open();
-      workspaceDialogService.open('doc-info', { docId: blocksuiteDoc.id });
+      workspaceDialogService.open('doc-info', { docId: canvasDoc.id });
     }
-  }, [blocksuiteDoc?.id, workspaceDialogService]);
+  }, [canvasDoc?.id, workspaceDialogService]);
 
   const onDisablePublicSharing = useCallback(() => {
     // TODO(@EYHN): implement disable public sharing

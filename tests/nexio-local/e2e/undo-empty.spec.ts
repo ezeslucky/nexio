@@ -2,7 +2,7 @@ import { clickEdgelessModeButton } from '@nexio-test/kit/utils/editor';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEmptyEditor,
 } from '@nexio-test/kit/utils/page-logic';
 import test, { expect } from '@playwright/test';
@@ -10,7 +10,7 @@ import test, { expect } from '@playwright/test';
 test('should be able to undo on empty page', async ({ page }) => {
   await openHomePage(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).isVisible();
+  await getCanvasEditorTitle(page).isVisible();
   await waitForEmptyEditor(page);
   await clickEdgelessModeButton(page);
   await page.keyboard.press('ControlOrMeta+Z');

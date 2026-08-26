@@ -12,7 +12,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "123"
@@ -34,7 +34,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "456"
@@ -56,7 +56,7 @@
             "collapsed": false,
             "order": null,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
                 {
                   "insert": "789"
@@ -98,7 +98,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
       ]
     }

@@ -10,7 +10,7 @@ import { getParagraphIds, locateToolbar } from '@nexio-test/kit/utils/editor';
 import { copyByKeyboard } from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { setSelection } from '@nexio-test/kit/utils/selection';
@@ -44,7 +44,7 @@ test('The reference links in the shared page should be accessible normally and c
   await enableCloudWorkspaceFromShareButton(page);
 
   // create linked page and share
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('Test linked doc', {
     delay: 50,
   });
@@ -77,7 +77,7 @@ test('The reference links in the shared page should be accessible normally and c
     const page2 = await context.newPage();
     await page2.goto(url);
     await waitForEditorLoad(page2);
-    const title = getBlockSuiteEditorTitle(page2);
+    const title = getCanvasEditorTitle(page2);
     await expect(title).toContainText('Test Page');
 
     // check linked page
@@ -134,7 +134,7 @@ test('Inline latex modal should be not shown in shared mode when clicking', asyn
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -189,7 +189,7 @@ test('share page should support copying content', async ({ page, browser }) => {
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.pressSequentially('TEST TITLE', {
     delay: 50,
   });
@@ -237,7 +237,7 @@ test('should enable opening peek view with pdf viewer in readonly and sharing mo
     page
   );
   await enableCloudWorkspaceFromShareButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importAttachment(page, 'lorem-ipsum.pdf');

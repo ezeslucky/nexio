@@ -1,4 +1,4 @@
-import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import { getViewManager } from '@nexio/core/canvas/manager/view';
 import { DebugLogger } from '@nexio/debug';
 import { BlockStdScope } from '@canvas/nexio/std';
 import type { Store } from '@canvas/nexio/store';

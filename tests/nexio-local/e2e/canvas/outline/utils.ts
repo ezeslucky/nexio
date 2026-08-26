@@ -1,13 +1,13 @@
 import { locateEditorContainer } from '@nexio-test/kit/utils/editor';
 import { pressEnter } from '@nexio-test/kit/utils/keyboard';
 import {
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   type,
 } from '@nexio-test/kit/utils/page-logic';
 import type { Locator, Page } from '@playwright/test';
 
 export async function createTitle(page: Page) {
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.scrollIntoViewIfNeeded();
   await title.click();
   await type(page, 'Title');

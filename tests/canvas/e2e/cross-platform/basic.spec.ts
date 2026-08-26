@@ -51,7 +51,7 @@ test(scoped`basic input`, async ({ page }) => {
   await focusRichText(page);
   await type(page, 'hello');
 
-  await test.expect(page).toHaveTitle(/BlockSuite/);
+  await test.expect(page).toHaveTitle(/Canvas/);
   expect(await getPageSnapshot(page, true)).toMatchSnapshot(
     `${BASIC_DEFAULT_SNAPSHOT}.json`
   );
@@ -64,11 +64,11 @@ test(scoped`basic init with external text`, async ({ page }) => {
   await page.evaluate(() => {
     const { doc } = window;
     const rootId = doc.addBlock('nexio:page', {
-      title: new window.$blocksuite.store.Text('hello'),
+      title: new window.$canvas.store.Text('hello'),
     });
     const note = doc.addBlock('nexio:note', {}, rootId);
 
-    const text = new window.$blocksuite.store.Text('world');
+    const text = new window.$canvas.store.Text('world');
     doc.addBlock('nexio:paragraph', { text }, note);
 
     const delta = [
@@ -78,7 +78,7 @@ test(scoped`basic init with external text`, async ({ page }) => {
     doc.addBlock(
       'nexio:paragraph',
       {
-        text: new window.$blocksuite.store.Text(delta as DeltaInsert[]),
+        text: new window.$canvas.store.Text(delta as DeltaInsert[]),
       },
       note
     );

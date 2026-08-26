@@ -1,4 +1,4 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/canvas/manager/store';
 import { MarkdownTransformer } from '@canvas/nexio/widgets/linked-doc';
 import { Entity } from '@ezeslucky/infra';
 

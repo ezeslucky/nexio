@@ -1,6 +1,6 @@
-import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
-import { NexioEditorViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
-import { NexioThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
+import { CloudViewExtension } from '@nexio/core/canvas/view-extensions/cloud';
+import { NexioEditorViewExtension } from '@nexio/core/canvas/view-extensions/editor-view/editor-view';
+import { NexioThemeViewExtension } from '@nexio/core/canvas/view-extensions/theme';
 import { I18n } from '@nexio/i18n';
 import { CodeBlockViewExtension } from '@canvas/nexio/blocks/code/view';
 import { DividerViewExtension } from '@canvas/nexio/blocks/divider/view';

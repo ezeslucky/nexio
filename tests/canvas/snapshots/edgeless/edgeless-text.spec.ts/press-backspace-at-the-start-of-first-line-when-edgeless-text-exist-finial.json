@@ -12,7 +12,7 @@
               "props": {
                 "collapsed": false,
                 "text": {
-                  "$blocksuite:internal:text$": true,
+                  "$canvas:internal:text$": true,
                   "delta": [
                     {
                       "insert": "aaa"
@@ -32,7 +32,7 @@
               "dark": "#ffffff",
               "light": "#000000"
             },
-            "fontFamily": "blocksuite:surface:Inter",
+            "fontFamily": "canvas:surface:Inter",
             "fontStyle": "normal",
             "fontWeight": "400",
             "hasMaxWidth": true,
@@ -66,7 +66,7 @@
           "props": {
             "collapsed": false,
             "text": {
-              "$blocksuite:internal:text$": true,
+              "$canvas:internal:text$": true,
               "delta": [
               ]
             },
@@ -105,7 +105,7 @@
   "id": "0",
   "props": {
     "title": {
-      "$blocksuite:internal:text$": true,
+      "$canvas:internal:text$": true,
       "delta": [
         {
           "insert": "bbb"

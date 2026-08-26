@@ -7,7 +7,7 @@ import { Slice, Text, Transformer } from '@canvas/nexio/store';
 import { ObjectPool, Service } from '@ezeslucky/infra';
 import { combineLatest, map } from 'rxjs';
 
-import { initDocFromProps } from '../../../blocksuite/initialization';
+import { initDocFromProps } from '../../../canvas/initialization';
 import { getNEXIOWorkspaceSchema } from '../../workspace';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
@@ -101,8 +101,8 @@ export class DocsService extends Service {
     if (!docRecord) {
       throw new Error('Doc record not found');
     }
-    const blockSuiteDoc = this.store.getBlockSuiteDoc(docId);
-    if (!blockSuiteDoc) {
+    const canvasDoc = this.store.getCanvasDoc(docId);
+    if (!canvasDoc) {
       throw new Error('Doc not found');
     }
 
@@ -113,12 +113,12 @@ export class DocsService extends Service {
 
     const docScope = this.framework.createScope(DocScope, {
       docId,
-      blockSuiteDoc,
+      canvasDoc,
       record: docRecord,
     });
 
     try {
-      blockSuiteDoc.load();
+      canvasDoc.load();
     } catch (e) {
       logger.error('Failed to load doc', {
         docId,
@@ -142,7 +142,7 @@ export class DocsService extends Service {
         : options;
     }
     const id = this.store.createDoc(options.id);
-    const docStore = this.store.getBlockSuiteDoc(id);
+    const docStore = this.store.getCanvasDoc(id);
     if (!docStore) {
       throw new Error('Failed to create doc');
     }
@@ -187,9 +187,9 @@ export class DocsService extends Service {
         },
       },
     ] as DeltaInsert<NexioTextAttributes>[]);
-    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('nexio:note');
+    const [frame] = doc.canvasDoc.getBlocksByFlavour('nexio:note');
     frame &&
-      doc.blockSuiteDoc.addBlock(
+      doc.canvasDoc.addBlock(
         'nexio:paragraph' as never, // TODO(eyhn): fix type
         { text },
         frame.id
@@ -223,8 +223,8 @@ export class DocsService extends Service {
 
     // duplicate doc content
     try {
-      const sourceBsDoc = this.store.getBlockSuiteDoc(sourceDocId);
-      const targetBsDoc = this.store.getBlockSuiteDoc(targetDocId);
+      const sourceBsDoc = this.store.getCanvasDoc(sourceDocId);
+      const targetBsDoc = this.store.getCanvasDoc(targetDocId);
       if (!sourceBsDoc) throw new Error('Source doc not found');
       if (!targetBsDoc) throw new Error('Target doc not found');
 
@@ -233,7 +233,7 @@ export class DocsService extends Service {
         targetBsDoc.deleteBlock(child)
       );
 
-      const collection = this.store.getBlocksuiteCollection();
+      const collection = this.store.getCanvasCollection();
       const transformer = new Transformer({
         schema: getNEXIOWorkspaceSchema(),
         blobCRUD: collection.blobSync,
@@ -323,8 +323,8 @@ export class DocsService extends Service {
 
     // duplicate doc content
     try {
-      const sourceBsDoc = this.store.getBlockSuiteDoc(sourceDocId);
-      const targetBsDoc = this.store.getBlockSuiteDoc(targetDocId);
+      const sourceBsDoc = this.store.getCanvasDoc(sourceDocId);
+      const targetBsDoc = this.store.getCanvasDoc(targetDocId);
       if (!sourceBsDoc) throw new Error('Source doc not found');
       if (!targetBsDoc) throw new Error('Target doc not found');
 
@@ -333,7 +333,7 @@ export class DocsService extends Service {
         targetBsDoc.deleteBlock(child)
       );
 
-      const collection = this.store.getBlocksuiteCollection();
+      const collection = this.store.getCanvasCollection();
       const transformer = new Transformer({
         schema: getNEXIOWorkspaceSchema(),
         blobCRUD: collection.blobSync,

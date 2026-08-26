@@ -3,7 +3,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEditorLoad,
@@ -18,8 +18,8 @@ test('New a page ,then open it and show delete modal', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to delete');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to delete');
   await page.getByTestId('all-pages').click();
   const cell = await getPageByTitle(page, 'this is a new page to delete');
   await expect(cell).toBeVisible();
@@ -42,8 +42,8 @@ test('New a page ,then go to all pages and show delete modal', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to delete');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to delete');
   const newPageId = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   const cell = await getPageByTitle(page, 'this is a new page to delete');

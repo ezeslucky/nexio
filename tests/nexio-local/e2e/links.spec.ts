@@ -18,7 +18,7 @@ import {
   clickNewPageButton,
   createLinkedPage,
   createTodayPage,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   type,
   waitForEmptyEditor,
 } from '@nexio-test/kit/utils/page-logic';
@@ -492,7 +492,7 @@ test('linked doc should show markdown preview in the backlink section', async ({
   await createLinkedPage(page, 'Test Page');
   await page.locator('nexio-reference:has-text("Test Page")').click();
 
-  await expect(getBlockSuiteEditorTitle(page)).toHaveText('Test Page');
+  await expect(getCanvasEditorTitle(page)).toHaveText('Test Page');
   await page
     .getByRole('button', {
       name: 'Show',
@@ -825,7 +825,7 @@ test.describe('Customize linked doc title and description', () => {
   //   await enableEmojiDocIcon(page);
 
   //   await clickNewPageButton(page);
-  //   const title = getBlockSuiteEditorTitle(page);
+  //   const title = getCanvasEditorTitle(page);
   //   await title.click();
 
   //   await page.keyboard.press('Enter');
@@ -854,7 +854,7 @@ test.describe('Customize linked doc title and description', () => {
   //     await enableEmojiDocIcon(page);
 
   //     await clickNewPageButton(page);
-  //     const title = getBlockSuiteEditorTitle(page);
+  //     const title = getCanvasEditorTitle(page);
   //     await title.click();
 
   //     await page.keyboard.press('Enter');
@@ -885,7 +885,7 @@ test('should save open doc mode of internal links', async ({ page }) => {
   await enableEmojiDocIcon(page);
 
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
 
   await page.keyboard.press('Enter');
@@ -994,11 +994,11 @@ test('should not show view toggle button when protocol of link is not http(s)', 
 }) => {
   await page.keyboard.press('Enter');
 
-  await writeTextToClipboard(page, 'ftp://nexio.pro/blocksuite.pdf');
+  await writeTextToClipboard(page, 'ftp://nexio.pro/canvas.pdf');
 
   const inlineLink = page.locator('nexio-link');
 
-  await expect(inlineLink).toHaveText('ftp://nexio.pro/blocksuite.pdf');
+  await expect(inlineLink).toHaveText('ftp://nexio.pro/canvas.pdf');
 
   await inlineLink.hover();
 

@@ -29,7 +29,7 @@ import {
 } from '@nexio-test/kit/utils/properties';
 import { expect } from '@playwright/test';
 
-import { addColumn } from './blocksuite/database/utils';
+import { addColumn } from './canvas/database/utils';
 
 test.beforeEach(async ({ page }) => {
   await openHomePage(page);

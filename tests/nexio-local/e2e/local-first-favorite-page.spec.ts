@@ -3,7 +3,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
@@ -16,8 +16,8 @@ test('New a page and open it, then favorite it', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to favorite');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to favorite');
   await page.getByTestId('all-pages').click();
   const cell = page
     .getByTestId('doc-list-item-title')
@@ -65,8 +65,8 @@ test('Cancel favorite', async ({ page, workspace }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page to favorite');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page to favorite');
   await page.getByTestId('all-pages').click();
   const cell = getPageByTitle(page, 'this is a new page to favorite');
   await expect(cell).toBeVisible();

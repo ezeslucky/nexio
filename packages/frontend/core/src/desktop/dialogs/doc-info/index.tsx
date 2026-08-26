@@ -1,5 +1,5 @@
 import { Modal, Scrollable } from '@nexio/component';
-import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
+import { CanvasHeaderTitle } from '@nexio/core/canvas/block-suite-header/title';
 import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
 import { type Doc, DocsService } from '@nexio/core/modules/doc';
@@ -47,7 +47,7 @@ export const DocInfoDialog = ({
               className={styles.titleContainer}
               data-testid="info-modal-title"
             >
-              <BlocksuiteHeaderTitle className={styles.titleStyle} />
+              <CanvasHeaderTitle className={styles.titleStyle} />
             </div>
             <InfoTable docId={docId} onClose={() => close()} />
           </Scrollable.Viewport>

@@ -55,13 +55,13 @@ test.describe('embed-synced-doc render', () => {
       const databaseId = doc2.addBlock(
         'nexio:database',
         {
-          title: new window.$blocksuite.store.Text('Database 1'),
+          title: new window.$canvas.store.Text('Database 1'),
         },
         noteId
       );
       const model = doc2.getModelById(databaseId) as DatabaseBlockModel;
       const datasource =
-        new window.$blocksuite.blocks.database.DatabaseBlockDataSource(model);
+        new window.$canvas.blocks.database.DatabaseBlockDataSource(model);
       datasource.viewManager.viewAdd('table');
     }, embedDocId);
 

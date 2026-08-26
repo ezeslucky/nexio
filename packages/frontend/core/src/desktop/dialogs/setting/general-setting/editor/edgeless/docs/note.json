@@ -13,7 +13,7 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": [
           {
             "insert": "Note"
@@ -38,7 +38,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"
@@ -88,7 +88,7 @@
             "props": {
               "type": "h1",
               "text": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Write, draw, plan all at once."
@@ -106,7 +106,7 @@
             "props": {
               "type": "text",
               "text": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "nexio is a workspace with fully merged docs,"
@@ -124,7 +124,7 @@
             "props": {
               "type": "text",
               "text": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "whiteboards and databases."

@@ -55,8 +55,8 @@ export class Doc extends Entity {
     return this.scope.props.docId;
   }
 
-  public readonly yDoc = this.scope.props.blockSuiteDoc.spaceDoc;
-  public readonly blockSuiteDoc = this.scope.props.blockSuiteDoc;
+  public readonly yDoc = this.scope.props.canvasDoc.spaceDoc;
+  public readonly canvasDoc = this.scope.props.canvasDoc;
   public readonly record = this.scope.props.record;
 
   readonly meta$ = this.record.meta$;
@@ -136,10 +136,10 @@ export class Doc extends Entity {
   }
 
   changeDocTitle(newTitle: string) {
-    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('nexio:page').at(0)
+    const pageBlock = this.canvasDoc.getBlocksByFlavour('nexio:page').at(0)
       ?.model as RootBlockModel | undefined;
     if (pageBlock) {
-      this.blockSuiteDoc.transact(() => {
+      this.canvasDoc.transact(() => {
         pageBlock.props.title.delete(0, pageBlock.props.title.length);
         pageBlock.props.title.insert(newTitle, 0);
       });

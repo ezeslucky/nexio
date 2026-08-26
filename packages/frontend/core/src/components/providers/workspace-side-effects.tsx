@@ -7,7 +7,7 @@ import {
   AIProvider,
   CopilotClient,
   setupAIProvider,
-} from '@nexio/core/blocksuite/ai';
+} from '@nexio/core/canvas/ai';
 import { useRegisterFindInPageCommands } from '@nexio/core/components/hooks/nexio/use-register-find-in-page-commands';
 import { useRegisterWorkspaceCommands } from '@nexio/core/components/hooks/use-register-workspace-commands';
 import { OverCapacityNotification } from '@nexio/core/components/over-capacity';

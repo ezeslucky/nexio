@@ -7,7 +7,7 @@ import {
   runPrisma,
 } from '@nexio-test/kit/utils/cloud';
 import {
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
@@ -98,7 +98,7 @@ test('can restore page to a history version', async ({ page }) => {
 
   await pushCurrentPageUpdates(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
 
   await title.focus();
 
@@ -163,7 +163,7 @@ test('empty history doc should not show starter bar', async ({ page }) => {
 
   await pushCurrentPageUpdates(page);
 
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.focus();
   await title.pressSequentially('TEST TITLE', {
     delay: 50,

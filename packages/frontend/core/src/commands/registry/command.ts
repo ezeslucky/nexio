@@ -31,7 +31,7 @@ export type CommandCategory =
 export interface KeybindingOptions {
   binding: string;
   capture?: boolean;
-  // some keybindings are already registered in blocksuite
+  // some keybindings are already registered in Canvas
   // we can skip the registration of these keybindings __FOR NOW__
   skipRegister?: boolean;
 }

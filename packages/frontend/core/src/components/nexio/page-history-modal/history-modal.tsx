@@ -29,8 +29,8 @@ import {
 } from 'react';
 import { encodeStateAsUpdate } from 'yjs';
 
-import { BlockSuiteEditor } from '../../../blocksuite/block-suite-editor';
-import { PureEditorModeSwitch } from '../../../blocksuite/block-suite-mode-switch';
+import { CanvasEditor } from '../../../canvas/block-suite-editor';
+import { PureEditorModeSwitch } from '../../../canvas/block-suite-mode-switch';
 import { pageHistoryModalAtom } from '../../atoms/page-history';
 import { useGuard } from '../../guard';
 import { NexioErrorBoundary } from '../nexio-error-boundary';
@@ -129,7 +129,7 @@ const HistoryEditorPreview = ({
           <NexioErrorBoundary>
             <Scrollable.Root>
               <Scrollable.Viewport className="nexio-page-viewport">
-                <BlockSuiteEditor
+                <CanvasEditor
                   className={styles.editor}
                   mode={mode}
                   page={snapshotPage}

@@ -121,11 +121,11 @@ async function createLinkBlock(page: Page, str: string, link: string) {
     ([str, link]) => {
       const { doc } = window;
       const rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text('title'),
+        title: new window.$canvas.store.Text('title'),
       });
       const noteId = doc.addBlock('nexio:note', {}, rootId);
 
-      const text = new window.$blocksuite.store.Text([
+      const text = new window.$canvas.store.Text([
         { insert: 'Hello' },
         { insert: str, attributes: { link } },
       ]);

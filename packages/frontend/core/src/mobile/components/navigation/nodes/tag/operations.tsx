@@ -5,7 +5,7 @@ import {
   toast,
   useConfirmModal,
 } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';

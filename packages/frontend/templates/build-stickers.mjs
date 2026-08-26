@@ -88,7 +88,7 @@ function buildStickerTemplate(data) {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',

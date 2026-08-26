@@ -5,7 +5,7 @@ import {
   PropertyCollapsibleContent,
   PropertyCollapsibleSection,
 } from '@nexio/component';
-import { BacklinkGroups } from '@nexio/core/blocksuite/block-suite-editor/bi-directional-link-panel';
+import { BacklinkGroups } from '@nexio/core/canvas/block-suite-editor/bi-directional-link-panel';
 import { CreatePropertyMenuItems } from '@nexio/core/components/properties/menu/create-doc-property';
 import { WorkspacePropertyRow } from '@nexio/core/components/properties/table';
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';

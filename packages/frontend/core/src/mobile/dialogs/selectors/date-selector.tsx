@@ -8,7 +8,7 @@ import { useCallback, useState } from 'react';
 import { VirtualKeyboardService } from '../../modules/virtual-keyboard';
 
 /**
- * A global date selector popover for mobile, mainly used in blocksuite editor
+ * A global date selector popover for mobile, mainly used in canvas editor
  */
 export const DateSelectorDialog = ({
   close,

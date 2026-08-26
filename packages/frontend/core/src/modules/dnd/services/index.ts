@@ -39,7 +39,7 @@ export class DndService extends Service {
     super();
 
     // order matters
-    this.resolvers.push(this.resolveBlocksuiteExternalData);
+    this.resolvers.push(this.resolveCanvasExternalData);
 
     const mimeResolvers: [string, EntityResolver][] = [
       ['text/html', this.resolveHTML],
@@ -66,18 +66,18 @@ export class DndService extends Service {
       });
     });
 
-    this.setupBlocksuiteAdapter();
+    this.setupCanvasAdapter();
   }
 
-  private setupBlocksuiteAdapter() {
+  private setupCanvasAdapter() {
     
-    const nexioToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const nexioToCanvas = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (data.entity && !data.bsEntity) {
         if (data.entity.type !== 'doc') {
           return;
         }
-        const dndAPI = this.getBlocksuiteDndAPI();
+        const dndAPI = this.getCanvasDndAPI();
         if (!dndAPI) {
           return;
         }
@@ -97,13 +97,13 @@ export class DndService extends Service {
     };
 
     
-    const blocksuiteToNexio = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const canvasToNexio = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (!data.entity && data.bsEntity) {
         if (data.bsEntity.type !== 'blocks' || !data.bsEntity.snapshot) {
           return;
         }
-        const dndAPI = this.getBlocksuiteDndAPI();
+        const dndAPI = this.getCanvasDndAPI();
         if (!dndAPI) {
           return;
         }
@@ -116,8 +116,8 @@ export class DndService extends Service {
     };
 
     function adaptDragEvent(args: MonitorGetFeedback<MixedDNDData>) {
-      nexioToBlocksuite(args);
-      blocksuiteToNexio(args);
+      nexioToCanvas(args);
+      canvasToNexio(args);
     }
 
     function canMonitor(args: MonitorGetFeedback<MixedDNDData>) {
@@ -152,7 +152,7 @@ export class DndService extends Service {
       const { entity, bsEntity } = args.source.data;
       if (!entity || !bsEntity) return;
 
-      const dndAPI = this.getBlocksuiteDndAPI();
+      const dndAPI = this.getCanvasDndAPI();
       if (!dndAPI) return;
 
       const snapshotSlice = dndAPI.fromEntity({
@@ -168,11 +168,7 @@ export class DndService extends Service {
       monitorForElements({
         canMonitor: (args: MonitorGetFeedback<MixedDNDData>) => {
           if (canMonitor(args)) {
-            // HACK ahead:
-            // canMonitor shall be used a pure function, which means
-            // we may need to adapt the drag event to make sure the data is applied onDragStart.
-            // However, canMonitor in blocksuite is also called BEFORE onDragStart,
-            // so we need to adapt it here in onMonitor
+         
             adaptDragEvent(args);
             return true;
           }
@@ -189,7 +185,7 @@ export class DndService extends Service {
     source: ExternalDragPayload
   ) => NexioDNDData['draggable'] | null)[] = [];
 
-  getBlocksuiteDndAPI(sourceDocId?: string) {
+  getCanvasDndAPI(sourceDocId?: string) {
     const collection = this.workspaceService.workspace.docCollection;
     sourceDocId ??= collection.docs.keys().next().value;
     const doc = sourceDocId ? collection.getDoc(sourceDocId)?.getStore() : null;
@@ -244,7 +240,7 @@ export class DndService extends Service {
       return {};
     }
 
-    const dndAPI = this.getBlocksuiteDndAPI(normalData.entity.id);
+    const dndAPI = this.getCanvasDndAPI(normalData.entity.id);
 
     if (!dndAPI) {
       return {};
@@ -292,12 +288,12 @@ export class DndService extends Service {
   };
 
   /**
-   * @deprecated Blocksuite DND is now using pragmatic-dnd as well
+   * @deprecated Canvas DND is now using pragmatic-dnd as well
    */
-  private readonly resolveBlocksuiteExternalData = (
+  private readonly resolveCanvasExternalData = (
     source: ExternalDragPayload
   ): NexioDNDData['draggable'] | null => {
-    const dndAPI = this.getBlocksuiteDndAPI();
+    const dndAPI = this.getCanvasDndAPI();
     if (!dndAPI) {
       return null;
     }

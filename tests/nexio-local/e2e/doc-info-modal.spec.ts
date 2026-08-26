@@ -3,7 +3,7 @@ import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   getPageOperationButton,
   waitForEmptyEditor,
@@ -33,8 +33,8 @@ test.beforeEach(async ({ page }) => {
   await clickNewPageButton(page);
   await waitForEmptyEditor(page);
   await ensurePagePropertiesVisible(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page');
 });
 
 test('New a page and open it ,then open info modal in the title bar', async ({

@@ -21,7 +21,7 @@ import {
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { memo, useCallback, useContext } from 'react';
 
-import { useBlockSuiteMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
+import { useCanvasMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
 import { IsFavoriteIcon } from '../../pure/icons';
 import { DocExplorerContext } from '../context';
 
@@ -245,7 +245,7 @@ export const QuickDeletePermanently = memo(function QuickDeletePermanently({
   const t = useI18n();
   const guardService = useService(GuardService);
   const contextValue = useContext(DocExplorerContext);
-  const { permanentlyDeletePage } = useBlockSuiteMetaHelper();
+  const { permanentlyDeletePage } = useCanvasMetaHelper();
   const quickDeletePermanently = useLiveData(
     contextValue.quickDeletePermanently$
   );
@@ -309,7 +309,7 @@ export const QuickRestore = memo(function QuickRestore({
   const t = useI18n();
   const contextValue = useContext(DocExplorerContext);
   const quickRestore = useLiveData(contextValue.quickRestore$);
-  const { restoreFromTrash } = useBlockSuiteMetaHelper();
+  const { restoreFromTrash } = useCanvasMetaHelper();
   const guardService = useService(GuardService);
 
   const handleRestore = useCallback(

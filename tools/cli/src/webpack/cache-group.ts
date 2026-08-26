@@ -32,8 +32,8 @@ export const productionCacheGroups = {
     priority: Number.MAX_SAFE_INTEGER,
     chunks: 'async' as const,
   },
-  blocksuite: {
-    name: `npm-blocksuite`,
+  canvas: {
+    name: `npm-canvas`,
     test: testPackageName(/[\\/]node_modules[\\/](@canvas)[\\/]/),
     priority: 200,
     enforce: true,

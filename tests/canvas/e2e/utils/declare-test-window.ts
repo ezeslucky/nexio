@@ -10,7 +10,7 @@ declare global {
     /** Available on playground window
      * the following instance are initialized in `packages/playground/apps/starter/main.ts`
      */
-    $blocksuite: {
+    $canvas: {
       store: typeof import('@canvas/nexio/store');
       blocks: {
         database: typeof import('@canvas/nexio/blocks/database');

@@ -2,7 +2,7 @@ import { test } from '@nexio-test/kit/playwright';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   getPageByTitle,
   getPageItem,
   getPageOperationButton,
@@ -18,8 +18,8 @@ test('page delete -> refresh page -> it should be disappear', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page delete');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page delete');
   const newPageId = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   const cell = await getPageByTitle(page, 'this is a new page delete');
@@ -50,8 +50,8 @@ test('page delete -> create new page -> refresh page -> new page should be appea
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page delete');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page delete');
   const newPageDeleteId = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   const cellDelete = await getPageByTitle(page, 'this is a new page delete');
@@ -70,14 +70,14 @@ test('page delete -> create new page -> refresh page -> new page should be appea
   await page.getByTestId('all-pages').click();
 
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page1');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page1');
   await page.waitForTimeout(1000);
   const newPageId1 = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page2');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page2');
   await page.waitForTimeout(1000);
   const newPageId2 = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
@@ -99,14 +99,14 @@ test('delete multiple pages -> create multiple pages -> refresh', async ({
   await waitForEditorLoad(page);
   // create 1st page
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page1');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page1');
   const newPageId1 = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
   // create 2nd page
   await clickNewPageButton(page);
-  await getBlockSuiteEditorTitle(page).click();
-  await getBlockSuiteEditorTitle(page).fill('this is a new page2');
+  await getCanvasEditorTitle(page).click();
+  await getCanvasEditorTitle(page).fill('this is a new page2');
   const newPageId2 = getCurrentDocIdFromUrl(page);
   await page.getByTestId('all-pages').click();
 

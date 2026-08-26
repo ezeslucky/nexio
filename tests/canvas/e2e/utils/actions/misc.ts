@@ -185,8 +185,8 @@ export async function enterPlaygroundRoom(
   });
 
   await page.evaluate(() => {
-    if (typeof window.$blocksuite !== 'object') {
-      throw new Error('window.$blocksuite is not object');
+    if (typeof window.$canvas !== 'object') {
+      throw new Error('window.$canvas is not object');
     }
   }, []);
   return room;
@@ -237,7 +237,7 @@ export async function enterPlaygroundWithList(
     ({ contents, type }: { contents: string[]; type: ListType }) => {
       const { doc } = window;
       const rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
       const noteId = doc.addBlock('nexio:note', {}, rootId);
       // eslint-disable-next-line @typescript-eslint/prefer-for-of
@@ -245,7 +245,7 @@ export async function enterPlaygroundWithList(
         doc.addBlock(
           'nexio:list',
           contents.length > 0
-            ? { text: new window.$blocksuite.store.Text(contents[i]), type }
+            ? { text: new window.$canvas.store.Text(contents[i]), type }
             : { type },
           noteId
         );
@@ -263,7 +263,7 @@ export async function initEmptyParagraphState(page: Page, rootId?: string) {
     doc.captureSync();
     if (!rootId) {
       rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
     }
 
@@ -288,7 +288,7 @@ export async function initMultipleNoteWithParagraphState(
       doc.captureSync();
       if (!rootId) {
         rootId = doc.addBlock('nexio:page', {
-          title: new window.$blocksuite.store.Text(),
+          title: new window.$canvas.store.Text(),
         });
       }
 
@@ -314,7 +314,7 @@ export async function initEmptyEdgelessState(page: Page) {
   const ids = await page.evaluate(() => {
     const { doc } = window;
     const rootId = doc.addBlock('nexio:page', {
-      title: new window.$blocksuite.store.Text(),
+      title: new window.$canvas.store.Text(),
     });
     doc.addBlock('nexio:surface', {}, rootId);
     const noteId = doc.addBlock('nexio:note', {}, rootId);
@@ -333,20 +333,20 @@ export async function initEmptyDatabaseState(page: Page, rootId?: string) {
     doc.captureSync();
     if (!rootId) {
       rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
     }
     const noteId = doc.addBlock('nexio:note', {}, rootId);
     const databaseId = doc.addBlock(
       'nexio:database',
       {
-        title: new window.$blocksuite.store.Text('Database 1'),
+        title: new window.$canvas.store.Text('Database 1'),
       },
       noteId
     );
     const model = doc.getModelById(databaseId) as DatabaseBlockModel;
     const datasource =
-      new window.$blocksuite.blocks.database.DatabaseBlockDataSource(model);
+      new window.$canvas.blocks.database.DatabaseBlockDataSource(model);
     datasource.viewManager.viewAdd('table');
     doc.captureSync();
     return { rootId, noteId, databaseId };
@@ -369,24 +369,24 @@ export async function initKanbanViewState(
       doc.captureSync();
       if (!rootId) {
         rootId = doc.addBlock('nexio:page', {
-          title: new window.$blocksuite.store.Text(),
+          title: new window.$canvas.store.Text(),
         });
       }
       const noteId = doc.addBlock('nexio:note', {}, rootId);
       const databaseId = doc.addBlock(
         'nexio:database',
         {
-          title: new window.$blocksuite.store.Text('Database 1'),
+          title: new window.$canvas.store.Text('Database 1'),
         },
         noteId
       );
       const model = doc.getModelById(databaseId) as DatabaseBlockModel;
       const datasource =
-        new window.$blocksuite.blocks.database.DatabaseBlockDataSource(model);
+        new window.$canvas.blocks.database.DatabaseBlockDataSource(model);
       const rowIds = config.rows.map(rowText => {
         const rowId = doc.addBlock(
           'nexio:paragraph',
-          { type: 'text', text: new window.$blocksuite.store.Text(rowText) },
+          { type: 'text', text: new window.$canvas.store.Text(rowText) },
           databaseId
         );
         return rowId;
@@ -406,7 +406,7 @@ export async function initKanbanViewState(
               rowId,
               columnId,
               column.type === 'rich-text'
-                ? new window.$blocksuite.store.Text(value as string)
+                ? new window.$canvas.store.Text(value as string)
                 : value
             );
           }
@@ -430,20 +430,20 @@ export async function initEmptyDatabaseWithParagraphState(
     doc.captureSync();
     if (!rootId) {
       rootId = doc.addBlock('nexio:page', {
-        title: new window.$blocksuite.store.Text(),
+        title: new window.$canvas.store.Text(),
       });
     }
     const noteId = doc.addBlock('nexio:note', {}, rootId);
     const databaseId = doc.addBlock(
       'nexio:database',
       {
-        title: new window.$blocksuite.store.Text('Database 1'),
+        title: new window.$canvas.store.Text('Database 1'),
       },
       noteId
     );
     const model = doc.getModelById(databaseId) as DatabaseBlockModel;
     const datasource =
-      new window.$blocksuite.blocks.database.DatabaseBlockDataSource(model);
+      new window.$canvas.blocks.database.DatabaseBlockDataSource(model);
     datasource.viewManager.viewAdd('table');
     doc.addBlock('nexio:paragraph', {}, noteId);
     doc.captureSync();
@@ -819,7 +819,7 @@ export async function getClipboardHTML(page: Page) {
     const text = await data?.text();
     const html = new DOMParser().parseFromString(text ?? '', 'text/html');
     const container = html.querySelector<HTMLDivElement>(
-      '[data-blocksuite-snapshot]'
+      '[data-canvas-snapshot]'
     );
     if (!container) {
       return '';
@@ -849,9 +849,9 @@ export async function getClipboardCustomData(page: Page, type: string) {
     const text = await data?.text();
     const html = new DOMParser().parseFromString(text ?? '', 'text/html');
     const container = html.querySelector<HTMLDivElement>(
-      '[data-blocksuite-snapshot]'
+      '[data-canvas-snapshot]'
     );
-    return container?.dataset.blocksuiteSnapshot ?? '';
+    return container?.dataset.canvasSnapshot ?? '';
   });
 
   const decompressed = lz.decompressFromEncodedURIComponent(dataInClipboard);
@@ -868,7 +868,7 @@ export async function getClipboardCustomData(page: Page, type: string) {
 export async function getClipboardSnapshot(page: Page) {
   const dataInClipboard = await getClipboardCustomData(
     page,
-    'BLOCKSUITE/SNAPSHOT'
+    'canvas/SNAPSHOT'
   );
   if (!dataInClipboard) {
     throw new Error('dataInClipboard is not found');
@@ -1118,7 +1118,7 @@ export async function initImageState(page: Page, prependParagraph = false) {
   await page.evaluate(async prepend => {
     const { doc } = window;
     const rootId = doc.addBlock('nexio:page', {
-      title: new window.$blocksuite.store.Text(),
+      title: new window.$canvas.store.Text(),
     });
     const noteId = doc.addBlock('nexio:note', {}, rootId);
 
@@ -1242,7 +1242,7 @@ export async function mockParseDocUrlService(
 ) {
   await page.evaluate(mapping => {
     const parseDocUrlService = window.host.std.get(
-      window.$blocksuite.services.ParseDocUrlProvider
+      window.$canvas.services.ParseDocUrlProvider
     );
     parseDocUrlService.parseDocUrl = (url: string) => {
       const docId = mapping[url];

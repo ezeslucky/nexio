@@ -1,5 +1,5 @@
 import { useConfirmModal, useLitPortalFactory } from '@nexio/component';
-import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import { getViewManager } from '@nexio/core/canvas/manager/view';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useFramework, useLiveData, useServices } from '@ezeslucky/infra';

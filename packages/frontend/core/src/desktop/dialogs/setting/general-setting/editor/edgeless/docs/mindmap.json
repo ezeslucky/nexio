@@ -2,7 +2,7 @@
   "type": "page",
   "meta": {
     "id": "_JUmoI_F28",
-    "title": "BlockSuite Playground",
+    "title": "Canvas Playground",
     "createDate": 1725610677620,
     "tags": []
   },
@@ -13,10 +13,10 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": [
           {
-            "insert": "BlockSuite Playground"
+            "insert": "Canvas Playground"
           }
         ]
       }
@@ -69,7 +69,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 20,
               "fontWeight": "600",
               "maxWidth": 400,
@@ -113,7 +113,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -157,7 +157,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -201,7 +201,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -243,7 +243,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

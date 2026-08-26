@@ -6,7 +6,7 @@ import {
   MenuSub,
   notify,
 } from '@nexio/component';
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
 import type {
   NavigationPanelTreeNodeIcon,
   NodeOperation,

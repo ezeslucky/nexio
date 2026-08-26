@@ -14,7 +14,7 @@ export const PageHeaderShareButton = () => {
     DocService,
   });
   const workspace = workspaceService.workspace;
-  const doc = docService.doc.blockSuiteDoc;
+  const doc = docService.doc.canvasDoc;
   const confirmEnableCloud = useEnableCloud();
 
   if (workspace.meta.flavour === 'local') {

@@ -6,7 +6,7 @@ import {
 } from '@nexio-test/kit/utils/cloud';
 import { clickPageModeButton } from '@nexio-test/kit/utils/editor';
 import {
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
 } from '@nexio-test/kit/utils/page-logic';
@@ -41,7 +41,7 @@ test('should transform local favorites data', async ({ page }) => {
   await clickPageModeButton(page);
   await waitForEmptyEditor(page);
 
-  await getBlockSuiteEditorTitle(page).fill('this is a new fav page');
+  await getCanvasEditorTitle(page).fill('this is a new fav page');
   await expect(
     page
       .getByTestId('navigation-panel-favorites')

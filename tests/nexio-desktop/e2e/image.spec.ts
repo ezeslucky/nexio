@@ -3,14 +3,14 @@ import { importImage } from '@nexio-test/kit/utils/image';
 import { pasteByKeyboard } from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
 } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('should be able to insert SVG images', async ({ page }) => {
   await page.waitForTimeout(500);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.focus();
   await page.keyboard.press('Enter');
 
@@ -23,7 +23,7 @@ test('should be able to insert SVG images', async ({ page }) => {
 test('should paste it as PNG after copying SVG', async ({ page }) => {
   await page.waitForTimeout(500);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.focus();
   await page.keyboard.press('Enter');
 

@@ -6,7 +6,7 @@ import { importImage } from '@nexio-test/kit/utils/image';
 import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
-  getBlockSuiteEditorTitle,
+  getCanvasEditorTitle,
   waitForEditorLoad,
 } from '@nexio-test/kit/utils/page-logic';
 import type { Page } from '@playwright/test';
@@ -21,7 +21,7 @@ test('image preview should be shown', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importImage(page, 'large-image.png');
@@ -38,7 +38,7 @@ test('image go left and right', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -53,7 +53,7 @@ test('image go left and right', async ({ page }) => {
     await closeImagePreviewModal(page);
   }
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'nexio-preview.png');
@@ -88,7 +88,7 @@ test('image able to zoom in and out with mouse scroll', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -142,7 +142,7 @@ test('image able to zoom in and out with button click', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -189,7 +189,7 @@ test('image should able to go left and right by buttons', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -204,7 +204,7 @@ test('image should able to go left and right by buttons', async ({ page }) => {
     await closeImagePreviewModal(page);
   }
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'nexio-preview.png');
@@ -242,7 +242,7 @@ test('image able to fit to screen by button', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -300,7 +300,7 @@ test('image able to reset zoom to 100%', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -354,7 +354,7 @@ test('image able to copy to clipboard', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -383,7 +383,7 @@ test('image preview should be able to copy image to clipboard on copy event', as
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -410,7 +410,7 @@ test('image able to download', async ({ page }) => {
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -441,7 +441,7 @@ test('image should only able to move when image is larger than viewport', async 
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -499,7 +499,7 @@ test('image should able to delete and when delete, it will move to previous/next
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -514,7 +514,7 @@ test('image should able to delete and when delete, it will move to previous/next
     await closeImagePreviewModal(page);
   }
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'nexio-preview.png');
@@ -538,7 +538,7 @@ test('image should able to delete and when delete, it will move to previous/next
       .getAttribute('data-blob-id')) as string;
     expect(newBlobId).toBe(blobId);
     await closeImagePreviewModal(page);
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'nexio-preview.png');
@@ -575,7 +575,7 @@ test('tooltips for all buttons should be visible when hovering', async ({
   await clickNewPageButton(page);
   let blobId: string;
   {
-    const title = getBlockSuiteEditorTitle(page);
+    const title = getCanvasEditorTitle(page);
     await title.click();
     await page.keyboard.press('Enter');
     await importImage(page, 'large-image.png');
@@ -679,7 +679,7 @@ test('keypress esc should close the modal', async ({ page }) => {
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importImage(page, 'large-image.png');
@@ -697,7 +697,7 @@ test('when mouse moves outside, the modal should be closed', async ({
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importImage(page, 'large-image.png');
@@ -718,7 +718,7 @@ test('caption should be visible and different styles were applied if image zoome
   await openHomePage(page);
   await waitForEditorLoad(page);
   await clickNewPageButton(page);
-  const title = getBlockSuiteEditorTitle(page);
+  const title = getCanvasEditorTitle(page);
   await title.click();
   await page.keyboard.press('Enter');
   await importImage(page, 'large-image.png');

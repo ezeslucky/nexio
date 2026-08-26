@@ -3,7 +3,7 @@ import { IconPicker, uniReactRoot } from '@nexio/component';
 import { type IconPickerService as IIconPickerService } from '@canvas/nexio-shared/services';
 import { Service } from '@ezeslucky/infra';
 
-// Re-export types from BlockSuite shared services
+// Re-export types from Canvas shared services
 export type {
   IconData,
   IconPickerService as IIconPickerService,
