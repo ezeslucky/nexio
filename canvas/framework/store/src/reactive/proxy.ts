@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { YArrayEvent, YMapEvent } from 'yjs';
 import { Array as YArray, Map as YMap } from 'yjs';
 
@@ -49,7 +49,7 @@ export class ReactiveYArray extends BaseReactiveYData<
       },
       set: (target, p, value, receiver) => {
         if (typeof p !== 'string') {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'key cannot be a symbol'
           );
@@ -68,14 +68,14 @@ export class ReactiveYArray extends BaseReactiveYData<
 
         const reactive = proxies.get(this._ySource);
         if (!reactive) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not subscribed before changes'
           );
         }
         const doc = this._ySource.doc;
         if (!doc) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not bound to a Y.Doc'
           );
@@ -96,7 +96,7 @@ export class ReactiveYArray extends BaseReactiveYData<
           return (start: number, deleteCount?: number, ...items: unknown[]) => {
             const doc = this._ySource.doc;
             if (!doc) {
-              throw new BlockSuiteError(
+              throw new CanvasError(
                 ErrorCode.ReactiveProxyError,
                 'YData is not bound to a Y.Doc'
               );
@@ -121,7 +121,7 @@ export class ReactiveYArray extends BaseReactiveYData<
           return () => {
             const doc = this._ySource.doc;
             if (!doc) {
-              throw new BlockSuiteError(
+              throw new CanvasError(
                 ErrorCode.ReactiveProxyError,
                 'YData is not bound to a Y.Doc'
               );
@@ -140,7 +140,7 @@ export class ReactiveYArray extends BaseReactiveYData<
           return (...items: unknown[]) => {
             const doc = this._ySource.doc;
             if (!doc) {
-              throw new BlockSuiteError(
+              throw new CanvasError(
                 ErrorCode.ReactiveProxyError,
                 'YData is not bound to a Y.Doc'
               );
@@ -159,7 +159,7 @@ export class ReactiveYArray extends BaseReactiveYData<
       },
       deleteProperty: (target, p): boolean => {
         if (typeof p !== 'string') {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'key cannot be a symbol'
           );
@@ -167,14 +167,14 @@ export class ReactiveYArray extends BaseReactiveYData<
 
         const proxied = proxies.get(this._ySource);
         if (!proxied) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not subscribed before changes'
           );
         }
         const doc = this._ySource.doc;
         if (!doc) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not bound to a Y.Doc'
           );
@@ -248,7 +248,7 @@ export class ReactiveYMap extends BaseReactiveYData<UnRecord, YMap<unknown>> {
       },
       set: (target, p, value, receiver) => {
         if (typeof p !== 'string') {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'key cannot be a symbol'
           );
@@ -265,14 +265,14 @@ export class ReactiveYMap extends BaseReactiveYData<UnRecord, YMap<unknown>> {
 
         const reactive = proxies.get(this._ySource);
         if (!reactive) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not subscribed before changes'
           );
         }
         const doc = this._ySource.doc;
         if (!doc) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not bound to a Y.Doc'
           );
@@ -290,7 +290,7 @@ export class ReactiveYMap extends BaseReactiveYData<UnRecord, YMap<unknown>> {
       },
       deleteProperty: (target, p) => {
         if (typeof p !== 'string') {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'key cannot be a symbol'
           );
@@ -301,14 +301,14 @@ export class ReactiveYMap extends BaseReactiveYData<UnRecord, YMap<unknown>> {
 
         const proxied = proxies.get(this._ySource);
         if (!proxied) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not subscribed before changes'
           );
         }
         const doc = this._ySource.doc;
         if (!doc) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.ReactiveProxyError,
             'YData is not bound to a Y.Doc'
           );

@@ -9,7 +9,7 @@ import {
 } from '@canvas/nexio-shared/utils';
 import { DataSourceBase, type PropertyMetaConfig } from '@canvas/data-view';
 import { propertyPresets } from '@canvas/data-view/property-presets';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import type { EditorHost } from '@canvas/std';
 import type { Block, Store } from '@canvas/store';
 import { Subject } from 'rxjs';
@@ -101,8 +101,8 @@ export class BlockQueryDataSource extends DataSourceBase {
   private getProperty(propertyId: string) {
     const property = this.meta.properties.find(v => v.key === propertyId);
     if (!property) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.ValueNotExists,
+      throw new CanvasError(
+        CanvasError.ErrorCode.ValueNotExists,
         `property ${propertyId} not found`
       );
     }

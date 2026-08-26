@@ -44,7 +44,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(o.node),
                     },
                   },
@@ -67,7 +67,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                     type: `h${o.node.depth}`,
                     collapsed: isCollapsed,
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(o.node),
                     },
                   },
@@ -92,7 +92,7 @@ export const paragraphBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher =
                   props: {
                     type: 'quote',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(o.node),
                     },
                   },

@@ -21,7 +21,7 @@ export const database: InitFn = (collection: Workspace, id: string) => {
   doc.load(() => {
     // Add root block and surface block at root level
     const rootId = store.addBlock('nexio:page', {
-      title: new Text('BlockSuite Playground'),
+      title: new Text('Canvas Playground'),
     });
     store.addBlock('nexio:surface', {}, rootId);
 

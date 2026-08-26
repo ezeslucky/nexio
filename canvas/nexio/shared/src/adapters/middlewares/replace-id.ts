@@ -6,7 +6,7 @@ import {
   ParagraphBlockModel,
   SurfaceRefBlockModel,
 } from '@canvas/nexio-model';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import type {
   AfterImportBlockPayload,
   BeforeImportBlockPayload,
@@ -200,8 +200,8 @@ export const replaceIdMiddleware =
                 if (idMap.has(connection.id)) {
                   const newId = idMap.get(connection.id);
                   if (!newId) {
-                    throw new BlockSuiteError(
-                      BlockSuiteError.ErrorCode.TransformerError,
+                    throw new CanvasError(
+                      CanvasError.ErrorCode.TransformerError,
                       `reference id must exist: ${connection.id}`
                     );
                   }
@@ -211,8 +211,8 @@ export const replaceIdMiddleware =
                 if (idMap.has(connection.id)) {
                   const newId = idMap.get(connection.id);
                   if (!newId) {
-                    throw new BlockSuiteError(
-                      BlockSuiteError.ErrorCode.TransformerError,
+                    throw new CanvasError(
+                      CanvasError.ErrorCode.TransformerError,
                       `reference id must exist: ${connection.id}`
                     );
                   }
@@ -228,8 +228,8 @@ export const replaceIdMiddleware =
                     delete json[key];
                     const newKey = idMap.get(key);
                     if (!newKey) {
-                      throw new BlockSuiteError(
-                        BlockSuiteError.ErrorCode.TransformerError,
+                      throw new CanvasError(
+                        CanvasError.ErrorCode.TransformerError,
                         `reference id must exist: ${key}`
                       );
                     }

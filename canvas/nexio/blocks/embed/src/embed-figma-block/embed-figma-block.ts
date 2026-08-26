@@ -81,7 +81,7 @@ export class EmbedFigmaBlockComponent extends EmbedBlockComponent<EmbedFigmaMode
           <div class="nexio-embed-figma">
             <div class="nexio-embed-figma-iframe-container">
               <iframe
-                src=${`https://www.figma.com/embed?embed_host=blocksuite&url=${url}`}
+                src=${`https://www.figma.com/embed?embed_host=canvas&url=${url}`}
                 allowfullscreen
                 loading="lazy"
                 credentialless

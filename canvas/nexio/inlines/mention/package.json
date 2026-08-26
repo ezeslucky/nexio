@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-mention",
-  "description": "Inline mention for BlockSuite.",
+  "description": "Inline mention for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

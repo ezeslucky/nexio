@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { describe, expect, test } from 'vitest';
 
 import { getAssetName } from '../adapter/assets.js';
@@ -67,9 +67,9 @@ describe('getAssetName', () => {
     expect(result).toBe('blobId.bin');
   });
 
-  test('should throw BlockSuiteError if blob is not found', () => {
+  test('should throw CanvasError if blob is not found', () => {
     const assets = new Map<string, Blob>();
-    expect(() => getAssetName(assets, 'blobId')).toThrow(BlockSuiteError);
+    expect(() => getAssetName(assets, 'blobId')).toThrow(CanvasError);
     expect(() => getAssetName(assets, 'blobId')).toThrowError(
       'blob not found for blobId: blobId'
     );

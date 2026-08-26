@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-pointer",
-  "description": "Gfx pointer for BlockSuite.",
+  "description": "Gfx pointer for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

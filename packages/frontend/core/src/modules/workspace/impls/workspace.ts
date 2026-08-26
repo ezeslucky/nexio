@@ -1,5 +1,5 @@
 import {
-  BlockSuiteError,
+  CanvasError,
   ErrorCode,
 } from '@canvas/nexio/global/exceptions';
 import { NoopLogger } from '@canvas/nexio/global/utils';
@@ -123,7 +123,7 @@ export class WorkspaceImpl implements Workspace {
       const id = this.onCreateDoc(docId);
       const doc = this.getDoc(id);
       if (!doc) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.DocCollectionError,
           'create doc failed'
         );
@@ -132,7 +132,7 @@ export class WorkspaceImpl implements Workspace {
     }
     const id = docId ?? this.idGenerator();
     if (this._hasDoc(id)) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DocCollectionError,
         'doc already exists'
       );
@@ -160,7 +160,7 @@ export class WorkspaceImpl implements Workspace {
   removeDoc(docId: string) {
     const docMeta = this.meta.getDocMeta(docId);
     if (!docMeta) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DocCollectionError,
         `doc meta not found: ${docId}`
       );

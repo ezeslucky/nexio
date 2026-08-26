@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-shape",
-  "description": "Gfx shape for BlockSuite.",
+  "description": "Gfx shape for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

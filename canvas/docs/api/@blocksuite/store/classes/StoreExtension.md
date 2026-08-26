@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../README.md)
+[**Canvas API Documentation**](../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../README.md) / [@canvas/store](../README.md) / StoreExtension
+[Canvas API Documentation](../../../README.md) / [@canvas/store](../README.md) / StoreExtension
 
 # Class: StoreExtension
 

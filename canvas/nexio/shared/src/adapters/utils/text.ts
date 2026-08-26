@@ -31,7 +31,7 @@ const isNullish = (value: unknown) => value === null || value === undefined;
 
 const createText = (s: string) => {
   return {
-    '$blocksuite:internal:text$': true,
+    '$canvas:internal:text$': true,
     delta: s.length === 0 ? [] : [{ insert: s }],
   };
 };
@@ -40,9 +40,9 @@ const isText = (o: unknown) => {
   if (
     typeof o === 'object' &&
     o !== null &&
-    '$blocksuite:internal:text$' in o
+    '$canvas:internal:text$' in o
   ) {
-    return o['$blocksuite:internal:text$'] === true;
+    return o['$canvas:internal:text$'] === true;
   }
   return false;
 };

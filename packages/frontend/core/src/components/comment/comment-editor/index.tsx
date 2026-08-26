@@ -1,5 +1,5 @@
 import { IconButton, notify, toast } from '@nexio/component';
-import { LitDocEditor, type PageEditor } from '@nexio/core/blocksuite/editors';
+import { LitDocEditor, type PageEditor } from '@nexio/core/canvas/editors';
 import { SnapshotHelper } from '@nexio/core/modules/comment/services/snapshot-helper';
 import type { CommentAttachment } from '@nexio/core/modules/comment/types';
 import { PeekViewService } from '@nexio/core/modules/peek-view';

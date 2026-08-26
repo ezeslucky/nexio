@@ -65,7 +65,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                   props: {
                     type: 'quote',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(
                         HastUtils.getTextChildrenOnlyAst(o.node)
                       ),
@@ -97,7 +97,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(o.node),
                     },
                   },
@@ -121,7 +121,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                   ? 'quote'
                   : 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: deltaConverter.astToDelta(o.node),
                 },
               },
@@ -146,7 +146,7 @@ export const paragraphBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
                 props: {
                   type: o.node.tagName,
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: deltaConverter.astToDelta(o.node),
                   },
                 },

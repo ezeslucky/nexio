@@ -15,7 +15,7 @@ import {
   type ShapeName,
   type ShapeStyle,
 } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Bound, normalizeDegAngle, type XYWH } from '@canvas/global/gfx';
 import { assertType } from '@canvas/global/utils';
 import type { BlockComponent } from '@canvas/std';
@@ -307,7 +307,7 @@ export function createEdgelessElement(
     );
     const note = store.getBlock(id)?.model;
     if (!note) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.GfxBlockElementError,
         'Note block is not found after creation'
       );
@@ -322,7 +322,7 @@ export function createEdgelessElement(
   }
 
   if (!element) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.GfxBlockElementError,
       'Element is not found after creation'
     );

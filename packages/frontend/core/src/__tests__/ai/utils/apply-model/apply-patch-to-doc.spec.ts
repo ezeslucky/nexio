@@ -6,8 +6,8 @@ import { StoreExtensionManager } from '@canvas/nexio-ext-loader';
 import { createNexioTemplate } from '@canvas/nexio-shared/test-utils';
 import { describe, expect, it } from 'vitest';
 
-import { applyPatchToDoc } from '../../../../blocksuite/ai/utils/apply-model/apply-patch-to-doc';
-import type { PatchOp } from '../../../../blocksuite/ai/utils/apply-model/markdown-diff';
+import { applyPatchToDoc } from '../../../../canvas/ai/utils/apply-model/apply-patch-to-doc';
+import type { PatchOp } from '../../../../canvas/ai/utils/apply-model/markdown-diff';
 
 const manager = new StoreExtensionManager(getInternalStoreExtensions());
 const { nexio } = createNexioTemplate(manager.get('store'));

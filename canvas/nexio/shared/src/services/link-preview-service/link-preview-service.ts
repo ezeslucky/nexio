@@ -1,6 +1,6 @@
 import { type LinkPreviewData } from '@canvas/nexio-model';
 import { type Container, createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import { DEFAULT_LINK_PREVIEW_ENDPOINT } from '../../consts';
@@ -76,7 +76,7 @@ export class LinkPreviewService
     try {
       const match = /\/status\/(\d+)/.exec(url);
       if (!match) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.DefaultRuntimeError,
           `Invalid tweet URL: ${url}`
         );
@@ -86,7 +86,7 @@ export class LinkPreviewService
       const response = await fetch(apiUrl, { signal }).then(res => res.json());
       const tweet = response?.tweet;
       if (!tweet) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.DefaultRuntimeError,
           `Invalid tweet response: ${url}`
         );
@@ -120,7 +120,7 @@ export class LinkPreviewService
     })
       .then(r => {
         if (!r || !r.ok) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.DefaultRuntimeError,
             `Failed to fetch link preview: ${url}`
           );

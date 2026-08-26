@@ -1,5 +1,5 @@
 import { createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { StdIdentifier } from '@canvas/std';
 import type { ExtensionType } from '@canvas/store';
 
@@ -22,8 +22,8 @@ export const ViewportElementExtension = (selector: string): ExtensionType => {
           const std = provider.get(StdIdentifier);
           const viewportElement = std.host.closest<HTMLElement>(selector);
           if (!viewportElement) {
-            throw new BlockSuiteError(
-              BlockSuiteError.ErrorCode.ValueNotExists,
+            throw new CanvasError(
+              CanvasError.ErrorCode.ValueNotExists,
               `ViewportElementProvider: viewport element is not found`
             );
           }

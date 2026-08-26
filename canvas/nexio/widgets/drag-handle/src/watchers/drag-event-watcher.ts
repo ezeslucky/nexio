@@ -47,7 +47,7 @@ import { assertType } from '@canvas/global/utils';
 import {
   BlockComponent,
   type BlockStdScope,
-  type DragFromBlockSuite,
+  type DragFromCanvas,
   type DragPayload,
   type DropPayload,
 } from '@canvas/std';
@@ -98,7 +98,7 @@ export type DragBlockEntity = {
   modelIds: string[];
 };
 
-export type DragBlockPayload = DragPayload<DragBlockEntity, DragFromBlockSuite>;
+export type DragBlockPayload = DragPayload<DragBlockEntity, DragFromCanvas>;
 
 declare module '@canvas/std' {
   interface DNDEntity {

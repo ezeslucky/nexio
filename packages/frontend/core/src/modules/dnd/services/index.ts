@@ -139,7 +139,7 @@ export class DndService extends Service {
     }
 
     const changeDocCardView = (args: MonitorDragEvent<MixedDNDData>) => {
-      if (args.source.data.from?.at === 'blocksuite-editor') return;
+      if (args.source.data.from?.at === 'canvas-editor') return;
 
       const dropTarget = getBSDropTarget(args);
       if (dropTarget === 'other') return;
@@ -316,7 +316,7 @@ export class DndService extends Service {
     return {
       entity,
       from: {
-        at: 'blocksuite-editor',
+        at: 'canvas-editor',
       },
     };
   };

@@ -1,5 +1,5 @@
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { BaseTextAttributes, DeltaInsert } from '@canvas/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { nothing, render, type TemplateResult } from 'lit';
@@ -199,14 +199,14 @@ export class InlineEditor<
     } = {}
   ) {
     if (!yText.doc) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'yText must be attached to a Y.Doc'
       );
     }
 
     if (yText.toString().includes('\r')) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'yText must not contain "\\r" because it will break the range synchronization'
       );
@@ -285,7 +285,7 @@ export class InlineEditor<
   transact(fn: () => void, withoutTransact = false): void {
     const doc = this.yText.doc;
     if (!doc) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'yText is not attached to a doc'
       );

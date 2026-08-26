@@ -8,7 +8,7 @@ import {
   parseDocToMarkdownFromDocSnapshot,
   readAllBlocksFromDocSnapshot,
   readAllDocIdsFromWorkspaceSnapshot,
-} from '../blocksuite';
+} from '../canvas';
 
 const module = await createModule({});
 const models = module.get(Models);

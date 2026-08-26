@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../../README.md)
+[**Canvas API Documentation**](../../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [gfx](../README.md) / SURFACE\_YMAP\_UNIQ\_IDENTIFIER
+[Canvas API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [gfx](../README.md) / SURFACE\_YMAP\_UNIQ\_IDENTIFIER
 
 # Variable: SURFACE\_YMAP\_UNIQ\_IDENTIFIER
 

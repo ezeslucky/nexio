@@ -1,5 +1,5 @@
 import { openSingleFileWith } from '@canvas/nexio-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { Bound } from '@canvas/global/gfx';
 import c from 'simple-xml-to-json';
 
@@ -15,7 +15,7 @@ export async function importMindmap(bound: Bound): Promise<MindMapNode> {
   const file = await openSingleFileWith('MindMap');
 
   if (!file) {
-    throw new BlockSuiteError(ErrorCode.UserAbortError, 'Aborted by user');
+    throw new CanvasError(ErrorCode.UserAbortError, 'Aborted by user');
   }
 
   let result;
@@ -25,7 +25,7 @@ export async function importMindmap(bound: Bound): Promise<MindMapNode> {
   } else if (file.name.endsWith('.opml') || file.name.endsWith('.xml')) {
     result = await parseOPMLFile(file);
   } else {
-    throw new BlockSuiteError(ErrorCode.ParsingError, 'Unsupported file type');
+    throw new CanvasError(ErrorCode.ParsingError, 'Unsupported file type');
   }
 
   if (result) {
@@ -80,7 +80,7 @@ async function parseMmFile(file: File): Promise<MindMapNode> {
     const result = traverse(map);
 
     if (!result) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ParsingError,
         'Failed to parse mm file'
       );
@@ -89,7 +89,7 @@ async function parseMmFile(file: File): Promise<MindMapNode> {
     return result;
   } catch (e) {
     console.error(e);
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ParsingError,
       'Failed to parse mm file'
     );
@@ -126,7 +126,7 @@ async function parseOPMLFile(file: File): Promise<MindMapNode> {
     const result = traverse(outline);
 
     if (!result) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ParsingError,
         'Failed to parse OPML file'
       );
@@ -135,7 +135,7 @@ async function parseOPMLFile(file: File): Promise<MindMapNode> {
     return result;
   } catch (e) {
     console.error(e);
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ParsingError,
       'Failed to parse OPML file'
     );

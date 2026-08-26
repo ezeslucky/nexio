@@ -49,7 +49,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                 props: {
                   type: 'quote',
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: deltaConverter.astToDelta(
                       HastUtils.getInlineOnlyElementAST(o.node),
                       { pageMap, removeLastBr: true }
@@ -78,7 +78,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                     ? 'quote'
                     : 'text',
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: deltaConverter.astToDelta(o.node, { pageMap }),
                   },
                 },
@@ -106,7 +106,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                   props: {
                     type: o.node.tagName,
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: deltaConverter.astToDelta(o.node, { pageMap }),
                     },
                   },
@@ -130,7 +130,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                       props: {
                         type: 'text',
                         text: {
-                          '$blocksuite:internal:text$': true,
+                          '$canvas:internal:text$': true,
                           delta: deltaConverter.astToDelta(o.node, { pageMap }),
                         },
                       },
@@ -167,7 +167,7 @@ export const paragraphBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatch
                     props: {
                       type: 'quote',
                       text: {
-                        '$blocksuite:internal:text$': true,
+                        '$canvas:internal:text$': true,
                         delta: [
                           { insert: iconText + '\n' },
                           ...deltaConverter.astToDelta(secondElementChild, {

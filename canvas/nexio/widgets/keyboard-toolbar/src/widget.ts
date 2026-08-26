@@ -108,14 +108,14 @@ export class NexioKeyboardToolbarWidget extends WidgetComponent<RootBlockModel> 
 
     if (!this.block?.rootComponent) return nothing;
 
-    return html`<blocksuite-portal
+    return html`<canvas-portal
       .shadowDom=${false}
       .template=${html`<nexio-keyboard-toolbar
         .keyboard=${this.keyboard}
         .config=${this.config}
         .rootComponent=${this.block.rootComponent}
       ></nexio-keyboard-toolbar>`}
-    ></blocksuite-portal>`;
+    ></canvas-portal>`;
   }
 }
 

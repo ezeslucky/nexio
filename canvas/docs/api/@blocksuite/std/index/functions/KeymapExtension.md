@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../../README.md)
+[**Canvas API Documentation**](../../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [index](../README.md) / KeymapExtension
+[Canvas API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [index](../README.md) / KeymapExtension
 
 # Function: KeymapExtension()
 

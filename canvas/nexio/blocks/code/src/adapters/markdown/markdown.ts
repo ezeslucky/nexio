@@ -58,7 +58,7 @@ export const codeBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
               language,
               wrap,
               text: {
-                '$blocksuite:internal:text$': true,
+                '$canvas:internal:text$': true,
                 delta: [
                   {
                     insert: o.node.value,

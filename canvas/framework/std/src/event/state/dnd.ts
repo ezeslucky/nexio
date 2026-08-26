@@ -17,7 +17,7 @@ export class DndEventState extends UIEventState {
 }
 
 declare global {
-  interface BlockSuiteUIEventState {
+  interface CanvasUIEventState {
     dndState: DndEventState;
   }
 }

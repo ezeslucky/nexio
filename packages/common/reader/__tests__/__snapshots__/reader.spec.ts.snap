@@ -1880,11 +1880,11 @@ exports[`should read doc blocks work 1`] = `
       "parentFlavour": "nexio:page",
       "yblock": {
         "prop:elements": {
-          "type": "$blocksuite:internal:native$",
+          "type": "$canvas:internal:native$",
           "value": {
             "EkqQL1MU5m": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -1900,7 +1900,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "F-GXtb8ubm": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:Lora",
+              "fontFamily": "canvas:surface:Lora",
               "fontSize": 72,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -2018,7 +2018,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "UloPoCxt6P": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2057,7 +2057,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "Z7D3qrSurD": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2073,7 +2073,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "_nC65-wkSP": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2118,7 +2118,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "gPvT0nfbcw": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2210,7 +2210,7 @@ exports[`should read doc blocks work 1`] = `
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-magenta",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "id": "qRCk-vrGXw",
               "index": "aXG",
               "radius": 0,
@@ -2253,7 +2253,7 @@ exports[`should read doc blocks work 1`] = `
             },
             "saGXC7nPOk": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2339,7 +2339,7 @@ exports[`should read doc blocks work 1`] = `
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-tangerine",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 36,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -3571,11 +3571,11 @@ exports[`should read doc blocks work without root doc 1`] = `
       "parentFlavour": "nexio:page",
       "yblock": {
         "prop:elements": {
-          "type": "$blocksuite:internal:native$",
+          "type": "$canvas:internal:native$",
           "value": {
             "EkqQL1MU5m": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3591,7 +3591,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "F-GXtb8ubm": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:Lora",
+              "fontFamily": "canvas:surface:Lora",
               "fontSize": 72,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -3709,7 +3709,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "UloPoCxt6P": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3748,7 +3748,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "Z7D3qrSurD": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3764,7 +3764,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "_nC65-wkSP": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3809,7 +3809,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "gPvT0nfbcw": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3901,7 +3901,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-magenta",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "id": "qRCk-vrGXw",
               "index": "aXG",
               "radius": 0,
@@ -3944,7 +3944,7 @@ exports[`should read doc blocks work without root doc 1`] = `
             },
             "saGXC7nPOk": {
               "color": "--nexio-palette-line-black",
-              "fontFamily": "blocksuite:surface:OrelegaOne",
+              "fontFamily": "canvas:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -4030,7 +4030,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-tangerine",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Poppins",
+              "fontFamily": "canvas:surface:Poppins",
               "fontSize": 36,
               "fontStyle": "normal",
               "fontWeight": "600",

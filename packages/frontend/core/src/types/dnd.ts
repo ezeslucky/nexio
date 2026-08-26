@@ -95,7 +95,7 @@ export interface NexioDNDData extends DNDData {
           edge: 'left' | 'right';
         }
       | {
-          at: 'blocksuite-editor';
+          at: 'canvas-editor';
         }
       | {
           at: 'external'; // for external apps

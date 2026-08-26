@@ -238,7 +238,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
     });
     return {
       file: file.replace(
-        '<!--BlockSuiteDocTitlePlaceholder-->',
+        '<!--CanvasDocTitlePlaceholder-->',
         `<h1>${payload.snapshot.meta.title}</h1>`
       ),
       assetsIds,
@@ -326,7 +326,7 @@ export class HtmlAdapter extends BaseAdapter<Html> {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: this.deltaConverter.astToDelta(
               titleAst ?? {
                 type: 'text',

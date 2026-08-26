@@ -1,5 +1,5 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { type BlockStdScope, StdIdentifier } from '@canvas/std';
 import { type BlockSnapshot, Extension, type Store } from '@canvas/store';
 
@@ -62,8 +62,8 @@ export abstract class EdgelessClipboardConfig extends Extension {
 
   static override setup(di: Container) {
     if (!this.key) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.ValueNotExists,
+      throw new CanvasError(
+        CanvasError.ErrorCode.ValueNotExists,
         'Key is not defined in the EdgelessClipboardConfig'
       );
     }

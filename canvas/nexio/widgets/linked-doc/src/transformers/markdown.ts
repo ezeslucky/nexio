@@ -7,7 +7,7 @@ import {
   titleMiddleware,
 } from '@canvas/nexio-shared/adapters';
 import { Container } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { sha } from '@canvas/global/utils';
 import type {
   ExtensionType,
@@ -79,7 +79,7 @@ async function exportDoc(doc: Store) {
   const contentBlob = new Blob([markdownResult.file], { type: 'plain/text' });
   if (markdownResult.assetsIds.length > 0) {
     if (!job.assets) {
-      throw new BlockSuiteError(ErrorCode.ValueNotExists, 'No assets found');
+      throw new CanvasError(ErrorCode.ValueNotExists, 'No assets found');
     }
     const zip = await createAssetsArchive(job.assets, markdownResult.assetsIds);
 
@@ -122,8 +122,8 @@ async function importMarkdownToBlock({
   });
 
   if (!snapshot) {
-    throw new BlockSuiteError(
-      BlockSuiteError.ErrorCode.ValueNotExists,
+    throw new CanvasError(
+      CanvasError.ErrorCode.ValueNotExists,
       'import markdown failed, expected to get a snapshot'
     );
   }

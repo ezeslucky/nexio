@@ -71,7 +71,7 @@ export const listBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatcher =
                 props: {
                   type: listType,
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta,
                   },
                   checked:

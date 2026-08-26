@@ -1,5 +1,5 @@
 import { IS_MAC } from '@canvas/global/env';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { base, keyName } from 'w3c-keyname';
 
 import type { UIEventHandler } from './base.js';
@@ -37,7 +37,7 @@ function normalizeKeyName(name: string) {
       return;
     }
 
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.EventDispatcherError,
       'Unrecognized modifier name: ' + mod
     );

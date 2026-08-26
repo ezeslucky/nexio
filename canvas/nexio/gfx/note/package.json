@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-note",
-  "description": "Gfx note for BlockSuite.",
+  "description": "Gfx note for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

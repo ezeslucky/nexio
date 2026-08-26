@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { computed, signal } from '@preact/signals-core';
 import { Subject } from 'rxjs';
 
@@ -33,7 +33,7 @@ export class StoreSelectionExtension extends StoreExtension {
   private readonly _jsonToSelection = (json: Record<string, unknown>) => {
     const ctor = this._selectionConstructors[json.type as string];
     if (!ctor) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.SelectionError,
         `Unknown selection type: ${json.type}`
       );

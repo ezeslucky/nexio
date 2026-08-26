@@ -1,6 +1,6 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import type { PointerEventState } from '../../event/index.js';
@@ -56,7 +56,7 @@ export abstract class BaseTool<
 
   static override setup(di: Container): void {
     if (!this.toolName) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         `The tool constructor '${this.name}' should have a static 'toolName' property.`
       );

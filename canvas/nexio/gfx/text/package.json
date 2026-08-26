@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-text",
-  "description": "Gfx text for BlockSuite.",
+  "description": "Gfx text for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

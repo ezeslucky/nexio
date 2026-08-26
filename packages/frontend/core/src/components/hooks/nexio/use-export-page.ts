@@ -3,7 +3,7 @@ import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
 } from '@nexio/component/global-loading';
-import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor/blocksuite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor/canvas-editor';
 import { EditorService } from '@nexio/core/modules/editor';
 import { getNEXIOWorkspaceSchema } from '@nexio/core/modules/workspace/global-schema';
 import { useI18n } from '@nexio/i18n';

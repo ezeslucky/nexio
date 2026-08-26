@@ -1,5 +1,5 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import { LifeCycleWatcher } from '../extension/lifecycle-watcher.js';
@@ -24,7 +24,7 @@ export abstract class SurfaceMiddlewareBuilder extends Extension {
 
   static override setup(di: Container) {
     if (!this.key) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'The surface middleware builder should have a static key property.'
       );

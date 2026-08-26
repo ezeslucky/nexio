@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio",
-  "description": "BlockSuite for Nexio",
+  "description": "Canvas for Nexio",
   "type": "module",
   "scripts": {
     "build": "tsc --build --verbose"

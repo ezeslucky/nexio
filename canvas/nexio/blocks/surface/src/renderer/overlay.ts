@@ -1,5 +1,5 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type GfxController,
   GfxControllerIdentifier,
@@ -24,7 +24,7 @@ export abstract class Overlay extends Extension {
 
   static override setup(di: Container): void {
     if (!this.overlayName) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         `The overlay constructor '${this.name}' should have a static 'overlayName' property.`
       );

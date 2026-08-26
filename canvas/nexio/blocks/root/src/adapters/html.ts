@@ -113,7 +113,7 @@ export const rootBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
         )
         .openNode({
           type: 'comment',
-          value: 'BlockSuiteDocTitlePlaceholder',
+          value: 'CanvasDocTitlePlaceholder',
         })
         .closeNode();
     },

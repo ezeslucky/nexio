@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { type BlockModel, type BlockViewType, Store } from '@canvas/store';
 import { consume, provide } from '@lit/context';
@@ -111,7 +111,7 @@ export class BlockComponent<
     }
     const model = this.store.getModelById<Model>(this.blockId);
     if (!model) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.MissingViewModelError,
         `Cannot find block model for id ${this.blockId}`
       );

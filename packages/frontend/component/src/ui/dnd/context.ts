@@ -15,7 +15,7 @@ export const DNDContext = createContext<{
 
   /**
    * Convert the draggable data to the external data.
-   * Mainly used to be consumed by blocksuite.
+   * Mainly used to be consumed by canvas.
    *
    * @default undefined
    */

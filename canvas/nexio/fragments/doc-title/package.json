@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-fragment-doc-title",
-  "description": "Doc title fragment for BlockSuite.",
+  "description": "Doc title fragment for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

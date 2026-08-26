@@ -3,7 +3,7 @@ import { Overlay } from '@canvas/nexio-block-surface';
 import type { FrameBlockModel } from '@canvas/nexio-model';
 import { EditPropsStore } from '@canvas/nexio-shared/services';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   Bound,
   deserializeXYWH,
@@ -221,7 +221,7 @@ export class EdgelessFrameManager extends GfxExtension {
     const frameModel = this.gfx.getElementById(id);
 
     if (!frameModel || !isFrameBlock(frameModel)) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.GfxBlockElementError,
         'Frame model is not found'
       );

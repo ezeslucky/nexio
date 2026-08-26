@@ -12,7 +12,7 @@ export const fileNameMiddleware =
       }
       payload.snapshot.meta.title = fileName;
       payload.snapshot.blocks.props.title = {
-        '$blocksuite:internal:text$': true,
+        '$canvas:internal:text$': true,
         delta: [
           {
             insert: fileName,

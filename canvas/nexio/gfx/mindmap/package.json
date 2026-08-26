@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-mindmap",
-  "description": "Gfx mindmap for BlockSuite.",
+  "description": "Gfx mindmap for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

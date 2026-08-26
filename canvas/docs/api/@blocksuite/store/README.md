@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../README.md)
+[**Canvas API Documentation**](../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../README.md) / @canvas/store
+[Canvas API Documentation](../../README.md) / @canvas/store
 
 # @canvas/store
 

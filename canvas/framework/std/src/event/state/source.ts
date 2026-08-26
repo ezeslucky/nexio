@@ -25,7 +25,7 @@ export class EventSourceState extends UIEventState {
 }
 
 declare global {
-  interface BlockSuiteUIEventState {
+  interface CanvasUIEventState {
     sourceState: EventSourceState;
   }
 }

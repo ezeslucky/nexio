@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-attachment",
-  "description": "Attachment block for BlockSuite.",
+  "description": "Attachment block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

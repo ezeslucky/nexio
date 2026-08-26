@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { NoopLogger } from '@canvas/global/utils';
 import {
   AwarenessEngine,
@@ -153,7 +153,7 @@ export class TestWorkspace implements Workspace {
   createDoc(docId?: string): Doc {
     const id = docId ?? this.idGenerator();
     if (this._hasDoc(id)) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DocCollectionError,
         'doc already exists'
       );
@@ -195,7 +195,7 @@ export class TestWorkspace implements Workspace {
   removeDoc(docId: string) {
     const docMeta = this.meta.getDocMeta(docId);
     if (!docMeta) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DocCollectionError,
         `doc meta not found: ${docId}`
       );

@@ -1,6 +1,6 @@
 import { ColorSchema } from '@canvas/nexio-model';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { DeepPartial } from '@canvas/global/utils';
 import { type BlockStdScope, LifeCycleWatcher } from '@canvas/std';
 import { computed, type Signal, signal } from '@preact/signals-core';
@@ -120,23 +120,23 @@ export class EditPropsStore extends LifeCycleWatcher {
     const id = this.std.store.id;
     switch (key) {
       case 'viewport':
-        return 'blocksuite:' + id + ':edgelessViewport';
+        return 'canvas:' + id + ':edgelessViewport';
       case 'presentBlackBackground':
-        return 'blocksuite:presentation:blackBackground';
+        return 'canvas:presentation:blackBackground';
       case 'presentFillScreen':
-        return 'blocksuite:presentation:fillScreen';
+        return 'canvas:presentation:fillScreen';
       case 'presentHideToolbar':
-        return 'blocksuite:presentation:hideToolbar';
+        return 'canvas:presentation:hideToolbar';
       case 'presentNoFrameToastShown':
-        return 'blocksuite:presentation:noFrameToastShown';
+        return 'canvas:presentation:noFrameToastShown';
       case 'templateCache':
-        return 'blocksuite:' + id + ':templateTool';
+        return 'canvas:' + id + ':templateTool';
       case 'remoteColor':
-        return 'blocksuite:remote-color';
+        return 'canvas:remote-color';
       case 'showBidirectional':
-        return 'blocksuite:' + id + ':showBidirectional';
+        return 'canvas:' + id + ':showBidirectional';
       case 'autoHideEmbedHTMLFullScreenToolbar':
-        return 'blocksuite:embedHTML:autoHideFullScreenToolbar';
+        return 'canvas:embedHTML:autoHideFullScreenToolbar';
       default:
         return key;
     }
@@ -147,7 +147,7 @@ export class EditPropsStore extends LifeCycleWatcher {
     props: Record<string, unknown>
   ) {
     if (['__proto__', 'constructor', 'prototype'].includes(key)) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DefaultRuntimeError,
         `Invalid key: ${key}`
       );

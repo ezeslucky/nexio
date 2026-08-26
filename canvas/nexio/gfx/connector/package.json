@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-connector",
-  "description": "Gfx connector for BlockSuite.",
+  "description": "Gfx connector for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -317,7 +317,7 @@ export class NexioLinkedDocWidget extends WidgetComponent<RootBlockModel> {
     if (this._mode$.value === 'none') return nothing;
 
     return html`${this._renderInputMask()}
-      <blocksuite-portal
+      <canvas-portal
         .shadowDom=${false}
         .template=${choose(
           this._mode$.value,
@@ -327,7 +327,7 @@ export class NexioLinkedDocWidget extends WidgetComponent<RootBlockModel> {
           ],
           () => html`${nothing}`
         )}
-      ></blocksuite-portal>`;
+      ></canvas-portal>`;
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-template",
-  "description": "Gfx template for BlockSuite.",
+  "description": "Gfx template for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

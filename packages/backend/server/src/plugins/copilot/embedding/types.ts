@@ -3,7 +3,7 @@ import { File } from 'node:buffer';
 import { z } from 'zod';
 
 import { CopilotContextFileNotSupported } from '../../../base';
-import type { PageDocContent } from '../../../core/utils/blocksuite';
+import type { PageDocContent } from '../../../core/utils/canvas
 import { ChunkSimilarity, Embedding } from '../../../models';
 import { parseDoc } from '../../../native';
 

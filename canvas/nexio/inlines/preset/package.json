@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-preset",
-  "description": "Inline preset for BlockSuite.",
+  "description": "Inline preset for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -1,6 +1,6 @@
 import type { Container } from '@canvas/global/di';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import type { EventName, UIEventHandler } from '../event/index.js';
@@ -16,7 +16,7 @@ import type { BlockStdScope } from '../scope/index.js';
  * BlockService is deprecated. You should reconsider where to put your feature.
  *
  * BlockService is a legacy extension that is used to provide services to the block.
- * In the previous version of BlockSuite, block service provides a way to extend the block.
+ * In the previous version of Canvas, block service provides a way to extend the block.
  * However, in the new version, we recommend using the new extension system.
  */
 export abstract class BlockService extends Extension {
@@ -56,7 +56,7 @@ export abstract class BlockService extends Extension {
 
   static override setup(di: Container) {
     if (!this.flavour) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'Flavour is not defined in the BlockService'
       );

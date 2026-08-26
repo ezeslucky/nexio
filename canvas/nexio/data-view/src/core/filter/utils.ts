@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
 import { getRefType } from '../expression/ref/ref.js';
 import type { Variable, VariableRef } from '../expression/types.js';
@@ -8,7 +8,7 @@ import type { FilterGroup, SingleFilter } from './types.js';
 export const firstFilterName = (vars: Variable[], ref: VariableRef) => {
   const type = getRefType(vars, ref);
   if (!type) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       `can't resolve ref type`
     );
@@ -29,7 +29,7 @@ export const firstFilterByRef = (
 export const firstFilter = (vars: Variable[]): SingleFilter => {
   const variable = vars[0];
   if (!variable) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       `can't find any variable`
     );
@@ -40,7 +40,7 @@ export const firstFilter = (vars: Variable[]): SingleFilter => {
   };
   const filter = firstFilterName(vars, ref);
   if (!filter) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       `can't match any filter`
     );

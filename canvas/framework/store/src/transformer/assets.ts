@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
 import type { BlockProps } from '../model';
 import type { BlobCRUD } from './type';
@@ -94,7 +94,7 @@ export class AssetsManager {
   async writeToBlob(blobId: string) {
     const blob = this._assetsMap.get(blobId);
     if (!blob) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         `Blob ${blobId} not found in assets manager`
       );

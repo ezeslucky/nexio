@@ -104,9 +104,7 @@ export class EventService<TextAttributes extends BaseTextAttributes> {
         event.inputType === 'deleteContentBackward' &&
         !(inlineRange.index === 0 && inlineRange.length === 0)
       ) {
-        // when press backspace at offset 1, double characters will be removed.
-        // because we mock backspace key event `androidBindKeymapPatch` in blocksuite/framework/std/src/event/keymap.ts
-        // so we need to stop the event propagation to prevent the double characters removal.
+       
         event.stopPropagation();
       }
     }

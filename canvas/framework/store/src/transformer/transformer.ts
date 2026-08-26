@@ -1,5 +1,5 @@
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { nextTick } from '@canvas/global/utils';
 import { Subject } from 'rxjs';
 
@@ -109,7 +109,7 @@ export class Transformer {
       const rootModel = doc.root;
       const meta = this._exportDocMeta(doc);
       if (!rootModel) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.TransformerError,
           'Root block not found in doc'
         );
@@ -284,7 +284,7 @@ export class Transformer {
           .filter(Boolean) as BlockModel[];
         const parentModel = parent ? doc.getBlock(parent)?.model : undefined;
         if (!parentModel) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.TransformerError,
             'Parent block not found in doc when moving slice'
           );
@@ -477,7 +477,7 @@ export class Transformer {
     const docMeta = doc.meta;
 
     if (!docMeta) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         'Doc meta not found'
       );
@@ -507,7 +507,7 @@ export class Transformer {
   private _getSchema(flavour: string) {
     const schema = this.schema.flavourSchemaMap.get(flavour);
     if (!schema) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         `Flavour schema not found for ${flavour}`
       );
@@ -540,7 +540,7 @@ export class Transformer {
 
       const model = doc.getBlock(id)?.model;
       if (!model) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.TransformerError,
           `Block not found by id ${id}`
         );

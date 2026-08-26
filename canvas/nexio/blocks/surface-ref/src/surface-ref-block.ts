@@ -24,7 +24,7 @@ import {
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { requestConnectedFrame } from '@canvas/nexio-shared/utils';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Bound, type SerializedXYWH } from '@canvas/global/gfx';
 import {
   BlockComponent,
@@ -305,7 +305,7 @@ export class SurfaceRefBlockComponent extends BlockComponent<SurfaceRefBlockMode
 
         const referenceElement = crud.getElementById(referenceId);
         if (!referenceElement) {
-          throw new BlockSuiteError(
+          throw new CanvasError(
             ErrorCode.MissingViewModelError,
             `can not find element(id:${referenceElement})`
           );

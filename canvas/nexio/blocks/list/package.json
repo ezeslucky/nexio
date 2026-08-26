@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-list",
-  "description": "List block for BlockSuite.",
+  "description": "List block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

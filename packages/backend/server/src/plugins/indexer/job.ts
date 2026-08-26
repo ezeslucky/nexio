@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 
 import { Config, JOB_SIGNAL, JobQueue, OnJob } from '../../base';
-import { readAllDocIdsFromWorkspaceSnapshot } from '../../core/utils/blocksuite';
+import { readAllDocIdsFromWorkspaceSnapshot } from '../../core/utils/canvas
 import { Models } from '../../models';
 import { IndexerService } from './service';
 

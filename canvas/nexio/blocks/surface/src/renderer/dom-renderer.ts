@@ -111,28 +111,28 @@ function getOpacity(elementModel: SurfaceElementModel) {
  *     Create a function that implements the rendering logic for your element.
  *     This function will receive the element's model, the target HTMLElement, and the DomRenderer instance.
  *     Signature: `(model: MyCustomElementModel, domElement: HTMLElement, renderer: DomRenderer) => void;`
- *     Example: `shapeDomRenderer` in `blocksuite/nexio/gfx/shape/src/element-renderer/shape-dom/index.ts`.
+ *     Example: `shapeDomRenderer` in `canvas/nexio/gfx/shape/src/element-renderer/shape-dom/index.ts`.
  *     In this function, you'll apply styles and attributes to the `domElement` based on the `model`.
  *
  * 2.  **Create the Renderer Extension**:
  *     Create a new file (e.g., `my-custom-element-dom-renderer.extension.ts`).
  *     Import `DomElementRendererExtension` (e.g., from `@canvas/nexio-block-surface` or its source location
- *     `blocksuite/nexio/blocks/surface/src/extensions/dom-element-renderer.ts`).
+ *     `canvas/nexio/blocks/surface/src/extensions/dom-element-renderer.ts`).
  *     Import your renderer function (from step 1).
  *     Use the factory to create your extension:
  *     `export const MyCustomElementDomRendererExtension = DomElementRendererExtension('my-custom-element', myCustomElementRendererFn);`
- *     Example: `ShapeDomRendererExtension` in `blocksuite/nexio/gfx/shape/src/element-renderer/shape-dom.ts`.
+ *     Example: `ShapeDomRendererExtension` in `canvas/nexio/gfx/shape/src/element-renderer/shape-dom.ts`.
  *
  * 3.  **Register the Extension**:
- *     In your application setup where BlockSuite services and view extensions are registered (e.g., a `ViewExtensionProvider`
+ *     In your application setup where canvas services and view extensions are registered (e.g., a `ViewExtensionProvider`
  *     or a central DI configuration place), import your new extension (from step 2) and register it with the
  *     dependency injection container.
  *     Example: `context.register(MyCustomElementDomRendererExtension);`
- *     As seen with `ShapeDomRendererExtension` being registered in `blocksuite/nexio/gfx/shape/src/view.ts`.
+ *     As seen with `ShapeDomRendererExtension` being registered in `canvas/nexio/gfx/shape/src/view.ts`.
  *
  * 4.  **Core Infrastructure (Provided by DomRenderer System)**:
  *     -   `DomElementRenderer` (type): The function signature for renderers, defined in
- *         `blocksuite/nexio/blocks/surface/src/renderer/dom-elements/index.ts`.
+ *         `canvas/nexio/blocks/surface/src/renderer/dom-elements/index.ts`.
  *     -   `DomElementRendererIdentifier` (function): Creates unique service identifiers for DI,
  *         used by `DomRenderer` to look up specific renderers. Defined in the same file.
  *     -   `DomElementRendererExtension` (factory): A helper to create extension objects for easy registration.

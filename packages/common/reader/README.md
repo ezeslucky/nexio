@@ -1,4 +1,4 @@
-# Nexio Blocksuite format YDoc reader
+# Nexio canvas format YDoc reader
 
 ## Usage
 

@@ -1,5 +1,5 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import type { GfxController } from '../../controller.js';
@@ -51,7 +51,7 @@ export class InteractivityExtension extends Extension {
 
   static override setup(di: Container) {
     if (!this.key) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'key is not defined in the InteractivityExtension'
       );

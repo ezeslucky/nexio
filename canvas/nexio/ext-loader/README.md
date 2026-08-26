@@ -1,6 +1,6 @@
 # @canvas/nexio-ext-loader
 
-Blocksuite extension loader system for NEXIO, providing a structured way to manage and load extensions in different contexts.
+Canvas extension loader system for NEXIO, providing a structured way to manage and load extensions in different contexts.
 
 ## Usage
 

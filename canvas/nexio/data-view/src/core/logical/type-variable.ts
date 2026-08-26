@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import Zod from 'zod';
 
 import type { TypeInstance, Unify } from './type.js';
@@ -33,7 +33,7 @@ export class TypeVarReferenceInstance<Name extends string = string>
   }
 
   unify(_ctx: TypeVarContext, _type: TypeInstance, _unify: Unify): boolean {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       'unexpected type unify, type var reference'
     );

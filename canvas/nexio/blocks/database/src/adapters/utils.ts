@@ -39,7 +39,7 @@ export function formatTable(rows: string[][]): string {
 }
 export const isDelta = (value: unknown): value is { delta: DeltaInsert[] } => {
   if (typeof value === 'object' && value !== null) {
-    return '$blocksuite:internal:text$' in value;
+    return '$canvas:internal:text$' in value;
   }
   return false;
 };

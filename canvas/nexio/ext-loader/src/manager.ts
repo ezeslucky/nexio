@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import type { ExtensionType } from '@canvas/store';
 
 import type { BaseExtensionProvider, Context, Empty } from './base-provider';
@@ -91,7 +91,7 @@ export class ExtensionManager<Scope extends string> {
    *
    * @param scope - The scope to retrieve extensions for
    * @returns An array of extensions registered for the specified scope
-   * @throws {BlockSuiteError} If the scope is not found
+   * @throws {CanvasError} If the scope is not found
    */
   get(scope: Scope) {
     if (this._extensions.has(scope)) {
@@ -100,8 +100,8 @@ export class ExtensionManager<Scope extends string> {
     this._build(scope);
     const extensionSet = this._extensions.get(scope);
     if (!extensionSet) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.ValueNotExists,
+      throw new CanvasError(
+        CanvasError.ErrorCode.ValueNotExists,
         `Extension scope ${scope} not found`
       );
     }

@@ -7,7 +7,7 @@ import type { ConnectorElementModel } from '@canvas/nexio-model';
 import type { RichText } from '@canvas/nexio-rich-text';
 import { ThemeProvider } from '@canvas/nexio-shared/services';
 import { almostEqual } from '@canvas/nexio-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Bound, type IVec, Vec } from '@canvas/global/gfx';
 import { WithDisposable } from '@canvas/global/lit';
 import {
@@ -35,7 +35,7 @@ export function mountConnectorLabelEditor(
 ) {
   const mountElm = edgeless.querySelector('.edgeless-mount-point');
   if (!mountElm) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ValueNotExists,
       "edgeless block's mount point does not exist"
     );

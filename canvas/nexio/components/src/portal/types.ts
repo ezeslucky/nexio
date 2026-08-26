@@ -37,7 +37,7 @@ export type PortalOptions = {
   renderOptions?: RenderOptions;
   /**
    * Defaults to `true`.
-   * If true, the portalRoot will be added a class `blocksuite-portal`. It's useful for finding the portalRoot.
+   * If true, the portalRoot will be added a class `canvas-portal`. It's useful for finding the portalRoot.
    */
   identifyWrapper?: boolean;
 

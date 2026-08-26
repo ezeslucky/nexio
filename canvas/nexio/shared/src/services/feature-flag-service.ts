@@ -1,7 +1,7 @@
 import { type Store, StoreExtension } from '@canvas/store';
 import { type Signal, signal } from '@preact/signals-core';
 
-export interface BlockSuiteFlags {
+export interface CanvasFlags {
   enable_database_number_formatting: boolean;
   enable_database_attachment_note: boolean;
   enable_database_full_width: boolean;
@@ -27,7 +27,7 @@ export interface BlockSuiteFlags {
 export class FeatureFlagService extends StoreExtension {
   static override key = 'feature-flag-server';
 
-  private readonly _flags: Signal<BlockSuiteFlags> = signal({
+  private readonly _flags: Signal<CanvasFlags> = signal({
     enable_database_number_formatting: false,
     enable_database_attachment_note: false,
     enable_database_full_width: false,
@@ -50,14 +50,14 @@ export class FeatureFlagService extends StoreExtension {
     enable_dom_renderer: false,
   });
 
-  setFlag(key: keyof BlockSuiteFlags, value: boolean) {
+  setFlag(key: keyof CanvasFlags, value: boolean) {
     this._flags.value = {
       ...this._flags.value,
       [key]: value,
     };
   }
 
-  getFlag(key: keyof BlockSuiteFlags) {
+  getFlag(key: keyof CanvasFlags) {
     return this._flags.value[key];
   }
 

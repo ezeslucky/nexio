@@ -14,7 +14,7 @@ import {
   VirtualKeyboardProvider,
 } from '@canvas/nexio-shared/services';
 import { matchModels } from '@canvas/nexio-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { BlockSelection } from '@canvas/std';
 import { flip, offset, shift } from '@floating-ui/dom';
 import {
@@ -155,7 +155,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
       const embedIframeService = this.embedIframeService;
       const linkPreviewService = this.linkPreviewService;
       if (!embedIframeService || !linkPreviewService) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.ValueNotExists,
           'EmbedIframeService or LinkPreviewService not found'
         );
@@ -170,7 +170,7 @@ export class EmbedIframeBlockComponent extends CaptionedBlockComponent<EmbedIfra
       // if the embed data is not found, and the iframeUrl is not set, throw an error
       const currentIframeUrl = this.model.props.iframeUrl;
       if (!embedData && !currentIframeUrl) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.ValueNotExists,
           'Failed to get embed data'
         );

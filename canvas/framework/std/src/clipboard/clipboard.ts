@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type {
   BlockSnapshot,
   Slice,
@@ -181,7 +181,7 @@ export class Clipboard extends LifeCycleWatcher {
         index
       );
       if (!slice) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.TransformerError,
           'No snapshot found'
         );
@@ -247,9 +247,9 @@ export class Clipboard extends LifeCycleWatcher {
     const sanitizedItems = DOMPurify.sanitize(items);
     const domParser = new DOMParser();
     const doc = domParser.parseFromString(sanitizedItems, 'text/html');
-    const dom = doc.querySelector<HTMLDivElement>('[data-blocksuite-snapshot]');
+    const dom = doc.querySelector<HTMLDivElement>('[data-Canvas-snapshot]');
     if (!dom) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         'No snapshot found'
       );

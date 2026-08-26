@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-latex",
-  "description": "Latex block for BlockSuite.",
+  "description": "Latex block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

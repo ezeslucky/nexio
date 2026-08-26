@@ -6,7 +6,7 @@ import {
   type ParagraphBlockModel,
   type ReferenceInfo,
 } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
@@ -66,7 +66,7 @@ class PointState {
   private readonly _blockFromPath = (id: string) => {
     const block = this.std.view.getBlock(id);
     if (!block) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         `Block not found when pasting: ${id}`
       );
@@ -89,7 +89,7 @@ class PointState {
     const text = this.model.text;
     if (!text) {
       console.error(this.point);
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         'Text point without text model'
       );

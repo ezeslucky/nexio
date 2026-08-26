@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-surface",
-  "description": "Surface block for BlockSuite.",
+  "description": "Surface block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -1,5 +1,5 @@
 import { Container, type ServiceProvider } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type ExtensionType,
   type Store,
@@ -95,7 +95,7 @@ export class BlockStdScope {
 
   get host() {
     if (!this._host) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'Host is not ready to use, the `render` method should be called first'
       );

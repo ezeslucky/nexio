@@ -1,0 +1,101 @@
+[
+  {
+    "type": "page",
+    "meta": {
+      "id": "doc:home",
+      "title": "",
+      "createDate": 1706086837052,
+      "tags": []
+    },
+    "blocks": {
+      "type": "block",
+      "id": "QiBH29dycZ",
+      "flavour": "nexio:page",
+      "version": 2,
+      "props": {
+        "title": {
+          "$canvas:internal:text$": true,
+          "delta": []
+        }
+      },
+      "children": [
+        {
+          "type": "block",
+          "id": "WZ9zUizVrs",
+          "flavour": "nexio:surface",
+          "version": 5,
+          "props": {
+            "elements": {
+              "DcoFASHQKI": {
+                "index": "a1",
+                "seed": 1391437441,
+                "xywh": "[-83.54346701558063,-50.225603646128235,1600.17596435546875,179]",
+                "rotate": 0,
+                "text": {
+                  "nexio:surface:text": true,
+                  "delta": [
+                    {
+                      "insert": "section1.title"
+                    }
+                  ]
+                },
+                "color": "--nexio-palette-line-black",
+                "fontSize": 128,
+                "fontFamily": "canvas:surface:Poppins",
+                "fontWeight": "400",
+                "fontStyle": "normal",
+                "textAlign": "left",
+                "type": "text",
+                "id": "DcoFASHQKI",
+                "hasMaxWidth": false
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "block",
+              "id": "Rb6xTvGyzU",
+              "flavour": "nexio:image",
+              "version": 1,
+              "props": {
+                "caption": "background",
+                "sourceId": "xeeMw2R2FtjRo2Q0H14rsCpImSR9-z54W_PDZUsFvJ8=",
+                "width": 1920,
+                "height": 1080,
+                "index": "a0",
+                "xywh": "[-300.7451171875,-355.744140625,1920,1080]",
+                "rotate": 0,
+                "size": 938620
+              },
+              "children": []
+            },
+            {
+              "type": "block",
+              "id": "Pa1ZO7Udi-",
+              "flavour": "nexio:frame",
+              "version": 1,
+              "props": {
+                "title": {
+                  "$canvas:internal:text$": true,
+                  "delta": [
+                    {
+                      "insert": "title"
+                    }
+                  ]
+                },
+                "background": "--nexio-palette-transparent",
+                "xywh": "[-340.7451171875,-395.744140625,2000,1160]",
+                "index": "Zz",
+                "childElementIds": {
+                  "DcoFASHQKI": true,
+                  "Rb6xTvGyzU": true
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

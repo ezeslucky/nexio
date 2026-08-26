@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-latex",
-  "description": "Inline latex for BlockSuite.",
+  "description": "Inline latex for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -7,7 +7,7 @@ const currentViewListSchema = z.array(
   })
 );
 const maxLength = 20;
-const currentViewListKey = 'blocksuite:databaseBlock:view:currentViewList';
+const currentViewListKey = 'canvas:databaseBlock:view:currentViewList';
 const storage = globalThis.sessionStorage;
 const createCurrentViewStorage = () => {
   const getList = () => {
