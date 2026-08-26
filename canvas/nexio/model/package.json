@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-model",
-  "description": "Models for BlockSuite in Nexio.",
+  "description": "Models for Canvas in Nexio.",
   "type": "module",
   "scripts": {
     "build": "tsc"

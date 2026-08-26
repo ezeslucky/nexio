@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../../README.md)
+[**Canvas API Documentation**](../../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [gfx](../README.md) / canSafeAddToContainer
+[Canvas API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [gfx](../README.md) / canSafeAddToContainer
 
 # Function: canSafeAddToContainer()
 

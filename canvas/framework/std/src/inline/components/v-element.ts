@@ -1,5 +1,5 @@
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { SignalWatcher } from '@canvas/global/lit';
 import type { BaseTextAttributes, DeltaInsert } from '@canvas/store';
 import { effect, signal } from '@preact/signals-core';
@@ -63,7 +63,7 @@ export class VElement<
     const isEmbed = inlineEditor.isEmbed(this.delta);
     if (isEmbed) {
       if (this.delta.insert.length !== 1) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.InlineEditorError,
           `The length of embed node should only be 1.
           This seems to be an internal issue with inline editor.

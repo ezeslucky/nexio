@@ -15,7 +15,7 @@ export class LinkPreviewStorage {
   /**
    * The storage key for the link preview
    */
-  storageKey = 'blocksuite:link-preview-cache';
+  storageKey = 'canvas:link-preview-cache';
 
   /**
    * Load the cache from local storage

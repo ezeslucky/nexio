@@ -1,6 +1,6 @@
 import type { ServiceIdentifier } from '@canvas/global/di';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { IBound, IPoint } from '@canvas/global/gfx';
 import { computed, Signal } from '@preact/signals-core';
 import { Subject, type Subscription } from 'rxjs';
@@ -284,7 +284,7 @@ export class ToolController extends GfxExtension {
         tool?.[evtName](evt);
         return true;
       } catch (e) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.ExecutionError,
           `Error occurred while executing ${evtName} handler of tool "${tool?.toolName}"`,
           {
@@ -550,8 +550,8 @@ export class ToolController extends GfxExtension {
   get = <T extends BaseTool>(type: ToolType<T>): T => {
     const instance = this._tools.get(type.toolName) as T | undefined;
     if (!instance) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.ValueNotExists,
+      throw new CanvasError(
+        CanvasError.ErrorCode.ValueNotExists,
         `Trying to get tool "${type.toolName}" is not registered`
       );
     }
@@ -595,7 +595,7 @@ export class ToolController extends GfxExtension {
 
     const currentTool = this.currentTool$.peek();
     if (!currentTool) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         `Tool "${this.currentToolName$.value}" is not defined`
       );

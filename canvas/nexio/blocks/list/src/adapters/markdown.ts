@@ -37,7 +37,7 @@ export const listBlockMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
                     ? 'numbered'
                     : 'bulleted',
               text: {
-                '$blocksuite:internal:text$': true,
+                '$canvas:internal:text$': true,
                 delta:
                   o.node.children[0] && o.node.children[0].type === 'paragraph'
                     ? deltaConverter.astToDelta(o.node.children[0])

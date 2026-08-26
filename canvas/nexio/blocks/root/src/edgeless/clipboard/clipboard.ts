@@ -43,7 +43,7 @@ import {
   referenceToNode,
 } from '@canvas/nexio-shared/utils';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   Bound,
   getCommonBound,
@@ -76,7 +76,7 @@ import {
   tryGetSvgFromClipboard,
 } from './utils.js';
 
-const BLOCKSUITE_SURFACE = 'blocksuite/surface';
+const CANVAS_SURFACE = 'canvas/surface';
 
 const IMAGE_PADDING = 5; // for rotated shapes some padding is needed
 
@@ -174,7 +174,7 @@ export class EdgelessClipboardController extends PageClipboard {
       const data = await prepareClipboardData(elements, this.std);
       return {
         ..._items,
-        [BLOCKSUITE_SURFACE]: JSON.stringify(data),
+        [CANVAS_SURFACE]: JSON.stringify(data),
       };
     });
   };
@@ -358,7 +358,7 @@ export class EdgelessClipboardController extends PageClipboard {
     try {
       // check for surface elements in clipboard
       const json = this.std.clipboard.readFromClipboard(data);
-      const mayBeSurfaceDataJson = json[BLOCKSUITE_SURFACE];
+      const mayBeSurfaceDataJson = json[CANVAS_SURFACE];
       if (mayBeSurfaceDataJson !== undefined) {
         const elementsRawData = JSON.parse(mayBeSurfaceDataJson);
         const { snapshot, blobs } = elementsRawData;
@@ -504,7 +504,7 @@ export class EdgelessClipboardController extends PageClipboard {
     ) => {
       const blockComponent = this.std.view.getBlock(block.id);
       if (!blockComponent) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.EdgelessExportError,
           'Could not find edgeless block component.'
         );

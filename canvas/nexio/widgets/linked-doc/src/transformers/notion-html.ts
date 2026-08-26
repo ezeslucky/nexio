@@ -243,11 +243,11 @@ function buildFolderHierarchy(
 }
 
 /**
- * Imports a Notion zip file into the BlockSuite collection.
+ * Imports a Notion zip file into the Canvas collection.
  *
  * @param options - The options for importing.
- * @param options.collection - The BlockSuite document collection.
- * @param options.schema - The schema of the BlockSuite document collection.
+ * @param options.collection - The Canvas document collection.
+ * @param options.schema - The schema of the Canvas document collection.
  * @param options.imported - The imported zip file as a Blob.
  *
  * @returns A promise that resolves to an object containing:

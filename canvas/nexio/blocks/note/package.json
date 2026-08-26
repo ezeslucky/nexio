@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-note",
-  "description": "Note block for BlockSuite.",
+  "description": "Note block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

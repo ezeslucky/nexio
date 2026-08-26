@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-paragraph",
-  "description": "Paragraph block for BlockSuite.",
+  "description": "Paragraph block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

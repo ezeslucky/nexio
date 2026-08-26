@@ -21,7 +21,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -81,7 +81,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -141,7 +141,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -201,7 +201,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -261,7 +261,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -321,7 +321,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -381,7 +381,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -441,7 +441,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -501,7 +501,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -561,7 +561,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -621,7 +621,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -681,7 +681,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -741,7 +741,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -801,7 +801,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -861,7 +861,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -921,7 +921,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -981,7 +981,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -1041,7 +1041,7 @@ export default [
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',

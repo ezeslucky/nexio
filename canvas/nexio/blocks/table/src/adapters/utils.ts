@@ -18,7 +18,7 @@ import type { Table as MarkdownTable } from 'mdast';
 type RichTextType = DeltaInsert[];
 const createRichText = (text: RichTextType) => {
   return {
-    '$blocksuite:internal:text$': true,
+    '$canvas:internal:text$': true,
     delta: text,
   };
 };

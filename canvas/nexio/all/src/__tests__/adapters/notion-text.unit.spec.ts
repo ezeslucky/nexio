@@ -36,7 +36,7 @@ describe('notion-text to snapshot', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aaa ',
@@ -133,7 +133,7 @@ describe('notion-text to snapshot', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'a ',

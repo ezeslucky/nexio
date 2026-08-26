@@ -1,6 +1,6 @@
 {
   "name": "@canvas/integration-test",
-  "description": "Integration test for BlockSuite",
+  "description": "Integration test for Canvas",
   "type": "module",
   "scripts": {
     "dev": "vite",

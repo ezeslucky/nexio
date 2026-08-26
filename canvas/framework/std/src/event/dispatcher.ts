@@ -1,5 +1,5 @@
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { signal } from '@preact/signals-core';
 
 import { LifeCycleWatcher } from '../extension/index.js';
@@ -293,7 +293,7 @@ export class UIEventDispatcher extends LifeCycleWatcher {
         break;
       }
       default: {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.EventDispatcherError,
           `Unknown event scope source: ${state.sourceType}`
         );

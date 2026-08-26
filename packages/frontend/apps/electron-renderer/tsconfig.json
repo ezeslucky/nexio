@@ -8,7 +8,7 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../../../blocksuite/nexio/all" },
+    { "path": "../../../../canvas/nexio/all" },
     { "path": "../../../common/infra" },
     { "path": "../../component" },
     { "path": "../../core" },

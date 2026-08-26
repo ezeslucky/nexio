@@ -312,7 +312,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
           ${this.model.props.type$.value.startsWith('h') &&
           collapsedSiblings.length > 0
             ? html`
-                <blocksuite-toggle-button
+                <canvas-toggle-button
                   .collapsed=${collapsed}
                   .updateCollapsed=${(value: boolean) => {
                     if (this.store.readonly) {
@@ -331,7 +331,7 @@ export class ParagraphBlockComponent extends CaptionedBlockComponent<ParagraphBl
                       });
                     }
                   }}
-                ></blocksuite-toggle-button>
+                ></canvas-toggle-button>
               `
             : nothing}
           <rich-text

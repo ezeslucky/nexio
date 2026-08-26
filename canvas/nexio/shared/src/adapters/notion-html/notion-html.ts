@@ -1,6 +1,6 @@
 import { DefaultTheme, NoteDisplayMode } from '@canvas/nexio-model';
 import type { ServiceProvider } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type AssetsManager,
   ASTWalker,
@@ -138,7 +138,7 @@ export class NotionHtmlAdapter extends BaseAdapter<NotionHtml> {
   override fromBlockSnapshot(
     _payload: FromBlockSnapshotPayload
   ): Promise<FromBlockSnapshotResult<NotionHtml>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionHtmlAdapter.fromBlockSnapshot is not implemented'
     );
@@ -147,7 +147,7 @@ export class NotionHtmlAdapter extends BaseAdapter<NotionHtml> {
   override fromDocSnapshot(
     _payload: FromDocSnapshotPayload
   ): Promise<FromDocSnapshotResult<NotionHtml>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionHtmlAdapter.fromDocSnapshot is not implemented'
     );
@@ -156,7 +156,7 @@ export class NotionHtmlAdapter extends BaseAdapter<NotionHtml> {
   override fromSliceSnapshot(
     _payload: FromSliceSnapshotPayload
   ): Promise<FromSliceSnapshotResult<NotionHtml>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionHtmlAdapter.fromSliceSnapshot is not implemented'
     );
@@ -224,7 +224,7 @@ export class NotionHtmlAdapter extends BaseAdapter<NotionHtml> {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: this.deltaConverter.astToDelta(
               titleAst ?? {
                 type: 'text',

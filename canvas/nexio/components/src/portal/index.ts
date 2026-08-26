@@ -5,5 +5,5 @@ export type * from './types.js';
 import { Portal } from './portal.js';
 
 export function effects() {
-  customElements.define('blocksuite-portal', Portal);
+  customElements.define('canvas-portal', Portal);
 }

@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-data-view",
-  "description": "Data view block for BlockSuite.",
+  "description": "Data view block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

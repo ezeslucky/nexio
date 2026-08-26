@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
 import type { GroupBy, GroupProperty } from '../../core/common/types.js';
 import type { FilterGroup } from '../../core/filter/types.js';
@@ -55,7 +55,7 @@ export const kanbanViewModel = kanbanViewType.createModel<KanbanViewData>({
     };
     const columnId = allowList.sort((a, b) => getWeight(b) - getWeight(a))[0];
     if (!columnId) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DatabaseBlockError,
         'no groupable column found'
       );
@@ -64,7 +64,7 @@ export const kanbanViewModel = kanbanViewType.createModel<KanbanViewData>({
     const meta = type && viewManager.dataSource.propertyMetaGet(type);
     const data = viewManager.dataSource.propertyDataGet(columnId);
     if (!columnId || !meta || !data) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DatabaseBlockError,
         'not implement yet'
       );

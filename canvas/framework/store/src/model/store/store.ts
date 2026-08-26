@@ -1,6 +1,6 @@
 import { Container, type ServiceProvider } from '@canvas/global/di';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { computed, signal } from '@preact/signals-core';
 import { Subject } from 'rxjs';
 import * as Y from 'yjs';
@@ -184,7 +184,7 @@ export type StoreSlots = {
 const internalExtensions = [StoreSelectionExtension, HistoryExtension];
 
 /**
- * Core store class that manages blocks and their lifecycle in BlockSuite
+ * Core store class that manages blocks and their lifecycle in Canvas
  * @remarks
  * The Store class is responsible for managing the lifecycle of blocks, handling transactions,
  * and maintaining the block tree structure.
@@ -736,7 +736,7 @@ export class Store {
    * @param parent - Optional parent block or parent block ID
    * @param parentIndex - Optional index position in parent's children
    * @returns The ID of the newly created block
-   * @throws {BlockSuiteError} When store is in readonly mode
+   * @throws {CanvasError} When store is in readonly mode
    *
    * @category Block CRUD
    */
@@ -747,7 +747,7 @@ export class Store {
     parentIndex?: number
   ): string {
     if (this.readonly) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ModelCRUDError,
         'cannot modify data in readonly mode'
       );
@@ -850,7 +850,7 @@ export class Store {
    * Updates a block's properties or executes a callback in a transaction
    * @param modelOrId - The block model or block ID to update
    * @param callBackOrProps - Either a callback function to execute or properties to update
-   * @throws {BlockSuiteError} When the block is not found or schema validation fails
+   * @throws {CanvasError} When the block is not found or schema validation fails
    *
    * @category Block CRUD
    */
@@ -873,7 +873,7 @@ export class Store {
         ? this.getBlock(modelOrId)?.model
         : modelOrId;
     if (!model) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ModelCRUDError,
         `updating block: ${modelOrId} not found`
       );
@@ -890,7 +890,7 @@ export class Store {
 
     const yBlock = this._yBlocks.get(model.id);
     if (!yBlock) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ModelCRUDError,
         `updating block: ${model.id} not found`
       );
@@ -915,7 +915,7 @@ export class Store {
 
       const schema = this.schema.flavourSchemaMap.get(model.flavour);
       if (!schema) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.ModelCRUDError,
           `schema for flavour: ${model.flavour} not found`
         );

@@ -17,7 +17,7 @@
     { "path": "../../common/error" },
     { "path": "../../common/graphql" },
     { "path": "../i18n" },
-    { "path": "../../../blocksuite/nexio/all" },
+    { "path": "../../../canvas/nexio/all" },
     { "path": "../../../tools/utils" }
   ],
   "paths": {

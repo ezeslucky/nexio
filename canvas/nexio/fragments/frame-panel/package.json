@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-fragment-frame-panel",
-  "description": "Frame panel fragment for BlockSuite.",
+  "description": "Frame panel fragment for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

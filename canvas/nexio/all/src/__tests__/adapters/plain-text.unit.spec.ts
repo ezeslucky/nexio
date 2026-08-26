@@ -23,7 +23,7 @@ describe('snapshot to plain text', () => {
       flavour: 'nexio:page',
       props: {
         title: {
-          '$blocksuite:internal:text$': true,
+          '$canvas:internal:text$': true,
           delta: [],
         },
       },
@@ -56,7 +56,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aaa',
@@ -84,7 +84,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ddd',
@@ -104,7 +104,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'eee',
@@ -124,7 +124,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'fff',
@@ -143,7 +143,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ggg',
@@ -174,7 +174,7 @@ describe('snapshot to plain text', () => {
       version: 2,
       props: {
         title: {
-          '$blocksuite:internal:text$': true,
+          '$canvas:internal:text$': true,
           delta: [],
         },
       },
@@ -218,7 +218,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'numbered',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aaa',
@@ -237,7 +237,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'numbered',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'bbb',
@@ -257,7 +257,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'bulleted',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -277,7 +277,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'numbered',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ddd',
@@ -299,7 +299,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'numbered',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'eee',
@@ -332,7 +332,7 @@ describe('snapshot to plain text', () => {
       flavour: 'nexio:page',
       props: {
         title: {
-          '$blocksuite:internal:text$': true,
+          '$canvas:internal:text$': true,
           delta: [],
         },
       },
@@ -365,7 +365,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aaa',
@@ -402,7 +402,7 @@ describe('snapshot to plain text', () => {
       flavour: 'nexio:page',
       props: {
         title: {
-          '$blocksuite:internal:text$': true,
+          '$canvas:internal:text$': true,
           delta: [],
         },
       },
@@ -435,7 +435,7 @@ describe('snapshot to plain text', () => {
               props: {
                 language: 'python',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'import this',
@@ -465,7 +465,7 @@ describe('snapshot to plain text', () => {
       flavour: 'nexio:page',
       props: {
         title: {
-          '$blocksuite:internal:text$': true,
+          '$canvas:internal:text$': true,
           delta: [],
         },
       },
@@ -498,7 +498,7 @@ describe('snapshot to plain text', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aaa',
@@ -517,7 +517,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: '',
@@ -547,7 +547,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: ' ',
@@ -634,7 +634,7 @@ describe('snapshot to plain text', () => {
           flavour: 'nexio:page',
           props: {
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [],
             },
           },
@@ -691,7 +691,7 @@ describe('snapshot to plain text', () => {
         version: 2,
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Test Doc',
@@ -784,7 +784,7 @@ describe('snapshot to plain text', () => {
           version: 2,
           props: {
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Deepest Doc',
@@ -832,7 +832,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [],
                     },
                   },
@@ -846,7 +846,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'Hello, This is deepest doc.',
@@ -877,7 +877,7 @@ describe('snapshot to plain text', () => {
           version: 2,
           props: {
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Synced Doc',
@@ -925,7 +925,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'h1',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'Heading 1',
@@ -943,7 +943,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'h2',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'heading 2',
@@ -961,7 +961,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'paragraph',
@@ -979,7 +979,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'strike',
@@ -999,7 +999,7 @@ describe('snapshot to plain text', () => {
                   version: 1,
                   props: {
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'Hello world!',
@@ -1050,7 +1050,7 @@ describe('snapshot to plain text', () => {
           version: 2,
           props: {
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Test Doc',
@@ -1098,7 +1098,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'Hello',
@@ -1130,7 +1130,7 @@ describe('snapshot to plain text', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'World!',
@@ -1226,7 +1226,7 @@ describe('snapshot to plain text', () => {
             'block:O8dpIDiP7-': {
               columnId: 'block:O8dpIDiP7-',
               value: {
-                '$blocksuite:internal:text$': true,
+                '$canvas:internal:text$': true,
                 delta: [
                   {
                     insert: 'test2',
@@ -1254,7 +1254,7 @@ describe('snapshot to plain text', () => {
             'block:O8dpIDiP7-': {
               columnId: 'block:O8dpIDiP7-',
               value: {
-                '$blocksuite:internal:text$': true,
+                '$canvas:internal:text$': true,
                 delta: [
                   {
                     insert: 'test1',
@@ -1377,7 +1377,7 @@ describe('snapshot to plain text', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Task 1',
@@ -1394,7 +1394,7 @@ describe('snapshot to plain text', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Task 2',

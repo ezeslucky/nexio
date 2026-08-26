@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { BaseTextAttributes } from '@canvas/store';
 import { html, render } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
@@ -19,7 +19,7 @@ export class RenderService<TextAttributes extends BaseTextAttributes> {
     const yText = this.editor.yText;
 
     if (yText.toString().includes('\r')) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'yText must not contain "\\r" because it will break the range synchronization'
       );

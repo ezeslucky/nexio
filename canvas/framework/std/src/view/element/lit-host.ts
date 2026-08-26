@@ -1,5 +1,5 @@
 import {
-  BlockSuiteError,
+  CanvasError,
   ErrorCode,
   handleError,
 } from '@canvas/global/exceptions';
@@ -128,7 +128,7 @@ export class EditorHost extends SignalWatcher(
     super.connectedCallback();
 
     if (!this.store.root) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.NoRootModelError,
         'This doc is missing root block. Please initialize the default block structure before connecting the editor to DOM.'
       );

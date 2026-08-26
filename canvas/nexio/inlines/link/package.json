@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-link",
-  "description": "Inline link for BlockSuite.",
+  "description": "Inline link for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -49,7 +49,7 @@ export const codeBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
               language: codeLang ?? 'Plain Text',
               wrap,
               text: {
-                '$blocksuite:internal:text$': true,
+                '$canvas:internal:text$': true,
                 delta: deltaConverter.astToDelta(codeText, {
                   trim: false,
                   pre: true,

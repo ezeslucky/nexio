@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-callout",
-  "description": "Callout block for BlockSuite.",
+  "description": "Callout block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

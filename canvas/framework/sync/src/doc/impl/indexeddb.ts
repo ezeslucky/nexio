@@ -16,14 +16,14 @@ type DocCollectionPersist = {
   updates: UpdateMessage[];
 };
 
-interface BlockSuiteBinaryDB extends DBSchema {
+interface CanvasBinaryDB extends DBSchema {
   collection: {
     key: string;
     value: DocCollectionPersist;
   };
 }
 
-export function upgradeDB(db: IDBPDatabase<BlockSuiteBinaryDB>) {
+export function upgradeDB(db: IDBPDatabase<CanvasBinaryDB>) {
   db.createObjectStore('collection', { keyPath: 'id' });
 }
 
@@ -36,7 +36,7 @@ export class IndexedDBDocSource implements DocSource {
   // indexeddb could be shared between tabs, so we use broadcast channel to notify other tabs
   channel = new BroadcastChannel('indexeddb:' + this.dbName);
 
-  dbPromise: Promise<IDBPDatabase<BlockSuiteBinaryDB>> | null = null;
+  dbPromise: Promise<IDBPDatabase<CanvasBinaryDB>> | null = null;
 
   mergeCount = 1;
 
@@ -46,7 +46,7 @@ export class IndexedDBDocSource implements DocSource {
 
   getDb() {
     if (this.dbPromise === null) {
-      this.dbPromise = openDB<BlockSuiteBinaryDB>(this.dbName, dbVersion, {
+      this.dbPromise = openDB<CanvasBinaryDB>(this.dbName, dbVersion, {
         upgrade: upgradeDB,
       });
     }

@@ -21,7 +21,7 @@ import {
   parseDocToMarkdownFromDocSnapshot,
   parsePageDoc,
   parseWorkspaceDoc,
-} from '../utils/blocksuite';
+} from '../utils/canvas';
 import { PgWorkspaceDocStorageAdapter } from './adapters/workspace';
 import { type DocDiff, type DocRecord } from './storage';
 

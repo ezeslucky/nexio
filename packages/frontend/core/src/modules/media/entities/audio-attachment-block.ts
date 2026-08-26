@@ -23,7 +23,7 @@ import type { TranscriptionResult } from './types';
 
 const logger = new DebugLogger('audio-attachment-block');
 
-// BlockSuiteError: yText must not contain "\r" because it will break the range synchronization
+// CanvasError: yText must not contain "\r" because it will break the range synchronization
 function sanitizeText(text: string) {
   return text.replace(/\r/g, '');
 }

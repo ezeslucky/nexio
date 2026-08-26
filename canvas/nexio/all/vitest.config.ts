@@ -13,7 +13,7 @@ export default defineConfig({
     coverage: {
       provider: 'istanbul', // or 'c8'
       reporter: ['lcov'],
-      reportsDirectory: '../../../.coverage/blocksuite-nexio',
+      reportsDirectory: '../../../.coverage/canvas-nexio',
     },
     /**
      * Custom handler for console.log in tests.

@@ -336,7 +336,7 @@ export class MarkdownAdapter extends BaseAdapter<Markdown> {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Untitled',

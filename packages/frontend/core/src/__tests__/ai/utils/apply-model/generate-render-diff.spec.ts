@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { generateRenderDiff } from '../../../../blocksuite/ai/utils/apply-model/generate-render-diff';
+import { generateRenderDiff } from '../../../../canvas/ai/utils/apply-model/generate-render-diff';
 
 describe('generateRenderDiff', () => {
   test('should handle block insertion', () => {

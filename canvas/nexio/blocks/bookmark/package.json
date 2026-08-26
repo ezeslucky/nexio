@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-bookmark",
-  "description": "Bookmark block for BlockSuite.",
+  "description": "Bookmark block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

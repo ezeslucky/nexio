@@ -9,7 +9,7 @@ import {
   isInsidePageEditor,
   matchModels,
 } from '@canvas/nexio-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { IBound } from '@canvas/global/gfx';
 import { deserializeXYWH } from '@canvas/global/gfx';
 import {
@@ -109,7 +109,7 @@ export class ExportManager {
       location.pathname !== pathName ||
       isInsidePageEditor(this.editorHost) !== editorMode
     ) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.EdgelessExportError,
         'Unable to export content to canvas'
       );

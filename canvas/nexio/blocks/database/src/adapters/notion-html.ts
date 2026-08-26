@@ -20,7 +20,7 @@ const ColumnClassMap: Record<string, string> = {
 const NotionDatabaseToken = '.collection-content';
 const NotionDatabaseTitleToken = '.collection-title';
 
-type BlocksuiteTableColumn = {
+type CanvasTableColumn = {
   type: string;
   name: string;
   data: {
@@ -33,7 +33,7 @@ type BlocksuiteTableColumn = {
   id: string;
 };
 
-type BlocksuiteTableRow = Record<
+type CanvasTableRow = Record<
   string,
   {
     columnId: string;
@@ -63,7 +63,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
             const columnType = Array.isArray(columnTypeClass)
               ? (ColumnClassMap[columnTypeClass[0] ?? ''] ?? 'rich-text')
               : 'rich-text';
-            walkerContext.pushGlobalContextStack<BlocksuiteTableColumn>(
+            walkerContext.pushGlobalContextStack<CanvasTableColumn>(
               'hast:table:column',
               {
                 type: columnType,
@@ -84,7 +84,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
               o.parent.node.tagName === 'tbody'
             ) {
               const columns =
-                walkerContext.getGlobalContextStack<BlocksuiteTableColumn>(
+                walkerContext.getGlobalContextStack<CanvasTableColumn>(
                   'hast:table:column'
                 );
               const row = Object.create(null);
@@ -107,7 +107,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                         flavour: 'nexio:paragraph',
                         props: {
                           text: {
-                            '$blocksuite:internal:text$': true,
+                            '$canvas:internal:text$': true,
                             delta: deltaConverter.astToDelta(child),
                           },
                           type: 'text',
@@ -124,7 +124,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                       flavour: 'nexio:paragraph',
                       props: {
                         text: {
-                          '$blocksuite:internal:text$': true,
+                          '$canvas:internal:text$': true,
                           delta: deltaConverter.astToDelta(child),
                         },
                         type: 'text',
@@ -149,7 +149,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                       flavour: 'nexio:paragraph',
                       props: {
                         text: {
-                          '$blocksuite:internal:text$': true,
+                          '$canvas:internal:text$': true,
                           delta: deltaConverter.astToDelta(child, { pageMap }),
                         },
                         type: 'text',
@@ -257,7 +257,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
         switch (o.node.tagName) {
           case 'table': {
             const columns =
-              walkerContext.getGlobalContextStack<BlocksuiteTableColumn>(
+              walkerContext.getGlobalContextStack<CanvasTableColumn>(
                 'hast:table:column'
               );
             walkerContext.setGlobalContextStack('hast:table:column', []);
@@ -267,7 +267,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
             walkerContext.setGlobalContextStack('hast:table:children', []);
             const cells = Object.create(null);
             walkerContext
-              .getGlobalContextStack<BlocksuiteTableRow>('hast:table:rows')
+              .getGlobalContextStack<CanvasTableRow>('hast:table:rows')
               .forEach((row, i) => {
                 Object.keys(row).forEach(columnId => {
                   const cell = row[columnId];
@@ -319,7 +319,7 @@ export const databaseBlockNotionHtmlAdapterMatcher: BlockNotionHtmlAdapterMatche
                     },
                   ],
                   title: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: databaseTitle
                       ? [
                           {

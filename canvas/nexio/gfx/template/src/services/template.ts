@@ -4,7 +4,7 @@ import {
   type SurfaceBlockTransformer,
 } from '@canvas/nexio-block-surface';
 import type { ConnectorElementModel } from '@canvas/nexio-model';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { Bound, getCommonBound } from '@canvas/global/gfx';
 import { assertType } from '@canvas/global/utils';
 import type { BlockStdScope } from '@canvas/std';
@@ -388,8 +388,8 @@ export function createTemplateJob(
 ) {
   const surface = getSurfaceBlock(std.store);
   if (!surface) {
-    throw new BlockSuiteError(
-      BlockSuiteError.ErrorCode.NoSurfaceModelError,
+    throw new CanvasError(
+      CanvasError.ErrorCode.NoSurfaceModelError,
       'This doc is missing surface block in edgeless.'
     );
   }

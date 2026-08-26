@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-embed-doc",
-  "description": "Embed doc blocks for BlockSuite.",
+  "description": "Embed doc blocks for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

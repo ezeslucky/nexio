@@ -7,7 +7,7 @@ export const DndApiExtensionIdentifier = createIdentifier<DNDAPIExtension>(
 );
 
 export class DNDAPIExtension extends Extension {
-  mimeType = 'application/x-blocksuite-dnd';
+  mimeType = 'application/x-canvas-dnd';
 
   constructor(readonly std: BlockStdScope) {
     super();

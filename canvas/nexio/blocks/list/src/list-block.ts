@@ -176,7 +176,7 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
         >
           ${this.model.children.length > 0
             ? html`
-                <blocksuite-toggle-button
+                <canvas-toggle-button
                   .collapsed=${collapsed}
                   .updateCollapsed=${(value: boolean) => {
                     if (this.store.readonly) {
@@ -188,7 +188,7 @@ export class ListBlockComponent extends CaptionedBlockComponent<ListBlockModel> 
                       });
                     }
                   }}
-                ></blocksuite-toggle-button>
+                ></canvas-toggle-button>
               `
             : nothing}
           ${listIcon}

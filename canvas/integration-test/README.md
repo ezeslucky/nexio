@@ -1,13 +1,13 @@
 # `@canvas/integration-test`
 
-Integration test for BlockSuite.
+Integration test for Canvas.
 
 ## Running Tests
 
 You can run all integration tests using:
 
 ```bash
-cd blocksuite/integration-test
+cd canvas/integration-test
 yarn test:unit
 ```
 

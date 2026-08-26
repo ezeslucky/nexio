@@ -36,14 +36,14 @@ export type DragEntity = { type: string };
 
 export type DragFrom = { at: string };
 
-export type DragFromBlockSuite = {
+export type DragFromCanvas = {
   at: 'canvas-editor';
   docId: string;
 };
 
 export type DragPayload<
   E extends DragEntity = DragEntity,
-  F extends DragFrom = DragFromBlockSuite,
+  F extends DragFrom = DragFromCanvas,
 > = {
   bsEntity?: E;
   from?: F;
@@ -219,7 +219,7 @@ export class DndController extends LifeCycleWatcher {
   >(
     args: DraggableOption<
       PayloadEntity,
-      DragFromBlockSuite,
+      DragFromCanvas,
       DropPayload<DropData>
     >
   ) {
@@ -305,7 +305,7 @@ export class DndController extends LifeCycleWatcher {
         return {
           bsEntity,
           from: {
-            at: 'blocksuite-editor',
+            at: 'canvas-editor',
             docId: this.std.store.doc.id,
           },
         };
@@ -324,7 +324,7 @@ export class DndController extends LifeCycleWatcher {
   dropTarget<
     PayloadEntity extends DragEntity = DragEntity,
     DropData extends {} = {},
-    PayloadFrom extends DragFrom = DragFromBlockSuite,
+    PayloadFrom extends DragFrom = DragFromCanvas,
   >(args: DropTargetOption<PayloadEntity, PayloadFrom, DropPayload<DropData>>) {
     const {
       element,
@@ -359,14 +359,14 @@ export class DndController extends LifeCycleWatcher {
   monitor<
     PayloadEntity extends DragEntity = DragEntity,
     DropData extends {} = {},
-    PayloadFrom extends DragFrom = DragFromBlockSuite,
+    PayloadFrom extends DragFrom = DragFromCanvas,
   >(args: MonitorOption<PayloadEntity, PayloadFrom, DropPayload<DropData>>) {
     return monitorForElements(args as OriginalMonitorOption);
   }
 
   autoScroll<
     PayloadEntity extends DragEntity = DragEntity,
-    PayloadFrom extends DragFrom = DragFromBlockSuite,
+    PayloadFrom extends DragFrom = DragFromCanvas,
   >(options: AutoScroll<PayloadEntity, PayloadFrom>) {
     return autoScrollForElements(options as OriginalAutoScrollOption);
   }

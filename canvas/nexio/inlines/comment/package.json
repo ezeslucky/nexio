@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-comment",
-  "description": "Inline comment for BlockSuite.",
+  "description": "Inline comment for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

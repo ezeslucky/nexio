@@ -1,5 +1,5 @@
 import { AttachmentBlockSchema } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -34,7 +34,7 @@ export class AttachmentAdapter extends BaseAdapter<Attachment> {
   override fromBlockSnapshot(
     _payload: FromBlockSnapshotPayload
   ): Promise<FromBlockSnapshotResult<Attachment>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'AttachmentAdapter.fromBlockSnapshot is not implemented.'
     );
@@ -43,7 +43,7 @@ export class AttachmentAdapter extends BaseAdapter<Attachment> {
   override fromDocSnapshot(
     _payload: FromDocSnapshotPayload
   ): Promise<FromDocSnapshotResult<Attachment>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'AttachmentAdapter.fromDocSnapshot is not implemented.'
     );
@@ -73,7 +73,7 @@ export class AttachmentAdapter extends BaseAdapter<Attachment> {
   override toBlockSnapshot(
     _payload: ToBlockSnapshotPayload<Attachment>
   ): Promise<BlockSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'AttachmentAdapter.toBlockSnapshot is not implemented.'
     );
@@ -82,7 +82,7 @@ export class AttachmentAdapter extends BaseAdapter<Attachment> {
   override toDocSnapshot(
     _payload: ToDocSnapshotPayload<Attachment>
   ): Promise<DocSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'AttachmentAdapter.toDocSnapshot is not implemented.'
     );

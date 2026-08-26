@@ -7,12 +7,12 @@
   },
   "include": ["./src", "src/**/*.json"],
   "references": [
-    { "path": "../../../blocksuite/framework/global" },
-    { "path": "../../../blocksuite/nexio/all" },
-    { "path": "../../../blocksuite/nexio/blocks/root" },
-    { "path": "../../../blocksuite/nexio/components" },
-    { "path": "../../../blocksuite/nexio/shared" },
-    { "path": "../../../blocksuite/framework/std" },
+    { "path": "../../../canvas/framework/global" },
+    { "path": "../../../canvas/nexio/all" },
+    { "path": "../../../canvas/nexio/blocks/root" },
+    { "path": "../../../canvas/nexio/components" },
+    { "path": "../../../canvas/nexio/shared" },
+    { "path": "../../../canvas/framework/std" },
     { "path": "../../common/infra" },
     { "path": "../component" },
     { "path": "../../common/debug" },
@@ -24,6 +24,6 @@
     { "path": "../../common/nbstore" },
     { "path": "../../common/reader" },
     { "path": "../track" },
-    { "path": "../../../blocksuite/nexio/ext-loader" }
+    { "path": "../../../canvas/nexio/ext-loader" }
   ]
 }

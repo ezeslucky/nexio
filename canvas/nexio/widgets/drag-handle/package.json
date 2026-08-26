@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-widget-drag-handle",
-  "description": "Drag handle for BlockSuite.",
+  "description": "Drag handle for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

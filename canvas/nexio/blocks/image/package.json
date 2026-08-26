@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-image",
-  "description": "Image block for BlockSuite.",
+  "description": "Image block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

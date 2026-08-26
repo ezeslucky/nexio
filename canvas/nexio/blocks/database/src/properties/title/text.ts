@@ -107,7 +107,7 @@ export class HeaderAreaTextCell extends BaseCellRenderer<Text, string> {
         };
         const snapshot = this.std?.clipboard?.readFromClipboard(
           e.clipboardData
-        )['BLOCKSUITE/SNAPSHOT'];
+        )['CANVAS/SNAPSHOT'];
         const deltas = (
           JSON.parse(snapshot).snapshot.content as BlockSnapshot[]
         ).flatMap(getDeltas);

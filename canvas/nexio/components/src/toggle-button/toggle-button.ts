@@ -6,7 +6,7 @@ import { css, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { html } from 'lit-html';
 
-export const TOGGLE_BUTTON_PARENT_CLASS = 'blocksuite-toggle-button-parent';
+export const TOGGLE_BUTTON_PARENT_CLASS = 'canvas-toggle-button-parent';
 
 export class ToggleButton extends WithDisposable(ShadowlessElement) {
   static override styles = css`
@@ -92,6 +92,6 @@ export class ToggleButton extends WithDisposable(ShadowlessElement) {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'blocksuite-toggle-button': ToggleButton;
+    'canvas-toggle-button': ToggleButton;
   }
 }

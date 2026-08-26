@@ -174,7 +174,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: line,
@@ -204,7 +204,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Untitled',
@@ -241,7 +241,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
                 props: {
                   type: 'text',
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: line,
@@ -314,7 +314,7 @@ export class MixTextAdapter extends BaseAdapter<MixText> {
                 props: {
                   ...o.node.props,
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta,
                   },
                 },

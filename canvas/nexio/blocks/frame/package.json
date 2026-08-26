@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-frame",
-  "description": "Frame block for BlockSuite.",
+  "description": "Frame block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

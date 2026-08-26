@@ -12,7 +12,7 @@ import { property } from 'lit/decorators.js';
  * ```ts
  * render() {
  *   return html`${showPortal
- *     ? html`<blocksuite-portal .template=${portalTemplate}></blocksuite-portal>`
+ *     ? html`<canvas-portal .template=${portalTemplate}></canvas-portal>`
  *     : null}`;
  * };
  * ```
@@ -28,7 +28,7 @@ export class Portal extends LitElement {
           ...(typeof this.shadowDom !== 'boolean' ? this.shadowDom : {}),
         })
       : portalRoot;
-    portalRoot.classList.add('blocksuite-portal');
+    portalRoot.classList.add('canvas-portal');
     this.container.append(portalRoot);
     this._portalRoot = portalRoot;
     return renderRoot;
@@ -55,6 +55,6 @@ export class Portal extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'blocksuite-portal': Portal;
+    'canvas-portal': Portal;
   }
 }

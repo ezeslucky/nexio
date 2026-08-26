@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type * as Y from 'yjs';
 
 import { VElement } from '../components/v-element.js';
@@ -304,14 +304,14 @@ export function inlineRangeToDomRange(
   if (isInEmbedElement(startText)) {
     const anchorVElement = startText.parentElement?.closest('v-element');
     if (!anchorVElement) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'failed to find vElement for a text note in an embed element'
       );
     }
     const nextSibling = anchorVElement.nextElementSibling;
     if (!nextSibling) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'failed to find nextSibling sibling of an embed element'
       );
@@ -319,7 +319,7 @@ export function inlineRangeToDomRange(
 
     const texts = getTextNodesFromElement(nextSibling);
     if (texts.length === 0) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'text node in v-text not found'
       );
@@ -336,14 +336,14 @@ export function inlineRangeToDomRange(
   if (isInEmbedElement(endText)) {
     const focusVElement = endText.parentElement?.closest('v-element');
     if (!focusVElement) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'failed to find vElement for a text note in an embed element'
       );
     }
     const nextSibling = focusVElement.nextElementSibling;
     if (!nextSibling) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'failed to find nextSibling sibling of an embed element'
       );
@@ -351,7 +351,7 @@ export function inlineRangeToDomRange(
 
     const texts = getTextNodesFromElement(nextSibling);
     if (texts.length === 0) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.InlineEditorError,
         'text node in v-text not found'
       );

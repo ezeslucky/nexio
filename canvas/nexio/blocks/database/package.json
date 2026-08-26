@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-database",
-  "description": "Database block for BlockSuite.",
+  "description": "Database block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

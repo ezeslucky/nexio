@@ -8,7 +8,7 @@ import {
   type LocalConnectorElementModel,
 } from '@canvas/nexio-model';
 import { ThemeProvider } from '@canvas/nexio-shared/services';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import type { IBound, IVec, IVec3 } from '@canvas/global/gfx';
 import {
   almostEqual,
@@ -566,8 +566,8 @@ function getConnectablePoints(
     );
   });
   if (!startEnds[0] || !startEnds[1]) {
-    throw new BlockSuiteError(
-      BlockSuiteError.ErrorCode.ValueNotExists,
+    throw new CanvasError(
+      CanvasError.ErrorCode.ValueNotExists,
       'Failed to get start and end points when getting connectable points'
     );
   }
@@ -714,8 +714,8 @@ function getNextPoint(
           [bound.maxX + 10, result[1]]
         );
         if (!intersects) {
-          throw new BlockSuiteError(
-            BlockSuiteError.ErrorCode.ValueNotExists,
+          throw new CanvasError(
+            CanvasError.ErrorCode.ValueNotExists,
             'Failed to get line intersections for getNextPoint'
           );
         }
@@ -728,8 +728,8 @@ function getNextPoint(
           [bound.x - 10, result[1]]
         );
         if (!intersects) {
-          throw new BlockSuiteError(
-            BlockSuiteError.ErrorCode.ValueNotExists,
+          throw new CanvasError(
+            CanvasError.ErrorCode.ValueNotExists,
             'Failed to get line intersections for getNextPoint'
           );
         }
@@ -744,8 +744,8 @@ function getNextPoint(
           [result[0], bound.maxY + 10]
         );
         if (!intersects) {
-          throw new BlockSuiteError(
-            BlockSuiteError.ErrorCode.ValueNotExists,
+          throw new CanvasError(
+            CanvasError.ErrorCode.ValueNotExists,
             'Failed to get line intersections for getNextPoint'
           );
         }
@@ -758,8 +758,8 @@ function getNextPoint(
           [result[0], bound.y - 10]
         );
         if (!intersects) {
-          throw new BlockSuiteError(
-            BlockSuiteError.ErrorCode.ValueNotExists,
+          throw new CanvasError(
+            CanvasError.ErrorCode.ValueNotExists,
             'Failed to get line intersections for getNextPoint'
           );
         }

@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-turbo-renderer",
-  "description": "Turbo renderer for viewport in BlockSuite.",
+  "description": "Turbo renderer for viewport in Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

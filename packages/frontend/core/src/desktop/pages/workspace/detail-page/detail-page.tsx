@@ -11,7 +11,7 @@ import { CommentSidebar } from '@nexio/core/components/comment/sidebar';
 import { useGuard } from '@nexio/core/components/guard';
 import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
-import { useRegisterBlocksuiteEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-blocksuite-editor-commands';
+import { useRegisterBlocksuiteEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-canvas-editor-commands';
 import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
 import { WorkspacePropertySidebar } from '@nexio/core/components/properties/sidebar';

@@ -62,9 +62,9 @@ export const config = (): BuildOptions => {
 
         const { path, ...rest } = args;
 
-        // mark all blocksuite packages as side-effect free
+        // mark all canvas packages as side-effect free
         // because they will include a lot of files that are not used in node_modules
-        if (rest.resolveDir.includes('blocksuite')) {
+        if (rest.resolveDir.includes('canvas')) {
           rest.pluginData = true; // Avoid infinite recursion
           const result = await build.resolve(path, rest);
 

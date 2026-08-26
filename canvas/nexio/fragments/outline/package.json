@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-fragment-outline",
-  "description": "Outline fragment for BlockSuite.",
+  "description": "Outline fragment for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

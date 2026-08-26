@@ -1,6 +1,6 @@
 {
   "name": "@canvas/std",
-  "description": "Std for blocksuite blocks",
+  "description": "Std for Canvas blocks",
   "type": "module",
   "scripts": {
     "build": "tsc"

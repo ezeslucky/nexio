@@ -52,18 +52,18 @@ export const TurboRendererConfigFactory =
  *
  * To add Turbo Rendering support for a new block type (e.g., 'nexio:my-block'):
  *
- * 1.  **In the block's package (e.g., `blocksuite/nexio/blocks/my-block`):**
+ * 1.  **In the block's package (e.g., `canvas/nexio/blocks/my-block`):**
  *   a.  Add `@canvas/nexio/gfx/turbo-renderer` as a dependency in `package.json` and create a `src/turbo` directory.
- *   b.  Implement the Layout Handler (e.g., `MyBlockLayoutHandlerExtension`) and Painter Worker (e.g., `MyBlockLayoutPainterExtension`). Refer to `ParagraphLayoutHandlerExtension` and `ParagraphLayoutPainterExtension` in `blocksuite/nexio/blocks/block-paragraph` for implementation examples.
+ *   b.  Implement the Layout Handler (e.g., `MyBlockLayoutHandlerExtension`) and Painter Worker (e.g., `MyBlockLayoutPainterExtension`). Refer to `ParagraphLayoutHandlerExtension` and `ParagraphLayoutPainterExtension` in `canvas/nexio/blocks/block-paragraph` for implementation examples.
  *   c.  Export the Layout Handler and Painter Worker extensions from the block package's main `src/index.ts` by adding these two explicit export statements:
  *       ```typescript
  *       export * from './turbo/my-block-layout-handler';
  *       export * from './turbo/my-block-painter.worker';
  *       ```
  *   d.  Add an export mapping for the painter worker in `package.json` under the `exports` field (e.g., `"./turbo-painter": "./src/turbo/my-block-painter.worker.ts"`).
- *   e.  Add a TypeScript project reference to `blocksuite/nexio/gfx/turbo-renderer` in `tsconfig.json`.
+ *   e.  Add a TypeScript project reference to `canvas/nexio/gfx/turbo-renderer` in `tsconfig.json`.
  *
- * 2.  **In the application integration point (e.g., `packages/frontend/core/src/blocksuite/extensions` and `blocksuite/integration-test/src/__tests__/utils/renderer-entry.ts`):**
+ * 2.  **In the application integration point (e.g., `packages/frontend/core/src/canvas/extensions` and `canvas/integration-test/src/__tests__/utils/renderer-entry.ts`):**
  *   a.  In `turbo-renderer.ts` (or the file setting up `TurboRendererConfigFactory`):
  *     - Import and add the new Layout Handler extension to the `patchTurboRendererExtension` array (or equivalent DI setup). See how `ParagraphLayoutHandlerExtension` is added as a reference.
  *   b.  In `turbo-painter.worker.ts` (the painter worker entry point):
@@ -71,7 +71,7 @@ export const TurboRendererConfigFactory =
  *
  * 3.  **Run `yarn nexio init`** from the workspace root to update generated configuration files (`workspace.gen.ts`) and the lockfile (`yarn.lock`).
  *
- * **Note:** Always ensure the directory structure and export patterns match the `paragraph` block (`blocksuite/nexio/blocks/block-paragraph`) for consistency.
+ * **Note:** Always ensure the directory structure and export patterns match the `paragraph` block (`canvas/nexio/blocks/block-paragraph`) for consistency.
  */
 export class ViewportTurboRendererExtension extends GfxExtension {
   static override key = 'viewportTurboRenderer';

@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 
 // more than 100% due to the shadow
 const leaveToPercent = `calc(100% + 10px)`;
@@ -48,8 +48,8 @@ export function createPopper<T extends keyof HTMLElementTagNameMap>(
   options?.setProps?.(menu);
   clipWrapper.append(menu);
   if (!reference.shadowRoot) {
-    throw new BlockSuiteError(
-      BlockSuiteError.ErrorCode.ValueNotExists,
+    throw new CanvasError(
+      CanvasError.ErrorCode.ValueNotExists,
       'reference must be a shadow root'
     );
   }

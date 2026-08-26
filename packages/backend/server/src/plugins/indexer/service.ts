@@ -6,7 +6,7 @@ import {
   JobQueue,
   SearchProviderNotFound,
 } from '../../base';
-import { readAllBlocksFromDocSnapshot } from '../../core/utils/blocksuite';
+import { readAllBlocksFromDocSnapshot } from '../../core/utils/canvas
 import { Models } from '../../models';
 import { SearchProviderType } from './config';
 import { SearchProviderFactory } from './factory';

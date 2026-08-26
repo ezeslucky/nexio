@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
 import type { VElement, VLine } from '../components/index.js';
 import { INLINE_ROOT_ATTR, ZERO_WIDTH_FOR_EMPTY_LINE } from '../consts.js';
@@ -59,7 +59,7 @@ export function textPointToDomPoint(
   rootElement: HTMLElement
 ): DomPoint | null {
   if (rootElement.dataset.vRoot !== 'true') {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.InlineEditorError,
       'textRangeToDomPoint should be called with editor root element'
     );
@@ -82,7 +82,7 @@ export function textPointToDomPoint(
 
   const textParentElement = text.parentElement;
   if (!textParentElement) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.InlineEditorError,
       'text element parent not found'
     );
@@ -91,7 +91,7 @@ export function textPointToDomPoint(
   const lineElement = textParentElement.closest('v-line');
 
   if (!lineElement) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.InlineEditorError,
       'line element not found'
     );

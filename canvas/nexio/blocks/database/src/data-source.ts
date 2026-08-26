@@ -22,7 +22,7 @@ import {
 } from '@canvas/data-view';
 import { propertyPresets } from '@canvas/data-view/property-presets';
 import { IS_MOBILE } from '@canvas/global/env';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { EditorHost } from '@canvas/std';
 import { type BlockModel } from '@canvas/store';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
@@ -607,7 +607,7 @@ export class DatabaseBlockDataSource extends DataSourceBase {
   viewMetaGet(type: string): ViewMeta {
     const view = databaseBlockViewMap[type];
     if (!view) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DatabaseBlockError,
         `Unknown view type: ${type}`
       );

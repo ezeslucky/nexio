@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type {
   BlockSnapshot,
   DocSnapshot,
@@ -25,7 +25,7 @@ export type FileSnapshot = {
 };
 
 export class ClipboardAdapter extends BaseAdapter<string> {
-  static MIME = 'BLOCKSUITE/SNAPSHOT';
+  static MIME = 'CANVAS/SNAPSHOT';
 
   private readonly _onError = (message: string) => {
     const notification = this.provider.getOptional(NotificationProvider);
@@ -37,7 +37,7 @@ export class ClipboardAdapter extends BaseAdapter<string> {
   override fromBlockSnapshot(
     _payload: FromBlockSnapshotPayload
   ): Promise<FromBlockSnapshotResult<string>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ClipboardAdapter.fromBlockSnapshot is not implemented'
     );
@@ -46,7 +46,7 @@ export class ClipboardAdapter extends BaseAdapter<string> {
   override fromDocSnapshot(
     _payload: FromDocSnapshotPayload
   ): Promise<FromDocSnapshotResult<string>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ClipboardAdapter.fromDocSnapshot is not implemented'
     );
@@ -58,7 +58,7 @@ export class ClipboardAdapter extends BaseAdapter<string> {
     const snapshot = payload.snapshot;
     const assets = payload.assets;
     if (!assets) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'ClipboardAdapter.fromSliceSnapshot: assets is not found'
       );
@@ -80,7 +80,7 @@ export class ClipboardAdapter extends BaseAdapter<string> {
   override toBlockSnapshot(
     _payload: ToBlockSnapshotPayload<string>
   ): Promise<BlockSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ClipboardAdapter.toBlockSnapshot is not implemented'
     );
@@ -89,7 +89,7 @@ export class ClipboardAdapter extends BaseAdapter<string> {
   override toDocSnapshot(
     _payload: ToDocSnapshotPayload<string>
   ): Promise<DocSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ClipboardAdapter.toDocSnapshot is not implemented'
     );

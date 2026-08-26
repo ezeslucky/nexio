@@ -1,7 +1,7 @@
 import { DefaultTool } from '@canvas/nexio-block-surface';
 import type { GroupElementModel } from '@canvas/nexio-model';
 import type { RichText } from '@canvas/nexio-rich-text';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Bound } from '@canvas/global/gfx';
 import { WithDisposable } from '@canvas/global/lit';
 import {
@@ -29,7 +29,7 @@ export function mountGroupTitleEditor(
 ) {
   const mountElm = edgeless.querySelector('.edgeless-mount-point');
   if (!mountElm) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ValueNotExists,
       "edgeless block's mount point does not exist"
     );

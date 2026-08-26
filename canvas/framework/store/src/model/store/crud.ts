@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import * as Y from 'yjs';
 
 import { isPureObject, native2Y } from '../../reactive/index.js';
@@ -52,7 +52,7 @@ export class DocCRUD {
   ) {
     const schema = this._schema.flavourSchemaMap.get(flavour);
     if (!schema) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ModelCRUDError,
         `schema for flavour: ${flavour} not found`
       );
@@ -60,7 +60,7 @@ export class DocCRUD {
 
     const hasBlock = this._yBlocks.has(id);
     if (hasBlock) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ModelCRUDError,
         `Should not add existing block: ${id}`
       );
@@ -171,7 +171,7 @@ export class DocCRUD {
       if (bringChildrenTo) {
         const bringChildrenToModel = () => {
           if (!bringChildrenTo) {
-            throw new BlockSuiteError(
+            throw new CanvasError(
               ErrorCode.ModelCRUDError,
               'bringChildrenTo is not provided when deleting block'
             );
@@ -329,7 +329,7 @@ export class DocCRUD {
 
       const last = children[children.length - 1];
       if (this.getNext(last) !== blockId) {
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.ModelCRUDError,
           'The blocks to move are not contiguous under their parent'
         );

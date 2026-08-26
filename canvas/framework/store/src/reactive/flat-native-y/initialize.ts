@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { Array as YArray, Map as YMap, Text as YText } from 'yjs';
 
 import { Boxed } from '../boxed';
@@ -34,8 +34,8 @@ export const initializeData = ({
       const next = new Text(value);
       finalData = transform(firstKey, next, value);
     } else if (value instanceof YMap) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.ReactiveProxyError,
+      throw new CanvasError(
+        CanvasError.ErrorCode.ReactiveProxyError,
         'flatY2Native does not support Y.Map as value of Y.Map'
       );
     } else {

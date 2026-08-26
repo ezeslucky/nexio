@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { Constructor } from '@canvas/global/utils';
 import type { LitElement } from 'lit';
 
@@ -28,13 +28,13 @@ function validatePropTypes<T extends InstanceType<Constructor>>(
   for (const [propName, validator] of Object.entries(propTypes)) {
     const key = propName as keyof T;
     if (instance[key] === undefined) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DefaultRuntimeError,
         `Property ${propName} is required to ${instance.constructor.name}.`
       );
     }
     if (validator && !validator(instance[key])) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.DefaultRuntimeError,
         `Property ${propName} is invalid to ${instance.constructor.name}.`
       );

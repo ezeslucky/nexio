@@ -15,10 +15,10 @@ vi.mock('@canvas/nexio-components/context-menu', () => ({
   popupTargetFromElement: (el: any) => el,
 }));
 
-import { SingleViewBase } from '../../../../../blocksuite/nexio/data-view/src/core/view-manager/single-view.js';
-import { MobileKanbanViewUILogic } from '../../../../../blocksuite/nexio/data-view/src/view-presets/kanban/mobile/kanban-view-ui-logic.js';
-import { popCardMenu } from '../../../../../blocksuite/nexio/data-view/src/view-presets/kanban/mobile/menu.js';
-import { popMobileRowMenu } from '../../../../../blocksuite/nexio/data-view/src/view-presets/table/mobile/menu.js';
+import { SingleViewBase } from '../../../../../canvas/nexio/data-view/src/core/view-manager/single-view.js';
+import { MobileKanbanViewUILogic } from '../../../../../canvas/nexio/data-view/src/view-presets/kanban/mobile/kanban-view-ui-logic.js';
+import { popCardMenu } from '../../../../../canvas/nexio/data-view/src/view-presets/kanban/mobile/menu.js';
+import { popMobileRowMenu } from '../../../../../canvas/nexio/data-view/src/view-presets/table/mobile/menu.js';
 
 class TestView extends SingleViewBase {
   detailProperties$ = computed(() => []);

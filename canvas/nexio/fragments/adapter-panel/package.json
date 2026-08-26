@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-fragment-adapter-panel",
-  "description": "Adapter panel fragment for BlockSuite.",
+  "description": "Adapter panel fragment for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

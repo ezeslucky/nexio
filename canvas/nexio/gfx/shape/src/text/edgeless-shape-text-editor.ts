@@ -11,7 +11,7 @@ import {
 import type { RichText } from '@canvas/nexio-rich-text';
 import { ThemeProvider } from '@canvas/nexio-shared/services';
 import { getSelectedRect } from '@canvas/nexio-shared/utils';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Bound, toRadian, Vec } from '@canvas/global/gfx';
 import { WithDisposable } from '@canvas/global/lit';
 import {
@@ -34,7 +34,7 @@ export function mountShapeTextEditor(
 ) {
   const mountElm = edgeless.querySelector('.edgeless-mount-point');
   if (!mountElm) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ValueNotExists,
       "edgeless block's mount point does not exist"
     );

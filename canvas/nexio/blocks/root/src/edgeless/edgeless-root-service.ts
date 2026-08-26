@@ -10,7 +10,7 @@ import {
   type ConnectorElementModel,
   RootBlockSchema,
 } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { BlockService, type BlockStdScope } from '@canvas/std';
 import type {
   GfxController,
@@ -116,7 +116,7 @@ export class EdgelessRootService
     super(std, flavourProvider);
     const surface = getSurfaceBlock(this.doc);
     if (!surface) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.NoSurfaceModelError,
         'This doc is missing surface block in edgeless.'
       );

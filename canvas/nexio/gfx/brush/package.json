@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-brush",
-  "description": "Gfx brush for BlockSuite.",
+  "description": "Gfx brush for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

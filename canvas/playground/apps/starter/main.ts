@@ -35,7 +35,7 @@ async function main() {
   const collection = createStarterDocCollection(storeManager);
 
   if (isE2E) {
-    Object.defineProperty(window, '$blocksuite', {
+    Object.defineProperty(window, '$canvas', {
       value: Object.freeze({
         store,
         blocks: {

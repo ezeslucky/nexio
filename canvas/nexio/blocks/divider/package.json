@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-divider",
-  "description": "Divider block for BlockSuite.",
+  "description": "Divider block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

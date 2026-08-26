@@ -46,7 +46,7 @@ describe('notion html to snapshot', () => {
             language: 'Plain Text',
             wrap: false,
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert:
@@ -101,7 +101,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -117,7 +117,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'bbb',
@@ -133,7 +133,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -152,7 +152,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ddd',
@@ -171,7 +171,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'eee',
@@ -216,7 +216,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'h1',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: '1',
@@ -233,7 +233,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'h2',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: '2',
@@ -250,7 +250,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'h3',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: '3',
@@ -382,7 +382,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'bulleted',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -400,7 +400,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'bulleted',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'bbb',
@@ -418,7 +418,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'bulleted',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -439,7 +439,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'bulleted',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ddd',
@@ -460,7 +460,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'bulleted',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'eee',
@@ -479,7 +479,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'todo',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -497,7 +497,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'todo',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'bbb',
@@ -515,7 +515,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'todo',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -536,7 +536,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'todo',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ddd',
@@ -557,7 +557,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'todo',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'eee',
@@ -576,7 +576,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'numbered',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -594,7 +594,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'numbered',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'bbb',
@@ -612,7 +612,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'numbered',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -633,7 +633,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'numbered',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ddd',
@@ -654,7 +654,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'numbered',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'eee',
@@ -673,7 +673,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'bulleted',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -691,7 +691,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'bulleted',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'bbb',
@@ -709,7 +709,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'bulleted',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ccc',
@@ -727,7 +727,7 @@ describe('notion html to snapshot', () => {
                       props: {
                         type: 'text',
                         text: {
-                          '$blocksuite:internal:text$': true,
+                          '$canvas:internal:text$': true,
                           delta: [
                             {
                               insert: 'ddd',
@@ -746,7 +746,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'text',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'eee',
@@ -765,7 +765,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'text',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'fff',
@@ -827,7 +827,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'bulleted',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'list 1',
@@ -845,7 +845,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'bulleted',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'list 2',
@@ -863,7 +863,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'bulleted',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'list 3',
@@ -881,7 +881,7 @@ describe('notion html to snapshot', () => {
                       props: {
                         type: 'text',
                         text: {
-                          '$blocksuite:internal:text$': true,
+                          '$canvas:internal:text$': true,
                           delta: [
                             {
                               insert: 'paragraph 1',
@@ -897,7 +897,7 @@ describe('notion html to snapshot', () => {
                           props: {
                             type: 'text',
                             text: {
-                              '$blocksuite:internal:text$': true,
+                              '$canvas:internal:text$': true,
                               delta: [
                                 {
                                   insert: 'paragraph 2',
@@ -956,7 +956,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'quote',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -973,7 +973,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'quote',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'bbb',
@@ -989,7 +989,7 @@ describe('notion html to snapshot', () => {
               props: {
                 type: 'quote',
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'ccc',
@@ -1005,7 +1005,7 @@ describe('notion html to snapshot', () => {
                   props: {
                     type: 'quote',
                     text: {
-                      '$blocksuite:internal:text$': true,
+                      '$canvas:internal:text$': true,
                       delta: [
                         {
                           insert: 'ddd',
@@ -1057,7 +1057,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'quote',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: '💡\n',
@@ -1106,7 +1106,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'aaa',
@@ -1130,7 +1130,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'bbb',
@@ -1175,7 +1175,7 @@ describe('notion html to snapshot', () => {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Untitled',
@@ -1483,7 +1483,7 @@ describe('notion html to snapshot', () => {
               },
             ],
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'Table View',
@@ -1576,7 +1576,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[58]': {
                   columnId: 'matchesReplaceMap[58]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: ' Not started ',
@@ -1605,7 +1605,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[58]': {
                   columnId: 'matchesReplaceMap[58]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: ' Not started ',
@@ -1634,7 +1634,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[58]': {
                   columnId: 'matchesReplaceMap[58]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: ' Not started ',
@@ -1656,7 +1656,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'https://nexio.pro',
@@ -1676,7 +1676,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'Untitled',
@@ -1696,7 +1696,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'Untitled',
@@ -1762,7 +1762,7 @@ describe('notion html to snapshot', () => {
               },
             ],
             title: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [],
             },
             columns: [
@@ -1784,7 +1784,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[17]': {
                   columnId: 'matchesReplaceMap[17]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: 'aa',
@@ -1795,7 +1795,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[19]': {
                   columnId: 'matchesReplaceMap[19]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [],
                   },
                 },
@@ -1804,7 +1804,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[17]': {
                   columnId: 'matchesReplaceMap[17]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: '1',
@@ -1815,7 +1815,7 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[19]': {
                   columnId: 'matchesReplaceMap[19]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [],
                   },
                 },
@@ -1824,14 +1824,14 @@ describe('notion html to snapshot', () => {
                 'matchesReplaceMap[17]': {
                   columnId: 'matchesReplaceMap[17]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [],
                   },
                 },
                 'matchesReplaceMap[19]': {
                   columnId: 'matchesReplaceMap[19]',
                   value: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [],
                   },
                 },
@@ -1845,7 +1845,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aa',
@@ -1862,7 +1862,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [
                     {
                       insert: 'aa',
@@ -1879,7 +1879,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [],
                 },
                 type: 'text',
@@ -1892,7 +1892,7 @@ describe('notion html to snapshot', () => {
               flavour: 'nexio:paragraph',
               props: {
                 text: {
-                  '$blocksuite:internal:text$': true,
+                  '$canvas:internal:text$': true,
                   delta: [],
                 },
                 type: 'text',
@@ -1979,7 +1979,7 @@ describe('notion html to snapshot', () => {
           flavour: 'nexio:paragraph',
           props: {
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'inline equation',
@@ -2031,7 +2031,7 @@ describe('notion html to snapshot', () => {
           flavour: 'nexio:paragraph',
           props: {
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: 'strong',

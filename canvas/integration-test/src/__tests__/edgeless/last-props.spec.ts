@@ -30,7 +30,7 @@ describe('apply last props', () => {
   let std!: BlockStdScope;
 
   beforeEach(async () => {
-    sessionStorage.removeItem('blocksuite:prop:record');
+    sessionStorage.removeItem('canvas:prop:record');
     const cleanup = await setupEditor('edgeless');
     edgelessRoot = getDocRootBlock(window.doc, window.editor, 'edgeless');
     service = edgelessRoot.service;

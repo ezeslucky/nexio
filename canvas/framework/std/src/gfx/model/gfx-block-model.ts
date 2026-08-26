@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { IVec, SerializedXYWH, XYWH } from '@canvas/global/gfx';
 import {
   Bound,
@@ -299,7 +299,7 @@ export function GfxCompatibleBlockModel<
     }
 
     if (Object.getPrototypeOf(currentClass.prototype) === null) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.GfxBlockElementError,
         'The SuperClass is not a subclass of BlockModel'
       );

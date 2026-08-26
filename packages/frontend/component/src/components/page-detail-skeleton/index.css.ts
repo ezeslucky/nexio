@@ -9,7 +9,7 @@ export const pageDetailSkeletonStyle = style({
   justifyContent: 'center',
   alignItems: 'center',
 });
-export const blockSuiteEditorStyle = style({
+export const canvasEditorStyle = style({
   margin: 'auto 2rem',
   padding: '0 24px',
   display: 'flex',

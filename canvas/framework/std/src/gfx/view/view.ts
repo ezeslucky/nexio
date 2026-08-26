@@ -1,6 +1,6 @@
 import { type Container, createIdentifier } from '@canvas/global/di';
 import { DisposableGroup } from '@canvas/global/disposable';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { type Bound, type IVec } from '@canvas/global/gfx';
 import type { Extension } from '@canvas/store';
 
@@ -87,7 +87,7 @@ export class GfxElementModelView<
 
   static setup(di: Container): void {
     if (!this.type) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'The GfxElementModelView should have a static `type` property.'
       );

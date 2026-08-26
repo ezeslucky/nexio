@@ -28,8 +28,8 @@ import {
 
 import { getStoreManager } from './bs-store';
 
-const blocksuiteSchema = new Schema();
-blocksuiteSchema.register([...NexioSchemas]);
+const canvasSchema = new Schema();
+canvasSchema.register([...NexioSchemas]);
 
 export interface BlockDocumentInfo {
   docId: string;
@@ -65,7 +65,7 @@ function generateMarkdownPreviewBuilder(
 ) {
   function yblockToDraftModal(yblock: YBlock): DraftModel | null {
     const flavour = yblock.get('sys:flavour') as string;
-    const blockSchema = blocksuiteSchema.flavourSchemaMap.get(flavour);
+    const blockSchema = canvasSchema.flavourSchemaMap.get(flavour);
     if (!blockSchema) {
       return null;
     }
@@ -127,7 +127,7 @@ function generateMarkdownPreviewBuilder(
   const provider = container.provider();
   const markdownAdapter = new MarkdownAdapter(
     new Transformer({
-      schema: blocksuiteSchema,
+      schema: canvasSchema,
       blobCRUD: {
         delete: () => Promise.resolve(),
         get: () => Promise.resolve(null),
@@ -677,7 +677,7 @@ export async function readAllBlocksFromDoc({
       if (
         !(
           elementsObj instanceof YMap &&
-          elementsObj.get('type') === '$blocksuite:internal:native$'
+          elementsObj.get('type') === '$canvas:internal:native$'
         )
       ) {
         continue;

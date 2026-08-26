@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-edgeless-text",
-  "description": "Edgeless text block for BlockSuite.",
+  "description": "Edgeless text block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

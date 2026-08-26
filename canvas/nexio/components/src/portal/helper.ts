@@ -1,4 +1,4 @@
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import {
   autoUpdate,
   computePosition,
@@ -11,7 +11,7 @@ import { Subject } from 'rxjs';
 import type { AdvancedPortalOptions, PortalOptions } from './types.js';
 
 /**
- * Similar to `<blocksuite-portal>`, but only renders once when called.
+ * Similar to `<canvas-portal>`, but only renders once when called.
  *
  * The template should be a **static** template since it will not be re-rendered unless `updatePortal` is called.
  *
@@ -27,7 +27,7 @@ export function createSimplePortal({
 }: PortalOptions) {
   const portalRoot = document.createElement('div');
   if (identifyWrapper) {
-    portalRoot.classList.add('blocksuite-portal');
+    portalRoot.classList.add('canvas-portal');
   }
   if (shadowDom) {
     portalRoot.attachShadow({
@@ -41,8 +41,8 @@ export function createSimplePortal({
 
   const root = shadowDom ? portalRoot.shadowRoot : portalRoot;
   if (!root) {
-    throw new BlockSuiteError(
-      BlockSuiteError.ErrorCode.ValueNotExists,
+    throw new CanvasError(
+      CanvasError.ErrorCode.ValueNotExists,
       'Failed to create portal root'
     );
   }

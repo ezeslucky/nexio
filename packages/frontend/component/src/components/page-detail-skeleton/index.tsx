@@ -19,7 +19,7 @@ export const EditorLoading = ({
     document.location.reload();
   }, []);
   return (
-    <div className={styles.blockSuiteEditorStyle}>
+    <div className={styles.canvasEditorStyle}>
       <ThemedImg
         style={{ width: '300px' }}
         draggable={false}

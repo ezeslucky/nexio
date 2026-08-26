@@ -11,7 +11,7 @@ import {
 } from '../../selection';
 import type { TableViewUILogic } from '../table-view-ui-logic.js';
 
-const BLOCKSUITE_DATABASE_TABLE = 'blocksuite/database/table';
+const CANVAS_DATABASE_TABLE = 'canvas/database/table';
 type JsonAreaData = string[][];
 const TEXT = 'text/plain';
 
@@ -51,7 +51,7 @@ export class TableClipboardController implements ReactiveController {
         return {
           ...items,
           [TEXT]: stringResult,
-          [BLOCKSUITE_DATABASE_TABLE]: JSON.stringify(jsonResult),
+          [CANVAS_DATABASE_TABLE]: JSON.stringify(jsonResult),
         };
       })
       .then(() => {
@@ -98,7 +98,7 @@ export class TableClipboardController implements ReactiveController {
       try {
         // First try to read internal format data
         const json = await this.clipboard.readFromClipboard(clipboardData);
-        const dataString = json[BLOCKSUITE_DATABASE_TABLE];
+        const dataString = json[CANVAS_DATABASE_TABLE];
 
         if (dataString) {
           // If internal format data exists, use it

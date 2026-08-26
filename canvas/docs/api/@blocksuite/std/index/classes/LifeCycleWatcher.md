@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../../README.md)
+[**Canvas API Documentation**](../../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [index](../README.md) / LifeCycleWatcher
+[Canvas API Documentation](../../../../README.md) / [@canvas/std](../../README.md) / [index](../README.md) / LifeCycleWatcher
 
 # Class: `abstract` LifeCycleWatcher
 

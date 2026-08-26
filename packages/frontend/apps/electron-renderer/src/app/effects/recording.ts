@@ -1,4 +1,4 @@
-import type { DocProps } from '@nexio/core/blocksuite/initialization';
+import type { DocProps } from '@nexio/core/canvas/initialization';
 import { DocsService } from '@nexio/core/modules/doc';
 import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
 import { WorkbenchService } from '@nexio/core/modules/workbench';

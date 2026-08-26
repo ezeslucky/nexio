@@ -17,7 +17,7 @@ export class ClipboardEventState extends UIEventState {
 }
 
 declare global {
-  interface BlockSuiteUIEventState {
+  interface CanvasUIEventState {
     clipboardState: ClipboardEventState;
   }
 }

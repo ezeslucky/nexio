@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-components",
-  "description": "Default BlockSuite editable blocks.",
+  "description": "Default canvas editable blocks.",
   "type": "module",
   "scripts": {
     "build": "tsc"

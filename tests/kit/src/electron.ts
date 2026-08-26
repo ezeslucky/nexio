@@ -95,7 +95,7 @@ export const test = base.extend<{
       throw new Error('No active page found');
     }
 
-    // wait for blocksuite to be loaded
+    // wait for Canvas to be loaded
     await page.waitForSelector('v-line');
 
     await use(page as Page);

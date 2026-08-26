@@ -1,5 +1,5 @@
 import type { Container } from '@canvas/global/di';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { Extension } from '@canvas/store';
 
 import { LifeCycleWatcherIdentifier, StdIdentifier } from '../identifier.js';
@@ -31,7 +31,7 @@ export abstract class LifeCycleWatcher extends Extension {
 
   static override setup(di: Container) {
     if (!this.key) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.ValueNotExists,
         'Key is not defined in the LifeCycleWatcher'
       );

@@ -3,7 +3,7 @@ import {
   EdgelessCRUDIdentifier,
 } from '@canvas/nexio-block-surface';
 import type { ConnectorElementModel } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { IVec } from '@canvas/global/gfx';
 import { Bound } from '@canvas/global/gfx';
 import type { BlockComponent } from '@canvas/std';
@@ -19,7 +19,7 @@ export function mountConnectorLabelEditor(
 ) {
   const mountElm = edgeless.querySelector('.edgeless-mount-point');
   if (!mountElm) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.ValueNotExists,
       "edgeless block's mount point does not exist"
     );

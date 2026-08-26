@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-gfx-group",
-  "description": "Gfx group for BlockSuite.",
+  "description": "Gfx group for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

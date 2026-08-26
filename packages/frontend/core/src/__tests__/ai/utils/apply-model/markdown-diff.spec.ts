@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { diffMarkdown } from '../../../../blocksuite/ai/utils/apply-model/markdown-diff';
+import { diffMarkdown } from '../../../../canvas/ai/utils/apply-model/markdown-diff';
 
 describe('diffMarkdown', () => {
   test('should diff block insertion', () => {

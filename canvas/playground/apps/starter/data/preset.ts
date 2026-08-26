@@ -21,7 +21,7 @@ export const preset: InitFn = async (collection: Workspace, id: string) => {
   if (!hasDoc) {
     // Add root block and surface block at root level
     const rootId = store.addBlock('nexio:page', {
-      title: new Text('BlockSuite Playground'),
+      title: new Text('Canvas Playground'),
     });
     store.addBlock('nexio:surface', {}, rootId);
 
@@ -44,5 +44,5 @@ export const preset: InitFn = async (collection: Workspace, id: string) => {
 };
 
 preset.id = 'preset';
-preset.displayName = 'BlockSuite Starter';
+preset.displayName = 'Canvas Starter';
 preset.description = 'Start from friendly introduction';

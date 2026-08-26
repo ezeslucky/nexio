@@ -50,7 +50,7 @@ test.describe('mime', () => {
   });
 
   test('should not paste bad svg', async ({ page }) => {
-    expectConsoleMessage(page, 'BlockSuiteError: val does not exist', 'error');
+    expectConsoleMessage(page, 'CanvasError: val does not exist', 'error');
     expectConsoleMessage(page, 'Error: Image sourceId is missing!', 'warning');
 
     await commonSetup(page);

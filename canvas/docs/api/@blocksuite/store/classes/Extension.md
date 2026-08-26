@@ -1,8 +1,8 @@
-[**BlockSuite API Documentation**](../../../README.md)
+[**Canvas API Documentation**](../../../README.md)
 
 ***
 
-[BlockSuite API Documentation](../../../README.md) / [@canvas/store](../README.md) / Extension
+[Canvas API Documentation](../../../README.md) / [@canvas/store](../README.md) / Extension
 
 # Class: `abstract` Extension
 
@@ -121,7 +121,7 @@ system.processFruit({ type: 'apple' });  // Output: Slicing apple
 system.processFruit({ type: 'banana' }); // Output: Peeling banana
 ```
 
-Note: We deliberately used a non-block specific example here. In BlockSuite, the extension
+Note: We deliberately used a non-block specific example here. In Canvas, the extension
 pattern can be applied to any entity that can be configured by third parties, not just blocks.
 This includes different tools in the whiteboard, different column types in database blocks,
 and many other extensible components. The pattern remains the same regardless of what you're extending.

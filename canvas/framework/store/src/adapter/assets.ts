@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import { sha } from '@canvas/global/utils';
 
 /**
@@ -31,7 +31,7 @@ export class MemoryBlobCRUD {
     const value = typeof valueOrKey === 'string' ? _value : valueOrKey;
 
     if (!value) {
-      throw new BlockSuiteError(
+      throw new CanvasError(
         ErrorCode.TransformerError,
         'value is required'
       );
@@ -143,7 +143,7 @@ const getExt = (type: string) => {
 export function getAssetName(assets: Map<string, Blob>, blobId: string) {
   const blob = assets.get(blobId);
   if (!blob) {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerError,
       `blob not found for blobId: ${blobId}`
     );

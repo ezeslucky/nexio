@@ -1,7 +1,7 @@
 // Polyfill for `showOpenFilePicker` API
 // See https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/wicg-file-system-access/index.d.ts
 // See also https://caniuse.com/?search=showOpenFilePicker
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
 interface OpenFilePickerOptions {
   types?:
@@ -134,7 +134,7 @@ export async function openFilesWith(
     try {
       const fileType = FileTypes.find(i => i.description === acceptType);
       if (acceptType !== 'Any' && !fileType)
-        throw new BlockSuiteError(
+        throw new CanvasError(
           ErrorCode.DefaultRuntimeError,
           `Unexpected acceptType "${acceptType}"`
         );

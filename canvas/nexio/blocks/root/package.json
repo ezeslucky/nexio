@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-root",
-  "description": "Root block for BlockSuite.",
+  "description": "Root block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

@@ -1,5 +1,5 @@
 import { ImageBlockSchema } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -34,7 +34,7 @@ export class ImageAdapter extends BaseAdapter<Image> {
   override fromBlockSnapshot(
     _payload: FromBlockSnapshotPayload
   ): Promise<FromBlockSnapshotResult<Image>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ImageAdapter.fromBlockSnapshot is not implemented.'
     );
@@ -43,7 +43,7 @@ export class ImageAdapter extends BaseAdapter<Image> {
   override fromDocSnapshot(
     _payload: FromDocSnapshotPayload
   ): Promise<FromDocSnapshotResult<Image>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ImageAdapter.fromDocSnapshot is not implemented.'
     );
@@ -73,7 +73,7 @@ export class ImageAdapter extends BaseAdapter<Image> {
   override toBlockSnapshot(
     _payload: ToBlockSnapshotPayload<Image>
   ): Promise<BlockSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ImageAdapter.toBlockSnapshot is not implemented.'
     );
@@ -82,7 +82,7 @@ export class ImageAdapter extends BaseAdapter<Image> {
   override toDocSnapshot(
     _payload: ToDocSnapshotPayload<Image>
   ): Promise<DocSnapshot> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'ImageAdapter.toDocSnapshot is not implemented'
     );

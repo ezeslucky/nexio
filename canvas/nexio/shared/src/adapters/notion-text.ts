@@ -1,5 +1,5 @@
 import { DefaultTheme } from '@canvas/nexio-model';
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import {
   type AssetsManager,
   BaseAdapter,
@@ -45,7 +45,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
   override fromBlockSnapshot():
     | FromBlockSnapshotResult<NotionText>
     | Promise<FromBlockSnapshotResult<NotionText>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionTextAdapter.fromBlockSnapshot is not implemented.'
     );
@@ -54,7 +54,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
   override fromDocSnapshot():
     | FromDocSnapshotResult<NotionText>
     | Promise<FromDocSnapshotResult<NotionText>> {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionTextAdapter.fromDocSnapshot is not implemented.'
     );
@@ -67,7 +67,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
       file: JSON.stringify({
         blockType: 'text',
         editing: [
-          ['Notion Text is not supported to be exported from BlockSuite', []],
+          ['Notion Text is not supported to be exported from Canvas', []],
         ],
       }),
       assetsIds: [],
@@ -75,14 +75,14 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
   }
 
   override toBlockSnapshot(): Promise<BlockSnapshot> | BlockSnapshot {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionTextAdapter.toBlockSnapshot is not implemented.'
     );
   }
 
   override toDocSnapshot(): Promise<DocSnapshot> | DocSnapshot {
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.TransformerNotImplementedError,
       'NotionTextAdapter.toDocSnapshot is not implemented.'
     );
@@ -161,7 +161,7 @@ export class NotionTextAdapter extends BaseAdapter<NotionText> {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: deltas,
             },
           },

@@ -21,7 +21,7 @@ import { ExportManager } from '@canvas/nexio/blocks/surface';
 import { toast } from '@canvas/nexio/components/toast';
 import { StoreExtensionManagerIdentifier } from '@canvas/nexio/ext-loader';
 import {
-  BlockSuiteError,
+  CanvasError,
   ErrorCode,
 } from '@canvas/nexio/global/exceptions';
 import type { SerializedXYWH } from '@canvas/nexio/global/gfx';
@@ -163,7 +163,7 @@ function initStyleDebugMenu(
 }
 
 function getDarkModeConfig(): boolean {
-  const updatedDarkModeConfig = localStorage.getItem('blocksuite:dark');
+  const updatedDarkModeConfig = localStorage.getItem('canvas:dark');
   if (updatedDarkModeConfig !== null) {
     return updatedDarkModeConfig === 'true';
   }
@@ -272,7 +272,7 @@ export class StarterDebugMenu extends ShadowlessElement {
 
     if (result.assetsIds.length > 0) {
       if (!job.assets) {
-        throw new BlockSuiteError(ErrorCode.ValueNotExists, 'No assets found');
+        throw new CanvasError(ErrorCode.ValueNotExists, 'No assets found');
       }
       const zip = await createAssetsArchive(job.assets, result.assetsIds);
       await zip.file(config.indexFileName, contentBlob);
@@ -563,7 +563,7 @@ export class StarterDebugMenu extends ShadowlessElement {
     const html = document.querySelector('html');
 
     this._dark = dark;
-    localStorage.setItem('blocksuite:dark', dark ? 'true' : 'false');
+    localStorage.setItem('canvas:dark', dark ? 'true' : 'false');
     if (!html) return;
     html.dataset.theme = dark ? 'dark' : 'light';
 

@@ -111,7 +111,7 @@ export class LanguageListButton extends WithDisposable(
   override connectedCallback(): void {
     super.connectedCallback();
 
-    const langList = localStorage.getItem('blocksuite:code-block:lang-list');
+    const langList = localStorage.getItem('canvas:code-block:lang-list');
     if (langList) {
       this._sortedBundledLanguages = JSON.parse(langList);
     } else {
@@ -124,7 +124,7 @@ export class LanguageListButton extends WithDisposable(
 
     this.disposables.add(() => {
       localStorage.setItem(
-        'blocksuite:code-block:lang-list',
+        'canvas:code-block:lang-list',
         JSON.stringify(this._sortedBundledLanguages)
       );
     });

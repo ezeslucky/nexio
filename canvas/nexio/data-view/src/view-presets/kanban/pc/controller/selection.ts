@@ -1,4 +1,4 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 import type { ReactiveController } from 'lit';
 
 import type {
@@ -378,7 +378,7 @@ export class KanbanSelectionController implements ReactiveController {
         groupIndex => (groupIndex === 0 ? groups.length - 1 : groupIndex - 1)
       );
     }
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       'Unknown arrow keys, only support: up, down, left, and right keys.'
     );
@@ -476,7 +476,7 @@ export class KanbanSelectionController implements ReactiveController {
         groupIndex => (groupIndex === 0 ? groups.length - 1 : groupIndex - 1)
       );
     }
-    throw new BlockSuiteError(
+    throw new CanvasError(
       ErrorCode.DatabaseBlockError,
       'Unknown arrow keys, only support: up, down, left, and right keys.'
     );

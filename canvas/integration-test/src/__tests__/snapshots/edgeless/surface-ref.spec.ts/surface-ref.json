@@ -13,7 +13,7 @@
     "version": 2,
     "props": {
       "title": {
-        "$blocksuite:internal:text$": true,
+        "$canvas:internal:text$": true,
         "delta": []
       }
     },
@@ -31,7 +31,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 20,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -58,7 +58,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 20,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -85,7 +85,7 @@
               "color": "--nexio-palette-line-black",
               "fillColor": "--nexio-palette-shape-yellow",
               "filled": true,
-              "fontFamily": "blocksuite:surface:Inter",
+              "fontFamily": "canvas:surface:Inter",
               "fontSize": 20,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -137,7 +137,7 @@
             "version": 1,
             "props": {
               "title": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"
@@ -184,7 +184,7 @@
             "props": {
               "type": "text",
               "text": {
-                "$blocksuite:internal:text$": true,
+                "$canvas:internal:text$": true,
                 "delta": []
               },
               "collapsed": false

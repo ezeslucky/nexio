@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-block-table",
-  "description": "Table block for BlockSuite.",
+  "description": "Table block for canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

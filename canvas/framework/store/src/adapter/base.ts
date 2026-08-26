@@ -1,5 +1,5 @@
 import type { ServiceProvider } from '@canvas/global/di';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 
 import {
   BlockModel,
@@ -309,7 +309,7 @@ export class ASTWalker<ONode extends object, TNode extends object | never> {
     this.context.openNode(tNode);
     await this._visit({ node: oNode, parent: null, prop: null, index: null });
     if (this.context.stack.length !== 1) {
-      throw new BlockSuiteError(1, 'There are unclosed nodes');
+      throw new CanvasError(1, 'There are unclosed nodes');
     }
     return this.context.currentNode();
   };

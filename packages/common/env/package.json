@@ -12,7 +12,7 @@
     "./workspace": "./src/workspace.ts",
     "./workspace/legacy-cloud": "./src/workspace/legacy-cloud/index.ts",
     "./filter": "./src/filter.ts",
-    "./blocksuite": "./src/blocksuite/index.ts",
+    "./canvas": "./src/canvas/index.ts",
     "./worker": "./src/worker.ts"
   },
   "peerDependencies": {

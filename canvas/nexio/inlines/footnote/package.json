@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-inline-footnote",
-  "description": "Inline footnote for BlockSuite.",
+  "description": "Inline footnote for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

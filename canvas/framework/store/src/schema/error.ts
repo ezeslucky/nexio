@@ -1,6 +1,6 @@
-import { BlockSuiteError, ErrorCode } from '@canvas/global/exceptions';
+import { CanvasError, ErrorCode } from '@canvas/global/exceptions';
 
-export class SchemaValidateError extends BlockSuiteError {
+export class SchemaValidateError extends CanvasError {
   constructor(flavour: string, message: string) {
     super(
       ErrorCode.SchemaValidateError,

@@ -181,7 +181,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: line,
@@ -211,7 +211,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
         flavour: 'nexio:page',
         props: {
           title: {
-            '$blocksuite:internal:text$': true,
+            '$canvas:internal:text$': true,
             delta: [
               {
                 insert: 'Untitled',
@@ -248,7 +248,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
                 props: {
                   type: 'text',
                   text: {
-                    '$blocksuite:internal:text$': true,
+                    '$canvas:internal:text$': true,
                     delta: [
                       {
                         insert: line,
@@ -291,7 +291,7 @@ export class PlainTextAdapter extends BaseAdapter<PlainText> {
           props: {
             type: 'text',
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta: [
                 {
                   insert: line,

@@ -1,6 +1,6 @@
 {
   "name": "@canvas/nexio-rich-text",
-  "description": "Inline rich text for BlockSuite.",
+  "description": "Inline rich text for Canvas.",
   "type": "module",
   "scripts": {
     "build": "tsc"

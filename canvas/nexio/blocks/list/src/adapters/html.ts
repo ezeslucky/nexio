@@ -52,7 +52,7 @@ export const listBlockHtmlAdapterMatcher: BlockHtmlAdapterMatcher = {
           props: {
             type: listType,
             text: {
-              '$blocksuite:internal:text$': true,
+              '$canvas:internal:text$': true,
               delta:
                 listType !== 'toggle'
                   ? deltaConverter.astToDelta(

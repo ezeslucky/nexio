@@ -4,7 +4,7 @@ import type {
 } from '@canvas/nexio-shared/services';
 import type { DisposableMember } from '@canvas/global/disposable';
 import { IS_MOBILE } from '@canvas/global/env';
-import { BlockSuiteError } from '@canvas/global/exceptions';
+import { CanvasError } from '@canvas/global/exceptions';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import {
   type Clipboard,
@@ -63,8 +63,8 @@ export class DataViewRootUILogic {
   private createDataViewUILogic(viewId: string): DataViewUILogicBase {
     const view = this.viewManager.viewGet(viewId);
     if (!view) {
-      throw new BlockSuiteError(
-        BlockSuiteError.ErrorCode.DatabaseBlockError,
+      throw new CanvasError(
+        CanvasError.ErrorCode.DatabaseBlockError,
         `View ${viewId} not found`
       );
     }
