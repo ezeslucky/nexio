@@ -1,8 +1,5 @@
-import { html, svg } from 'lit';
-import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
-import arrowLeftSvg from 'lucide-static/icons/arrow-left.svg';
-
-const ArrowLeftBigIcon = () => svg`${unsafeSVG(arrowLeftSvg)}`;
+import { ArrowLeftBigIcon } from '@blocksuite/icons/lit';
+import { html } from 'lit';
 
 export const menuTitle = (name: string, onBack: () => void) => {
   return html`
@@ -17,7 +14,7 @@ export const menuTitle = (name: string, onBack: () => void) => {
         ${ArrowLeftBigIcon()}
       </div>
       <div
-        style="font-weight:500;font-size: 14px;line-height: 22px;color: var(--nexio-text-primary-color)"
+        style="font-weight:500;font-size: 14px;line-height: 22px;color: var(--affine-text-primary-color)"
       >
         ${name}
       </div>
