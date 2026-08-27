@@ -1,6 +1,6 @@
 import { MobileMenuSub, useMobileMenuController } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { EditIcon } from '@canvas/icons/rc';
+import { EditIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
 import { RenameContent } from './content';

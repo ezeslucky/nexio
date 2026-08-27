@@ -19,7 +19,7 @@ import { GuardService } from '@nexio/core/modules/permissions';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { PlusIcon } from '@canvas/icons/rc';
+import { PlusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 

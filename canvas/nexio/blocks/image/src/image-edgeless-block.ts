@@ -8,7 +8,7 @@ import {
 } from '@canvas/nexio-model';
 import { cssVarV2, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { formatSize } from '@canvas/nexio-shared/utils';
-import { BrokenImageIcon, ImageIcon } from '@canvas/icons/lit';
+import { BrokenImageIcon, ImageIcon } from '@blocksuite/icons/lit';
 import { GfxBlockComponent } from '@canvas/std';
 import { GfxViewInteractionExtension } from '@canvas/std/gfx';
 import { computed } from '@preact/signals-core';

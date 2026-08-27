@@ -4,7 +4,7 @@ import {
   ToolbarContext,
 } from '@canvas/nexio-shared/services';
 import { SignalWatcher } from '@canvas/global/lit';
-import { PaletteIcon } from '@canvas/icons/lit';
+import { PaletteIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@canvas/std';
 import {
   computed,

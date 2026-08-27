@@ -6,7 +6,7 @@ import {
   type SlashMenuConfig,
   SlashMenuConfigIdentifier,
 } from '@canvas/nexio-widget-slash-menu';
-import { LinkedPageIcon, PlusIcon } from '@canvas/icons/lit';
+import { LinkedPageIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { type ExtensionType } from '@canvas/store';
 
 import { LinkDocTooltip, NewDocTooltip } from './tooltips';

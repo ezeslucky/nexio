@@ -9,9 +9,9 @@ import {
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useEffect, useState } from 'react';
 
 import {

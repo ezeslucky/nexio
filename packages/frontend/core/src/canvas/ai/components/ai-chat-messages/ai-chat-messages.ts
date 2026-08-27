@@ -10,7 +10,7 @@ import {
 } from '@canvas/nexio/shared/services';
 import { type EditorHost, ShadowlessElement } from '@canvas/nexio/std';
 import type { BaseSelection, ExtensionType } from '@canvas/nexio/store';
-import { ArrowDownBigIcon as ArrowDownIcon } from '@canvas/icons/lit';
+import { ArrowDownBigIcon as ArrowDownIcon } from '@blocksuite/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

@@ -1,5 +1,5 @@
 import type { EditorHost } from '@canvas/std';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { html } from 'lit';
 
 import { createToastContainer } from './create.js';

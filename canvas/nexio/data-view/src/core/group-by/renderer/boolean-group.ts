@@ -1,4 +1,4 @@
-import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@canvas/icons/lit';
+import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 
 import { BaseGroup } from './base.js';

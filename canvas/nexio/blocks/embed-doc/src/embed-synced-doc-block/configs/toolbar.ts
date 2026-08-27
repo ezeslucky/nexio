@@ -36,7 +36,7 @@ import {
   ExpandFullIcon,
   InsertIntoPageIcon,
   OpenInNewIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier, isGfxBlockComponent } from '@canvas/std';
 import {
   type BlockModel,

@@ -11,9 +11,9 @@
   "license": "MIT",
   "dependencies": {
     "@atlaskit/pragmatic-drag-and-drop": "^1.4.0",
+    "@blocksuite/icons": "^2.2.17",
     "@canvas/data-view": "workspace:*",
     "@canvas/global": "workspace:*",
-    "@canvas/icons": "^2.2.17",
     "@canvas/nexio-components": "workspace:*",
     "@canvas/nexio-ext-loader": "workspace:*",
     "@canvas/nexio-inline-preset": "workspace:*",

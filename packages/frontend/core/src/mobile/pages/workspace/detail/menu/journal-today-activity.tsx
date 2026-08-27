@@ -9,7 +9,7 @@ import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { JournalService } from '@nexio/core/modules/journal';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { HistoryIcon } from '@canvas/icons/rc';
+import { HistoryIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import dayjs from 'dayjs';
 import { type ReactNode, useCallback, useMemo } from 'react';

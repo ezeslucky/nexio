@@ -1,5 +1,5 @@
 import { LoadingIcon } from '@canvas/nexio/components/icons';
-import { WarningIcon } from '@canvas/icons/lit';
+import { WarningIcon } from '@blocksuite/icons/lit';
 import { type TemplateResult } from 'lit';
 
 import type {

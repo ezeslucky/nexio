@@ -17,10 +17,10 @@ import {
   IconType,
 } from '@canvas/nexio-shared/services';
 import type { UniComponent } from '@canvas/nexio-shared/types';
-import * as icons from '@canvas/icons/lit';
+import * as icons from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import { type Signal } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import type { TemplateResult } from 'lit';
 import { html } from 'lit';
 import { type StyleInfo, styleMap } from 'lit/directives/style-map.js';

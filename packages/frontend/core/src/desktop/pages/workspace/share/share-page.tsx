@@ -27,7 +27,7 @@ import { useI18n } from '@nexio/i18n';
 import { DisposableGroup } from '@canvas/nexio/global/disposable';
 import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
 import { type DocMode, DocModes } from '@canvas/nexio/model';
-import { Logo1Icon } from '@canvas/icons/rc';
+import { Logo1Icon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';

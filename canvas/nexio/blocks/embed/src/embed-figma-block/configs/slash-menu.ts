@@ -1,7 +1,7 @@
 import { DefaultTool } from '@canvas/nexio-block-surface';
 import { toggleEmbedCardCreateModal } from '@canvas/nexio-components/embed-card-modal';
 import type { SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { FigmaDuotoneIcon } from '@canvas/icons/lit';
+import { FigmaDuotoneIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 
 import { FigmaTooltip } from './tooltips';

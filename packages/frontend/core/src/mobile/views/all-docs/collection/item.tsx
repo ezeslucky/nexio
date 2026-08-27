@@ -3,7 +3,7 @@ import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import type { CollectionMeta } from '@nexio/core/modules/collection';
 import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import { ViewLayersIcon } from '@canvas/icons/rc';
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { type MouseEvent, useCallback } from 'react';
 

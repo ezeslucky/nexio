@@ -6,7 +6,7 @@ import {
   MenuSub,
 } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { ArrowDownSmallIcon, DoneIcon } from '@canvas/icons/rc';
+import { ArrowDownSmallIcon, DoneIcon } from '@blocksuite/icons/rc';
 import { useCallback, useMemo } from 'react';
 
 import type { PageDisplayProperties, PageGroupByType } from '../types';

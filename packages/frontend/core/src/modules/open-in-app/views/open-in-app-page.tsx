@@ -2,7 +2,7 @@ import { Button } from '@nexio/component/ui/button';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { appIconMap, appNames } from '@nexio/core/utils/channel';
 import { Trans, useI18n } from '@nexio/i18n';
-import { LocalWorkspaceIcon, Logo1Icon } from '@canvas/icons/rc';
+import { LocalWorkspaceIcon, Logo1Icon } from '@blocksuite/icons/rc';
 import { useServiceOptional } from '@ezeslucky/infra';
 import type { MouseEvent } from 'react';
 import { useCallback } from 'react';

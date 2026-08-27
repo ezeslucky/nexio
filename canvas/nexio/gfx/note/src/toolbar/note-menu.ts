@@ -10,7 +10,7 @@ import {
   openSingleFileWith,
 } from '@canvas/nexio-shared/utils';
 import { EdgelessToolbarToolMixin } from '@canvas/nexio-widget-edgeless-toolbar';
-import { AttachmentIcon, ImageIcon, LinkIcon } from '@canvas/icons/lit';
+import { AttachmentIcon, ImageIcon, LinkIcon } from '@blocksuite/icons/lit';
 import type { ToolOptions } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';

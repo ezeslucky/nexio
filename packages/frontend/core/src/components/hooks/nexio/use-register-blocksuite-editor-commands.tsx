@@ -19,7 +19,7 @@ import {
   HistoryIcon,
   LocalWorkspaceIcon,
   PageIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,

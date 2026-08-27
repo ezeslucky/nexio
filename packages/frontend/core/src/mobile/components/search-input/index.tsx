@@ -1,6 +1,6 @@
 import { useAutoFocus } from '@nexio/component';
 import { getFigmaSquircleSvgPath } from '@canvas/nexio/shared/utils';
-import { SearchIcon } from '@canvas/icons/rc';
+import { SearchIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
 import {

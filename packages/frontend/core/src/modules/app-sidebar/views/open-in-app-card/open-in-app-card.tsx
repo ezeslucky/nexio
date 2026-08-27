@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/modules/open-in-app';
 import { appIconMap } from '@nexio/core/utils';
 import { Trans, useI18n } from '@nexio/i18n';
-import { CloseIcon } from '@canvas/icons/rc';
+import { CloseIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

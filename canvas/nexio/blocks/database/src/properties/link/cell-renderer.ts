@@ -10,7 +10,7 @@ import {
   createFromBaseCellRenderer,
   createIcon,
 } from '@canvas/data-view';
-import { EditIcon } from '@canvas/icons/lit';
+import { EditIcon } from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { html, nothing, type PropertyValues } from 'lit';
 import { createRef, ref } from 'lit/directives/ref.js';

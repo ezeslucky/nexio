@@ -13,10 +13,10 @@ import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
 } from '@canvas/nexio-shared/services';
-import { DeleteIcon, PaletteIcon, SmileIcon } from '@canvas/icons/lit';
+import { DeleteIcon, PaletteIcon, SmileIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import type { ExtensionType } from '@canvas/store';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { html } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { styleMap } from 'lit/directives/style-map.js';

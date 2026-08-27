@@ -23,7 +23,7 @@ import {
   DistributeHorizontalIcon,
   DistributeVerticalIcon,
   ResizeTidyUpIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { GfxModel } from '@canvas/std/gfx';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

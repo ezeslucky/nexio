@@ -12,7 +12,7 @@ import {
   OpenInNewIcon,
   PlusIcon,
   SplitViewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useMemo } from 'react';

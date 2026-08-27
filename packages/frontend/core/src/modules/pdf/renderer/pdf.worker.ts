@@ -3,13 +3,13 @@ import {
   OpConsumer,
   transfer,
 } from '@ezeslucky/infra/op';
-import type { Document } from '@ezeslucky/pdf-viewer';
+import type { Document } from '@toeverything/pdf-viewer';
 import {
   createPDFium,
   PageRenderingflags,
   Runtime,
   Viewer,
-} from '@ezeslucky/pdf-viewer';
+} from '@toeverything/pdf-viewer';
 import {
   BehaviorSubject,
   combineLatestWith,

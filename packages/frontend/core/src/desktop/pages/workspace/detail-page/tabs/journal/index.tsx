@@ -22,7 +22,7 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { CalendarXmarkIcon, EditIcon } from '@canvas/icons/rc';
+import { CalendarXmarkIcon, EditIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,

@@ -8,7 +8,7 @@ import {
   ExportToPngIcon,
   PageIcon,
   PrinterIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { ReactNode } from 'react';
 import { useCallback } from 'react';
 

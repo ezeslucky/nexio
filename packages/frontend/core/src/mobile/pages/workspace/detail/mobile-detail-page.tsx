@@ -33,7 +33,7 @@ import {
   useService,
   useServices,
 } from '@ezeslucky/infra';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
 import dayjs from 'dayjs';
 import { useCallback, useEffect, useRef, useState } from 'react';

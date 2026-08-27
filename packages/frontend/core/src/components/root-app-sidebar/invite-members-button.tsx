@@ -2,7 +2,7 @@ import { MenuItem } from '@nexio/core/modules/app-sidebar/views';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { CollaborationIcon } from '@canvas/icons/rc';
+import { CollaborationIcon } from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

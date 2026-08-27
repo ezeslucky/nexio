@@ -11,7 +11,7 @@ import {
   getViewportElement,
 } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { MoreHorizontalIcon } from '@canvas/icons/lit';
+import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';

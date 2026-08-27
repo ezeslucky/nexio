@@ -6,7 +6,7 @@ import type { ColorScheme } from '@canvas/nexio/model';
 import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import { MarkdownTransformer } from '@canvas/nexio/widgets/linked-doc';
 import type { NotificationService } from '@canvas/nexio-shared/services';
-import { CopyIcon, PageIcon, ToolIcon } from '@canvas/icons/lit';
+import { CopyIcon, PageIcon, ToolIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@canvas/std';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -11,7 +11,7 @@ import {
   GithubIcon,
   GoogleIcon,
   LockIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactElement, type SVGAttributes, useCallback } from 'react';
 

@@ -6,7 +6,7 @@ import { UserFriendlyError } from '@nexio/error';
 import { type InvoicesQuery, InvoiceStatus } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';
 
 import * as styles from './styles.css';

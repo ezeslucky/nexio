@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
-import { cssVar } from '@ezeslucky/theme';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVar } from '@toeverything/theme';
+import { cssVarV2 } from '@toeverything/theme/v2';
 
 export const attachmentsWrapper = css({
   display: 'flex',

@@ -2,7 +2,7 @@ import { RENDER_CARD_THROTTLE_MS } from '@canvas/nexio-block-embed';
 import { LoadingIcon } from '@canvas/nexio-components/icons';
 import { ThemeProvider } from '@canvas/nexio-shared/services';
 import { WithDisposable } from '@canvas/global/lit';
-import { ResetIcon } from '@canvas/icons/lit';
+import { ResetIcon } from '@blocksuite/icons/lit';
 import {
   BlockSelection,
   isGfxBlockComponent,

@@ -1,6 +1,6 @@
 import { getSelectedModelsCommand } from '@canvas/nexio-shared/commands';
 import type { SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { EmbedIcon } from '@canvas/icons/lit';
+import { EmbedIcon } from '@blocksuite/icons/lit';
 
 import { insertEmptyEmbedIframeCommand } from '../../commands/insert-empty-embed-iframe';
 import { EmbedIframeTooltip } from './tooltip';

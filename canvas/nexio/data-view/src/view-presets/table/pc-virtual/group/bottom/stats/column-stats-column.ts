@@ -5,7 +5,7 @@ import {
   popupTargetFromElement,
 } from '@canvas/nexio-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { ArrowDownSmallIcon } from '@canvas/icons/lit';
+import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { Text } from '@canvas/store';
 import { autoPlacement, offset } from '@floating-ui/dom';

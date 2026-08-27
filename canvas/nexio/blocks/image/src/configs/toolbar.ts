@@ -16,7 +16,7 @@ import {
   TextAlignCenterIcon,
   TextAlignLeftIcon,
   TextAlignRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import type { ExtensionType } from '@canvas/store';
 

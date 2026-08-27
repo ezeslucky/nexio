@@ -1,9 +1,9 @@
-import { type NexioTheme, darkTheme, lightTheme } from '@ezeslucky/theme';
+import { type NexioTheme, darkTheme, lightTheme } from '@toeverything/theme';
 import {
   type NexioThemeKeyV2,
   darkThemeV2,
   lightThemeV2,
-} from '@ezeslucky/theme/v2';
+} from '@toeverything/theme/v2';
 import { useTheme } from 'next-themes';
 
 export const useThemeValueV2 = (key: NexioThemeKeyV2) => {

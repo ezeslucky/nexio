@@ -1,4 +1,4 @@
-import { InformationIcon } from '@canvas/icons/rc';
+import { InformationIcon } from '@blocksuite/icons/rc';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import type { InputProps } from './index';

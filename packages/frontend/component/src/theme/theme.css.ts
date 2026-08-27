@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { globalStyle } from '@vanilla-extract/css';
 
 globalStyle('body', {

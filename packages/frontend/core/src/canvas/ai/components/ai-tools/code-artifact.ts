@@ -16,7 +16,7 @@ import {
   DownloadIcon,
   PageIcon,
   ToolIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { effect, signal } from '@preact/signals-core';
 import { css, html, LitElement, nothing } from 'lit';

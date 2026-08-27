@@ -17,7 +17,7 @@ import {
   OpenInNewIcon,
   ResetIcon,
   SplitViewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { memo, useCallback, useContext } from 'react';
 

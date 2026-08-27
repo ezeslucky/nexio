@@ -4,7 +4,7 @@ import { ImageProxyService } from '@canvas/nexio-shared/adapters';
 import { ThemeProvider } from '@canvas/nexio-shared/services';
 import { getHostName } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { OpenInNewIcon } from '@canvas/icons/lit';
+import { OpenInNewIcon } from '@blocksuite/icons/lit';
 import { isGfxBlockComponent, ShadowlessElement } from '@canvas/std';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';

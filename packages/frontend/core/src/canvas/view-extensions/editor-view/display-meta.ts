@@ -10,7 +10,7 @@ import {
   referenceToNode,
 } from '@canvas/nexio/shared/utils';
 import { LifeCycleWatcher, StdIdentifier } from '@canvas/nexio/std';
-import { LinkedPageIcon, PageIcon } from '@canvas/icons/lit';
+import { LinkedPageIcon, PageIcon } from '@blocksuite/icons/lit';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { type FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';

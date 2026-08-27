@@ -24,7 +24,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 import {
   AIImageIconWithAnimation,

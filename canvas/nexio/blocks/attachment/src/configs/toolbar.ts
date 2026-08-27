@@ -26,7 +26,7 @@ import {
   EditIcon,
   ReplaceIcon,
   ResetIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import type { ExtensionType } from '@canvas/store';
 import { flip, offset } from '@floating-ui/dom';

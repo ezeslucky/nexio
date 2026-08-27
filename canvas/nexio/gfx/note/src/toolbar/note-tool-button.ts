@@ -3,7 +3,7 @@ import {
   type MenuPopper,
   QuickToolMixin,
 } from '@canvas/nexio-widget-edgeless-toolbar';
-import { PageIcon } from '@canvas/icons/lit';
+import { PageIcon } from '@blocksuite/icons/lit';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { state } from 'lit/decorators.js';

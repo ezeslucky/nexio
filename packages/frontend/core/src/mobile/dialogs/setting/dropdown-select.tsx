@@ -1,5 +1,5 @@
 import { type MenuProps, MobileMenu, MobileMenuItem } from '@nexio/component';
-import { ArrowDownSmallIcon } from '@canvas/icons/rc';
+import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import {
   type CSSProperties,

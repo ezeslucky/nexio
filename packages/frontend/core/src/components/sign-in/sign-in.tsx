@@ -16,9 +16,9 @@ import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,
   PublishIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import {
   type Dispatch,
   type SetStateAction,

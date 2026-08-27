@@ -25,7 +25,7 @@ import {
   ArrowDownSmallIcon,
   EditIcon,
   MoreHorizontalIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';

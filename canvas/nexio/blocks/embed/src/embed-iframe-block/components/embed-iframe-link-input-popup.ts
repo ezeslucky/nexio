@@ -3,8 +3,8 @@ import {
   TelemetryProvider,
 } from '@canvas/nexio-shared/services';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { CloseIcon } from '@canvas/icons/lit';
-import { baseTheme } from '@ezeslucky/theme';
+import { CloseIcon } from '@blocksuite/icons/lit';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

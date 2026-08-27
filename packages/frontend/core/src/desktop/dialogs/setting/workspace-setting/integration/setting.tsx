@@ -1,5 +1,5 @@
 import { Switch } from '@nexio/component';
-import { DoneIcon } from '@canvas/icons/rc';
+import { DoneIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes, ReactNode } from 'react';
 

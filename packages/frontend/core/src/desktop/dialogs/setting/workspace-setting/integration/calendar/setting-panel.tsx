@@ -2,7 +2,7 @@ import { Button, Input, Modal, notify } from '@nexio/component';
 import { IntegrationService } from '@nexio/core/modules/integration';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { PlusIcon, TodayIcon } from '@canvas/icons/rc';
+import { PlusIcon, TodayIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

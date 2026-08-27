@@ -21,7 +21,7 @@ import {
   PenIcon,
   ReplaceIcon,
   ResetIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import type { TemplateResult } from 'lit';
 

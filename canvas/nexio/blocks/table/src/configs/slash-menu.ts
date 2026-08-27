@@ -2,7 +2,7 @@ import { getSelectedModelsCommand } from '@canvas/nexio-shared/commands';
 import { TelemetryProvider } from '@canvas/nexio-shared/services';
 import { isInsideBlockByFlavour } from '@canvas/nexio-shared/utils';
 import type { SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { TableIcon } from '@canvas/icons/lit';
+import { TableIcon } from '@blocksuite/icons/lit';
 
 import { insertTableBlockCommand } from '../commands';
 import { tableTooltip } from './tooltips';

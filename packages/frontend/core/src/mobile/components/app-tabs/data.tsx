@@ -1,4 +1,4 @@
-import { AllDocsIcon, HomeIcon } from '@canvas/icons/rc';
+import { AllDocsIcon, HomeIcon } from '@blocksuite/icons/rc';
 
 import { AppTabCreate } from './create';
 import { AppTabJournal } from './journal';

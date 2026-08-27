@@ -1,4 +1,4 @@
-import { DoneIcon } from '@canvas/icons/rc';
+import { DoneIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 
 import type { MenuItemProps } from './menu.types';

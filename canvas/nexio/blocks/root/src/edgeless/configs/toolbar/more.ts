@@ -46,7 +46,7 @@ import {
   GroupIcon,
   LinkedPageIcon,
   ResetIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import { GfxBlockElementModel, type GfxModel } from '@canvas/std/gfx';
 

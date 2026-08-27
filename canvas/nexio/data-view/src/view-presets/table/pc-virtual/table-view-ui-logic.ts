@@ -4,9 +4,9 @@ import {
   popupTargetFromElement,
 } from '@canvas/nexio-components/context-menu';
 import type { InsertToPosition } from '@canvas/nexio-shared/utils';
-import { AddCursorIcon } from '@canvas/icons/lit';
+import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { computed, signal } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import type { TemplateResult } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 import { html } from 'lit/static-html.js';

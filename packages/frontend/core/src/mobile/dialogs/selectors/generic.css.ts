@@ -3,8 +3,8 @@ import {
   bodyRegular,
   footnoteRegular,
   subHeadlineRegular,
-} from '@ezeslucky/theme/typography';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+} from '@toeverything/theme/typography';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { style } from '@vanilla-extract/css';
 
 const flexCenter = style({

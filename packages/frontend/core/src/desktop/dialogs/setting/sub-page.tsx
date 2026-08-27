@@ -1,7 +1,7 @@
 import { Button, Scrollable } from '@nexio/component';
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { type Island } from '@nexio/core/utils/island';
-import { ArrowLeftBigIcon } from '@canvas/icons/rc';
+import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { eases, waapi } from 'animejs';
 import clsx from 'clsx';

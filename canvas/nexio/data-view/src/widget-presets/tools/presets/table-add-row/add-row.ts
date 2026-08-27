@@ -1,6 +1,6 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { IS_MOBILE } from '@canvas/global/env';
-import { PlusIcon } from '@canvas/icons/lit';
+import { PlusIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 
 import { WidgetBase } from '../../../../core/widget/widget-base.js';

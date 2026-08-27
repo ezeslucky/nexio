@@ -1,6 +1,6 @@
 import { Button } from '@nexio/component/ui/button';
 import { useI18n } from '@nexio/i18n';
-import { Logo1Icon } from '@canvas/icons/rc';
+import { Logo1Icon } from '@blocksuite/icons/rc';
 import { useTheme } from 'next-themes';
 import { type ReactNode, useCallback } from 'react';
 

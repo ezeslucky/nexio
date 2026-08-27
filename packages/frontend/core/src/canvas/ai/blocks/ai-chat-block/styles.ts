@@ -1,4 +1,4 @@
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';
 
 export const AIChatBlockStyles = css`

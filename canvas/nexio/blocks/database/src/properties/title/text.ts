@@ -10,7 +10,7 @@ import {
 } from '@canvas/nexio-shared/utils';
 import { BaseCellRenderer } from '@canvas/data-view';
 import { IS_MAC } from '@canvas/global/env';
-import { LinkedPageIcon } from '@canvas/icons/lit';
+import { LinkedPageIcon } from '@blocksuite/icons/lit';
 import type { BlockSnapshot, DeltaInsert, Text } from '@canvas/store';
 import { computed, signal } from '@preact/signals-core';
 import { property } from 'lit/decorators.js';

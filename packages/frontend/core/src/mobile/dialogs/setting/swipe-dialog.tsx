@@ -4,7 +4,7 @@ import {
   Scrollable,
 } from '@nexio/component';
 import { PageHeader } from '@nexio/core/mobile/components';
-import { ArrowLeftSmallIcon } from '@canvas/icons/rc';
+import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { animate } from 'animejs';
 import {

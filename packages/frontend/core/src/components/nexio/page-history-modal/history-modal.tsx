@@ -12,7 +12,7 @@ import { i18nTime, Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import type { DocMode } from '@canvas/nexio/model';
 import type { Store, Workspace } from '@canvas/nexio/store';
-import { CloseIcon, ToggleRightIcon } from '@canvas/icons/rc';
+import { CloseIcon, ToggleRightIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import type { DialogContentProps } from '@radix-ui/react-dialog';
 import { useLiveData, useService } from '@ezeslucky/infra';

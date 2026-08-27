@@ -1,5 +1,5 @@
 import { LiveData, Store } from '@ezeslucky/infra';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { exhaustMap, map } from 'rxjs';
 
 import { AuthService, type WorkspaceServerService } from '../../cloud';

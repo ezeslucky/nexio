@@ -34,7 +34,7 @@ import {
   TextAlignCenterIcon,
   TextAlignLeftIcon,
   TextAlignRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { GfxModel } from '@canvas/std/gfx';
 import { signal } from '@preact/signals-core';
 import { html } from 'lit';

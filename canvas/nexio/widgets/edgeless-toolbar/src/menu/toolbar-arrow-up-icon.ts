@@ -1,4 +1,4 @@
-import { ArrowUpSmallIcon } from '@canvas/icons/lit';
+import { ArrowUpSmallIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css, html } from 'lit';
 

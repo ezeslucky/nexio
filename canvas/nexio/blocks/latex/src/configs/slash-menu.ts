@@ -4,7 +4,7 @@ import {
   getTextSelectionCommand,
 } from '@canvas/nexio-shared/commands';
 import { type SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { TeXIcon } from '@canvas/icons/lit';
+import { TeXIcon } from '@blocksuite/icons/lit';
 
 import { insertLatexBlockCommand } from '../commands';
 import { LatexTooltip } from './tooltips';

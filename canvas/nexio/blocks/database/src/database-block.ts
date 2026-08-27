@@ -42,7 +42,7 @@ import {
   CopyIcon,
   DeleteIcon,
   MoreHorizontalIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { type BlockComponent, BlockSelection } from '@canvas/std';
 import { RANGE_SYNC_EXCLUDE_ATTR } from '@canvas/std/inline';
 import { Slice } from '@canvas/store';

@@ -4,7 +4,7 @@ import { Label } from '@nexio/admin/components/ui/label';
 import { Separator } from '@nexio/admin/components/ui/separator';
 import { Switch } from '@nexio/admin/components/ui/switch';
 import type { FeatureType } from '@nexio/graphql';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { ChevronRightIcon } from 'lucide-react';
 import type { ChangeEvent } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';

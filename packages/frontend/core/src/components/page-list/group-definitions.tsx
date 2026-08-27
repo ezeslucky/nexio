@@ -3,7 +3,7 @@ import type { Tag } from '@nexio/core/modules/tag';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
 import type { DocMeta } from '@canvas/nexio/store';
-import { FavoritedIcon, FavoriteIcon } from '@canvas/icons/rc';
+import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { type ReactNode, useMemo } from 'react';
 

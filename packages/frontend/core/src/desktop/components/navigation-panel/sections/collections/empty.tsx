@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { ViewLayersIcon } from '@canvas/icons/rc';
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 
 import { NavigationPanelEmptySection } from '../../layouts/empty-section';
 

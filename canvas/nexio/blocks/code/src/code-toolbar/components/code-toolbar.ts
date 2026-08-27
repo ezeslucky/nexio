@@ -7,7 +7,7 @@ import { renderGroups } from '@canvas/nexio-components/toolbar';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { WithDisposable } from '@canvas/global/lit';
 import { noop } from '@canvas/global/utils';
-import { MoreVerticalIcon } from '@canvas/icons/lit';
+import { MoreVerticalIcon } from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

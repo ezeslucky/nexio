@@ -6,7 +6,7 @@ import {
   ArrowUpSmallIcon,
   CloseIcon,
   DoneIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';

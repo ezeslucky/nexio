@@ -9,9 +9,9 @@ import {
   LockIcon,
   SingleSelectCheckSolidIcon,
   ViewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 

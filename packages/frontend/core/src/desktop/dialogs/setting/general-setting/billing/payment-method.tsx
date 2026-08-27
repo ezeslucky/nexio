@@ -11,7 +11,7 @@ import { UrlService } from '@nexio/core/modules/url';
 import { UserFriendlyError } from '@nexio/error';
 import { createCustomerPortalMutation } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect, useState } from 'react';
 

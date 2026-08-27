@@ -5,7 +5,7 @@ import { unsafeCSSVar } from '@canvas/nexio-shared/theme';
 import type { NexioTextAttributes } from '@canvas/nexio-shared/types';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { noop } from '@canvas/global/utils';
-import { DoneIcon } from '@canvas/icons/lit';
+import { DoneIcon } from '@blocksuite/icons/lit';
 import { type BlockStdScope, ShadowlessElement } from '@canvas/std';
 import { InlineManagerExtension } from '@canvas/std/inline';
 import { effect, type Signal, signal } from '@preact/signals-core';

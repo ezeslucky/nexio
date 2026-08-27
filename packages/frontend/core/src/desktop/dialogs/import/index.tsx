@@ -35,10 +35,10 @@ import {
   PageIcon,
   SaveIcon,
   ZipIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVar } from '@toeverything/theme';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   type ReactElement,
   type SVGAttributes,

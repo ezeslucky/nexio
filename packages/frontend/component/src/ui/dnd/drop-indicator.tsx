@@ -1,6 +1,6 @@
 import type { Edge } from '@atlaskit/pragmatic-drag-and-drop-hitbox/closest-edge';
 import type { Instruction } from '@atlaskit/pragmatic-drag-and-drop-hitbox/tree-item';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { type ReactElement } from 'react';

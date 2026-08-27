@@ -6,7 +6,7 @@ import { viewPresets } from '@canvas/data-view/view-presets';
 import {
   DatabaseKanbanViewIcon,
   DatabaseTableViewIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 import { insertDatabaseBlockCommand } from '../commands';
 import { KanbanViewTooltip, TableViewTooltip } from './tooltips';

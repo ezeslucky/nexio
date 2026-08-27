@@ -4,13 +4,13 @@ import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
 import { UrlService } from '@nexio/core/modules/url';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon } from '@canvas/icons/rc';
+import { DeleteIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,
   useServiceOptional,
 } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { useCallback } from 'react';
 
 export const ThemeEditorSetting = () => {

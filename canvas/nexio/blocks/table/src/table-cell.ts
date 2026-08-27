@@ -27,7 +27,7 @@ import {
   InsertLeftIcon,
   InsertRightIcon,
   PasteIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import type { Text } from '@canvas/store';
 import { computed, effect, signal } from '@preact/signals-core';

@@ -3,7 +3,7 @@ import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-hel
 import { CollectionService } from '@nexio/core/modules/collection';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { ViewLayersIcon } from '@canvas/icons/rc';
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

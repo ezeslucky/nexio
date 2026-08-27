@@ -14,7 +14,7 @@ import {
   DeleteIcon,
   DuplicateIcon,
   ExpandFullIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import { type ExtensionType, Slice } from '@canvas/store';
 import { html } from 'lit';

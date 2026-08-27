@@ -1,4 +1,4 @@
-import { Logo1Icon } from '@canvas/icons/rc';
+import { Logo1Icon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { FC } from 'react';
 

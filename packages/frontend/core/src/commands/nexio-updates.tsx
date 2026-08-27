@@ -2,7 +2,7 @@ import { notify } from '@nexio/component';
 import { updateReadyAtom } from '@nexio/core/components/hooks/use-app-updater';
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ResetIcon } from '@canvas/icons/rc';
+import { ResetIcon } from '@blocksuite/icons/rc';
 import type { createStore } from 'jotai';
 
 import { registerNexioCommand } from './registry';

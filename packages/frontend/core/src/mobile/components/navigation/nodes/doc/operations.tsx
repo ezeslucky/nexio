@@ -24,7 +24,7 @@ import {
   InformationIcon,
   LinkedPageIcon,
   OpenInNewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

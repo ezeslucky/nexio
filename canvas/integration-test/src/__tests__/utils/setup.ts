@@ -1,5 +1,5 @@
-import '@ezeslucky/theme/style.css';
-import '@ezeslucky/theme/fonts.css';
+import '@toeverything/theme/style.css';
+import '@toeverything/theme/fonts.css';
 
 import type { DocMode } from '@canvas/nexio/model';
 import { NexioSchemas } from '@canvas/nexio/schemas';

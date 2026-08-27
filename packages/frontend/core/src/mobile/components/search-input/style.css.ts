@@ -1,5 +1,5 @@
-import { bodyRegular } from '@ezeslucky/theme/typography';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { bodyRegular } from '@toeverything/theme/typography';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { generateIdentifier, style } from '@vanilla-extract/css';
 
 export const searchVTName = generateIdentifier('mobile-search-input');

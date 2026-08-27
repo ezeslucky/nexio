@@ -18,7 +18,7 @@ import {
 } from '@nexio/graphql';
 import { Trans, useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { DoneIcon } from '@canvas/icons/rc';
+import { DoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';

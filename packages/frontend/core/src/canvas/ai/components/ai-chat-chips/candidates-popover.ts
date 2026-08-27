@@ -2,7 +2,7 @@ import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
 import { scrollbarStyle } from '@canvas/nexio/shared/styles';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import { ShadowlessElement } from '@canvas/nexio/std';
-import { PlusIcon } from '@canvas/icons/lit';
+import { PlusIcon } from '@blocksuite/icons/lit';
 import { type Signal, signal } from '@preact/signals-core';
 import { css, html } from 'lit';
 import { property, state } from 'lit/decorators.js';

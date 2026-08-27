@@ -8,7 +8,7 @@ import {
   CheckBoxUnIcon,
   ToggleDownIcon,
   ToggleRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { getNumberPrefix } from './get-number-prefix.js';

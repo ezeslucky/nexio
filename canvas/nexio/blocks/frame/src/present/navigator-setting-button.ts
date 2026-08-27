@@ -2,7 +2,7 @@ import { EdgelessLegacySlotIdentifier } from '@canvas/nexio-block-surface';
 import { EditPropsStore } from '@canvas/nexio-shared/services';
 import { createButtonPopper } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { SettingsIcon } from '@canvas/icons/lit';
+import { SettingsIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

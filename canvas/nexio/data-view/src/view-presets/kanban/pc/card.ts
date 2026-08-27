@@ -1,9 +1,9 @@
 import { popupTargetFromElement } from '@canvas/nexio-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { CenterPeekIcon, MoreHorizontalIcon } from '@canvas/icons/lit';
+import { CenterPeekIcon, MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { signal } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

@@ -15,7 +15,7 @@ import {
   FilterIcon,
   MoreHorizontalIcon,
   PlusIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed, type ReadonlySignal } from '@preact/signals-core';
 import { css, html } from 'lit';

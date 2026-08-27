@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { ArrowLeftSmallIcon } from '@canvas/icons/rc';
+import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import type { FC } from 'react';
 
 import type { ButtonProps } from '../../ui/button';

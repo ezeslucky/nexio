@@ -32,7 +32,7 @@ import {
   SystemFontFamilyService,
 } from '@nexio/core/modules/system-font-family';
 import { Trans, useI18n } from '@nexio/i18n';
-import { DoneIcon, SearchIcon } from '@canvas/icons/rc';
+import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {

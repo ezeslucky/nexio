@@ -13,7 +13,7 @@ import {
   ExpandFullIcon,
   InsertLeftIcon,
   InsertRightIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { useAtom } from 'jotai';

@@ -13,12 +13,12 @@ import {
   CloseIcon,
   DeleteIcon,
   MoreHorizontalIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { nanoid } from '@canvas/store';
 import { autoPlacement, offset, shift } from '@floating-ui/dom';
 import { computed, type ReadonlySignal, signal } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

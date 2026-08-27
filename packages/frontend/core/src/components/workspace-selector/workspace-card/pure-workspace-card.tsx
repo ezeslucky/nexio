@@ -2,7 +2,7 @@ import { Skeleton } from '@nexio/component';
 import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
-import { DoneIcon } from '@canvas/icons/rc';
+import { DoneIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef } from 'react';

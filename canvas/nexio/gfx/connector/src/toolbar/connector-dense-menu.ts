@@ -6,7 +6,7 @@ import {
   ConnectorCIcon,
   ConnectorEIcon,
   ConnectorLIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 import { ConnectorTool } from '../connector-tool';
 

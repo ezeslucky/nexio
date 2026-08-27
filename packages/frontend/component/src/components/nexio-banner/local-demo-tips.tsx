@@ -1,7 +1,7 @@
 import { Button, IconButton } from '@nexio/component/ui/button';
 import { useI18n } from '@nexio/i18n';
-import { CloseIcon } from '@canvas/icons/rc';
-import { cssVar } from '@ezeslucky/theme';
+import { CloseIcon } from '@blocksuite/icons/rc';
+import { cssVar } from '@toeverything/theme';
 import { useCallback } from 'react';
 
 import * as styles from './index.css';

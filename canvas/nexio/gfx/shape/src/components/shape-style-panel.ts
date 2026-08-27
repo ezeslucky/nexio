@@ -1,5 +1,5 @@
 import { ShapeStyle } from '@canvas/nexio-model';
-import { StyleGeneralIcon, StyleScribbleIcon } from '@canvas/icons/lit';
+import { StyleGeneralIcon, StyleScribbleIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

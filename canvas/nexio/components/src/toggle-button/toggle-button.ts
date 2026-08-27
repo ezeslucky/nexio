@@ -1,6 +1,6 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { WithDisposable } from '@canvas/global/lit';
-import { ToggleDownIcon, ToggleRightIcon } from '@canvas/icons/lit';
+import { ToggleDownIcon, ToggleRightIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,5 +1,5 @@
 import { popupTargetFromElement } from '@canvas/nexio-components/context-menu';
-import { SortIcon } from '@canvas/icons/lit';
+import { SortIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { sortTraitKey } from '../../../core/sort/manager.js';

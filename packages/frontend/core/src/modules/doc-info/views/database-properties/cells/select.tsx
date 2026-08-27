@@ -9,7 +9,7 @@ import {
 } from '@nexio/core/modules/tag/entities/utils';
 import type { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
 import type { SelectTag } from '@canvas/data-view';
-import { MultiSelectIcon, SingleSelectIcon } from '@canvas/icons/rc';
+import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useMemo } from 'react';

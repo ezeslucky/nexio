@@ -2,7 +2,7 @@ import {
   NexioIcon,
   ArrowRightBigIcon,
   FolderIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { Meta } from '@storybook/react';
 import clsx from 'clsx';
 import { useCallback, useEffect, useState } from 'react';

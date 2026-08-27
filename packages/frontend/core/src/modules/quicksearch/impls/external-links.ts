@@ -1,4 +1,4 @@
-import { LinkIcon } from '@canvas/icons/rc';
+import { LinkIcon } from '@blocksuite/icons/rc';
 import { Entity, LiveData } from '@ezeslucky/infra';
 
 import { resolveLinkToDoc } from '../../navigation';

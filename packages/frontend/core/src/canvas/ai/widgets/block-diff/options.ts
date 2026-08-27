@@ -1,7 +1,7 @@
 import track from '@nexio/track';
 import { WithDisposable } from '@canvas/nexio/global/lit';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
-import { CloseIcon, DoneIcon } from '@canvas/icons/lit';
+import { CloseIcon, DoneIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

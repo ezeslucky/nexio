@@ -26,7 +26,7 @@ import {
   LinkedPageIcon,
   OpenInNewIcon,
   ResetIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier, BlockSelection } from '@canvas/std';
 import {
   type ExtensionType,

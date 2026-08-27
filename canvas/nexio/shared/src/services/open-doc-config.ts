@@ -1,5 +1,5 @@
 import { createIdentifier } from '@canvas/global/di';
-import { CenterPeekIcon, ExpandFullIcon } from '@canvas/icons/lit';
+import { CenterPeekIcon, ExpandFullIcon } from '@blocksuite/icons/lit';
 import { type ExtensionType } from '@canvas/store';
 import type { TemplateResult } from 'lit';
 

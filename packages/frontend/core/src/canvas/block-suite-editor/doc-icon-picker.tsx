@@ -1,7 +1,7 @@
 import { IconEditor, IconRenderer } from '@nexio/component';
 import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
 import { useI18n } from '@nexio/i18n';
-import { SmileSolidIcon } from '@canvas/icons/rc';
+import { SmileSolidIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 
 import * as styles from './doc-icon-picker.css';

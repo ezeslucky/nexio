@@ -2,7 +2,7 @@ import { focusBlockEnd } from '@canvas/nexio-shared/commands';
 import { FeatureFlagService } from '@canvas/nexio-shared/services';
 import { isInsideBlockByFlavour } from '@canvas/nexio-shared/utils';
 import { type SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { FontIcon } from '@canvas/icons/lit';
+import { FontIcon } from '@blocksuite/icons/lit';
 
 import { calloutTooltip } from './tooltips';
 

@@ -1,7 +1,7 @@
 import { cn } from '@nexio/admin/utils';
-import { CloseIcon } from '@canvas/icons/rc';
+import { CloseIcon } from '@blocksuite/icons/rc';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import * as React from 'react';
 
 const Dialog = DialogPrimitive.Root;

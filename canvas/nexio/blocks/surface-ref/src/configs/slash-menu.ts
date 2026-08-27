@@ -8,7 +8,7 @@ import {
   type SlashMenuItem,
 } from '@canvas/nexio-widget-slash-menu';
 import { Bound } from '@canvas/global/gfx';
-import { FrameIcon, GroupingIcon, MindmapIcon } from '@canvas/icons/lit';
+import { FrameIcon, GroupingIcon, MindmapIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 

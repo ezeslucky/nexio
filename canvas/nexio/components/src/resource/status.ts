@@ -8,7 +8,7 @@ import {
   stopPropagation,
 } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { InformationIcon } from '@canvas/icons/lit';
+import { InformationIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@canvas/std';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';

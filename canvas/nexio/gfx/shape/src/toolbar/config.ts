@@ -35,7 +35,7 @@ import {
   renderMenu,
 } from '@canvas/nexio-widget-edgeless-toolbar';
 import { Bound } from '@canvas/global/gfx';
-import { AddTextIcon, ShapeIcon } from '@canvas/icons/lit';
+import { AddTextIcon, ShapeIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import { html } from 'lit';
 import isEqual from 'lodash-es/isEqual';

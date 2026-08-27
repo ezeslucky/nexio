@@ -9,7 +9,7 @@ import {
   DoneIcon,
   ExpandCloseIcon,
   SettingsIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { autoPlacement, flip, offset } from '@floating-ui/dom';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

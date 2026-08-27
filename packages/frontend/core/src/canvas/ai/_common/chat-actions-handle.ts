@@ -37,7 +37,7 @@ import {
   InsertBleowIcon as InsertBelowIcon,
   LinkedPageIcon,
   PageIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { TemplateResult } from 'lit';
 
 import { insertFromMarkdown } from '../../utils';

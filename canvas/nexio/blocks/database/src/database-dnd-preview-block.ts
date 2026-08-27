@@ -1,6 +1,6 @@
 import type { DatabaseBlockModel } from '@canvas/nexio-model';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { DatabaseListViewIcon } from '@canvas/icons/lit';
+import { DatabaseListViewIcon } from '@blocksuite/icons/lit';
 import { BlockComponent } from '@canvas/std';
 import { css, html } from 'lit';
 

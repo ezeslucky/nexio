@@ -1,7 +1,7 @@
 import { EdgelessLegacySlotIdentifier } from '@canvas/nexio-block-surface';
 import { stopPropagation } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { MinusIcon, PlusIcon, ViewBarIcon } from '@canvas/icons/lit';
+import { MinusIcon, PlusIcon, ViewBarIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@canvas/std';
 import {
   GfxControllerIdentifier,
@@ -10,7 +10,7 @@ import {
   ZOOM_STEP,
 } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import clamp from 'lodash-es/clamp';

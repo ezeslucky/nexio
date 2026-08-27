@@ -10,7 +10,7 @@ import { fontXSStyle, panelBaseStyle } from '@canvas/nexio-shared/styles';
 import type { NexioTextAttributes } from '@canvas/nexio-shared/types';
 import { stopPropagation } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { DoneIcon, ResetIcon } from '@canvas/icons/lit';
+import { DoneIcon, ResetIcon } from '@blocksuite/icons/lit';
 import { type BlockStdScope, ShadowlessElement } from '@canvas/std';
 import type { InlineEditor, InlineRange } from '@canvas/std/inline';
 import { computePosition, inline, offset, shift } from '@floating-ui/dom';

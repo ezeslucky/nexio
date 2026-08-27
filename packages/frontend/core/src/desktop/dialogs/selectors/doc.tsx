@@ -4,7 +4,7 @@ import type {
   DialogComponentProps,
   WORKSPACE_DIALOG_SCHEMA,
 } from '@nexio/core/modules/dialogs';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 
 export const DocSelectorDialog = ({
   close,

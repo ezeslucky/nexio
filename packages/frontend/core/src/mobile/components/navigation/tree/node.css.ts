@@ -1,6 +1,6 @@
-import { cssVar } from '@ezeslucky/theme';
-import { bodyRegular } from '@ezeslucky/theme/typography';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVar } from '@toeverything/theme';
+import { bodyRegular } from '@toeverything/theme/typography';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { createVar, style } from '@vanilla-extract/css';
 
 export const levelIndent = createVar();

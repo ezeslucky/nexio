@@ -9,7 +9,7 @@ import {
   ExpandFullIcon,
   MoveLeftIcon,
   MoveRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { groupTraitKey } from '../../../core/group-by/trait.js';

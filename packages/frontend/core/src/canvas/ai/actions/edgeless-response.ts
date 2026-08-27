@@ -29,7 +29,7 @@ import {
   InsertBleowIcon as InsertBelowIcon,
   PenIcon,
   ResetIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { html, type TemplateResult } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

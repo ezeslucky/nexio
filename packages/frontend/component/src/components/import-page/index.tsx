@@ -5,7 +5,7 @@ import {
   HelpIcon,
   NewIcon,
   NotionIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 
 import { IconButton } from '../../ui/button';
 import { Tooltip } from '../../ui/tooltip';

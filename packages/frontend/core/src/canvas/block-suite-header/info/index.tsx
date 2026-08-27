@@ -2,7 +2,7 @@ import { IconButton } from '@nexio/component';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { InformationIcon } from '@canvas/icons/rc';
+import { InformationIcon } from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

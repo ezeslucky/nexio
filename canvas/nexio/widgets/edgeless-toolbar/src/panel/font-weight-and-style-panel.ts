@@ -5,7 +5,7 @@ import {
   FontStyle,
   FontWeight,
 } from '@canvas/nexio-model';
-import { DoneIcon } from '@canvas/icons/lit';
+import { DoneIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

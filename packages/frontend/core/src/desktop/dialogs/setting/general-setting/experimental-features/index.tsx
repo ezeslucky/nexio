@@ -12,7 +12,7 @@ import {
   DiscordIcon,
   EmailIcon,
   GithubIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';

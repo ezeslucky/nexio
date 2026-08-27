@@ -14,7 +14,7 @@ import {
   MoveLeftIcon,
   MoveRightIcon,
   ViewIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -15,7 +15,7 @@ import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { PlusIcon } from '@canvas/icons/rc';
+import { PlusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { type MouseEventHandler, useCallback, useMemo } from 'react';
 

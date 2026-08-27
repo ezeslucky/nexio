@@ -3,7 +3,7 @@ import {
   ForwardThirtySecondsIcon,
   RewindFifteenSecondsIcon,
   VoiceIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { clamp } from 'lodash-es';
 import { type MouseEventHandler, type ReactNode, useCallback } from 'react';
 

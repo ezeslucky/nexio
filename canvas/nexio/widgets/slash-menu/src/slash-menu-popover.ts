@@ -18,7 +18,7 @@ import {
   substringMatchScore,
 } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { ArrowDownSmallIcon } from '@canvas/icons/lit';
+import { ArrowDownSmallIcon } from '@blocksuite/icons/lit';
 import { autoPlacement, offset } from '@floating-ui/dom';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

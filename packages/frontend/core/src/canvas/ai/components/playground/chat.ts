@@ -12,7 +12,7 @@ import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import type { EditorHost } from '@canvas/nexio/std';
 import { ShadowlessElement } from '@canvas/nexio/std';
 import type { ExtensionType, Store } from '@canvas/nexio/store';
-import { DeleteIcon, NewPageIcon } from '@canvas/icons/lit';
+import { DeleteIcon, NewPageIcon } from '@blocksuite/icons/lit';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { createRef, type Ref, ref } from 'lit/directives/ref.js';

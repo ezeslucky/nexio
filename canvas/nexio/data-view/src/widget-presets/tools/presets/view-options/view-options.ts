@@ -17,7 +17,7 @@ import {
   LayoutIcon,
   MoreHorizontalIcon,
   SortIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';
 

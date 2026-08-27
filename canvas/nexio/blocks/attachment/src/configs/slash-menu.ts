@@ -1,6 +1,6 @@
 import { openSingleFileWith } from '@canvas/nexio-shared/utils';
 import { type SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { ExportToPdfIcon, FileIcon } from '@canvas/icons/lit';
+import { ExportToPdfIcon, FileIcon } from '@blocksuite/icons/lit';
 
 import { addSiblingAttachmentBlocks } from '../utils';
 import { AttachmentTooltip, PDFTooltip } from './tooltips';

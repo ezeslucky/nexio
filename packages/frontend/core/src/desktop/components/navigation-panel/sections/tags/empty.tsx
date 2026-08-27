@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { TagIcon } from '@canvas/icons/rc';
+import { TagIcon } from '@blocksuite/icons/rc';
 
 import { NavigationPanelEmptySection } from '../../layouts/empty-section';
 

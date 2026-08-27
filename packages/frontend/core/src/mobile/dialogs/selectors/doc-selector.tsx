@@ -7,7 +7,7 @@ import { DocsService } from '@nexio/core/modules/doc';
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 
 import { GenericSelector } from './generic-selector';

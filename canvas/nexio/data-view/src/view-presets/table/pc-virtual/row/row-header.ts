@@ -1,5 +1,5 @@
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@canvas/icons/lit';
+import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed, effect } from '@preact/signals-core';
 import clsx from 'clsx';

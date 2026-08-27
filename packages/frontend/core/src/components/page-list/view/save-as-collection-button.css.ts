@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { style } from '@vanilla-extract/css';
 export const button = style({
   padding: '6px 10px',

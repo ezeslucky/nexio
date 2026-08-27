@@ -1,4 +1,4 @@
-import { HighLightDuotoneIcon } from '@canvas/icons/lit';
+import { HighLightDuotoneIcon } from '@blocksuite/icons/lit';
 import { css, LitElement } from 'lit';
 
 export class HighlightDuotoneIcon extends LitElement {

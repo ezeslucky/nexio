@@ -17,7 +17,7 @@ import {
   PageIcon,
   PlusIcon,
   TemplateIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type React from 'react';

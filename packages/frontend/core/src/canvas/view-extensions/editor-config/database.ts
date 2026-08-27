@@ -13,7 +13,7 @@ import {
   type MenuOptions,
 } from '@canvas/nexio/components/context-menu';
 import type { DatabaseBlockModel } from '@canvas/nexio/model';
-import { LinkIcon } from '@canvas/icons/lit';
+import { LinkIcon } from '@blocksuite/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 export function createDatabaseOptionsConfig(framework: FrameworkProvider) {

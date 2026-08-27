@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 
 export const CloudSvg = () => (
   <svg

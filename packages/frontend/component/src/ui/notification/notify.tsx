@@ -2,7 +2,7 @@ import { UserFriendlyError } from '@nexio/error';
 import {
   InformationFillDuotoneIcon,
   SingleSelectCheckSolidIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { FC } from 'react';
 import { type ExternalToast, toast } from 'sonner';
 

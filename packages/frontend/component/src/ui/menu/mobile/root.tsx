@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { ArrowLeftSmallIcon } from '@canvas/icons/rc';
+import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
 import {

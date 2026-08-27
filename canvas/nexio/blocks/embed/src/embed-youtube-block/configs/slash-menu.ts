@@ -1,7 +1,7 @@
 import { DefaultTool } from '@canvas/nexio-block-surface';
 import { toggleEmbedCardCreateModal } from '@canvas/nexio-components/embed-card-modal';
 import type { SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { YoutubeDuotoneIcon } from '@canvas/icons/lit';
+import { YoutubeDuotoneIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 
 import { YoutubeVideoTooltip } from './tooltips';

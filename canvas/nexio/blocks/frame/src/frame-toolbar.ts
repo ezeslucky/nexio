@@ -31,7 +31,7 @@ import {
   EditIcon,
   InsertIntoPageIcon,
   UngroupIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { type BlockComponent, BlockFlavourIdentifier } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import type { ExtensionType } from '@canvas/store';

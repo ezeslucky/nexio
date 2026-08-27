@@ -29,7 +29,7 @@ import {
   type Rect,
   shift,
 } from '@floating-ui/dom';
-import { darkCssVariables, lightCssVariables } from '@ezeslucky/theme';
+import { darkCssVariables, lightCssVariables } from '@toeverything/theme';
 import { css, html, nothing, type PropertyValues, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { choose } from 'lit/directives/choose.js';

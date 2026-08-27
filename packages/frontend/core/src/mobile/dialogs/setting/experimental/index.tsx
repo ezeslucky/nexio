@@ -5,7 +5,7 @@ import {
   type Flag,
 } from '@nexio/core/modules/feature-flag';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useState } from 'react';
 

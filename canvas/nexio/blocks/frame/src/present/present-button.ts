@@ -2,7 +2,7 @@ import {
   EdgelessToolbarToolMixin,
   QuickToolMixin,
 } from '@canvas/nexio-widget-edgeless-toolbar';
-import { PresentationIcon } from '@canvas/icons/lit';
+import { PresentationIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 
 import { PresentTool } from '../present-tool';

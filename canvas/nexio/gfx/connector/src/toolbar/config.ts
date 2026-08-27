@@ -53,7 +53,7 @@ import {
   StartPointDiamondIcon,
   StartPointIcon,
   StartPointTriangleIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import { html } from 'lit';
 import { styleMap } from 'lit/directives/style-map.js';

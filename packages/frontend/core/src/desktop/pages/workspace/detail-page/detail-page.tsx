@@ -46,7 +46,7 @@ import {
   PropertyIcon,
   TocIcon,
   TodayIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import {
   FrameworkScope,
   useLiveData,

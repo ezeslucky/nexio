@@ -15,7 +15,7 @@ import {
   AutoTidyUpIcon,
   PropertyIcon,
   ResizeTidyUpIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import {
   type HTMLProps,

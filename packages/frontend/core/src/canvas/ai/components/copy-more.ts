@@ -10,7 +10,7 @@ import type {
   TextSelection,
 } from '@canvas/nexio/std';
 import type { NotificationService } from '@canvas/nexio-shared/services';
-import { CopyIcon, MoreHorizontalIcon, ResetIcon } from '@canvas/icons/lit';
+import { CopyIcon, MoreHorizontalIcon, ResetIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

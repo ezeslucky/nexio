@@ -1,6 +1,6 @@
 import { LoadingIcon } from '@canvas/nexio-components/icons';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { EmbedIcon } from '@canvas/icons/lit';
+import { EmbedIcon } from '@blocksuite/icons/lit';
 import { type BlockStdScope } from '@canvas/std';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

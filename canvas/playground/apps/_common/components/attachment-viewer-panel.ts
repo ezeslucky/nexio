@@ -6,7 +6,7 @@ import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,
   CloseIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import { css, html, LitElement, type TemplateResult } from 'lit';
 import { customElement, query } from 'lit/decorators.js';

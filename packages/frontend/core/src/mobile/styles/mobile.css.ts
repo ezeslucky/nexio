@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { globalStyle } from '@vanilla-extract/css';
 
 import { globalVars } from './variables.css';

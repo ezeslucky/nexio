@@ -2,7 +2,7 @@ import { DatePicker, Menu } from '@nexio/component';
 import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
 import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
 import { useI18n } from '@nexio/i18n';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback, useState } from 'react';
 
 /**

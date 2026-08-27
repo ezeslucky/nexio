@@ -1,6 +1,6 @@
 import { cssVarV2 } from '@canvas/nexio-shared/theme';
 import { css } from '@emotion/css';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 
 export const linkCellStyle = css({
   width: '100%',

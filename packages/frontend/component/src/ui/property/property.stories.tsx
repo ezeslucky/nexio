@@ -1,4 +1,4 @@
-import { FrameIcon } from '@canvas/icons/rc';
+import { FrameIcon } from '@blocksuite/icons/rc';
 
 import { useDraggable, useDropTarget } from '../dnd';
 import { MenuItem } from '../menu';

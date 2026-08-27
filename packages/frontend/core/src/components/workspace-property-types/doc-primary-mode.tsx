@@ -8,7 +8,7 @@ import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { DocService } from '@nexio/core/modules/doc';
 import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@canvas/nexio/model';
-import { EdgelessIcon, PageIcon } from '@canvas/icons/rc';
+import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

@@ -2,7 +2,7 @@ import { Button } from '@nexio/admin/components/ui/button';
 import { Input } from '@nexio/admin/components/ui/input';
 import { useQuery } from '@nexio/admin/use-query';
 import { getUserByEmailQuery } from '@nexio/graphql';
-import { ExportIcon, ImportIcon, PlusIcon } from '@canvas/icons/rc';
+import { ExportIcon, ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 import type { Table } from '@tanstack/react-table';
 import type { Dispatch, SetStateAction } from 'react';
 import {

@@ -42,7 +42,7 @@ import {
   FileIconXlsxIcon,
   FileIconXmlIcon,
   FileIconZipIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 // TODO(@fundon): should be an extension, users can customize.
 const iconMap = new Map([

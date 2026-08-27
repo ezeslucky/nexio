@@ -61,7 +61,7 @@ import {
   DeleteIcon,
   DuplicateIcon,
   LinkedPageIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import {
   type BlockComponent,
   BlockSelection,

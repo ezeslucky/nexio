@@ -1,5 +1,5 @@
 import { createModal } from '@canvas/nexio-components/context-menu';
-import { CloseIcon } from '@canvas/icons/lit';
+import { CloseIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css, html, type TemplateResult } from 'lit';
 import { property } from 'lit/decorators.js';

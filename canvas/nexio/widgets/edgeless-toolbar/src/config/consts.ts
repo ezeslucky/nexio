@@ -1,4 +1,4 @@
-import { StyleGeneralIcon, StyleScribbleIcon } from '@canvas/icons/lit';
+import { StyleGeneralIcon, StyleScribbleIcon } from '@blocksuite/icons/lit';
 
 import type { MenuItem } from './types';
 

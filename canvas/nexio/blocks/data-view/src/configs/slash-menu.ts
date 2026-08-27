@@ -1,7 +1,7 @@
 import { FeatureFlagService } from '@canvas/nexio-shared/services';
 import { isInsideBlockByFlavour } from '@canvas/nexio-shared/utils';
 import { type SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { DatabaseTableViewIcon } from '@canvas/icons/lit';
+import { DatabaseTableViewIcon } from '@blocksuite/icons/lit';
 
 import type { DataViewBlockComponent } from '../data-view-block';
 import { ToDoListTooltip } from './tooltips';

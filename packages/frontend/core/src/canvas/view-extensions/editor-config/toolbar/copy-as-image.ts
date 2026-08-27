@@ -13,7 +13,7 @@ import {
   GfxPrimitiveElementModel,
   isGfxGroupCompatibleModel,
 } from '@canvas/nexio/std/gfx';
-import { CopyAsImgaeIcon } from '@canvas/icons/lit';
+import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 
 const snapshotStyle = `

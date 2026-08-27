@@ -6,7 +6,7 @@ import {
   ConnectorCIcon,
   ConnectorEIcon,
   ConnectorLIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 

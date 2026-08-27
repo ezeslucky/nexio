@@ -20,7 +20,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

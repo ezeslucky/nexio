@@ -1,5 +1,5 @@
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { PlusIcon } from '@canvas/icons/lit';
+import { PlusIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import {
   autoPlacement,

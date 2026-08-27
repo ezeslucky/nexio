@@ -2,7 +2,7 @@ import { MenuItem, PropertyValue, type RadioItem } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { useI18n } from '@nexio/i18n';
-import { EdgelessIcon } from '@canvas/icons/rc';
+import { EdgelessIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useMemo } from 'react';
 

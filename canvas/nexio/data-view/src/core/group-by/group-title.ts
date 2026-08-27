@@ -1,6 +1,6 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { IS_MOBILE } from '@canvas/global/env';
-import { MoreHorizontalIcon, PlusIcon } from '@canvas/icons/lit';
+import { MoreHorizontalIcon, PlusIcon } from '@blocksuite/icons/lit';
 import { nothing } from 'lit';
 import { html } from 'lit/static-html.js';
 

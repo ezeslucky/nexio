@@ -32,7 +32,7 @@ import {
   LockIcon,
   ReleaseFromGroupIcon,
   UnlockIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { GfxModel } from '@canvas/std/gfx';
 import { html } from 'lit';
 

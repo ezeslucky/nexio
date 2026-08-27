@@ -6,7 +6,7 @@ import {
 import { WithDisposable } from '@canvas/nexio/global/lit';
 import { NotificationProvider } from '@canvas/nexio/shared/services';
 import type { EditorHost } from '@canvas/nexio/std';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

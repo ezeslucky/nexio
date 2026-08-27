@@ -6,7 +6,7 @@ import {
   RoundedRectangleIcon,
   SquareIcon,
   TriangleIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { TemplateResult } from 'lit';
 
 import {

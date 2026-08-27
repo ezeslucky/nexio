@@ -5,7 +5,7 @@ import {
   isTopLevelBlock,
   requestThrottledConnectedFrame,
 } from '@canvas/nexio-shared/utils';
-import { MultiCursorDuotoneIcon } from '@canvas/icons/lit';
+import { MultiCursorDuotoneIcon } from '@blocksuite/icons/lit';
 import { WidgetComponent } from '@canvas/std';
 import { GfxControllerIdentifier, type GfxModel } from '@canvas/std/gfx';
 import type { UserInfo } from '@canvas/store';

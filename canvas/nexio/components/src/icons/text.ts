@@ -1,4 +1,4 @@
-import * as icons from '@canvas/icons/lit';
+import * as icons from '@blocksuite/icons/lit';
 import { html, svg } from 'lit';
 
 import { icon } from './utils.js';
