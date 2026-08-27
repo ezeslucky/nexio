@@ -3,7 +3,7 @@ import {
   TextAlignCenterIcon,
   TextAlignLeftIcon,
   TextAlignRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { TemplateResult } from 'lit';
 
 export interface TextAlignConfig {

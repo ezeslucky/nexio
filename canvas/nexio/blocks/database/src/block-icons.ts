@@ -11,7 +11,7 @@ import {
   NumberedListIcon,
   QuoteIcon,
   TextIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { BlockModel } from '@canvas/store';
 import type { TemplateResult } from 'lit';
 const icons: Record<string, TemplateResult> = {

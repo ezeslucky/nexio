@@ -10,7 +10,7 @@ import {
   FrameIcon,
   GroupIcon,
   MindmapIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import type { GfxModel } from '@canvas/std/gfx';
 import { css, html, type TemplateResult } from 'lit';

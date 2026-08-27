@@ -14,7 +14,7 @@ import {
   CustomizedHeightIcon,
   InsertIntoPageIcon,
   ScissorsIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 import type { ExtensionType } from '@canvas/store';
 import { computed } from '@preact/signals-core';

@@ -12,7 +12,7 @@ import {
   ExpandFullIcon,
   PenIcon as EditIcon,
   PenIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

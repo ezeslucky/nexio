@@ -1,5 +1,5 @@
 import { useI18n } from '@nexio/i18n';
-import { SearchIcon } from '@canvas/icons/rc';
+import { SearchIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 

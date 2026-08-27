@@ -4,7 +4,7 @@ import { Bound, deserializeXYWH } from '@canvas/global/gfx';
 import { WidgetComponent } from '@canvas/std';
 import { GfxControllerIdentifier, type GfxModel } from '@canvas/std/gfx';
 import { computed, signal } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, nothing, unsafeCSS } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 import { styleMap } from 'lit/directives/style-map.js';

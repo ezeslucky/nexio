@@ -1,5 +1,5 @@
 import { NavigationPanelTreeContext } from '@nexio/core/desktop/components/navigation-panel';
-import { PlusIcon } from '@canvas/icons/rc';
+import { PlusIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { type HTMLAttributes, useContext } from 'react';

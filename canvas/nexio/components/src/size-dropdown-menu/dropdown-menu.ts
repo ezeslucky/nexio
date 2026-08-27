@@ -1,6 +1,6 @@
 import { stopPropagation } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { DoneIcon } from '@canvas/icons/lit';
+import { DoneIcon } from '@blocksuite/icons/lit';
 import { PropTypes, requiredProperties } from '@canvas/std';
 import type { ReadonlySignal, Signal } from '@preact/signals-core';
 import { css, html, LitElement, type TemplateResult } from 'lit';

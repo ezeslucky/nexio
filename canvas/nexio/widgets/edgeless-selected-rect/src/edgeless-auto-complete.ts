@@ -39,7 +39,7 @@ import {
   PlusIcon,
   SiblingNodeIcon,
   SubNodeIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import {
   type BlockComponent,
   type BlockStdScope,

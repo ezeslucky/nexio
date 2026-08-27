@@ -1,6 +1,6 @@
 import type { BlockSnapshot } from '@canvas/store';
 import { expect } from '@playwright/test';
-import { lightThemeV2 } from '@ezeslucky/theme/v2';
+import { lightThemeV2 } from '@toeverything/theme/v2';
 
 import { initDatabaseColumn } from '../database/actions.js';
 import {

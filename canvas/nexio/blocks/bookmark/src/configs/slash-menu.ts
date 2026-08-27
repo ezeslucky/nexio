@@ -5,7 +5,7 @@ import {
   type SlashMenuConfig,
   SlashMenuConfigIdentifier,
 } from '@canvas/nexio-widget-slash-menu';
-import { LinkIcon } from '@canvas/icons/lit';
+import { LinkIcon } from '@blocksuite/icons/lit';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import type { ExtensionType } from '@canvas/store';
 

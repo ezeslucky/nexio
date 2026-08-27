@@ -1,6 +1,6 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { PlusIcon } from '@canvas/icons/lit';
+import { PlusIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css, type TemplateResult } from 'lit';
 import { property, query } from 'lit/decorators.js';

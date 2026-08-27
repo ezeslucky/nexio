@@ -12,7 +12,7 @@ import {
   MeetingIcon,
   NotificationIcon,
   PenIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useEffect, useMemo } from 'react';
 

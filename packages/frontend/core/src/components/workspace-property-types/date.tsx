@@ -6,8 +6,8 @@ import {
 } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import { DateTimeIcon } from '@canvas/icons/rc';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { DateTimeIcon } from '@blocksuite/icons/rc';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   useCallback,
   useEffect,

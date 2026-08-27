@@ -1,6 +1,6 @@
 import { Progress, PropertyValue } from '@nexio/component';
 import { ConfigModal } from '@nexio/core/components/mobile';
-import { ProgressIcon } from '@canvas/icons/rc';
+import { ProgressIcon } from '@blocksuite/icons/rc';
 import type { LiveData } from '@ezeslucky/infra';
 import { useLiveData } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';

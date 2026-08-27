@@ -1,7 +1,7 @@
 import { IconButton } from '@nexio/component';
 import { NotificationCountService } from '@nexio/core/modules/notification';
 import { track } from '@nexio/track';
-import { SidebarIcon } from '@canvas/icons/rc';
+import { SidebarIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useRef } from 'react';

@@ -1,7 +1,7 @@
 import { Button } from '@nexio/component';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { useI18n } from '@nexio/i18n';
-import { DoneIcon } from '@canvas/icons/rc';
+import { DoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

@@ -11,10 +11,10 @@ import {
 } from '@canvas/nexio-shared/services';
 import { formatSize } from '@canvas/nexio-shared/utils';
 import { IS_MOBILE } from '@canvas/global/env';
-import { BrokenImageIcon, ImageIcon } from '@canvas/icons/lit';
+import { BrokenImageIcon, ImageIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

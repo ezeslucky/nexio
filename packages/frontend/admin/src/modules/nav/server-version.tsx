@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { useCallback } from 'react';
 
 import { Button } from '../../components/ui/button';

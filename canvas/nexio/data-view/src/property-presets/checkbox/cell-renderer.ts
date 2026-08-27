@@ -1,5 +1,5 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@canvas/icons/lit';
+import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { query } from 'lit/decorators.js';
 

@@ -1,5 +1,5 @@
 import { IconButton, Modal } from '@nexio/component';
-import { CloseIcon } from '@canvas/icons/rc';
+import { CloseIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
 import { RenameContent } from './content';

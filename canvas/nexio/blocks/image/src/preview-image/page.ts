@@ -1,6 +1,6 @@
 import type { ImageBlockModel } from '@canvas/nexio-model';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { ImageIcon } from '@canvas/icons/lit';
+import { ImageIcon } from '@blocksuite/icons/lit';
 import { BlockComponent } from '@canvas/std';
 import { css, html } from 'lit';
 

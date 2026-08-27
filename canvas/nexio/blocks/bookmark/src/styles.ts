@@ -1,5 +1,5 @@
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';
 
 export const styles = css`

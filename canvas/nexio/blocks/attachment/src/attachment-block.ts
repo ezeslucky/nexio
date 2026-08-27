@@ -32,7 +32,8 @@ import {
   ResetIcon,
   UpgradeIcon,
   WarningIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
+
 import { BlockSelection } from '@canvas/std';
 import { nanoid, Slice } from '@canvas/store';
 import { batch, computed, signal } from '@preact/signals-core';

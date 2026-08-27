@@ -6,7 +6,7 @@ import {
   stopPropagation,
 } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { DoneIcon } from '@canvas/icons/lit';
+import { DoneIcon } from '@blocksuite/icons/lit';
 import {
   type BlockStdScope,
   ShadowlessElement,

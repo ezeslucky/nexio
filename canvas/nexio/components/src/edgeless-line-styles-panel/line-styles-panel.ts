@@ -1,6 +1,6 @@
 import { LineWidth, StrokeStyle } from '@canvas/nexio-model';
 import { WithDisposable } from '@canvas/global/lit';
-import { BanIcon, DashLineIcon, StraightLineIcon } from '@canvas/icons/lit';
+import { BanIcon, DashLineIcon, StraightLineIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

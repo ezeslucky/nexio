@@ -9,7 +9,7 @@ import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import type { EditorHost } from '@canvas/nexio/std';
 import { ShadowlessElement } from '@canvas/nexio/std';
 import type { ExtensionType, Store } from '@canvas/nexio/store';
-import { CenterPeekIcon } from '@canvas/icons/lit';
+import { CenterPeekIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

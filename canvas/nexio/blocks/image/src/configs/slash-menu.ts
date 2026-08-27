@@ -1,6 +1,6 @@
 import { getSelectedModelsCommand } from '@canvas/nexio-shared/commands';
 import { type SlashMenuConfig } from '@canvas/nexio-widget-slash-menu';
-import { ImageIcon } from '@canvas/icons/lit';
+import { ImageIcon } from '@blocksuite/icons/lit';
 
 import { insertImagesCommand } from '../commands';
 import { PhotoTooltip } from './tooltips';

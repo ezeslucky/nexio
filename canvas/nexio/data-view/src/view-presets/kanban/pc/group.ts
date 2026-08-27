@@ -4,7 +4,7 @@ import {
   popupTargetFromElement,
 } from '@canvas/nexio-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { AddCursorIcon } from '@canvas/icons/lit';
+import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { css, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

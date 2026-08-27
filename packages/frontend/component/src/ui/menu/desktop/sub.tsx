@@ -1,4 +1,4 @@
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import * as ContextMenu from '@radix-ui/react-context-menu';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import clsx from 'clsx';

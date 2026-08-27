@@ -1,7 +1,7 @@
 import { NoteDisplayMode } from '@canvas/nexio-model';
 import { stopPropagation } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { EdgelessIcon, PageIcon } from '@canvas/icons/lit';
+import { EdgelessIcon, PageIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

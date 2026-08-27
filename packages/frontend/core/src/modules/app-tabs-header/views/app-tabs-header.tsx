@@ -12,7 +12,7 @@ import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-ev
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { CloseIcon, PlusIcon, RightSidebarIcon } from '@canvas/icons/rc';
+import { CloseIcon, PlusIcon, RightSidebarIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,

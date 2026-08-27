@@ -17,7 +17,7 @@ import {
   FileIcon,
   MoreHorizontalIcon,
   PlusIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import {
   computed,
   type ReadonlySignal,

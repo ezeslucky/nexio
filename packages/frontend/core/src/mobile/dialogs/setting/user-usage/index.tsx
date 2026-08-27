@@ -6,8 +6,8 @@ import {
   UserQuotaService,
 } from '@nexio/core/modules/cloud';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVar } from '@toeverything/theme';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { type ReactNode, useEffect } from 'react';
 
 import { SettingGroup } from '../group';

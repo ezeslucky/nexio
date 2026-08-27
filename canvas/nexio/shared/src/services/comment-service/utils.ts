@@ -1,4 +1,4 @@
-import { CommentIcon } from '@canvas/icons/lit';
+import { CommentIcon } from '@blocksuite/icons/lit';
 import { BlockSelection, SurfaceSelection } from '@canvas/std';
 import type {
   GfxPrimitiveElementModel,

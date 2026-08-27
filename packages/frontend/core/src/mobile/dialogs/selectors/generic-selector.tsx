@@ -7,8 +7,8 @@ import {
 } from '@nexio/component';
 import { PageHeader } from '@nexio/core/mobile/components';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   type ReactNode,
   type TouchEvent as ReactTouchEvent,

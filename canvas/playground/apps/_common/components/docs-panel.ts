@@ -3,7 +3,7 @@ import { GenerateDocUrlProvider } from '@canvas/nexio/shared/services';
 import { createDefaultDoc } from '@canvas/nexio/shared/utils';
 import { ShadowlessElement } from '@canvas/nexio/std';
 import type { Doc, Workspace } from '@canvas/nexio/store';
-import { CloseIcon } from '@canvas/icons/lit';
+import { CloseIcon } from '@blocksuite/icons/lit';
 import type { TestNexioEditorContainer } from '@canvas/integration-test';
 import { css, html, nothing } from 'lit';
 import { customElement, property } from 'lit/decorators.js';

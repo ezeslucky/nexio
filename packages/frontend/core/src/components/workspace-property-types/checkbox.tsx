@@ -1,7 +1,7 @@
 import { Checkbox, MenuItem, PropertyValue } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { useI18n } from '@nexio/i18n';
-import { CheckBoxCheckLinearIcon } from '@canvas/icons/rc';
+import { CheckBoxCheckLinearIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';

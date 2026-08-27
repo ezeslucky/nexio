@@ -18,11 +18,11 @@ import {
   ExpandFullIcon,
   StartPointArrowIcon,
   StopAiIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import type { ToolOptions } from '@canvas/std/gfx';
 import { effect } from '@preact/signals-core';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

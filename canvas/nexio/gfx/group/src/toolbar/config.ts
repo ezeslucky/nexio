@@ -18,7 +18,7 @@ import {
   EditIcon,
   InsertIntoPageIcon,
   UngroupIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 
 import { ungroupCommand } from '../command';

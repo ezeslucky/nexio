@@ -1,7 +1,7 @@
 import { LoadingIcon } from '@canvas/nexio/components/icons';
 import { WithDisposable } from '@canvas/nexio/global/lit';
 import { unsafeCSSVar } from '@canvas/nexio/shared/theme';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import {
   css,
   html,

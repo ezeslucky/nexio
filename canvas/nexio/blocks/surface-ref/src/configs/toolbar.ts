@@ -8,7 +8,7 @@ import {
   blockCommentToolbarButton,
   type ToolbarModuleConfig,
 } from '@canvas/nexio-shared/services';
-import { CaptionIcon, CopyIcon, DeleteIcon } from '@canvas/icons/lit';
+import { CaptionIcon, CopyIcon, DeleteIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { SurfaceRefBlockComponent } from '../surface-ref-block';

@@ -7,7 +7,7 @@ import {
   type SlashMenuItem,
   type SlashMenuSubMenu,
 } from '@canvas/nexio/widgets/slash-menu';
-import { MoreHorizontalIcon } from '@canvas/icons/lit';
+import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { pageAIGroups } from '../_common/config';

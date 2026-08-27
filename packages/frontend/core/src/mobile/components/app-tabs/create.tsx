@@ -5,7 +5,7 @@ import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import track from '@nexio/track';
-import { EditIcon } from '@canvas/icons/rc';
+import { EditIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 
 import { TabItem } from './tab-item';

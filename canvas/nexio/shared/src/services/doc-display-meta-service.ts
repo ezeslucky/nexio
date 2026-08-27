@@ -12,7 +12,7 @@ import {
   LinkedEdgelessIcon,
   LinkedPageIcon,
   PageIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { LifeCycleWatcher, StdIdentifier } from '@canvas/std';
 import type { Store } from '@canvas/store';
 import {

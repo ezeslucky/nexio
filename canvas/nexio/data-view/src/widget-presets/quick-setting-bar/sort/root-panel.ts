@@ -11,7 +11,7 @@ import {
   CloseIcon,
   DeleteIcon,
   PlusIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed } from '@preact/signals-core';
 import { css, html } from 'lit';

@@ -4,7 +4,7 @@ import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { OrganizeService } from '@nexio/core/modules/organize';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { AddOrganizeIcon } from '@canvas/icons/rc';
+import { AddOrganizeIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@ezeslucky/infra';
 import { useCallback, useMemo, useState } from 'react';
 

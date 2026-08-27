@@ -15,7 +15,7 @@ import {
   type MenuItem,
   renderMenu,
 } from '@canvas/nexio-widget-edgeless-toolbar';
-import { RadiantIcon, RightLayoutIcon, StyleIcon } from '@canvas/icons/lit';
+import { RadiantIcon, RightLayoutIcon, StyleIcon } from '@blocksuite/icons/lit';
 import { BlockFlavourIdentifier } from '@canvas/std';
 
 import {

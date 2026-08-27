@@ -9,7 +9,7 @@ import {
   TagIcon,
   TodayIcon,
   ViewLayersIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { ReactNode } from 'react';
 
 export const iconNameToIcon = {

@@ -1,5 +1,5 @@
 import { css } from '@emotion/css';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 
 export const progressCellStyle = css({
   display: 'block',

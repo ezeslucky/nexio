@@ -1,6 +1,6 @@
 import { NoteDisplayMode } from '@canvas/nexio-model';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { CloseIcon, SortIcon } from '@canvas/icons/lit';
+import { CloseIcon, SortIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { consume } from '@lit/context';
 import { effect, signal } from '@preact/signals-core';

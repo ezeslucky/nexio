@@ -6,7 +6,7 @@ import {
   MoreHorizontalIcon,
   ZoomDownIcon,
   ZoomUpIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { useState } from 'react';
 

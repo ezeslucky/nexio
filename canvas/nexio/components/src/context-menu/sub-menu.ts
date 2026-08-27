@@ -1,5 +1,5 @@
 import { IS_MOBILE } from '@canvas/global/env';
-import { ArrowRightSmallIcon } from '@canvas/icons/lit';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/lit';
 import {
   autoPlacement,
   autoUpdate,

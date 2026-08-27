@@ -8,8 +8,8 @@
     "./bootstrap": "./src/bootstrap/index.ts"
   },
   "dependencies": {
+    "@blocksuite/icons": "^2.2.17",
     "@canvas/global": "workspace:*",
-    "@canvas/icons": "^2.2.17",
     "@canvas/nexio": "workspace:*",
     "@canvas/nexio-block-root": "workspace:*",
     "@canvas/nexio-components": "workspace:*",
@@ -44,8 +44,8 @@
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-toolbar": "^1.1.1",
     "@sentry/react": "^9.2.0",
-    "@ezeslucky/pdf-viewer": "^0.1.1",
-    "@ezeslucky/theme": "^1.1.16",
+    "@toeverything/pdf-viewer": "^0.1.1",
+    "@toeverything/theme": "^1.1.16",
     "@vanilla-extract/dynamic": "^2.1.2",
     "@webcontainer/api": "^1.6.1",
     "animejs": "4.3.5",

@@ -7,7 +7,7 @@ import {
 import { generateUniqueNameInSequence } from '@nexio/core/utils/unique-name';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { PlusIcon } from '@canvas/icons/rc';
+import { PlusIcon } from '@blocksuite/icons/rc';
 import {
   Content as CollapsibleContent,
   Root as CollapsibleRoot,

@@ -6,10 +6,10 @@ import {
 } from '@nexio/admin/components/ui/accordion';
 import { buttonVariants } from '@nexio/admin/components/ui/button';
 import { cn } from '@nexio/admin/utils';
-import { SettingsIcon } from '@canvas/icons/rc';
+import { SettingsIcon } from '@blocksuite/icons/rc';
 import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { NavLink } from 'react-router-dom';
 
 import { KNOWN_CONFIG_GROUPS, UNKNOWN_CONFIG_GROUPS } from '../settings/config';

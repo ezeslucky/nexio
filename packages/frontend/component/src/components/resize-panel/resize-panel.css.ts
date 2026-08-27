@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { createVar, style } from '@vanilla-extract/css';
 export const panelWidthVar = createVar('panel-width');
 export const resizeHandleOffsetVar = createVar('resize-handle-offset');

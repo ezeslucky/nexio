@@ -10,7 +10,7 @@ import {
   LinkIcon,
   OpenInNewIcon,
   SplitViewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import { clsx } from 'clsx';
 import {

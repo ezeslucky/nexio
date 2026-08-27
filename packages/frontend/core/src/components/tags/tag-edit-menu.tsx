@@ -7,7 +7,7 @@ import {
   Scrollable,
 } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { DeleteIcon, DoneIcon, TagsIcon } from '@canvas/icons/rc';
+import { DeleteIcon, DoneIcon, TagsIcon } from '@blocksuite/icons/rc';
 import type { MouseEventHandler, PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

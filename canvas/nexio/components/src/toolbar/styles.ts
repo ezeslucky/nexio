@@ -2,7 +2,7 @@ import {
   type NexioCssVariables,
   combinedDarkCssVariables,
   combinedLightCssVariables,
-} from '@ezeslucky/theme';
+} from '@toeverything/theme';
 import { unsafeCSS } from 'lit';
 
 const toolbarColorKeys: Array<keyof NexioCssVariables> = [

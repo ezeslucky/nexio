@@ -5,7 +5,7 @@ import {
 import { Separator } from '@nexio/admin/components/ui/separator';
 import { TooltipProvider } from '@nexio/admin/components/ui/tooltip';
 import { cn } from '@nexio/admin/utils';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { AlignJustifyIcon } from 'lucide-react';
 import type { PropsWithChildren, ReactNode, RefObject } from 'react';
 import { useCallback, useRef, useState } from 'react';

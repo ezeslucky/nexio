@@ -6,7 +6,7 @@ import {
   type PopupTarget,
 } from '@canvas/nexio-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { DeleteIcon } from '@canvas/icons/lit';
+import { DeleteIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed } from '@preact/signals-core';
 import { css, html, unsafeCSS } from 'lit';

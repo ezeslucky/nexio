@@ -1,4 +1,4 @@
-import { TextBackgroundDuotoneIcon } from '@canvas/icons/lit';
+import { TextBackgroundDuotoneIcon } from '@blocksuite/icons/lit';
 import { css, LitElement } from 'lit';
 
 export class TextDuotoneIcon extends LitElement {

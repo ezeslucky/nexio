@@ -16,7 +16,7 @@ import {
   InsertBleowIcon,
   LinkedPageIcon,
   PageIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

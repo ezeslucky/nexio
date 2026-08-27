@@ -6,7 +6,7 @@ import { JournalService } from '@nexio/core/modules/journal';
 import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
 import { i18nTime } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import dayjs from 'dayjs';
 import { useCallback, useLayoutEffect, useState } from 'react';
 

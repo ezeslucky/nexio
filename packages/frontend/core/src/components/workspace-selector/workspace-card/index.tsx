@@ -21,9 +21,9 @@ import {
   SettingsIcon,
   TeamWorkspaceIcon,
   UnsyncIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';

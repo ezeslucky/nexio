@@ -18,7 +18,7 @@ import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
   InvisibleIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { WidgetComponent, WidgetViewExtension } from '@canvas/std';
 import {
   type GfxController,

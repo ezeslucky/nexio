@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import type { KeyboardEvent, ReactElement } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 

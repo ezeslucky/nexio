@@ -5,11 +5,11 @@ import {
   type NexioCssVariables,
   type NexioTheme,
   cssVar,
-} from '@ezeslucky/theme';
-export { cssVar } from '@ezeslucky/theme';
-import { type NexioThemeKeyV2, cssVarV2 } from '@ezeslucky/theme/v2';
+} from '@toeverything/theme';
+export { cssVar } from '@toeverything/theme';
+import { type NexioThemeKeyV2, cssVarV2 } from '@toeverything/theme/v2';
 import { unsafeCSS } from 'lit';
-export { cssVarV2 } from '@ezeslucky/theme/v2';
+export { cssVarV2 } from '@toeverything/theme/v2';
 export const ColorVariables = [
   '--nexio-brand-color',
   '--nexio-primary-color',

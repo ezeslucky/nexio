@@ -1,7 +1,7 @@
 import { DefaultTool } from '@canvas/nexio-block-surface';
 import { menu } from '@canvas/nexio-components/context-menu';
 import type { DenseMenuBuilder } from '@canvas/nexio-widget-edgeless-toolbar';
-import { FrameIcon } from '@canvas/icons/lit';
+import { FrameIcon } from '@blocksuite/icons/lit';
 
 import { EdgelessFrameManagerIdentifier } from '../frame-manager.js';
 import { FrameTool } from '../frame-tool';

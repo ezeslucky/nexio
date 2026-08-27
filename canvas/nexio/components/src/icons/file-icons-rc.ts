@@ -40,7 +40,7 @@ import {
   FileIconXmlIcon,
   FileIconZipIcon,
   ImageIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 
 export function getAttachmentFileIconRC(filetype: string) {
   switch (filetype) {

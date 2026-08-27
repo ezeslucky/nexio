@@ -32,7 +32,7 @@ import {
   PlusIcon,
   ResetIcon,
   SplitViewIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@ezeslucky/infra';
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';

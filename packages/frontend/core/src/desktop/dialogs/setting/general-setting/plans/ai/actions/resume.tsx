@@ -9,9 +9,9 @@ import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { SingleSelectCheckSolidIcon } from '@canvas/icons/rc';
+import { SingleSelectCheckSolidIcon } from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 

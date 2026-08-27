@@ -1,9 +1,9 @@
 import { Input, PropertyValue } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { useI18n } from '@nexio/i18n';
-import { NumberIcon } from '@canvas/icons/rc';
-import { cssVar } from '@ezeslucky/theme';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { NumberIcon } from '@blocksuite/icons/rc';
+import { cssVar } from '@toeverything/theme';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   type ChangeEventHandler,
   useCallback,

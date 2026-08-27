@@ -1,4 +1,4 @@
-import { cssVar, lightCssVariables } from '@ezeslucky/theme';
+import { cssVar, lightCssVariables } from '@toeverything/theme';
 import { globalStyle, style } from '@vanilla-extract/css';
 
 export const appStyle = style({

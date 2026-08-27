@@ -1,7 +1,7 @@
 import { shallowEqual } from '@nexio/component';
 import type { CollectionMeta } from '@nexio/core/modules/collection';
 import { useI18n } from '@nexio/i18n';
-import { ToggleRightIcon, ViewLayersIcon } from '@canvas/icons/rc';
+import { ToggleRightIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
 import { selectAtom } from 'jotai/utils';
 import type { MouseEventHandler } from 'react';
 import { memo, useCallback, useMemo } from 'react';

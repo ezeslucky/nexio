@@ -1,7 +1,7 @@
 import { ColorScheme } from '@canvas/nexio-model';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { DeleteIcon } from '@canvas/icons/lit';
+import { DeleteIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { type GfxModel } from '@canvas/std/gfx';
 import { css, html, nothing } from 'lit';

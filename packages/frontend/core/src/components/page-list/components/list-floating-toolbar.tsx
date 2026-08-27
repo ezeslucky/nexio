@@ -3,7 +3,7 @@ import {
   DeleteIcon,
   DeletePermanentlyIcon,
   ResetIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { ReactNode } from 'react';
 
 import { FloatingToolbar } from './floating-toolbar';

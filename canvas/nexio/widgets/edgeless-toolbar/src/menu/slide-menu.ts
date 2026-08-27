@@ -1,5 +1,5 @@
 import { WithDisposable } from '@canvas/global/lit';
-import { ArrowRightSmallIcon } from '@canvas/icons/lit';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/lit';
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';

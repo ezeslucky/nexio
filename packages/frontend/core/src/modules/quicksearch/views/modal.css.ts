@@ -1,4 +1,4 @@
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { createVar, keyframes, style } from '@vanilla-extract/css';
 const contentShow = keyframes({
   from: {

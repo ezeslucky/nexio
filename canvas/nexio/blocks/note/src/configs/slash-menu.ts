@@ -20,7 +20,7 @@ import {
   SlashMenuConfigExtension,
   type SlashMenuItem,
 } from '@canvas/nexio-widget-slash-menu';
-import { HeadingsIcon } from '@canvas/icons/lit';
+import { HeadingsIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 
 import { updateBlockAlign, updateBlockType } from '../commands';

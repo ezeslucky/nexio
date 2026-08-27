@@ -12,7 +12,7 @@ import {
   EditIcon,
   LockIcon,
   MoreHorizontalIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useCallback, useState } from 'react';
 import { toast } from 'sonner';
 

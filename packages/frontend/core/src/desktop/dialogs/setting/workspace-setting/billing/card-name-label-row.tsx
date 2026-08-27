@@ -3,7 +3,7 @@ import { useI18n } from '@nexio/i18n';
 import {
   InformationFillDuotoneIcon,
   SingleSelectCheckSolidIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { useMemo } from 'react';
 

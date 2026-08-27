@@ -6,7 +6,7 @@ import {
 import { EditorService } from '@nexio/core/modules/editor';
 import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@canvas/nexio/model';
-import { BlockIcon, EdgelessIcon, PageIcon } from '@canvas/icons/rc';
+import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';

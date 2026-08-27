@@ -18,7 +18,7 @@ import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@ezeslucky/infra';
-import { cssVar } from '@ezeslucky/theme';
+import { cssVar } from '@toeverything/theme';
 import { useCallback, useMemo, useState } from 'react';
 
 const FavoriteOperation = ({ collection }: { collection: ListItem }) => {

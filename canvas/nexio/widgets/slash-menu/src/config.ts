@@ -14,7 +14,7 @@ import {
   TodayIcon,
   TomorrowIcon,
   YesterdayIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { type DeltaInsert, Slice, Text } from '@canvas/store';
 
 import { slashMenuToolTips } from './tooltips';

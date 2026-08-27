@@ -1,4 +1,4 @@
-import { CloseIcon } from '@canvas/icons/rc';
+import { CloseIcon } from '@blocksuite/icons/rc';
 import type {
   AvatarFallbackProps,
   AvatarImageProps,

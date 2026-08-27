@@ -6,7 +6,7 @@ import {
   type GrantedUser,
 } from '@nexio/core/modules/permissions';
 import { useI18n } from '@nexio/i18n';
-import { ArrowLeftBigIcon } from '@canvas/icons/rc';
+import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useCallback, useEffect } from 'react';
 import { Virtuoso } from 'react-virtuoso';

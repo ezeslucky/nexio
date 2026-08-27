@@ -4,10 +4,10 @@ import {
   type PopupTarget,
 } from '@canvas/nexio-components/context-menu';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { InvisibleIcon, ViewIcon } from '@canvas/icons/lit';
+import { InvisibleIcon, ViewIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed } from '@preact/signals-core';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { css, html, unsafeCSS } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

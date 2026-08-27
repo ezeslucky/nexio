@@ -2,7 +2,7 @@ import { NoteDisplayMode } from '@canvas/nexio-model';
 import { DocModeProvider } from '@canvas/nexio-shared/services';
 import { scrollbarStyle } from '@canvas/nexio-shared/styles';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { TocIcon } from '@canvas/icons/lit';
+import { TocIcon } from '@blocksuite/icons/lit';
 import {
   type EditorHost,
   PropTypes,

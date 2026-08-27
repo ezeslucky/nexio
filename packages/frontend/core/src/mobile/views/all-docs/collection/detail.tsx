@@ -11,7 +11,7 @@ import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-lis
 import { PageHeader } from '@nexio/core/mobile/components';
 import { Page } from '@nexio/core/mobile/components/page';
 import type { Collection } from '@nexio/core/modules/collection';
-import { ViewLayersIcon } from '@canvas/icons/rc';
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData } from '@ezeslucky/infra';
 import { useEffect, useState } from 'react';
 

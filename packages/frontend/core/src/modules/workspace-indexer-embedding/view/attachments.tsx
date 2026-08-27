@@ -3,7 +3,7 @@ import { Pagination } from '@nexio/component/setting-components';
 import { useI18n } from '@nexio/i18n';
 import { getAttachmentFileIconRC } from '@canvas/nexio/components/icons';
 import { cssVarV2 } from '@canvas/nexio/shared/theme';
-import { CloseIcon, WarningIcon } from '@canvas/icons/rc';
+import { CloseIcon, WarningIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { useCallback } from 'react';
 

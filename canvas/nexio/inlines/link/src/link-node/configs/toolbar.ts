@@ -12,7 +12,7 @@ import {
   DeleteIcon,
   EditIcon,
   UnlinkIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { signal } from '@preact/signals-core';
 import { html } from 'lit-html';

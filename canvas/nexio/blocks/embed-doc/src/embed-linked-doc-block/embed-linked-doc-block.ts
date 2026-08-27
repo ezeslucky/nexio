@@ -33,7 +33,7 @@ import {
   referenceToNode,
 } from '@canvas/nexio-shared/utils';
 import { Bound } from '@canvas/global/gfx';
-import { ResetIcon } from '@canvas/icons/lit';
+import { ResetIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { Text } from '@canvas/store';
 import { computed } from '@preact/signals-core';

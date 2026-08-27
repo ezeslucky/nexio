@@ -4,7 +4,7 @@ import {
 } from '@canvas/nexio-shared/services';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { SignalWatcher } from '@canvas/global/lit';
-import { DoneIcon } from '@canvas/icons/lit';
+import { DoneIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 
 import { EmbedIframeLinkInputBase } from './embed-iframe-link-input-base';

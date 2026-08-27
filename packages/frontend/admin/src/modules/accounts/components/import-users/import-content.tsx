@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import type { FC, RefObject } from 'react';
 
 import type { ParsedUser } from '../../utils/csv-utils';

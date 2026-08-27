@@ -1,6 +1,6 @@
 import { createLitPortal } from '@canvas/nexio-components/portal';
 import { SignalWatcher } from '@canvas/global/lit';
-import { ArrowDownSmallIcon, FlipDirectionIcon } from '@canvas/icons/lit';
+import { ArrowDownSmallIcon, FlipDirectionIcon } from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { consume } from '@lit/context';
 import { css, html, LitElement } from 'lit';

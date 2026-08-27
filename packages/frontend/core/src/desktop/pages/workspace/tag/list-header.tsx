@@ -9,7 +9,7 @@ import {
 import { type Tag, TagService } from '@nexio/core/modules/tag';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
-import { ArrowDownSmallIcon, DoneIcon, SearchIcon } from '@canvas/icons/rc';
+import { ArrowDownSmallIcon, DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import {

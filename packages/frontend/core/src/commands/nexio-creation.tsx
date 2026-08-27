@@ -1,7 +1,7 @@
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import type { DocMode } from '@canvas/nexio/model';
-import { ImportIcon, PlusIcon } from '@canvas/icons/rc';
+import { ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 
 import type { usePageHelper } from '../canvas/block-suite-page-list/utils';
 import type { GlobalDialogService } from '../modules/dialogs';

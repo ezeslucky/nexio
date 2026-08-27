@@ -1,6 +1,6 @@
 import { Scrollable } from '@nexio/component';
 import { ViewSidebarTab } from '@nexio/core/modules/workbench';
-import { TodayIcon } from '@canvas/icons/rc';
+import { TodayIcon } from '@blocksuite/icons/rc';
 
 import { sidebarScrollArea } from '../detail-page/detail-page.css';
 import { EditorJournalPanel } from '../detail-page/tabs/journal';

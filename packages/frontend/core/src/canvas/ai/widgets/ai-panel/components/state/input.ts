@@ -3,11 +3,11 @@ import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
 import { ColorScheme } from '@canvas/nexio/model';
 import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import { stopPropagation } from '@canvas/nexio/shared/utils';
-import { SendIcon } from '@canvas/icons/lit';
+import { SendIcon } from '@blocksuite/icons/lit';
 import {
   darkCssVariablesV2,
   lightCssVariablesV2,
-} from '@ezeslucky/theme/v2';
+} from '@toeverything/theme/v2';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 

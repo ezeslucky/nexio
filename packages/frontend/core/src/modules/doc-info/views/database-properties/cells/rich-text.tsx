@@ -4,7 +4,7 @@ import { DefaultInlineManagerExtension } from '@canvas/nexio/inlines/preset';
 import { RichText } from '@canvas/nexio/rich-text';
 import type { BlockStdScope } from '@canvas/nexio/std';
 import type { Store } from '@canvas/nexio/store';
-import { TextIcon } from '@canvas/icons/rc';
+import { TextIcon } from '@blocksuite/icons/rc';
 import { type LiveData, useLiveData } from '@ezeslucky/infra';
 import { type CSSProperties, useEffect, useRef, useState } from 'react';
 import type * as Y from 'yjs';

@@ -5,7 +5,7 @@ import {
 } from '@nexio/core/desktop/components/navigation-panel';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { extractEmojiIcon } from '@nexio/core/utils';
-import { ArrowDownSmallIcon, MoreHorizontalIcon } from '@canvas/icons/rc';
+import { ArrowDownSmallIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import {

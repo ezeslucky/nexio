@@ -13,7 +13,7 @@ import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import type { BlockStdScope } from '@canvas/std';
 import { computed, signal } from '@preact/signals-core';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

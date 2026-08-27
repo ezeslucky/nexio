@@ -18,7 +18,7 @@ import {
   NumberedListIcon,
   QuoteIcon,
   TextIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import type { EditorHost } from '@canvas/std';
 import { createContext } from '@lit/context';
 import type { Signal } from '@preact/signals-core';

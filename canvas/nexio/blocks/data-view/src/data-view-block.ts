@@ -34,7 +34,7 @@ import {
   uniMap,
 } from '@canvas/data-view';
 import { widgetPresets } from '@canvas/data-view/widget-presets';
-import { MoreHorizontalIcon } from '@canvas/icons/lit';
+import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import { type BlockComponent } from '@canvas/std';
 import { RANGE_SYNC_EXCLUDE_ATTR } from '@canvas/std/inline';
 import { Slice } from '@canvas/store';

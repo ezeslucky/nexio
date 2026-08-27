@@ -1,8 +1,8 @@
 import type { IconButtonProps } from '@nexio/component';
 import { IconButton } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { FavoritedIcon, FavoriteIcon } from '@canvas/icons/rc';
-import { cssVar } from '@ezeslucky/theme';
+import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
+import { cssVar } from '@toeverything/theme';
 import Lottie from 'lottie-react';
 import { forwardRef, useCallback, useState } from 'react';
 

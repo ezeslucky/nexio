@@ -16,7 +16,7 @@ import {
   referenceToNode,
 } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { LinkedPageIcon } from '@canvas/icons/lit';
+import { LinkedPageIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent, BlockStdScope } from '@canvas/std';
 import { BLOCK_ID_ATTR, ShadowlessElement } from '@canvas/std';
 import {

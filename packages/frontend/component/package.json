@@ -22,7 +22,7 @@
   "dependencies": {
     "@atlaskit/pragmatic-drag-and-drop": "^1.4.0",
     "@atlaskit/pragmatic-drag-and-drop-hitbox": "^1.0.3",
-    "@canvas/icons": "^2.2.17",
+    "@blocksuite/icons": "^2.2.17",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@nexio/debug": "workspace:*",
@@ -45,7 +45,7 @@
     "@radix-ui/react-toast": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.1.5",
     "@radix-ui/react-visually-hidden": "^1.1.1",
-    "@ezeslucky/theme": "^1.1.16",
+    "@toeverything/theme": "^1.1.16",
     "@vanilla-extract/dynamic": "^2.1.2",
     "bytes": "^3.1.2",
     "check-password-strength": "^3.0.0",

@@ -1,6 +1,6 @@
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { ContactWithUsIcon, NewIcon } from '@canvas/icons/rc';
+import { ContactWithUsIcon, NewIcon } from '@blocksuite/icons/rc';
 
 import type { WorkspaceDialogService } from '../modules/dialogs';
 import type { UrlService } from '../modules/url';

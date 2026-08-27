@@ -1,6 +1,6 @@
 import { WithDisposable } from '@canvas/global/lit';
 import { type EditorHost, ShadowlessElement } from '@canvas/std';
-import { baseTheme } from '@ezeslucky/theme';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 

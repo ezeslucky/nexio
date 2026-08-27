@@ -1,4 +1,4 @@
-import { RecentIcon } from '@canvas/icons/rc';
+import { RecentIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import {
   createContext,

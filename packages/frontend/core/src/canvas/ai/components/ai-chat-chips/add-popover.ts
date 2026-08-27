@@ -15,7 +15,7 @@ import {
   SearchIcon,
   TagsIcon,
   UploadIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { Signal } from '@preact/signals-core';
 import { css, html, type TemplateResult } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

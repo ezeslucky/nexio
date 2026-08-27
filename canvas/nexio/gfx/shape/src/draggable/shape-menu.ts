@@ -13,7 +13,7 @@ import {
 } from '@canvas/nexio-shared/services';
 import type { ColorEvent } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { StyleGeneralIcon, StyleScribbleIcon } from '@canvas/icons/lit';
+import { StyleGeneralIcon, StyleScribbleIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import {
   GfxControllerIdentifier,

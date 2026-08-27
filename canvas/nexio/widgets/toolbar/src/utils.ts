@@ -11,7 +11,7 @@ import {
   type ToolbarPlacement,
 } from '@canvas/nexio-shared/services';
 import { nextTick } from '@canvas/global/utils';
-import { MoreVerticalIcon } from '@canvas/icons/lit';
+import { MoreVerticalIcon } from '@blocksuite/icons/lit';
 import type {
   AutoUpdateOptions,
   ComputePositionConfig,

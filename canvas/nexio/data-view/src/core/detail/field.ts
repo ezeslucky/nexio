@@ -9,7 +9,7 @@ import {
   DuplicateIcon,
   MoveLeftIcon,
   MoveRightIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { computed, signal } from '@preact/signals-core';
 import { css } from 'lit';

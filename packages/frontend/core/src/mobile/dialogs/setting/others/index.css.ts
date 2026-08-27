@@ -1,4 +1,4 @@
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import { keyframes, style } from '@vanilla-extract/css';
 
 const shineAnimation = keyframes({

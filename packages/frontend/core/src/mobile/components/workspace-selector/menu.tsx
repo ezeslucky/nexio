@@ -24,7 +24,7 @@ import {
   MoreHorizontalIcon,
   SelfhostIcon,
   SignOutIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import { type HTMLAttributes, useCallback, useMemo } from 'react';

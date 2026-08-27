@@ -8,7 +8,7 @@ import { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
 import { useI18n } from '@nexio/i18n';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useService } from '@ezeslucky/infra';
 import { useCallback } from 'react';
 

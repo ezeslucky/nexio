@@ -10,8 +10,8 @@
   "author": "ezeslucky",
   "license": "MIT",
   "dependencies": {
+    "@blocksuite/icons": "^2.2.17",
     "@canvas/global": "workspace:*",
-    "@canvas/icons": "^2.2.17",
     "@canvas/nexio-block-database": "workspace:*",
     "@canvas/nexio-block-surface": "workspace:*",
     "@canvas/nexio-block-table": "workspace:*",
@@ -22,7 +22,7 @@
     "@canvas/std": "workspace:*",
     "@floating-ui/dom": "^1.6.13",
     "@preact/signals-core": "^1.8.0",
-    "@ezeslucky/theme": "^1.1.16",
+    "@toeverything/theme": "^1.1.16",
     "@types/lodash-es": "^4.17.12",
     "lit": "^3.2.0",
     "lodash-es": "^4.17.21",

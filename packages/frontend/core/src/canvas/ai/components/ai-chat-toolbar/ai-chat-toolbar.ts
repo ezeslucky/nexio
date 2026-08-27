@@ -9,7 +9,7 @@ import {
   PinedIcon,
   PinIcon,
   PlusIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { css, html } from 'lit';
 import { property, query } from 'lit/decorators.js';

@@ -3,7 +3,7 @@ import { createLitPortal } from '@canvas/nexio/components/portal';
 import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
 import { unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import { ShadowlessElement } from '@canvas/nexio/std';
-import { MoreVerticalIcon } from '@canvas/icons/lit';
+import { MoreVerticalIcon } from '@blocksuite/icons/lit';
 import { flip, offset } from '@floating-ui/dom';
 import { computed, type Signal, signal } from '@preact/signals-core';
 import { css, html, nothing, type PropertyValues } from 'lit';

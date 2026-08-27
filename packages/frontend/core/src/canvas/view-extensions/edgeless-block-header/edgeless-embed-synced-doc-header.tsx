@@ -15,7 +15,7 @@ import {
   SplitViewIcon,
   ToggleDownIcon,
   ToggleRightIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { BlockStdScope } from '@canvas/std';
 import { batch } from '@preact/signals-core';
 import { useLiveData, useService } from '@ezeslucky/infra';

@@ -21,7 +21,7 @@ import {
   EditIcon,
   FilterIcon,
   PlusIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { useMemo, useState } from 'react';
 

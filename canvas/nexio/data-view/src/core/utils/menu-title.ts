@@ -1,5 +1,8 @@
-import { ArrowLeftBigIcon } from '@canvas/icons/lit';
-import { html } from 'lit';
+import { html, svg } from 'lit';
+import { unsafeSVG } from 'lit/directives/unsafe-svg.js';
+import arrowLeftSvg from 'lucide-static/icons/arrow-left.svg';
+
+const ArrowLeftBigIcon = () => svg`${unsafeSVG(arrowLeftSvg)}`;
 
 export const menuTitle = (name: string, onBack: () => void) => {
   return html`

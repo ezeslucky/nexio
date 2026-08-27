@@ -13,7 +13,7 @@ import {
   MinusIcon,
   PlusIcon,
   ViewBarIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import { useService } from '@ezeslucky/infra';
 import clsx from 'clsx';
 import type { ImgHTMLAttributes, ReactElement } from 'react';

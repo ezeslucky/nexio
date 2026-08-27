@@ -10,7 +10,7 @@ import {
 import { createButtonPopper } from '@canvas/nexio-shared/utils';
 import { DisposableGroup } from '@canvas/global/disposable';
 import { WithDisposable } from '@canvas/global/lit';
-import { PresentationIcon, SettingsIcon } from '@canvas/icons/lit';
+import { PresentationIcon, SettingsIcon } from '@blocksuite/icons/lit';
 import type { EditorHost } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { css, html, LitElement, type PropertyValues } from 'lit';

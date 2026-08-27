@@ -6,7 +6,7 @@ import {
   ArrowLeftSmallIcon,
   CloseIcon,
   SearchIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { RANGE_SYNC_EXCLUDE_ATTR } from '@canvas/std/inline';
 import {

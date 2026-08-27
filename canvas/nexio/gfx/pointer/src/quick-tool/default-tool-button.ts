@@ -1,6 +1,6 @@
 import { DefaultTool } from '@canvas/nexio-block-surface';
 import { QuickToolMixin } from '@canvas/nexio-widget-edgeless-toolbar';
-import { HandIcon, SelectIcon } from '@canvas/icons/lit';
+import { HandIcon, SelectIcon } from '@blocksuite/icons/lit';
 import { effect } from '@preact/signals-core';
 import { css, html, LitElement } from 'lit';
 import { query } from 'lit/decorators.js';

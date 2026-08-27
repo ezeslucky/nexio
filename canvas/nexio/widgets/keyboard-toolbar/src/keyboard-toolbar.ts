@@ -1,7 +1,7 @@
 import { getSelectedModelsCommand } from '@canvas/nexio-shared/commands';
 import { type VirtualKeyboardProviderWithAction } from '@canvas/nexio-shared/services';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { ArrowLeftBigIcon, KeyboardIcon } from '@canvas/icons/lit';
+import { ArrowLeftBigIcon, KeyboardIcon } from '@blocksuite/icons/lit';
 import {
   BlockComponent,
   PropTypes,

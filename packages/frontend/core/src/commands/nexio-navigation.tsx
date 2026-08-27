@@ -1,7 +1,7 @@
 import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import type { Workspace } from '@canvas/nexio/store';
-import { ArrowRightBigIcon } from '@canvas/icons/rc';
+import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 
 import type { useNavigateHelper } from '../components/hooks/use-navigate-helper';
 import type { WorkspaceDialogService } from '../modules/dialogs';

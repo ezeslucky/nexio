@@ -14,7 +14,7 @@ import {
   ArrowUpBigIcon,
   AttachmentIcon,
   CloseIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { TextSelection } from '@canvas/std';
 import { useFramework, useService } from '@ezeslucky/infra';
 import bytes from 'bytes';

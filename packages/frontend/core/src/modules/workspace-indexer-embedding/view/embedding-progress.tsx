@@ -1,6 +1,6 @@
 import { Progress } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 
 import { embeddingProgress, embeddingProgressTitle } from './styles-css';
 

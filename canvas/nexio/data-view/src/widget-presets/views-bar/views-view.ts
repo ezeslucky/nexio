@@ -13,7 +13,7 @@ import {
   MoveLeftIcon,
   MoveRightIcon,
   PlusIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

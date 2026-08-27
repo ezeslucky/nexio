@@ -12,7 +12,7 @@ import { DocDisplayMetaProvider } from '@canvas/nexio-shared/services';
 import type { NexioTextAttributes } from '@canvas/nexio-shared/types';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
 import { noop } from '@canvas/global/utils';
-import { LinkedPageIcon } from '@canvas/icons/lit';
+import { LinkedPageIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import type { BlockModel, DeltaInsert } from '@canvas/store';
 import { consume } from '@lit/context';

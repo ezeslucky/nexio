@@ -1,6 +1,6 @@
 import { menu } from '@canvas/nexio-components/context-menu';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
-import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@canvas/icons/lit';
+import { CheckBoxCheckSolidIcon, CheckBoxUnIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 import { t } from '../../logical/type-presets.js';

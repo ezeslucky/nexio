@@ -2,7 +2,7 @@ import { Checkbox, MenuItem, PropertyValue } from '@nexio/component';
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { type DocRecord, DocService } from '@nexio/core/modules/doc';
 import { useI18n } from '@nexio/i18n';
-import { TemplateIcon } from '@canvas/icons/rc';
+import { TemplateIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@ezeslucky/infra';
 import { type ChangeEvent, useCallback } from 'react';
 

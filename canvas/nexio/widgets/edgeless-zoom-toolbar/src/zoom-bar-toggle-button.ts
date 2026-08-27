@@ -2,7 +2,7 @@ import { EdgelessLegacySlotIdentifier } from '@canvas/nexio-block-surface';
 import { createLitPortal } from '@canvas/nexio-components/portal';
 import { stopPropagation } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { MoreHorizontalIcon } from '@canvas/icons/lit';
+import { MoreHorizontalIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@canvas/std';
 import { offset } from '@floating-ui/dom';
 import { css, html, LitElement, nothing } from 'lit';

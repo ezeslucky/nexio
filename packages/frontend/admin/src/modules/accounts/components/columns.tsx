@@ -10,9 +10,9 @@ import {
   EmailWarningIcon,
   LockIcon,
   UnlockIcon,
-} from '@canvas/icons/rc';
+} from '@blocksuite/icons/rc';
 import type { ColumnDef } from '@tanstack/react-table';
-import { cssVarV2 } from '@ezeslucky/theme/v2';
+import { cssVarV2 } from '@toeverything/theme/v2';
 import {
   type Dispatch,
   type ReactNode,

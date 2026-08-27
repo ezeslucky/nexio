@@ -13,14 +13,14 @@ import { TagService } from '@nexio/core/modules/tag';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
 import { sleep } from '@canvas/nexio/global/utils';
-import { ViewLayersIcon } from '@canvas/icons/rc';
+import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import {
   LiveData,
   useLiveData,
   useService,
   useServices,
 } from '@ezeslucky/infra';
-import { bodyEmphasized } from '@ezeslucky/theme/typography';
+import { bodyEmphasized } from '@toeverything/theme/typography';
 import { useCallback, useMemo } from 'react';
 
 import {

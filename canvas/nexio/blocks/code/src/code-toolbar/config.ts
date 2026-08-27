@@ -10,7 +10,7 @@ import type { MenuItemGroup } from '@canvas/nexio-components/toolbar';
 import { CommentProviderIdentifier } from '@canvas/nexio-shared/services';
 import { isInsidePageEditor } from '@canvas/nexio-shared/utils';
 import { noop, sleep } from '@canvas/global/utils';
-import { CommentIcon, NumberedListIcon } from '@canvas/icons/lit';
+import { CommentIcon, NumberedListIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { html } from 'lit';
 import { ifDefined } from 'lit/directives/if-defined.js';

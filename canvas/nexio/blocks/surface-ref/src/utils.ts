@@ -9,7 +9,7 @@ import {
   FrameIcon,
   GroupIcon,
   MindmapIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { type GfxModel } from '@canvas/std/gfx';
 import { html, type TemplateResult } from 'lit';
 

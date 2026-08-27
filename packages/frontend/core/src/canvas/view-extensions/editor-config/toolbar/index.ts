@@ -78,7 +78,7 @@ import {
   EditIcon,
   LinkIcon,
   OpenInNewIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 import { computed } from '@preact/signals-core';
 import type { FrameworkProvider } from '@ezeslucky/infra';
 import { html } from 'lit';

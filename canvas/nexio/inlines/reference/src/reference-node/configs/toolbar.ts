@@ -10,7 +10,7 @@ import {
   cloneReferenceInfoWithoutAliases,
   isInsideBlockByFlavour,
 } from '@canvas/nexio-shared/utils';
-import { DeleteIcon } from '@canvas/icons/lit';
+import { DeleteIcon } from '@blocksuite/icons/lit';
 import { BlockSelection } from '@canvas/std';
 import { signal } from '@preact/signals-core';
 import { html } from 'lit-html';

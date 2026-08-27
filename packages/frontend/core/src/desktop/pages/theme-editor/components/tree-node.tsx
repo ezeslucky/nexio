@@ -1,4 +1,4 @@
-import { ArrowDownSmallIcon, PaletteIcon } from '@canvas/icons/rc';
+import { ArrowDownSmallIcon, PaletteIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { useCallback, useState } from 'react';
 

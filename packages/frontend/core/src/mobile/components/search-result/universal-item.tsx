@@ -1,6 +1,6 @@
 import type { QuickSearchItem } from '@nexio/core/modules/quicksearch';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import { ArrowRightSmallIcon } from '@canvas/icons/rc';
+import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 
 import { SearchResLabel } from './search-res-label';
 import * as styles from './universal-item.css';

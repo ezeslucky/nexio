@@ -10,7 +10,7 @@ import {
   ExpandFullIcon,
   OpenInNewIcon,
   SplitViewIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 type OpenDocAction = OpenDocConfigItem & {
   enabled: boolean;

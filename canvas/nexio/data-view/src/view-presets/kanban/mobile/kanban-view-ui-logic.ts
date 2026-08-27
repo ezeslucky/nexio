@@ -5,7 +5,7 @@ import {
 } from '@canvas/nexio-components/context-menu';
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import type { InsertToPosition } from '@canvas/nexio-shared/utils';
-import { AddCursorIcon } from '@canvas/icons/lit';
+import { AddCursorIcon } from '@blocksuite/icons/lit';
 import { css } from '@emotion/css';
 import { signal } from '@preact/signals-core';
 import type { TemplateResult } from 'lit';

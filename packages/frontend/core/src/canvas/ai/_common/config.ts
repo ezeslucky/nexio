@@ -23,7 +23,7 @@ import {
   SelectionIcon,
   ShorterIcon,
   ToneIcon,
-} from '@canvas/icons/lit';
+} from '@blocksuite/icons/lit';
 
 import { actionToHandler } from '../actions/doc-handler';
 import {

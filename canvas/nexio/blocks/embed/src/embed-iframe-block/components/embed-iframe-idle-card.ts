@@ -1,7 +1,7 @@
 import { unsafeCSSVarV2 } from '@canvas/nexio-shared/theme';
 import { WithDisposable } from '@canvas/global/lit';
-import { EmbedIcon } from '@canvas/icons/lit';
-import { baseTheme } from '@ezeslucky/theme';
+import { EmbedIcon } from '@blocksuite/icons/lit';
+import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

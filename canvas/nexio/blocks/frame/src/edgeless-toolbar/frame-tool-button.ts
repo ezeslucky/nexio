@@ -1,5 +1,5 @@
 import { QuickToolMixin } from '@canvas/nexio-widget-edgeless-toolbar';
-import { FrameIcon } from '@canvas/icons/lit';
+import { FrameIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 
 import { FrameTool } from '../frame-tool';

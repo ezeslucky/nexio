@@ -15,7 +15,7 @@ import { getRectByBlockComponent } from '@canvas/nexio-shared/utils';
 import type { EdgelessSelectedRectWidget } from '@canvas/nexio-widget-edgeless-selected-rect';
 import { DisposableGroup } from '@canvas/global/disposable';
 import { deserializeXYWH, Point, serializeXYWH } from '@canvas/global/gfx';
-import { ScissorsIcon } from '@canvas/icons/lit';
+import { ScissorsIcon } from '@blocksuite/icons/lit';
 import { WidgetComponent, WidgetViewExtension } from '@canvas/std';
 import { GfxControllerIdentifier } from '@canvas/std/gfx';
 import { css, html, nothing, type PropertyValues } from 'lit';

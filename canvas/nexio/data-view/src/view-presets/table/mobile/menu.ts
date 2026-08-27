@@ -3,7 +3,7 @@ import {
   popFilterableSimpleMenu,
   type PopupTarget,
 } from '@canvas/nexio-components/context-menu';
-import { DeleteIcon, ExpandFullIcon } from '@canvas/icons/lit';
+import { DeleteIcon, ExpandFullIcon } from '@blocksuite/icons/lit';
 
 import type { SingleView } from '../../../core/index.js';
 import type { MobileTableViewUILogic } from './table-view-ui-logic.js';

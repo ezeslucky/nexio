@@ -21,7 +21,7 @@ import {
   stopPropagation,
 } from '@canvas/nexio-shared/utils';
 import { SignalWatcher, WithDisposable } from '@canvas/global/lit';
-import { ArrowLeftSmallIcon, PaletteIcon } from '@canvas/icons/lit';
+import { ArrowLeftSmallIcon, PaletteIcon } from '@blocksuite/icons/lit';
 import { BlockStdScope, PropTypes, requiredProperties } from '@canvas/std';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

@@ -3,7 +3,7 @@ import {
   popMenu,
   type PopupTarget,
 } from '@canvas/nexio-components/context-menu';
-import { AddCursorIcon } from '@canvas/icons/lit';
+import { AddCursorIcon } from '@blocksuite/icons/lit';
 import type { Middleware } from '@floating-ui/dom';
 import type { ReadonlySignal } from '@preact/signals-core';
 

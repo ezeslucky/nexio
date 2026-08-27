@@ -1,6 +1,6 @@
 import { SignalWatcher, WithDisposable } from '@canvas/nexio/global/lit';
 import { ShadowlessElement } from '@canvas/nexio/std';
-import { CollectionsIcon } from '@canvas/icons/lit';
+import { CollectionsIcon } from '@blocksuite/icons/lit';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';
 

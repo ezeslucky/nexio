@@ -11,7 +11,7 @@ import { unsafeCSSVar, unsafeCSSVarV2 } from '@canvas/nexio/shared/theme';
 import type { EditorHost } from '@canvas/nexio/std';
 import { ShadowlessElement } from '@canvas/nexio/std';
 import type { NotificationService } from '@canvas/nexio-shared/services';
-import { ArrowUpBigIcon, CloseIcon } from '@canvas/icons/lit';
+import { ArrowUpBigIcon, CloseIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

@@ -1,7 +1,7 @@
 import type { FrameBlockModel } from '@canvas/nexio-model';
 import { createButtonPopper } from '@canvas/nexio-shared/utils';
 import { WithDisposable } from '@canvas/global/lit';
-import { LayerIcon } from '@canvas/icons/lit';
+import { LayerIcon } from '@blocksuite/icons/lit';
 import type { BlockComponent } from '@canvas/std';
 import { css, html, LitElement } from 'lit';
 import { property, query } from 'lit/decorators.js';

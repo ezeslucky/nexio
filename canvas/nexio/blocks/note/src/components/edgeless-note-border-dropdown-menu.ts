@@ -1,6 +1,6 @@
 import { EditorChevronDown } from '@canvas/nexio-components/toolbar';
 import { LineWidth, type StrokeStyle } from '@canvas/nexio-model';
-import { LineStyleIcon } from '@canvas/icons/lit';
+import { LineStyleIcon } from '@blocksuite/icons/lit';
 import { ShadowlessElement } from '@canvas/std';
 import { html } from 'lit';
 import { property } from 'lit/decorators.js';

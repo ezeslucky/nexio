@@ -1,4 +1,4 @@
-import { EdgelessIcon, PageIcon } from '@canvas/icons/rc';
+import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 
