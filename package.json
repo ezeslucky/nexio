@@ -1,5 +1,5 @@
 {
-  "name": "@affine/monorepo",
+  "name": "@nexio/monorepo",
   "version": "0.27.5",
   "private": true,
   "author": "toeverything",
@@ -18,17 +18,19 @@
     "node": ">=22.12.0 <23.0.0"
   },
   "scripts": {
-    "affine": "r affine.ts",
-    "af": "r affine.ts",
-    "dev": "yarn affine dev -p web",
-    "dev:web": "yarn affine dev -p web",
-    "dev:server": "yarn affine dev -p server",
-    "dev:admin": "yarn affine dev -p admin",
-    "build": "yarn affine build",
-    "build:all": "yarn affine build -p server --deps && yarn affine build -p web && yarn affine build -p admin",
-    "build:server": "yarn affine build -p server --deps",
-    "build:web": "yarn affine build -p web",
-    "build:admin": "yarn affine build -p admin",
+    "nexio": "r nexio.ts",
+    "nx": "r nexio.ts",
+    "affine": "r nexio.ts",
+    "af": "r nexio.ts",
+    "dev": "yarn nexio dev -p web",
+    "dev:web": "yarn nexio dev -p web",
+    "dev:server": "yarn nexio dev -p server",
+    "dev:admin": "yarn nexio dev -p admin",
+    "build": "yarn nexio build",
+    "build:all": "yarn nexio build -p server --deps && yarn nexio build -p web && yarn nexio build -p admin",
+    "build:server": "yarn nexio build -p server --deps",
+    "build:web": "yarn nexio build -p web",
+    "build:admin": "yarn nexio build -p admin",
     "lint:format": "oxfmt --check .",
     "lint:format:fix": "oxfmt --write .",
     "lint:ox": "oxlint --deny-warnings",
@@ -39,7 +41,7 @@
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc -b tsconfig.json --verbose",
-    "postinstall": "yarn affine init && yarn husky"
+    "postinstall": "yarn nexio init && yarn husky"
   },
   "lint-staged": {
     "*": "oxfmt --write --no-error-on-unmatched-pattern",

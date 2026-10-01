@@ -4,6 +4,7 @@
   "type": "module",
   "private": true,
   "bin": {
+    "nexio": "./bin/cli.js",
     "affine": "./bin/cli.js",
     "r": "./bin/runner.js"
   },
@@ -12,6 +13,7 @@
     "./bundle": "./src/bundle.ts"
   },
   "scripts": {
+    "nexio": "r ./src/nexio.ts",
     "affine": "r ./src/affine.ts"
   },
   "dependencies": {

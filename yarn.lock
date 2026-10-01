@@ -721,9 +721,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@affine/monorepo@workspace:.":
+"@nexio/monorepo@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@affine/monorepo@workspace:."
+  resolution: "@nexio/monorepo@workspace:."
   dependencies:
     "@affine-tools/cli": "workspace:*"
     "@capacitor/cli": "npm:^8.4.2"
