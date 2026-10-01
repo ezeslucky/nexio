@@ -4,17 +4,17 @@ import {
   Menu,
   MenuItem,
   Tooltip,
-} from '@nexio/component';
-import { AddFilterMenu } from '@nexio/core/components/filter/add-filter';
+} from '@affine/component';
+import { AddFilterMenu } from '@affine/core/components/filter/add-filter';
 import {
   CollectionService,
   type PinnedCollectionRecord,
   PinnedCollectionService,
-} from '@nexio/core/modules/collection';
-import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/core/modules/collection';
+import type { FilterParams } from '@affine/core/modules/collection-rules';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   CloseIcon,
   CollectionsIcon,
@@ -22,7 +22,7 @@ import {
   FilterIcon,
   PlusIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo, useState } from 'react';
 
 import * as styles from './pinned-collections.css';
@@ -114,7 +114,7 @@ export const PinnedCollections = ({
         }}
         role="button"
       >
-        {t['com.nexio.all-docs.pinned-collection.all']()}
+        {t['com.affine.all-docs.pinned-collection.all']()}
       </div>
       {pinnedCollections.map((record, index) => (
         <PinnedCollectionItem
@@ -149,7 +149,7 @@ export const PinnedCollections = ({
       )}
       <div style={{ flex: 1 }}></div>
       {activeCollectionId && (
-        <Tooltip content={t['com.nexio.all-docs.pinned-collection.edit']()}>
+        <Tooltip content={t['com.affine.all-docs.pinned-collection.edit']()}>
           <IconButton
             size="16"
             className={styles.editIconButton}
@@ -229,7 +229,7 @@ export const AddPinnedCollectionMenuContent = ({
           setAddingFilter(true);
         }}
       >
-        {t['com.nexio.filter']()}
+        {t['com.affine.filter']()}
       </MenuItem>
       {unpinnedCollectionMetas.length > 0 && <Divider />}
       {unpinnedCollectionMetas.map(meta => (

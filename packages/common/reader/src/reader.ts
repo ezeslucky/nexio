@@ -1,14 +1,14 @@
-import { Container } from '@canvas/nexio/global/di';
+import { Container } from '@blocksuite/affine/global/di';
 import type {
   AttachmentBlockModel,
   BookmarkBlockModel,
   EmbedBlockModel,
   ImageBlockModel,
   TableBlockModel,
-} from '@canvas/nexio/model';
-import { NexioSchemas } from '@canvas/nexio/schemas';
-import { MarkdownAdapter } from '@canvas/nexio/shared/adapters';
-import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
+} from '@blocksuite/affine/model';
+import { AffineSchemas } from '@blocksuite/affine/schemas';
+import { MarkdownAdapter } from '@blocksuite/affine/shared/adapters';
+import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
 import {
   createYProxy,
   type DeltaInsert,
@@ -17,8 +17,8 @@ import {
   Transformer,
   type TransformerMiddleware,
   type YBlock,
-} from '@canvas/nexio/store';
-import { uniq } from 'lodash-es';
+} from '@blocksuite/affine/store';
+import { uniqBy } from 'lodash-es';
 import {
   Array as YArray,
   type Doc as YDoc,
@@ -28,8 +28,8 @@ import {
 
 import { getStoreManager } from './bs-store';
 
-const canvasSchema = new Schema();
-canvasSchema.register([...NexioSchemas]);
+const blocksuiteSchema = new Schema();
+blocksuiteSchema.register([...AffineSchemas]);
 
 export interface BlockDocumentInfo {
   docId: string;
@@ -51,12 +51,87 @@ export interface BlockDocumentInfo {
 }
 
 const bookmarkFlavours = new Set([
-  'nexio:bookmark',
-  'nexio:embed-youtube',
-  'nexio:embed-figma',
-  'nexio:embed-github',
-  'nexio:embed-loom',
+  'affine:bookmark',
+  'affine:embed-youtube',
+  'affine:embed-figma',
+  'affine:embed-github',
+  'affine:embed-loom',
 ]);
+
+const collectInlineReferences = (
+  deltas: DeltaInsert<AffineTextAttributes>[]
+): { refDocId: string; ref: string }[] =>
+  uniqBy(
+    deltas
+      .flatMap(delta => {
+        if (
+          delta.attributes &&
+          delta.attributes.reference &&
+          delta.attributes.reference.pageId
+        ) {
+          const { pageId: refDocId, params = {} } = delta.attributes.reference;
+          return {
+            refDocId,
+            ref: JSON.stringify({ docId: refDocId, ...params }),
+          };
+        }
+        return null;
+      })
+      .filter((ref): ref is { refDocId: string; ref: string } => ref !== null),
+    item => item.ref
+  );
+
+const getTextDeltasFromCellValue = (
+  value: unknown
+): DeltaInsert<AffineTextAttributes>[] | null => {
+  if (!value) {
+    return null;
+  }
+
+  if (value instanceof YText) {
+    return value.toDelta() as DeltaInsert<AffineTextAttributes>[];
+  }
+
+  if (typeof value === 'object' && value !== null) {
+    const maybeText = value as { yText?: unknown };
+    if (maybeText.yText instanceof YText) {
+      return maybeText.yText.toDelta() as DeltaInsert<AffineTextAttributes>[];
+    }
+  }
+
+  if (value instanceof YMap) {
+    const marker = value.get('$blocksuite:internal:text$');
+    const delta = value.get('delta');
+    if (marker) {
+      if (delta instanceof YArray) {
+        return delta
+          .toArray()
+          .map(entry => (entry instanceof YMap ? entry.toJSON() : entry)) as
+          | DeltaInsert<AffineTextAttributes>[]
+          | null;
+      }
+      if (Array.isArray(delta)) {
+        return delta as DeltaInsert<AffineTextAttributes>[];
+      }
+    }
+  }
+
+  if (
+    typeof value === 'object' &&
+    value !== null &&
+    '$blocksuite:internal:text$' in value
+  ) {
+    const delta = (value as { delta?: unknown }).delta;
+    if (delta instanceof YArray) {
+      return delta.toArray() as DeltaInsert<AffineTextAttributes>[];
+    }
+    if (Array.isArray(delta)) {
+      return delta as DeltaInsert<AffineTextAttributes>[];
+    }
+  }
+
+  return null;
+};
 
 function generateMarkdownPreviewBuilder(
   workspaceId: string,
@@ -65,7 +140,7 @@ function generateMarkdownPreviewBuilder(
 ) {
   function yblockToDraftModal(yblock: YBlock): DraftModel | null {
     const flavour = yblock.get('sys:flavour') as string;
-    const blockSchema = canvasSchema.flavourSchemaMap.get(flavour);
+    const blockSchema = blocksuiteSchema.flavourSchemaMap.get(flavour);
     if (!blockSchema) {
       return null;
     }
@@ -127,7 +202,7 @@ function generateMarkdownPreviewBuilder(
   const provider = container.provider();
   const markdownAdapter = new MarkdownAdapter(
     new Transformer({
-      schema: canvasSchema,
+      schema: blocksuiteSchema,
       blobCRUD: {
         delete: () => Promise.resolve(),
         get: () => Promise.resolve(null),
@@ -175,7 +250,7 @@ function generateMarkdownPreviewBuilder(
       );
 
       // reach the root block. do not count it.
-      if (!currentBlock || currentBlock.flavour !== 'nexio:list') {
+      if (!currentBlock || currentBlock.flavour !== 'affine:list') {
         break;
       }
       parentBlockCount++;
@@ -199,7 +274,7 @@ function generateMarkdownPreviewBuilder(
 
   const generateDatabaseMarkdownPreview = (block: BlockDocumentInfo) => {
     const isDatabaseBlock = (block: BlockDocumentInfo) => {
-      return block.flavour === 'nexio:database';
+      return block.flavour === 'affine:database';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -234,7 +309,7 @@ function generateMarkdownPreviewBuilder(
     const isImageModel = (
       model: DraftModel | null
     ): model is DraftModel<ImageBlockModel> => {
-      return model?.flavour === 'nexio:image';
+      return model?.flavour === 'affine:image';
     };
 
     const model = yblockToDraftModal(block.yblock);
@@ -261,8 +336,8 @@ function generateMarkdownPreviewBuilder(
       model: DraftModel | null
     ): model is DraftModel<EmbedBlockModel> => {
       return (
-        model?.flavour === 'nexio:embed-linked-doc' ||
-        model?.flavour === 'nexio:embed-synced-doc'
+        model?.flavour === 'affine:embed-linked-doc' ||
+        model?.flavour === 'affine:embed-synced-doc'
       );
     };
 
@@ -307,7 +382,7 @@ function generateMarkdownPreviewBuilder(
     const isAttachmentModel = (
       model: DraftModel | null
     ): model is DraftModel<AttachmentBlockModel> => {
-      return model?.flavour === 'nexio:attachment';
+      return model?.flavour === 'affine:attachment';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -322,7 +397,7 @@ function generateMarkdownPreviewBuilder(
     const isTableModel = (
       model: DraftModel | null
     ): model is DraftModel<TableBlockModel> => {
-      return model?.flavour === 'nexio:table';
+      return model?.flavour === 'affine:table';
     };
 
     const draftModel = yblockToDraftModal(block.yblock);
@@ -343,48 +418,48 @@ function generateMarkdownPreviewBuilder(
     let markdown: string | null = null;
 
     if (
-      flavour === 'nexio:paragraph' ||
-      flavour === 'nexio:list' ||
-      flavour === 'nexio:code'
+      flavour === 'affine:paragraph' ||
+      flavour === 'affine:list' ||
+      flavour === 'affine:code'
     ) {
       const draftModel = yblockToDraftModal(block.yblock);
       markdown =
-        block.parentFlavour === 'nexio:database'
+        block.parentFlavour === 'affine:database'
           ? generateDatabaseMarkdownPreview(block)
           : ((draftModel ? await markdownAdapter.fromBlock(draftModel) : null)
               ?.file ?? null);
 
       if (markdown) {
-        if (flavour === 'nexio:code') {
+        if (flavour === 'affine:code') {
           markdown = trimCodeBlock(markdown);
-        } else if (flavour === 'nexio:paragraph') {
+        } else if (flavour === 'affine:paragraph') {
           markdown = trimParagraph(markdown);
         }
       }
-    } else if (flavour === 'nexio:database') {
+    } else if (flavour === 'affine:database') {
       markdown = generateDatabaseMarkdownPreview(block);
     } else if (
-      flavour === 'nexio:embed-linked-doc' ||
-      flavour === 'nexio:embed-synced-doc'
+      flavour === 'affine:embed-linked-doc' ||
+      flavour === 'affine:embed-synced-doc'
     ) {
       markdown = generateEmbedMarkdownPreview(block);
-    } else if (flavour === 'nexio:attachment') {
+    } else if (flavour === 'affine:attachment') {
       markdown = generateAttachmentMarkdownPreview(block);
-    } else if (flavour === 'nexio:image') {
+    } else if (flavour === 'affine:image') {
       markdown = generateImageMarkdownPreview(block);
-    } else if (flavour === 'nexio:surface' || flavour === 'nexio:page') {
+    } else if (flavour === 'affine:surface' || flavour === 'affine:page') {
       // skip
-    } else if (flavour === 'nexio:latex') {
+    } else if (flavour === 'affine:latex') {
       markdown = generateLatexMarkdownPreview(block);
     } else if (bookmarkFlavours.has(flavour)) {
       markdown = generateBookmarkMarkdownPreview(block);
-    } else if (flavour === 'nexio:table') {
+    } else if (flavour === 'affine:table') {
       markdown = generateTableMarkdownPreview(block);
     } else {
       console.warn(`unknown flavour: ${flavour}`);
     }
 
-    if (markdown && flavour === 'nexio:list') {
+    if (markdown && flavour === 'affine:list') {
       const blockDepth = getListDepth(block);
       markdown = indentMarkdown(markdown, Math.max(0, blockDepth));
     }
@@ -504,7 +579,7 @@ export async function readAllBlocksFromDoc({
   for (const block of blocks.values()) {
     const flavour = block.get('sys:flavour')?.toString();
     const blockId = block.get('sys:id')?.toString();
-    if (flavour === 'nexio:page' && blockId) {
+    if (flavour === 'affine:page' && blockId) {
       rootBlockId = blockId;
     }
   }
@@ -545,7 +620,7 @@ export async function readAllBlocksFromDoc({
 
     const flavour = block.get('sys:flavour')?.toString();
     const parentFlavour = parentBlock?.get('sys:flavour')?.toString();
-    const noteBlock = nearestByFlavour(blockId, 'nexio:note');
+    const noteBlock = nearestByFlavour(blockId, 'affine:note');
 
     // display mode:
     // - both: page and edgeless -> fallback to page
@@ -572,13 +647,13 @@ export async function readAllBlocksFromDoc({
       additional: { displayMode, noteBlockId },
     };
 
-    if (flavour === 'nexio:page') {
+    if (flavour === 'affine:page') {
       docTitle = block.get('prop:title').toString();
       blockDocuments.push({ ...commonBlockProps, content: docTitle });
     } else if (
-      flavour === 'nexio:paragraph' ||
-      flavour === 'nexio:list' ||
-      flavour === 'nexio:code'
+      flavour === 'affine:paragraph' ||
+      flavour === 'affine:list' ||
+      flavour === 'affine:code'
     ) {
       const text = block.get('prop:text') as YText;
 
@@ -586,29 +661,11 @@ export async function readAllBlocksFromDoc({
         continue;
       }
 
-      const deltas: DeltaInsert<NexioTextAttributes>[] = text.toDelta();
-      const refs = uniq(
-        deltas
-          .flatMap(delta => {
-            if (
-              delta.attributes &&
-              delta.attributes.reference &&
-              delta.attributes.reference.pageId
-            ) {
-              const { pageId: refDocId, params = {} } =
-                delta.attributes.reference;
-              return {
-                refDocId,
-                ref: JSON.stringify({ docId: refDocId, ...params }),
-              };
-            }
-            return null;
-          })
-          .filter(ref => !!ref)
-      );
+      const deltas: DeltaInsert<AffineTextAttributes>[] = text.toDelta();
+      const refs = collectInlineReferences(deltas);
 
       const databaseName =
-        flavour === 'nexio:paragraph' && parentFlavour === 'nexio:database' // if block is a database row
+        flavour === 'affine:paragraph' && parentFlavour === 'affine:database' // if block is a database row
           ? parentBlock?.get('prop:title')?.toString()
           : undefined;
 
@@ -633,8 +690,8 @@ export async function readAllBlocksFromDoc({
         maxSummaryLength -= text.length;
       }
     } else if (
-      flavour === 'nexio:embed-linked-doc' ||
-      flavour === 'nexio:embed-synced-doc'
+      flavour === 'affine:embed-linked-doc' ||
+      flavour === 'affine:embed-synced-doc'
     ) {
       const pageId = block.get('prop:pageId');
       if (typeof pageId === 'string') {
@@ -648,7 +705,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'nexio:attachment') {
+    } else if (flavour === 'affine:attachment') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -659,7 +716,7 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'nexio:image') {
+    } else if (flavour === 'affine:image') {
       const blobId = block.get('prop:sourceId');
       if (typeof blobId === 'string') {
         blockDocuments.push({
@@ -670,14 +727,14 @@ export async function readAllBlocksFromDoc({
           parentBlockId,
         });
       }
-    } else if (flavour === 'nexio:surface') {
+    } else if (flavour === 'affine:surface') {
       const texts = [];
 
       const elementsObj = block.get('prop:elements');
       if (
         !(
           elementsObj instanceof YMap &&
-          elementsObj.get('type') === '$canvas:internal:native$'
+          elementsObj.get('type') === '$blocksuite:internal:native$'
         )
       ) {
         continue;
@@ -705,7 +762,7 @@ export async function readAllBlocksFromDoc({
         parentFlavour,
         parentBlockId,
       });
-    } else if (flavour === 'nexio:database') {
+    } else if (flavour === 'affine:database') {
       const texts = [];
       const columnsObj = block.get('prop:columns');
       const databaseTitle = block.get('prop:title');
@@ -741,6 +798,29 @@ export async function readAllBlocksFromDoc({
         }
       }
 
+      const databaseRefs: { refDocId: string; ref: string }[] = [];
+      const cellsObj = block.get('prop:cells');
+      if (cellsObj instanceof YMap) {
+        for (const row of cellsObj.values()) {
+          if (!(row instanceof YMap)) {
+            continue;
+          }
+          for (const cell of row.values()) {
+            if (!(cell instanceof YMap)) {
+              continue;
+            }
+            const deltas = getTextDeltasFromCellValue(cell.get('value'));
+            if (!deltas?.length) {
+              continue;
+            }
+            const refs = collectInlineReferences(deltas);
+            if (refs.length) {
+              databaseRefs.push(...refs);
+            }
+          }
+        }
+      }
+
       blockDocuments.push({
         ...commonBlockProps,
         content: texts,
@@ -748,13 +828,23 @@ export async function readAllBlocksFromDoc({
           ...commonBlockProps.additional,
           databaseName: databaseTitle?.toString(),
         },
+        ...(databaseRefs.length
+          ? databaseRefs.reduce<{ refDocId: string[]; ref: string[] }>(
+              (prev, curr) => {
+                prev.refDocId.push(curr.refDocId);
+                prev.ref.push(curr.ref);
+                return prev;
+              },
+              { refDocId: [], ref: [] }
+            )
+          : {}),
       });
-    } else if (flavour === 'nexio:latex') {
+    } else if (flavour === 'affine:latex') {
       blockDocuments.push({
         ...commonBlockProps,
         content: block.get('prop:latex')?.toString() ?? '',
       });
-    } else if (flavour === 'nexio:table') {
+    } else if (flavour === 'affine:table') {
       const contents = Array.from<string>(block.keys())
         .map(key => {
           if (key.startsWith('prop:cells.') && key.endsWith('.text')) {
@@ -781,13 +871,13 @@ export async function readAllBlocksFromDoc({
     if (block.ref?.length) {
       const target = block;
 
-      // should only generate the markdown preview belong to the same nexio:note
-      const noteBlock = nearestByFlavour(block.blockId, 'nexio:note');
+      // should only generate the markdown preview belong to the same affine:note
+      const noteBlock = nearestByFlavour(block.blockId, 'affine:note');
 
       const sameNoteBlocks = noteBlock
         ? blockDocuments.filter(
             candidate =>
-              nearestByFlavour(candidate.blockId, 'nexio:note') === noteBlock
+              nearestByFlavour(candidate.blockId, 'affine:note') === noteBlock
           )
         : [];
 

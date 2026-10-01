@@ -1,21 +1,21 @@
-import { Button, Modal, notify } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { ServerSelector } from '@nexio/core/components/server-selector';
+import { Button, Modal, notify } from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { ServerSelector } from '@affine/core/components/server-selector';
 import {
   AuthService,
   type Server,
   ServersService,
-} from '@nexio/core/modules/cloud';
+} from '@affine/core/modules/cloud';
 import {
   type DialogComponentProps,
   type GLOBAL_DIALOG_SCHEMA,
   GlobalDialogService,
-} from '@nexio/core/modules/dialogs';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/dialogs';
+import { WorkspacesService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
 import { CloudWorkspaceIcon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './dialog.css';
@@ -66,7 +66,7 @@ const Dialog = ({
     } catch (e) {
       console.error(e);
       notify.error({
-        title: t['com.nexio.workspace.enable-cloud.failed'](),
+        title: t['com.affine.workspace.enable-cloud.failed'](),
       });
     }
   }, [
@@ -101,12 +101,12 @@ const Dialog = ({
       <CloudWorkspaceIcon width={'36px'} height={'36px'} />
       <div className={styles.textContainer}>
         <div className={styles.title}>
-          {t['com.nexio.enablenexioCloudModal.custom-server.title']({
+          {t['com.affine.enableAffineCloudModal.custom-server.title']({
             workspaceName: workspace?.name$.value || 'untitled',
           })}
         </div>
         <div className={styles.description}>
-          {t['com.nexio.enablenexioCloudModal.custom-server.description']()}
+          {t['com.affine.enableAffineCloudModal.custom-server.description']()}
         </div>
       </div>
       <div className={styles.serverSelector}>
@@ -123,7 +123,7 @@ const Dialog = ({
         size="extraLarge"
         variant="primary"
       >
-        {t['com.nexio.enablenexioCloudModal.custom-server.enable']()}
+        {t['com.affine.enableAffineCloudModal.custom-server.enable']()}
       </Button>
     </div>
   );

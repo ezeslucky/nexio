@@ -1,5 +1,5 @@
-import { StoreExtensionManager } from '@canvas/nexio/ext-loader';
-import { getInternalStoreExtensions } from '@canvas/nexio/extensions/store';
+import { StoreExtensionManager } from '@blocksuite/affine/ext-loader';
+import { getInternalStoreExtensions } from '@blocksuite/affine/extensions/store';
 
 const manager = new StoreExtensionManager(getInternalStoreExtensions());
 

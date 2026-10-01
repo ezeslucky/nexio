@@ -3,13 +3,12 @@ import {
   type ListNotificationsQuery,
   listNotificationsQuery,
   mentionUserMutation,
-  notificationCountQuery,
   type PaginationInput,
   readAllNotificationsMutation,
   readNotificationMutation,
   type UnionNotificationBodyType,
-} from '@nexio/graphql';
-import { Store } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { Store } from '@toeverything/infra';
 import { map } from 'rxjs';
 
 import type { GraphQLService, ServerService } from '../../cloud';
@@ -21,7 +20,7 @@ export type Notification = NonNullable<
 
 export type NotificationBody = UnionNotificationBodyType;
 
-export { NotificationType } from '@nexio/graphql';
+export { NotificationType } from '@affine/graphql';
 
 export class NotificationStore extends Store {
   constructor(
@@ -50,17 +49,6 @@ export class NotificationStore extends Store {
       'notification-count:' + this.serverService.server.id,
       count
     );
-  }
-
-  async getNotificationCount(signal?: AbortSignal) {
-    const result = await this.gqlService.gql({
-      query: notificationCountQuery,
-      context: {
-        signal,
-      },
-    });
-
-    return result.currentUser?.notificationCount;
   }
 
   async listNotification(pagination: PaginationInput, signal?: AbortSignal) {

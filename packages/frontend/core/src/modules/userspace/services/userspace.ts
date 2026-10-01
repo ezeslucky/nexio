@@ -1,4 +1,4 @@
-import { ObjectPool, Service } from '@ezeslucky/infra';
+import { ObjectPool, Service } from '@toeverything/infra';
 
 import { CurrentUserDB } from '../entities/current-user-db';
 import { UserDB, type UserDBWithTables } from '../entities/user-db';

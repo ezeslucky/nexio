@@ -1,4 +1,4 @@
-import { ServerFeature } from '@nexio/graphql';
+import { ServerFeature } from '@affine/graphql';
 import { SearchIcon } from '@blocksuite/icons/rc';
 import {
   effect,
@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { truncate } from 'lodash-es';
 import { catchError, EMPTY, map, of, switchMap, tap, throttleTime } from 'rxjs';
 
@@ -64,7 +64,7 @@ export class DocsQuickSearchSession
     source: 'docs',
     label: {
       title: {
-        i18nKey: 'com.nexio.quicksearch.search-locally',
+        i18nKey: 'com.affine.quicksearch.search-locally',
       },
     },
     score: 1000,
@@ -105,11 +105,46 @@ export class DocsQuickSearchSession
     switchMap((query: string) => {
       let out;
       if (!query) {
-        out = of([] as QuickSearchItem<'docs', DocsPayload>[]);
+        out = of({ items: [], useLocalLabel: false });
       } else {
-        out = this.docsSearchService.search$(query).pipe(
-          map(docs =>
-            docs
+        const preferRemote =
+          !this.searchLocally && this.isSupportServerIndexer();
+        const preferMode =
+          this.searchLocally || !this.isSupportServerIndexer()
+            ? 'local'
+            : 'remote';
+        const search$ = preferRemote
+          ? this.docsSearchService.search$(query, 'remote').pipe(
+              switchMap(docs => {
+                if (docs.length > 0) {
+                  return of({ docs, useLocalLabel: false });
+                }
+                return this.docsSearchService.search$(query, 'local').pipe(
+                  map(localDocs => ({
+                    docs: localDocs,
+                    useLocalLabel: true,
+                  }))
+                );
+              }),
+              catchError(() =>
+                this.docsSearchService.search$(query, 'local').pipe(
+                  map(localDocs => ({
+                    docs: localDocs,
+                    useLocalLabel: true,
+                  }))
+                )
+              )
+            )
+          : this.docsSearchService.search$(query, preferMode).pipe(
+              map(docs => ({
+                docs,
+                useLocalLabel: preferMode === 'local',
+              }))
+            );
+
+        out = search$.pipe(
+          map(({ docs, useLocalLabel }) => {
+            const items = docs
               .map(doc => {
                 const docRecord = this.docsService.list.doc$(doc.docId).value;
                 return [doc, docRecord] as const;
@@ -126,9 +161,9 @@ export class DocsQuickSearchSession
                   group: {
                     id: 'docs',
                     label: {
-                      i18nKey: this.searchLocally
-                        ? 'com.nexio.quicksearch.group.searchfor-locally'
-                        : 'com.nexio.quicksearch.group.searchfor',
+                      i18nKey: useLocalLabel
+                        ? 'com.affine.quicksearch.group.searchfor-locally'
+                        : 'com.affine.quicksearch.group.searchfor',
                       options: { query: truncate(query) },
                     },
                     score: 5,
@@ -142,16 +177,18 @@ export class DocsQuickSearchSession
                   timestamp: updatedDate,
                   payload: doc,
                 } as QuickSearchItem<'docs', DocsPayload>;
-              })
-          )
+              });
+            return { items, useLocalLabel };
+          })
         );
       }
       return out.pipe(
-        tap((items: QuickSearchItem<'docs', DocsPayload>[]) => {
+        tap(({ items, useLocalLabel }) => {
           this.items$.next(
             this.isSupportServerIndexer() &&
               !this.searchLocally &&
-              !this.isEnableBatterySaveMode()
+              !this.isEnableBatterySaveMode() &&
+              !useLocalLabel
               ? [...items, this.searchLocallyItem]
               : items
           );

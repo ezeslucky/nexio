@@ -1,6 +1,6 @@
-import { buttonVariants } from '@nexio/admin/components/ui/button';
-import { Separator } from '@nexio/admin/components/ui/separator';
-import { cn } from '@nexio/admin/utils';
+import { buttonVariants } from '@affine/admin/components/ui/button';
+import { Separator } from '@affine/admin/components/ui/separator';
+import { cn } from '@affine/admin/utils';
 import {
   AlbumIcon,
   ChevronRightIcon,
@@ -12,10 +12,10 @@ import {
 type Channel = 'stable' | 'canary' | 'beta' | 'internal';
 
 const appNames = {
-  stable: 'NEXIO',
-  canary: 'NEXIO Canary',
-  beta: 'NEXIO Beta',
-  internal: 'NEXIO Internal',
+  stable: 'Nexio',
+  canary: 'Nexio Canary',
+  beta: 'Nexio Beta',
+  internal: 'Nexio Internal',
 } satisfies Record<Channel, string>;
 const appName = appNames[BUILD_CONFIG.appBuildType];
 
@@ -23,7 +23,7 @@ const links = [
   {
     href: BUILD_CONFIG.githubUrl,
     icon: <GithubIcon size={20} />,
-    label: 'Star NEXIO on GitHub',
+    label: 'Star Nexio on GitHub',
   },
   {
     href: BUILD_CONFIG.githubUrl,
@@ -31,22 +31,22 @@ const links = [
     label: 'Report an Issue',
   },
   {
-    href: 'https://docs.nexio.pro/docs/self-host-nexio',
+    href: 'https://docs.affine.pro/docs/self-host-affine',
     icon: <AlbumIcon size={20} />,
     label: 'Self-host Document',
   },
   {
-    href: 'https://nexio.pro/pricing/?type=selfhost#table',
+    href: 'https://affine.pro/pricing/?type=selfhost#table',
     icon: <UploadCloudIcon size={20} />,
     label: 'Upgrade to Team',
   },
 ];
 
-export function AboutNEXIO() {
+export function AboutAFFiNE() {
   return (
     <div className="flex flex-col h-full gap-3 py-5 px-6 w-full">
       <div className="flex items-center">
-        <span className="text-xl font-semibold">About NEXIO</span>
+        <span className="text-xl font-semibold">About Nexio</span>
       </div>
       <div className="overflow-y-auto space-y-[10px]">
         <div className="flex flex-col rounded-md border">
@@ -74,7 +74,7 @@ export function AboutNEXIO() {
           ))}
         </div>
       </div>
-      <div className="space-y-3 text-sm font-normal text-gray-500">
+      <div className="space-y-3 text-sm font-normal text-muted-foreground">
         <div>{`App Version: ${appName} ${BUILD_CONFIG.appVersion}`}</div>
         <div>{`Editor Version: ${BUILD_CONFIG.editorVersion}`}</div>
       </div>

@@ -1,12 +1,12 @@
-import { notify } from '@nexio/component';
-import { DebugLogger } from '@nexio/debug';
+import { notify } from '@affine/component';
+import { DebugLogger } from '@affine/debug';
 import {
   getOrCreateI18n,
   i18nCompletenesses,
   type Language,
   SUPPORTED_LANGUAGES,
-} from '@nexio/i18n';
-import { effect, Entity, fromPromise, LiveData } from '@ezeslucky/infra';
+} from '@affine/i18n';
+import { effect, Entity, fromPromise, LiveData } from '@toeverything/infra';
 import { catchError, EMPTY, exhaustMap } from 'rxjs';
 
 import type { GlobalCache } from '../../storage';
@@ -54,13 +54,22 @@ export class I18n extends Entity {
   constructor(private readonly cache: GlobalCache) {
     super();
     this.i18n.on('languageChanged', (language: Language) => {
-      document.documentElement.lang = language;
+      this.applyDocumentLanguage(language);
       this.cache.set('i18n_lng', language);
     });
   }
 
   init() {
-    this.changeLanguage(this.currentLanguageKey$.value ?? 'en');
+    const language = this.currentLanguageKey$.value ?? 'en';
+    this.applyDocumentLanguage(language);
+    this.changeLanguage(language);
+  }
+
+  private applyDocumentLanguage(language: Language) {
+    document.documentElement.lang = language;
+    document.documentElement.dir = SUPPORTED_LANGUAGES[language]?.rtl
+      ? 'rtl'
+      : 'ltr';
   }
 
   changeLanguage = effect(

@@ -1,4 +1,4 @@
-This document explains how to start server (@nexio/server) locally with Docker
+This document explains how to start server (@affine/server) locally with Docker
 
 > **Warning**:
 >
@@ -7,7 +7,7 @@ This document explains how to start server (@nexio/server) locally with Docker
 
 ## Run required dev services in docker compose
 
-Running yarn's server package (@nexio/server) requires some dev services to be running, i.e.:
+Running yarn's server package (@affine/server) requires some dev services to be running, i.e.:
 
 - postgres
 - redis
@@ -24,7 +24,7 @@ docker compose -f ./.docker/dev/compose.yml up
 
 ### Notify
 
-> Starting from NEXIO 0.20, compose.yml includes a breaking change: the default database image has switched from `postgres:16` to `pgvector/pgvector:pg16`. If you were previously using another major version of Postgres, please change the number after `pgvector/pgvector:pg` to the major version you are using.
+> Starting from AFFiNE 0.20, compose.yml includes a breaking change: the default database image has switched from `postgres:16` to `pgvector/pgvector:pg16`. If you were previously using another major version of Postgres, please change the number after `pgvector/pgvector:pg` to the major version you are using.
 
 ## Build native packages (you need to setup rust toolchain first)
 
@@ -32,13 +32,7 @@ Server also requires native packages to be built, you can build them by running 
 
 ```sh
 # build native
-yarn nexio @nexio/server-native build
-```
-
-## Build @nexio/reader package
-
-```sh
-yarn nexio @nexio/reader build
+yarn affine @affine/server-native build
 ```
 
 ## Prepare dev environment
@@ -48,14 +42,14 @@ yarn nexio @nexio/reader build
 cp packages/backend/server/.env.example packages/backend/server/.env
 
 # everytime there are new migrations, init command should runned again
-yarn nexio server init
+yarn affine server init
 ```
 
 ## Start server
 
 ```sh
 # at project root
-yarn nexio server dev
+yarn affine server dev
 ```
 
 when server started, it will created a default user and a pro user for testing:
@@ -64,7 +58,7 @@ when server started, it will created a default user and a pro user for testing:
 
 Workspace members up to 3
 
-- email: dev@nexio.pro
+- email: dev@affine.pro
 - name: Dev User
 - password: dev
 
@@ -72,7 +66,7 @@ Workspace members up to 3
 
 Workspace members up to 10
 
-- email: pro@nexio.pro
+- email: pro@affine.pro
 - name: Pro User
 - password: pro
 
@@ -80,7 +74,7 @@ Workspace members up to 10
 
 Include a default `Team Workspace` and the members up to 10
 
-- email: team@nexio.pro
+- email: team@affine.pro
 - name: Team User
 - password: team
 
@@ -91,11 +85,11 @@ Include a default `Team Workspace` and the members up to 10
 yarn dev
 ```
 
-You can login with the user (dev@nexio.pro / dev) above to test the server.
+You can login with the user (dev@affine.pro / dev) above to test the server.
 
 ## Done
 
-Now you should be able to start developing nexio with server enabled.
+Now you should be able to start developing affine with server enabled.
 
 ## Bonus
 
@@ -103,11 +97,11 @@ Now you should be able to start developing nexio with server enabled.
 
 ```sh
 # available at http://localhost:5555
-yarn nexio server prisma studio
+yarn affine server prisma studio
 ```
 
 ### Seed the db
 
 ```sh
-yarn nexio server seed -h
+yarn affine server seed -h
 ```

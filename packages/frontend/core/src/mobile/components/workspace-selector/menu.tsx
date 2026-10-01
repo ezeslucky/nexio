@@ -1,21 +1,24 @@
-import { Divider, IconButton, Menu, MenuItem } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
-import { WorkspaceAvatar } from '@nexio/core/components/workspace-avatar';
+import { Divider, IconButton, Menu, MenuItem } from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import {
+  RouteLogic,
+  useNavigateHelper,
+} from '@affine/core/components/hooks/use-navigate-helper';
+import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import { WorkspaceAvatar } from '@affine/core/components/workspace-avatar';
 import {
   type AuthAccountInfo,
   AuthService,
   type Server,
   ServersService,
-} from '@nexio/core/modules/cloud';
-import { GlobalDialogService } from '@nexio/core/modules/dialogs';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
+} from '@affine/core/modules/cloud';
+import { GlobalDialogService } from '@affine/core/modules/dialogs';
+import { GlobalContextService } from '@affine/core/modules/global-context';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
 import {
   AccountIcon,
   CloseIcon,
@@ -25,7 +28,7 @@ import {
   SelfhostIcon,
   SignOutIcon,
 } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { type HTMLAttributes, useCallback, useMemo } from 'react';
 
@@ -44,7 +47,7 @@ const WorkspaceItem = ({
     <li className={styles.wsItem}>
       <button className={clsx(styles.wsCard, className)} {...attrs}>
         <WorkspaceAvatar
-          key={workspace.id}
+          key={`${workspace.flavour}:${workspace.id}`}
           meta={workspace}
           rounded={6}
           data-testid="workspace-avatar"
@@ -70,7 +73,7 @@ export const WorkspaceList = (props: WorkspaceListProps) => {
 
   return workspaceList.map(item => (
     <WorkspaceItem
-      key={item.id}
+      key={`${item.flavour}:${item.id}`}
       workspace={item}
       onClick={() => props.onClick(item)}
     />
@@ -112,14 +115,14 @@ const WorkspaceServerInfo = ({
   const menuItems = useMemo(
     () =>
       [
-        server !== 'nexio-cloud' && server !== 'local' && (
+        server !== 'affine-cloud' && server !== 'local' && (
           <MenuItem
             prefixIcon={<DeleteIcon />}
             type="danger"
             key="delete-server"
             onClick={onDeleteServer}
           >
-            {t['com.nexio.server.delete']()}
+            {t['com.affine.server.delete']()}
           </MenuItem>
         ),
         accountStatus === 'authenticated' && (
@@ -173,7 +176,7 @@ const LocalWorkspaces = ({
     <>
       <WorkspaceServerInfo
         server="local"
-        name={t['com.nexio.workspaceList.workspaceListType.local']()}
+        name={t['com.affine.workspaceList.workspaceListType.local']()}
       />
       <WorkspaceList
         items={workspaces}
@@ -278,15 +281,22 @@ export const SelectorMenu = ({ onClose }: { onClose?: () => void }) => {
   const workspacesService = useService(WorkspacesService);
   const workspaces = useLiveData(workspacesService.list.workspaces$);
   const serversService = useService(ServersService);
+  const globalContextService = useService(GlobalContextService);
   const { jumpToPage } = useNavigateHelper();
 
+  const currentWorkspaceId = useLiveData(
+    globalContextService.globalContext.workspaceId.$
+  );
+  const currentWorkspaceFlavour = useLiveData(
+    globalContextService.globalContext.workspaceFlavour.$
+  );
   const servers = useLiveData(serversService.servers$);
-  const nexioCloudServer = useMemo(
-    () => servers.find(s => s.id === 'nexio-cloud') as Server,
+  const affineCloudServer = useMemo(
+    () => servers.find(s => s.id === 'affine-cloud') as Server,
     [servers]
   );
   const selfhostServers = useMemo(
-    () => servers.filter(s => s.id !== 'nexio-cloud'),
+    () => servers.filter(s => s.id !== 'affine-cloud'),
     [servers]
   );
 
@@ -309,12 +319,29 @@ export const SelectorMenu = ({ onClose }: { onClose?: () => void }) => {
   const handleClickWorkspace = useCallback(
     (workspaceMetadata: WorkspaceMetadata) => {
       const id = workspaceMetadata.id;
-      if (id !== currentWorkspace?.id) {
-        jumpToPage(id, 'home');
+      const isCurrentWorkspace =
+        id === currentWorkspaceId &&
+        workspaceMetadata.flavour === currentWorkspaceFlavour;
+      if (!isCurrentWorkspace) {
+        const server = servers.find(
+          server => server.id === workspaceMetadata.flavour
+        );
+        if (workspaceMetadata.flavour !== 'local' && !server) {
+          return;
+        }
+        const searchParams = new URLSearchParams({
+          flavour: workspaceMetadata.flavour,
+        });
+        if (workspaceMetadata.flavour !== 'local' && server) {
+          searchParams.set('server', server.baseUrl);
+        }
+        jumpToPage(id, 'home', RouteLogic.PUSH, {
+          search: searchParams,
+        });
       }
       onClose?.();
     },
-    [onClose, jumpToPage]
+    [currentWorkspaceFlavour, currentWorkspaceId, jumpToPage, onClose, servers]
   );
 
   return (
@@ -328,15 +355,15 @@ export const SelectorMenu = ({ onClose }: { onClose?: () => void }) => {
       </header>
       <div className={styles.divider} />
       <main className={styles.body}>
-        {/* 1. nexio-cloud  */}
+        {/* 1. affine-cloud  */}
         <FrameworkScope
-          key={nexioCloudServer.id}
-          scope={nexioCloudServer.scope}
+          key={affineCloudServer.id}
+          scope={affineCloudServer.scope}
         >
           <CloudWorkSpaceList
-            server={nexioCloudServer}
+            server={affineCloudServer}
             workspaces={cloudWorkspaces.filter(
-              ({ flavour }) => flavour === nexioCloudServer.id
+              ({ flavour }) => flavour === affineCloudServer.id
             )}
             onClickWorkspace={handleClickWorkspace}
           />

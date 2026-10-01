@@ -7,27 +7,27 @@ import {
   PropertyRoot,
   useDraggable,
   useDropTarget,
-} from '@nexio/component';
-import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
-import { DocService } from '@nexio/core/modules/doc';
-import { DocDatabaseBacklinkInfo } from '@nexio/core/modules/doc-info';
+} from '@affine/component';
+import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+import { DocService } from '@affine/core/modules/doc';
+import { DocDatabaseBacklinkInfo } from '@affine/core/modules/doc-info';
 import type {
   DatabaseRow,
   DatabaseValueCell,
-} from '@nexio/core/modules/doc-info/types';
-import { DocIntegrationPropertiesTable } from '@nexio/core/modules/integration';
-import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/core/modules/doc-info/types';
+import { DocIntegrationPropertiesTable } from '@affine/core/modules/integration';
+import { ViewService, WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import clsx from 'clsx';
 import type React from 'react';
 import { forwardRef, useCallback, useMemo, useState } from 'react';
@@ -95,7 +95,7 @@ export const WorkspacePropertiesTableHeader = ({
     <Collapsible.Trigger style={style} role="button" onClick={handleCollapse}>
       <div className={clsx(styles.tableHeader, className)}>
         <div className={clsx(!open ? styles.pageInfoDimmed : null)}>
-          {t['com.nexio.page-properties.page-info']()}
+          {t['com.affine.page-properties.page-info']()}
         </div>
         <div
           className={styles.tableHeaderCollapseButtonWrapper}
@@ -164,7 +164,7 @@ export const WorkspacePropertyRow = ({
   );
 
   const docId = docService.doc.id;
-  const { dragRef } = useDraggable<NexioDNDData>(
+  const { dragRef } = useDraggable<AffineDNDData>(
     () => ({
       canDrag: !propertyInfoReadonly,
       data: {
@@ -180,7 +180,7 @@ export const WorkspacePropertyRow = ({
     }),
     [docId, propertyInfo.id, propertyInfoReadonly]
   );
-  const { dropTargetRef, closestEdge } = useDropTarget<NexioDNDData>(
+  const { dropTargetRef, closestEdge } = useDropTarget<AffineDNDData>(
     () => ({
       closestEdge: {
         allowedEdges: ['bottom', 'top'],
@@ -316,7 +316,7 @@ const WorkspaceWorkspacePropertiesTableBody = forwardRef<
         ref={ref}
         className={clsx(styles.tableBodyRoot, className)}
         style={style}
-        title={t.t('com.nexio.workspace.properties')}
+        title={t.t('com.affine.workspace.properties')}
         defaultCollapsed={!defaultOpen}
         onCollapseChange={handleCollapseChange}
         {...props}
@@ -329,17 +329,17 @@ const WorkspaceWorkspacePropertiesTableBody = forwardRef<
           collapseButtonText={({ hide, isCollapsed }) =>
             isCollapsed
               ? hide === 1
-                ? t['com.nexio.page-properties.more-property.one']({
+                ? t['com.affine.page-properties.more-property.one']({
                     count: hide.toString(),
                   })
-                : t['com.nexio.page-properties.more-property.more']({
+                : t['com.affine.page-properties.more-property.more']({
                     count: hide.toString(),
                   })
               : hide === 1
-                ? t['com.nexio.page-properties.hide-property.one']({
+                ? t['com.affine.page-properties.hide-property.one']({
                     count: hide.toString(),
                   })
-                : t['com.nexio.page-properties.hide-property.more']({
+                : t['com.affine.page-properties.hide-property.more']({
                     count: hide.toString(),
                   })
           }
@@ -366,7 +366,7 @@ const WorkspaceWorkspacePropertiesTableBody = forwardRef<
                 data-testid="add-property-button"
                 disabled={!canEditPropertyInfo}
               >
-                {t['com.nexio.page-properties.add-property']()}
+                {t['com.affine.page-properties.add-property']()}
               </Button>
             ) : (
               <Menu
@@ -388,7 +388,7 @@ const WorkspaceWorkspacePropertiesTableBody = forwardRef<
                   className={styles.propertyActionButton}
                   data-testid="add-property-button"
                 >
-                  {t['com.nexio.page-properties.add-property']()}
+                  {t['com.affine.page-properties.add-property']()}
                 </Button>
               </Menu>
             )}
@@ -405,7 +405,7 @@ const WorkspaceWorkspacePropertiesTableBody = forwardRef<
                   workbenchService.workbench.openSidebar();
                 }}
               >
-                {t['com.nexio.page-properties.config-properties']()}
+                {t['com.affine.page-properties.config-properties']()}
               </Button>
             ) : null}
           </div>
@@ -467,6 +467,8 @@ const WorkspacePropertiesTableInner = ({
   );
 };
 
+// this is the main component that renders the page properties table at the top of the page below
+// the page title
 export const WorkspacePropertiesTable = (
   props: WorkspacePropertiesTableProps
 ) => {

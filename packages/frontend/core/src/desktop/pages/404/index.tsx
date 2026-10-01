@@ -1,15 +1,15 @@
 import {
   NoPermissionOrNotFound,
   NotFoundPage,
-} from '@nexio/component/not-found-page';
-import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+} from '@affine/component/not-found-page';
+import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
+import { DesktopApiService } from '@affine/core/modules/desktop-api';
 import {
   FrameworkScope,
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import type { ReactElement } from 'react';
 import { useCallback, useEffect } from 'react';
 

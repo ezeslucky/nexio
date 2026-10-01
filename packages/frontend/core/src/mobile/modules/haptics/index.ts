@@ -1,4 +1,4 @@
-import type { Framework } from '@ezeslucky/infra';
+import type { Framework } from '@toeverything/infra';
 
 import { HapticProvider } from './providers/haptic';
 import { HapticsService } from './services/haptics';

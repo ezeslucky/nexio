@@ -1,5 +1,5 @@
-import { Button, usePromptModal } from '@nexio/component';
-import { useI18n } from '@nexio/i18n';
+import { Button, usePromptModal } from '@affine/component';
+import { useI18n } from '@affine/i18n';
 import { SaveIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
@@ -16,18 +16,18 @@ export const SaveAsCollectionButton = ({
   const { openPromptModal } = usePromptModal();
   const handleClick = useCallback(() => {
     openPromptModal({
-      title: t['com.nexio.editCollection.saveCollection'](),
-      label: t['com.nexio.editCollectionName.name'](),
+      title: t['com.affine.editCollection.saveCollection'](),
+      label: t['com.affine.editCollectionName.name'](),
       inputOptions: {
-        placeholder: t['com.nexio.editCollectionName.name.placeholder'](),
+        placeholder: t['com.affine.editCollectionName.name.placeholder'](),
       },
       children: (
         <div className={styles.createTips}>
-          {t['com.nexio.editCollectionName.createTips']()}
+          {t['com.affine.editCollectionName.createTips']()}
         </div>
       ),
-      confirmText: t['com.nexio.editCollection.save'](),
-      cancelText: t['com.nexio.editCollection.button.cancel'](),
+      confirmText: t['com.affine.editCollection.save'](),
+      cancelText: t['com.affine.editCollection.button.cancel'](),
       confirmButtonOptions: {
         variant: 'primary',
       },
@@ -43,7 +43,7 @@ export const SaveAsCollectionButton = ({
       prefix={<SaveIcon />}
       className={styles.button}
     >
-      {t['com.nexio.editCollection.saveCollection']()}
+      {t['com.affine.editCollection.saveCollection']()}
     </Button>
   );
 };

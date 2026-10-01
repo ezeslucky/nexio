@@ -1,23 +1,23 @@
-import { Loading, Scrollable } from '@nexio/component';
-import { WorkspaceDetailSkeleton } from '@nexio/component/setting-components';
-import type { ModalProps } from '@nexio/component/ui/modal';
-import { Modal } from '@nexio/component/ui/modal';
+import { Loading, Scrollable } from '@affine/component';
+import { WorkspaceDetailSkeleton } from '@affine/component/setting-components';
+import type { ModalProps } from '@affine/component/ui/modal';
+import { Modal } from '@affine/component/ui/modal';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@nexio/core/modules/cloud';
-import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
+} from '@affine/core/modules/cloud';
+import type { DialogComponentProps } from '@affine/core/modules/dialogs';
 import type {
   SettingTab,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@nexio/core/modules/dialogs/constant';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { createIsland, type Island } from '@nexio/core/utils/island';
-import { ServerDeploymentType } from '@nexio/graphql';
-import { Trans } from '@nexio/i18n';
+} from '@affine/core/modules/dialogs/constant';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { createIsland, type Island } from '@affine/core/utils/island';
+import { ServerDeploymentType } from '@affine/graphql';
+import { Trans, useTranslation } from '@affine/i18n';
 import { ContactWithUsIcon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';
 import {
   Suspense,
@@ -34,7 +34,7 @@ import { AccountSetting } from './account-setting';
 import { GeneralSetting } from './general-setting';
 import { IssueFeedbackModal } from './issue-feedback-modal';
 import { SettingSidebar } from './setting-sidebar';
-import { StarNEXIOModal } from './star-nexio-modal';
+import { StarAFFiNEModal } from './star-affine-modal';
 import * as style from './style.css';
 import {
   SubPageContext,
@@ -72,10 +72,12 @@ const SettingModalInner = ({
     scrollAnchor: initialScrollAnchor,
   });
   const globalContextService = useService(GlobalContextService);
+  const { i18n } = useTranslation('translation');
 
   const currentServerId = useLiveData(
     globalContextService.globalContext.serverId.$
   );
+  const currentLanguageKey = i18n.resolvedLanguage ?? i18n.language;
   const serversService = useService(ServersService);
   const defaultServerService = useService(DefaultServerService);
   const currentServer =
@@ -141,15 +143,15 @@ const SettingModalInner = ({
     [setSettingState]
   );
   const [openIssueFeedbackModal, setOpenIssueFeedbackModal] = useState(false);
-  const [openStarNEXIOModal, setOpenStarNEXIOModal] = useState(false);
+  const [openStarAFFiNEModal, setOpenStarAFFiNEModal] = useState(false);
 
   const handleOpenIssueFeedbackModal = useCallback(() => {
     setOpenIssueFeedbackModal(true);
   }, [setOpenIssueFeedbackModal]);
 
-  const handleOpenStarNEXIOModal = useCallback(() => {
-    setOpenStarNEXIOModal(true);
-  }, [setOpenStarNEXIOModal]);
+  const handleOpenStarAFFiNEModal = useCallback(() => {
+    setOpenStarAFFiNEModal(true);
+  }, [setOpenStarAFFiNEModal]);
 
   const addSubPageIsland = useCallback(() => {
     const island = createIsland();
@@ -193,7 +195,10 @@ const SettingModalInner = ({
     modalContentWrapperRef.current?.scrollTo({ top: 0 });
   }, [settingState]);
   return (
-    <FrameworkScope scope={currentServer.scope}>
+    <FrameworkScope
+      key={`setting-modal-${currentServerId}-${currentLanguageKey}`}
+      scope={currentServer.scope}
+    >
       <SettingSidebar
         activeTab={settingState.activeTab}
         onTabChange={onTabChange}
@@ -216,6 +221,7 @@ const SettingModalInner = ({
                   ) : isWorkspaceSetting(settingState.activeTab) ? (
                     <WorkspaceSetting
                       activeTab={settingState.activeTab}
+                      scrollAnchor={settingState.scrollAnchor}
                       onCloseSetting={onCloseSetting}
                       onChangeSettingState={setSettingState}
                     />
@@ -230,12 +236,12 @@ const SettingModalInner = ({
               <div className={style.footer}>
                 <ContactWithUsIcon fontSize={16} />
                 <Trans
-                  i18nKey={'com.nexio.settings.suggestion-2'}
+                  i18nKey={'com.affine.settings.suggestion-2'}
                   components={{
                     1: (
                       <span
                         className={style.link}
-                        onClick={handleOpenStarNEXIOModal}
+                        onClick={handleOpenStarAFFiNEModal}
                       />
                     ),
                     2: (
@@ -247,9 +253,9 @@ const SettingModalInner = ({
                   }}
                 />
               </div>
-              <StarNEXIOModal
-                open={openStarNEXIOModal}
-                setOpen={setOpenStarNEXIOModal}
+              <StarAFFiNEModal
+                open={openStarAFFiNEModal}
+                setOpen={setOpenStarAFFiNEModal}
               />
               <IssueFeedbackModal
                 open={openIssueFeedbackModal}

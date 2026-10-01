@@ -1,8 +1,8 @@
 import {
   useMutateQueryResource,
   useMutation,
-} from '@nexio/admin/use-mutation';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+} from '@affine/admin/use-mutation';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import {
   createChangePasswordUrlMutation,
   createUserMutation,
@@ -15,7 +15,7 @@ import {
   listUsersQuery,
   updateAccountFeaturesMutation,
   updateAccountMutation,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import { useCallback, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 
@@ -323,6 +323,7 @@ export const useExportUsers = () => {
         });
         dataToCopy.push(row);
       });
+      // oxlint-disable-next-line typescript/no-floating-promises
       navigator.clipboard.writeText(JSON.stringify(dataToCopy, null, 2));
       callback?.();
     },

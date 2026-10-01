@@ -4,30 +4,30 @@ import {
   type InlineEditHandle,
   observeResize,
   useDraggable,
-} from '@nexio/component';
-import { FavoriteButton } from '@nexio/core/canvas/block-suite-header/favorite';
-import { InfoButton } from '@nexio/core/canvas/block-suite-header/info';
-import { JournalWeekDatePicker } from '@nexio/core/canvas/block-suite-header/journal/date-picker';
-import { JournalTodayButton } from '@nexio/core/canvas/block-suite-header/journal/today-button';
-import { PageHeaderMenuButton } from '@nexio/core/canvas/block-suite-header/menu';
-import { DetailPageHeaderPresentButton } from '@nexio/core/canvas/block-suite-header/present/detail-header-present-button';
-import { CanvasHeaderTitle } from '@nexio/core/canvas/block-suite-header/title';
-import { EditorModeSwitch } from '@nexio/core/canvas/block-suite-mode-switch';
-import { useRegisterCopyLinkCommands } from '@nexio/core/components/hooks/nexio/use-register-copy-link-commands';
-import { HeaderDivider } from '@nexio/core/components/pure/header';
-import { DocService } from '@nexio/core/modules/doc';
-import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import { EditorService } from '@nexio/core/modules/editor';
-import { JournalService } from '@nexio/core/modules/journal';
-import { SharePageButton } from '@nexio/core/modules/share-menu';
-import { TemplateDocService } from '@nexio/core/modules/template-doc';
-import { ViewIcon, ViewTitle } from '@nexio/core/modules/workbench';
-import type { Workspace } from '@nexio/core/modules/workspace';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
-import type { Store } from '@canvas/nexio/store';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component';
+import { FavoriteButton } from '@affine/core/blocksuite/block-suite-header/favorite';
+import { InfoButton } from '@affine/core/blocksuite/block-suite-header/info';
+import { JournalWeekDatePicker } from '@affine/core/blocksuite/block-suite-header/journal/date-picker';
+import { JournalTodayButton } from '@affine/core/blocksuite/block-suite-header/journal/today-button';
+import { PageHeaderMenuButton } from '@affine/core/blocksuite/block-suite-header/menu';
+import { DetailPageHeaderPresentButton } from '@affine/core/blocksuite/block-suite-header/present/detail-header-present-button';
+import { BlocksuiteHeaderTitle } from '@affine/core/blocksuite/block-suite-header/title';
+import { EditorModeSwitch } from '@affine/core/blocksuite/block-suite-mode-switch';
+import { useRegisterCopyLinkCommands } from '@affine/core/components/hooks/affine/use-register-copy-link-commands';
+import { HeaderDivider } from '@affine/core/components/pure/header';
+import { DocService } from '@affine/core/modules/doc';
+import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { EditorService } from '@affine/core/modules/editor';
+import { JournalService } from '@affine/core/modules/journal';
+import { SharePageButton } from '@affine/core/modules/share-menu';
+import { TemplateDocService } from '@affine/core/modules/template-doc';
+import { ViewIcon, ViewTitle } from '@affine/core/modules/workbench';
+import type { Workspace } from '@affine/core/modules/workspace';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
+import type { Store } from '@blocksuite/affine/store';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,
@@ -97,8 +97,7 @@ export function JournalPageHeader({ page, workspace }: PageHeaderProps) {
     useDetailPageHeaderResponsive(containerWidth);
 
   const docDisplayMetaService = useService(DocDisplayMetaService);
-  const i18n = useI18n();
-  const title = i18n.t(useLiveData(docDisplayMetaService.title$(page.id)));
+  const title = useLiveData(docDisplayMetaService.title$(page.id));
 
   return (
     <Header className={styles.header} ref={containerRef}>
@@ -147,8 +146,7 @@ export function NormalPageHeader({ page, workspace }: PageHeaderProps) {
   }, []);
 
   const docDisplayMetaService = useService(DocDisplayMetaService);
-  const i18n = useI18n();
-  const title = i18n.t(useLiveData(docDisplayMetaService.title$(page.id)));
+  const title = useLiveData(docDisplayMetaService.title$(page.id));
 
   const editor = useService(EditorService).editor;
   const currentMode = useLiveData(editor.mode$);
@@ -158,7 +156,7 @@ export function NormalPageHeader({ page, workspace }: PageHeaderProps) {
       <ViewTitle title={title} />
       <ViewIcon icon={currentMode ?? 'page'} />
       <EditorModeSwitch />
-      <CanvasHeaderTitle inputHandleRef={titleInputHandleRef} />
+      <BlocksuiteHeaderTitle inputHandleRef={titleInputHandleRef} />
       <TemplateMark />
       <div className={styles.iconButtonContainer}>
         {hideCollect ? null : (
@@ -205,7 +203,7 @@ export function DetailPageHeader(
   });
 
   const { dragRef, dragging, CustomDragPreview } =
-    useDraggable<NexioDNDData>(() => {
+    useDraggable<AffineDNDData>(() => {
       return {
         data: {
           from: {

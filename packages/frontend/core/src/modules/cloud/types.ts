@@ -3,7 +3,7 @@ import type {
   OAuthProviderType,
   ServerDeploymentType,
   ServerFeature,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 
 export interface ServerMetadata {
   id: string;

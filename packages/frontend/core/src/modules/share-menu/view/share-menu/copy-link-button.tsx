@@ -1,13 +1,14 @@
-import { Button, Menu, MenuItem, MenuTrigger } from '@nexio/component';
+import { Button, Menu, MenuItem, MenuTrigger } from '@affine/component';
 import {
   getSelectedNodes,
   useSharingUrl,
-} from '@nexio/core/components/hooks/nexio/use-share-url';
-import { EditorService } from '@nexio/core/modules/editor';
-import { useI18n } from '@nexio/i18n';
-import type { DocMode } from '@canvas/nexio/model';
+} from '@affine/core/components/hooks/affine/use-share-url';
+import { getDefaultShareMode } from '@affine/core/components/hooks/affine/use-share-url.utils';
+import { EditorService } from '@affine/core/modules/editor';
+import { useI18n } from '@affine/i18n';
+import type { DocMode } from '@blocksuite/affine/model';
 import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';
 
@@ -46,8 +47,8 @@ export const CopyLinkButton = ({
   }, [onClickCopyLink, currentMode, blockIds, elementIds]);
 
   const onCopyLink = useCallback(() => {
-    onClickCopyLink();
-  }, [onClickCopyLink]);
+    onClickCopyLink(getDefaultShareMode(currentMode));
+  }, [currentMode, onClickCopyLink]);
 
   return (
     <div
@@ -64,7 +65,7 @@ export const CopyLinkButton = ({
             secondary: secondary,
           })}
         >
-          {t['com.nexio.share-menu.copy']()}
+          {t['com.affine.share-menu.copy']()}
         </span>
         {BUILD_CONFIG.isDesktopEdition && (
           <span
@@ -87,21 +88,21 @@ export const CopyLinkButton = ({
               onSelect={onCopyPageLink}
               data-testid="share-link-menu-copy-page"
             >
-              {t['com.nexio.share-menu.copy.page']()}
+              {t['com.affine.share-menu.copy.page']()}
             </MenuItem>
             <MenuItem
               prefixIcon={<EdgelessIcon />}
               onSelect={onCopyEdgelessLink}
               data-testid="share-link-menu-copy-edgeless"
             >
-              {t['com.nexio.share-menu.copy.edgeless']()}
+              {t['com.affine.share-menu.copy.edgeless']()}
             </MenuItem>
             <MenuItem
               prefixIcon={<BlockIcon />}
               onSelect={onCopyBlockLink}
               disabled={blockIds.length + elementIds.length === 0}
             >
-              {t['com.nexio.share-menu.copy.block']()}
+              {t['com.affine.share-menu.copy.block']()}
             </MenuItem>
           </>
         }

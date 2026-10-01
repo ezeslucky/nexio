@@ -1,16 +1,16 @@
-import { Avatar, IconButton, Loading, Menu, notify } from '@nexio/component';
-import { Pagination } from '@nexio/component/setting-components';
-import { type AuthAccountInfo, AuthService } from '@nexio/core/modules/cloud';
+import { Avatar, IconButton, Loading, Menu, notify } from '@affine/component';
+import { Pagination } from '@affine/component/setting-components';
+import { type AuthAccountInfo, AuthService } from '@affine/core/modules/cloud';
 import {
   type Member,
   WorkspaceMembersService,
-} from '@nexio/core/modules/permissions';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { UserFriendlyError } from '@nexio/error';
-import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
-import { type I18nString, useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/permissions';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { UserFriendlyError } from '@affine/error';
+import { Permission, WorkspaceMemberStatus } from '@affine/graphql';
+import { type I18nString, useI18n } from '@affine/i18n';
 import { MoreVerticalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -45,7 +45,6 @@ export const MemberList = ({
   const handlePageChange = useCallback(
     (_: number, pageNum: number) => {
       membersService.members.setPageNum(pageNum);
-      membersService.members.revalidate();
     },
     [membersService]
   );
@@ -57,7 +56,7 @@ export const MemberList = ({
   return (
     <div>
       {pageMembers === undefined ? (
-        isLoading ? (
+        isLoading || !error ? (
           <MemberListFallback
             memberCount={
               memberCount
@@ -70,11 +69,7 @@ export const MemberList = ({
             }
           />
         ) : (
-          <span className={styles.errorStyle}>
-            {error
-              ? UserFriendlyError.fromAny(error).message
-              : 'Failed to load members'}
-          </span>
+          <MemberListError error={error} />
         )
       ) : (
         pageMembers?.map(member => (
@@ -169,8 +164,8 @@ const MemberItem = ({
         if (result) {
           setOpen(false);
           notify.success({
-            title: t['com.nexio.payment.member.team.assign.notify.title'](),
-            message: t['com.nexio.payment.member.team.assign.notify.message']({
+            title: t['com.affine.payment.member.team.assign.notify.title'](),
+            message: t['com.affine.payment.member.team.assign.notify.message']({
               name: member.name || member.email || member.id,
             }),
           });
@@ -278,19 +273,24 @@ const getMemberStatus = (member: Member): I18nString => {
   }
 };
 
+const getMembersFallbackHeight = (memberCount?: number) => {
+  if (memberCount) {
+    // height and margin-bottom
+    return memberCount * 58 + (memberCount - 1) * 6;
+  }
+  return 'auto';
+};
+
 export const MemberListFallback = ({
   memberCount,
 }: {
   memberCount?: number;
 }) => {
   // prevent page jitter
-  const height = useMemo(() => {
-    if (memberCount) {
-      // height and margin-bottom
-      return memberCount * 58 + (memberCount - 1) * 6;
-    }
-    return 'auto';
-  }, [memberCount]);
+  const height = useMemo(
+    () => getMembersFallbackHeight(memberCount),
+    [memberCount]
+  );
   const t = useI18n();
 
   return (
@@ -301,7 +301,35 @@ export const MemberListFallback = ({
       className={styles.membersFallback}
     >
       <Loading size={20} />
-      <span>{t['com.nexio.settings.member.loading']()}</span>
+      <span>{t['com.affine.settings.member.loading']()}</span>
+    </div>
+  );
+};
+
+export const MemberListError = ({
+  error,
+  memberCount,
+}: {
+  error?: unknown;
+  memberCount?: number;
+}) => {
+  const height = useMemo(
+    () => getMembersFallbackHeight(memberCount),
+    [memberCount]
+  );
+
+  return (
+    <div
+      style={{
+        height,
+      }}
+      className={styles.membersFallback}
+    >
+      <span className={styles.errorStyle}>
+        {error
+          ? UserFriendlyError.fromAny(error).message
+          : 'Failed to load members'}
+      </span>
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { useService } from '@ezeslucky/infra';
+import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as style from './style.css';

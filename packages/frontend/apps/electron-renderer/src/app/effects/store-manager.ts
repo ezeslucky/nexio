@@ -1,8 +1,9 @@
-import { NbstoreProvider } from '@nexio/core/modules/storage';
-import { apis } from '@nexio/electron-api';
-import { StoreManagerClient } from '@nexio/nbstore/worker/client';
-import type { Framework } from '@ezeslucky/infra';
-import { OpClient } from '@ezeslucky/infra/op';
+import { NbstoreProvider } from '@affine/core/modules/storage';
+import { apis } from '@affine/electron-api';
+import { StoreManagerClient } from '@affine/nbstore/worker/client';
+import { setTelemetryTransport } from '@affine/track';
+import type { Framework } from '@toeverything/infra';
+import { OpClient } from '@toeverything/infra/op';
 import { v4 as uuid } from 'uuid';
 
 function createStoreManagerClient() {
@@ -32,7 +33,7 @@ function createStoreManagerClient() {
   window.addEventListener('message', handleMessage);
 
   // oxlint-disable-next-line no-non-null-assertion
-  apis!.worker.connectWorker('nexio-shared-worker', portId).catch(err => {
+  apis!.worker.connectWorker('affine-shared-worker', portId).catch(err => {
     console.error('failed to connect worker', err);
   });
 
@@ -43,6 +44,7 @@ function createStoreManagerClient() {
 
 export function setupStoreManager(framework: Framework) {
   const storeManagerClient = createStoreManagerClient();
+  setTelemetryTransport(storeManagerClient.telemetry);
   window.addEventListener('beforeunload', () => {
     storeManagerClient.dispose();
   });
@@ -57,6 +59,7 @@ export function setupStoreManager(framework: Framework) {
   });
 
   framework.impl(NbstoreProvider, {
+    realtime: storeManagerClient.realtime,
     openStore(key, options) {
       const { store, dispose } = storeManagerClient.open(key, options);
 

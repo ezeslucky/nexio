@@ -1,4 +1,4 @@
-import { Input } from '@nexio/component';
+import { Input } from '@affine/component';
 import { useCallback, useState } from 'react';
 
 import * as styles from './string-cell.css';

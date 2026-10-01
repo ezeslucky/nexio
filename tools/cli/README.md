@@ -1,15 +1,15 @@
-# NEXIO Monorepo Cli
+# AFFiNE Monorepo Cli
 
 ## Start
 
 ```bash
-yarn nexio -h
+yarn affine -h
 ```
 
 ### Run build command defined in package.json
 
 ```bash
-yarn nexio i18n build
+yarn affine i18n build
 # or
 yarn build -p i18n
 ```
@@ -17,7 +17,7 @@ yarn build -p i18n
 ### Run dev command defined in package.json
 
 ```bash
-yarn nexio web dev
+yarn affine web dev
 # or
 yarn dev -p i18n
 ```
@@ -25,9 +25,9 @@ yarn dev -p i18n
 ### Clean
 
 ```bash
-yarn nexio clean --dist --rust
+yarn affine clean --dist --rust
 # clean node_modules
-yarn nexio clean --node-modules
+yarn affine clean --node-modules
 ```
 
 ### Init
@@ -35,18 +35,18 @@ yarn nexio clean --node-modules
 > Generate files that make the monorepo work properly, the per project codegen will not be included anymore
 
 ```bash
-yarn nexio init
+yarn affine init
 ```
 
 ## Tricks
 
-### Define scripts to run a .ts files without `--loader ts-node/esm/transpile-only`
+### Define scripts to run a .ts files without manually wiring a TypeScript loader
 
-`nexio run` will automatically inject `ts-node`'s transpile service(swc used) for your scripts
+`affine run` will automatically inject `tsx` for your scripts
 
 ```json
 {
-  "name": "@nexio/demo",
+  "name": "@affine/demo",
   "scripts": {
     "dev": "node ./dev.ts"
   }
@@ -54,19 +54,19 @@ yarn nexio init
 ```
 
 ```bash
-nexio @nexio/demo dev
+affine @affine/demo dev
 ```
 
 or
 
 ```json
 {
-  "name": "@nexio/demo",
+  "name": "@affine/demo",
   "scripts": {
     "dev": "r ./src/index.ts"
   },
   "devDependencies": {
-    "@nexio-tools/cli": "workspace:*"
+    "@affine-tools/cli": "workspace:*"
   }
 }
 ```
@@ -82,17 +82,17 @@ yarn af web build
 
 > personally, I use 'af'
 
-create file `af` in the root of NEXIO project with the following content
+create file `af` in the root of AFFiNE project with the following content
 
 ```bash
 #!/usr/bin/env sh
-./tools/scripts/bin/runner.js nexio.ts $@
+./tools/scripts/bin/runner.js affine.ts $@
 ```
 
 or on windows:
 
 ```cmd
-node "./tools/cli/bin/runner.js" nexio.ts %*
+node "./tools/cli/bin/runner.js" affine.ts %*
 ```
 
 and give it executable permission

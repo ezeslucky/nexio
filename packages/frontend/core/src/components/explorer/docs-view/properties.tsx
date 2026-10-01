@@ -1,7 +1,7 @@
-import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
-import { type DocRecord, DocsService } from '@nexio/core/modules/doc';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+import { type DocRecord, DocsService } from '@affine/core/modules/doc';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useContext, useMemo } from 'react';
 

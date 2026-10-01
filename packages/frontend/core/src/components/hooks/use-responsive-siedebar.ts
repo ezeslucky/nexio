@@ -1,7 +1,7 @@
-import { observeResize } from '@nexio/component';
-import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useService } from '@ezeslucky/infra';
+import { observeResize } from '@affine/component';
+import { AppSidebarService } from '@affine/core/modules/app-sidebar';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useRef } from 'react';
 
 let OBSERVED = false;

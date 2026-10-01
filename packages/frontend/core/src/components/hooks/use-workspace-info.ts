@@ -1,8 +1,8 @@
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workspace';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 
 export function useWorkspaceInfo(meta?: WorkspaceMetadata) {

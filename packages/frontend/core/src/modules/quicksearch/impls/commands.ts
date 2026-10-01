@@ -1,11 +1,11 @@
 import {
-  type NexioCommand,
-  NexioCommandRegistry,
+  type AffineCommand,
+  AffineCommandRegistry,
   type CommandCategory,
   PreconditionStrategy,
-} from '@nexio/core/commands';
-import type { DocMode } from '@canvas/nexio/model';
-import { Entity, LiveData } from '@ezeslucky/infra';
+} from '@affine/core/commands';
+import type { DocMode } from '@blocksuite/affine/model';
+import { Entity, LiveData } from '@toeverything/infra';
 import Fuse from 'fuse.js';
 
 import type { GlobalContextService } from '../../global-context';
@@ -15,83 +15,83 @@ import type { QuickSearchItem } from '../types/item';
 import { highlighter } from '../utils/highlighter';
 
 const categories = {
-  'nexio:recent': {
-    id: 'command:nexio:recent',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.recent' },
+  'affine:recent': {
+    id: 'command:affine:recent',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.recent' },
     score: 10,
   },
-  'nexio:navigation': {
-    id: 'command:nexio:navigation',
+  'affine:navigation': {
+    id: 'command:affine:navigation',
     label: {
-      i18nKey: 'com.nexio.cmdk.nexio.category.nexio.navigation',
+      i18nKey: 'com.affine.cmdk.affine.category.affine.navigation',
     },
     score: 10,
   },
-  'nexio:creation': {
-    id: 'command:nexio:creation',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.creation' },
+  'affine:creation': {
+    id: 'command:affine:creation',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.creation' },
     score: 10,
   },
-  'nexio:general': {
-    id: 'command:nexio:general',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.general' },
+  'affine:general': {
+    id: 'command:affine:general',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.general' },
     score: 10,
   },
-  'nexio:layout': {
-    id: 'command:nexio:layout',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.layout' },
+  'affine:layout': {
+    id: 'command:affine:layout',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.layout' },
     score: 10,
   },
-  'nexio:pages': {
-    id: 'command:nexio:pages',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.pages' },
+  'affine:pages': {
+    id: 'command:affine:pages',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.pages' },
     score: 10,
   },
-  'nexio:edgeless': {
-    id: 'command:nexio:edgeless',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.edgeless' },
+  'affine:edgeless': {
+    id: 'command:affine:edgeless',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.edgeless' },
     score: 10,
   },
-  'nexio:collections': {
-    id: 'command:nexio:collections',
+  'affine:collections': {
+    id: 'command:affine:collections',
     label: {
-      i18nKey: 'com.nexio.cmdk.nexio.category.nexio.collections',
+      i18nKey: 'com.affine.cmdk.affine.category.affine.collections',
     },
     score: 10,
   },
-  'nexio:settings': {
-    id: 'command:nexio:settings',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.settings' },
+  'affine:settings': {
+    id: 'command:affine:settings',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.settings' },
     score: 10,
   },
-  'nexio:updates': {
-    id: 'command:nexio:updates',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.updates' },
+  'affine:updates': {
+    id: 'command:affine:updates',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.updates' },
     score: 10,
   },
-  'nexio:help': {
-    id: 'command:nexio:help',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.nexio.help' },
+  'affine:help': {
+    id: 'command:affine:help',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.help' },
     score: 10,
   },
   'editor:edgeless': {
     id: 'command:editor:edgeless',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.editor.edgeless' },
+    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.edgeless' },
     score: 10,
   },
   'editor:insert-object': {
     id: 'command:editor:insert-object',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.editor.insert-object' },
+    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.insert-object' },
     score: 10,
   },
   'editor:page': {
     id: 'command:editor:page',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.editor.page' },
+    label: { i18nKey: 'com.affine.cmdk.affine.category.editor.page' },
     score: 10,
   },
-  'nexio:results': {
-    id: 'command:nexio:results',
-    label: { i18nKey: 'com.nexio.cmdk.nexio.category.results' },
+  'affine:results': {
+    id: 'command:affine:results',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.results' },
     score: 10,
   },
 } satisfies Required<{
@@ -99,7 +99,7 @@ const categories = {
 }>;
 
 function filterCommandByContext(
-  command: NexioCommand,
+  command: AffineCommand,
   context: {
     docMode: DocMode | undefined;
   }
@@ -126,7 +126,7 @@ function filterCommandByContext(
 }
 
 function getAllCommand(context: { docMode: DocMode | undefined }) {
-  const commands = NexioCommandRegistry.getAll();
+  const commands = AffineCommandRegistry.getAll();
   return commands.filter(command => {
     return filterCommandByContext(command, context);
   });
@@ -134,7 +134,7 @@ function getAllCommand(context: { docMode: DocMode | undefined }) {
 
 export class CommandsQuickSearchSession
   extends Entity
-  implements QuickSearchSession<'commands', NexioCommand>
+  implements QuickSearchSession<'commands', AffineCommand>
 {
   constructor(private readonly contextService: GlobalContextService) {
     super();
@@ -160,7 +160,7 @@ export class CommandsQuickSearchSession
       ? fuse.search(query)
       : commands.map(item => ({ item, matches: [], score: 0 }));
 
-    return result.map<QuickSearchItem<'commands', NexioCommand>>(
+    return result.map<QuickSearchItem<'commands', AffineCommand>>(
       ({ item, matches, score = 1 }) => {
         const normalizedRange = ([start, end]: [number, number]) =>
           [

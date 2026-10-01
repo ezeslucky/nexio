@@ -1,15 +1,15 @@
-import { AIChatBlockSchema } from '@nexio/core/canvas/ai/blocks/ai-chat-block/model';
-import { TranscriptionBlockSchema } from '@nexio/core/canvas/ai/blocks/transcription-block/model';
-import { NexioSchemas } from '@canvas/nexio/schemas';
-import { Schema } from '@canvas/nexio/store';
+import { AIChatBlockSchema } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/model';
+import { TranscriptionBlockSchema } from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
+import { AffineSchemas } from '@blocksuite/affine/schemas';
+import { Schema } from '@blocksuite/affine/store';
 
 let _schema: Schema | null = null;
-export function getNEXIOWorkspaceSchema() {
+export function getAFFiNEWorkspaceSchema() {
   if (!_schema) {
     _schema = new Schema();
 
     _schema.register([
-      ...NexioSchemas,
+      ...AffineSchemas,
       AIChatBlockSchema,
       TranscriptionBlockSchema,
     ]);

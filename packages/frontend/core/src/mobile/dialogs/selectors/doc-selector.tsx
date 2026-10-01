@@ -1,12 +1,12 @@
-import { Modal } from '@nexio/component';
+import { Modal } from '@affine/component';
 import type {
   DialogComponentProps,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@nexio/core/modules/dialogs';
-import { DocsService } from '@nexio/core/modules/doc';
-import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/dialogs';
+import { DocsService } from '@affine/core/modules/doc';
+import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 
@@ -65,7 +65,7 @@ export const DocSelectorDialog = ({
         onBeforeConfirm={onBeforeConfirm}
         initial={init}
         data={list}
-        typeName={t[`com.nexio.m.selector.type-doc`]()}
+        typeName={t[`com.affine.m.selector.type-doc`]()}
       />
     </Modal>
   );

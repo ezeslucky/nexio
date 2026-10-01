@@ -1,42 +1,63 @@
-import { Scrollable, uniReactRoot } from '@nexio/component';
-import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
-import { useActiveCanvasEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
-import { AppContainer } from '@nexio/core/desktop/components/app-container';
-import { AuthService, ServerService } from '@nexio/core/modules/cloud';
-import { type Doc, DocsService } from '@nexio/core/modules/doc';
+import { Scrollable, uniReactRoot } from '@affine/component';
+import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
+import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { PageDetailEditor } from '@affine/core/components/page-detail-editor';
+import { AppContainer } from '@affine/core/desktop/components/app-container';
+import { AuthService, ServerService } from '@affine/core/modules/cloud';
+import { type Doc, DocsService } from '@affine/core/modules/doc';
 import {
   type Editor,
   type EditorSelector,
   EditorService,
   EditorsService,
-} from '@nexio/core/modules/editor';
-import { PeekViewManagerModal } from '@nexio/core/modules/peek-view';
+} from '@affine/core/modules/editor';
+import { PeekViewManagerModal } from '@affine/core/modules/peek-view';
 import {
   ViewIcon,
   ViewTitle,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
+} from '@affine/core/modules/workbench';
 import {
   type Workspace,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { DisposableGroup } from '@canvas/nexio/global/disposable';
-import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
-import { type DocMode, DocModes } from '@canvas/nexio/model';
+} from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { DisposableGroup } from '@blocksuite/affine/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { type DocMode, DocModes } from '@blocksuite/affine/model';
 import { Logo1Icon } from '@blocksuite/icons/rc';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { filter, firstValueFrom, timeout } from 'rxjs';
 
 import { PageNotFound } from '../../404';
 import { ShareFooter } from './share-footer';
 import { ShareHeader } from './share-header';
 import * as styles from './share-page.css';
+import {
+  fetchSharedPublishMode,
+  getResolvedPublishMode,
+  isSharePagePermissionError,
+  isSharePageTimeoutError,
+} from './share-page.utils';
+import { useSharedModeQuerySync } from './use-shared-mode-query-sync';
+
+const waitForSharedDocRecord = async (
+  docsService: DocsService,
+  docId: string
+): Promise<void> => {
+  if (docsService.list.doc$(docId).value) {
+    return;
+  }
+
+  await firstValueFrom(
+    docsService.list.doc$(docId).pipe(filter(Boolean), timeout(3000))
+  );
+};
 
 const useUpdateBasename = (workspace: Workspace | null) => {
   const location = useLocation();
@@ -106,7 +127,7 @@ export const SharePage = ({
 const SharePageInner = ({
   workspaceId,
   docId,
-  publishMode = 'page',
+  publishMode,
   selector,
   isTemplate,
   templateName,
@@ -126,16 +147,63 @@ const SharePageInner = ({
   const [page, setPage] = useState<Doc | null>(null);
   const [editor, setEditor] = useState<Editor | null>(null);
   const [noPermission, setNoPermission] = useState(false);
-  const [editorContainer, setActiveCanvasEditor] =
-    useActiveCanvasEditor();
+  const [loadFailed, setLoadFailed] = useState(false);
+  const [fetchedPublishMode, setFetchedPublishMode] = useState<
+    DocMode | null | undefined
+  >(() => (publishMode === undefined ? undefined : null));
+  const [editorContainer, setActiveBlocksuiteEditor] =
+    useActiveBlocksuiteEditor();
+  const resolvedPublishMode =
+    publishMode !== undefined
+      ? publishMode
+      : fetchedPublishMode === undefined
+        ? null
+        : getResolvedPublishMode(null, fetchedPublishMode);
+  const currentPublishMode = useSharedModeQuerySync({
+    editor,
+    resolvedPublishMode,
+  });
 
   useEffect(() => {
-    // create a workspace for share page
-    const { workspace } = workspacesService.open(
+    if (publishMode !== undefined) {
+      setFetchedPublishMode(null);
+      return;
+    }
+
+    const abortController = new AbortController();
+    setFetchedPublishMode(undefined);
+
+    void fetchSharedPublishMode({
+      serverBaseUrl: serverService.server.baseUrl,
+      workspaceId,
+      docId,
+      signal: abortController.signal,
+    })
+      .then(mode => {
+        if (!abortController.signal.aborted) {
+          setFetchedPublishMode(mode);
+        }
+      })
+      .catch(err => {
+        if (!abortController.signal.aborted) {
+          console.error(err);
+          setFetchedPublishMode(null);
+        }
+      });
+
+    return () => {
+      abortController.abort();
+    };
+  }, [docId, publishMode, serverService.server.baseUrl, workspaceId]);
+
+  useEffect(() => {
+    if (resolvedPublishMode === null) return;
+
+    const { workspace: sharedWorkspace, dispose } = workspacesService.open(
       {
         metadata: {
           id: workspaceId,
-          flavour: 'nexio-cloud',
+          flavour: 'affine-cloud',
         },
         isSharedMode: true,
       },
@@ -145,59 +213,113 @@ const SharePageInner = ({
             name: 'StaticCloudDocStorage',
             opts: {
               id: workspaceId,
+              publicRootDocId: docId,
               serverBaseUrl: serverService.server.baseUrl,
             },
           },
           blob: {
-            name: 'CloudBlobStorage',
+            name: BUILD_CONFIG.isElectron
+              ? 'SqliteBlobStorage'
+              : 'IndexedDBBlobStorage',
             opts: {
               id: workspaceId,
-              serverBaseUrl: serverService.server.baseUrl,
+              flavour: 'affine-cloud',
+              type: 'workspace',
             },
           },
         },
-        remotes: {},
+        remotes: {
+          cloud: {
+            blob: {
+              name: 'CloudBlobStorage',
+              opts: {
+                id: workspaceId,
+                serverBaseUrl: serverService.server.baseUrl,
+              },
+            },
+          },
+        },
       }
     );
+    const controller = new AbortController();
 
-    setWorkspace(workspace);
+    setWorkspace(sharedWorkspace);
+    setPage(null);
+    setEditor(null);
 
-    workspace.engine.doc
-      .waitForDocLoaded(workspace.id)
-      .then(async () => {
-        const { doc } = workspace.scope.get(DocsService).open(docId);
-        doc.canvasDoc.load();
-        doc.canvasDoc.readonly = true;
+    (async () => {
+      try {
+        await sharedWorkspace.engine.doc.waitForDocLoaded(
+          sharedWorkspace.id,
+          controller.signal
+        );
+        if (controller.signal.aborted) return;
 
-        await workspace.engine.doc.waitForDocLoaded(docId);
+        const docsService = sharedWorkspace.scope.get(DocsService);
+        await waitForSharedDocRecord(docsService, docId);
+        if (controller.signal.aborted) return;
 
-        if (!doc.canvasDoc.root) {
+        const { doc } = docsService.open(docId);
+        doc.blockSuiteDoc.load();
+        doc.blockSuiteDoc.readonly = true;
+
+        await sharedWorkspace.engine.doc.waitForDocLoaded(
+          docId,
+          controller.signal
+        );
+        if (controller.signal.aborted) return;
+
+        if (!doc.blockSuiteDoc.root) {
           throw new Error('Doc is empty');
         }
 
         setPage(doc);
 
         const editor = doc.scope.get(EditorsService).createEditor();
-        editor.setMode(publishMode);
+        editor.setMode(resolvedPublishMode);
 
         if (selector) {
           editor.setSelector(selector);
         }
 
         setEditor(editor);
-      })
-      .catch(err => {
+      } catch (err) {
+        if (controller.signal.aborted) return;
         console.error(err);
-        setNoPermission(true);
-      });
+        if (isSharePagePermissionError(err)) {
+          setNoPermission(true);
+          return;
+        }
+
+        if (isSharePageTimeoutError(err)) {
+          setLoadFailed(true);
+          return;
+        }
+
+        setLoadFailed(true);
+      }
+    })().catch(console.error);
+
+    return () => {
+      controller.abort();
+      dispose();
+    };
   }, [
     docId,
+    resolvedPublishMode,
+    selector,
     workspaceId,
     workspacesService,
-    publishMode,
-    selector,
     serverService.server.baseUrl,
   ]);
+
+  useEffect(() => {
+    if (!editor) {
+      return;
+    }
+
+    editor.setSelector(selector);
+  }, [editor, selector]);
 
   const t = useI18n();
   const pageTitle = useLiveData(page?.title$);
@@ -205,8 +327,8 @@ const SharePageInner = ({
   useUpdateBasename(workspace);
 
   const onEditorLoad = useCallback(
-    (editorContainer: NexioEditorContainer) => {
-      setActiveCanvasEditor(editorContainer);
+    (editorContainer: AffineEditorContainer) => {
+      setActiveBlocksuiteEditor(editorContainer);
       if (!editor) {
         return;
       }
@@ -237,14 +359,18 @@ const SharePageInner = ({
         unbind();
       };
     },
-    [editor, setActiveCanvasEditor, jumpToPageBlock, openPage, workspaceId]
+    [editor, setActiveBlocksuiteEditor, jumpToPageBlock, openPage, workspaceId]
   );
 
   if (noPermission) {
     return <PageNotFound noPermission />;
   }
 
-  if (!workspace || !page || !editor) {
+  if (loadFailed) {
+    return <PageNotFound />;
+  }
+
+  if (!workspace || !page || !editor || !currentPublishMode) {
     return null;
   }
 
@@ -252,13 +378,13 @@ const SharePageInner = ({
     <FrameworkScope scope={workspace.scope}>
       <FrameworkScope scope={page.scope}>
         <FrameworkScope scope={editor.scope}>
-          <ViewIcon icon={publishMode === 'page' ? 'doc' : 'edgeless'} />
+          <ViewIcon icon={currentPublishMode === 'page' ? 'doc' : 'edgeless'} />
           <ViewTitle title={pageTitle ?? t['unnamed']()} />
           <div className={styles.root}>
             <div className={styles.mainContainer}>
               <ShareHeader
                 pageId={page.id}
-                publishMode={publishMode}
+                publishMode={currentPublishMode}
                 isTemplate={isTemplate}
                 templateName={templateName}
                 snapshotUrl={templateSnapshotUrl}
@@ -266,12 +392,12 @@ const SharePageInner = ({
               <Scrollable.Root>
                 <Scrollable.Viewport
                   className={clsx(
-                    'nexio-page-viewport',
+                    'affine-page-viewport',
                     styles.editorContainer
                   )}
                 >
                   <PageDetailEditor onLoad={onEditorLoad} readonly />
-                  {publishMode === 'page' && !BUILD_CONFIG.isElectron ? (
+                  {currentPublishMode === 'page' && !BUILD_CONFIG.isElectron ? (
                     <ShareFooter />
                   ) : null}
                 </Scrollable.Viewport>
@@ -279,7 +405,7 @@ const SharePageInner = ({
               </Scrollable.Root>
               <EditorOutlineViewer
                 editor={editorContainer?.host ?? null}
-                show={publishMode === 'page'}
+                show={currentPublishMode === 'page'}
               />
               {!BUILD_CONFIG.isElectron && <SharePageFooter />}
             </div>
@@ -304,13 +430,13 @@ const SharePageFooter = () => {
   }
   return (
     <a
-      href="https://nexio.pro"
+      href="https://affine.pro"
       target="_blank"
       className={styles.link}
       rel="noreferrer"
     >
       <span className={styles.linkText}>
-        {t['com.nexio.share-page.footer.built-with']()}
+        {t['com.affine.share-page.footer.built-with']()}
       </span>
       <Logo1Icon fontSize={20} />
     </a>

@@ -2,21 +2,21 @@
   "type": "page",
   "meta": {
     "id": "UpLwaWKe8S9s8krsxi3A8",
-    "title": "Canvas Playground",
+    "title": "BlockSuite Playground",
     "createDate": 1725435317986,
     "tags": []
   },
   "blocks": {
     "type": "block",
     "id": "mUEhyeRfVdzFKHV3w897g",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
-            "insert": "Canvas Playground"
+            "insert": "BlockSuite Playground"
           }
         ]
       }
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "oc5oq3DFWcqVjzyevWrx6",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {
@@ -35,7 +35,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -59,7 +59,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -83,7 +83,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -107,7 +107,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -131,7 +131,7 @@
               "color": "#000000",
               "fillColor": "#fcd34d",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontSize": 12,
               "maxWidth": false,
               "padding": [10, 20],
@@ -155,11 +155,11 @@
           {
             "type": "block",
             "id": "NSlTmqVn2NsIJCDvzIoUF",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Shapes"

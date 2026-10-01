@@ -1,9 +1,10 @@
-import { getStoreManager } from '@nexio/core/canvas/manager/store';
-import { Container } from '@canvas/nexio/global/di';
+import { getStoreManager } from '@affine/core/blocksuite/manager/store';
+import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import { Container } from '@blocksuite/affine/global/di';
 import {
   customImageProxyMiddleware,
   MarkdownAdapter,
-} from '@canvas/nexio/shared/adapters';
+} from '@blocksuite/affine/shared/adapters';
 import {
   type BlockModel,
   type DocSnapshot,
@@ -11,13 +12,13 @@ import {
   type Store,
   Text,
   Transformer,
-} from '@canvas/nexio/store';
-import { Service } from '@ezeslucky/infra';
+} from '@blocksuite/affine/store';
+import { Service } from '@toeverything/infra';
 import { Doc as YDoc } from 'yjs';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';
 import {
-  getNEXIOWorkspaceSchema,
+  getAFFiNEWorkspaceSchema,
   type WorkspaceService,
 } from '../../workspace';
 import { WorkspaceImpl } from '../../workspace/impls/workspace';
@@ -46,7 +47,9 @@ export class SnapshotHelper extends Service {
         get: async key => {
           const record =
             await this.workspaceService.workspace.engine.blob.get(key);
-          return record ? new Blob([record.data], { type: record.mime }) : null;
+          return record
+            ? new Blob([toArrayBuffer(record.data)], { type: record.mime })
+            : null;
         },
         set() {
           return Promise.resolve('');
@@ -66,7 +69,7 @@ export class SnapshotHelper extends Service {
   // todo: cache the transformer?
   getTransformer() {
     const collection = this.getTempWorkspace();
-    const schema = getNEXIOWorkspaceSchema();
+    const schema = getAFFiNEWorkspaceSchema();
     const imageProxyUrl = new URL(
       BUILD_CONFIG.imageProxyUrl,
       this.serverService.baseUrl
@@ -127,15 +130,15 @@ export class SnapshotHelper extends Service {
       const store = doc.getStore();
       store.load(() => {
         // Add root page block with empty title
-        const rootId = store.addBlock('nexio:page', {
+        const rootId = store.addBlock('affine:page', {
           title: new Text(''),
         });
 
         // Add note block
-        const noteId = store.addBlock('nexio:note', {}, rootId);
+        const noteId = store.addBlock('affine:note', {}, rootId);
 
         // Add default paragraph block
-        store.addBlock('nexio:paragraph', {}, noteId);
+        store.addBlock('affine:paragraph', {}, noteId);
       });
 
       // Reset history to prevent initial creation operations from being undone

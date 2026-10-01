@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import pkg from '../package.json' with { type: 'json' };
 
 declare global {
+  // oxlint-disable-next-line no-shadow-restricted-names
   namespace globalThis {
     // oxlint-disable-next-line no-var
     var env: Readonly<Env>;
@@ -22,8 +23,16 @@ export enum Flavor {
   Graphql = 'graphql',
   Sync = 'sync',
   Renderer = 'renderer',
-  Doc = 'doc',
+  Front = 'front',
+  Worker = 'worker',
   Script = 'script',
+}
+
+export enum ServerRole {
+  Frontend = 'frontend',
+  Api = 'api',
+  Worker = 'worker',
+  AllInOne = 'allinone',
 }
 
 export enum Namespace {
@@ -39,7 +48,7 @@ export enum NodeEnv {
 }
 
 export enum DeploymentType {
-  NEXIO = 'nexio',
+  Affine = 'affine',
   Selfhosted = 'selfhosted',
 }
 
@@ -56,7 +65,7 @@ export type AppEnv = {
 };
 
 globalThis.CLS_REQUEST_HOST = 'CLS_REQUEST_HOST';
-globalThis.CUSTOM_CONFIG_PATH = join(homedir(), '.nexio/config');
+globalThis.CUSTOM_CONFIG_PATH = join(homedir(), '.affine/config');
 globalThis.readEnv = function readEnv<T>(
   env: string,
   defaultValue: T,
@@ -81,13 +90,13 @@ globalThis.readEnv = function readEnv<T>(
 export class Env implements AppEnv {
   NODE_ENV = (process.env.NODE_ENV ?? NodeEnv.Production) as NodeEnv;
   NAMESPACE = readEnv(
-    'NEXIO_ENV',
+    'AFFINE_ENV',
     Namespace.Production,
     Object.values(Namespace)
   );
   DEPLOYMENT_TYPE = readEnv(
     'DEPLOYMENT_TYPE',
-    this.dev ? DeploymentType.NEXIO : DeploymentType.Selfhosted,
+    this.dev ? DeploymentType.Affine : DeploymentType.Selfhosted,
     Object.values(DeploymentType)
   );
   FLAVOR = readEnv('SERVER_FLAVOR', Flavor.AllInOne, Object.values(Flavor));
@@ -99,6 +108,39 @@ export class Env implements AppEnv {
     return this.DEPLOYMENT_TYPE === DeploymentType.Selfhosted;
   }
 
+  get role(): ServerRole | undefined {
+    switch (this.FLAVOR) {
+      case Flavor.AllInOne:
+        return ServerRole.AllInOne;
+      case Flavor.Graphql:
+        return ServerRole.Api;
+      case Flavor.Worker:
+        return ServerRole.Worker;
+      case Flavor.Front:
+      case Flavor.Sync:
+      case Flavor.Renderer:
+        return ServerRole.Frontend;
+      case Flavor.Script:
+        return undefined;
+    }
+  }
+
+  get isApi() {
+    return this.FLAVOR === Flavor.Graphql || this.FLAVOR === Flavor.AllInOne;
+  }
+
+  get isWorker() {
+    return this.FLAVOR === Flavor.Worker || this.FLAVOR === Flavor.AllInOne;
+  }
+
+  get isFrontend() {
+    return (
+      this.FLAVOR === Flavor.Front ||
+      this.FLAVOR === Flavor.Sync ||
+      this.FLAVOR === Flavor.Renderer
+    );
+  }
+
   isFlavor(flavor: Flavor) {
     return this.FLAVOR === flavor || this.FLAVOR === Flavor.AllInOne;
   }
@@ -108,7 +150,8 @@ export class Env implements AppEnv {
       graphql: this.isFlavor(Flavor.Graphql),
       sync: this.isFlavor(Flavor.Sync),
       renderer: this.isFlavor(Flavor.Renderer),
-      doc: this.isFlavor(Flavor.Doc),
+      front: this.FLAVOR === Flavor.Front,
+      worker: this.isFlavor(Flavor.Worker),
       // Script in a special flavor, return true only when it is set explicitly
       script: this.FLAVOR === Flavor.Script,
     };

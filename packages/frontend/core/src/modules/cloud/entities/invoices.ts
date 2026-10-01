@@ -1,4 +1,4 @@
-import type { InvoicesQuery } from '@nexio/graphql';
+import type { InvoicesQuery } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { map, tap } from 'rxjs';
 
 import type { InvoicesStore } from '../stores/invoices';

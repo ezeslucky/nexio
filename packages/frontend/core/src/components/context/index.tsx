@@ -1,16 +1,19 @@
-import { ConfirmModalProvider, PromptModalProvider } from '@nexio/component';
-import { ProviderComposer } from '@nexio/component/provider-composer';
-import { ThemeProvider } from '@nexio/core/components/theme-provider';
+import { ConfirmModalProvider, PromptModalProvider } from '@affine/component';
+import { ProviderComposer } from '@affine/component/provider-composer';
+import { ThemeProvider } from '@affine/core/components/theme-provider';
 import type { createStore } from 'jotai';
 import { Provider } from 'jotai';
 import type { PropsWithChildren } from 'react';
 import { useMemo } from 'react';
 
-export type NexioContextProps = PropsWithChildren<{
+import { useImageAntialiasing } from '../hooks/use-image-antialiasing';
+
+export type AffineContextProps = PropsWithChildren<{
   store?: ReturnType<typeof createStore>;
 }>;
 
-export function NexioContext(props: NexioContextProps) {
+export function AffineContext(props: AffineContextProps) {
+  useImageAntialiasing();
   return (
     <ProviderComposer
       contexts={useMemo(

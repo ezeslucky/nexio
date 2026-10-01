@@ -1,23 +1,23 @@
-import { Button, ConfirmModal, Input, Modal, notify } from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useMutation } from '@nexio/core/components/hooks/use-mutation';
+import { Button, ConfirmModal, Input, Modal, notify } from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useMutation } from '@affine/core/components/hooks/use-mutation';
 import {
   SelfhostLicenseService,
   WorkspaceSubscriptionService,
-} from '@nexio/core/modules/cloud';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
-import { UrlService } from '@nexio/core/modules/url';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { UserFriendlyError } from '@nexio/error';
+} from '@affine/core/modules/cloud';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceQuotaService } from '@affine/core/modules/quota';
+import { UrlService } from '@affine/core/modules/url';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { UserFriendlyError } from '@affine/error';
 import {
   createSelfhostCustomerPortalMutation,
   SubscriptionVariant,
-} from '@nexio/graphql';
-import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { Trans, useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -43,6 +43,7 @@ export const SelfHostTeamCard = () => {
   const [loading, setLoading] = useState(false);
   const selfhostLicenseService = useService(SelfhostLicenseService);
   const license = useLiveData(selfhostLicenseService.license$);
+  const hasLicense = !!license;
   const isOneTimePurchase = license?.variant === SubscriptionVariant.Onetime;
 
   const revalidate = useCallback(() => {
@@ -67,12 +68,13 @@ export const SelfHostTeamCard = () => {
         <div>
           <p>
             {t[
-              'com.nexio.settings.workspace.license.self-host-team.team.description'
+              'com.affine.settings.workspace.license.self-host-team.team.description'
             ]({
               expirationDate: new Date(
                 license?.expiredAt || 0
               ).toLocaleDateString(),
               leftDays: Math.floor(
+                // oxlint-disable-next-line react-hooks-js/purity
                 (new Date(license?.expiredAt || 0).getTime() - Date.now()) /
                   (1000 * 60 * 60 * 24)
               ).toLocaleString(),
@@ -81,7 +83,7 @@ export const SelfHostTeamCard = () => {
           {isOneTimePurchase ? (
             <p>
               <Trans
-                i18nKey="com.nexio.settings.workspace.license.self-host-team.team.license"
+                i18nKey="com.affine.settings.workspace.license.self-host-team.team.license"
                 components={{ 1: <strong /> }}
               />
             </p>
@@ -90,7 +92,7 @@ export const SelfHostTeamCard = () => {
       );
     }
     return t[
-      'com.nexio.settings.workspace.license.self-host-team.free.description'
+      'com.affine.settings.workspace.license.self-host-team.free.description'
     ]({
       memberCount: workspaceQuota?.humanReadable.memberLimit || '10',
     });
@@ -118,7 +120,7 @@ export const SelfHostTeamCard = () => {
           revalidate();
           notify.success({
             title:
-              t['com.nexio.settings.workspace.license.activate-success'](),
+              t['com.affine.settings.workspace.license.activate-success'](),
           });
         })
         .catch(e => {
@@ -146,7 +148,7 @@ export const SelfHostTeamCard = () => {
         revalidate();
         notify.success({
           title:
-            t['com.nexio.settings.workspace.license.deactivate-success'](),
+            t['com.affine.settings.workspace.license.deactivate-success'](),
         });
       })
       .catch(e => {
@@ -164,13 +166,13 @@ export const SelfHostTeamCard = () => {
 
   const handleConfirm = useCallback(
     (license: string) => {
-      if (isTeam) {
+      if (hasLicense) {
         onDeactivate();
       } else {
         onActivate(license);
       }
     },
-    [isTeam, onActivate, onDeactivate]
+    [hasLicense, onActivate, onDeactivate]
   );
 
   return (
@@ -181,7 +183,7 @@ export const SelfHostTeamCard = () => {
             <SettingRow
               spreadCol={false}
               name={t[
-                `com.nexio.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
+                `com.affine.settings.workspace.license.self-host${isTeam ? '-team' : ''}`
               ]()}
               desc={description}
             />
@@ -193,7 +195,7 @@ export const SelfHostTeamCard = () => {
           >
             <span className={styles.seat}>
               {t[
-                'com.nexio.settings.workspace.license.self-host-team.seats'
+                'com.affine.settings.workspace.license.self-host-team.seats'
               ]()}
             </span>
             <span>
@@ -205,17 +207,17 @@ export const SelfHostTeamCard = () => {
         </div>
         <div
           className={clsx(styles.buttonContainer, {
-            left: isTeam || isLocalWorkspace,
+            left: hasLicense || isLocalWorkspace,
           })}
         >
-          {!isTeam && !isLocalWorkspace ? (
+          {!hasLicense && !isLocalWorkspace ? (
             <Button
               variant="plain"
               className={styles.uploadButton}
               onClick={handleOpenUploadModal}
             >
               {t[
-                'com.nexio.settings.workspace.license.self-host-team.upload-license-file'
+                'com.affine.settings.workspace.license.self-host-team.upload-license-file'
               ]()}
             </Button>
           ) : null}
@@ -225,7 +227,7 @@ export const SelfHostTeamCard = () => {
             onClick={handleClick}
           >
             {t[
-              `com.nexio.settings.workspace.license.self-host-team.${isTeam ? 'deactivate-license' : 'use-purchased-key'}`
+              `com.affine.settings.workspace.license.self-host-team.${hasLicense ? 'deactivate-license' : 'use-purchased-key'}`
             ]()}
           </Button>
         </div>
@@ -233,7 +235,7 @@ export const SelfHostTeamCard = () => {
       <ActionModal
         open={openModal}
         onOpenChange={setOpenModal}
-        isTeam={!!isTeam}
+        hasLicense={hasLicense}
         loading={loading}
         onConfirm={handleConfirm}
         isOneTimePurchase={isOneTimePurchase}
@@ -249,14 +251,14 @@ export const SelfHostTeamCard = () => {
 const ActionModal = ({
   open,
   onOpenChange,
-  isTeam,
+  hasLicense,
   onConfirm,
   loading,
   isOneTimePurchase,
 }: {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  isTeam: boolean;
+  hasLicense: boolean;
   loading: boolean;
   isOneTimePurchase: boolean;
   onConfirm: (key: string) => void;
@@ -305,17 +307,17 @@ const ActionModal = ({
     onOpenChange(false);
   }, [onOpenChange]);
 
-  if (isTeam && isOneTimePurchase) {
+  if (hasLicense && isOneTimePurchase) {
     return (
       <ConfirmModal
         width={480}
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.nexio.settings.workspace.license.deactivate-modal.title`
+          `com.affine.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={t[
-          'com.nexio.settings.workspace.license.deactivate-modal.description-license'
+          'com.affine.settings.workspace.license.deactivate-modal.description-license'
         ]()}
         cancelText={t['Cancel']()}
         cancelButtonOptions={{
@@ -333,18 +335,18 @@ const ActionModal = ({
     );
   }
 
-  if (isTeam) {
+  if (hasLicense) {
     return (
       <Modal
         width={480}
         open={open}
         onOpenChange={handleOpenChange}
         title={t[
-          `com.nexio.settings.workspace.license.deactivate-modal.title`
+          `com.affine.settings.workspace.license.deactivate-modal.title`
         ]()}
         description={
           <Trans
-            i18nKey="com.nexio.settings.workspace.license.deactivate-modal.description"
+            i18nKey="com.affine.settings.workspace.license.deactivate-modal.description"
             components={{
               1: <strong />,
             }}
@@ -359,7 +361,7 @@ const ActionModal = ({
             disabled={isMutating}
           >
             {t[
-              'com.nexio.settings.workspace.license.deactivate-modal.manage-payment'
+              'com.affine.settings.workspace.license.deactivate-modal.manage-payment'
             ]()}
           </Button>
           <div className={styles.rightActions}>
@@ -380,9 +382,9 @@ const ActionModal = ({
       width={480}
       open={open}
       onOpenChange={handleOpenChange}
-      title={t['com.nexio.settings.workspace.license.activate-modal.title']()}
+      title={t['com.affine.settings.workspace.license.activate-modal.title']()}
       description={t[
-        'com.nexio.settings.workspace.license.activate-modal.description'
+        'com.affine.settings.workspace.license.activate-modal.description'
       ]()}
       cancelText={t['Cancel']()}
       cancelButtonOptions={{
@@ -398,7 +400,7 @@ const ActionModal = ({
       confirmButtonOptions={{
         loading: loading,
         variant: 'primary',
-        disabled: loading || (!isTeam && !key),
+        disabled: loading || !key,
       }}
       onConfirm={handleConfirm}
       childrenContentClassName={styles.activateModalContent}
@@ -410,11 +412,11 @@ const ActionModal = ({
       />
       <span className={styles.tips}>
         <Trans
-          i18nKey="com.nexio.settings.workspace.license.activate-modal.tips"
+          i18nKey="com.affine.settings.workspace.license.activate-modal.tips"
           components={{
             1: (
               <a
-                href="https://nexio.pro/pricing/?type=selfhost#table"
+                href="https://affine.pro/pricing/?type=selfhost#table"
                 target="_blank"
                 rel="noreferrer"
                 style={{ color: cssVarV2('text/link') }}

@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 import { map, type Observable, switchMap } from 'rxjs';
 
 import type { ServersService } from '../../cloud';
@@ -19,11 +19,11 @@ export class CurrentUserDBEditorSettingProvider
   ) {
     super();
 
-    const nexioCloudServer = this.serversService.server$('nexio-cloud').value; // TODO: support multiple servers
-    if (!nexioCloudServer) {
-      throw new Error('nexio-cloud server not found');
+    const affineCloudServer = this.serversService.server$('affine-cloud').value; // TODO: support multiple servers
+    if (!affineCloudServer) {
+      throw new Error('affine-cloud server not found');
     }
-    const userDBService = nexioCloudServer.scope.get(UserDBService);
+    const userDBService = affineCloudServer.scope.get(UserDBService);
     this.currentUserDB$ = userDBService.currentUserDB.db$;
   }
 

@@ -1,12 +1,12 @@
 export { Tag } from './entities/tag';
 export {
-  nexioLabelToDatabaseTagColor,
-  databaseTagColorToNexioLabel,
+  affineLabelToDatabaseTagColor,
+  databaseTagColorToAffineLabel,
 } from './entities/utils';
 export { TagService } from './service/tag';
 export { useDeleteTagConfirmModal } from './view/delete-tag-modal';
 
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { DocsService } from '../doc';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

@@ -9,4 +9,4 @@ import { LoggerProvider } from './service';
 })
 export class GCloudLogging {}
 
-export { NEXIOLogger } from './logger';
+export { AFFiNELogger } from './logger';

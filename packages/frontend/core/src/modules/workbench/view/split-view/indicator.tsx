@@ -1,6 +1,6 @@
-import type { MenuProps } from '@nexio/component';
-import { Menu, Tooltip } from '@nexio/component';
-import { useI18n } from '@nexio/i18n';
+import type { MenuProps } from '@affine/component';
+import { Menu, Tooltip } from '@affine/component';
+import { useI18n } from '@affine/i18n';
 import clsx from 'clsx';
 import type { HTMLAttributes, MouseEventHandler } from 'react';
 import { forwardRef, memo, useCallback, useMemo, useState } from 'react';
@@ -8,8 +8,7 @@ import { forwardRef, memo, useCallback, useMemo, useState } from 'react';
 import type { View } from '../../entities/view';
 import * as styles from './indicator.css';
 
-export interface SplitViewDragHandleProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface SplitViewDragHandleProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   dragging?: boolean;
   open?: boolean;
@@ -109,7 +108,7 @@ export const SplitViewIndicator = memo(
             <div className={styles.menuTrigger} />
           </Menu>
           <Tooltip
-            content={t['com.nexio.split-view-drag-handle.tooltip']()}
+            content={t['com.affine.split-view-drag-handle.tooltip']()}
             side="bottom"
           >
             <SplitViewDragHandle

@@ -1,4 +1,4 @@
-import type { GetWorkspacePageMetaByIdQuery } from '@nexio/graphql';
+import type { GetWorkspacePageMetaByIdQuery } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { tap } from 'rxjs';
 
 import type { DocService } from '../../doc';

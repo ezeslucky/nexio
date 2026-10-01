@@ -1,8 +1,8 @@
-import { Button, Divider } from '@nexio/component';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { Button, Divider } from '@affine/component';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { WorkspacePropertyName } from '../../properties';
@@ -66,7 +66,7 @@ export const DisplayProperties = ({
   return (
     <div className={styles.root}>
       <section className={styles.sectionLabel}>
-        {t['com.nexio.all-docs.display.properties']()}
+        {t['com.affine.all-docs.display.properties']()}
       </section>
       <div className={styles.properties}>
         {explorerPropertyList
@@ -106,7 +106,7 @@ export const DisplayProperties = ({
         <>
           <Divider space={4} size="thinner" />
           <section className={styles.sectionLabel}>
-            {t['com.nexio.all-docs.display.list-view']()}
+            {t['com.affine.all-docs.display.list-view']()}
           </section>
           <div className={styles.properties}>
             <Button
@@ -114,14 +114,14 @@ export const DisplayProperties = ({
               data-show={showIcon}
               onClick={toggleIcon}
             >
-              {t['com.nexio.all-docs.display.list-view.icon']()}
+              {t['com.affine.all-docs.display.list-view.icon']()}
             </Button>
             <Button
               className={styles.property}
               data-show={showBody}
               onClick={toggleBody}
             >
-              {t['com.nexio.all-docs.display.list-view.body']()}
+              {t['com.affine.all-docs.display.list-view.body']()}
             </Button>
           </div>
         </>

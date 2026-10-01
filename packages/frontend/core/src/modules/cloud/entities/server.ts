@@ -1,4 +1,4 @@
-import type { ServerFeature } from '@nexio/graphql';
+import type { ServerFeature } from '@affine/graphql';
 import {
   backoffRetry,
   effect,
@@ -7,7 +7,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { exhaustMap, map, tap } from 'rxjs';
 
 import { ServerScope } from '../scopes/server';

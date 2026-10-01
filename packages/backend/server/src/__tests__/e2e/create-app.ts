@@ -1,36 +1,48 @@
 import assert from 'node:assert';
 
-import { gqlFetcherFactory } from '@nexio/graphql';
-import { INestApplication, ModuleMetadata } from '@nestjs/common';
+import { gqlFetcherFactory } from '@affine/graphql';
+import { INestApplication, ModuleMetadata, Type } from '@nestjs/common';
 import { NestApplication } from '@nestjs/core';
-import { Test, TestingModuleBuilder } from '@nestjs/testing';
+import {
+  Test,
+  type TestingModule,
+  TestingModuleBuilder,
+} from '@nestjs/testing';
 import { PrismaClient } from '@prisma/client';
 import cookieParser from 'cookie-parser';
 import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
 import supertest from 'supertest';
 
 import {
-  NEXIOLogger,
+  AFFiNELogger,
   CacheInterceptor,
   CloudThrottlerGuard,
+  ConfigFactory,
   EventBus,
   GlobalExceptionFilter,
-  JobQueue,
   OneMB,
 } from '../../base';
+import { ThrottlerStorage } from '../../base/throttler';
 import { SocketIoAdapter } from '../../base/websocket';
 import { AuthGuard, AuthService } from '../../core/auth';
+import {
+  BACKEND_RUNTIME_CONFIG_PATHS,
+  BackendRuntimeProvider,
+} from '../../core/backend-runtime';
 import { Mailer } from '../../core/mail';
+import { StorageRuntimeProvider } from '../../core/storage-runtime';
+import { ServerRole } from '../../env';
 import { Models } from '../../models';
+import { IndexerService } from '../../plugins/indexer/service';
 import {
   createFactory,
   MockedUser,
-  MockJobQueue,
   MockMailer,
   MockUser,
   MockUserInput,
 } from '../mocks';
 import { parseCookies, TEST_LOG_LEVEL } from '../utils';
+import { createTestRuntimeConfig } from '../utils/runtime-config';
 
 interface TestingAppMetadata {
   tapModule?(m: TestingModuleBuilder): void;
@@ -41,11 +53,19 @@ interface TestingAppMetadata {
 export class TestingApp extends NestApplication {
   private sessionCookie: string | null = null;
   private currentUserCookie: string | null = null;
+  private csrfCookie: string | null = null;
   private readonly userCookies: Set<string> = new Set();
 
+  private getOptional<T>(token: Type<T>) {
+    try {
+      return this.get(token, { strict: false });
+    } catch {
+      return undefined;
+    }
+  }
+
   create = createFactory(this.get(PrismaClient, { strict: false }));
-  mails = this.get(Mailer, { strict: false }) as MockMailer;
-  queue = this.get(JobQueue, { strict: false }) as MockJobQueue;
+  mails = this.getOptional(Mailer) as unknown as MockMailer;
   eventBus = this.get(EventBus, { strict: false });
   models = this.get(Models, { strict: false });
 
@@ -61,16 +81,35 @@ export class TestingApp extends NestApplication {
     await this.close();
   }
 
+  clearAuth() {
+    this.resetRateLimit();
+    this.sessionCookie = null;
+    this.currentUserCookie = null;
+    this.csrfCookie = null;
+    this.userCookies.clear();
+  }
+
   request(
     method: 'options' | 'get' | 'post' | 'put' | 'delete' | 'patch',
     path: string
   ): supertest.Test {
-    return supertest(this.getHttpServer())
+    const cookies = [
+      `${AuthService.sessionCookieName}=${this.sessionCookie ?? ''}`,
+      `${AuthService.userCookieName}=${this.currentUserCookie ?? ''}`,
+    ];
+    if (this.csrfCookie) {
+      cookies.push(`${AuthService.csrfCookieName}=${this.csrfCookie}`);
+    }
+
+    const req = supertest(this.getHttpServer())
       [method](path)
-      .set('Cookie', [
-        `${AuthService.sessionCookieName}=${this.sessionCookie ?? ''}`,
-        `${AuthService.userCookieName}=${this.currentUserCookie ?? ''}`,
-      ]);
+      .set('Cookie', cookies);
+
+    if (this.csrfCookie) {
+      req.set('x-affine-csrf-token', this.csrfCookie);
+    }
+
+    return req;
   }
 
   gql = gqlFetcherFactory('', async (_input, init) => {
@@ -123,6 +162,9 @@ export class TestingApp extends NestApplication {
 
           this.sessionCookie = cookies[AuthService.sessionCookieName];
           this.currentUserCookie = cookies[AuthService.userCookieName];
+          if (AuthService.csrfCookieName in cookies) {
+            this.csrfCookie = cookies[AuthService.csrfCookieName] || null;
+          }
           if (this.currentUserCookie) {
             this.userCookies.add(this.currentUserCookie);
           }
@@ -148,6 +190,10 @@ export class TestingApp extends NestApplication {
     return await this.create(MockUser, overrides);
   }
 
+  resetRateLimit() {
+    this.get(ThrottlerStorage, { strict: false }).storage.clear();
+  }
+
   async signup(overrides?: Partial<MockUserInput>) {
     const user = await this.create(MockUser, overrides);
     await this.login(user);
@@ -155,6 +201,7 @@ export class TestingApp extends NestApplication {
   }
 
   async login(user: MockedUser) {
+    this.resetRateLimit();
     return await this.POST('/api/auth/sign-in').send({
       email: user.email,
       password: user.password,
@@ -180,13 +227,18 @@ export class TestingApp extends NestApplication {
   }
 
   async logout(userId?: string) {
-    const res = await this.GET(
+    this.resetRateLimit();
+    const res = await this.POST(
       '/api/auth/sign-out' + (userId ? `?user_id=${userId}` : '')
     ).expect(200);
     const cookies = parseCookies(res);
     this.sessionCookie = cookies[AuthService.sessionCookieName];
+    if (AuthService.csrfCookieName in cookies) {
+      this.csrfCookie = cookies[AuthService.csrfCookieName] || null;
+    }
     if (!this.sessionCookie) {
       this.currentUserCookie = null;
+      this.csrfCookie = null;
       this.userCookies.clear();
     } else {
       this.currentUserCookie = cookies[AuthService.userCookieName];
@@ -200,6 +252,11 @@ export class TestingApp extends NestApplication {
 export async function createApp(
   metadata: TestingAppMetadata = {}
 ): Promise<TestingApp> {
+  const config = new ConfigFactory().config;
+  const runtimeConfig = await createTestRuntimeConfig(
+    config.db.datasourceUrl,
+    config.indexer
+  );
   const { buildAppModule } = await import('../../app.module');
   const { tapModule, tapApp } = metadata;
 
@@ -208,14 +265,47 @@ export async function createApp(
   });
 
   builder.overrideProvider(Mailer).useValue(new MockMailer());
-  builder.overrideProvider(JobQueue).useValue(new MockJobQueue());
+  builder
+    .overrideProvider(BACKEND_RUNTIME_CONFIG_PATHS)
+    .useValue([runtimeConfig.configPath]);
 
   // when custom override happens
   if (tapModule) {
     tapModule(builder);
   }
 
-  const module = await builder.compile();
+  let module: TestingModule;
+  try {
+    module = await builder.compile();
+  } catch (error) {
+    await runtimeConfig.cleanup();
+    throw error;
+  }
+  module.get(ConfigFactory).override({
+    storages: {
+      avatar: {
+        storage: {
+          provider: 'assetpack',
+          bucket: 'avatars',
+          config: { path: runtimeConfig.storagePath },
+        },
+      },
+      blob: {
+        storage: {
+          provider: 'assetpack',
+          bucket: 'blobs',
+          config: { path: runtimeConfig.storagePath },
+        },
+      },
+    },
+    copilot: {
+      storage: {
+        provider: 'assetpack',
+        bucket: 'copilot',
+        config: { path: runtimeConfig.storagePath },
+      },
+    },
+  });
 
   module.useCustomApplicationConstructor(TestingApp);
 
@@ -224,8 +314,19 @@ export async function createApp(
     bodyParser: true,
     rawBody: true,
   });
+  const close = app.close.bind(app);
+  let closePromise: Promise<void> | undefined;
+  app.close = () => {
+    return (closePromise ??= (async () => {
+      try {
+        await close();
+      } finally {
+        await runtimeConfig.cleanup();
+      }
+    })());
+  };
 
-  const logger = new NEXIOLogger();
+  const logger = new AFFiNELogger();
   logger.setLogLevels([TEST_LOG_LEVEL]);
   app.useLogger(logger);
   app.use(cookieParser());
@@ -237,7 +338,11 @@ export async function createApp(
     })
   );
 
-  app.useGlobalGuards(app.get(AuthGuard), app.get(CloudThrottlerGuard));
+  if (globalThis.env.role === ServerRole.Worker) {
+    app.useGlobalGuards(app.get(CloudThrottlerGuard));
+  } else {
+    app.useGlobalGuards(app.get(AuthGuard), app.get(CloudThrottlerGuard));
+  }
   app.useGlobalInterceptors(app.get(CacheInterceptor));
   app.useGlobalFilters(new GlobalExceptionFilter(app.getHttpAdapter()));
 
@@ -249,7 +354,18 @@ export async function createApp(
     tapApp(app);
   }
 
-  await app.init();
+  try {
+    await app.init();
+    await app.get(BackendRuntimeProvider, { strict: false }).runMigrations();
+    await app.get(StorageRuntimeProvider, { strict: false }).runMigrations();
+    if (globalThis.env.isApi || globalThis.env.isFrontend) {
+      await app.get(IndexerService, { strict: false }).onApplicationBootstrap();
+    }
+    await app.listen(0);
+  } catch (error) {
+    await app.close();
+    throw error;
+  }
 
   return app;
 }

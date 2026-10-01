@@ -3,7 +3,7 @@ import {
   LiveData,
   type MediaStats,
   type PlaybackState,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 
 import type { GlobalState } from '../../storage';
 

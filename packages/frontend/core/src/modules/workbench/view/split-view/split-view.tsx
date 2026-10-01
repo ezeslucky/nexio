@@ -1,9 +1,9 @@
-import { Checkbox, notify, useDndMonitor } from '@nexio/component';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
-import { useService } from '@ezeslucky/infra';
+import { Checkbox, notify, useDndMonitor } from '@affine/component';
+import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
+import { useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useSetAtom } from 'jotai';
 import { nanoid } from 'nanoid';
@@ -40,7 +40,7 @@ export const SplitView = ({
   const { appSettings } = useAppSettingHelper();
   const workbench = useService(WorkbenchService).workbench;
 
-  // workaround: canvas's lit host element has an issue on remounting.
+  // workaround: blocksuite's lit host element has an issue on remounting.
   // we do not want the view to change its render ordering here after reordering
   // instead we use a local state to store the views + its order to avoid remounting
   const [localViewsState, setLocalViewsState] = useState<View[]>(views);
@@ -89,7 +89,7 @@ export const SplitView = ({
   const t = useI18n();
   const hideFolderWarningRef = useRef(false);
 
-  useDndMonitor<NexioDNDData>(() => {
+  useDndMonitor<AffineDNDData>(() => {
     return {
       canMonitor(data) {
         if (!BUILD_CONFIG.isElectron) {
@@ -130,7 +130,7 @@ export const SplitView = ({
                 message: (
                   <div className={styles.folderWarningMessage}>
                     <p>
-                      {t['com.nexio.split-view-folder-warning.description']()}
+                      {t['com.affine.split-view-folder-warning.description']()}
                     </p>
                     <p>
                       <Checkbox
@@ -165,7 +165,7 @@ export const SplitView = ({
           return;
         }
 
-        const dropTarget = candidate.data as NexioDNDData['draggable']['from'];
+        const dropTarget = candidate.data as AffineDNDData['draggable']['from'];
         const entity = data.source.data.entity;
         const from = data.source.data.from;
 

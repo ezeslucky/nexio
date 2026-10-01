@@ -9,7 +9,7 @@ export const root = style({
   fontSize: cssVar('fontBase'),
   position: 'relative',
 });
-export const nexioLogo = style({
+export const affineLogo = style({
   color: 'inherit',
 });
 export const topNav = style({

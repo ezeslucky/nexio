@@ -1,4 +1,4 @@
-import { cn } from '@nexio/admin/utils';
+import { cn } from '@affine/admin/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import type * as React from 'react';
 
@@ -23,7 +23,8 @@ const badgeVariants = cva(
 );
 
 export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof badgeVariants> {}
 
 function Badge({ className, variant, ...props }: BadgeProps) {

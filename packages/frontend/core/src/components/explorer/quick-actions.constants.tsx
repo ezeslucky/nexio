@@ -1,4 +1,4 @@
-import type { I18nString } from '@nexio/i18n';
+import type { I18nString } from '@affine/i18n';
 
 import {
   type QuickActionProps,
@@ -29,33 +29,33 @@ export type QuickActionKey = ExtractPrefixKeys<
 
 const QUICK_ACTION_MAP: Record<QuickActionKey, QuickActionItem> = {
   quickFavorite: {
-    name: 'com.nexio.all-docs.quick-action.favorite',
+    name: 'com.affine.all-docs.quick-action.favorite',
     Component: QuickFavorite,
   },
   quickTrash: {
-    name: 'com.nexio.all-docs.quick-action.trash',
+    name: 'com.affine.all-docs.quick-action.trash',
     Component: QuickDelete,
   },
   quickSplit: {
-    name: 'com.nexio.all-docs.quick-action.split',
+    name: 'com.affine.all-docs.quick-action.split',
     Component: QuickSplit,
     disabled: !BUILD_CONFIG.isElectron,
   },
   quickTab: {
-    name: 'com.nexio.all-docs.quick-action.tab',
+    name: 'com.affine.all-docs.quick-action.tab',
     Component: QuickTab,
   },
   quickSelect: {
-    name: 'com.nexio.all-docs.quick-action.select',
+    name: 'com.affine.all-docs.quick-action.select',
     Component: QuickSelect,
   },
   quickDeletePermanently: {
-    name: 'com.nexio.all-docs.quick-action.delete-permanently',
+    name: 'com.affine.all-docs.quick-action.delete-permanently',
     Component: QuickDeletePermanently,
     disabled: true, // can only be controlled in code
   },
   quickRestore: {
-    name: 'com.nexio.all-docs.quick-action.restore',
+    name: 'com.affine.all-docs.quick-action.restore',
     Component: QuickRestore,
     disabled: true, // can only be controlled in code
   },

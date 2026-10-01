@@ -1,13 +1,13 @@
-import { Button } from '@nexio/admin/components/ui/button';
-import { Input } from '@nexio/admin/components/ui/input';
-import { Label } from '@nexio/admin/components/ui/label';
-import { FeatureType, getUserFeaturesQuery } from '@nexio/graphql';
+import { Button } from '@affine/admin/components/ui/button';
+import { Input } from '@affine/admin/components/ui/input';
+import { Label } from '@affine/admin/components/ui/label';
+import { FeatureType, getUserFeaturesQuery } from '@affine/graphql';
 import type { FormEvent } from 'react';
 import { useCallback, useRef } from 'react';
 import { Navigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { nexioFetch } from '../../fetch-utils';
+import { affineFetch } from '../../fetch-utils';
 import { isAdmin, useCurrentUser, useRevalidateCurrentUser } from '../common';
 import logo from './logo.svg';
 
@@ -21,7 +21,7 @@ export function Auth() {
       e.preventDefault();
       e.stopPropagation();
       if (!emailRef.current || !passwordRef.current) return;
-      nexioFetch('/api/auth/sign-in', {
+      affineFetch('/api/auth/sign-in', {
         method: 'POST',
         body: JSON.stringify({
           email: emailRef.current?.value,
@@ -39,7 +39,7 @@ export function Auth() {
           return response.json();
         })
         .then(() =>
-          nexioFetch('/graphql', {
+          affineFetch('/graphql', {
             method: 'POST',
             body: JSON.stringify({
               operationName: getUserFeaturesQuery.op,
@@ -78,7 +78,7 @@ export function Auth() {
   }
 
   return (
-    <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px] h-screen">
+    <div className="w-full lg:grid lg:min-h-[600px] lg:grid-cols-2 xl:min-h-[800px] h-dvh">
       <div className="flex items-center justify-center py-12">
         <div className="mx-auto grid w-[350px] gap-6">
           <div className="grid gap-2 text-center">

@@ -6,7 +6,7 @@ import {
   mapInto,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { exhaustMap } from 'rxjs';
 
 export type FontData = {

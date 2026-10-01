@@ -37,7 +37,7 @@ let workspace: Workspace;
 test.beforeEach(async t => {
   await t.context.module.initTestingDB();
   user = await t.context.user.create({
-    email: 'test@nexio.pro',
+    email: 'test@affine.pro',
   });
   workspace = await t.context.workspace.create(user.id);
 });
@@ -72,6 +72,27 @@ test('should create a history record', async t => {
     ...created,
     blob: snapshot.blob,
   });
+});
+
+test('should not fail on duplicated history record', async t => {
+  const snapshot = {
+    spaceId: workspace.id,
+    docId: randomUUID(),
+    blob: Uint8Array.from([1, 2, 3]),
+    timestamp: Date.now(),
+    editorId: user.id,
+  };
+
+  const created1 = await t.context.history.create(snapshot, 1000);
+  const created2 = await t.context.history.create(snapshot, 1000);
+  t.deepEqual(created1.timestamp, snapshot.timestamp);
+  t.deepEqual(created2.timestamp, snapshot.timestamp);
+
+  const histories = await t.context.history.findMany(
+    snapshot.spaceId,
+    snapshot.docId
+  );
+  t.is(histories.length, 1);
 });
 
 test('should return null when history timestamp not match', async t => {

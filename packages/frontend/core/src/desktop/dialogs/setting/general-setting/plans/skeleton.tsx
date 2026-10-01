@@ -1,4 +1,4 @@
-import { Skeleton } from '@nexio/component';
+import { Skeleton } from '@affine/component';
 
 import { AIPlanLayout } from './ai/layout';
 import { CloudPlanLayout, PlanLayout } from './layout';

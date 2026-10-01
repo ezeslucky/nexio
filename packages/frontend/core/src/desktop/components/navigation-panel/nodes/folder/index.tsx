@@ -8,21 +8,21 @@ import {
   MenuSeparator,
   MenuSub,
   notify,
-} from '@nexio/component';
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+} from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
 import {
   type FolderNode,
   OrganizeService,
-} from '@nexio/core/modules/organize';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { Unreachable } from '@nexio/env/constant';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/core/modules/organize';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { Unreachable } from '@affine/env/constant';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import {
   DeleteIcon,
   FolderIcon,
@@ -32,7 +32,7 @@ import {
   RemoveFolderIcon,
   TagsIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { difference } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -62,7 +62,7 @@ export const NavigationPanelFolderNode = ({
 }: {
   defaultRenaming?: boolean;
   nodeId: string;
-  onDrop?: (data: DropTargetDropEvent<NexioDNDData>, node: FolderNode) => void;
+  onDrop?: (data: DropTargetDropEvent<AffineDNDData>, node: FolderNode) => void;
   operations?:
     | NodeOperation[]
     | ((type: string, node: FolderNode) => NodeOperation[]);
@@ -74,7 +74,7 @@ export const NavigationPanelFolderNode = ({
   const type = useLiveData(node?.type$);
   const data = useLiveData(node?.data$);
   const handleDrop = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>) => {
+    (data: DropTargetDropEvent<AffineDNDData>) => {
       if (!node) {
         return;
       }
@@ -223,10 +223,10 @@ const NavigationPanelFolderNodeFolder = ({
       type: 'folder',
     });
     notify.success({
-      title: t['com.nexio.rootAppSidebar.organize.delete.notify-title']({
+      title: t['com.affine.rootAppSidebar.organize.delete.notify-title']({
         name,
       }),
-      message: t['com.nexio.rootAppSidebar.organize.delete.notify-message'](),
+      message: t['com.affine.rootAppSidebar.organize.delete.notify-message'](),
     });
   }, [name, node, t]);
 
@@ -247,7 +247,7 @@ const NavigationPanelFolderNodeFolder = ({
       dropTarget: {
         at: 'navigation-panel:organize:folder',
       },
-    } satisfies NexioDNDData;
+    } satisfies AffineDNDData;
   }, [location, node.id]);
 
   const handleRename = useCallback(
@@ -258,7 +258,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnFolder = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>) => {
+    (data: DropTargetDropEvent<AffineDNDData>) => {
       if (data.source.data.entity?.type) {
         track.$.navigationPanel.folders.drop({
           type: data.source.data.entity.type,
@@ -338,7 +338,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnPlaceholder = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>) => {
+    (data: DropTargetDropEvent<AffineDNDData>) => {
       if (data.source.data.entity?.type) {
         track.$.navigationPanel.folders.drop({
           type: data.source.data.entity.type,
@@ -382,7 +382,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleDropOnChildren = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>, dropAtNode?: FolderNode) => {
+    (data: DropTargetDropEvent<AffineDNDData>, dropAtNode?: FolderNode) => {
       if (!dropAtNode || !dropAtNode.id) {
         return;
       }
@@ -521,7 +521,7 @@ const NavigationPanelFolderNodeFolder = ({
       [dropEffect, node]
     );
 
-  const handleCanDrop = useMemo<DropTargetOptions<NexioDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
     () => args => {
       const entityType = args.source.data.entity?.type;
       if (args.treeInstruction && args.treeInstruction?.type !== 'make-child') {
@@ -555,7 +555,7 @@ const NavigationPanelFolderNodeFolder = ({
   );
 
   const handleChildrenCanDrop = useMemo<
-    DropTargetOptions<NexioDNDData>['canDrop']
+    DropTargetOptions<AffineDNDData>['canDrop']
   >(
     () => args => {
       const entityType = args.source.data.entity?.type;
@@ -597,7 +597,7 @@ const NavigationPanelFolderNodeFolder = ({
 
   const handleCreateSubfolder = useCallback(() => {
     const newFolderId = node.createFolder(
-      t['com.nexio.rootAppSidebar.organize.new-folders'](),
+      t['com.affine.rootAppSidebar.organize.new-folders'](),
       node.indexAt('before')
     );
     track.$.navigationPanel.organize.createOrganizeItem({ type: 'folder' });
@@ -659,7 +659,7 @@ const NavigationPanelFolderNodeFolder = ({
             size="16"
             onClick={handleNewDoc}
             tooltip={t[
-              'com.nexio.rootAppSidebar.explorer.organize-add-tooltip'
+              'com.affine.rootAppSidebar.explorer.organize-add-tooltip'
             ]()}
           >
             <PlusIcon />
@@ -670,7 +670,7 @@ const NavigationPanelFolderNodeFolder = ({
         index: 100,
         view: (
           <MenuItem prefixIcon={<FolderIcon />} onClick={handleCreateSubfolder}>
-            {t['com.nexio.rootAppSidebar.organize.folder.create-subfolder']()}
+            {t['com.affine.rootAppSidebar.organize.folder.create-subfolder']()}
           </MenuItem>
         ),
       },
@@ -681,7 +681,7 @@ const NavigationPanelFolderNodeFolder = ({
             prefixIcon={<PageIcon />}
             onClick={() => handleAddToFolder('doc')}
           >
-            {t['com.nexio.rootAppSidebar.organize.folder.add-docs']()}
+            {t['com.affine.rootAppSidebar.organize.folder.add-docs']()}
           </MenuItem>
         ),
       },
@@ -698,20 +698,20 @@ const NavigationPanelFolderNodeFolder = ({
                   onClick={() => handleAddToFolder('tag')}
                   prefixIcon={<TagsIcon />}
                 >
-                  {t['com.nexio.rootAppSidebar.organize.folder.add-tags']()}
+                  {t['com.affine.rootAppSidebar.organize.folder.add-tags']()}
                 </MenuItem>
                 <MenuItem
                   onClick={() => handleAddToFolder('collection')}
                   prefixIcon={<AnimatedCollectionsIcon closed={false} />}
                 >
                   {t[
-                    'com.nexio.rootAppSidebar.organize.folder.add-collections'
+                    'com.affine.rootAppSidebar.organize.folder.add-collections'
                   ]()}
                 </MenuItem>
               </>
             }
           >
-            {t['com.nexio.rootAppSidebar.organize.folder.add-others']()}
+            {t['com.affine.rootAppSidebar.organize.folder.add-others']()}
           </MenuSub>
         ),
       },
@@ -733,7 +733,7 @@ const NavigationPanelFolderNodeFolder = ({
             prefixIcon={<DeleteIcon />}
             onClick={handleDelete}
           >
-            {t['com.nexio.rootAppSidebar.organize.delete']()}
+            {t['com.affine.rootAppSidebar.organize.delete']()}
           </MenuItem>
         ),
       },
@@ -768,7 +768,7 @@ const NavigationPanelFolderNodeFolder = ({
                 data-event-args-type={node.type$.value}
                 onClick={() => node.delete()}
               >
-                {t['com.nexio.rootAppSidebar.organize.delete-from-folder']()}
+                {t['com.affine.rootAppSidebar.organize.delete-from-folder']()}
               </MenuItem>
             ),
           },

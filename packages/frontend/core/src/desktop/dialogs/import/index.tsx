@@ -1,42 +1,45 @@
-import { Button, IconButton, Modal } from '@nexio/component';
-import { IconType } from '@nexio/component';
-import { getStoreManager } from '@nexio/core/canvas/manager/store';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { Button, IconButton, Modal } from '@affine/component';
+import { getStoreManager } from '@affine/core/blocksuite/manager/store';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
 import {
   type DialogComponentProps,
   GlobalDialogService,
   type WORKSPACE_DIALOG_SCHEMA,
-} from '@nexio/core/modules/dialogs';
-import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
-import { OrganizeService } from '@nexio/core/modules/organize';
-import { UrlService } from '@nexio/core/modules/url';
+} from '@affine/core/modules/dialogs';
 import {
-  getNEXIOWorkspaceSchema,
+  type ImportRunContext,
+  ImportService,
+} from '@affine/core/modules/import';
+import { UrlService } from '@affine/core/modules/url';
+import {
+  getAFFiNEWorkspaceSchema,
   type WorkspaceMetadata,
   WorkspaceService,
-} from '@nexio/core/modules/workspace';
-import { DebugLogger } from '@nexio/debug';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
-import { openFilesWith } from '@canvas/nexio/shared/utils';
-import type { Workspace } from '@canvas/nexio/store';
+} from '@affine/core/modules/workspace';
+import { DebugLogger } from '@affine/debug';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
+import { openDirectory, openFilesWith } from '@blocksuite/affine/shared/utils';
+import type { Workspace } from '@blocksuite/affine/store';
 import {
+  DocxTransformer,
   HtmlTransformer,
+  type ImportWarning,
   MarkdownTransformer,
-  NotionHtmlTransformer,
   ZipTransformer,
-} from '@canvas/nexio/widgets/linked-doc';
+} from '@blocksuite/affine/widgets/linked-doc';
 import {
   ExportToHtmlIcon,
   ExportToMarkdownIcon,
+  FileIcon,
   HelpIcon,
   NotionIcon,
   PageIcon,
   SaveIcon,
   ZipIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@ezeslucky/infra';
+import { useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import {
@@ -44,6 +47,7 @@ import {
   type SVGAttributes,
   useCallback,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 
@@ -51,166 +55,103 @@ import * as style from './styles.css';
 
 const logger = new DebugLogger('import');
 
-type NotionPageIcon = {
-  type: 'emoji' | 'image';
-  content: string; // emoji unicode or image URL/data
-};
-
-type FolderHierarchy = {
-  name: string;
-  path: string;
-  children: Map<string, FolderHierarchy>;
-  pageId?: string;
-  parentPath?: string;
-  icon?: NotionPageIcon;
-};
-
-// Helper function to create folder structure using OrganizeService
-function createFolderStructure(
-  organizeService: OrganizeService,
-  hierarchy: FolderHierarchy,
-  parentFolderId: string | null = null,
-  explorerIconService?: ExplorerIconService
-): {
-  folderId: string | null;
-  docLinks: Array<{ folderId: string; docId: string }>;
-} {
-  const docLinks: Array<{ folderId: string; docId: string }> = [];
-  const rootFolder = organizeService.folderTree.rootFolder;
-
-  function processHierarchyNode(
-    node: FolderHierarchy,
-    currentParentId: string | null
-  ): string | null {
-    let currentFolderId = currentParentId;
-
-    // If this node represents a folder (has children but no pageId), create it
-    if (node.children.size > 0 && !node.pageId && node.name) {
-      const parent = currentParentId
-        ? organizeService.folderTree.folderNode$(currentParentId).value
-        : rootFolder;
-
-      if (parent) {
-        const index = parent.indexAt('after');
-        currentFolderId = parent.createFolder(node.name, index);
-      }
-    }
-
-    // Process all children
-    for (const child of node.children.values()) {
-      if (child.pageId) {
-        // This is a document, link it to the current folder
-        if (currentFolderId) {
-          docLinks.push({ folderId: currentFolderId, docId: child.pageId });
-        }
-
-        // Set icon for the document if available
-        if (child.icon && explorerIconService) {
-          logger.debug('=== Setting icon for document ===');
-          logger.debug('Document ID:', child.pageId);
-          logger.debug('Icon data:', child.icon);
-
-          try {
-            let iconData;
-            if (child.icon.type === 'emoji') {
-              iconData = {
-                type: IconType.Emoji as const,
-                unicode: child.icon.content,
-              };
-              logger.debug('Created emoji icon data:', iconData);
-            } else if (child.icon.type === 'image') {
-              // For image icons, we'd need to handle blob conversion
-              // For now, let's skip image icons or convert them to default
-              // This could be enhanced later to download and convert images to blobs
-              logger.debug(
-                'Skipping image icon (not implemented):',
-                child.icon.content
-              );
-              iconData = undefined;
-            }
-
-            if (iconData) {
-              logger.debug('Calling explorerIconService.setIcon with:', {
-                where: 'doc',
-                id: child.pageId,
-                icon: iconData,
-              });
-              explorerIconService.setIcon({
-                where: 'doc',
-                id: child.pageId,
-                icon: iconData,
-              });
-              logger.debug('Icon set successfully for document:', child.pageId);
-            } else {
-              logger.debug('No valid icon data to set');
-            }
-          } catch (error) {
-            logger.error(
-              'Error setting icon for document:',
-              child.pageId,
-              error
-            );
-            logger.warn(
-              'Failed to set icon for document:',
-              child.pageId,
-              error
-            );
-          }
-        } else {
-          if (!child.icon) {
-            logger.debug('No icon found for document:', child.pageId);
-          }
-          if (!explorerIconService) {
-            logger.debug(
-              'ExplorerIconService not available for document:',
-              child.pageId
-            );
-          }
-        }
-      } else if (child.children.size > 0) {
-        // This is a subfolder, process it recursively
-        processHierarchyNode(child, currentFolderId);
-      }
-    }
-
-    return currentFolderId;
-  }
-
-  const rootFolderId = processHierarchyNode(hierarchy, parentFolderId);
-  return { folderId: rootFolderId, docLinks };
+function shouldSnapshotPickedFiles(type: ImportType, acceptType: AcceptType) {
+  if (acceptType === 'Directory' || acceptType === 'Skip') return false;
+  return !['markdownZip', 'notion', 'bear', 'oneNote'].includes(type);
 }
 
 type ImportType =
   | 'markdown'
   | 'markdownZip'
   | 'notion'
+  | 'obsidian'
+  | 'bear'
+  | 'oneNote'
   | 'snapshot'
   | 'html'
-  | 'dotnexiofile';
-type AcceptType = 'Markdown' | 'Zip' | 'Html' | 'Skip'; // Skip is used for dotnexiofile
+  | 'docx'
+  | 'dotaffinefile';
+type AcceptType =
+  | 'Markdown'
+  | 'Zip'
+  | 'Html'
+  | 'Docx'
+  | 'OneNote'
+  | 'Directory'
+  | 'Skip'; // Skip is used for dotaffinefile
 type Status = 'idle' | 'importing' | 'success' | 'error';
+type ImportErrorState = {
+  code: string;
+  message: string;
+  sourcePath?: string;
+};
 type ImportResult = {
   docIds: string[];
   entryId?: string;
   isWorkspaceFile?: boolean;
   rootFolderId?: string;
+  importedWorkspace?: WorkspaceMetadata;
+  warnings?: ImportWarning[];
 };
+
+type ImportedWorkspacePayload = {
+  workspace: WorkspaceMetadata;
+};
+
+type ImportFunctionArgs = {
+  docCollection: Workspace;
+  files: File[];
+  importAffineFile: () => Promise<WorkspaceMetadata | undefined>;
+  importService?: ImportService;
+  context: ImportRunContext;
+};
+
+function toImportErrorState(error: unknown): ImportErrorState {
+  const sourcePath =
+    typeof error === 'object' &&
+    error !== null &&
+    'sourcePath' in error &&
+    typeof error.sourcePath === 'string'
+      ? error.sourcePath
+      : undefined;
+  if (error instanceof DOMException && error.name === 'AbortError') {
+    return {
+      code: 'cancelled',
+      message: 'Import cancelled',
+      sourcePath,
+    };
+  }
+  if (error instanceof Error) {
+    return {
+      code: error.name || 'import-error',
+      message: error.message || 'Unknown error occurred',
+      sourcePath,
+    };
+  }
+  return {
+    code: 'unknown',
+    message: 'Unknown error occurred',
+    sourcePath,
+  };
+}
+
+function requireImportService(importService?: ImportService) {
+  if (!importService) {
+    throw new Error('Import service is unavailable');
+  }
+  return importService;
+}
 
 type ImportConfig = {
   fileOptions: { acceptType: AcceptType; multiple: boolean };
-  importFunction: (
-    docCollection: Workspace,
-    files: File[],
-    handleImportNexioFile: () => Promise<WorkspaceMetadata | undefined>,
-    organizeService?: OrganizeService,
-    explorerIconService?: ExplorerIconService
-  ) => Promise<ImportResult>;
+  nativeOnly?: boolean;
+  importFunction: (args: ImportFunctionArgs) => Promise<ImportResult>;
 };
 
 const importOptions = [
   {
     key: 'markdown',
-    label: 'com.nexio.import.markdown-files',
+    label: 'com.affine.import.markdown-files',
     prefixIcon: (
       <ExportToMarkdownIcon
         color={cssVarV2('icon/primary')}
@@ -223,20 +164,20 @@ const importOptions = [
   },
   {
     key: 'markdownZip',
-    label: 'com.nexio.import.markdown-with-media-files',
+    label: 'com.affine.import.markdown-with-media-files',
     prefixIcon: (
       <ZipIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.nexio.import.markdown-with-media-files.tooltip',
+    suffixTooltip: 'com.affine.import.markdown-with-media-files.tooltip',
     testId: 'editor-option-menu-import-markdown-with-media',
     type: 'markdownZip' as ImportType,
   },
   {
     key: 'html',
-    label: 'com.nexio.import.html-files',
+    label: 'com.affine.import.html-files',
     prefixIcon: (
       <ExportToHtmlIcon
         color={cssVarV2('icon/primary')}
@@ -247,47 +188,97 @@ const importOptions = [
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.nexio.import.html-files.tooltip',
+    suffixTooltip: 'com.affine.import.html-files.tooltip',
     testId: 'editor-option-menu-import-html',
     type: 'html' as ImportType,
   },
   {
     key: 'notion',
-    label: 'com.nexio.import.notion',
+    label: 'com.affine.import.notion',
     prefixIcon: <NotionIcon color={cssVar('black')} width={20} height={20} />,
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.nexio.import.notion.tooltip',
+    suffixTooltip: 'com.affine.import.notion.tooltip',
     testId: 'editor-option-menu-import-notion',
     type: 'notion' as ImportType,
   },
   {
+    key: 'obsidian',
+    label: 'com.affine.import.obsidian',
+    prefixIcon: (
+      <ExportToMarkdownIcon color={cssVar('black')} width={20} height={20} />
+    ),
+    suffixIcon: (
+      <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixTooltip: 'com.affine.import.obsidian.tooltip',
+    testId: 'editor-option-menu-import-obsidian',
+    type: 'obsidian' as ImportType,
+  },
+  {
+    key: 'bear',
+    label: 'com.affine.import.bear',
+    prefixIcon: (
+      <FileIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixIcon: (
+      <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixTooltip: 'com.affine.import.bear.tooltip',
+    testId: 'editor-option-menu-import-bear',
+    type: 'bear' as ImportType,
+  },
+  {
+    key: 'oneNote',
+    label: 'com.affine.import.onenote',
+    prefixIcon: (
+      <FileIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixIcon: (
+      <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixTooltip: 'com.affine.import.onenote.tooltip',
+    testId: 'editor-option-menu-import-onenote',
+    type: 'oneNote' as ImportType,
+  },
+  {
+    key: 'docx',
+    label: 'com.affine.import.docx',
+    prefixIcon: <FileIcon color={cssVar('black')} width={20} height={20} />,
+    suffixIcon: (
+      <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
+    ),
+    suffixTooltip: 'com.affine.import.docx.tooltip',
+    testId: 'editor-option-menu-import-docx',
+    type: 'docx' as ImportType,
+  },
+  {
     key: 'snapshot',
-    label: 'com.nexio.import.snapshot',
+    label: 'com.affine.import.snapshot',
     prefixIcon: (
       <PageIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
     suffixIcon: (
       <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
     ),
-    suffixTooltip: 'com.nexio.import.snapshot.tooltip',
+    suffixTooltip: 'com.affine.import.snapshot.tooltip',
     testId: 'editor-option-menu-import-snapshot',
     type: 'snapshot' as ImportType,
   },
   BUILD_CONFIG.isElectron
     ? {
-        key: 'dotnexiofile',
-        label: 'com.nexio.import.dotnexiofile',
+        key: 'dotaffinefile',
+        label: 'com.affine.import.dotaffinefile',
         prefixIcon: (
           <SaveIcon color={cssVarV2('icon/primary')} width={20} height={20} />
         ),
         suffixIcon: (
           <HelpIcon color={cssVarV2('icon/primary')} width={20} height={20} />
         ),
-        suffixTooltip: 'com.nexio.import.dotnexiofile.tooltip',
-        testId: 'editor-option-menu-import-dotnexiofile',
-        type: 'dotnexiofile' as ImportType,
+        suffixTooltip: 'com.affine.import.dotaffinefile.tooltip',
+        testId: 'editor-option-menu-import-dotaffinefile',
+        type: 'dotaffinefile' as ImportType,
       }
     : null,
 ].filter(v => v !== null);
@@ -295,20 +286,14 @@ const importOptions = [
 const importConfigs: Record<ImportType, ImportConfig> = {
   markdown: {
     fileOptions: { acceptType: 'Markdown', multiple: true },
-    importFunction: async (
-      docCollection,
-      files,
-      _handleImportNexioFile,
-      _organizeService,
-      _explorerIconService
-    ) => {
+    importFunction: async ({ docCollection, files }) => {
       const docIds: string[] = [];
       for (const file of files) {
         const text = await file.text();
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await MarkdownTransformer.importMarkdownToDoc({
           collection: docCollection,
-          schema: getNEXIOWorkspaceSchema(),
+          schema: getAFFiNEWorkspaceSchema(),
           markdown: text,
           fileName,
           extensions: getStoreManager().config.init().value.get('store'),
@@ -322,44 +307,27 @@ const importConfigs: Record<ImportType, ImportConfig> = {
   },
   markdownZip: {
     fileOptions: { acceptType: 'Zip', multiple: false },
-    importFunction: async (
-      docCollection,
-      files,
-      _handleImportNexioFile,
-      _organizeService,
-      _explorerIconService
-    ) => {
+    importFunction: async ({ files, importService, context }) => {
       const file = files.length === 1 ? files[0] : null;
       if (!file) {
         throw new Error('Expected a single zip file for markdownZip import');
       }
-      const docIds = await MarkdownTransformer.importMarkdownZip({
-        collection: docCollection,
-        schema: getNEXIOWorkspaceSchema(),
-        imported: file,
-        extensions: getStoreManager().config.init().value.get('store'),
-      });
-      return {
-        docIds,
-      };
+      return requireImportService(importService).importMarkdownZip(
+        file,
+        context
+      );
     },
   },
   html: {
     fileOptions: { acceptType: 'Html', multiple: true },
-    importFunction: async (
-      docCollection,
-      files,
-      _handleImportNexioFile,
-      _organizeService,
-      _explorerIconService
-    ) => {
+    importFunction: async ({ docCollection, files }) => {
       const docIds: string[] = [];
       for (const file of files) {
         const text = await file.text();
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await HtmlTransformer.importHTMLToDoc({
           collection: docCollection,
-          schema: getNEXIOWorkspaceSchema(),
+          schema: getAFFiNEWorkspaceSchema(),
           extensions: getStoreManager().config.init().value.get('store'),
           html: text,
           fileName,
@@ -373,74 +341,66 @@ const importConfigs: Record<ImportType, ImportConfig> = {
   },
   notion: {
     fileOptions: { acceptType: 'Zip', multiple: false },
-    importFunction: async (
-      docCollection,
-      files,
-      _handleImportNexioFile,
-      organizeService,
-      explorerIconService
-    ) => {
+    importFunction: async ({ files, importService, context }) => {
       const file = files.length === 1 ? files[0] : null;
       if (!file) {
         throw new Error('Expected a single zip file for notion import');
       }
-      const { entryId, pageIds, isWorkspaceFile, folderHierarchy } =
-        await NotionHtmlTransformer.importNotionZip({
+      return requireImportService(importService).importNotionZip(file, context);
+    },
+  },
+  obsidian: {
+    fileOptions: { acceptType: 'Directory', multiple: false },
+    importFunction: async ({ files, importService, context }) => {
+      return requireImportService(importService).importObsidianVault(
+        files,
+        context
+      );
+    },
+  },
+  bear: {
+    fileOptions: { acceptType: 'Zip', multiple: false },
+    importFunction: async ({ files, importService, context }) => {
+      const file = files.length === 1 ? files[0] : null;
+      if (!file) {
+        throw new Error('Expected a single .bear2bk file for Bear import');
+      }
+      return requireImportService(importService).importBearBackup(
+        file,
+        context
+      );
+    },
+  },
+  oneNote: {
+    fileOptions: { acceptType: 'OneNote', multiple: false },
+    nativeOnly: true,
+    importFunction: async ({ files, importService, context }) => {
+      const file = files.length === 1 ? files[0] : null;
+      if (!file) {
+        throw new Error('Expected a single OneNote file');
+      }
+      return requireImportService(importService).importOneNote(file, context);
+    },
+  },
+  docx: {
+    fileOptions: { acceptType: 'Docx', multiple: false },
+    importFunction: async ({ docCollection, files }) => {
+      const docIds: string[] = [];
+      for (const file of files) {
+        const docId = await DocxTransformer.importDocx({
           collection: docCollection,
-          schema: getNEXIOWorkspaceSchema(),
+          schema: getAFFiNEWorkspaceSchema(),
           imported: file,
           extensions: getStoreManager().config.init().value.get('store'),
         });
-
-      let rootFolderId: string | undefined;
-
-      // Create folder structure if hierarchy exists and OrganizeService is available
-      if (
-        folderHierarchy &&
-        organizeService &&
-        folderHierarchy.children.size > 0
-      ) {
-        try {
-          const { folderId, docLinks } = createFolderStructure(
-            organizeService,
-            folderHierarchy,
-            null,
-            explorerIconService
-          );
-          rootFolderId = folderId || undefined;
-
-          // Create links for all documents to their respective folders
-          for (const { folderId, docId } of docLinks) {
-            const folder =
-              organizeService.folderTree.folderNode$(folderId).value;
-            if (folder) {
-              const index = folder.indexAt('after');
-              folder.createLink('doc', docId, index);
-            }
-          }
-        } catch (error) {
-          logger.warn('Failed to create folder structure:', error);
-          // Continue with import even if folder creation fails
-        }
+        if (docId) docIds.push(docId);
       }
-
-      return {
-        docIds: pageIds,
-        entryId,
-        isWorkspaceFile,
-        rootFolderId,
-      };
+      return { docIds };
     },
   },
   snapshot: {
     fileOptions: { acceptType: 'Zip', multiple: false },
-    importFunction: async (
-      docCollection,
-      files,
-      _handleImportNexioFile,
-      _organizeService,
-      _explorerIconService
-    ) => {
+    importFunction: async ({ docCollection, files }) => {
       const file = files.length === 1 ? files[0] : null;
       if (!file) {
         throw new Error('Expected a single zip file for snapshot import');
@@ -448,11 +408,11 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       const docIds = (
         await ZipTransformer.importDocs(
           docCollection,
-          getNEXIOWorkspaceSchema(),
+          getAFFiNEWorkspaceSchema(),
           file
         )
       )
-        .filter(doc => doc !== undefined)
+        .filter((doc): doc is NonNullable<typeof doc> => doc !== undefined)
         .map(doc => doc.id);
 
       return {
@@ -460,20 +420,15 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       };
     },
   },
-  dotnexiofile: {
+  dotaffinefile: {
     fileOptions: { acceptType: 'Skip', multiple: false },
-    importFunction: async (
-      _,
-      __,
-      handleImportNexioFile,
-      _organizeService,
-      _explorerIconService
-    ) => {
-      await handleImportNexioFile();
+    importFunction: async ({ importAffineFile }) => {
+      const workspace = await importAffineFile();
       return {
         docIds: [],
         entryId: undefined,
         isWorkspaceFile: true,
+        importedWorkspace: workspace,
       };
     },
   },
@@ -486,6 +441,7 @@ const ImportOptionItem = ({
   suffixTooltip,
   type,
   onImport,
+  disabled,
   ...props
 }: {
   label: string;
@@ -494,10 +450,16 @@ const ImportOptionItem = ({
   suffixTooltip?: string;
   type: ImportType;
   onImport: (type: ImportType) => void;
+  disabled?: boolean;
 }) => {
   const t = useI18n();
   return (
-    <div className={style.importItem} onClick={() => onImport(type)} {...props}>
+    <div
+      className={disabled ? style.importItemDisabled : style.importItem}
+      onClick={() => onImport(type)}
+      aria-disabled={disabled}
+      {...props}
+    >
       {prefixIcon}
       <div className={style.importItemLabel}>{t[label]()}</div>
       {suffixIcon && (
@@ -531,22 +493,28 @@ const ImportOptions = ({
             suffixTooltip,
             testId,
             type,
-          }) => (
-            <ImportOptionItem
-              key={key}
-              prefixIcon={prefixIcon}
-              suffixIcon={suffixIcon}
-              suffixTooltip={suffixTooltip}
-              label={label}
-              type={type}
-              onImport={onImport}
-              data-testid={testId}
-            />
-          )
+          }) => {
+            const disabled = Boolean(
+              importConfigs[type].nativeOnly && !BUILD_CONFIG.isElectron
+            );
+            return (
+              <ImportOptionItem
+                key={key}
+                prefixIcon={prefixIcon}
+                suffixIcon={suffixIcon}
+                suffixTooltip={suffixTooltip}
+                label={label}
+                type={type}
+                onImport={onImport}
+                disabled={disabled}
+                data-testid={testId}
+              />
+            );
+          }
         )}
       </div>
       <div className={style.importModalTip}>
-        {t['com.nexio.import.modal.tip']()}{' '}
+        {t['com.affine.import.modal.tip']()}{' '}
         <a
           className={style.link}
           href={BUILD_CONFIG.discordUrl}
@@ -561,29 +529,53 @@ const ImportOptions = ({
   );
 };
 
-const ImportingStatus = () => {
+const ImportingStatus = ({
+  progress,
+  onCancel,
+}: {
+  progress: { completed: number; total: number } | null;
+  onCancel: () => void;
+}) => {
   const t = useI18n();
+  const progressLabel =
+    progress && progress.total > 0
+      ? `${progress.completed}/${progress.total}`
+      : null;
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.nexio.import.status.importing.title']()}
+        {t['com.affine.import.status.importing.title']()}
       </div>
       <p className={style.importStatusContent}>
-        {t['com.nexio.import.status.importing.message']()}
+        {t['com.affine.import.status.importing.message']()}
       </p>
+      {progressLabel ? (
+        <div className={style.importProgress}>{progressLabel}</div>
+      ) : null}
+      <div className={style.importModalButtonContainer}>
+        <Button onClick={onCancel} variant="secondary">
+          {t['Cancel']()}
+        </Button>
+      </div>
     </>
   );
 };
 
-const SuccessStatus = ({ onComplete }: { onComplete: () => void }) => {
+const SuccessStatus = ({
+  warnings,
+  onComplete,
+}: {
+  warnings: string[];
+  onComplete: () => void;
+}) => {
   const t = useI18n();
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.nexio.import.status.success.title']()}
+        {t['com.affine.import.status.success.title']()}
       </div>
       <p className={style.importStatusContent}>
-        {t['com.nexio.import.status.success.message']()}{' '}
+        {t['com.affine.import.status.success.message']()}{' '}
         <a
           className={style.link}
           href={BUILD_CONFIG.discordUrl}
@@ -594,6 +586,13 @@ const SuccessStatus = ({ onComplete }: { onComplete: () => void }) => {
         </a>
         .
       </p>
+      {warnings.length ? (
+        <div className={style.importWarnings}>
+          {warnings.map((warning, index) => (
+            <div key={`${warning}-${index}`}>{warning}</div>
+          ))}
+        </div>
+      ) : null}
       <div className={style.importModalButtonContainer}>
         <Button onClick={onComplete} variant="primary">
           {t['Complete']()}
@@ -607,7 +606,7 @@ const ErrorStatus = ({
   error,
   onRetry,
 }: {
-  error: string | null;
+  error: ImportErrorState | null;
   onRetry: () => void;
 }) => {
   const t = useI18n();
@@ -615,11 +614,14 @@ const ErrorStatus = ({
   return (
     <>
       <div className={style.importModalTitle}>
-        {t['com.nexio.import.status.failed.title']()}
+        {t['com.affine.import.status.failed.title']()}
       </div>
       <p className={style.importStatusContent}>
-        {error || 'Unknown error occurred'}
+        {error?.message || 'Unknown error occurred'}
       </p>
+      {error?.sourcePath ? (
+        <div className={style.importErrorDetail}>{error.sourcePath}</div>
+      ) : null}
       <div className={style.importModalButtonContainer}>
         <Button
           onClick={() => {
@@ -642,12 +644,16 @@ export const ImportDialog = ({
 }: DialogComponentProps<WORKSPACE_DIALOG_SCHEMA['import']>) => {
   const t = useI18n();
   const [status, setStatus] = useState<Status>('idle');
-  const [importError, setImportError] = useState<string | null>(null);
+  const [importError, setImportError] = useState<ImportErrorState | null>(null);
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
+  const [importProgress, setImportProgress] = useState<{
+    completed: number;
+    total: number;
+  } | null>(null);
+  const importAbortControllerRef = useRef<AbortController | null>(null);
   const workspace = useService(WorkspaceService).workspace;
   const docCollection = workspace.docCollection;
-  const organizeService = useService(OrganizeService);
-  const explorerIconService = useService(ExplorerIconService);
+  const importService = useService(ImportService);
 
   const globalDialogService = useService(GlobalDialogService);
 
@@ -676,40 +682,54 @@ export const ImportDialog = ({
     [jumpToPage]
   );
 
-  const handleImportNexioFile = useMemo(() => {
+  const handleImportAffineFile = useMemo(() => {
     return async () => {
       track.$.navigationPanel.workspaceList.createWorkspace({
         control: 'import',
       });
 
       return new Promise<WorkspaceMetadata | undefined>((resolve, reject) => {
-        globalDialogService.open('import-workspace', undefined, payload => {
-          if (payload) {
-            handleCreatedWorkspace({ metadata: payload.workspace });
-            resolve(payload.workspace);
-          } else {
-            reject(new Error('No workspace imported'));
+        globalDialogService.open(
+          'import-workspace',
+          undefined,
+          (payload?: ImportedWorkspacePayload) => {
+            if (payload) {
+              resolve(payload.workspace);
+            } else {
+              reject(new Error('No workspace imported'));
+            }
           }
-        });
+        );
       });
     };
-  }, [globalDialogService, handleCreatedWorkspace]);
+  }, [globalDialogService]);
 
   const handleImport = useAsyncCallback(
     async (type: ImportType) => {
       setImportError(null);
+      setImportProgress(null);
       try {
         const importConfig = importConfigs[type];
+        if (importConfig.nativeOnly && !BUILD_CONFIG.isElectron) {
+          throw new Error(t['com.affine.import.onenote.desktop-only']());
+        }
         const { acceptType, multiple } = importConfig.fileOptions;
 
         const files =
           acceptType === 'Skip'
             ? []
-            : await openFilesWith(acceptType, multiple);
+            : acceptType === 'Directory'
+              ? await openDirectory({
+                  fileSystemAccess: false,
+                })
+              : await openFilesWith(acceptType, multiple, {
+                  fileSystemAccess: false,
+                  snapshot: shouldSnapshotPickedFiles(type, acceptType),
+                });
 
         if (!files || (files.length === 0 && acceptType !== 'Skip')) {
           throw new Error(
-            t['com.nexio.import.status.failed.message.no-file-selected']()
+            t['com.affine.import.status.failed.message.no-file-selected']()
           );
         }
 
@@ -721,16 +741,37 @@ export const ImportDialog = ({
           });
         }
 
-        const { docIds, entryId, isWorkspaceFile, rootFolderId } =
-          await importConfig.importFunction(
-            docCollection,
-            files,
-            handleImportNexioFile,
-            organizeService,
-            explorerIconService
-          );
+        const abortController = new AbortController();
+        importAbortControllerRef.current = abortController;
+        const {
+          docIds,
+          entryId,
+          isWorkspaceFile,
+          rootFolderId,
+          importedWorkspace,
+          warnings,
+        } = await importConfig.importFunction({
+          docCollection,
+          files,
+          importAffineFile: handleImportAffineFile,
+          importService,
+          context: {
+            signal: abortController.signal,
+            onProgress: progress => {
+              setImportProgress(progress);
+            },
+          },
+        });
+        importAbortControllerRef.current = null;
 
-        setImportResult({ docIds, entryId, isWorkspaceFile, rootFolderId });
+        setImportResult({
+          docIds,
+          entryId,
+          isWorkspaceFile,
+          rootFolderId,
+          importedWorkspace,
+          warnings,
+        });
         setStatus('success');
         track.$.importModal.$.import({
           type,
@@ -743,39 +784,62 @@ export const ImportDialog = ({
           control: 'import',
         });
       } catch (error) {
-        const errorMessage =
-          error instanceof Error ? error.message : 'Unknown error occurred';
-        setImportError(errorMessage);
+        importAbortControllerRef.current = null;
+        const structuredError = toImportErrorState(error);
+        setImportError(structuredError);
         setStatus('error');
         track.$.importModal.$.import({
           type,
           status: 'failed',
-          error: errorMessage || undefined,
+          error: structuredError.message || undefined,
         });
         logger.error('Failed to import', error);
       }
     },
-    [
-      docCollection,
-      explorerIconService,
-      handleImportNexioFile,
-      organizeService,
-      t,
-    ]
+    [docCollection, handleImportAffineFile, importService, t]
   );
 
+  const finishImport = useCallback(() => {
+    if (importResult?.importedWorkspace) {
+      handleCreatedWorkspace({ metadata: importResult.importedWorkspace });
+    }
+    if (!importResult) {
+      close();
+      return;
+    }
+    close({
+      docIds: importResult.docIds,
+      entryId: importResult.entryId,
+      isWorkspaceFile: importResult.isWorkspaceFile,
+    });
+  }, [close, handleCreatedWorkspace, importResult]);
+
   const handleComplete = useCallback(() => {
-    close(importResult || undefined);
-  }, [importResult, close]);
+    finishImport();
+  }, [finishImport]);
 
   const handleRetry = () => {
+    setImportProgress(null);
     setStatus('idle');
   };
 
+  const handleCancel = useCallback(() => {
+    importAbortControllerRef.current?.abort();
+  }, []);
+
   const statusComponents = {
     idle: <ImportOptions onImport={handleImport} />,
-    importing: <ImportingStatus />,
-    success: <SuccessStatus onComplete={handleComplete} />,
+    importing: (
+      <ImportingStatus progress={importProgress} onCancel={handleCancel} />
+    ),
+    success: (
+      <SuccessStatus
+        warnings={(importResult?.warnings ?? []).map(warning =>
+          typeof warning === 'string' ? warning : warning.message
+        )}
+        onComplete={handleComplete}
+      />
+    ),
     error: <ErrorStatus error={importError} onRetry={handleRetry} />,
   };
 
@@ -784,7 +848,7 @@ export const ImportDialog = ({
       open
       onOpenChange={(open: boolean) => {
         if (!open) {
-          close(importResult || undefined);
+          finishImport();
         }
       }}
       width={480}

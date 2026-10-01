@@ -1,7 +1,7 @@
-import { EditorService } from '@nexio/core/modules/editor';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useViewPosition } from '@nexio/core/modules/workbench/view/use-view-position';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { EditorService } from '@affine/core/modules/editor';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { useViewPosition } from '@affine/core/modules/workbench/view/use-view-position';
+import { useLiveData, useService } from '@toeverything/infra';
 
 export const useDetailPageHeaderResponsive = (availableWidth: number) => {
   const mode = useLiveData(useService(EditorService).editor.mode$);

@@ -1,10 +1,10 @@
-import type { AttachmentBlockModel } from '@canvas/nexio/model';
+import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 import {
   attachmentBlockAudioMediaKey,
   type AudioMediaKey,
   ObjectPool,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 
 import { AudioAttachmentBlock } from '../entities/audio-attachment-block';
 

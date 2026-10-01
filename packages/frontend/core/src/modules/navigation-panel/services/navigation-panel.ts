@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@ezeslucky/infra';
+import { LiveData, Service } from '@toeverything/infra';
 
 import type { GlobalCache } from '../../storage/providers/global';
 import type { WorkspaceService } from '../../workspace';

@@ -1,10 +1,10 @@
-import { DebugLogger } from '@nexio/debug';
+import { DebugLogger } from '@affine/debug';
 import {
   effect,
   exhaustMapWithTrailing,
   fromPromise,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { catchError, distinctUntilChanged, EMPTY, throttleTime } from 'rxjs';
 
 import type { AIButtonProvider } from '../provider/ai-button';

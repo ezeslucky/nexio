@@ -1,9 +1,9 @@
-import type { GetCurrentUserFeaturesQuery } from '@nexio/graphql';
+import type { GetCurrentUserFeaturesQuery } from '@affine/graphql';
 import {
   adminServerConfigQuery,
   FeatureType,
   getCurrentUserFeaturesQuery,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import { useEffect, useState } from 'react';
 
 import { useMutateQueryResource } from '../use-mutation';

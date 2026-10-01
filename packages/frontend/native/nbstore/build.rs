@@ -1,6 +1,6 @@
 use std::fs;
 
-use nexio_schema::get_migrator;
+use affine_schema::get_migrator;
 use sqlx::sqlite::SqliteConnectOptions;
 
 #[tokio::main]
@@ -9,7 +9,7 @@ async fn main() -> Result<(), std::io::Error> {
 
   // always start with a fresh database to have latest db schema
   let cwd = std::env::var("CARGO_MANIFEST_DIR").unwrap();
-  let db_path = format!("{cwd}/nexio.db");
+  let db_path = format!("{cwd}/affine.db");
 
   if fs::metadata(&db_path).is_ok() {
     fs::remove_file(&db_path)?;

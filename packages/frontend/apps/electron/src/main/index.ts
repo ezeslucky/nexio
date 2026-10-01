@@ -1,10 +1,8 @@
-import './security-restrictions';
-
 import path from 'node:path';
 
 import * as Sentry from '@sentry/electron/main';
 import { IPCMode } from '@sentry/electron/main';
-import { app } from 'electron';
+import { app, protocol } from 'electron';
 
 import { createApplicationMenu } from './application-menu/create';
 import { buildType, isDev, overrideSession } from './config';
@@ -15,6 +13,7 @@ import { registerHandlers } from './handlers';
 import { logger } from './logger';
 import { registerProtocol } from './protocol';
 import { setupRecordingFeature } from './recording/feature';
+import { registerSecurityRestrictions } from './security-restrictions';
 import { setupTrayState } from './tray';
 import { registerUpdater } from './updater';
 import { launch } from './windows-manager/launcher';
@@ -22,30 +21,51 @@ import { launchStage } from './windows-manager/stage';
 
 app.enableSandbox();
 
-app.commandLine.appendSwitch('enable-features', 'CSSTextAutoSpace');
 if (isDev) {
- 
-  app.commandLine.appendSwitch('host-rules', 'MAP 0.0.0.0 127.0.0.1');
+  // In electron the dev server will be resolved to 0.0.0.0, but it
+  // might be blocked by electron.
+  // See https://github.com/webpack/webpack-dev-server/pull/384
+  app.commandLine.appendSwitch('host-resolver-rules', 'MAP 0.0.0.0 127.0.0.1');
 }
+// https://github.com/electron/electron/issues/43556
+// // `CalculateNativeWinOcclusion` - Disable native window occlusion tracker (https://groups.google.com/a/chromium.org/g/embedder-dev/c/ZF3uHHyWLKw/m/VDN2hDXMAAAJ)
+const disabledFeatures = [
+  'PlzDedicatedWorker',
+  'CalculateNativeWinOcclusion',
+  // Disable Chrome autofill and password save prompts
+  'AutofillServerCommunication',
+  'AutofillProfileCleanup',
+  'AutofillAddressProfileSavePrompt',
+  'AutofillPaymentCards',
+  'AutofillEnableAccountWalletStorage',
+  'SavePasswordBubble',
+].join(',');
+app.commandLine.appendSwitch('disable-features', disabledFeatures);
+app.commandLine.appendSwitch('disable-blink-features', 'Autofill');
 
-app.commandLine.appendSwitch(
-  'disable-features',
-  'PlzDedicatedWorker,CalculateNativeWinOcclusion'
-);
-
-const featuresToEnable = `DocumentPolicyIncludeJSCallStacksInCrashReports,EarlyEstablishGpuChannel,EstablishGpuChannelAsync`;
-app.commandLine.appendSwitch('enable-features', featuresToEnable);
+// Following features are enabled from the runtime:
+// `DocumentPolicyIncludeJSCallStacksInCrashReports` - https://www.electronjs.org/docs/latest/api/web-frame-main#framecollectjavascriptcallstack-experimental
+// `EarlyEstablishGpuChannel` - Refs https://issues.chromium.org/issues/40208065
+// `EstablishGpuChannelAsync` - Refs https://issues.chromium.org/issues/40208065
+const enabledFeatures = [
+  'DocumentPolicyIncludeJSCallStacksInCrashReports',
+  'EarlyEstablishGpuChannel',
+  'EstablishGpuChannelAsync',
+].join(',');
+app.commandLine.appendSwitch('enable-features', enabledFeatures);
+const enabledBlinkFeatures = ['CSSTextAutoSpace', 'WebCodecs'].join(',');
+app.commandLine.appendSwitch('enable-blink-features', enabledBlinkFeatures);
 app.commandLine.appendSwitch('force-color-profile', 'srgb');
 
 // use the same data for internal & beta for testing
 if (overrideSession) {
-  const appName = buildType === 'stable' ? 'NEXIO' : `NEXIO-${buildType}`;
+  const appName = buildType === 'stable' ? 'AFFiNE' : `AFFiNE-${buildType}`;
   const userDataPath = path.join(app.getPath('appData'), appName);
   app.setPath('userData', userDataPath);
   app.setPath('sessionData', userDataPath);
 }
 
-// oxlint-disable-next-line @typescript-eslint/no-var-requires
+// oxlint-disable-next-line typescript/no-var-requires
 if (require('electron-squirrel-startup')) app.quit();
 
 if (process.env.SKIP_ONBOARDING) {
@@ -84,6 +104,7 @@ app.on('activate', () => {
 });
 
 setupDeepLink(app);
+registerSecurityRestrictions();
 
 /**
  * Create app window when background process will be ready
@@ -116,3 +137,16 @@ if (process.env.SENTRY_RELEASE) {
     appVersion: app.getVersion(),
   });
 }
+
+protocol.registerSchemesAsPrivileged([
+  {
+    scheme: 'assets',
+    privileges: {
+      secure: true,
+      corsEnabled: true,
+      supportFetchAPI: true,
+      standard: true,
+      stream: true,
+    },
+  },
+]);

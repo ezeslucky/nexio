@@ -1,12 +1,13 @@
-import { useI18n } from '@nexio/i18n';
+import { useI18n } from '@affine/i18n';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { Slot } from '@radix-ui/react-slot';
 import clsx from 'clsx';
 import {
   useCallback,
   useContext,
-  useEffect,
   useImperativeHandle,
+  useLayoutEffect,
+  useMemo,
   useState,
 } from 'react';
 
@@ -23,11 +24,18 @@ import {
 import * as styles from './styles.css';
 import { MobileMenuSubRaw } from './sub';
 
+const EMPTY_CONTENT_OPTIONS: NonNullable<MenuProps['contentOptions']> = {};
+
 export const MobileMenu = ({
   children,
   items,
   title,
-  contentOptions: {
+  contentOptions,
+  contentWrapperStyle,
+  rootOptions,
+  ref,
+}: MenuProps) => {
+  const {
     className,
     onPointerDownOutside,
     onInteractOutside,
@@ -37,18 +45,17 @@ export const MobileMenu = ({
     align: _align,
 
     ...otherContentOptions
-  } = {},
-  contentWrapperStyle,
-  rootOptions,
-  ref,
-}: MenuProps) => {
+  } = contentOptions ?? EMPTY_CONTENT_OPTIONS;
   const [subMenus, setSubMenus] = useState<SubMenuContent[]>([]);
   const [open, setOpen] = useState(false);
-  const mobileContextValue = {
-    subMenus,
-    setSubMenus,
-    setOpen,
-  };
+  const mobileContextValue = useMemo(
+    () => ({
+      subMenus,
+      setSubMenus,
+      setOpen,
+    }),
+    [subMenus]
+  );
 
   const { removeSubMenu, removeAllSubMenus } =
     useMobileSubMenuHelper(mobileContextValue);
@@ -64,12 +71,14 @@ export const MobileMenu = ({
   const activeIndex = subMenus.length;
 
   // dynamic height for slider
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (sliderElement && finalOpen) {
       const active = sliderElement.querySelector(
         `.${styles.menuContent}[data-index="${activeIndex}"]`
       );
       if (!active) return;
+
+      setSliderHeight(active.getBoundingClientRect().height);
 
       // for the situation that content is loaded asynchronously
       return observeResize(active, entry => {
@@ -94,6 +103,10 @@ export const MobileMenu = ({
       }
     },
     [onInteractOutside, onPointerDownOutside, removeAllSubMenus, rootOptions]
+  );
+  const mobileMenuContextValue = useMemo(
+    () => ({ subMenus, setSubMenus, setOpen: onOpenChange }),
+    [onOpenChange, subMenus]
   );
 
   useImperativeHandle(
@@ -139,14 +152,13 @@ export const MobileMenu = ({
   return (
     <>
       <Slot onClick={onItemClick}>{children}</Slot>
-      <MobileMenuContext.Provider
-        value={{ subMenus, setSubMenus, setOpen: onOpenChange }}
-      >
+      <MobileMenuContext.Provider value={mobileMenuContextValue}>
         <Modal
           open={finalOpen}
           onOpenChange={onOpenChange}
           width="100%"
           animation="slideBottom"
+          contentAnimation="none"
           withoutCloseButton={true}
           contentOptions={{
             className: clsx(className, styles.mobileMenuModal),
@@ -154,6 +166,7 @@ export const MobileMenu = ({
           }}
           contentWrapperStyle={contentWrapperStyle}
           disableAutoFocus={true}
+          preserveEditingFocusOnAction
         >
           <div
             ref={setSliderElement}
@@ -182,7 +195,7 @@ export const MobileMenu = ({
                   }}
                   prefixStyle={{ width: 24, height: 24 }}
                 >
-                  {sub.title || t['com.nexio.backButton']()}
+                  {sub.title || t['com.affine.backButton']()}
                 </Button>
                 <Scrollable.Root>
                   <Scrollable.Viewport className={styles.scrollArea}>

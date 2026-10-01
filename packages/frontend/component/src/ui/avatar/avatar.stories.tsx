@@ -16,26 +16,26 @@ const Template: StoryFn<AvatarProps> = args => <Avatar {...args} />;
 
 export const DefaultAvatar: StoryFn<AvatarProps> = Template.bind(undefined);
 DefaultAvatar.args = {
-  name: 'NEXIO',
-  url: 'https://nexio.pro/favicon-96.png',
+  name: 'AFFiNE',
+  url: 'https://affine.pro/favicon-96.png',
   size: 50,
 };
 export const Fallback: StoryFn<AvatarProps> = Template.bind(undefined);
 Fallback.args = {
-  name: 'NEXIO',
+  name: 'AFFiNE',
   size: 50,
 };
 export const ColorfulFallback: StoryFn<AvatarProps> = Template.bind(undefined);
 ColorfulFallback.args = {
   size: 50,
   colorfulFallback: true,
-  name: 'canvas',
+  name: 'blocksuite',
 };
 export const ColorfulFallbackWithDifferentSize: StoryFn<AvatarProps> = args => (
   <>
-    <Avatar {...args} size={20} colorfulFallback name="NEXIO" />
-    <Avatar {...args} size={40} colorfulFallback name="NEXIO" />
-    <Avatar {...args} size={60} colorfulFallback name="NEXIO" />
+    <Avatar {...args} size={20} colorfulFallback name="AFFiNE" />
+    <Avatar {...args} size={40} colorfulFallback name="AFFiNE" />
+    <Avatar {...args} size={60} colorfulFallback name="AFFiNE" />
   </>
 );
 export const WithHover: StoryFn<AvatarProps> = Template.bind(undefined);
@@ -64,7 +64,7 @@ const img =
 
 export const CustomizeBorderRadius: StoryFn<AvatarProps> = args => (
   <div style={{ display: 'flex', gap: 4 }}>
-    <Avatar {...args} size={60} colorfulFallback name="NEXIO" rounded={10} />
+    <Avatar {...args} size={60} colorfulFallback name="AFFiNE" rounded={10} />
     <Avatar {...args} size={60} url={img} rounded="10px" />
     <Avatar {...args} size={60} rounded={'5%'} name="C" />
   </div>

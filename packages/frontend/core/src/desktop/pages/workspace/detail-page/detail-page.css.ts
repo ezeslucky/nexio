@@ -1,6 +1,6 @@
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
-import { style } from '@vanilla-extract/css';
+import { globalStyle, style } from '@vanilla-extract/css';
 
 export const mainContainer = style({
   containerType: 'inline-size',
@@ -27,8 +27,8 @@ export const editorContainer = style({
   flex: 1,
   zIndex: 0,
 });
-// brings styles of .nexio-page-viewport from Canvas
-export const nexioDocViewport = style({
+// brings styles of .affine-page-viewport from blocksuite
+export const affineDocViewport = style({
   display: 'flex',
   flexDirection: 'column',
   containerName: 'viewport',
@@ -46,6 +46,20 @@ export const nexioDocViewport = style({
     },
   },
 });
+
+export const pageModeViewportContentBox = style({});
+globalStyle(
+  `${pageModeViewportContentBox} >:first-child:has(>[data-affine-editor-container])`,
+  { display: 'table !important', minWidth: '100%' }
+);
+globalStyle(
+  `${pageModeViewportContentBox} >:first-child:has(>[data-affine-editor-container].full-screen)`,
+  { display: 'block !important', width: '100%', minWidth: '100%' }
+);
+globalStyle(
+  `${pageModeViewportContentBox} >:first-child:has(>[data-editor-loading="true"]) > [data-editor-loading="true"]`,
+  { flex: 1, minHeight: '100%' }
+);
 
 export const scrollbar = style({
   marginRight: '4px',

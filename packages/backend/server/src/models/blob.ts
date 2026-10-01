@@ -1,59 +1,25 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 
+import { BlobInvalid } from '../base';
 import { BaseModel } from './base';
-
-export type CreateBlobInput = Prisma.BlobUncheckedCreateInput;
 
 /**
  * Blob Model
  */
 @Injectable()
 export class BlobModel extends BaseModel {
-  async upsert(blob: CreateBlobInput) {
-    return await this.db.blob.upsert({
-      where: {
-        workspaceId_key: {
-          workspaceId: blob.workspaceId,
-          key: blob.key,
-        },
-      },
-      update: {
-        mime: blob.mime,
-        size: blob.size,
-      },
-      create: {
-        workspaceId: blob.workspaceId,
-        key: blob.key,
-        mime: blob.mime,
-        size: blob.size,
-      },
+  async setReservationUploadId(
+    workspaceId: string,
+    key: string,
+    reservationId: string,
+    uploadId: string | null
+  ) {
+    const result = await this.db.blob.updateMany({
+      where: { workspaceId, key, reservationId, status: 'pending' },
+      data: { uploadId },
     });
-  }
-
-  async delete(workspaceId: string, key: string, permanently = false) {
-    if (permanently) {
-      await this.db.blob.deleteMany({
-        where: {
-          workspaceId,
-          key,
-        },
-      });
-      this.logger.log(`deleted blob ${workspaceId}/${key} permanently`);
-      return;
-    }
-
-    await this.db.blob.update({
-      where: {
-        workspaceId_key: {
-          workspaceId,
-          key,
-        },
-      },
-      data: {
-        deletedAt: new Date(),
-      },
-    });
+    if (result.count !== 1) throw new BlobInvalid('Blob reservation changed');
   }
 
   async get(workspaceId: string, key: string) {
@@ -76,18 +42,21 @@ export class BlobModel extends BaseModel {
         ...options?.where,
         workspaceId,
         deletedAt: null,
+        status: 'completed',
       },
       select: options?.select,
     });
   }
 
-  async listDeleted(workspaceId: string) {
-    return await this.db.blob.findMany({
+  async hasAny(workspaceId: string) {
+    const count = await this.db.blob.count({
       where: {
         workspaceId,
-        deletedAt: { not: null },
+        deletedAt: null,
+        status: 'completed',
       },
     });
+    return count > 0;
   }
 
   async totalSize(workspaceId: string) {
@@ -95,6 +64,7 @@ export class BlobModel extends BaseModel {
       where: {
         workspaceId,
         deletedAt: null,
+        status: 'completed',
       },
       _sum: {
         size: true,

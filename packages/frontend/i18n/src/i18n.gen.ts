@@ -34,7 +34,7 @@ function createProxy(initValue: (key: string) => any) {
         },
     });
 }
-export function useNEXIOI18N(): {
+export function useAFFiNEI18N(): {
     /**
       * `Back to my Content`
       */
@@ -48,9 +48,9 @@ export function useNEXIOI18N(): {
       */
     ["404.signOut"](): string;
     /**
-      * `NEXIO Cloud`
+      * `Nexio Cloud`
       */
-    ["NEXIO Cloud"](): string;
+    ["AFFiNE Cloud"](): string;
     /**
       * `All docs`
       */
@@ -184,15 +184,15 @@ export function useNEXIOI18N(): {
       */
     Enable(): string;
     /**
-      * `Enable NEXIO Cloud`
+      * `Enable Nexio Cloud`
       */
-    ["Enable NEXIO Cloud"](): string;
+    ["Enable AFFiNE Cloud"](): string;
     /**
-      * `If enabled, the data in this workspace will be backed up and synchronised via NEXIO Cloud.`
+      * `Your workspace will be synced and backed up with Nexio Sync.`
       */
-    ["Enable NEXIO Cloud Description"](): string;
+    ["Enable AFFiNE Cloud Description"](): string;
     /**
-      * `The following functions rely on NEXIO Cloud. All data is stored on the current device. You can enable NEXIO Cloud for this workspace to keep data in sync with the cloud.`
+      * `Some features need Nexio Sync. Web workspaces are saved in this browser and may be removed automatically when disk space is low. Enable Nexio Sync to keep this workspace safer and available across devices.`
       */
     ["Enable cloud hint"](): string;
     /**
@@ -438,7 +438,7 @@ export function useNEXIOI18N(): {
       */
     Select(): string;
     /**
-      * `Sign in`
+      * `Sign in to Nexio`
       */
     ["Sign in"](): string;
     /**
@@ -446,7 +446,7 @@ export function useNEXIOI18N(): {
       */
     ["Sign in and Enable"](): string;
     /**
-      * `Sign out`
+      * `Sign out of Nexio`
       */
     ["Sign out"](): string;
     /**
@@ -481,10 +481,6 @@ export function useNEXIOI18N(): {
       * `Sync`
       */
     Sync(): string;
-    /**
-      * `Synced with NEXIO Cloud`
-      */
-    ["Synced with NEXIO Cloud"](): string;
     /**
       * `Tags`
       */
@@ -612,3933 +608,4352 @@ export function useNEXIOI18N(): {
     /**
       * `Automatically check for new updates periodically.`
       */
-    ["com.nexio.AboutNexio.autoCheckUpdate.description"](): string;
+    ["com.affine.aboutAFFiNE.autoCheckUpdate.description"](): string;
     /**
       * `Check for updates automatically`
       */
-    ["com.nexio.AboutNexio.autoCheckUpdate.title"](): string;
+    ["com.affine.aboutAFFiNE.autoCheckUpdate.title"](): string;
     /**
       * `Automatically download updates (to this device).`
       */
-    ["com.nexio.AboutNexio.autoDownloadUpdate.description"](): string;
+    ["com.affine.aboutAFFiNE.autoDownloadUpdate.description"](): string;
     /**
       * `Download updates automatically`
       */
-    ["com.nexio.AboutNexio.autoDownloadUpdate.title"](): string;
+    ["com.affine.aboutAFFiNE.autoDownloadUpdate.title"](): string;
     /**
-      * `View the NEXIO Changelog.`
+      * `View the Nexio Changelog.`
       */
-    ["com.nexio.AboutNexio.changelog.description"](): string;
+    ["com.affine.aboutAFFiNE.changelog.description"](): string;
     /**
       * `Discover what's new`
       */
-    ["com.nexio.AboutNexio.changelog.title"](): string;
+    ["com.affine.aboutAFFiNE.changelog.title"](): string;
     /**
       * `Check for update`
       */
-    ["com.nexio.AboutNexio.checkUpdate.button.check"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.button.check"](): string;
     /**
       * `Download update`
       */
-    ["com.nexio.AboutNexio.checkUpdate.button.download"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.button.download"](): string;
     /**
       * `Restart to update`
       */
-    ["com.nexio.AboutNexio.checkUpdate.button.restart"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.button.restart"](): string;
     /**
       * `Retry`
       */
-    ["com.nexio.AboutNexio.checkUpdate.button.retry"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.button.retry"](): string;
     /**
       * `New version is ready`
       */
-    ["com.nexio.AboutNexio.checkUpdate.description"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.description"](): string;
     /**
       * `Manually check for updates.`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.check"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.check"](): string;
     /**
       * `Checking for updates...`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.checking"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.checking"](): string;
     /**
       * `Downloading the latest version...`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.downloading"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.downloading"](): string;
     /**
       * `Unable to connect to the update server.`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.error"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.error"](): string;
     /**
-      * `You've got the latest version of NEXIO.`
+      * `You've got the latest version of Nexio.`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.latest"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.latest"](): string;
     /**
       * `Restart to apply update.`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.restart"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.restart"](): string;
     /**
       * `New update available ({{version}})`
       */
-    ["com.nexio.AboutNexio.checkUpdate.subtitle.update-available"](options: {
+    ["com.affine.aboutAFFiNE.checkUpdate.subtitle.update-available"](options: {
         readonly version: string;
     }): string;
     /**
       * `Check for updates`
       */
-    ["com.nexio.AboutNexio.checkUpdate.title"](): string;
+    ["com.affine.aboutAFFiNE.checkUpdate.title"](): string;
     /**
       * `Communities`
       */
-    ["com.nexio.AboutNexio.community.title"](): string;
+    ["com.affine.aboutAFFiNE.community.title"](): string;
     /**
-      * `NEXIO community`
+      * `Nexio community`
       */
-    ["com.nexio.AboutNexio.contact.community"](): string;
+    ["com.affine.aboutAFFiNE.contact.community"](): string;
     /**
       * `Contact us`
       */
-    ["com.nexio.AboutNexio.contact.title"](): string;
+    ["com.affine.aboutAFFiNE.contact.title"](): string;
     /**
       * `Official website`
       */
-    ["com.nexio.AboutNexio.contact.website"](): string;
+    ["com.affine.aboutAFFiNE.contact.website"](): string;
     /**
       * `Privacy`
       */
-    ["com.nexio.AboutNexio.legal.privacy"](): string;
+    ["com.affine.aboutAFFiNE.legal.privacy"](): string;
     /**
       * `Legal Info`
       */
-    ["com.nexio.AboutNexio.legal.title"](): string;
+    ["com.affine.aboutAFFiNE.legal.title"](): string;
     /**
       * `Terms of use`
       */
-    ["com.nexio.AboutNexio.legal.tos"](): string;
+    ["com.affine.aboutAFFiNE.legal.tos"](): string;
     /**
-      * `Information about NEXIO`
+      * `Information about Nexio`
       */
-    ["com.nexio.AboutNexio.subtitle"](): string;
+    ["com.affine.aboutAFFiNE.subtitle"](): string;
     /**
-      * `About NEXIO`
+      * `About Nexio`
       */
-    ["com.nexio.AboutNexio.title"](): string;
+    ["com.affine.aboutAFFiNE.title"](): string;
     /**
       * `App version`
       */
-    ["com.nexio.AboutNexio.version.app"](): string;
+    ["com.affine.aboutAFFiNE.version.app"](): string;
     /**
       * `Editor version`
       */
-    ["com.nexio.AboutNexio.version.editor.title"](): string;
+    ["com.affine.aboutAFFiNE.version.editor.title"](): string;
     /**
-      * `Version`
+      * `Nexio Version`
       */
-    ["com.nexio.AboutNexio.version.title"](): string;
+    ["com.affine.aboutAFFiNE.version.title"](): string;
     /**
       * `Get started`
       */
-    ["com.nexio.ai-onboarding.edgeless.get-started"](): string;
+    ["com.affine.ai-onboarding.edgeless.get-started"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.nexio.ai-onboarding.edgeless.message"](): string;
+    ["com.affine.ai-onboarding.edgeless.message"](): string;
     /**
       * `Upgrade to unlimited usage`
       */
-    ["com.nexio.ai-onboarding.edgeless.purchase"](): string;
+    ["com.affine.ai-onboarding.edgeless.purchase"](): string;
     /**
       * `Right-clicking to select content AI`
       */
-    ["com.nexio.ai-onboarding.edgeless.title"](): string;
+    ["com.affine.ai-onboarding.edgeless.title"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.nexio.ai-onboarding.general.1.description"](): string;
+    ["com.affine.ai-onboarding.general.1.description"](): string;
     /**
-      * `Meet NEXIO AI`
+      * `Meet Nexio AI`
       */
-    ["com.nexio.ai-onboarding.general.1.title"](): string;
+    ["com.affine.ai-onboarding.general.1.title"](): string;
     /**
-      * `Answer questions, draft docs, visualize ideas - NEXIO AI can save you time at every possible step. Powered by GPT's most powerful model.`
+      * `Answer questions, draft docs, visualize ideas - Nexio AI can save you time at every possible step. Powered by GPT's most powerful model.`
       */
-    ["com.nexio.ai-onboarding.general.2.description"](): string;
+    ["com.affine.ai-onboarding.general.2.description"](): string;
     /**
-      * `Chat with NEXIO AI`
+      * `Chat with Nexio AI`
       */
-    ["com.nexio.ai-onboarding.general.2.title"](): string;
+    ["com.affine.ai-onboarding.general.2.title"](): string;
     /**
       * `Get insightful answer to any question, instantly.`
       */
-    ["com.nexio.ai-onboarding.general.3.description"](): string;
+    ["com.affine.ai-onboarding.general.3.description"](): string;
     /**
-      * `Edit inline with NEXIO AI`
+      * `Edit inline with Nexio AI`
       */
-    ["com.nexio.ai-onboarding.general.3.title"](): string;
+    ["com.affine.ai-onboarding.general.3.title"](): string;
     /**
       * `Expand thinking. Untangle complexity. Breakdown and visualise your content with crafted mindmap and presentable slides with one click.`
       */
-    ["com.nexio.ai-onboarding.general.4.description"](): string;
+    ["com.affine.ai-onboarding.general.4.description"](): string;
     /**
       * `Make mind-map and presents with AI`
       */
-    ["com.nexio.ai-onboarding.general.4.title"](): string;
+    ["com.affine.ai-onboarding.general.4.title"](): string;
     /**
-      * `NEXIO AI is ready`
+      * `Nexio AI is ready`
       */
-    ["com.nexio.ai-onboarding.general.5.title"](): string;
+    ["com.affine.ai-onboarding.general.5.title"](): string;
     /**
       * `Get started`
       */
-    ["com.nexio.ai-onboarding.general.get-started"](): string;
+    ["com.affine.ai-onboarding.general.get-started"](): string;
     /**
       * `Next`
       */
-    ["com.nexio.ai-onboarding.general.next"](): string;
+    ["com.affine.ai-onboarding.general.next"](): string;
     /**
       * `Back`
       */
-    ["com.nexio.ai-onboarding.general.prev"](): string;
+    ["com.affine.ai-onboarding.general.prev"](): string;
     /**
       * `Get unlimited usage`
       */
-    ["com.nexio.ai-onboarding.general.purchase"](): string;
+    ["com.affine.ai-onboarding.general.purchase"](): string;
     /**
       * `Remind me later`
       */
-    ["com.nexio.ai-onboarding.general.skip"](): string;
+    ["com.affine.ai-onboarding.general.skip"](): string;
     /**
       * `Try for free`
       */
-    ["com.nexio.ai-onboarding.general.try-for-free"](): string;
+    ["com.affine.ai-onboarding.general.try-for-free"](): string;
     /**
       * `Dismiss`
       */
-    ["com.nexio.ai-onboarding.local.action-dismiss"](): string;
+    ["com.affine.ai-onboarding.local.action-dismiss"](): string;
     /**
       * `Get started`
       */
-    ["com.nexio.ai-onboarding.local.action-get-started"](): string;
+    ["com.affine.ai-onboarding.local.action-get-started"](): string;
     /**
       * `Learn more`
       */
-    ["com.nexio.ai-onboarding.local.action-learn-more"](): string;
+    ["com.affine.ai-onboarding.local.action-learn-more"](): string;
     /**
       * `Lets you think bigger, create faster, work smarter and save time for every project.`
       */
-    ["com.nexio.ai-onboarding.local.message"](): string;
+    ["com.affine.ai-onboarding.local.message"](): string;
     /**
-      * `Meet NEXIO AI`
+      * `Meet Nexio AI`
       */
-    ["com.nexio.ai-onboarding.local.title"](): string;
+    ["com.affine.ai-onboarding.local.title"](): string;
     /**
       * `New`
       */
-    ["com.nexio.ai-scroll-tip.tag"](): string;
+    ["com.affine.ai-scroll-tip.tag"](): string;
     /**
-      * `Meet NEXIO AI`
+      * `Meet Nexio AI`
       */
-    ["com.nexio.ai-scroll-tip.title"](): string;
+    ["com.affine.ai-scroll-tip.title"](): string;
     /**
       * `View`
       */
-    ["com.nexio.ai-scroll-tip.view"](): string;
+    ["com.affine.ai-scroll-tip.view"](): string;
     /**
       * `Please switch to edgeless mode`
       */
-    ["com.nexio.ai.action.edgeless-only.dialog-title"](): string;
+    ["com.affine.ai.action.edgeless-only.dialog-title"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.ai.login-required.dialog-cancel"](): string;
+    ["com.affine.ai.login-required.dialog-cancel"](): string;
     /**
       * `Sign in`
       */
-    ["com.nexio.ai.login-required.dialog-confirm"](): string;
+    ["com.affine.ai.login-required.dialog-confirm"](): string;
     /**
-      * `To use NEXIO AI, please sign in to your NEXIO Cloud account.`
+      * `To use Nexio AI, please sign in to your Nexio Cloud account.`
       */
-    ["com.nexio.ai.login-required.dialog-content"](): string;
+    ["com.affine.ai.login-required.dialog-content"](): string;
     /**
       * `Sign in to continue`
       */
-    ["com.nexio.ai.login-required.dialog-title"](): string;
+    ["com.affine.ai.login-required.dialog-title"](): string;
     /**
       * `Failed to insert template, please try again.`
       */
-    ["com.nexio.ai.template-insert.failed"](): string;
+    ["com.affine.ai.template-insert.failed"](): string;
+    /**
+      * `Nexio AI`
+      */
+    ["com.affine.ai.chat-panel.title"](): string;
+    /**
+      * `Nexio AI is loading history...`
+      */
+    ["com.affine.ai.chat-panel.loading-history"](): string;
+    /**
+      * `Embedding {{done}}/{{total}}`
+      */
+    ["com.affine.ai.chat-panel.embedding-progress"](options: Readonly<{
+        done: string;
+        total: string;
+    }>): string;
+    /**
+      * `Local workspaces don't support attachments or references.`
+      */
+    ["com.affine.ai.chat-panel.local-workspace-context-unavailable"](): string;
+    /**
+      * `Reading canvas`
+      */
+    ["com.affine.ai.chat-panel.tool.canvas.reading"](): string;
+    /**
+      * `Read canvas of "{{title}}"`
+      */
+    ["com.affine.ai.chat-panel.tool.canvas.read"](options: {
+        readonly title: string;
+    }): string;
+    /**
+      * `Read canvas`
+      */
+    ["com.affine.ai.chat-panel.tool.canvas.read-untitled"](): string;
+    /**
+      * `Canvas read failed`
+      */
+    ["com.affine.ai.chat-panel.tool.canvas.failed"](): string;
+    /**
+      * `Canvas content`
+      */
+    ["com.affine.ai.chat-panel.tool.canvas.content"](): string;
+    /**
+      * `Current document`
+      */
+    ["com.affine.ai.chat-panel.tool.live.current-document"](): string;
+    /**
+      * `Checking editor state`
+      */
+    ["com.affine.ai.chat-panel.tool.live.state-checking"](): string;
+    /**
+      * `Checked editor state`
+      */
+    ["com.affine.ai.chat-panel.tool.live.state-checked"](): string;
+    /**
+      * `Reading selection`
+      */
+    ["com.affine.ai.chat-panel.tool.live.selection-reading"](): string;
+    /**
+      * `Read selection`
+      */
+    ["com.affine.ai.chat-panel.tool.live.selection-read"](): string;
+    /**
+      * `Reading editor content`
+      */
+    ["com.affine.ai.chat-panel.tool.live.content-reading"](): string;
+    /**
+      * `Read editor content`
+      */
+    ["com.affine.ai.chat-panel.tool.live.content-read"](): string;
+    /**
+      * `Reading outline of "{{title}}"`
+      */
+    ["com.affine.ai.chat-panel.tool.live.outline-reading"](options: {
+        readonly title: string;
+    }): string;
+    /**
+      * `Read outline of "{{title}}"`
+      */
+    ["com.affine.ai.chat-panel.tool.live.outline-read"](options: {
+        readonly title: string;
+    }): string;
+    /**
+      * `Reading canvas of "{{title}}"`
+      */
+    ["com.affine.ai.chat-panel.tool.live.canvas-reading"](options: {
+        readonly title: string;
+    }): string;
+    /**
+      * `Read canvas of "{{title}}"`
+      */
+    ["com.affine.ai.chat-panel.tool.live.canvas-read"](options: {
+        readonly title: string;
+    }): string;
+    /**
+      * `This view is not available in the current editor mode`
+      */
+    ["com.affine.ai.chat-panel.tool.live.view-unavailable"](): string;
+    /**
+      * `Live editor read failed`
+      */
+    ["com.affine.ai.chat-panel.tool.live.failed"](): string;
+    /**
+      * `{{mode}} mode`
+      */
+    ["com.affine.ai.chat-panel.tool.live.mode"](options: {
+        readonly mode: string;
+    }): string;
+    /**
+      * `{{count}} blocks`
+      */
+    ["com.affine.ai.chat-panel.tool.live.blocks"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `{{count}} elements`
+      */
+    ["com.affine.ai.chat-panel.tool.live.elements"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Document`
+      */
+    ["com.affine.ai.chat-panel.scope.document"](): string;
+    /**
+      * `Tag`
+      */
+    ["com.affine.ai.chat-panel.scope.tag"](): string;
+    /**
+      * `Collection`
+      */
+    ["com.affine.ai.chat-panel.scope.collection"](): string;
+    /**
+      * `Favorites`
+      */
+    ["com.affine.ai.chat-panel.scope.favorite"](): string;
+    /**
+      * `Attachment`
+      */
+    ["com.affine.ai.chat-panel.scope.artifact"](): string;
+    /**
+      * `{{count}} sources`
+      */
+    ["com.affine.ai.chat-panel.scope.sources"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Your selected sources are still processing. Try again shortly.`
+      */
+    ["com.affine.ai.error.selectedSourcesProcessing"](): string;
+    /**
+      * `Some selected sources could not be processed. Try again; if the problem continues, remove them and send a new message.`
+      */
+    ["com.affine.ai.error.selectedSourcesFailed"](): string;
+    /**
+      * `One or more selected sources are unavailable. Check the sources or workspace AI indexing settings, then retry.`
+      */
+    ["com.affine.ai.error.selectedSourcesUnavailable"](): string;
+    /**
+      * `Too many sources or too much content was selected. Select fewer sources and send a new message.`
+      */
+    ["com.affine.ai.error.selectedSourcesLimitExceeded"](): string;
+    /**
+      * `Retry`
+      */
+    ["com.affine.ai.error.retry"](): string;
+    /**
+      * `Working… · {{count}} actions`
+      */
+    ["com.affine.ai.chat-panel.tool-group.running"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Completed {{count}} actions`
+      */
+    ["com.affine.ai.chat-panel.tool-group.completed"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Completed {{count}} actions · {{failed}} failed`
+      */
+    ["com.affine.ai.chat-panel.tool-group.failed"](options: Readonly<{
+        count: string;
+        failed: string;
+    }>): string;
+    /**
+      * `Delete this history?`
+      */
+    ["com.affine.ai.chat-panel.session.delete.confirm.title"](): string;
+    /**
+      * `Do you want to delete this AI conversation history? Once deleted, it cannot be recovered.`
+      */
+    ["com.affine.ai.chat-panel.session.delete.confirm.message"](): string;
+    /**
+      * `History deleted`
+      */
+    ["com.affine.ai.chat-panel.session.delete.toast.success"](): string;
+    /**
+      * `Failed to delete history`
+      */
+    ["com.affine.ai.chat-panel.session.delete.toast.failed"](): string;
     /**
       * `All docs`
       */
-    ["com.nexio.all-pages.header"](): string;
+    ["com.affine.all-pages.header"](): string;
     /**
       * `Learn more`
       */
-    ["com.nexio.app-sidebar.learn-more"](): string;
+    ["com.affine.app-sidebar.learn-more"](): string;
     /**
       * `Star us`
       */
-    ["com.nexio.app-sidebar.star-us"](): string;
+    ["com.affine.app-sidebar.star-us"](): string;
     /**
       * `Download update`
       */
-    ["com.nexio.appUpdater.downloadUpdate"](): string;
+    ["com.affine.appUpdater.downloadUpdate"](): string;
     /**
       * `Downloading`
       */
-    ["com.nexio.appUpdater.downloading"](): string;
+    ["com.affine.appUpdater.downloading"](): string;
     /**
       * `Restart to install update`
       */
-    ["com.nexio.appUpdater.installUpdate"](): string;
+    ["com.affine.appUpdater.installUpdate"](): string;
     /**
       * `Open download page`
       */
-    ["com.nexio.appUpdater.openDownloadPage"](): string;
+    ["com.affine.appUpdater.openDownloadPage"](): string;
     /**
       * `Update available`
       */
-    ["com.nexio.appUpdater.updateAvailable"](): string;
+    ["com.affine.appUpdater.updateAvailable"](): string;
     /**
       * `Discover what's new!`
       */
-    ["com.nexio.appUpdater.whatsNew"](): string;
+    ["com.affine.appUpdater.whatsNew"](): string;
     /**
       * `Customise the appearance of the client.`
       */
-    ["com.nexio.appearanceSettings.clientBorder.description"](): string;
+    ["com.affine.appearanceSettings.clientBorder.description"](): string;
     /**
       * `Client border style`
       */
-    ["com.nexio.appearanceSettings.clientBorder.title"](): string;
+    ["com.affine.appearanceSettings.clientBorder.title"](): string;
     /**
       * `Choose your colour mode`
       */
-    ["com.nexio.appearanceSettings.color.description"](): string;
+    ["com.affine.appearanceSettings.color.description"](): string;
     /**
       * `Colour mode`
       */
-    ["com.nexio.appearanceSettings.color.title"](): string;
+    ["com.affine.appearanceSettings.color.title"](): string;
     /**
-      * `Edit all NEXIO theme variables here`
+      * `Edit all Nexio theme variables here`
       */
-    ["com.nexio.appearanceSettings.customize-theme.description"](): string;
+    ["com.affine.appearanceSettings.customize-theme.description"](): string;
     /**
       * `Customize Theme`
       */
-    ["com.nexio.appearanceSettings.customize-theme.title"](): string;
+    ["com.affine.appearanceSettings.customize-theme.title"](): string;
+    /**
+      * `Images`
+      */
+    ["com.affine.appearanceSettings.images.title"](): string;
+    /**
+      * `Smooth image rendering`
+      */
+    ["com.affine.appearanceSettings.images.antialiasing.title"](): string;
+    /**
+      * `When disabled, images are rendered using nearest-neighbor scaling for crisp pixels.`
+      */
+    ["com.affine.appearanceSettings.images.antialiasing.description"](): string;
     /**
       * `Reset all`
       */
-    ["com.nexio.appearanceSettings.customize-theme.reset"](): string;
+    ["com.affine.appearanceSettings.customize-theme.reset"](): string;
     /**
       * `Open Theme Editor`
       */
-    ["com.nexio.appearanceSettings.customize-theme.open"](): string;
+    ["com.affine.appearanceSettings.customize-theme.open"](): string;
     /**
       * `Choose your font style`
       */
-    ["com.nexio.appearanceSettings.font.description"](): string;
+    ["com.affine.appearanceSettings.font.description"](): string;
     /**
       * `Font style`
       */
-    ["com.nexio.appearanceSettings.font.title"](): string;
+    ["com.affine.appearanceSettings.font.title"](): string;
     /**
       * `Mono`
       */
-    ["com.nexio.appearanceSettings.fontStyle.mono"](): string;
+    ["com.affine.appearanceSettings.fontStyle.mono"](): string;
     /**
       * `Sans`
       */
-    ["com.nexio.appearanceSettings.fontStyle.sans"](): string;
+    ["com.affine.appearanceSettings.fontStyle.sans"](): string;
     /**
       * `Serif`
       */
-    ["com.nexio.appearanceSettings.fontStyle.serif"](): string;
+    ["com.affine.appearanceSettings.fontStyle.serif"](): string;
     /**
       * `Select the language for the interface.`
       */
-    ["com.nexio.appearanceSettings.language.description"](): string;
+    ["com.affine.appearanceSettings.language.description"](): string;
     /**
       * `Display language`
       */
-    ["com.nexio.appearanceSettings.language.title"](): string;
+    ["com.affine.appearanceSettings.language.title"](): string;
     /**
       * `Use background noise effect on the sidebar.`
       */
-    ["com.nexio.appearanceSettings.noisyBackground.description"](): string;
+    ["com.affine.appearanceSettings.noisyBackground.description"](): string;
     /**
       * `Noise background on the sidebar`
       */
-    ["com.nexio.appearanceSettings.noisyBackground.title"](): string;
+    ["com.affine.appearanceSettings.noisyBackground.title"](): string;
     /**
       * `Sidebar`
       */
-    ["com.nexio.appearanceSettings.sidebar.title"](): string;
+    ["com.affine.appearanceSettings.sidebar.title"](): string;
     /**
-      * `Customize your NEXIO appearance`
+      * `Customize your Nexio appearance`
       */
-    ["com.nexio.appearanceSettings.subtitle"](): string;
+    ["com.affine.appearanceSettings.subtitle"](): string;
     /**
       * `Menubar`
       */
-    ["com.nexio.appearanceSettings.menubar.title"](): string;
+    ["com.affine.appearanceSettings.menubar.title"](): string;
     /**
       * `Enable menubar app`
       */
-    ["com.nexio.appearanceSettings.menubar.toggle"](): string;
+    ["com.affine.appearanceSettings.menubar.toggle"](): string;
     /**
-      * `Display the menubar app in the tray for quick access to NEXIO or meeting recordings.`
+      * `Display the menubar app in the tray for quick access to Nexio or meeting recordings.`
       */
-    ["com.nexio.appearanceSettings.menubar.description"](): string;
+    ["com.affine.appearanceSettings.menubar.description"](): string;
+    /**
+      * `Window behavior`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.title"](): string;
+    /**
+      * `Quick open from tray icon`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.openOnLeftClick.toggle"](): string;
+    /**
+      * `Open Nexio when left‑clicking the tray icon.`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.openOnLeftClick.description"](): string;
+    /**
+      * `Minimize to tray`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.minimizeToTray.toggle"](): string;
+    /**
+      * `Minimize Nexio to the system tray.`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.minimizeToTray.description"](): string;
+    /**
+      * `Close to tray`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.closeToTray.toggle"](): string;
+    /**
+      * `Close Nexio to the system tray.`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.closeToTray.description"](): string;
+    /**
+      * `Start minimized`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.startMinimized.toggle"](): string;
+    /**
+      * `Start Nexio minimized to the system tray.`
+      */
+    ["com.affine.appearanceSettings.menubar.windowBehavior.startMinimized.description"](): string;
     /**
       * `Theme`
       */
-    ["com.nexio.appearanceSettings.theme.title"](): string;
+    ["com.affine.appearanceSettings.theme.title"](): string;
     /**
       * `Appearance settings`
       */
-    ["com.nexio.appearanceSettings.title"](): string;
+    ["com.affine.appearanceSettings.title"](): string;
     /**
       * `Use transparency effect on the sidebar.`
       */
-    ["com.nexio.appearanceSettings.translucentUI.description"](): string;
+    ["com.affine.appearanceSettings.translucentUI.description"](): string;
     /**
       * `Translucent UI on the sidebar`
       */
-    ["com.nexio.appearanceSettings.translucentUI.title"](): string;
+    ["com.affine.appearanceSettings.translucentUI.title"](): string;
     /**
       * `Show linked doc in sidebar`
       */
-    ["com.nexio.appearanceSettings.showLinkedDocInSidebar.title"](): string;
+    ["com.affine.appearanceSettings.showLinkedDocInSidebar.title"](): string;
     /**
       * `Control whether to show the structure of linked docs in the sidebar.`
       */
-    ["com.nexio.appearanceSettings.showLinkedDocInSidebar.description"](): string;
+    ["com.affine.appearanceSettings.showLinkedDocInSidebar.description"](): string;
     /**
-      * `Your current email is {{email}}. We'll send a temporary verification link to this email.`
+      * `Your current email is {{email}}. We'll send a confirmation link there first so you can securely switch to a new email address.`
       */
-    ["com.nexio.auth.change.email.message"](options: {
+    ["com.affine.auth.change.email.message"](options: {
         readonly email: string;
     }): string;
     /**
       * `Please enter your new email address below. We will send a verification link to this email address to complete the process.`
       */
-    ["com.nexio.auth.change.email.page.subtitle"](): string;
+    ["com.affine.auth.change.email.page.subtitle"](): string;
     /**
-      * `Congratulations! You have successfully updated the email address associated with your NEXIO Cloud account.`
+      * `Congratulations! You have successfully updated the email address associated with your Nexio account.`
       */
-    ["com.nexio.auth.change.email.page.success.subtitle"](): string;
+    ["com.affine.auth.change.email.page.success.subtitle"](): string;
     /**
       * `Email address updated!`
       */
-    ["com.nexio.auth.change.email.page.success.title"](): string;
+    ["com.affine.auth.change.email.page.success.title"](): string;
     /**
       * `Change email address`
       */
-    ["com.nexio.auth.change.email.page.title"](): string;
+    ["com.affine.auth.change.email.page.title"](): string;
     /**
       * `Forgot password`
       */
-    ["com.nexio.auth.forget"](): string;
+    ["com.affine.auth.forget"](): string;
     /**
       * `Later`
       */
-    ["com.nexio.auth.later"](): string;
+    ["com.affine.auth.later"](): string;
     /**
-      * `Open NEXIO`
+      * `Open Nexio`
       */
-    ["com.nexio.auth.open.nexio"](): string;
+    ["com.affine.auth.open.affine"](): string;
     /**
       * `Download app`
       */
-    ["com.nexio.auth.open.nexio.download-app"](): string;
+    ["com.affine.auth.open.affine.download-app"](): string;
     /**
       * `Try again`
       */
-    ["com.nexio.auth.open.nexio.try-again"](): string;
+    ["com.affine.auth.open.affine.try-again"](): string;
     /**
       * `Still have problems?`
       */
-    ["com.nexio.auth.open.nexio.still-have-problems"](): string;
+    ["com.affine.auth.open.affine.still-have-problems"](): string;
     /**
       * `Continue with Browser`
       */
-    ["com.nexio.auth.open.nexio.continue-with-browser"](): string;
+    ["com.affine.auth.open.affine.continue-with-browser"](): string;
     /**
       * `Download Latest Client`
       */
-    ["com.nexio.auth.open.nexio.download-latest-client"](): string;
+    ["com.affine.auth.open.affine.download-latest-client"](): string;
     /**
       * `Open here instead`
       */
-    ["com.nexio.auth.open.nexio.doc.open-here"](): string;
+    ["com.affine.auth.open.affine.doc.open-here"](): string;
     /**
       * `Edit settings`
       */
-    ["com.nexio.auth.open.nexio.doc.edit-settings"](): string;
+    ["com.affine.auth.open.affine.doc.edit-settings"](): string;
     /**
-      * `Requires NEXIO desktop app version 0.18 or later.`
+      * `Requires Nexio desktop app version 0.18 or later.`
       */
-    ["com.nexio.auth.open.nexio.doc.footer-text"](): string;
+    ["com.affine.auth.open.affine.doc.footer-text"](): string;
     /**
       * `Please set a password of {{min}}-{{max}} characters with both letters and numbers to continue signing up with `
       */
-    ["com.nexio.auth.page.sent.email.subtitle"](options: Readonly<{
+    ["com.affine.auth.page.sent.email.subtitle"](options: Readonly<{
         min: string;
         max: string;
     }>): string;
     /**
-      * `Welcome to NEXIO Cloud, you are almost there!`
+      * `Welcome to Nexio, you're almost there!`
       */
-    ["com.nexio.auth.page.sent.email.title"](): string;
+    ["com.affine.auth.page.sent.email.title"](): string;
     /**
       * `Password`
       */
-    ["com.nexio.auth.password"](): string;
+    ["com.affine.auth.password"](): string;
     /**
       * `Invalid password`
       */
-    ["com.nexio.auth.password.error"](): string;
+    ["com.affine.auth.password.error"](): string;
     /**
       * `Set password failed`
       */
-    ["com.nexio.auth.password.set-failed"](): string;
+    ["com.affine.auth.password.set-failed"](): string;
     /**
       * `Reset password`
       */
-    ["com.nexio.auth.reset.password"](): string;
+    ["com.affine.auth.reset.password"](): string;
     /**
       * `You will receive an email with a link to reset your password. Please check your inbox.`
       */
-    ["com.nexio.auth.reset.password.message"](): string;
+    ["com.affine.auth.reset.password.message"](): string;
     /**
       * `Password reset successful`
       */
-    ["com.nexio.auth.reset.password.page.success"](): string;
+    ["com.affine.auth.reset.password.page.success"](): string;
     /**
-      * `Reset your NEXIO Cloud password`
+      * `Reset your Nexio password`
       */
-    ["com.nexio.auth.reset.password.page.title"](): string;
+    ["com.affine.auth.reset.password.page.title"](): string;
     /**
       * `Send reset link`
       */
-    ["com.nexio.auth.send.reset.password.link"](): string;
+    ["com.affine.auth.send.reset.password.link"](): string;
     /**
       * `Send set link`
       */
-    ["com.nexio.auth.send.set.password.link"](): string;
+    ["com.affine.auth.send.set.password.link"](): string;
     /**
       * `Send verification link`
       */
-    ["com.nexio.auth.send.verify.email.hint"](): string;
+    ["com.affine.auth.send.verify.email.hint"](): string;
     /**
       * `Verification code`
       */
-    ["com.nexio.auth.sign.auth.code"](): string;
+    ["com.affine.auth.sign.auth.code"](): string;
     /**
       * `Invalid verification code`
       */
-    ["com.nexio.auth.sign.auth.code.invalid"](): string;
+    ["com.affine.auth.sign.auth.code.invalid"](): string;
     /**
       * `Continue with code`
       */
-    ["com.nexio.auth.sign.auth.code.continue"](): string;
+    ["com.affine.auth.sign.auth.code.continue"](): string;
     /**
       * `Resend code`
       */
-    ["com.nexio.auth.sign.auth.code.resend"](): string;
+    ["com.affine.auth.sign.auth.code.resend"](): string;
     /**
       * `Resend in {{second}}s`
       */
-    ["com.nexio.auth.sign.auth.code.resend.hint"](options: {
+    ["com.affine.auth.sign.auth.code.resend.hint"](options: {
         readonly second: string;
     }): string;
     /**
       * `Sent`
       */
-    ["com.nexio.auth.sent"](): string;
+    ["com.affine.auth.sent"](): string;
     /**
       * `The verification link failed to be sent, please try again later.`
       */
-    ["com.nexio.auth.sent.change.email.fail"](): string;
+    ["com.affine.auth.sent.change.email.fail"](): string;
     /**
       * `Verification link has been sent.`
       */
-    ["com.nexio.auth.sent.change.email.hint"](): string;
+    ["com.affine.auth.sent.change.email.hint"](): string;
     /**
       * `Reset password link has been sent.`
       */
-    ["com.nexio.auth.sent.change.password.hint"](): string;
+    ["com.affine.auth.sent.change.password.hint"](): string;
     /**
-      * `Your password has been updated! You can sign in NEXIO Cloud with new password!`
+      * `Your password has been updated! You can sign in to Nexio with the new password.`
       */
-    ["com.nexio.auth.sent.reset.password.success.message"](): string;
+    ["com.affine.auth.sent.reset.password.success.message"](): string;
     /**
       * `Set password link has been sent.`
       */
-    ["com.nexio.auth.sent.set.password.hint"](): string;
+    ["com.affine.auth.sent.set.password.hint"](): string;
     /**
-      * `Your password has saved! You can sign in NEXIO Cloud with email and password!`
+      * `Your password has been saved! You can sign in to Nexio with email and password.`
       */
-    ["com.nexio.auth.sent.set.password.success.message"](): string;
+    ["com.affine.auth.sent.set.password.success.message"](): string;
     /**
       * `Verification link has been sent.`
       */
-    ["com.nexio.auth.sent.verify.email.hint"](): string;
+    ["com.affine.auth.sent.verify.email.hint"](): string;
     /**
       * `Save Email`
       */
-    ["com.nexio.auth.set.email.save"](): string;
+    ["com.affine.auth.set.email.save"](): string;
     /**
       * `Set password`
       */
-    ["com.nexio.auth.set.password"](): string;
+    ["com.affine.auth.set.password"](): string;
     /**
       * `Please set a password of {{min}}-{{max}} characters with both letters and numbers to continue signing up with `
       */
-    ["com.nexio.auth.set.password.message"](options: Readonly<{
+    ["com.affine.auth.set.password.message"](options: Readonly<{
         min: string;
         max: string;
     }>): string;
     /**
       * `Maximum {{max}} characters`
       */
-    ["com.nexio.auth.set.password.message.maxlength"](options: {
+    ["com.affine.auth.set.password.message.maxlength"](options: {
         readonly max: string;
     }): string;
     /**
       * `Minimum {{min}} characters`
       */
-    ["com.nexio.auth.set.password.message.minlength"](options: {
+    ["com.affine.auth.set.password.message.minlength"](options: {
         readonly min: string;
     }): string;
     /**
       * `Password set successful`
       */
-    ["com.nexio.auth.set.password.page.success"](): string;
+    ["com.affine.auth.set.password.page.success"](): string;
     /**
-      * `Set your NEXIO Cloud password`
+      * `Set your Nexio password`
       */
-    ["com.nexio.auth.set.password.page.title"](): string;
+    ["com.affine.auth.set.password.page.title"](): string;
     /**
       * `Set a password at least {{min}} letters long`
       */
-    ["com.nexio.auth.set.password.placeholder"](options: {
+    ["com.affine.auth.set.password.placeholder"](options: {
         readonly min: string;
     }): string;
     /**
       * `Confirm password`
       */
-    ["com.nexio.auth.set.password.placeholder.confirm"](): string;
+    ["com.affine.auth.set.password.placeholder.confirm"](): string;
     /**
       * `Save password`
       */
-    ["com.nexio.auth.set.password.save"](): string;
+    ["com.affine.auth.set.password.save"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.auth.sign-out.confirm-modal.cancel"](): string;
+    ["com.affine.auth.sign-out.confirm-modal.cancel"](): string;
     /**
       * `Sign Out`
       */
-    ["com.nexio.auth.sign-out.confirm-modal.confirm"](): string;
+    ["com.affine.auth.sign-out.confirm-modal.confirm"](): string;
     /**
-      * `After signing out, the Cloud Workspaces associated with this account will be removed from the current device, and signing in again will add them back.`
+      * `After signing out, synced workspaces associated with this account will be removed from this device. Signing in again will add them back.`
       */
-    ["com.nexio.auth.sign-out.confirm-modal.description"](): string;
+    ["com.affine.auth.sign-out.confirm-modal.description"](): string;
     /**
       * `Sign out?`
       */
-    ["com.nexio.auth.sign-out.confirm-modal.title"](): string;
+    ["com.affine.auth.sign-out.confirm-modal.title"](): string;
     /**
       * `If you haven't received the email, please check your spam folder.`
       */
-    ["com.nexio.auth.sign.auth.code.message"](): string;
+    ["com.affine.auth.sign.auth.code.message"](): string;
     /**
       * `Sign in with magic link`
       */
-    ["com.nexio.auth.sign.auth.code.send-email.sign-in"](): string;
+    ["com.affine.auth.sign.auth.code.send-email.sign-in"](): string;
     /**
       * `Terms of conditions`
       */
-    ["com.nexio.auth.sign.condition"](): string;
+    ["com.affine.auth.sign.condition"](): string;
     /**
       * `Continue with email`
       */
-    ["com.nexio.auth.sign.email.continue"](): string;
+    ["com.affine.auth.sign.email.continue"](): string;
     /**
       * `Invalid email`
       */
-    ["com.nexio.auth.sign.email.error"](): string;
+    ["com.affine.auth.sign.email.error"](): string;
     /**
       * `Enter your email address`
       */
-    ["com.nexio.auth.sign.email.placeholder"](): string;
+    ["com.affine.auth.sign.email.placeholder"](): string;
     /**
-      * `Sign in`
+      * `Sign in to Nexio`
       */
-    ["com.nexio.auth.sign.in"](): string;
+    ["com.affine.auth.sign.in"](): string;
     /**
       * `Confirm your email`
       */
-    ["com.nexio.auth.sign.in.sent.email.subtitle"](): string;
+    ["com.affine.auth.sign.in.sent.email.subtitle"](): string;
     /**
-      * `Self-Hosted`
+      * `Self-hosted Nexio`
       */
-    ["com.nexio.auth.sign.add-selfhosted.title"](): string;
+    ["com.affine.auth.sign.add-selfhosted.title"](): string;
     /**
-      * `Connect to a Self-Hosted Instance`
+      * `Connect to your Nexio server`
       */
-    ["com.nexio.auth.sign.add-selfhosted"](): string;
+    ["com.affine.auth.sign.add-selfhosted"](): string;
     /**
-      * `Server URL`
+      * `Nexio Server URL`
       */
-    ["com.nexio.auth.sign.add-selfhosted.baseurl"](): string;
+    ["com.affine.auth.sign.add-selfhosted.baseurl"](): string;
     /**
       * `Connect`
       */
-    ["com.nexio.auth.sign.add-selfhosted.connect-button"](): string;
+    ["com.affine.auth.sign.add-selfhosted.connect-button"](): string;
     /**
       * `Unable to connect to the server.`
       */
-    ["com.nexio.auth.sign.add-selfhosted.error"](): string;
+    ["com.affine.auth.sign.add-selfhosted.error"](): string;
     /**
       * `Privacy policy`
       */
-    ["com.nexio.auth.sign.policy"](): string;
+    ["com.affine.auth.sign.policy"](): string;
     /**
       * `Sign up`
       */
-    ["com.nexio.auth.sign.up"](): string;
+    ["com.affine.auth.sign.up"](): string;
     /**
       * `Create your account`
       */
-    ["com.nexio.auth.sign.up.sent.email.subtitle"](): string;
+    ["com.affine.auth.sign.up.sent.email.subtitle"](): string;
     /**
-      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the NEXIO app.`
+      * `The app will automatically open or redirect to the web version. If you encounter any issues, you can also click the button below to manually open the Nexio app.`
       */
-    ["com.nexio.auth.sign.up.success.subtitle"](): string;
+    ["com.affine.auth.sign.up.success.subtitle"](): string;
     /**
       * `Your account has been created and you're now signed in!`
       */
-    ["com.nexio.auth.sign.up.success.title"](): string;
+    ["com.affine.auth.sign.up.success.title"](): string;
     /**
-      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the NEXIO app.`
+      * `You have successfully signed in. The app will automatically open or redirect to the web version. if you encounter any issues, you can also click the button below to  manually open the Nexio app.`
       */
-    ["com.nexio.auth.signed.success.subtitle"](): string;
+    ["com.affine.auth.signed.success.subtitle"](): string;
     /**
       * `You're almost there!`
       */
-    ["com.nexio.auth.signed.success.title"](): string;
+    ["com.affine.auth.signed.success.title"](): string;
     /**
       * `Server error, please try again later.`
       */
-    ["com.nexio.auth.toast.message.failed"](): string;
+    ["com.affine.auth.toast.message.failed"](): string;
     /**
-      * `You have been signed in, start to sync your data with NEXIO Cloud!`
+      * `You have signed in to Nexio.`
       */
-    ["com.nexio.auth.toast.message.signed-in"](): string;
+    ["com.affine.auth.toast.message.signed-in"](): string;
     /**
       * `Unable to sign in`
       */
-    ["com.nexio.auth.toast.title.failed"](): string;
+    ["com.affine.auth.toast.title.failed"](): string;
     /**
       * `Signed in`
       */
-    ["com.nexio.auth.toast.title.signed-in"](): string;
+    ["com.affine.auth.toast.title.signed-in"](): string;
     /**
-      * `Your current email is {{email}}. We'll send a temporary verification link to this email.`
+      * `Your current email is {{email}}. We'll send a verification link to this email so you can confirm it belongs to you.`
       */
-    ["com.nexio.auth.verify.email.message"](options: {
+    ["com.affine.auth.verify.email.message"](options: {
         readonly email: string;
     }): string;
     /**
       * `Back`
       */
-    ["com.nexio.backButton"](): string;
+    ["com.affine.backButton"](): string;
     /**
-      * `Your local data is stored in the browser and may be lost. Don't risk it - enable cloud now!`
+      * `Your workspace is saved in this browser. When disk space is low, the browser may remove it automatically. Enable Nexio Sync to keep it safer.`
       */
-    ["com.nexio.banner.local-warning"](): string;
+    ["com.affine.banner.local-warning"](): string;
     /**
-      * `NEXIO Cloud`
+      * `Nexio Cloud`
       */
-    ["com.nexio.brand.nexioCloud"](): string;
+    ["com.affine.brand.affineCloud"](): string;
     /**
       * `Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec`
       */
-    ["com.nexio.calendar-date-picker.month-names"](): string;
+    ["com.affine.calendar-date-picker.month-names"](): string;
     /**
       * `Today`
       */
-    ["com.nexio.calendar-date-picker.today"](): string;
+    ["com.affine.calendar-date-picker.today"](): string;
     /**
       * `Su,Mo,Tu,We,Th,Fr,Sa`
       */
-    ["com.nexio.calendar-date-picker.week-days"](): string;
+    ["com.affine.calendar-date-picker.week-days"](): string;
     /**
-      * `Host by NEXIO.Pro, Save, sync, and backup all your data.`
+      * `Host by Nexio.Pro, Save, sync, and backup all your data.`
       */
-    ["com.nexio.cloud-scroll-tip.caption"](): string;
+    ["com.affine.cloud-scroll-tip.caption"](): string;
     /**
-      * `NEXIO Cloud`
+      * `Nexio Cloud`
       */
-    ["com.nexio.cloud-scroll-tip.title"](): string;
+    ["com.affine.cloud-scroll-tip.title"](): string;
     /**
       * `Collections`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.collections"](): string;
+    ["com.affine.cmdk.affine.category.affine.collections"](): string;
     /**
       * `Create`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.creation"](): string;
+    ["com.affine.cmdk.affine.category.affine.creation"](): string;
     /**
       * `Edgeless`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.edgeless"](): string;
+    ["com.affine.cmdk.affine.category.affine.edgeless"](): string;
     /**
       * `General`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.general"](): string;
+    ["com.affine.cmdk.affine.category.affine.general"](): string;
     /**
       * `Help`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.help"](): string;
+    ["com.affine.cmdk.affine.category.affine.help"](): string;
     /**
       * `Layout controls`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.layout"](): string;
+    ["com.affine.cmdk.affine.category.affine.layout"](): string;
     /**
       * `Navigation`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.navigation"](): string;
+    ["com.affine.cmdk.affine.category.affine.navigation"](): string;
     /**
       * `Docs`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.pages"](): string;
+    ["com.affine.cmdk.affine.category.affine.pages"](): string;
     /**
       * `Recent`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.recent"](): string;
+    ["com.affine.cmdk.affine.category.affine.recent"](): string;
     /**
       * `Settings`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.settings"](): string;
+    ["com.affine.cmdk.affine.category.affine.settings"](): string;
     /**
       * `Tags`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.tags"](): string;
+    ["com.affine.cmdk.affine.category.affine.tags"](): string;
     /**
       * `Updates`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.updates"](): string;
+    ["com.affine.cmdk.affine.category.affine.updates"](): string;
     /**
       * `Edgeless commands`
       */
-    ["com.nexio.cmdk.nexio.category.editor.edgeless"](): string;
+    ["com.affine.cmdk.affine.category.editor.edgeless"](): string;
     /**
       * `Insert object`
       */
-    ["com.nexio.cmdk.nexio.category.editor.insert-object"](): string;
+    ["com.affine.cmdk.affine.category.editor.insert-object"](): string;
     /**
       * `Doc Commands`
       */
-    ["com.nexio.cmdk.nexio.category.editor.page"](): string;
+    ["com.affine.cmdk.affine.category.editor.page"](): string;
     /**
       * `Results`
       */
-    ["com.nexio.cmdk.nexio.category.results"](): string;
+    ["com.affine.cmdk.affine.category.results"](): string;
     /**
       * `Change client border style to`
       */
-    ["com.nexio.cmdk.nexio.client-border-style.to"](): string;
+    ["com.affine.cmdk.affine.client-border-style.to"](): string;
     /**
       * `Change colour mode to`
       */
-    ["com.nexio.cmdk.nexio.color-mode.to"](): string;
+    ["com.affine.cmdk.affine.color-mode.to"](): string;
     /**
       * `Contact us`
       */
-    ["com.nexio.cmdk.nexio.contact-us"](): string;
+    ["com.affine.cmdk.affine.contact-us"](): string;
     /**
       * `Create "{{keyWord}}" doc and insert`
       */
-    ["com.nexio.cmdk.nexio.create-new-doc-and-insert"](options: {
+    ["com.affine.cmdk.affine.create-new-doc-and-insert"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `New "{{keyWord}}" edgeless`
       */
-    ["com.nexio.cmdk.nexio.create-new-edgeless-as"](options: {
+    ["com.affine.cmdk.affine.create-new-edgeless-as"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `New "{{keyWord}}" page`
       */
-    ["com.nexio.cmdk.nexio.create-new-page-as"](options: {
+    ["com.affine.cmdk.affine.create-new-page-as"](options: {
         readonly keyWord: string;
     }): string;
     /**
       * `Change display language to`
       */
-    ["com.nexio.cmdk.nexio.display-language.to"](): string;
+    ["com.affine.cmdk.affine.display-language.to"](): string;
     /**
       * `Add to favourites`
       */
-    ["com.nexio.cmdk.nexio.editor.add-to-favourites"](): string;
+    ["com.affine.cmdk.affine.editor.add-to-favourites"](): string;
     /**
       * `Start presentation`
       */
-    ["com.nexio.cmdk.nexio.editor.edgeless.presentation-start"](): string;
+    ["com.affine.cmdk.affine.editor.edgeless.presentation-start"](): string;
     /**
       * `Remove from favourites`
       */
-    ["com.nexio.cmdk.nexio.editor.remove-from-favourites"](): string;
+    ["com.affine.cmdk.affine.editor.remove-from-favourites"](): string;
     /**
       * `Restore from trash`
       */
-    ["com.nexio.cmdk.nexio.editor.restore-from-trash"](): string;
+    ["com.affine.cmdk.affine.editor.restore-from-trash"](): string;
     /**
       * `Reveal doc history modal`
       */
-    ["com.nexio.cmdk.nexio.editor.reveal-page-history-modal"](): string;
+    ["com.affine.cmdk.affine.editor.reveal-page-history-modal"](): string;
     /**
       * `This doc has been moved to the trash, you can either restore or permanently delete it.`
       */
-    ["com.nexio.cmdk.nexio.editor.trash-footer-hint"](): string;
+    ["com.affine.cmdk.affine.editor.trash-footer-hint"](): string;
     /**
       * `Change font style to`
       */
-    ["com.nexio.cmdk.nexio.font-style.to"](): string;
+    ["com.affine.cmdk.affine.font-style.to"](): string;
     /**
       * `Change full width layout to`
       */
-    ["com.nexio.cmdk.nexio.full-width-layout.to"](): string;
+    ["com.affine.cmdk.affine.full-width-layout.to"](): string;
     /**
       * `Change default width for new pages in to standard`
       */
-    ["com.nexio.cmdk.nexio.default-page-width-layout.standard"](): string;
+    ["com.affine.cmdk.affine.default-page-width-layout.standard"](): string;
     /**
       * `Change default width for new pages in to full width`
       */
-    ["com.nexio.cmdk.nexio.default-page-width-layout.full-width"](): string;
+    ["com.affine.cmdk.affine.default-page-width-layout.full-width"](): string;
     /**
       * `Change current page width to standard`
       */
-    ["com.nexio.cmdk.nexio.current-page-width-layout.standard"](): string;
+    ["com.affine.cmdk.affine.current-page-width-layout.standard"](): string;
     /**
       * `Change current page width to full width`
       */
-    ["com.nexio.cmdk.nexio.current-page-width-layout.full-width"](): string;
+    ["com.affine.cmdk.affine.current-page-width-layout.full-width"](): string;
     /**
       * `Getting started`
       */
-    ["com.nexio.cmdk.nexio.getting-started"](): string;
+    ["com.affine.cmdk.affine.getting-started"](): string;
     /**
       * `Import workspace`
       */
-    ["com.nexio.cmdk.nexio.import-workspace"](): string;
+    ["com.affine.cmdk.affine.import-workspace"](): string;
     /**
       * `Insert this link to the current doc`
       */
-    ["com.nexio.cmdk.nexio.insert-link"](): string;
+    ["com.affine.cmdk.affine.insert-link"](): string;
     /**
       * `Collapse left sidebar`
       */
-    ["com.nexio.cmdk.nexio.left-sidebar.collapse"](): string;
+    ["com.affine.cmdk.affine.left-sidebar.collapse"](): string;
     /**
       * `Expand left sidebar`
       */
-    ["com.nexio.cmdk.nexio.left-sidebar.expand"](): string;
+    ["com.affine.cmdk.affine.left-sidebar.expand"](): string;
     /**
       * `Go to all docs`
       */
-    ["com.nexio.cmdk.nexio.navigation.goto-all-pages"](): string;
+    ["com.affine.cmdk.affine.navigation.goto-all-pages"](): string;
     /**
       * `Go to edgeless list`
       */
-    ["com.nexio.cmdk.nexio.navigation.goto-edgeless-list"](): string;
+    ["com.affine.cmdk.affine.navigation.goto-edgeless-list"](): string;
     /**
       * `Go to page list`
       */
-    ["com.nexio.cmdk.nexio.navigation.goto-page-list"](): string;
+    ["com.affine.cmdk.affine.navigation.goto-page-list"](): string;
     /**
       * `Go to trash`
       */
-    ["com.nexio.cmdk.nexio.navigation.goto-trash"](): string;
+    ["com.affine.cmdk.affine.navigation.goto-trash"](): string;
     /**
       * `Go to workspace`
       */
-    ["com.nexio.cmdk.nexio.navigation.goto-workspace"](): string;
+    ["com.affine.cmdk.affine.navigation.goto-workspace"](): string;
     /**
       * `Go to account settings`
       */
-    ["com.nexio.cmdk.nexio.navigation.open-account-settings"](): string;
+    ["com.affine.cmdk.affine.navigation.open-account-settings"](): string;
     /**
       * `Go to Settings`
       */
-    ["com.nexio.cmdk.nexio.navigation.open-settings"](): string;
+    ["com.affine.cmdk.affine.navigation.open-settings"](): string;
     /**
       * `New edgeless`
       */
-    ["com.nexio.cmdk.nexio.new-edgeless-page"](): string;
+    ["com.affine.cmdk.affine.new-edgeless-page"](): string;
     /**
       * `New page`
       */
-    ["com.nexio.cmdk.nexio.new-page"](): string;
+    ["com.affine.cmdk.affine.new-page"](): string;
     /**
       * `New workspace`
       */
-    ["com.nexio.cmdk.nexio.new-workspace"](): string;
+    ["com.affine.cmdk.affine.new-workspace"](): string;
     /**
       * `Change noise background on the sidebar to`
       */
-    ["com.nexio.cmdk.nexio.noise-background-on-the-sidebar.to"](): string;
+    ["com.affine.cmdk.affine.noise-background-on-the-sidebar.to"](): string;
     /**
       * `Restart to upgrade`
       */
-    ["com.nexio.cmdk.nexio.restart-to-upgrade"](): string;
+    ["com.affine.cmdk.affine.restart-to-upgrade"](): string;
     /**
       * `OFF`
       */
-    ["com.nexio.cmdk.nexio.switch-state.off"](): string;
+    ["com.affine.cmdk.affine.switch-state.off"](): string;
     /**
       * `ON`
       */
-    ["com.nexio.cmdk.nexio.switch-state.on"](): string;
+    ["com.affine.cmdk.affine.switch-state.on"](): string;
     /**
       * `Change translucent UI on the sidebar to`
       */
-    ["com.nexio.cmdk.nexio.translucent-ui-on-the-sidebar.to"](): string;
+    ["com.affine.cmdk.affine.translucent-ui-on-the-sidebar.to"](): string;
     /**
       * `What's new`
       */
-    ["com.nexio.cmdk.nexio.whats-new"](): string;
+    ["com.affine.cmdk.affine.whats-new"](): string;
     /**
       * `Search docs or paste link...`
       */
-    ["com.nexio.cmdk.docs.placeholder"](): string;
+    ["com.affine.cmdk.docs.placeholder"](): string;
     /**
       * `Insert links`
       */
-    ["com.nexio.cmdk.insert-links"](): string;
+    ["com.affine.cmdk.insert-links"](): string;
     /**
       * `No results found`
       */
-    ["com.nexio.cmdk.no-results"](): string;
+    ["com.affine.cmdk.no-results"](): string;
     /**
       * `No results found for`
       */
-    ["com.nexio.cmdk.no-results-for"](): string;
+    ["com.affine.cmdk.no-results-for"](): string;
     /**
       * `Type a command or search anything...`
       */
-    ["com.nexio.cmdk.placeholder"](): string;
+    ["com.affine.cmdk.placeholder"](): string;
     /**
-      * `Switch to $t(com.nexio.edgelessMode)`
+      * `Switch to $t(com.affine.edgelessMode)`
       */
-    ["com.nexio.cmdk.switch-to-edgeless"](): string;
+    ["com.affine.cmdk.switch-to-edgeless"](): string;
     /**
-      * `Switch to $t(com.nexio.pageMode)`
+      * `Switch to $t(com.affine.pageMode)`
       */
-    ["com.nexio.cmdk.switch-to-page"](): string;
+    ["com.affine.cmdk.switch-to-page"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.collection-bar.action.tooltip.delete"](): string;
+    ["com.affine.collection-bar.action.tooltip.delete"](): string;
     /**
       * `Edit`
       */
-    ["com.nexio.collection-bar.action.tooltip.edit"](): string;
+    ["com.affine.collection-bar.action.tooltip.edit"](): string;
     /**
       * `Pin to sidebar`
       */
-    ["com.nexio.collection-bar.action.tooltip.pin"](): string;
+    ["com.affine.collection-bar.action.tooltip.pin"](): string;
     /**
       * `Unpin`
       */
-    ["com.nexio.collection-bar.action.tooltip.unpin"](): string;
+    ["com.affine.collection-bar.action.tooltip.unpin"](): string;
     /**
       * `Do you want to add a document to the current collection? If it is filtered based on rules, this will add a set of included rules.`
       */
-    ["com.nexio.collection.add-doc.confirm.description"](): string;
+    ["com.affine.collection.add-doc.confirm.description"](): string;
     /**
       * `Add new doc to this collection`
       */
-    ["com.nexio.collection.add-doc.confirm.title"](): string;
+    ["com.affine.collection.add-doc.confirm.title"](): string;
     /**
       * `Doc already exists`
       */
-    ["com.nexio.collection.addPage.alreadyExists"](): string;
+    ["com.affine.collection.addPage.alreadyExists"](): string;
     /**
       * `Added successfully`
       */
-    ["com.nexio.collection.addPage.success"](): string;
+    ["com.affine.collection.addPage.success"](): string;
     /**
       * `Add docs`
       */
-    ["com.nexio.collection.addPages"](): string;
+    ["com.affine.collection.addPages"](): string;
     /**
       * `Add rules`
       */
-    ["com.nexio.collection.addRules"](): string;
+    ["com.affine.collection.addRules"](): string;
     /**
       * `All collections`
       */
-    ["com.nexio.collection.allCollections"](): string;
+    ["com.affine.collection.allCollections"](): string;
     /**
       * `Empty collection`
       */
-    ["com.nexio.collection.emptyCollection"](): string;
+    ["com.affine.collection.emptyCollection"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.nexio.collection.emptyCollectionDescription"](): string;
+    ["com.affine.collection.emptyCollectionDescription"](): string;
     /**
       * `HELP INFO`
       */
-    ["com.nexio.collection.helpInfo"](): string;
+    ["com.affine.collection.helpInfo"](): string;
     /**
       * `Edit collection`
       */
-    ["com.nexio.collection.menu.edit"](): string;
+    ["com.affine.collection.menu.edit"](): string;
     /**
       * `Rename`
       */
-    ["com.nexio.collection.menu.rename"](): string;
+    ["com.affine.collection.menu.rename"](): string;
     /**
       * `Removed successfully`
       */
-    ["com.nexio.collection.removePage.success"](): string;
+    ["com.affine.collection.removePage.success"](): string;
     /**
       * `No collections`
       */
-    ["com.nexio.collections.empty.message"](): string;
+    ["com.affine.collections.empty.message"](): string;
     /**
       * `New collection`
       */
-    ["com.nexio.collections.empty.new-collection-button"](): string;
+    ["com.affine.collections.empty.new-collection-button"](): string;
     /**
       * `Collections`
       */
-    ["com.nexio.collections.header"](): string;
+    ["com.affine.collections.header"](): string;
     /**
       * `Couldn't copy image`
       */
-    ["com.nexio.copy.asImage.notAvailable.title"](): string;
+    ["com.affine.copy.asImage.notAvailable.title"](): string;
     /**
       * `The 'Copy as image' feature is only available on our desktop app. Please download and install the client to access this feature.`
       */
-    ["com.nexio.copy.asImage.notAvailable.message"](): string;
+    ["com.affine.copy.asImage.notAvailable.message"](): string;
     /**
       * `Download Client`
       */
-    ["com.nexio.copy.asImage.notAvailable.action"](): string;
+    ["com.affine.copy.asImage.notAvailable.action"](): string;
     /**
       * `Image copied`
       */
-    ["com.nexio.copy.asImage.success"](): string;
+    ["com.affine.copy.asImage.success"](): string;
     /**
       * `Image copy failed`
       */
-    ["com.nexio.copy.asImage.failed"](): string;
+    ["com.affine.copy.asImage.failed"](): string;
+    /**
+      * `Copy as Markdown`
+      */
+    ["com.affine.export.copy-markdown"](): string;
+    /**
+      * `Copied as Markdown`
+      */
+    ["com.affine.export.copied-as-markdown"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.confirmModal.button.cancel"](): string;
+    ["com.affine.confirmModal.button.cancel"](): string;
     /**
       * `Ok`
       */
-    ["com.nexio.confirmModal.button.ok"](): string;
+    ["com.affine.confirmModal.button.ok"](): string;
     /**
       * `Current year`
       */
-    ["com.nexio.currentYear"](): string;
+    ["com.affine.currentYear"](): string;
     /**
       * `Deleting {{count}} tags cannot be undone, please proceed with caution.`
       */
-    ["com.nexio.delete-tags.confirm.multi-tag-description"](options: {
+    ["com.affine.delete-tags.confirm.multi-tag-description"](options: {
         readonly count: string;
     }): string;
     /**
       * `Delete tag?`
       */
-    ["com.nexio.delete-tags.confirm.title"](): string;
+    ["com.affine.delete-tags.confirm.title"](): string;
     /**
       * `{{count}} tag deleted`
     
-      * - com.nexio.delete-tags.count_one: `{{count}} tag deleted`
+      * - com.affine.delete-tags.count_one: `{{count}} tag deleted`
     
-      * - com.nexio.delete-tags.count_other: `{{count}} tags deleted`
+      * - com.affine.delete-tags.count_other: `{{count}} tags deleted`
       */
-    ["com.nexio.delete-tags.count"](options: {
+    ["com.affine.delete-tags.count"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} tag deleted`
       */
-    ["com.nexio.delete-tags.count_one"](options: {
+    ["com.affine.delete-tags.count_one"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} tags deleted`
       */
-    ["com.nexio.delete-tags.count_other"](options: {
+    ["com.affine.delete-tags.count_other"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `Delete workspace from this device and optionally delete all data.`
       */
-    ["com.nexio.deleteLeaveWorkspace.description"](): string;
+    ["com.affine.deleteLeaveWorkspace.description"](): string;
     /**
       * `Leave workspace`
       */
-    ["com.nexio.deleteLeaveWorkspace.leave"](): string;
+    ["com.affine.deleteLeaveWorkspace.leave"](): string;
     /**
       * `After you leave, you will not be able to access content within this workspace.`
       */
-    ["com.nexio.deleteLeaveWorkspace.leaveDescription"](): string;
+    ["com.affine.deleteLeaveWorkspace.leaveDescription"](): string;
     /**
       * `Docs`
       */
-    ["com.nexio.docs.header"](): string;
+    ["com.affine.docs.header"](): string;
     /**
       * `Draw with a blank whiteboard`
       */
-    ["com.nexio.draw_with_a_blank_whiteboard"](): string;
+    ["com.affine.draw_with_a_blank_whiteboard"](): string;
     /**
       * `Earlier`
       */
-    ["com.nexio.earlier"](): string;
+    ["com.affine.earlier"](): string;
     /**
       * `Edgeless mode`
       */
-    ["com.nexio.edgelessMode"](): string;
+    ["com.affine.edgelessMode"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.editCollection.button.cancel"](): string;
+    ["com.affine.editCollection.button.cancel"](): string;
     /**
       * `Create`
       */
-    ["com.nexio.editCollection.button.create"](): string;
+    ["com.affine.editCollection.button.create"](): string;
     /**
       * `Create collection`
       */
-    ["com.nexio.editCollection.createCollection"](): string;
+    ["com.affine.editCollection.createCollection"](): string;
     /**
       * `Filters`
       */
-    ["com.nexio.editCollection.filters"](): string;
+    ["com.affine.editCollection.filters"](): string;
     /**
       * `Docs`
       */
-    ["com.nexio.editCollection.pages"](): string;
+    ["com.affine.editCollection.pages"](): string;
     /**
       * `Clear selected`
       */
-    ["com.nexio.editCollection.pages.clear"](): string;
+    ["com.affine.editCollection.pages.clear"](): string;
     /**
       * `Rename collection`
       */
-    ["com.nexio.editCollection.renameCollection"](): string;
+    ["com.affine.editCollection.renameCollection"](): string;
     /**
       * `Rules`
       */
-    ["com.nexio.editCollection.rules"](): string;
+    ["com.affine.editCollection.rules"](): string;
     /**
       * `No results`
       */
-    ["com.nexio.editCollection.rules.empty.noResults"](): string;
+    ["com.affine.editCollection.rules.empty.noResults"](): string;
     /**
       * `No docs meet the filtering rules`
       */
-    ["com.nexio.editCollection.rules.empty.noResults.tips"](): string;
+    ["com.affine.editCollection.rules.empty.noResults.tips"](): string;
     /**
       * `No rules`
       */
-    ["com.nexio.editCollection.rules.empty.noRules"](): string;
+    ["com.affine.editCollection.rules.empty.noRules"](): string;
     /**
       * `Add selected doc`
       */
-    ["com.nexio.editCollection.rules.include.add"](): string;
+    ["com.affine.editCollection.rules.include.add"](): string;
     /**
       * `is`
       */
-    ["com.nexio.editCollection.rules.include.is"](): string;
+    ["com.affine.editCollection.rules.include.is"](): string;
     /**
       * `is-not`
       */
-    ["com.nexio.editCollection.rules.include.is-not"](): string;
+    ["com.affine.editCollection.rules.include.is-not"](): string;
     /**
       * `Doc`
       */
-    ["com.nexio.editCollection.rules.include.page"](): string;
+    ["com.affine.editCollection.rules.include.page"](): string;
     /**
       * `“Selected docs” refers to manually adding docs rather than automatically adding them through rule matching. You can manually add docs through the “Add selected docs” option or by dragging and dropping.`
       */
-    ["com.nexio.editCollection.rules.include.tips"](): string;
+    ["com.affine.editCollection.rules.include.tips"](): string;
     /**
       * `What is "Selected docs"？`
       */
-    ["com.nexio.editCollection.rules.include.tipsTitle"](): string;
+    ["com.affine.editCollection.rules.include.tipsTitle"](): string;
     /**
       * `Selected docs`
       */
-    ["com.nexio.editCollection.rules.include.title"](): string;
+    ["com.affine.editCollection.rules.include.title"](): string;
     /**
       * `Preview`
       */
-    ["com.nexio.editCollection.rules.preview"](): string;
+    ["com.affine.editCollection.rules.preview"](): string;
     /**
       * `Reset`
       */
-    ["com.nexio.editCollection.rules.reset"](): string;
+    ["com.affine.editCollection.rules.reset"](): string;
     /**
       * `automatically`
       */
-    ["com.nexio.editCollection.rules.tips.highlight"](): string;
+    ["com.affine.editCollection.rules.tips.highlight"](): string;
     /**
       * `Save`
       */
-    ["com.nexio.editCollection.save"](): string;
+    ["com.affine.editCollection.save"](): string;
     /**
       * `Save as new collection`
       */
-    ["com.nexio.editCollection.saveCollection"](): string;
+    ["com.affine.editCollection.saveCollection"](): string;
     /**
       * `Search doc...`
       */
-    ["com.nexio.editCollection.search.placeholder"](): string;
+    ["com.affine.editCollection.search.placeholder"](): string;
     /**
       * `Untitled collection`
       */
-    ["com.nexio.editCollection.untitledCollection"](): string;
+    ["com.affine.editCollection.untitledCollection"](): string;
     /**
       * `Update collection`
       */
-    ["com.nexio.editCollection.updateCollection"](): string;
+    ["com.affine.editCollection.updateCollection"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.nexio.editCollectionName.createTips"](): string;
+    ["com.affine.editCollectionName.createTips"](): string;
     /**
       * `Name`
       */
-    ["com.nexio.editCollectionName.name"](): string;
+    ["com.affine.editCollectionName.name"](): string;
     /**
       * `Collection name`
       */
-    ["com.nexio.editCollectionName.name.placeholder"](): string;
+    ["com.affine.editCollectionName.name.placeholder"](): string;
     /**
       * `Default to Edgeless mode`
       */
-    ["com.nexio.editorDefaultMode.edgeless"](): string;
+    ["com.affine.editorDefaultMode.edgeless"](): string;
     /**
       * `Default to Page mode`
       */
-    ["com.nexio.editorDefaultMode.page"](): string;
+    ["com.affine.editorDefaultMode.page"](): string;
     /**
       * `Add docs`
       */
-    ["com.nexio.empty.collection-detail.action.add-doc"](): string;
+    ["com.affine.empty.collection-detail.action.add-doc"](): string;
     /**
       * `Add rules`
       */
-    ["com.nexio.empty.collection-detail.action.add-rule"](): string;
+    ["com.affine.empty.collection-detail.action.add-rule"](): string;
     /**
       * `Collection is a smart folder where you can manually add docs or automatically add docs through rules.`
       */
-    ["com.nexio.empty.collection-detail.description"](): string;
+    ["com.affine.empty.collection-detail.description"](): string;
     /**
       * `Empty collection`
       */
-    ["com.nexio.empty.collection-detail.title"](): string;
+    ["com.affine.empty.collection-detail.title"](): string;
     /**
       * `Add collection`
       */
-    ["com.nexio.empty.collections.action.new-collection"](): string;
+    ["com.affine.empty.collections.action.new-collection"](): string;
     /**
       * `Create your first collection here.`
       */
-    ["com.nexio.empty.collections.description"](): string;
+    ["com.affine.empty.collections.description"](): string;
     /**
       * `Collection management`
       */
-    ["com.nexio.empty.collections.title"](): string;
+    ["com.affine.empty.collections.title"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.empty.docs.action.new-doc"](): string;
+    ["com.affine.empty.docs.action.new-doc"](): string;
     /**
       * `Create your first doc here.`
       */
-    ["com.nexio.empty.docs.all-description"](): string;
+    ["com.affine.empty.docs.all-description"](): string;
     /**
       * `Docs management`
       */
-    ["com.nexio.empty.docs.title"](): string;
+    ["com.affine.empty.docs.title"](): string;
     /**
       * `Deleted docs will appear here.`
       */
-    ["com.nexio.empty.docs.trash-description"](): string;
+    ["com.affine.empty.docs.trash-description"](): string;
     /**
       * `Create a new tag for your documents.`
       */
-    ["com.nexio.empty.tags.description"](): string;
+    ["com.affine.empty.tags.description"](): string;
     /**
       * `Tag management`
       */
-    ["com.nexio.empty.tags.title"](): string;
+    ["com.affine.empty.tags.title"](): string;
     /**
       * `There's no doc here yet`
       */
-    ["com.nexio.emptyDesc"](): string;
+    ["com.affine.emptyDesc"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.enableNexioCloudModal.button.cancel"](): string;
+    ["com.affine.enableAffineCloudModal.button.cancel"](): string;
     /**
-      * `Enable Cloud for {{workspaceName}}`
+      * `Enable Nexio Sync for {{workspaceName}}`
       */
-    ["com.nexio.enableNexioCloudModal.custom-server.title"](options: {
+    ["com.affine.enableAffineCloudModal.custom-server.title"](options: {
         readonly workspaceName: string;
     }): string;
     /**
-      * `Choose an instance.`
+      * `Choose where this workspace will sync.`
       */
-    ["com.nexio.enableNexioCloudModal.custom-server.description"](): string;
+    ["com.affine.enableAffineCloudModal.custom-server.description"](): string;
     /**
-      * `Enable Cloud`
+      * `Enable Nexio Sync`
       */
-    ["com.nexio.enableNexioCloudModal.custom-server.enable"](): string;
+    ["com.affine.enableAffineCloudModal.custom-server.enable"](): string;
     /**
       * `Hide error`
       */
-    ["com.nexio.error.hide-error"](): string;
+    ["com.affine.error.hide-error"](): string;
     /**
       * `Doc content is missing`
       */
-    ["com.nexio.error.no-page-root.title"](): string;
+    ["com.affine.error.no-page-root.title"](): string;
     /**
       * `It takes longer to load the doc content.`
       */
-    ["com.nexio.error.loading-timeout-error"](): string;
+    ["com.affine.error.loading-timeout-error"](): string;
     /**
       * `Refetch`
       */
-    ["com.nexio.error.refetch"](): string;
+    ["com.affine.error.refetch"](): string;
     /**
-      * `Reload NEXIO`
+      * `Reload Nexio`
       */
-    ["com.nexio.error.reload"](): string;
+    ["com.affine.error.reload"](): string;
     /**
       * `Refresh`
       */
-    ["com.nexio.error.retry"](): string;
+    ["com.affine.error.retry"](): string;
     /**
       * `Something is wrong...`
       */
-    ["com.nexio.error.unexpected-error.title"](): string;
+    ["com.affine.error.unexpected-error.title"](): string;
     /**
       * `Please request a new reset password link.`
       */
-    ["com.nexio.expired.page.subtitle"](): string;
+    ["com.affine.expired.page.subtitle"](): string;
     /**
       * `Please request a new link.`
       */
-    ["com.nexio.expired.page.new-subtitle"](): string;
+    ["com.affine.expired.page.new-subtitle"](): string;
     /**
       * `This link has expired...`
       */
-    ["com.nexio.expired.page.title"](): string;
+    ["com.affine.expired.page.title"](): string;
     /**
       * `Please try it again later.`
       */
-    ["com.nexio.export.error.message"](): string;
+    ["com.affine.export.error.message"](): string;
     /**
       * `Export failed due to an unexpected error`
       */
-    ["com.nexio.export.error.title"](): string;
+    ["com.affine.export.error.title"](): string;
     /**
       * `Print`
       */
-    ["com.nexio.export.print"](): string;
+    ["com.affine.export.print"](): string;
     /**
       * `Please open the download folder to check.`
       */
-    ["com.nexio.export.success.message"](): string;
+    ["com.affine.export.success.message"](): string;
     /**
       * `Exported successfully`
       */
-    ["com.nexio.export.success.title"](): string;
+    ["com.affine.export.success.title"](): string;
     /**
       * `Add to favourites`
       */
-    ["com.nexio.favoritePageOperation.add"](): string;
+    ["com.affine.favoritePageOperation.add"](): string;
     /**
       * `Remove from favourites`
       */
-    ["com.nexio.favoritePageOperation.remove"](): string;
+    ["com.affine.favoritePageOperation.remove"](): string;
     /**
       * `Filter`
       */
-    ["com.nexio.filter"](): string;
+    ["com.affine.filter"](): string;
     /**
       * `Add Filter Rule`
       */
-    ["com.nexio.filter.add-filter"](): string;
+    ["com.affine.filter.add-filter"](): string;
     /**
       * `after`
       */
-    ["com.nexio.filter.after"](): string;
+    ["com.affine.filter.after"](): string;
     /**
       * `before`
       */
-    ["com.nexio.filter.before"](): string;
+    ["com.affine.filter.before"](): string;
     /**
       * `contains all`
       */
-    ["com.nexio.filter.contains all"](): string;
+    ["com.affine.filter.contains all"](): string;
     /**
       * `contains one of`
       */
-    ["com.nexio.filter.contains one of"](): string;
+    ["com.affine.filter.contains one of"](): string;
     /**
       * `does not contains all`
       */
-    ["com.nexio.filter.does not contains all"](): string;
+    ["com.affine.filter.does not contains all"](): string;
     /**
       * `does not contains one of`
       */
-    ["com.nexio.filter.does not contains one of"](): string;
+    ["com.affine.filter.does not contains one of"](): string;
     /**
       * `Empty`
       */
-    ["com.nexio.filter.empty-tag"](): string;
+    ["com.affine.filter.empty-tag"](): string;
     /**
       * `Empty`
       */
-    ["com.nexio.filter.empty"](): string;
+    ["com.affine.filter.empty"](): string;
     /**
       * `false`
       */
-    ["com.nexio.filter.false"](): string;
+    ["com.affine.filter.false"](): string;
     /**
       * `is`
       */
-    ["com.nexio.filter.is"](): string;
+    ["com.affine.filter.is"](): string;
     /**
       * `is empty`
       */
-    ["com.nexio.filter.is empty"](): string;
+    ["com.affine.filter.is empty"](): string;
     /**
       * `is not empty`
       */
-    ["com.nexio.filter.is not empty"](): string;
+    ["com.affine.filter.is not empty"](): string;
     /**
       * `Favourited`
       */
-    ["com.nexio.filter.is-favourited"](): string;
+    ["com.affine.filter.is-favourited"](): string;
     /**
       * `Shared`
       */
-    ["com.nexio.filter.is-public"](): string;
+    ["com.affine.filter.is-public"](): string;
     /**
       * `between`
       */
-    ["com.nexio.filter.between"](): string;
+    ["com.affine.filter.between"](): string;
     /**
       * `last 3 days`
       */
-    ["com.nexio.filter.last 3 days"](): string;
+    ["com.affine.filter.last 3 days"](): string;
     /**
       * `last 7 days`
       */
-    ["com.nexio.filter.last 7 days"](): string;
+    ["com.affine.filter.last 7 days"](): string;
     /**
       * `last 15 days`
       */
-    ["com.nexio.filter.last 15 days"](): string;
+    ["com.affine.filter.last 15 days"](): string;
     /**
       * `last 30 days`
       */
-    ["com.nexio.filter.last 30 days"](): string;
+    ["com.affine.filter.last 30 days"](): string;
     /**
       * `this week`
       */
-    ["com.nexio.filter.this week"](): string;
+    ["com.affine.filter.this week"](): string;
     /**
       * `this month`
       */
-    ["com.nexio.filter.this month"](): string;
+    ["com.affine.filter.this month"](): string;
     /**
       * `this quarter`
       */
-    ["com.nexio.filter.this quarter"](): string;
+    ["com.affine.filter.this quarter"](): string;
     /**
       * `this year`
       */
-    ["com.nexio.filter.this year"](): string;
+    ["com.affine.filter.this year"](): string;
     /**
       * `last`
       */
-    ["com.nexio.filter.last"](): string;
+    ["com.affine.filter.last"](): string;
     /**
       * `Save view`
       */
-    ["com.nexio.filter.save-view"](): string;
+    ["com.affine.filter.save-view"](): string;
     /**
       * `true`
       */
-    ["com.nexio.filter.true"](): string;
+    ["com.affine.filter.true"](): string;
     /**
       * `Add filter`
       */
-    ["com.nexio.filterList.button.add"](): string;
+    ["com.affine.filterList.button.add"](): string;
     /**
       * `Display`
       */
-    ["com.nexio.explorer.display-menu.button"](): string;
+    ["com.affine.explorer.display-menu.button"](): string;
     /**
       * `Grouping`
       */
-    ["com.nexio.explorer.display-menu.grouping"](): string;
+    ["com.affine.explorer.display-menu.grouping"](): string;
     /**
       * `Remove group`
       */
-    ["com.nexio.explorer.display-menu.grouping.remove"](): string;
+    ["com.affine.explorer.display-menu.grouping.remove"](): string;
     /**
       * `Ordering`
       */
-    ["com.nexio.explorer.display-menu.ordering"](): string;
+    ["com.affine.explorer.display-menu.ordering"](): string;
     /**
       * `View in Page mode`
       */
-    ["com.nexio.header.mode-switch.page"](): string;
+    ["com.affine.header.mode-switch.page"](): string;
     /**
       * `View in Edgeless Canvas`
       */
-    ["com.nexio.header.mode-switch.edgeless"](): string;
+    ["com.affine.header.mode-switch.edgeless"](): string;
     /**
       * `Add tag`
       */
-    ["com.nexio.header.option.add-tag"](): string;
+    ["com.affine.header.option.add-tag"](): string;
     /**
       * `Duplicate`
       */
-    ["com.nexio.header.option.duplicate"](): string;
+    ["com.affine.header.option.duplicate"](): string;
     /**
       * `Open in desktop app`
       */
-    ["com.nexio.header.option.open-in-desktop"](): string;
+    ["com.affine.header.option.open-in-desktop"](): string;
     /**
       * `View all frames`
       */
-    ["com.nexio.header.option.view-frame"](): string;
+    ["com.affine.header.option.view-frame"](): string;
     /**
       * `View table of contents`
       */
-    ["com.nexio.header.option.view-toc"](): string;
+    ["com.affine.header.option.view-toc"](): string;
     /**
       * `Table of contents`
       */
-    ["com.nexio.header.menu.toc"](): string;
+    ["com.affine.header.menu.toc"](): string;
     /**
       * `Contact us`
       */
-    ["com.nexio.helpIsland.contactUs"](): string;
+    ["com.affine.helpIsland.contactUs"](): string;
     /**
       * `Getting started`
       */
-    ["com.nexio.helpIsland.gettingStarted"](): string;
+    ["com.affine.helpIsland.gettingStarted"](): string;
     /**
       * `Help and feedback`
       */
-    ["com.nexio.helpIsland.helpAndFeedback"](): string;
+    ["com.affine.helpIsland.helpAndFeedback"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.history-vision.tips-modal.cancel"](): string;
+    ["com.affine.history-vision.tips-modal.cancel"](): string;
     /**
-      * `Enable NEXIO Cloud`
+      * `Enable Nexio Sync`
       */
-    ["com.nexio.history-vision.tips-modal.confirm"](): string;
+    ["com.affine.history-vision.tips-modal.confirm"](): string;
     /**
-      * `The current workspace is a local workspace, and we do not support version history for it at the moment. You can enable NEXIO Cloud. This will sync the workspace with the Cloud, allowing you to use this feature.`
+      * `Version history can't work with local workspace. Enable Nexio Sync for this workspace to use version history.`
       */
-    ["com.nexio.history-vision.tips-modal.description"](): string;
+    ["com.affine.history-vision.tips-modal.description"](): string;
     /**
-      * `History vision needs NEXIO Cloud`
+      * `Version history needs Nexio Sync`
       */
-    ["com.nexio.history-vision.tips-modal.title"](): string;
+    ["com.affine.history-vision.tips-modal.title"](): string;
     /**
       * `Back to doc`
       */
-    ["com.nexio.history.back-to-page"](): string;
+    ["com.affine.history.back-to-page"](): string;
     /**
       * `You are about to restore the current version of the doc to the latest version available. This action will overwrite any changes made prior to the latest version.`
       */
-    ["com.nexio.history.confirm-restore-modal.hint"](): string;
+    ["com.affine.history.confirm-restore-modal.hint"](): string;
     /**
       * `Load more`
       */
-    ["com.nexio.history.confirm-restore-modal.load-more"](): string;
+    ["com.affine.history.confirm-restore-modal.load-more"](): string;
     /**
       * `LIMITED DOC HISTORY`
       */
-    ["com.nexio.history.confirm-restore-modal.plan-prompt.limited-title"](): string;
+    ["com.affine.history.confirm-restore-modal.plan-prompt.limited-title"](): string;
     /**
       * `HELP INFO`
       */
-    ["com.nexio.history.confirm-restore-modal.plan-prompt.title"](): string;
+    ["com.affine.history.confirm-restore-modal.plan-prompt.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.history.confirm-restore-modal.pro-plan-prompt.upgrade"](): string;
+    ["com.affine.history.confirm-restore-modal.pro-plan-prompt.upgrade"](): string;
     /**
       * `Restore`
       */
-    ["com.nexio.history.confirm-restore-modal.restore"](): string;
+    ["com.affine.history.confirm-restore-modal.restore"](): string;
     /**
       * `This document is such a spring chicken, it hasn't sprouted a single historical sprig yet!`
       */
-    ["com.nexio.history.empty-prompt.description"](): string;
+    ["com.affine.history.empty-prompt.description"](): string;
     /**
       * `Empty`
       */
-    ["com.nexio.history.empty-prompt.title"](): string;
+    ["com.affine.history.empty-prompt.title"](): string;
     /**
       * `Restore current version`
       */
-    ["com.nexio.history.restore-current-version"](): string;
+    ["com.affine.history.restore-current-version"](): string;
     /**
       * `Version history`
       */
-    ["com.nexio.history.version-history"](): string;
+    ["com.affine.history.version-history"](): string;
     /**
       * `View history version`
       */
-    ["com.nexio.history.view-history-version"](): string;
+    ["com.affine.history.view-history-version"](): string;
     /**
       * `Create into a New Workspace`
       */
-    ["com.nexio.import-template.dialog.createDocToNewWorkspace"](): string;
+    ["com.affine.import-template.dialog.createDocToNewWorkspace"](): string;
     /**
       * `Create doc to "{{workspace}}"`
       */
-    ["com.nexio.import-template.dialog.createDocToWorkspace"](options: {
+    ["com.affine.import-template.dialog.createDocToWorkspace"](options: {
         readonly workspace: string;
     }): string;
     /**
       * `Create doc with "{{templateName}}" template`
       */
-    ["com.nexio.import-template.dialog.createDocWithTemplate"](options: {
+    ["com.affine.import-template.dialog.createDocWithTemplate"](options: {
         readonly templateName: string;
     }): string;
     /**
       * `Failed to import template, please try again.`
       */
-    ["com.nexio.import-template.dialog.errorImport"](): string;
+    ["com.affine.import-template.dialog.errorImport"](): string;
     /**
       * `Failed to load template, please try again.`
       */
-    ["com.nexio.import-template.dialog.errorLoad"](): string;
+    ["com.affine.import-template.dialog.errorLoad"](): string;
     /**
       * `Create into a New Workspace`
       */
-    ["com.nexio.import-clipper.dialog.createDocToNewWorkspace"](): string;
+    ["com.affine.import-clipper.dialog.createDocToNewWorkspace"](): string;
     /**
       * `Create doc to "{{workspace}}"`
       */
-    ["com.nexio.import-clipper.dialog.createDocToWorkspace"](options: {
+    ["com.affine.import-clipper.dialog.createDocToWorkspace"](options: {
         readonly workspace: string;
     }): string;
     /**
       * `Create doc from Web Clipper`
       */
-    ["com.nexio.import-clipper.dialog.createDocFromClipper"](): string;
+    ["com.affine.import-clipper.dialog.createDocFromClipper"](): string;
     /**
       * `Failed to import content, please try again.`
       */
-    ["com.nexio.import-clipper.dialog.errorImport"](): string;
+    ["com.affine.import-clipper.dialog.errorImport"](): string;
     /**
       * `Failed to load content, please try again.`
       */
-    ["com.nexio.import-clipper.dialog.errorLoad"](): string;
+    ["com.affine.import-clipper.dialog.errorLoad"](): string;
     /**
       * `Support Markdown/Notion`
       */
-    ["com.nexio.import_file"](): string;
+    ["com.affine.import_file"](): string;
     /**
-      * `NEXIO workspace data`
+      * `Nexio workspace data`
       */
-    ["com.nexio.import.nexio-workspace-data"](): string;
+    ["com.affine.import.affine-workspace-data"](): string;
+    /**
+      * `Bear (.bear2bk) (Experimental)`
+      */
+    ["com.affine.import.bear"](): string;
+    /**
+      * `Import your Bear note backup. Tags will be converted to Nexio tags and folders.`
+      */
+    ["com.affine.import.bear.tooltip"](): string;
+    /**
+      * `Docx`
+      */
+    ["com.affine.import.docx"](): string;
+    /**
+      * `Import your .docx file.`
+      */
+    ["com.affine.import.docx.tooltip"](): string;
     /**
       * `HTML`
       */
-    ["com.nexio.import.html-files"](): string;
+    ["com.affine.import.html-files"](): string;
     /**
       * `This is an experimental feature that is not perfect and may cause your data to be missing after import.`
       */
-    ["com.nexio.import.html-files.tooltip"](): string;
+    ["com.affine.import.html-files.tooltip"](): string;
     /**
       * `Markdown files (.md)`
       */
-    ["com.nexio.import.markdown-files"](): string;
+    ["com.affine.import.markdown-files"](): string;
     /**
       * `Markdown with media files (.zip)`
       */
-    ["com.nexio.import.markdown-with-media-files"](): string;
+    ["com.affine.import.markdown-with-media-files"](): string;
     /**
       * `Please upload a markdown zip file with attachments, experimental function, there may be data loss.`
       */
-    ["com.nexio.import.markdown-with-media-files.tooltip"](): string;
+    ["com.affine.import.markdown-with-media-files.tooltip"](): string;
     /**
       * `If you'd like to request support for additional file types, feel free to let us know on`
       */
-    ["com.nexio.import.modal.tip"](): string;
+    ["com.affine.import.modal.tip"](): string;
     /**
-      * `Notion`
+      * `Notion (Experimental)`
       */
-    ["com.nexio.import.notion"](): string;
+    ["com.affine.import.notion"](): string;
     /**
       * `Import your Notion data. Supported import formats: HTML with subpages.`
       */
-    ["com.nexio.import.notion.tooltip"](): string;
+    ["com.affine.import.notion.tooltip"](): string;
+    /**
+      * `OneNote (Experimental)`
+      */
+    ["com.affine.import.onenote"](): string;
+    /**
+      * `Import a OneNote .one, .onetoc2, or .onepkg file. Available in the desktop app.`
+      */
+    ["com.affine.import.onenote.tooltip"](): string;
+    /**
+      * `This format importer is available in the Nexio desktop app.`
+      */
+    ["com.affine.import.onenote.desktop-only"](): string;
+    /**
+      * `Obsidian Vault (Experimental)`
+      */
+    ["com.affine.import.obsidian"](): string;
+    /**
+      * `Import an Obsidian vault. Select a folder to import all notes, images, and assets with wikilinks resolved.`
+      */
+    ["com.affine.import.obsidian.tooltip"](): string;
     /**
       * `Snapshot`
       */
-    ["com.nexio.import.snapshot"](): string;
+    ["com.affine.import.snapshot"](): string;
     /**
-      * `Import your NEXIO workspace and page snapshot file.`
+      * `Import your Nexio workspace and page snapshot file.`
       */
-    ["com.nexio.import.snapshot.tooltip"](): string;
+    ["com.affine.import.snapshot.tooltip"](): string;
     /**
-      * `.nexio file`
+      * `.affine file`
       */
-    ["com.nexio.import.dotnexiofile"](): string;
+    ["com.affine.import.dotaffinefile"](): string;
     /**
-      * `Import your NEXIO db file (.nexio)`
+      * `Import your Nexio db file (.affine)`
       */
-    ["com.nexio.import.dotnexiofile.tooltip"](): string;
+    ["com.affine.import.dotaffinefile.tooltip"](): string;
     /**
       * `Import failed, please try again.`
       */
-    ["com.nexio.import.status.failed.message"](): string;
+    ["com.affine.import.status.failed.message"](): string;
     /**
       * `No file selected`
       */
-    ["com.nexio.import.status.failed.message.no-file-selected"](): string;
+    ["com.affine.import.status.failed.message.no-file-selected"](): string;
     /**
       * `Import failure`
       */
-    ["com.nexio.import.status.failed.title"](): string;
+    ["com.affine.import.status.failed.title"](): string;
     /**
       * `Importing your workspace data, please wait patiently.`
       */
-    ["com.nexio.import.status.importing.message"](): string;
+    ["com.affine.import.status.importing.message"](): string;
     /**
       * `Importing...`
       */
-    ["com.nexio.import.status.importing.title"](): string;
+    ["com.affine.import.status.importing.title"](): string;
     /**
-      * `Your document has been imported successfully, thank you for choosing NEXIO. Any questions please feel free to feedback to us`
+      * `Your document has been imported successfully, thank you for choosing Nexio. Any questions please feel free to feedback to us`
       */
-    ["com.nexio.import.status.success.message"](): string;
+    ["com.affine.import.status.success.message"](): string;
     /**
       * `Import completed`
       */
-    ["com.nexio.import.status.success.title"](): string;
+    ["com.affine.import.status.success.title"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.inviteModal.button.cancel"](): string;
+    ["com.affine.inviteModal.button.cancel"](): string;
     /**
       * `Maybe later`
       */
-    ["com.nexio.issue-feedback.cancel"](): string;
+    ["com.affine.issue-feedback.cancel"](): string;
     /**
       * `Create issue on GitHub`
       */
-    ["com.nexio.issue-feedback.confirm"](): string;
+    ["com.affine.issue-feedback.confirm"](): string;
     /**
       * `Got feedback? We're all ears! Create an issue on GitHub to let us know your thoughts and suggestions`
       */
-    ["com.nexio.issue-feedback.description"](): string;
+    ["com.affine.issue-feedback.description"](): string;
     /**
       * `Share your feedback on GitHub`
       */
-    ["com.nexio.issue-feedback.title"](): string;
+    ["com.affine.issue-feedback.title"](): string;
     /**
       * `Journals`
       */
-    ["com.nexio.journal.app-sidebar-title"](): string;
+    ["com.affine.journal.app-sidebar-title"](): string;
     /**
       * `{{count}} more articles`
       */
-    ["com.nexio.journal.conflict-show-more"](options: {
+    ["com.affine.journal.conflict-show-more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Created`
       */
-    ["com.nexio.journal.created-today"](): string;
+    ["com.affine.journal.created-today"](): string;
     /**
       * `You haven't created anything yet`
       */
-    ["com.nexio.journal.daily-count-created-empty-tips"](): string;
+    ["com.affine.journal.daily-count-created-empty-tips"](): string;
     /**
       * `You haven't updated anything yet`
       */
-    ["com.nexio.journal.daily-count-updated-empty-tips"](): string;
+    ["com.affine.journal.daily-count-updated-empty-tips"](): string;
     /**
       * `Updated`
       */
-    ["com.nexio.journal.updated-today"](): string;
+    ["com.affine.journal.updated-today"](): string;
     /**
-      * `No Journal`
+      * `No journal for this day`
       */
-    ["com.nexio.journal.placeholder.title"](): string;
+    ["com.affine.journal.placeholder.title"](): string;
     /**
-      * `Create Daily Journal`
+      * `Create one to start writing.`
       */
-    ["com.nexio.journal.placeholder.create"](): string;
+    ["com.affine.journal.placeholder.description"](): string;
+    /**
+      * `Create journal`
+      */
+    ["com.affine.journal.placeholder.create"](): string;
     /**
       * `Just now`
       */
-    ["com.nexio.just-now"](): string;
+    ["com.affine.just-now"](): string;
     /**
       * `Align center`
       */
-    ["com.nexio.keyboardShortcuts.alignCenter"](): string;
+    ["com.affine.keyboardShortcuts.alignCenter"](): string;
     /**
       * `Align left`
       */
-    ["com.nexio.keyboardShortcuts.alignLeft"](): string;
+    ["com.affine.keyboardShortcuts.alignLeft"](): string;
     /**
       * `Align right`
       */
-    ["com.nexio.keyboardShortcuts.alignRight"](): string;
+    ["com.affine.keyboardShortcuts.alignRight"](): string;
     /**
       * `Append to daily note`
       */
-    ["com.nexio.keyboardShortcuts.appendDailyNote"](): string;
+    ["com.affine.keyboardShortcuts.appendDailyNote"](): string;
     /**
       * `Body text`
       */
-    ["com.nexio.keyboardShortcuts.bodyText"](): string;
+    ["com.affine.keyboardShortcuts.bodyText"](): string;
     /**
       * `Bold`
       */
-    ["com.nexio.keyboardShortcuts.bold"](): string;
+    ["com.affine.keyboardShortcuts.bold"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.keyboardShortcuts.cancel"](): string;
+    ["com.affine.keyboardShortcuts.cancel"](): string;
     /**
       * `Code block`
       */
-    ["com.nexio.keyboardShortcuts.codeBlock"](): string;
+    ["com.affine.keyboardShortcuts.codeBlock"](): string;
     /**
       * `Copy private link`
       */
-    ["com.nexio.keyboardShortcuts.copy-private-link"](): string;
+    ["com.affine.keyboardShortcuts.copy-private-link"](): string;
     /**
       * `Connector`
       */
-    ["com.nexio.keyboardShortcuts.connector"](): string;
+    ["com.affine.keyboardShortcuts.connector"](): string;
     /**
       * `Divider`
       */
-    ["com.nexio.keyboardShortcuts.divider"](): string;
+    ["com.affine.keyboardShortcuts.divider"](): string;
     /**
       * `Expand/collapse sidebar`
       */
-    ["com.nexio.keyboardShortcuts.expandOrCollapseSidebar"](): string;
+    ["com.affine.keyboardShortcuts.expandOrCollapseSidebar"](): string;
     /**
       * `Go back`
       */
-    ["com.nexio.keyboardShortcuts.goBack"](): string;
+    ["com.affine.keyboardShortcuts.goBack"](): string;
     /**
       * `Go forward`
       */
-    ["com.nexio.keyboardShortcuts.goForward"](): string;
+    ["com.affine.keyboardShortcuts.goForward"](): string;
     /**
       * `Group`
       */
-    ["com.nexio.keyboardShortcuts.group"](): string;
+    ["com.affine.keyboardShortcuts.group"](): string;
     /**
       * `Group as database`
       */
-    ["com.nexio.keyboardShortcuts.groupDatabase"](): string;
+    ["com.affine.keyboardShortcuts.groupDatabase"](): string;
     /**
       * `Hand`
       */
-    ["com.nexio.keyboardShortcuts.hand"](): string;
+    ["com.affine.keyboardShortcuts.hand"](): string;
     /**
       * `Heading {{number}}`
       */
-    ["com.nexio.keyboardShortcuts.heading"](options: {
+    ["com.affine.keyboardShortcuts.heading"](options: {
         readonly number: string;
     }): string;
     /**
       * `Image`
       */
-    ["com.nexio.keyboardShortcuts.image"](): string;
+    ["com.affine.keyboardShortcuts.image"](): string;
     /**
       * `Increase indent`
       */
-    ["com.nexio.keyboardShortcuts.increaseIndent"](): string;
+    ["com.affine.keyboardShortcuts.increaseIndent"](): string;
     /**
       * `Inline code`
       */
-    ["com.nexio.keyboardShortcuts.inlineCode"](): string;
+    ["com.affine.keyboardShortcuts.inlineCode"](): string;
     /**
       * `Italic`
       */
-    ["com.nexio.keyboardShortcuts.italic"](): string;
+    ["com.affine.keyboardShortcuts.italic"](): string;
     /**
       * `Hyperlink (with selected text)`
       */
-    ["com.nexio.keyboardShortcuts.link"](): string;
+    ["com.affine.keyboardShortcuts.link"](): string;
     /**
       * `Move down`
       */
-    ["com.nexio.keyboardShortcuts.moveDown"](): string;
+    ["com.affine.keyboardShortcuts.moveDown"](): string;
     /**
       * `Move up`
       */
-    ["com.nexio.keyboardShortcuts.moveUp"](): string;
+    ["com.affine.keyboardShortcuts.moveUp"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.keyboardShortcuts.newPage"](): string;
+    ["com.affine.keyboardShortcuts.newPage"](): string;
     /**
       * `Note`
       */
-    ["com.nexio.keyboardShortcuts.note"](): string;
+    ["com.affine.keyboardShortcuts.note"](): string;
     /**
       * `Pen`
       */
-    ["com.nexio.keyboardShortcuts.pen"](): string;
+    ["com.affine.keyboardShortcuts.pen"](): string;
     /**
       * `Quick search`
       */
-    ["com.nexio.keyboardShortcuts.quickSearch"](): string;
+    ["com.affine.keyboardShortcuts.quickSearch"](): string;
     /**
       * `Redo`
       */
-    ["com.nexio.keyboardShortcuts.redo"](): string;
+    ["com.affine.keyboardShortcuts.redo"](): string;
     /**
       * `Reduce indent`
       */
-    ["com.nexio.keyboardShortcuts.reduceIndent"](): string;
+    ["com.affine.keyboardShortcuts.reduceIndent"](): string;
     /**
       * `Select`
       */
-    ["com.nexio.keyboardShortcuts.select"](): string;
+    ["com.affine.keyboardShortcuts.select"](): string;
     /**
       * `Select all`
       */
-    ["com.nexio.keyboardShortcuts.selectAll"](): string;
+    ["com.affine.keyboardShortcuts.selectAll"](): string;
     /**
       * `Shape`
       */
-    ["com.nexio.keyboardShortcuts.shape"](): string;
+    ["com.affine.keyboardShortcuts.shape"](): string;
     /**
       * `Strikethrough`
       */
-    ["com.nexio.keyboardShortcuts.strikethrough"](): string;
+    ["com.affine.keyboardShortcuts.strikethrough"](): string;
     /**
       * `Check keyboard shortcuts quickly`
       */
-    ["com.nexio.keyboardShortcuts.subtitle"](): string;
+    ["com.affine.keyboardShortcuts.subtitle"](): string;
     /**
       * `Switch view`
       */
-    ["com.nexio.keyboardShortcuts.switch"](): string;
+    ["com.affine.keyboardShortcuts.switch"](): string;
     /**
       * `Text`
       */
-    ["com.nexio.keyboardShortcuts.text"](): string;
+    ["com.affine.keyboardShortcuts.text"](): string;
     /**
       * `Keyboard shortcuts`
       */
-    ["com.nexio.keyboardShortcuts.title"](): string;
+    ["com.affine.keyboardShortcuts.title"](): string;
     /**
       * `Ungroup`
       */
-    ["com.nexio.keyboardShortcuts.unGroup"](): string;
+    ["com.affine.keyboardShortcuts.unGroup"](): string;
     /**
       * `Underline`
       */
-    ["com.nexio.keyboardShortcuts.underline"](): string;
+    ["com.affine.keyboardShortcuts.underline"](): string;
     /**
       * `Undo`
       */
-    ["com.nexio.keyboardShortcuts.undo"](): string;
+    ["com.affine.keyboardShortcuts.undo"](): string;
     /**
       * `Zoom in`
       */
-    ["com.nexio.keyboardShortcuts.zoomIn"](): string;
+    ["com.affine.keyboardShortcuts.zoomIn"](): string;
     /**
       * `Zoom out`
       */
-    ["com.nexio.keyboardShortcuts.zoomOut"](): string;
+    ["com.affine.keyboardShortcuts.zoomOut"](): string;
     /**
       * `Zoom to 100%`
       */
-    ["com.nexio.keyboardShortcuts.zoomTo100"](): string;
+    ["com.affine.keyboardShortcuts.zoomTo100"](): string;
     /**
       * `Zoom to fit`
       */
-    ["com.nexio.keyboardShortcuts.zoomToFit"](): string;
+    ["com.affine.keyboardShortcuts.zoomToFit"](): string;
     /**
       * `Zoom to selection`
       */
-    ["com.nexio.keyboardShortcuts.zoomToSelection"](): string;
+    ["com.affine.keyboardShortcuts.zoomToSelection"](): string;
     /**
       * `Last 30 days`
       */
-    ["com.nexio.last30Days"](): string;
+    ["com.affine.last30Days"](): string;
     /**
       * `Last 7 days`
       */
-    ["com.nexio.last7Days"](): string;
+    ["com.affine.last7Days"](): string;
     /**
       * `Last month`
       */
-    ["com.nexio.lastMonth"](): string;
+    ["com.affine.lastMonth"](): string;
     /**
       * `Last week`
       */
-    ["com.nexio.lastWeek"](): string;
+    ["com.affine.lastWeek"](): string;
     /**
       * `Last year`
       */
-    ["com.nexio.lastYear"](): string;
+    ["com.affine.lastYear"](): string;
     /**
       * `Loading`
       */
-    ["com.nexio.loading"](): string;
+    ["com.affine.loading"](): string;
     /**
       * `Loading document content, please wait a moment.`
       */
-    ["com.nexio.loading.description"](): string;
+    ["com.affine.loading.description"](): string;
     /**
       * `Rename`
       */
-    ["com.nexio.menu.rename"](): string;
+    ["com.affine.menu.rename"](): string;
     /**
       * `No results found`
       */
-    ["com.nexio.mobile.search.empty"](): string;
+    ["com.affine.mobile.search.empty"](): string;
     /**
       * `App version`
       */
-    ["com.nexio.mobile.setting.about.appVersion"](): string;
+    ["com.affine.mobile.setting.about.appVersion"](): string;
     /**
       * `Editor version`
       */
-    ["com.nexio.mobile.setting.about.editorVersion"](): string;
+    ["com.affine.mobile.setting.about.editorVersion"](): string;
     /**
       * `About`
       */
-    ["com.nexio.mobile.setting.about.title"](): string;
+    ["com.affine.mobile.setting.about.title"](): string;
+    /**
+      * `Log In / Sign Up`
+      */
+    ["com.affine.mobile.setting.account.sign-in"](): string;
+    /**
+      * `Account & Data`
+      */
+    ["com.affine.mobile.setting.account.title"](): string;
     /**
       * `Font style`
       */
-    ["com.nexio.mobile.setting.appearance.font"](): string;
+    ["com.affine.mobile.setting.appearance.font"](): string;
     /**
       * `Display language`
       */
-    ["com.nexio.mobile.setting.appearance.language"](): string;
+    ["com.affine.mobile.setting.appearance.language"](): string;
     /**
       * `Color mode`
       */
-    ["com.nexio.mobile.setting.appearance.theme"](): string;
+    ["com.affine.mobile.setting.appearance.theme"](): string;
     /**
       * `Appearance`
       */
-    ["com.nexio.mobile.setting.appearance.title"](): string;
+    ["com.affine.mobile.setting.appearance.title"](): string;
+    /**
+      * `Experimental features`
+      */
+    ["com.affine.mobile.setting.experimental.features"](): string;
+    /**
+      * `Experimental`
+      */
+    ["com.affine.mobile.setting.experimental.title"](): string;
     /**
       * `Settings`
       */
-    ["com.nexio.mobile.setting.header-title"](): string;
+    ["com.affine.mobile.setting.header-title"](): string;
     /**
       * `Star us on GitHub`
       */
-    ["com.nexio.mobile.setting.others.github"](): string;
+    ["com.affine.mobile.setting.others.github"](): string;
     /**
-      * `Discord Group`
+      * `Discord group`
       */
-    ["com.nexio.mobile.setting.others.discord"](): string;
+    ["com.affine.mobile.setting.others.discord"](): string;
     /**
       * `Privacy`
       */
-    ["com.nexio.mobile.setting.others.privacy"](): string;
+    ["com.affine.mobile.setting.others.privacy"](): string;
     /**
       * `Terms of use`
       */
-    ["com.nexio.mobile.setting.others.terms"](): string;
+    ["com.affine.mobile.setting.others.terms"](): string;
     /**
       * `Privacy & others`
       */
-    ["com.nexio.mobile.setting.others.title"](): string;
+    ["com.affine.mobile.setting.others.title"](): string;
     /**
       * `Official website`
       */
-    ["com.nexio.mobile.setting.others.website"](): string;
+    ["com.affine.mobile.setting.others.website"](): string;
     /**
-      * `Delete my account`
+      * `Delete Account`
       */
-    ["com.nexio.mobile.setting.others.delete-account"](): string;
+    ["com.affine.mobile.setting.others.delete-account"](): string;
+    /**
+      * `Danger Zone`
+      */
+    ["com.affine.mobile.setting.danger-zone.title"](): string;
+    /**
+      * `Plans`
+      */
+    ["com.affine.mobile.setting.plans.title"](): string;
+    /**
+      * `Collaborate in Cloud or Self-Hosted.`
+      */
+    ["com.affine.mobile.setting.promo.description"](): string;
+    /**
+      * `Nexio for teams`
+      */
+    ["com.affine.mobile.setting.promo.title"](): string;
+    /**
+      * `More cloud storage and advanced features.`
+      */
+    ["com.affine.mobile.setting.subscription.description"](): string;
+    /**
+      * `Nexio Pro`
+      */
+    ["com.affine.mobile.setting.subscription.title"](): string;
+    /**
+      * `Invite a friend`
+      */
+    ["com.affine.mobile.setting.support.invite"](): string;
+    /**
+      * `Check out Nexio for notes, whiteboards, docs, and AI.`
+      */
+    ["com.affine.mobile.setting.support.invite-message"](): string;
+    /**
+      * `Rate Nexio`
+      */
+    ["com.affine.mobile.setting.support.rate"](): string;
+    /**
+      * `Support us`
+      */
+    ["com.affine.mobile.setting.support.title"](): string;
     /**
       * `Want to keep data local?`
       */
-    ["com.nexio.mobile.sign-in.skip.hint"](): string;
+    ["com.affine.mobile.sign-in.skip.hint"](): string;
     /**
-      * `Start NEXIO without an account`
+      * `Start Nexio without an account`
       */
-    ["com.nexio.mobile.sign-in.skip.link"](): string;
+    ["com.affine.mobile.sign-in.skip.link"](): string;
     /**
       * `Older than a month`
       */
-    ["com.nexio.moreThan30Days"](): string;
+    ["com.affine.moreThan30Days"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.moveToTrash.confirmModal.cancel"](): string;
+    ["com.affine.moveToTrash.confirmModal.cancel"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.moveToTrash.confirmModal.confirm"](): string;
+    ["com.affine.moveToTrash.confirmModal.confirm"](): string;
     /**
       * `{{title}} will be moved to trash`
       */
-    ["com.nexio.moveToTrash.confirmModal.description"](options: {
+    ["com.affine.moveToTrash.confirmModal.description"](options: {
         readonly title: string;
     }): string;
     /**
       * `{{ number }} docs will be moved to Trash`
       */
-    ["com.nexio.moveToTrash.confirmModal.description.multiple"](options: {
+    ["com.affine.moveToTrash.confirmModal.description.multiple"](options: {
         readonly number: string;
     }): string;
     /**
       * `Delete doc?`
       */
-    ["com.nexio.moveToTrash.confirmModal.title"](): string;
+    ["com.affine.moveToTrash.confirmModal.title"](): string;
     /**
       * `Delete {{ number }} docs?`
       */
-    ["com.nexio.moveToTrash.confirmModal.title.multiple"](options: {
+    ["com.affine.moveToTrash.confirmModal.title.multiple"](options: {
         readonly number: string;
     }): string;
     /**
       * `Move to trash`
       */
-    ["com.nexio.moveToTrash.title"](): string;
+    ["com.affine.moveToTrash.title"](): string;
     /**
       * `New tab`
       */
-    ["com.nexio.multi-tab.new-tab"](): string;
+    ["com.affine.multi-tab.new-tab"](): string;
     /**
-      * `Enabling NEXIO Cloud allows you to synchronise and backup data, as well as support multi-user collaboration and content publishing.`
+      * `Nexio Sync keeps your workspace backed up, available across devices, and ready for collaboration and publishing.`
       */
-    ["com.nexio.nameWorkspace.nexio-cloud.description"](): string;
+    ["com.affine.nameWorkspace.affine-cloud.description"](): string;
     /**
-      * `Sync across devices with NEXIO Cloud`
+      * `Sync across devices with Nexio Sync`
       */
-    ["com.nexio.nameWorkspace.nexio-cloud.title"](): string;
+    ["com.affine.nameWorkspace.affine-cloud.title"](): string;
     /**
-      * `If you want the workspace to be stored locally, you can download the desktop client.`
+      * `In the web app, workspaces are saved in this browser. If disk space runs low, the browser may remove them automatically. For fully local storage, use the desktop app.`
       */
-    ["com.nexio.nameWorkspace.nexio-cloud.web-tips"](): string;
+    ["com.affine.nameWorkspace.affine-cloud.web-tips"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.nameWorkspace.button.cancel"](): string;
+    ["com.affine.nameWorkspace.button.cancel"](): string;
     /**
       * `Create`
       */
-    ["com.nexio.nameWorkspace.button.create"](): string;
+    ["com.affine.nameWorkspace.button.create"](): string;
     /**
       * `A workspace is your virtual space to capture, create and plan as just one person or together as a team.`
       */
-    ["com.nexio.nameWorkspace.description"](): string;
+    ["com.affine.nameWorkspace.description"](): string;
     /**
       * `Set a workspace name`
       */
-    ["com.nexio.nameWorkspace.placeholder"](): string;
+    ["com.affine.nameWorkspace.placeholder"](): string;
     /**
       * `Workspace name`
       */
-    ["com.nexio.nameWorkspace.subtitle.workspace-name"](): string;
+    ["com.affine.nameWorkspace.subtitle.workspace-name"](): string;
     /**
       * `Workspace type`
       */
-    ["com.nexio.nameWorkspace.subtitle.workspace-type"](): string;
+    ["com.affine.nameWorkspace.subtitle.workspace-type"](): string;
     /**
       * `Name your workspace`
       */
-    ["com.nexio.nameWorkspace.title"](): string;
+    ["com.affine.nameWorkspace.title"](): string;
     /**
       * `New page`
       */
-    ["com.nexio.new.page-mode"](): string;
+    ["com.affine.new.page-mode"](): string;
     /**
       * `New edgeless`
       */
-    ["com.nexio.new_edgeless"](): string;
+    ["com.affine.new_edgeless"](): string;
     /**
       * `Import`
       */
-    ["com.nexio.new_import"](): string;
+    ["com.affine.new_import"](): string;
     /**
       * `Next week`
       */
-    ["com.nexio.nextWeek"](): string;
+    ["com.affine.nextWeek"](): string;
     /**
       * `Back home`
       */
-    ["com.nexio.notFoundPage.backButton"](): string;
+    ["com.affine.notFoundPage.backButton"](): string;
     /**
       * `Page not found`
       */
-    ["com.nexio.notFoundPage.title"](): string;
+    ["com.affine.notFoundPage.title"](): string;
     /**
-      * `NEXIO Community`
+      * `Nexio Community`
       */
-    ["com.nexio.other-page.nav.nexio-community"](): string;
+    ["com.affine.other-page.nav.affine-community"](): string;
     /**
       * `Blog`
       */
-    ["com.nexio.other-page.nav.blog"](): string;
+    ["com.affine.other-page.nav.blog"](): string;
     /**
       * `Contact us`
       */
-    ["com.nexio.other-page.nav.contact-us"](): string;
+    ["com.affine.other-page.nav.contact-us"](): string;
     /**
       * `Download app`
       */
-    ["com.nexio.other-page.nav.download-app"](): string;
+    ["com.affine.other-page.nav.download-app"](): string;
     /**
       * `Official website`
       */
-    ["com.nexio.other-page.nav.official-website"](): string;
+    ["com.affine.other-page.nav.official-website"](): string;
     /**
-      * `Open NEXIO`
+      * `Open Nexio`
       */
-    ["com.nexio.other-page.nav.open-nexio"](): string;
+    ["com.affine.other-page.nav.open-affine"](): string;
     /**
       * `Add linked doc`
       */
-    ["com.nexio.page-operation.add-linked-page"](): string;
+    ["com.affine.page-operation.add-linked-page"](): string;
     /**
       * `{{ count }} more properties`
       */
-    ["com.nexio.page-properties.more-property.more"](options: {
+    ["com.affine.page-properties.more-property.more"](options: {
         readonly count: string;
     }): string;
     /**
       * `{{ count }} more property`
       */
-    ["com.nexio.page-properties.more-property.one"](options: {
+    ["com.affine.page-properties.more-property.one"](options: {
         readonly count: string;
     }): string;
     /**
       * `hide {{ count }} property`
       */
-    ["com.nexio.page-properties.hide-property.one"](options: {
+    ["com.affine.page-properties.hide-property.one"](options: {
         readonly count: string;
     }): string;
     /**
       * `hide {{ count }} properties`
       */
-    ["com.nexio.page-properties.hide-property.more"](options: {
+    ["com.affine.page-properties.hide-property.more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Add property`
       */
-    ["com.nexio.page-properties.add-property"](): string;
+    ["com.affine.page-properties.add-property"](): string;
     /**
       * `Create property`
       */
-    ["com.nexio.page-properties.add-property.menu.create"](): string;
+    ["com.affine.page-properties.add-property.menu.create"](): string;
     /**
       * `Properties`
       */
-    ["com.nexio.page-properties.add-property.menu.header"](): string;
+    ["com.affine.page-properties.add-property.menu.header"](): string;
     /**
       * `Config properties`
       */
-    ["com.nexio.page-properties.config-properties"](): string;
+    ["com.affine.page-properties.config-properties"](): string;
     /**
       * `Backlinks`
       */
-    ["com.nexio.page-properties.backlinks"](): string;
+    ["com.affine.page-properties.backlinks"](): string;
     /**
       * `Type`
       */
-    ["com.nexio.page-properties.create-property.menu.header"](): string;
+    ["com.affine.page-properties.create-property.menu.header"](): string;
     /**
       * `Added`
       */
-    ["com.nexio.page-properties.create-property.added"](): string;
+    ["com.affine.page-properties.create-property.added"](): string;
     /**
       * `Icons`
       */
-    ["com.nexio.page-properties.icons"](): string;
+    ["com.affine.page-properties.icons"](): string;
     /**
       * `Local user`
       */
-    ["com.nexio.page-properties.local-user"](): string;
+    ["com.affine.page-properties.local-user"](): string;
     /**
       * `Outgoing links`
       */
-    ["com.nexio.page-properties.outgoing-links"](): string;
+    ["com.affine.page-properties.outgoing-links"](): string;
     /**
       * `Info`
       */
-    ["com.nexio.page-properties.page-info"](): string;
+    ["com.affine.page-properties.page-info"](): string;
     /**
       * `View Info`
       */
-    ["com.nexio.page-properties.page-info.view"](): string;
+    ["com.affine.page-properties.page-info.view"](): string;
     /**
       * `No Record`
       */
-    ["com.nexio.page-properties.property-user-avatar-no-record"](): string;
+    ["com.affine.page-properties.property-user-avatar-no-record"](): string;
     /**
       * `Local User`
       */
-    ["com.nexio.page-properties.property-user-local"](): string;
+    ["com.affine.page-properties.property-user-local"](): string;
     /**
       * `Empty`
       */
-    ["com.nexio.page-properties.property-value-placeholder"](): string;
+    ["com.affine.page-properties.property-value-placeholder"](): string;
     /**
       * `Always hide`
       */
-    ["com.nexio.page-properties.property.always-hide"](): string;
+    ["com.affine.page-properties.property.always-hide"](): string;
     /**
       * `Always show`
       */
-    ["com.nexio.page-properties.property.always-show"](): string;
+    ["com.affine.page-properties.property.always-show"](): string;
     /**
       * `Checkbox`
       */
-    ["com.nexio.page-properties.property.checkbox"](): string;
+    ["com.affine.page-properties.property.checkbox"](): string;
     /**
       * `Created by`
       */
-    ["com.nexio.page-properties.property.createdBy"](): string;
+    ["com.affine.page-properties.property.createdBy"](): string;
     /**
       * `Date`
       */
-    ["com.nexio.page-properties.property.date"](): string;
+    ["com.affine.page-properties.property.date"](): string;
     /**
       * `Hide in view`
       */
-    ["com.nexio.page-properties.property.hide-in-view"](): string;
+    ["com.affine.page-properties.property.hide-in-view"](): string;
     /**
       * `Hide in view when empty`
       */
-    ["com.nexio.page-properties.property.hide-in-view-when-empty"](): string;
+    ["com.affine.page-properties.property.hide-in-view-when-empty"](): string;
     /**
       * `Hide when empty`
       */
-    ["com.nexio.page-properties.property.hide-when-empty"](): string;
+    ["com.affine.page-properties.property.hide-when-empty"](): string;
     /**
       * `Number`
       */
-    ["com.nexio.page-properties.property.number"](): string;
+    ["com.affine.page-properties.property.number"](): string;
     /**
       * `Progress`
       */
-    ["com.nexio.page-properties.property.progress"](): string;
+    ["com.affine.page-properties.property.progress"](): string;
     /**
       * `Remove property`
       */
-    ["com.nexio.page-properties.property.remove-property"](): string;
+    ["com.affine.page-properties.property.remove-property"](): string;
     /**
       * `Required`
       */
-    ["com.nexio.page-properties.property.required"](): string;
+    ["com.affine.page-properties.property.required"](): string;
     /**
       * `Show in view`
       */
-    ["com.nexio.page-properties.property.show-in-view"](): string;
+    ["com.affine.page-properties.property.show-in-view"](): string;
     /**
       * `Tags`
       */
-    ["com.nexio.page-properties.property.tags"](): string;
+    ["com.affine.page-properties.property.tags"](): string;
     /**
       * `Doc mode`
       */
-    ["com.nexio.page-properties.property.docPrimaryMode"](): string;
+    ["com.affine.page-properties.property.docPrimaryMode"](): string;
     /**
       * `Text`
       */
-    ["com.nexio.page-properties.property.text"](): string;
+    ["com.affine.page-properties.property.text"](): string;
     /**
       * `Journal`
       */
-    ["com.nexio.page-properties.property.journal"](): string;
+    ["com.affine.page-properties.property.journal"](): string;
     /**
       * `Duplicated`
       */
-    ["com.nexio.page-properties.property.journal-duplicated"](): string;
+    ["com.affine.page-properties.property.journal-duplicated"](): string;
     /**
       * `Remove journal mark`
       */
-    ["com.nexio.page-properties.property.journal-remove"](): string;
+    ["com.affine.page-properties.property.journal-remove"](): string;
     /**
       * `Last edited by`
       */
-    ["com.nexio.page-properties.property.updatedBy"](): string;
+    ["com.affine.page-properties.property.updatedBy"](): string;
     /**
       * `Created`
       */
-    ["com.nexio.page-properties.property.createdAt"](): string;
+    ["com.affine.page-properties.property.createdAt"](): string;
     /**
       * `Updated`
       */
-    ["com.nexio.page-properties.property.updatedAt"](): string;
+    ["com.affine.page-properties.property.updatedAt"](): string;
     /**
       * `Edgeless theme`
       */
-    ["com.nexio.page-properties.property.edgelessTheme"](): string;
+    ["com.affine.page-properties.property.edgelessTheme"](): string;
     /**
       * `Page width`
       */
-    ["com.nexio.page-properties.property.pageWidth"](): string;
+    ["com.affine.page-properties.property.pageWidth"](): string;
     /**
       * `Template`
       */
-    ["com.nexio.page-properties.property.template"](): string;
+    ["com.affine.page-properties.property.template"](): string;
     /**
       * `Add relevant identifiers or categories to the doc. Useful for organizing content, improving searchability, and grouping related docs together.`
       */
-    ["com.nexio.page-properties.property.tags.tooltips"](): string;
+    ["com.affine.page-properties.property.tags.tooltips"](): string;
     /**
       * `Indicates that this doc is a journal entry or daily note. Facilitates easy capture of ideas, quick logging of thoughts, and ongoing personal reflection.`
       */
-    ["com.nexio.page-properties.property.journal.tooltips"](): string;
+    ["com.affine.page-properties.property.journal.tooltips"](): string;
     /**
       * `Use a checkbox to indicate whether a condition is true or false. Useful for confirming options, toggling features, or tracking task states.`
       */
-    ["com.nexio.page-properties.property.checkbox.tooltips"](): string;
+    ["com.affine.page-properties.property.checkbox.tooltips"](): string;
     /**
       * `Use a date field to select or display a specific date. Useful for scheduling, setting deadlines, or recording important events.`
       */
-    ["com.nexio.page-properties.property.date.tooltips"](): string;
+    ["com.affine.page-properties.property.date.tooltips"](): string;
     /**
       * `Upload images to display or manage them. Useful for showcasing visual content, adding illustrations, or organizing a gallery.`
       */
-    ["com.nexio.page-properties.property.image.tooltips"](): string;
+    ["com.affine.page-properties.property.image.tooltips"](): string;
     /**
       * `Select one or more options. Useful for categorizing items, filtering data, or managing tags.`
       */
-    ["com.nexio.page-properties.property.multiSelect.tooltips"](): string;
+    ["com.affine.page-properties.property.multiSelect.tooltips"](): string;
     /**
       * `Enter a numeric value. Useful for quantities, measurements, or ranking items.`
       */
-    ["com.nexio.page-properties.property.number.tooltips"](): string;
+    ["com.affine.page-properties.property.number.tooltips"](): string;
     /**
       * `Set a progress value between 0 and 100. Useful for tracking completion status, visualizing progress, or managing goals.`
       */
-    ["com.nexio.page-properties.property.progress.tooltips"](): string;
+    ["com.affine.page-properties.property.progress.tooltips"](): string;
     /**
       * `Choose one option. Useful for selecting a single preference, categorizing items, or making decisions.`
       */
-    ["com.nexio.page-properties.property.select.tooltips"](): string;
+    ["com.affine.page-properties.property.select.tooltips"](): string;
     /**
-      * `Enter a link to websites or NEXIO docs. Useful for connecting to external resources and referencing internal docs.`
+      * `Enter a link to websites or Nexio docs. Useful for connecting to external resources and referencing internal docs.`
       */
-    ["com.nexio.page-properties.property.link.tooltips"](): string;
+    ["com.affine.page-properties.property.link.tooltips"](): string;
     /**
       * `Enter text. Useful for descriptions, comments, notes, or any other free-form text input.`
       */
-    ["com.nexio.page-properties.property.text.tooltips"](): string;
+    ["com.affine.page-properties.property.text.tooltips"](): string;
     /**
       * `Displays the author of the current doc. Useful for tracking doc ownership, accountability, and collaboration.`
       */
-    ["com.nexio.page-properties.property.createdBy.tooltips"](): string;
+    ["com.affine.page-properties.property.createdBy.tooltips"](): string;
     /**
       * `Displays the last editor of the current doc. Useful for tracking recent changes.`
       */
-    ["com.nexio.page-properties.property.updatedBy.tooltips"](): string;
+    ["com.affine.page-properties.property.updatedBy.tooltips"](): string;
     /**
       * `Record the last modification timestamp. Useful for tracking changes, identifying recent updates, or monitoring content freshness.`
       */
-    ["com.nexio.page-properties.property.updatedAt.tooltips"](): string;
+    ["com.affine.page-properties.property.updatedAt.tooltips"](): string;
     /**
       * `Track when a doc was first created. Useful for maintaining record history, sorting by creation date, or auditing content chronologically.`
       */
-    ["com.nexio.page-properties.property.createdAt.tooltips"](): string;
+    ["com.affine.page-properties.property.createdAt.tooltips"](): string;
     /**
       * `Select the doc mode from Page Mode, Edgeless Mode, or Auto. Useful for choosing the best display for your content.`
       */
-    ["com.nexio.page-properties.property.docPrimaryMode.tooltips"](): string;
+    ["com.affine.page-properties.property.docPrimaryMode.tooltips"](): string;
     /**
       * `Select the doc theme from Light, Dark, or System. Useful for precise control over content viewing style.`
       */
-    ["com.nexio.page-properties.property.edgelessTheme.tooltips"](): string;
+    ["com.affine.page-properties.property.edgelessTheme.tooltips"](): string;
     /**
       * `Control the width of this page to fit content display needs.`
       */
-    ["com.nexio.page-properties.property.pageWidth.tooltips"](): string;
+    ["com.affine.page-properties.property.pageWidth.tooltips"](): string;
     /**
       * `Mark this doc as a template, which can be used to create new docs.`
       */
-    ["com.nexio.page-properties.property.template.tooltips"](): string;
+    ["com.affine.page-properties.property.template.tooltips"](): string;
     /**
       * `Created by {{userName}}`
       */
-    ["com.nexio.page-properties.property.createdBy.tip"](options: {
+    ["com.affine.page-properties.property.createdBy.tip"](options: {
         readonly userName: string;
     }): string;
     /**
       * `Last edited by {{userName}}`
       */
-    ["com.nexio.page-properties.property.updatedBy.tip"](options: {
+    ["com.affine.page-properties.property.updatedBy.tip"](options: {
         readonly userName: string;
     }): string;
     /**
       * `Properties`
       */
-    ["com.nexio.propertySidebar.property-list.section"](): string;
+    ["com.affine.propertySidebar.property-list.section"](): string;
     /**
       * `Add more properties`
       */
-    ["com.nexio.propertySidebar.add-more.section"](): string;
+    ["com.affine.propertySidebar.add-more.section"](): string;
     /**
       * `customize properties`
       */
-    ["com.nexio.page-properties.settings.title"](): string;
+    ["com.affine.page-properties.settings.title"](): string;
     /**
       * `Open tag page`
       */
-    ["com.nexio.page-properties.tags.open-tags-page"](): string;
+    ["com.affine.page-properties.tags.open-tags-page"](): string;
     /**
       * `Select tag or create one`
       */
-    ["com.nexio.page-properties.tags.selector-header-title"](): string;
+    ["com.affine.page-properties.tags.selector-header-title"](): string;
     /**
       * `Display`
       */
-    ["com.nexio.page.display"](): string;
+    ["com.affine.page.display"](): string;
     /**
       * `Display properties`
       */
-    ["com.nexio.page.display.display-properties"](): string;
+    ["com.affine.page.display.display-properties"](): string;
     /**
       * `Body notes`
       */
-    ["com.nexio.page.display.display-properties.body-notes"](): string;
+    ["com.affine.page.display.display-properties.body-notes"](): string;
     /**
       * `Grouping`
       */
-    ["com.nexio.page.display.grouping"](): string;
+    ["com.affine.page.display.grouping"](): string;
     /**
       * `Favourites`
       */
-    ["com.nexio.page.display.grouping.group-by-favourites"](): string;
+    ["com.affine.page.display.grouping.group-by-favourites"](): string;
     /**
       * `Tag`
       */
-    ["com.nexio.page.display.grouping.group-by-tag"](): string;
+    ["com.affine.page.display.grouping.group-by-tag"](): string;
     /**
       * `Untagged`
       */
-    ["com.nexio.page.display.grouping.group-by-tag.untagged"](): string;
+    ["com.affine.page.display.grouping.group-by-tag.untagged"](): string;
     /**
       * `No grouping`
       */
-    ["com.nexio.page.display.grouping.no-grouping"](): string;
+    ["com.affine.page.display.grouping.no-grouping"](): string;
     /**
       * `List option`
       */
-    ["com.nexio.page.display.list-option"](): string;
+    ["com.affine.page.display.list-option"](): string;
     /**
       * `Clear selection`
       */
-    ["com.nexio.page.group-header.clear"](): string;
+    ["com.affine.page.group-header.clear"](): string;
     /**
       * `Favourited`
       */
-    ["com.nexio.page.group-header.favourited"](): string;
+    ["com.affine.page.group-header.favourited"](): string;
     /**
       * `Not favourited`
       */
-    ["com.nexio.page.group-header.not-favourited"](): string;
+    ["com.affine.page.group-header.not-favourited"](): string;
     /**
       * `Select all`
       */
-    ["com.nexio.page.group-header.select-all"](): string;
+    ["com.affine.page.group-header.select-all"](): string;
     /**
       * `Created by {{name}}`
       */
-    ["com.nexio.page.toolbar.created_by"](options: {
+    ["com.affine.page.toolbar.created_by"](options: {
         readonly name: string;
     }): string;
     /**
       * `Doc mode`
       */
-    ["com.nexio.pageMode"](): string;
+    ["com.affine.pageMode"](): string;
     /**
       * `all`
       */
-    ["com.nexio.pageMode.all"](): string;
+    ["com.affine.pageMode.all"](): string;
     /**
       * `Edgeless`
       */
-    ["com.nexio.pageMode.edgeless"](): string;
+    ["com.affine.pageMode.edgeless"](): string;
     /**
       * `Page`
       */
-    ["com.nexio.pageMode.page"](): string;
+    ["com.affine.pageMode.page"](): string;
     /**
-      * `Congratulations on your successful purchase of NEXIO AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within NEXIO AI, dramatically enhancing your productivity.`
+      * `Congratulations on your successful purchase of Nexio AI! You're now empowered to refine your content, generate images, and craft comprehensive mindmaps directly within Nexio AI, dramatically enhancing your productivity.`
       */
-    ["com.nexio.payment.ai-upgrade-success-page.text"](): string;
+    ["com.affine.payment.ai-upgrade-success-page.text"](): string;
     /**
       * `Purchase successful!`
       */
-    ["com.nexio.payment.ai-upgrade-success-page.title"](): string;
+    ["com.affine.payment.ai-upgrade-success-page.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.nexio.payment.ai.action.cancel.button-label"](): string;
+    ["com.affine.payment.ai.action.cancel.button-label"](): string;
     /**
-      * `Keep NEXIO AI`
+      * `Keep Nexio AI`
       */
-    ["com.nexio.payment.ai.action.cancel.confirm.cancel-text"](): string;
-    /**
-      * `Cancel subscription`
-      */
-    ["com.nexio.payment.ai.action.cancel.confirm.confirm-text"](): string;
-    /**
-      * `If you end your subscription now, you can still use NEXIO AI until the end of this billing period.`
-      */
-    ["com.nexio.payment.ai.action.cancel.confirm.description"](): string;
+    ["com.affine.payment.ai.action.cancel.confirm.cancel-text"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.nexio.payment.ai.action.cancel.confirm.title"](): string;
+    ["com.affine.payment.ai.action.cancel.confirm.confirm-text"](): string;
+    /**
+      * `If you end your subscription now, you can still use Nexio AI until the end of this billing period.`
+      */
+    ["com.affine.payment.ai.action.cancel.confirm.description"](): string;
+    /**
+      * `Cancel subscription`
+      */
+    ["com.affine.payment.ai.action.cancel.confirm.title"](): string;
     /**
       * `Login`
       */
-    ["com.nexio.payment.ai.action.login.button-label"](): string;
+    ["com.affine.payment.ai.action.login.button-label"](): string;
     /**
       * `Resume`
       */
-    ["com.nexio.payment.ai.action.resume.button-label"](): string;
+    ["com.affine.payment.ai.action.resume.button-label"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.cancel-text"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.cancel-text"](): string;
     /**
       * `Confirm`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.confirm-text"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.confirm-text"](): string;
     /**
-      * `Are you sure you want to resume the subscription for NEXIO AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
+      * `Are you sure you want to resume the subscription for Nexio AI? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.description"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.description"](): string;
     /**
       * `You will be charged in the next billing cycle.`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.notify.msg"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.notify.msg"](): string;
     /**
       * `Subscription updated`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.notify.title"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.notify.title"](): string;
     /**
       * `Resume auto-renewal?`
       */
-    ["com.nexio.payment.ai.action.resume.confirm.title"](): string;
+    ["com.affine.payment.ai.action.resume.confirm.title"](): string;
     /**
       * `Write with you`
       */
-    ["com.nexio.payment.ai.benefit.g1"](): string;
+    ["com.affine.payment.ai.benefit.g1"](): string;
     /**
       * `Create quality content from sentences to articles on topics you need`
       */
-    ["com.nexio.payment.ai.benefit.g1-1"](): string;
+    ["com.affine.payment.ai.benefit.g1-1"](): string;
     /**
       * `Rewrite like the professionals`
       */
-    ["com.nexio.payment.ai.benefit.g1-2"](): string;
+    ["com.affine.payment.ai.benefit.g1-2"](): string;
     /**
       * `Change the tones / fix spelling & grammar`
       */
-    ["com.nexio.payment.ai.benefit.g1-3"](): string;
+    ["com.affine.payment.ai.benefit.g1-3"](): string;
     /**
       * `Draw with you`
       */
-    ["com.nexio.payment.ai.benefit.g2"](): string;
+    ["com.affine.payment.ai.benefit.g2"](): string;
     /**
       * `Visualize your mind, magically`
       */
-    ["com.nexio.payment.ai.benefit.g2-1"](): string;
+    ["com.affine.payment.ai.benefit.g2-1"](): string;
     /**
       * `Turn your outline into beautiful, engaging presentations`
       */
-    ["com.nexio.payment.ai.benefit.g2-2"](): string;
+    ["com.affine.payment.ai.benefit.g2-2"](): string;
     /**
       * `Summarize your content into structured mind-map`
       */
-    ["com.nexio.payment.ai.benefit.g2-3"](): string;
+    ["com.affine.payment.ai.benefit.g2-3"](): string;
     /**
       * `Plan with you`
       */
-    ["com.nexio.payment.ai.benefit.g3"](): string;
+    ["com.affine.payment.ai.benefit.g3"](): string;
     /**
       * `Memorize and tidy up your knowledge`
       */
-    ["com.nexio.payment.ai.benefit.g3-1"](): string;
+    ["com.affine.payment.ai.benefit.g3-1"](): string;
     /**
       * `Auto-sorting and auto-tagging`
       */
-    ["com.nexio.payment.ai.benefit.g3-2"](): string;
+    ["com.affine.payment.ai.benefit.g3-2"](): string;
     /**
       * `Open source & Privacy ensured`
       */
-    ["com.nexio.payment.ai.benefit.g3-3"](): string;
+    ["com.affine.payment.ai.benefit.g3-3"](): string;
     /**
-      * `You have purchased NEXIO AI. The expiration date is {{end}}.`
+      * `You have purchased Nexio AI. The expiration date is {{end}}.`
       */
-    ["com.nexio.payment.ai.billing-tip.end-at"](options: {
+    ["com.affine.payment.ai.billing-tip.end-at"](options: {
         readonly end: string;
     }): string;
     /**
-      * `You have purchased NEXIO AI. The next payment date is {{due}}.`
+      * `You have purchased Nexio AI. The next payment date is {{due}}.`
       */
-    ["com.nexio.payment.ai.billing-tip.next-bill-at"](options: {
+    ["com.affine.payment.ai.billing-tip.next-bill-at"](options: {
         readonly due: string;
     }): string;
     /**
       * `Your recent payment failed, the next payment date is {{due}}.`
       */
-    ["com.nexio.payment.billing-tip.past-due"](options: {
+    ["com.affine.payment.billing-tip.past-due"](options: {
         readonly due: string;
     }): string;
     /**
       * `You are currently on the Free plan.`
       */
-    ["com.nexio.payment.ai.pricing-plan.caption-free"](): string;
+    ["com.affine.payment.ai.pricing-plan.caption-free"](): string;
     /**
-      * `You have purchased NEXIO AI`
+      * `You have purchased Nexio AI`
       */
-    ["com.nexio.payment.ai.pricing-plan.caption-purchased"](): string;
+    ["com.affine.payment.ai.pricing-plan.caption-purchased"](): string;
     /**
-      * `Learn about NEXIO AI`
+      * `Learn about Nexio AI`
       */
-    ["com.nexio.payment.ai.pricing-plan.learn"](): string;
+    ["com.affine.payment.ai.pricing-plan.learn"](): string;
     /**
-      * `NEXIO AI`
+      * `Nexio AI`
       */
-    ["com.nexio.payment.ai.pricing-plan.title"](): string;
+    ["com.affine.payment.ai.pricing-plan.title"](): string;
     /**
       * `Turn all your ideas into reality`
       */
-    ["com.nexio.payment.ai.pricing-plan.title-caption-1"](): string;
+    ["com.affine.payment.ai.pricing-plan.title-caption-1"](): string;
     /**
       * `A true multimodal AI copilot.`
       */
-    ["com.nexio.payment.ai.pricing-plan.title-caption-2"](): string;
+    ["com.affine.payment.ai.pricing-plan.title-caption-2"](): string;
     /**
       * `Billed annually`
       */
-    ["com.nexio.payment.ai.subscribe.billed-annually"](): string;
+    ["com.affine.payment.ai.subscribe.billed-annually"](): string;
     /**
-      * `You have purchased NEXIO AI.`
+      * `You have purchased Nexio AI.`
       */
-    ["com.nexio.payment.ai.usage-description-purchased"](): string;
+    ["com.affine.payment.ai.usage-description-purchased"](): string;
     /**
-      * `NEXIO AI usage`
+      * `Nexio AI usage`
       */
-    ["com.nexio.payment.ai.usage-title"](): string;
+    ["com.affine.payment.ai.usage-title"](): string;
     /**
       * `Change plan`
       */
-    ["com.nexio.payment.ai.usage.change-button-label"](): string;
+    ["com.affine.payment.ai.usage.change-button-label"](): string;
     /**
       * `Purchase`
       */
-    ["com.nexio.payment.ai.usage.purchase-button-label"](): string;
+    ["com.affine.payment.ai.usage.purchase-button-label"](): string;
     /**
       * `Times used`
       */
-    ["com.nexio.payment.ai.usage.used-caption"](): string;
+    ["com.affine.payment.ai.usage.used-caption"](): string;
     /**
       * `{{used}}/{{limit}} times`
       */
-    ["com.nexio.payment.ai.usage.used-detail"](options: Readonly<{
+    ["com.affine.payment.ai.usage.used-detail"](options: Readonly<{
         used: string;
         limit: string;
     }>): string;
     /**
       * `Active`
       */
-    ["com.nexio.payment.subscription-status.active"](): string;
+    ["com.affine.payment.subscription-status.active"](): string;
     /**
       * `Past-due bill`
       */
-    ["com.nexio.payment.subscription-status.past-due"](): string;
+    ["com.affine.payment.subscription-status.past-due"](): string;
     /**
       * `Trialing`
       */
-    ["com.nexio.payment.subscription-status.trialing"](): string;
+    ["com.affine.payment.subscription-status.trialing"](): string;
     /**
       * `Unlimited local workspaces`
       */
-    ["com.nexio.payment.benefit-1"](): string;
+    ["com.affine.payment.benefit-1"](): string;
     /**
       * `Unlimited login devices`
       */
-    ["com.nexio.payment.benefit-2"](): string;
+    ["com.affine.payment.benefit-2"](): string;
     /**
       * `Unlimited blocks`
       */
-    ["com.nexio.payment.benefit-3"](): string;
+    ["com.affine.payment.benefit-3"](): string;
     /**
       * `{{capacity}} of cloud storage`
       */
-    ["com.nexio.payment.benefit-4"](options: {
+    ["com.affine.payment.benefit-4"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `{{capacity}} of maximum file size`
       */
-    ["com.nexio.payment.benefit-5"](options: {
+    ["com.affine.payment.benefit-5"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `Number of members per workspace ≤ {{capacity}}`
       */
-    ["com.nexio.payment.benefit-6"](options: {
+    ["com.affine.payment.benefit-6"](options: {
         readonly capacity: string;
     }): string;
     /**
       * `{{capacity}}-days version history`
       */
-    ["com.nexio.payment.benefit-7"](options: {
+    ["com.affine.payment.benefit-7"](options: {
         readonly capacity: string;
     }): string;
     /**
-      * `NEXIO AI`
+      * `Nexio AI`
       */
-    ["com.nexio.payment.billing-setting.ai-plan"](): string;
+    ["com.affine.payment.billing-setting.ai-plan"](): string;
     /**
       * `Purchase`
       */
-    ["com.nexio.payment.billing-setting.ai.purchase"](): string;
+    ["com.affine.payment.billing-setting.ai.purchase"](): string;
     /**
       * `Start free trial`
       */
-    ["com.nexio.payment.billing-setting.ai.start-free-trial"](): string;
+    ["com.affine.payment.billing-setting.ai.start-free-trial"](): string;
     /**
       * `One-time payment`
       */
-    ["com.nexio.payment.billing-setting.believer.price-caption"](): string;
+    ["com.affine.payment.billing-setting.believer.price-caption"](): string;
     /**
-      * `NEXIO Cloud`
+      * `Nexio Cloud`
       */
-    ["com.nexio.payment.billing-setting.believer.title"](): string;
+    ["com.affine.payment.billing-setting.believer.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.nexio.payment.billing-setting.cancel-subscription"](): string;
+    ["com.affine.payment.billing-setting.cancel-subscription"](): string;
     /**
       * `Once you canceled subscription you will no longer enjoy the plan benefits.`
       */
-    ["com.nexio.payment.billing-setting.cancel-subscription.description"](): string;
+    ["com.affine.payment.billing-setting.cancel-subscription.description"](): string;
     /**
       * `Change plan`
       */
-    ["com.nexio.payment.billing-setting.change-plan"](): string;
+    ["com.affine.payment.billing-setting.change-plan"](): string;
     /**
-      * `NEXIO Cloud`
+      * `Nexio Cloud`
       */
-    ["com.nexio.payment.billing-setting.current-plan"](): string;
+    ["com.affine.payment.billing-setting.current-plan"](): string;
     /**
       * `Expiration date`
       */
-    ["com.nexio.payment.billing-setting.expiration-date"](): string;
+    ["com.affine.payment.billing-setting.expiration-date"](): string;
     /**
       * `Your subscription is valid until {{expirationDate}}`
       */
-    ["com.nexio.payment.billing-setting.expiration-date.description"](options: {
+    ["com.affine.payment.billing-setting.expiration-date.description"](options: {
         readonly expirationDate: string;
     }): string;
     /**
       * `Billing history`
       */
-    ["com.nexio.payment.billing-setting.history"](): string;
+    ["com.affine.payment.billing-setting.history"](): string;
     /**
       * `Information`
       */
-    ["com.nexio.payment.billing-setting.information"](): string;
+    ["com.affine.payment.billing-setting.information"](): string;
     /**
       * `month`
       */
-    ["com.nexio.payment.billing-setting.month"](): string;
+    ["com.affine.payment.billing-setting.month"](): string;
     /**
       * `There are no invoices to display.`
       */
-    ["com.nexio.payment.billing-setting.no-invoice"](): string;
+    ["com.affine.payment.billing-setting.no-invoice"](): string;
     /**
       * `Paid`
       */
-    ["com.nexio.payment.billing-setting.paid"](): string;
+    ["com.affine.payment.billing-setting.paid"](): string;
     /**
       * `Manage payment details`
       */
-    ["com.nexio.payment.billing-setting.payment-method"](): string;
+    ["com.affine.payment.billing-setting.payment-method"](): string;
     /**
       * `View future and past invoices, update billing information, and change payment methods. Provided by Stripe.`
       */
-    ["com.nexio.payment.billing-setting.payment-method.description"](): string;
+    ["com.affine.payment.billing-setting.payment-method.description"](): string;
     /**
       * `Go`
       */
-    ["com.nexio.payment.billing-setting.payment-method.go"](): string;
+    ["com.affine.payment.billing-setting.payment-method.go"](): string;
     /**
       * `Renew date`
       */
-    ["com.nexio.payment.billing-setting.renew-date"](): string;
+    ["com.affine.payment.billing-setting.renew-date"](): string;
     /**
       * `Next billing date: {{renewDate}}`
       */
-    ["com.nexio.payment.billing-setting.renew-date.description"](options: {
+    ["com.affine.payment.billing-setting.renew-date.description"](options: {
         readonly renewDate: string;
     }): string;
     /**
       * `Due date`
       */
-    ["com.nexio.payment.billing-setting.due-date"](): string;
+    ["com.affine.payment.billing-setting.due-date"](): string;
     /**
       * `Your subscription will end on {{dueDate}}`
       */
-    ["com.nexio.payment.billing-setting.due-date.description"](options: {
+    ["com.affine.payment.billing-setting.due-date.description"](options: {
         readonly dueDate: string;
     }): string;
     /**
       * `Resume`
       */
-    ["com.nexio.payment.billing-setting.resume-subscription"](): string;
+    ["com.affine.payment.billing-setting.resume-subscription"](): string;
     /**
       * `Manage your billing information and invoices`
       */
-    ["com.nexio.payment.billing-setting.subtitle"](): string;
+    ["com.affine.payment.billing-setting.subtitle"](): string;
     /**
       * `Billing`
       */
-    ["com.nexio.payment.billing-setting.title"](): string;
+    ["com.affine.payment.billing-setting.title"](): string;
     /**
       * `Update`
       */
-    ["com.nexio.payment.billing-setting.update"](): string;
+    ["com.affine.payment.billing-setting.update"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.payment.billing-setting.upgrade"](): string;
+    ["com.affine.payment.billing-setting.upgrade"](): string;
     /**
       * `View invoice`
       */
-    ["com.nexio.payment.billing-setting.view-invoice"](): string;
+    ["com.affine.payment.billing-setting.view-invoice"](): string;
     /**
       * `year`
       */
-    ["com.nexio.payment.billing-setting.year"](): string;
+    ["com.affine.payment.billing-setting.year"](): string;
     /**
-      * `Please tell us more about your use case, to make NEXIO better.`
+      * `Please tell us more about your use case, to make Nexio better.`
       */
-    ["com.nexio.payment.billing-type-form.description"](): string;
+    ["com.affine.payment.billing-type-form.description"](): string;
     /**
       * `Go`
       */
-    ["com.nexio.payment.billing-type-form.go"](): string;
+    ["com.affine.payment.billing-type-form.go"](): string;
     /**
       * `Tell us your use case`
       */
-    ["com.nexio.payment.billing-type-form.title"](): string;
+    ["com.affine.payment.billing-type-form.title"](): string;
     /**
       * `You have reached the limit`
       */
-    ["com.nexio.payment.blob-limit.title"](): string;
+    ["com.affine.payment.blob-limit.title"](): string;
     /**
       * `Book a demo`
       */
-    ["com.nexio.payment.book-a-demo"](): string;
+    ["com.affine.payment.book-a-demo"](): string;
     /**
       * `Buy Pro`
       */
-    ["com.nexio.payment.buy-pro"](): string;
+    ["com.affine.payment.buy-pro"](): string;
     /**
       * `Change to {{to}} Billing`
       */
-    ["com.nexio.payment.change-to"](options: {
+    ["com.affine.payment.change-to"](options: {
         readonly to: string;
     }): string;
     /**
       * `Include in FOSS`
       */
-    ["com.nexio.payment.cloud.free.benefit.g1"](): string;
+    ["com.affine.payment.cloud.free.benefit.g1"](): string;
     /**
       * `Unlimited local workspaces`
       */
-    ["com.nexio.payment.cloud.free.benefit.g1-1"](): string;
+    ["com.affine.payment.cloud.free.benefit.g1-1"](): string;
     /**
       * `Unlimited use and customization`
       */
-    ["com.nexio.payment.cloud.free.benefit.g1-2"](): string;
+    ["com.affine.payment.cloud.free.benefit.g1-2"](): string;
     /**
       * `Unlimited doc and edgeless editing`
       */
-    ["com.nexio.payment.cloud.free.benefit.g1-3"](): string;
+    ["com.affine.payment.cloud.free.benefit.g1-3"](): string;
     /**
       * `Include in Basic`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2"](): string;
     /**
       * `10 GB of cloud storage.`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2-1"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2-1"](): string;
     /**
       * `10 MB of maximum file size.`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2-2"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2-2"](): string;
     /**
       * `Up to 3 members per workspace.`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2-3"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2-3"](): string;
     /**
       * `7-days cloud time machine file version history.`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2-4"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2-4"](): string;
     /**
       * `Up to 3 login devices.`
       */
-    ["com.nexio.payment.cloud.free.benefit.g2-5"](): string;
+    ["com.affine.payment.cloud.free.benefit.g2-5"](): string;
     /**
       * `Local Editor under MIT license.`
       */
-    ["com.nexio.payment.cloud.free.description"](): string;
+    ["com.affine.payment.cloud.free.description"](): string;
     /**
       * `Local FOSS + Cloud Basic`
       */
-    ["com.nexio.payment.cloud.free.name"](): string;
+    ["com.affine.payment.cloud.free.name"](): string;
     /**
       * `Free forever`
       */
-    ["com.nexio.payment.cloud.free.title"](): string;
+    ["com.affine.payment.cloud.free.title"](): string;
     /**
       * `Included in Pro plan`
       */
-    ["com.nexio.payment.cloud.onetime.included"](): string;
+    ["com.affine.payment.cloud.onetime.included"](): string;
     /**
       * `Included in Believer plan`
       */
-    ["com.nexio.payment.cloud.lifetime.included"](): string;
+    ["com.affine.payment.cloud.lifetime.included"](): string;
     /**
       * `We host, no technical setup required.`
       */
-    ["com.nexio.payment.cloud.pricing-plan.select.caption"](): string;
+    ["com.affine.payment.cloud.pricing-plan.select.caption"](): string;
     /**
-      * `Hosted by NEXIO.Pro`
+      * `Hosted by Nexio.Pro`
       */
-    ["com.nexio.payment.cloud.pricing-plan.select.title"](): string;
+    ["com.affine.payment.cloud.pricing-plan.select.title"](): string;
     /**
       * `Billed annually`
       */
-    ["com.nexio.payment.cloud.pricing-plan.toggle-billed-yearly"](): string;
+    ["com.affine.payment.cloud.pricing-plan.toggle-billed-yearly"](): string;
     /**
       * `Saving {{discount}}%`
       */
-    ["com.nexio.payment.cloud.pricing-plan.toggle-discount"](options: {
+    ["com.affine.payment.cloud.pricing-plan.toggle-discount"](options: {
         readonly discount: string;
     }): string;
     /**
       * `Annually`
       */
-    ["com.nexio.payment.cloud.pricing-plan.toggle-yearly"](): string;
+    ["com.affine.payment.cloud.pricing-plan.toggle-yearly"](): string;
     /**
       * `Include in Pro`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1"](): string;
     /**
-      * `Everything in NEXIO FOSS & Basic.`
+      * `Everything in Nexio FOSS & Basic.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-1"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-1"](): string;
     /**
       * `100 GB of cloud storage.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-2"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-2"](): string;
     /**
       * `100 MB of maximum file size.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-3"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-3"](): string;
     /**
       * `Up to 10 members per workspace.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-4"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-4"](): string;
     /**
       * `30-days cloud time machine file version history.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-5"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-5"](): string;
     /**
       * `Add comments on Doc and Edgeless.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-6"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-6"](): string;
     /**
       * `Community support.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-7"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-7"](): string;
     /**
       * `Real-time syncing & collaboration for more people.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-8"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-8"](): string;
     /**
       * `Granular edit access to docs.`
       */
-    ["com.nexio.payment.cloud.pro.benefit.g1-9"](): string;
+    ["com.affine.payment.cloud.pro.benefit.g1-9"](): string;
     /**
       * `For family and small teams.`
       */
-    ["com.nexio.payment.cloud.pro.description"](): string;
+    ["com.affine.payment.cloud.pro.description"](): string;
     /**
       * `Pro`
       */
-    ["com.nexio.payment.cloud.pro.name"](): string;
+    ["com.affine.payment.cloud.pro.name"](): string;
     /**
       * `annually`
       */
-    ["com.nexio.payment.cloud.pro.title.billed-yearly"](): string;
+    ["com.affine.payment.cloud.pro.title.billed-yearly"](): string;
     /**
       * `{{price}} per month`
       */
-    ["com.nexio.payment.cloud.pro.title.price-monthly"](options: {
+    ["com.affine.payment.cloud.pro.title.price-monthly"](options: {
         readonly price: string;
     }): string;
     /**
       * `Include in Team Workspace`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1"](): string;
     /**
-      * `Everything in NEXIO Pro.`
+      * `Everything in Nexio Pro.`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-1"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-1"](): string;
     /**
       * `100 GB initial storage + 20 GB per seat.`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-2"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-2"](): string;
     /**
       * `500 MB of maximum file size.`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-3"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-3"](): string;
     /**
       * `Unlimited team members (10+ seats).`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-4"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-4"](): string;
     /**
       * `Multiple admin roles.`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-5"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-5"](): string;
     /**
       * `Priority customer support.`
       */
-    ["com.nexio.payment.cloud.team-workspace.benefit.g1-6"](): string;
+    ["com.affine.payment.cloud.team-workspace.benefit.g1-6"](): string;
     /**
       * `Best for scalable teams.`
       */
-    ["com.nexio.payment.cloud.team-workspace.description"](): string;
+    ["com.affine.payment.cloud.team-workspace.description"](): string;
     /**
       * `Team`
       */
-    ["com.nexio.payment.cloud.team-workspace.name"](): string;
+    ["com.affine.payment.cloud.team-workspace.name"](): string;
     /**
       * `annually`
       */
-    ["com.nexio.payment.cloud.team-workspace.title.billed-yearly"](): string;
+    ["com.affine.payment.cloud.team-workspace.title.billed-yearly"](): string;
     /**
       * `{{price}} per seat/month`
       */
-    ["com.nexio.payment.cloud.team-workspace.title.price-monthly"](options: {
+    ["com.affine.payment.cloud.team-workspace.title.price-monthly"](options: {
         readonly price: string;
     }): string;
     /**
       * `Contact sales`
       */
-    ["com.nexio.payment.contact-sales"](): string;
+    ["com.affine.payment.contact-sales"](): string;
     /**
       * `Current plan`
       */
-    ["com.nexio.payment.current-plan"](): string;
+    ["com.affine.payment.current-plan"](): string;
     /**
       * `Start 14-day free trial`
       */
-    ["com.nexio.payment.start-free-trial"](): string;
+    ["com.affine.payment.start-free-trial"](): string;
     /**
       * `{{amount}}% off`
       */
-    ["com.nexio.payment.discount-amount"](options: {
+    ["com.affine.payment.discount-amount"](options: {
         readonly amount: string;
     }): string;
     /**
       * `Downgrade`
       */
-    ["com.nexio.payment.downgrade"](): string;
+    ["com.affine.payment.downgrade"](): string;
     /**
-      * `We'd like to hear more about where we fall short, so that we can make NEXIO better.`
+      * `We'd like to hear more about where we fall short, so that we can make Nexio better.`
       */
-    ["com.nexio.payment.downgraded-notify.content"](): string;
+    ["com.affine.payment.downgraded-notify.content"](): string;
     /**
       * `Later`
       */
-    ["com.nexio.payment.downgraded-notify.later"](): string;
+    ["com.affine.payment.downgraded-notify.later"](): string;
     /**
       * `Sure, Open in browser`
       */
-    ["com.nexio.payment.downgraded-notify.ok-client"](): string;
+    ["com.affine.payment.downgraded-notify.ok-client"](): string;
     /**
       * `Sure, Open in new tab`
       */
-    ["com.nexio.payment.downgraded-notify.ok-web"](): string;
+    ["com.affine.payment.downgraded-notify.ok-web"](): string;
     /**
       * `Sorry to see you go`
       */
-    ["com.nexio.payment.downgraded-notify.title"](): string;
+    ["com.affine.payment.downgraded-notify.title"](): string;
     /**
       * `You have successfully downgraded. After the current billing period ends, your account will automatically switch to the Free plan.`
       */
-    ["com.nexio.payment.downgraded-tooltip"](): string;
+    ["com.affine.payment.downgraded-tooltip"](): string;
     /**
       * `Best team workspace for collaboration and knowledge distilling.`
       */
-    ["com.nexio.payment.dynamic-benefit-1"](): string;
+    ["com.affine.payment.dynamic-benefit-1"](): string;
     /**
       * `Focusing on what really matters with team project management and automation.`
       */
-    ["com.nexio.payment.dynamic-benefit-2"](): string;
+    ["com.affine.payment.dynamic-benefit-2"](): string;
     /**
       * `Pay for seats, fits all team size.`
       */
-    ["com.nexio.payment.dynamic-benefit-3"](): string;
+    ["com.affine.payment.dynamic-benefit-3"](): string;
     /**
       * `Solutions & best practices for dedicated needs.`
       */
-    ["com.nexio.payment.dynamic-benefit-4"](): string;
+    ["com.affine.payment.dynamic-benefit-4"](): string;
     /**
       * `Embedable & interrogations with IT support.`
       */
-    ["com.nexio.payment.dynamic-benefit-5"](): string;
+    ["com.affine.payment.dynamic-benefit-5"](): string;
     /**
-      * `Everything in NEXIO Pro`
+      * `Everything in Nexio Pro`
       */
-    ["com.nexio.payment.lifetime.benefit-1"](): string;
+    ["com.affine.payment.lifetime.benefit-1"](): string;
     /**
       * `Life-time personal usage`
       */
-    ["com.nexio.payment.lifetime.benefit-2"](): string;
+    ["com.affine.payment.lifetime.benefit-2"](): string;
     /**
       * `{{capacity}} Cloud Storage`
       */
-    ["com.nexio.payment.lifetime.benefit-3"](options: {
+    ["com.affine.payment.lifetime.benefit-3"](options: {
         readonly capacity: string;
     }): string;
     /**
-      * `Dedicated Discord support with NEXIO makers`
+      * `Dedicated Discord support with Nexio makers`
       */
-    ["com.nexio.payment.lifetime.benefit-4"](): string;
+    ["com.affine.payment.lifetime.benefit-4"](): string;
     /**
       * `Become a Life-time supporter?`
       */
-    ["com.nexio.payment.lifetime.caption-1"](): string;
+    ["com.affine.payment.lifetime.caption-1"](): string;
     /**
       * `Purchase`
       */
-    ["com.nexio.payment.lifetime.purchase"](): string;
+    ["com.affine.payment.lifetime.purchase"](): string;
     /**
       * `Purchased`
       */
-    ["com.nexio.payment.lifetime.purchased"](): string;
+    ["com.affine.payment.lifetime.purchased"](): string;
     /**
       * `Believer Plan`
       */
-    ["com.nexio.payment.lifetime.title"](): string;
+    ["com.affine.payment.lifetime.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.payment.member-limit.free.confirm"](): string;
+    ["com.affine.payment.member-limit.free.confirm"](): string;
     /**
       * `Workspaces created by {{planName}} users are limited to {{quota}} members. To add more collaborators, you can:`
       */
-    ["com.nexio.payment.member-limit.description"](options: Readonly<{
+    ["com.affine.payment.member-limit.description"](options: Readonly<{
         planName: string;
         quota: string;
     }>): string;
     /**
-      * `Upgrade to nexio Pro for expanded member capacity`
+      * `Upgrade to Nexio Pro for expanded member capacity`
       */
-    ["com.nexio.payment.member-limit.description.tips-for-free-plan"](): string;
+    ["com.affine.payment.member-limit.description.tips-for-free-plan"](): string;
     /**
       * `Convert to a Team Workspace for unlimited collaboration`
       */
-    ["com.nexio.payment.member-limit.description.tips-1"](): string;
+    ["com.affine.payment.member-limit.description.tips-1"](): string;
     /**
       * `Or create a new workspace`
       */
-    ["com.nexio.payment.member-limit.description.tips-2"](): string;
+    ["com.affine.payment.member-limit.description.tips-2"](): string;
     /**
       * `Got it`
       */
-    ["com.nexio.payment.member-limit.pro.confirm"](): string;
+    ["com.affine.payment.member-limit.pro.confirm"](): string;
     /**
       * `You have reached the limit`
       */
-    ["com.nexio.payment.member-limit.title"](): string;
+    ["com.affine.payment.member-limit.title"](): string;
     /**
       * `Manage members here. {{planName}} users can invite up to {{memberLimit}}`
       */
-    ["com.nexio.payment.member.description"](options: Readonly<{
+    ["com.affine.payment.member.description"](options: Readonly<{
         planName: string;
         memberLimit: string;
     }>): string;
     /**
       * `Choose your plan`
       */
-    ["com.nexio.payment.member.description.choose-plan"](): string;
+    ["com.affine.payment.member.description.choose-plan"](): string;
     /**
       * `go upgrade`
       */
-    ["com.nexio.payment.member.description.go-upgrade"](): string;
+    ["com.affine.payment.member.description.go-upgrade"](): string;
     /**
       * `Looking to collaborate with more people?`
       */
-    ["com.nexio.payment.member.description2"](): string;
+    ["com.affine.payment.member.description2"](): string;
     /**
       * `Work together with unlimited team members.`
       */
-    ["com.nexio.payment.member.team.description"](): string;
+    ["com.affine.payment.member.team.description"](): string;
     /**
       * `Invite team members`
       */
-    ["com.nexio.payment.member.team.invite.title"](): string;
+    ["com.affine.payment.member.team.invite.title"](): string;
     /**
       * `Invite new members to join your workspace via email or share an invite link`
       */
-    ["com.nexio.payment.member.team.invite.description"](): string;
+    ["com.affine.payment.member.team.invite.description"](): string;
     /**
       * `Email Invite`
       */
-    ["com.nexio.payment.member.team.invite.email-invite"](): string;
+    ["com.affine.payment.member.team.invite.email-invite"](): string;
     /**
       * `Invite Link`
       */
-    ["com.nexio.payment.member.team.invite.invite-link"](): string;
+    ["com.affine.payment.member.team.invite.invite-link"](): string;
     /**
       * `Email addresses`
       */
-    ["com.nexio.payment.member.team.invite.email-addresses"](): string;
+    ["com.affine.payment.member.team.invite.email-addresses"](): string;
     /**
       * `Enter email addresses (separated by commas)`
       */
-    ["com.nexio.payment.member.team.invite.email-placeholder"](): string;
+    ["com.affine.payment.member.team.invite.email-placeholder"](): string;
     /**
       * `Import CSV`
       */
-    ["com.nexio.payment.member.team.invite.import-csv"](): string;
+    ["com.affine.payment.member.team.invite.import-csv"](): string;
     /**
       * `Send Invites`
       */
-    ["com.nexio.payment.member.team.invite.send-invites"](): string;
+    ["com.affine.payment.member.team.invite.send-invites"](): string;
     /**
       * `Link expiration`
       */
-    ["com.nexio.payment.member.team.invite.link-expiration"](): string;
+    ["com.affine.payment.member.team.invite.link-expiration"](): string;
     /**
       * `{{number}} days`
       */
-    ["com.nexio.payment.member.team.invite.expiration-date"](options: {
+    ["com.affine.payment.member.team.invite.expiration-date"](options: {
         readonly number: string;
     }): string;
     /**
       * `To expire at: {{expireTime}}`
       */
-    ["com.nexio.payment.member.team.invite.expire-at"](options: {
+    ["com.affine.payment.member.team.invite.expire-at"](options: {
         readonly expireTime: string;
     }): string;
     /**
       * `Invitation link`
       */
-    ["com.nexio.payment.member.team.invite.invitation-link"](): string;
+    ["com.affine.payment.member.team.invite.invitation-link"](): string;
     /**
       * `Generate a link to invite members to your workspace`
       */
-    ["com.nexio.payment.member.team.invite.invitation-link.description"](): string;
+    ["com.affine.payment.member.team.invite.invitation-link.description"](): string;
     /**
       * `Generate`
       */
-    ["com.nexio.payment.member.team.invite.generate"](): string;
+    ["com.affine.payment.member.team.invite.generate"](): string;
     /**
       * `Copy`
       */
-    ["com.nexio.payment.member.team.invite.copy"](): string;
+    ["com.affine.payment.member.team.invite.copy"](): string;
     /**
       * `Done`
       */
-    ["com.nexio.payment.member.team.invite.done"](): string;
+    ["com.affine.payment.member.team.invite.done"](): string;
     /**
-      * `Invitation sent,{{successCount}} successful, {{failedCount}} failed`
+      * `Invitations sent: {{count}}`
       */
-    ["com.nexio.payment.member.team.invite.notify.title"](options: Readonly<{
-        successCount: string;
-        failedCount: string;
-    }>): string;
+    ["com.affine.payment.member.team.invite.notify.title"](options: {
+        readonly count: string;
+    }): string;
     /**
       * `These email addresses have already been invited:`
       */
-    ["com.nexio.payment.member.team.invite.notify.fail-message"](): string;
+    ["com.affine.payment.member.team.invite.notify.fail-message"](): string;
     /**
       * `Revoke invitation`
       */
-    ["com.nexio.payment.member.team.revoke"](): string;
+    ["com.affine.payment.member.team.revoke"](): string;
     /**
       * `Approve`
       */
-    ["com.nexio.payment.member.team.approve"](): string;
+    ["com.affine.payment.member.team.approve"](): string;
     /**
       * `Decline`
       */
-    ["com.nexio.payment.member.team.decline"](): string;
+    ["com.affine.payment.member.team.decline"](): string;
     /**
       * `Remove member`
       */
-    ["com.nexio.payment.member.team.remove"](): string;
+    ["com.affine.payment.member.team.remove"](): string;
     /**
       * `Retry payment`
       */
-    ["com.nexio.payment.member.team.retry-payment"](): string;
+    ["com.affine.payment.member.team.retry-payment"](): string;
     /**
       * `Change role to admin`
       */
-    ["com.nexio.payment.member.team.change.admin"](): string;
+    ["com.affine.payment.member.team.change.admin"](): string;
     /**
       * `Change role to collaborator`
       */
-    ["com.nexio.payment.member.team.change.collaborator"](): string;
+    ["com.affine.payment.member.team.change.collaborator"](): string;
     /**
       * `Assign as owner`
       */
-    ["com.nexio.payment.member.team.assign"](): string;
+    ["com.affine.payment.member.team.assign"](): string;
     /**
       * `Insufficient Team Seats`
       */
-    ["com.nexio.payment.member.team.retry-payment.title"](): string;
+    ["com.affine.payment.member.team.retry-payment.title"](): string;
     /**
       * `The payment for adding new team members has failed. To add more seats, please update your payment method and process unpaid invoices.`
       */
-    ["com.nexio.payment.member.team.retry-payment.owner.description"](): string;
+    ["com.affine.payment.member.team.retry-payment.owner.description"](): string;
     /**
       * `The payment for adding new team members has failed. Please contact your workspace owner to update the payment method and process unpaid invoices.`
       */
-    ["com.nexio.payment.member.team.retry-payment.admin.description"](): string;
+    ["com.affine.payment.member.team.retry-payment.admin.description"](): string;
     /**
       * `Update Payment`
       */
-    ["com.nexio.payment.member.team.retry-payment.update-payment"](): string;
+    ["com.affine.payment.member.team.retry-payment.update-payment"](): string;
     /**
       * `Subscription has been disabled for your team workspace. To add more seats, you'll need to resume subscription first.`
       */
-    ["com.nexio.payment.member.team.disabled-subscription.owner.description"](): string;
+    ["com.affine.payment.member.team.disabled-subscription.owner.description"](): string;
     /**
       * `Your team workspace has subscription disabled, which prevents adding more seats. Please contact your workspace owner to enable subscription.`
       */
-    ["com.nexio.payment.member.team.disabled-subscription.admin.description"](): string;
+    ["com.affine.payment.member.team.disabled-subscription.admin.description"](): string;
     /**
       * `Resume Subscription`
       */
-    ["com.nexio.payment.member.team.disabled-subscription.resume-subscription"](): string;
+    ["com.affine.payment.member.team.disabled-subscription.resume-subscription"](): string;
     /**
       * `Invitation Revoked`
       */
-    ["com.nexio.payment.member.team.revoke.notify.title"](): string;
+    ["com.affine.payment.member.team.revoke.notify.title"](): string;
     /**
       * `You have canceled the invitation for {{name}}`
       */
-    ["com.nexio.payment.member.team.revoke.notify.message"](options: {
+    ["com.affine.payment.member.team.revoke.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Request approved`
       */
-    ["com.nexio.payment.member.team.approve.notify.title"](): string;
+    ["com.affine.payment.member.team.approve.notify.title"](): string;
     /**
       * `You have approved the {{name}}’s request to join this workspace`
       */
-    ["com.nexio.payment.member.team.approve.notify.message"](options: {
+    ["com.affine.payment.member.team.approve.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Request declined`
       */
-    ["com.nexio.payment.member.team.decline.notify.title"](): string;
+    ["com.affine.payment.member.team.decline.notify.title"](): string;
     /**
       * `You have declined the {{name}}’s request to join this workspace`
       */
-    ["com.nexio.payment.member.team.decline.notify.message"](options: {
+    ["com.affine.payment.member.team.decline.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Member removed`
       */
-    ["com.nexio.payment.member.team.remove.notify.title"](): string;
+    ["com.affine.payment.member.team.remove.notify.title"](): string;
     /**
       * `You have removed {{name}} from this workspace`
       */
-    ["com.nexio.payment.member.team.remove.notify.message"](options: {
+    ["com.affine.payment.member.team.remove.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Role Updated`
       */
-    ["com.nexio.payment.member.team.change.notify.title"](): string;
+    ["com.affine.payment.member.team.change.notify.title"](): string;
     /**
       * `You have successfully promoted {{name}} to Admin.`
       */
-    ["com.nexio.payment.member.team.change.admin.notify.message"](options: {
+    ["com.affine.payment.member.team.change.admin.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `You have successfully changed {{name}} s role to collaborator.`
       */
-    ["com.nexio.payment.member.team.change.collaborator.notify.message"](options: {
+    ["com.affine.payment.member.team.change.collaborator.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Owner assigned`
       */
-    ["com.nexio.payment.member.team.assign.notify.title"](): string;
+    ["com.affine.payment.member.team.assign.notify.title"](): string;
     /**
       * `You have successfully assigned {{name}} as the owner of this workspace.`
       */
-    ["com.nexio.payment.member.team.assign.notify.message"](options: {
+    ["com.affine.payment.member.team.assign.notify.message"](options: {
         readonly name: string;
     }): string;
     /**
       * `Confirm new workspace owner`
       */
-    ["com.nexio.payment.member.team.assign.confirm.title"](): string;
+    ["com.affine.payment.member.team.assign.confirm.title"](): string;
     /**
       * `You are about to transfer workspace ownership to {{name}}. Please review the following changes carefully:`
       */
-    ["com.nexio.payment.member.team.assign.confirm.description"](options: {
+    ["com.affine.payment.member.team.assign.confirm.description"](options: {
         readonly name: string;
     }): string;
     /**
       * `This action cannot be undone`
       */
-    ["com.nexio.payment.member.team.assign.confirm.description-1"](): string;
+    ["com.affine.payment.member.team.assign.confirm.description-1"](): string;
     /**
       * `Your role will be changed to Admin`
       */
-    ["com.nexio.payment.member.team.assign.confirm.description-2"](): string;
+    ["com.affine.payment.member.team.assign.confirm.description-2"](): string;
     /**
       * `You will lose ownership rights to the entire workspace`
       */
-    ["com.nexio.payment.member.team.assign.confirm.description-3"](): string;
+    ["com.affine.payment.member.team.assign.confirm.description-3"](): string;
     /**
       * `To confirm this transfer, please type the workspace name`
       */
-    ["com.nexio.payment.member.team.assign.confirm.description-4"](): string;
+    ["com.affine.payment.member.team.assign.confirm.description-4"](): string;
     /**
       * `Type workspace name to confirm`
       */
-    ["com.nexio.payment.member.team.assign.confirm.placeholder"](): string;
+    ["com.affine.payment.member.team.assign.confirm.placeholder"](): string;
     /**
       * `Transfer Ownership`
       */
-    ["com.nexio.payment.member.team.assign.confirm.button"](): string;
+    ["com.affine.payment.member.team.assign.confirm.button"](): string;
     /**
       * `Remove member from workspace?`
       */
-    ["com.nexio.payment.member.team.remove.confirm.title"](): string;
+    ["com.affine.payment.member.team.remove.confirm.title"](): string;
     /**
       * `This action will revoke their access to all workspace resources immediately.`
       */
-    ["com.nexio.payment.member.team.remove.confirm.description"](): string;
+    ["com.affine.payment.member.team.remove.confirm.description"](): string;
     /**
       * `Remove Member`
       */
-    ["com.nexio.payment.member.team.remove.confirm.confirm-button"](): string;
+    ["com.affine.payment.member.team.remove.confirm.confirm-button"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.payment.member.team.remove.confirm.cancel"](): string;
+    ["com.affine.payment.member.team.remove.confirm.cancel"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.payment.modal.change.cancel"](): string;
+    ["com.affine.payment.modal.change.cancel"](): string;
     /**
       * `Change`
       */
-    ["com.nexio.payment.modal.change.confirm"](): string;
+    ["com.affine.payment.modal.change.confirm"](): string;
     /**
       * `Change your subscription`
       */
-    ["com.nexio.payment.modal.change.title"](): string;
+    ["com.affine.payment.modal.change.title"](): string;
     /**
       * `Cancel subscription`
       */
-    ["com.nexio.payment.modal.downgrade.cancel"](): string;
+    ["com.affine.payment.modal.downgrade.cancel"](): string;
     /**
-      * `You can still use NEXIO Cloud Pro until the end of this billing period :)`
+      * `You can still use Nexio Cloud Pro until the end of this billing period :)`
       */
-    ["com.nexio.payment.modal.downgrade.caption"](): string;
+    ["com.affine.payment.modal.downgrade.caption"](): string;
     /**
-      * `Keep NEXIO Cloud Pro`
+      * `Keep Nexio Cloud Pro`
       */
-    ["com.nexio.payment.modal.downgrade.confirm"](): string;
+    ["com.affine.payment.modal.downgrade.confirm"](): string;
     /**
       * `Keep Team plan`
       */
-    ["com.nexio.payment.modal.downgrade.team-confirm"](): string;
+    ["com.affine.payment.modal.downgrade.team-confirm"](): string;
     /**
       * `We're sorry to see you go, but we're always working to improve, and your feedback is welcome. We hope to see you return in the future.`
       */
-    ["com.nexio.payment.modal.downgrade.content"](): string;
+    ["com.affine.payment.modal.downgrade.content"](): string;
     /**
       * `Are you sure?`
       */
-    ["com.nexio.payment.modal.downgrade.title"](): string;
+    ["com.affine.payment.modal.downgrade.title"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.payment.modal.resume.cancel"](): string;
+    ["com.affine.payment.modal.resume.cancel"](): string;
     /**
       * `Confirm`
       */
-    ["com.nexio.payment.modal.resume.confirm"](): string;
+    ["com.affine.payment.modal.resume.confirm"](): string;
     /**
       * `Are you sure you want to resume the subscription for your pro account? This means your payment method will be charged automatically at the end of each billing cycle, starting from the next billing cycle.`
       */
-    ["com.nexio.payment.modal.resume.content"](): string;
+    ["com.affine.payment.modal.resume.content"](): string;
     /**
       * `Resume auto-renewal?`
       */
-    ["com.nexio.payment.modal.resume.title"](): string;
+    ["com.affine.payment.modal.resume.title"](): string;
     /**
       * `Refresh`
       */
-    ["com.nexio.payment.plans-error-retry"](): string;
+    ["com.affine.payment.plans-error-retry"](): string;
     /**
       * `Unable to load pricing plans, please check your network. `
       */
-    ["com.nexio.payment.plans-error-tip"](): string;
+    ["com.affine.payment.plans-error-tip"](): string;
     /**
       * `monthly`
       */
-    ["com.nexio.payment.recurring-monthly"](): string;
+    ["com.affine.payment.recurring-monthly"](): string;
     /**
       * `annually`
       */
-    ["com.nexio.payment.recurring-yearly"](): string;
+    ["com.affine.payment.recurring-yearly"](): string;
     /**
       * `Resume`
       */
-    ["com.nexio.payment.resume"](): string;
+    ["com.affine.payment.resume"](): string;
     /**
       * `Subscription Resumed`
       */
-    ["com.nexio.payment.resume.success.title"](): string;
+    ["com.affine.payment.resume.success.title"](): string;
     /**
       * `Your team workspace subscription has been enabled successfully. Changes will take effect immediately.`
       */
-    ["com.nexio.payment.resume.success.team.message"](): string;
+    ["com.affine.payment.resume.success.team.message"](): string;
     /**
       * `Resume auto-renewal`
       */
-    ["com.nexio.payment.resume-renewal"](): string;
+    ["com.affine.payment.resume-renewal"](): string;
     /**
       * `See all plans`
       */
-    ["com.nexio.payment.see-all-plans"](): string;
+    ["com.affine.payment.see-all-plans"](): string;
     /**
       * `Sign up free`
       */
-    ["com.nexio.payment.sign-up-free"](): string;
+    ["com.affine.payment.sign-up-free"](): string;
     /**
       * `Cloud storage is insufficient. Please contact the owner of that workspace.`
       */
-    ["com.nexio.payment.storage-limit.description.member"](): string;
+    ["com.affine.payment.storage-limit.description.member"](): string;
     /**
       * `Cloud storage is insufficient. You can upgrade your account to unlock more cloud storage.`
       */
-    ["com.nexio.payment.storage-limit.description.owner"](): string;
+    ["com.affine.payment.storage-limit.description.owner"](): string;
     /**
       * `Unable to sync due to insufficient storage space. You can remove excess content, upgrade your account, or increase your workspace storage to resolve this issue.`
       */
-    ["com.nexio.payment.storage-limit.new-description.owner"](): string;
+    ["com.affine.payment.storage-limit.new-description.owner"](): string;
     /**
       * `Sync failed due to storage space limit`
       */
-    ["com.nexio.payment.storage-limit.new-title"](): string;
+    ["com.affine.payment.storage-limit.new-title"](): string;
     /**
       * `View`
       */
-    ["com.nexio.payment.storage-limit.view"](): string;
+    ["com.affine.payment.storage-limit.view"](): string;
     /**
       * `You are currently on the {{plan}} plan. After the current billing period ends, your account will automatically switch to the Free plan.`
       */
-    ["com.nexio.payment.subtitle-canceled"](options: {
+    ["com.affine.payment.subtitle-canceled"](options: {
         readonly plan: string;
     }): string;
     /**
-      * `This is the pricing plans of NEXIO Cloud. You can sign up or sign in to your account first.`
+      * `This is the pricing plans of Nexio Cloud. You can sign up or sign in to your account first.`
       */
-    ["com.nexio.payment.subtitle-not-signed-in"](): string;
+    ["com.affine.payment.subtitle-not-signed-in"](): string;
     /**
       * `See all plans`
       */
-    ["com.nexio.payment.tag-tooltips"](): string;
+    ["com.affine.payment.tag-tooltips"](): string;
     /**
       * `Tell us your use case`
       */
-    ["com.nexio.payment.tell-us-use-case"](): string;
+    ["com.affine.payment.tell-us-use-case"](): string;
     /**
       * `Pricing plans`
       */
-    ["com.nexio.payment.title"](): string;
+    ["com.affine.payment.title"](): string;
     /**
       * `You have changed your plan to {{plan}} billing.`
       */
-    ["com.nexio.payment.updated-notify-msg"](options: {
+    ["com.affine.payment.updated-notify-msg"](options: {
         readonly plan: string;
     }): string;
     /**
       * `Subscription updated`
       */
-    ["com.nexio.payment.updated-notify-title"](): string;
+    ["com.affine.payment.updated-notify-title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.payment.upgrade"](): string;
+    ["com.affine.payment.upgrade"](): string;
     /**
       * `Redeem code`
       */
-    ["com.nexio.payment.redeem-code"](): string;
+    ["com.affine.payment.redeem-code"](): string;
     /**
-      * `We'd like to hear more about your use case, so that we can make NEXIO better.`
+      * `We'd like to hear more about your use case, so that we can make Nexio better.`
       */
-    ["com.nexio.payment.upgrade-success-notify.content"](): string;
+    ["com.affine.payment.upgrade-success-notify.content"](): string;
     /**
       * `Later`
       */
-    ["com.nexio.payment.upgrade-success-notify.later"](): string;
+    ["com.affine.payment.upgrade-success-notify.later"](): string;
     /**
       * `Sure, open in browser`
       */
-    ["com.nexio.payment.upgrade-success-notify.ok-client"](): string;
+    ["com.affine.payment.upgrade-success-notify.ok-client"](): string;
     /**
       * `Sure, open in new tab`
       */
-    ["com.nexio.payment.upgrade-success-notify.ok-web"](): string;
+    ["com.affine.payment.upgrade-success-notify.ok-web"](): string;
     /**
       * `Thanks for subscribing!`
       */
-    ["com.nexio.payment.upgrade-success-notify.title"](): string;
+    ["com.affine.payment.upgrade-success-notify.title"](): string;
     /**
-      * `Congratulations! Your NEXIO account has been successfully upgraded to a Pro account.`
+      * `Congratulations! Your Nexio account has been successfully upgraded to a Pro account.`
       */
-    ["com.nexio.payment.upgrade-success-page.text"](): string;
+    ["com.affine.payment.upgrade-success-page.text"](): string;
     /**
       * `Upgrade successful!`
       */
-    ["com.nexio.payment.upgrade-success-page.title"](): string;
+    ["com.affine.payment.upgrade-success-page.title"](): string;
     /**
       * `Congratulations! Your workspace has been successfully upgraded to a Team Workspace. Now you can invite unlimited members to collaborate in this workspace.`
       */
-    ["com.nexio.payment.upgrade-success-page.team.text-1"](): string;
+    ["com.affine.payment.upgrade-success-page.team.text-1"](): string;
     /**
       * `Thank you for your purchase!`
       */
-    ["com.nexio.payment.license-success.title"](): string;
+    ["com.affine.payment.license-success.title"](): string;
     /**
-      * `Thank you for purchasing the NEXIO self-hosted license.`
+      * `Thank you for purchasing the Nexio self-hosted license.`
       */
-    ["com.nexio.payment.license-success.text-1"](): string;
+    ["com.affine.payment.license-success.text-1"](): string;
     /**
       * `You can use this key to upgrade in Settings > Workspace > License > Use purchased key`
       */
-    ["com.nexio.payment.license-success.hint"](): string;
+    ["com.affine.payment.license-success.hint"](): string;
     /**
-      * `Open NEXIO`
+      * `Open Nexio`
       */
-    ["com.nexio.payment.license-success.open-nexio"](): string;
+    ["com.affine.payment.license-success.open-affine"](): string;
     /**
       * `Copied key to clipboard`
       */
-    ["com.nexio.payment.license-success.copy"](): string;
+    ["com.affine.payment.license-success.copy"](): string;
+    /**
+      * `View analytics`
+      */
+    ["com.affine.doc.analytics.title"](): string;
+    /**
+      * `({{count}} total)`
+      */
+    ["com.affine.doc.analytics.summary.total"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Last {{days}} days`
+      */
+    ["com.affine.doc.analytics.window.last-days"](options: {
+        readonly days: string;
+    }): string;
+    /**
+      * `Total`
+      */
+    ["com.affine.doc.analytics.metric.total"](): string;
+    /**
+      * `Unique`
+      */
+    ["com.affine.doc.analytics.metric.unique"](): string;
+    /**
+      * `Guest`
+      */
+    ["com.affine.doc.analytics.metric.guest"](): string;
+    /**
+      * `Total views`
+      */
+    ["com.affine.doc.analytics.chart.total-views"](): string;
+    /**
+      * `Unique views`
+      */
+    ["com.affine.doc.analytics.chart.unique-views"](): string;
+    /**
+      * `Unable to load analytics.`
+      */
+    ["com.affine.doc.analytics.error.load-analytics"](): string;
+    /**
+      * `Unable to load viewers.`
+      */
+    ["com.affine.doc.analytics.error.load-viewers"](): string;
+    /**
+      * `No page views in this window.`
+      */
+    ["com.affine.doc.analytics.empty.no-page-views"](): string;
+    /**
+      * `No viewers in this window.`
+      */
+    ["com.affine.doc.analytics.empty.no-viewers"](): string;
+    /**
+      * `Viewers`
+      */
+    ["com.affine.doc.analytics.viewers.title"](): string;
+    /**
+      * `Show all viewers`
+      */
+    ["com.affine.doc.analytics.viewers.show-all"](): string;
+    /**
+      * `Open pricing plans`
+      */
+    ["com.affine.doc.analytics.paywall.open-pricing"](): string;
+    /**
+      * `Doc analytics over 7 days require an Nexio Team subscription.`
+      */
+    ["com.affine.doc.analytics.paywall.toast"](): string;
     /**
       * `Close`
       */
-    ["com.nexio.peek-view-controls.close"](): string;
+    ["com.affine.peek-view-controls.close"](): string;
     /**
       * `Open this doc`
       */
-    ["com.nexio.peek-view-controls.open-doc"](): string;
+    ["com.affine.peek-view-controls.open-doc"](): string;
     /**
       * `Open in edgeless`
       */
-    ["com.nexio.peek-view-controls.open-doc-in-edgeless"](): string;
+    ["com.affine.peek-view-controls.open-doc-in-edgeless"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.nexio.peek-view-controls.open-doc-in-new-tab"](): string;
+    ["com.affine.peek-view-controls.open-doc-in-new-tab"](): string;
     /**
       * `Open in split view`
       */
-    ["com.nexio.peek-view-controls.open-doc-in-split-view"](): string;
+    ["com.affine.peek-view-controls.open-doc-in-split-view"](): string;
     /**
       * `Open doc info`
       */
-    ["com.nexio.peek-view-controls.open-info"](): string;
+    ["com.affine.peek-view-controls.open-info"](): string;
     /**
       * `Open this attachment`
       */
-    ["com.nexio.peek-view-controls.open-attachment"](): string;
+    ["com.affine.peek-view-controls.open-attachment"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.nexio.peek-view-controls.open-attachment-in-new-tab"](): string;
+    ["com.affine.peek-view-controls.open-attachment-in-new-tab"](): string;
     /**
       * `Open in split view`
       */
-    ["com.nexio.peek-view-controls.open-attachment-in-split-view"](): string;
+    ["com.affine.peek-view-controls.open-attachment-in-split-view"](): string;
     /**
       * `Open in center peek`
       */
-    ["com.nexio.peek-view-controls.open-doc-in-center-peek"](): string;
+    ["com.affine.peek-view-controls.open-doc-in-center-peek"](): string;
     /**
       * `Copy link`
       */
-    ["com.nexio.peek-view-controls.copy-link"](): string;
+    ["com.affine.peek-view-controls.copy-link"](): string;
     /**
       * `Click or drag`
       */
-    ["com.nexio.split-view-drag-handle.tooltip"](): string;
+    ["com.affine.split-view-drag-handle.tooltip"](): string;
     /**
       * `Split view does not support folders.`
       */
-    ["com.nexio.split-view-folder-warning.description"](): string;
+    ["com.affine.split-view-folder-warning.description"](): string;
     /**
       * `Do not show this again`
       */
@@ -4546,2064 +4961,2667 @@ export function useNEXIOI18N(): {
     /**
       * `New`
       */
-    ["com.nexio.quicksearch.group.creation"](): string;
+    ["com.affine.quicksearch.group.creation"](): string;
     /**
       * `Search locally`
       */
-    ["com.nexio.quicksearch.search-locally"](): string;
+    ["com.affine.quicksearch.search-locally"](): string;
     /**
       * `Search for "{{query}}"`
       */
-    ["com.nexio.quicksearch.group.searchfor"](options: {
+    ["com.affine.quicksearch.group.searchfor"](options: {
         readonly query: string;
     }): string;
     /**
       * `Search for "{{query}}" (locally)`
       */
-    ["com.nexio.quicksearch.group.searchfor-locally"](options: {
+    ["com.affine.quicksearch.group.searchfor-locally"](options: {
         readonly query: string;
     }): string;
     /**
       * `Reset sync`
       */
-    ["com.nexio.resetSyncStatus.button"](): string;
+    ["com.affine.resetSyncStatus.button"](): string;
     /**
       * `This operation may fix some synchronization issues.`
       */
-    ["com.nexio.resetSyncStatus.description"](): string;
+    ["com.affine.resetSyncStatus.description"](): string;
     /**
       * `Collections`
       */
-    ["com.nexio.rootAppSidebar.collections"](): string;
+    ["com.affine.rootAppSidebar.collections"](): string;
     /**
       * `Notifications`
       */
-    ["com.nexio.rootAppSidebar.notifications"](): string;
+    ["com.affine.rootAppSidebar.notifications"](): string;
     /**
       * `Only doc can be placed on here`
       */
-    ["com.nexio.rootAppSidebar.doc.link-doc-only"](): string;
+    ["com.affine.rootAppSidebar.doc.link-doc-only"](): string;
     /**
       * `No linked docs`
       */
-    ["com.nexio.rootAppSidebar.docs.no-subdoc"](): string;
+    ["com.affine.rootAppSidebar.docs.no-subdoc"](): string;
     /**
       * `Loading linked docs...`
       */
-    ["com.nexio.rootAppSidebar.docs.references-loading"](): string;
+    ["com.affine.rootAppSidebar.docs.references-loading"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.rootAppSidebar.explorer.collection-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.collection-add-tooltip"](): string;
     /**
       * `New collection`
       */
-    ["com.nexio.rootAppSidebar.explorer.collection-section-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.collection-section-add-tooltip"](): string;
     /**
       * `New linked doc`
       */
-    ["com.nexio.rootAppSidebar.explorer.doc-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.doc-add-tooltip"](): string;
     /**
       * `Copy`
       */
-    ["com.nexio.rootAppSidebar.explorer.drop-effect.copy"](): string;
+    ["com.affine.rootAppSidebar.explorer.drop-effect.copy"](): string;
     /**
       * `Link`
       */
-    ["com.nexio.rootAppSidebar.explorer.drop-effect.link"](): string;
+    ["com.affine.rootAppSidebar.explorer.drop-effect.link"](): string;
     /**
       * `Move`
       */
-    ["com.nexio.rootAppSidebar.explorer.drop-effect.move"](): string;
+    ["com.affine.rootAppSidebar.explorer.drop-effect.move"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.rootAppSidebar.explorer.fav-section-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.fav-section-add-tooltip"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.rootAppSidebar.explorer.organize-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.organize-add-tooltip"](): string;
     /**
       * `New folder`
       */
-    ["com.nexio.rootAppSidebar.explorer.organize-section-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.organize-section-add-tooltip"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.rootAppSidebar.explorer.tag-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.tag-add-tooltip"](): string;
     /**
       * `New tag`
       */
-    ["com.nexio.rootAppSidebar.explorer.tag-section-add-tooltip"](): string;
+    ["com.affine.rootAppSidebar.explorer.tag-section-add-tooltip"](): string;
     /**
       * `Favorites`
       */
-    ["com.nexio.rootAppSidebar.favorites"](): string;
+    ["com.affine.rootAppSidebar.favorites"](): string;
     /**
       * `No favorites`
       */
-    ["com.nexio.rootAppSidebar.favorites.empty"](): string;
+    ["com.affine.rootAppSidebar.favorites.empty"](): string;
     /**
       * `Migration data`
       */
-    ["com.nexio.rootAppSidebar.migration-data"](): string;
+    ["com.affine.rootAppSidebar.migration-data"](): string;
     /**
       * `Empty the old favorites`
       */
-    ["com.nexio.rootAppSidebar.migration-data.clean-all"](): string;
+    ["com.affine.rootAppSidebar.migration-data.clean-all"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.rootAppSidebar.migration-data.clean-all.cancel"](): string;
+    ["com.affine.rootAppSidebar.migration-data.clean-all.cancel"](): string;
     /**
       * `OK`
       */
-    ["com.nexio.rootAppSidebar.migration-data.clean-all.confirm"](): string;
+    ["com.affine.rootAppSidebar.migration-data.clean-all.confirm"](): string;
     /**
       * `The old "Favorites" will be replaced`
       */
-    ["com.nexio.rootAppSidebar.migration-data.help"](): string;
+    ["com.affine.rootAppSidebar.migration-data.help"](): string;
     /**
       * `Empty the old favorites`
       */
-    ["com.nexio.rootAppSidebar.migration-data.help.clean-all"](): string;
+    ["com.affine.rootAppSidebar.migration-data.help.clean-all"](): string;
     /**
       * `OK`
       */
-    ["com.nexio.rootAppSidebar.migration-data.help.confirm"](): string;
+    ["com.affine.rootAppSidebar.migration-data.help.confirm"](): string;
     /**
       * `Organize`
       */
-    ["com.nexio.rootAppSidebar.organize"](): string;
+    ["com.affine.rootAppSidebar.organize"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.rootAppSidebar.organize.delete"](): string;
+    ["com.affine.rootAppSidebar.organize.delete"](): string;
     /**
       * `Remove from folder`
       */
-    ["com.nexio.rootAppSidebar.organize.delete-from-folder"](): string;
+    ["com.affine.rootAppSidebar.organize.delete-from-folder"](): string;
     /**
       * `Delete the folder will not delete any docs, tags, or collections.`
       */
-    ["com.nexio.rootAppSidebar.organize.delete.notify-message"](): string;
+    ["com.affine.rootAppSidebar.organize.delete.notify-message"](): string;
     /**
       * `Delete {{name}}`
       */
-    ["com.nexio.rootAppSidebar.organize.delete.notify-title"](options: {
+    ["com.affine.rootAppSidebar.organize.delete.notify-title"](options: {
         readonly name: string;
     }): string;
     /**
       * `No folders`
       */
-    ["com.nexio.rootAppSidebar.organize.empty"](): string;
+    ["com.affine.rootAppSidebar.organize.empty"](): string;
     /**
       * `Empty folder`
       */
-    ["com.nexio.rootAppSidebar.organize.empty-folder"](): string;
+    ["com.affine.rootAppSidebar.organize.empty-folder"](): string;
     /**
       * `Add pages`
       */
-    ["com.nexio.rootAppSidebar.organize.empty-folder.add-pages"](): string;
+    ["com.affine.rootAppSidebar.organize.empty-folder.add-pages"](): string;
     /**
       * `New folder`
       */
-    ["com.nexio.rootAppSidebar.organize.empty.new-folders-button"](): string;
+    ["com.affine.rootAppSidebar.organize.empty.new-folders-button"](): string;
     /**
       * `Add to favorites`
       */
-    ["com.nexio.rootAppSidebar.organize.folder-add-favorite"](): string;
+    ["com.affine.rootAppSidebar.organize.folder-add-favorite"](): string;
     /**
       * `Remove from favorites`
       */
-    ["com.nexio.rootAppSidebar.organize.folder-rm-favorite"](): string;
+    ["com.affine.rootAppSidebar.organize.folder-rm-favorite"](): string;
     /**
       * `Add Collections`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.add-collections"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.add-collections"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.new-doc"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.new-doc"](): string;
     /**
       * `Add docs`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.add-docs"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.add-docs"](): string;
     /**
       * `Add others`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.add-others"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.add-others"](): string;
     /**
       * `Add tags`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.add-tags"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.add-tags"](): string;
     /**
       * `Create a subfolder`
       */
-    ["com.nexio.rootAppSidebar.organize.folder.create-subfolder"](): string;
+    ["com.affine.rootAppSidebar.organize.folder.create-subfolder"](): string;
     /**
       * `New folder`
       */
-    ["com.nexio.rootAppSidebar.organize.new-folders"](): string;
+    ["com.affine.rootAppSidebar.organize.new-folders"](): string;
     /**
       * `Only folder can be placed on here`
       */
-    ["com.nexio.rootAppSidebar.organize.root-folder-only"](): string;
+    ["com.affine.rootAppSidebar.organize.root-folder-only"](): string;
     /**
       * `Add More`
       */
-    ["com.nexio.rootAppSidebar.organize.add-more"](): string;
+    ["com.affine.rootAppSidebar.organize.add-more"](): string;
     /**
       * `Add Folder`
       */
-    ["com.nexio.rootAppSidebar.organize.add-folder"](): string;
+    ["com.affine.rootAppSidebar.organize.add-folder"](): string;
     /**
       * `New Collection`
       */
-    ["com.nexio.rootAppSidebar.collection.new"](): string;
+    ["com.affine.rootAppSidebar.collection.new"](): string;
     /**
       * `Others`
       */
-    ["com.nexio.rootAppSidebar.others"](): string;
+    ["com.affine.rootAppSidebar.others"](): string;
     /**
       * `Only doc can be placed on here`
       */
-    ["com.nexio.rootAppSidebar.tag.doc-only"](): string;
+    ["com.affine.rootAppSidebar.tag.doc-only"](): string;
     /**
       * `Tags`
       */
-    ["com.nexio.rootAppSidebar.tags"](): string;
+    ["com.affine.rootAppSidebar.tags"](): string;
     /**
       * `No tags`
       */
-    ["com.nexio.rootAppSidebar.tags.empty"](): string;
+    ["com.affine.rootAppSidebar.tags.empty"](): string;
     /**
       * `New tag`
       */
-    ["com.nexio.rootAppSidebar.tags.empty.new-tag-button"](): string;
+    ["com.affine.rootAppSidebar.tags.empty.new-tag-button"](): string;
     /**
       * `New tag`
       */
-    ["com.nexio.rootAppSidebar.tags.new-tag"](): string;
+    ["com.affine.rootAppSidebar.tags.new-tag"](): string;
     /**
       * `No docs`
       */
-    ["com.nexio.rootAppSidebar.tags.no-doc"](): string;
+    ["com.affine.rootAppSidebar.tags.no-doc"](): string;
     /**
       * `Drag to resize`
       */
-    ["com.nexio.rootAppSidebar.resize-handle.tooltip.drag"](): string;
+    ["com.affine.rootAppSidebar.resize-handle.tooltip.drag"](): string;
     /**
       * `Click to collapse`
       */
-    ["com.nexio.rootAppSidebar.resize-handle.tooltip.click"](): string;
+    ["com.affine.rootAppSidebar.resize-handle.tooltip.click"](): string;
     /**
       * `Type here ...`
       */
-    ["com.nexio.search-tags.placeholder"](): string;
+    ["com.affine.search-tags.placeholder"](): string;
     /**
       * `Empty`
       */
-    ["com.nexio.selectPage.empty"](): string;
+    ["com.affine.selectPage.empty"](): string;
     /**
       * `Selected`
       */
-    ["com.nexio.selectPage.selected"](): string;
+    ["com.affine.selectPage.selected"](): string;
     /**
       * `Add include doc`
       */
-    ["com.nexio.selectPage.title"](): string;
+    ["com.affine.selectPage.title"](): string;
     /**
       * `Search collections...`
       */
-    ["com.nexio.selector-collection.search.placeholder"](): string;
+    ["com.affine.selector-collection.search.placeholder"](): string;
     /**
       * `Search tags...`
       */
-    ["com.nexio.selector-tag.search.placeholder"](): string;
+    ["com.affine.selector-tag.search.placeholder"](): string;
     /**
       * `Notifications`
       */
-    ["com.nexio.setting.notifications"](): string;
+    ["com.affine.setting.notifications"](): string;
     /**
       * `Notifications`
       */
-    ["com.nexio.setting.notifications.header.title"](): string;
+    ["com.affine.setting.notifications.header.title"](): string;
     /**
       * `Choose the types of updates you want to receive and where to get them.`
       */
-    ["com.nexio.setting.notifications.header.description"](): string;
+    ["com.affine.setting.notifications.header.description"](): string;
     /**
       * `Email notifications`
       */
-    ["com.nexio.setting.notifications.email.title"](): string;
+    ["com.affine.setting.notifications.email.title"](): string;
     /**
       * `Mention`
       */
-    ["com.nexio.setting.notifications.email.mention.title"](): string;
+    ["com.affine.setting.notifications.email.mention.title"](): string;
     /**
       * `You will be notified through email when other members of the workspace @ you.`
       */
-    ["com.nexio.setting.notifications.email.mention.subtitle"](): string;
+    ["com.affine.setting.notifications.email.mention.subtitle"](): string;
     /**
       * `Invites`
       */
-    ["com.nexio.setting.notifications.email.invites.title"](): string;
+    ["com.affine.setting.notifications.email.invites.title"](): string;
     /**
       * `Invitation related messages will be sent through emails.`
       */
-    ["com.nexio.setting.notifications.email.invites.subtitle"](): string;
+    ["com.affine.setting.notifications.email.invites.subtitle"](): string;
     /**
       * `Comments`
       */
-    ["com.nexio.setting.notifications.email.comments.title"](): string;
+    ["com.affine.setting.notifications.email.comments.title"](): string;
     /**
       * `You will be notified through email when other members of the workspace comment on your docs.`
       */
-    ["com.nexio.setting.notifications.email.comments.subtitle"](): string;
+    ["com.affine.setting.notifications.email.comments.subtitle"](): string;
     /**
       * `Account settings`
       */
-    ["com.nexio.setting.account"](): string;
+    ["com.affine.setting.account"](): string;
     /**
       * `Delete your account from {{server}}`
       */
-    ["com.nexio.setting.account.delete-from-server"](options: {
+    ["com.affine.setting.account.delete-from-server"](options: {
         readonly server: string;
     }): string;
     /**
-      * `Once deleted, your account will no longer be accessible, and all data in your personal cloud space will be permanently deleted.`
+      * `Once deleted, your account will no longer be accessible, and all data in your personal space on the server will be permanently deleted.`
       */
-    ["com.nexio.setting.account.delete.message"](): string;
+    ["com.affine.setting.account.delete.message"](): string;
     /**
       * `Cannot delete account`
       */
-    ["com.nexio.setting.account.delete.team-warning-title"](): string;
+    ["com.affine.setting.account.delete.team-warning-title"](): string;
     /**
       * `You’re the owner of a team workspace. To delete your account, please delete the workspace or transfer ownership first.`
       */
-    ["com.nexio.setting.account.delete.team-warning-description"](): string;
+    ["com.affine.setting.account.delete.team-warning-description"](): string;
     /**
       * `Delete your account?`
       */
-    ["com.nexio.setting.account.delete.confirm-title"](): string;
+    ["com.affine.setting.account.delete.confirm-title"](): string;
+    /**
+      * `Confirm your email`
+      */
+    ["com.affine.setting.account.delete.email-confirm-title"](): string;
     /**
       * `Please type your email to confirm`
       */
-    ["com.nexio.setting.account.delete.input-placeholder"](): string;
+    ["com.affine.setting.account.delete.input-placeholder"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.setting.account.delete.confirm-button"](): string;
+    ["com.affine.setting.account.delete.confirm-button"](): string;
     /**
       * `Account deleted`
       */
-    ["com.nexio.setting.account.delete.success-title"](): string;
+    ["com.affine.setting.account.delete.success-title"](): string;
     /**
-      * `Your account and cloud data have been deleted.`
+      * `Your account and server-side data have been deleted.`
       */
-    ["com.nexio.setting.account.delete.success-description-1"](): string;
+    ["com.affine.setting.account.delete.success-description-1"](): string;
     /**
       * `Local data can be deleted by uninstalling app and clearing browser data.`
       */
-    ["com.nexio.setting.account.delete.success-description-2"](): string;
+    ["com.affine.setting.account.delete.success-description-2"](): string;
     /**
       * `Your personal information`
       */
-    ["com.nexio.setting.account.message"](): string;
+    ["com.affine.setting.account.message"](): string;
     /**
-      * `Sync with NEXIO Cloud`
+      * `Sync with Nexio`
       */
-    ["com.nexio.setting.sign.message"](): string;
+    ["com.affine.setting.sign.message"](): string;
     /**
       * `Securely sign out of your account.`
       */
-    ["com.nexio.setting.sign.out.message"](): string;
+    ["com.affine.setting.sign.out.message"](): string;
     /**
       * `General`
       */
-    ["com.nexio.settingSidebar.settings.general"](): string;
+    ["com.affine.settingSidebar.settings.general"](): string;
     /**
       * `Workspace`
       */
-    ["com.nexio.settingSidebar.settings.workspace"](): string;
+    ["com.affine.settingSidebar.settings.workspace"](): string;
     /**
       * `Settings`
       */
-    ["com.nexio.settingSidebar.title"](): string;
+    ["com.affine.settingSidebar.title"](): string;
     /**
       * `Appearance`
       */
-    ["com.nexio.settings.appearance"](): string;
+    ["com.affine.settings.appearance"](): string;
     /**
       * `Customise the appearance of the client.`
       */
-    ["com.nexio.settings.appearance.border-style-description"](): string;
+    ["com.affine.settings.appearance.border-style-description"](): string;
     /**
       * `Customise your date style.`
       */
-    ["com.nexio.settings.appearance.date-format-description"](): string;
+    ["com.affine.settings.appearance.date-format-description"](): string;
     /**
       * `Maximum display of content within a doc.`
       */
-    ["com.nexio.settings.appearance.full-width-description"](): string;
+    ["com.affine.settings.appearance.full-width-description"](): string;
     /**
       * `Select the language for the interface.`
       */
-    ["com.nexio.settings.appearance.language-description"](): string;
+    ["com.affine.settings.appearance.language-description"](): string;
     /**
       * `By default, the week starts on Sunday.`
       */
-    ["com.nexio.settings.appearance.start-week-description"](): string;
+    ["com.affine.settings.appearance.start-week-description"](): string;
     /**
       * `Customise appearance of Windows Client.`
       */
-    ["com.nexio.settings.appearance.window-frame-description"](): string;
+    ["com.affine.settings.appearance.window-frame-description"](): string;
     /**
       * `Links`
       */
-    ["com.nexio.setting.appearance.links"](): string;
+    ["com.affine.setting.appearance.links"](): string;
     /**
-      * `Open NEXIO links`
+      * `Open Nexio links`
       */
-    ["com.nexio.setting.appearance.open-in-app"](): string;
+    ["com.affine.setting.appearance.open-in-app"](): string;
     /**
       * `You can choose to open the link in the desktop app or directly in the browser.`
       */
-    ["com.nexio.setting.appearance.open-in-app.hint"](): string;
+    ["com.affine.setting.appearance.open-in-app.hint"](): string;
     /**
       * `Ask me each time`
       */
-    ["com.nexio.setting.appearance.open-in-app.always-ask"](): string;
+    ["com.affine.setting.appearance.open-in-app.always-ask"](): string;
     /**
       * `Open links in desktop app`
       */
-    ["com.nexio.setting.appearance.open-in-app.open-in-desktop-app"](): string;
+    ["com.affine.setting.appearance.open-in-app.open-in-desktop-app"](): string;
     /**
       * `Open links in browser`
       */
-    ["com.nexio.setting.appearance.open-in-app.open-in-web"](): string;
+    ["com.affine.setting.appearance.open-in-app.open-in-web"](): string;
     /**
-      * `Open NEXIO links`
+      * `Open Nexio links`
       */
-    ["com.nexio.setting.appearance.open-in-app.title"](): string;
+    ["com.affine.setting.appearance.open-in-app.title"](): string;
     /**
-      * `Open this doc in NEXIO app`
+      * `Open this doc in Nexio app`
       */
-    ["com.nexio.open-in-app.card.title"](): string;
+    ["com.affine.open-in-app.card.title"](): string;
     /**
       * `Open in app`
       */
-    ["com.nexio.open-in-app.card.button.open"](): string;
+    ["com.affine.open-in-app.card.button.open"](): string;
     /**
       * `Dismiss`
       */
-    ["com.nexio.open-in-app.card.button.dismiss"](): string;
+    ["com.affine.open-in-app.card.button.dismiss"](): string;
     /**
       * `Remember choice`
       */
-    ["com.nexio.open-in-app.card.remember"](): string;
+    ["com.affine.open-in-app.card.remember"](): string;
     /**
       * `Download desktop app`
       */
-    ["com.nexio.open-in-app.card.download"](): string;
+    ["com.affine.open-in-app.card.download"](): string;
     /**
       * `If enabled, it will automatically check for new versions at regular intervals.`
       */
-    ["com.nexio.settings.auto-check-description"](): string;
+    ["com.affine.settings.auto-check-description"](): string;
     /**
       * `If enabled, new versions will be automatically downloaded to the current device.`
       */
-    ["com.nexio.settings.auto-download-description"](): string;
+    ["com.affine.settings.auto-download-description"](): string;
     /**
       * `Editor`
       */
-    ["com.nexio.settings.editorSettings"](): string;
+    ["com.affine.settings.editorSettings"](): string;
     /**
       * `Edgeless`
       */
-    ["com.nexio.settings.editorSettings.edgeless"](): string;
+    ["com.affine.settings.editorSettings.edgeless"](): string;
     /**
       * `Connector`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter"](): string;
     /**
       * `Border style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.border-style"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.border-style"](): string;
     /**
       * `Border thickness`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.border-thickness"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.border-thickness"](): string;
     /**
       * `Color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.color"](): string;
     /**
       * `Connector shape`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.connector-shape"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape"](): string;
     /**
       * `Curve`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.curve"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.curve"](): string;
     /**
       * `Elbowed`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.elbowed"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.elbowed"](): string;
     /**
       * `Straight`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.connector-shape.straight"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.connector-shape.straight"](): string;
     /**
       * `End endpoint`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.end-endpoint"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.end-endpoint"](): string;
     /**
       * `Start endpoint`
       */
-    ["com.nexio.settings.editorSettings.edgeless.connecter.start-endpoint"](): string;
+    ["com.affine.settings.editorSettings.edgeless.connecter.start-endpoint"](): string;
     /**
       * `Custom`
       */
-    ["com.nexio.settings.editorSettings.edgeless.custom"](): string;
+    ["com.affine.settings.editorSettings.edgeless.custom"](): string;
     /**
       * `Mind Map`
       */
-    ["com.nexio.settings.editorSettings.edgeless.mind-map"](): string;
+    ["com.affine.settings.editorSettings.edgeless.mind-map"](): string;
     /**
       * `Layout`
       */
-    ["com.nexio.settings.editorSettings.edgeless.mind-map.layout"](): string;
+    ["com.affine.settings.editorSettings.edgeless.mind-map.layout"](): string;
     /**
       * `Left`
       */
-    ["com.nexio.settings.editorSettings.edgeless.mind-map.layout.left"](): string;
+    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.left"](): string;
     /**
       * `Radial`
       */
-    ["com.nexio.settings.editorSettings.edgeless.mind-map.layout.radial"](): string;
+    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.radial"](): string;
     /**
       * `Right`
       */
-    ["com.nexio.settings.editorSettings.edgeless.mind-map.layout.right"](): string;
+    ["com.affine.settings.editorSettings.edgeless.mind-map.layout.right"](): string;
     /**
       * `Note`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note"](): string;
     /**
       * `Background`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.background"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.background"](): string;
     /**
       * `Border style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.border"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.border"](): string;
     /**
       * `Border thickness`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.border-thickness"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.border-thickness"](): string;
     /**
       * `Dash`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.border.dash"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.border.dash"](): string;
     /**
       * `None`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.border.none"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.border.none"](): string;
     /**
       * `Solid`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.border.solid"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.border.solid"](): string;
     /**
       * `Corners`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.corners"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.corners"](): string;
     /**
       * `Shadow style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.note.shadow"](): string;
+    ["com.affine.settings.editorSettings.edgeless.note.shadow"](): string;
     /**
       * `Pen`
       */
-    ["com.nexio.settings.editorSettings.edgeless.pen"](): string;
+    ["com.affine.settings.editorSettings.edgeless.pen"](): string;
     /**
       * `Color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.pen.color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.pen.color"](): string;
     /**
       * `Thickness`
       */
-    ["com.nexio.settings.editorSettings.edgeless.pen.thickness"](): string;
+    ["com.affine.settings.editorSettings.edgeless.pen.thickness"](): string;
     /**
       * `Shape`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape"](): string;
     /**
       * `Border color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.border-color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.border-color"](): string;
     /**
       * `Border style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.border-style"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.border-style"](): string;
     /**
       * `Border thickness`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.border-thickness"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.border-thickness"](): string;
     /**
       * `Diamond`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.diamond"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.diamond"](): string;
     /**
       * `Ellipse`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.ellipse"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.ellipse"](): string;
     /**
       * `Fill color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.fill-color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.fill-color"](): string;
     /**
       * `Flow`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.flow"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.flow"](): string;
     /**
       * `Font`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.font"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.font"](): string;
     /**
       * `Font size`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.font-size"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.font-size"](): string;
     /**
       * `Font style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.font-style"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.font-style"](): string;
     /**
       * `List`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.list"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.list"](): string;
     /**
       * `Rounded Rectangle`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.rounded-rectangle"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.rounded-rectangle"](): string;
     /**
       * `Square`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.square"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.square"](): string;
     /**
       * `Text alignment`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.text-alignment"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.text-alignment"](): string;
     /**
       * `Text color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.text-color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.text-color"](): string;
     /**
       * `Triangle`
       */
-    ["com.nexio.settings.editorSettings.edgeless.shape.triangle"](): string;
+    ["com.affine.settings.editorSettings.edgeless.shape.triangle"](): string;
     /**
       * `Frame`
       */
-    ["com.nexio.settings.editorSettings.edgeless.frame"](): string;
+    ["com.affine.settings.editorSettings.edgeless.frame"](): string;
     /**
       * `Background`
       */
-    ["com.nexio.settings.editorSettings.edgeless.frame.background"](): string;
+    ["com.affine.settings.editorSettings.edgeless.frame.background"](): string;
     /**
       * `Style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.style"](): string;
+    ["com.affine.settings.editorSettings.edgeless.style"](): string;
     /**
       * `General`
       */
-    ["com.nexio.settings.editorSettings.edgeless.style.general"](): string;
+    ["com.affine.settings.editorSettings.edgeless.style.general"](): string;
     /**
       * `Scribbled`
       */
-    ["com.nexio.settings.editorSettings.edgeless.style.scribbled"](): string;
+    ["com.affine.settings.editorSettings.edgeless.style.scribbled"](): string;
     /**
       * `Text`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text"](): string;
     /**
       * `Alignment`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.alignment"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.alignment"](): string;
     /**
       * `Center`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.alignment.center"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.alignment.center"](): string;
     /**
       * `Left`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.alignment.left"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.alignment.left"](): string;
     /**
       * `Right`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.alignment.right"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.alignment.right"](): string;
     /**
       * `Text color`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.color"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.color"](): string;
     /**
       * `Font`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.font"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.font"](): string;
     /**
       * `Font family`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.font-family"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.font-family"](): string;
     /**
       * `Font size`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.font-size"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.font-size"](): string;
     /**
       * `Font style`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.font-style"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.font-style"](): string;
     /**
       * `Font weight`
       */
-    ["com.nexio.settings.editorSettings.edgeless.text.font-weight"](): string;
+    ["com.affine.settings.editorSettings.edgeless.text.font-weight"](): string;
     /**
       * `General`
       */
-    ["com.nexio.settings.editorSettings.general"](): string;
+    ["com.affine.settings.editorSettings.general"](): string;
     /**
-      * `Enable the powerful AI assistant, NEXIO AI.`
+      * `Enable the powerful AI assistant, Nexio AI.`
       */
-    ["com.nexio.settings.editorSettings.general.ai.description"](): string;
+    ["com.affine.settings.editorSettings.general.ai.description"](): string;
     /**
       * `Disable AI and Reload`
       */
-    ["com.nexio.settings.editorSettings.general.ai.disable.confirm"](): string;
+    ["com.affine.settings.editorSettings.general.ai.disable.confirm"](): string;
     /**
       * `Are you sure you want to disable AI? We value your productivity and our AI can enhance it. Please think again!`
       */
-    ["com.nexio.settings.editorSettings.general.ai.disable.description"](): string;
+    ["com.affine.settings.editorSettings.general.ai.disable.description"](): string;
     /**
       * `Disable AI?`
       */
-    ["com.nexio.settings.editorSettings.general.ai.disable.title"](): string;
+    ["com.affine.settings.editorSettings.general.ai.disable.title"](): string;
     /**
       * `Enable AI and Reload`
       */
-    ["com.nexio.settings.editorSettings.general.ai.enable.confirm"](): string;
+    ["com.affine.settings.editorSettings.general.ai.enable.confirm"](): string;
     /**
       * `Do you want to enable AI? Our AI assistant is ready to enhance your productivity and provide smart assistance. Let's get started! We need reload page to make this change.`
       */
-    ["com.nexio.settings.editorSettings.general.ai.enable.description"](): string;
+    ["com.affine.settings.editorSettings.general.ai.enable.description"](): string;
     /**
       * `Enable AI?`
       */
-    ["com.nexio.settings.editorSettings.general.ai.enable.title"](): string;
+    ["com.affine.settings.editorSettings.general.ai.enable.title"](): string;
     /**
-      * `NEXIO AI`
+      * `Nexio AI`
       */
-    ["com.nexio.settings.editorSettings.general.ai.title"](): string;
+    ["com.affine.settings.editorSettings.general.ai.title"](): string;
     /**
       * `Set a default programming language.`
       */
-    ["com.nexio.settings.editorSettings.general.default-code-block.language.description"](): string;
+    ["com.affine.settings.editorSettings.general.default-code-block.language.description"](): string;
     /**
       * `Code blocks default language`
       */
-    ["com.nexio.settings.editorSettings.general.default-code-block.language.title"](): string;
+    ["com.affine.settings.editorSettings.general.default-code-block.language.title"](): string;
+    /**
+      * `Show line numbers in all code blocks by default.`
+      */
+    ["com.affine.settings.editorSettings.general.default-code-block.line-numbers.description"](): string;
+    /**
+      * `Show line numbers in code blocks`
+      */
+    ["com.affine.settings.editorSettings.general.default-code-block.line-numbers.title"](): string;
     /**
       * `Encapsulate code snippets for better readability.`
       */
-    ["com.nexio.settings.editorSettings.general.default-code-block.wrap.description"](): string;
+    ["com.affine.settings.editorSettings.general.default-code-block.wrap.description"](): string;
     /**
       * `Wrap code in code blocks`
       */
-    ["com.nexio.settings.editorSettings.general.default-code-block.wrap.title"](): string;
+    ["com.affine.settings.editorSettings.general.default-code-block.wrap.title"](): string;
     /**
       * `Default mode for new doc.`
       */
-    ["com.nexio.settings.editorSettings.general.default-new-doc.description"](): string;
+    ["com.affine.settings.editorSettings.general.default-new-doc.description"](): string;
     /**
       * `New doc default mode`
       */
-    ["com.nexio.settings.editorSettings.general.default-new-doc.title"](): string;
+    ["com.affine.settings.editorSettings.general.default-new-doc.title"](): string;
+    /**
+      * `Auto-title new docs with current date`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.title"](): string;
+    /**
+      * `Automatically title blank new docs with today's date.`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.description"](): string;
+    /**
+      * `New doc date format`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.title"](): string;
+    /**
+      * `Choose the date format used for automatic new doc titles.`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.description"](): string;
+    /**
+      * `DD-MM-YYYY`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.dd-mm-yyyy"](): string;
+    /**
+      * `MM-DD-YYYY`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.mm-dd-yyyy"](): string;
+    /**
+      * `YYYY-MM-DD`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.yyyy-mm-dd"](): string;
+    /**
+      * `Journal style (localized)`
+      */
+    ["com.affine.settings.editorSettings.general.auto-date-title.format.journal"](): string;
+    /**
+      * `Display add icon option`
+      */
+    ["com.affine.settings.editorSettings.general.add-icon-option.title"](): string;
+    /**
+      * `Show or hide the add icon option for docs without an icon.`
+      */
+    ["com.affine.settings.editorSettings.general.add-icon-option.description"](): string;
     /**
       * `Customize your text experience.`
       */
-    ["com.nexio.settings.editorSettings.general.font-family.custom.description"](): string;
+    ["com.affine.settings.editorSettings.general.font-family.custom.description"](): string;
     /**
       * `Custom font family`
       */
-    ["com.nexio.settings.editorSettings.general.font-family.custom.title"](): string;
+    ["com.affine.settings.editorSettings.general.font-family.custom.title"](): string;
     /**
       * `Choose your editor's font family.`
       */
-    ["com.nexio.settings.editorSettings.general.font-family.description"](): string;
+    ["com.affine.settings.editorSettings.general.font-family.description"](): string;
     /**
       * `Font family`
       */
-    ["com.nexio.settings.editorSettings.general.font-family.title"](): string;
+    ["com.affine.settings.editorSettings.general.font-family.title"](): string;
+    /**
+      * `Adjust the base font size for better readability.`
+      */
+    ["com.affine.settings.editorSettings.general.font-size.description"](): string;
+    /**
+      * `Font size`
+      */
+    ["com.affine.settings.editorSettings.general.font-size.title"](): string;
     /**
       * `Automatically detect and correct spelling errors.`
       */
-    ["com.nexio.settings.editorSettings.general.spell-check.description"](): string;
+    ["com.affine.settings.editorSettings.general.spell-check.description"](): string;
     /**
       * `Spell check`
       */
-    ["com.nexio.settings.editorSettings.general.spell-check.title"](): string;
+    ["com.affine.settings.editorSettings.general.spell-check.title"](): string;
     /**
       * `Page`
       */
-    ["com.nexio.settings.editorSettings.page"](): string;
+    ["com.affine.settings.editorSettings.page"](): string;
     /**
       * `Middle click paste`
       */
-    ["com.nexio.settings.editorSettings.general.middle-click-paste.title"](): string;
+    ["com.affine.settings.editorSettings.general.middle-click-paste.title"](): string;
     /**
       * `Enable default middle click paste behavior on Linux.`
       */
-    ["com.nexio.settings.editorSettings.general.middle-click-paste.description"](): string;
+    ["com.affine.settings.editorSettings.general.middle-click-paste.description"](): string;
     /**
       * `Display bi-directional links on the doc.`
       */
-    ["com.nexio.settings.editorSettings.page.display-bi-link.description"](): string;
+    ["com.affine.settings.editorSettings.page.display-bi-link.description"](): string;
     /**
       * `Display bi-directional links`
       */
-    ["com.nexio.settings.editorSettings.page.display-bi-link.title"](): string;
+    ["com.affine.settings.editorSettings.page.display-bi-link.title"](): string;
     /**
       * `Display document information on the doc.`
       */
-    ["com.nexio.settings.editorSettings.page.display-doc-info.description"](): string;
+    ["com.affine.settings.editorSettings.page.display-doc-info.description"](): string;
     /**
       * `Display doc info`
       */
-    ["com.nexio.settings.editorSettings.page.display-doc-info.title"](): string;
+    ["com.affine.settings.editorSettings.page.display-doc-info.title"](): string;
     /**
       * `Maximise display of content within a page.`
       */
-    ["com.nexio.settings.editorSettings.page.full-width.description"](): string;
+    ["com.affine.settings.editorSettings.page.full-width.description"](): string;
     /**
       * `Full width layout`
       */
-    ["com.nexio.settings.editorSettings.page.full-width.title"](): string;
+    ["com.affine.settings.editorSettings.page.full-width.title"](): string;
     /**
       * `Default page width`
       */
-    ["com.nexio.settings.editorSettings.page.default-page-width.title"](): string;
+    ["com.affine.settings.editorSettings.page.default-page-width.title"](): string;
     /**
       * `Set default width for new pages, individual pages can override.`
       */
-    ["com.nexio.settings.editorSettings.page.default-page-width.description"](): string;
+    ["com.affine.settings.editorSettings.page.default-page-width.description"](): string;
     /**
       * `Standard`
       */
-    ["com.nexio.settings.editorSettings.page.default-page-width.standard"](): string;
+    ["com.affine.settings.editorSettings.page.default-page-width.standard"](): string;
     /**
       * `Full width`
       */
-    ["com.nexio.settings.editorSettings.page.default-page-width.full-width"](): string;
+    ["com.affine.settings.editorSettings.page.default-page-width.full-width"](): string;
     /**
       * `Set edgeless default color scheme.`
       */
-    ["com.nexio.settings.editorSettings.page.edgeless-default-theme.description"](): string;
+    ["com.affine.settings.editorSettings.page.edgeless-default-theme.description"](): string;
     /**
       * `Edgeless default theme`
       */
-    ["com.nexio.settings.editorSettings.page.edgeless-default-theme.title"](): string;
+    ["com.affine.settings.editorSettings.page.edgeless-default-theme.title"](): string;
     /**
       * `Specified by current color mode`
       */
-    ["com.nexio.settings.editorSettings.page.edgeless-default-theme.specified"](): string;
+    ["com.affine.settings.editorSettings.page.edgeless-default-theme.specified"](): string;
     /**
       * `Scroll wheel zoom`
       */
-    ["com.nexio.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title"](): string;
+    ["com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title"](): string;
     /**
       * `Use the scroll wheel to zoom in and out.`
       */
-    ["com.nexio.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description"](): string;
+    ["com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description"](): string;
     /**
       * `Preferences`
       */
-    ["com.nexio.settings.editorSettings.preferences"](): string;
+    ["com.affine.settings.editorSettings.preferences"](): string;
     /**
       * `You can export the entire preferences data for backup, and the exported data can be re-imported.`
       */
-    ["com.nexio.settings.editorSettings.preferences.export.description"](): string;
+    ["com.affine.settings.editorSettings.preferences.export.description"](): string;
     /**
       * `Export Settings`
       */
-    ["com.nexio.settings.editorSettings.preferences.export.title"](): string;
+    ["com.affine.settings.editorSettings.preferences.export.title"](): string;
     /**
       * `You can import previously exported preferences data for restoration.`
       */
-    ["com.nexio.settings.editorSettings.preferences.import.description"](): string;
+    ["com.affine.settings.editorSettings.preferences.import.description"](): string;
     /**
       * `Import Settings`
       */
-    ["com.nexio.settings.editorSettings.preferences.import.title"](): string;
+    ["com.affine.settings.editorSettings.preferences.import.title"](): string;
     /**
       * `Configure your own editor`
       */
-    ["com.nexio.settings.editorSettings.subtitle"](): string;
+    ["com.affine.settings.editorSettings.subtitle"](): string;
     /**
       * `Editor settings`
       */
-    ["com.nexio.settings.editorSettings.title"](): string;
+    ["com.affine.settings.editorSettings.title"](): string;
     /**
       * `Ask me every time`
       */
-    ["com.nexio.settings.editorSettings.ask-me-every-time"](): string;
+    ["com.affine.settings.editorSettings.ask-me-every-time"](): string;
     /**
       * `Email`
       */
-    ["com.nexio.settings.email"](): string;
+    ["com.affine.settings.email"](): string;
     /**
       * `Change email`
       */
-    ["com.nexio.settings.email.action"](): string;
+    ["com.affine.settings.email.action"](): string;
     /**
       * `Change email`
       */
-    ["com.nexio.settings.email.action.change"](): string;
+    ["com.affine.settings.email.action.change"](): string;
     /**
       * `Verify email`
       */
-    ["com.nexio.settings.email.action.verify"](): string;
+    ["com.affine.settings.email.action.verify"](): string;
     /**
-      * `Enable NEXIO Cloud to collaborate with others`
+      * `Enable Nexio Sync to collaborate with others`
       */
-    ["com.nexio.settings.member-tooltip"](): string;
+    ["com.affine.settings.member-tooltip"](): string;
     /**
       * `Loading member list...`
       */
-    ["com.nexio.settings.member.loading"](): string;
+    ["com.affine.settings.member.loading"](): string;
     /**
       * `Noise background on the sidebar`
       */
-    ["com.nexio.settings.noise-style"](): string;
+    ["com.affine.settings.noise-style"](): string;
     /**
       * `Use background noise effect on the sidebar.`
       */
-    ["com.nexio.settings.noise-style-description"](): string;
+    ["com.affine.settings.noise-style-description"](): string;
     /**
       * `Password`
       */
-    ["com.nexio.settings.password"](): string;
+    ["com.affine.settings.password"](): string;
     /**
       * `Change password`
       */
-    ["com.nexio.settings.password.action.change"](): string;
+    ["com.affine.settings.password.action.change"](): string;
     /**
       * `Set password`
       */
-    ["com.nexio.settings.password.action.set"](): string;
+    ["com.affine.settings.password.action.set"](): string;
     /**
       * `Set a password to sign in to your account`
       */
-    ["com.nexio.settings.password.message"](): string;
+    ["com.affine.settings.password.message"](): string;
     /**
       * `My profile`
       */
-    ["com.nexio.settings.profile"](): string;
+    ["com.affine.settings.profile"](): string;
     /**
       * `Your account profile will be displayed to everyone.`
       */
-    ["com.nexio.settings.profile.message"](): string;
+    ["com.affine.settings.profile.message"](): string;
     /**
       * `Display name`
       */
-    ["com.nexio.settings.profile.name"](): string;
+    ["com.affine.settings.profile.name"](): string;
     /**
       * `Input account name`
       */
-    ["com.nexio.settings.profile.placeholder"](): string;
+    ["com.affine.settings.profile.placeholder"](): string;
     /**
       * `Remove workspace`
       */
-    ["com.nexio.settings.remove-workspace"](): string;
+    ["com.affine.settings.remove-workspace"](): string;
     /**
       * `Remove workspace from this device and optionally delete all data.`
       */
-    ["com.nexio.settings.remove-workspace-description"](): string;
+    ["com.affine.settings.remove-workspace-description"](): string;
     /**
       * `Sign in / Sign up`
       */
-    ["com.nexio.settings.sign"](): string;
+    ["com.affine.settings.sign"](): string;
     /**
       * `Need more customization options? Tell us in the community.`
       */
-    ["com.nexio.settings.suggestion"](): string;
+    ["com.affine.settings.suggestion"](): string;
     /**
       * `Translucent UI on the sidebar`
       */
-    ["com.nexio.settings.translucent-style"](): string;
+    ["com.affine.settings.translucent-style"](): string;
     /**
       * `Use transparency effect on the sidebar.`
       */
-    ["com.nexio.settings.translucent-style-description"](): string;
+    ["com.affine.settings.translucent-style-description"](): string;
     /**
       * `Meetings`
       */
-    ["com.nexio.settings.meetings"](): string;
+    ["com.affine.settings.meetings"](): string;
     /**
       * `Beyond Recording
     Your AI Meeting Assistant is Here`
       */
-    ["com.nexio.settings.meetings.setting.welcome"](): string;
+    ["com.affine.settings.meetings.setting.welcome"](): string;
     /**
       * `Native Audio Capture, No Bots Required - Direct from Your Mac to Meeting Intelligence.`
       */
-    ["com.nexio.settings.meetings.setting.prompt"](): string;
+    ["com.affine.settings.meetings.setting.prompt"](): string;
     /**
       * `Learn more`
       */
-    ["com.nexio.settings.meetings.setting.welcome.learn-more"](): string;
+    ["com.affine.settings.meetings.setting.welcome.learn-more"](): string;
     /**
       * `Enable meeting notes`
       */
-    ["com.nexio.settings.meetings.enable.title"](): string;
+    ["com.affine.settings.meetings.enable.title"](): string;
     /**
       * `Meeting recording`
       */
-    ["com.nexio.settings.meetings.record.header"](): string;
+    ["com.affine.settings.meetings.record.header"](): string;
     /**
       * `When meeting starts`
       */
-    ["com.nexio.settings.meetings.record.recording-mode"](): string;
+    ["com.affine.settings.meetings.record.recording-mode"](): string;
     /**
       * `Choose the behavior when the meeting starts.`
       */
-    ["com.nexio.settings.meetings.record.recording-mode.description"](): string;
+    ["com.affine.settings.meetings.record.recording-mode.description"](): string;
     /**
       * `Open saved recordings`
       */
-    ["com.nexio.settings.meetings.record.open-saved-file"](): string;
+    ["com.affine.settings.meetings.record.open-saved-file"](): string;
     /**
       * `Open the locally stored recording files.`
       */
-    ["com.nexio.settings.meetings.record.open-saved-file.description"](): string;
+    ["com.affine.settings.meetings.record.open-saved-file.description"](): string;
     /**
       * `Transcription with AI`
       */
-    ["com.nexio.settings.meetings.transcription.header"](): string;
+    ["com.affine.settings.meetings.transcription.header"](): string;
     /**
       * `AI auto summary`
       */
-    ["com.nexio.settings.meetings.transcription.auto-summary"](): string;
+    ["com.affine.settings.meetings.transcription.auto-summary"](): string;
     /**
       * `Automatically generate a summary of the meeting notes.`
       */
-    ["com.nexio.settings.meetings.transcription.auto-summary.description"](): string;
+    ["com.affine.settings.meetings.transcription.auto-summary.description"](): string;
     /**
       * `AI auto todo list`
       */
-    ["com.nexio.settings.meetings.transcription.auto-todo"](): string;
+    ["com.affine.settings.meetings.transcription.auto-todo"](): string;
     /**
       * `Automatically generate a todo list of the meeting notes.`
       */
-    ["com.nexio.settings.meetings.transcription.auto-todo.description"](): string;
+    ["com.affine.settings.meetings.transcription.auto-todo.description"](): string;
     /**
       * `Privacy & Security`
       */
-    ["com.nexio.settings.meetings.privacy.header"](): string;
+    ["com.affine.settings.meetings.privacy.header"](): string;
     /**
       * `Screen & System audio recording`
       */
-    ["com.nexio.settings.meetings.privacy.screen-system-audio-recording"](): string;
+    ["com.affine.settings.meetings.privacy.screen-system-audio-recording"](): string;
     /**
       * `The Meeting feature requires permission to be used.`
       */
-    ["com.nexio.settings.meetings.privacy.screen-system-audio-recording.description"](): string;
+    ["com.affine.settings.meetings.privacy.screen-system-audio-recording.description"](): string;
     /**
       * `Click to allow`
       */
-    ["com.nexio.settings.meetings.privacy.screen-system-audio-recording.permission-setting"](): string;
+    ["com.affine.settings.meetings.privacy.screen-system-audio-recording.permission-setting"](): string;
     /**
       * `Microphone`
       */
-    ["com.nexio.settings.meetings.privacy.microphone"](): string;
+    ["com.affine.settings.meetings.privacy.microphone"](): string;
     /**
       * `The Meeting feature requires permission to be used.`
       */
-    ["com.nexio.settings.meetings.privacy.microphone.description"](): string;
+    ["com.affine.settings.meetings.privacy.microphone.description"](): string;
     /**
       * `Click to allow`
       */
-    ["com.nexio.settings.meetings.privacy.microphone.permission-setting"](): string;
+    ["com.affine.settings.meetings.privacy.microphone.permission-setting"](): string;
     /**
       * `Permission issues`
       */
-    ["com.nexio.settings.meetings.privacy.issues"](): string;
+    ["com.affine.settings.meetings.privacy.issues"](): string;
     /**
       * `Permissions are granted but the status isn't updated? Restart the app to refresh permissions.`
       */
-    ["com.nexio.settings.meetings.privacy.issues.description"](): string;
+    ["com.affine.settings.meetings.privacy.issues.description"](): string;
     /**
       * `Restart App`
       */
-    ["com.nexio.settings.meetings.privacy.issues.restart"](): string;
+    ["com.affine.settings.meetings.privacy.issues.restart"](): string;
     /**
       * `Do nothing`
       */
-    ["com.nexio.settings.meetings.record.recording-mode.none"](): string;
+    ["com.affine.settings.meetings.record.recording-mode.none"](): string;
     /**
       * `Auto start recording`
       */
-    ["com.nexio.settings.meetings.record.recording-mode.auto-start"](): string;
+    ["com.affine.settings.meetings.record.recording-mode.auto-start"](): string;
     /**
       * `Show a recording prompt`
       */
-    ["com.nexio.settings.meetings.record.recording-mode.prompt"](): string;
+    ["com.affine.settings.meetings.record.recording-mode.prompt"](): string;
     /**
       * `Screen & System Audio Recording`
       */
-    ["com.nexio.settings.meetings.record.permission-modal.title"](): string;
+    ["com.affine.settings.meetings.record.permission-modal.title"](): string;
     /**
-      * `NEXIO will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
+      * `Nexio will generate meeting notes by recording your meetings. Authorization to "Screen & System Audio Recording" is necessary.`
       */
-    ["com.nexio.settings.meetings.record.permission-modal.description"](): string;
+    ["com.affine.settings.meetings.record.permission-modal.description"](): string;
     /**
       * `Save meeting's recording block to`
       */
-    ["com.nexio.settings.meetings.record.save-mode"](): string;
+    ["com.affine.settings.meetings.record.save-mode"](): string;
     /**
       * `Open System Settings`
       */
-    ["com.nexio.settings.meetings.record.permission-modal.open-setting"](): string;
+    ["com.affine.settings.meetings.record.permission-modal.open-setting"](): string;
     /**
       * `Workspace`
       */
-    ["com.nexio.settings.workspace"](): string;
+    ["com.affine.settings.workspace"](): string;
     /**
       * `You can view current workspace's information here.`
       */
-    ["com.nexio.settings.workspace.description"](): string;
+    ["com.affine.settings.workspace.description"](): string;
+    /**
+      * `AI BYOK (Beta)`
+      */
+    ["com.affine.settings.workspace.byok.title"](): string;
+    /**
+      * `Loading provider keys.`
+      */
+    ["com.affine.settings.workspace.byok.loading"](): string;
+    /**
+      * `Use your own provider keys for this workspace.`
+      */
+    ["com.affine.settings.workspace.byok.subtitle"](): string;
+    /**
+      * `Use workspace provider keys before Nexio AI plan routes.`
+      */
+    ["com.affine.settings.workspace.byok.header"](): string;
+    /**
+      * `BYOK requires Pro, Team, or Believer`
+      */
+    ["com.affine.settings.workspace.byok.locked.title"](): string;
+    /**
+      * `Upgrade this workspace to add provider keys and route Nexio AI through your own OpenAI, Anthropic, Gemini, or FAL account.`
+      */
+    ["com.affine.settings.workspace.byok.locked.description"](): string;
+    /**
+      * `Provider keys`
+      */
+    ["com.affine.settings.workspace.byok.keys.title"](): string;
+    /**
+      * `List order controls fallback within each storage group.`
+      */
+    ["com.affine.settings.workspace.byok.keys.description"](): string;
+    /**
+      * `No provider keys`
+      */
+    ["com.affine.settings.workspace.byok.empty.title"](): string;
+    /**
+      * `Add a key to create the first route for this workspace. Provider rows are not shown until a key exists.`
+      */
+    ["com.affine.settings.workspace.byok.empty.description"](): string;
+    /**
+      * `Local`
+      */
+    ["com.affine.settings.workspace.byok.storage.local"](): string;
+    /**
+      * `Server`
+      */
+    ["com.affine.settings.workspace.byok.storage.server"](): string;
+    /**
+      * `Available to workspace members.`
+      */
+    ["com.affine.settings.workspace.byok.storage.server.description"](): string;
+    /**
+      * `Kept in this desktop device’s secure storage.`
+      */
+    ["com.affine.settings.workspace.byok.storage.local.description"](): string;
+    /**
+      * `Available in the Nexio desktop app.`
+      */
+    ["com.affine.settings.workspace.byok.storage.local.desktop-only"](): string;
+    /**
+      * `Secure local storage is not available on this device.`
+      */
+    ["com.affine.settings.workspace.byok.storage.local.unavailable"](): string;
+    /**
+      * `Testing sends this key to the workspace server for this request only; it is not stored there.`
+      */
+    ["com.affine.settings.workspace.byok.storage.local.test-disclosure"](): string;
+    /**
+      * `Disabled after failure`
+      */
+    ["com.affine.settings.workspace.byok.status.disabled-after-failure"](): string;
+    /**
+      * `Key verified`
+      */
+    ["com.affine.settings.workspace.byok.status.key-verified"](): string;
+    /**
+      * `Text`
+      */
+    ["com.affine.settings.workspace.byok.capability.text"](): string;
+    /**
+      * `Image input`
+      */
+    ["com.affine.settings.workspace.byok.capability.image-input"](): string;
+    /**
+      * `Actions`
+      */
+    ["com.affine.settings.workspace.byok.capability.actions"](): string;
+    /**
+      * `Image generate`
+      */
+    ["com.affine.settings.workspace.byok.capability.image-generate"](): string;
+    /**
+      * `Transcript`
+      */
+    ["com.affine.settings.workspace.byok.capability.transcript"](): string;
+    /**
+      * `Indexing`
+      */
+    ["com.affine.settings.workspace.byok.capability.indexing"](): string;
+    /**
+      * `failed {{date}}`
+      */
+    ["com.affine.settings.workspace.byok.row.activity.failed"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `not used yet`
+      */
+    ["com.affine.settings.workspace.byok.row.activity.unused"](): string;
+    /**
+      * `Feature coverage`
+      */
+    ["com.affine.settings.workspace.byok.coverage.title"](): string;
+    /**
+      * `Writing and chat`
+      */
+    ["com.affine.settings.workspace.byok.feature.chat.title"](): string;
+    /**
+      * `Covered when an OpenAI, Anthropic, or Gemini BYOK key exists.`
+      */
+    ["com.affine.settings.workspace.byok.feature.chat.fallback"](): string;
+    /**
+      * `Actions and structured output`
+      */
+    ["com.affine.settings.workspace.byok.feature.action.title"](): string;
+    /**
+      * `Covered when an OpenAI or Gemini BYOK key exists.`
+      */
+    ["com.affine.settings.workspace.byok.feature.action.fallback"](): string;
+    /**
+      * `Image generation`
+      */
+    ["com.affine.settings.workspace.byok.feature.image.title"](): string;
+    /**
+      * `Covered when an OpenAI, Gemini, or FAL BYOK key exists.`
+      */
+    ["com.affine.settings.workspace.byok.feature.image.fallback"](): string;
+    /**
+      * `Transcript`
+      */
+    ["com.affine.settings.workspace.byok.feature.transcript.title"](): string;
+    /**
+      * `Covered when a server Gemini BYOK key exists.`
+      */
+    ["com.affine.settings.workspace.byok.feature.transcript.fallback"](): string;
+    /**
+      * `Workspace indexing`
+      */
+    ["com.affine.settings.workspace.byok.feature.workspace-indexing.title"](): string;
+    /**
+      * `Covered when a server Gemini BYOK key exists.`
+      */
+    ["com.affine.settings.workspace.byok.feature.workspace-indexing.fallback"](): string;
+    /**
+      * `Transcript and workspace indexing require a server Gemini BYOK key or Nexio AI plan fallback.`
+      */
+    ["com.affine.settings.workspace.byok.warning.transcript"](): string;
+    /**
+      * `Workspace indexing requires a server Gemini BYOK key or Nexio AI plan fallback.`
+      */
+    ["com.affine.settings.workspace.byok.warning.workspace-indexing"](): string;
+    /**
+      * `BYOK usage`
+      */
+    ["com.affine.settings.workspace.byok.usage.title"](): string;
+    /**
+      * `Last 30 days`
+      */
+    ["com.affine.settings.workspace.byok.usage.period"](): string;
+    /**
+      * `{{count}} tokens`
+      */
+    ["com.affine.settings.workspace.byok.usage.tokens"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Connect AI provider`
+      */
+    ["com.affine.settings.workspace.byok.modal.connect-title"](): string;
+    /**
+      * `Manage provider`
+      */
+    ["com.affine.settings.workspace.byok.modal.manage-title"](): string;
+    /**
+      * `Choose where the key is stored, then select the models Nexio may use.`
+      */
+    ["com.affine.settings.workspace.byok.modal.connect-description"](): string;
+    /**
+      * `Add models`
+      */
+    ["com.affine.settings.workspace.byok.modal.add-model-title"](): string;
+    /**
+      * `Add custom model`
+      */
+    ["com.affine.settings.workspace.byok.modal.add-custom-model-title"](): string;
+    /**
+      * `Edit model`
+      */
+    ["com.affine.settings.workspace.byok.modal.edit-model-title"](): string;
+    /**
+      * `Choose one or more models this key may use.`
+      */
+    ["com.affine.settings.workspace.byok.modal.catalog-model-description"](): string;
+    /**
+      * `Enter the endpoint model ID and choose its uses.`
+      */
+    ["com.affine.settings.workspace.byok.modal.custom-model-description"](): string;
+    /**
+      * `Connection`
+      */
+    ["com.affine.settings.workspace.byok.section.connection"](): string;
+    /**
+      * `Models`
+      */
+    ["com.affine.settings.workspace.byok.section.models"](): string;
+    /**
+      * `Advanced details`
+      */
+    ["com.affine.settings.workspace.byok.section.advanced"](): string;
+    /**
+      * `Models this key may use.`
+      */
+    ["com.affine.settings.workspace.byok.models.description.selected"](): string;
+    /**
+      * `Among compatible models, enabled models are tried from top to bottom.`
+      */
+    ["com.affine.settings.workspace.byok.models.description.order"](): string;
+    /**
+      * `No models added yet.`
+      */
+    ["com.affine.settings.workspace.byok.models.empty"](): string;
+    /**
+      * `All available models have been added.`
+      */
+    ["com.affine.settings.workspace.byok.models.all-added"](): string;
+    /**
+      * `No matching models.`
+      */
+    ["com.affine.settings.workspace.byok.models.no-search-results"](): string;
+    /**
+      * `Provider`
+      */
+    ["com.affine.settings.workspace.byok.field.provider"](): string;
+    /**
+      * `Key name`
+      */
+    ["com.affine.settings.workspace.byok.field.key-name"](): string;
+    /**
+      * `Description`
+      */
+    ["com.affine.settings.workspace.byok.field.description"](): string;
+    /**
+      * `Provider enabled`
+      */
+    ["com.affine.settings.workspace.byok.field.provider-enabled"](): string;
+    /**
+      * `API key`
+      */
+    ["com.affine.settings.workspace.byok.field.api-key"](): string;
+    /**
+      * `Endpoint`
+      */
+    ["com.affine.settings.workspace.byok.field.endpoint"](): string;
+    /**
+      * `API dialect`
+      */
+    ["com.affine.settings.workspace.byok.field.dialect"](): string;
+    /**
+      * `Model ID`
+      */
+    ["com.affine.settings.workspace.byok.field.model-id"](): string;
+    /**
+      * `Custom endpoints are disabled by the server administrator. In Self-hosted Admin, enable copilot.byok.allowCustomEndpoint.`
+      */
+    ["com.affine.settings.workspace.byok.endpoint.custom-disabled"](): string;
+    /**
+      * `Private network endpoints additionally require the server administrator to enable copilot.byok.allowPrivateEndpoint.`
+      */
+    ["com.affine.settings.workspace.byok.endpoint.private-disabled"](): string;
+    /**
+      * `Leave blank to keep the current key`
+      */
+    ["com.affine.settings.workspace.byok.placeholder.keep-current-key"](): string;
+    /**
+      * `Model ID`
+      */
+    ["com.affine.settings.workspace.byok.placeholder.model-id"](): string;
+    /**
+      * `Search models…`
+      */
+    ["com.affine.settings.workspace.byok.placeholder.search-models"](): string;
+    /**
+      * `Select an API dialect`
+      */
+    ["com.affine.settings.workspace.byok.placeholder.dialect"](): string;
+    /**
+      * `Use a custom API-compatible endpoint`
+      */
+    ["com.affine.settings.workspace.byok.endpoint.use-custom"](): string;
+    /**
+      * `Responses API`
+      */
+    ["com.affine.settings.workspace.byok.dialect.responses"](): string;
+    /**
+      * `Chat Completions API`
+      */
+    ["com.affine.settings.workspace.byok.dialect.chat-completions"](): string;
+    /**
+      * `Include an image generation request when testing (provider charges may apply)`
+      */
+    ["com.affine.settings.workspace.byok.probe.include-image"](): string;
+    /**
+      * `Connection verified`
+      */
+    ["com.affine.settings.workspace.byok.probe.verified"](): string;
+    /**
+      * `Connection failed`
+      */
+    ["com.affine.settings.workspace.byok.probe.failed"](): string;
+    /**
+      * `Recommended`
+      */
+    ["com.affine.settings.workspace.byok.model.recommended"](): string;
+    /**
+      * `This model has already been added.`
+      */
+    ["com.affine.settings.workspace.byok.model.duplicate-id"](): string;
+    /**
+      * `Not tested`
+      */
+    ["com.affine.settings.workspace.byok.model.status.not-tested"](): string;
+    /**
+      * `Verified`
+      */
+    ["com.affine.settings.workspace.byok.model.status.verified"](): string;
+    /**
+      * `Failed`
+      */
+    ["com.affine.settings.workspace.byok.model.status.failed"](): string;
+    /**
+      * `Partially verified · {{verified}} of {{total}}`
+      */
+    ["com.affine.settings.workspace.byok.model.status.partially-verified"](options: Readonly<{
+        verified: string;
+        total: string;
+    }>): string;
+    /**
+      * `Disabled`
+      */
+    ["com.affine.settings.workspace.byok.model.status.disabled"](): string;
+    /**
+      * `Use this model for`
+      */
+    ["com.affine.settings.workspace.byok.model.use-this-for"](): string;
+    /**
+      * `Chat & writing`
+      */
+    ["com.affine.settings.workspace.byok.model.use.chat"](): string;
+    /**
+      * `Actions`
+      */
+    ["com.affine.settings.workspace.byok.model.use.actions"](): string;
+    /**
+      * `Structured output`
+      */
+    ["com.affine.settings.workspace.byok.model.use.structured"](): string;
+    /**
+      * `Image understanding`
+      */
+    ["com.affine.settings.workspace.byok.model.use.vision"](): string;
+    /**
+      * `Image generation`
+      */
+    ["com.affine.settings.workspace.byok.model.use.image"](): string;
+    /**
+      * `Transcription`
+      */
+    ["com.affine.settings.workspace.byok.model.use.transcript"](): string;
+    /**
+      * `Workspace indexing`
+      */
+    ["com.affine.settings.workspace.byok.model.use.embedding"](): string;
+    /**
+      * `Search reranking`
+      */
+    ["com.affine.settings.workspace.byok.model.use.rerank"](): string;
+    /**
+      * `Add key`
+      */
+    ["com.affine.settings.workspace.byok.action.add-key"](): string;
+    /**
+      * `Test connection`
+      */
+    ["com.affine.settings.workspace.byok.action.test-connection"](): string;
+    /**
+      * `Test`
+      */
+    ["com.affine.settings.workspace.byok.action.test"](): string;
+    /**
+      * `Testing…`
+      */
+    ["com.affine.settings.workspace.byok.action.testing"](): string;
+    /**
+      * `Cancel`
+      */
+    ["com.affine.settings.workspace.byok.action.cancel"](): string;
+    /**
+      * `Connect`
+      */
+    ["com.affine.settings.workspace.byok.action.connect"](): string;
+    /**
+      * `Connecting…`
+      */
+    ["com.affine.settings.workspace.byok.action.connecting"](): string;
+    /**
+      * `Save changes`
+      */
+    ["com.affine.settings.workspace.byok.action.save-changes"](): string;
+    /**
+      * `Add model`
+      */
+    ["com.affine.settings.workspace.byok.action.add-model"](): string;
+    /**
+      * `Add {{count}} models`
+      */
+    ["com.affine.settings.workspace.byok.action.add-selected-models"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Save model`
+      */
+    ["com.affine.settings.workspace.byok.action.save-model"](): string;
+    /**
+      * `Enable {{model}}`
+      */
+    ["com.affine.settings.workspace.byok.action.enable-model"](options: {
+        readonly model: string;
+    }): string;
+    /**
+      * `Disable {{model}}`
+      */
+    ["com.affine.settings.workspace.byok.action.disable-model"](options: {
+        readonly model: string;
+    }): string;
+    /**
+      * `Options for {{model}}`
+      */
+    ["com.affine.settings.workspace.byok.action.model-options"](options: {
+        readonly model: string;
+    }): string;
+    /**
+      * `Move up`
+      */
+    ["com.affine.settings.workspace.byok.action.move-up"](): string;
+    /**
+      * `Move down`
+      */
+    ["com.affine.settings.workspace.byok.action.move-down"](): string;
+    /**
+      * `Remove`
+      */
+    ["com.affine.settings.workspace.byok.action.remove"](): string;
+    /**
+      * `Clear all BYOK keys`
+      */
+    ["com.affine.settings.workspace.byok.action.clear-all"](): string;
+    /**
+      * `Reorder`
+      */
+    ["com.affine.settings.workspace.byok.action.reorder"](): string;
+    /**
+      * `Edit`
+      */
+    ["com.affine.settings.workspace.byok.action.edit"](): string;
+    /**
+      * `Delete`
+      */
+    ["com.affine.settings.workspace.byok.action.delete"](): string;
+    /**
+      * `Key test failed`
+      */
+    ["com.affine.settings.workspace.byok.notify.test-failed.title"](): string;
+    /**
+      * `Local key not saved`
+      */
+    ["com.affine.settings.workspace.byok.notify.local-save-failed.title"](): string;
+    /**
+      * `Secure device storage is unavailable.`
+      */
+    ["com.affine.settings.workspace.byok.notify.local-save-failed.message"](): string;
+    /**
+      * `BYOK settings not loaded`
+      */
+    ["com.affine.settings.workspace.byok.notify.load-failed.title"](): string;
+    /**
+      * `BYOK key not saved`
+      */
+    ["com.affine.settings.workspace.byok.notify.save-failed.title"](): string;
+    /**
+      * `BYOK key not deleted`
+      */
+    ["com.affine.settings.workspace.byok.notify.delete-failed.title"](): string;
+    /**
+      * `BYOK keys not reordered`
+      */
+    ["com.affine.settings.workspace.byok.notify.reorder-failed.title"](): string;
+    /**
+      * `BYOK keys not cleared`
+      */
+    ["com.affine.settings.workspace.byok.notify.clear-failed.title"](): string;
+    /**
+      * `BYOK settings changed`
+      */
+    ["com.affine.settings.workspace.byok.notify.reload-required.title"](): string;
+    /**
+      * `Reload the settings and try again.`
+      */
+    ["com.affine.settings.workspace.byok.notify.reload-required.message"](): string;
+    /**
+      * `Please try again.`
+      */
+    ["com.affine.settings.workspace.byok.notify.operation-failed.message"](): string;
+    /**
+      * `Cannot reorder across storage`
+      */
+    ["com.affine.settings.workspace.byok.notify.cross-storage-reorder.title"](): string;
+    /**
+      * `Local keys and server keys keep separate fallback order.`
+      */
+    ["com.affine.settings.workspace.byok.notify.cross-storage-reorder.message"](): string;
     /**
       * `Experimental features`
       */
-    ["com.nexio.settings.workspace.experimental-features"](): string;
+    ["com.affine.settings.workspace.experimental-features"](): string;
     /**
       * `Get started`
       */
-    ["com.nexio.settings.workspace.experimental-features.get-started"](): string;
+    ["com.affine.settings.workspace.experimental-features.get-started"](): string;
     /**
       * `Experimental features`
       */
-    ["com.nexio.settings.workspace.experimental-features.header.plugins"](): string;
+    ["com.affine.settings.workspace.experimental-features.header.plugins"](): string;
     /**
       * `Some features available for early access`
       */
-    ["com.nexio.settings.workspace.experimental-features.header.subtitle"](): string;
+    ["com.affine.settings.workspace.experimental-features.header.subtitle"](): string;
     /**
       * `I am aware of the risks, and I am willing to continue to use it.`
       */
-    ["com.nexio.settings.workspace.experimental-features.prompt-disclaimer"](): string;
+    ["com.affine.settings.workspace.experimental-features.prompt-disclaimer"](): string;
     /**
       * `Do you want to use the plugin system that is in an experimental stage?`
       */
-    ["com.nexio.settings.workspace.experimental-features.prompt-header"](): string;
+    ["com.affine.settings.workspace.experimental-features.prompt-header"](): string;
     /**
       * `You are about to enable an experimental feature. This feature is still in development and may contain errors or behave unpredictably. Please proceed with caution and at your own risk.`
       */
-    ["com.nexio.settings.workspace.experimental-features.prompt-warning"](): string;
+    ["com.affine.settings.workspace.experimental-features.prompt-warning"](): string;
     /**
       * `WARNING MESSAGE`
       */
-    ["com.nexio.settings.workspace.experimental-features.prompt-warning-title"](): string;
+    ["com.affine.settings.workspace.experimental-features.prompt-warning-title"](): string;
     /**
       * `Enable AI`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai.name"](): string;
     /**
       * `Enable or disable ALL AI features.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai.description"](): string;
     /**
       * `Enable AI Network Search`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-network-search.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-network-search.name"](): string;
     /**
       * `Enable or disable AI Network Search feature.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-network-search.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-network-search.description"](): string;
     /**
       * `Enable AI Model Switch`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-model-switch.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-model-switch.name"](): string;
     /**
       * `Enable or disable AI model switch feature.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-model-switch.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-model-switch.description"](): string;
     /**
       * `Enable AI Playground`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-playground.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-playground.name"](): string;
     /**
       * `Enable or disable AI playground feature.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-playground.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-playground.description"](): string;
     /**
       * `Database Full Width`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-database-full-width.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-database-full-width.name"](): string;
     /**
       * `The database will be displayed in full-width mode.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-database-full-width.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-database-full-width.description"](): string;
     /**
       * `Database Attachment Note`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-database-attachment-note.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-database-attachment-note.name"](): string;
     /**
       * `Allows adding notes to database attachments.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-database-attachment-note.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-database-attachment-note.description"](): string;
     /**
       * `Todo Block Query`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-block-query.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-block-query.name"](): string;
     /**
       * `Enables querying of todo blocks.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-block-query.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-block-query.description"](): string;
     /**
       * `Synced Doc Block`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-synced-doc-block.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-synced-doc-block.name"](): string;
     /**
       * `Enables syncing of doc blocks.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-synced-doc-block.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-synced-doc-block.description"](): string;
     /**
       * `Edgeless Text`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-edgeless-text.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-edgeless-text.name"](): string;
     /**
       * `Enables edgeless text blocks.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-edgeless-text.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-edgeless-text.description"](): string;
     /**
       * `Color Picker`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-color-picker.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-color-picker.name"](): string;
     /**
       * `Enables color picker blocks.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-color-picker.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-color-picker.description"](): string;
     /**
       * `AI Chat Block`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-chat-block.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-chat-block.name"](): string;
     /**
       * `Enables AI chat blocks.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-chat-block.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-chat-block.description"](): string;
     /**
       * `AI Onboarding`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-onboarding.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-onboarding.name"](): string;
     /**
       * `Enables AI onboarding.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-onboarding.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-onboarding.description"](): string;
     /**
       * `Mind Map Import`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mind-map-import.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mind-map-import.name"](): string;
     /**
       * `Enables mind map import.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mind-map-import.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mind-map-import.description"](): string;
     /**
       * `Block Meta`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-block-meta.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-block-meta.name"](): string;
     /**
       * `Once enabled, all blocks will have created time, updated time, created by and updated by.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-block-meta.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-block-meta.description"](): string;
     /**
       * `Callout`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-callout.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-callout.name"](): string;
     /**
       * `Let your words stand out. This also include the callout in the transcription block.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-callout.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-callout.description"](): string;
     /**
       * `Embed Iframe Block`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-embed-iframe-block.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-embed-iframe-block.name"](): string;
     /**
       * `Enables Embed Iframe Block.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-embed-iframe-block.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-embed-iframe-block.description"](): string;
     /**
       * `Emoji Folder Icon`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-emoji-folder-icon.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-emoji-folder-icon.name"](): string;
     /**
       * `Once enabled, you can use an emoji as the folder icon. When the first character of the folder name is an emoji, it will be extracted and used as its icon.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-emoji-folder-icon.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-emoji-folder-icon.description"](): string;
     /**
       * `Emoji Doc Icon`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-emoji-doc-icon.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-emoji-doc-icon.name"](): string;
     /**
       * `Once enabled, you can use an emoji as the doc icon. When the first character of the doc name is an emoji, it will be extracted and used as its icon.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-emoji-doc-icon.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-emoji-doc-icon.description"](): string;
     /**
       * `Editor Settings`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-editor-settings.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-editor-settings.name"](): string;
     /**
       * `Enables editor settings.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-editor-settings.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-editor-settings.description"](): string;
     /**
       * `Theme Editor`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-theme-editor.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-theme-editor.name"](): string;
     /**
       * `Enables theme editor.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-theme-editor.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-theme-editor.description"](): string;
     /**
       * `Allow create local workspace`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-local-workspace.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-local-workspace.name"](): string;
     /**
       * `Allow create local workspace`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-local-workspace.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-local-workspace.description"](): string;
     /**
       * `Advanced block visibility control`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-advanced-block-visibility.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-advanced-block-visibility.name"](): string;
     /**
       * `To provide detailed control over which edgeless blocks are visible in page mode.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-advanced-block-visibility.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-advanced-block-visibility.description"](): string;
     /**
       * `Mobile Keyboard Toolbar`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.name"](): string;
     /**
       * `Enables the mobile keyboard toolbar.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-keyboard-toolbar.description"](): string;
     /**
       * `Mobile Linked Doc Widget`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.name"](): string;
     /**
       * `Enables the mobile linked doc menu.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-linked-doc-menu.description"](): string;
     /**
       * `Enable Snapshot Import Export`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-snapshot-import-export.name"](): string;
     /**
-      * `Once enabled, users can import and export canvas snapshots.`
+      * `Once enabled, users can import and export blocksuite snapshots.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-snapshot-import-export.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-snapshot-import-export.description"](): string;
     /**
       * `Enable Edgeless Editing`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-edgeless-editing.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-edgeless-editing.name"](): string;
     /**
       * `Once enabled, users can edit edgeless canvas.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-mobile-edgeless-editing.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-mobile-edgeless-editing.description"](): string;
     /**
       * `PDF embed preview`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-pdf-embed-preview.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-pdf-embed-preview.name"](): string;
     /**
       * `Once enabled, you can preview PDF in embed view.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-pdf-embed-preview.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-pdf-embed-preview.description"](): string;
     /**
       * `Audio block`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-audio-block.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-audio-block.name"](): string;
     /**
       * `Audio block allows you to play audio files globally and add notes to them.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-audio-block.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-audio-block.description"](): string;
     /**
       * `Meetings`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-meetings.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-meetings.name"](): string;
     /**
-      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in NEXIO settings.`
+      * `Meetings allows you to record and transcribe meetings. Don't forget to enable it in Nexio settings.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-meetings.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-meetings.description"](): string;
     /**
       * `Editor RTL`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-editor-rtl.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-editor-rtl.name"](): string;
     /**
       * `Once enabled, the editor will be displayed in RTL mode.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-editor-rtl.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-editor-rtl.description"](): string;
     /**
       * `Edgeless scribbled style`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-edgeless-scribbled-style.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-edgeless-scribbled-style.name"](): string;
     /**
       * `Once enabled, you can use scribbled style in edgeless mode.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-edgeless-scribbled-style.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-edgeless-scribbled-style.description"](): string;
     /**
       * `Database block table view virtual scroll`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-table-virtual-scroll.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-table-virtual-scroll.name"](): string;
     /**
       * `Once enabled, switch table view to virtual scroll mode in Database Block.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-table-virtual-scroll.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-table-virtual-scroll.description"](): string;
     /**
       * `Code block HTML preview`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-code-block-html-preview.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-code-block-html-preview.name"](): string;
     /**
       * `Once enabled, you can preview HTML in code block.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-code-block-html-preview.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-code-block-html-preview.description"](): string;
     /**
       * `Adapter Panel`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-adapter-panel.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-adapter-panel.name"](): string;
     /**
       * `Once enabled, you can preview adapter export content in the right side bar.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-adapter-panel.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-adapter-panel.description"](): string;
     /**
       * `Send detailed object information to AI`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-send-detailed-object.name"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-send-detailed-object.name"](): string;
     /**
       * `When toggled off, every time you choose "Continue with AI", AI only got a screenshot.`
       */
-    ["com.nexio.settings.workspace.experimental-features.enable-ai-send-detailed-object.description"](): string;
+    ["com.affine.settings.workspace.experimental-features.enable-ai-send-detailed-object.description"](): string;
     /**
       * `Only an owner can edit the workspace avatar and name. Changes will be shown for everyone.`
       */
-    ["com.nexio.settings.workspace.not-owner"](): string;
+    ["com.affine.settings.workspace.not-owner"](): string;
     /**
       * `Preference`
       */
-    ["com.nexio.settings.workspace.preferences"](): string;
+    ["com.affine.settings.workspace.preferences"](): string;
     /**
       * `Team's Billing`
       */
-    ["com.nexio.settings.workspace.billing"](): string;
+    ["com.affine.settings.workspace.billing"](): string;
     /**
       * `Team Workspace`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace"](): string;
+    ["com.affine.settings.workspace.billing.team-workspace"](): string;
     /**
       * `Your workspace is in a free trail period.`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.description.free-trail"](): string;
+    ["com.affine.settings.workspace.billing.team-workspace.description.free-trail"](): string;
     /**
       * `Your workspace is billed annually.`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.description.billed.annually"](): string;
+    ["com.affine.settings.workspace.billing.team-workspace.description.billed.annually"](): string;
     /**
       * `Your workspace is billed monthly.`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.description.billed.monthly"](): string;
+    ["com.affine.settings.workspace.billing.team-workspace.description.billed.monthly"](): string;
     /**
       * `Your subscription will end on {{date}}`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.not-renewed"](options: {
+    ["com.affine.settings.workspace.billing.team-workspace.not-renewed"](options: {
         readonly date: string;
     }): string;
     /**
       * `Next billing date: {{date}}`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.next-billing-date"](options: {
+    ["com.affine.settings.workspace.billing.team-workspace.next-billing-date"](options: {
         readonly date: string;
     }): string;
     /**
       * `Cancel Plan`
       */
-    ["com.nexio.settings.workspace.billing.team-workspace.cancel-plan"](): string;
+    ["com.affine.settings.workspace.billing.team-workspace.cancel-plan"](): string;
     /**
       * `License`
       */
-    ["com.nexio.settings.workspace.license"](): string;
+    ["com.affine.settings.workspace.license"](): string;
     /**
       * `Manage license information and invoices for the self host team workspace.`
       */
-    ["com.nexio.settings.workspace.license.description"](): string;
+    ["com.affine.settings.workspace.license.description"](): string;
     /**
       * `Get teams plan for your self hosted workspace.`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.title"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.title"](): string;
     /**
       * `Need more seats? Best for scalable teams.`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.subtitle"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.subtitle"](): string;
     /**
       * `Everything in Self Hosted FOSS`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g1"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.g1"](): string;
     /**
       * `{{initialQuota}} initial storage + {{quotaPerSeat}} per seat`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g2"](options: Readonly<{
+    ["com.affine.settings.workspace.license.benefit.team.g2"](options: Readonly<{
         initialQuota: string;
         quotaPerSeat: string;
     }>): string;
     /**
       * `{{quota}} of maximum file size`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g3"](options: {
+    ["com.affine.settings.workspace.license.benefit.team.g3"](options: {
         readonly quota: string;
     }): string;
     /**
       * `Unlimited team members (10+ seats)`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g4"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.g4"](): string;
     /**
       * `Multiple admin roles`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g5"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.g5"](): string;
     /**
       * `Priority customer support`
       */
-    ["com.nexio.settings.workspace.license.benefit.team.g6"](): string;
+    ["com.affine.settings.workspace.license.benefit.team.g6"](): string;
     /**
-      * `Lean more`
+      * `Learn more`
       */
-    ["com.nexio.settings.workspace.license.lean-more"](): string;
+    ["com.affine.settings.workspace.license.learn-more"](): string;
     /**
       * `Selfhosted workspace`
       */
-    ["com.nexio.settings.workspace.license.self-host"](): string;
+    ["com.affine.settings.workspace.license.self-host"](): string;
     /**
       * `Self-host Team Workspace`
       */
-    ["com.nexio.settings.workspace.license.self-host-team"](): string;
+    ["com.affine.settings.workspace.license.self-host-team"](): string;
     /**
       * `This license will expire on {{expirationDate}}, with {{leftDays}} days remaining.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.team.description"](options: Readonly<{
+    ["com.affine.settings.workspace.license.self-host-team.team.description"](options: Readonly<{
         expirationDate: string;
         leftDays: string;
     }>): string;
     /**
       * `Basic version: {{memberCount}} seats. For more, purchase or use activation key.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.free.description"](options: {
+    ["com.affine.settings.workspace.license.self-host-team.free.description"](options: {
         readonly memberCount: string;
     }): string;
     /**
       * `Seats`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.seats"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.seats"](): string;
     /**
       * `Use purchased key`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.use-purchased-key"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.use-purchased-key"](): string;
     /**
       * `Upload license file`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file"](): string;
     /**
       * `Upload license file locally and verify the license information.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.description"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.description"](): string;
     /**
       * `To purchase a license:`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.title"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.title"](): string;
     /**
       * `Workspace id`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id"](): string;
     /**
       * `Click to upload`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.click-to-upload"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.click-to-upload"](): string;
     /**
       * `Activation failed`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.failed"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.failed"](): string;
     /**
       * `Activation Success`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.success.title"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.success.title"](): string;
     /**
       * `License has been successfully applied`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
     /**
-      * `If you encounter any issues, contact aurobindolife888@gmail.com .`
+      * `If you encounter any issues, contact support@toeverything.info.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
     /**
       * `Deactivate`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.deactivate-license"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.deactivate-license"](): string;
     /**
       * `Replace your license file`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.replace-license.title"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.replace-license.title"](): string;
     /**
       * `Replace the existing license file with a new, updated version.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.replace-license.description"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.replace-license.description"](): string;
     /**
       * `Upload license file`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.replace-license.upload"](): string;
+    ["com.affine.settings.workspace.license.self-host-team.replace-license.upload"](): string;
     /**
       * `Buy more seat`
       */
-    ["com.nexio.settings.workspace.license.buy-more-seat"](): string;
+    ["com.affine.settings.workspace.license.buy-more-seat"](): string;
     /**
       * `Activate License`
       */
-    ["com.nexio.settings.workspace.license.activate-modal.title"](): string;
+    ["com.affine.settings.workspace.license.activate-modal.title"](): string;
     /**
       * `Enter license key to activate this self host workspace.`
       */
-    ["com.nexio.settings.workspace.license.activate-modal.description"](): string;
+    ["com.affine.settings.workspace.license.activate-modal.description"](): string;
     /**
       * `License activated successfully.`
       */
-    ["com.nexio.settings.workspace.license.activate-success"](): string;
+    ["com.affine.settings.workspace.license.activate-success"](): string;
     /**
       * `Confirm deactivation?`
       */
-    ["com.nexio.settings.workspace.license.deactivate-modal.title"](): string;
+    ["com.affine.settings.workspace.license.deactivate-modal.title"](): string;
     /**
       * `After deactivation, you will need to upload a new license to continue using team feature`
       */
-    ["com.nexio.settings.workspace.license.deactivate-modal.description-license"](): string;
+    ["com.affine.settings.workspace.license.deactivate-modal.description-license"](): string;
     /**
       * `Manage Payment`
       */
-    ["com.nexio.settings.workspace.license.deactivate-modal.manage-payment"](): string;
+    ["com.affine.settings.workspace.license.deactivate-modal.manage-payment"](): string;
     /**
       * `License deactivated successfully.`
       */
-    ["com.nexio.settings.workspace.license.deactivate-success"](): string;
+    ["com.affine.settings.workspace.license.deactivate-success"](): string;
     /**
       * `Local`
       */
-    ["com.nexio.settings.workspace.state.local"](): string;
+    ["com.affine.settings.workspace.state.local"](): string;
     /**
-      * `Sync with NEXIO Cloud`
+      * `Sync with Nexio Cloud`
       */
-    ["com.nexio.settings.workspace.state.sync-nexio-cloud"](): string;
+    ["com.affine.settings.workspace.state.sync-affine-cloud"](): string;
     /**
       * `Self-Hosted Server`
       */
-    ["com.nexio.settings.workspace.state.self-hosted"](): string;
+    ["com.affine.settings.workspace.state.self-hosted"](): string;
     /**
       * `Joined Workspace`
       */
-    ["com.nexio.settings.workspace.state.joined"](): string;
+    ["com.affine.settings.workspace.state.joined"](): string;
     /**
       * `Available Offline`
       */
-    ["com.nexio.settings.workspace.state.available-offline"](): string;
+    ["com.affine.settings.workspace.state.available-offline"](): string;
     /**
       * `Published to Web`
       */
-    ["com.nexio.settings.workspace.state.published"](): string;
+    ["com.affine.settings.workspace.state.published"](): string;
     /**
       * `Team Workspace`
       */
-    ["com.nexio.settings.workspace.state.team"](): string;
+    ["com.affine.settings.workspace.state.team"](): string;
     /**
       * `Properties`
       */
-    ["com.nexio.settings.workspace.properties"](): string;
+    ["com.affine.settings.workspace.properties"](): string;
     /**
       * `Add property`
       */
-    ["com.nexio.settings.workspace.properties.add_property"](): string;
+    ["com.affine.settings.workspace.properties.add_property"](): string;
     /**
       * `All`
       */
-    ["com.nexio.settings.workspace.properties.all"](): string;
+    ["com.affine.settings.workspace.properties.all"](): string;
     /**
       * `Delete property`
       */
-    ["com.nexio.settings.workspace.properties.delete-property"](): string;
+    ["com.affine.settings.workspace.properties.delete-property"](): string;
     /**
       * `Edit property`
       */
-    ["com.nexio.settings.workspace.properties.edit-property"](): string;
+    ["com.affine.settings.workspace.properties.edit-property"](): string;
     /**
       * `General properties`
       */
-    ["com.nexio.settings.workspace.properties.general-properties"](): string;
+    ["com.affine.settings.workspace.properties.general-properties"](): string;
     /**
       * `Properties`
       */
-    ["com.nexio.settings.workspace.properties.header.title"](): string;
+    ["com.affine.settings.workspace.properties.header.title"](): string;
     /**
       * `In use`
       */
-    ["com.nexio.settings.workspace.properties.in-use"](): string;
+    ["com.affine.settings.workspace.properties.in-use"](): string;
     /**
       * `Readonly properties`
       */
-    ["com.nexio.settings.workspace.properties.readonly-properties"](): string;
+    ["com.affine.settings.workspace.properties.readonly-properties"](): string;
     /**
       * `Required properties`
       */
-    ["com.nexio.settings.workspace.properties.required-properties"](): string;
+    ["com.affine.settings.workspace.properties.required-properties"](): string;
     /**
       * `Set as required property`
       */
-    ["com.nexio.settings.workspace.properties.set-as-required"](): string;
+    ["com.affine.settings.workspace.properties.set-as-required"](): string;
     /**
       * `Unused`
       */
-    ["com.nexio.settings.workspace.properties.unused"](): string;
+    ["com.affine.settings.workspace.properties.unused"](): string;
     /**
       * `You can view current workspace's storage and files here.`
       */
-    ["com.nexio.settings.workspace.storage.subtitle"](): string;
+    ["com.affine.settings.workspace.storage.subtitle"](): string;
     /**
-      * `Enable NEXIO Cloud to publish this workspace`
+      * `Enable Nexio Sync to publish this workspace`
       */
-    ["com.nexio.settings.workspace.publish-tooltip"](): string;
+    ["com.affine.settings.workspace.publish-tooltip"](): string;
     /**
       * `Sharing`
       */
-    ["com.nexio.settings.workspace.sharing.title"](): string;
+    ["com.affine.settings.workspace.sharing.title"](): string;
     /**
       * `Allow URL unfurling by Slack & other social apps, even if a doc is only accessible by workspace members.`
       */
-    ["com.nexio.settings.workspace.sharing.url-preview.description"](): string;
+    ["com.affine.settings.workspace.sharing.url-preview.description"](): string;
     /**
       * `Always enable url preview`
       */
-    ["com.nexio.settings.workspace.sharing.url-preview.title"](): string;
+    ["com.affine.settings.workspace.sharing.url-preview.title"](): string;
     /**
-      * `NEXIO AI`
+      * `Control whether pages in this workspace can be shared publicly. Turn off to block new shares and external access for existing shares.`
       */
-    ["com.nexio.settings.workspace.nexio-ai.title"](): string;
+    ["com.affine.settings.workspace.sharing.workspace-sharing.description"](): string;
     /**
-      * `Allow NEXIO AI Assistant`
+      * `Allow workspace page sharing`
       */
-    ["com.nexio.settings.workspace.nexio-ai.label"](): string;
+    ["com.affine.settings.workspace.sharing.workspace-sharing.title"](): string;
     /**
-      * `Allow workspace members to use NEXIO AI features. This setting doesn't affect billing. Workspace members use NEXIO AI through their personal accounts.`
+      * `Nexio AI`
       */
-    ["com.nexio.settings.workspace.nexio-ai.description"](): string;
+    ["com.affine.settings.workspace.affine-ai.title"](): string;
+    /**
+      * `Allow Nexio AI Assistant`
+      */
+    ["com.affine.settings.workspace.affine-ai.label"](): string;
+    /**
+      * `Allow workspace members to use Nexio AI features. This setting doesn't affect billing. Workspace members use Nexio AI through their personal accounts.`
+      */
+    ["com.affine.settings.workspace.affine-ai.description"](): string;
     /**
       * `Archived workspaces`
       */
-    ["com.nexio.settings.workspace.backup"](): string;
+    ["com.affine.settings.workspace.backup"](): string;
     /**
       * `Manage archived local workspace files`
       */
-    ["com.nexio.settings.workspace.backup.subtitle"](): string;
+    ["com.affine.settings.workspace.backup.subtitle"](): string;
     /**
       * `No archived workspace files found`
       */
-    ["com.nexio.settings.workspace.backup.empty"](): string;
+    ["com.affine.settings.workspace.backup.empty"](): string;
     /**
       * `Delete archived workspace`
       */
-    ["com.nexio.settings.workspace.backup.delete"](): string;
+    ["com.affine.settings.workspace.backup.delete"](): string;
     /**
       * `Are you sure you want to delete this workspace. This action cannot be undone. Make sure you no longer need them before proceeding.`
       */
-    ["com.nexio.settings.workspace.backup.delete.warning"](): string;
+    ["com.affine.settings.workspace.backup.delete.warning"](): string;
     /**
       * `Workspace backup deleted successfully`
       */
-    ["com.nexio.settings.workspace.backup.delete.success"](): string;
+    ["com.affine.settings.workspace.backup.delete.success"](): string;
     /**
       * `Workspace enabled successfully`
       */
-    ["com.nexio.settings.workspace.backup.import.success"](): string;
+    ["com.affine.settings.workspace.backup.import.success"](): string;
     /**
       * `Enable local workspace`
       */
-    ["com.nexio.settings.workspace.backup.import"](): string;
+    ["com.affine.settings.workspace.backup.import"](): string;
     /**
       * `Open`
       */
-    ["com.nexio.settings.workspace.backup.import.success.action"](): string;
+    ["com.affine.settings.workspace.backup.import.success.action"](): string;
     /**
       * `Deleted on {{date}} at {{time}}`
       */
-    ["com.nexio.settings.workspace.backup.delete-at"](options: Readonly<{
+    ["com.affine.settings.workspace.backup.delete-at"](options: Readonly<{
         date: string;
         time: string;
     }>): string;
     /**
       * `Indexer & Embedding`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.title"](): string;
     /**
-      * `Manage NEXIO indexing and NEXIO AI Embedding for local content processing`
+      * `Manage Nexio indexing and Nexio AI Embedding for local content processing`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.description"](): string;
     /**
       * `Embedding`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.title"](): string;
     /**
       * `Embedding allows AI to retrieve your content. If the indexer uses local settings, it may affect some of the results of the Embedding.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.description"](): string;
     /**
       * `Only the workspace owner can enable Workspace Embedding.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.disabled-tooltip"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.disabled-tooltip"](): string;
     /**
       * `Select doc`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.select-doc"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.select-doc"](): string;
     /**
       * `Upload file`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.upload-file"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.upload-file"](): string;
     /**
       * `Workspace Embedding`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.switch.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.title"](): string;
     /**
       * `AI can call files embedded in the workspace.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.switch.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.description"](): string;
     /**
       * `Failed to update workspace doc embedding enabled`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.switch.error"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.switch.error"](): string;
     /**
       * `Failed to remove attachment from embedding`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.remove-attachment.error"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.remove-attachment.error"](): string;
     /**
       * `Failed to update ignored docs`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error"](): string;
     /**
       * `Embedding progress`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.progress.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.title"](): string;
     /**
       * `Syncing`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.progress.syncing"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.syncing"](): string;
     /**
       * `Synced`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.progress.synced"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.synced"](): string;
     /**
       * `Loading sync status...`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.progress.loading-sync-status"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.progress.loading-sync-status"](): string;
     /**
       * `Ignore Docs`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.ignore-docs.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.title"](): string;
     /**
       * `The Ignored docs will not be embedded into the current workspace.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.ignore-docs.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.description"](): string;
     /**
       * `Additional attachments`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.title"](): string;
     /**
       * `The uploaded file will be embedded in the current workspace.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.description"](): string;
     /**
       * `Remove the attachment from embedding?`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title"](): string;
     /**
       * `Attachment will be removed. AI will not continue to extract content from this attachment.`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description"](): string;
     /**
       * `Delete File`
       */
-    ["com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip"](): string;
+    ["com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip"](): string;
     /**
-      * `Sharing doc requires nexio Cloud.`
+      * `Sharing docs requires Nexio Sync.`
       */
-    ["com.nexio.share-menu.EnableCloudDescription"](): string;
+    ["com.affine.share-menu.EnableCloudDescription"](): string;
     /**
       * `Share mode`
       */
-    ["com.nexio.share-menu.ShareMode"](): string;
+    ["com.affine.share-menu.ShareMode"](): string;
     /**
       * `Share doc`
       */
-    ["com.nexio.share-menu.SharePage"](): string;
+    ["com.affine.share-menu.SharePage"](): string;
     /**
       * `General access`
       */
-    ["com.nexio.share-menu.generalAccess"](): string;
+    ["com.affine.share-menu.generalAccess"](): string;
     /**
       * `Share via export`
       */
-    ["com.nexio.share-menu.ShareViaExport"](): string;
+    ["com.affine.share-menu.ShareViaExport"](): string;
     /**
       * `Download a static copy of your doc to share with others`
       */
-    ["com.nexio.share-menu.ShareViaExportDescription"](): string;
+    ["com.affine.share-menu.ShareViaExportDescription"](): string;
     /**
       * `Print a paper copy`
       */
-    ["com.nexio.share-menu.ShareViaPrintDescription"](): string;
+    ["com.affine.share-menu.ShareViaPrintDescription"](): string;
     /**
       * `Share with link`
       */
-    ["com.nexio.share-menu.ShareWithLink"](): string;
+    ["com.affine.share-menu.ShareWithLink"](): string;
     /**
       * `Create a link you can easily share with anyone. The visitors will open your doc in the form od a document`
       */
-    ["com.nexio.share-menu.ShareWithLinkDescription"](): string;
+    ["com.affine.share-menu.ShareWithLinkDescription"](): string;
     /**
       * `Shared doc`
       */
-    ["com.nexio.share-menu.SharedPage"](): string;
+    ["com.affine.share-menu.SharedPage"](): string;
     /**
       * `Copy Link`
       */
-    ["com.nexio.share-menu.copy"](): string;
+    ["com.affine.share-menu.copy"](): string;
     /**
       * `Copy private link`
       */
-    ["com.nexio.share-menu.copy-private-link"](): string;
+    ["com.affine.share-menu.copy-private-link"](): string;
     /**
       * `Copy Link to Selected Block`
       */
-    ["com.nexio.share-menu.copy.block"](): string;
+    ["com.affine.share-menu.copy.block"](): string;
     /**
       * `Copy Link to Edgeless Mode`
       */
-    ["com.nexio.share-menu.copy.edgeless"](): string;
+    ["com.affine.share-menu.copy.edgeless"](): string;
     /**
       * `Copy Link to Selected Frame`
       */
-    ["com.nexio.share-menu.copy.frame"](): string;
+    ["com.affine.share-menu.copy.frame"](): string;
     /**
       * `Copy Link to Page Mode`
       */
-    ["com.nexio.share-menu.copy.page"](): string;
+    ["com.affine.share-menu.copy.page"](): string;
     /**
       * `You can share this document with link.`
       */
-    ["com.nexio.share-menu.create-public-link.notification.success.message"](): string;
+    ["com.affine.share-menu.create-public-link.notification.success.message"](): string;
     /**
       * `Public link created`
       */
-    ["com.nexio.share-menu.create-public-link.notification.success.title"](): string;
+    ["com.affine.share-menu.create-public-link.notification.success.title"](): string;
     /**
       * `Please try again later.`
       */
-    ["com.nexio.share-menu.disable-publish-link.notification.fail.message"](): string;
+    ["com.affine.share-menu.disable-publish-link.notification.fail.message"](): string;
     /**
       * `Failed to disable public link`
       */
-    ["com.nexio.share-menu.disable-publish-link.notification.fail.title"](): string;
+    ["com.affine.share-menu.disable-publish-link.notification.fail.title"](): string;
     /**
       * `This doc is no longer shared publicly.`
       */
-    ["com.nexio.share-menu.disable-publish-link.notification.success.message"](): string;
+    ["com.affine.share-menu.disable-publish-link.notification.success.message"](): string;
     /**
       * `Public link disabled`
       */
-    ["com.nexio.share-menu.disable-publish-link.notification.success.title"](): string;
+    ["com.affine.share-menu.disable-publish-link.notification.success.title"](): string;
     /**
       * `Manage workspace members`
       */
-    ["com.nexio.share-menu.navigate.workspace"](): string;
+    ["com.affine.share-menu.navigate.workspace"](): string;
     /**
       * `Anyone with the link`
       */
-    ["com.nexio.share-menu.option.link.label"](): string;
+    ["com.affine.share-menu.option.link.label"](): string;
     /**
       * `No access`
       */
-    ["com.nexio.share-menu.option.link.no-access"](): string;
+    ["com.affine.share-menu.option.link.no-access"](): string;
     /**
       * `Only workspace members can access this link`
       */
-    ["com.nexio.share-menu.option.link.no-access.description"](): string;
+    ["com.affine.share-menu.option.link.no-access.description"](): string;
     /**
       * `Read only`
       */
-    ["com.nexio.share-menu.option.link.readonly"](): string;
+    ["com.affine.share-menu.option.link.readonly"](): string;
     /**
       * `Anyone can access this link`
       */
-    ["com.nexio.share-menu.option.link.readonly.description"](): string;
+    ["com.affine.share-menu.option.link.readonly.description"](): string;
+    /**
+      * `Sharing for this workspace is turned off. Please contact an admin to enable it.`
+      */
+    ["com.affine.share-menu.workspace-sharing.disabled.tooltip"](): string;
     /**
       * `Can manage`
       */
-    ["com.nexio.share-menu.option.permission.can-manage"](): string;
+    ["com.affine.share-menu.option.permission.can-manage"](): string;
     /**
       * `Can edit`
       */
-    ["com.nexio.share-menu.option.permission.can-edit"](): string;
+    ["com.affine.share-menu.option.permission.can-edit"](): string;
     /**
       * `Can read`
       */
-    ["com.nexio.share-menu.option.permission.can-read"](): string;
+    ["com.affine.share-menu.option.permission.can-read"](): string;
     /**
       * `No access`
       */
-    ["com.nexio.share-menu.option.permission.no-access"](): string;
+    ["com.affine.share-menu.option.permission.no-access"](): string;
     /**
       * `Members in workspace`
       */
-    ["com.nexio.share-menu.option.permission.label"](): string;
+    ["com.affine.share-menu.option.permission.label"](): string;
     /**
       * `Workspace admins and owner automatically have Can manage permissions.`
       */
-    ["com.nexio.share-menu.option.permission.tips"](): string;
+    ["com.affine.share-menu.option.permission.tips"](): string;
     /**
       * `Publish to web`
       */
-    ["com.nexio.share-menu.publish-to-web"](): string;
+    ["com.affine.share-menu.publish-to-web"](): string;
     /**
       * `Share privately`
       */
-    ["com.nexio.share-menu.share-privately"](): string;
+    ["com.affine.share-menu.share-privately"](): string;
     /**
       * `Share`
       */
-    ["com.nexio.share-menu.shareButton"](): string;
+    ["com.affine.share-menu.shareButton"](): string;
     /**
       * `Shared`
       */
-    ["com.nexio.share-menu.sharedButton"](): string;
+    ["com.affine.share-menu.sharedButton"](): string;
     /**
       * `{{member1}} and {{member2}} are in this doc`
       */
-    ["com.nexio.share-menu.member-management.member-count-2"](options: Readonly<{
+    ["com.affine.share-menu.member-management.member-count-2"](options: Readonly<{
         member1: string;
         member2: string;
     }>): string;
     /**
       * `{{member1}}, {{member2}} and {{member3}} are in this doc`
       */
-    ["com.nexio.share-menu.member-management.member-count-3"](options: Readonly<{
+    ["com.affine.share-menu.member-management.member-count-3"](options: Readonly<{
         member1: string;
         member2: string;
         member3: string;
@@ -6611,7 +7629,7 @@ export function useNEXIOI18N(): {
     /**
       * `{{member1}}, {{member2}} and {{memberCount}} others`
       */
-    ["com.nexio.share-menu.member-management.member-count-more"](options: Readonly<{
+    ["com.affine.share-menu.member-management.member-count-more"](options: Readonly<{
         member1: string;
         member2: string;
         memberCount: string;
@@ -6619,681 +7637,685 @@ export function useNEXIOI18N(): {
     /**
       * `Remove`
       */
-    ["com.nexio.share-menu.member-management.remove"](): string;
+    ["com.affine.share-menu.member-management.remove"](): string;
     /**
       * `Set as owner`
       */
-    ["com.nexio.share-menu.member-management.set-as-owner"](): string;
+    ["com.affine.share-menu.member-management.set-as-owner"](): string;
     /**
       * `Make this person the owner?`
       */
-    ["com.nexio.share-menu.member-management.set-as-owner.confirm.title"](): string;
+    ["com.affine.share-menu.member-management.set-as-owner.confirm.title"](): string;
     /**
       * `The new owner will be effective immediately, and you might lose access to this doc if other users remove you, please confirm.`
       */
-    ["com.nexio.share-menu.member-management.set-as-owner.confirm.description"](): string;
+    ["com.affine.share-menu.member-management.set-as-owner.confirm.description"](): string;
     /**
       * `Permission updated`
       */
-    ["com.nexio.share-menu.member-management.update-success"](): string;
+    ["com.affine.share-menu.member-management.update-success"](): string;
     /**
       * `Failed to update permission`
       */
-    ["com.nexio.share-menu.member-management.update-fail"](): string;
+    ["com.affine.share-menu.member-management.update-fail"](): string;
     /**
       * `{{memberCount}} collaborators in the doc`
       */
-    ["com.nexio.share-menu.member-management.header"](options: {
+    ["com.affine.share-menu.member-management.header"](options: {
         readonly memberCount: string;
     }): string;
     /**
       * `Add collaborators`
       */
-    ["com.nexio.share-menu.member-management.add-collaborators"](): string;
+    ["com.affine.share-menu.member-management.add-collaborators"](): string;
     /**
       * `Send invite`
       */
-    ["com.nexio.share-menu.invite-editor.header"](): string;
+    ["com.affine.share-menu.invite-editor.header"](): string;
     /**
       * `Manage members`
       */
-    ["com.nexio.share-menu.invite-editor.manage-members"](): string;
+    ["com.affine.share-menu.invite-editor.manage-members"](): string;
     /**
       * `Invite`
       */
-    ["com.nexio.share-menu.invite-editor.invite"](): string;
+    ["com.affine.share-menu.invite-editor.invite"](): string;
     /**
       * `No results found`
       */
-    ["com.nexio.share-menu.invite-editor.no-found"](): string;
+    ["com.affine.share-menu.invite-editor.no-found"](): string;
     /**
       * `Invite other members`
       */
-    ["com.nexio.share-menu.invite-editor.placeholder"](): string;
+    ["com.affine.share-menu.invite-editor.placeholder"](): string;
     /**
       * `Notify via Email`
       */
-    ["com.nexio.share-menu.invite-editor.sent-email"](): string;
+    ["com.affine.share-menu.invite-editor.sent-email"](): string;
     /**
       * `Permission not available in Free plan`
       */
-    ["com.nexio.share-menu.paywall.owner.title"](): string;
+    ["com.affine.share-menu.paywall.owner.title"](): string;
     /**
       * `Upgrade to Pro or higher to unlock permission settings for this doc.`
       */
-    ["com.nexio.share-menu.paywall.owner.description"](): string;
+    ["com.affine.share-menu.paywall.owner.description"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.share-menu.paywall.owner.confirm"](): string;
+    ["com.affine.share-menu.paywall.owner.confirm"](): string;
     /**
       * `Permission requires a workspace upgrade`
       */
-    ["com.nexio.share-menu.paywall.member.title"](): string;
+    ["com.affine.share-menu.paywall.member.title"](): string;
     /**
       * `Ask your workspace owner to upgrade to Pro or higher to enable permissions.`
       */
-    ["com.nexio.share-menu.paywall.member.description"](): string;
+    ["com.affine.share-menu.paywall.member.description"](): string;
     /**
       * `Got it`
       */
-    ["com.nexio.share-menu.paywall.member.confirm"](): string;
+    ["com.affine.share-menu.paywall.member.confirm"](): string;
     /**
       * `Built with`
       */
-    ["com.nexio.share-page.footer.built-with"](): string;
+    ["com.affine.share-page.footer.built-with"](): string;
     /**
       * `Create with`
       */
-    ["com.nexio.share-page.footer.create-with"](): string;
+    ["com.affine.share-page.footer.create-with"](): string;
     /**
-      * `Empower your sharing with NEXIO Cloud: One-click doc sharing`
+      * `Empower your sharing with Nexio Cloud: One-click doc sharing`
       */
-    ["com.nexio.share-page.footer.description"](): string;
+    ["com.affine.share-page.footer.description"](): string;
     /**
       * `Get started for free`
       */
-    ["com.nexio.share-page.footer.get-started"](): string;
+    ["com.affine.share-page.footer.get-started"](): string;
     /**
       * `Use This Template`
       */
-    ["com.nexio.share-page.header.import-template"](): string;
+    ["com.affine.share-page.header.import-template"](): string;
     /**
       * `Login or Sign Up`
       */
-    ["com.nexio.share-page.header.login"](): string;
+    ["com.affine.share-page.header.login"](): string;
     /**
       * `Present`
       */
-    ["com.nexio.share-page.header.present"](): string;
+    ["com.affine.share-page.header.present"](): string;
     /**
       * `Edgeless`
       */
-    ["com.nexio.shortcutsTitle.edgeless"](): string;
+    ["com.affine.shortcutsTitle.edgeless"](): string;
     /**
       * `General`
       */
-    ["com.nexio.shortcutsTitle.general"](): string;
+    ["com.affine.shortcutsTitle.general"](): string;
     /**
       * `Markdown syntax`
       */
-    ["com.nexio.shortcutsTitle.markdownSyntax"](): string;
+    ["com.affine.shortcutsTitle.markdownSyntax"](): string;
     /**
       * `Page`
       */
-    ["com.nexio.shortcutsTitle.page"](): string;
+    ["com.affine.shortcutsTitle.page"](): string;
     /**
       * `Collapse sidebar`
       */
-    ["com.nexio.sidebarSwitch.collapse"](): string;
+    ["com.affine.sidebarSwitch.collapse"](): string;
     /**
       * `Expand sidebar`
       */
-    ["com.nexio.sidebarSwitch.expand"](): string;
+    ["com.affine.sidebarSwitch.expand"](): string;
     /**
       * `Snapshot Imp. & Exp.`
       */
-    ["com.nexio.snapshot.import-export.enable"](): string;
+    ["com.affine.snapshot.import-export.enable"](): string;
     /**
       * `Once enabled you can find the Snapshot Export Import option in the document's More menu.`
       */
-    ["com.nexio.snapshot.import-export.enable.desc"](): string;
+    ["com.affine.snapshot.import-export.enable.desc"](): string;
     /**
       * `Maybe later`
       */
-    ["com.nexio.star-nexio.cancel"](): string;
+    ["com.affine.star-affine.cancel"](): string;
     /**
       * `Star on GitHub`
       */
-    ["com.nexio.star-nexio.confirm"](): string;
+    ["com.affine.star-affine.confirm"](): string;
     /**
       * `Are you finding our app useful and enjoyable? We'd love your support to keep improving! A great way to help us out is by giving us a star on GitHub. This simple action can make a big difference and helps us continue to deliver the best experience for you.`
       */
-    ["com.nexio.star-nexio.description"](): string;
+    ["com.affine.star-affine.description"](): string;
     /**
       * `Star us on GitHub`
       */
-    ["com.nexio.star-nexio.title"](): string;
+    ["com.affine.star-affine.title"](): string;
     /**
       * `Change plan`
       */
-    ["com.nexio.storage.change-plan"](): string;
+    ["com.affine.storage.change-plan"](): string;
     /**
       * `You have reached the maximum capacity limit for your current account`
       */
-    ["com.nexio.storage.maximum-tips"](): string;
+    ["com.affine.storage.maximum-tips"](): string;
     /**
       * `Pro users will have unlimited storage capacity during the alpha test period of the team version`
       */
-    ["com.nexio.storage.maximum-tips.pro"](): string;
+    ["com.affine.storage.maximum-tips.pro"](): string;
     /**
       * `Plan`
       */
-    ["com.nexio.storage.plan"](): string;
+    ["com.affine.storage.plan"](): string;
     /**
-      * `NEXIO Cloud storage`
+      * `Nexio Sync storage`
       */
-    ["com.nexio.storage.title"](): string;
+    ["com.affine.storage.title"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.storage.upgrade"](): string;
+    ["com.affine.storage.upgrade"](): string;
     /**
       * `Space used`
       */
-    ["com.nexio.storage.used.hint"](): string;
+    ["com.affine.storage.used.hint"](): string;
     /**
       * `Syncing`
       */
-    ["com.nexio.syncing"](): string;
+    ["com.affine.syncing"](): string;
     /**
       * `{{count}} doc`
     
-      * - com.nexio.tags.count_one: `{{count}} doc`
+      * - com.affine.tags.count_one: `{{count}} doc`
     
-      * - com.nexio.tags.count_other: `{{count}} docs`
+      * - com.affine.tags.count_other: `{{count}} docs`
     
-      * - com.nexio.tags.count_zero: `{{count}} doc`
+      * - com.affine.tags.count_zero: `{{count}} doc`
       */
-    ["com.nexio.tags.count"](options: {
+    ["com.affine.tags.count"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} doc`
       */
-    ["com.nexio.tags.count_one"](options: {
+    ["com.affine.tags.count_one"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} docs`
       */
-    ["com.nexio.tags.count_other"](options: {
+    ["com.affine.tags.count_other"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `{{count}} doc`
       */
-    ["com.nexio.tags.count_zero"](options: {
+    ["com.affine.tags.count_zero"](options: {
         readonly count: string | number | bigint;
     }): string;
     /**
       * `Type tag name here...`
       */
-    ["com.nexio.tags.create-tag.placeholder"](): string;
+    ["com.affine.tags.create-tag.placeholder"](): string;
     /**
       * `Tag already exists`
       */
-    ["com.nexio.tags.create-tag.toast.exist"](): string;
+    ["com.affine.tags.create-tag.toast.exist"](): string;
     /**
       * `Tag created`
       */
-    ["com.nexio.tags.create-tag.toast.success"](): string;
+    ["com.affine.tags.create-tag.toast.success"](): string;
     /**
       * `Tag deleted`
       */
-    ["com.nexio.tags.delete-tags.toast"](): string;
+    ["com.affine.tags.delete-tags.toast"](): string;
     /**
       * `Tag updated`
       */
-    ["com.nexio.tags.edit-tag.toast.success"](): string;
+    ["com.affine.tags.edit-tag.toast.success"](): string;
     /**
       * `New tag`
       */
-    ["com.nexio.tags.empty.new-tag-button"](): string;
+    ["com.affine.tags.empty.new-tag-button"](): string;
     /**
       * `Enable telemetry`
       */
-    ["com.nexio.telemetry.enable"](): string;
+    ["com.affine.telemetry.enable"](): string;
     /**
       * `Telemetry is a feature that allows us to collect data on how you use the app. This data helps us improve the app and provide better features.`
       */
-    ["com.nexio.telemetry.enable.desc"](): string;
+    ["com.affine.telemetry.enable.desc"](): string;
     /**
       * `Dark`
       */
-    ["com.nexio.themeSettings.dark"](): string;
+    ["com.affine.themeSettings.dark"](): string;
     /**
       * `Light`
       */
-    ["com.nexio.themeSettings.light"](): string;
+    ["com.affine.themeSettings.light"](): string;
     /**
       * `System`
       */
-    ["com.nexio.themeSettings.system"](): string;
+    ["com.affine.themeSettings.system"](): string;
     /**
       * `Auto`
       */
-    ["com.nexio.themeSettings.auto"](): string;
+    ["com.affine.themeSettings.auto"](): string;
     /**
       * `now`
       */
-    ["com.nexio.time.now"](): string;
+    ["com.affine.time.now"](): string;
     /**
       * `this month`
       */
-    ["com.nexio.time.this-mouth"](): string;
+    ["com.affine.time.this-mouth"](): string;
     /**
       * `this week`
       */
-    ["com.nexio.time.this-week"](): string;
+    ["com.affine.time.this-week"](): string;
     /**
       * `this year`
       */
-    ["com.nexio.time.this-year"](): string;
+    ["com.affine.time.this-year"](): string;
     /**
       * `today`
       */
-    ["com.nexio.time.today"](): string;
+    ["com.affine.time.today"](): string;
     /**
       * `Successfully added linked doc`
       */
-    ["com.nexio.toastMessage.addLinkedPage"](): string;
+    ["com.affine.toastMessage.addLinkedPage"](): string;
     /**
       * `Added to favorites`
       */
-    ["com.nexio.toastMessage.addedFavorites"](): string;
+    ["com.affine.toastMessage.addedFavorites"](): string;
     /**
       * `Edgeless mode`
       */
-    ["com.nexio.toastMessage.edgelessMode"](): string;
+    ["com.affine.toastMessage.edgelessMode"](): string;
     /**
       * `Moved to trash`
       */
-    ["com.nexio.toastMessage.movedTrash"](): string;
+    ["com.affine.toastMessage.movedTrash"](): string;
     /**
       * `Page Mode`
       */
-    ["com.nexio.toastMessage.pageMode"](): string;
+    ["com.affine.toastMessage.pageMode"](): string;
     /**
       * `Default mode has changed`
       */
-    ["com.nexio.toastMessage.defaultMode.page.title"](): string;
+    ["com.affine.toastMessage.defaultMode.page.title"](): string;
     /**
       * `The default mode for this document has been changed to Page mode`
       */
-    ["com.nexio.toastMessage.defaultMode.page.message"](): string;
+    ["com.affine.toastMessage.defaultMode.page.message"](): string;
     /**
       * `Default mode has changed`
       */
-    ["com.nexio.toastMessage.defaultMode.edgeless.title"](): string;
+    ["com.affine.toastMessage.defaultMode.edgeless.title"](): string;
     /**
       * `The default mode for this document has been changed to Edgeless mode`
       */
-    ["com.nexio.toastMessage.defaultMode.edgeless.message"](): string;
+    ["com.affine.toastMessage.defaultMode.edgeless.message"](): string;
     /**
       * `Permanently deleted`
       */
-    ["com.nexio.toastMessage.permanentlyDeleted"](): string;
+    ["com.affine.toastMessage.permanentlyDeleted"](): string;
     /**
       * `Removed from favourites`
       */
-    ["com.nexio.toastMessage.removedFavorites"](): string;
+    ["com.affine.toastMessage.removedFavorites"](): string;
     /**
       * `Successfully renamed`
       */
-    ["com.nexio.toastMessage.rename"](): string;
+    ["com.affine.toastMessage.rename"](): string;
     /**
       * `{{title}} restored`
       */
-    ["com.nexio.toastMessage.restored"](options: {
+    ["com.affine.toastMessage.restored"](options: {
         readonly title: string;
     }): string;
     /**
       * `Successfully deleted`
       */
-    ["com.nexio.toastMessage.successfullyDeleted"](): string;
+    ["com.affine.toastMessage.successfullyDeleted"](): string;
     /**
       * `Today`
       */
-    ["com.nexio.today"](): string;
+    ["com.affine.today"](): string;
     /**
       * `Tomorrow`
       */
-    ["com.nexio.tomorrow"](): string;
+    ["com.affine.tomorrow"](): string;
     /**
       * `Last {{weekday}}`
       */
-    ["com.nexio.last-week"](options: {
+    ["com.affine.last-week"](options: {
         readonly weekday: string;
     }): string;
     /**
       * `Next {{weekday}}`
       */
-    ["com.nexio.next-week"](options: {
+    ["com.affine.next-week"](options: {
         readonly weekday: string;
     }): string;
     /**
       * `Limited to view-only on mobile.`
       */
-    ["com.nexio.top-tip.mobile"](): string;
+    ["com.affine.top-tip.mobile"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.trashOperation.delete"](): string;
+    ["com.affine.trashOperation.delete"](): string;
     /**
       * `Once deleted, you can't undo this action. Do you confirm?`
       */
-    ["com.nexio.trashOperation.delete.description"](): string;
+    ["com.affine.trashOperation.delete.description"](): string;
     /**
       * `Permanently delete`
       */
-    ["com.nexio.trashOperation.delete.title"](): string;
+    ["com.affine.trashOperation.delete.title"](): string;
     /**
       * `Once deleted, you can't undo this action. Do you confirm?`
       */
-    ["com.nexio.trashOperation.deleteDescription"](): string;
+    ["com.affine.trashOperation.deleteDescription"](): string;
     /**
       * `Delete permanently`
       */
-    ["com.nexio.trashOperation.deletePermanently"](): string;
+    ["com.affine.trashOperation.deletePermanently"](): string;
     /**
       * `Restore it`
       */
-    ["com.nexio.trashOperation.restoreIt"](): string;
+    ["com.affine.trashOperation.restoreIt"](): string;
     /**
       * `Refresh current page`
       */
-    ["com.nexio.upgrade.button-text.done"](): string;
+    ["com.affine.upgrade.button-text.done"](): string;
     /**
       * `Data upgrade error`
       */
-    ["com.nexio.upgrade.button-text.error"](): string;
+    ["com.affine.upgrade.button-text.error"](): string;
     /**
       * `Upgrade workspace data`
       */
-    ["com.nexio.upgrade.button-text.pending"](): string;
+    ["com.affine.upgrade.button-text.pending"](): string;
     /**
       * `Upgrading`
       */
-    ["com.nexio.upgrade.button-text.upgrading"](): string;
+    ["com.affine.upgrade.button-text.upgrading"](): string;
     /**
       * `After upgrading the workspace data, please refresh the page to see the changes.`
       */
-    ["com.nexio.upgrade.tips.done"](): string;
+    ["com.affine.upgrade.tips.done"](): string;
     /**
       * `We encountered some errors while upgrading the workspace data.`
       */
-    ["com.nexio.upgrade.tips.error"](): string;
+    ["com.affine.upgrade.tips.error"](): string;
     /**
-      * `To ensure compatibility with the updated nexio client, please upgrade your data by clicking the "Upgrade workspace data" button below.`
+      * `To ensure compatibility with the updated Nexio client, please upgrade your data by clicking the "Upgrade workspace data" button below.`
       */
-    ["com.nexio.upgrade.tips.normal"](): string;
+    ["com.affine.upgrade.tips.normal"](): string;
     /**
       * `AI usage`
       */
-    ["com.nexio.user-info.usage.ai"](): string;
+    ["com.affine.user-info.usage.ai"](): string;
     /**
-      * `Cloud storage`
+      * `Sync storage`
       */
-    ["com.nexio.user-info.usage.cloud"](): string;
+    ["com.affine.user-info.usage.cloud"](): string;
     /**
       * `Close`
       */
-    ["com.nexio.workbench.split-view-menu.close"](): string;
+    ["com.affine.workbench.split-view-menu.close"](): string;
     /**
       * `Full screen`
       */
-    ["com.nexio.workbench.split-view-menu.full-screen"](): string;
+    ["com.affine.workbench.split-view-menu.full-screen"](): string;
     /**
       * `Solo view`
       */
-    ["com.nexio.workbench.split-view-menu.keep-this-one"](): string;
+    ["com.affine.workbench.split-view-menu.keep-this-one"](): string;
     /**
       * `Move left`
       */
-    ["com.nexio.workbench.split-view-menu.move-left"](): string;
+    ["com.affine.workbench.split-view-menu.move-left"](): string;
     /**
       * `Move right`
       */
-    ["com.nexio.workbench.split-view-menu.move-right"](): string;
+    ["com.affine.workbench.split-view-menu.move-right"](): string;
     /**
       * `Open in split view`
       */
-    ["com.nexio.workbench.split-view.page-menu-open"](): string;
+    ["com.affine.workbench.split-view.page-menu-open"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.nexio.workbench.tab.page-menu-open"](): string;
+    ["com.affine.workbench.tab.page-menu-open"](): string;
     /**
       * `You cannot delete the last workspace`
       */
-    ["com.nexio.workspace.cannot-delete"](): string;
+    ["com.affine.workspace.cannot-delete"](): string;
     /**
-      * `Cloud workspaces`
+      * `Synced workspaces`
       */
-    ["com.nexio.workspace.cloud"](): string;
+    ["com.affine.workspace.cloud"](): string;
     /**
       * `Sign out`
       */
-    ["com.nexio.workspace.cloud.account.logout"](): string;
+    ["com.affine.workspace.cloud.account.logout"](): string;
     /**
       * `Account settings`
       */
-    ["com.nexio.workspace.cloud.account.settings"](): string;
+    ["com.affine.workspace.cloud.account.settings"](): string;
     /**
       * `Admin panel`
       */
-    ["com.nexio.workspace.cloud.account.admin"](): string;
+    ["com.affine.workspace.cloud.account.admin"](): string;
     /**
       * `Team owner`
       */
-    ["com.nexio.workspace.cloud.account.team.owner"](): string;
+    ["com.affine.workspace.cloud.account.team.owner"](): string;
     /**
       * `Team member`
       */
-    ["com.nexio.workspace.cloud.account.team.member"](): string;
+    ["com.affine.workspace.cloud.account.team.member"](): string;
     /**
       * `Multiple teams`
       */
-    ["com.nexio.workspace.cloud.account.team.multi"](): string;
+    ["com.affine.workspace.cloud.account.team.multi"](): string;
     /**
       * `Click to open workspace`
       */
-    ["com.nexio.workspace.cloud.account.team.tips-1"](): string;
+    ["com.affine.workspace.cloud.account.team.tips-1"](): string;
     /**
       * `Click to open workspace list`
       */
-    ["com.nexio.workspace.cloud.account.team.tips-2"](): string;
+    ["com.affine.workspace.cloud.account.team.tips-2"](): string;
     /**
-      * `Sign up/ Sign in`
+      * `Sign in / Sign up to Nexio`
       */
-    ["com.nexio.workspace.cloud.auth"](): string;
+    ["com.affine.workspace.cloud.auth"](): string;
     /**
-      * `Sync with NEXIO Cloud`
+      * `Sync with Nexio`
       */
-    ["com.nexio.workspace.cloud.description"](): string;
+    ["com.affine.workspace.cloud.description"](): string;
     /**
       * `Join workspace`
       */
-    ["com.nexio.workspace.cloud.join"](): string;
+    ["com.affine.workspace.cloud.join"](): string;
     /**
-      * `Cloud sync`
+      * `Nexio Sync`
       */
-    ["com.nexio.workspace.cloud.sync"](): string;
+    ["com.affine.workspace.cloud.sync"](): string;
     /**
-      * `Failed to enable Cloud, please try again.`
+      * `Failed to turn on Nexio Sync. Please try again.`
       */
-    ["com.nexio.workspace.enable-cloud.failed"](): string;
+    ["com.affine.workspace.enable-cloud.failed"](): string;
     /**
       * `Local workspaces`
       */
-    ["com.nexio.workspace.local"](): string;
+    ["com.affine.workspace.local"](): string;
     /**
       * `Import workspace`
       */
-    ["com.nexio.workspace.local.import"](): string;
+    ["com.affine.workspace.local.import"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.workspaceDelete.button.cancel"](): string;
+    ["com.affine.workspaceDelete.button.cancel"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.workspaceDelete.button.delete"](): string;
+    ["com.affine.workspaceDelete.button.delete"](): string;
     /**
       * `Please type workspace name to confirm`
       */
-    ["com.nexio.workspaceDelete.placeholder"](): string;
+    ["com.affine.workspaceDelete.placeholder"](): string;
     /**
       * `Delete workspace`
       */
-    ["com.nexio.workspaceDelete.title"](): string;
+    ["com.affine.workspaceDelete.title"](): string;
     /**
       * `Create workspace`
       */
-    ["com.nexio.workspaceList.addWorkspace.create"](): string;
+    ["com.affine.workspaceList.addWorkspace.create"](): string;
     /**
-      * `Create cloud workspace`
+      * `Create synced workspace`
       */
-    ["com.nexio.workspaceList.addWorkspace.create-cloud"](): string;
+    ["com.affine.workspaceList.addWorkspace.create-cloud"](): string;
     /**
       * `Cloud sync`
       */
-    ["com.nexio.workspaceList.workspaceListType.cloud"](): string;
+    ["com.affine.workspaceList.workspaceListType.cloud"](): string;
     /**
       * `Local storage`
       */
-    ["com.nexio.workspaceList.workspaceListType.local"](): string;
+    ["com.affine.workspaceList.workspaceListType.local"](): string;
     /**
       * `Add Server`
       */
-    ["com.nexio.workspaceList.addServer"](): string;
+    ["com.affine.workspaceList.addServer"](): string;
     /**
       * `All docs`
       */
-    ["com.nexio.workspaceSubPath.all"](): string;
+    ["com.affine.workspaceSubPath.all"](): string;
+    /**
+      * `Intelligence`
+      */
+    ["com.affine.workspaceSubPath.chat"](): string;
     /**
       * `Trash`
       */
-    ["com.nexio.workspaceSubPath.trash"](): string;
+    ["com.affine.workspaceSubPath.trash"](): string;
     /**
       * `Deleted docs will appear here.`
       */
-    ["com.nexio.workspaceSubPath.trash.empty-description"](): string;
+    ["com.affine.workspaceSubPath.trash.empty-description"](): string;
     /**
       * `Write with a blank page`
       */
-    ["com.nexio.write_with_a_blank_page"](): string;
+    ["com.affine.write_with_a_blank_page"](): string;
     /**
       * `Yesterday`
       */
-    ["com.nexio.yesterday"](): string;
+    ["com.affine.yesterday"](): string;
     /**
       * `Inactive`
       */
-    ["com.nexio.inactive"](): string;
+    ["com.affine.inactive"](): string;
     /**
       * `Inactive member`
       */
-    ["com.nexio.inactive-member"](): string;
+    ["com.affine.inactive-member"](): string;
     /**
       * `Inactive workspace`
       */
-    ["com.nexio.inactive-workspace"](): string;
+    ["com.affine.inactive-workspace"](): string;
     /**
       * `Display Properties`
       */
-    ["com.nexio.all-docs.display.properties"](): string;
+    ["com.affine.all-docs.display.properties"](): string;
     /**
       * `List view options`
       */
-    ["com.nexio.all-docs.display.list-view"](): string;
+    ["com.affine.all-docs.display.list-view"](): string;
     /**
       * `Icon`
       */
-    ["com.nexio.all-docs.display.list-view.icon"](): string;
+    ["com.affine.all-docs.display.list-view.icon"](): string;
     /**
       * `Body`
       */
-    ["com.nexio.all-docs.display.list-view.body"](): string;
+    ["com.affine.all-docs.display.list-view.body"](): string;
     /**
       * `Quick actions`
       */
-    ["com.nexio.all-docs.quick-actions"](): string;
+    ["com.affine.all-docs.quick-actions"](): string;
     /**
       * `Favorite`
       */
-    ["com.nexio.all-docs.quick-action.favorite"](): string;
+    ["com.affine.all-docs.quick-action.favorite"](): string;
     /**
       * `Move to trash`
       */
-    ["com.nexio.all-docs.quick-action.trash"](): string;
+    ["com.affine.all-docs.quick-action.trash"](): string;
     /**
       * `Open in split view`
       */
-    ["com.nexio.all-docs.quick-action.split"](): string;
+    ["com.affine.all-docs.quick-action.split"](): string;
     /**
       * `Open in new tab`
       */
-    ["com.nexio.all-docs.quick-action.tab"](): string;
+    ["com.affine.all-docs.quick-action.tab"](): string;
     /**
       * `Select checkbox`
       */
-    ["com.nexio.all-docs.quick-action.select"](): string;
+    ["com.affine.all-docs.quick-action.select"](): string;
     /**
       * `Delete permanently`
       */
-    ["com.nexio.all-docs.quick-action.delete-permanently"](): string;
+    ["com.affine.all-docs.quick-action.delete-permanently"](): string;
     /**
       * `Restore`
       */
-    ["com.nexio.all-docs.quick-action.restore"](): string;
+    ["com.affine.all-docs.quick-action.restore"](): string;
     /**
       * `All`
       */
-    ["com.nexio.all-docs.pinned-collection.all"](): string;
+    ["com.affine.all-docs.pinned-collection.all"](): string;
     /**
       * `Edit collection rules`
       */
-    ["com.nexio.all-docs.pinned-collection.edit"](): string;
+    ["com.affine.all-docs.pinned-collection.edit"](): string;
     /**
       * `Template`
       */
-    ["com.nexio.all-docs.group.is-template"](): string;
+    ["com.affine.all-docs.group.is-template"](): string;
     /**
       * `Not Template`
       */
-    ["com.nexio.all-docs.group.is-not-template"](): string;
+    ["com.affine.all-docs.group.is-not-template"](): string;
     /**
       * `Journal`
       */
-    ["com.nexio.all-docs.group.is-journal"](): string;
+    ["com.affine.all-docs.group.is-journal"](): string;
     /**
       * `Not Journal`
       */
-    ["com.nexio.all-docs.group.is-not-journal"](): string;
+    ["com.affine.all-docs.group.is-not-journal"](): string;
     /**
       * `Checked`
       */
-    ["com.nexio.all-docs.group.is-checked"](): string;
+    ["com.affine.all-docs.group.is-checked"](): string;
     /**
       * `Unchecked`
       */
-    ["com.nexio.all-docs.group.is-not-checked"](): string;
+    ["com.affine.all-docs.group.is-not-checked"](): string;
     /**
       * `Never updated`
       */
-    ["com.nexio.all-docs.group.updated-at.never-updated"](): string;
+    ["com.affine.all-docs.group.updated-at.never-updated"](): string;
     /**
       * `core`
       */
@@ -7329,493 +8351,529 @@ export function useNEXIOI18N(): {
     /**
       * `Workspace properties`
       */
-    ["com.nexio.workspace.properties"](): string;
+    ["com.affine.workspace.properties"](): string;
     /**
       * `Rename to "{{name}}"`
       */
-    ["com.nexio.m.rename-to"](options: {
+    ["com.affine.m.rename-to"](options: {
         readonly name: string;
     }): string;
     /**
       * `Rename`
       */
-    ["com.nexio.m.explorer.folder.rename"](): string;
+    ["com.affine.m.explorer.folder.rename"](): string;
     /**
       * `Create Folder`
       */
-    ["com.nexio.m.explorer.folder.new-dialog-title"](): string;
+    ["com.affine.m.explorer.folder.new-dialog-title"](): string;
     /**
       * `Organize`
       */
-    ["com.nexio.m.explorer.folder.root"](): string;
+    ["com.affine.m.explorer.folder.root"](): string;
     /**
       * `Create a folder in the {{parent}}.`
       */
-    ["com.nexio.m.explorer.folder.new-tip-empty"](options: {
+    ["com.affine.m.explorer.folder.new-tip-empty"](options: {
         readonly parent: string;
     }): string;
     /**
       * `Create "{{value}}" in the {{parent}}.`
       */
-    ["com.nexio.m.explorer.folder.new-tip-not-empty"](options: Readonly<{
+    ["com.affine.m.explorer.folder.new-tip-not-empty"](options: Readonly<{
         value: string;
         parent: string;
     }>): string;
     /**
       * `Done`
       */
-    ["com.nexio.m.explorer.folder.rename-confirm"](): string;
+    ["com.affine.m.explorer.folder.rename-confirm"](): string;
     /**
       * `Rename`
       */
-    ["com.nexio.m.explorer.tag.rename"](): string;
+    ["com.affine.m.explorer.tag.rename"](): string;
     /**
       * `Rename Tag`
       */
-    ["com.nexio.m.explorer.tag.rename-menu-title"](): string;
+    ["com.affine.m.explorer.tag.rename-menu-title"](): string;
     /**
       * `Create Tag`
       */
-    ["com.nexio.m.explorer.tag.new-dialog-title"](): string;
+    ["com.affine.m.explorer.tag.new-dialog-title"](): string;
     /**
       * `Done`
       */
-    ["com.nexio.m.explorer.tag.rename-confirm"](): string;
+    ["com.affine.m.explorer.tag.rename-confirm"](): string;
     /**
       * `Create a tag in this workspace.`
       */
-    ["com.nexio.m.explorer.tag.new-tip-empty"](): string;
+    ["com.affine.m.explorer.tag.new-tip-empty"](): string;
     /**
       * `Create "{{value}}" tag in this workspace.`
       */
-    ["com.nexio.m.explorer.tag.new-tip-not-empty"](options: {
+    ["com.affine.m.explorer.tag.new-tip-not-empty"](options: {
         readonly value: string;
     }): string;
     /**
       * `Manage Doc(s)`
       */
-    ["com.nexio.m.explorer.tag.manage-docs"](): string;
+    ["com.affine.m.explorer.tag.manage-docs"](): string;
     /**
       * `Rename`
       */
-    ["com.nexio.m.explorer.collection.rename"](): string;
+    ["com.affine.m.explorer.collection.rename"](): string;
     /**
       * `Rename Collection`
       */
-    ["com.nexio.m.explorer.collection.rename-menu-title"](): string;
+    ["com.affine.m.explorer.collection.rename-menu-title"](): string;
     /**
       * `Create Collection`
       */
-    ["com.nexio.m.explorer.collection.new-dialog-title"](): string;
+    ["com.affine.m.explorer.collection.new-dialog-title"](): string;
+    /**
+      * `No documents yet`
+      */
+    ["com.affine.m.explorer.empty.docs.title"](): string;
+    /**
+      * `Create your first document to start capturing ideas and organizing knowledge.`
+      */
+    ["com.affine.m.explorer.empty.docs.description"](): string;
+    /**
+      * `New Document`
+      */
+    ["com.affine.m.explorer.empty.docs.action"](): string;
+    /**
+      * `No collections yet`
+      */
+    ["com.affine.m.explorer.empty.collections.title"](): string;
+    /**
+      * `Create a collection to organize related content in one place.`
+      */
+    ["com.affine.m.explorer.empty.collections.description"](): string;
+    /**
+      * `New Collection`
+      */
+    ["com.affine.m.explorer.empty.collections.action"](): string;
+    /**
+      * `No tags yet`
+      */
+    ["com.affine.m.explorer.empty.tags.title"](): string;
+    /**
+      * `Add tags to your documents for easier organization and discovery.`
+      */
+    ["com.affine.m.explorer.empty.tags.description"](): string;
+    /**
+      * `New Tag`
+      */
+    ["com.affine.m.explorer.empty.tags.action"](): string;
     /**
       * `Rename`
       */
-    ["com.nexio.m.explorer.doc.rename"](): string;
+    ["com.affine.m.explorer.doc.rename"](): string;
     /**
       * `Doc`
       */
-    ["com.nexio.m.selector.type-doc"](): string;
+    ["com.affine.m.selector.type-doc"](): string;
     /**
       * `Tag`
       */
-    ["com.nexio.m.selector.type-tag"](): string;
+    ["com.affine.m.selector.type-tag"](): string;
     /**
       * `Collection`
       */
-    ["com.nexio.m.selector.type-collection"](): string;
+    ["com.affine.m.selector.type-collection"](): string;
     /**
       * `Folder`
       */
-    ["com.nexio.m.selector.where-folder"](): string;
+    ["com.affine.m.selector.where-folder"](): string;
     /**
       * `Tag`
       */
-    ["com.nexio.m.selector.where-tag"](): string;
+    ["com.affine.m.selector.where-tag"](): string;
     /**
       * `Collection`
       */
-    ["com.nexio.m.selector.where-collection"](): string;
+    ["com.affine.m.selector.where-collection"](): string;
     /**
       * `Apply`
       */
-    ["com.nexio.m.selector.confirm-default"](): string;
+    ["com.affine.m.selector.confirm-default"](): string;
     /**
       * `Manage {{type}}(s)`
       */
-    ["com.nexio.m.selector.title"](options: {
+    ["com.affine.m.selector.title"](options: {
         readonly type: string;
     }): string;
     /**
       * `{{total}} item(s)`
       */
-    ["com.nexio.m.selector.info-total"](options: {
+    ["com.affine.m.selector.info-total"](options: {
         readonly total: string;
     }): string;
     /**
       * `Add {{count}} {{type}}(s)`
       */
-    ["com.nexio.m.selector.info-added"](options: Readonly<{
+    ["com.affine.m.selector.info-added"](options: Readonly<{
         count: string;
         type: string;
     }>): string;
     /**
       * `Remove {{count}} {{type}}(s)`
       */
-    ["com.nexio.m.selector.info-removed"](options: Readonly<{
+    ["com.affine.m.selector.info-removed"](options: Readonly<{
         count: string;
         type: string;
     }>): string;
     /**
       * `Remove items`
       */
-    ["com.nexio.m.selector.remove-warning.title"](): string;
+    ["com.affine.m.selector.remove-warning.title"](): string;
     /**
       * `You unchecked {{type}} that already exist in the current {{where}}, which means you will remove them from this {{where}}. The item will not be deleted.`
       */
-    ["com.nexio.m.selector.remove-warning.message"](options: Readonly<{
+    ["com.affine.m.selector.remove-warning.message"](options: Readonly<{
         type: string;
         where: string;
     }>): string;
     /**
       * `Do not ask again`
       */
-    ["com.nexio.m.selector.remove-warning.confirm"](): string;
+    ["com.affine.m.selector.remove-warning.confirm"](): string;
     /**
       * `Cancel`
       */
-    ["com.nexio.m.selector.remove-warning.cancel"](): string;
+    ["com.affine.m.selector.remove-warning.cancel"](): string;
     /**
       * `tag`
       */
-    ["com.nexio.m.selector.remove-warning.where-tag"](): string;
+    ["com.affine.m.selector.remove-warning.where-tag"](): string;
     /**
       * `folder`
       */
-    ["com.nexio.m.selector.remove-warning.where-folder"](): string;
+    ["com.affine.m.selector.remove-warning.where-folder"](): string;
     /**
       * `Today's activity`
       */
-    ["com.nexio.m.selector.journal-menu.today-activity"](): string;
+    ["com.affine.m.selector.journal-menu.today-activity"](): string;
     /**
       * `Duplicate Entries in Today's Journal`
       */
-    ["com.nexio.m.selector.journal-menu.conflicts"](): string;
+    ["com.affine.m.selector.journal-menu.conflicts"](): string;
     /**
       * `Unable to preview this file`
       */
-    ["com.nexio.attachment.preview.error.title"](): string;
+    ["com.affine.attachment.preview.error.title"](): string;
     /**
       * `file type not supported.`
       */
-    ["com.nexio.attachment.preview.error.subtitle"](): string;
+    ["com.affine.attachment.preview.error.subtitle"](): string;
     /**
       * `Failed to render page.`
       */
-    ["com.nexio.pdf.page.render.error"](): string;
+    ["com.affine.pdf.page.render.error"](): string;
     /**
       * `Duplicate Entries in Today's Journal`
       */
-    ["com.nexio.editor.journal-conflict.title"](): string;
+    ["com.affine.editor.journal-conflict.title"](): string;
     /**
       * `Search for "{{query}}"`
       */
-    ["com.nexio.editor.at-menu.link-to-doc"](options: {
+    ["com.affine.editor.at-menu.link-to-doc"](options: {
         readonly query: string;
     }): string;
     /**
       * `Recent`
       */
-    ["com.nexio.editor.at-menu.recent-docs"](): string;
+    ["com.affine.editor.at-menu.recent-docs"](): string;
     /**
       * `Tags`
       */
-    ["com.nexio.editor.at-menu.tags"](): string;
+    ["com.affine.editor.at-menu.tags"](): string;
     /**
       * `Collections`
       */
-    ["com.nexio.editor.at-menu.collections"](): string;
+    ["com.affine.editor.at-menu.collections"](): string;
     /**
       * `Loading...`
       */
-    ["com.nexio.editor.at-menu.loading"](): string;
+    ["com.affine.editor.at-menu.loading"](): string;
     /**
       * `New`
       */
-    ["com.nexio.editor.at-menu.new-doc"](): string;
+    ["com.affine.editor.at-menu.new-doc"](): string;
     /**
       * `New "{{name}}" page`
       */
-    ["com.nexio.editor.at-menu.create-page"](options: {
+    ["com.affine.editor.at-menu.create-page"](options: {
         readonly name: string;
     }): string;
     /**
       * `New "{{name}}" edgeless`
       */
-    ["com.nexio.editor.at-menu.create-edgeless"](options: {
+    ["com.affine.editor.at-menu.create-edgeless"](options: {
         readonly name: string;
     }): string;
     /**
       * `Import`
       */
-    ["com.nexio.editor.at-menu.import"](): string;
+    ["com.affine.editor.at-menu.import"](): string;
     /**
       * `{{count}} more docs`
       */
-    ["com.nexio.editor.at-menu.more-docs-hint"](options: {
+    ["com.affine.editor.at-menu.more-docs-hint"](options: {
         readonly count: string;
     }): string;
     /**
       * `{{count}} more members`
       */
-    ["com.nexio.editor.at-menu.more-members-hint"](options: {
+    ["com.affine.editor.at-menu.more-members-hint"](options: {
         readonly count: string;
     }): string;
     /**
       * `Journal`
       */
-    ["com.nexio.editor.at-menu.journal"](): string;
+    ["com.affine.editor.at-menu.journal"](): string;
     /**
       * `Select a specific date`
       */
-    ["com.nexio.editor.at-menu.date-picker"](): string;
+    ["com.affine.editor.at-menu.date-picker"](): string;
     /**
       * `Mention Members`
       */
-    ["com.nexio.editor.at-menu.mention-members"](): string;
+    ["com.affine.editor.at-menu.mention-members"](): string;
     /**
       * `Member not notified`
       */
-    ["com.nexio.editor.at-menu.member-not-notified"](): string;
+    ["com.affine.editor.at-menu.member-not-notified"](): string;
     /**
       * `This member does not have access to this doc, they are not notified.`
       */
-    ["com.nexio.editor.at-menu.member-not-notified-message"](): string;
+    ["com.affine.editor.at-menu.member-not-notified-message"](): string;
     /**
       * `Invited and notified`
       */
-    ["com.nexio.editor.at-menu.invited-and-notified"](): string;
+    ["com.affine.editor.at-menu.invited-and-notified"](): string;
     /**
       * `Access needed`
       */
-    ["com.nexio.editor.at-menu.access-needed"](): string;
+    ["com.affine.editor.at-menu.access-needed"](): string;
     /**
       * `{{username}} does not have access to this doc, do you want to invite and notify them?`
       */
-    ["com.nexio.editor.at-menu.access-needed-message"](options: {
+    ["com.affine.editor.at-menu.access-needed-message"](options: {
         readonly username: string;
     }): string;
     /**
       * `Show`
       */
-    ["com.nexio.editor.bi-directional-link-panel.show"](): string;
+    ["com.affine.editor.bi-directional-link-panel.show"](): string;
     /**
       * `Hide`
       */
-    ["com.nexio.editor.bi-directional-link-panel.hide"](): string;
+    ["com.affine.editor.bi-directional-link-panel.hide"](): string;
     /**
       * `Fold page block`
       */
-    ["com.nexio.editor.edgeless-note-header.fold-page-block"](): string;
+    ["com.affine.editor.edgeless-note-header.fold-page-block"](): string;
     /**
       * `Open in Page`
       */
-    ["com.nexio.editor.edgeless-note-header.open-in-page"](): string;
+    ["com.affine.editor.edgeless-note-header.open-in-page"](): string;
     /**
       * `Fold`
       */
-    ["com.nexio.editor.edgeless-embed-synced-doc-header.fold"](): string;
+    ["com.affine.editor.edgeless-embed-synced-doc-header.fold"](): string;
     /**
       * `Unfold`
       */
-    ["com.nexio.editor.edgeless-embed-synced-doc-header.unfold"](): string;
+    ["com.affine.editor.edgeless-embed-synced-doc-header.unfold"](): string;
     /**
       * `Open`
       */
-    ["com.nexio.editor.edgeless-embed-synced-doc-header.open"](): string;
+    ["com.affine.editor.edgeless-embed-synced-doc-header.open"](): string;
     /**
       * `Empower Your Team with Seamless Collaboration`
       */
-    ["com.nexio.upgrade-to-team-page.title"](): string;
+    ["com.affine.upgrade-to-team-page.title"](): string;
     /**
       * `Select an existing workspace or create a new one`
       */
-    ["com.nexio.upgrade-to-team-page.workspace-selector.placeholder"](): string;
+    ["com.affine.upgrade-to-team-page.workspace-selector.placeholder"](): string;
     /**
       * `Create Workspace`
       */
-    ["com.nexio.upgrade-to-team-page.workspace-selector.create-workspace"](): string;
+    ["com.affine.upgrade-to-team-page.workspace-selector.create-workspace"](): string;
     /**
       * `Upgrade to Team Workspace`
       */
-    ["com.nexio.upgrade-to-team-page.upgrade-button"](): string;
+    ["com.affine.upgrade-to-team-page.upgrade-button"](): string;
     /**
       * `Team Workspace gives you everything you need for seamless team collaboration:`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.title"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.title"](): string;
     /**
       * `Invite unlimited members to your workspace`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.g1"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.g1"](): string;
     /**
       * `Set custom roles and permissions for better control`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.g2"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.g2"](): string;
     /**
       * `Access advanced team management features`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.g3"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.g3"](): string;
     /**
       * `Get priority customer support`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.g4"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.g4"](): string;
     /**
       * `Perfect for growing teams and organizations that need professional collaboration tools.`
       */
-    ["com.nexio.upgrade-to-team-page.benefit.description"](): string;
+    ["com.affine.upgrade-to-team-page.benefit.description"](): string;
     /**
       * `Upgrade to Team Workspace`
       */
-    ["com.nexio.upgrade-to-team-page.upgrade-confirm.title"](): string;
+    ["com.affine.upgrade-to-team-page.upgrade-confirm.title"](): string;
     /**
       * `Name Your Workspace`
       */
-    ["com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.title"](): string;
+    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.title"](): string;
     /**
       * `A workspace is your virtual space to capture, create and plan as just one person or together as a team.`
       */
-    ["com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.description"](): string;
+    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.description"](): string;
     /**
       * `Set a workspace name`
       */
-    ["com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.placeholder"](): string;
+    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.placeholder"](): string;
     /**
       * `Continue to Pricing`
       */
-    ["com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.confirm"](): string;
+    ["com.affine.upgrade-to-team-page.create-and-upgrade-confirm.confirm"](): string;
     /**
       * `No workspace available`
       */
-    ["com.nexio.upgrade-to-team-page.no-workspace-available"](): string;
+    ["com.affine.upgrade-to-team-page.no-workspace-available"](): string;
     /**
       * `Workspace storage`
       */
-    ["com.nexio.workspace.storage"](): string;
+    ["com.affine.workspace.storage"](): string;
     /**
       * `Journal`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.journal"](): string;
+    ["com.affine.cmdk.affine.category.affine.journal"](): string;
     /**
       * `Select a specific date`
       */
-    ["com.nexio.cmdk.nexio.category.nexio.date-picker"](): string;
+    ["com.affine.cmdk.affine.category.affine.date-picker"](): string;
     /**
       * `Workspace sync paused`
       */
-    ["com.nexio.payment.sync-paused.title"](): string;
+    ["com.affine.payment.sync-paused.title"](): string;
     /**
       * `Your workspace has exceeded both storage and member limits, causing synchronization to pause. To resume syncing, please either:`
       */
-    ["com.nexio.payment.sync-paused.owner.both.description"](): string;
+    ["com.affine.payment.sync-paused.owner.both.description"](): string;
     /**
       * `Reduce storage usage and remove some team members`
       */
-    ["com.nexio.payment.sync-paused.owner.both.tips-1"](): string;
+    ["com.affine.payment.sync-paused.owner.both.tips-1"](): string;
     /**
       * `Upgrade your plan for increased capacity`
       */
-    ["com.nexio.payment.sync-paused.owner.both.tips-2"](): string;
+    ["com.affine.payment.sync-paused.owner.both.tips-2"](): string;
     /**
       * `Your workspace has exceeded its storage limit and synchronization has been paused. To resume syncing, please either:`
       */
-    ["com.nexio.payment.sync-paused.owner.storage.description"](): string;
+    ["com.affine.payment.sync-paused.owner.storage.description"](): string;
     /**
       * `Remove unnecessary files or content to reduce storage usage`
       */
-    ["com.nexio.payment.sync-paused.owner.storage.tips-1"](): string;
+    ["com.affine.payment.sync-paused.owner.storage.tips-1"](): string;
     /**
       * `Upgrade your plan for increased storage capacity`
       */
-    ["com.nexio.payment.sync-paused.owner.storage.tips-2"](): string;
+    ["com.affine.payment.sync-paused.owner.storage.tips-2"](): string;
     /**
       * `Your workspace has reached its maximum member capacity and synchronization has been paused. To resume syncing, you can either`
       */
-    ["com.nexio.payment.sync-paused.owner.member.description"](): string;
+    ["com.affine.payment.sync-paused.owner.member.description"](): string;
     /**
       * `Remove some team members from the workspace`
       */
-    ["com.nexio.payment.sync-paused.owner.member.tips-1"](): string;
+    ["com.affine.payment.sync-paused.owner.member.tips-1"](): string;
     /**
       * `Upgrade your plan to accommodate more members`
       */
-    ["com.nexio.payment.sync-paused.owner.member.tips-2"](): string;
+    ["com.affine.payment.sync-paused.owner.member.tips-2"](): string;
     /**
       * `This workspace has exceeded both storage and member limits, causing synchronization to pause. Please contact your workspace owner to address these limits and resume syncing.`
       */
-    ["com.nexio.payment.sync-paused.member.both.description"](): string;
+    ["com.affine.payment.sync-paused.member.both.description"](): string;
     /**
       * `This workspace has exceeded its storage limit and synchronization has been paused. Please contact your workspace owner to either reduce storage usage or upgrade the plan to resume syncing.`
       */
-    ["com.nexio.payment.sync-paused.member.storage.description"](): string;
+    ["com.affine.payment.sync-paused.member.storage.description"](): string;
     /**
       * `This workspace has reached its maximum member capacity and synchronization has been paused. Please contact your workspace owner to either adjust team membership or upgrade the plan to resume syncing.`
       */
-    ["com.nexio.payment.sync-paused.member.member.description"](): string;
+    ["com.affine.payment.sync-paused.member.member.description"](): string;
     /**
       * `Got It`
       */
-    ["com.nexio.payment.sync-paused.member.member.confirm"](): string;
+    ["com.affine.payment.sync-paused.member.member.confirm"](): string;
     /**
       * `Delete Server`
       */
-    ["com.nexio.server.delete"](): string;
+    ["com.affine.server.delete"](): string;
     /**
       * `Start`
       */
-    ["com.nexio.page-starter-bar.start"](): string;
+    ["com.affine.page-starter-bar.start"](): string;
     /**
       * `Template`
       */
-    ["com.nexio.page-starter-bar.template"](): string;
+    ["com.affine.page-starter-bar.template"](): string;
     /**
       * `With AI`
       */
-    ["com.nexio.page-starter-bar.ai"](): string;
+    ["com.affine.page-starter-bar.ai"](): string;
     /**
       * `Edgeless`
       */
-    ["com.nexio.page-starter-bar.edgeless"](): string;
+    ["com.affine.page-starter-bar.edgeless"](): string;
     /**
       * `Unsupported message`
       */
-    ["com.nexio.notification.unsupported"](): string;
+    ["com.affine.notification.unsupported"](): string;
     /**
       * `What are your thoughts?`
       */
-    ["com.nexio.notification.comment-prompt"](): string;
+    ["com.affine.notification.comment-prompt"](): string;
     /**
       * `No new notifications`
       */
-    ["com.nexio.notification.empty"](): string;
+    ["com.affine.notification.empty"](): string;
     /**
       * `Loading more...`
       */
-    ["com.nexio.notification.loading-more"](): string;
+    ["com.affine.notification.loading-more"](): string;
     /**
       * `You'll be notified here for @mentions and workspace invites.`
       */
-    ["com.nexio.notification.empty.description"](): string;
+    ["com.affine.notification.empty.description"](): string;
     /**
       * `Open workspace`
       */
-    ["com.nexio.notification.invitation-review-approved.open-workspace"](): string;
+    ["com.affine.notification.invitation-review-approved.open-workspace"](): string;
     /**
       * `Accept & Join`
       */
-    ["com.nexio.notification.invitation.accept"](): string;
+    ["com.affine.notification.invitation.accept"](): string;
     /**
       * `Delete all notifications`
       */
-    ["com.nexio.notification.delete-all"](): string;
+    ["com.affine.notification.delete-all"](): string;
     /**
       * `Tips`
       */
@@ -7827,537 +8885,933 @@ export function useNEXIOI18N(): {
     /**
       * `Delete Template`
       */
-    ["com.nexio.template-list.delete"](): string;
+    ["com.affine.template-list.delete"](): string;
     /**
       * `No template`
       */
-    ["com.nexio.template-list.empty"](): string;
+    ["com.affine.template-list.empty"](): string;
     /**
       * `Create new template`
       */
-    ["com.nexio.template-list.create-new"](): string;
+    ["com.affine.template-list.create-new"](): string;
     /**
       * `Set a Template for the Journal`
       */
-    ["com.nexio.template-journal-onboarding.title"](): string;
+    ["com.affine.template-journal-onboarding.title"](): string;
     /**
       * `Select`
       */
-    ["com.nexio.template-journal-onboarding.select"](): string;
+    ["com.affine.template-journal-onboarding.select"](): string;
     /**
       * `My Templates`
       */
-    ["com.nexio.settings.workspace.template.title"](): string;
+    ["com.affine.settings.workspace.template.title"](): string;
     /**
       * `Template for journal`
       */
-    ["com.nexio.settings.workspace.template.journal"](): string;
+    ["com.affine.settings.workspace.template.journal"](): string;
     /**
       * `Select a template for your journal`
       */
-    ["com.nexio.settings.workspace.template.journal-desc"](): string;
+    ["com.affine.settings.workspace.template.journal-desc"](): string;
     /**
       * `Keep empty`
       */
-    ["com.nexio.settings.workspace.template.keep-empty"](): string;
+    ["com.affine.settings.workspace.template.keep-empty"](): string;
     /**
       * `New doc with template`
       */
-    ["com.nexio.settings.workspace.template.page"](): string;
+    ["com.affine.settings.workspace.template.page"](): string;
     /**
       * `New docs will use the specified template, ignoring default settings.`
       */
-    ["com.nexio.settings.workspace.template.page-desc"](): string;
+    ["com.affine.settings.workspace.template.page-desc"](): string;
     /**
       * `Template for new doc`
       */
-    ["com.nexio.settings.workspace.template.page-select"](): string;
+    ["com.affine.settings.workspace.template.page-select"](): string;
     /**
       * `Remove template`
       */
-    ["com.nexio.settings.workspace.template.remove"](): string;
+    ["com.affine.settings.workspace.template.remove"](): string;
     /**
       * `You don't have permission to do this`
       */
-    ["com.nexio.no-permission"](): string;
+    ["com.affine.no-permission"](): string;
     /**
       * `Unused blobs`
       */
-    ["com.nexio.settings.workspace.storage.unused-blobs"](): string;
+    ["com.affine.settings.workspace.storage.unused-blobs"](): string;
     /**
       * `No unused blobs`
       */
-    ["com.nexio.settings.workspace.storage.unused-blobs.empty"](): string;
+    ["com.affine.settings.workspace.storage.unused-blobs.empty"](): string;
     /**
       * `Selected`
       */
-    ["com.nexio.settings.workspace.storage.unused-blobs.selected"](): string;
+    ["com.affine.settings.workspace.storage.unused-blobs.selected"](): string;
     /**
       * `Delete blob files`
       */
-    ["com.nexio.settings.workspace.storage.unused-blobs.delete.title"](): string;
+    ["com.affine.settings.workspace.storage.unused-blobs.delete.title"](): string;
     /**
       * `Are you sure you want to delete these blob files? This action cannot be undone. Make sure you no longer need them before proceeding.`
       */
-    ["com.nexio.settings.workspace.storage.unused-blobs.delete.warning"](): string;
+    ["com.affine.settings.workspace.storage.unused-blobs.delete.warning"](): string;
     /**
       * `Join Failed`
       */
-    ["com.nexio.fail-to-join-workspace.title"](): string;
+    ["com.affine.fail-to-join-workspace.title"](): string;
+    /**
+      * `This invitation is for another account`
+      */
+    ["com.affine.invitation.account-mismatch.title"](): string;
+    /**
+      * `You're signed in with an account that wasn't invited. Sign in with the account that received this invitation to continue.`
+      */
+    ["com.affine.invitation.account-mismatch.description"](): string;
+    /**
+      * `Sign in with another account`
+      */
+    ["com.affine.invitation.account-mismatch.switch-account"](): string;
+    /**
+      * `Back to Nexio`
+      */
+    ["com.affine.invitation.account-mismatch.back-to-affine"](): string;
     /**
       * `Please contact your workspace owner to add more seats.`
       */
-    ["com.nexio.fail-to-join-workspace.description-2"](): string;
+    ["com.affine.fail-to-join-workspace.description-2"](): string;
     /**
       * `Request to join`
       */
-    ["com.nexio.request-to-join-workspace.button"](): string;
+    ["com.affine.request-to-join-workspace.button"](): string;
     /**
       * `Request Sent successfully`
       */
-    ["com.nexio.sent-request-to-join-workspace.title"](): string;
+    ["com.affine.sent-request-to-join-workspace.title"](): string;
     /**
       * `Request failed to send`
       */
-    ["com.nexio.failed-to-send-request.title"](): string;
+    ["com.affine.failed-to-send-request.title"](): string;
     /**
       * `Readwise`
       */
-    ["com.nexio.integration.name.readwise"](): string;
+    ["com.affine.integration.name.readwise"](): string;
     /**
       * `Integrations`
       */
-    ["com.nexio.integration.integrations"](): string;
+    ["com.affine.integration.integrations"](): string;
     /**
       * `Web Clipper`
       */
-    ["com.nexio.integration.web-clipper.name"](): string;
+    ["com.affine.integration.web-clipper.name"](): string;
     /**
-      * `Import web pages to NEXIO`
+      * `Import web pages to Nexio`
       */
-    ["com.nexio.integration.web-clipper.desc"](): string;
+    ["com.affine.integration.web-clipper.desc"](): string;
     /**
-      * `Elevate your NEXIO experience with diverse add-ons and seamless integrations.`
+      * `Elevate your Nexio experience with diverse add-ons and seamless integrations.`
       */
-    ["com.nexio.integration.setting.description"](): string;
+    ["com.affine.integration.setting.description"](): string;
     /**
-      * `Learn how to develop a integration for NEXIO`
+      * `Learn how to develop a integration for Nexio`
       */
-    ["com.nexio.integration.setting.learn"](): string;
+    ["com.affine.integration.setting.learn"](): string;
     /**
       * `Readwise`
       */
-    ["com.nexio.integration.readwise.name"](): string;
+    ["com.affine.integration.readwise.name"](): string;
     /**
-      * `Manually import your content to NEXIO from Readwise`
+      * `Manually import your content to Nexio from Readwise`
       */
-    ["com.nexio.integration.readwise.desc"](): string;
+    ["com.affine.integration.readwise.desc"](): string;
     /**
       * `Connect`
       */
-    ["com.nexio.integration.readwise.connect"](): string;
+    ["com.affine.integration.readwise.connect"](): string;
     /**
       * `Connect to Readwise`
       */
-    ["com.nexio.integration.readwise.connect.title"](): string;
+    ["com.affine.integration.readwise.connect.title"](): string;
     /**
       * `Paste your access token here`
       */
-    ["com.nexio.integration.readwise.connect.placeholder"](): string;
+    ["com.affine.integration.readwise.connect.placeholder"](): string;
     /**
       * `Please enter a valid access token.`
       */
-    ["com.nexio.integration.readwise.connect.input-error"](): string;
+    ["com.affine.integration.readwise.connect.input-error"](): string;
     /**
       * `Access Token failed validation`
       */
-    ["com.nexio.integration.readwise.connect.error-notify-title"](): string;
+    ["com.affine.integration.readwise.connect.error-notify-title"](): string;
     /**
       * `The token could not access Readwise. Please verify access and try again.`
       */
-    ["com.nexio.integration.readwise.connect.error-notify-desc"](): string;
+    ["com.affine.integration.readwise.connect.error-notify-desc"](): string;
     /**
       * `Import`
       */
-    ["com.nexio.integration.readwise.import"](): string;
+    ["com.affine.integration.readwise.import"](): string;
     /**
       * `Disconnect`
       */
-    ["com.nexio.integration.readwise.disconnect"](): string;
+    ["com.affine.integration.readwise.disconnect"](): string;
     /**
       * `Disconnect Readwise?`
       */
-    ["com.nexio.integration.readwise.disconnect.title"](): string;
+    ["com.affine.integration.readwise.disconnect.title"](): string;
     /**
-      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in NEXIO?`
+      * `Once disconnected, content will no longer be imported. Do you want to keep your existing highlights in Nexio?`
       */
-    ["com.nexio.integration.readwise.disconnect.desc"](): string;
+    ["com.affine.integration.readwise.disconnect.desc"](): string;
     /**
       * `Keep`
       */
-    ["com.nexio.integration.readwise.disconnect.keep"](): string;
+    ["com.affine.integration.readwise.disconnect.keep"](): string;
     /**
       * `Delete`
       */
-    ["com.nexio.integration.readwise.disconnect.delete"](): string;
+    ["com.affine.integration.readwise.disconnect.delete"](): string;
     /**
       * `Highlights to be imported this time`
       */
-    ["com.nexio.integration.readwise.import.title"](): string;
+    ["com.affine.integration.readwise.import.title"](): string;
     /**
       * `Importing everything from the start`
       */
-    ["com.nexio.integration.readwise.import.desc-from-start"](): string;
+    ["com.affine.integration.readwise.import.desc-from-start"](): string;
     /**
       * `Content`
       */
-    ["com.nexio.integration.readwise.import.cell-h-content"](): string;
+    ["com.affine.integration.readwise.import.cell-h-content"](): string;
     /**
       * `Todo`
       */
-    ["com.nexio.integration.readwise.import.cell-h-todo"](): string;
+    ["com.affine.integration.readwise.import.cell-h-todo"](): string;
     /**
       * `Last update on Readwise`
       */
-    ["com.nexio.integration.readwise.import.cell-h-time"](): string;
+    ["com.affine.integration.readwise.import.cell-h-time"](): string;
     /**
       * `New`
       */
-    ["com.nexio.integration.readwise.import.todo-new"](): string;
+    ["com.affine.integration.readwise.import.todo-new"](): string;
     /**
       * `Skip`
       */
-    ["com.nexio.integration.readwise.import.todo-skip"](): string;
+    ["com.affine.integration.readwise.import.todo-skip"](): string;
     /**
       * `Updated`
       */
-    ["com.nexio.integration.readwise.import.todo-update"](): string;
+    ["com.affine.integration.readwise.import.todo-update"](): string;
     /**
       * `No highlights needs to be imported`
       */
-    ["com.nexio.integration.readwise.import.empty"](): string;
+    ["com.affine.integration.readwise.import.empty"](): string;
     /**
       * `Importing...`
       */
-    ["com.nexio.integration.readwise.import.importing"](): string;
+    ["com.affine.integration.readwise.import.importing"](): string;
     /**
       * `Please keep this app active until it's finished`
       */
-    ["com.nexio.integration.readwise.import.importing-desc"](): string;
+    ["com.affine.integration.readwise.import.importing-desc"](): string;
     /**
       * `Stop Importing`
       */
-    ["com.nexio.integration.readwise.import.importing-stop"](): string;
+    ["com.affine.integration.readwise.import.importing-stop"](): string;
     /**
       * `Importing aborted`
       */
-    ["com.nexio.integration.readwise.import.abort-notify-title"](): string;
+    ["com.affine.integration.readwise.import.abort-notify-title"](): string;
     /**
       * `Import aborted, with {{finished}} highlights processed`
       */
-    ["com.nexio.integration.readwise.import.abort-notify-desc"](options: {
+    ["com.affine.integration.readwise.import.abort-notify-desc"](options: {
         readonly finished: string;
     }): string;
     /**
       * `Configuration`
       */
-    ["com.nexio.integration.readwise.setting.caption"](): string;
+    ["com.affine.integration.readwise.setting.caption"](): string;
     /**
-      * `New Readwise highlights will be imported to nexio `
+      * `New Readwise highlights will be imported to Nexio `
       */
-    ["com.nexio.integration.readwise.setting.sync-new-name"](): string;
+    ["com.affine.integration.readwise.setting.sync-new-name"](): string;
     /**
-      * `New highlights in Readwise will be synced to nexio `
+      * `New highlights in Readwise will be synced to Nexio `
       */
-    ["com.nexio.integration.readwise.setting.sync-new-desc"](): string;
+    ["com.affine.integration.readwise.setting.sync-new-desc"](): string;
     /**
       * `Updates to Readwise highlights will be imported`
       */
-    ["com.nexio.integration.readwise.setting.update-name"](): string;
+    ["com.affine.integration.readwise.setting.update-name"](): string;
     /**
       * `Enable this, so that we will process updates of existing highlights from Readwise `
       */
-    ["com.nexio.integration.readwise.setting.update-desc"](): string;
+    ["com.affine.integration.readwise.setting.update-desc"](): string;
     /**
       * `How do we handle updates`
       */
-    ["com.nexio.integration.readwise.setting.update-strategy"](): string;
+    ["com.affine.integration.readwise.setting.update-strategy"](): string;
     /**
       * `Append new version to the end`
       */
-    ["com.nexio.integration.readwise.setting.update-append-name"](): string;
+    ["com.affine.integration.readwise.setting.update-append-name"](): string;
     /**
       * `Cited or modified highlights will have future versions added to the end of them`
       */
-    ["com.nexio.integration.readwise.setting.update-append-desc"](): string;
+    ["com.affine.integration.readwise.setting.update-append-desc"](): string;
     /**
       * `Overwrite with new version`
       */
-    ["com.nexio.integration.readwise.setting.update-override-name"](): string;
+    ["com.affine.integration.readwise.setting.update-override-name"](): string;
     /**
       * `Cited or modified highlights will be overwritten if there are future updates`
       */
-    ["com.nexio.integration.readwise.setting.update-override-desc"](): string;
+    ["com.affine.integration.readwise.setting.update-override-desc"](): string;
     /**
       * `Start Importing`
       */
-    ["com.nexio.integration.readwise.setting.start-import-name"](): string;
+    ["com.affine.integration.readwise.setting.start-import-name"](): string;
     /**
       * `Using the settings above`
       */
-    ["com.nexio.integration.readwise.setting.start-import-desc"](): string;
+    ["com.affine.integration.readwise.setting.start-import-desc"](): string;
     /**
       * `Import`
       */
-    ["com.nexio.integration.readwise.setting.start-import-button"](): string;
+    ["com.affine.integration.readwise.setting.start-import-button"](): string;
     /**
       * `Apply tags to highlight imports`
       */
-    ["com.nexio.integration.readwise.setting.tags-label"](): string;
+    ["com.affine.integration.readwise.setting.tags-label"](): string;
     /**
       * `Click to add tags`
       */
-    ["com.nexio.integration.readwise.setting.tags-placeholder"](): string;
+    ["com.affine.integration.readwise.setting.tags-placeholder"](): string;
     /**
       * `Author`
       */
-    ["com.nexio.integration.readwise-prop.author"](): string;
+    ["com.affine.integration.readwise-prop.author"](): string;
     /**
       * `Source`
       */
-    ["com.nexio.integration.readwise-prop.source"](): string;
+    ["com.affine.integration.readwise-prop.source"](): string;
     /**
       * `Created`
       */
-    ["com.nexio.integration.readwise-prop.created"](): string;
+    ["com.affine.integration.readwise-prop.created"](): string;
     /**
       * `Updated`
       */
-    ["com.nexio.integration.readwise-prop.updated"](): string;
+    ["com.affine.integration.readwise-prop.updated"](): string;
     /**
       * `Integration properties`
       */
-    ["com.nexio.integration.properties"](): string;
+    ["com.affine.integration.properties"](): string;
     /**
       * `Calendar`
       */
-    ["com.nexio.integration.calendar.name"](): string;
+    ["com.affine.integration.calendar.name"](): string;
     /**
-      * `New events will be scheduled in nexio’s journal`
+      * `New events will be scheduled in Nexio’s journal`
       */
-    ["com.nexio.integration.calendar.desc"](): string;
+    ["com.affine.integration.calendar.desc"](): string;
     /**
       * `Subscribe`
       */
-    ["com.nexio.integration.calendar.new-subscription"](): string;
+    ["com.affine.integration.calendar.new-subscription"](): string;
     /**
       * `Unsubscribe`
       */
-    ["com.nexio.integration.calendar.unsubscribe"](): string;
+    ["com.affine.integration.calendar.unsubscribe"](): string;
     /**
       * `Add a calendar by URL`
       */
-    ["com.nexio.integration.calendar.new-title"](): string;
+    ["com.affine.integration.calendar.new-title"](): string;
     /**
       * `Calendar URL`
       */
-    ["com.nexio.integration.calendar.new-url-label"](): string;
+    ["com.affine.integration.calendar.new-url-label"](): string;
     /**
-      * `This is a duplicate calendar`
+      * `An error occurred while saving the calendar settings`
       */
-    ["com.nexio.integration.calendar.new-duplicate-error-title"](): string;
-    /**
-      * `This subscription calendar already exists in the account of subscribed calendars.`
-      */
-    ["com.nexio.integration.calendar.new-duplicate-error-content"](): string;
-    /**
-      * `An error occurred while adding the calendar`
-      */
-    ["com.nexio.integration.calendar.new-error"](): string;
+    ["com.affine.integration.calendar.save-error"](): string;
     /**
       * `All day`
       */
-    ["com.nexio.integration.calendar.all-day"](): string;
+    ["com.affine.integration.calendar.all-day"](): string;
+    /**
+      * `Failed to load calendar accounts`
+      */
+    ["com.affine.integration.calendar.account.load-error"](): string;
+    /**
+      * `Failed to load calendar providers`
+      */
+    ["com.affine.integration.calendar.provider.load-error"](): string;
+    /**
+      * `Failed to start calendar authorization`
+      */
+    ["com.affine.integration.calendar.auth.start-error"](): string;
+    /**
+      * `Failed to unlink calendar account`
+      */
+    ["com.affine.integration.calendar.account.unlink-error"](): string;
+    /**
+      * `Unlink`
+      */
+    ["com.affine.integration.calendar.account.unlink"](): string;
+    /**
+      * `Link`
+      */
+    ["com.affine.integration.calendar.account.link"](): string;
+    /**
+      * `No calendar accounts linked yet.`
+      */
+    ["com.affine.integration.calendar.account.linked-empty"](): string;
+    /**
+      * `Authorization failed: {{error}}`
+      */
+    ["com.affine.integration.calendar.account.status.failed"](options: {
+        readonly error: string;
+    }): string;
+    /**
+      * `Authorization failed. Please reconnect your account.`
+      */
+    ["com.affine.integration.calendar.account.status.failed-reconnect"](): string;
+    /**
+      * `{{count}} calendar`
+      */
+    ["com.affine.integration.calendar.account.count"](options: {
+        readonly count: string;
+    }): string;
+    /**
+      * `Link CalDAV account`
+      */
+    ["com.affine.integration.calendar.caldav.link.title"](): string;
+    /**
+      * `Failed to link CalDAV account`
+      */
+    ["com.affine.integration.calendar.caldav.link.failed"](): string;
+    /**
+      * `Provider`
+      */
+    ["com.affine.integration.calendar.caldav.field.provider"](): string;
+    /**
+      * `Select provider`
+      */
+    ["com.affine.integration.calendar.caldav.field.provider.placeholder"](): string;
+    /**
+      * `Please select a provider.`
+      */
+    ["com.affine.integration.calendar.caldav.field.provider.error"](): string;
+    /**
+      * `Username`
+      */
+    ["com.affine.integration.calendar.caldav.field.username"](): string;
+    /**
+      * `email@example.com`
+      */
+    ["com.affine.integration.calendar.caldav.field.username.placeholder"](): string;
+    /**
+      * `Username is required.`
+      */
+    ["com.affine.integration.calendar.caldav.field.username.error"](): string;
+    /**
+      * `Password`
+      */
+    ["com.affine.integration.calendar.caldav.field.password"](): string;
+    /**
+      * `Password or app-specific password`
+      */
+    ["com.affine.integration.calendar.caldav.field.password.placeholder"](): string;
+    /**
+      * `Password is required.`
+      */
+    ["com.affine.integration.calendar.caldav.field.password.error"](): string;
+    /**
+      * `Display name (optional)`
+      */
+    ["com.affine.integration.calendar.caldav.field.displayName"](): string;
+    /**
+      * `My CalDAV`
+      */
+    ["com.affine.integration.calendar.caldav.field.displayName.placeholder"](): string;
+    /**
+      * `App-specific password required.`
+      */
+    ["com.affine.integration.calendar.caldav.hint.app-password"](): string;
+    /**
+      * `Learn more`
+      */
+    ["com.affine.integration.calendar.caldav.hint.learn-more"](): string;
+    /**
+      * `Provider setup guide`
+      */
+    ["com.affine.integration.calendar.caldav.hint.guide"](): string;
     /**
       * `New doc`
       */
-    ["com.nexio.integration.calendar.new-doc"](): string;
+    ["com.affine.integration.calendar.new-doc"](): string;
     /**
       * `Show calendar events`
       */
-    ["com.nexio.integration.calendar.show-events"](): string;
+    ["com.affine.integration.calendar.show-events"](): string;
     /**
-      * `Enabling this setting allows you to connect your calendar events to your Journal in nexio`
+      * `Enabling this setting allows you to connect your calendar events to your Journal in Nexio`
       */
-    ["com.nexio.integration.calendar.show-events-desc"](): string;
+    ["com.affine.integration.calendar.show-events-desc"](): string;
     /**
       * `Show all day event`
       */
-    ["com.nexio.integration.calendar.show-all-day-events"](): string;
+    ["com.affine.integration.calendar.show-all-day-events"](): string;
     /**
       * `Are you sure you want to unsubscribe "{{name}}"? Unsubscribing this account will remove its data from Journal.`
       */
-    ["com.nexio.integration.calendar.unsubscribe-content"](options: {
+    ["com.affine.integration.calendar.unsubscribe-content"](options: {
         readonly name: string;
     }): string;
     /**
+      * `No journal page found for {{date}}. Please create a journal page first.`
+      */
+    ["com.affine.integration.calendar.no-journal"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `No subscribed calendars yet.`
+      */
+    ["com.affine.integration.calendar.no-calendar"](): string;
+    /**
       * `MCP Server`
       */
-    ["com.nexio.integration.mcp-server.name"](): string;
+    ["com.affine.integration.mcp-server.name"](): string;
     /**
-      * `Enable other MCP Client to search and read the doc of nexio.`
+      * `Enable other MCP Client to search and read the doc of Nexio.`
       */
-    ["com.nexio.integration.mcp-server.desc"](): string;
+    ["com.affine.integration.mcp-server.desc"](): string;
+    /**
+      * `The MCP token is shown only once. Delete and recreate it to copy the JSON configuration.`
+      */
+    ["com.affine.integration.mcp-server.copy-json.disabled-hint"](): string;
+    /**
+      * `Credentials`
+      */
+    ["com.affine.integration.mcp-server.credentials.title"](): string;
+    /**
+      * `Use a separate credential for each MCP client so it can be revoked independently.`
+      */
+    ["com.affine.integration.mcp-server.credentials.description"](): string;
+    /**
+      * `Create credential`
+      */
+    ["com.affine.integration.mcp-server.action.create"](): string;
+    /**
+      * `Rotate`
+      */
+    ["com.affine.integration.mcp-server.action.rotate"](): string;
+    /**
+      * `Revoke credential`
+      */
+    ["com.affine.integration.mcp-server.action.revoke"](): string;
+    /**
+      * `Copy token`
+      */
+    ["com.affine.integration.mcp-server.action.copy-token"](): string;
+    /**
+      * `Copy JSON`
+      */
+    ["com.affine.integration.mcp-server.action.copy-json"](): string;
+    /**
+      * `Done`
+      */
+    ["com.affine.integration.mcp-server.action.done"](): string;
+    /**
+      * `Failed to load MCP credentials.`
+      */
+    ["com.affine.integration.mcp-server.load-error"](): string;
+    /**
+      * `No MCP credentials`
+      */
+    ["com.affine.integration.mcp-server.empty.title"](): string;
+    /**
+      * `Create a workspace-bound credential to connect an MCP client.`
+      */
+    ["com.affine.integration.mcp-server.empty.description"](): string;
+    /**
+      * `Read only`
+      */
+    ["com.affine.integration.mcp-server.access.read-only"](): string;
+    /**
+      * `Can read and search documents in this workspace using your current permissions.`
+      */
+    ["com.affine.integration.mcp-server.access.read-only-desc"](): string;
+    /**
+      * `Read and write`
+      */
+    ["com.affine.integration.mcp-server.access.read-write"](): string;
+    /**
+      * `Expires {{date}}`
+      */
+    ["com.affine.integration.mcp-server.meta.expires"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `Created {{date}}`
+      */
+    ["com.affine.integration.mcp-server.meta.created"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `Last used {{date}}`
+      */
+    ["com.affine.integration.mcp-server.meta.last-used"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `Never used`
+      */
+    ["com.affine.integration.mcp-server.meta.never-used"](): string;
+    /**
+      * `Old token valid until {{date}}`
+      */
+    ["com.affine.integration.mcp-server.meta.grace-until"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `Active`
+      */
+    ["com.affine.integration.mcp-server.status.active"](): string;
+    /**
+      * `Rotating`
+      */
+    ["com.affine.integration.mcp-server.status.rotating"](): string;
+    /**
+      * `Expiring`
+      */
+    ["com.affine.integration.mcp-server.status.expiring"](): string;
+    /**
+      * `Expired`
+      */
+    ["com.affine.integration.mcp-server.status.expired"](): string;
+    /**
+      * `Revoked`
+      */
+    ["com.affine.integration.mcp-server.status.revoked"](): string;
+    /**
+      * `Create MCP credential`
+      */
+    ["com.affine.integration.mcp-server.create.title"](): string;
+    /**
+      * `This credential will only work with this workspace's MCP endpoint.`
+      */
+    ["com.affine.integration.mcp-server.create.description"](): string;
+    /**
+      * `Label`
+      */
+    ["com.affine.integration.mcp-server.field.label"](): string;
+    /**
+      * `Access`
+      */
+    ["com.affine.integration.mcp-server.field.access"](): string;
+    /**
+      * `Expires in`
+      */
+    ["com.affine.integration.mcp-server.field.expiry"](): string;
+    /**
+      * `{{days}} days`
+      */
+    ["com.affine.integration.mcp-server.expiry.days"](options: {
+        readonly days: string;
+    }): string;
+    /**
+      * `MCP credential created`
+      */
+    ["com.affine.integration.mcp-server.reveal.title"](): string;
+    /**
+      * `Copy this credential now. You won’t be able to see it again.`
+      */
+    ["com.affine.integration.mcp-server.reveal.warning"](): string;
+    /**
+      * `The old token remains valid until {{date}}.`
+      */
+    ["com.affine.integration.mcp-server.reveal.old-valid-until"](options: {
+        readonly date: string;
+    }): string;
+    /**
+      * `Credential`
+      */
+    ["com.affine.integration.mcp-server.reveal.token"](): string;
+    /**
+      * `MCP configuration`
+      */
+    ["com.affine.integration.mcp-server.reveal.config"](): string;
+    /**
+      * `Rotate this credential?`
+      */
+    ["com.affine.integration.mcp-server.rotate.title"](): string;
+    /**
+      * `A new token will be created immediately. The old token remains valid for up to 24 hours so you can update the MCP client.`
+      */
+    ["com.affine.integration.mcp-server.rotate.description"](): string;
+    /**
+      * `Revoke “{{name}}”?`
+      */
+    ["com.affine.integration.mcp-server.revoke.title"](options: {
+        readonly name: string;
+    }): string;
+    /**
+      * `All generations of this credential will stop working immediately. This cannot be undone.`
+      */
+    ["com.affine.integration.mcp-server.revoke.description"](): string;
+    /**
+      * `Supported capabilities`
+      */
+    ["com.affine.integration.mcp-server.capabilities.title"](): string;
+    /**
+      * `Read documents`
+      */
+    ["com.affine.integration.mcp-server.capabilities.read"](): string;
+    /**
+      * `Keyword search`
+      */
+    ["com.affine.integration.mcp-server.capabilities.keyword-search"](): string;
+    /**
+      * `Semantic search`
+      */
+    ["com.affine.integration.mcp-server.capabilities.semantic-search"](): string;
+    /**
+      * `Create and update documents`
+      */
+    ["com.affine.integration.mcp-server.capabilities.write"](): string;
     /**
       * `Notes`
       */
-    ["com.nexio.audio.notes"](): string;
+    ["com.affine.audio.notes"](): string;
     /**
       * `Transcribing`
       */
-    ["com.nexio.audio.transcribing"](): string;
+    ["com.affine.audio.transcribing"](): string;
     /**
       * `Unable to retrieve AI results for others`
       */
-    ["com.nexio.audio.transcribe.non-owner.confirm.title"](): string;
+    ["com.affine.audio.transcribe.non-owner.confirm.title"](): string;
     /**
       * `Audio activity`
       */
-    ["com.nexio.recording.new"](): string;
+    ["com.affine.recording.new"](): string;
+    /**
+      * `Importing...`
+      */
+    ["com.affine.recording.importing.prompt"](): string;
     /**
       * `Finished`
       */
-    ["com.nexio.recording.success.prompt"](): string;
+    ["com.affine.recording.success.prompt"](): string;
     /**
       * `Open app`
       */
-    ["com.nexio.recording.success.button"](): string;
+    ["com.affine.recording.success.button"](): string;
     /**
       * `Failed to save`
       */
-    ["com.nexio.recording.failed.prompt"](): string;
+    ["com.affine.recording.failed.prompt"](): string;
     /**
       * `Open file`
       */
-    ["com.nexio.recording.failed.button"](): string;
+    ["com.affine.recording.failed.button"](): string;
     /**
       * `{{appName}}'s audio`
       */
-    ["com.nexio.recording.recording"](options: {
+    ["com.affine.recording.recording"](options: {
         readonly appName: string;
     }): string;
     /**
       * `Audio recording`
       */
-    ["com.nexio.recording.recording.unnamed"](): string;
+    ["com.affine.recording.recording.unnamed"](): string;
     /**
       * `Start`
       */
-    ["com.nexio.recording.start"](): string;
+    ["com.affine.recording.start"](): string;
     /**
       * `Dismiss`
       */
-    ["com.nexio.recording.dismiss"](): string;
+    ["com.affine.recording.dismiss"](): string;
     /**
       * `Stop`
       */
-    ["com.nexio.recording.stop"](): string;
+    ["com.affine.recording.stop"](): string;
     /**
       * `Migrate Data to Enhance User Experience`
       */
-    ["com.nexio.migration-all-docs-notification.header"](): string;
+    ["com.affine.migration-all-docs-notification.header"](): string;
     /**
       * `We are updating the local data to facilitate the recording and filtering of created by and Last edited by information. Please click the “Migrate Data” button and ensure a stable network connection during the process.`
       */
-    ["com.nexio.migration-all-docs-notification.desc"](): string;
+    ["com.affine.migration-all-docs-notification.desc"](): string;
     /**
       * `Migration failed: {{errorMessage}}`
       */
-    ["com.nexio.migration-all-docs-notification.error"](options: {
+    ["com.affine.migration-all-docs-notification.error"](options: {
         readonly errorMessage: string;
     }): string;
     /**
       * `Migrate data`
       */
-    ["com.nexio.migration-all-docs-notification.button"](): string;
+    ["com.affine.migration-all-docs-notification.button"](): string;
     /**
       * `Comments`
       */
-    ["com.nexio.comment.comments"](): string;
+    ["com.affine.comment.comments"](): string;
     /**
       * `No comments yet, select content to add comment to`
       */
-    ["com.nexio.comment.no-comments"](): string;
+    ["com.affine.comment.no-comments"](): string;
     /**
       * `Delete the thread?`
       */
-    ["com.nexio.comment.delete.confirm.title"](): string;
+    ["com.affine.comment.delete.confirm.title"](): string;
     /**
       * `All comments will also be deleted, and this action cannot be undone.`
       */
-    ["com.nexio.comment.delete.confirm.description"](): string;
+    ["com.affine.comment.delete.confirm.description"](): string;
     /**
       * `Delete this reply?`
       */
-    ["com.nexio.comment.reply.delete.confirm.title"](): string;
+    ["com.affine.comment.reply.delete.confirm.title"](): string;
     /**
       * `Delete this reply? This action cannot be undone.`
       */
-    ["com.nexio.comment.reply.delete.confirm.description"](): string;
+    ["com.affine.comment.reply.delete.confirm.description"](): string;
     /**
       * `Show {{count}} more replies`
       */
-    ["com.nexio.comment.reply.show-more"](options: {
+    ["com.affine.comment.reply.show-more"](options: {
         readonly count: string;
     }): string;
     /**
       * `Show resolved comments`
       */
-    ["com.nexio.comment.filter.show-resolved"](): string;
+    ["com.affine.comment.filter.show-resolved"](): string;
     /**
       * `Only my replies and mentions`
       */
-    ["com.nexio.comment.filter.only-my-replies"](): string;
+    ["com.affine.comment.filter.only-my-replies"](): string;
     /**
       * `Only current mode`
       */
-    ["com.nexio.comment.filter.only-current-mode"](): string;
+    ["com.affine.comment.filter.only-current-mode"](): string;
     /**
       * `Unlock more features`
       */
-    ["com.nexio.payment.subscription.title"](): string;
+    ["com.affine.payment.subscription.title"](): string;
     /**
       * `The universal editor that lets you work, play, present or create just about anything.`
       */
-    ["com.nexio.payment.subscription.description"](): string;
+    ["com.affine.payment.subscription.description"](): string;
     /**
       * `Upgrade`
       */
-    ["com.nexio.payment.subscription.button"](): string;
+    ["com.affine.payment.subscription.button"](): string;
     /**
       * `Reply`
       */
-    ["com.nexio.comment.reply"](): string;
+    ["com.affine.comment.reply"](): string;
     /**
       * `Copy link`
       */
-    ["com.nexio.comment.copy-link"](): string;
+    ["com.affine.comment.copy-link"](): string;
     /**
       * `Copy`
       */
-    ["com.nexio.context-menu.copy"](): string;
+    ["com.affine.context-menu.copy"](): string;
     /**
       * `Paste`
       */
-    ["com.nexio.context-menu.paste"](): string;
+    ["com.affine.context-menu.paste"](): string;
     /**
       * `Cut`
       */
-    ["com.nexio.context-menu.cut"](): string;
+    ["com.affine.context-menu.cut"](): string;
     /**
       * `Add icon`
       */
-    ["com.nexio.docIconPicker.placeholder"](): string;
+    ["com.affine.docIconPicker.placeholder"](): string;
+    /**
+      * `Devices`
+      */
+    ["com.affine.settings.devices.title"](): string;
+    /**
+      * `Devices with an active sign-in session`
+      */
+    ["com.affine.settings.devices.description"](): string;
+    /**
+      * `current`
+      */
+    ["com.affine.settings.devices.current"](): string;
+    /**
+      * `Last used {{time}}`
+      */
+    ["com.affine.settings.devices.last-used"](options: {
+        readonly time: string;
+    }): string;
+    /**
+      * `Loading…`
+      */
+    ["com.affine.settings.devices.loading"](): string;
+    /**
+      * `Sign out`
+      */
+    ["com.affine.settings.devices.sign-out"](): string;
+    /**
+      * `Sign out all devices`
+      */
+    ["com.affine.settings.devices.sign-out-all"](): string;
+    /**
+      * `Sign out {{device}}?`
+      */
+    ["com.affine.settings.devices.confirm"](options: {
+        readonly device: string;
+    }): string;
+    /**
+      * `Sign out every device?`
+      */
+    ["com.affine.settings.devices.confirm-all"](): string;
+    /**
+      * `Failed to load devices`
+      */
+    ["com.affine.settings.devices.load-failed"](): string;
+    /**
+      * `Failed to sign out device`
+      */
+    ["com.affine.settings.devices.sign-out-failed"](): string;
+    /**
+      * `Failed to sign out devices`
+      */
+    ["com.affine.settings.devices.sign-out-all-failed"](): string;
+    /**
+      * `Real-time connection failed`
+      */
+    ["com.affine.realtime.connection-error.title"](): string;
+    /**
+      * `The real-time connection could not authenticate your session. Sign in again if the problem continues.`
+      */
+    ["com.affine.realtime.connection-error.authentication"](): string;
+    /**
+      * `The server cannot be reached. Check your network connection and server proxy.`
+      */
+    ["com.affine.realtime.connection-error.network"](): string;
+    /**
+      * `The server rejected the real-time request. Try again later.`
+      */
+    ["com.affine.realtime.connection-error.server"](): string;
+    /**
+      * `The server did not respond in time. Nexio will keep trying to reconnect.`
+      */
+    ["com.affine.realtime.connection-error.timeout"](): string;
     /**
       * `An internal error occurred.`
       */
@@ -8392,9 +9846,28 @@ export function useNEXIOI18N(): {
         readonly message: string;
     }): string;
     /**
+      * `URL blocked by SSRF protection: {{reason}}`
+      */
+    ["error.SSRF_BLOCKED_ERROR"](options: {
+        readonly reason: string;
+    }): string;
+    /**
+      * `Response too large ({{receivedBytes}} bytes), limit is {{limitBytes}} bytes`
+      */
+    ["error.RESPONSE_TOO_LARGE_ERROR"](options: Readonly<{
+        receivedBytes: string;
+        limitBytes: string;
+    }>): string;
+    /**
       * `Email service is not configured.`
       */
     ["error.EMAIL_SERVICE_NOT_CONFIGURED"](): string;
+    /**
+      * `Image format not supported: {{format}}`
+      */
+    ["error.IMAGE_FORMAT_NOT_SUPPORTED"](options: {
+        readonly format: string;
+    }): string;
     /**
       * `Query is too long, max length is {{max}}.`
       */
@@ -8492,10 +9965,6 @@ export function useNEXIOI18N(): {
       */
     ["error.WRONG_SIGN_IN_METHOD"](): string;
     /**
-      * `You don't have early access permission. Visit https://community.nexio.pro/c/insider-general/ for more information.`
-      */
-    ["error.EARLY_ACCESS_REQUIRED"](): string;
-    /**
       * `You are not allowed to sign up.`
       */
     ["error.SIGN_UP_FORBIDDEN"](): string;
@@ -8515,6 +9984,34 @@ export function useNEXIOI18N(): {
       * `You must sign in first to access this resource.`
       */
     ["error.AUTHENTICATION_REQUIRED"](): string;
+    /**
+      * `The access token has expired.`
+      */
+    ["error.ACCESS_TOKEN_EXPIRED"](): string;
+    /**
+      * `The access token is invalid.`
+      */
+    ["error.ACCESS_TOKEN_INVALID"](): string;
+    /**
+      * `The auth session has expired.`
+      */
+    ["error.AUTH_SESSION_EXPIRED"](): string;
+    /**
+      * `The auth session has been revoked.`
+      */
+    ["error.AUTH_SESSION_REVOKED"](): string;
+    /**
+      * `The refresh token is invalid.`
+      */
+    ["error.REFRESH_TOKEN_INVALID"](): string;
+    /**
+      * `The refresh token has already been used.`
+      */
+    ["error.REFRESH_TOKEN_REUSED"](): string;
+    /**
+      * `Auth session service is temporarily unavailable.`
+      */
+    ["error.AUTH_SESSION_TEMPORARILY_UNAVAILABLE"](): string;
     /**
       * `You are not allowed to perform this action.`
       */
@@ -8561,6 +10058,12 @@ export function useNEXIOI18N(): {
       * `You do not have permission to access Space {{spaceId}}.`
       */
     ["error.SPACE_ACCESS_DENIED"](options: {
+        readonly spaceId: string;
+    }): string;
+    /**
+      * `Permissions for Space {{spaceId}} changed during synchronization.`
+      */
+    ["error.SYNC_PERMISSION_GENERATION_CHANGED"](options: {
         readonly spaceId: string;
     }): string;
     /**
@@ -8629,6 +10132,10 @@ export function useNEXIOI18N(): {
         spaceId: string;
     }>): string;
     /**
+      * `Blob is invalid.`
+      */
+    ["error.BLOB_INVALID"](): string;
+    /**
       * `Expected to publish a doc, not a Space.`
       */
     ["error.EXPECT_TO_PUBLISH_DOC"](): string;
@@ -8689,6 +10196,10 @@ export function useNEXIOI18N(): {
       * `Invalid invitation provided.`
       */
     ["error.INVALID_INVITATION"](): string;
+    /**
+      * `This invitation belongs to another account.`
+      */
+    ["error.INVITATION_ACCOUNT_MISMATCH"](): string;
     /**
       * `No more seat available in the Space {{spaceId}}.`
       */
@@ -8767,6 +10278,13 @@ export function useNEXIOI18N(): {
       * `This subscription is managed by App Store or Google Play. Please manage it in the corresponding store.`
       */
     ["error.MANAGED_BY_APP_STORE_OR_PLAY"](): string;
+    /**
+      * `Calendar provider request error, status: {{status}}, message: {{message}}`
+      */
+    ["error.CALENDAR_PROVIDER_REQUEST_ERROR"](options: Readonly<{
+        status: string;
+        message: string;
+    }>): string;
     /**
       * `Copilot session not found.`
       */
@@ -8850,40 +10368,6 @@ export function useNEXIOI18N(): {
         message: string;
     }>): string;
     /**
-      * `Invalid copilot context {{contextId}}.`
-      */
-    ["error.COPILOT_INVALID_CONTEXT"](options: {
-        readonly contextId: string;
-    }): string;
-    /**
-      * `File {{fileName}} is not supported to use as context: {{message}}`
-      */
-    ["error.COPILOT_CONTEXT_FILE_NOT_SUPPORTED"](options: Readonly<{
-        fileName: string;
-        message: string;
-    }>): string;
-    /**
-      * `Failed to modify context {{contextId}}: {{message}}`
-      */
-    ["error.COPILOT_FAILED_TO_MODIFY_CONTEXT"](options: Readonly<{
-        contextId: string;
-        message: string;
-    }>): string;
-    /**
-      * `Failed to match context {{contextId}} with "%7B%7Bcontent%7D%7D": {{message}}`
-      */
-    ["error.COPILOT_FAILED_TO_MATCH_CONTEXT"](options: Readonly<{
-        contextId: string;
-        message: string;
-    }>): string;
-    /**
-      * `Failed to match context in workspace {{workspaceId}} with "%7B%7Bcontent%7D%7D": {{message}}`
-      */
-    ["error.COPILOT_FAILED_TO_MATCH_GLOBAL_CONTEXT"](options: Readonly<{
-        workspaceId: string;
-        message: string;
-    }>): string;
-    /**
       * `Embedding feature is disabled, please contact the administrator to enable it in the workspace settings.`
       */
     ["error.COPILOT_EMBEDDING_DISABLED"](): string;
@@ -8891,6 +10375,28 @@ export function useNEXIOI18N(): {
       * `Embedding feature not available, you may need to install pgvector extension to your database`
       */
     ["error.COPILOT_EMBEDDING_UNAVAILABLE"](): string;
+    /**
+      * `Selected sources are still processing. Try again shortly.`
+      */
+    ["error.COPILOT_SELECTED_SOURCES_PROCESSING"](): string;
+    /**
+      * `Selected sources could not be processed. Remove the failed source or try again.`
+      */
+    ["error.COPILOT_SELECTED_SOURCES_FAILED"](): string;
+    /**
+      * `Selected sources are not available for AI retrieval.`
+      */
+    ["error.COPILOT_SELECTED_SOURCES_UNAVAILABLE"](): string;
+    /**
+      * `Too many or too much content was selected. Select fewer sources and try again.`
+      */
+    ["error.COPILOT_SELECTED_SOURCES_LIMIT_EXCEEDED"](): string;
+    /**
+      * `Failed to add workspace artifact: {{message}}`
+      */
+    ["error.COPILOT_FAILED_TO_ADD_WORKSPACE_ARTIFACT"](options: {
+        readonly message: string;
+    }): string;
     /**
       * `Transcription job already exists`
       */
@@ -8903,12 +10409,6 @@ export function useNEXIOI18N(): {
       * `Audio not provided.`
       */
     ["error.COPILOT_TRANSCRIPTION_AUDIO_NOT_PROVIDED"](): string;
-    /**
-      * `Failed to add workspace file embedding: {{message}}`
-      */
-    ["error.COPILOT_FAILED_TO_ADD_WORKSPACE_FILE_EMBEDDING"](options: {
-        readonly message: string;
-    }): string;
     /**
       * `You have exceeded your blob size quota.`
       */
@@ -8999,6 +10499,12 @@ export function useNEXIOI18N(): {
         requiredVersion: string;
     }>): string;
     /**
+      * `This AFFiNE server is too old for this client. Please upgrade the server to {{requiredVersion}}.`
+      */
+    ["error.UNSUPPORTED_SERVER_VERSION"](options: {
+        readonly requiredVersion: string;
+    }): string;
+    /**
       * `Notification not found.`
       */
     ["error.NOTIFICATION_NOT_FOUND"](): string;
@@ -9026,6 +10532,24 @@ export function useNEXIOI18N(): {
     ["error.INVALID_APP_CONFIG_INPUT"](options: {
         readonly message: string;
     }): string;
+    /**
+      * `Search index for Space {{spaceId}} is not ready yet.`
+      */
+    ["error.SEARCH_INDEX_NOT_READY"](options: {
+        readonly spaceId: string;
+    }): string;
+    /**
+      * `Search permissions are still syncing. Please try again shortly.`
+      */
+    ["error.SEARCH_PERMISSION_SYNCING"](): string;
+    /**
+      * `Search provider is temporarily unavailable.`
+      */
+    ["error.SEARCH_PROVIDER_UNAVAILABLE"](): string;
+    /**
+      * `Search index is temporarily unavailable.`
+      */
+    ["error.SEARCH_INDEX_FAILED"](): string;
     /**
       * `Search provider not found.`
       */
@@ -9064,9 +10588,9 @@ function createComponent(i18nKey: string) {
 }
 export const TypedTrans: {
     /**
-      * `Go to <a>{{link}}</a> for learn more details about NEXIO AI.`
+      * `Go to <a>{{link}}</a> for learn more details about Nexio AI.`
       */
-    ["com.nexio.ai-onboarding.general.5.description"]: ComponentType<TypedTransProps<{
+    ["com.affine.ai-onboarding.general.5.description"]: ComponentType<TypedTransProps<{
         readonly link: string;
     }, {
         a: JSX.Element;
@@ -9074,25 +10598,25 @@ export const TypedTrans: {
     /**
       * `By continuing, you are agreeing to our <a>AI Terms</a>.`
       */
-    ["com.nexio.ai-onboarding.general.privacy"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.ai-onboarding.general.privacy"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
-      * `Opening <1>NEXIO</1> app now`
+      * `Opening <1>Nexio</1> app now`
       */
-    ["com.nexio.auth.open.nexio.prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.auth.open.affine.prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `This doc is now opened in <1>NEXIO</1> app`
+      * `This doc is now opened in <1>Nexio</1> app`
       */
-    ["com.nexio.auth.open.nexio.open-doc-prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.auth.open.affine.open-doc-prompt"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `To continue signing in, please enter the code that was sent to <a>{{email}}</a>.`
       */
-    ["com.nexio.auth.sign.auth.code.hint"]: ComponentType<TypedTransProps<{
+    ["com.affine.auth.sign.auth.code.hint"]: ComponentType<TypedTransProps<{
         readonly email: string;
     }, {
         a: JSX.Element;
@@ -9100,36 +10624,36 @@ export const TypedTrans: {
     /**
       * `Or <1>sign in with password</1> instead.`
       */
-    ["com.nexio.auth.sign.auth.code.message.password"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.auth.sign.auth.code.message.password"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `The Self-Hosted instance is not hosted or deployed by NEXIO. Your data will be stored on these instances.  <1>Learn more about Self-Host details.</1>`
+      * `This is an Nexio server hosted by you or your team. After signing in, workspace data is saved to the Nexio server you enter, not to Nexio Cloud. <1>Learn more about self-hosting.</1>`
       */
-    ["com.nexio.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.auth.sign.add-selfhosted.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to NEXIO's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
+      * `By clicking “Continue with Google/Email” above, you acknowledge that you agree to Nexio's <1>Terms of Conditions</1> and <3>Privacy Policy</3>.`
       */
-    ["com.nexio.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.auth.sign.message"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `This demo is limited. <1>Download the NEXIO Client</1> for the latest features and Performance.`
+      * `This demo is limited. <1>Download the Nexio Client</1> for the latest features and Performance.`
       */
-    ["com.nexio.banner.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.banner.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.nexio.collection.toolbar.selected_one: `<0>{{count}}</0> collection selected`
+      * - com.affine.collection.toolbar.selected_one: `<0>{{count}}</0> collection selected`
     
-      * - com.nexio.collection.toolbar.selected_other: `<0>{{count}}</0> collection(s) selected`
+      * - com.affine.collection.toolbar.selected_other: `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.nexio.collection.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.affine.collection.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9137,7 +10661,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection selected`
       */
-    ["com.nexio.collection.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.affine.collection.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9145,7 +10669,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.nexio.collection.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.affine.collection.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9153,7 +10677,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> collection(s) selected`
       */
-    ["com.nexio.collection.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.affine.collection.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9161,7 +10685,7 @@ export const TypedTrans: {
     /**
       * `Deleting <1>{{tag}}</1> cannot be undone, please proceed with caution.`
       */
-    ["com.nexio.delete-tags.confirm.description"]: ComponentType<TypedTransProps<{
+    ["com.affine.delete-tags.confirm.description"]: ComponentType<TypedTransProps<{
         readonly tag: string;
     }, {
         ["1"]: JSX.Element;
@@ -9169,7 +10693,7 @@ export const TypedTrans: {
     /**
       * `Selected <1>{{selectedCount}}</1>, filtered <3>{{filteredCount}}</3>`
       */
-    ["com.nexio.editCollection.rules.countTips"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.editCollection.rules.countTips"]: ComponentType<TypedTransProps<Readonly<{
         selectedCount: string;
         filteredCount: string;
     }>, {
@@ -9179,7 +10703,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> docs.`
       */
-    ["com.nexio.editCollection.rules.countTips.more"]: ComponentType<TypedTransProps<{
+    ["com.affine.editCollection.rules.countTips.more"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9187,7 +10711,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> doc.`
       */
-    ["com.nexio.editCollection.rules.countTips.one"]: ComponentType<TypedTransProps<{
+    ["com.affine.editCollection.rules.countTips.one"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9195,7 +10719,7 @@ export const TypedTrans: {
     /**
       * `Showing <1>{{count}}</1> docs.`
       */
-    ["com.nexio.editCollection.rules.countTips.zero"]: ComponentType<TypedTransProps<{
+    ["com.affine.editCollection.rules.countTips.zero"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["1"]: JSX.Element;
@@ -9203,14 +10727,14 @@ export const TypedTrans: {
     /**
       * `Please <1>add rules</1> to save this collection or switch to <3>Docs</3>, use manual selection mode`
       */
-    ["com.nexio.editCollection.rules.empty.noRules.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.editCollection.rules.empty.noRules.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["3"]: JSX.Element;
     }>>;
     /**
       * `Docs that meet the rules will be added to the current collection <2>{{highlight}}</2>`
       */
-    ["com.nexio.editCollection.rules.tips"]: ComponentType<TypedTransProps<{
+    ["com.affine.editCollection.rules.tips"]: ComponentType<TypedTransProps<{
         readonly highlight: string;
     }, {
         ["2"]: JSX.Element;
@@ -9218,29 +10742,29 @@ export const TypedTrans: {
     /**
       * `If you are still experiencing this issue, please <1>contact us through the community</1>.`
       */
-    ["com.nexio.error.contact-us"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.error.contact-us"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `With the workspace creator's free account, every member can access up to <1>7 days<1> of version history.`
       */
-    ["com.nexio.history.confirm-restore-modal.free-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.history.confirm-restore-modal.free-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `With the workspace creator's Pro account, every member enjoys the privilege of accessing up to <1>30 days<1> of version history.`
       */
-    ["com.nexio.history.confirm-restore-modal.pro-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.history.confirm-restore-modal.pro-plan-prompt.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.nexio.page.toolbar.selected_one: `<0>{{count}}</0> doc selected`
+      * - com.affine.page.toolbar.selected_one: `<0>{{count}}</0> doc selected`
     
-      * - com.nexio.page.toolbar.selected_other: `<0>{{count}}</0> doc(s) selected`
+      * - com.affine.page.toolbar.selected_other: `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.nexio.page.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.affine.page.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9248,7 +10772,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc selected`
       */
-    ["com.nexio.page.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.affine.page.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9256,7 +10780,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.nexio.page.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.affine.page.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9264,7 +10788,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc(s) selected`
       */
-    ["com.nexio.page.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.affine.page.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9272,19 +10796,19 @@ export const TypedTrans: {
     /**
       * `You are currently on the <a>free plan</a>.`
       */
-    ["com.nexio.payment.billing-setting.ai.free-desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.billing-setting.ai.free-desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You have purchased <a>Believer plan</a>. Enjoy with your benefits!`
       */
-    ["com.nexio.payment.billing-setting.believer.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.billing-setting.believer.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You are currently on the <1>{{planName}} plan</1>.`
       */
-    ["com.nexio.payment.billing-setting.current-plan.description"]: ComponentType<TypedTransProps<{
+    ["com.affine.payment.billing-setting.current-plan.description"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9292,7 +10816,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the believer <1>{{planName}} plan</1>.`
       */
-    ["com.nexio.payment.billing-setting.current-plan.description.lifetime"]: ComponentType<TypedTransProps<{
+    ["com.affine.payment.billing-setting.current-plan.description.lifetime"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9300,7 +10824,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the monthly <1>{{planName}} plan</1>.`
       */
-    ["com.nexio.payment.billing-setting.current-plan.description.monthly"]: ComponentType<TypedTransProps<{
+    ["com.affine.payment.billing-setting.current-plan.description.monthly"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9308,7 +10832,7 @@ export const TypedTrans: {
     /**
       * `You are currently on the annually <1>{{planName}} plan</1>.`
       */
-    ["com.nexio.payment.billing-setting.current-plan.description.yearly"]: ComponentType<TypedTransProps<{
+    ["com.affine.payment.billing-setting.current-plan.description.yearly"]: ComponentType<TypedTransProps<{
         readonly planName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9316,13 +10840,13 @@ export const TypedTrans: {
     /**
       * `One-time Purchase. Personal use rights for up to 150 years. <a>Fair Usage Policies</a> may apply.`
       */
-    ["com.nexio.payment.lifetime.caption-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.lifetime.caption-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         a: JSX.Element;
     }>>;
     /**
       * `You are currently on the {{currentPlan}} plan. If you have any questions, please contact our <3>customer support</3>.`
       */
-    ["com.nexio.payment.subtitle-active"]: ComponentType<TypedTransProps<{
+    ["com.affine.payment.subtitle-active"]: ComponentType<TypedTransProps<{
         readonly currentPlan: string;
     }, {
         ["3"]: JSX.Element;
@@ -9330,37 +10854,37 @@ export const TypedTrans: {
     /**
       * `If you have any questions, please contact our <1> customer support</1>.`
       */
-    ["com.nexio.payment.upgrade-success-page.support"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.upgrade-success-page.support"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `If you have any questions, please contact our <1>customer support</1>.`
       */
-    ["com.nexio.payment.upgrade-success-page.team.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.upgrade-success-page.team.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `If you have any questions, please contact our <1>customer support</1>.`
       */
-    ["com.nexio.payment.license-success.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.payment.license-success.text-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `This action deletes the old Favorites section. <b>Your documents are safe</b>, ensure you've moved your frequently accessed documents to the new personal Favorites section.`
       */
-    ["com.nexio.rootAppSidebar.migration-data.clean-all.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.rootAppSidebar.migration-data.clean-all.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         b: JSX.Element;
     }>>;
     /**
       * `<b>Your documents are safe</b>, but you'll need to re-pin your most-used ones. "Favorites" are now personal. Move items from the old shared section to your new personal section or remove the old one by clicking "Empty the old favorites" now.`
       */
-    ["com.nexio.rootAppSidebar.migration-data.help.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.rootAppSidebar.migration-data.help.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         b: JSX.Element;
     }>>;
     /**
       * `No doc titles contain <1>{{search}}</1>`
       */
-    ["com.nexio.selectPage.empty.tips"]: ComponentType<TypedTransProps<{
+    ["com.affine.selectPage.empty.tips"]: ComponentType<TypedTransProps<{
         readonly search: string;
     }, {
         ["1"]: JSX.Element;
@@ -9368,85 +10892,93 @@ export const TypedTrans: {
     /**
       * `Are you sure you want to delete your account from <1>{{server}}</1>?`
       */
-    ["com.nexio.setting.account.delete.confirm-delete-description-1"]: ComponentType<TypedTransProps<{
+    ["com.affine.setting.account.delete.confirm-delete-description-1"]: ComponentType<TypedTransProps<{
         readonly server: string;
     }, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `Your account will be inaccessible, and your personal cloud space will be permanently deleted. You can remove local data by uninstalling the app or clearing your browser storage. <1>This action is irreversible.</1>`
+      * `Your account will be inaccessible, and your personal space on the server will be permanently deleted. You can remove local data by uninstalling the app or clearing your browser storage. <1>This action is irreversible.</1>`
       */
-    ["com.nexio.setting.account.delete.confirm-delete-description-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.setting.account.delete.confirm-delete-description-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+        ["1"]: JSX.Element;
+    }>>;
+    /**
+      * `Type <1>{{email}}</1> to confirm account deletion.`
+      */
+    ["com.affine.setting.account.delete.email-confirm-description"]: ComponentType<TypedTransProps<{
+        readonly email: string;
+    }, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Don't have the app? <1>Click to download</1>.`
       */
-    ["com.nexio.open-in-app.card.subtitle"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.open-in-app.card.subtitle"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Settings changed; please restart the app. <1>Restart</1>`
       */
-    ["com.nexio.settings.editorSettings.general.spell-check.restart-hint"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.editorSettings.general.spell-check.restart-hint"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Love our app? <1>Star us on GitHub</1> and <2>create issues</2> for your valuable feedback!`
       */
-    ["com.nexio.settings.suggestion-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.suggestion-2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
         ["2"]: JSX.Element;
     }>>;
     /**
       * `Meeting Features Available <strong>Free</strong> in Beta Phase`
       */
-    ["com.nexio.settings.meetings.setting.prompt.2"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.meetings.setting.prompt.2"]: ComponentType<TypedTransProps<Readonly<{}>, {
         strong: JSX.Element;
     }>>;
     /**
-      * `<strong>Where AI meets your meetings - nexio your collaboration.</strong>
+      * `<strong>Where AI meets your meetings - affine your collaboration.</strong>
     <ul><li>Extract Action Items & Key Insights Instantly</li><li>Smart Auto-Capture Starts With Your Meeting</li><li>Seamless Integration Across All Meeting Platforms</li><li>One Unified Space for All Your Meeting's Context</li><li>Your AI Assistant with Every Meeting Context Preserved</li></ul>`
       */
-    ["com.nexio.settings.meetings.setting.welcome.hints"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.meetings.setting.welcome.hints"]: ComponentType<TypedTransProps<Readonly<{}>, {
         strong: JSX.Element;
         ul: JSX.Element;
         li: JSX.Element;
     }>>;
     /**
-      * `Utilize the meeting notes and AI summarization features provided by NEXIO. <1>Discuss more in the community</1>.`
+      * `Utilize the meeting notes and AI summarization features provided by Nexio. <1>Discuss more in the community</1>.`
       */
-    ["com.nexio.settings.meetings.enable.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.meetings.enable.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `Activate using the local key from <1>ezeslucky.Inc</1>`
+      * `Activate using the local key from <1>Toeverything.Inc</1>`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.team.license"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.workspace.license.self-host-team.team.license"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `Copy your workspace id and <1>reach out to us</1>.`
       */
-    ["com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.content"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `If you encounter any issues, contact aurobindolife888@gmail.com . No license yet? <1>Click to purchase</1>.`
+      * `If you encounter any issues, contact support@toeverything.info. No license yet? <1>Click to purchase</1>.`
       */
-    ["com.nexio.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `This will make the workspace read-only. Your key remains usable elsewhere. Deactivation doesn't cancel your Team plan. To cancel, go to <1>Manage Payment</1>.`
       */
-    ["com.nexio.settings.workspace.license.deactivate-modal.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.settings.workspace.license.deactivate-modal.description"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;
     }>>;
     /**
       * `The "<1>{{ name }}</1>" property will be removed. This action cannot be undone.`
       */
-    ["com.nexio.settings.workspace.properties.delete-property-desc"]: ComponentType<TypedTransProps<{
+    ["com.affine.settings.workspace.properties.delete-property-desc"]: ComponentType<TypedTransProps<{
         readonly name: string;
     }, {
         ["1"]: JSX.Element;
@@ -9454,7 +10986,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> doc`
       */
-    ["com.nexio.settings.workspace.properties.doc"]: ComponentType<TypedTransProps<{
+    ["com.affine.settings.workspace.properties.doc"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9462,7 +10994,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> docs`
       */
-    ["com.nexio.settings.workspace.properties.doc_others"]: ComponentType<TypedTransProps<{
+    ["com.affine.settings.workspace.properties.doc_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9470,7 +11002,7 @@ export const TypedTrans: {
     /**
       * `Manage workspace <1>{{name}}</1> properties`
       */
-    ["com.nexio.settings.workspace.properties.header.subtitle"]: ComponentType<TypedTransProps<{
+    ["com.affine.settings.workspace.properties.header.subtitle"]: ComponentType<TypedTransProps<{
         readonly name: string;
     }, {
         ["1"]: JSX.Element;
@@ -9478,11 +11010,11 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> selected`
     
-      * - com.nexio.tag.toolbar.selected_one: `<0>{{count}}</0> tag selected`
+      * - com.affine.tag.toolbar.selected_one: `<0>{{count}}</0> tag selected`
     
-      * - com.nexio.tag.toolbar.selected_other: `<0>{{count}}</0> tag(s) selected`
+      * - com.affine.tag.toolbar.selected_other: `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.nexio.tag.toolbar.selected"]: ComponentType<TypedTransProps<{
+    ["com.affine.tag.toolbar.selected"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9490,7 +11022,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag selected`
       */
-    ["com.nexio.tag.toolbar.selected_one"]: ComponentType<TypedTransProps<{
+    ["com.affine.tag.toolbar.selected_one"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9498,7 +11030,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.nexio.tag.toolbar.selected_other"]: ComponentType<TypedTransProps<{
+    ["com.affine.tag.toolbar.selected_other"]: ComponentType<TypedTransProps<{
         readonly count: string | number | bigint;
     }, {
         ["0"]: JSX.Element;
@@ -9506,7 +11038,7 @@ export const TypedTrans: {
     /**
       * `<0>{{count}}</0> tag(s) selected`
       */
-    ["com.nexio.tag.toolbar.selected_others"]: ComponentType<TypedTransProps<{
+    ["com.affine.tag.toolbar.selected_others"]: ComponentType<TypedTransProps<{
         readonly count: string;
     }, {
         ["0"]: JSX.Element;
@@ -9514,15 +11046,15 @@ export const TypedTrans: {
     /**
       * `Deleting <1>{{workspace}}</1> cannot be undone, please proceed with caution. All contents will be lost.`
       */
-    ["com.nexio.workspaceDelete.description"]: ComponentType<TypedTransProps<{
+    ["com.affine.workspaceDelete.description"]: ComponentType<TypedTransProps<{
         readonly workspace: string;
     }, {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `Deleting <1>{{workspace}}</1> will delete both local and cloud data, this operation cannot be undone, please proceed with caution.`
+      * `Deleting <1>{{workspace}}</1> will delete both local data and synced server data. This cannot be undone, so please proceed with caution.`
       */
-    ["com.nexio.workspaceDelete.description2"]: ComponentType<TypedTransProps<{
+    ["com.affine.workspaceDelete.description2"]: ComponentType<TypedTransProps<{
         readonly workspace: string;
     }, {
         ["1"]: JSX.Element;
@@ -9536,7 +11068,7 @@ export const TypedTrans: {
     /**
       * `Are you sure you want to upgrade <1>{{workspaceName}}</1> to a Team Workspace? This will allow unlimited members to collaborate in this workspace.`
       */
-    ["com.nexio.upgrade-to-team-page.upgrade-confirm.description"]: ComponentType<TypedTransProps<{
+    ["com.affine.upgrade-to-team-page.upgrade-confirm.description"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9544,7 +11076,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> mentioned you in <2>{{docTitle}}</2>`
       */
-    ["com.nexio.notification.mention"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.mention"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9554,7 +11086,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> commented in <2>{{docTitle}}</2>`
       */
-    ["com.nexio.notification.comment"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.comment"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9564,7 +11096,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> mentioned you in a comment in <2>{{docTitle}}</2>`
       */
-    ["com.nexio.notification.comment-mention"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.comment-mention"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         docTitle: string;
     }>, {
@@ -9572,9 +11104,9 @@ export const TypedTrans: {
         ["2"]: JSX.Element;
     }>>;
     /**
-      * `<1>{{username}}</1> has accept your invitation`
+      * `<1>{{username}}</1> has accepted your invitation`
       */
-    ["com.nexio.notification.invitation-accepted"]: ComponentType<TypedTransProps<{
+    ["com.affine.notification.invitation-accepted"]: ComponentType<TypedTransProps<{
         readonly username: string;
     }, {
         ["1"]: JSX.Element;
@@ -9582,7 +11114,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has requested to join <2>{{workspaceName}}</2>`
       */
-    ["com.nexio.notification.invitation-review-request"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.invitation-review-request"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9592,7 +11124,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has declined your request to join <2>{{workspaceName}}</2>`
       */
-    ["com.nexio.notification.invitation-review-declined"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.invitation-review-declined"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9602,7 +11134,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> has approved your request to join <2>{{workspaceName}}</2>`
       */
-    ["com.nexio.notification.invitation-review-approved"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.invitation-review-approved"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9612,7 +11144,7 @@ export const TypedTrans: {
     /**
       * `There is an issue regarding your invitation to <1>{{workspaceName}}</1> `
       */
-    ["com.nexio.notification.invitation-blocked"]: ComponentType<TypedTransProps<{
+    ["com.affine.notification.invitation-blocked"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9620,7 +11152,7 @@ export const TypedTrans: {
     /**
       * `<1>{{username}}</1> invited you to join <2>{{workspaceName}}</2>`
       */
-    ["com.nexio.notification.invitation"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.notification.invitation"]: ComponentType<TypedTransProps<Readonly<{
         username: string;
         workspaceName: string;
     }>, {
@@ -9630,7 +11162,7 @@ export const TypedTrans: {
     /**
       * `Unable to join <1/> <2>{{workspaceName}}</2> due to insufficient seats available.`
       */
-    ["com.nexio.fail-to-join-workspace.description-1"]: ComponentType<TypedTransProps<{
+    ["com.affine.fail-to-join-workspace.description-1"]: ComponentType<TypedTransProps<{
         readonly workspaceName: string;
     }, {
         ["1"]: JSX.Element;
@@ -9639,7 +11171,7 @@ export const TypedTrans: {
     /**
       * `You requested to join <1/> <2>{{workspaceName}}</2> with <3>{{userEmail}}</3>, the workspace owner and team admins will review your request.`
       */
-    ["com.nexio.sent-request-to-join-workspace.description"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.sent-request-to-join-workspace.description"]: ComponentType<TypedTransProps<Readonly<{
         workspaceName: string;
         userEmail: string;
     }>, {
@@ -9650,7 +11182,7 @@ export const TypedTrans: {
     /**
       * `Unable to process your request to join <1/> <2>{{workspaceName}}</2> with <3>{{userEmail}}</3>, the workspace has reached its member limit. Please contact the workspace owner for available seats.`
       */
-    ["com.nexio.failed-to-send-request.description"]: ComponentType<TypedTransProps<Readonly<{
+    ["com.affine.failed-to-send-request.description"]: ComponentType<TypedTransProps<Readonly<{
         workspaceName: string;
         userEmail: string;
     }>, {
@@ -9659,16 +11191,16 @@ export const TypedTrans: {
         ["3"]: JSX.Element;
     }>>;
     /**
-      * `Import your Readwise highlights to NEXIO. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
+      * `Import your Readwise highlights to Nexio. Please visit Readwise, <br />click <a>"Get Access Token"</a>, and paste the token below.`
       */
-    ["com.nexio.integration.readwise.connect.desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
+    ["com.affine.integration.readwise.connect.desc"]: ComponentType<TypedTransProps<Readonly<{}>, {
         br: JSX.Element;
         a: JSX.Element;
     }>>;
     /**
       * `Updates to be imported since last successful import on {{lastImportedAt}} <a>Import everything instead</a>`
       */
-    ["com.nexio.integration.readwise.import.desc-from-last"]: ComponentType<TypedTransProps<{
+    ["com.affine.integration.readwise.import.desc-from-last"]: ComponentType<TypedTransProps<{
         readonly lastImportedAt: string;
     }, {
         a: JSX.Element;
@@ -9676,7 +11208,7 @@ export const TypedTrans: {
     /**
       * `Please contact <1>{{user}}</1> to upgrade AI rights or resend the attachment.`
       */
-    ["com.nexio.audio.transcribe.non-owner.confirm.message"]: ComponentType<TypedTransProps<{
+    ["com.affine.audio.transcribe.non-owner.confirm.message"]: ComponentType<TypedTransProps<{
         readonly user: string;
     }, {
         ["1"]: JSX.Element;

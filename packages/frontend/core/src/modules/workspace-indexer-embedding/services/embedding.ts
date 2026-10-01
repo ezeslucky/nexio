@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import { AdditionalAttachments } from '../entities/additional-attachments';
 import { EmbeddingEnabled } from '../entities/embedding-enabled';

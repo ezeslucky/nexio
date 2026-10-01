@@ -1,17 +1,17 @@
-import { Button } from '@nexio/admin/components/ui/button';
-import type { CarouselApi } from '@nexio/admin/components/ui/carousel';
+import { Button } from '@affine/admin/components/ui/button';
+import type { CarouselApi } from '@affine/admin/components/ui/carousel';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@nexio/admin/components/ui/carousel';
-import { validateEmailAndPassword } from '@nexio/admin/utils';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+} from '@affine/admin/components/ui/carousel';
+import { validateEmailAndPassword } from '@affine/admin/utils';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { nexioFetch } from '../../fetch-utils';
+import { affineFetch } from '../../fetch-utils';
 import { useRevalidateServerConfig, useServerConfig } from '../common';
 import { CreateAdmin } from './create-admin';
 
@@ -28,10 +28,10 @@ const Welcome = () => {
       style={{ minHeight: '300px' }}
     >
       <h1 className="text-5xl font-extrabold max-lg:text-3xl max-lg:font-bold">
-        Welcome to NEXIO
+        Welcome to Nexio
       </h1>
       <p className="mt-5 font-semibold text-xl max-lg:px-4 max-lg:text-lg">
-        Configure your Self Host NEXIO with a few simple settings.
+        Configure your Self Host Nexio with a few simple settings.
       </p>
     </div>
   );
@@ -47,7 +47,7 @@ const SettingsDone = () => {
         All Settings Done
       </h1>
       <p className="mt-5 font-semibold text-xl max-lg:px-4 max-lg:text-lg">
-        NEXIO is ready to use.
+        Nexio is ready to use.
       </p>
     </div>
   );
@@ -96,9 +96,10 @@ export const Form = () => {
 
   const createAdmin = useCallback(async () => {
     try {
-      const createResponse = await nexioFetch('/api/setup/create-admin-user', {
+      const createResponse = await affineFetch('/api/setup/create-admin-user', {
         method: 'POST',
         body: JSON.stringify({
+          name: nameValue,
           email: emailValue,
           password: passwordValue,
         }),
@@ -120,7 +121,7 @@ export const Form = () => {
       console.error(err);
       throw err;
     }
-  }, [emailValue, passwordValue, refreshServerConfig]);
+  }, [nameValue, emailValue, passwordValue, refreshServerConfig]);
 
   const onNext = useAsyncCallback(async () => {
     if (isCreateAdminStep) {
@@ -208,7 +209,7 @@ export const Form = () => {
           </Button>
         )}
         <Button onClick={onNext} disabled={disableContinue}>
-          {current === count ? 'Open NEXIO' : 'Continue'}
+          {current === count ? 'Open AFFiNE' : 'Continue'}
         </Button>
       </div>
 

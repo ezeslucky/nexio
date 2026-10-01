@@ -4,20 +4,20 @@ import {
   MenuSub,
   toast,
   useConfirmModal,
-} from '@nexio/component';
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
-import { Guard } from '@nexio/core/components/guard';
-import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
-import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
-import { DocsService } from '@nexio/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { preventDefault } from '@nexio/core/utils';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { Guard } from '@affine/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
+import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
+import { DocsService } from '@affine/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { preventDefault } from '@affine/core/utils';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import {
   DeleteIcon,
   DuplicateIcon,
@@ -25,38 +25,45 @@ import {
   LinkedPageIcon,
   OpenInNewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { DocFrameScope, DocInfoSheet } from '../../../doc-info';
+import { MobileNavigationMenuItems } from '../../menu-host';
 import { DocRenameSubMenu } from './dialog';
 
-export const useNavigationPanelDocNodeOperations = (
+export const useNavigationPanelDocNodeAddLinkedPage = (
   docId: string,
-  options: {
-    openNodeCollapsed: () => void;
-  }
+  openNodeCollapsed: () => void
 ) => {
-  const t = useI18n();
-  const {
-    workbenchService,
-    workspaceService,
-    docsService,
-    compatibleFavoriteItemsAdapter,
-  } = useServices({
+  const { docsService, workspaceService } = useServices({
     DocsService,
-    WorkbenchService,
     WorkspaceService,
-    CompatibleFavoriteItemsAdapter,
   });
+  const { createPage } = usePageHelper(
+    workspaceService.workspace.docCollection
+  );
+  return useAsyncCallback(async () => {
+    const newDoc = createPage();
+    await docsService.addLinkedDoc(docId, newDoc.id);
+    track.$.navigationPanel.docs.createDoc({ control: 'linkDoc' });
+    track.$.navigationPanel.docs.linkDoc({ control: 'createDoc' });
+    openNodeCollapsed();
+  }, [createPage, docId, docsService, openNodeCollapsed]);
+};
+
+export const useNavigationPanelDocNodeOperations = (docId: string) => {
+  const t = useI18n();
+  const { workbenchService, docsService, compatibleFavoriteItemsAdapter } =
+    useServices({
+      DocsService,
+      WorkbenchService,
+      CompatibleFavoriteItemsAdapter,
+    });
 
   const { openConfirmModal } = useConfirmModal();
 
   const docRecord = useLiveData(docsService.list.doc$(docId));
-
-  const { createPage } = usePageHelper(
-    workspaceService.workspace.docCollection
-  );
 
   const favorite = useLiveData(
     useMemo(() => {
@@ -64,7 +71,7 @@ export const useNavigationPanelDocNodeOperations = (
     }, [docId, compatibleFavoriteItemsAdapter])
   );
 
-  const { duplicate } = useCanvasMetaHelper();
+  const { duplicate } = useBlockSuiteMetaHelper();
   const handleDuplicate = useCallback(() => {
     duplicate(docId, true);
     track.$.navigationPanel.docs.createDoc();
@@ -75,21 +82,21 @@ export const useNavigationPanelDocNodeOperations = (
       return;
     }
     openConfirmModal({
-      title: t['com.nexio.moveToTrash.title'](),
-      description: t['com.nexio.moveToTrash.confirmModal.description']({
+      title: t['com.affine.moveToTrash.title'](),
+      description: t['com.affine.moveToTrash.confirmModal.description']({
         title: docRecord.title$.value,
       }),
-      confirmText: t['com.nexio.moveToTrash.confirmModal.confirm'](),
-      cancelText: t['com.nexio.moveToTrash.confirmModal.cancel'](),
+      confirmText: t['com.affine.moveToTrash.confirmModal.confirm'](),
+      cancelText: t['com.affine.moveToTrash.confirmModal.cancel'](),
       confirmButtonOptions: {
         variant: 'error',
       },
-      onConfirm() {
-        docRecord.moveToTrash();
+      async onConfirm() {
+        await docRecord.moveToTrash();
         track.$.navigationPanel.docs.deleteDoc({
           control: 'button',
         });
-        toast(t['com.nexio.toastMessage.movedTrash']());
+        toast(t['com.affine.toastMessage.movedTrash']());
       },
     });
   }, [docRecord, openConfirmModal, t]);
@@ -112,15 +119,6 @@ export const useNavigationPanelDocNodeOperations = (
     });
   }, [docId, workbenchService.workbench]);
 
-  const handleAddLinkedPage = useAsyncCallback(async () => {
-    const newDoc = createPage();
-    // TODO: handle timeout & error
-    await docsService.addLinkedDoc(docId, newDoc.id);
-    track.$.navigationPanel.docs.createDoc({ control: 'linkDoc' });
-    track.$.navigationPanel.docs.linkDoc({ control: 'createDoc' });
-    options.openNodeCollapsed();
-  }, [createPage, docId, docsService, options]);
-
   const handleToggleFavoriteDoc = useCallback(() => {
     compatibleFavoriteItemsAdapter.toggle(docId, 'doc');
     track.$.navigationPanel.organize.toggleFavorite({
@@ -139,7 +137,6 @@ export const useNavigationPanelDocNodeOperations = (
   return useMemo(
     () => ({
       favorite,
-      handleAddLinkedPage,
       handleDuplicate,
       handleToggleFavoriteDoc,
       handleOpenInSplitView,
@@ -149,7 +146,6 @@ export const useNavigationPanelDocNodeOperations = (
     }),
     [
       favorite,
-      handleAddLinkedPage,
       handleDuplicate,
       handleMoveToTrash,
       handleOpenInNewTab,
@@ -163,26 +159,28 @@ export const useNavigationPanelDocNodeOperations = (
 export const useNavigationPanelDocNodeOperationsMenu = (
   docId: string,
   options: {
-    openInfoModal: () => void;
-    openNodeCollapsed: () => void;
+    handleAddLinkedPage: () => void;
   }
-): NodeOperation[] => {
+): {
+  operations: NodeOperation[];
+  handleAddLinkedPage: () => void;
+} => {
   const t = useI18n();
+  const { handleAddLinkedPage } = options;
   const {
     favorite,
-    handleAddLinkedPage,
     handleDuplicate,
     handleToggleFavoriteDoc,
     handleOpenInNewTab,
     handleMoveToTrash,
     handleRename,
-  } = useNavigationPanelDocNodeOperations(docId, options);
+  } = useNavigationPanelDocNodeOperations(docId);
 
   const docService = useService(DocsService);
   const docRecord = useLiveData(docService.list.doc$(docId));
   const title = useLiveData(docRecord?.title$);
 
-  return useMemo(
+  const operations = useMemo(
     () => [
       {
         index: 10,
@@ -217,7 +215,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
               </DocFrameScope>
             }
           >
-            <span>{t['com.nexio.page-properties.page-info.view']()}</span>
+            <span>{t['com.affine.page-properties.page-info.view']()}</span>
           </MenuSub>
         ),
       },
@@ -231,7 +229,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleAddLinkedPage}
                 disabled={!canEdit}
               >
-                {t['com.nexio.page-operation.add-linked-page']()}
+                {t['com.affine.page-operation.add-linked-page']()}
               </MenuItem>
             )}
           </Guard>
@@ -241,7 +239,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 98,
         view: (
           <MenuItem prefixIcon={<DuplicateIcon />} onClick={handleDuplicate}>
-            {t['com.nexio.header.option.duplicate']()}
+            {t['com.affine.header.option.duplicate']()}
           </MenuItem>
         ),
       },
@@ -249,7 +247,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<OpenInNewIcon />} onClick={handleOpenInNewTab}>
-            {t['com.nexio.workbench.tab.page-menu-open']()}
+            {t['com.affine.workbench.tab.page-menu-open']()}
           </MenuItem>
         ),
       },
@@ -261,8 +259,8 @@ export const useNavigationPanelDocNodeOperationsMenu = (
             onClick={handleToggleFavoriteDoc}
           >
             {favorite
-              ? t['com.nexio.favoritePageOperation.remove']()
-              : t['com.nexio.favoritePageOperation.add']()}
+              ? t['com.affine.favoritePageOperation.remove']()
+              : t['com.affine.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -281,7 +279,7 @@ export const useNavigationPanelDocNodeOperationsMenu = (
                 onClick={handleMoveToTrash}
                 disabled={!canMoveToTrash}
               >
-                {t['com.nexio.moveToTrash.title']()}
+                {t['com.affine.moveToTrash.title']()}
               </MenuItem>
             )}
           </Guard>
@@ -301,4 +299,28 @@ export const useNavigationPanelDocNodeOperationsMenu = (
       title,
     ]
   );
+
+  return useMemo(
+    () => ({ operations, handleAddLinkedPage }),
+    [handleAddLinkedPage, operations]
+  );
+};
+
+export const NavigationPanelDocNodeMenu = ({
+  docId,
+  handleAddLinkedPage,
+  additionalOperations,
+}: {
+  docId: string;
+  handleAddLinkedPage: () => void;
+  additionalOperations?: NodeOperation[];
+}) => {
+  const { operations } = useNavigationPanelDocNodeOperationsMenu(docId, {
+    handleAddLinkedPage,
+  });
+  const allOperations = useMemo(
+    () => [...operations, ...(additionalOperations ?? [])],
+    [additionalOperations, operations]
+  );
+  return <MobileNavigationMenuItems operations={allOperations} />;
 };

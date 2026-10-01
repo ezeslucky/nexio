@@ -1,7 +1,9 @@
 import { AutoReconnectConnection } from '../../connection';
 import type {
   BlobRecord,
+  CrawlResult,
   DocClock,
+  DocIndexedClock,
   DocRecord,
   ListedBlobRecord,
 } from '../../storage';
@@ -11,6 +13,42 @@ export interface SqliteNativeDBOptions {
   readonly flavour: string;
   readonly type: SpaceType;
   readonly id: string;
+}
+
+export interface NativeIndexField {
+  field: string;
+  values: string[];
+}
+
+export interface NativeIndexQuery {
+  kind: 'match' | 'exists' | 'all' | 'boolean' | 'boost';
+  field?: string;
+  value?: string;
+  occur?: 'must' | 'should' | 'must_not';
+  clauses?: NativeIndexQuery[];
+  boost?: number;
+}
+
+export interface NativeIndexSearchOptions {
+  limit: number;
+  offset: number;
+  fields: string[];
+  highlights: string[];
+}
+
+export interface NativeIndexHit {
+  id: string;
+  score: number;
+  fields: NativeIndexField[];
+  highlights: {
+    field: string;
+    values: { valueIndex: number; spans: { start: number; end: number }[] }[];
+  }[];
+}
+
+export interface NativeIndexSearchResult {
+  total: number;
+  hits: NativeIndexHit[];
 }
 
 export interface NativeDBApis {
@@ -28,6 +66,18 @@ export interface NativeDBApis {
   deleteDoc: (id: string, docId: string) => Promise<void>;
   getDocClocks: (id: string, after?: Date | null) => Promise<DocClock[]>;
   getDocClock: (id: string, docId: string) => Promise<DocClock | null>;
+  getDocIndexedClock: (
+    id: string,
+    docId: string
+  ) => Promise<DocIndexedClock | null>;
+  setDocIndexedClock: (
+    id: string,
+    docId: string,
+    indexedClock: Date,
+    indexerVersion: number
+  ) => Promise<void>;
+  setDocIndexedClocks: (id: string, clocks: DocIndexedClock[]) => Promise<void>;
+  clearDocIndexedClock: (id: string, docId: string) => Promise<void>;
   getBlob: (id: string, key: string) => Promise<BlobRecord | null>;
   setBlob: (id: string, blob: BlobRecord) => Promise<void>;
   deleteBlob: (id: string, key: string, permanently: boolean) => Promise<void>;
@@ -81,6 +131,43 @@ export interface NativeDBApis {
     peer: string,
     blobId: string
   ) => Promise<Date | null>;
+  crawlDocData: (id: string, docId: string) => Promise<CrawlResult>;
+  indexUpsert: (
+    id: string,
+    table: string,
+    document: { id: string; fields: NativeIndexField[] }
+  ) => Promise<void>;
+  indexDelete: (id: string, table: string, docId: string) => Promise<void>;
+  indexSearch: (
+    id: string,
+    table: string,
+    query: NativeIndexQuery,
+    options: NativeIndexSearchOptions
+  ) => Promise<NativeIndexSearchResult>;
+  indexAggregate: (
+    id: string,
+    table: string,
+    query: NativeIndexQuery,
+    field: string,
+    limit: number,
+    offset: number,
+    hits?: NativeIndexSearchOptions
+  ) => Promise<{
+    total: number;
+    buckets: {
+      key: string;
+      count: number;
+      score: number;
+      hits: NativeIndexHit[];
+    }[];
+  }>;
+  indexDeleteByQuery: (
+    id: string,
+    table: string,
+    query: NativeIndexQuery
+  ) => Promise<number>;
+  indexFlush: (id: string) => Promise<void>;
+  indexVersion: () => Promise<number>;
 }
 
 type NativeDBApisWrapper = NativeDBApis extends infer APIs
@@ -88,7 +175,7 @@ type NativeDBApisWrapper = NativeDBApis extends infer APIs
       [K in keyof APIs]: APIs[K] extends (...args: any[]) => any
         ? Parameters<APIs[K]> extends [string, ...infer Rest]
           ? (...args: Rest) => ReturnType<APIs[K]>
-          : never
+          : (...args: Parameters<APIs[K]>) => ReturnType<APIs[K]>
         : never;
     }
   : never;

@@ -1,10 +1,10 @@
-import { notify } from '@nexio/component';
-import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
-import { SignInPageContainer } from '@nexio/component/auth-components';
-import { SignInPanel } from '@nexio/core/components/sign-in';
-import { SignInBackgroundArts } from '@nexio/core/components/sign-in/background-arts';
-import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
-import { useI18n } from '@nexio/i18n';
+import { notify } from '@affine/component';
+import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
+import { SignInPageContainer } from '@affine/component/auth-components';
+import { SignInPanel } from '@affine/core/components/sign-in';
+import { SignInBackgroundArts } from '@affine/core/components/sign-in/background-arts';
+import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
+import { useI18n } from '@affine/i18n';
 import { useCallback, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
@@ -30,7 +30,7 @@ export const SignIn = ({
   useEffect(() => {
     if (error) {
       notify.error({
-        title: t['com.nexio.auth.toast.title.failed'](),
+        title: t['com.affine.auth.toast.title.failed'](),
         message: error,
       });
     }
@@ -64,12 +64,13 @@ export const SignIn = ({
 
   return (
     <SignInPageContainer>
-      <div style={{ maxWidth: '400px', width: '100%' }}>
+      <div style={{ maxWidth: '400px', width: '100%', zIndex: 1 }}>
         <SignInPanel
           onSkip={handleClose}
           onAuthenticated={handleAuthenticated}
           initStep={initStep}
           server={server}
+          redirectUrl={redirectUrl ?? undefined}
         />
       </div>
     </SignInPageContainer>
@@ -78,9 +79,9 @@ export const SignIn = ({
 
 export const Component = () => {
   return (
-    <NexioOtherPageLayout>
+    <AffineOtherPageLayout>
       <SignInBackgroundArts />
       <SignIn />
-    </NexioOtherPageLayout>
+    </AffineOtherPageLayout>
   );
 };

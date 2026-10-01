@@ -1,44 +1,36 @@
-import { useI18n } from '@nexio/i18n';
+import { useI18n } from '@affine/i18n';
 
 import { SettingGroup } from '../group';
 import { RowLayout } from '../row.layout';
-import { DeleteAccount } from './delete-account';
-import { hotTag } from './index.css';
 
 export const OthersGroup = () => {
   const t = useI18n();
 
   return (
-    <SettingGroup title={t['com.nexio.mobile.setting.others.title']()}>
+    <SettingGroup title={t['com.affine.mobile.setting.others.title']()}>
       <RowLayout
-        label={
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            {t['com.nexio.mobile.setting.others.discord']()}
-            <div className={hotTag}>Hot</div>
-          </div>
-        }
+        label={t['com.affine.mobile.setting.others.discord']()}
         href="https://discord.com/invite/whd5mjYqVw"
       />
       <RowLayout
-        label={t['com.nexio.mobile.setting.others.github']()}
+        label={t['com.affine.mobile.setting.others.github']()}
         href="https://github.com/ezeslucky/nexio"
       />
 
       <RowLayout
-        label={t['com.nexio.mobile.setting.others.website']()}
-        href="https://nexio.pro/"
+        label={t['com.affine.mobile.setting.others.website']()}
+        href="https://affine.pro/"
       />
 
       <RowLayout
-        label={t['com.nexio.mobile.setting.others.privacy']()}
-        href="https://nexio.pro/privacy"
+        label={t['com.affine.mobile.setting.others.privacy']()}
+        href="https://affine.pro/privacy"
       />
 
       <RowLayout
-        label={t['com.nexio.mobile.setting.others.terms']()}
-        href="https://nexio.pro/terms"
+        label={t['com.affine.mobile.setting.others.terms']()}
+        href="https://affine.pro/terms"
       />
-      <DeleteAccount />
     </SettingGroup>
   );
 };

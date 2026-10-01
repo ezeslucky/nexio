@@ -1,15 +1,15 @@
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { DesktopApiService } from '@affine/core/modules/desktop-api';
 import {
   CacheStorage,
   GlobalCache,
   GlobalState,
-} from '@nexio/core/modules/storage';
+} from '@affine/core/modules/storage';
 import {
   ElectronGlobalCache,
   ElectronGlobalState,
-} from '@nexio/core/modules/storage/impls/electron';
-import { IDBGlobalState } from '@nexio/core/modules/storage/impls/storage';
-import type { Framework } from '@ezeslucky/infra';
+} from '@affine/core/modules/storage/impls/electron';
+import { IDBGlobalState } from '@affine/core/modules/storage/impls/storage';
+import type { Framework } from '@toeverything/infra';
 
 export function configureElectronStateStorageImpls(framework: Framework) {
   framework.impl(GlobalCache, ElectronGlobalCache, [DesktopApiService]);

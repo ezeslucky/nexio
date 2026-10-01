@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@nexio/error';
+import { UserFriendlyError } from '@affine/error';
 import {
   InformationFillDuotoneIcon,
   SingleSelectCheckSolidIcon,

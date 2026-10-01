@@ -1,5 +1,5 @@
 import { type Page } from '@playwright/test';
-import { AsyncLock } from '@ezeslucky/infra/utils';
+import { AsyncLock } from '@toeverything/infra/utils';
 
 const IS_MAC = process.platform === 'darwin';
 
@@ -114,6 +114,7 @@ export async function writeTextToClipboard(
   // paste the url
   await page.evaluate(
     async ([text]) => {
+      // oxlint-disable-next-line typescript/no-floating-promises
       navigator.clipboard.writeText('');
       const e = new ClipboardEvent('paste', {
         clipboardData: new DataTransfer(),

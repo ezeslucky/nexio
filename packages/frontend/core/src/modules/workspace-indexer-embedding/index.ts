@@ -1,9 +1,10 @@
-import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { WorkspaceServerService } from '@affine/core/modules/cloud';
+import { NbstoreService } from '@affine/core/modules/storage';
 import {
   WorkspaceScope,
   WorkspaceService,
-} from '@nexio/core/modules/workspace';
-import { type Framework } from '@ezeslucky/infra';
+} from '@affine/core/modules/workspace';
+import { type Framework } from '@toeverything/infra';
 
 import { AdditionalAttachments } from './entities/additional-attachments';
 import { EmbeddingEnabled } from './entities/embedding-enabled';
@@ -16,7 +17,7 @@ export function configureIndexerEmbeddingModule(framework: Framework) {
   framework
     .scope(WorkspaceScope)
     .service(EmbeddingService)
-    .store(EmbeddingStore, [WorkspaceServerService])
+    .store(EmbeddingStore, [WorkspaceServerService, NbstoreService])
     .entity(EmbeddingEnabled, [WorkspaceService, EmbeddingStore])
     .entity(AdditionalAttachments, [WorkspaceService, EmbeddingStore])
     .entity(IgnoredDocs, [WorkspaceService, EmbeddingStore])

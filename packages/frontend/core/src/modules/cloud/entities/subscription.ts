@@ -2,8 +2,7 @@ import {
   SubscriptionPlan,
   type SubscriptionQuery,
   SubscriptionRecurring,
-  SubscriptionVariant,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -14,7 +13,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { map, tap } from 'rxjs';
 
 import type { AuthService } from '../services/auth';
@@ -43,12 +42,6 @@ export class Subscription extends Entity {
   );
   isBeliever$ = this.pro$.map(
     sub => sub?.recurring === SubscriptionRecurring.Lifetime
-  );
-  isOnetimePro$ = this.pro$.map(
-    sub => sub?.variant === SubscriptionVariant.Onetime
-  );
-  isOnetimeAI$ = this.ai$.map(
-    sub => sub?.variant === SubscriptionVariant.Onetime
   );
 
   constructor(

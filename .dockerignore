@@ -1,23 +1,26 @@
-node_modules
-**/node_modules
 .git
+.github/**/*.md
 .gitignore
-.next
-dist
-build
-out
-coverage
-.turbo
-.cache
-*.log
-*.tsbuildinfo
-.env
-.env.*
-.vscode
-.idea
 
+# Local dependency/build artifacts
+/node_modules
+/target
 
-target
-**/target
-.cargo
-*.node
+# Yarn v4 artifacts (not needed for image packaging)
+/.yarn/cache
+/.yarn/unplugged
+/.yarn/install-state.gz
+/.pnp.*
+
+# Test artifacts
+/test-results
+/playwright-report
+/coverage
+/.coverage
+
+# OS noise
+.DS_Store
+
+# Sourcemaps (keep server sourcemap for backend stacktraces)
+**/*.map
+!packages/backend/server/dist/main.js.map

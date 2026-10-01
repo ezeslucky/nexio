@@ -1,7 +1,7 @@
 import {
   type DocPermissionActions,
   type WorkspacePermissionActions,
-} from '@nexio/core/modules/permissions';
+} from '@affine/core/modules/permissions';
 import type React from 'react';
 
 import { useGuard } from './use-guard';

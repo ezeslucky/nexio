@@ -1,14 +1,13 @@
 {
-  "name": "@nexio/monorepo",
-  "version": "0.22.4",
+  "name": "@affine/monorepo",
+  "version": "0.27.5",
   "private": true,
-  "author": "ezeslucky",
+  "author": "toeverything",
   "license": "MIT",
   "workspaces": [
     ".",
-    "canvas/**/*",
+    "blocksuite/**/*",
     "packages/*/*",
-    "packages/common/y-octo/node",
     "packages/frontend/apps/*",
     "tools/*",
     "docs/reference",
@@ -16,32 +15,36 @@
     "tests/*"
   ],
   "engines": {
-    "node": "<23.0.0"
+    "node": ">=22.12.0 <23.0.0"
   },
   "scripts": {
-    "nexio": "r nexio.ts",
-    "af": "r nexio.ts",
-    "dev": "yarn nexio dev",
-    "build": "yarn nexio build",
-    "build:all": "yarn nexio build -p @nexio/server --deps && yarn nexio build -p @nexio/web && yarn nexio build -p @nexio/admin",
-    "lint:eslint": "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" eslint --report-unused-disable-directives-severity=off . --cache",
-    "lint:eslint:fix": "yarn lint:eslint --fix --fix-type problem,suggestion,layout",
-    "lint:prettier": "prettier --ignore-unknown --cache --check .",
-    "lint:prettier:fix": "prettier --ignore-unknown --cache --write .",
-    "lint:ox": "oxlint -c oxlint.json --deny-warnings",
-    "lint": "yarn lint:eslint && yarn lint:prettier",
-    "lint:fix": "yarn lint:eslint:fix && yarn lint:prettier:fix",
+    "affine": "r affine.ts",
+    "af": "r affine.ts",
+    "dev": "yarn affine dev -p web",
+    "dev:web": "yarn affine dev -p web",
+    "dev:server": "yarn affine dev -p server",
+    "dev:admin": "yarn affine dev -p admin",
+    "build": "yarn affine build",
+    "build:all": "yarn affine build -p server --deps && yarn affine build -p web && yarn affine build -p admin",
+    "build:server": "yarn affine build -p server --deps",
+    "build:web": "yarn affine build -p web",
+    "build:admin": "yarn affine build -p admin",
+    "lint:format": "oxfmt --check .",
+    "lint:format:fix": "oxfmt --write .",
+    "lint:ox": "oxlint --deny-warnings",
+    "lint:ox:fix": "yarn lint:ox --fix",
+    "lint": "yarn lint:ox && yarn lint:format",
+    "lint:fix": "yarn lint:ox:fix && yarn lint:format:fix",
     "test": "vitest --run",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc -b tsconfig.json --verbose",
-    "postinstall": "yarn nexio init && yarn husky"
+    "postinstall": "yarn affine init && yarn husky"
   },
   "lint-staged": {
-    "*": "prettier --write --ignore-unknown --cache",
+    "*": "oxfmt --write --no-error-on-unmatched-pattern",
     "*.{ts,tsx,mjs,js,jsx}": [
-      "prettier --ignore-unknown --write",
-      "cross-env NODE_OPTIONS=\"--max-old-space-size=8192\" eslint --cache --fix"
+      "oxlint --fix --no-error-on-unmatched-pattern"
     ],
     "*.toml": [
       "taplo format"
@@ -50,48 +53,87 @@
       "cargo fmt --"
     ]
   },
+  "dependenciesMeta": {
+    "@apollo/protobufjs": {
+      "built": false
+    },
+    "@prisma/client": {
+      "built": true
+    },
+    "@prisma/engines": {
+      "built": true
+    },
+    "@scarf/scarf": {
+      "built": false
+    },
+    "@sentry/cli": {
+      "built": true
+    },
+    "@swc/core": {
+      "built": false
+    },
+    "core-js": {
+      "built": false
+    },
+    "electron": {
+      "built": true
+    },
+    "electron-winstaller": {
+      "built": true
+    },
+    "esbuild": {
+      "built": true
+    },
+    "msgpackr-extract": {
+      "built": false
+    },
+    "msw": {
+      "built": false
+    },
+    "prisma": {
+      "built": false
+    },
+    "protobufjs": {
+      "built": false
+    },
+    "unrs-resolver": {
+      "built": false
+    }
+  },
   "devDependencies": {
-    "@capacitor/cli": "^7.0.0",
-    "@eslint/js": "^9.16.0",
-    "@ezeslucky/infra": "workspace:*",
-    "@faker-js/faker": "^10.0.0",
+    "@affine-tools/cli": "workspace:*",
+    "@capacitor/cli": "^8.4.2",
+    "@faker-js/faker": "^10.1.0",
     "@istanbuljs/schema": "^0.1.3",
-    "@magic-works/i18n-codegen": "^0.6.1",
-    "@nexio-tools/cli": "workspace:*",
-    "@playwright/test": "=1.52.0",
-    "@smarttools/eslint-plugin-rxjs": "^1.0.8",
+    "@playwright/test": "=1.58.2",
     "@taplo/cli": "^0.7.0",
-    "@types/eslint": "^9.6.1",
+    "@toeverything/infra": "workspace:*",
     "@types/node": "^22.0.0",
-    "@typescript-eslint/parser": "^8.18.0",
+    "@typescript/native": "npm:typescript@7.0.2",
     "@vanilla-extract/vite-plugin": "^5.0.0",
-    "@vitest/browser": "3.1.3",
-    "@vitest/coverage-istanbul": "3.1.3",
-    "@vitest/ui": "3.1.3",
-    "cross-env": "^7.0.3",
-    "electron": "^35.0.0",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^10.0.0",
-    "eslint-import-resolver-typescript": "^4.0.0",
-    "eslint-plugin-import-x": "^4.5.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.1.0",
+    "@vitest/browser": "^4.1.10",
+    "@vitest/coverage-istanbul": "^4.1.10",
+    "@vitest/ui": "^4.1.10",
+    "electron": "^39.0.0",
+    "eslint": "9.39.2",
+    "eslint-plugin-import-x": "^4.16.1",
+    "eslint-plugin-lit": "^2.2.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-sonarjs": "^4.0.3",
-    "eslint-plugin-unicorn": "^59.0.0",
+    "eslint-plugin-sonarjs": "^4.0.2",
     "happy-dom": "^20.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.0.0",
-    "msw": "^2.6.8",
-    "oxlint": "~1.18.0",
-    "prettier": "^3.4.2",
-    "semver": "^7.6.3",
-    "serve": "^14.2.4",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.18.0",
-    "unplugin-swc": "^1.5.1",
-    "vite": "^7.0.0",
-    "vitest": "3.1.3"
+    "msw": "^2.13.2",
+    "oxfmt": "0.63.0",
+    "oxlint": "1.78.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "semver": "^7.7.3",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "unplugin-swc": "^1.5.9",
+    "vite": "^7.3.5",
+    "vitest": "^4.1.10"
   },
   "packageManager": "yarn@4.9.1",
   "resolutions": {
@@ -167,13 +209,27 @@
     "typedarray": "npm:@nolyfill/typedarray@^1",
     "macos-alias": "npm:@napi-rs/macos-alias@0.0.4",
     "fs-xattr": "npm:@napi-rs/xattr@latest",
+    "@opentelemetry/core": "^2.10.0",
+    "ioredis": "^5.11.1",
+    "js-yaml@npm:^3.13.1": "^3.15.1",
+    "js-yaml@npm:^3.14.1": "^3.15.1",
+    "js-yaml@npm:^4.1.0": "^5.0.0",
+    "js-yaml@npm:4.1.1": "^5.0.0",
+    "js-yaml@npm:5.2.1": "^5.2.3",
+    "multer": "^2.2.0",
+    "protobufjs": "^7.6.4",
+    "tar": "^7.5.21",
+    "tmp": "^0.2.7",
+    "ws@npm:^8.18.0": "^8.21.0",
+    "ws@npm:^8.18.3": "^8.21.0",
+    "ws@npm:^8.19.0": "^8.21.0",
     "decode-named-character-reference@npm:^1.0.0": "patch:decode-named-character-reference@npm%3A1.0.2#~/.yarn/patches/decode-named-character-reference-npm-1.0.2-db17a755fd.patch",
     "@atlaskit/pragmatic-drag-and-drop": "patch:@atlaskit/pragmatic-drag-and-drop@npm%3A1.4.0#~/.yarn/patches/@atlaskit-pragmatic-drag-and-drop-npm-1.4.0-75c45f52d3.patch",
+    "@atlaskit/pragmatic-drag-and-drop-auto-scroll": "3.0.0",
+    "@atlaskit/pragmatic-drag-and-drop-hitbox": "2.0.0",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "animejs": "4.0.2",
     "yjs": "patch:yjs@npm%3A13.6.21#~/.yarn/patches/yjs-npm-13.6.21-c9f1f3397c.patch"
-  },
-  "dependencies": {
-    "@as-integrations/express5": "^1.1.2",
-    "react": "^19.2.4",
-    "react-dom": "19.2.4"
   }
 }

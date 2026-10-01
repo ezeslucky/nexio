@@ -1,9 +1,12 @@
 import type { AppAdapter } from 'electron-updater/out/AppAdapter';
 
-
+/**
+ * For testing and same as:
+ * https://github.com/electron-userland/electron-builder/blob/master/packages/electron-updater/src/ElectronAppAdapter.ts
+ */
 export class MockedAppAdapter implements AppAdapter {
   version: string;
-  name = 'NEXIO-testing';
+  name = 'AFFiNE-testing';
   isPackaged = true;
   appUpdateConfigPath = '';
   userDataPath = '';

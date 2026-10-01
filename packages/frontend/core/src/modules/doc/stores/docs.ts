@@ -1,15 +1,15 @@
-import type { DocMode } from '@canvas/nexio/model';
-import type { DocMeta } from '@canvas/nexio/store';
+import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMeta } from '@blocksuite/affine/store';
 import {
   Store,
   yjsGetPath,
   yjsObserve,
   yjsObserveDeep,
   yjsObservePath,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, switchMap } from 'rxjs';
-import { Array as YArray, Map as YMap, transact } from 'yjs';
+import { applyUpdate, Array as YArray, Map as YMap, transact } from 'yjs';
 
 import type { WorkspaceService } from '../../workspace';
 import type { DocPropertiesStore } from './doc-properties';
@@ -22,7 +22,7 @@ export class DocsStore extends Store {
     super();
   }
 
-  getCanvasDoc(id: string) {
+  getBlockSuiteDoc(id: string) {
     return (
       this.workspaceService.workspace.docCollection
         .getDoc(id)
@@ -30,7 +30,7 @@ export class DocsStore extends Store {
     );
   }
 
-  getCanvasCollection() {
+  getBlocksuiteCollection() {
     return this.workspaceService.workspace.docCollection;
   }
 
@@ -246,6 +246,31 @@ export class DocsStore extends Store {
 
   setDocMeta(id: string, meta: Partial<DocMeta>) {
     this.workspaceService.workspace.docCollection.meta.setDocMeta(id, meta);
+  }
+
+  async applyDocLifecycle(
+    id: string,
+    lifecycle: 'trash' | 'restore' | 'delete'
+  ) {
+    const workspace = this.workspaceService.workspace;
+    if (workspace.flavour === 'local') {
+      if (lifecycle === 'delete') {
+        workspace.docCollection.removeDoc(id);
+      } else {
+        this.setDocMeta(
+          id,
+          lifecycle === 'trash'
+            ? { trash: true, trashDate: Date.now() }
+            : { trash: false, trashDate: undefined }
+        );
+      }
+      return;
+    }
+    const result = await workspace.engine.doc.applyDocLifecycle(id, lifecycle);
+    applyUpdate(workspace.rootYDoc, result.rootUpdate, 'server-lifecycle');
+    if (lifecycle === 'delete') {
+      await workspace.engine.doc.storage.deleteDoc(id);
+    }
   }
 
   setDocPrimaryModeSetting(id: string, mode: DocMode) {

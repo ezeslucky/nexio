@@ -2,8 +2,8 @@ import {
   type Workspace,
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workspace';
+import { useService } from '@toeverything/infra';
 import { useEffect, useState } from 'react';
 
 /**

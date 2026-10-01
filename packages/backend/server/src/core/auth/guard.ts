@@ -7,62 +7,65 @@ import type {
 import { Injectable, SetMetadata } from '@nestjs/common';
 import { ModuleRef, Reflector } from '@nestjs/core';
 import type { Request, Response } from 'express';
+import semver from 'semver';
 import { Socket } from 'socket.io';
 
 import {
-  AccessDenied,
   AuthenticationRequired,
+  checkCanaryDateClientVersion,
   Config,
-  CryptoHelper,
+  getClientVersionFromRequest,
   getRequestResponseFromContext,
   parseCookies,
+  UnsupportedClientVersion,
 } from '../../base';
 import { WEBSOCKET_OPTIONS } from '../../base/websocket';
+import { AccessTokenService, SessionAccessTokenError } from './access-token';
+import { AuthSessionService } from './auth-session';
+import { extractTokenFromHeader } from './input';
 import { AuthService } from './service';
-import { Session, TokenSession } from './session';
+import { AuthSessionPrincipal, Session } from './session';
+import { AuthSessionHttpError } from './session-exchange';
+import { isLikelyJwt } from './token';
 
 const PUBLIC_ENTRYPOINT_SYMBOL = Symbol('public');
-const INTERNAL_ENTRYPOINT_SYMBOL = Symbol('internal');
+
+type AuthenticatedRequestSession =
+  | { type: 'jwt'; session: Session }
+  | { type: 'cookie_session'; session: Session };
 
 @Injectable()
 export class AuthGuard implements CanActivate, OnModuleInit {
   private auth!: AuthService;
+  private accessTokens!: AccessTokenService;
+  private authSessions!: AuthSessionService;
+  private readonly cachedVersionRange = new Map<string, semver.Range | null>();
+  private static readonly HARD_REQUIRED_VERSION = '>=0.25.0';
+  private static readonly CANARY_REQUIRED_VERSION = 'canary (within 2 months)';
 
   constructor(
-    private readonly crypto: CryptoHelper,
+    private readonly config: Config,
     private readonly ref: ModuleRef,
     private readonly reflector: Reflector
   ) {}
 
   onModuleInit() {
     this.auth = this.ref.get(AuthService, { strict: false });
+    this.accessTokens = this.ref.get(AccessTokenService, { strict: false });
+    this.authSessions = this.ref.get(AuthSessionService, { strict: false });
   }
 
   async canActivate(context: ExecutionContext) {
     const { req, res } = getRequestResponseFromContext(context);
     const clazz = context.getClass();
     const handler = context.getHandler();
-    // rpc request is internal
-    const isInternal = this.reflector.getAllAndOverride<boolean>(
-      INTERNAL_ENTRYPOINT_SYMBOL,
-      [clazz, handler]
-    );
-    if (isInternal) {
-      // check access token: data,signature
-      const accessToken = req.get('x-access-token');
-      if (accessToken && this.crypto.verify(accessToken)) {
-        return true;
-      }
-      throw new AccessDenied('Invalid internal request');
-    }
-
-    const authedUser = await this.signIn(req, res);
-
     // api is public
     const isPublic = this.reflector.getAllAndOverride<boolean>(
       PUBLIC_ENTRYPOINT_SYMBOL,
       [clazz, handler]
     );
+
+    const authedUser = await this.signIn(req, res, isPublic);
 
     if (isPublic) {
       return true;
@@ -77,36 +80,92 @@ export class AuthGuard implements CanActivate, OnModuleInit {
 
   async signIn(
     req: Request,
-    res?: Response
-  ): Promise<Session | TokenSession | null> {
-    const userSession = await this.signInWithCookie(req, res);
-    if (userSession) {
-      return userSession;
+    res?: Response,
+    isPublic = false
+  ): Promise<Session | null> {
+    const result = await this.resolveRequestSession(req, res, isPublic);
+    return result?.session ?? null;
+  }
+
+  private async resolveRequestSession(
+    req: Request,
+    res?: Response,
+    isPublic = false
+  ): Promise<AuthenticatedRequestSession | null> {
+    const bearer = req.headers.authorization
+      ? extractTokenFromHeader(req.headers.authorization)
+      : undefined;
+    if (bearer && isLikelyJwt(bearer)) {
+      try {
+        const session = await this.signInWithJwt(req, bearer, res, isPublic);
+        return session ? { type: 'jwt', session } : null;
+      } catch (err) {
+        if (err instanceof SessionAccessTokenError) {
+          throw new AuthSessionHttpError(err.code);
+        }
+        throw err;
+      }
     }
 
-    return await this.signInWithAccessToken(req);
+    const session = await this.signInWithCookie(req, res, isPublic);
+    return session ? { type: 'cookie_session', session } : null;
+  }
+
+  async signInWithJwt(
+    req: Request,
+    token: string,
+    res?: Response,
+    isPublic = false
+  ): Promise<Session | null> {
+    if (req.session && req.authType === 'jwt') return req.session;
+    const session = await this.accessTokens.verify(token);
+    const versionAllowed = await this.checkUserSessionClientVersion(
+      req,
+      session,
+      res,
+      isPublic
+    );
+    if (!versionAllowed) return null;
+    req.session = session;
+    req.authType = 'jwt';
+    return req.session;
   }
 
   async signInWithCookie(
     req: Request,
-    res?: Response
+    res?: Response,
+    isPublic = false
   ): Promise<Session | null> {
-    if (req.session) {
-      return req.session;
-    }
+    if (req.session) return req.session;
 
     // TODO(@forehalo): a cache for user session
     const userSession = await this.auth.getUserSessionFromRequest(req, res);
 
     if (userSession) {
-      if (res) {
-        await this.auth.refreshUserSessionIfNeeded(res, userSession.session);
+      const headerClientVersion = getClientVersionFromRequest(req);
+      req.session = { ...userSession.session, user: userSession.user };
+
+      const versionAllowed = await this.checkUserSessionClientVersion(
+        req,
+        req.session,
+        res,
+        isPublic
+      );
+      if (!versionAllowed) {
+        req.session = undefined;
+        return null;
       }
 
-      req.session = {
-        ...userSession.session,
-        user: userSession.user,
-      };
+      if (res) {
+        await this.auth.refreshUserSessionIfNeeded(
+          res,
+          userSession.session,
+          undefined,
+          headerClientVersion
+        );
+      }
+
+      req.authType = 'session';
 
       return req.session;
     }
@@ -114,23 +173,112 @@ export class AuthGuard implements CanActivate, OnModuleInit {
     return null;
   }
 
-  async signInWithAccessToken(req: Request): Promise<TokenSession | null> {
-    if (req.token) {
-      return req.token;
+  private async checkUserSessionClientVersion(
+    req: Request,
+    session: Session,
+    res?: Response,
+    isPublic = false
+  ) {
+    if (!this.config.client.versionControl.enabled) {
+      return true;
     }
 
-    const tokenSession = await this.auth.getTokenSessionFromRequest(req);
+    const headerClientVersion = getClientVersionFromRequest(req);
+    const clientVersion =
+      headerClientVersion ??
+      session.refreshClientVersion ??
+      session.signInClientVersion;
 
-    if (tokenSession) {
-      req.token = {
-        ...tokenSession.token,
-        user: tokenSession.user,
-      };
-
-      return req.token;
+    const versionCheckResult = this.checkClientVersion(clientVersion);
+    if (versionCheckResult.ok) {
+      return true;
     }
 
-    return null;
+    const authSessionId = (session as Partial<AuthSessionPrincipal>)
+      .authSessionId;
+    if (authSessionId) {
+      await this.authSessions.revoke(
+        authSessionId,
+        'unsupported_client_version',
+        session.user.id
+      );
+    } else {
+      await this.auth.signOut(session.sessionId);
+    }
+    if (res && !authSessionId) {
+      await this.auth.refreshCookies(res, session.sessionId);
+    }
+
+    if (isPublic && !authSessionId) {
+      return false;
+    }
+
+    throw new UnsupportedClientVersion({
+      clientVersion: clientVersion ?? 'unset_or_invalid',
+      requiredVersion: versionCheckResult.requiredVersion,
+    });
+  }
+
+  private getVersionRange(versionRange: string): semver.Range | null {
+    if (this.cachedVersionRange.has(versionRange)) {
+      // oxlint-disable-next-line typescript/no-non-null-assertion
+      return this.cachedVersionRange.get(versionRange)!;
+    }
+
+    let range: semver.Range | null = null;
+    try {
+      range = new semver.Range(versionRange, { loose: false });
+      if (!semver.validRange(range)) {
+        range = null;
+      }
+    } catch {
+      range = null;
+    }
+
+    this.cachedVersionRange.set(versionRange, range);
+    return range;
+  }
+
+  private checkClientVersion(
+    clientVersion?: string | null
+  ): { ok: true } | { ok: false; requiredVersion: string } {
+    const requiredVersion = this.config.client.versionControl.requiredVersion;
+
+    if (clientVersion && env.namespaces.canary) {
+      const canaryCheck = checkCanaryDateClientVersion(clientVersion);
+      if (canaryCheck.matched) {
+        return canaryCheck.allowed
+          ? { ok: true }
+          : { ok: false, requiredVersion: AuthGuard.CANARY_REQUIRED_VERSION };
+      }
+    }
+
+    const configRange = this.getVersionRange(requiredVersion);
+    if (
+      configRange &&
+      (!clientVersion ||
+        !semver.satisfies(clientVersion, configRange, {
+          includePrerelease: true,
+        }))
+    ) {
+      return { ok: false, requiredVersion };
+    }
+
+    const hardRange = this.getVersionRange(AuthGuard.HARD_REQUIRED_VERSION);
+    if (!hardRange) {
+      return { ok: true };
+    }
+
+    if (
+      !clientVersion ||
+      !semver.satisfies(clientVersion, hardRange, {
+        includePrerelease: true,
+      })
+    ) {
+      return { ok: false, requiredVersion: AuthGuard.HARD_REQUIRED_VERSION };
+    }
+
+    return { ok: true };
   }
 }
 
@@ -138,11 +286,6 @@ export class AuthGuard implements CanActivate, OnModuleInit {
  * Mark api to be public accessible
  */
 export const Public = () => SetMetadata(PUBLIC_ENTRYPOINT_SYMBOL, true);
-
-/**
- * Mark rpc api to be internal accessible
- */
-export const Internal = () => SetMetadata(INTERNAL_ENTRYPOINT_SYMBOL, true);
 
 export const AuthWebsocketOptionsProvider: FactoryProvider = {
   provide: WEBSOCKET_OPTIONS,
@@ -156,13 +299,17 @@ export const AuthWebsocketOptionsProvider: FactoryProvider = {
         // compatibility with websocket request
         parseCookies(upgradeReq);
 
-        upgradeReq.cookies = {
-          [AuthService.sessionCookieName]: handshake.auth.token,
-          [AuthService.userCookieName]: handshake.auth.userId,
-          ...upgradeReq.cookies,
-        };
+        if (handshake.auth.tokenType === 'jwt') {
+          upgradeReq.headers.authorization = `Bearer ${handshake.auth.token}`;
+        }
 
-        const session = await guard.signIn(upgradeReq);
+        const session = await (async () => {
+          try {
+            return await guard.signIn(upgradeReq);
+          } catch {
+            return null;
+          }
+        })();
 
         return !!session;
       },

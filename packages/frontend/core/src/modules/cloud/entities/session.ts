@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@nexio/error';
+import { UserFriendlyError } from '@affine/error';
 import {
   backoffRetry,
   effect,
@@ -8,7 +8,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { tap } from 'rxjs';
 
@@ -92,6 +92,14 @@ export class AuthSession extends Entity {
       )
     )
   );
+
+  async revalidateOnce() {
+    const sessionInfo = await this.getSession();
+    if (!isEqual(this.store.getCachedAuthSession(), sessionInfo)) {
+      this.store.setCachedAuthSession(sessionInfo);
+    }
+    return sessionInfo;
+  }
 
   private async getSession(): Promise<AuthSessionInfo | null> {
     try {

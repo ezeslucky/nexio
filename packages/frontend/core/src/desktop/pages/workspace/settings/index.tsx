@@ -1,7 +1,7 @@
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useService } from '@ezeslucky/infra';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import type { SettingTab } from '@affine/core/modules/dialogs/constant';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { useService } from '@toeverything/infra';
 import { useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -12,6 +12,7 @@ export const Component = () => {
 
   const [searchParams] = useSearchParams();
   const tab = searchParams.get('tab') ?? undefined;
+  const scrollAnchor = searchParams.get('scrollAnchor') ?? undefined;
 
   const isOpened = useRef(false);
 
@@ -23,7 +24,8 @@ export const Component = () => {
     workbench.openAll();
     workspaceDialogService.open('setting', {
       activeTab: tab as SettingTab,
+      scrollAnchor,
     });
-  }, [tab, workbench, workspaceDialogService]);
+  }, [scrollAnchor, tab, workbench, workspaceDialogService]);
   return null;
 };

@@ -1,28 +1,28 @@
-import { DNDContext } from '@nexio/component';
-import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
-import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
+import { DNDContext } from '@affine/component';
+import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
+import { workbenchRoutes } from '@affine/core/desktop/workbench-router';
 import {
   DefaultServerService,
   ServersService,
-} from '@nexio/core/modules/cloud';
-import { GlobalDialogService } from '@nexio/core/modules/dialogs';
-import { DndService } from '@nexio/core/modules/dnd/services';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { OpenInAppGuard } from '@nexio/core/modules/open-in-app';
+} from '@affine/core/modules/cloud';
+import { GlobalDialogService } from '@affine/core/modules/dialogs';
+import { DndService } from '@affine/core/modules/dnd/services';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { OpenInAppGuard } from '@affine/core/modules/open-in-app';
 import {
-  getNEXIOWorkspaceSchema,
+  getAFFiNEWorkspaceSchema,
   type Workspace,
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
+} from '@affine/core/modules/workspace';
+import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
 import {
   FrameworkScope,
   LiveData,
   useLiveData,
   useService,
   useServices,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -34,7 +34,7 @@ import {
 import { map } from 'rxjs';
 import * as _Y from 'yjs';
 
-import { NexioErrorBoundary } from '../../../components/nexio/nexio-error-boundary';
+import { AffineErrorBoundary } from '../../../components/affine/affine-error-boundary';
 import { WorkbenchRoot } from '../../../modules/workbench';
 import { AppContainer } from '../../components/app-container';
 import { PageNotFound } from '../404';
@@ -54,7 +54,7 @@ declare global {
   // oxlint-disable-next-line no-var
   var Y: typeof _Y;
   interface WindowEventMap {
-    'nexio:workspace:change': CustomEvent<{ id: string }>;
+    'affine:workspace:change': CustomEvent<{ id: string }>;
   }
 }
 
@@ -207,9 +207,9 @@ export const Component = (): ReactElement => {
     }
     return (
       <FrameworkScope scope={server?.scope}>
-        <NexioOtherPageLayout>
+        <AffineOtherPageLayout>
           <PageNotFound noPermission />
-        </NexioOtherPageLayout>
+        </AffineOtherPageLayout>
       </FrameworkScope>
     );
   }
@@ -253,28 +253,26 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
     };
   }, [meta, workspacesService]);
 
-  const isRootDocReady =
-    useLiveData(
-      useMemo(
-        () =>
-          workspace
-            ? LiveData.from(
-                workspace.engine.doc
-                  .docState$(workspace.id)
-                  .pipe(map(v => v.ready)),
-                false
-              )
-            : null,
-        [workspace]
-      )
-    ) ?? false;
+  const rootDocReady$ = useMemo(
+    () =>
+      workspace
+        ? LiveData.from(
+            workspace.engine.doc
+              .docState$(workspace.id)
+              .pipe(map(v => v.ready)),
+            false
+          )
+        : null,
+    [workspace]
+  );
+  const isRootDocReady = useLiveData(rootDocReady$) ?? false;
 
   useEffect(() => {
     if (workspace) {
       // for debug purpose
       window.currentWorkspace = workspace ?? undefined;
       window.dispatchEvent(
-        new CustomEvent('nexio:workspace:change', {
+        new CustomEvent('affine:workspace:change', {
           detail: {
             id: workspace.id,
           },
@@ -283,7 +281,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
       window.exportWorkspaceSnapshot = async (docs?: string[]) => {
         await ZipTransformer.exportDocs(
           workspace.docCollection,
-          getNEXIOWorkspaceSchema(),
+          getAFFiNEWorkspaceSchema(),
           Array.from(workspace.docCollection.docs.values())
             .filter(doc => (docs ? docs.includes(doc.id) : true))
             .map(doc => doc.getStore())
@@ -299,7 +297,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
             const blob = new Blob([file], { type: 'application/zip' });
             const newDocs = await ZipTransformer.importDocs(
               workspace.docCollection,
-              getNEXIOWorkspaceSchema(),
+              getAFFiNEWorkspaceSchema(),
               blob
             );
             console.log(
@@ -349,11 +347,11 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
     <FrameworkScope scope={workspace.scope}>
       <DNDContextProvider>
         <OpenInAppGuard>
-          <NexioErrorBoundary height="100vh">
+          <AffineErrorBoundary height="100vh">
             <WorkspaceLayout>
               <WorkbenchRoot />
             </WorkspaceLayout>
-          </NexioErrorBoundary>
+          </AffineErrorBoundary>
         </OpenInAppGuard>
       </DNDContextProvider>
     </FrameworkScope>

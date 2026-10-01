@@ -18,17 +18,17 @@ const webDir = path.join(
   'apps',
   'electron-renderer'
 );
-const nexioWebOutDir = path.join(webDir, 'dist');
-const publicNexioOutDir = path.join(publicDistDir, `web-static`);
+const affineWebOutDir = path.join(webDir, 'dist');
+const publicAffineOutDir = path.join(publicDistDir, `web-static`);
 const releaseVersionEnv = process.env.RELEASE_VERSION || '';
 
 console.log('build with following variables', {
   repoRootDir,
   electronRootDir,
   publicDistDir,
-  nexioSrcDir: webDir,
-  nexioSrcOutDir: nexioWebOutDir,
-  publicNexioOutDir,
+  affineSrcDir: webDir,
+  affineSrcOutDir: affineWebOutDir,
+  publicAffineOutDir,
   releaseVersionEnv,
 });
 
@@ -45,21 +45,21 @@ const cwd = repoRootDir;
 
 // step 1: build web dist
 if (!process.env.SKIP_WEB_BUILD) {
-  spawnSync('yarn', ['nexio', '@nexio/electron-renderer', 'build'], {
+  spawnSync('yarn', ['affine', '@affine/electron-renderer', 'build'], {
     stdio: 'inherit',
     env: process.env,
     cwd,
     shell: true,
   });
 
-  spawnSync('yarn', ['nexio', '@nexio/electron', 'build'], {
+  spawnSync('yarn', ['affine', '@affine/electron', 'build'], {
     stdio: 'inherit',
     env: process.env,
     cwd,
     shell: true,
   });
 
-  await fs.move(nexioWebOutDir, publicNexioOutDir, { overwrite: true });
+  await fs.move(affineWebOutDir, publicAffineOutDir, { overwrite: true });
 }
 
 // step 2: update app-updater.yml content with build type in resources folder
@@ -67,8 +67,8 @@ if (process.env.BUILD_TYPE === 'internal') {
   const appUpdaterYml = path.join(publicDistDir, 'app-update.yml');
   const appUpdaterYmlContent = await fs.readFile(appUpdaterYml, 'utf-8');
   const newAppUpdaterYmlContent = appUpdaterYmlContent.replace(
-    'NEXIO',
-    'NEXIO-Releases'
+    'AFFiNE',
+    'AFFiNE-Releases'
   );
   await fs.writeFile(appUpdaterYml, newAppUpdaterYmlContent);
 }

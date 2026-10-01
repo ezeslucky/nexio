@@ -21,7 +21,7 @@ const {
   PREV_VERSION,
   DEPLOYMENT,
   FLAVOR,
-  CANVAS_REPO_PATH,
+  BLOCKSUITE_REPO_PATH,
 } = process.env;
 
 const slack = new WebClient(SLACK_BOT_TOKEN);
@@ -112,12 +112,12 @@ async function getChangeLog(repo, previousCommit, currentCommit) {
     .replaceAll('</samp>', '');
 }
 
-let canvasChangelog = '';
+let blockSuiteChangelog = '';
 const pkgJsonPath = 'packages/frontend/core/package.json';
 
 const content = await readFile(join(rootDir, pkgJsonPath), 'utf8');
 const { dependencies } = JSON.parse(content);
-const canvasVersion = dependencies['@canvas/nexio'];
+const blocksuiteVersion = dependencies['@blocksuite/affine'];
 
 const prevCommit = repo.findCommit(PREV_VERSION);
 
@@ -136,20 +136,20 @@ const previousPkgJsonBlob = prevCommit
 const previousPkgJson = JSON.parse(
   Buffer.from(previousPkgJsonBlob.content()).toString('utf8')
 );
-const previousCanvasVersion =
-  previousPkgJson.dependencies['@canvas/nexio'];
+const previousBlocksuiteVersion =
+  previousPkgJson.dependencies['@blocksuite/affine'];
 
-if (canvasVersion !== previousCanvasVersion) {
-  const canvasRepo = new Repository(
-    CANVAS_REPO_PATH ?? join(rootDir, '..', 'canvas')
+if (blocksuiteVersion !== previousBlocksuiteVersion) {
+  const blockSuiteRepo = new Repository(
+    BLOCKSUITE_REPO_PATH ?? join(rootDir, '..', 'blocksuite')
   );
   console.log(
-    `Canvas ${previousCanvasVersion} -> ${canvasVersion}`
+    `Blocksuite ${previousBlocksuiteVersion} -> ${blocksuiteVersion}`
   );
-  canvasChangelog = await getChangeLog(
-    canvasRepo,
-    previousCanvasVersion,
-    canvasVersion
+  blockSuiteChangelog = await getChangeLog(
+    blockSuiteRepo,
+    previousBlocksuiteVersion,
+    blocksuiteVersion
   );
 }
 
@@ -159,19 +159,19 @@ const messageHead =
 
 - [${DEPLOYED_URL}](${DEPLOYED_URL})
 `
-    : `# NEXIO Client ${FLAVOR} released`;
+    : `# AFFiNE Client ${FLAVOR} released`;
 
 let changelogMessage = `${messageHead}
 
 ${await getChangeLog(repo, PREV_VERSION)}
 `;
 
-if (canvasChangelog) {
+if (blockSuiteChangelog) {
   changelogMessage += `
 
-# Canvas Changelog
+# Blocksuite Changelog
 
-${canvasChangelog}`;
+${blockSuiteChangelog}`;
 }
 
 const { ok } = await slack.chat.postMessage({

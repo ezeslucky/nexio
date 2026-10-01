@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import type { WorkspaceMetadata } from '../metadata';
 import type { WorkspaceFlavoursService } from './flavours';

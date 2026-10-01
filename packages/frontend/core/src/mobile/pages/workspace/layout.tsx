@@ -1,25 +1,26 @@
-import { uniReactRoot } from '@nexio/component';
-import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
-import { AiLoginRequiredModal } from '@nexio/core/components/nexio/auth/ai-login-required';
-import { SWRConfigProvider } from '@nexio/core/components/providers/swr-config-provider';
-import { WorkspaceSideEffects } from '@nexio/core/components/providers/workspace-side-effects';
+import { uniReactRoot } from '@affine/component';
+import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
+import { AiLoginRequiredModal } from '@affine/core/components/affine/auth/ai-login-required';
+import { SWRConfigProvider } from '@affine/core/components/providers/swr-config-provider';
+import { WorkspaceSideEffects } from '@affine/core/components/providers/workspace-side-effects';
 import {
   DefaultServerService,
   WorkspaceServerService,
-} from '@nexio/core/modules/cloud';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { PeekViewManagerModal } from '@nexio/core/modules/peek-view';
+} from '@affine/core/modules/cloud';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { PeekViewManagerModal } from '@affine/core/modules/peek-view';
 import type {
   Workspace,
   WorkspaceMetadata,
-} from '@nexio/core/modules/workspace';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
+} from '@affine/core/modules/workspace';
+import { WorkspacesService } from '@affine/core/modules/workspace';
 import {
   FrameworkScope,
   LiveData,
   useLiveData,
+  useService,
   useServices,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import {
   type PropsWithChildren,
   useEffect,
@@ -30,7 +31,9 @@ import {
 import { map } from 'rxjs';
 
 import { AppFallback } from '../../components/app-fallback';
+import { MobileShellHost } from '../../components/mobile-shell-host';
 import { WorkspaceDialogs } from '../../dialogs';
+import { MobileBackCoordinator } from '../../modules/back-coordinator';
 
 // TODO(@forehalo): reuse the global context with [core/electron]
 declare global {
@@ -44,7 +47,7 @@ declare global {
   // oxlint-disable-next-line no-var
   var importWorkspaceSnapshot: () => Promise<void>;
   interface WindowEventMap {
-    'nexio:workspace:change': CustomEvent<{ id: string }>;
+    'affine:workspace:change': CustomEvent<{ id: string }>;
   }
 }
 
@@ -76,13 +79,14 @@ export const WorkspaceLayout = ({
       // for debug purpose
       window.currentWorkspace = workspace ?? undefined;
       window.dispatchEvent(
-        new CustomEvent('nexio:workspace:change', {
+        new CustomEvent('affine:workspace:change', {
           detail: {
             id: workspace.id,
           },
         })
       );
       localStorage.setItem('last_workspace_id', workspace.id);
+      localStorage.setItem('last_workspace_flavour', workspace.flavour);
       globalContextService.globalContext.workspaceId.set(workspace.id);
       if (workspaceServer) {
         globalContextService.globalContext.serverId.set(workspaceServer.id);
@@ -109,21 +113,19 @@ export const WorkspaceLayout = ({
     workspaceServer,
   ]);
 
-  const isRootDocReady =
-    useLiveData(
-      useMemo(
-        () =>
-          workspace
-            ? LiveData.from(
-                workspace.engine.doc
-                  .docState$(workspace.id)
-                  .pipe(map(v => v.ready)),
-                false
-              )
-            : null,
-        [workspace]
-      )
-    ) ?? false;
+  const rootDocReady$ = useMemo(
+    () =>
+      workspace
+        ? LiveData.from(
+            workspace.engine.doc
+              .docState$(workspace.id)
+              .pipe(map(v => v.ready)),
+            false
+          )
+        : null,
+    [workspace]
+  );
+  const isRootDocReady = useLiveData(rootDocReady$) ?? false;
 
   if (!workspace) {
     return null; // skip this, workspace will be set in layout effect
@@ -136,19 +138,31 @@ export const WorkspaceLayout = ({
   return (
     <FrameworkScope scope={workspaceServer?.scope}>
       <FrameworkScope scope={workspace.scope}>
-        <NexioErrorBoundary height="100dvh">
+        <WorkspaceBackReset workspaceId={workspace.id} />
+        <AffineErrorBoundary height="100dvh">
           <SWRConfigProvider>
-            <WorkspaceDialogs />
+            <MobileShellHost>
+              <WorkspaceDialogs />
 
-            {/* ---- some side-effect components ---- */}
-            <PeekViewManagerModal />
-            <AiLoginRequiredModal />
-            <uniReactRoot.Root />
-            <WorkspaceSideEffects />
-            {children}
+              {/* ---- some side-effect components ---- */}
+              <PeekViewManagerModal />
+              <AiLoginRequiredModal />
+              <uniReactRoot.Root />
+              <WorkspaceSideEffects />
+              {children}
+            </MobileShellHost>
           </SWRConfigProvider>
-        </NexioErrorBoundary>
+        </AffineErrorBoundary>
       </FrameworkScope>
     </FrameworkScope>
   );
+};
+
+const WorkspaceBackReset = ({ workspaceId }: { workspaceId: string }) => {
+  const coordinator = useService(MobileBackCoordinator);
+  useEffect(() => {
+    coordinator.reset();
+    return () => coordinator.reset();
+  }, [coordinator, workspaceId]);
+  return null;
 };

@@ -1,7 +1,7 @@
 declare namespace Express {
   interface Request {
     session?: import('./core/auth/session').Session;
-    token?: import('./core/auth/session').TokenSession;
+    authType?: 'jwt' | 'session';
   }
 }
 
@@ -51,6 +51,6 @@ declare type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
 };
 
-declare type NEXIOModule =
+declare type AFFiNEModule =
   | import('@nestjs/common').Type
   | import('@nestjs/common').DynamicModule;

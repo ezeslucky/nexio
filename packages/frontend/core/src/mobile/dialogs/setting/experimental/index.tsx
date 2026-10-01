@@ -1,12 +1,12 @@
-import { Switch } from '@nexio/component';
+import { Switch } from '@affine/component';
 import {
-  NEXIO_FLAGS,
+  AFFINE_FLAGS,
   FeatureFlagService,
   type Flag,
-} from '@nexio/core/modules/feature-flag';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/feature-flag';
+import { useI18n } from '@affine/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import { SettingGroup } from '../group';
@@ -16,22 +16,17 @@ import * as styles from './styles.css';
 
 export const ExperimentalFeatureSetting = () => {
   const [open, setOpen] = useState(false);
+  const t = useI18n();
+  const title = t['com.affine.mobile.setting.experimental.features']();
 
   return (
     <>
-      <SettingGroup title="Experimental">
-        <RowLayout
-          label={'Experimental Features'}
-          onClick={() => setOpen(true)}
-        >
+      <SettingGroup title={t['com.affine.mobile.setting.experimental.title']()}>
+        <RowLayout label={title} onClick={() => setOpen(true)}>
           <ArrowRightSmallIcon fontSize={22} />
         </RowLayout>
       </SettingGroup>
-      <SwipeDialog
-        open={open}
-        onOpenChange={setOpen}
-        title="Experimental Features"
-      >
+      <SwipeDialog open={open} onOpenChange={setOpen} title={title}>
         <ExperimentalFeatureList />
       </SwipeDialog>
     </>
@@ -43,11 +38,11 @@ const ExperimentalFeatureList = () => {
 
   return (
     <ul className={styles.content}>
-      {Object.keys(NEXIO_FLAGS).map(key => (
+      {Object.keys(AFFINE_FLAGS).map(key => (
         <ExperimentalFeaturesItem
           key={key}
           flagKey={key}
-          flag={featureFlagService.flags[key as keyof NEXIO_FLAGS]}
+          flag={featureFlagService.flags[key as keyof AFFINE_FLAGS]}
         />
       ))}
     </ul>

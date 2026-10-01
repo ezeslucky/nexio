@@ -1,11 +1,11 @@
-import { UserFriendlyError } from '@nexio/error';
+import { UserFriendlyError } from '@affine/error';
 import {
   gqlFetcherFactory,
   type GraphQLQuery,
   type QueryOptions,
   type QueryResponse,
-} from '@nexio/graphql';
-import { fromPromise, Service } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { fromPromise, Service } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 
 import { AuthService } from './auth';

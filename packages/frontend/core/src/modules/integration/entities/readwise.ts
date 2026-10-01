@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import { chunk } from 'lodash-es';
 
 import type { DocsService } from '../../doc';
@@ -61,7 +61,7 @@ export class ReadwiseIntegration extends Entity<{ writer: IntegrationWriter }> {
       }));
   }
 
-  async highlightsToNexioDocs(
+  async highlightsToAffineDocs(
     highlights: ReadwiseHighlight[],
     books: ReadwiseBookMap,
     options: {
@@ -117,7 +117,7 @@ export class ReadwiseIntegration extends Entity<{ writer: IntegrationWriter }> {
             });
             // write if not matched
             if (action !== 'skip' && !signal?.aborted) {
-              await this.highlightToNexioDoc(highlight, book, localDocId, {
+              await this.highlightToAffineDoc(highlight, book, localDocId, {
                 updateStrategy,
                 integrationId,
                 userId,
@@ -138,7 +138,7 @@ export class ReadwiseIntegration extends Entity<{ writer: IntegrationWriter }> {
     }
   }
 
-  async highlightToNexioDoc(
+  async highlightToAffineDoc(
     highlight: ReadwiseHighlight,
     book: Omit<ReadwiseBook, 'highlights'>,
     docId: string | undefined,
@@ -234,10 +234,10 @@ export class ReadwiseIntegration extends Entity<{ writer: IntegrationWriter }> {
   async deleteAll() {
     const refs = await this.getRefs();
     await Promise.all(
-      refs.map(ref => {
+      refs.map(async ref => {
         const doc = this.docsService.list.doc$(ref.id).value;
         if (doc) {
-          doc.moveToTrash();
+          await doc.moveToTrash();
         }
         return this.integrationRefStore.deleteRef(ref.id);
       })

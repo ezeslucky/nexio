@@ -1,21 +1,21 @@
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@nexio/core/components/explorer/context';
-import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import type { ExplorerDisplayPreference } from '@nexio/core/components/explorer/types';
-import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { TagService } from '@nexio/core/modules/tag';
+} from '@affine/core/components/explorer/context';
+import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
+import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
+import { CollectionRulesService } from '@affine/core/modules/collection-rules';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { TagService } from '@affine/core/modules/tag';
 import {
   useIsActiveView,
   ViewBody,
   ViewHeader,
   ViewIcon,
   ViewTitle,
-} from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workbench';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

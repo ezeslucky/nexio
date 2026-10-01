@@ -2,7 +2,7 @@ import {
   type MessageCommunicapable,
   OpConsumer,
   transfer,
-} from '@ezeslucky/infra/op';
+} from '@toeverything/infra/op';
 import type { Document } from '@toeverything/pdf-viewer';
 import {
   createPDFium,
@@ -23,10 +23,9 @@ import {
   switchMap,
 } from 'rxjs';
 
-import type { ClientOps } from './ops';
-import type { PDFMeta, RenderPageOpts } from './types';
+import type { PDFMeta, PDFOps, RenderPageOpts } from './types';
 
-class PDFRendererBackend extends OpConsumer<ClientOps> {
+class PDFRendererBackend extends OpConsumer<PDFOps> {
   constructor(port: MessageCommunicapable) {
     super(port);
     this.register('open', this.open.bind(this));

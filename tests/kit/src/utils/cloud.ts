@@ -1,13 +1,13 @@
 import { createRequire } from 'node:module';
 
-import { openHomePage } from '@nexio-test/kit/utils/load-page';
+import { openHomePage } from '@affine-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@nexio-test/kit/utils/page-logic';
-import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
-import { Package } from '@nexio-tools/utils/workspace';
+} from '@affine-test/kit/utils/page-logic';
+import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
+import { Package } from '@affine-tools/utils/workspace';
 import { faker } from '@faker-js/faker';
 import { hash } from '@node-rs/argon2';
 import type { BrowserContext, Cookie, Page } from '@playwright/test';
@@ -54,7 +54,7 @@ const cloudUserSchema = z.object({
   password: z.string(),
 });
 
-const server = new Package('@nexio/server');
+const server = new Package('@affine/server');
 const require = createRequire(server.srcPath.join('index.ts').toFileUrl());
 
 export const runPrisma = async <T>(
@@ -64,7 +64,7 @@ export const runPrisma = async <T>(
   const client = new PrismaClient({
     datasourceUrl:
       process.env.DATABASE_URL ||
-      'postgresql://nexio:nexio@localhost:5432/nexio',
+      'postgresql://affine:affine@localhost:5432/affine',
   });
   await client.$connect();
   try {
@@ -88,13 +88,14 @@ export async function addUserToWorkspace(
     if (workspace == null) {
       throw new Error(`workspace ${workspaceId} not found`);
     }
-    await client.workspaceUserRole.create({
+    await client.workspaceMember.create({
       data: {
         workspaceId: workspace.id,
         userId,
-        accepted: true,
-        status: 'Accepted',
-        type: permission,
+        role:
+          permission === 99 ? 'owner' : permission === 10 ? 'admin' : 'member',
+        state: 'active',
+        source: 'legacy',
       },
     });
   });
@@ -113,23 +114,16 @@ export async function createRandomUser(): Promise<{
     password: '123456',
   };
   const result = await runPrisma(async client => {
-    const featureId = await client.feature
-      .findFirst({
-        where: { name: 'free_plan_v1' },
-        select: { id: true },
-      })
-      .then(f => f!.id);
-
     await client.user.create({
       data: {
         ...user,
         emailVerifiedAt: new Date(),
+        createdAt: new Date(Date.now() - 25 * 60 * 60 * 1000),
         password: await hash(user.password),
         features: {
           create: {
             reason: 'created by test case',
             activated: true,
-            featureId,
             name: 'free_plan_v1',
             type: 1,
           },
@@ -161,22 +155,6 @@ export async function cleanupWorkspace(workspaceId: string): Promise<void> {
   });
 }
 
-export async function switchDefaultChatModel(model: string) {
-  await runPrisma(async client => {
-    const promptId = await client.aiPrompt
-      .findFirst({
-        where: { name: 'Chat With NEXIO AI' },
-        select: { id: true },
-      })
-      .then(f => f!.id);
-
-    await client.aiPrompt.update({
-      where: { id: promptId },
-      data: { model },
-    });
-  });
-}
-
 export async function createRandomAIUser(): Promise<{
   name: string;
   email: string;
@@ -189,20 +167,7 @@ export async function createRandomAIUser(): Promise<{
     password: '123456',
   };
   const result = await runPrisma(async client => {
-    const freeFeatureId = await client.feature
-      .findFirst({
-        where: { name: 'free_plan_v1' },
-        select: { id: true },
-      })
-      .then(f => f!.id);
-    const aiFeatureId = await client.feature
-      .findFirst({
-        where: { name: 'unlimited_copilot' },
-        select: { id: true },
-      })
-      .then(f => f!.id);
-
-    await client.user.create({
+    const created = await client.user.create({
       data: {
         ...user,
         emailVerifiedAt: new Date(),
@@ -212,14 +177,12 @@ export async function createRandomAIUser(): Promise<{
             {
               reason: 'created by test case',
               activated: true,
-              featureId: freeFeatureId,
               name: 'free_plan_v1',
               type: 1,
             },
             {
               reason: 'created by test case',
               activated: true,
-              featureId: aiFeatureId,
               name: 'unlimited_copilot',
               type: 0,
             },
@@ -228,11 +191,21 @@ export async function createRandomAIUser(): Promise<{
       },
     });
 
-    return await client.user.findUnique({
-      where: {
-        email: user.email,
+    await client.entitlement.create({
+      data: {
+        targetType: 'user',
+        targetId: created.id,
+        source: 'cloud_subscription',
+        plan: 'ai',
+        status: 'active',
+        subjectId: `test-ai:${created.id}`,
+        metadata: {
+          legacySync: false,
+        },
       },
     });
+
+    return created;
   });
   cloudUserSchema.parse(result);
   return {
@@ -304,15 +277,38 @@ export async function loginUserDirectly(
   }
 }
 
+async function dismissBlockingModal(page: Page) {
+  const modal = page.locator('modal-transition-container [data-modal="true"]');
+  if (
+    !(await modal
+      .first()
+      .isVisible()
+      .catch(() => false))
+  ) {
+    return;
+  }
+
+  const closeButton = page.getByTestId('modal-close-button').last();
+  if (await closeButton.isVisible().catch(() => false)) {
+    await closeButton.click({ timeout: 5000 });
+  } else {
+    await page.keyboard.press('Escape');
+  }
+
+  await expect(modal.first()).toBeHidden({ timeout: 10000 });
+}
+
 export async function enableCloudWorkspace(page: Page) {
   await clickSideBarSettingButton(page);
   await page.getByTestId('workspace-setting:preference').click();
-  await page.getByTestId('publish-enable-nexio-cloud-button').click();
-  await page.getByTestId('confirm-enable-nexio-cloud-button').click();
+  await page.getByTestId('publish-enable-affine-cloud-button').click();
+  await page.getByTestId('confirm-enable-affine-cloud-button').click();
   // wait for upload and delete local workspace
   await page.waitForTimeout(2000);
   await waitForAllPagesLoad(page);
+  await dismissBlockingModal(page);
   await clickNewPageButton(page);
+  await waitForWorkspaceSynced(page);
 }
 
 export async function enableCloudWorkspaceFromShareButton(page: Page) {
@@ -322,12 +318,39 @@ export async function enableCloudWorkspaceFromShareButton(page: Page) {
   await shareMenuButton.click();
   await expect(page.getByTestId('local-share-menu')).toBeVisible();
 
-  await page.getByTestId('share-menu-enable-nexio-cloud-button').click();
-  await page.getByTestId('confirm-enable-nexio-cloud-button').click();
+  await page.getByTestId('share-menu-enable-affine-cloud-button').click();
+  await page.getByTestId('confirm-enable-affine-cloud-button').click();
   // wait for upload and delete local workspace
   await page.waitForTimeout(2000);
   await waitForEditorLoad(page);
+  await dismissBlockingModal(page);
   await clickNewPageButton(page);
+  await waitForWorkspaceSynced(page);
+}
+
+async function waitForWorkspaceSynced(page: Page) {
+  await page.evaluate(async () => {
+    const workspaceId = location.pathname.split('/')[2];
+    const workspace = (
+      window as typeof window & {
+        currentWorkspace?: {
+          engine: {
+            doc: {
+              waitForSynced(docId: string, abort: AbortSignal): Promise<void>;
+            };
+          };
+        };
+      }
+    ).currentWorkspace;
+    if (!workspaceId || !workspace) {
+      throw new Error('Cloud workspace is unavailable');
+    }
+    const abort = AbortSignal.timeout(60_000);
+    await Promise.all([
+      workspace.engine.doc.waitForSynced(workspaceId, abort),
+      workspace.engine.doc.waitForSynced('db$docProperties', abort),
+    ]);
+  });
 }
 
 export async function enableShare(page: Page) {
@@ -336,4 +359,8 @@ export async function enableShare(page: Page) {
   // wait for the menu to be visible
   await page.waitForTimeout(500);
   await page.getByTestId('share-link-menu-enable-share').click();
+  await expect(page.getByTestId('share-link-menu-trigger')).toHaveText(
+    'Read only',
+    { timeout: 30_000 }
+  );
 }

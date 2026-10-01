@@ -1,6 +1,6 @@
-import type { InsertRow } from '@nexio/native';
-import { SqliteConnection } from '@nexio/native';
-import type { ByteKVBehavior } from '@ezeslucky/infra/storage';
+import type { InsertRow } from '@affine/native';
+import { SqliteConnection } from '@affine/native';
+import type { ByteKVBehavior } from '@toeverything/infra/storage';
 
 import { logger } from '../../logger';
 

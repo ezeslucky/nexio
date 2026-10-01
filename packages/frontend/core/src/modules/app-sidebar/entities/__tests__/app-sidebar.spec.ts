@@ -1,4 +1,4 @@
-import { Framework, MemoryMemento } from '@ezeslucky/infra';
+import { Framework, MemoryMemento } from '@toeverything/infra';
 import { beforeEach, describe, expect, test } from 'vitest';
 
 import { AppSidebarState } from '../../providers/storage';

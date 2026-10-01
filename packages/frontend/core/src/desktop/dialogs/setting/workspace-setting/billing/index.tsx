@@ -1,13 +1,13 @@
-import { Button, Loading } from '@nexio/component';
+import { Button, Loading } from '@affine/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { WorkspaceSubscriptionService } from '@nexio/core/modules/cloud';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component/setting-components';
+import { WorkspaceSubscriptionService } from '@affine/core/modules/cloud';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { TeamResumeAction } from '../../general-setting/plans/actions';
@@ -43,11 +43,11 @@ export const WorkspaceSettingBilling = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.nexio.payment.billing-setting.title']()}
-        subtitle={t['com.nexio.payment.billing-setting.subtitle']()}
+        title={t['com.affine.payment.billing-setting.title']()}
+        subtitle={t['com.affine.payment.billing-setting.subtitle']()}
       />
       <SettingWrapper
-        title={t['com.nexio.payment.billing-setting.information']()}
+        title={t['com.affine.payment.billing-setting.information']()}
       >
         <TeamCard />
         <TypeformLink />
@@ -57,7 +57,7 @@ export const WorkspaceSettingBilling = () => {
         ) : null}
       </SettingWrapper>
 
-      <SettingWrapper title={t['com.nexio.payment.billing-setting.history']()}>
+      <SettingWrapper title={t['com.affine.payment.billing-setting.history']()}>
         <BillingHistory />
       </SettingWrapper>
     </>
@@ -73,8 +73,8 @@ const ResumeSubscription = ({ expirationDate }: { expirationDate: string }) => {
 
   return (
     <SettingRow
-      name={t['com.nexio.payment.billing-setting.expiration-date']()}
-      desc={t['com.nexio.payment.billing-setting.expiration-date.description'](
+      name={t['com.affine.payment.billing-setting.expiration-date']()}
+      desc={t['com.affine.payment.billing-setting.expiration-date.description'](
         {
           expirationDate: new Date(expirationDate).toLocaleDateString(),
         }
@@ -82,7 +82,7 @@ const ResumeSubscription = ({ expirationDate }: { expirationDate: string }) => {
     >
       <TeamResumeAction open={open} onOpenChange={setOpen}>
         <Button onClick={handleClick} variant="primary">
-          {t['com.nexio.payment.billing-setting.resume-subscription']()}
+          {t['com.affine.payment.billing-setting.resume-subscription']()}
         </Button>
       </TeamResumeAction>
     </SettingRow>

@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react';
 
-import { NexioIconRenderer } from './renderer/nexio-icon';
+import { AffineIconRenderer } from './renderer/affine-icon';
 import { type IconData, IconType } from './type';
 
 export const IconRenderer = ({
   data,
   fallback,
+  ...props
 }: {
   data?: IconData;
   fallback?: ReactNode;
@@ -17,8 +18,10 @@ export const IconRenderer = ({
   if (data.type === IconType.Emoji && data.unicode) {
     return data.unicode;
   }
-  if (data.type === IconType.NexioIcon && data.name) {
-    return <NexioIconRenderer name={data.name} color={data.color} />;
+  if (data.type === IconType.AffineIcon && data.name) {
+    return (
+      <AffineIconRenderer name={data.name} color={data.color} {...props} />
+    );
   }
   if (data.type === IconType.Blob) {
     // Not supported yet

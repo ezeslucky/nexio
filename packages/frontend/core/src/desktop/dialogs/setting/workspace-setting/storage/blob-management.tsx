@@ -4,16 +4,15 @@ import {
   Loading,
   templateToString,
   useConfirmModal,
-  useDisposable,
-} from '@nexio/component';
-import { Pagination } from '@nexio/component/setting-components';
-import { BlobManagementService } from '@nexio/core/modules/blob-management/services';
-import { useI18n } from '@nexio/i18n';
-import type { ListedBlobRecord } from '@nexio/nbstore';
-import track from '@nexio/track';
-import { getAttachmentFileIcon } from '@canvas/nexio/components/icons';
+} from '@affine/component';
+import { Pagination } from '@affine/component/setting-components';
+import { BlobManagementService } from '@affine/core/modules/blob-management/services';
+import { useI18n } from '@affine/i18n';
+import type { ListedBlobRecord } from '@affine/nbstore';
+import track from '@affine/track';
+import { getAttachmentFileIcon } from '@blocksuite/affine/components/icons';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
@@ -23,65 +22,29 @@ const Empty = () => {
   const t = useI18n();
   return (
     <div className={styles.empty}>
-      {t['com.nexio.settings.workspace.storage.unused-blobs.empty']()}
+      {t['com.affine.settings.workspace.storage.unused-blobs.empty']()}
     </div>
   );
 };
 
-const useBlob = (blobRecord: ListedBlobRecord) => {
-  const unusedBlobsEntity = useService(BlobManagementService).unusedBlobs;
-  return useDisposable(
-    (abortSignal?: AbortSignal) =>
-      unusedBlobsEntity.hydrateBlob(blobRecord, abortSignal),
-    [blobRecord]
-  );
-};
-
 const BlobPreview = ({ blobRecord }: { blobRecord: ListedBlobRecord }) => {
-  const { data, loading, error } = useBlob(blobRecord);
-
-  const element = useMemo(() => {
-    if (loading) return <Loading size={24} />;
-    if (!data?.url || !data.type) return null;
-
-    const { url, type, mime } = data;
-
-    const icon = templateToString(getAttachmentFileIcon(type));
-
-    if (error) {
-      return (
-        <div
-          className={styles.unknownBlobIcon}
-          dangerouslySetInnerHTML={{ __html: icon }}
-        />
-      );
-    }
-
-    if (mime?.startsWith('image/')) {
-      return (
-        <img
-          className={styles.blobImagePreview}
-          src={url}
-          alt={blobRecord.key}
-        />
-      );
-    } else {
-      return (
-        <div
-          className={styles.unknownBlobIcon}
-          dangerouslySetInnerHTML={{ __html: icon }}
-        />
-      );
-    }
-  }, [loading, data, error, blobRecord.key]);
+  const type = blobRecord.mime?.startsWith('text/')
+    ? 'txt'
+    : blobRecord.mime?.split('/')[1] || 'unknown';
+  const icon = templateToString(getAttachmentFileIcon(type));
 
   return (
     <div className={styles.blobPreviewContainer}>
-      <div className={styles.blobPreview}>{element}</div>
+      <div className={styles.blobPreview}>
+        <div
+          className={styles.unknownBlobIcon}
+          dangerouslySetInnerHTML={{ __html: icon }}
+        />
+      </div>
       <div className={styles.blobPreviewFooter}>
         <div className={styles.blobPreviewName}>{blobRecord.key}</div>
         <div className={styles.blobPreviewInfo}>
-          {data?.type ? `${data.type} · ` : ''}
+          {type !== 'unknown' ? `${type} · ` : ''}
           {bytes(blobRecord.size)}
         </div>
       </div>
@@ -217,11 +180,11 @@ export const BlobManagementPanel = () => {
       openConfirmModal({
         title:
           t[
-            'com.nexio.settings.workspace.storage.unused-blobs.delete.title'
+            'com.affine.settings.workspace.storage.unused-blobs.delete.title'
           ](),
         children:
           t[
-            'com.nexio.settings.workspace.storage.unused-blobs.delete.warning'
+            'com.affine.settings.workspace.storage.unused-blobs.delete.warning'
           ](),
         onConfirm: async () => {
           setDeleting(true);
@@ -268,12 +231,12 @@ export const BlobManagementPanel = () => {
       {selectedBlobs.length > 0 ? (
         <div className={styles.blobManagementControls}>
           <div className={styles.blobManagementName}>
-            {`${selectedBlobs.length} ${t['com.nexio.settings.workspace.storage.unused-blobs.selected']()}`}
+            {`${selectedBlobs.length} ${t['com.affine.settings.workspace.storage.unused-blobs.selected']()}`}
           </div>
           <div className={styles.spacer} />
           {showSelectAll && (
             <Button onClick={handleSelectAll} variant="primary">
-              {t['com.nexio.keyboardShortcuts.selectAll']()}
+              {t['com.affine.keyboardShortcuts.selectAll']()}
             </Button>
           )}
           <Button
@@ -287,7 +250,7 @@ export const BlobManagementPanel = () => {
         </div>
       ) : (
         <div className={styles.blobManagementNameInactive}>
-          {`${t['com.nexio.settings.workspace.storage.unused-blobs']()} (${unusedBlobs.length})`}
+          {`${t['com.affine.settings.workspace.storage.unused-blobs']()} (${unusedBlobs.length})`}
         </div>
       )}
       {isEmpty ? (

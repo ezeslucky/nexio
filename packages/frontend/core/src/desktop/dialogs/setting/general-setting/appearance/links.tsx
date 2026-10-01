@@ -1,10 +1,10 @@
-import { Menu, MenuItem, MenuTrigger } from '@nexio/component';
+import { Menu, MenuItem, MenuTrigger } from '@affine/component';
 import {
   OpenInAppService,
   OpenLinkMode,
-} from '@nexio/core/modules/open-in-app';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/open-in-app';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 
 import * as styles from './links.css';
@@ -18,8 +18,8 @@ export const OpenInAppLinksMenu = () => {
     () =>
       Object.values(OpenLinkMode).map(mode => ({
         label:
-          t.t(`com.nexio.setting.appearance.open-in-app.${mode}`) ||
-          `com.nexio.setting.appearance.open-in-app.${mode}`,
+          t.t(`com.affine.setting.appearance.open-in-app.${mode}`) ||
+          `com.affine.setting.appearance.open-in-app.${mode}`,
         value: mode,
       })),
     [t]

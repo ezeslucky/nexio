@@ -1,4 +1,4 @@
-import { Scope } from '@ezeslucky/infra';
+import { Scope } from '@toeverything/infra';
 
 import type { View } from '../entities/view';
 

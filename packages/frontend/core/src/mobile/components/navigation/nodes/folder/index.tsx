@@ -1,42 +1,40 @@
 import {
   AnimatedFolderIcon,
-  IconButton,
   MenuItem,
   MenuSeparator,
   MenuSub,
   notify,
-} from '@nexio/component';
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
+} from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
 import type {
   NavigationPanelTreeNodeIcon,
   NodeOperation,
-} from '@nexio/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+} from '@affine/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
 import {
   type FolderNode,
   OrganizeService,
-} from '@nexio/core/modules/organize';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/core/modules/organize';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   DeleteIcon,
   FolderIcon,
   LayerIcon,
   PageIcon,
-  PlusIcon,
   PlusThickIcon,
   RemoveFolderIcon,
   TagsIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { difference } from 'lodash-es';
-import { useCallback, useMemo } from 'react';
+import { type ReactNode, useCallback, useMemo } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';
+import { MobileNavigationMenuItems } from '../../menu-host';
 import { NavigationPanelTreeNode } from '../../tree/node';
 import { NavigationPanelCollectionNode } from '../collection';
 import { NavigationPanelDocNode } from '../doc';
@@ -129,6 +127,229 @@ const NavigationPanelFolderIcon: NavigationPanelTreeNodeIcon = ({
   />
 );
 
+const NavigationPanelFolderMenu = ({
+  nodeId,
+  name,
+  handleDelete,
+  handleRename,
+  handleCreateSubfolder,
+  handleAddToFolder,
+  createSubTipRenderer,
+  additionalOperations,
+}: {
+  nodeId: string;
+  name: string;
+  handleDelete: () => void;
+  handleRename: (name: string) => void;
+  handleCreateSubfolder: (name: string) => void;
+  handleAddToFolder: (type: 'doc' | 'collection' | 'tag') => void;
+  createSubTipRenderer: (props: { input: string }) => ReactNode;
+  additionalOperations?: NodeOperation[];
+}) => {
+  const t = useI18n();
+  const operations = useMemo(
+    () => [
+      {
+        index: 98,
+        view: (
+          <FolderRenameSubMenu
+            initialName={name}
+            onConfirm={handleRename}
+            menuProps={{ triggerOptions: { 'data-testid': 'rename-folder' } }}
+          />
+        ),
+      },
+      { index: 99, view: <MenuSeparator /> },
+      {
+        index: 100,
+        view: (
+          <FolderRenameSubMenu
+            text={t[
+              'com.affine.rootAppSidebar.organize.folder.create-subfolder'
+            ]()}
+            title={t[
+              'com.affine.rootAppSidebar.organize.folder.create-subfolder'
+            ]()}
+            onConfirm={handleCreateSubfolder}
+            descRenderer={createSubTipRenderer}
+            icon={<FolderIcon />}
+            menuProps={{
+              triggerOptions: { 'data-testid': 'create-subfolder' },
+            }}
+          />
+        ),
+      },
+      {
+        index: 102,
+        view: (
+          <MenuSub
+            triggerOptions={{ prefixIcon: <PlusThickIcon /> }}
+            items={
+              <>
+                <MenuItem
+                  prefixIcon={<PageIcon />}
+                  onClick={() => handleAddToFolder('doc')}
+                >
+                  {t['com.affine.rootAppSidebar.organize.folder.add-docs']()}
+                </MenuItem>
+                <MenuItem
+                  prefixIcon={<TagsIcon />}
+                  onClick={() => handleAddToFolder('tag')}
+                >
+                  {t['com.affine.rootAppSidebar.organize.folder.add-tags']()}
+                </MenuItem>
+                <MenuItem
+                  prefixIcon={<LayerIcon />}
+                  onClick={() => handleAddToFolder('collection')}
+                >
+                  {t[
+                    'com.affine.rootAppSidebar.organize.folder.add-collections'
+                  ]()}
+                </MenuItem>
+              </>
+            }
+          >
+            {t['com.affine.rootAppSidebar.organize.folder.add-others']()}
+          </MenuSub>
+        ),
+      },
+      {
+        index: 200,
+        view: nodeId ? <FavoriteFolderOperation id={nodeId} /> : null,
+      },
+      { index: 9999, view: <MenuSeparator /> },
+      {
+        index: 10000,
+        view: (
+          <MenuItem
+            type="danger"
+            prefixIcon={<DeleteIcon />}
+            onClick={handleDelete}
+          >
+            {t['com.affine.rootAppSidebar.organize.delete']()}
+          </MenuItem>
+        ),
+      },
+    ],
+    [
+      createSubTipRenderer,
+      handleAddToFolder,
+      handleCreateSubfolder,
+      handleDelete,
+      handleRename,
+      name,
+      nodeId,
+      t,
+    ]
+  );
+  return (
+    <MobileNavigationMenuItems
+      operations={[...(additionalOperations ?? []), ...operations]}
+    />
+  );
+};
+
+export const NavigationPanelFolderNodeMenu = ({
+  nodeId,
+  additionalOperations,
+}: {
+  nodeId: string;
+  additionalOperations?: NodeOperation[];
+}) => {
+  const t = useI18n();
+  const { organizeService, workspaceDialogService } = useServices({
+    OrganizeService,
+    WorkspaceDialogService,
+  });
+  const node = useLiveData(organizeService.folderTree.folderNode$(nodeId));
+  const name = useLiveData(node?.name$) ?? '';
+  const children = useLiveData(node?.sortedChildren$);
+
+  const handleDelete = useCallback(() => {
+    if (!node) return;
+    node.delete();
+    track.$.navigationPanel.organize.deleteOrganizeItem({ type: 'folder' });
+    notify.success({
+      title: t['com.affine.rootAppSidebar.organize.delete.notify-title']({
+        name,
+      }),
+      message: t['com.affine.rootAppSidebar.organize.delete.notify-message'](),
+    });
+  }, [name, node, t]);
+  const handleRename = useCallback(
+    (newName: string) => node?.rename(newName),
+    [node]
+  );
+  const handleCreateSubfolder = useCallback(
+    (newName: string) => {
+      if (!node) return;
+      node.createFolder(newName, node.indexAt('before'));
+      track.$.navigationPanel.organize.createOrganizeItem({ type: 'folder' });
+    },
+    [node]
+  );
+  const handleAddToFolder = useCallback(
+    (type: 'doc' | 'collection' | 'tag') => {
+      if (!node) return;
+      const currentChildren = children ?? [];
+      const initialIds = currentChildren
+        .filter(child => child.type$.value === type)
+        .map(child => child.data$.value)
+        .filter(Boolean) as string[];
+      const selector =
+        type === 'doc'
+          ? 'doc-selector'
+          : type === 'collection'
+            ? 'collection-selector'
+            : 'tag-selector';
+      workspaceDialogService.open(
+        selector,
+        { init: initialIds },
+        selectedIds => {
+          if (selectedIds === undefined) return;
+          const newItemIds = difference(selectedIds, initialIds);
+          const removedItemIds = difference(initialIds, selectedIds);
+          newItemIds.forEach(id =>
+            node.createLink(type, id, node.indexAt('after'))
+          );
+          currentChildren
+            .filter(
+              child =>
+                !!child.data$.value &&
+                removedItemIds.includes(child.data$.value)
+            )
+            .forEach(child => child.delete());
+        }
+      );
+      track.$.navigationPanel.organize.createOrganizeItem({
+        type: 'link',
+        target: type,
+      });
+    },
+    [children, node, workspaceDialogService]
+  );
+  const createSubTipRenderer = useCallback(
+    ({ input }: { input: string }) => (
+      <FolderCreateTip input={input} parentName={name} />
+    ),
+    [name]
+  );
+
+  if (!node) return null;
+  return (
+    <NavigationPanelFolderMenu
+      nodeId={nodeId}
+      name={name}
+      handleDelete={handleDelete}
+      handleRename={handleRename}
+      handleCreateSubfolder={handleCreateSubfolder}
+      handleAddToFolder={handleAddToFolder}
+      createSubTipRenderer={createSubTipRenderer}
+      additionalOperations={additionalOperations}
+    />
+  );
+};
+
 const NavigationPanelFolderNodeFolder = ({
   node,
   operations: additionalOperations,
@@ -139,13 +360,10 @@ const NavigationPanelFolderNodeFolder = ({
   parentPath: string[];
 }) => {
   const t = useI18n();
-  const { workspaceService, featureFlagService, workspaceDialogService } =
-    useServices({
-      WorkspaceService,
-      CompatibleFavoriteItemsAdapter,
-      FeatureFlagService,
-      WorkspaceDialogService,
-    });
+  const { workspaceService, featureFlagService } = useServices({
+    WorkspaceService,
+    FeatureFlagService,
+  });
   const name = useLiveData(node.name$);
   const enableEmojiIcon = useLiveData(
     featureFlagService.flags.enable_emoji_folder_icon.$
@@ -166,27 +384,7 @@ const NavigationPanelFolderNodeFolder = ({
   const { createPage } = usePageHelper(
     workspaceService.workspace.docCollection
   );
-  const handleDelete = useCallback(() => {
-    node.delete();
-    track.$.navigationPanel.organize.deleteOrganizeItem({
-      type: 'folder',
-    });
-    notify.success({
-      title: t['com.nexio.rootAppSidebar.organize.delete.notify-title']({
-        name,
-      }),
-      message: t['com.nexio.rootAppSidebar.organize.delete.notify-message'](),
-    });
-  }, [name, node, t]);
-
   const children = useLiveData(node.sortedChildren$);
-
-  const handleRename = useCallback(
-    (newName: string) => {
-      node.rename(newName);
-    },
-    [node]
-  );
 
   const handleNewDoc = useCallback(() => {
     const newDoc = createPage();
@@ -199,195 +397,15 @@ const NavigationPanelFolderNodeFolder = ({
     setCollapsed(false);
   }, [createPage, node, setCollapsed]);
 
-  const handleCreateSubfolder = useCallback(
-    (name: string) => {
-      node.createFolder(name, node.indexAt('before'));
-      track.$.navigationPanel.organize.createOrganizeItem({ type: 'folder' });
-      setCollapsed(false);
-    },
-    [node, setCollapsed]
+  const menuTarget = useMemo(
+    () => (
+      <NavigationPanelFolderNodeMenu
+        nodeId={node.id ?? ''}
+        additionalOperations={additionalOperations}
+      />
+    ),
+    [additionalOperations, node.id]
   );
-
-  const handleAddToFolder = useCallback(
-    (type: 'doc' | 'collection' | 'tag') => {
-      const initialIds = children
-        .filter(node => node.type$.value === type)
-        .map(node => node.data$.value)
-        .filter(Boolean) as string[];
-      const selector =
-        type === 'doc'
-          ? 'doc-selector'
-          : type === 'collection'
-            ? 'collection-selector'
-            : 'tag-selector';
-      workspaceDialogService.open(
-        selector,
-        {
-          init: initialIds,
-        },
-        selectedIds => {
-          if (selectedIds === undefined) {
-            return;
-          }
-          const newItemIds = difference(selectedIds, initialIds);
-          const removedItemIds = difference(initialIds, selectedIds);
-          const removedItems = children.filter(
-            node =>
-              !!node.data$.value && removedItemIds.includes(node.data$.value)
-          );
-
-          newItemIds.forEach(id => {
-            node.createLink(type, id, node.indexAt('after'));
-          });
-          removedItems.forEach(node => node.delete());
-          const updated = newItemIds.length + removedItems.length;
-          updated && setCollapsed(false);
-        }
-      );
-      track.$.navigationPanel.organize.createOrganizeItem({
-        type: 'link',
-        target: type,
-      });
-    },
-    [children, node, setCollapsed, workspaceDialogService]
-  );
-
-  const createSubTipRenderer = useCallback(
-    ({ input }: { input: string }) => {
-      return <FolderCreateTip input={input} parentName={name} />;
-    },
-    [name]
-  );
-
-  const folderOperations = useMemo(() => {
-    return [
-      {
-        index: 0,
-        inline: true,
-        view: (
-          <IconButton
-            size="16"
-            onClick={handleNewDoc}
-            tooltip={t[
-              'com.nexio.rootAppSidebar.explorer.organize-add-tooltip'
-            ]()}
-          >
-            <PlusIcon />
-          </IconButton>
-        ),
-      },
-      {
-        index: 98,
-        view: (
-          <FolderRenameSubMenu
-            initialName={name}
-            onConfirm={handleRename}
-            menuProps={{
-              triggerOptions: { 'data-testid': 'rename-folder' },
-            }}
-          />
-        ),
-      },
-      {
-        index: 99,
-        view: <MenuSeparator />,
-      },
-      {
-        index: 100,
-        view: (
-          <FolderRenameSubMenu
-            text={t[
-              'com.nexio.rootAppSidebar.organize.folder.create-subfolder'
-            ]()}
-            title={t[
-              'com.nexio.rootAppSidebar.organize.folder.create-subfolder'
-            ]()}
-            onConfirm={handleCreateSubfolder}
-            descRenderer={createSubTipRenderer}
-            icon={<FolderIcon />}
-            menuProps={{
-              triggerOptions: { 'data-testid': 'create-subfolder' },
-            }}
-          />
-        ),
-      },
-      {
-        index: 102,
-        view: (
-          <MenuSub
-            triggerOptions={{
-              prefixIcon: <PlusThickIcon />,
-            }}
-            items={
-              <>
-                <MenuItem
-                  prefixIcon={<PageIcon />}
-                  onClick={() => handleAddToFolder('doc')}
-                >
-                  {t['com.nexio.rootAppSidebar.organize.folder.add-docs']()}
-                </MenuItem>
-                <MenuItem
-                  onClick={() => handleAddToFolder('tag')}
-                  prefixIcon={<TagsIcon />}
-                >
-                  {t['com.nexio.rootAppSidebar.organize.folder.add-tags']()}
-                </MenuItem>
-                <MenuItem
-                  onClick={() => handleAddToFolder('collection')}
-                  prefixIcon={<LayerIcon />}
-                >
-                  {t[
-                    'com.nexio.rootAppSidebar.organize.folder.add-collections'
-                  ]()}
-                </MenuItem>
-              </>
-            }
-          >
-            {t['com.nexio.rootAppSidebar.organize.folder.add-others']()}
-          </MenuSub>
-        ),
-      },
-
-      {
-        index: 200,
-        view: node.id ? <FavoriteFolderOperation id={node.id} /> : null,
-      },
-
-      {
-        index: 9999,
-        view: <MenuSeparator key="menu-separator" />,
-      },
-      {
-        index: 10000,
-        view: (
-          <MenuItem
-            type={'danger'}
-            prefixIcon={<DeleteIcon />}
-            onClick={handleDelete}
-          >
-            {t['com.nexio.rootAppSidebar.organize.delete']()}
-          </MenuItem>
-        ),
-      },
-    ];
-  }, [
-    createSubTipRenderer,
-    handleAddToFolder,
-    handleCreateSubfolder,
-    handleDelete,
-    handleNewDoc,
-    handleRename,
-    name,
-    node.id,
-    t,
-  ]);
-
-  const finalOperations = useMemo(() => {
-    if (additionalOperations) {
-      return [...additionalOperations, ...folderOperations];
-    }
-    return folderOperations;
-  }, [additionalOperations, folderOperations]);
 
   const childrenOperations = useCallback(
     (type: string, node: FolderNode) => {
@@ -403,7 +421,7 @@ const NavigationPanelFolderNodeFolder = ({
                 data-event-args-type={node.type$.value}
                 onClick={() => node.delete()}
               >
-                {t['com.nexio.rootAppSidebar.organize.delete-from-folder']()}
+                {t['com.affine.rootAppSidebar.organize.delete-from-folder']()}
               </MenuItem>
             ),
           },
@@ -432,7 +450,7 @@ const NavigationPanelFolderNodeFolder = ({
       extractEmojiAsIcon={enableEmojiIcon}
       collapsed={collapsed}
       setCollapsed={handleCollapsedChange}
-      operations={finalOperations}
+      menuTarget={menuTarget}
       data-testid={`navigation-panel-folder-${node.id}`}
       aria-label={name}
       data-role="navigation-panel-folder"
@@ -446,7 +464,7 @@ const NavigationPanelFolderNodeFolder = ({
         />
       ))}
       <AddItemPlaceholder
-        label={t['com.nexio.rootAppSidebar.organize.folder.new-doc']()}
+        label={t['com.affine.rootAppSidebar.organize.folder.new-doc']()}
         onClick={handleNewDoc}
         data-testid="new-folder-in-folder-button"
       />

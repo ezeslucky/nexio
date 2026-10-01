@@ -1,12 +1,12 @@
-import { ResizePanel } from '@nexio/component/resize-panel';
-import { NexioErrorComponent } from '@nexio/core/components/nexio/nexio-error-boundary/nexio-error-fallback';
-import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
+import { ResizePanel } from '@affine/component/resize-panel';
+import { AffineErrorComponent } from '@affine/core/components/affine/affine-error-boundary/affine-error-fallback';
+import { workbenchRoutes } from '@affine/core/desktop/workbench-router';
 import {
   appSettingAtom,
   FrameworkScope,
   useLiveData,
   useService,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { useAtomValue } from 'jotai';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { type RouteObject, useLocation } from 'react-router-dom';
@@ -29,7 +29,7 @@ const useAdapter = BUILD_CONFIG.isElectron
 const routes: RouteObject[] = [
   {
     element: <RouteContainer />,
-    errorElement: <NexioErrorComponent />,
+    errorElement: <AffineErrorComponent />,
     children: workbenchRoutes,
   },
 ];

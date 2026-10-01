@@ -1,5 +1,5 @@
-import type { DocMode, RootBlockModel } from '@canvas/nexio/model';
-import { Entity } from '@ezeslucky/infra';
+import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+import { Entity } from '@toeverything/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
 
@@ -55,8 +55,8 @@ export class Doc extends Entity {
     return this.scope.props.docId;
   }
 
-  public readonly yDoc = this.scope.props.canvasDoc.spaceDoc;
-  public readonly canvasDoc = this.scope.props.canvasDoc;
+  public readonly yDoc = this.scope.props.blockSuiteDoc.spaceDoc;
+  public readonly blockSuiteDoc = this.scope.props.blockSuiteDoc;
   public readonly record = this.scope.props.record;
 
   readonly meta$ = this.record.meta$;
@@ -127,6 +127,10 @@ export class Doc extends Entity {
     return this.record.restoreFromTrash();
   }
 
+  deletePermanently() {
+    return this.record.deletePermanently();
+  }
+
   waitForSyncReady() {
     return this.store.waitForDocLoadReady(this.id);
   }
@@ -136,10 +140,10 @@ export class Doc extends Entity {
   }
 
   changeDocTitle(newTitle: string) {
-    const pageBlock = this.canvasDoc.getBlocksByFlavour('nexio:page').at(0)
+    const pageBlock = this.blockSuiteDoc.getBlocksByFlavour('affine:page').at(0)
       ?.model as RootBlockModel | undefined;
     if (pageBlock) {
-      this.canvasDoc.transact(() => {
+      this.blockSuiteDoc.transact(() => {
         pageBlock.props.title.delete(0, pageBlock.props.title.length);
         pageBlock.props.title.insert(newTitle, 0);
       });

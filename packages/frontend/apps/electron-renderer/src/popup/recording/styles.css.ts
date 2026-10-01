@@ -12,7 +12,7 @@ export const root = style({
   ['WebkitAppRegion' as string]: 'drag',
 });
 
-export const nexioIcon = style({
+export const affineIcon = style({
   width: 28,
   height: 28,
 });

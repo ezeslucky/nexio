@@ -1,7 +1,7 @@
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useEffect, useMemo } from 'react';
 
@@ -47,7 +47,7 @@ const getConditions = (
     { condition: !isOwner, label: 'joinedWorkspace' },
     { condition: flavour === 'local', label: 'local' },
     {
-      condition: flavour === 'nexio-cloud',
+      condition: flavour === 'affine-cloud',
       label: 'syncCloud',
     },
     {
@@ -55,7 +55,7 @@ const getConditions = (
       label: 'teamWorkspace',
     },
     {
-      condition: flavour !== 'nexio-cloud' && flavour !== 'local',
+      condition: flavour !== 'affine-cloud' && flavour !== 'local',
       label: 'selfHosted',
     },
   ];
@@ -63,31 +63,31 @@ const getConditions = (
 
 const getLabelMap = (t: ReturnType<typeof useI18n>): LabelMap => ({
   local: {
-    value: t['com.nexio.settings.workspace.state.local'](),
+    value: t['com.affine.settings.workspace.state.local'](),
     background: cssVarV2('chip/label/orange'),
   },
   syncCloud: {
-    value: t['com.nexio.settings.workspace.state.sync-nexio-cloud'](),
+    value: t['com.affine.settings.workspace.state.sync-affine-cloud'](),
     background: cssVarV2('chip/label/blue'),
   },
   selfHosted: {
-    value: t['com.nexio.settings.workspace.state.self-hosted'](),
+    value: t['com.affine.settings.workspace.state.self-hosted'](),
     background: cssVarV2('chip/label/purple'),
   },
   joinedWorkspace: {
-    value: t['com.nexio.settings.workspace.state.joined'](),
+    value: t['com.affine.settings.workspace.state.joined'](),
     background: cssVarV2('chip/label/yellow'),
   },
   availableOffline: {
-    value: t['com.nexio.settings.workspace.state.available-offline'](),
+    value: t['com.affine.settings.workspace.state.available-offline'](),
     background: cssVarV2('chip/label/green'),
   },
   publishedToWeb: {
-    value: t['com.nexio.settings.workspace.state.published'](),
+    value: t['com.affine.settings.workspace.state.published'](),
     background: cssVarV2('chip/label/blue'),
   },
   teamWorkspace: {
-    value: t['com.nexio.settings.workspace.state.team'](),
+    value: t['com.affine.settings.workspace.state.team'](),
     background: cssVarV2('chip/label/purple'),
   },
 });

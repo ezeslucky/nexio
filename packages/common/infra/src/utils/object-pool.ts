@@ -1,4 +1,4 @@
-import { Unreachable } from '@nexio/env/constant';
+import { Unreachable } from '@affine/env/constant';
 
 export interface RcRef<T> extends Disposable {
   obj: T;
@@ -64,7 +64,8 @@ export class ObjectPool<Key, T> {
 
   private gc() {
     for (const [key, { obj, rc }] of new Map(
-      this.objects /* clone the map, because the origin will be modified during iteration */
+      this
+        .objects /* clone the map, because the origin will be modified during iteration */
     )) {
       if (
         rc === 0 &&

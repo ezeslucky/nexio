@@ -5,14 +5,14 @@ import {
   MenuItem,
   type MenuProps,
   useConfirmModal,
-} from '@nexio/component';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { DocsService } from '@nexio/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { GuardService } from '@nexio/core/modules/permissions';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/component';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { DocsService } from '@affine/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { GuardService } from '@affine/core/modules/permissions';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   DeleteIcon,
   DuplicateIcon,
@@ -21,10 +21,10 @@ import {
   OpenInNewIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useContext } from 'react';
 
-import { useCanvasMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
+import { useBlockSuiteMetaHelper } from '../../hooks/affine/use-block-suite-meta-helper';
 import { IsFavoriteIcon } from '../../pure/icons';
 import { DocExplorerContext } from '../context';
 
@@ -52,8 +52,8 @@ const ToggleFavorite = ({ docId }: DocOperationProps) => {
       data-testid="doc-list-operation-favorite"
     >
       {favourite
-        ? t['com.nexio.favoritePageOperation.remove']()
-        : t['com.nexio.favoritePageOperation.add']()}
+        ? t['com.affine.favoritePageOperation.remove']()
+        : t['com.affine.favoritePageOperation.add']()}
     </MenuItem>
   );
 };
@@ -74,7 +74,7 @@ const DocInfo = ({ docId }: DocOperationProps) => {
 
   return (
     <MenuItem onClick={onOpenInfoModal} prefixIcon={<InformationIcon />}>
-      {t['com.nexio.page-properties.page-info.view']()}
+      {t['com.affine.page-properties.page-info.view']()}
     </MenuItem>
   );
 };
@@ -93,7 +93,7 @@ const NewTab = ({ docId }: DocOperationProps) => {
 
   return (
     <MenuItem onClick={onOpenInNewTab} prefixIcon={<OpenInNewIcon />}>
-      {t['com.nexio.workbench.tab.page-menu-open']()}
+      {t['com.affine.workbench.tab.page-menu-open']()}
     </MenuItem>
   );
 };
@@ -113,7 +113,7 @@ const SplitView = ({ docId }: DocOperationProps) => {
 
   return (
     <MenuItem onClick={onOpenInSplitView} prefixIcon={<SplitViewIcon />}>
-      {t['com.nexio.workbench.split-view.page-menu-open']()}
+      {t['com.affine.workbench.split-view.page-menu-open']()}
     </MenuItem>
   );
 };
@@ -122,7 +122,7 @@ const SplitView = ({ docId }: DocOperationProps) => {
  * Duplicate Operation
  */
 const Duplicate = ({ docId }: DocOperationProps) => {
-  const { duplicate } = useCanvasMetaHelper();
+  const { duplicate } = useBlockSuiteMetaHelper();
   const t = useI18n();
 
   const onDuplicate = useCallback(() => {
@@ -134,7 +134,7 @@ const Duplicate = ({ docId }: DocOperationProps) => {
 
   return (
     <MenuItem prefixIcon={<DuplicateIcon />} onSelect={onDuplicate}>
-      {t['com.nexio.header.option.duplicate']()}
+      {t['com.affine.header.option.duplicate']()}
     </MenuItem>
   );
 };
@@ -158,17 +158,17 @@ const MoveToTrash = ({ docId }: DocOperationProps) => {
 
     track.allDocs.list.docMenu.deleteDoc();
     openConfirmModal({
-      title: t['com.nexio.moveToTrash.confirmModal.title'](),
-      description: t['com.nexio.moveToTrash.confirmModal.description']({
+      title: t['com.affine.moveToTrash.confirmModal.title'](),
+      description: t['com.affine.moveToTrash.confirmModal.description']({
         title: doc.title$.value || t['Untitled'](),
       }),
-      cancelText: t['com.nexio.confirmModal.button.cancel'](),
+      cancelText: t['com.affine.confirmModal.button.cancel'](),
       confirmText: t.Delete(),
       confirmButtonOptions: {
         variant: 'error',
       },
-      onConfirm: () => {
-        doc.moveToTrash();
+      onConfirm: async () => {
+        await doc.moveToTrash();
       },
     });
   }, [doc, openConfirmModal, t]);
@@ -180,7 +180,7 @@ const MoveToTrash = ({ docId }: DocOperationProps) => {
       onClick={onMoveToTrash}
       disabled={!canTrash}
     >
-      {t['com.nexio.moveToTrash.title']()}
+      {t['com.affine.moveToTrash.title']()}
     </MenuItem>
   );
 };

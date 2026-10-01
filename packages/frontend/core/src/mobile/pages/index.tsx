@@ -1,4 +1,4 @@
-import { Component as IndexComponent } from '@nexio/core/desktop/pages/index';
+import { Component as IndexComponent } from '@affine/core/desktop/pages/index';
 
 import { AppFallback } from '../components/app-fallback';
 
@@ -7,6 +7,10 @@ import { AppFallback } from '../components/app-fallback';
 export const Component = () => {
   // TODO: replace with a mobile version
   return (
-    <IndexComponent defaultIndexRoute={'home'} fallback={<AppFallback />} />
+    <IndexComponent
+      defaultIndexRoute={'home'}
+      fallback={<AppFallback />}
+      createErrorFallback={retry => <AppFallback onRetry={retry} />}
+    />
   );
 };

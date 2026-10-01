@@ -1,4 +1,4 @@
-import { Button } from '@nexio/component';
+import { Button } from '@affine/component';
 import clsx from 'clsx';
 import {
   cloneElement,
@@ -13,8 +13,7 @@ import {
 
 import * as styles from './empty-section.css';
 
-interface NavigationPanelEmptySectionProps
-  extends HTMLAttributes<HTMLDivElement> {
+interface NavigationPanelEmptySectionProps extends HTMLAttributes<HTMLDivElement> {
   icon:
     | ((props: SVGProps<SVGSVGElement>) => JSX.Element)
     | ReactElement<SVGAttributes<SVGElement>>;

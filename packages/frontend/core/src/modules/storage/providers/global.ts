@@ -2,7 +2,7 @@ import {
   type AsyncMemento,
   createIdentifier,
   type Memento,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 
 /**
  * A memento object that stores the entire application state.

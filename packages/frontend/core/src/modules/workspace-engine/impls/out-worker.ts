@@ -1,5 +1,5 @@
-import { getWorkerUrl } from '@nexio/env/worker';
-import { OpClient } from '@ezeslucky/infra/op';
+import { getWorkerUrl } from '@affine/env/worker';
+import { OpClient } from '@toeverything/infra/op';
 
 import type { WorkerOps } from './worker-ops';
 

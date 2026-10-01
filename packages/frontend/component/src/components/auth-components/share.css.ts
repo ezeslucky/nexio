@@ -71,6 +71,7 @@ export const authInputError = style({
   color: cssVar('errorColor'),
   fontSize: cssVar('fontXs'),
   lineHeight: '20px',
+  minHeight: '20px',
 });
 
 globalStyle(`${authContent} a`, {
@@ -141,8 +142,6 @@ export const signInPageContainer = style({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  position: 'relative',
-  zIndex: 1,
 });
 export const input = style({
   width: '330px',

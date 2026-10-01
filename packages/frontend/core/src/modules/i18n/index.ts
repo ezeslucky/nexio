@@ -1,4 +1,4 @@
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { GlobalCache } from '../storage';
 import { I18nProvider } from './context';

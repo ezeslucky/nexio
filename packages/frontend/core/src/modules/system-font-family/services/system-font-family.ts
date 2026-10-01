@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import { SystemFontFamily } from '../entities/system-font-family';
 

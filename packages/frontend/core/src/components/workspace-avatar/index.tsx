@@ -1,9 +1,9 @@
-import { Avatar, type AvatarProps } from '@nexio/component';
+import { Avatar, type AvatarProps } from '@affine/component';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workspace';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useLayoutEffect, useState } from 'react';
 
 const cache = new Map<string, { imageBitmap: ImageBitmap; key: string }>();

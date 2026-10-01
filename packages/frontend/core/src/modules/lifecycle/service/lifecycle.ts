@@ -1,4 +1,4 @@
-import { createEvent, Service } from '@ezeslucky/infra';
+import { createEvent, Service } from '@toeverything/infra';
 
 /**
  * Event that is emitted when application is started.

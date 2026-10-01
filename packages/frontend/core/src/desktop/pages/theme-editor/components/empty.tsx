@@ -1,4 +1,4 @@
-import { Empty } from '@nexio/component';
+import { Empty } from '@affine/component';
 
 export const ThemeEmpty = () => {
   return (

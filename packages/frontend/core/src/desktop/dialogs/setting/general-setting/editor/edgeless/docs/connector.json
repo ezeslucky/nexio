@@ -9,11 +9,11 @@
   "blocks": {
     "type": "block",
     "id": "orzKfiHevj",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": []
       }
     },
@@ -21,7 +21,7 @@
       {
         "type": "block",
         "id": "-48EmppaxI",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {
@@ -39,7 +39,7 @@
                   "light": "#000000"
                 },
                 "fontSize": 16,
-                "fontFamily": "canvas:surface:Inter",
+                "fontFamily": "blocksuite:surface:Inter",
                 "fontWeight": "400",
                 "fontStyle": "normal",
                 "textAlign": "center"
@@ -59,7 +59,7 @@
                 "position": [387.4453125, 4.02734375]
               },
               "text": {
-                "nexio:surface:text": true,
+                "affine:surface:text": true,
                 "delta": [
                   {
                     "insert": "label"
@@ -75,11 +75,11 @@
           {
             "type": "block",
             "id": "-6UhNH7qhy",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

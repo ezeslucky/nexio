@@ -9,11 +9,11 @@
   "blocks": {
     "type": "block",
     "id": "MCYCDPz_QH",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
             "insert": "FrameDoc"
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "I_s0rS2Pbl",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {}
@@ -34,11 +34,11 @@
           {
             "type": "block",
             "id": "mHE8GI9UWx",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

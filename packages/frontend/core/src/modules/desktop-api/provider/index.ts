@@ -3,8 +3,8 @@ import type {
   ClientEvents,
   ClientHandler,
   SharedStorage,
-} from '@nexio/electron-api';
-import { createIdentifier } from '@ezeslucky/infra';
+} from '@affine/electron-api';
+import { createIdentifier } from '@toeverything/infra';
 
 // for now desktop api's type are all inferred from electron-api
 export interface DesktopApiProvider {

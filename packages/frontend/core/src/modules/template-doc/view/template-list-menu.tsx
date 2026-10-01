@@ -4,16 +4,16 @@ import {
   MenuItem,
   type MenuProps,
   Scrollable,
-} from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { inferOpenMode } from '@nexio/core/utils';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { inferOpenMode } from '@affine/core/utils';
+import { useI18n } from '@affine/i18n';
 import {
   DualLinkIcon,
   InformationIcon,
   TemplateIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import { type DocRecord, DocsService } from '../../doc';
@@ -61,11 +61,11 @@ const Empty = () => {
     <div className={styles.empty}>
       <InformationIcon className={styles.emptyIcon} />
       <span className={styles.emptyText}>
-        {t['com.nexio.template-list.empty']()}
+        {t['com.affine.template-list.empty']()}
       </span>
       <div className={styles.space} />
       <a
-        href="https://nexio.pro/blog/how-to-use-template"
+        href="https://affine.pro/blog/how-to-use-template"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.link}
@@ -117,8 +117,7 @@ export const TemplateListMenuContentScrollable = (
 };
 
 interface TemplateListMenuProps
-  extends TemplateListMenuContentProps,
-    Omit<MenuProps, 'items'> {}
+  extends TemplateListMenuContentProps, Omit<MenuProps, 'items'> {}
 export const TemplateListMenu = ({
   children,
   onSelect,
@@ -169,7 +168,7 @@ export const TemplateListMenuAdd = () => {
       onClick={createNewTemplate}
       onAuxClick={createNewTemplate}
     >
-      {t['com.nexio.template-list.create-new']()}
+      {t['com.affine.template-list.create-new']()}
     </MenuItem>
   );
 };

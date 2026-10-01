@@ -5,22 +5,22 @@ import {
   PropertyCollapsibleContent,
   PropertyCollapsibleSection,
   Scrollable,
-} from '@nexio/component';
-import { useGuard } from '@nexio/core/components/guard';
+} from '@affine/component';
+import { useGuard } from '@affine/core/components/guard';
 import {
   type DefaultOpenProperty,
   WorkspacePropertyRow,
-} from '@nexio/core/components/properties';
-import { CreatePropertyMenuItems } from '@nexio/core/components/properties/menu/create-doc-property';
-import { LinksRow } from '@nexio/core/desktop/dialogs/doc-info/links-row';
-import { TimeRow } from '@nexio/core/desktop/dialogs/doc-info/time-row';
-import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
-import { DocDatabaseBacklinkInfo } from '@nexio/core/modules/doc-info';
-import { DocLinksService } from '@nexio/core/modules/doc-link';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/components/properties';
+import { CreatePropertyMenuItems } from '@affine/core/components/properties/menu/create-doc-property';
+import { LinksRow } from '@affine/core/desktop/dialogs/doc-info/links-row';
+import { TimeRow } from '@affine/core/desktop/dialogs/doc-info/time-row';
+import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+import { DocDatabaseBacklinkInfo } from '@affine/core/modules/doc-info';
+import { DocLinksService } from '@affine/core/modules/doc-link';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import { useI18n } from '@affine/i18n';
 import { PlusIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { Suspense, useCallback, useEffect, useState } from 'react';
 
 import * as styles from './doc-info.css';
@@ -61,24 +61,24 @@ export const DocInfoSheet = ({
           <TimeRow docId={docId} className={styles.timeRow} />
           <Divider size="thinner" />
           <PropertyCollapsibleSection
-            title={t.t('com.nexio.workspace.properties')}
+            title={t.t('com.affine.workspace.properties')}
           >
             <PropertyCollapsibleContent
               className={styles.tableBodyRoot}
               collapseButtonText={({ hide, isCollapsed }) =>
                 isCollapsed
                   ? hide === 1
-                    ? t['com.nexio.page-properties.more-property.one']({
+                    ? t['com.affine.page-properties.more-property.one']({
                         count: hide.toString(),
                       })
-                    : t['com.nexio.page-properties.more-property.more']({
+                    : t['com.affine.page-properties.more-property.more']({
                         count: hide.toString(),
                       })
                   : hide === 1
-                    ? t['com.nexio.page-properties.hide-property.one']({
+                    ? t['com.affine.page-properties.hide-property.one']({
                         count: hide.toString(),
                       })
-                    : t['com.nexio.page-properties.hide-property.more']({
+                    : t['com.affine.page-properties.hide-property.more']({
                         count: hide.toString(),
                       })
               }
@@ -98,7 +98,7 @@ export const DocInfoSheet = ({
                   prefix={<PlusIcon />}
                   className={styles.addPropertyButton}
                 >
-                  {t['com.nexio.page-properties.add-property']()}
+                  {t['com.affine.page-properties.add-property']()}
                 </Button>
               ) : (
                 <Menu
@@ -116,7 +116,7 @@ export const DocInfoSheet = ({
                     prefix={<PlusIcon />}
                     className={styles.addPropertyButton}
                   >
-                    {t['com.nexio.page-properties.add-property']()}
+                    {t['com.affine.page-properties.add-property']()}
                   </Button>
                 </Menu>
               )}
@@ -132,7 +132,7 @@ export const DocInfoSheet = ({
                 className={styles.linksRow}
                 references={backlinks}
                 count={backlinks.length}
-                label={t['com.nexio.page-properties.backlinks']()}
+                label={t['com.affine.page-properties.backlinks']()}
               />
               <Divider size="thinner" />
             </>
@@ -143,7 +143,7 @@ export const DocInfoSheet = ({
                 className={styles.linksRow}
                 references={links}
                 count={links.length}
-                label={t['com.nexio.page-properties.outgoing-links']()}
+                label={t['com.affine.page-properties.outgoing-links']()}
               />
               <Divider size="thinner" />
             </>

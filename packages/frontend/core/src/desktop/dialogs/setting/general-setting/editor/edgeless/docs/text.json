@@ -9,11 +9,11 @@
   "blocks": {
     "type": "block",
     "id": "Mz1SM8_rfE",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
             "insert": "TextDoc"
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "AnKvfM9lyB",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {}
@@ -34,11 +34,11 @@
           {
             "type": "block",
             "id": "xLced7EEmu",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"
@@ -59,14 +59,14 @@
           {
             "type": "block",
             "id": "1jGoMnK9qs",
-            "flavour": "nexio:edgeless-text",
+            "flavour": "affine:edgeless-text",
             "version": 1,
             "props": {
               "xywh": "[112.00732421875,29.2640380859375,273.905029296875,127.79339599609375]",
               "index": "a0",
               "lockedBySelf": false,
               "color": "#53b2ef",
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "fontStyle": "normal",
               "fontWeight": "400",
               "textAlign": "left",
@@ -78,12 +78,12 @@
               {
                 "type": "block",
                 "id": "EC2iyFQ3aU",
-                "flavour": "nexio:paragraph",
+                "flavour": "affine:paragraph",
                 "version": 1,
                 "props": {
                   "type": "text",
                   "text": {
-                    "$canvas:internal:text$": true,
+                    "$blocksuite:internal:text$": true,
                     "delta": [
                       {
                         "insert": "To Shape,"
@@ -97,12 +97,12 @@
               {
                 "type": "block",
                 "id": "Ss-EVG-70C",
-                "flavour": "nexio:paragraph",
+                "flavour": "affine:paragraph",
                 "version": 1,
                 "props": {
                   "type": "text",
                   "text": {
-                    "$canvas:internal:text$": true,
+                    "$blocksuite:internal:text$": true,
                     "delta": [
                       {
                         "insert": "Not to Adopt."

@@ -1,25 +1,24 @@
-import { Button, type ButtonProps } from '@nexio/component/ui/button';
-import { Tooltip } from '@nexio/component/ui/tooltip';
-import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { Button, type ButtonProps } from '@affine/component/ui/button';
+import { Tooltip } from '@affine/component/ui/tooltip';
+import { generateSubscriptionCallbackLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   ServerService,
   SubscriptionService,
-} from '@nexio/core/modules/cloud';
-import { GlobalDialogService } from '@nexio/core/modules/dialogs';
-import { UrlService } from '@nexio/core/modules/url';
+} from '@affine/core/modules/cloud';
+import { GlobalDialogService } from '@affine/core/modules/dialogs';
+import { UrlService } from '@affine/core/modules/url';
 import {
   type CreateCheckoutSessionInput,
   SubscriptionPlan,
-  SubscriptionRecurring,
+  type SubscriptionRecurring,
   SubscriptionStatus,
-  SubscriptionVariant,
-} from '@nexio/graphql';
-import { Trans, useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/graphql';
+import { Trans, useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import { DoneIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import type { PropsWithChildren } from 'react';
@@ -100,11 +99,11 @@ const getSignUpText = (
 ) => {
   switch (plan) {
     case SubscriptionPlan.Free:
-      return t['com.nexio.payment.sign-up-free']();
+      return t['com.affine.payment.sign-up-free']();
     case SubscriptionPlan.Team:
-      return t['com.nexio.payment.upgrade']();
+      return t['com.affine.payment.upgrade']();
     default:
-      return t['com.nexio.payment.buy-pro']();
+      return t['com.affine.payment.buy-pro']();
   }
 };
 
@@ -119,7 +118,6 @@ const ActionButton = ({ detail, recurring }: PlanCardProps) => {
   );
   const currentPlan = primarySubscription?.plan ?? SubscriptionPlan.Free;
   const currentRecurring = primarySubscription?.recurring;
-  const isOnetime = useLiveData(subscriptionService.subscription.isOnetimePro$);
   const isFree = detail.plan === SubscriptionPlan.Free;
 
   const signUpText = useMemo(
@@ -136,9 +134,6 @@ const ActionButton = ({ detail, recurring }: PlanCardProps) => {
   //  else
   //    if team                                 => 'Start 14-day free trial'
   //    if isBeliever                           => 'Included in Lifetime'
-  //    if onetime
-  //      if free                               => 'Included in Pro'
-  //      else                                  => 'Redeem Code'
   //    if isCurrent
   //      if canceled                           => 'Resume'
   //      else                                  => 'Current Plan'
@@ -160,19 +155,8 @@ const ActionButton = ({ detail, recurring }: PlanCardProps) => {
   if (isBeliever) {
     return (
       <Button className={styles.planAction} disabled>
-        {t['com.nexio.payment.cloud.lifetime.included']()}
+        {t['com.affine.payment.cloud.lifetime.included']()}
       </Button>
-    );
-  }
-
-  // onetime
-  if (isOnetime) {
-    return isFree ? (
-      <Button className={styles.planAction} disabled>
-        {t['com.nexio.payment.cloud.onetime.included']()}
-      </Button>
-    ) : (
-      <RedeemCode recurring={recurring} />
     );
   }
 
@@ -212,7 +196,7 @@ const CurrentPlan = () => {
   const t = useI18n();
   return (
     <Button className={styles.planAction}>
-      {t['com.nexio.payment.current-plan']()}
+      {t['com.affine.payment.current-plan']()}
     </Button>
   );
 };
@@ -222,7 +206,7 @@ const Downgrade = ({ disabled }: { disabled?: boolean }) => {
   const [open, setOpen] = useState(false);
 
   const tooltipContent = disabled
-    ? t['com.nexio.payment.downgraded-tooltip']()
+    ? t['com.affine.payment.downgraded-tooltip']()
     : null;
 
   const handleClick = useCallback(() => {
@@ -239,7 +223,7 @@ const Downgrade = ({ disabled }: { disabled?: boolean }) => {
             onClick={handleClick}
             disabled={disabled}
           >
-            {t['com.nexio.payment.downgrade']()}
+            {t['com.affine.payment.downgrade']()}
           </Button>
         </div>
       </Tooltip>
@@ -270,7 +254,7 @@ const UpgradeToTeam = ({ recurring }: { recurring: SubscriptionRecurring }) => {
         variant="primary"
         data-event-args-url={`${url}${urlParams.toString() ? `&${urlParams.toString()}` : ''}`}
       >
-        {t['com.nexio.payment.upgrade']()}
+        {t['com.affine.payment.upgrade']()}
       </Button>
     </a>
   );
@@ -344,7 +328,7 @@ export const Upgrade = ({
           {...props}
           {...btnProps}
         >
-          {children ?? t['com.nexio.payment.upgrade']()}
+          {children ?? t['com.affine.payment.upgrade']()}
         </Button>
       )}
     />
@@ -406,7 +390,7 @@ const ChangeRecurring = ({
         disabled={disabled || isMutating}
         loading={isMutating}
       >
-        {t['com.nexio.payment.change-to']({ to })}
+        {t['com.affine.payment.change-to']({ to })}
       </Button>
 
       <ConfirmLoadingModal
@@ -462,38 +446,12 @@ const ResumeButton = () => {
     <ResumeAction open={open} onOpenChange={setOpen}>
       <Button className={styles.resumeAction} onClick={handleClick}>
         <span data-show-hover="true" className={clsx(styles.resumeContent)}>
-          {t['com.nexio.payment.resume-renewal']()}
+          {t['com.affine.payment.resume-renewal']()}
         </span>
         <span data-show-hover="false" className={clsx(styles.resumeContent)}>
-          {t['com.nexio.payment.current-plan']()}
+          {t['com.affine.payment.current-plan']()}
         </span>
       </Button>
     </ResumeAction>
-  );
-};
-
-const redeemCodeCheckoutInput = { variant: SubscriptionVariant.Onetime };
-export const RedeemCode = ({
-  className,
-  recurring = SubscriptionRecurring.Yearly,
-  plan,
-  children,
-  ...btnProps
-}: ButtonProps & {
-  recurring?: SubscriptionRecurring;
-  plan?: SubscriptionPlan;
-}) => {
-  const t = useI18n();
-
-  return (
-    <Upgrade
-      recurring={recurring}
-      className={className}
-      checkoutInput={redeemCodeCheckoutInput}
-      plan={plan ?? SubscriptionPlan.Pro}
-      {...btnProps}
-    >
-      {children ?? t['com.nexio.payment.redeem-code']()}
-    </Upgrade>
   );
 };

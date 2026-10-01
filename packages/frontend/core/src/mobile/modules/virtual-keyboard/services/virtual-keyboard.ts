@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@ezeslucky/infra';
+import { LiveData, Service } from '@toeverything/infra';
 import { setElementVars } from '@vanilla-extract/dynamic';
 
 import { globalVars } from '../../../styles/variables.css';
@@ -20,8 +20,10 @@ export class VirtualKeyboardService extends Service {
   private _observe() {
     this.disposables.push(
       this.virtualKeyboardProvider.onChange(info => {
+        const layoutHeight = info.overlaysContent === false ? 0 : info.height;
+
         this.visible$.next(info.visible);
-        this.height$.next(info.height);
+        this.height$.next(layoutHeight);
 
         setElementVars(document.body, {
           [globalVars.appKeyboardHeight]: `${this.height$.value}px`,

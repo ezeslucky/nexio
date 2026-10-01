@@ -1,4 +1,4 @@
-import track from '@nexio/track';
+import track from '@affine/track';
 
 /**
  * Wrap the track function to add default properties to the first argument

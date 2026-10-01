@@ -1,8 +1,8 @@
 import {
   WorkbenchLink,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workbench';
+import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './style.css';
 

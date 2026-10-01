@@ -1,9 +1,11 @@
-import { type IconData, IconRenderer, IconType } from '@nexio/component';
+import { type IconData, IconRenderer, IconType } from '@affine/component';
 import * as litIcons from '@blocksuite/icons/lit';
 import { html } from 'lit';
 
 export const getDocIconComponent = (icon: IconData) => {
-  const Icon = () => <IconRenderer data={icon} />;
+  const Icon = (props: React.SVGProps<SVGSVGElement>) => (
+    <IconRenderer data={icon} {...props} />
+  );
   Icon.displayName = 'DocIcon';
   return Icon;
 };
@@ -13,7 +15,7 @@ export const getDocIconComponentLit = (icon: IconData) => {
     if (icon.type === IconType.Emoji) {
       return html`<div class="icon">${icon.unicode}</div>`;
     }
-    if (icon.type === IconType.NEXIOIcon) {
+    if (icon.type === IconType.AffineIcon) {
       return html`<div
         style="color: ${icon.color}; display: flex; align-items: center; justify-content: center;"
       >

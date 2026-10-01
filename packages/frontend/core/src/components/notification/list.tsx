@@ -8,16 +8,17 @@ import {
   observeIntersection,
   Scrollable,
   Skeleton,
-} from '@nexio/component';
-import { InvitationService } from '@nexio/core/modules/cloud';
+} from '@affine/component';
+import { AuthService, InvitationService } from '@affine/core/modules/cloud';
+import { GlobalDialogService } from '@affine/core/modules/dialogs';
 import {
   type Notification,
   NotificationListService,
   NotificationType,
-} from '@nexio/core/modules/notification';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
-import { extractEmojiIcon } from '@nexio/core/utils';
-import { UserFriendlyError } from '@nexio/error';
+} from '@affine/core/modules/notification';
+import { WorkspacesService } from '@affine/core/modules/workspace';
+import { extractEmojiIcon } from '@affine/core/utils';
+import { UserFriendlyError } from '@affine/error';
 import type {
   InvitationAcceptedNotificationBodyType,
   InvitationBlockedNotificationBodyType,
@@ -26,9 +27,9 @@ import type {
   InvitationReviewDeclinedNotificationBodyType,
   InvitationReviewRequestNotificationBodyType,
   MentionNotificationBodyType,
-} from '@nexio/graphql';
-import { i18nTime, Trans, useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/graphql';
+import { i18nTime, Trans, useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   CollaborationIcon,
   DeleteIcon,
@@ -37,7 +38,7 @@ import {
   NotificationIcon,
   PageIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   useCallback,
@@ -54,10 +55,18 @@ import * as styles from './list.style.css';
 export const NotificationList = () => {
   const t = useI18n();
   const notificationListService = useService(NotificationListService);
+  const authService = useService(AuthService);
+  const globalDialogService = useService(GlobalDialogService);
+  const authStatus = useLiveData(authService.session.status$);
   const notifications = useLiveData(notificationListService.notifications$);
   const isLoading = useLiveData(notificationListService.isLoading$);
   const error = useLiveData(notificationListService.error$);
   const hasMore = useLiveData(notificationListService.hasMore$);
+  const showLoadingMore =
+    authStatus === 'authenticated' &&
+    notifications.length > 0 &&
+    hasMore &&
+    isLoading;
   const loadMoreIndicatorRef = useRef<HTMLDivElement>(null);
 
   const userFriendlyError = useMemo(() => {
@@ -65,23 +74,31 @@ export const NotificationList = () => {
   }, [error]);
 
   useLayoutEffect(() => {
-    // reset the notification list when the component is mounted
     notificationListService.reset();
-    notificationListService.loadMore();
-  }, [notificationListService]);
+    if (authStatus === 'authenticated') notificationListService.loadMore();
+  }, [authStatus, notificationListService]);
 
   useEffect(() => {
     if (loadMoreIndicatorRef.current) {
       let previousIsIntersecting = false;
       return observeIntersection(loadMoreIndicatorRef.current, entity => {
-        if (entity.isIntersecting && !previousIsIntersecting && hasMore) {
+        if (
+          authStatus === 'authenticated' &&
+          entity.isIntersecting &&
+          !previousIsIntersecting &&
+          hasMore
+        ) {
           notificationListService.loadMore();
         }
         previousIsIntersecting = entity.isIntersecting;
       });
     }
     return;
-  }, [hasMore, notificationListService]);
+  }, [authStatus, hasMore, notificationListService]);
+
+  const handleSignIn = useCallback(() => {
+    globalDialogService.open('sign-in', {});
+  }, [globalDialogService]);
 
   const handleDeleteAll = useCallback(() => {
     notificationListService.readAllNotifications().catch(err => {
@@ -95,12 +112,12 @@ export const NotificationList = () => {
       data-mobile={BUILD_CONFIG.isMobileEdition ? '' : undefined}
     >
       <div className={styles.header}>
-        <span>{t['com.nexio.rootAppSidebar.notifications']()}</span>
+        <span>{t['com.affine.rootAppSidebar.notifications']()}</span>
         {notifications.length > 0 && (
           <Menu
             items={
               <MenuItem prefixIcon={<DeleteIcon />} onClick={handleDeleteAll}>
-                <span>{t['com.nexio.notification.delete-all']()}</span>
+                <span>{t['com.affine.notification.delete-all']()}</span>
               </MenuItem>
             }
           >
@@ -110,7 +127,9 @@ export const NotificationList = () => {
       </div>
       <Scrollable.Root className={styles.scrollRoot}>
         <Scrollable.Viewport className={styles.scrollViewport}>
-          {notifications.length > 0 ? (
+          {authStatus === 'unauthenticated' ? (
+            <NotificationSignIn onSignIn={handleSignIn} />
+          ) : notifications.length > 0 ? (
             <ul className={styles.itemList}>
               {notifications.map(notification => (
                 <li key={notification.id}>
@@ -118,26 +137,91 @@ export const NotificationList = () => {
                 </li>
               ))}
               {userFriendlyError && (
-                <div className={styles.error}>{userFriendlyError.message}</div>
+                <li>
+                  <NotificationError
+                    message={userFriendlyError.message}
+                    onRetry={() => notificationListService.retry()}
+                  />
+                </li>
               )}
             </ul>
           ) : isLoading ? (
             <NotificationItemSkeleton />
           ) : userFriendlyError ? (
-            <div className={styles.error}>{userFriendlyError.message}</div>
+            <NotificationErrorEmpty
+              message={userFriendlyError.message}
+              onRetry={() => notificationListService.retry()}
+            />
           ) : (
             <NotificationListEmpty />
           )}
 
           <div
             ref={loadMoreIndicatorRef}
-            className={hasMore ? styles.loadMoreIndicator : ''}
+            className={showLoadingMore ? styles.loadMoreIndicator : ''}
           >
-            {hasMore ? t['com.nexio.notification.loading-more']() : null}
+            {showLoadingMore
+              ? t['com.affine.notification.loading-more']()
+              : null}
           </div>
         </Scrollable.Viewport>
         <Scrollable.Scrollbar />
       </Scrollable.Root>
+    </div>
+  );
+};
+
+const NotificationSignIn = ({ onSignIn }: { onSignIn: () => void }) => {
+  const t = useI18n();
+  return (
+    <div className={styles.listEmpty}>
+      <div className={styles.listEmptyIconContainer}>
+        <NotificationIcon width={24} height={24} />
+      </div>
+      <div className={styles.listEmptyTitle}>
+        {t['com.affine.ai.login-required.dialog-title']()}
+      </div>
+      <div className={styles.listEmptyDescription}>
+        {t['com.affine.notification.empty.description']()}
+      </div>
+      <Button variant="primary" onClick={onSignIn}>
+        {t['com.affine.ai.login-required.dialog-confirm']()}
+      </Button>
+    </div>
+  );
+};
+
+const NotificationErrorEmpty = ({
+  message,
+  onRetry,
+}: {
+  message: string;
+  onRetry: () => void;
+}) => {
+  const t = useI18n();
+  return (
+    <div className={styles.listEmpty}>
+      <div className={styles.listEmptyIconContainer}>
+        <NotificationIcon width={24} height={24} />
+      </div>
+      <div className={styles.errorEmptyTitle}>{message}</div>
+      <Button onClick={onRetry}>{t['Retry']()}</Button>
+    </div>
+  );
+};
+
+const NotificationError = ({
+  message,
+  onRetry,
+}: {
+  message: string;
+  onRetry: () => void;
+}) => {
+  const t = useI18n();
+  return (
+    <div className={styles.error}>
+      <span>{message}</span>
+      <Button onClick={onRetry}>{t['Retry']()}</Button>
     </div>
   );
 };
@@ -150,10 +234,10 @@ const NotificationListEmpty = () => {
         <NotificationIcon width={24} height={24} />
       </div>
       <div className={styles.listEmptyTitle}>
-        {t['com.nexio.notification.empty']()}
+        {t['com.affine.notification.empty']()}
       </div>
       <div className={styles.listEmptyDescription}>
-        {t['com.nexio.notification.empty.description']()}
+        {t['com.affine.notification.empty.description']()}
       </div>
     </div>
   );
@@ -204,7 +288,7 @@ const NotificationItem = ({ notification }: { notification: Notification }) => {
     <div className={styles.itemContainer}>
       <Avatar size={22} />
       <div className={styles.itemNotSupported}>
-        {t['com.nexio.notification.unsupported']()} ({type})
+        {t['com.affine.notification.unsupported']()} ({type})
       </div>
       <DeleteButton notification={notification} />
     </div>
@@ -252,7 +336,7 @@ const MentionNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.mention'}
+            i18nKey={'com.affine.notification.mention'}
             components={{
               1: (
                 <b
@@ -264,7 +348,7 @@ const MentionNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               docTitle: body.doc.title || t['Untitled'](),
             }}
           />
@@ -315,7 +399,7 @@ const InvitationReviewRequestNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation-review-request'}
+            i18nKey={'com.affine.notification.invitation-review-request'}
             components={{
               1: (
                 <b
@@ -327,9 +411,9 @@ const InvitationReviewRequestNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               workspaceName:
-                body.workspace?.name ?? t['com.nexio.inactive-workspace'](),
+                body.workspace?.name ?? t['com.affine.inactive-workspace'](),
             }}
           />
         </span>
@@ -365,7 +449,7 @@ const InvitationReviewDeclinedNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation-review-declined'}
+            i18nKey={'com.affine.notification.invitation-review-declined'}
             components={{
               1: (
                 <b
@@ -377,9 +461,9 @@ const InvitationReviewDeclinedNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               workspaceName:
-                body.workspace?.name ?? t['com.nexio.inactive-workspace'](),
+                body.workspace?.name ?? t['com.affine.inactive-workspace'](),
             }}
           />
         </span>
@@ -432,7 +516,7 @@ const InvitationReviewApprovedNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation-review-approved'}
+            i18nKey={'com.affine.notification.invitation-review-approved'}
             components={{
               1: (
                 <b
@@ -444,9 +528,9 @@ const InvitationReviewApprovedNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               workspaceName:
-                body.workspace?.name ?? t['com.nexio.inactive-workspace'](),
+                body.workspace?.name ?? t['com.affine.inactive-workspace'](),
             }}
           />
         </span>
@@ -457,7 +541,7 @@ const InvitationReviewApprovedNotificationItem = ({
             onClick={handleClick}
           >
             {t[
-              'com.nexio.notification.invitation-review-approved.open-workspace'
+              'com.affine.notification.invitation-review-approved.open-workspace'
             ]()}
           </Button>
         )}
@@ -507,13 +591,13 @@ const InvitationAcceptedNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation-accepted'}
+            i18nKey={'com.affine.notification.invitation-accepted'}
             components={{
               1: <WorkspaceNameWithIcon data-inactived={memberInactived} />,
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
             }}
           />
         </span>
@@ -559,7 +643,7 @@ const InvitationBlockedNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation-blocked'}
+            i18nKey={'com.affine.notification.invitation-blocked'}
             components={{
               1: (
                 <b
@@ -570,7 +654,7 @@ const InvitationBlockedNotificationItem = ({
             }}
             values={{
               workspaceName:
-                body.workspace?.name ?? t['com.nexio.inactive-workspace'](),
+                body.workspace?.name ?? t['com.affine.inactive-workspace'](),
             }}
           />
         </span>
@@ -633,8 +717,8 @@ const InvitationNotificationItem = ({
         if (value === false) {
           // invite is expired
           notify.error({
-            title: t['com.nexio.expired.page.title'](),
-            message: t['com.nexio.expired.page.new-subtitle'](),
+            title: t['com.affine.expired.page.title'](),
+            message: t['com.affine.expired.page.new-subtitle'](),
           });
           notificationListService
             .readNotification(notification.id)
@@ -675,7 +759,7 @@ const InvitationNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.invitation'}
+            i18nKey={'com.affine.notification.invitation'}
             components={{
               1: (
                 <b
@@ -687,9 +771,9 @@ const InvitationNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               workspaceName:
-                body.workspace?.name ?? t['com.nexio.inactive-workspace'](),
+                body.workspace?.name ?? t['com.affine.inactive-workspace'](),
             }}
           />
         </span>
@@ -700,7 +784,7 @@ const InvitationNotificationItem = ({
             onClick={handleAcceptInvite}
             loading={isAccepting}
           >
-            {t['com.nexio.notification.invitation.accept']()}
+            {t['com.affine.notification.invitation.accept']()}
           </Button>
         )}
         <div className={styles.itemDate}>
@@ -846,7 +930,7 @@ const CommentNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.comment'}
+            i18nKey={'com.affine.notification.comment'}
             components={{
               1: (
                 <b
@@ -858,7 +942,7 @@ const CommentNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               docTitle: body.doc?.title || t['Untitled'](),
             }}
           />
@@ -916,7 +1000,7 @@ const CommentMentionNotificationItem = ({
       <div className={styles.itemMain}>
         <span>
           <Trans
-            i18nKey={'com.nexio.notification.comment-mention'}
+            i18nKey={'com.affine.notification.comment-mention'}
             components={{
               1: (
                 <b
@@ -928,7 +1012,7 @@ const CommentMentionNotificationItem = ({
             }}
             values={{
               username:
-                body.createdByUser?.name ?? t['com.nexio.inactive-member'](),
+                body.createdByUser?.name ?? t['com.affine.inactive-member'](),
               docTitle: body.doc?.title || t['Untitled'](),
             }}
           />

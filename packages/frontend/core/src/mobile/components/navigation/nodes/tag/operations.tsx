@@ -4,49 +4,69 @@ import {
   MenuSeparator,
   toast,
   useConfirmModal,
-} from '@nexio/component';
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
-import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { DocsService } from '@nexio/core/modules/doc';
-import { FavoriteService } from '@nexio/core/modules/favorite';
-import { GlobalCacheService } from '@nexio/core/modules/storage';
-import { TagService } from '@nexio/core/modules/tag';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
+import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { DocsService } from '@affine/core/modules/doc';
+import { FavoriteService } from '@affine/core/modules/favorite';
+import { GlobalCacheService } from '@affine/core/modules/storage';
+import { TagService } from '@affine/core/modules/tag';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import {
   DeleteIcon,
   FolderIcon,
   PlusIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
+import { MobileNavigationMenuItems } from '../../menu-host';
 import { TagRenameSubMenu } from './dialog';
+
+export const useNavigationPanelTagNodeNewDoc = (
+  tagId: string,
+  openNodeCollapsed: () => void
+) => {
+  const { workspaceService, tagService } = useServices({
+    WorkspaceService,
+    TagService,
+  });
+  const tagRecord = useLiveData(tagService.tagList.tagByTagId$(tagId));
+  const { createPage } = usePageHelper(
+    workspaceService.workspace.docCollection
+  );
+  return useCallback(() => {
+    if (!tagRecord) return;
+    const newDoc = createPage();
+    tagRecord.tag(newDoc.id);
+    track.$.navigationPanel.tags.createDoc();
+    openNodeCollapsed();
+  }, [createPage, openNodeCollapsed, tagRecord]);
+};
 
 export const useNavigationPanelTagNodeOperations = (
   tagId: string,
   {
-    openNodeCollapsed,
+    handleNewDoc,
   }: {
-    openNodeCollapsed: () => void;
+    handleNewDoc: () => void;
   }
 ) => {
   const t = useI18n();
   const {
     workbenchService,
-    workspaceService,
     tagService,
     favoriteService,
     workspaceDialogService,
     globalCacheService,
   } = useServices({
     WorkbenchService,
-    WorkspaceService,
     TagService,
     DocsService,
     FavoriteService,
@@ -60,23 +80,10 @@ export const useNavigationPanelTagNodeOperations = (
   );
   const tagRecord = useLiveData(tagService.tagList.tagByTagId$(tagId));
 
-  const { createPage } = usePageHelper(
-    workspaceService.workspace.docCollection
-  );
-
-  const handleNewDoc = useCallback(() => {
-    if (tagRecord) {
-      const newDoc = createPage();
-      tagRecord?.tag(newDoc.id);
-      track.$.navigationPanel.tags.createDoc();
-      openNodeCollapsed();
-    }
-  }, [createPage, openNodeCollapsed, tagRecord]);
-
   const handleMoveToTrash = useCallback(() => {
     tagService.tagList.deleteTag(tagId);
     track.$.navigationPanel.organize.deleteOrganizeItem({ type: 'tag' });
-    toast(t['com.nexio.tags.delete-tags.toast']());
+    toast(t['com.affine.tags.delete-tags.toast']());
   }, [t, tagId, tagService.tagList]);
 
   const handleOpenInSplitView = useCallback(() => {
@@ -145,13 +152,13 @@ export const useNavigationPanelTagNodeOperations = (
             ) !== true
           ) {
             openConfirmModal({
-              title: t['com.nexio.m.selector.remove-warning.title'](),
-              description: t['com.nexio.m.selector.remove-warning.message']({
-                type: t['com.nexio.m.selector.type-doc'](),
-                where: t['com.nexio.m.selector.where-tag'](),
+              title: t['com.affine.m.selector.remove-warning.title'](),
+              description: t['com.affine.m.selector.remove-warning.message']({
+                type: t['com.affine.m.selector.type-doc'](),
+                where: t['com.affine.m.selector.where-tag'](),
               }),
-              cancelText: t['com.nexio.m.selector.remove-warning.cancel'](),
-              confirmText: t['com.nexio.m.selector.remove-warning.confirm'](),
+              cancelText: t['com.affine.m.selector.remove-warning.cancel'](),
+              confirmText: t['com.affine.m.selector.remove-warning.confirm'](),
               reverseFooter: true,
               onConfirm: () => {
                 globalCacheService.globalCache.set(
@@ -214,7 +221,7 @@ export const useNavigationPanelTagNodeOperations = (
 export const useNavigationPanelTagNodeOperationsMenu = (
   tagId: string,
   option: {
-    openNodeCollapsed: () => void;
+    handleNewDoc: () => void;
   }
 ): NodeOperation[] => {
   const t = useI18n();
@@ -257,7 +264,7 @@ export const useNavigationPanelTagNodeOperationsMenu = (
         index: 12,
         view: (
           <MenuItem prefixIcon={<FolderIcon />} onClick={handleOpenDocSelector}>
-            {t['com.nexio.m.explorer.tag.manage-docs']()}
+            {t['com.affine.m.explorer.tag.manage-docs']()}
           </MenuItem>
         ),
       },
@@ -270,7 +277,7 @@ export const useNavigationPanelTagNodeOperationsMenu = (
                   prefixIcon={<SplitViewIcon />}
                   onClick={handleOpenInSplitView}
                 >
-                  {t['com.nexio.workbench.split-view.page-menu-open']()}
+                  {t['com.affine.workbench.split-view.page-menu-open']()}
                 </MenuItem>
               ),
             },
@@ -284,8 +291,8 @@ export const useNavigationPanelTagNodeOperationsMenu = (
             onClick={handleToggleFavoriteTag}
           >
             {favorite
-              ? t['com.nexio.favoritePageOperation.remove']()
-              : t['com.nexio.favoritePageOperation.add']()}
+              ? t['com.affine.favoritePageOperation.remove']()
+              : t['com.affine.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -318,4 +325,23 @@ export const useNavigationPanelTagNodeOperationsMenu = (
       tagId,
     ]
   );
+};
+
+export const NavigationPanelTagNodeMenu = ({
+  tagId,
+  handleNewDoc,
+  additionalOperations,
+}: {
+  tagId: string;
+  handleNewDoc: () => void;
+  additionalOperations?: NodeOperation[];
+}) => {
+  const operations = useNavigationPanelTagNodeOperationsMenu(tagId, {
+    handleNewDoc,
+  });
+  const allOperations = useMemo(
+    () => [...operations, ...(additionalOperations ?? [])],
+    [additionalOperations, operations]
+  );
+  return <MobileNavigationMenuItems operations={allOperations} />;
 };

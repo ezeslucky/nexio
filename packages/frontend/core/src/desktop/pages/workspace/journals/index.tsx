@@ -2,12 +2,12 @@ import {
   Button,
   WeekDatePicker,
   type WeekDatePickerHandle,
-} from '@nexio/component';
-import { CanvasEditorJournalDocTitleUI } from '@nexio/core/canvas/block-suite-editor/journal-doc-title';
+} from '@affine/component';
+import { BlocksuiteEditorJournalDocTitleUI } from '@affine/core/blocksuite/block-suite-editor/journal-doc-title';
 import {
   JOURNAL_DATE_FORMAT,
   JournalService,
-} from '@nexio/core/modules/journal';
+} from '@affine/core/modules/journal';
 import {
   ViewBody,
   ViewHeader,
@@ -15,10 +15,10 @@ import {
   ViewService,
   ViewTitle,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
-import { useI18n } from '@nexio/i18n';
-import { TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workbench';
+import { useI18n } from '@affine/i18n';
+import { PlusIcon, TodayIcon } from '@blocksuite/icons/rc';
+import { useLiveData, useService } from '@toeverything/infra';
 import dayjs from 'dayjs';
 import type { Location } from 'history';
 import { useCallback, useLayoutEffect, useRef, useState } from 'react';
@@ -53,7 +53,7 @@ export const JournalPlaceholder = ({ dateString }: { dateString: string }) => {
   return (
     <div className={styles.body} data-mobile={BUILD_CONFIG.isMobileEdition}>
       <div className={styles.content}>
-        <CanvasEditorJournalDocTitleUI
+        <BlocksuiteEditorJournalDocTitleUI
           date={dateString}
           overrideClassName={styles.docTitleContainer}
         />
@@ -62,14 +62,19 @@ export const JournalPlaceholder = ({ dateString }: { dateString: string }) => {
             <TodayIcon />
           </div>
           <div className={styles.placeholderText}>
-            {t['com.nexio.journal.placeholder.title']()}
+            {t['com.affine.journal.placeholder.title']()}
+          </div>
+          <div className={styles.placeholderDescription}>
+            {t['com.affine.journal.placeholder.description']()}
           </div>
           <Button
             variant="primary"
+            size={BUILD_CONFIG.isMobileEdition ? 'extraLarge' : undefined}
+            prefix={BUILD_CONFIG.isMobileEdition ? <PlusIcon /> : undefined}
             onClick={createJournal}
             data-testid="confirm-create-journal-button"
           >
-            {t['com.nexio.journal.placeholder.create']()}
+            {t['com.affine.journal.placeholder.create']()}
           </Button>
         </div>
       </div>
@@ -137,7 +142,7 @@ export const JournalsPageWithConfirmation = () => {
               className={styles.todayButton}
               onClick={() => openJournal(todayString)}
             >
-              {t['com.nexio.today']()}
+              {t['com.affine.today']()}
             </Button>
           ) : null}
         </div>

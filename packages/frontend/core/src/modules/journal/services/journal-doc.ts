@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import type { DocService } from '../../doc';
 import type { JournalService } from './journal';

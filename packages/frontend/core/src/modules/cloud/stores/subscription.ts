@@ -1,7 +1,7 @@
 import type {
   CreateCheckoutSessionInput,
   SubscriptionRecurring,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import {
   cancelSubscriptionMutation,
   createCheckoutSessionMutation,
@@ -11,8 +11,8 @@ import {
   SubscriptionPlan,
   subscriptionQuery,
   updateSubscriptionMutation,
-} from '@nexio/graphql';
-import { Store } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { Store } from '@toeverything/infra';
 
 import type { GlobalCache } from '../../storage';
 import type { UrlService } from '../../url';

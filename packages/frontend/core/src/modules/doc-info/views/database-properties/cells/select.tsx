@@ -1,16 +1,14 @@
-/* eslint-disable rxjs/finnish */
-
-import { PropertyValue } from '@nexio/component';
-import { type TagLike, TagsInlineEditor } from '@nexio/core/components/tags';
-import { TagService } from '@nexio/core/modules/tag';
+import { PropertyValue } from '@affine/component';
+import { type TagLike, TagsInlineEditor } from '@affine/core/components/tags';
+import { TagService } from '@affine/core/modules/tag';
 import {
-  nexioLabelToDatabaseTagColor,
+  affineLabelToDatabaseTagColor,
   databaseTagColorToV2,
-} from '@nexio/core/modules/tag/entities/utils';
-import type { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
-import type { SelectTag } from '@canvas/data-view';
+} from '@affine/core/modules/tag/entities/utils';
+import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+import type { SelectTag } from '@blocksuite/data-view';
 import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
+import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useCallback, useMemo } from 'react';
 
@@ -143,7 +141,7 @@ const adapter = {
   },
 };
 
-const CanvasDatabaseSelector = ({
+const BlocksuiteDatabaseSelector = ({
   cell,
   dataSource,
   rowId,
@@ -166,7 +164,7 @@ const CanvasDatabaseSelector = ({
 
   const onCreateTag = useCallback(
     (name: string, color: string) => {
-      
+      // bs database uses --affine-tag-xxx colors
       const newTag = {
         id: nanoid(),
         name: name,
@@ -203,7 +201,7 @@ const CanvasDatabaseSelector = ({
   const tagColors = useMemo(() => {
     return tagService.tagColors.map(([name, color]) => ({
       id: name,
-      value: nexioLabelToDatabaseTagColor(color),
+      value: affineLabelToDatabaseTagColor(color),
       name,
     }));
   }, [tagService.tagColors]);
@@ -212,7 +210,7 @@ const CanvasDatabaseSelector = ({
     (tagId: string, property: string, value: string) => {
       adapter.updateTag(selectCell, dataSource, tagId, old => {
         if (property === 'color') {
-          value = nexioLabelToDatabaseTagColor(value);
+          value = affineLabelToDatabaseTagColor(value);
         }
         return {
           ...old,
@@ -258,7 +256,7 @@ export const SelectCell = ({
   );
   return (
     <PropertyValue isEmpty={isEmpty} className={styles.container}>
-      <CanvasDatabaseSelector
+      <BlocksuiteDatabaseSelector
         cell={cell}
         dataSource={dataSource}
         rowId={rowId}
@@ -280,7 +278,7 @@ export const MultiSelectCell = ({
   );
   return (
     <PropertyValue isEmpty={isEmpty} className={styles.container}>
-      <CanvasDatabaseSelector
+      <BlocksuiteDatabaseSelector
         cell={cell}
         dataSource={dataSource}
         rowId={rowId}

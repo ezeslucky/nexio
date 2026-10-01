@@ -1,4 +1,4 @@
-import { oauthProvidersQuery } from '@nexio/graphql';
+import { oauthProvidersQuery } from '@affine/graphql';
 
 import { ConfigModule } from '../../../base/config';
 import { createApp, e2e, TestingApp } from '../test';
@@ -41,7 +41,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-nexio-version': '0.22.0',
+        'x-affine-version': '0.22.0',
       },
     },
   });
@@ -51,7 +51,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-nexio-version': '0.23.0-beta.1',
+        'x-affine-version': '0.23.0-beta.1',
       },
     },
   });
@@ -62,7 +62,7 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
     query: oauthProvidersQuery,
     context: {
       headers: {
-        'x-nexio-version': '2025.6.29-canary.93',
+        'x-affine-version': '2025.6.29-canary.93',
       },
     },
   });
@@ -71,39 +71,10 @@ e2e('should return apple oauth provider in version >= 0.22.0', async t => {
 });
 
 e2e(
-  'should not return apple oauth provider when client version is not specified',
+  'should return apple oauth provider when client version is not specified',
   async t => {
     const res = await app.gql({
       query: oauthProvidersQuery,
-    });
-
-    t.snapshot(res);
-  }
-);
-
-e2e('should not return apple oauth provider in version < 0.22.0', async t => {
-  const res = await app.gql({
-    query: oauthProvidersQuery,
-    context: {
-      headers: {
-        'x-nexio-version': '0.21.0',
-      },
-    },
-  });
-
-  t.snapshot(res);
-});
-
-e2e(
-  'should not return apple oauth provider when client version format is not correct',
-  async t => {
-    const res = await app.gql({
-      query: oauthProvidersQuery,
-      context: {
-        headers: {
-          'x-nexio-version': 'mock-invalid-version',
-        },
-      },
     });
 
     t.snapshot(res);

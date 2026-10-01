@@ -1,15 +1,13 @@
-import {
-  Body,
-  Button as EmailButton,
-  Container,
-  Head,
-  Html,
-  Img,
-  Link,
-  Row,
-  Section,
-  Text as EmailText,
-} from '@react-email/components';
+import { Body } from '@react-email/body';
+import { Button as EmailButton } from '@react-email/button';
+import { Container } from '@react-email/container';
+import { Head } from '@react-email/head';
+import { Html } from '@react-email/html';
+import { Img } from '@react-email/img';
+import { Link } from '@react-email/link';
+import { Row } from '@react-email/row';
+import { Section } from '@react-email/section';
+import { Text as EmailText } from '@react-email/text';
 import type { PropsWithChildren } from 'react';
 
 import { BasicTextStyle } from './common';
@@ -167,7 +165,7 @@ function fetchContent(
 
   if (Array.isArray(content.props.children)) {
     return content.props.children.map((child, i) => {
-      /* oxlint-disable-next-line eslint-plugin-react/no-array-index-key */
+      /* oxlint-disable-next-line react/no-array-index-key */
       return <Row key={i}>{child}</Row>;
     });
   }
@@ -214,10 +212,10 @@ export function Template(props: PropsWithChildren) {
           }}
         >
           <Section>
-            <Link href="https://nexio.pro">
+            <Link href="https://affine.pro">
               <Img
-                src="https://cdn.nexio.pro/mail/2023-8-9/nexio-logo.png"
-                alt="nexio logo"
+                src="https://cdn.affine.pro/mail/2023-8-9/affine-logo.png"
+                alt="AFFiNE logo"
                 height="32px"
               />
             </Link>

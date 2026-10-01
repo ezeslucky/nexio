@@ -15,28 +15,28 @@ export type CommandCategory =
   | 'editor:insert-object'
   | 'editor:page'
   | 'editor:edgeless'
-  | 'nexio:recent'
-  | 'nexio:pages'
-  | 'nexio:edgeless'
-  | 'nexio:collections'
-  | 'nexio:navigation'
-  | 'nexio:creation'
-  | 'nexio:settings'
-  | 'nexio:layout'
-  | 'nexio:updates'
-  | 'nexio:help'
-  | 'nexio:general'
-  | 'nexio:results';
+  | 'affine:recent'
+  | 'affine:pages'
+  | 'affine:edgeless'
+  | 'affine:collections'
+  | 'affine:navigation'
+  | 'affine:creation'
+  | 'affine:settings'
+  | 'affine:layout'
+  | 'affine:updates'
+  | 'affine:help'
+  | 'affine:general'
+  | 'affine:results';
 
 export interface KeybindingOptions {
   binding: string;
   capture?: boolean;
-  // some keybindings are already registered in Canvas
+  // some keybindings are already registered in blocksuite
   // we can skip the registration of these keybindings __FOR NOW__
   skipRegister?: boolean;
 }
 
-export interface NexioCommandOptions {
+export interface AffineCommandOptions {
   id: string;
   // a set of predefined precondition strategies, but also allow user to customize their own
   // note: this only controls the visibility of the command, not the availability (e.g., shortcut keybinding still works)
@@ -62,7 +62,7 @@ export interface NexioCommandOptions {
   run: () => void | Promise<void>;
 }
 
-export interface NexioCommand {
+export interface AffineCommand {
   readonly id: string;
   readonly preconditionStrategy: PreconditionStrategy | (() => boolean);
   readonly label: {
@@ -75,16 +75,16 @@ export interface NexioCommand {
   run(): void | Promise<void>;
 }
 
-export function createNexioCommand(
-  options: NexioCommandOptions
-): NexioCommand {
+export function createAffineCommand(
+  options: AffineCommandOptions
+): AffineCommand {
   return {
     id: options.id,
     run: options.run,
     icon: options.icon,
     preconditionStrategy:
       options.preconditionStrategy ?? PreconditionStrategy.Always,
-    category: options.category ?? 'nexio:general',
+    category: options.category ?? 'affine:general',
     get label() {
       let label = options.label;
       label = typeof label === 'function' ? label?.() : label;

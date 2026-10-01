@@ -1,6 +1,6 @@
 {
-  "name": "@nexio/playstore-auto-bump",
-  "version": "0.22.4",
+  "name": "@affine/playstore-auto-bump",
+  "version": "0.27.5",
   "private": true,
   "type": "module",
   "description": "Automatically bump the versionCode and versionName of an Android app from the Google Play Store versions",
@@ -9,10 +9,10 @@
     "bump": "r ./index.ts"
   },
   "dependencies": {
-    "@googleapis/androidpublisher": "^31.0.0",
-    "@nexio-tools/cli": "workspace:*",
-    "@nexio-tools/utils": "workspace:*",
-    "typescript": "^5.7.2"
+    "@affine-tools/cli": "workspace:*",
+    "@affine-tools/utils": "workspace:*",
+    "@googleapis/androidpublisher": "^36.0.0",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.0.0"

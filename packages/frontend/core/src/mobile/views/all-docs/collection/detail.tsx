@@ -1,18 +1,18 @@
-import { Wrapper } from '@nexio/component';
+import { Wrapper } from '@affine/component';
 import {
   EmptyCollectionDetail,
   EmptyDocs,
-} from '@nexio/core/components/nexio/empty';
+} from '@affine/core/components/affine/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@nexio/core/components/explorer/context';
-import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import { PageHeader } from '@nexio/core/mobile/components';
-import { Page } from '@nexio/core/mobile/components/page';
-import type { Collection } from '@nexio/core/modules/collection';
+} from '@affine/core/components/explorer/context';
+import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
+import { PageHeader } from '@affine/core/mobile/components';
+import { Page } from '@affine/core/mobile/components/page';
+import type { Collection } from '@affine/core/modules/collection';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@toeverything/infra';
 import { useEffect, useState } from 'react';
 
 import * as styles from './detail.css';

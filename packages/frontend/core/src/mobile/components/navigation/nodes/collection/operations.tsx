@@ -4,16 +4,16 @@ import {
   MenuSeparator,
   notify,
   useConfirmModal,
-} from '@nexio/component';
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
-import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
-import { CollectionService } from '@nexio/core/modules/collection';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
+import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
+import { CollectionService } from '@affine/core/modules/collection';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import {
   DeleteIcon,
   FilterIcon,
@@ -21,42 +21,25 @@ import {
   PlusIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
+import { MobileNavigationMenuItems } from '../../menu-host';
 import { CollectionRenameSubMenu } from './dialog';
 
-export const useNavigationPanelCollectionNodeOperations = (
+export const useNavigationPanelCollectionAddDoc = (
   collectionId: string,
-  onOpenCollapsed: () => void,
-  onOpenEdit: () => void
+  onOpenCollapsed: () => void
 ) => {
   const t = useI18n();
-  const {
-    workbenchService,
-    workspaceService,
-    collectionService,
-    compatibleFavoriteItemsAdapter,
-  } = useServices({
-    WorkbenchService,
+  const { workspaceService, collectionService } = useServices({
     WorkspaceService,
     CollectionService,
-    CompatibleFavoriteItemsAdapter,
   });
-
   const { createPage } = usePageHelper(
     workspaceService.workspace.docCollection
   );
-
-  const favorite = useLiveData(
-    useMemo(
-      () =>
-        compatibleFavoriteItemsAdapter.isFavorite$(collectionId, 'collection'),
-      [collectionId, compatibleFavoriteItemsAdapter]
-    )
-  );
   const { openConfirmModal } = useConfirmModal();
-
   const createAndAddDocument = useCallback(() => {
     const newDoc = createPage();
     collectionService.addDocToCollection(collectionId, newDoc.id);
@@ -66,26 +49,47 @@ export const useNavigationPanelCollectionNodeOperations = (
     });
     onOpenCollapsed();
   }, [collectionId, collectionService, createPage, onOpenCollapsed]);
+  return useCallback(() => {
+    openConfirmModal({
+      title: t['com.affine.collection.add-doc.confirm.title'](),
+      description: t['com.affine.collection.add-doc.confirm.description'](),
+      cancelText: t['Cancel'](),
+      confirmText: t['Confirm'](),
+      confirmButtonOptions: { variant: 'primary' },
+      onConfirm: createAndAddDocument,
+    });
+  }, [createAndAddDocument, openConfirmModal, t]);
+};
 
+export const useNavigationPanelCollectionNodeOperations = (
+  collectionId: string,
+  handleAddDocToCollection: () => void,
+  onOpenEdit: () => void
+) => {
+  const t = useI18n();
+  const {
+    workbenchService,
+    collectionService,
+    compatibleFavoriteItemsAdapter,
+  } = useServices({
+    WorkbenchService,
+    CollectionService,
+    CompatibleFavoriteItemsAdapter,
+  });
+
+  const favorite = useLiveData(
+    useMemo(
+      () =>
+        compatibleFavoriteItemsAdapter.isFavorite$(collectionId, 'collection'),
+      [collectionId, compatibleFavoriteItemsAdapter]
+    )
+  );
   const handleToggleFavoriteCollection = useCallback(() => {
     compatibleFavoriteItemsAdapter.toggle(collectionId, 'collection');
     track.$.navigationPanel.organize.toggleFavorite({
       type: 'collection',
     });
   }, [compatibleFavoriteItemsAdapter, collectionId]);
-
-  const handleAddDocToCollection = useCallback(() => {
-    openConfirmModal({
-      title: t['com.nexio.collection.add-doc.confirm.title'](),
-      description: t['com.nexio.collection.add-doc.confirm.description'](),
-      cancelText: t['Cancel'](),
-      confirmText: t['Confirm'](),
-      confirmButtonOptions: {
-        variant: 'primary',
-      },
-      onConfirm: createAndAddDocument,
-    });
-  }, [createAndAddDocument, openConfirmModal, t]);
 
   const handleOpenInSplitView = useCallback(() => {
     workbenchService.workbench.openCollection(collectionId, { at: 'beside' });
@@ -121,7 +125,7 @@ export const useNavigationPanelCollectionNodeOperations = (
         track.$.navigationPanel.organize.renameOrganizeItem({
           type: 'collection',
         });
-        notify.success({ message: t['com.nexio.toastMessage.rename']() });
+        notify.success({ message: t['com.affine.toastMessage.rename']() });
       }
     },
     [collectionId, collectionService, t]
@@ -153,14 +157,14 @@ export const useNavigationPanelCollectionNodeOperations = (
 
 export const useNavigationPanelCollectionNodeOperationsMenu = (
   collectionId: string,
-  onOpenCollapsed: () => void,
+  handleAddDocToCollection: () => void,
   onOpenEdit: () => void
 ): NodeOperation[] => {
   const t = useI18n();
 
   const {
     favorite,
-    handleAddDocToCollection,
+    handleAddDocToCollection: addDocToCollection,
     handleDeleteCollection,
     handleOpenInNewTab,
     handleOpenInSplitView,
@@ -169,7 +173,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
     handleRename,
   } = useNavigationPanelCollectionNodeOperations(
     collectionId,
-    onOpenCollapsed,
+    handleAddDocToCollection,
     onOpenEdit
   );
 
@@ -181,9 +185,9 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
         view: (
           <IconButton
             size="16"
-            onClick={handleAddDocToCollection}
+            onClick={addDocToCollection}
             tooltip={t[
-              'com.nexio.rootAppSidebar.explorer.collection-add-tooltip'
+              'com.affine.rootAppSidebar.explorer.collection-add-tooltip'
             ]()}
           >
             <PlusIcon />
@@ -202,17 +206,14 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<FilterIcon />} onClick={handleShowEdit}>
-            {t['com.nexio.collection.menu.edit']()}
+            {t['com.affine.collection.menu.edit']()}
           </MenuItem>
         ),
       },
       {
         index: 99,
         view: (
-          <MenuItem
-            prefixIcon={<PlusIcon />}
-            onClick={handleAddDocToCollection}
-          >
+          <MenuItem prefixIcon={<PlusIcon />} onClick={addDocToCollection}>
             {t['New Page']()}
           </MenuItem>
         ),
@@ -225,8 +226,8 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
             onClick={handleToggleFavoriteCollection}
           >
             {favorite
-              ? t['com.nexio.favoritePageOperation.remove']()
-              : t['com.nexio.favoritePageOperation.add']()}
+              ? t['com.affine.favoritePageOperation.remove']()
+              : t['com.affine.favoritePageOperation.add']()}
           </MenuItem>
         ),
       },
@@ -234,7 +235,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
         index: 99,
         view: (
           <MenuItem prefixIcon={<OpenInNewIcon />} onClick={handleOpenInNewTab}>
-            {t['com.nexio.workbench.tab.page-menu-open']()}
+            {t['com.affine.workbench.tab.page-menu-open']()}
           </MenuItem>
         ),
       },
@@ -247,7 +248,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
                   prefixIcon={<SplitViewIcon />}
                   onClick={handleOpenInSplitView}
                 >
-                  {t['com.nexio.workbench.split-view.page-menu-open']()}
+                  {t['com.affine.workbench.split-view.page-menu-open']()}
                 </MenuItem>
               ),
             },
@@ -272,7 +273,7 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
     ],
     [
       favorite,
-      handleAddDocToCollection,
+      addDocToCollection,
       handleDeleteCollection,
       handleOpenInNewTab,
       handleOpenInSplitView,
@@ -282,4 +283,27 @@ export const useNavigationPanelCollectionNodeOperationsMenu = (
       t,
     ]
   );
+};
+
+export const NavigationPanelCollectionNodeMenu = ({
+  collectionId,
+  handleAddDocToCollection,
+  onOpenEdit,
+  additionalOperations,
+}: {
+  collectionId: string;
+  handleAddDocToCollection: () => void;
+  onOpenEdit: () => void;
+  additionalOperations?: NodeOperation[];
+}) => {
+  const operations = useNavigationPanelCollectionNodeOperationsMenu(
+    collectionId,
+    handleAddDocToCollection,
+    onOpenEdit
+  );
+  const allOperations = useMemo(
+    () => [...(additionalOperations ?? []), ...operations],
+    [additionalOperations, operations]
+  );
+  return <MobileNavigationMenuItems operations={allOperations} />;
 };

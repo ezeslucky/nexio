@@ -1,144 +1,36 @@
+# Contributing to AFFiNE
 
-## How to contribute
+Thank you for your interest in contributing! ❤️ AFFiNE welcomes contributions of all kinds — code, docs, bug reports, feature ideas and translations. See [types-of-contributions.md](./types-of-contributions.md) for the full picture.
 
-We welcome issues, bug fixes, documentation improvements, and new features.  
-The basic flow is:
+This page is the five-minute overview. The full contributor handbook lives at <https://docs.affine.pro/contributing>.
 
-1. **Fork** the repository on GitHub.
-2. **Create a branch** for your change:
-   ```bash
-   git checkout -b feature/my-change
-   ```
-3. **Set up the dev environment** (see OS‑specific requirements below).
-4. Make your changes and **run tests / type checks**:
-   ```bash
-   yarn lint
-   yarn test
-   ```
-5. Commit with a descriptive message and **open a pull request** against the main repo.
+## Before your first pull request: sign the CLA
 
-Please keep PRs focused and small where possible, and describe:
-- what changed,
-- why it changed,
-- how you tested it.
+We can only merge pull requests whose authors have signed the [Contributor License Agreement](../.github/CLA.md). Every PR is checked automatically (the `license/cla` status check), and an unsigned CLA is the single most common reason PRs get stuck before merge.
 
-## Environment requirements by OS
+**How to sign (takes under a minute):**
 
-### macOS
+1. Open <https://cla-assistant.io/toeverything/AFFiNE>.
+2. Sign in with your GitHub account and agree.
 
-- **OS**: macOS 13+ (Apple Silicon or Intel)
-- **Tools**:
-  - Homebrew (`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`)
-  - Node.js v20 (via `nvm`)
-  - Yarn v4 (via Corepack)
-  - PostgreSQL 14+ (via Homebrew)
-  - Git
+Already opened a PR? Sign, then click the **recheck** link in the CLA bot's comment on your PR (or push a new commit). Note that **every** committer on the PR must sign, and each commit's author email must be [linked to a GitHub account](https://github.com/settings/emails). See [BUILDING.md — Sign the CLA first](./BUILDING.md#sign-the-cla-first) for troubleshooting.
 
-```bash
-brew install git postgresql
+## Contribution flow
 
-curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+1. **Find something to work on.** Browse [good first issues](https://github.com/ezeslucky/nexio/contribute) or the [issue tracker](https://github.com/ezeslucky/nexio/issues). Issues that are still in triage haven't been reviewed yet — better not to start work on those. For bigger changes, open a [discussion](https://github.com/ezeslucky/nexio/discussions) or talk to us on [Discord](https://affine.pro/redirect/discord) first.
+2. **Set up your environment.** Follow [BUILDING.md](./BUILDING.md) for the web app. For the server (cloud features) see [developing-server.md](./developing-server.md); for the desktop client see [building-desktop-client-app.md](./building-desktop-client-app.md).
+3. **Make your change** on a branch created from `canary`. Add tests where it makes sense, and run `yarn lint`, `yarn typecheck` and the relevant tests locally.
+4. **Open a PR to `canary`** with a [Conventional Commits](https://www.conventionalcommits.org/) title, e.g. `fix(editor): keep selection after paste` — the title format is enforced by CI.
+5. **Get it merged.** A PR merges once the `license/cla` check is green, CI passes, and a maintainer approves the review.
 
-nvm install 20
-nvm use 20
+## Code of conduct
 
-corepack enable
-```
+Please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
 
-### Linux
+## Useful links
 
-- **OS**: Any modern 64‑bit distro (Ubuntu, Debian, Fedora, Arch, etc.)
-- **Tools**:
-  - Node.js v20 (via `nvm`)
-  - Yarn v4 (via Corepack)
-  - PostgreSQL 14+
-  - Git
-
-Example (Ubuntu/WSL):
-
-```bash
-sudo apt update
-sudo apt install -y git postgresql postgresql-client build-essential
-
-curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-nvm install 20
-nvm use 20
-
-corepack enable
-```
-
-### Windows
-
-On Windows we recommend **WSL2** (Ubuntu) for the smoothest experience.
-
-1. Enable WSL and install Ubuntu from the Microsoft Store.
-2. Inside the WSL terminal, follow the **Linux** instructions above.
-
-If you prefer native Windows:
-- Install Node 20 (from `nodejs.org`),
-- Install Git for Windows,
-- Install PostgreSQL for Windows,
-- Enable Corepack in PowerShell:
-
-```powershell
-corepack enable
-```
-
-> Note: native Windows is less tested; WSL2 is strongly recommended.
-
-## Project setup (all platforms)
-
-Once your OS has the tools above:
-
-```bash
-git clone https://github.com/ezeslucky/nexio.git
-cd nexio
-yarn install
-```
-
-Set up PostgreSQL:
-
-```bash
-sudo -u postgres psql
-```
-
-Then in `psql`:
-
-```sql
-CREATE ROLE nexio WITH LOGIN PASSWORD 'nexio';
-ALTER ROLE nexio WITH LOGIN PASSWORD 'nexio';
-CREATE DATABASE nexio OWNER nexio;
-GRANT ALL PRIVILEGES ON DATABASE nexio TO nexio;
-\q
-```
-
-Ensure `packages/backend/server/.env` contains:
-
-```env
-DATABASE_URL="postgres://nexio:nexio@localhost:5432/nexio"
-```
-
-Run migrations:
-
-```bash
-yarn run nexio @nexio/server prisma migrate deploy
-```
-
-Start dev servers:
-
-```bash
-# Terminal 1 – backend
-yarn nexio dev -p @nexio/server
-
-# Terminal 2 – web
-export NODE_OPTIONS="--max-old-space-size=8192"
-yarn nexio dev -p @nexio/web
-```
-
-Open `http://localhost:8080` to use Nexio while you develop.
-
+- Codebase tour: [contributing/tutorial.md](./contributing/tutorial.md)
+- How issues are triaged: [issue-triaging.md](./issue-triaging.md)
+- Release process: [contributing/releases.md](./contributing/releases.md)
+- Reporting security issues: [SECURITY.md](../SECURITY.md)
+- Community: [Discord](https://affine.pro/redirect/discord) · [GitHub Discussions](https://github.com/ezeslucky/nexio/discussions)

@@ -1,12 +1,11 @@
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
-import { DocsService } from '@nexio/core/modules/doc';
-import { JournalService } from '@nexio/core/modules/journal';
-import { LifecycleService } from '@nexio/core/modules/lifecycle';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { apis, events } from '@nexio/electron-api';
-import type { FrameworkProvider } from '@ezeslucky/infra';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import type { SettingTab } from '@affine/core/modules/dialogs/constant';
+import { DocsService } from '@affine/core/modules/doc';
+import { JournalService } from '@affine/core/modules/journal';
+import { LifecycleService } from '@affine/core/modules/lifecycle';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { apis, events } from '@affine/electron-api';
+import type { FrameworkProvider } from '@toeverything/infra';
 
 import { setupRecordingEvents } from './recording';
 import { getCurrentWorkspace } from './utils';
@@ -17,12 +16,6 @@ export function setupEvents(frameworkProvider: FrameworkProvider) {
     frameworkProvider.get(LifecycleService).applicationFocus();
   });
   frameworkProvider.get(LifecycleService).applicationStart();
-  window.addEventListener('unload', () => {
-    frameworkProvider
-      .get(DesktopApiService)
-      .api.handler.ui.pingAppLayoutReady(false)
-      .catch(console.error);
-  });
 
   events?.applicationMenu.openInSettingModal(({ activeTab, scrollAnchor }) => {
     using currentWorkspace = getCurrentWorkspace(frameworkProvider);
@@ -53,7 +46,10 @@ export function setupEvents(frameworkProvider: FrameworkProvider) {
         const { workspace } = currentWorkspace;
         const docsService = workspace.scope.get(DocsService);
 
-        const page = docsService.createDoc({ primaryMode: type });
+        const page =
+          type === 'default'
+            ? docsService.createDoc()
+            : docsService.createDoc({ primaryMode: type });
         workspace.scope.get(WorkbenchService).workbench.openDoc(page.id);
       })
       .catch(err => {

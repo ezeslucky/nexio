@@ -1,13 +1,13 @@
 import type { SetStateAction } from 'jotai';
 import { atom, useAtom } from 'jotai';
 
-import type { NexioEditorContainer } from '../../canvas/block-suite-editor';
+import type { AffineEditorContainer } from '../../blocksuite/block-suite-editor';
 
-const activeEditorContainerAtom = atom<NexioEditorContainer | null>(null);
+const activeEditorContainerAtom = atom<AffineEditorContainer | null>(null);
 
-export function useActiveCanvasEditor(): [
-  NexioEditorContainer | null,
-  React.Dispatch<SetStateAction<NexioEditorContainer | null>>,
+export function useActiveBlocksuiteEditor(): [
+  AffineEditorContainer | null,
+  React.Dispatch<SetStateAction<AffineEditorContainer | null>>,
 ] {
   const [editorContainer, setEditorContainer] = useAtom(
     activeEditorContainerAtom

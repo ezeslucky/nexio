@@ -1,5 +1,5 @@
-import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import { Scope } from '@ezeslucky/infra';
+import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
+import { Scope } from '@toeverything/infra';
 
 import type { WorkspaceOpenOptions } from '../open-options';
 

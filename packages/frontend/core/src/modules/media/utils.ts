@@ -1,4 +1,4 @@
-import type { AttachmentBlockModel } from '@canvas/nexio/model';
+import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 
 const imageExts = new Set([
   'jpg',

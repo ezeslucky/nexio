@@ -1,7 +1,6 @@
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
 import { ToggleRightIcon } from '@blocksuite/icons/rc';
-import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,
@@ -28,8 +27,7 @@ interface CollapsibleSectionProps extends HTMLAttributes<HTMLDivElement> {
   contentClassName?: string;
 }
 
-interface CollapsibleSectionTriggerProps
-  extends HTMLAttributes<HTMLDivElement> {
+interface CollapsibleSectionTriggerProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   collapsed?: boolean;
   actions?: ReactNode;
@@ -92,9 +90,9 @@ export const CollapsibleSection = ({
   );
 
   return (
-    <Collapsible.Root
+    <div
       data-collapsed={collapsed}
-      open={!collapsed}
+      data-state={collapsed ? 'closed' : 'open'}
       data-testid={testId}
       {...attrs}
     >
@@ -106,12 +104,15 @@ export const CollapsibleSection = ({
         data-testid={headerTestId}
         className={headerClassName}
       />
-      <Collapsible.Content
-        data-testid="collapsible-section-content"
-        className={clsx(content, contentClassName)}
-      >
-        {children}
-      </Collapsible.Content>
-    </Collapsible.Root>
+      {collapsed ? null : (
+        <div
+          data-state="open"
+          data-testid="collapsible-section-content"
+          className={clsx(content, contentClassName)}
+        >
+          {children}
+        </div>
+      )}
+    </div>
   );
 };

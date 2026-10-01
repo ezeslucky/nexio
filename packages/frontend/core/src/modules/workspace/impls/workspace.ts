@@ -1,20 +1,20 @@
 import {
-  CanvasError,
+  BlockSuiteError,
   ErrorCode,
-} from '@canvas/nexio/global/exceptions';
-import { NoopLogger } from '@canvas/nexio/global/utils';
+} from '@blocksuite/affine/global/exceptions';
+import { NoopLogger } from '@blocksuite/affine/global/utils';
 import {
   type Doc,
   type IdGenerator,
   nanoid,
   type Workspace,
   type WorkspaceMeta,
-} from '@canvas/nexio/store';
+} from '@blocksuite/affine/store';
 import {
   BlobEngine,
   type BlobSource,
   MemoryBlobSource,
-} from '@canvas/nexio/sync';
+} from '@blocksuite/affine/sync';
 import { Subject } from 'rxjs';
 import type { Awareness } from 'y-protocols/awareness.js';
 import type { Doc as YDoc } from 'yjs';
@@ -28,6 +28,7 @@ type WorkspaceOptions = {
   rootDoc: YDoc;
   blobSource?: BlobSource;
   onLoadDoc?: (doc: YDoc) => void;
+  onUnloadDoc?: (doc: YDoc) => void;
   onLoadAwareness?: (awareness: Awareness) => void;
   onCreateDoc?: (docId?: string) => string;
   featureFlagService?: FeatureFlagService;
@@ -47,9 +48,7 @@ export class WorkspaceImpl implements Workspace {
   meta: WorkspaceMeta;
 
   slots = {
-    /* eslint-disable rxjs/finnish */
     docListUpdated: new Subject<void>(),
-    /* eslint-enable rxjs/finnish */
   };
 
   get docs() {
@@ -57,6 +56,7 @@ export class WorkspaceImpl implements Workspace {
   }
 
   readonly onLoadDoc?: (doc: YDoc) => void;
+  readonly onUnloadDoc?: (doc: YDoc) => void;
   readonly onLoadAwareness?: (awareness: Awareness) => void;
   readonly onCreateDoc?: (docId?: string) => string;
   readonly featureFlagService?: FeatureFlagService;
@@ -66,6 +66,7 @@ export class WorkspaceImpl implements Workspace {
     rootDoc,
     blobSource,
     onLoadDoc,
+    onUnloadDoc,
     onLoadAwareness,
     onCreateDoc,
     featureFlagService,
@@ -74,6 +75,7 @@ export class WorkspaceImpl implements Workspace {
     this.featureFlagService = featureFlagService;
     this.doc = rootDoc;
     this.onLoadDoc = onLoadDoc;
+    this.onUnloadDoc = onUnloadDoc;
     this.onLoadDoc?.(this.doc);
     this.onLoadAwareness = onLoadAwareness;
     this.onCreateDoc = onCreateDoc;
@@ -123,7 +125,7 @@ export class WorkspaceImpl implements Workspace {
       const id = this.onCreateDoc(docId);
       const doc = this.getDoc(id);
       if (!doc) {
-        throw new CanvasError(
+        throw new BlockSuiteError(
           ErrorCode.DocCollectionError,
           'create doc failed'
         );
@@ -132,7 +134,7 @@ export class WorkspaceImpl implements Workspace {
     }
     const id = docId ?? this.idGenerator();
     if (this._hasDoc(id)) {
-      throw new CanvasError(
+      throw new BlockSuiteError(
         ErrorCode.DocCollectionError,
         'doc already exists'
       );
@@ -160,7 +162,7 @@ export class WorkspaceImpl implements Workspace {
   removeDoc(docId: string) {
     const docMeta = this.meta.getDocMeta(docId);
     if (!docMeta) {
-      throw new CanvasError(
+      throw new BlockSuiteError(
         ErrorCode.DocCollectionError,
         `doc meta not found: ${docId}`
       );
@@ -176,5 +178,6 @@ export class WorkspaceImpl implements Workspace {
 
   dispose() {
     this.blockCollections.forEach(doc => doc.dispose());
+    this.onUnloadDoc?.(this.doc);
   }
 }

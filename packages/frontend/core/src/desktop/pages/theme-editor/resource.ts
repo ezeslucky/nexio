@@ -116,7 +116,7 @@ const getTree = (
   };
 };
 
-export const nexioThemes = {
+export const affineThemes = {
   v1: getTree(lightCssVariables, darkCssVariables),
   v2: getTree(lightCssVariablesV2, darkCssVariablesV2),
 };

@@ -10,24 +10,24 @@ import {
   Modal,
   notify,
   Scrollable,
-} from '@nexio/component';
-import { AuthPageContainer } from '@nexio/component/auth-components';
-import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
-import { PureWorkspaceCard } from '@nexio/core/components/workspace-selector/workspace-card';
-import { AuthService } from '@nexio/core/modules/cloud';
+} from '@affine/component';
+import { AuthPageContainer } from '@affine/component/auth-components';
+import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import { PureWorkspaceCard } from '@affine/core/components/workspace-selector/workspace-card';
+import { AuthService } from '@affine/core/modules/cloud';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { buildShowcaseWorkspace } from '@nexio/core/utils/first-app-data';
-import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
-import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
-import { type I18nString, Trans, useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/workspace';
+import { buildShowcaseWorkspace } from '@affine/core/utils/first-app-data';
+import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
+import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
+import { type I18nString, Trans, useI18n } from '@affine/i18n';
 import { DoneIcon, NewPageIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -36,10 +36,10 @@ import { PageNotFound } from '../404';
 import * as styles from './styles.css';
 
 const benefitList: I18nString[] = [
-  'com.nexio.upgrade-to-team-page.benefit.g1',
-  'com.nexio.upgrade-to-team-page.benefit.g2',
-  'com.nexio.upgrade-to-team-page.benefit.g3',
-  'com.nexio.upgrade-to-team-page.benefit.g4',
+  'com.affine.upgrade-to-team-page.benefit.g1',
+  'com.affine.upgrade-to-team-page.benefit.g2',
+  'com.affine.upgrade-to-team-page.benefit.g3',
+  'com.affine.upgrade-to-team-page.benefit.g4',
 ];
 
 export const Component = () => {
@@ -83,7 +83,7 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
       return name;
     }
     return t[
-      'com.nexio.upgrade-to-team-page.workspace-selector.placeholder'
+      'com.affine.upgrade-to-team-page.workspace-selector.placeholder'
     ]();
   }, [name, selectedWorkspace, t]);
 
@@ -103,7 +103,7 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
   const [params] = useSearchParams();
   const isTeam = workspaceInfo?.isTeam;
 
-  const openNEXIO = useCallback(() => {
+  const openAFFiNE = useCallback(() => {
     if (params.get('client')) {
       jumpToOpenInApp(`/workspace/${selectedWorkspace?.id}/all`);
     } else if (selectedWorkspace) {
@@ -124,12 +124,12 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
 
   useEffect(() => {
     if (isTeam && selectedWorkspace) {
-      return openNEXIO();
+      return openAFFiNE();
     }
-  }, [isTeam, jumpToPage, openNEXIO, selectedWorkspace]);
+  }, [isTeam, jumpToPage, openAFFiNE, selectedWorkspace]);
 
   return (
-    <AuthPageContainer title={t['com.nexio.upgrade-to-team-page.title']()}>
+    <AuthPageContainer title={t['com.affine.upgrade-to-team-page.title']()}>
       <div className={styles.root}>
         <Menu
           items={
@@ -159,11 +159,11 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
             onClick={onUpgradeButtonClick}
             disabled={!selectedWorkspace}
           >
-            {t['com.nexio.upgrade-to-team-page.upgrade-button']()}
+            {t['com.affine.upgrade-to-team-page.upgrade-button']()}
           </Button>
         </div>
         <div className={styles.contentContainer}>
-          <div>{t['com.nexio.upgrade-to-team-page.benefit.title']()}</div>
+          <div>{t['com.affine.upgrade-to-team-page.benefit.title']()}</div>
           <ul>
             {benefitList.map((benefit, index) => (
               <li key={`${benefit}:${index}`} className={styles.liStyle}>
@@ -173,7 +173,7 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
             ))}
           </ul>
           <div>
-            {t['com.nexio.upgrade-to-team-page.benefit.description']()}
+            {t['com.affine.upgrade-to-team-page.benefit.description']()}
           </div>
           {selectedWorkspace && (
             <UpgradeDialog
@@ -236,11 +236,11 @@ const UpgradeDialog = ({
   return (
     <Modal width={480} open={open} onOpenChange={onOpenChange}>
       <div className={styles.dialogTitle}>
-        {t['com.nexio.upgrade-to-team-page.upgrade-confirm.title']()}
+        {t['com.affine.upgrade-to-team-page.upgrade-confirm.title']()}
       </div>
       <div className={styles.dialogMessage}>
         <Trans
-          i18nKey="com.nexio.upgrade-to-team-page.upgrade-confirm.description"
+          i18nKey="com.affine.upgrade-to-team-page.upgrade-confirm.description"
           components={{
             1: <span style={{ fontWeight: 600 }} />,
           }}
@@ -264,7 +264,7 @@ const UpgradeDialog = ({
             },
           }}
         >
-          {t['com.nexio.payment.upgrade']()}
+          {t['com.affine.payment.upgrade']()}
         </Upgrade>
       </div>
     </Modal>
@@ -284,7 +284,7 @@ const WorkspaceSelector = ({
   const cloudWorkspaces = useMemo(
     () =>
       metas.filter(
-        ({ flavour }) => flavour === 'nexio-cloud'
+        ({ flavour }) => flavour === 'affine-cloud'
       ) as WorkspaceMetadata[],
     [metas]
   );
@@ -313,7 +313,7 @@ const WorkspaceSelector = ({
         </Scrollable.Root>
       ) : (
         <div className={styles.noWorkspaceItem}>
-          {t['com.nexio.upgrade-to-team-page.no-workspace-available']()}
+          {t['com.affine.upgrade-to-team-page.no-workspace-available']()}
         </div>
       )}
       <Divider size="thinner" />
@@ -325,7 +325,7 @@ const WorkspaceSelector = ({
       >
         <div className={styles.itemContent}>
           {t[
-            'com.nexio.upgrade-to-team-page.workspace-selector.create-workspace'
+            'com.affine.upgrade-to-team-page.workspace-selector.create-workspace'
           ]()}
         </div>
       </MenuItem>
@@ -379,7 +379,7 @@ const CreateWorkspaceDialog = ({
   const onCreate = useCallback(async () => {
     const newWorkspace = await buildShowcaseWorkspace(
       workspacesService,
-      'nexio-cloud',
+      'affine-cloud',
       name
     );
     notify.success({
@@ -397,19 +397,19 @@ const CreateWorkspaceDialog = ({
     <Modal width={480} open={open} onOpenChange={onOpenChange}>
       <div className={styles.dialogTitle}>
         {t[
-          'com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.title'
+          'com.affine.upgrade-to-team-page.create-and-upgrade-confirm.title'
         ]()}
       </div>
 
       <div className={styles.createConfirmContent}>
         <div>
           {t[
-            'com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.description'
+            'com.affine.upgrade-to-team-page.create-and-upgrade-confirm.description'
           ]()}
         </div>
         <Input
           placeholder={t[
-            'com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.placeholder'
+            'com.affine.upgrade-to-team-page.create-and-upgrade-confirm.placeholder'
           ]()}
           value={name}
           onChange={setName}
@@ -424,7 +424,7 @@ const CreateWorkspaceDialog = ({
           onClick={onBeforeCheckout}
         >
           {t[
-            'com.nexio.upgrade-to-team-page.create-and-upgrade-confirm.confirm'
+            'com.affine.upgrade-to-team-page.create-and-upgrade-confirm.confirm'
           ]()}
         </Button>
       </div>

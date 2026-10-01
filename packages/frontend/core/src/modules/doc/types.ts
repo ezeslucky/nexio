@@ -1,5 +1,5 @@
-import type { DocProps } from '@nexio/core/canvas/initialization';
-import type { DocMode } from '@canvas/nexio/model';
+import type { DocProps } from '@affine/core/blocksuite/initialization';
+import type { DocMode } from '@blocksuite/affine/model';
 
 export interface DocCreateOptions {
   id?: string;

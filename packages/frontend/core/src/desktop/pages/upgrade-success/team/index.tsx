@@ -1,7 +1,7 @@
-import { Button } from '@nexio/component';
-import { AuthPageContainer } from '@nexio/component/auth-components';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { Trans, useI18n } from '@nexio/i18n';
+import { Button } from '@affine/component';
+import { AuthPageContainer } from '@affine/component/auth-components';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { Trans, useI18n } from '@affine/i18n';
 import { useCallback } from 'react';
 
 import * as styles from './styles.css';
@@ -21,14 +21,14 @@ export const Component = () => {
 
   const subtitle = (
     <div className={styles.leftContentText}>
-      <div>{t['com.nexio.payment.upgrade-success-page.team.text-1']()}</div>
+      <div>{t['com.affine.payment.upgrade-success-page.team.text-1']()}</div>
       <div>
         <Trans
-          i18nKey={'com.nexio.payment.upgrade-success-page.team.text-2'}
+          i18nKey={'com.affine.payment.upgrade-success-page.team.text-2'}
           components={{
             1: (
               <a
-                href="mailto:support@ezeslucky.info"
+                href="mailto:support@toeverything.info"
                 className={styles.mail}
               />
             ),
@@ -40,7 +40,7 @@ export const Component = () => {
 
   return (
     <AuthPageContainer
-      title={t['com.nexio.payment.upgrade-success-page.title']()}
+      title={t['com.affine.payment.upgrade-success-page.title']()}
       subtitle={subtitle}
     >
       <Button variant="primary" size="extraLarge" onClick={openWorkspace}>

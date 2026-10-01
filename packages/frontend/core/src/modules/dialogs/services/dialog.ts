@@ -1,4 +1,4 @@
-import { LiveData, Service } from '@ezeslucky/infra';
+import { LiveData, Service } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 
 import type { GLOBAL_DIALOG_SCHEMA } from '../constant';

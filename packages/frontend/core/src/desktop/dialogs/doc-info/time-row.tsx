@@ -1,8 +1,8 @@
-import { PropertyName, PropertyRoot, PropertyValue } from '@nexio/component';
-import { DocsService } from '@nexio/core/modules/doc';
-import { i18nTime, useI18n } from '@nexio/i18n';
+import { PropertyName, PropertyRoot, PropertyValue } from '@affine/component';
+import { DocsService } from '@affine/core/modules/doc';
+import { i18nTime, useI18n } from '@affine/i18n';
 import { DateTimeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import type { ConfigType } from 'dayjs';
 import { useDebouncedValue } from 'foxact/use-debounced-value';

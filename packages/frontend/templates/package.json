@@ -1,8 +1,8 @@
 {
-  "name": "@nexio/templates",
+  "name": "@affine/templates",
   "private": true,
   "sideEffect": false,
-  "version": "0.22.4",
+  "version": "0.27.5",
   "scripts": {
     "build": "node ./build-edgeless.mjs && node ./build-stickers.mjs",
     "postinstall": "yarn build"

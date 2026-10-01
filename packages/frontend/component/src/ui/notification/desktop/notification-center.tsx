@@ -31,7 +31,7 @@ export function DesktopNotificationCenter({
 
   return (
     <Toaster
-      className="nexio-notification-center"
+      className="affine-notification-center"
       style={style}
       toastOptions={toastOptions}
       theme={resolvedTheme}

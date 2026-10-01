@@ -1,17 +1,17 @@
-import { Tabs, Tooltip, useConfirmModal } from '@nexio/component';
-import { Button } from '@nexio/component/ui/button';
-import { Menu } from '@nexio/component/ui/menu';
-import { ServerService } from '@nexio/core/modules/cloud';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
-import { ShareInfoService } from '@nexio/core/modules/share-doc';
-import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
-import { ServerDeploymentType, SubscriptionPlan } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import type { Store } from '@canvas/nexio/store';
+import { Tabs, Tooltip, useConfirmModal } from '@affine/component';
+import { Button } from '@affine/component/ui/button';
+import { Menu } from '@affine/component/ui/menu';
+import { ServerService } from '@affine/core/modules/cloud';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceQuotaService } from '@affine/core/modules/quota';
+import { ShareInfoService } from '@affine/core/modules/share-doc';
+import type { WorkspaceMetadata } from '@affine/core/modules/workspace';
+import { ServerDeploymentType, SubscriptionPlan } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import type { Store } from '@blocksuite/affine/store';
 import { LockIcon, PublishIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import {
   forwardRef,
   type PropsWithChildren,
@@ -31,10 +31,12 @@ import { SharePage } from './share-page';
 export interface ShareMenuProps extends PropsWithChildren {
   workspaceMetadata: WorkspaceMetadata;
   currentPage: Store;
-  onEnableNexioCloud: () => void;
+  onEnableAffineCloud: () => void;
   onOpenShareModal?: (open: boolean) => void;
   openPaywallModal?: () => void;
   hittingPaywall?: boolean;
+  disabled?: boolean;
+  disabledReason?: string;
 }
 
 export enum ShareMenuTab {
@@ -97,15 +99,15 @@ export const ShareMenuContent = (props: ShareMenuProps) => {
     openConfirmModal({
       title:
         t[
-          `com.nexio.share-menu.paywall.${isOwner ? 'owner' : 'member'}.title`
+          `com.affine.share-menu.paywall.${isOwner ? 'owner' : 'member'}.title`
         ](),
       description:
         t[
-          `com.nexio.share-menu.paywall.${isOwner ? 'owner' : 'member'}.description`
+          `com.affine.share-menu.paywall.${isOwner ? 'owner' : 'member'}.description`
         ](),
       confirmText:
         t[
-          `com.nexio.share-menu.paywall.${isOwner ? 'owner' : 'member'}.confirm`
+          `com.affine.share-menu.paywall.${isOwner ? 'owner' : 'member'}.confirm`
         ](),
       onConfirm: onConfirm,
       cancelText: t['Cancel'](),
@@ -154,7 +156,7 @@ export const ShareMenuContent = (props: ShareMenuProps) => {
       >
         <Tabs.List className={styles.tabList}>
           <Tabs.Trigger value={ShareMenuTab.Share} className={styles.tab}>
-            {t['com.nexio.share-menu.shareButton']()}
+            {t['com.affine.share-menu.shareButton']()}
           </Tabs.Trigger>
           <Tabs.Trigger
             value={ShareMenuTab.Export}
@@ -203,7 +205,7 @@ export const ShareMenuContent = (props: ShareMenuProps) => {
 };
 
 const DefaultShareButton = forwardRef(function DefaultShareButton(
-  _,
+  props: { disabled?: boolean; tooltip?: string },
   ref: Ref<HTMLButtonElement>
 ) {
   const t = useI18n();
@@ -211,21 +213,29 @@ const DefaultShareButton = forwardRef(function DefaultShareButton(
   const shared = useLiveData(shareInfoService.shareInfo.isShared$);
 
   useEffect(() => {
+    if (props.disabled) {
+      return;
+    }
     shareInfoService.shareInfo.revalidate();
-  }, [shareInfoService]);
+  }, [props.disabled, shareInfoService]);
+
+  const tooltip =
+    props.tooltip ??
+    (shared
+      ? t['com.affine.share-menu.option.link.readonly.description']()
+      : t['com.affine.share-menu.option.link.no-access.description']());
 
   return (
-    <Tooltip
-      content={
-        shared
-          ? t['com.nexio.share-menu.option.link.readonly.description']()
-          : t['com.nexio.share-menu.option.link.no-access.description']()
-      }
-    >
-      <Button ref={ref} className={styles.button} variant="primary">
+    <Tooltip content={tooltip}>
+      <Button
+        ref={ref}
+        className={styles.button}
+        variant="primary"
+        disabled={props.disabled}
+      >
         <div className={styles.buttonContainer}>
           {shared ? <PublishIcon fontSize={16} /> : <LockIcon fontSize={16} />}
-          {t['com.nexio.share-menu.shareButton']()}
+          {t['com.affine.share-menu.shareButton']()}
         </div>
       </Button>
     </Tooltip>
@@ -233,6 +243,13 @@ const DefaultShareButton = forwardRef(function DefaultShareButton(
 });
 
 const LocalShareMenu = (props: ShareMenuProps) => {
+  if (props.disabled) {
+    return (
+      <div data-testid="local-share-menu-button">
+        <DefaultShareButton disabled tooltip={props.disabledReason} />
+      </div>
+    );
+  }
   return (
     <Menu
       items={<ShareMenuContent {...props} />}
@@ -254,6 +271,13 @@ const LocalShareMenu = (props: ShareMenuProps) => {
 };
 
 const CloudShareMenu = (props: ShareMenuProps) => {
+  if (props.disabled) {
+    return (
+      <div data-testid="cloud-share-menu-button">
+        <DefaultShareButton disabled tooltip={props.disabledReason} />
+      </div>
+    );
+  }
   return (
     <Menu
       items={<ShareMenuContent {...props} />}

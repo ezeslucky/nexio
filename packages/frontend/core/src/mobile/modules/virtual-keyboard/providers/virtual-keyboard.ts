@@ -1,8 +1,9 @@
-import { createIdentifier } from '@ezeslucky/infra';
+import { createIdentifier } from '@toeverything/infra';
 
 interface VirtualKeyboardInfo {
   visible: boolean;
   height: number;
+  overlaysContent?: boolean;
 }
 
 type VirtualKeyboardAction = {

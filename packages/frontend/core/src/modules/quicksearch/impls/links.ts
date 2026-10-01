@@ -1,6 +1,6 @@
-import type { ReferenceParams } from '@canvas/nexio/model';
+import type { ReferenceParams } from '@blocksuite/affine/model';
 import { BlockLinkIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import { omit, truncate } from 'lodash-es';
 
 import type { DocsService } from '../../doc';
@@ -64,7 +64,7 @@ export class LinksQuickSearchSession
         group: {
           id: 'docs',
           label: {
-            i18nKey: 'com.nexio.quicksearch.group.searchfor',
+            i18nKey: 'com.affine.quicksearch.group.searchfor',
             options: { query: truncate(query) },
           },
           score: 5,

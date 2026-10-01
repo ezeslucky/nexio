@@ -1,6 +1,6 @@
-import { notify } from '@nexio/component';
-import { I18n } from '@nexio/i18n';
-import { OnEvent, Service } from '@ezeslucky/infra';
+import { notify } from '@affine/component';
+import { I18n } from '@affine/i18n';
+import { OnEvent, Service } from '@toeverything/infra';
 import type { To } from 'history';
 import { debounce } from 'lodash-es';
 
@@ -131,7 +131,7 @@ export class DesktopApiService extends Service {
           targetServer = defaultServerService.server;
         }
         if (!targetServer) {
-          throw new Error('Nexio Cloud server not found');
+          throw new Error('AFFiNE Cloud server not found');
         }
         const authService = targetServer.scope.get(AuthService);
 
@@ -146,10 +146,18 @@ export class DesktopApiService extends Service {
             await authService.signInOauth(code, state, provider);
             break;
           }
+          case 'open-app-signin': {
+            const code = (payload as { code?: unknown }).code;
+            if (typeof code !== 'string' || !code) {
+              throw new Error('Invalid open-app sign-in payload');
+            }
+            await authService.signInOpenAppSignInCode(code);
+            break;
+          }
         }
       })().catch(e => {
         notify.error({
-          title: I18n['com.nexio.auth.toast.title.failed'](),
+          title: I18n['com.affine.auth.toast.title.failed'](),
           message: (e as any).message,
         });
       });

@@ -7,13 +7,6 @@
   },
   "include": ["./src", "src/**/*.json"],
   "references": [
-    { "path": "../../../canvas/framework/global" },
-    { "path": "../../../canvas/nexio/all" },
-    { "path": "../../../canvas/nexio/blocks/root" },
-    { "path": "../../../canvas/nexio/components" },
-    { "path": "../../../canvas/nexio/shared" },
-    { "path": "../../../canvas/framework/std" },
-    { "path": "../../common/infra" },
     { "path": "../component" },
     { "path": "../../common/debug" },
     { "path": "../electron-api" },
@@ -24,6 +17,14 @@
     { "path": "../../common/nbstore" },
     { "path": "../../common/reader" },
     { "path": "../track" },
-    { "path": "../../../canvas/nexio/ext-loader" }
+    { "path": "../../../blocksuite/affine/all" },
+    { "path": "../../../blocksuite/affine/blocks/root" },
+    { "path": "../../../blocksuite/affine/components" },
+    { "path": "../../../blocksuite/affine/shared" },
+    { "path": "../../../blocksuite/affine/data-view" },
+    { "path": "../../../blocksuite/framework/global" },
+    { "path": "../../../blocksuite/framework/std" },
+    { "path": "../../common/infra" },
+    { "path": "../../../blocksuite/affine/ext-loader" }
   ]
 }

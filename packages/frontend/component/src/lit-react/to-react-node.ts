@@ -5,7 +5,7 @@ import React, { createElement, type ReactNode } from 'react';
 import { createComponent } from './create-component';
 
 export
-@customElement('nexio-lit-template-wrapper')
+@customElement('affine-lit-template-wrapper')
 class LitTemplateWrapper extends LitElement {
   static override get properties() {
     return {

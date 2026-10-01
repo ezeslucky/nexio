@@ -1,8 +1,8 @@
-import { ServersService } from '@nexio/core/modules/cloud';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
-import type { FrameworkProvider } from '@ezeslucky/infra';
+import { ServersService } from '@affine/core/modules/cloud';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { WorkspacesService } from '@affine/core/modules/workspace';
+import type { FrameworkProvider } from '@toeverything/infra';
 
 export function getCurrentWorkspace(frameworkProvider: FrameworkProvider) {
   const currentWorkspaceId = frameworkProvider

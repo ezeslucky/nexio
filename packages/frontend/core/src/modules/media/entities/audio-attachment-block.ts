@@ -1,17 +1,16 @@
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
-} from '@nexio/core/canvas/ai/blocks/transcription-block/model';
-import { insertFromMarkdown } from '@nexio/core/canvas/utils';
-import { encodeAudioBlobToOpusSlices } from '@nexio/core/utils/opus-encoding';
-import { DebugLogger } from '@nexio/debug';
-import { AiJobStatus } from '@nexio/graphql';
-import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@canvas/nexio/model';
-import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
-import { type DeltaInsert, Text } from '@canvas/nexio/store';
+} from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
+import { insertFromMarkdown } from '@affine/core/blocksuite/utils';
+import { preprocessAudioBlobForTranscription } from '@affine/core/utils/opus-encoding';
+import { DebugLogger } from '@affine/debug';
+import track from '@affine/track';
+import type { AttachmentBlockModel } from '@blocksuite/affine/model';
+import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
+import { type DeltaInsert, Text } from '@blocksuite/affine/store';
 import { computed } from '@preact/signals-core';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 
 import type { WorkspaceService } from '../../workspace';
@@ -22,10 +21,20 @@ import { AudioTranscriptionJob } from './audio-transcription-job';
 import type { TranscriptionResult } from './types';
 
 const logger = new DebugLogger('audio-attachment-block');
+type TranscriptionBlockProps = TranscriptionBlockModel['props'];
 
-// CanvasError: yText must not contain "\r" because it will break the range synchronization
+// BlockSuiteError: yText must not contain "\r" because it will break the range synchronization
 function sanitizeText(text: string) {
   return text.replace(/\r/g, '');
+}
+
+function requireTranscriptionBlockProps(
+  transcriptionBlockProps: TranscriptionBlockProps | undefined
+) {
+  if (!transcriptionBlockProps) {
+    throw new Error('No transcription block props');
+  }
+  return transcriptionBlockProps;
 }
 
 const colorOptions = [
@@ -92,7 +101,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       this.transcriptionJob.status$.value.status === 'waiting-for-job' &&
       !this.hasTranscription$.value
     ) {
-      this.transcribe().catch(error => {
+      this.resumeTranscription().catch(error => {
         logger.error('Error transcribing audio:', error);
       });
     }
@@ -114,7 +123,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
     if (!transcriptionBlockProps) {
       // transcription block is not created yet, we need to create it
       this.props.store.addBlock(
-        'nexio:transcription',
+        'affine:transcription',
         {
           transcription: {},
         },
@@ -123,42 +132,55 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       transcriptionBlockProps = this.transcriptionBlock$.value?.props;
     }
 
-    if (!transcriptionBlockProps) {
-      throw new Error('No transcription block props');
-    }
-
     const job = this.framework.createEntity(AudioTranscriptionJob, {
       blobId: this.props.props.sourceId,
-      blockProps: transcriptionBlockProps,
-      getAudioFiles: async () => {
+      blockProps: requireTranscriptionBlockProps(transcriptionBlockProps),
+      getAudioTranscriptionInput: async () => {
         const buffer = await this.audioMedia.getBuffer();
         if (!buffer) {
           throw new Error('No audio buffer available');
         }
-        const slices = await encodeAudioBlobToOpusSlices(buffer, 64000);
-        const files = slices.map((slice, index) => {
-          const blob = new Blob([slice], { type: 'audio/opus' });
-          return new File([blob], this.props.props.name + `-${index}.opus`, {
-            type: 'audio/opus',
+        const currentTranscriptionBlockProps = requireTranscriptionBlockProps(
+          this.transcriptionBlock$.value?.props
+        );
+        const { files, sourceAudio, sliceManifest } =
+          await preprocessAudioBlobForTranscription(buffer, {
+            fileNameBase: this.props.props.name,
+            sourceMimeType: this.props.props.type,
+            targetBitrate: 64000,
           });
-        });
-        return files;
+
+        return {
+          files,
+          input: {
+            sourceAudio: {
+              ...sourceAudio,
+              ...currentTranscriptionBlockProps.transcription.sourceAudio,
+            },
+            quality: currentTranscriptionBlockProps.transcription.quality,
+            sliceManifest,
+          },
+        };
       },
     });
 
     return job;
   }
 
-  readonly transcribe = async () => {
+  private readonly runTranscription = async (retryFailed: boolean) => {
     try {
-      // if job is already running, we should not start it again
-      if (this.transcriptionJob.status$.value.status !== 'waiting-for-job') {
+      const initialStatus = this.transcriptionJob.status$.value.status;
+      if (initialStatus !== 'waiting-for-job' && initialStatus !== 'failed') {
         return;
       }
-      const status = await this.transcriptionJob.start();
-      if (status.status === AiJobStatus.claimed) {
+      const status = await this.transcriptionJob.start(retryFailed);
+      if (status.status === 'blocked') {
+        return status;
+      }
+      if (status.status === 'settled') {
         await this.fillTranscriptionResult(status.result);
       }
+      return status;
     } catch (error) {
       track.doc.editor.audioBlock.transcribeRecording({
         type: 'Meeting record',
@@ -168,6 +190,10 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       throw error;
     }
   };
+
+  readonly resumeTranscription = () => this.runTranscription(false);
+
+  readonly transcribe = () => this.runTranscription(true);
 
   private readonly fillTranscriptionResult = async (
     result: TranscriptionResult
@@ -180,14 +206,14 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
       collapsed: boolean = false
     ) => {
       const calloutId = this.props.store.addBlock(
-        'nexio:callout',
+        'affine:callout',
         {
           emoji,
         },
         this.transcriptionBlock$.value?.id
       );
       this.props.store.addBlock(
-        'nexio:paragraph',
+        'affine:paragraph',
         {
           type: 'h6',
           collapsed,
@@ -211,7 +237,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           color = colorOptions[speakerToColors.size % colorOptions.length];
           speakerToColors.set(segment.speaker, color);
         }
-        const deltaInserts: DeltaInsert<NexioTextAttributes>[] = [
+        const deltaInserts: DeltaInsert<AffineTextAttributes>[] = [
           {
             insert: sanitizeText(segment.start + ' ' + segment.speaker),
             attributes: {
@@ -224,7 +250,7 @@ export class AudioAttachmentBlock extends Entity<AttachmentBlockModel> {
           },
         ];
         this.props.store.addBlock(
-          'nexio:paragraph',
+          'affine:paragraph',
           {
             text: new Text(deltaInserts),
           },

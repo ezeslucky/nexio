@@ -1,4 +1,4 @@
-import { type CellDataType } from '@canvas/nexio/model';
+import { type CellDataType } from '@blocksuite/affine/model';
 import { type Doc as YDoc, type Map as YMap } from 'yjs';
 
 export interface WorkspacePage {
@@ -11,7 +11,7 @@ export interface WorkspacePage {
   properties?: Record<string, any>;
 }
 
-export type BaseFlavour<T extends string> = `nexio:${T}`;
+export type BaseFlavour<T extends string> = `affine:${T}`;
 
 export type Flavour = BaseFlavour<
   | 'page'
@@ -48,26 +48,26 @@ export interface ParsedDoc {
 }
 
 export interface ParagraphBlock extends BaseParsedBlock {
-  flavour: 'nexio:paragraph';
+  flavour: 'affine:paragraph';
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'quote';
 }
 
 export interface DividerBlock extends BaseParsedBlock {
-  flavour: 'nexio:divider';
+  flavour: 'affine:divider';
 }
 
 export interface ListBlock extends BaseParsedBlock {
-  flavour: 'nexio:list';
+  flavour: 'affine:list';
   type: 'bulleted' | 'numbered';
 }
 
 export interface CodeBlock extends BaseParsedBlock {
-  flavour: 'nexio:code';
+  flavour: 'affine:code';
   language: string;
 }
 
 export interface ImageBlock extends BaseParsedBlock {
-  flavour: 'nexio:image';
+  flavour: 'affine:image';
   sourceId: string;
   blobUrl: string;
   width?: number;
@@ -76,39 +76,39 @@ export interface ImageBlock extends BaseParsedBlock {
 }
 
 export interface AttachmentBlock extends BaseParsedBlock {
-  flavour: 'nexio:attachment';
+  flavour: 'affine:attachment';
   type: string;
   sourceId: string;
 }
 
 export interface EmbedYoutubeBlock extends BaseParsedBlock {
-  flavour: 'nexio:embed-youtube';
+  flavour: 'affine:embed-youtube';
   videoId: string;
 }
 
 export interface BookmarkBlock extends BaseParsedBlock {
-  flavour: 'nexio:bookmark';
+  flavour: 'affine:bookmark';
   url: string;
 }
 
 export interface EmbedLinkedDocBlock extends BaseParsedBlock {
-  flavour: 'nexio:embed-linked-doc';
+  flavour: 'affine:embed-linked-doc';
   pageId: string;
 }
 
 export interface EmbedSyncedDocBlock extends BaseParsedBlock {
-  flavour: 'nexio:embed-synced-doc';
+  flavour: 'affine:embed-synced-doc';
   pageId: string;
 }
 
 export interface DatabaseBlock extends BaseParsedBlock {
   title: string;
-  flavour: 'nexio:database';
+  flavour: 'affine:database';
   rows: Record<string, string>[];
 }
 
 export interface TableBlock extends BaseParsedBlock {
-  flavour: 'nexio:table';
+  flavour: 'affine:table';
   rows: string[][];
   columns: string[];
 }

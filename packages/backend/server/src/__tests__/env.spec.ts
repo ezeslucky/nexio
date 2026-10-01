@@ -37,7 +37,7 @@ test('should read NODE_ENV', t => {
 test('should read NAMESPACE', t => {
   t.deepEqual(
     ['dev', 'beta', 'production'].map(envVal => {
-      process.env.NEXIO_ENV = envVal;
+      process.env.AFFINE_ENV = envVal;
       const env = new Env();
       return env.NAMESPACE;
     }),
@@ -45,19 +45,19 @@ test('should read NAMESPACE', t => {
   );
 
   t.throws(() => {
-    process.env.NEXIO_ENV = 'unknown';
+    process.env.AFFINE_ENV = 'unknown';
     new Env();
   });
 });
 
 test('should read DEPLOYMENT_TYPE', t => {
   t.deepEqual(
-    ['nexio', 'selfhosted'].map(envVal => {
+    ['affine', 'selfhosted'].map(envVal => {
       process.env.DEPLOYMENT_TYPE = envVal;
       const env = new Env();
       return env.DEPLOYMENT_TYPE;
     }),
-    ['nexio', 'selfhosted']
+    ['affine', 'selfhosted']
   );
 
   t.throws(() => {
@@ -68,12 +68,20 @@ test('should read DEPLOYMENT_TYPE', t => {
 
 test('should read FLAVOR', t => {
   t.deepEqual(
-    ['allinone', 'graphql', 'sync', 'renderer', 'doc', 'script'].map(envVal => {
+    [
+      'allinone',
+      'graphql',
+      'sync',
+      'renderer',
+      'front',
+      'worker',
+      'script',
+    ].map(envVal => {
       process.env.SERVER_FLAVOR = envVal;
       const env = new Env();
       return env.FLAVOR;
     }),
-    ['allinone', 'graphql', 'sync', 'renderer', 'doc', 'script']
+    ['allinone', 'graphql', 'sync', 'renderer', 'front', 'worker', 'script']
   );
 
   t.throws(
@@ -83,7 +91,7 @@ test('should read FLAVOR', t => {
     },
     {
       message:
-        'Invalid value "unknown" for environment variable SERVER_FLAVOR, expected one of ["allinone","graphql","sync","renderer","doc","script"]',
+        'Invalid value "unknown" for environment variable SERVER_FLAVOR, expected one of ["allinone","graphql","sync","renderer","front","worker","script"]',
     }
   );
 });
@@ -110,7 +118,8 @@ test('should tell flavors correctly', t => {
     graphql: true,
     sync: true,
     renderer: true,
-    doc: true,
+    front: false,
+    worker: true,
     script: false,
   });
 
@@ -119,7 +128,18 @@ test('should tell flavors correctly', t => {
     graphql: true,
     sync: false,
     renderer: false,
-    doc: false,
+    front: false,
+    worker: false,
+    script: false,
+  });
+
+  process.env.SERVER_FLAVOR = 'front';
+  t.deepEqual(new Env().flavors, {
+    graphql: false,
+    sync: false,
+    renderer: false,
+    front: true,
+    worker: false,
     script: false,
   });
 
@@ -128,7 +148,8 @@ test('should tell flavors correctly', t => {
     graphql: false,
     sync: false,
     renderer: false,
-    doc: false,
+    front: false,
+    worker: false,
     script: true,
   });
 });
@@ -137,26 +158,26 @@ test('should tell selfhosted correctly', t => {
   process.env.DEPLOYMENT_TYPE = 'selfhosted';
   t.true(new Env().selfhosted);
 
-  process.env.DEPLOYMENT_TYPE = 'nexio';
+  process.env.DEPLOYMENT_TYPE = 'affine';
   t.false(new Env().selfhosted);
 });
 
 test('should tell namespaces correctly', t => {
-  process.env.NEXIO_ENV = 'dev';
+  process.env.AFFINE_ENV = 'dev';
   t.deepEqual(new Env().namespaces, {
     canary: true,
     beta: false,
     production: false,
   });
 
-  process.env.NEXIO_ENV = 'beta';
+  process.env.AFFINE_ENV = 'beta';
   t.deepEqual(new Env().namespaces, {
     canary: false,
     beta: true,
     production: false,
   });
 
-  process.env.NEXIO_ENV = 'production';
+  process.env.AFFINE_ENV = 'production';
   t.deepEqual(new Env().namespaces, {
     canary: false,
     beta: false,

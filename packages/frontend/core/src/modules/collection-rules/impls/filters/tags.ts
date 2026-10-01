@@ -1,7 +1,7 @@
-import type { DocsService } from '@nexio/core/modules/doc';
-import type { TagService } from '@nexio/core/modules/tag';
-import type { WorkspacePropertyFilter } from '@nexio/core/modules/workspace-property';
-import { Service } from '@ezeslucky/infra';
+import type { DocsService } from '@affine/core/modules/doc';
+import type { TagService } from '@affine/core/modules/tag';
+import type { WorkspacePropertyFilter } from '@affine/core/modules/workspace-property';
+import { Service } from '@toeverything/infra';
 import { combineLatest, map, type Observable, of, switchMap } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

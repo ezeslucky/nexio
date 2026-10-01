@@ -1,15 +1,15 @@
 // the following import is used to ensure the block suite editor effects are run
-import '../canvas/block-suite-editor';
+import '../blocksuite/block-suite-editor';
 
-import { DebugLogger } from '@nexio/debug';
-import { DEFAULT_WORKSPACE_NAME } from '@nexio/env/constant';
-import onboardingUrl from '@nexio/templates/onboarding.zip';
-import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
+import { DebugLogger } from '@affine/debug';
+import { DEFAULT_WORKSPACE_NAME } from '@affine/env/constant';
+import onboardingUrl from '@affine/templates/onboarding.zip';
+import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
 
 import { DocsService } from '../modules/doc';
 import { OrganizeService } from '../modules/organize';
 import {
-  getNEXIOWorkspaceSchema,
+  getAFFiNEWorkspaceSchema,
   type WorkspacesService,
 } from '../modules/workspace';
 
@@ -25,7 +25,7 @@ export async function buildShowcaseWorkspace(
 
     await ZipTransformer.importDocs(
       docCollection,
-      getNEXIOWorkspaceSchema(),
+      getAFFiNEWorkspaceSchema(),
       blob
     );
   });
@@ -67,16 +67,33 @@ export async function buildShowcaseWorkspace(
 
 const logger = new DebugLogger('createFirstAppData');
 
-export async function createFirstAppData(workspacesService: WorkspacesService) {
-  if (localStorage.getItem('is-first-open') !== null) {
+let firstAppDataPromise:
+  | Promise<Awaited<ReturnType<typeof buildShowcaseWorkspace>>>
+  | undefined;
+
+export function createFirstAppData(workspacesService: WorkspacesService) {
+  if (workspacesService.list.workspaces$.value.length > 0) {
     return;
   }
-  localStorage.setItem('is-first-open', 'false');
-  const { meta, defaultDocId } = await buildShowcaseWorkspace(
+
+  if (
+    !BUILD_CONFIG.isMobileEdition &&
+    localStorage.getItem('is-first-open') !== null
+  ) {
+    return;
+  }
+
+  firstAppDataPromise ??= buildShowcaseWorkspace(
     workspacesService,
     'local',
     DEFAULT_WORKSPACE_NAME
-  );
-  logger.info('create first workspace', defaultDocId);
-  return { meta, defaultPageId: defaultDocId };
+  ).finally(() => {
+    firstAppDataPromise = undefined;
+  });
+
+  return firstAppDataPromise.then(({ meta, defaultDocId }) => {
+    localStorage.setItem('is-first-open', 'false');
+    logger.info('create first workspace', defaultDocId);
+    return { meta, defaultPageId: defaultDocId };
+  });
 }

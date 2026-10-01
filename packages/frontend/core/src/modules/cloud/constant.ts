@@ -2,21 +2,22 @@ import {
   OAuthProviderType,
   ServerDeploymentType,
   ServerFeature,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 
+import { DEFAULT_SELF_HOSTED_SERVER_NAME } from './server-name';
 import type { ServerConfig, ServerMetadata } from './types';
 
 export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
   environment.isSelfHosted
     ? [
         {
-          id: 'nexio-cloud',
+          id: 'affine-cloud',
           baseUrl: location.origin,
           // selfhosted baseUrl is `location.origin`
           // this is ok for web app, but not for desktop app
           // since we never build desktop app in selfhosted mode, so it's fine
           config: {
-            serverName: 'Nexio Selfhost',
+            serverName: DEFAULT_SELF_HOSTED_SERVER_NAME,
             features: [],
             oauthProviders: [],
             type: ServerDeploymentType.Selfhosted,
@@ -32,7 +33,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
     : BUILD_CONFIG.debug
       ? [
           {
-            id: 'nexio-cloud',
+            id: 'affine-cloud',
             baseUrl: BUILD_CONFIG.isElectron
               ? 'http://localhost:8080'
               : location.origin,
@@ -50,7 +51,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                 OAuthProviderType.Google,
                 OAuthProviderType.Apple,
               ],
-              type: ServerDeploymentType.Nexio,
+              type: ServerDeploymentType.Affine,
               credentialsRequirement: {
                 password: {
                   minLength: 8,
@@ -63,11 +64,11 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
       : BUILD_CONFIG.appBuildType === 'stable'
         ? [
             {
-              id: 'nexio-cloud',
+              id: 'affine-cloud',
               baseUrl: BUILD_CONFIG.isNative
                 ? BUILD_CONFIG.isIOS
-                  ? 'https://apple.getnexioapp.com'
-                  : 'https://app.nexio.pro'
+                  ? 'https://apple.getaffineapp.com'
+                  : 'https://app.affine.pro'
                 : location.origin,
               config: {
                 serverName: 'Nexio Cloud',
@@ -83,7 +84,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                   OAuthProviderType.Google,
                   OAuthProviderType.Apple,
                 ],
-                type: ServerDeploymentType.Nexio,
+                type: ServerDeploymentType.Affine,
                 credentialsRequirement: {
                   password: {
                     minLength: 8,
@@ -96,11 +97,11 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
         : BUILD_CONFIG.appBuildType === 'beta'
           ? [
               {
-                id: 'nexio-cloud',
+                id: 'affine-cloud',
                 baseUrl: BUILD_CONFIG.isNative
                   ? BUILD_CONFIG.isIOS
-                    ? 'https://apple.getnexioapp.com'
-                    : 'https://insider.nexio.pro'
+                    ? 'https://apple.getaffineapp.com'
+                    : 'https://insider.affine.pro'
                   : location.origin,
                 config: {
                   serverName: 'Nexio Cloud',
@@ -116,7 +117,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                     OAuthProviderType.Google,
                     OAuthProviderType.Apple,
                   ],
-                  type: ServerDeploymentType.Nexio,
+                  type: ServerDeploymentType.Affine,
                   credentialsRequirement: {
                     password: {
                       minLength: 8,
@@ -129,8 +130,8 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
           : BUILD_CONFIG.appBuildType === 'internal'
             ? [
                 {
-                  id: 'nexio-cloud',
-                  baseUrl: 'https://insider.nexio.pro',
+                  id: 'affine-cloud',
+                  baseUrl: 'https://insider.affine.pro',
                   config: {
                     serverName: 'Nexio Cloud',
                     features: [
@@ -145,7 +146,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                       OAuthProviderType.Google,
                       OAuthProviderType.Apple,
                     ],
-                    type: ServerDeploymentType.Nexio,
+                    type: ServerDeploymentType.Affine,
                     credentialsRequirement: {
                       password: {
                         minLength: 8,
@@ -158,9 +159,9 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
             : BUILD_CONFIG.appBuildType === 'canary'
               ? [
                   {
-                    id: 'nexio-cloud',
+                    id: 'affine-cloud',
                     baseUrl: BUILD_CONFIG.isNative
-                      ? 'https://nexio.fail'
+                      ? 'https://affine.fail'
                       : location.origin,
                     config: {
                       serverName: 'Nexio Cloud',
@@ -176,7 +177,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                         OAuthProviderType.Google,
                         OAuthProviderType.Apple,
                       ],
-                      type: ServerDeploymentType.Nexio,
+                      type: ServerDeploymentType.Affine,
                       credentialsRequirement: {
                         password: {
                           minLength: 8,
@@ -187,3 +188,32 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
                   },
                 ]
               : [];
+
+export type TelemetryChannel =
+  | 'stable'
+  | 'beta'
+  | 'internal'
+  | 'canary'
+  | 'local';
+
+const OFFICIAL_TELEMETRY_ENDPOINTS: Record<TelemetryChannel, string> = {
+  stable: 'https://app.affine.pro',
+  beta: 'https://insider.affine.pro',
+  internal: 'https://insider.affine.pro',
+  canary: 'https://affine.fail',
+  local: 'http://localhost:8080',
+};
+
+export function getOfficialTelemetryEndpoint(
+  channel = BUILD_CONFIG.appBuildType
+): string {
+  if (BUILD_CONFIG.debug) {
+    return BUILD_CONFIG.isNative
+      ? OFFICIAL_TELEMETRY_ENDPOINTS.local
+      : location.origin;
+  } else if (['beta', 'internal', 'canary', 'stable'].includes(channel)) {
+    return OFFICIAL_TELEMETRY_ENDPOINTS[channel];
+  }
+
+  return OFFICIAL_TELEMETRY_ENDPOINTS.stable;
+}

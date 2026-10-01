@@ -1,9 +1,0 @@
-query listUserAccessTokens {
-  revealedAccessTokens {
-    id
-    name
-    createdAt
-    expiresAt
-    token
-  }
-}

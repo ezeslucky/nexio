@@ -3,7 +3,7 @@ import { Readable } from 'node:stream';
 import type { Request } from 'express';
 
 import { OneMB, readBufferWithLimit } from '../../base';
-import type { PromptTools } from './providers';
+import type { PromptTools } from './providers/types';
 import type { ToolsConfig } from './types';
 
 export const MAX_EMBEDDABLE_SIZE = 50 * OneMB;
@@ -67,14 +67,21 @@ export function getTools(
       case 'searchWorkspace':
         if (value === false) {
           result = result.filter(tool => {
-            return tool !== 'docKeywordSearch' && tool !== 'docSemanticSearch';
+            return tool !== 'docSearch';
           });
         }
         break;
       case 'readingDocs':
         if (value === false) {
           result = result.filter(tool => {
-            return tool !== 'docRead';
+            return ![
+              'docRead',
+              'docCanvasRead',
+              'frontendGetEditorState',
+              'frontendReadSelection',
+              'frontendReadNodes',
+              'frontendSnapshotDocument',
+            ].includes(tool);
           });
         }
         break;

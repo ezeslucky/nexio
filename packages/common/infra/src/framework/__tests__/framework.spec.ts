@@ -261,7 +261,7 @@ describe('framework', () => {
     const framework = new Framework();
 
     class SystemService extends Service {
-      appName = 'nexio';
+      appName = 'affine';
     }
 
     framework.service(SystemService);
@@ -311,14 +311,14 @@ describe('framework', () => {
       .service(EditorService, [PageService]);
 
     const root = framework.provider();
-    expect(root.get(SystemService).appName).toEqual('nexio');
+    expect(root.get(SystemService).appName).toEqual('affine');
     expect(() => root.get(WorkspaceService)).toThrowError(
       ComponentNotFoundError
     );
 
     const workspaceScope = root.createScope(WorkspaceScope);
     const workspaceService = workspaceScope.get(WorkspaceService);
-    expect(workspaceService.system.appName).toEqual('nexio');
+    expect(workspaceService.system.appName).toEqual('affine');
     expect(() => workspaceScope.get(PageService)).toThrowError(
       ComponentNotFoundError
     );
@@ -329,7 +329,7 @@ describe('framework', () => {
     expect(pageScope.props.pageId).toEqual('test-page');
     const pageService = pageScope.get(PageService);
     expect(pageService.workspace).toBe(workspaceService);
-    expect(pageService.system.appName).toEqual('nexio');
+    expect(pageService.system.appName).toEqual('affine');
 
     const editorScope = pageScope.createScope(EditorScope);
     expect(editorScope.pageId).toEqual('test-page');
@@ -376,7 +376,7 @@ describe('framework', () => {
 
     let isSystemDisposed = false;
     class System extends Service {
-      appName = 'nexio';
+      appName = 'affine';
 
       override dispose(): void {
         super.dispose();

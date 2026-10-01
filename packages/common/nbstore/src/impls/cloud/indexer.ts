@@ -3,7 +3,7 @@ import {
   indexerAggregateQuery,
   indexerSearchQuery,
   type SearchInput,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import { Observable } from 'rxjs';
 
 import {
@@ -138,5 +138,13 @@ export class CloudIndexerStorage extends IndexerStorageBase {
 
   override refresh<T extends keyof IndexerSchema>(_table: T): Promise<void> {
     return Promise.resolve();
+  }
+
+  override async refreshIfNeed(): Promise<void> {
+    return;
+  }
+
+  override async indexVersion(): Promise<number> {
+    return 1;
   }
 }

@@ -3,15 +3,15 @@ import {
   type MasonryGroup,
   type MasonryItem,
   useConfirmModal,
-} from '@nexio/component';
-import { DocsService } from '@nexio/core/modules/doc';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { Trans, useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component';
+import { DocsService } from '@affine/core/modules/doc';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import { Trans, useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { memo, useCallback, useContext, useEffect, useMemo } from 'react';
 
-import { EmptyDocs } from '../../nexio/empty';
+import { EmptyDocs } from '../../affine/empty';
 import { ListFloatingToolbar } from '../../page-list/components/list-floating-toolbar';
 import { SystemPropertyTypes } from '../../system-property-types';
 import { WorkspacePropertyTypes } from '../../workspace-property-types';
@@ -179,25 +179,27 @@ export const DocsExplorer = ({
     }
 
     openConfirmModal({
-      title: t['com.nexio.moveToTrash.confirmModal.title.multiple']({
+      title: t['com.affine.moveToTrash.confirmModal.title.multiple']({
         number: selectedDocIds.length.toString(),
       }),
       description: t[
-        'com.nexio.moveToTrash.confirmModal.description.multiple'
+        'com.affine.moveToTrash.confirmModal.description.multiple'
       ]({
         number: selectedDocIds.length.toString(),
       }),
-      cancelText: t['com.nexio.confirmModal.button.cancel'](),
+      cancelText: t['com.affine.confirmModal.button.cancel'](),
       confirmText: t.Delete(),
       confirmButtonOptions: {
         variant: 'error',
       },
-      onConfirm: () => {
+      onConfirm: async () => {
         const selectedDocIds = contextValue.selectedDocIds$.value;
-        for (const docId of selectedDocIds) {
-          const doc = docsService.list.doc$(docId).value;
-          doc?.moveToTrash();
-        }
+        await Promise.all(
+          selectedDocIds.map(async docId => {
+            await docsService.list.doc$(docId).value?.moveToTrash();
+          })
+        );
+        handleCloseFloatingToolbar();
       },
     });
   }, [
@@ -271,7 +273,7 @@ export const DocsExplorer = ({
           onClose={handleCloseFloatingToolbar}
           content={
             <Trans
-              i18nKey="com.nexio.page.toolbar.selected"
+              i18nKey="com.affine.page.toolbar.selected"
               count={selectedDocIds.length}
             >
               <div style={{ color: cssVarV2.text.secondary }}>

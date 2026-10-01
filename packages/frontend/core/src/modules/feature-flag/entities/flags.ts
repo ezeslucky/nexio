@@ -1,18 +1,17 @@
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import { NEVER } from 'rxjs';
 
 import type { GlobalStateService } from '../../storage';
-import { NEXIO_FLAGS } from '../constant';
+import { AFFINE_FLAGS } from '../constant';
 import type { FlagInfo } from '../types';
 
-const FLAG_PREFIX = 'nexio-flag:';
+const FLAG_PREFIX = 'affine-flag:';
 
 export type Flag<F extends FlagInfo = FlagInfo> = {
   readonly value: F['defaultState'] extends boolean
     ? boolean
     : boolean | undefined;
   set: (value: boolean) => void;
-  // eslint-disable-next-line rxjs/finnish
   $: F['defaultState'] extends boolean
     ? LiveData<boolean>
     : LiveData<boolean> | LiveData<boolean | undefined>;
@@ -24,7 +23,7 @@ export class Flags extends Entity {
   constructor(private readonly globalStateService: GlobalStateService) {
     super();
 
-    Object.entries(NEXIO_FLAGS).forEach(([flagKey, flag]) => {
+    Object.entries(AFFINE_FLAGS).forEach(([flagKey, flag]) => {
       const configurable = flag.configurable ?? true;
       const defaultState =
         'defaultState' in flag ? flag.defaultState : undefined;
@@ -62,5 +61,5 @@ export class Flags extends Entity {
 }
 
 export type FlagsExt = Flags & {
-  [K in keyof NEXIO_FLAGS]: Flag<NEXIO_FLAGS[K]>;
+  [K in keyof AFFINE_FLAGS]: Flag<AFFINE_FLAGS[K]>;
 };

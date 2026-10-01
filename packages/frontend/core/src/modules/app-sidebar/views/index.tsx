@@ -1,15 +1,15 @@
-import { type DropTargetGetFeedback, Skeleton } from '@nexio/component';
-import { ResizePanel } from '@nexio/component/resize-panel';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
-import { NavigateContext } from '@nexio/core/components/hooks/use-navigate-helper';
-import { WorkspaceNavigator } from '@nexio/core/components/workspace-selector';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
+import { type DropTargetGetFeedback, Skeleton } from '@affine/component';
+import { ResizePanel } from '@affine/component/resize-panel';
+import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
+import { NavigateContext } from '@affine/core/components/hooks/use-navigate-helper';
+import { WorkspaceNavigator } from '@affine/core/components/workspace-selector';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useContext, useEffect, useMemo } from 'react';
@@ -128,7 +128,7 @@ export function AppSidebar({ children }: PropsWithChildren) {
           viewId: firstView.id,
         };
       },
-      canDrop: (data: DropTargetGetFeedback<NexioDNDData>) => {
+      canDrop: (data: DropTargetGetFeedback<AffineDNDData>) => {
         return (
           (!!data.source.data.entity?.type &&
             allowedSplitViewEntityTypes.has(data.source.data.entity?.type)) ||
@@ -199,8 +199,8 @@ const ResizeHandleTooltipContent = () => {
   const t = useI18n();
   return (
     <div>
-      <div>{t['com.nexio.rootAppSidebar.resize-handle.tooltip.drag']()}</div>
-      <div>{t['com.nexio.rootAppSidebar.resize-handle.tooltip.click']()}</div>
+      <div>{t['com.affine.rootAppSidebar.resize-handle.tooltip.drag']()}</div>
+      <div>{t['com.affine.rootAppSidebar.resize-handle.tooltip.click']()}</div>
     </div>
   );
 };
@@ -269,7 +269,7 @@ const RandomBars = ({ count, header }: { count: number; header?: boolean }) => {
         />
       ) : null}
       {Array.from({ length: count }).map((_, index) => (
-        // oxlint-disable-next-line eslint-plugin-react(no-array-index-key)
+        // oxlint-disable-next-line react/no-array-index-key
         <RandomBar key={index} />
       ))}
     </div>

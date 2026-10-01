@@ -1,4 +1,5 @@
-import { DebugLogger } from '@nexio/debug';
+import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import { DebugLogger } from '@affine/debug';
 import {
   catchErrorInto,
   effect,
@@ -8,7 +9,7 @@ import {
   type MediaStats,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { clamp } from 'lodash-es';
 import { mergeMap, switchMap } from 'rxjs';
 
@@ -170,7 +171,7 @@ export class AudioMedia extends Entity<AudioSource> {
 
   private async loadAudioBuffer() {
     const uint8Array = await this.getBuffer();
-    return new Blob([uint8Array]);
+    return new Blob([toArrayBuffer(uint8Array)]);
   }
 
   readonly revalidateBuffer = effect(

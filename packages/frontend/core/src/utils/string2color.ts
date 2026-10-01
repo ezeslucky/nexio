@@ -1,5 +1,5 @@
 export function stringToColour(str: string) {
-  str = str || 'nexio';
+  str = str || 'affine';
   let colour = '#';
   let hash = 0;
   // str to hash

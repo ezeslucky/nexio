@@ -1,5 +1,5 @@
-import { Input } from '@nexio/admin/components/ui/input';
-import { Label } from '@nexio/admin/components/ui/label';
+import { Input } from '@affine/admin/components/ui/input';
+import { Label } from '@affine/admin/components/ui/label';
 import { useCallback } from 'react';
 
 type CreateAdminProps = {
@@ -56,7 +56,7 @@ export const CreateAdmin = ({
             Create Administrator Account
           </h1>
           <p className="text-sm text-muted-foreground">
-            This account can also be used to log in as an NEXIO user.
+            This account can also be used to log in as an AFFiNE user.
           </p>
         </div>
         <div className="flex flex-col gap-9">
@@ -80,7 +80,7 @@ export const CreateAdmin = ({
               required
             />
             <p
-              className={`absolute text-sm text-red-500 -bottom-6 ${invalidEmail ? '' : 'opacity-0 pointer-events-none'}`}
+              className={`absolute text-sm text-destructive -bottom-6 ${invalidEmail ? '' : 'opacity-0 pointer-events-none'}`}
             >
               Invalid email address.
             </p>
@@ -99,7 +99,7 @@ export const CreateAdmin = ({
               required
             />
             <p
-              className={`text-sm text-muted-foreground ${invalidPassword && 'text-red-500'}`}
+              className={`text-sm text-muted-foreground ${invalidPassword && 'text-destructive'}`}
             >
               {invalidPassword ? 'Invalid password. ' : ''}Please enter{' '}
               {String(passwordLimits.minLength)}-

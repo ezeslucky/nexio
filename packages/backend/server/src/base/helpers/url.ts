@@ -4,8 +4,27 @@ import { Injectable } from '@nestjs/common';
 import type { Response } from 'express';
 import { ClsService } from 'nestjs-cls';
 
+import {
+  buildSafeCallbackUrl,
+  evaluateLocalRedirect,
+  evaluateRedirectUri,
+} from '../../native';
 import { Config } from '../config';
+import { ActionForbidden } from '../error';
 import { OnEvent } from '../event';
+
+// Keep in sync with frontend /redirect-proxy allowlist.
+const TRUSTED_REDIRECT_DOMAINS = [
+  'google.com',
+  'stripe.com',
+  'github.com',
+  'twitter.com',
+  'discord.gg',
+  'youtube.com',
+  't.me',
+  'reddit.com',
+  'affine.pro',
+].map(d => d.toLowerCase());
 
 @Injectable()
 export class URLHelper {
@@ -78,24 +97,6 @@ export class URLHelper {
     return new URLSearchParams(query).toString();
   }
 
-  addSimpleQuery(
-    url: string,
-    key: string,
-    value: string | number | boolean,
-    escape = true
-  ) {
-    const urlObj = new URL(url);
-    if (escape) {
-      urlObj.searchParams.set(key, encodeURIComponent(value));
-      return urlObj.toString();
-    } else {
-      const query =
-        (urlObj.search ? urlObj.search + '&' : '?') + `${key}=${value}`;
-
-      return urlObj.origin + urlObj.pathname + query;
-    }
-  }
-
   url(path: string, query: Record<string, any> = {}) {
     const url = new URL(path, this.requestOrigin);
 
@@ -110,25 +111,58 @@ export class URLHelper {
     return this.url(path, query).toString();
   }
 
+  safeLink(path: string, query: Record<string, any> = {}) {
+    try {
+      return buildSafeCallbackUrl(
+        path,
+        this.requestOrigin,
+        this.allowedOrigins,
+        Object.entries(query).map(([name, value]) => ({
+          name,
+          value: String(value),
+        }))
+      );
+    } catch {
+      throw new ActionForbidden();
+    }
+  }
+
   safeRedirect(res: Response, to: string) {
     try {
-      const finalTo = new URL(decodeURIComponent(to), this.requestBaseUrl);
-
-      for (const host of this.redirectAllowHosts) {
-        const hostURL = new URL(host);
-        if (
-          hostURL.origin === finalTo.origin &&
-          finalTo.pathname.startsWith(hostURL.pathname)
-        ) {
-          return res.redirect(finalTo.toString().replace(/\/$/, ''));
-        }
-      }
+      const canonical = evaluateLocalRedirect(
+        to,
+        this.requestBaseUrl,
+        this.redirectAllowHosts
+      );
+      return res.redirect(canonical);
     } catch {
-      // just ignore invalid url
+      return res.redirect(this.baseUrl);
     }
+  }
 
-    // redirect to home if the url is invalid
-    return res.redirect(this.baseUrl);
+  canonicalRedirectUri(redirectUri: string, query: Record<string, any> = {}) {
+    try {
+      return evaluateRedirectUri(
+        redirectUri,
+        this.requestOrigin,
+        this.allowedOrigins,
+        TRUSTED_REDIRECT_DOMAINS,
+        Object.entries(query).map(([name, value]) => ({
+          name,
+          value: String(value),
+        }))
+      );
+    } catch {
+      throw new ActionForbidden();
+    }
+  }
+
+  redirectPolicy() {
+    return {
+      redirectBaseUrl: this.requestOrigin,
+      redirectAllowedOrigins: this.allowedOrigins,
+      redirectTrustedDomains: TRUSTED_REDIRECT_DOMAINS,
+    };
   }
 
   verify(url: string | URL) {

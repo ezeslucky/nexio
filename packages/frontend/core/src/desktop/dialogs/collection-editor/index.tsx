@@ -1,12 +1,12 @@
-import { Modal } from '@nexio/component';
+import { Modal } from '@affine/component';
 import {
   type CollectionInfo,
   CollectionService,
-} from '@nexio/core/modules/collection';
-import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
-import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/collection';
+import type { DialogComponentProps } from '@affine/core/modules/dialogs';
+import type { WORKSPACE_DIALOG_SCHEMA } from '@affine/core/modules/dialogs/constant';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { EditCollection } from './edit-collection';
@@ -46,13 +46,13 @@ export const CollectionEditorDialog = ({
         style: {
           padding: 0,
           maxWidth: 944,
-          backgroundColor: 'var(--nexio-background-primary-color)',
+          backgroundColor: 'var(--affine-background-primary-color)',
         },
       }}
       persistent
     >
       <EditCollection
-        onConfirmText={t['com.nexio.editCollection.save']()}
+        onConfirmText={t['com.affine.editCollection.save']()}
         init={info}
         mode={mode}
         onCancel={onCancel}

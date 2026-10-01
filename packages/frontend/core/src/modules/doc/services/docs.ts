@@ -1,14 +1,14 @@
-import { DebugLogger } from '@nexio/debug';
-import { Unreachable } from '@nexio/env/constant';
-import { replaceIdMiddleware } from '@canvas/nexio/shared/adapters';
-import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
-import type { DeltaInsert } from '@canvas/nexio/store';
-import { Slice, Text, Transformer } from '@canvas/nexio/store';
-import { ObjectPool, Service } from '@ezeslucky/infra';
+import { DebugLogger } from '@affine/debug';
+import { Unreachable } from '@affine/env/constant';
+import { replaceIdMiddleware } from '@blocksuite/affine/shared/adapters';
+import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
+import type { DeltaInsert } from '@blocksuite/affine/store';
+import { Slice, Text, Transformer } from '@blocksuite/affine/store';
+import { ObjectPool, Service } from '@toeverything/infra';
 import { combineLatest, map } from 'rxjs';
 
-import { initDocFromProps } from '../../../canvas/initialization';
-import { getNEXIOWorkspaceSchema } from '../../workspace';
+import { initDocFromProps } from '../../../blocksuite/initialization';
+import { getAFFiNEWorkspaceSchema } from '../../workspace/global-schema';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
 import { DocCreated, DocInitialized } from '../events';
@@ -18,6 +18,7 @@ import type { DocPropertiesStore } from '../stores/doc-properties';
 import type { DocsStore } from '../stores/docs';
 import type { DocCreateOptions } from '../types';
 import { DocService } from './doc';
+import { getDuplicatedDocTitle } from './duplicate-title';
 
 const logger = new DebugLogger('DocsService');
 
@@ -30,7 +31,12 @@ export class DocsService extends Service {
     },
   });
 
-  
+  /**
+   * Get all property values of a property, used for search
+   *
+   * Results may include docs in trash or deleted docs
+   * Legacy property data such as old `journal` will not be included in the values
+   */
   propertyValues$(propertyKey: string) {
     return combineLatest([
       this.store.watchDocIds(),
@@ -101,8 +107,8 @@ export class DocsService extends Service {
     if (!docRecord) {
       throw new Error('Doc record not found');
     }
-    const canvasDoc = this.store.getCanvasDoc(docId);
-    if (!canvasDoc) {
+    const blockSuiteDoc = this.store.getBlockSuiteDoc(docId);
+    if (!blockSuiteDoc) {
       throw new Error('Doc not found');
     }
 
@@ -113,12 +119,12 @@ export class DocsService extends Service {
 
     const docScope = this.framework.createScope(DocScope, {
       docId,
-      canvasDoc,
+      blockSuiteDoc,
       record: docRecord,
     });
 
     try {
-      canvasDoc.load();
+      blockSuiteDoc.load();
     } catch (e) {
       logger.error('Failed to load doc', {
         docId,
@@ -142,7 +148,7 @@ export class DocsService extends Service {
         : options;
     }
     const id = this.store.createDoc(options.id);
-    const docStore = this.store.getCanvasDoc(id);
+    const docStore = this.store.getBlockSuiteDoc(id);
     if (!docStore) {
       throw new Error('Failed to create doc');
     }
@@ -186,11 +192,11 @@ export class DocsService extends Service {
           },
         },
       },
-    ] as DeltaInsert<NexioTextAttributes>[]);
-    const [frame] = doc.canvasDoc.getBlocksByFlavour('nexio:note');
+    ] as DeltaInsert<AffineTextAttributes>[]);
+    const [frame] = doc.blockSuiteDoc.getBlocksByFlavour('affine:note');
     frame &&
-      doc.canvasDoc.addBlock(
-        'nexio:paragraph' as never, // TODO(eyhn): fix type
+      doc.blockSuiteDoc.addBlock(
+        'affine:paragraph' as never, // TODO(eyhn): fix type
         { text },
         frame.id
       );
@@ -223,8 +229,8 @@ export class DocsService extends Service {
 
     // duplicate doc content
     try {
-      const sourceBsDoc = this.store.getCanvasDoc(sourceDocId);
-      const targetBsDoc = this.store.getCanvasDoc(targetDocId);
+      const sourceBsDoc = this.store.getBlockSuiteDoc(sourceDocId);
+      const targetBsDoc = this.store.getBlockSuiteDoc(targetDocId);
       if (!sourceBsDoc) throw new Error('Source doc not found');
       if (!targetBsDoc) throw new Error('Target doc not found');
 
@@ -233,9 +239,9 @@ export class DocsService extends Service {
         targetBsDoc.deleteBlock(child)
       );
 
-      const collection = this.store.getCanvasCollection();
+      const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getNEXIOWorkspaceSchema(),
+        schema: getAFFiNEWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {
@@ -281,13 +287,7 @@ export class DocsService extends Service {
     });
 
     // duplicate doc title
-    const originalTitle = sourceDoc.title$.value;
-    const lastDigitRegex = /\((\d+)\)$/;
-    const match = originalTitle.match(lastDigitRegex);
-    const newNumber = match ? parseInt(match[1], 10) + 1 : 1;
-    const newPageTitle =
-      originalTitle.replace(lastDigitRegex, '') + `(${newNumber})`;
-    targetDoc.changeDocTitle(newPageTitle);
+    targetDoc.changeDocTitle(getDuplicatedDocTitle(sourceDoc.title$.value));
 
     // duplicate doc properties
     const properties = sourceDoc.getProperties();
@@ -323,8 +323,8 @@ export class DocsService extends Service {
 
     // duplicate doc content
     try {
-      const sourceBsDoc = this.store.getCanvasDoc(sourceDocId);
-      const targetBsDoc = this.store.getCanvasDoc(targetDocId);
+      const sourceBsDoc = this.store.getBlockSuiteDoc(sourceDocId);
+      const targetBsDoc = this.store.getBlockSuiteDoc(targetDocId);
       if (!sourceBsDoc) throw new Error('Source doc not found');
       if (!targetBsDoc) throw new Error('Target doc not found');
 
@@ -333,9 +333,9 @@ export class DocsService extends Service {
         targetBsDoc.deleteBlock(child)
       );
 
-      const collection = this.store.getCanvasCollection();
+      const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getNEXIOWorkspaceSchema(),
+        schema: getAFFiNEWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {

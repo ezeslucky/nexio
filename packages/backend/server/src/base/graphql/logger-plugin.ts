@@ -28,7 +28,7 @@ export class GQLLoggerPlugin implements ApolloServerPlugin {
 
     const info = {
       operation: ctx.request.operationName ?? headers?.get('x-operation-name'),
-      clientVersion: headers?.get('x-nexio-version'),
+      clientVersion: headers?.get('x-affine-version'),
     };
 
     if (!info.operation) {

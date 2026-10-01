@@ -1,9 +1,9 @@
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
 
 export type { WorkspaceProfileInfo } from './entities/profile';
 export { Workspace } from './entities/workspace';
 export { WorkspaceEngineBeforeStart, WorkspaceInitialized } from './events';
-export { getNEXIOWorkspaceSchema } from './global-schema';
+export { getAFFiNEWorkspaceSchema } from './global-schema';
 export type { WorkspaceMetadata } from './metadata';
 export type { WorkspaceOpenOptions } from './open-options';
 export type { WorkspaceFlavourProvider } from './providers/flavour';
@@ -13,7 +13,7 @@ export { WorkspaceScope } from './scopes/workspace';
 export { WorkspaceService } from './services/workspace';
 export { WorkspacesService } from './services/workspaces';
 
-import type { Framework } from '@ezeslucky/infra';
+import type { Framework } from '@toeverything/infra';
 
 import { GlobalCache, GlobalState, NbstoreService } from '../storage';
 import { WorkspaceEngine } from './entities/engine';

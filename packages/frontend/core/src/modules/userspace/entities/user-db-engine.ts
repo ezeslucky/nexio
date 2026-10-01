@@ -1,13 +1,14 @@
-import { ServerDeploymentType } from '@nexio/graphql';
+import { ServerDeploymentType } from '@affine/graphql';
 import {
   IndexedDBDocStorage,
   IndexedDBDocSyncStorage,
-} from '@nexio/nbstore/idb';
-import { SqliteDocStorage, SqliteDocSyncStorage } from '@nexio/nbstore/sqlite';
-import type { StoreClient } from '@nexio/nbstore/worker/client';
-import { Entity } from '@ezeslucky/infra';
+} from '@affine/nbstore/idb';
+import { SqliteDocStorage, SqliteDocSyncStorage } from '@affine/nbstore/sqlite';
+import type { StoreClient } from '@affine/nbstore/worker/client';
+import { Entity } from '@toeverything/infra';
 
 import type { ServerService } from '../../cloud';
+import { assertSupportedServerVersion } from '../../cloud/stores/server-config';
 import type { NbstoreService } from '../../storage';
 
 export class UserDBEngine extends Entity<{
@@ -35,7 +36,7 @@ export class UserDBEngine extends Entity<{
     serverService: ServerService
   ) {
     super();
-
+    assertSupportedServerVersion(serverService.server.config$.value.version);
     const { store, dispose } = this.nbstoreService.openStore(
       `userspace:${serverService.server.id},${this.userId}`,
       {

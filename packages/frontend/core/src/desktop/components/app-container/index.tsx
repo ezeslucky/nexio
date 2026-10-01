@@ -1,19 +1,18 @@
-import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
-import { RootAppSidebar } from '@nexio/core/components/root-app-sidebar';
-import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
+import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
+import { RootAppSidebar } from '@affine/core/components/root-app-sidebar';
+import { AppSidebarService } from '@affine/core/modules/app-sidebar';
 import {
   AppSidebarFallback,
-  OpenInAppCard,
   SidebarSwitch,
-} from '@nexio/core/modules/app-sidebar/views';
-import { AppTabsHeader } from '@nexio/core/modules/app-tabs-header';
-import { NavigationButtons } from '@nexio/core/modules/navigation';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
+} from '@affine/core/modules/app-sidebar/views';
+import { AppTabsHeader } from '@affine/core/modules/app-tabs-header';
+import { NavigationButtons } from '@affine/core/modules/navigation';
+import { WorkspaceService } from '@affine/core/modules/workspace';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   forwardRef,
@@ -95,7 +94,6 @@ const BrowserLayout = ({
 
   return (
     <div className={styles.browserAppViewContainer}>
-      <OpenInAppCard />
       {fallback ? <AppSidebarFallback /> : isInWorkspace && <RootAppSidebar />}
       <MainContainer>{children}</MainContainer>
     </div>

@@ -5,20 +5,20 @@ import {
   toast,
   useConfirmModal,
   usePromptModal,
-} from '@nexio/component';
-import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
-import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { DocsService } from '@nexio/core/modules/doc';
+} from '@affine/component';
+import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { DocsService } from '@affine/core/modules/doc';
 import {
   CompatibleFavoriteItemsAdapter,
   FavoriteService,
-} from '@nexio/core/modules/favorite';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
-import type { DocMeta } from '@canvas/nexio/store';
+} from '@affine/core/modules/favorite';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
+import type { DocMeta } from '@blocksuite/affine/store';
 import {
   DeleteIcon,
   DeletePermanentlyIcon,
@@ -33,10 +33,11 @@ import {
   ResetIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { MouseEvent } from 'react';
 import { useCallback, useState } from 'react';
 
+import { usePageHelper } from '../../blocksuite/block-suite-page-list/utils';
 import {
   type CollectionMeta,
   CollectionService,
@@ -79,17 +80,17 @@ const PageOperationCellMenuItem = ({
   const currentWorkspace = workspaceService.workspace;
   const favourite = useLiveData(favAdapter.isFavorite$(page.id, 'doc'));
   const workbench = workbenchService.workbench;
-  const { duplicate } = useCanvasMetaHelper();
+  const { duplicate } = useBlockSuiteMetaHelper();
   const docRecord = useLiveData(useService(DocsService).list.doc$(page.id));
-  const canvasDoc = currentWorkspace.docCollection.getDoc(page.id);
+  const blocksuiteDoc = currentWorkspace.docCollection.getDoc(page.id);
 
   const workspaceDialogService = useService(WorkspaceDialogService);
   const onOpenInfoModal = useCallback(() => {
-    if (canvasDoc?.id) {
+    if (blocksuiteDoc?.id) {
       track.$.docInfoPanel.$.open();
-      workspaceDialogService.open('doc-info', { docId: canvasDoc.id });
+      workspaceDialogService.open('doc-info', { docId: blocksuiteDoc.id });
     }
-  }, [canvasDoc?.id, workspaceDialogService]);
+  }, [blocksuiteDoc, workspaceDialogService]);
 
   const onDisablePublicSharing = useCallback(() => {
     // TODO(@EYHN): implement disable public sharing
@@ -107,17 +108,17 @@ const PageOperationCellMenuItem = ({
     track.allDocs.list.docMenu.deleteDoc();
 
     openConfirmModal({
-      title: t['com.nexio.moveToTrash.confirmModal.title'](),
-      description: t['com.nexio.moveToTrash.confirmModal.description']({
+      title: t['com.affine.moveToTrash.confirmModal.title'](),
+      description: t['com.affine.moveToTrash.confirmModal.description']({
         title: docRecord.title$.value || t['Untitled'](),
       }),
-      cancelText: t['com.nexio.confirmModal.button.cancel'](),
+      cancelText: t['com.affine.confirmModal.button.cancel'](),
       confirmText: t.Delete(),
       confirmButtonOptions: {
         variant: 'error',
       },
-      onConfirm: () => {
-        docRecord.moveToTrash();
+      onConfirm: async () => {
+        await docRecord.moveToTrash();
       },
     });
   }, [docRecord, openConfirmModal, t]);
@@ -137,8 +138,8 @@ const PageOperationCellMenuItem = ({
     favAdapter.toggle(page.id, 'doc');
     toast(
       status
-        ? t['com.nexio.toastMessage.removedFavorites']()
-        : t['com.nexio.toastMessage.addedFavorites']()
+        ? t['com.affine.toastMessage.removedFavorites']()
+        : t['com.affine.toastMessage.addedFavorites']()
     );
   }, [page.id, favAdapter, t]);
 
@@ -183,23 +184,23 @@ const PageOperationCellMenuItem = ({
         prefixIcon={<IsFavoriteIcon favorite={favourite} />}
       >
         {favourite
-          ? t['com.nexio.favoritePageOperation.remove']()
-          : t['com.nexio.favoritePageOperation.add']()}
+          ? t['com.affine.favoritePageOperation.remove']()
+          : t['com.affine.favoritePageOperation.add']()}
       </MenuItem>
       <MenuItem onClick={onOpenInfoModal} prefixIcon={<InformationIcon />}>
-        {t['com.nexio.page-properties.page-info.view']()}
+        {t['com.affine.page-properties.page-info.view']()}
       </MenuItem>
       <MenuItem onClick={onOpenInNewTab} prefixIcon={<OpenInNewIcon />}>
-        {t['com.nexio.workbench.tab.page-menu-open']()}
+        {t['com.affine.workbench.tab.page-menu-open']()}
       </MenuItem>
       {BUILD_CONFIG.isElectron ? (
         <MenuItem onClick={onOpenInSplitView} prefixIcon={<SplitViewIcon />}>
-          {t['com.nexio.workbench.split-view.page-menu-open']()}
+          {t['com.affine.workbench.split-view.page-menu-open']()}
         </MenuItem>
       ) : null}
 
       <MenuItem prefixIcon={<DuplicateIcon />} onSelect={onDuplicate}>
-        {t['com.nexio.header.option.duplicate']()}
+        {t['com.affine.header.option.duplicate']()}
       </MenuItem>
 
       <MoveToTrash
@@ -228,8 +229,8 @@ export const PageOperationCell = ({
     favAdapter.toggle(page.id, 'doc');
     toast(
       status
-        ? t['com.nexio.toastMessage.removedFavorites']()
-        : t['com.nexio.toastMessage.addedFavorites']()
+        ? t['com.affine.toastMessage.removedFavorites']()
+        : t['com.affine.toastMessage.addedFavorites']()
     );
   }, [page.id, favAdapter, t]);
   return (
@@ -280,10 +281,10 @@ export const TrashOperationCell = ({
     e => {
       e.preventDefault();
       openConfirmModal({
-        title: `${t['com.nexio.trashOperation.deletePermanently']()}?`,
-        description: t['com.nexio.trashOperation.deleteDescription'](),
+        title: `${t['com.affine.trashOperation.deletePermanently']()}?`,
+        description: t['com.affine.trashOperation.deleteDescription'](),
         cancelText: t['Cancel'](),
-        confirmText: t['com.nexio.trashOperation.delete'](),
+        confirmText: t['com.affine.trashOperation.delete'](),
         confirmButtonOptions: {
           variant: 'error',
         },
@@ -304,7 +305,7 @@ export const TrashOperationCell = ({
   return (
     <ColWrapper flex={1}>
       <IconButton
-        tooltip={t['com.nexio.trashOperation.restoreIt']()}
+        tooltip={t['com.affine.trashOperation.restoreIt']()}
         tooltipOptions={tooltipSideTop}
         data-testid="restore-page-button"
         style={{ marginRight: '12px' }}
@@ -314,7 +315,7 @@ export const TrashOperationCell = ({
         <ResetIcon />
       </IconButton>
       <IconButton
-        tooltip={t['com.nexio.trashOperation.deletePermanently']()}
+        tooltip={t['com.affine.trashOperation.deletePermanently']()}
         tooltipOptions={tooltipSideTopAlignEnd}
         data-testid="delete-page-button"
         onClick={onConfirmPermanentlyDelete}
@@ -340,13 +341,16 @@ export const CollectionOperationCell = ({
     compatibleFavoriteItemsAdapter: favAdapter,
     workspaceDialogService,
     collectionService,
-    docsService,
+    workspaceService,
   } = useServices({
     CompatibleFavoriteItemsAdapter,
     WorkspaceDialogService,
     CollectionService,
-    DocsService,
+    WorkspaceService,
   });
+  const { createPage } = usePageHelper(
+    workspaceService.workspace.docCollection
+  );
   const collectionId = collectionMeta.id;
   const { openConfirmModal } = useConfirmModal();
   const favourite = useLiveData(
@@ -364,13 +368,13 @@ export const CollectionOperationCell = ({
     (event: MouseEvent) => {
       handlePropagation(event);
       openPromptModal({
-        title: t['com.nexio.editCollection.renameCollection'](),
-        label: t['com.nexio.editCollectionName.name'](),
+        title: t['com.affine.editCollection.renameCollection'](),
+        label: t['com.affine.editCollectionName.name'](),
         inputOptions: {
-          placeholder: t['com.nexio.editCollectionName.name.placeholder'](),
+          placeholder: t['com.affine.editCollectionName.name.placeholder'](),
         },
-        confirmText: t['com.nexio.editCollection.save'](),
-        cancelText: t['com.nexio.editCollection.button.cancel'](),
+        confirmText: t['com.affine.editCollection.save'](),
+        cancelText: t['com.affine.editCollection.button.cancel'](),
         confirmButtonOptions: {
           variant: 'primary',
         },
@@ -403,20 +407,20 @@ export const CollectionOperationCell = ({
     favAdapter.toggle(collectionId, 'collection');
     toast(
       status
-        ? t['com.nexio.toastMessage.removedFavorites']()
-        : t['com.nexio.toastMessage.addedFavorites']()
+        ? t['com.affine.toastMessage.removedFavorites']()
+        : t['com.affine.toastMessage.addedFavorites']()
     );
   }, [favAdapter, collectionId, t]);
 
   const createAndAddDocument = useCallback(() => {
-    const newDoc = docsService.createDoc();
+    const newDoc = createPage(undefined, { show: false });
     collectionService.addDocToCollection(collectionId, newDoc.id);
-  }, [docsService, collectionService, collectionId]);
+  }, [collectionService, collectionId, createPage]);
 
   const onConfirmAddDocToCollection = useCallback(() => {
     openConfirmModal({
-      title: t['com.nexio.collection.add-doc.confirm.title'](),
-      description: t['com.nexio.collection.add-doc.confirm.description'](),
+      title: t['com.affine.collection.add-doc.confirm.title'](),
+      description: t['com.affine.collection.add-doc.confirm.description'](),
       cancelText: t['Cancel'](),
       confirmText: t['Confirm'](),
       confirmButtonOptions: {
@@ -438,14 +442,14 @@ export const CollectionOperationCell = ({
       </ColWrapper>
       <IconButton
         onClick={handleEditName}
-        tooltip={t['com.nexio.collection.menu.rename']()}
+        tooltip={t['com.affine.collection.menu.rename']()}
         tooltipOptions={tooltipSideTop}
       >
         <EditIcon />
       </IconButton>
       <IconButton
         onClick={handleEdit}
-        tooltip={t['com.nexio.collection.menu.edit']()}
+        tooltip={t['com.affine.collection.menu.edit']()}
         tooltipOptions={tooltipSideTop}
       >
         <FilterIcon />
@@ -459,8 +463,8 @@ export const CollectionOperationCell = ({
                 prefixIcon={<IsFavoriteIcon favorite={favourite} />}
               >
                 {favourite
-                  ? t['com.nexio.favoritePageOperation.remove']()
-                  : t['com.nexio.favoritePageOperation.add']()}
+                  ? t['com.affine.favoritePageOperation.remove']()
+                  : t['com.affine.favoritePageOperation.add']()}
               </MenuItem>
               <MenuItem
                 onClick={onConfirmAddDocToCollection}

@@ -85,10 +85,10 @@ function buildStickerTemplate(data) {
       blocks: {
         type: 'block',
         id: 'block:1VxnfD_8xb',
-        flavour: 'nexio:page',
+        flavour: 'affine:page',
         props: {
           title: {
-            '$canvas:internal:text$': true,
+            '$blocksuite:internal:text$': true,
             delta: [
               {
                 insert: 'Sticker',
@@ -100,7 +100,7 @@ function buildStickerTemplate(data) {
           {
             type: 'block',
             id: 'block:pcmYJQ63hX',
-            flavour: 'nexio:surface',
+            flavour: 'affine:surface',
             props: {
               elements: {},
             },
@@ -108,7 +108,7 @@ function buildStickerTemplate(data) {
               {
                 type: 'block',
                 id: 'block:N24al1Qgl7',
-                flavour: 'nexio:image',
+                flavour: 'affine:image',
                 props: {
                   caption: '',
                   sourceId: data.hash,
@@ -129,7 +129,7 @@ function buildStickerTemplate(data) {
 }
 
 const code = `
-/* eslint-disable */
+/* oxlint-disable */
 // @ts-nocheck
 
 ${importStatements}

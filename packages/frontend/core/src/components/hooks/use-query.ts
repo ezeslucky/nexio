@@ -1,10 +1,10 @@
-import { GraphQLService } from '@nexio/core/modules/cloud';
+import { GraphQLService } from '@affine/core/modules/cloud';
 import type {
   GraphQLQuery,
   QueryOptions,
   QueryResponse,
-} from '@nexio/graphql';
-import { useService } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { useService } from '@toeverything/infra';
 import type { GraphQLError } from 'graphql';
 import { useCallback, useMemo } from 'react';
 import type { SWRConfiguration, SWRResponse } from 'swr';
@@ -12,13 +12,22 @@ import useSWR from 'swr';
 import useSWRImmutable from 'swr/immutable';
 import useSWRInfinite from 'swr/infinite';
 
+export type UseQueryConfig<Query extends GraphQLQuery = GraphQLQuery> = Omit<
+  SWRConfiguration<
+    QueryResponse<Query>,
+    GraphQLError,
+    (options: QueryOptions<Query>) => Promise<QueryResponse<Query>>
+  >,
+  'fetcher'
+>;
+
 /**
  * A `useSWR` wrapper for sending graphql queries
  *
  * @example
  *
  * ```ts
- * import { someQuery, someQueryWithNoVars } from '@nexio/graphql'
+ * import { someQuery, someQueryWithNoVars } from '@affine/graphql'
  *
  * const swrResponse1 = useQuery({
  *   query: workspaceByIdQuery,
@@ -32,14 +41,7 @@ import useSWRInfinite from 'swr/infinite';
  */
 type useQueryFn = <Query extends GraphQLQuery>(
   options?: QueryOptions<Query>,
-  config?: Omit<
-    SWRConfiguration<
-      QueryResponse<Query>,
-      GraphQLError,
-      (options: QueryOptions<Query>) => Promise<QueryResponse<Query>>
-    >,
-    'fetcher'
-  >
+  config?: UseQueryConfig<Query>
 ) => SWRResponse<
   QueryResponse<Query>,
   GraphQLError,

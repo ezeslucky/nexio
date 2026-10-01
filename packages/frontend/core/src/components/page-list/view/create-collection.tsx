@@ -1,6 +1,6 @@
-import { Button, Input, Modal } from '@nexio/component';
-import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
-import { useI18n } from '@nexio/i18n';
+import { Button, Input, Modal } from '@affine/component';
+import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
+import { useI18n } from '@affine/i18n';
 import type { KeyboardEvent } from 'react';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -41,7 +41,7 @@ export const CreateCollectionModal = ({
       {init != null ? (
         <CreateCollection
           showTips={showTips}
-          onConfirmText={t['com.nexio.editCollection.save']()}
+          onConfirmText={t['com.affine.editCollection.save']()}
           init={init}
           onConfirm={onConfirmTitle}
           onCancel={onCancel}
@@ -91,26 +91,26 @@ export const CreateCollection = ({
     <div data-testid="edit-collection-modal">
       <div className={styles.content}>
         <div className={styles.label}>
-          {t['com.nexio.editCollectionName.name']()}
+          {t['com.affine.editCollectionName.name']()}
         </div>
         <Input
           autoFocus
           value={value}
           data-testid="input-collection-title"
-          placeholder={t['com.nexio.editCollectionName.name.placeholder']()}
+          placeholder={t['com.affine.editCollectionName.name.placeholder']()}
           onChange={useCallback((value: string) => onChange(value), [onChange])}
           onEnter={save}
           onKeyDown={onKeyDown}
         ></Input>
         {showTips ? (
           <div className={styles.createTips}>
-            {t['com.nexio.editCollectionName.createTips']()}
+            {t['com.affine.editCollectionName.createTips']()}
           </div>
         ) : null}
       </div>
       <div className={styles.footer}>
         <Button size="large" onClick={onCancel}>
-          {t['com.nexio.editCollection.button.cancel']()}
+          {t['com.affine.editCollection.button.cancel']()}
         </Button>
         <Button
           size="large"
@@ -119,7 +119,7 @@ export const CreateCollection = ({
           disabled={isNameEmpty}
           onClick={save}
         >
-          {onConfirmText ?? t['com.nexio.editCollection.button.create']()}
+          {onConfirmText ?? t['com.affine.editCollection.button.create']()}
         </Button>
       </div>
     </div>

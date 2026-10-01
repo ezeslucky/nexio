@@ -1,9 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { afterEach } from 'node:test';
-
-import { beforeEach, describe, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { resolveLinkToDoc, toURLSearchParams } from '../utils';
 
@@ -22,7 +20,7 @@ function defineTest(
 }
 
 beforeEach(() => {
-  vi.stubGlobal('location', { origin: 'http://nexio.pro' });
+  vi.stubGlobal('location', { origin: 'http://affine.pro' });
 });
 
 afterEach(() => {
@@ -40,17 +38,17 @@ const testCases: [string, ReturnType<typeof resolveLinkToDoc>][] = [
     },
   ],
   [
-    'http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/-Uge-K6SYcAbcNYfQ5U-j?blockIds=xxxx',
+    'http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/-Uge-K6SYcAbcNYfQ5U-j?blockIds=xxxx',
     {
       workspaceId: '48__RTCSwASvWZxyAk3Jw',
       docId: '-Uge-K6SYcAbcNYfQ5U-j',
       blockIds: ['xxxx'],
     },
   ],
-  ['http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/all', null],
-  ['http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/collection', null],
-  ['http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/tag', null],
-  ['http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/trash', null],
+  ['http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/all', null],
+  ['http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/collection', null],
+  ['http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/tag', null],
+  ['http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/trash', null],
   [
     'file//./workspace/48__RTCSwASvWZxyAk3Jw/-Uge-K6SYcAbcNYfQ5U-j?blockIds=xxxx',
     {
@@ -124,7 +122,7 @@ describe('resolveLinkToDoc in self-hosted', () => {
       },
     ],
     [
-      'http://nexio.pro/workspace/48__RTCSwASvWZxyAk3Jw/-Uge-K6SYcAbcNYfQ5U-j?blockIds=xxxx',
+      'http://affine.pro/workspace/48__RTCSwASvWZxyAk3Jw/-Uge-K6SYcAbcNYfQ5U-j?blockIds=xxxx',
       {
         workspaceId: '48__RTCSwASvWZxyAk3Jw',
         docId: '-Uge-K6SYcAbcNYfQ5U-j',

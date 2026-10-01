@@ -1,6 +1,6 @@
-import type { DocMode } from '@canvas/nexio/model';
-import type { DocMeta } from '@canvas/nexio/store';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMeta } from '@blocksuite/affine/store';
+import { Entity, LiveData } from '@toeverything/infra';
 
 import type { DocProperties } from '../../db';
 import type { DocPropertiesStore } from '../stores/doc-properties';
@@ -83,11 +83,15 @@ export class DocRecord extends Entity<{ id: string }> {
   }
 
   moveToTrash() {
-    return this.setMeta({ trash: true, trashDate: Date.now() });
+    return this.docsStore.applyDocLifecycle(this.id, 'trash');
   }
 
   restoreFromTrash() {
-    return this.setMeta({ trash: false, trashDate: undefined });
+    return this.docsStore.applyDocLifecycle(this.id, 'restore');
+  }
+
+  deletePermanently() {
+    return this.docsStore.applyDocLifecycle(this.id, 'delete');
   }
 
   title$ = this.meta$.map(meta => meta.title ?? '');

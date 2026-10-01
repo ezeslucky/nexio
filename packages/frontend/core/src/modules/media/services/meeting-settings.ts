@@ -1,8 +1,8 @@
 import type {
   MeetingSettingsKey,
   MeetingSettingsSchema,
-} from '@nexio/electron/main/shared-state-schema';
-import { LiveData, Service } from '@ezeslucky/infra';
+} from '@affine/electron/main/shared-state-schema';
+import { LiveData, Service } from '@toeverything/infra';
 import { defaults } from 'lodash-es';
 
 import { DesktopApiService } from '../../desktop-api';
@@ -83,8 +83,9 @@ export class MeetingSettingsService extends Service {
         await this.desktopApiService?.handler.recording.getCurrentRecording();
       if (
         ongoingRecording &&
-        ongoingRecording.status !== 'new' &&
-        ongoingRecording.status !== 'ready'
+        ['starting', 'recording', 'finalizing'].includes(
+          ongoingRecording.status
+        )
       ) {
         throw new Error('There is an ongoing recording, please stop it first');
       }

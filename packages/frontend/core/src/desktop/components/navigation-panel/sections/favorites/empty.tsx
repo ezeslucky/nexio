@@ -2,9 +2,9 @@ import {
   type DropTargetDropEvent,
   Skeleton,
   useDropTarget,
-} from '@nexio/component';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
 import { FavoriteIcon } from '@blocksuite/icons/rc';
 
 import { NavigationPanelEmptySection } from '../../layouts/empty-section';
@@ -12,7 +12,7 @@ import { DropEffect } from '../../tree';
 import { favoriteRootCanDrop, favoriteRootDropEffect } from './dnd';
 
 interface RootEmptyProps {
-  onDrop?: (data: DropTargetDropEvent<NexioDNDData>) => void;
+  onDrop?: (data: DropTargetDropEvent<AffineDNDData>) => void;
   isLoading?: boolean;
 }
 
@@ -23,7 +23,7 @@ const RootEmptyReady = ({ onDrop }: Omit<RootEmptyProps, 'isLoading'>) => {
   const t = useI18n();
 
   const { dropTargetRef, draggedOverDraggable, draggedOverPosition } =
-    useDropTarget<NexioDNDData>(
+    useDropTarget<AffineDNDData>(
       () => ({
         data: {
           at: 'navigation-panel:favorite:root',
@@ -39,7 +39,7 @@ const RootEmptyReady = ({ onDrop }: Omit<RootEmptyProps, 'isLoading'>) => {
     <NavigationPanelEmptySection
       ref={dropTargetRef}
       icon={FavoriteIcon}
-      message={t['com.nexio.rootAppSidebar.favorites.empty']()}
+      message={t['com.affine.rootAppSidebar.favorites.empty']()}
       messageTestId="slider-bar-favorites-empty-message"
     >
       {draggedOverDraggable && (

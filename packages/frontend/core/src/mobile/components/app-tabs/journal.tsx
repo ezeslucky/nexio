@@ -1,8 +1,8 @@
-import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import { JournalService } from '@nexio/core/modules/journal';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { JournalService } from '@affine/core/modules/journal';
+import { WorkbenchService } from '@affine/core/modules/workbench';
 import { TodayIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { TabItem } from './tab-item';
@@ -19,7 +19,7 @@ export const AppTabJournal = ({ tab }: AppTabCustomFCProps) => {
   const JournalIcon = useLiveData(docDisplayMetaService.icon$(maybeDocId));
 
   const handleOpenToday = useCallback(() => {
-    workbench.open('/journals', { at: 'active' });
+    workbench.open('/journals', { at: 'active', replaceHistory: true });
   }, [workbench]);
 
   const Icon = journalDate ? JournalIcon : TodayIcon;

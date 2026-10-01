@@ -1,4 +1,4 @@
-import { PropertyValue } from '@nexio/component';
+import { PropertyValue } from '@affine/component';
 import { DualLinkIcon } from '@blocksuite/icons/rc';
 
 import { IntegrationTypeIcon } from '../icon';

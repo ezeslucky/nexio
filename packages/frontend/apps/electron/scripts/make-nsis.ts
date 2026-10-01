@@ -16,7 +16,7 @@ import {
   ROOT,
 } from './make-env.js';
 
-const log = debug('nexio:make-nsis');
+const log = debug('affine:make-nsis');
 
 async function make() {
   const appName = productName;

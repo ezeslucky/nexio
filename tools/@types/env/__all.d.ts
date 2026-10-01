@@ -1,7 +1,7 @@
-import '@nexio/env/constant';
-import '@canvas/nexio/global/types'
+import '@affine/env/constant';
+import '@blocksuite/affine/global/types'
 
-declare module '@canvas/nexio/store' {
+declare module '@blocksuite/affine/store' {
   interface DocMeta {
     /**
      * @deprecated
@@ -44,7 +44,7 @@ declare type Environment = {
     env: Record<string, string>;
   };
   var environment: Environment;
-  var $NEXIO_SETUP: boolean | undefined;
+  var $AFFINE_SETUP: boolean | undefined;
   /**
    * Inject by https://www.npmjs.com/package/@sentry/webpack-plugin
    */

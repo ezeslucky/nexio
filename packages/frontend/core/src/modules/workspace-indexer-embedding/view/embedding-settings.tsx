@@ -1,17 +1,17 @@
-import { Button, notify, Switch, Tooltip } from '@nexio/component';
+import { Button, notify, Switch, Tooltip } from '@affine/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { Upload } from '@nexio/core/components/pure/file-upload';
-import { EnableCloudPanel } from '@nexio/core/desktop/dialogs/setting/workspace-setting/preference/enable-cloud';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { UserFriendlyError } from '@nexio/error';
-import { ServerFeature } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component/setting-components';
+import { Upload } from '@affine/core/components/pure/file-upload';
+import { EnableCloudPanel } from '@affine/core/desktop/dialogs/setting/workspace-setting/preference/enable-cloud';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { UserFriendlyError } from '@affine/error';
+import { ServerFeature } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
+import { useLiveData, useService } from '@toeverything/infra';
 import type React from 'react';
 import { useCallback, useEffect } from 'react';
 
@@ -66,7 +66,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
         .setEnabled(checked)
         .then(() => {
           if (checked) {
-            embeddingService.embeddingProgress.startEmbeddingProgressPolling();
+            embeddingService.embeddingProgress.startEmbeddingProgress();
           }
         })
         .catch(error => {
@@ -74,7 +74,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
           notify.error({
             title:
               t[
-                'com.nexio.settings.workspace.indexer-embedding.embedding.switch.error'
+                'com.affine.settings.workspace.indexer-embedding.embedding.switch.error'
               ](),
             message: t[`error.${err.name}`](err.data),
           });
@@ -91,8 +91,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
         docType: file.type,
       });
       embeddingService.additionalAttachments.addAttachments([file]);
-      // Restart polling to track progress of newly uploaded files
-      embeddingService.embeddingProgress.startEmbeddingProgressPolling();
+      embeddingService.embeddingProgress.startEmbeddingProgress();
     },
     [embeddingService.additionalAttachments, embeddingService.embeddingProgress]
   );
@@ -106,7 +105,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
           notify.error({
             title:
               t[
-                'com.nexio.settings.workspace.indexer-embedding.embedding.remove-attachment.error'
+                'com.affine.settings.workspace.indexer-embedding.embedding.remove-attachment.error'
               ](),
             message: t[`error.${err.name}`](err.data),
           });
@@ -152,7 +151,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
             notify.error({
               title:
                 t[
-                  'com.nexio.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error'
+                  'com.affine.settings.workspace.indexer-embedding.embedding.update-ignored-docs.error'
                 ](),
               message: t[`error.${err.name}`](err.data),
             });
@@ -168,7 +167,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
   ]);
 
   useEffect(() => {
-    embeddingService.embeddingProgress.startEmbeddingProgressPolling();
+    embeddingService.embeddingProgress.startEmbeddingProgress();
     embeddingService.embeddingEnabled.getEnabled();
     embeddingService.additionalAttachments.getAttachments({
       first: COUNT_PER_PAGE,
@@ -178,7 +177,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
     embeddingService.embeddingProgress.getEmbeddingProgress();
 
     return () => {
-      embeddingService.embeddingProgress.stopEmbeddingProgressPolling();
+      embeddingService.embeddingProgress.stopEmbeddingProgress();
     };
   }, [
     embeddingService.embeddingProgress,
@@ -195,10 +194,10 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
     >
       <SettingRow
         name={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.switch.title'
+          'com.affine.settings.workspace.indexer-embedding.embedding.switch.title'
         ]()}
         desc={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.switch.description'
+          'com.affine.settings.workspace.indexer-embedding.embedding.switch.description'
         ]()}
       >
         <Switch
@@ -212,7 +211,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
         <>
           <SettingRow
             name={t[
-              'com.nexio.settings.workspace.indexer-embedding.embedding.progress.title'
+              'com.affine.settings.workspace.indexer-embedding.embedding.progress.title'
             ]()}
             style={{ marginBottom: '0px' }}
           />
@@ -223,10 +222,10 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
 
       <SettingRow
         name={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.title'
+          'com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.title'
         ]()}
         desc={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.description'
+          'com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.description'
         ]()}
       >
         <Upload fileChange={handleAttachmentUpload}>
@@ -235,7 +234,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
             variant="primary"
           >
             {t[
-              'com.nexio.settings.workspace.indexer-embedding.embedding.upload-file'
+              'com.affine.settings.workspace.indexer-embedding.embedding.upload-file'
             ]()}
           </Button>
         </Upload>
@@ -253,10 +252,10 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
 
       <SettingRow
         name={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.ignore-docs.title'
+          'com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.title'
         ]()}
         desc={t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.ignore-docs.description'
+          'com.affine.settings.workspace.indexer-embedding.embedding.ignore-docs.description'
         ]()}
       >
         <Button
@@ -265,7 +264,7 @@ const EmbeddingCloud: React.FC<{ disabled: boolean }> = ({ disabled }) => {
           onClick={handleSelectDoc}
         >
           {t[
-            'com.nexio.settings.workspace.indexer-embedding.embedding.select-doc'
+            'com.affine.settings.workspace.indexer-embedding.embedding.select-doc'
           ]()}
         </Button>
       </SettingRow>
@@ -297,17 +296,17 @@ export const EmbeddingSettings: React.FC<EmbeddingSettingsProps> = () => {
         content={
           !isEmbeddingEnabled &&
           t[
-            'com.nexio.settings.workspace.indexer-embedding.embedding.disabled-tooltip'
+            'com.affine.settings.workspace.indexer-embedding.embedding.disabled-tooltip'
           ]()
         }
       >
         <SettingHeader
           data-testid="workspace-embedding-setting-header"
           title={t[
-            'com.nexio.settings.workspace.indexer-embedding.embedding.title'
+            'com.affine.settings.workspace.indexer-embedding.embedding.title'
           ]()}
           subtitle={t[
-            'com.nexio.settings.workspace.indexer-embedding.embedding.description'
+            'com.affine.settings.workspace.indexer-embedding.embedding.description'
           ]()}
         />
       </Tooltip>

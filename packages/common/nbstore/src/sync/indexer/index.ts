@@ -1,4 +1,4 @@
-import { readAllDocsFromRootDoc } from '@nexio/reader';
+import { readAllDocsFromRootDoc } from '@affine/reader';
 import { omit } from 'lodash-es';
 import {
   filter,
@@ -106,16 +106,18 @@ export interface IndexerSync {
 }
 
 export class IndexerSyncImpl implements IndexerSync {
-  /**
-   * increase this number to re-index all docs
-   */
-  readonly INDEXER_VERSION = 1;
   private abort: AbortController | null = null;
   private readonly rootDocId = this.doc.spaceId;
   private readonly status = new IndexerSyncStatus(this.rootDocId);
 
   private readonly indexer: IndexerStorage;
   private readonly remote?: IndexerStorage;
+  private readonly pendingIndexedClocks = new Map<
+    string,
+    { docId: string; timestamp: Date; indexerVersion: number }
+  >();
+
+  private lastRefreshed = Date.now();
 
   state$ = this.status.state$.pipe(
     // throttle the state to 1 second to avoid spamming the UI
@@ -264,7 +266,8 @@ export class IndexerSyncImpl implements IndexerSync {
     this.status.errorMessage = null;
     this.status.statusUpdatedSubject$.next(true);
 
-    console.log('indexer sync start');
+    const indexVersion = await this.indexer.indexVersion();
+    console.log('indexer sync start, version: ', indexVersion);
 
     const unsubscribe = this.doc.subscribeDocUpdate(update => {
       if (!this.status.rootDocReady) {
@@ -346,9 +349,13 @@ export class IndexerSyncImpl implements IndexerSync {
                   IndexerDocument.from(docId, {
                     docId,
                     title,
+                    summary: existingDoc.summary,
                   })
                 );
-                this.status.docsInIndexer.set(docId, { title });
+                this.status.docsInIndexer.set(docId, {
+                  title,
+                  summary: existingDoc.summary,
+                });
                 this.status.statusUpdatedSubject$.next(docId);
               }
             } else {
@@ -373,13 +380,13 @@ export class IndexerSyncImpl implements IndexerSync {
                 field: 'docId',
                 match: docId,
               });
+              this.pendingIndexedClocks.delete(docId);
               await this.indexerSync.clearDocIndexedClock(docId);
               this.status.docsInIndexer.delete(docId);
               this.status.statusUpdatedSubject$.next(docId);
             }
           }
-          await this.indexer.refresh('block');
-          await this.indexer.refresh('doc');
+          await this.refreshIfNeed(true);
           // #endregion
         } else {
           // #region crawl doc
@@ -396,44 +403,52 @@ export class IndexerSyncImpl implements IndexerSync {
           }
 
           const docIndexedClock =
-            await this.indexerSync.getDocIndexedClock(docId);
+            this.pendingIndexedClocks.get(docId) ??
+            (await this.indexerSync.getDocIndexedClock(docId));
           if (
             docIndexedClock &&
             docIndexedClock.timestamp.getTime() ===
               docClock.timestamp.getTime() &&
-            docIndexedClock.indexerVersion === this.INDEXER_VERSION
+            docIndexedClock.indexerVersion === indexVersion
           ) {
             // doc is already indexed, just skip
             continue;
           }
 
-          const docBin = await this.doc.getDoc(docId);
-          if (!docBin) {
-            // doc is deleted, just skip
-            continue;
-          }
           console.log('[indexer] start indexing doc', docId);
-          const docYDoc = new YDoc({ guid: docId });
-          applyUpdate(docYDoc, docBin.bin);
 
           let blocks: IndexerDocument<'block'>[] = [];
           let preview: string | undefined;
 
-          try {
-            const result = await crawlingDocData({
-              ydoc: docYDoc,
-              rootYDoc: this.status.rootDoc,
-              spaceId: this.status.rootDocId,
-              docId,
-            });
-            if (!result) {
-              // doc is empty without root block, just skip
+          const nativeResult = await this.tryNativeCrawlDocData(docId);
+          if (nativeResult) {
+            blocks = nativeResult.block;
+            preview = nativeResult.summary;
+          } else {
+            const docBin = await this.doc.getDoc(docId);
+            if (!docBin) {
+              // doc is deleted, just skip
               continue;
             }
-            blocks = result.blocks;
-            preview = result.preview;
-          } catch (error) {
-            console.error('error crawling doc', error);
+            const docYDoc = new YDoc({ guid: docId });
+            applyUpdate(docYDoc, docBin.bin);
+
+            try {
+              const result = await crawlingDocData({
+                ydoc: docYDoc,
+                rootYDoc: this.status.rootDoc,
+                spaceId: this.status.rootDocId,
+                docId,
+              });
+              if (!result) {
+                // doc is empty without root block, just skip
+                continue;
+              }
+              blocks = result.blocks;
+              preview = result.preview;
+            } catch (error) {
+              console.error('error crawling doc', error);
+            }
           }
 
           await this.indexer.deleteByQuery('block', {
@@ -446,33 +461,66 @@ export class IndexerSyncImpl implements IndexerSync {
             await this.indexer.insert('block', block);
           }
 
-          await this.indexer.refresh('block');
-
           if (preview) {
             await this.indexer.update(
               'doc',
               IndexerDocument.from(docId, {
+                docId,
+                title: existingDoc.title,
                 summary: preview,
               })
             );
-            await this.indexer.refresh('doc');
+            this.status.docsInIndexer.set(docId, {
+              title: existingDoc.title,
+              summary: preview,
+            });
           }
 
-          await this.indexerSync.setDocIndexedClock({
+          this.pendingIndexedClocks.set(docId, {
             docId,
             timestamp: docClock.timestamp,
-            indexerVersion: this.INDEXER_VERSION,
+            indexerVersion: indexVersion,
           });
+          await this.refreshIfNeed();
           // #endregion
         }
 
         console.log('[indexer] complete job', docId);
+        await this.refreshIfNeed();
 
         this.status.completeJob();
       }
     } finally {
+      await this.refreshIfNeed(true);
       unsubscribe();
     }
+  }
+
+  // ensure the indexer is refreshed according to recommendRefreshInterval
+  // recommendRefreshInterval <= 0 means force refresh on each operation
+  // recommendRefreshInterval > 0 means refresh if the last refresh is older than recommendRefreshInterval
+  private async refreshIfNeed(force = false): Promise<void> {
+    const recommendRefreshInterval = this.indexer.recommendRefreshInterval ?? 0;
+    const needRefresh =
+      recommendRefreshInterval > 0 &&
+      this.lastRefreshed + recommendRefreshInterval < Date.now();
+    const forceRefresh = recommendRefreshInterval <= 0;
+    if (force || needRefresh || forceRefresh) {
+      if (this.indexerSync.commitsIndexAtomically) {
+        await this.flushPendingIndexedClocks();
+      } else {
+        await this.indexer.refreshIfNeed();
+        await this.flushPendingIndexedClocks();
+      }
+      this.lastRefreshed = Date.now();
+    }
+  }
+
+  private async flushPendingIndexedClocks() {
+    if (this.pendingIndexedClocks.size === 0) return;
+    const clocks = [...this.pendingIndexedClocks.values()];
+    await this.indexerSync.setDocIndexedClocks(clocks);
+    for (const clock of clocks) this.pendingIndexedClocks.delete(clock.docId);
   }
 
   /**
@@ -482,6 +530,36 @@ export class IndexerSyncImpl implements IndexerSync {
     return readAllDocsFromRootDoc(this.status.rootDoc, {
       includeTrash: false,
     });
+  }
+
+  private async tryNativeCrawlDocData(docId: string) {
+    try {
+      const result = await this.doc.crawlDocData?.(docId);
+      if (result) {
+        return {
+          title: result.title,
+          block: result.blocks.map(block =>
+            IndexerDocument.from<'block'>(`${docId}:${block.blockId}`, {
+              docId,
+              blockId: block.blockId,
+              content: block.content,
+              flavour: block.flavour,
+              blob: block.blob,
+              refDocId: block.refDocId,
+              ref: block.refInfo,
+              parentFlavour: block.parentFlavour,
+              parentBlockId: block.parentBlockId,
+              additional: block.additional,
+            })
+          ),
+          summary: result.summary,
+        };
+      }
+      return null;
+    } catch (error) {
+      console.warn('[indexer] native crawlDocData failed', docId, error);
+      return null;
+    }
   }
 
   private async getAllDocsFromIndexer() {
@@ -494,17 +572,19 @@ export class IndexerSyncImpl implements IndexerSync {
         pagination: {
           limit: Infinity,
         },
-        fields: ['docId', 'title'],
+        fields: ['docId', 'title', 'summary'],
       }
     );
 
     return new Map(
       docs.nodes.map(node => {
         const title = node.fields.title;
+        const summary = node.fields.summary;
         return [
           node.id,
           {
-            title: typeof title === 'string' ? title : title.at(0),
+            title: typeof title === 'string' ? title : undefined,
+            summary: typeof summary === 'string' ? summary : undefined,
           },
         ];
       })
@@ -628,7 +708,10 @@ class IndexerSyncStatus {
   jobs = new AsyncPriorityQueue();
   rootDoc = new YDoc({ guid: this.rootDocId });
   rootDocReady = false;
-  docsInIndexer = new Map<string, { title: string | undefined }>();
+  docsInIndexer = new Map<
+    string,
+    { title: string | undefined; summary?: string }
+  >();
   docsInRootDoc = new Map<string, { title: string | undefined }>();
   currentJob: string | null = null;
   errorMessage: string | null = null;
@@ -655,7 +738,10 @@ class IndexerSyncStatus {
           indexing: this.jobs.length() + (this.currentJob ? 1 : 0),
           total: this.docsInRootDoc.size + 1,
           errorMessage: this.errorMessage,
-          completed: this.rootDocReady && this.jobs.length() === 0,
+          completed:
+            this.rootDocReady &&
+            this.jobs.length() === 0 &&
+            this.currentJob === null,
           batterySaveMode: this.batterySaveMode,
           paused: this.paused !== null,
         });
@@ -683,9 +769,10 @@ class IndexerSyncStatus {
             completed: true,
           });
         } else {
+          const indexing = this.jobs.has(docId) || this.currentJob === docId;
           subscribe.next({
-            indexing: this.jobs.has(docId),
-            completed: this.docsInIndexer.has(docId) && !this.jobs.has(docId),
+            indexing,
+            completed: this.docsInIndexer.has(docId) && !indexing,
           });
         }
       };

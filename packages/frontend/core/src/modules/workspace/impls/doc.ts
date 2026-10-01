@@ -1,4 +1,4 @@
-import { getStoreManager } from '@nexio/core/canvas/manager/store';
+import { getStoreManager } from '@affine/core/blocksuite/manager/store';
 import {
   AwarenessStore,
   type Doc,
@@ -6,7 +6,7 @@ import {
   type GetStoreOptions,
   StoreContainer,
   type YBlock,
-} from '@canvas/nexio/store';
+} from '@blocksuite/affine/store';
 import { Awareness } from 'y-protocols/awareness.js';
 import * as Y from 'yjs';
 
@@ -117,6 +117,9 @@ export class DocImpl implements Doc {
   }
 
   private _destroy() {
+    if (this._loaded) {
+      this.workspace.onUnloadDoc?.(this._ySpaceDoc);
+    }
     this.awarenessStore.destroy();
     this._ySpaceDoc.destroy();
     this._loaded = false;

@@ -1,4 +1,4 @@
-import { createIdentifier, Service } from '@ezeslucky/infra';
+import { createIdentifier, Service } from '@toeverything/infra';
 import { parsePath, type To } from 'history';
 
 import type { DesktopApiService } from '../../desktop-api';

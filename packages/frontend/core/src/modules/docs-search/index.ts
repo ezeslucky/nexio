@@ -1,6 +1,9 @@
-export { DocsSearchService } from './services/docs-search';
+export {
+  DocsSearchService,
+  type IndexedDocReference,
+} from './services/docs-search';
 
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { DocsService } from '../doc';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

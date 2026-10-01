@@ -1,5 +1,5 @@
-import { getDocCreatedByUpdatedByListQuery } from '@nexio/graphql';
-import { Store, yjsGetPath } from '@ezeslucky/infra';
+import { getDocCreatedByUpdatedByListQuery } from '@affine/graphql';
+import { Store, yjsGetPath } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';
@@ -33,7 +33,7 @@ export class DocCreatedByUpdatedBySyncStore extends Store {
   watchDocCreatedByUpdatedBySynced() {
     const rootYDoc = this.workspaceService.workspace.rootYDoc;
     return yjsGetPath(
-      rootYDoc.getMap('nexio:workspace-properties'),
+      rootYDoc.getMap('affine:workspace-properties'),
       'docCreatedByUpdatedBySynced'
     ) as Observable<boolean>;
   }
@@ -41,7 +41,7 @@ export class DocCreatedByUpdatedBySyncStore extends Store {
   setDocCreatedByUpdatedBySynced(synced: boolean) {
     const rootYDoc = this.workspaceService.workspace.rootYDoc;
     rootYDoc
-      .getMap('nexio:workspace-properties')
+      .getMap('affine:workspace-properties')
       .set('docCreatedByUpdatedBySynced', synced);
   }
 }

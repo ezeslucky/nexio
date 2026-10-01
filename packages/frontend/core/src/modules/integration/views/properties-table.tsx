@@ -3,9 +3,9 @@ import {
   PropertyCollapsibleSection,
   PropertyName,
   PropertyRoot,
-} from '@nexio/component';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { type ReactNode, useMemo } from 'react';
 
 import { IntegrationPropertyService } from '../services/integration-property';
@@ -42,7 +42,7 @@ export const DocIntegrationPropertiesTable = ({
   return (
     <>
       <PropertyCollapsibleSection
-        title={t['com.nexio.integration.properties']()}
+        title={t['com.affine.integration.properties']()}
       >
         <PropertyCollapsibleContent>
           {properties.map(property => {

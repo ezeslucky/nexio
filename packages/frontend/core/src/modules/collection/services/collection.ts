@@ -1,4 +1,4 @@
-import { LiveData, ObjectPool, Service } from '@ezeslucky/infra';
+import { LiveData, ObjectPool, Service } from '@toeverything/infra';
 import { map } from 'rxjs';
 
 import { Collection } from '../entities/collection';

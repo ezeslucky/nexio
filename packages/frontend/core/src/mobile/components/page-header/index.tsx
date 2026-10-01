@@ -1,4 +1,4 @@
-import { SafeArea } from '@nexio/component';
+import { SafeArea } from '@affine/component';
 import clsx from 'clsx';
 import type {
   HtmlHTMLAttributes,
@@ -11,8 +11,10 @@ import { forwardRef } from 'react';
 import { NavigationBackButton } from '../navigation-back';
 import * as styles from './styles.css';
 
-export interface PageHeaderProps
-  extends Omit<HtmlHTMLAttributes<HTMLHeadElement>, 'prefix'> {
+export interface PageHeaderProps extends Omit<
+  HtmlHTMLAttributes<HTMLHeadElement>,
+  'prefix'
+> {
   /**
    * whether to show back button
    */

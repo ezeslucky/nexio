@@ -1,40 +1,44 @@
-import { DebugLogger } from '@nexio/debug';
+import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import { DebugLogger } from '@affine/debug';
 import {
   createWorkspaceMutation,
   deleteWorkspaceMutation,
-  getWorkspaceInfoQuery,
   getWorkspacesQuery,
-  Permission,
   ServerDeploymentType,
   ServerFeature,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import type {
+  BlobSource,
   BlobStorage,
   DocStorage,
   ListedBlobRecord,
-} from '@nexio/nbstore';
-import { CloudBlobStorage, StaticCloudDocStorage } from '@nexio/nbstore/cloud';
+} from '@affine/nbstore';
+import { CloudBlobStorage, StaticCloudDocStorage } from '@affine/nbstore/cloud';
 import {
   IndexedDBBlobStorage,
   IndexedDBBlobSyncStorage,
   IndexedDBDocStorage,
   IndexedDBDocSyncStorage,
-} from '@nexio/nbstore/idb';
+  IndexedDBIndexerStorage,
+  IndexedDBIndexerSyncStorage,
+} from '@affine/nbstore/idb';
 import {
   IndexedDBV1BlobStorage,
   IndexedDBV1DocStorage,
-} from '@nexio/nbstore/idb/v1';
+} from '@affine/nbstore/idb/v1';
 import {
   SqliteBlobStorage,
   SqliteBlobSyncStorage,
   SqliteDocStorage,
   SqliteDocSyncStorage,
-} from '@nexio/nbstore/sqlite';
+  SqliteIndexerStorage,
+  SqliteIndexerSyncStorage,
+} from '@affine/nbstore/sqlite';
 import {
   SqliteV1BlobStorage,
   SqliteV1DocStorage,
-} from '@nexio/nbstore/sqlite/v1';
-import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
+} from '@affine/nbstore/sqlite/v1';
+import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
 import {
   catchErrorInto,
   effect,
@@ -45,7 +49,7 @@ import {
   onComplete,
   onStart,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { map, Observable, switchMap, tap } from 'rxjs';
 import {
@@ -63,7 +67,8 @@ import {
   GraphQLService,
   WorkspaceServerService,
 } from '../../cloud';
-import type { GlobalState } from '../../storage';
+import { assertSupportedServerVersion } from '../../cloud/stores/server-config';
+import { type GlobalState, NbstoreService } from '../../storage';
 import type {
   Workspace,
   WorkspaceFlavourProvider,
@@ -75,17 +80,18 @@ import { WorkspaceImpl } from '../../workspace/impls/workspace';
 import { getWorkspaceProfileWorker } from './out-worker';
 
 const getCloudWorkspaceCacheKey = (serverId: string) => {
-  if (serverId === 'nexio-cloud') {
+  if (serverId === 'affine-cloud') {
     return 'cloud-workspace:'; // FOR BACKWARD COMPATIBILITY
   }
   return `selfhosted-workspace-${serverId}:`;
 };
 
-const logger = new DebugLogger('nexio:cloud-workspace-flavour-provider');
+const logger = new DebugLogger('affine:cloud-workspace-flavour-provider');
 
 class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   private readonly authService: AuthService;
   private readonly graphqlService: GraphQLService;
+  private readonly nbstoreService: NbstoreService;
   private readonly unsubscribeAccountChanged: () => void;
 
   constructor(
@@ -94,6 +100,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   ) {
     this.authService = server.scope.get(AuthService);
     this.graphqlService = server.scope.get(GraphQLService);
+    this.nbstoreService = server.scope.get(NbstoreService);
     this.unsubscribeAccountChanged = this.server.scope.eventBus.on(
       AccountChanged,
       () => {
@@ -130,6 +137,13 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
     BUILD_CONFIG.isElectron || BUILD_CONFIG.isIOS || BUILD_CONFIG.isAndroid
       ? SqliteBlobSyncStorage
       : IndexedDBBlobSyncStorage;
+  IndexerStorageType =
+    BUILD_CONFIG.isElectron || BUILD_CONFIG.isIOS || BUILD_CONFIG.isAndroid
+      ? SqliteIndexerStorage
+      : IndexedDBIndexerStorage;
+  IndexerSyncStorageType = BUILD_CONFIG.isElectron
+    ? SqliteIndexerSyncStorage
+    : IndexedDBIndexerSyncStorage;
 
   async deleteWorkspace(id: string): Promise<void> {
     await this.graphqlService.gql({
@@ -181,7 +195,9 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
       blobSource: {
         get: async key => {
           const record = await blobStorage.get(key);
-          return record ? new Blob([record.data], { type: record.mime }) : null;
+          return record
+            ? new Blob([toArrayBuffer(record.data)], { type: record.mime })
+            : null;
         },
         delete: async () => {
           return;
@@ -318,7 +334,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   ): Promise<WorkspaceProfileInfo | undefined> {
     // get information from both cloud and local storage
 
-    // we use nexio 'static' storage here, which use http protocol, no need to websocket.
+    // we use affine 'static' storage here, which use http protocol, no need to websocket.
     const cloudStorage = new StaticCloudDocStorage({
       id: id,
       serverBaseUrl: this.server.serverMetadata.baseUrl,
@@ -341,13 +357,12 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
 
     const info = await this.getWorkspaceInfo(id, signal);
 
+    const isOwner = info.workspace.permissions.Workspace_Delete;
+    const isAdmin =
+      !isOwner && info.workspace.permissions.Workspace_Settings_Update;
+
     if (!cloudData && !localData) {
-      return {
-        isOwner: info.workspace.role === Permission.Owner,
-        isAdmin: info.workspace.role === Permission.Admin,
-        isTeam: info.workspace.team,
-        isEmpty,
-      };
+      return { isOwner, isAdmin, isTeam: info.workspace.team, isEmpty };
     }
 
     const client = getWorkspaceProfileWorker();
@@ -360,14 +375,22 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
     return {
       name: result.name,
       avatar: result.avatar,
-      isOwner: info.workspace.role === Permission.Owner,
-      isAdmin: info.workspace.role === Permission.Admin,
+      isOwner,
+      isAdmin,
       isTeam: info.workspace.team,
       isEmpty,
     };
   }
 
-  async getWorkspaceBlob(id: string, blob: string): Promise<Blob | null> {
+  async getWorkspaceBlob(
+    id: string,
+    blob: string,
+    source: BlobSource = {
+      type: 'currentDoc',
+      workspaceId: id,
+      docId: id,
+    }
+  ): Promise<Blob | null> {
     const storage = new this.BlobStorageType({
       id: id,
       flavour: this.flavour,
@@ -375,33 +398,72 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
     });
     storage.connection.connect();
     await storage.connection.waitForConnected();
-    const localBlob = await storage.get(blob);
-
-    storage.connection.disconnect();
+    const localBlob = await storage
+      .get(blob)
+      .finally(() => storage.connection.disconnect());
 
     if (localBlob) {
-      return new Blob([localBlob.data], { type: localBlob.mime });
+      return new Blob([toArrayBuffer(localBlob.data)], {
+        type: localBlob.mime,
+      });
     }
 
-    const cloudBlob = await new CloudBlobStorage({
-      id,
-      serverBaseUrl: this.server.serverMetadata.baseUrl,
-    }).get(blob);
-    if (!cloudBlob) {
-      return null;
+    const sourceSession = this.openWorkspaceBlobSource(id, source);
+    try {
+      return await sourceSession.get(blob);
+    } finally {
+      await sourceSession.close();
     }
-    return new Blob([cloudBlob.data], { type: cloudBlob.mime });
   }
 
-  async listBlobs(id: string): Promise<ListedBlobRecord[]> {
+  openWorkspaceBlobSource(id: string, source: BlobSource) {
     const cloudStorage = new CloudBlobStorage({
       id,
       serverBaseUrl: this.server.serverMetadata.baseUrl,
     });
-    return cloudStorage.list();
+    let ready: Promise<void> | undefined;
+    let registered = false;
+    let closed = false;
+    return {
+      get: async (blob: string) => {
+        if (closed) throw new Error('Workspace blob source is closed');
+        if (!ready) {
+          registered = true;
+          const registration = cloudStorage.registerSource(source);
+          ready = registration;
+          try {
+            await registration;
+          } catch (error) {
+            if (ready === registration) ready = undefined;
+            throw error;
+          }
+        } else {
+          await ready;
+        }
+        const cloudBlob = await cloudStorage.get(blob, undefined, source);
+        return cloudBlob
+          ? new Blob([toArrayBuffer(cloudBlob.data)], {
+              type: cloudBlob.mime,
+            })
+          : null;
+      },
+      close: async () => {
+        if (closed) return;
+        closed = true;
+        if (registered) await cloudStorage.unregisterSource(source);
+      },
+    };
   }
 
-  async deleteBlob(
+  async listManageableBlobs(id: string): Promise<ListedBlobRecord[]> {
+    const cloudStorage = new CloudBlobStorage({
+      id,
+      serverBaseUrl: this.server.serverMetadata.baseUrl,
+    });
+    return cloudStorage.listManageable();
+  }
+
+  async deleteManagedBlob(
     id: string,
     blob: string,
     permanent: boolean
@@ -425,21 +487,21 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
   }
 
   onWorkspaceInitialized(workspace: Workspace): void {
-    // bind the workspace to the nexio cloud server
+    // bind the workspace to the affine cloud server
     workspace.scope.get(WorkspaceServerService).bindServer(this.server);
   }
 
   private async getWorkspaceInfo(workspaceId: string, signal?: AbortSignal) {
-    return await this.graphqlService.gql({
-      query: getWorkspaceInfoQuery,
-      variables: {
-        workspaceId,
-      },
-      context: { signal },
-    });
+    const { access } = await this.nbstoreService.realtime.request(
+      'workspace.access.get',
+      { workspaceId },
+      { signal, timeoutMs: 10000 }
+    );
+    return { workspace: access };
   }
 
   getEngineWorkerInitOptions(workspaceId: string): WorkerInitOptions {
+    assertSupportedServerVersion(this.server.config$.value.version);
     return {
       local: {
         doc: {
@@ -481,7 +543,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
           },
         },
         indexer: {
-          name: 'IndexedDBIndexerStorage',
+          name: this.IndexerStorageType.identifier,
           opts: {
             flavour: this.flavour,
             type: 'workspace',
@@ -489,7 +551,7 @@ class CloudWorkspaceFlavourProvider implements WorkspaceFlavourProvider {
           },
         },
         indexerSync: {
-          name: 'IndexedDBIndexerSyncStorage',
+          name: this.IndexerSyncStorageType.identifier,
           opts: {
             flavour: this.flavour,
             type: 'workspace',

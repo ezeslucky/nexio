@@ -1,21 +1,22 @@
-import type { TagMeta } from '@nexio/core/components/page-list';
-import { UserFriendlyError } from '@nexio/error';
-import { I18n } from '@nexio/i18n';
-import { createSignalFromObservable } from '@canvas/nexio/shared/utils';
-import type { DocMeta } from '@canvas/nexio/store';
+import type { TagMeta } from '@affine/core/components/page-list';
+import { UserFriendlyError } from '@affine/error';
+import { I18n } from '@affine/i18n';
+import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
+import type { DocMeta } from '@blocksuite/affine/store';
 import type {
   LinkedMenuGroup,
   LinkedMenuItem,
-} from '@canvas/nexio/widgets/linked-doc';
+} from '@blocksuite/affine/widgets/linked-doc';
+import { unsafeHTML } from '@blocksuite/affine-shared/utils';
 import { CollectionsIcon, WarningIcon } from '@blocksuite/icons/lit';
 import { computed, signal } from '@preact/signals-core';
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import Fuse, { type FuseResultMatch } from 'fuse.js';
 import { html } from 'lit';
-import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { catchError, map, of } from 'rxjs';
 
+import { normalizeSearchText } from '../../../utils/normalize-search-text';
 import type { CollectionMeta, CollectionService } from '../../collection';
 import type { DocDisplayMetaService } from '../../doc-display-meta';
 import type { DocsSearchService } from '../../docs-search';
@@ -68,7 +69,7 @@ export class SearchMenuService extends Service {
     const rawMetas = currentWorkspace.docCollection.meta.docMetas;
     const recentDocs = this.recentDocsService.getRecentDocs();
     return {
-      name: I18n.t('com.nexio.editor.at-menu.recent-docs'),
+      name: I18n.t('com.affine.editor.at-menu.recent-docs'),
       items: recentDocs
         .map(doc => {
           const meta = rawMetas.find(meta => meta.id === doc.id);
@@ -137,7 +138,7 @@ export class SearchMenuService extends Service {
 
     const overflowText = computed(() => {
       const overflowCount = docsSignal.value.length - MAX_DOCS;
-      return I18n.t('com.nexio.editor.at-menu.more-docs-hint', {
+      return I18n.t('com.affine.editor.at-menu.more-docs-hint', {
         count: overflowCount > 100 ? '100+' : overflowCount,
       });
     });
@@ -147,7 +148,7 @@ export class SearchMenuService extends Service {
     });
 
     return {
-      name: I18n.t('com.nexio.editor.at-menu.link-to-doc', {
+      name: I18n.t('com.affine.editor.at-menu.link-to-doc', {
         query,
       }),
       loading: loading,
@@ -185,14 +186,16 @@ export class SearchMenuService extends Service {
               typeof node.fields.docId === 'string'
                 ? node.fields.docId
                 : node.fields.docId[0];
-            const title =
+            const title = normalizeSearchText(
               typeof node.fields.title === 'string'
                 ? node.fields.title
-                : node.fields.title[0];
+                : node.fields.title[0]
+            );
+            const highlights = normalizeSearchText(node.highlights?.title?.[0]);
             return {
               id,
               title,
-              highlights: node.highlights?.title?.[0],
+              highlights: highlights || undefined,
             };
           })
         )
@@ -260,7 +263,7 @@ export class SearchMenuService extends Service {
     const tags: TagMeta[] = this.tagService.tagList.tagMetas$.value;
     if (query.trim().length === 0) {
       return {
-        name: I18n.t('com.nexio.editor.at-menu.tags', {
+        name: I18n.t('com.affine.editor.at-menu.tags', {
           query,
         }),
         items: tags.map(tag => this.toTagMenuItem(tag, action)),
@@ -277,7 +280,7 @@ export class SearchMenuService extends Service {
     const result = fuse.search(query);
 
     return {
-      name: I18n.t('com.nexio.editor.at-menu.link-to-doc', {
+      name: I18n.t('com.affine.editor.at-menu.link-to-doc', {
         query,
       }),
       items: result.map(item => {
@@ -320,7 +323,7 @@ export class SearchMenuService extends Service {
     const collections = this.collectionService.collectionMetas$.value;
     if (query.trim().length === 0) {
       return {
-        name: I18n.t('com.nexio.editor.at-menu.collections', {
+        name: I18n.t('com.affine.editor.at-menu.collections', {
           query,
         }),
         items: collections.map(collection =>
@@ -345,7 +348,7 @@ export class SearchMenuService extends Service {
     const result = fuse.search(query);
 
     return {
-      name: I18n.t('com.nexio.editor.at-menu.link-to-doc', {
+      name: I18n.t('com.affine.editor.at-menu.link-to-doc', {
         query,
       }),
       items: result.map(item => {

@@ -6,10 +6,11 @@ export { DocScope } from './scopes/doc';
 export { DocService } from './services/doc';
 export { DocsService } from './services/docs';
 
-import type { Framework } from '@ezeslucky/infra';
+import type { Framework } from '@toeverything/infra';
 
 import { WorkspaceDBService } from '../db/services/db';
-import { WorkspaceScope, WorkspaceService } from '../workspace';
+import { WorkspaceScope } from '../workspace/scopes/workspace';
+import { WorkspaceService } from '../workspace/services/workspace';
 import { Doc } from './entities/doc';
 import { DocRecord } from './entities/record';
 import { DocRecordList } from './entities/record-list';

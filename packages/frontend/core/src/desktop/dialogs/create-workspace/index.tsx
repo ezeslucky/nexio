@@ -1,20 +1,20 @@
-import { Button, ConfirmModal, notify, RowInput } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { Button, ConfirmModal, notify, RowInput } from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   type Server,
   ServersService,
-} from '@nexio/core/modules/cloud';
+} from '@affine/core/modules/cloud';
 import {
   type DialogComponentProps,
   type GLOBAL_DIALOG_SCHEMA,
   GlobalDialogService,
-} from '@nexio/core/modules/dialogs';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
-import { buildShowcaseWorkspace } from '@nexio/core/utils/first-app-data';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/dialogs';
+import { WorkspacesService } from '@affine/core/modules/workspace';
+import { buildShowcaseWorkspace } from '@affine/core/utils/first-app-data';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
 import * as styles from './index.css';
@@ -44,7 +44,7 @@ export const CreateWorkspaceDialog = ({
 
   const [workspaceName, setWorkspaceName] = useState('');
   const [inputServerId, setInputServerId] = useState(
-    serverId ?? 'nexio-cloud'
+    serverId ?? 'affine-cloud'
   );
 
   const serversService = useService(ServersService);
@@ -63,9 +63,9 @@ export const CreateWorkspaceDialog = ({
     <ConfirmModal
       open
       onOpenChange={onOpenChange}
-      title={t['com.nexio.nameWorkspace.title']()}
-      description={t['com.nexio.nameWorkspace.description']()}
-      cancelText={t['com.nexio.nameWorkspace.button.cancel']()}
+      title={t['com.affine.nameWorkspace.title']()}
+      description={t['com.affine.nameWorkspace.description']()}
+      cancelText={t['com.affine.nameWorkspace.button.cancel']()}
       closeButtonOptions={{
         ['data-testid' as string]: 'create-workspace-close-button',
       }}
@@ -87,13 +87,13 @@ export const CreateWorkspaceDialog = ({
       {...props}
     >
       <FormSection
-        label={t['com.nexio.nameWorkspace.subtitle.workspace-name']()}
+        label={t['com.affine.nameWorkspace.subtitle.workspace-name']()}
         input={
           <RowInput
             autoFocus
             className={styles.input}
             data-testid="create-workspace-input"
-            placeholder={t['com.nexio.nameWorkspace.placeholder']()}
+            placeholder={t['com.affine.nameWorkspace.placeholder']()}
             maxLength={64}
             minLength={0}
             onChange={setWorkspaceName}
@@ -102,7 +102,7 @@ export const CreateWorkspaceDialog = ({
       />
 
       <FormSection
-        label={t['com.nexio.nameWorkspace.subtitle.workspace-type']()}
+        label={t['com.affine.nameWorkspace.subtitle.workspace-type']()}
         input={
           <ServerSelector
             className={styles.select}
@@ -140,7 +140,7 @@ const CustomConfirmButton = ({
     if (loading) return;
     setLoading(true);
     track.$.$.$.createWorkspace({
-      flavour: !server ? 'local' : 'nexio-cloud',
+      flavour: !server ? 'local' : 'affine-cloud',
     });
 
     // this will be the last step for web for now
@@ -178,7 +178,7 @@ const CustomConfirmButton = ({
       onClick={handleCheckSessionAndConfirm}
       loading={loading}
     >
-      {t['com.nexio.nameWorkspace.button.create']()}
+      {t['com.affine.nameWorkspace.button.create']()}
     </Button>
   );
 };

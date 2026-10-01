@@ -2,11 +2,11 @@ import {
   RadioGroup,
   type RadioItem,
   useMobileMenuController,
-} from '@nexio/component';
-import { EditorService } from '@nexio/core/modules/editor';
-import track from '@nexio/track';
-import type { DocMode } from '@canvas/nexio/model';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component';
+import { EditorService } from '@affine/core/modules/editor';
+import track from '@affine/track';
+import type { DocMode } from '@blocksuite/affine/model';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './mode-switch.css';

@@ -1,4 +1,4 @@
-import { cn } from '@nexio/admin/utils';
+import { cn } from '@affine/admin/utils';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import * as React from 'react';
 

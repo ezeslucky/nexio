@@ -1,4 +1,4 @@
-import { LiveData, useLiveData } from '@ezeslucky/infra';
+import { LiveData, useLiveData } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import {
   forwardRef,

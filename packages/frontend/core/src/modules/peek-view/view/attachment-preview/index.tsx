@@ -1,5 +1,5 @@
-import { AttachmentViewer } from '@nexio/core/canvas/attachment-viewer';
-import type { AttachmentBlockModel } from '@canvas/nexio/model';
+import { AttachmentViewer } from '@affine/core/blocksuite/attachment-viewer';
+import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 import { useMemo } from 'react';
 
 import { useEditor } from '../utils';
@@ -14,10 +14,10 @@ export const AttachmentPreviewPeekView = ({
   blockId,
 }: AttachmentPreviewModalProps) => {
   const { doc } = useEditor(docId);
-  const canvasDoc = doc?.canvasDoc;
+  const blocksuiteDoc = doc?.blockSuiteDoc;
   const model = useMemo(
-    () => canvasDoc?.getModelById<AttachmentBlockModel>(blockId) ?? null,
-    [blockId, canvasDoc]
+    () => blocksuiteDoc?.getModelById<AttachmentBlockModel>(blockId) ?? null,
+    [blockId, blocksuiteDoc]
   );
 
   if (model) {

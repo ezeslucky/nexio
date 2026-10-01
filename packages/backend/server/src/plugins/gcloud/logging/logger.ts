@@ -1,8 +1,8 @@
 import { WinstonLogger } from 'nest-winston';
 
-import { NEXIOLogger as RawNEXIOLogger } from '../../../base/logger';
+import { AFFiNELogger as RawAFFiNELogger } from '../../../base/logger';
 
-export class NEXIOLogger extends WinstonLogger {
+export class AFFiNELogger extends WinstonLogger {
   override error(
     message: any,
     stackOrError?: Error | string | unknown,
@@ -10,7 +10,7 @@ export class NEXIOLogger extends WinstonLogger {
   ) {
     super.error(
       message,
-      RawNEXIOLogger.formatStack(stackOrError) as string,
+      RawAFFiNELogger.formatStack(stackOrError) as string,
       context
     );
   }

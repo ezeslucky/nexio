@@ -151,8 +151,8 @@ Default.args = {
 };
 
 const selectList = [
-  { name: 'NEXIO', value: '1' },
-  { name: 'canvas', value: '2' },
+  { name: 'AFFiNE', value: '1' },
+  { name: 'blocksuite', value: '2' },
   { name: 'octobase', value: '3' },
   { name: 'virgo', value: '4' },
 ];

@@ -3,7 +3,7 @@ import {
   Store,
   yjsGetPath,
   yjsObserveDeep,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { isNil, omitBy } from 'lodash-es';
 import { combineLatest, map, switchMap } from 'rxjs';
 import { AbstractType as YAbstractType } from 'yjs';
@@ -91,7 +91,7 @@ export class DocPropertiesStore extends Store {
 
   private getLegacyDocProperties(id: string) {
     return this.workspaceService.workspace.rootYDoc
-      .getMap<any>('nexio:workspace-properties')
+      .getMap<any>('affine:workspace-properties')
       .get('pageProperties')
       ?.get(id)
       ?.toJSON() as LegacyDocProperties | undefined;
@@ -100,7 +100,7 @@ export class DocPropertiesStore extends Store {
   private watchLegacyDocProperties(id: string) {
     return yjsGetPath(
       this.workspaceService.workspace.rootYDoc.getMap<any>(
-        'nexio:workspace-properties'
+        'affine:workspace-properties'
       ),
       `pageProperties.${id}`
     ).pipe(

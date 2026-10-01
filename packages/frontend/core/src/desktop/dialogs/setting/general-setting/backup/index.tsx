@@ -6,23 +6,24 @@ import {
   notify,
   Skeleton,
   useConfirmModal,
-} from '@nexio/component';
+} from '@affine/component';
 import {
   Pagination,
   SettingHeader,
-} from '@nexio/component/setting-components';
-import { Avatar } from '@nexio/component/ui/avatar';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
-import { BackupService } from '@nexio/core/modules/backup/services';
-import { i18nTime, useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/component/setting-components';
+import { Avatar } from '@affine/component/ui/avatar';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { BackupService } from '@affine/core/modules/backup/services';
+import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import { i18nTime, useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   DeleteIcon,
   LocalWorkspaceIcon,
   MoreVerticalIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
@@ -32,7 +33,7 @@ const Empty = () => {
   const t = useI18n();
   return (
     <div className={styles.empty}>
-      {t['com.nexio.settings.workspace.backup.empty']()}
+      {t['com.affine.settings.workspace.backup.empty']()}
     </div>
   );
 };
@@ -47,7 +48,7 @@ const BlobAvatar = ({
   const [url, setUrl] = useState<string | null>(null);
   useEffect(() => {
     if (!blob) return;
-    const url = URL.createObjectURL(new Blob([blob]));
+    const url = URL.createObjectURL(new Blob([toArrayBuffer(blob)]));
     setUrl(url);
     return () => {
       URL.revokeObjectURL(url);
@@ -80,18 +81,18 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
   const handleImport = useAsyncCallback(async () => {
     setImporting(true);
     track.$.settingsPanel.archivedWorkspaces.recoverArchivedWorkspace();
-    const workspaceId = await backupService.recoverBackupWorkspace(item.dbPath);
+    const workspaceId = await backupService.recoverBackupWorkspace(item.id);
     if (!workspaceId) {
       setImporting(false);
       return;
     }
     notify.success({
-      title: t['com.nexio.settings.workspace.backup.import.success'](),
+      title: t['com.affine.settings.workspace.backup.import.success'](),
       actions: [
         {
           key: 'open',
           label:
-            t['com.nexio.settings.workspace.backup.import.success.action'](),
+            t['com.affine.settings.workspace.backup.import.success.action'](),
           onClick: () => {
             jumpToPage(workspaceId, 'all');
           },
@@ -101,18 +102,18 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
     });
     setMenuOpen(false);
     setImporting(false);
-  }, [backupService, item.dbPath, jumpToPage, t]);
+  }, [backupService, item.id, jumpToPage, t]);
 
   const handleDelete = useCallback(
     (backupWorkspaceId: string) => {
       openConfirmModal({
-        title: t['com.nexio.workspaceDelete.title'](),
-        children: t['com.nexio.settings.workspace.backup.delete.warning'](),
+        title: t['com.affine.workspaceDelete.title'](),
+        children: t['com.affine.settings.workspace.backup.delete.warning'](),
         onConfirm: async () => {
           track.$.settingsPanel.archivedWorkspaces.deleteArchivedWorkspace();
           await backupService.deleteBackupWorkspace(backupWorkspaceId);
           notify.success({
-            title: t['com.nexio.settings.workspace.backup.delete.success'](),
+            title: t['com.affine.settings.workspace.backup.delete.success'](),
           });
         },
         confirmText: t['Confirm'](),
@@ -140,7 +141,7 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
         </div>
       </div>
       <div className={styles.listItemRightLabel}>
-        {t['com.nexio.settings.workspace.backup.delete-at']({
+        {t['com.affine.settings.workspace.backup.delete-at']({
           date: i18nTime(item.updatedAt, {
             absolute: {
               accuracy: 'day',
@@ -166,7 +167,7 @@ const BackupWorkspaceItem = ({ item }: { item: BackupWorkspaceItem }) => {
                 prefixIcon={<LocalWorkspaceIcon />}
                 onClick={handleImport}
               >
-                {t['com.nexio.settings.workspace.backup.import']()}
+                {t['com.affine.settings.workspace.backup.import']()}
               </MenuItem>
               <MenuItem
                 prefixIcon={<DeleteIcon />}
@@ -247,8 +248,8 @@ export const BackupSettingPanel = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.nexio.settings.workspace.backup']()}
-        subtitle={t['com.nexio.settings.workspace.backup.subtitle']()}
+        title={t['com.affine.settings.workspace.backup']()}
+        subtitle={t['com.affine.settings.workspace.backup.subtitle']()}
         data-testid="backup-title"
       />
       {isEmpty ? (

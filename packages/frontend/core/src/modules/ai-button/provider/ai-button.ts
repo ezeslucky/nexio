@@ -1,4 +1,4 @@
-import { createIdentifier } from '@ezeslucky/infra';
+import { createIdentifier } from '@toeverything/infra';
 
 export interface AIButtonProvider {
   presentAIButton: () => Promise<void>;

@@ -1,7 +1,7 @@
 import './setup';
 
-import { appConfigProxy } from '@nexio/core/components/hooks/use-app-config-storage';
-import { Telemetry } from '@nexio/core/components/telemetry';
+import { appConfigProxy } from '@affine/core/components/hooks/use-app-config-storage';
+import { Telemetry } from '@affine/core/components/telemetry';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
@@ -18,7 +18,7 @@ function main() {
 }
 
 function mountApp() {
-  // oxlint-disable-next-line typescript-eslint/no-non-null-assertion
+  // oxlint-disable-next-line typescript/no-non-null-assertion
   const root = document.getElementById('app')!;
   createRoot(root).render(
     <StrictMode>

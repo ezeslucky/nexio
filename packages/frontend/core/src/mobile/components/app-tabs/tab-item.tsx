@@ -1,5 +1,5 @@
-import { GlobalCacheService } from '@nexio/core/modules/storage';
-import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
+import { GlobalCacheService } from '@affine/core/modules/storage';
+import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { type PropsWithChildren, useCallback, useMemo } from 'react';
 
 import { cacheKey } from './constants';

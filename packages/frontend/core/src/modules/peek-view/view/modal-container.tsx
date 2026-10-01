@@ -1,5 +1,5 @@
 import * as Dialog from '@radix-ui/react-dialog';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { eases, waapi, type WAAPIAnimation } from 'animejs';
 import clsx from 'clsx';
 import {
@@ -27,14 +27,14 @@ const contentOptions: Dialog.DialogContentProps = {
     if (
       el.closest('[data-peek-view-wrapper]') ||
       // workaround for slash menu click outside issue
-      el.closest('nexio-slash-menu')
+      el.closest('affine-slash-menu')
     ) {
       e.preventDefault();
     }
   },
   onEscapeKeyDown: e => {
     // prevent closing the modal when pressing escape key by default
-    // this is because radix-ui register the escape key event on the document using capture, which is not possible to prevent in canvas
+    // this is because radix-ui register the escape key event on the document using capture, which is not possible to prevent in blocksuite
     e.preventDefault();
   },
 };
@@ -153,7 +153,6 @@ export const PeekViewModalContainer = forwardRef<
         !target.getBoundingClientRect().width &&
         iteration < 10
       ) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         target = target.parentElement || undefined;
         iteration++;
       }

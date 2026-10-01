@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import { DocBacklinks } from '../entities/doc-backlinks';
 import { DocLinks } from '../entities/doc-links';

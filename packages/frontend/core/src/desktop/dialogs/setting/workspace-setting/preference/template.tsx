@@ -3,18 +3,18 @@ import {
   MenuSeparator,
   MenuTrigger,
   Switch,
-} from '@nexio/component';
+} from '@affine/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { DocsService } from '@nexio/core/modules/doc';
-import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import { TemplateDocService } from '@nexio/core/modules/template-doc';
-import { TemplateListMenu } from '@nexio/core/modules/template-doc/view/template-list-menu';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component/setting-components';
+import { DocsService } from '@affine/core/modules/doc';
+import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { TemplateDocService } from '@affine/core/modules/template-doc';
+import { TemplateListMenu } from '@affine/core/modules/template-doc/view/template-list-menu';
+import { useI18n } from '@affine/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import * as styles from './template.css';
@@ -49,10 +49,10 @@ export const TemplateDocSetting = () => {
   );
 
   return (
-    <SettingWrapper title={t['com.nexio.settings.workspace.template.title']()}>
+    <SettingWrapper title={t['com.affine.settings.workspace.template.title']()}>
       <SettingRow
-        name={t['com.nexio.settings.workspace.template.journal']()}
-        desc={t['com.nexio.settings.workspace.template.journal-desc']()}
+        name={t['com.affine.settings.workspace.template.journal']()}
+        desc={t['com.affine.settings.workspace.template.journal-desc']()}
       >
         <TemplateSelector
           testId="journal-template-selector"
@@ -61,8 +61,8 @@ export const TemplateDocSetting = () => {
         />
       </SettingRow>
       <SettingRow
-        name={t['com.nexio.settings.workspace.template.page']()}
-        desc={t['com.nexio.settings.workspace.template.page-desc']()}
+        name={t['com.affine.settings.workspace.template.page']()}
+        desc={t['com.affine.settings.workspace.template.page-desc']()}
       >
         <Switch
           data-testid="page-template-switch"
@@ -72,7 +72,7 @@ export const TemplateDocSetting = () => {
       </SettingRow>
       {enablePageTemplate ? (
         <SettingRow
-          name={t['com.nexio.settings.workspace.template.page-select']()}
+          name={t['com.affine.settings.workspace.template.page-select']()}
           desc={null}
         >
           <TemplateSelector
@@ -116,14 +116,14 @@ const TemplateSelector = ({
             type="danger"
             data-testid="template-doc-item-remove"
           >
-            {t['com.nexio.settings.workspace.template.remove']()}
+            {t['com.affine.settings.workspace.template.remove']()}
           </MenuItem>
         </>
       }
     >
       <MenuTrigger className={styles.menuTrigger} data-testid={testId}>
         {/* TODO: in trash design */}
-        {title ?? t['com.nexio.settings.workspace.template.keep-empty']()}
+        {title ?? t['com.affine.settings.workspace.template.keep-empty']()}
       </MenuTrigger>
     </TemplateListMenu>
   );

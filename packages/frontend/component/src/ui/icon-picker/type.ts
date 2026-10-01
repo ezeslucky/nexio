@@ -1,6 +1,6 @@
 export enum IconType {
   Emoji = 'emoji',
-  NexioIcon = 'nexio-icon',
+  AffineIcon = 'affine-icon',
   Blob = 'blob',
 }
 
@@ -10,7 +10,7 @@ export type IconData =
       unicode: string;
     }
   | {
-      type: IconType.NexioIcon;
+      type: IconType.AffineIcon;
       name: string;
       color: string;
     }

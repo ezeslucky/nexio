@@ -1,4 +1,4 @@
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { DesktopApi } from './entities/electron-api';
 import { ElectronApiImpl } from './impl';
@@ -13,4 +13,4 @@ export function configureDesktopApiModule(framework: Framework) {
 }
 
 export { DesktopApiService } from './service/desktop-api';
-export type { ClientEvents, TabViewsMetaSchema } from '@nexio/electron-api';
+export type { ClientEvents, TabViewsMetaSchema } from '@affine/electron-api';

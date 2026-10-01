@@ -6,11 +6,11 @@ import {
   type MenuRef,
   RowInput,
   Scrollable,
-} from '@nexio/component';
-import { TagService, useDeleteTagConfirmModal } from '@nexio/core/modules/tag';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import { TagService, useDeleteTagConfirmModal } from '@affine/core/modules/tag';
+import { useI18n } from '@affine/i18n';
 import { DoneIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { clamp } from 'lodash-es';
 import type { KeyboardEvent, ReactNode } from 'react';
@@ -23,7 +23,7 @@ import {
   useState,
 } from 'react';
 
-import { useAsyncCallback } from '../hooks/nexio-async-hooks';
+import { useAsyncCallback } from '../hooks/affine-async-hooks';
 import { ConfigModal } from '../mobile';
 import { InlineTagList } from './inline-tag-list';
 import * as styles from './styles.css';
@@ -150,6 +150,7 @@ export const TagsEditor = ({
       const idx = tagColors.findIndex(c => c.value === color);
       return tagColors[(idx + 1) % tagColors.length].value;
     },
+    // oxlint-disable-next-line react-hooks-js/purity
     tagColors[Math.floor(Math.random() * tagColors.length)].value
   );
 
@@ -293,7 +294,7 @@ export const TagsEditor = ({
       )}
       <div className={styles.tagsEditorTagsSelector}>
         <div className={styles.tagsEditorTagsSelectorHeader}>
-          {t['com.nexio.page-properties.tags.selector-header-title']()}
+          {t['com.affine.page-properties.tags.selector-header-title']()}
         </div>
         <Scrollable.Root>
           <Scrollable.Viewport
@@ -310,6 +311,7 @@ export const TagsEditor = ({
                 onClick: () => onSelectTagOption(tag),
                 onMouseEnter: () => setFocusedIndex(idx),
                 ['data-testid']: 'tag-selector-item',
+                ['data-modal-action']: '',
                 ['data-focused']: safeFocusedIndex === idx,
                 className: styles.tagSelectorItem,
               };

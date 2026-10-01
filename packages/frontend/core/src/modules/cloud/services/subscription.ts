@@ -1,6 +1,6 @@
-import { type CreateCheckoutSessionInput } from '@nexio/graphql';
-import { mixpanel } from '@nexio/track';
-import { OnEvent, Service } from '@ezeslucky/infra';
+import { type CreateCheckoutSessionInput } from '@affine/graphql';
+import { tracker } from '@affine/track';
+import { OnEvent, Service } from '@toeverything/infra';
 
 import { Subscription } from '../entities/subscription';
 import { SubscriptionPrices } from '../entities/subscription-prices';
@@ -18,7 +18,7 @@ export class SubscriptionService extends Service {
       .map(sub => !!sub)
       .distinctUntilChanged()
       .subscribe(ai => {
-        mixpanel.people.set({
+        tracker.people.set({
           ai,
         });
       });
@@ -26,7 +26,7 @@ export class SubscriptionService extends Service {
       .map(sub => !!sub)
       .distinctUntilChanged()
       .subscribe(pro => {
-        mixpanel.people.set({
+        tracker.people.set({
           pro,
         });
       });

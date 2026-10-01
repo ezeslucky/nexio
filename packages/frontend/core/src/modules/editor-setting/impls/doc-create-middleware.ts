@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import type { DocCreateMiddleware, DocRecord } from '../../doc';
 import type { DocCreateOptions } from '../../doc/types';
@@ -47,7 +47,7 @@ export class EditorSettingDocCreateMiddleware
 
     docCreateOptions.docProps = {
       ...docCreateOptions.docProps,
-      note: this.editorSettingService.editorSetting.get('nexio:note'),
+      note: this.editorSettingService.editorSetting.get('affine:note'),
     };
 
     return docCreateOptions;

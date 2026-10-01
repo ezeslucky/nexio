@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { NexioCanvasTextFonts } from '@canvas/nexio/shared/services';
+import { AffineCanvasTextFonts } from '@blocksuite/affine/shared/services';
 
 const fontPath = join(
   fileURLToPath(import.meta.url),
@@ -16,7 +16,7 @@ const fontPath = join(
 );
 
 await Promise.all(
-  NexioCanvasTextFonts.map(async ({ url }) => {
+  AffineCanvasTextFonts.map(async ({ url }) => {
     const buffer = await fetch(url).then(res =>
       res.arrayBuffer().then(res => Buffer.from(res))
     );

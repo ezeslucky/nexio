@@ -1,11 +1,11 @@
-import { Modal } from '@nexio/component';
+import { Modal } from '@affine/component';
 import type {
   DialogComponentProps,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@nexio/core/modules/dialogs';
-import { TagService } from '@nexio/core/modules/tag';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/dialogs';
+import { TagService } from '@affine/core/modules/tag';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { useMemo } from 'react';
 
@@ -73,7 +73,7 @@ export const TagSelectorDialog = ({
         onBeforeConfirm={onBeforeConfirm}
         initial={init}
         data={list}
-        typeName={t[`com.nexio.m.selector.type-tag`]()}
+        typeName={t[`com.affine.m.selector.type-tag`]()}
       />
     </Modal>
   );

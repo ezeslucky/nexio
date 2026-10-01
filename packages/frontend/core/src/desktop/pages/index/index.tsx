@@ -1,16 +1,16 @@
-import { DefaultServerService } from '@nexio/core/modules/cloud';
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { DefaultServerService } from '@affine/core/modules/cloud';
+import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import { WorkspacesService } from '@affine/core/modules/workspace';
 import {
   buildShowcaseWorkspace,
   createFirstAppData,
-} from '@nexio/core/utils/first-app-data';
-import { ServerFeature } from '@nexio/graphql';
+} from '@affine/core/utils/first-app-data';
+import { ServerFeature } from '@affine/graphql';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import {
   type ReactNode,
   useCallback,
@@ -39,14 +39,18 @@ export const Component = ({
   defaultIndexRoute = 'all',
   children,
   fallback,
+  createErrorFallback,
 }: {
   defaultIndexRoute?: string;
   children?: ReactNode;
   fallback?: ReactNode;
+  createErrorFallback?: (retry: () => void) => ReactNode;
 }) => {
   // navigating and creating may be slow, to avoid flickering, we show workspace fallback
   const [navigating, setNavigating] = useState(true);
   const [creating, setCreating] = useState(false);
+  const [createError, setCreateError] = useState(false);
+  const [createAttempt, setCreateAttempt] = useState(0);
   const authService = useService(AuthService);
   const defaultServerService = useService(DefaultServerService);
 
@@ -75,7 +79,7 @@ export const Component = ({
     if (createOnceRef.current) return;
     createOnceRef.current = true;
     // TODO: support selfhosted
-    buildShowcaseWorkspace(workspacesService, 'nexio-cloud', 'nexio Cloud')
+    buildShowcaseWorkspace(workspacesService, 'affine-cloud', 'Nexio Cloud')
       .then(({ meta, defaultDocId }) => {
         if (defaultDocId) {
           jumpToPage(meta.id, defaultDocId);
@@ -104,20 +108,23 @@ export const Component = ({
     // check is user logged in && has cloud workspace
     if (searchParams.get('initCloud') === 'true') {
       if (loggedIn) {
-        if (list.every(w => w.flavour !== 'nexio-cloud')) {
+        if (list.every(w => w.flavour !== 'affine-cloud')) {
           createCloudWorkspace();
           return;
         }
 
         // open first cloud workspace
         const openWorkspace =
-          list.find(w => w.flavour === 'nexio-cloud') ?? list[0];
+          list.find(w => w.flavour === 'affine-cloud') ?? list[0];
         openPage(openWorkspace.id, defaultIndexRoute);
       } else {
         return;
       }
     } else {
       if (list.length === 0) {
+        if (BUILD_CONFIG.isMobileEdition && enableLocalWorkspace) {
+          return;
+        }
         setNavigating(false);
         return;
       }
@@ -151,7 +158,12 @@ export const Component = ({
       return;
     }
 
-    createFirstAppData(workspacesService)
+    const creation = createFirstAppData(workspacesService);
+    if (!creation) return;
+
+    setCreateError(false);
+    setCreating(true);
+    creation
       .then(createdWorkspace => {
         if (createdWorkspace) {
           if (createdWorkspace.defaultPageId) {
@@ -166,20 +178,28 @@ export const Component = ({
       })
       .catch(err => {
         console.error('Failed to create first app data', err);
+        setCreateError(true);
       })
       .finally(() => {
         setCreating(false);
       });
   }, [
     jumpToPage,
-    jumpToSignIn,
     openPage,
     workspacesService,
-    loggedIn,
     listIsLoading,
     list,
     enableLocalWorkspace,
+    createAttempt,
   ]);
+
+  const retryCreate = useCallback(() => {
+    setCreateAttempt(attempt => attempt + 1);
+  }, []);
+
+  if (createError && createErrorFallback) {
+    return createErrorFallback(retryCreate);
+  }
 
   if (navigating || creating) {
     return fallback ?? <AppContainer fallback />;

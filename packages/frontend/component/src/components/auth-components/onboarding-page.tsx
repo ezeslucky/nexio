@@ -74,7 +74,7 @@ export const ScrollableLayout = ({
         <div className={styles.linkGroup}>
           <a
             className={styles.link}
-            href="https://nexio.pro/terms"
+            href="https://affine.pro/terms"
             target="_blank"
             rel="noreferrer"
           >
@@ -83,7 +83,7 @@ export const ScrollableLayout = ({
           <Divider orientation="vertical" />
           <a
             className={styles.link}
-            href="https://nexio.pro/privacy"
+            href="https://affine.pro/privacy"
             target="_blank"
             rel="noreferrer"
           >
@@ -97,10 +97,10 @@ export const ScrollableLayout = ({
 
 export const OnboardingPage = ({
   user,
-  onOpenNexio,
+  onOpenAffine,
 }: {
   user: User;
-  onOpenNexio: () => void;
+  onOpenAffine: () => void;
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -122,16 +122,6 @@ export const OnboardingPage = ({
   const isWindowsDesktop = BUILD_CONFIG.isElectron && environment.isWindows;
 
   if (!questions) {
-    return null;
-  }
-
-  // deprecated
-  // TODO(@forehalo): remove
-  if (callbackUrl?.startsWith('/open-app/signin-redirect')) {
-    const url = new URL(callbackUrl, window.location.origin);
-    url.searchParams.set('next', 'onboarding');
-    console.log('redirect to', url.toString());
-    window.location.assign(url.toString());
     return null;
   }
 
@@ -226,7 +216,7 @@ export const OnboardingPage = ({
                     ],
                   };
 
-                  // eslint-disable-next-line @typescript-eslint/no-floating-promises
+                  // oxlint-disable-next-line typescript/no-floating-promises
                   fetch('/api/worker/questionnaire', {
                     method: 'POST',
                     body: JSON.stringify(answer),
@@ -260,14 +250,14 @@ export const OnboardingPage = ({
           you once again for your supports.
         </p>
         <Button
-          className={clsx(styles.button, styles.openNEXIOButton)}
+          className={clsx(styles.button, styles.openAFFiNEButton)}
           variant="primary"
           size="extraLarge"
           onClick={() => {
             if (callbackUrl) {
               navigate(callbackUrl);
             } else {
-              onOpenNexio();
+              onOpenAffine();
             }
           }}
           suffix={<ArrowRightSmallIcon />}

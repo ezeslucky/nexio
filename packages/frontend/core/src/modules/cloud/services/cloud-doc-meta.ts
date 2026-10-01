@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import { CloudDocMeta } from '../entities/cloud-doc-meta';
 

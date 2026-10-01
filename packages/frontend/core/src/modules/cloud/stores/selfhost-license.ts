@@ -3,8 +3,8 @@ import {
   deactivateLicenseMutation,
   getLicenseQuery,
   installLicenseMutation,
-} from '@nexio/graphql';
-import { Store } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { Store } from '@toeverything/infra';
 
 import type { WorkspaceServerService } from '../services/workspace-server';
 

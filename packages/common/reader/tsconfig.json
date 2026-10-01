@@ -6,5 +6,5 @@
     "outDir": "./dist",
     "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
   },
-  "references": [{ "path": "../../../canvas/nexio/all" }]
+  "references": [{ "path": "../../../blocksuite/affine/all" }]
 }

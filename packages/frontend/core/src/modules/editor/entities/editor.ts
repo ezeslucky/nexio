@@ -1,20 +1,20 @@
-import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
-import type { DefaultOpenProperty } from '@nexio/core/components/properties';
-import { PresentTool } from '@canvas/nexio/blocks/frame';
-import { DefaultTool } from '@canvas/nexio/blocks/surface';
-import type { DocTitle } from '@canvas/nexio/fragments/doc-title';
-import { findCommentedTexts } from '@canvas/nexio/inlines/comment';
-import type { DocMode, ReferenceParams } from '@canvas/nexio/model';
-import { HighlightSelection } from '@canvas/nexio/shared/selection';
+import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
+import type { DefaultOpenProperty } from '@affine/core/components/properties';
+import { PresentTool } from '@blocksuite/affine/blocks/frame';
+import { DefaultTool } from '@blocksuite/affine/blocks/surface';
+import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
+import { findCommentedTexts } from '@blocksuite/affine/inlines/comment';
+import type { DocMode, ReferenceParams } from '@blocksuite/affine/model';
+import { HighlightSelection } from '@blocksuite/affine/shared/selection';
 import {
   DocModeProvider,
   findCommentedBlocks,
   findCommentedElements,
-} from '@canvas/nexio/shared/services';
-import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
-import type { InlineEditor } from '@canvas/std/inline';
+} from '@blocksuite/affine/shared/services';
+import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import type { InlineEditor } from '@blocksuite/std/inline';
 import { effect } from '@preact/signals-core';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import { defaults, isEqual, omit } from 'lodash-es';
 import { skip } from 'rxjs';
 
@@ -37,7 +37,7 @@ export class Editor extends Entity {
   readonly doc = this.docService.doc;
   readonly isSharedMode =
     this.workspaceService.workspace.openOptions.isSharedMode;
-  readonly editorContainer$ = new LiveData<NexioEditorContainer | null>(null);
+  readonly editorContainer$ = new LiveData<AffineEditorContainer | null>(null);
   readonly defaultOpenProperty$ = new LiveData<DefaultOpenProperty | undefined>(
     undefined
   );
@@ -269,7 +269,7 @@ export class Editor extends Entity {
   }
 
   bindEditorContainer(
-    editorContainer: NexioEditorContainer,
+    editorContainer: AffineEditorContainer,
     docTitle?: DocTitle | null,
     scrollViewport?: HTMLElement | null
   ) {
@@ -318,29 +318,71 @@ export class Editor extends Entity {
     }
 
     // update scroll position when scrollViewport scroll
-    const saveScrollPosition = () => {
-      if (this.mode$.value === 'page' && scrollViewport) {
-        this.scrollPosition.page = scrollViewport.scrollTop;
-        this.workbenchView?.setScrollPosition(scrollViewport.scrollTop);
-      } else if (this.mode$.value === 'edgeless' && gfx) {
-        const pos = {
-          centerX: gfx.viewport.centerX,
-          centerY: gfx.viewport.centerY,
-          zoom: gfx.viewport.zoom,
-        };
-        this.scrollPosition.edgeless = pos;
-        this.workbenchView?.setScrollPosition(pos);
+    let edgelessWriteTimer: ReturnType<typeof setTimeout> | null = null;
+
+    const flushEdgelessScrollPosition = () => {
+      if (edgelessWriteTimer) {
+        clearTimeout(edgelessWriteTimer);
+        edgelessWriteTimer = null;
       }
+
+      const pos = this.scrollPosition.edgeless;
+      if (!pos) {
+        return;
+      }
+
+      this.workbenchView?.setScrollPosition(pos);
     };
-    scrollViewport?.addEventListener('scroll', saveScrollPosition);
+
+    const savePageScrollPosition = () => {
+      if (!scrollViewport || this.mode$.value !== 'page') {
+        return;
+      }
+
+      this.scrollPosition.page = scrollViewport.scrollTop;
+      this.workbenchView?.setScrollPosition(scrollViewport.scrollTop);
+    };
+
+    const saveEdgelessScrollPosition = () => {
+      if (!gfx || this.mode$.value !== 'edgeless') {
+        return;
+      }
+
+      this.scrollPosition.edgeless = {
+        centerX: gfx.viewport.centerX,
+        centerY: gfx.viewport.centerY,
+        zoom: gfx.viewport.zoom,
+      };
+
+      if (edgelessWriteTimer) {
+        clearTimeout(edgelessWriteTimer);
+      }
+      edgelessWriteTimer = setTimeout(() => {
+        flushEdgelessScrollPosition();
+      }, 160);
+    };
+
+    const handleViewportScroll = () => {
+      if (this.mode$.value === 'edgeless' && scrollViewport) {
+        return;
+      }
+
+      savePageScrollPosition();
+    };
+
+    scrollViewport?.addEventListener('scroll', handleViewportScroll);
     unsubs.push(() => {
-      scrollViewport?.removeEventListener('scroll', saveScrollPosition);
+      scrollViewport?.removeEventListener('scroll', handleViewportScroll);
     });
     if (gfx) {
-      const subscription =
-        gfx.viewport.viewportUpdated.subscribe(saveScrollPosition);
+      const subscription = gfx.viewport.viewportUpdated.subscribe(() => {
+        saveEdgelessScrollPosition();
+      });
       unsubs.push(subscription.unsubscribe.bind(subscription));
     }
+    unsubs.push(() => {
+      flushEdgelessScrollPosition();
+    });
 
     // update selection when focusAt$ changed
     const subscription = this.focusAt$

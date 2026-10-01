@@ -44,28 +44,7 @@ export const allPlansLink = style({
   fontSize: cssVar('fontXs'),
 });
 
-export const collapsibleHeader = style({
-  display: 'flex',
-  alignItems: 'start',
-  marginBottom: 8,
-});
-export const collapsibleHeaderContent = style({
-  width: 0,
-  flex: 1,
-});
-export const collapsibleHeaderTitle = style({
-  fontWeight: 600,
-  fontSize: cssVar('fontBase'),
-  lineHeight: '22px',
-});
-export const collapsibleHeaderCaption = style({
-  fontWeight: 400,
-  fontSize: cssVar('fontXs'),
-  lineHeight: '20px',
-  color: cssVar('textSecondaryColor'),
-});
-
-export const nexioCloudHeader = style({
+export const affineCloudHeader = style({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',

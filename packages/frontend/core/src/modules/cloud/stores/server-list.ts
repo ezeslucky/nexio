@@ -1,4 +1,4 @@
-import { Store } from '@ezeslucky/infra';
+import { Store } from '@toeverything/infra';
 import { map } from 'rxjs';
 
 import type { GlobalStateService } from '../../storage';

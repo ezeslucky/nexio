@@ -1,9 +1,9 @@
-import { Switch } from '@nexio/component';
-import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
-import { Trans, useI18n } from '@nexio/i18n';
-import {  AfFiNeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { Switch } from '@affine/component';
+import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
+import { Trans, useI18n } from '@affine/i18n';
+import { AfFiNeIcon } from '@blocksuite/icons/rc';
+import { useLiveData, useServices } from '@toeverything/infra';
 import {
   type ReactNode,
   type RefObject,
@@ -56,38 +56,38 @@ export interface DynamicPrice extends BasePrice {
 }
 
 const freeBenefits: BenefitsGetter = t => ({
-  [t['com.nexio.payment.cloud.free.benefit.g1']()]: ([1, 2, 3] as const).map(
+  [t['com.affine.payment.cloud.free.benefit.g1']()]: ([1, 2, 3] as const).map(
     i => ({
-      title: t[`com.nexio.payment.cloud.free.benefit.g1-${i}`](),
+      title: t[`com.affine.payment.cloud.free.benefit.g1-${i}`](),
     })
   ),
-  [t['com.nexio.payment.cloud.free.benefit.g2']()]: (
+  [t['com.affine.payment.cloud.free.benefit.g2']()]: (
     [1, 2, 3, 4, 5] as const
   ).map(i => ({
-    title: t[`com.nexio.payment.cloud.free.benefit.g2-${i}`](),
+    title: t[`com.affine.payment.cloud.free.benefit.g2-${i}`](),
   })),
 });
 
 const proBenefits: BenefitsGetter = t => ({
-  [t['com.nexio.payment.cloud.pro.benefit.g1']()]: [
+  [t['com.affine.payment.cloud.pro.benefit.g1']()]: [
     {
-      title: t['com.nexio.payment.cloud.pro.benefit.g1-1'](),
-      icon: < AfFiNeIcon />,
+      title: t['com.affine.payment.cloud.pro.benefit.g1-1'](),
+      icon: <AfFiNeIcon />,
     },
     ...([2, 3, 4, 5, 7, 8] as const).map(i => ({
-      title: t[`com.nexio.payment.cloud.pro.benefit.g1-${i}`](),
+      title: t[`com.affine.payment.cloud.pro.benefit.g1-${i}`](),
     })),
   ],
 });
 
 const teamBenefits: BenefitsGetter = t => ({
-  [t['com.nexio.payment.cloud.team-workspace.benefit.g1']()]: [
+  [t['com.affine.payment.cloud.team-workspace.benefit.g1']()]: [
     {
-      title: t['com.nexio.payment.cloud.team-workspace.benefit.g1-1'](),
-      icon: < AfFiNeIcon />,
+      title: t['com.affine.payment.cloud.team-workspace.benefit.g1-1'](),
+      icon: <AfFiNeIcon />,
     },
     ...([2, 3, 4, 5, 6] as const).map(i => ({
-      title: t[`com.nexio.payment.cloud.team-workspace.benefit.g1-${i}`](),
+      title: t[`com.affine.payment.cloud.team-workspace.benefit.g1-${i}`](),
     })),
   ],
 });
@@ -101,9 +101,9 @@ export function getPlanDetail(t: T) {
         plan: SubscriptionPlan.Free,
         price: '0',
         yearlyPrice: '0',
-        name: t['com.nexio.payment.cloud.free.name'](),
-        description: t['com.nexio.payment.cloud.free.description'](),
-        titleRenderer: () => t['com.nexio.payment.cloud.free.title'](),
+        name: t['com.affine.payment.cloud.free.name'](),
+        description: t['com.affine.payment.cloud.free.description'](),
+        titleRenderer: () => t['com.affine.payment.cloud.free.title'](),
         benefits: freeBenefits(t),
       },
     ],
@@ -114,8 +114,8 @@ export function getPlanDetail(t: T) {
         plan: SubscriptionPlan.Pro,
         price: '1',
         yearlyPrice: '1',
-        name: t['com.nexio.payment.cloud.pro.name'](),
-        description: t['com.nexio.payment.cloud.pro.description'](),
+        name: t['com.affine.payment.cloud.pro.name'](),
+        description: t['com.affine.payment.cloud.pro.description'](),
         titleRenderer: (recurring, detail) => {
           const price =
             recurring === SubscriptionRecurring.Yearly
@@ -123,12 +123,12 @@ export function getPlanDetail(t: T) {
               : detail.price;
           return (
             <>
-              {t['com.nexio.payment.cloud.pro.title.price-monthly']({
+              {t['com.affine.payment.cloud.pro.title.price-monthly']({
                 price: '$' + price,
               })}
               {recurring === SubscriptionRecurring.Yearly ? (
                 <span className={planTitleTitleCaption}>
-                  {t['com.nexio.payment.cloud.pro.title.billed-yearly']()}
+                  {t['com.affine.payment.cloud.pro.title.billed-yearly']()}
                 </span>
               ) : null}
             </>
@@ -144,8 +144,8 @@ export function getPlanDetail(t: T) {
         plan: SubscriptionPlan.Team,
         price: '2',
         yearlyPrice: '2',
-        name: t['com.nexio.payment.cloud.team-workspace.name'](),
-        description: t['com.nexio.payment.cloud.team-workspace.description'](),
+        name: t['com.affine.payment.cloud.team-workspace.name'](),
+        description: t['com.affine.payment.cloud.team-workspace.description'](),
         titleRenderer: (recurring, detail) => {
           const price =
             recurring === SubscriptionRecurring.Yearly
@@ -153,7 +153,7 @@ export function getPlanDetail(t: T) {
               : detail.price;
           return (
             <>
-              {t['com.nexio.payment.cloud.team-workspace.title.price-monthly'](
+              {t['com.affine.payment.cloud.team-workspace.title.price-monthly'](
                 {
                   price: '$' + price,
                 }
@@ -161,7 +161,7 @@ export function getPlanDetail(t: T) {
               {recurring === SubscriptionRecurring.Yearly ? (
                 <span className={planTitleTitleCaption}>
                   {t[
-                    'com.nexio.payment.cloud.team-workspace.title.billed-yearly'
+                    'com.affine.payment.cloud.team-workspace.title.billed-yearly'
                   ]()}
                 </span>
               ) : null}
@@ -182,8 +182,8 @@ const getRecurringLabel = ({
   t: ReturnType<typeof useI18n>;
 }) => {
   return recurring === SubscriptionRecurring.Monthly
-    ? t['com.nexio.payment.recurring-monthly']()
-    : t['com.nexio.payment.recurring-yearly']();
+    ? t['com.affine.payment.recurring-monthly']()
+    : t['com.affine.payment.recurring-yearly']();
 };
 
 export const CloudPlans = () => {
@@ -198,9 +198,6 @@ export const CloudPlans = () => {
   const prices = useLiveData(subscriptionService.prices.prices$);
   const loggedIn = useLiveData(authService.session.status$) === 'authenticated';
   const proSubscription = useLiveData(subscriptionService.subscription.pro$);
-  const isOnetimePro = useLiveData(
-    subscriptionService.subscription.isOnetimePro$
-  );
 
   const [recurring, setRecurring] = useState<SubscriptionRecurring>(
     proSubscription?.recurring ?? SubscriptionRecurring.Yearly
@@ -270,7 +267,7 @@ export const CloudPlans = () => {
   const cloudCaption = loggedIn ? (
     isCanceled ? (
       <p>
-        {t['com.nexio.payment.subtitle-canceled']({
+        {t['com.affine.payment.subtitle-canceled']({
           plan: `${getRecurringLabel({
             recurring: currentRecurring,
             t,
@@ -281,14 +278,14 @@ export const CloudPlans = () => {
       <p>
         <Trans
           plan={currentPlan}
-          i18nKey="com.nexio.payment.subtitle-active"
+          i18nKey="com.affine.payment.subtitle-active"
           values={{ currentPlan }}
         >
           You are currently on the {{ currentPlan }} plan. If you have any
           questions, please contact our&nbsp;
           <a
-            href="mailto:support@ezeslucky.info"
-            style={{ color: 'var(--nexio-link-color)' }}
+            href="mailto:support@toeverything.info"
+            style={{ color: 'var(--affine-link-color)' }}
           >
             customer support
           </a>
@@ -297,7 +294,7 @@ export const CloudPlans = () => {
       </p>
     )
   ) : (
-    <p>{t['com.nexio.payment.subtitle-not-signed-in']()}</p>
+    <p>{t['com.affine.payment.subtitle-not-signed-in']()}</p>
   );
 
   // toggle
@@ -306,12 +303,12 @@ export const CloudPlans = () => {
       <div>
         <div className={styles.recurringToggleRecurring}>
           <span>
-            {t['com.nexio.payment.cloud.pricing-plan.toggle-billed-yearly']()}
+            {t['com.affine.payment.cloud.pricing-plan.toggle-billed-yearly']()}
           </span>
         </div>
         {yearlyDiscount ? (
           <div className={styles.recurringToggleDiscount}>
-            {t['com.nexio.payment.cloud.pricing-plan.toggle-discount']({
+            {t['com.affine.payment.cloud.pricing-plan.toggle-discount']({
               discount: yearlyDiscount,
             })}
           </div>
@@ -340,8 +337,8 @@ export const CloudPlans = () => {
 
   const cloudSelect = (
     <div className={styles.cloudSelect}>
-      <b>{t['com.nexio.payment.cloud.pricing-plan.select.title']()}</b>
-      <span>{t['com.nexio.payment.cloud.pricing-plan.select.caption']()}</span>
+      <b>{t['com.affine.payment.cloud.pricing-plan.select.title']()}</b>
+      <span>{t['com.affine.payment.cloud.pricing-plan.select.caption']()}</span>
     </div>
   );
 
@@ -352,7 +349,7 @@ export const CloudPlans = () => {
       toggle={cloudToggle}
       scroll={cloudScroll}
       scrollRef={scrollWrapper as RefObject<HTMLDivElement>}
-      lifetime={isOnetimePro ? null : <LifetimePlan />}
+      lifetime={<LifetimePlan />}
     />
   );
 };

@@ -11,7 +11,7 @@ export default function VerifyChangeEmail(props: VerifyChangeEmailProps) {
       <Content>
         <P>
           You recently requested to change the email address associated with
-          your Nexio account. To complete this process, please click on the
+          your AFFiNE account. To complete this process, please click on the
           verification link below. This magic link will expire in 30 minutes.
         </P>
         <Button href={props.url}>Verify your new email address</Button>
@@ -21,5 +21,5 @@ export default function VerifyChangeEmail(props: VerifyChangeEmailProps) {
 }
 
 VerifyChangeEmail.PreviewProps = {
-  url: 'https://app.nexio.pro',
+  url: 'https://app.affine.pro',
 };

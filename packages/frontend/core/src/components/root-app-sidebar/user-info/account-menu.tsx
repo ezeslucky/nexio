@@ -1,20 +1,20 @@
-import { MenuItem } from '@nexio/component';
-import { ServerService, UserFeatureService } from '@nexio/core/modules/cloud';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+import { MenuItem } from '@affine/component';
+import { ServerService, UserFeatureService } from '@affine/core/modules/cloud';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import { AccountIcon, AdminIcon, SignOutIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
-import { useSignOut } from '../../hooks/nexio/use-sign-out';
+import { useSignOut } from '../../hooks/affine/use-sign-out';
 
 export const AccountMenu = () => {
   const workspaceDialogService = useService(WorkspaceDialogService);
   const openSignOutModal = useSignOut();
   const serverService = useService(ServerService);
   const userFeatureService = useService(UserFeatureService);
-  const isNEXIOAdmin = useLiveData(userFeatureService.userFeature.isAdmin$);
+  const isAFFiNEAdmin = useLiveData(userFeatureService.userFeature.isAdmin$);
 
   const onOpenAccountSetting = useCallback(() => {
     track.$.navigationPanel.profileAndBadge.openSettings({ to: 'account' });
@@ -40,15 +40,15 @@ export const AccountMenu = () => {
         data-testid="workspace-modal-account-settings-option"
         onClick={onOpenAccountSetting}
       >
-        {t['com.nexio.workspace.cloud.account.settings']()}
+        {t['com.affine.workspace.cloud.account.settings']()}
       </MenuItem>
-      {isNEXIOAdmin ? (
+      {isAFFiNEAdmin ? (
         <MenuItem
           prefixIcon={<AdminIcon />}
           data-testid="workspace-modal-account-admin-option"
           onClick={onOpenAdminPanel}
         >
-          {t['com.nexio.workspace.cloud.account.admin']()}
+          {t['com.affine.workspace.cloud.account.admin']()}
         </MenuItem>
       ) : null}
       <MenuItem
@@ -56,7 +56,7 @@ export const AccountMenu = () => {
         data-testid="workspace-modal-sign-out-option"
         onClick={openSignOutModal}
       >
-        {t['com.nexio.workspace.cloud.account.logout']()}
+        {t['com.affine.workspace.cloud.account.logout']()}
       </MenuItem>
     </>
   );

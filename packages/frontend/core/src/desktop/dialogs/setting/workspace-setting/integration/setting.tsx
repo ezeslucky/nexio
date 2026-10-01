@@ -1,4 +1,4 @@
-import { Switch } from '@nexio/component';
+import { Switch } from '@affine/component';
 import { DoneIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { HTMLAttributes, ReactNode } from 'react';
@@ -34,8 +34,7 @@ export const IntegrationSettingHeader = ({
 };
 
 // universal
-export interface IntegrationSettingItemProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface IntegrationSettingItemProps extends HTMLAttributes<HTMLDivElement> {
   name?: ReactNode;
   desc?: ReactNode;
 }

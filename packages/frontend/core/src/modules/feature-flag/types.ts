@@ -1,4 +1,4 @@
-import type { CanvasFlags } from '@canvas/nexio/shared/services';
+import type { BlockSuiteFlags } from '@blocksuite/affine/shared/services';
 
 type FeedbackType = 'discord' | 'email' | 'github';
 
@@ -15,10 +15,10 @@ export type FlagInfo = {
   feedbackLink?: string;
 } & (
   | {
-      category: 'nexio';
+      category: 'affine';
     }
   | {
-      category: 'canvas';
-      bsFlag: keyof CanvasFlags;
+      category: 'blocksuite';
+      bsFlag: keyof BlockSuiteFlags;
     }
 );

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-import { Path, ProjectRoot } from '@nexio-tools/utils/path';
+import { Path, ProjectRoot } from '@affine-tools/utils/path';
 import type { BrowserContext } from '@playwright/test';
 import { test as baseTest } from '@playwright/test';
 
@@ -44,7 +44,7 @@ export const test = baseTest.extend<{
           if (!(globalThis as any).currentWorkspace) {
             await new Promise<void>((resolve, reject) => {
               globalThis.addEventListener(
-                'nexio:workspace:change',
+                'affine:workspace:change',
                 () => resolve(),
                 {
                   once: true,
@@ -71,6 +71,14 @@ export const test = baseTest.extend<{
     await use(page);
   },
   context: async ({ context }, use) => {
+    // Force-mark the body so global.css knows we are in a test.
+    // This keeps animations ON (0.1s) for tests, but OFF (0ms) for battery users.
+    await context.addInitScript(() => {
+      window.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('playwright-test');
+      });
+    });
+
     // workaround for skipping onboarding redirect on the web
     await skipOnboarding(context);
 

@@ -1,16 +1,14 @@
 import { join } from 'node:path';
 import { setTimeout } from 'node:timers/promises';
 
-import {
-  app,
-  BrowserWindow,
-  type BrowserWindowConstructorOptions,
-} from 'electron';
+import { BrowserWindow, type BrowserWindowConstructorOptions } from 'electron';
 import { BehaviorSubject } from 'rxjs';
 
-import { popupViewUrl } from '../constants';
+import { popupViewUrl } from '../../shared/internal-origin';
 import { logger } from '../logger';
 import type { MainEventRegister, NamespaceHandlers } from '../type';
+import { buildWebPreferences } from '../web-preferences';
+import { ensureDockVisible } from './main-window';
 import { getCurrentDisplay } from './utils';
 
 type PopupWindowType = 'notification' | 'recording';
@@ -85,21 +83,18 @@ abstract class PopupWindow {
       visualEffectState: 'active',
       vibrancy: 'under-window',
       ...this.windowOptions,
-      webPreferences: {
-        ...this.windowOptions.webPreferences,
+      webPreferences: buildWebPreferences({
         webgl: true,
-        contextIsolation: true,
-        sandbox: false,
         transparent: true,
         spellcheck: false,
         preload: join(__dirname, './preload.js'), // this points to the bundled preload module
+        ...this.windowOptions.webPreferences,
         // serialize exposed meta that to be used in preload
         additionalArguments: await getAdditionalArguments(this.name),
-      },
+      }),
     });
 
-    // it seems that the dock will disappear when popup windows are shown
-    await app.dock?.show();
+    await ensureDockVisible();
 
     // required to make the window transparent
     browserWindow.setBackgroundColor('#00000000');

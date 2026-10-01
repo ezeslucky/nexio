@@ -3,13 +3,14 @@ use std::{
   ffi::OsString,
   os::windows::ffi::OsStringExt,
   sync::{
-    atomic::{AtomicBool, AtomicU32, Ordering},
     Arc, LazyLock, RwLock,
+    atomic::{AtomicBool, AtomicU32, Ordering},
   },
   thread,
   time::Duration,
 };
 
+use cpal::SampleRate;
 use napi::{
   bindgen_prelude::{Buffer, Error, Result, Status},
   threadsafe_function::{ThreadsafeFunction, ThreadsafeFunctionCallMode},
@@ -18,15 +19,16 @@ use napi_derive::napi;
 // Windows API imports
 use windows::Win32::Foundation::{CloseHandle, INVALID_HANDLE_VALUE}; // HWND removed
 use windows::Win32::System::{
-  Com::{CoInitializeEx, COINIT_MULTITHREADED},
+  Com::{COINIT_MULTITHREADED, CoInitializeEx},
   Diagnostics::ToolHelp::{
-    CreateToolhelp32Snapshot, Process32FirstW, Process32NextW, PROCESSENTRY32W, TH32CS_SNAPPROCESS,
+    CreateToolhelp32Snapshot, PROCESSENTRY32W, Process32FirstW, Process32NextW, TH32CS_SNAPPROCESS,
   },
   ProcessStatus::{GetModuleFileNameExW, GetProcessImageFileNameW},
   Threading::{OpenProcess, PROCESS_QUERY_INFORMATION, PROCESS_VM_READ},
 };
 
 // Import the function from microphone_listener
+use crate::audio_callback::AudioCallback;
 use crate::windows::microphone_listener::is_process_actively_using_microphone;
 
 // Type alias to match macOS API
@@ -34,20 +36,17 @@ pub type AudioObjectID = u32;
 
 // Global storage for running applications (Windows equivalent of macOS audio
 // process list)
-static RUNNING_APPLICATIONS: LazyLock<RwLock<Vec<u32>>> =
-  LazyLock::new(|| RwLock::new(get_running_processes()));
+static RUNNING_APPLICATIONS: LazyLock<RwLock<Vec<u32>>> = LazyLock::new(|| RwLock::new(get_running_processes()));
 
 // Simple counter for generating unique handles
 static NEXT_HANDLE: AtomicU32 = AtomicU32::new(1);
 
 // Global storage for active watchers
-static ACTIVE_APP_WATCHERS: LazyLock<
-  RwLock<Vec<(u32, u32, Arc<ThreadsafeFunction<(), ()>>, Arc<AtomicBool>)>>,
-> = LazyLock::new(|| RwLock::new(Vec::new()));
+static ACTIVE_APP_WATCHERS: LazyLock<RwLock<Vec<(u32, u32, Arc<ThreadsafeFunction<(), ()>>, Arc<AtomicBool>)>>> =
+  LazyLock::new(|| RwLock::new(Vec::new()));
 
-static ACTIVE_LIST_WATCHERS: LazyLock<
-  RwLock<Vec<(u32, Arc<ThreadsafeFunction<(), ()>>, Arc<AtomicBool>)>>,
-> = LazyLock::new(|| RwLock::new(Vec::new()));
+static ACTIVE_LIST_WATCHERS: LazyLock<RwLock<Vec<(u32, Arc<ThreadsafeFunction<(), ()>>, Arc<AtomicBool>)>>> =
+  LazyLock::new(|| RwLock::new(Vec::new()));
 
 // Plain struct for efficient transmission via napi-rs
 #[napi]
@@ -103,10 +102,7 @@ impl ApplicationListChangedSubscriber {
   #[napi]
   pub fn unsubscribe(&self) -> Result<()> {
     if let Ok(mut watchers) = ACTIVE_LIST_WATCHERS.write() {
-      if let Some(pos) = watchers
-        .iter()
-        .position(|(handle, _, _)| *handle == self.handle)
-      {
+      if let Some(pos) = watchers.iter().position(|(handle, _, _)| *handle == self.handle) {
         let (_, _, should_stop) = &watchers[pos];
         should_stop.store(true, Ordering::Relaxed);
         watchers.remove(pos);
@@ -132,10 +128,7 @@ impl ApplicationStateChangedSubscriber {
   #[napi]
   pub fn unsubscribe(&self) {
     if let Ok(mut watchers) = ACTIVE_APP_WATCHERS.write() {
-      if let Some(pos) = watchers
-        .iter()
-        .position(|(handle, _, _, _)| *handle == self.handle)
-      {
+      if let Some(pos) = watchers.iter().position(|(handle, _, _, _)| *handle == self.handle) {
         let (_, _, _, should_stop) = &watchers[pos];
         should_stop.store(true, Ordering::Relaxed);
         watchers.remove(pos);
@@ -152,9 +145,7 @@ pub struct ShareableContent {
 #[napi]
 impl ShareableContent {
   #[napi]
-  pub fn on_application_list_changed(
-    callback: ThreadsafeFunction<(), ()>,
-  ) -> Result<ApplicationListChangedSubscriber> {
+  pub fn on_application_list_changed(callback: ThreadsafeFunction<(), ()>) -> Result<ApplicationListChangedSubscriber> {
     let handle = NEXT_HANDLE.fetch_add(1, Ordering::Relaxed);
     let callback_arc = Arc::new(callback);
 
@@ -189,25 +180,20 @@ impl ShareableContent {
   #[napi(constructor)]
   pub fn new() -> Self {
     unsafe {
-      CoInitializeEx(None, COINIT_MULTITHREADED)
-        .ok()
-        .unwrap_or_else(|_| {
-          // COM initialization failed, but we can't return an error from
-          // constructor This is typically not fatal as COM might
-          // already be initialized
-        });
+      CoInitializeEx(None, COINIT_MULTITHREADED).ok().unwrap_or_else(|_| {
+        // COM initialization failed, but we can't return an error from
+        // constructor This is typically not fatal as COM might
+        // already be initialized
+      });
     }
     Self {}
   }
 
   #[napi]
   pub fn applications() -> Result<Vec<ApplicationInfo>> {
-    let processes = RUNNING_APPLICATIONS.read().map_err(|_| {
-      Error::new(
-        Status::GenericFailure,
-        "Failed to read running applications",
-      )
-    })?;
+    let processes = RUNNING_APPLICATIONS
+      .read()
+      .map_err(|_| Error::new(Status::GenericFailure, "Failed to read running applications"))?;
 
     let mut apps = Vec::new();
     for &process_id in processes.iter() {
@@ -230,24 +216,24 @@ impl ShareableContent {
     }
   }
 
-  #[napi]
-  pub fn tap_audio(
-    _process_id: u32, // Currently unused - Windows captures global audio
-    audio_stream_callback: ThreadsafeFunction<napi::bindgen_prelude::Float32Array, ()>,
+  pub(crate) fn tap_audio_with_callback(
+    _process_id: u32,
+    audio_stream_callback: AudioCallback,
+    target_sample_rate: Option<u32>,
   ) -> Result<AudioCaptureSession> {
-    // On Windows with CPAL, we capture global audio (mic + loopback)
-    // since per-application audio tapping isn't supported the same way as macOS
-    crate::windows::audio_capture::start_recording(audio_stream_callback)
+    let target = target_sample_rate.map(SampleRate);
+    crate::windows::audio_capture::start_recording(audio_stream_callback, target)
   }
 
-  #[napi]
-  pub fn tap_global_audio(
+  pub(crate) fn tap_global_audio_with_callback(
     _excluded_processes: Option<Vec<&ApplicationInfo>>,
-    audio_stream_callback: ThreadsafeFunction<napi::bindgen_prelude::Float32Array, ()>,
+    audio_stream_callback: AudioCallback,
+    target_sample_rate: Option<u32>,
   ) -> Result<AudioCaptureSession> {
+    let target = target_sample_rate.map(SampleRate);
     // Delegate to audio_capture::start_recording which handles mixing mic +
     // loopback
-    crate::windows::audio_capture::start_recording(audio_stream_callback)
+    crate::windows::audio_capture::start_recording(audio_stream_callback, target)
   }
 
   #[napi]
@@ -284,7 +270,8 @@ fn get_running_processes() -> Vec<u32> {
     let h_snapshot = match h_snapshot_result {
       Ok(handle) => {
         if handle == INVALID_HANDLE_VALUE {
-          // eprintln!("CreateToolhelp32Snapshot returned INVALID_HANDLE_VALUE");
+          // eprintln!("CreateToolhelp32Snapshot returned
+          // INVALID_HANDLE_VALUE");
           return Vec::new();
         }
         handle
@@ -326,8 +313,7 @@ fn is_process_running(process_id: u32) -> bool {
 
 fn get_process_name(pid: u32) -> Option<String> {
   unsafe {
-    let process_handle =
-      OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pid).ok()?;
+    let process_handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pid).ok()?;
     // Allocate a buffer large enough to hold extended-length paths (up to ~32K
     // characters) instead of the legacy MAX_PATH (260) limit. 32 768 is the
     // maximum length supported by the Win32 APIs when the path is prefixed
@@ -352,8 +338,7 @@ fn get_process_name(pid: u32) -> Option<String> {
 
 fn get_process_executable_path(pid: u32) -> Option<String> {
   unsafe {
-    let process_handle =
-      OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pid).ok()?;
+    let process_handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, false, pid).ok()?;
     // Use a buffer that can hold extended-length paths. See rationale above.
     let mut buffer: Vec<u16> = std::iter::repeat(0).take(32_768).collect();
 
@@ -372,11 +357,7 @@ fn get_process_executable_path(pid: u32) -> Option<String> {
 }
 
 // Helper function to start monitoring a specific process
-fn start_process_monitoring(
-  handle: u32,
-  process_id: u32,
-  callback: Arc<ThreadsafeFunction<(), ()>>,
-) {
+fn start_process_monitoring(handle: u32, process_id: u32, callback: Arc<ThreadsafeFunction<(), ()>>) {
   let should_stop = Arc::new(AtomicBool::new(false));
   let should_stop_clone = should_stop.clone();
 

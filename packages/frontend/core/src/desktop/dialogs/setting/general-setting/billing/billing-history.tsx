@@ -1,15 +1,15 @@
-import { Button, Loading } from '@nexio/component';
+import { Button, Loading } from '@affine/component';
 import {
   Pagination,
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { InvoicesService } from '@nexio/core/modules/cloud';
-import { UrlService } from '@nexio/core/modules/url';
-import { UserFriendlyError } from '@nexio/error';
-import { type InvoicesQuery, InvoiceStatus } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component/setting-components';
+import { InvoicesService } from '@affine/core/modules/cloud';
+import { UrlService } from '@affine/core/modules/url';
+import { UserFriendlyError } from '@affine/error';
+import { type InvoicesQuery, InvoiceStatus } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';
 
@@ -56,11 +56,14 @@ export const BillingHistory = () => {
       <div className={styles.historyContent}>
         {invoiceCount === 0 ? (
           <p className={styles.noInvoice}>
-            {t['com.nexio.payment.billing-setting.no-invoice']()}
+            {t['com.affine.payment.billing-setting.no-invoice']()}
           </p>
         ) : (
-          pageInvoices?.map(invoice => (
-            <InvoiceLine key={invoice.id} invoice={invoice} />
+          pageInvoices?.map((invoice, index) => (
+            <InvoiceLine
+              key={`${invoice.createdAt}:${invoice.status}:${invoice.amount}:${index}`}
+              invoice={invoice}
+            />
           ))
         )}
       </div>
@@ -93,16 +96,15 @@ const InvoiceLine = ({
 
   return (
     <SettingRow
-      key={invoice.id}
       name={new Date(invoice.createdAt).toLocaleDateString()}
       desc={`${
         invoice.status === InvoiceStatus.Paid
-          ? t['com.nexio.payment.billing-setting.paid']()
+          ? t['com.affine.payment.billing-setting.paid']()
           : ''
       } $${invoice.amount / 100}`}
     >
       <Button onClick={open}>
-        {t['com.nexio.payment.billing-setting.view-invoice']()}
+        {t['com.affine.payment.billing-setting.view-invoice']()}
       </Button>
     </SettingRow>
   );
@@ -111,7 +113,7 @@ const InvoiceLine = ({
 const BillingHistorySkeleton = () => {
   const t = useI18n();
   return (
-    <SettingWrapper title={t['com.nexio.payment.billing-setting.history']()}>
+    <SettingWrapper title={t['com.affine.payment.billing-setting.history']()}>
       <div className={styles.billingHistorySkeleton}>
         <Loading />
       </div>

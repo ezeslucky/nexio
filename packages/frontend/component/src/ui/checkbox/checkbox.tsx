@@ -73,7 +73,7 @@ export const Checkbox = ({
       {icon}
       <input
         ref={inputRef}
-        data-testid="nexio-checkbox"
+        data-testid="affine-checkbox"
         className={clsx(styles.input, inputClassName)}
         type="checkbox"
         value={checked ? 'on' : 'off'}
@@ -93,7 +93,7 @@ export const Checkbox = ({
 
 export const playCheckAnimation = async (refElement: Element) => {
   const sparkingEl = document.createElement('div');
-  sparkingEl.classList.add('nexio-check-animation');
+  sparkingEl.classList.add('affine-check-animation');
   sparkingEl.style.cssText = `
     position: absolute;
     width: 1em;

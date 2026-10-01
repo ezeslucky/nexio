@@ -1,4 +1,4 @@
-import type { AsyncMemento, Memento } from '@ezeslucky/infra';
+import type { AsyncMemento, Memento } from '@toeverything/infra';
 import EventEmitter2 from 'eventemitter2';
 import { type IDBPDatabase, openDB } from 'idb';
 import { Observable } from 'rxjs';
@@ -156,7 +156,7 @@ export class AsyncStorageMemento implements AsyncMemento {
       this.eventEmitter.on(key, eventEmitterCb);
 
       // Listen for cross-tab events
-      // eslint-disable-next-line sonarjs/no-identical-functions
+      // oxlint-disable-next-line sonarjs/no-identical-functions
       const channelCb = (event: MessageEvent) => {
         if (event.data.key === key) {
           subscriber.next(event.data.value);

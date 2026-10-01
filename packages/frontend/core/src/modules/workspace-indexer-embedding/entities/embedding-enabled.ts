@@ -1,4 +1,4 @@
-import type { WorkspaceService } from '@nexio/core/modules/workspace';
+import type { WorkspaceService } from '@affine/core/modules/workspace';
 import { logger } from '@sentry/react';
 import {
   catchErrorInto,
@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { EMPTY } from 'rxjs';
 import { exhaustMap, mergeMap } from 'rxjs/operators';
 

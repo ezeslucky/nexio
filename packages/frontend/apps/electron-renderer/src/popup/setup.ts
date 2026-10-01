@@ -1,2 +1,2 @@
-import '@nexio/core/bootstrap/electron';
-import '@nexio/component/theme';
+import '@affine/core/bootstrap/electron';
+import '@affine/component/theme';

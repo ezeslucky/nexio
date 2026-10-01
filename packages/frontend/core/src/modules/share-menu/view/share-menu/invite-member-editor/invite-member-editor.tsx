@@ -6,20 +6,20 @@ import {
   MenuTrigger,
   notify,
   RowInput,
-} from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+} from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
 import {
   DocGrantedUsersService,
   type Member,
   MemberSearchService,
-} from '@nexio/core/modules/permissions';
-import { UserFriendlyError } from '@nexio/error';
-import { DocRole, WorkspaceMemberStatus } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/core/modules/permissions';
+import { UserFriendlyError } from '@affine/error';
+import { DocRole, WorkspaceMemberStatus } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { debounce } from 'lodash-es';
 import {
@@ -41,11 +41,11 @@ import { SelectedMemberItem } from './selected-member-item';
 const getRoleName = (role: DocRole, t: ReturnType<typeof useI18n>) => {
   switch (role) {
     case DocRole.Manager:
-      return t['com.nexio.share-menu.option.permission.can-manage']();
+      return t['com.affine.share-menu.option.permission.can-manage']();
     case DocRole.Editor:
-      return t['com.nexio.share-menu.option.permission.can-edit']();
+      return t['com.affine.share-menu.option.permission.can-edit']();
     case DocRole.Reader:
-      return t['com.nexio.share-menu.option.permission.can-read']();
+      return t['com.affine.share-menu.option.permission.can-read']();
     default:
       return '';
   }
@@ -188,7 +188,7 @@ export const InviteMemberEditor = ({
     <div className={styles.containerStyle}>
       <div className={styles.headerStyle} onClick={onClickCancel}>
         <ArrowLeftBigIcon className={styles.iconStyle} />
-        {t['com.nexio.share-menu.invite-editor.header']()}
+        {t['com.affine.share-menu.invite-editor.header']()}
       </div>
       <div className={styles.memberListStyle}>
         <div
@@ -224,7 +224,7 @@ export const InviteMemberEditor = ({
               placeholder={
                 selectedMembers.length
                   ? ''
-                  : t['com.nexio.share-menu.invite-editor.placeholder']()
+                  : t['com.affine.share-menu.invite-editor.placeholder']()
               }
             />
           </div>
@@ -246,7 +246,7 @@ export const InviteMemberEditor = ({
           className={styles.manageMemberStyle}
           onClick={switchToMemberManagementTab}
         >
-          {t['com.nexio.share-menu.invite-editor.manage-members']()}
+          {t['com.affine.share-menu.invite-editor.manage-members']()}
         </span>
         <div className={styles.buttonsContainer}>
           <Button className={styles.button} onClick={onClickCancel}>
@@ -258,7 +258,7 @@ export const InviteMemberEditor = ({
             disabled={!selectedMembers.length}
             onClick={onInvite}
           >
-            {t['com.nexio.share-menu.invite-editor.invite']()}
+            {t['com.affine.share-menu.invite-editor.invite']()}
           </Button>
         </div>
       </div>
@@ -305,7 +305,7 @@ const Result = ({
     }
     return (
       <div className={styles.noFound}>
-        {t['com.nexio.share-menu.invite-editor.no-found']()}
+        {t['com.affine.share-menu.invite-editor.no-found']()}
       </div>
     );
   }
@@ -375,14 +375,14 @@ const RoleSelector = ({
               onSelect={changeToAdmin}
               selected={inviteDocRoleType === DocRole.Manager}
             >
-              {t['com.nexio.share-menu.option.permission.can-manage']()}
+              {t['com.affine.share-menu.option.permission.can-manage']()}
             </MenuItem>
             <MenuItem
               onSelect={changeToWrite}
               selected={inviteDocRoleType === DocRole.Editor}
             >
               <div className={styles.planTagContainer}>
-                {t['com.nexio.share-menu.option.permission.can-edit']()}
+                {t['com.affine.share-menu.option.permission.can-edit']()}
                 {hittingPaywall ? <PlanTag /> : null}
               </div>
             </MenuItem>
@@ -391,7 +391,7 @@ const RoleSelector = ({
               selected={inviteDocRoleType === DocRole.Reader}
             >
               <div className={styles.planTagContainer}>
-                {t['com.nexio.share-menu.option.permission.can-read']()}
+                {t['com.affine.share-menu.option.permission.can-read']()}
                 {hittingPaywall ? <PlanTag /> : null}
               </div>
             </MenuItem>

@@ -41,7 +41,7 @@ const snapshot: Snapshot = {
   id: 'doc1',
   blob: Uint8Array.from([1, 0]),
   state: Uint8Array.from([0]),
-  seq: 0,
+  size: BigInt(2),
   updatedAt: new Date(),
   createdAt: new Date(),
   createdBy: null,
@@ -56,6 +56,21 @@ function getSnapshot(timestamp: number = Date.now()): DocRecord {
     timestamp,
   };
 }
+
+test('history max age converts quota seconds to milliseconds', async t => {
+  Sinon.restore();
+  const options = m.get(DocStorageOptions);
+  // @ts-expect-error private service boundary is asserted here
+  Sinon.stub(options.quota, 'getWorkspaceQuota').resolves({
+    name: 'Pro',
+    blobLimit: 1,
+    storageQuota: 1,
+    historyPeriod: 30,
+    memberLimit: 1,
+  });
+
+  t.is(await options.historyMaxAge('1'), 30_000);
+});
 
 test('should create doc history if never created before', async t => {
   // @ts-expect-error private method

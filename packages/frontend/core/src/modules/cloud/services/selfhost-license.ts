@@ -1,4 +1,4 @@
-import type { License } from '@nexio/graphql';
+import type { License } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +9,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { tap } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

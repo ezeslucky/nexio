@@ -11,7 +11,7 @@ yarn
 ### Build Native binding
 
 ```bash
-yarn nexio @nexio/server-native build
+yarn affine @affine/server-native build
 ```
 
 ### Run server

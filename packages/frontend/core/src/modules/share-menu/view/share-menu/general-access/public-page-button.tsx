@@ -1,16 +1,17 @@
-import { Menu, MenuItem, MenuTrigger, notify } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { ShareInfoService } from '@nexio/core/modules/share-doc';
-import { UserFriendlyError } from '@nexio/error';
-import { PublicDocMode } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+import { Menu, MenuItem, MenuTrigger, notify } from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { EditorService } from '@affine/core/modules/editor';
+import { ShareInfoService } from '@affine/core/modules/share-doc';
+import { UserFriendlyError } from '@affine/error';
+import { PublicDocMode } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   LockIcon,
   SingleSelectCheckSolidIcon,
   ViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import { useEffect } from 'react';
@@ -19,11 +20,13 @@ import * as styles from './styles.css';
 
 export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
   const t = useI18n();
+  const editorService = useService(EditorService);
   const shareInfoService = useService(ShareInfoService);
   const isSharedPage = useLiveData(shareInfoService.shareInfo.isShared$);
   const isRevalidating = useLiveData(
     shareInfoService.shareInfo.isRevalidating$
   );
+  const currentMode = useLiveData(editorService.editor.mode$);
 
   useEffect(() => {
     shareInfoService.shareInfo.revalidate();
@@ -35,22 +38,22 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
       notify.error({
         title:
           t[
-            'com.nexio.share-menu.disable-publish-link.notification.success.title'
+            'com.affine.share-menu.disable-publish-link.notification.success.title'
           ](),
         message:
           t[
-            'com.nexio.share-menu.disable-publish-link.notification.success.message'
+            'com.affine.share-menu.disable-publish-link.notification.success.message'
           ](),
       });
     } catch (err) {
       notify.error({
         title:
           t[
-            'com.nexio.share-menu.disable-publish-link.notification.fail.title'
+            'com.affine.share-menu.disable-publish-link.notification.fail.title'
           ](),
         message:
           t[
-            'com.nexio.share-menu.disable-publish-link.notification.fail.message'
+            'com.affine.share-menu.disable-publish-link.notification.fail.message'
           ](),
       });
       console.log(err);
@@ -63,16 +66,18 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
     }
     try {
       // TODO(@JimmFly): remove mode when we have a better way to handle it
-      await shareInfoService.shareInfo.enableShare(PublicDocMode.Page);
+      await shareInfoService.shareInfo.enableShare(
+        currentMode === 'edgeless' ? PublicDocMode.Edgeless : PublicDocMode.Page
+      );
       track.$.sharePanel.$.createShareLink();
       notify.success({
         title:
           t[
-            'com.nexio.share-menu.create-public-link.notification.success.title'
+            'com.affine.share-menu.create-public-link.notification.success.title'
           ](),
         message:
           t[
-            'com.nexio.share-menu.create-public-link.notification.success.message'
+            'com.affine.share-menu.create-public-link.notification.success.message'
           ](),
         style: 'normal',
         icon: <SingleSelectCheckSolidIcon color={cssVar('primaryColor')} />,
@@ -84,19 +89,19 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
         message: err.message,
       });
     }
-  }, [isSharedPage, shareInfoService.shareInfo, t]);
+  }, [currentMode, isSharedPage, shareInfoService.shareInfo, t]);
 
   return (
     <div className={styles.rowContainerStyle}>
       <div className={styles.labelStyle}>
-        {t['com.nexio.share-menu.option.link.label']()}
+        {t['com.affine.share-menu.option.link.label']()}
       </div>
       {disabled ? (
         <div className={clsx(styles.menuTriggerStyle, 'disable')}>
           <div className={styles.menuTriggerText}>
             {isSharedPage
-              ? t['com.nexio.share-menu.option.link.readonly']()
-              : t['com.nexio.share-menu.option.link.no-access']()}
+              ? t['com.affine.share-menu.option.link.readonly']()
+              : t['com.affine.share-menu.option.link.no-access']()}
           </div>
         </div>
       ) : (
@@ -113,7 +118,7 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
               >
                 <div className={styles.publicItemRowStyle}>
                   <div>
-                    {t['com.nexio.share-menu.option.link.no-access']()}
+                    {t['com.affine.share-menu.option.link.no-access']()}
                   </div>
                 </div>
               </MenuItem>
@@ -124,7 +129,7 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
                 selected={!!isSharedPage}
               >
                 <div className={styles.publicItemRowStyle}>
-                  <div>{t['com.nexio.share-menu.option.link.readonly']()}</div>
+                  <div>{t['com.affine.share-menu.option.link.readonly']()}</div>
                 </div>
               </MenuItem>
             </>
@@ -142,8 +147,8 @@ export const PublicDoc = ({ disabled }: { disabled?: boolean }) => {
             disabled={isRevalidating}
           >
             {isSharedPage
-              ? t['com.nexio.share-menu.option.link.readonly']()
-              : t['com.nexio.share-menu.option.link.no-access']()}
+              ? t['com.affine.share-menu.option.link.readonly']()
+              : t['com.affine.share-menu.option.link.no-access']()}
           </MenuTrigger>
         </Menu>
       )}

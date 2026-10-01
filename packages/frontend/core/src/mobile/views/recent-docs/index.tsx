@@ -1,15 +1,15 @@
-import { useCanvasDocMeta } from '@nexio/core/components/hooks/use-block-suite-page-meta';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useService } from '@ezeslucky/infra';
+import { useBlockSuiteDocMeta } from '@affine/core/components/hooks/use-block-suite-page-meta';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 
 import { DocCard } from '../../components/doc-card';
-import { CollapsibleSection } from '../../components/navigation';
+import { CollapsibleSection } from '../../components/navigation/layouts/collapsible-section';
 import * as styles from './styles.css';
 
 export const RecentDocs = ({ max = 5 }: { max?: number }) => {
   const workspace = useService(WorkspaceService).workspace;
-  const allPageMetas = useCanvasDocMeta(workspace.docCollection);
+  const allPageMetas = useBlockSuiteDocMeta(workspace.docCollection);
 
   const cardMetas = useMemo(() => {
     return [...allPageMetas]

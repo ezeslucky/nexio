@@ -2,7 +2,7 @@ import {
   generateFractionalIndexingKeyBetween,
   LiveData,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 
 import type {
   PinnedCollectionRecord,

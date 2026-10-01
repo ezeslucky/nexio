@@ -1,5 +1,5 @@
-import { track } from '@nexio/track';
-import { Service } from '@ezeslucky/infra';
+import { track } from '@affine/track';
+import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';
 import type { WorkbenchService } from '../../workbench';
@@ -116,7 +116,7 @@ export class CMDKQuickSearchService extends Service {
         },
         {
           placeholder: {
-            i18nKey: 'com.nexio.cmdk.docs.placeholder',
+            i18nKey: 'com.affine.cmdk.docs.placeholder',
           },
         }
       );

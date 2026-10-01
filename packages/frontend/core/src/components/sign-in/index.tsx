@@ -1,6 +1,6 @@
-import { DefaultServerService, type Server } from '@nexio/core/modules/cloud';
-import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
-import { FrameworkScope, useService } from '@ezeslucky/infra';
+import { DefaultServerService, type Server } from '@affine/core/modules/cloud';
+import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
+import { FrameworkScope, useService } from '@toeverything/infra';
 import { useState } from 'react';
 
 import { AddSelfhostedStep } from './add-selfhosted';
@@ -28,11 +28,13 @@ export const SignInPanel = ({
   server: initialServerBaseUrl,
   initStep,
   onAuthenticated,
+  redirectUrl,
 }: {
   onAuthenticated?: (status: AuthSessionStatus) => void;
   onSkip: () => void;
   server?: string;
   initStep?: SignInStep | undefined;
+  redirectUrl?: string;
 }) => {
   const [state, setState] = useState<SignInState>({
     step: initStep
@@ -41,6 +43,7 @@ export const SignInPanel = ({
         ? 'addSelfhosted'
         : 'signIn',
     initialServerBaseUrl: initialServerBaseUrl,
+    redirectUrl,
   });
 
   const defaultServerService = useService(DefaultServerService);

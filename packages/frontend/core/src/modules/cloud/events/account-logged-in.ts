@@ -1,4 +1,4 @@
-import { createEvent } from '@ezeslucky/infra';
+import { createEvent } from '@toeverything/infra';
 
 import type { AuthAccountInfo } from '../entities/session';
 

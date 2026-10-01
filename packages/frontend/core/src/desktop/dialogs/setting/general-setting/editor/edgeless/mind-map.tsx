@@ -3,14 +3,14 @@ import {
   MenuTrigger,
   RadioGroup,
   type RadioItem,
-} from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import { useI18n } from '@nexio/i18n';
-import { getSurfaceBlock } from '@canvas/nexio/blocks/surface';
-import { LayoutType, MindmapStyle } from '@canvas/nexio/model';
-import type { Store } from '@canvas/nexio/store';
-import { useFramework, useLiveData } from '@ezeslucky/infra';
+} from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import { useI18n } from '@affine/i18n';
+import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
+import { LayoutType, MindmapStyle } from '@blocksuite/affine/model';
+import type { Store } from '@blocksuite/affine/store';
+import { useFramework, useLiveData } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { DropdownMenu } from '../menu';
@@ -57,21 +57,21 @@ export const MindMapSettings = () => {
         value: LayoutType.LEFT as any,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.mind-map.layout.left'
+            'com.affine.settings.editorSettings.edgeless.mind-map.layout.left'
           ](),
       },
       {
         value: LayoutType.BALANCE as any,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.mind-map.layout.radial'
+            'com.affine.settings.editorSettings.edgeless.mind-map.layout.radial'
           ](),
       },
       {
         value: LayoutType.RIGHT as any,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.mind-map.layout.right'
+            'com.affine.settings.editorSettings.edgeless.mind-map.layout.right'
           ](),
       },
     ],
@@ -101,14 +101,14 @@ export const MindMapSettings = () => {
   return (
     <>
       <EdgelessSnapshot
-        title={t['com.nexio.settings.editorSettings.edgeless.mind-map']()}
+        title={t['com.affine.settings.editorSettings.edgeless.mind-map']()}
         docName="mindmap"
         keyName={'mindmap' as any}
         getElements={getElements}
         height={320}
       />
       <SettingRow
-        name={t['com.nexio.settings.editorSettings.edgeless.style']()}
+        name={t['com.affine.settings.editorSettings.edgeless.style']()}
         desc={''}
       >
         <DropdownMenu
@@ -122,7 +122,7 @@ export const MindMapSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.mind-map.layout'
+          'com.affine.settings.editorSettings.edgeless.mind-map.layout'
         ]()}
         desc={''}
       >

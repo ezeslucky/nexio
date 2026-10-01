@@ -1,15 +1,20 @@
-import { Button, notify, Skeleton, Tooltip } from '@nexio/component';
-import { Loading } from '@nexio/component/ui/loading';
-import { useSystemOnline } from '@nexio/core/components/hooks/use-system-online';
-import { useWorkspace } from '@nexio/core/components/hooks/use-workspace';
-import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
+import { Button, notify, Skeleton, Tooltip } from '@affine/component';
+import { Loading } from '@affine/component/ui/loading';
+import { useSystemOnline } from '@affine/core/components/hooks/use-system-online';
+import { useWorkspace } from '@affine/core/components/hooks/use-workspace';
+import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import {
+  getSelfHostedServerName,
+  ServersService,
+} from '@affine/core/modules/cloud';
 import {
   type WorkspaceMetadata,
   type WorkspaceProfileInfo,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
+import { ServerDeploymentType } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,
@@ -18,28 +23,30 @@ import {
   InformationFillDuotoneIcon,
   LocalWorkspaceIcon,
   NoNetworkIcon,
+  SelfhostIcon,
   SettingsIcon,
   TeamWorkspaceIcon,
   UnsyncIcon,
 } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
+import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 
-import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
+import { useAsyncCallback } from '../../hooks/affine-async-hooks';
 import { useCatchEventCallback } from '../../hooks/use-catch-event-hook';
 import { useNavigateHelper } from '../../hooks/use-navigate-helper';
 import { WorkspaceAvatar } from '../../workspace-avatar';
 import * as styles from './styles.css';
 export { PureWorkspaceCard } from './pure-workspace-card';
 
-const CloudWorkspaceStatus = () => {
+const RemoteWorkspaceStatus = ({ selfHosted }: { selfHosted?: boolean }) => {
+  const Icon = selfHosted ? SelfhostIcon : CloudWorkspaceIcon;
   return (
     <>
-      <CloudWorkspaceIcon />
-      Cloud
+      <Icon />
+      {selfHosted ? 'Nexio' : 'Cloud'}
     </>
   );
 };
@@ -87,6 +94,19 @@ const OfflineStatus = () => {
 const useSyncEngineSyncProgress = (meta: WorkspaceMetadata) => {
   const isOnline = useSystemOnline();
   const workspace = useWorkspace(meta);
+  const serversService = useService(ServersService);
+  const server = useLiveData(
+    useMemo(
+      () => serversService.server$(meta.flavour),
+      [meta.flavour, serversService]
+    )
+  );
+  const serverConfig = useLiveData(server?.config$);
+  const isSelfHostedServer =
+    serverConfig?.type === ServerDeploymentType.Selfhosted;
+  const syncTarget = isSelfHostedServer
+    ? getSelfHostedServerName(serverConfig.serverName)
+    : 'Nexio Cloud';
 
   const engineState = useLiveData(
     useMemo(() => {
@@ -120,10 +140,10 @@ const useSyncEngineSyncProgress = (meta: WorkspaceMetadata) => {
     content = 'Sync disconnected due to unexpected issues, reconnecting.';
   } else if (syncing) {
     content =
-      `Syncing with NEXIO Cloud` +
+      `Syncing with ${syncTarget}` +
       (progress ? ` (${Math.floor(progress * 100)}%)` : '');
   } else {
-    content = 'Synced with NEXIO Cloud';
+    content = `Synced with ${syncTarget}`;
   }
 
   const CloudWorkspaceSyncStatus = () => {
@@ -134,7 +154,7 @@ const useSyncEngineSyncProgress = (meta: WorkspaceMetadata) => {
     } else if (engineState.syncRetrying) {
       return UnSyncWorkspaceStatus();
     } else {
-      return CloudWorkspaceStatus();
+      return <RemoteWorkspaceStatus selfHosted={isSelfHostedServer} />;
     }
   };
 
@@ -185,6 +205,19 @@ const WorkspaceSyncInfo = ({
 }) => {
   const syncStatus = useSyncEngineSyncProgress(workspaceMetadata);
   const isCloud = workspaceMetadata.flavour !== 'local';
+  const serversService = useService(ServersService);
+  const server = useLiveData(
+    useMemo(
+      () =>
+        workspaceMetadata.flavour === 'local'
+          ? null
+          : serversService.server$(workspaceMetadata.flavour),
+      [serversService, workspaceMetadata.flavour]
+    )
+  );
+  const serverConfig = useLiveData(server?.config$);
+  const isSelfHostedServer =
+    serverConfig?.type === ServerDeploymentType.Selfhosted;
   const { paused, pause } = usePauseAnimation();
 
   // to make sure that animation will play first time
@@ -226,7 +259,11 @@ const WorkspaceSyncInfo = ({
           </div>
           {!dense ? (
             <div className={styles.workspaceStatus}>
-              {isCloud ? <CloudWorkspaceStatus /> : <LocalWorkspaceStatus />}
+              {isCloud ? (
+                <RemoteWorkspaceStatus selfHosted={isSelfHostedServer} />
+              ) : (
+                <LocalWorkspaceStatus />
+              )}
             </div>
           ) : null}
         </div>
@@ -378,13 +415,13 @@ export const WorkspaceCard = forwardRef<
         <div className={styles.suffixIcons}>
           {hideCollaborationIcon || information?.isOwner ? null : (
             <Tooltip
-              content={t['com.nexio.settings.workspace.state.joined']()}
+              content={t['com.affine.settings.workspace.state.joined']()}
             >
               <CollaborationIcon className={styles.collaborationIcon} />
             </Tooltip>
           )}
           {hideTeamWorkspaceIcon || !information?.isTeam ? null : (
-            <Tooltip content={t['com.nexio.settings.workspace.state.team']()}>
+            <Tooltip content={t['com.affine.settings.workspace.state.team']()}>
               <TeamWorkspaceIcon className={styles.collaborationIcon} />
             </Tooltip>
           )}

@@ -1,4 +1,4 @@
-import type { DateCell } from '@nexio/component';
+import type { DateCell } from '@affine/component';
 import {
   DatePicker,
   IconButton,
@@ -7,32 +7,35 @@ import {
   MenuSeparator,
   Scrollable,
   useConfirmModal,
-} from '@nexio/component';
-import { Guard } from '@nexio/core/components/guard';
-import { MoveToTrash } from '@nexio/core/components/page-list';
+} from '@affine/component';
+import { Guard } from '@affine/core/components/guard';
+import { MoveToTrash } from '@affine/core/components/page-list';
+import { WorkspaceServerService } from '@affine/core/modules/cloud';
 import {
   type DocRecord,
   DocService,
   DocsService,
-} from '@nexio/core/modules/doc';
-import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
-import { JournalService } from '@nexio/core/modules/journal';
+} from '@affine/core/modules/doc';
+import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { IntegrationService } from '@affine/core/modules/integration';
+import { JournalService } from '@affine/core/modules/journal';
 import {
+  ViewService,
   WorkbenchLink,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/workbench';
+import { useI18n } from '@affine/i18n';
 import { CalendarXmarkIcon, EditIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import dayjs from 'dayjs';
 import type { HTMLAttributes, PropsWithChildren, ReactNode } from 'react';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { CalendarEvents } from './calendar-events';
 import * as styles from './journal.css';
@@ -49,8 +52,10 @@ const CountDisplay = ({
 }: { count: number; max?: number } & HTMLAttributes<HTMLSpanElement>) => {
   return <span {...attrs}>{count > max ? `${max}+` : count}</span>;
 };
-interface PageItemProps
-  extends Omit<HTMLAttributes<HTMLAnchorElement>, 'onClick'> {
+interface PageItemProps extends Omit<
+  HTMLAttributes<HTMLAnchorElement>,
+  'onClick'
+> {
   docId: string;
   right?: ReactNode;
   duplicate?: boolean;
@@ -82,7 +87,7 @@ const PageItem = ({
         {title}
         {duplicate ? (
           <div className={styles.duplicateTag}>
-            {i18n['com.nexio.page-properties.property.journal-duplicated']()}
+            {i18n['com.affine.page-properties.property.journal-duplicated']()}
           </div>
         ) : null}
       </div>
@@ -101,17 +106,65 @@ interface JournalBlockProps {
   date: dayjs.Dayjs;
 }
 
+type DateDotType = 'journal' | 'event' | 'activity';
+
 const mobile = environment.isMobile;
 export const EditorJournalPanel = () => {
   const t = useI18n();
   const doc = useServiceOptional(DocService)?.doc;
   const workbench = useService(WorkbenchService).workbench;
+  const viewService = useService(ViewService);
   const journalService = useService(JournalService);
+  const calendar = useService(IntegrationService).calendar;
+  const workspaceServerService = useService(WorkspaceServerService);
+  const server = useLiveData(workspaceServerService.server$);
+  const location = useLiveData(viewService.view.location$);
   const journalDateStr = useLiveData(
     doc ? journalService.journalDate$(doc.id) : null
   );
   const journalDate = journalDateStr ? dayjs(journalDateStr) : null;
   const isJournal = !!journalDate;
+  const routeDate = useMemo(() => {
+    if (!location.pathname.startsWith('/journals')) return null;
+    const searchParams = new URLSearchParams(location.search);
+    const rawDate = searchParams.get('date');
+    return rawDate ? dayjs(rawDate) : dayjs();
+  }, [location.pathname, location.search]);
+  const [selectedDate, setSelectedDate] = useState(() => {
+    return journalDate ?? routeDate ?? dayjs();
+  });
+  const [calendarCursor, setCalendarCursor] = useState(selectedDate);
+  const calendarCursorMonthKey = useMemo(() => {
+    return calendarCursor.format('YYYY-MM');
+  }, [calendarCursor]);
+  const calendarCursorMonthStart = useMemo(() => {
+    return dayjs(`${calendarCursorMonthKey}-01`);
+  }, [calendarCursorMonthKey]);
+  const calendarCursorMonthEnd = useMemo(() => {
+    return dayjs(`${calendarCursorMonthKey}-01`).endOf('month');
+  }, [calendarCursorMonthKey]);
+  const docRecords = useLiveData(useService(DocsService).list.docs$);
+  const allJournalDates = useLiveData(journalService.allJournalDates$);
+  const eventDates = useLiveData(calendar.eventDates$);
+  const workspaceCalendars = useLiveData(calendar.workspaceCalendars$);
+  const workspaceCalendarId = workspaceCalendars[0]?.id;
+
+  useEffect(() => {
+    if (journalDate && !journalDate.isSame(selectedDate, 'day')) {
+      setSelectedDate(journalDate);
+    }
+  }, [journalDate, selectedDate]);
+
+  useEffect(() => {
+    if (journalDate || !routeDate) return;
+    if (!routeDate.isSame(selectedDate, 'day')) {
+      setSelectedDate(routeDate);
+    }
+  }, [journalDate, routeDate, selectedDate]);
+
+  useEffect(() => {
+    setCalendarCursor(selectedDate);
+  }, [selectedDate]);
 
   const openJournal = useCallback(
     (date: string) => {
@@ -127,17 +180,70 @@ export const EditorJournalPanel = () => {
 
   const onDateSelect = useCallback(
     (date: string) => {
-      if (journalDate && dayjs(date).isSame(dayjs(journalDate))) return;
+      if (dayjs(date).isSame(selectedDate, 'day')) return;
+      setSelectedDate(dayjs(date));
       openJournal(date);
     },
-    [journalDate, openJournal]
+    [openJournal, selectedDate]
   );
 
-  const allJournalDates = useLiveData(journalService.allJournalDates$);
+  const docActivityDates = useMemo(() => {
+    const dates = new Set<string>();
+    for (const docRecord of docRecords) {
+      const meta = docRecord.meta$.value;
+      if (meta.trash) continue;
+      if (meta.createDate) {
+        dates.add(dayjs(meta.createDate).format('YYYY-MM-DD'));
+      }
+      if (meta.updatedDate) {
+        dates.add(dayjs(meta.updatedDate).format('YYYY-MM-DD'));
+      }
+    }
+    return dates;
+  }, [docRecords]);
+
+  useEffect(() => {
+    calendar.revalidateWorkspaceCalendars().catch(() => undefined);
+    calendar.loadAccountCalendars().catch(() => undefined);
+  }, [calendar, server]);
+
+  useEffect(() => {
+    const update = () => {
+      calendar
+        .revalidateEventsRange(calendarCursorMonthStart, calendarCursorMonthEnd)
+        .catch(() => undefined);
+    };
+    update();
+    const interval = setInterval(update, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [
+    calendar,
+    calendarCursorMonthEnd,
+    calendarCursorMonthStart,
+    workspaceCalendarId,
+  ]);
+
+  const getDotType = useCallback(
+    (dateKey: string): DateDotType[] => {
+      const dotTypes: DateDotType[] = [];
+      if (allJournalDates.has(dateKey)) {
+        dotTypes.push('journal');
+      }
+      if (eventDates.has(dateKey)) {
+        dotTypes.push('event');
+      }
+      if (docActivityDates.has(dateKey)) {
+        dotTypes.push('activity');
+      }
+      return dotTypes;
+    },
+    [allJournalDates, docActivityDates, eventDates]
+  );
 
   const customDayRenderer = useCallback(
     (cell: DateCell) => {
-      const hasJournal = allJournalDates.has(cell.date.format('YYYY-MM-DD'));
+      const dateKey = cell.date.format('YYYY-MM-DD');
+      const dotTypes = getDotType(dateKey);
       return (
         <button
           className={styles.journalDateCell}
@@ -147,17 +253,27 @@ export const EditorJournalPanel = () => {
           data-not-current-month={cell.notCurrentMonth}
           data-selected={cell.selected}
           data-is-journal={isJournal}
-          data-has-journal={hasJournal}
+          data-has-journal={allJournalDates.has(dateKey)}
           data-mobile={mobile}
         >
           {cell.label}
-          {hasJournal && !cell.selected ? (
-            <div className={styles.journalDateCellDot} />
+          {!cell.selected && dotTypes.length ? (
+            <div className={styles.journalDateCellDotContainer}>
+              {dotTypes.map(dotType => (
+                <div
+                  key={dotType}
+                  className={clsx(
+                    styles.journalDateCellDot,
+                    styles.journalDateCellDotType[dotType]
+                  )}
+                />
+              ))}
+            </div>
           ) : null}
         </button>
       );
     },
-    [allJournalDates, isJournal]
+    [allJournalDates, getDotType, isJournal]
   );
 
   return (
@@ -168,25 +284,20 @@ export const EditorJournalPanel = () => {
     >
       <div data-mobile={mobile} className={styles.calendar}>
         <DatePicker
-          weekDays={t['com.nexio.calendar-date-picker.week-days']()}
-          monthNames={t['com.nexio.calendar-date-picker.month-names']()}
-          todayLabel={t['com.nexio.calendar-date-picker.today']()}
+          weekDays={t['com.affine.calendar-date-picker.week-days']()}
+          monthNames={t['com.affine.calendar-date-picker.month-names']()}
+          todayLabel={t['com.affine.calendar-date-picker.today']()}
           customDayRenderer={customDayRenderer}
-          value={journalDate?.format('YYYY-MM-DD')}
+          value={selectedDate.format('YYYY-MM-DD')}
           onChange={onDateSelect}
+          onCursorChange={setCalendarCursor}
           cellSize={34}
         />
       </div>
       <JournalTemplateOnboarding />
-      {journalDate ? (
-        <>
-          <JournalConflictBlock date={journalDate} />
-          <CalendarEvents date={journalDate} />
-          <JournalDailyCountBlock date={journalDate} />
-        </>
-      ) : (
-        <div className={styles.spacer} />
-      )}
+      <JournalConflictBlock date={selectedDate} />
+      <CalendarEvents date={selectedDate} />
+      <JournalDailyCountBlock date={selectedDate} />
       <JournalTemplateSetting />
     </div>
   );
@@ -211,8 +322,8 @@ const DailyCountEmptyFallback = ({ name }: { name: NavItemName }) => {
   return (
     <div className={styles.dailyCountEmpty}>
       {name === 'createdToday'
-        ? t['com.nexio.journal.daily-count-created-empty-tips']()
-        : t['com.nexio.journal.daily-count-updated-empty-tips']()}
+        ? t['com.affine.journal.daily-count-created-empty-tips']()
+        : t['com.affine.journal.daily-count-updated-empty-tips']()}
     </div>
   );
 };
@@ -249,12 +360,12 @@ const JournalDailyCountBlock = ({ date }: JournalBlockProps) => {
     () => [
       {
         name: 'createdToday',
-        label: t['com.nexio.journal.created-today'](),
+        label: t['com.affine.journal.created-today'](),
         count: createdToday.length,
       },
       {
         name: 'updatedToday',
-        label: t['com.nexio.journal.updated-today'](),
+        label: t['com.affine.journal.updated-today'](),
         count: updatedToday.length,
       },
     ],
@@ -321,8 +432,7 @@ const JournalDailyCountBlock = ({ date }: JournalBlockProps) => {
 
 const MAX_CONFLICT_COUNT = 5;
 interface ConflictListProps
-  extends PropsWithChildren,
-    HTMLAttributes<HTMLDivElement> {
+  extends PropsWithChildren, HTMLAttributes<HTMLDivElement> {
   docRecords: DocRecord[];
 }
 const ConflictList = ({
@@ -332,24 +442,24 @@ const ConflictList = ({
   ...attrs
 }: ConflictListProps) => {
   const t = useI18n();
-  const currentDoc = useService(DocService).doc;
+  const currentDocId = useServiceOptional(DocService)?.doc.id;
   const journalService = useService(JournalService);
   const { openConfirmModal } = useConfirmModal();
 
   const handleOpenTrashModal = useCallback(
     (docRecord: DocRecord) => {
       openConfirmModal({
-        title: t['com.nexio.moveToTrash.confirmModal.title'](),
-        description: t['com.nexio.moveToTrash.confirmModal.description']({
+        title: t['com.affine.moveToTrash.confirmModal.title'](),
+        description: t['com.affine.moveToTrash.confirmModal.description']({
           title: docRecord.title$.value || t['Untitled'](),
         }),
-        cancelText: t['com.nexio.confirmModal.button.cancel'](),
+        cancelText: t['com.affine.confirmModal.button.cancel'](),
         confirmButtonOptions: {
           variant: 'error',
         },
         confirmText: t.Delete(),
-        onConfirm: () => {
-          docRecord.moveToTrash();
+        onConfirm: async () => {
+          await docRecord.moveToTrash();
         },
       });
     },
@@ -369,7 +479,7 @@ const ConflictList = ({
       {...attrs}
     >
       {docRecords.map(docRecord => {
-        const isCurrent = docRecord.id === currentDoc.id;
+        const isCurrent = currentDocId ? docRecord.id === currentDocId : false;
         return (
           <PageItem
             aria-selected={isCurrent}
@@ -398,7 +508,7 @@ const ConflictList = ({
                           disabled={!canEdit}
                         >
                           {t[
-                            'com.nexio.page-properties.property.journal-remove'
+                            'com.affine.page-properties.property.journal-remove'
                           ]()}
                         </MenuItem>
                       )}
@@ -461,7 +571,7 @@ const JournalConflictBlock = ({ date }: JournalBlockProps) => {
           }
         >
           <div className={styles.journalConflictMoreTrigger}>
-            {t['com.nexio.journal.conflict-show-more']({
+            {t['com.affine.journal.conflict-show-more']({
               count: (docRecords.length - MAX_CONFLICT_COUNT).toFixed(0),
             })}
           </div>

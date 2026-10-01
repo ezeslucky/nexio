@@ -2,25 +2,23 @@ import {
   createCipheriv,
   createDecipheriv,
   createHash,
+  createPrivateKey,
   createPublicKey,
   createSign,
   createVerify,
   generateKeyPairSync,
+  type KeyObject,
   randomBytes,
   randomInt,
+  sign,
   timingSafeEqual,
+  verify,
 } from 'node:crypto';
 
-import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
-import {
-  hash as hashPassword,
-  verify as verifyPassword,
-} from '@node-rs/argon2';
+import { Injectable, OnModuleInit } from '@nestjs/common';
+import { hash as hashPassword } from '@node-rs/argon2';
 
-import {
-  NEXIO_PRO_LICENSE_AES_KEY,
-  NEXIO_PRO_PUBLIC_KEY,
-} from '../../native';
+import { AFFINE_PRO_PUBLIC_KEY } from '../../native';
 import { Config } from '../config';
 import { OnEvent } from '../event';
 
@@ -32,42 +30,56 @@ function generatePrivateKey(): string {
     namedCurve: 'prime256v1',
   });
 
+  // Export EC private key as PKCS#8 PEM. This avoids OpenSSL 3.x decoder issues
+  // in Node.js 22 when later deriving the public key via createPublicKey.
   const key = privateKey.export({
-    type: 'sec1',
+    type: 'pkcs8',
     format: 'pem',
   });
 
   return key.toString('utf8');
 }
 
-function generatePublicKey(privateKey: string) {
-  return createPublicKey({
-    key: Buffer.from(privateKey),
-  })
-    .export({ format: 'pem', type: 'spki' })
-    .toString('utf8');
+function parseKey(privateKey: string) {
+  const keyBuf = Buffer.from(privateKey);
+  let priv: KeyObject;
+  try {
+    priv = createPrivateKey({ key: keyBuf, format: 'pem', type: 'pkcs8' });
+  } catch {
+    try {
+      priv = createPrivateKey({ key: keyBuf, format: 'pem', type: 'sec1' });
+    } catch {
+      // As a last resort rely on auto-detection
+      priv = createPrivateKey(keyBuf);
+    }
+  }
+  const pub = createPublicKey(priv);
+  return { priv, pub };
 }
 
 @Injectable()
 export class CryptoHelper implements OnModuleInit {
-  logger = new Logger(CryptoHelper.name);
-
   keyPair!: {
-    publicKey: Buffer;
-    privateKey: Buffer;
+    publicKey: KeyObject;
+    privateKey: KeyObject;
     sha256: {
       publicKey: Buffer;
       privateKey: Buffer;
     };
   };
 
-  NEXIOProPublicKey: Buffer | null = null;
-  NEXIOProLicenseAESKey: Buffer | null = null;
+  private previousPublicKeys: KeyObject[] = [];
+
+  AFFiNEProPublicKey: Buffer | null = null;
 
   onModuleInit() {
     if (env.selfhosted) {
-      this.NEXIOProPublicKey = this.loadNEXIOProPublicKey();
-      this.NEXIOProLicenseAESKey = this.loadNEXIOProLicenseAESKey();
+      this.AFFiNEProPublicKey = this.loadAFFiNEProPublicKey();
+      if (!this.AFFiNEProPublicKey) {
+        throw new Error(
+          'AFFINE_PRO_PUBLIC_KEY must be embedded in self-hosted server-native builds.'
+        );
+      }
     }
   }
 
@@ -86,12 +98,26 @@ export class CryptoHelper implements OnModuleInit {
   }
 
   private setup() {
+    const prevPublicKey = this.keyPair?.publicKey;
     const privateKey = this.config.crypto.privateKey || generatePrivateKey();
-    const publicKey = generatePublicKey(privateKey);
+    const { priv, pub } = parseKey(privateKey);
+    const publicKey = pub
+      .export({ format: 'pem', type: 'spki' })
+      .toString('utf8');
+
+    if (prevPublicKey) {
+      const prevPem = prevPublicKey
+        .export({ format: 'pem', type: 'spki' })
+        .toString('utf8');
+      if (prevPem !== publicKey) {
+        this.previousPublicKeys.unshift(prevPublicKey);
+        this.previousPublicKeys = this.previousPublicKeys.slice(0, 2);
+      }
+    }
 
     this.keyPair = {
-      publicKey: Buffer.from(publicKey),
-      privateKey: Buffer.from(privateKey),
+      publicKey: pub,
+      privateKey: priv,
       sha256: {
         publicKey: this.sha256(publicKey),
         privateKey: this.sha256(privateKey),
@@ -99,11 +125,23 @@ export class CryptoHelper implements OnModuleInit {
     };
   }
 
+  private get keyType() {
+    return (this.keyPair.privateKey.asymmetricKeyType as string) || 'ec';
+  }
+
   sign(data: string) {
-    const sign = createSign('rsa-sha256');
-    sign.update(data, 'utf-8');
-    sign.end();
-    return `${data},${sign.sign(this.keyPair.privateKey, 'base64')}`;
+    const input = Buffer.from(data, 'utf-8');
+    if (this.keyType === 'ed25519') {
+      // Ed25519 signs the message directly (no pre-hash)
+      const sig = sign(null, input, this.keyPair.privateKey);
+      return `${data},${sig.toString('base64')}`;
+    } else {
+      // ECDSA with SHA-256 for EC keys
+      const sign = createSign('sha256');
+      sign.update(input);
+      sign.end();
+      return `${data},${sign.sign(this.keyPair.privateKey, 'base64')}`;
+    }
   }
 
   verify(signatureWithData: string) {
@@ -111,10 +149,23 @@ export class CryptoHelper implements OnModuleInit {
     if (!signature) {
       return false;
     }
-    const verify = createVerify('rsa-sha256');
-    verify.update(data, 'utf-8');
-    verify.end();
-    return verify.verify(this.keyPair.privateKey, signature, 'base64');
+    const input = Buffer.from(data, 'utf-8');
+    const sigBuf = Buffer.from(signature, 'base64');
+
+    const keys = [this.keyPair.publicKey, ...this.previousPublicKeys];
+    return keys.some(publicKey => {
+      const keyType = (publicKey.asymmetricKeyType as string) || 'ec';
+      if (keyType === 'ed25519') {
+        // Ed25519 verifies the message directly
+        return verify(null, input, publicKey, sigBuf);
+      } else {
+        // ECDSA with SHA-256
+        const verifier = createVerify('sha256');
+        verifier.update(input);
+        verifier.end();
+        return verifier.verify(publicKey, sigBuf);
+      }
+    });
   }
 
   encrypt(data: string) {
@@ -155,10 +206,6 @@ export class CryptoHelper implements OnModuleInit {
     return hashPassword(password);
   }
 
-  verifyPassword(password: string, hash: string) {
-    return verifyPassword(hash, password);
-  }
-
   compare(lhs: string, rhs: string) {
     if (lhs.length !== rhs.length) {
       return false;
@@ -179,7 +226,7 @@ export class CryptoHelper implements OnModuleInit {
     let otp = '';
 
     for (let i = 0; i < length; i++) {
-      otp += this.randomInt(0, 9).toString();
+      otp += this.randomInt(0, 10).toString();
     }
 
     return otp;
@@ -189,33 +236,10 @@ export class CryptoHelper implements OnModuleInit {
     return createHash('sha256').update(data).digest();
   }
 
-  private loadNEXIOProPublicKey() {
-    if (NEXIO_PRO_PUBLIC_KEY) {
-      return Buffer.from(NEXIO_PRO_PUBLIC_KEY);
-    } else {
-      this.logger.warn('NEXIO_PRO_PUBLIC_KEY is not set at compile time.');
+  private loadAFFiNEProPublicKey() {
+    if (AFFINE_PRO_PUBLIC_KEY) {
+      return Buffer.from(AFFINE_PRO_PUBLIC_KEY);
     }
-
-    if (!env.prod && process.env.NEXIO_PRO_PUBLIC_KEY) {
-      return Buffer.from(process.env.NEXIO_PRO_PUBLIC_KEY);
-    }
-
-    return null;
-  }
-
-  private loadNEXIOProLicenseAESKey() {
-    if (NEXIO_PRO_LICENSE_AES_KEY) {
-      return this.sha256(NEXIO_PRO_LICENSE_AES_KEY);
-    } else {
-      this.logger.warn(
-        'NEXIO_PRO_LICENSE_AES_KEY is not set at compile time.'
-      );
-    }
-
-    if (!env.prod && process.env.NEXIO_PRO_LICENSE_AES_KEY) {
-      return this.sha256(process.env.NEXIO_PRO_LICENSE_AES_KEY);
-    }
-
     return null;
   }
 }

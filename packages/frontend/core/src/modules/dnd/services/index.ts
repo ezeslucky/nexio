@@ -5,28 +5,28 @@ import {
   monitorForElements,
   type MonitorGetFeedback,
   type toExternalData,
-} from '@nexio/component';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
+} from '@affine/component';
+import type { AffineDNDData } from '@affine/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
-} from '@canvas/nexio/shared/services';
-import { BlockStdScope } from '@canvas/nexio/std';
-import type { SliceSnapshot } from '@canvas/nexio/store';
-import type { DragBlockPayload } from '@canvas/nexio/widgets/drag-handle';
-import { Service } from '@ezeslucky/infra';
+} from '@blocksuite/affine/shared/services';
+import { BlockStdScope } from '@blocksuite/affine/std';
+import type { SliceSnapshot } from '@blocksuite/affine/store';
+import type { DragBlockPayload } from '@blocksuite/affine/widgets/drag-handle';
+import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';
 import type { EditorSettingService } from '../../editor-setting';
 import { resolveLinkToDoc } from '../../navigation';
 import type { WorkspaceService } from '../../workspace';
 
-type Entity = NexioDNDData['draggable']['entity'];
+type Entity = AffineDNDData['draggable']['entity'];
 type EntityResolver = (data: string) => Entity | null;
 
 type ExternalDragPayload = ExternalGetDataFeedbackArgs['source'];
 
-type MixedDNDData = NexioDNDData & {
+type MixedDNDData = AffineDNDData & {
   draggable: DragBlockPayload;
 };
 
@@ -39,7 +39,7 @@ export class DndService extends Service {
     super();
 
     // order matters
-    this.resolvers.push(this.resolveCanvasExternalData);
+    this.resolvers.push(this.resolveBlocksuiteExternalData);
 
     const mimeResolvers: [string, EntityResolver][] = [
       ['text/html', this.resolveHTML],
@@ -66,24 +66,27 @@ export class DndService extends Service {
       });
     });
 
-    this.setupCanvasAdapter();
+    this.setupBlocksuiteAdapter();
   }
 
-  private setupCanvasAdapter() {
-    
-    const nexioToCanvas = (args: MonitorGetFeedback<MixedDNDData>) => {
+  private setupBlocksuiteAdapter() {
+    /**
+     * Migrate from affine to blocksuite
+     * For now, we only support doc
+     */
+    const affineToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (data.entity && !data.bsEntity) {
         if (data.entity.type !== 'doc') {
           return;
         }
-        const dndAPI = this.getCanvasDndAPI();
+        const dndAPI = this.getBlocksuiteDndAPI();
         if (!dndAPI) {
           return;
         }
         const snapshotSlice = dndAPI.fromEntity({
           docId: data.entity.id,
-          flavour: 'nexio:embed-linked-doc',
+          flavour: 'affine:embed-linked-doc',
         });
         if (!snapshotSlice) {
           return;
@@ -96,14 +99,16 @@ export class DndService extends Service {
       }
     };
 
-    
-    const canvasToNexio = (args: MonitorGetFeedback<MixedDNDData>) => {
+    /**
+     * Migrate from blocksuite to affine
+     */
+    const blocksuiteToAffine = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (!data.entity && data.bsEntity) {
         if (data.bsEntity.type !== 'blocks' || !data.bsEntity.snapshot) {
           return;
         }
-        const dndAPI = this.getCanvasDndAPI();
+        const dndAPI = this.getBlocksuiteDndAPI();
         if (!dndAPI) {
           return;
         }
@@ -116,8 +121,8 @@ export class DndService extends Service {
     };
 
     function adaptDragEvent(args: MonitorGetFeedback<MixedDNDData>) {
-      nexioToCanvas(args);
-      canvasToNexio(args);
+      affineToBlocksuite(args);
+      blocksuiteToAffine(args);
     }
 
     function canMonitor(args: MonitorGetFeedback<MixedDNDData>) {
@@ -131,15 +136,15 @@ export class DndService extends Service {
     function getBSDropTarget(args: MonitorDragEvent<MixedDNDData>) {
       for (const target of args.location.current.dropTargets) {
         const { tagName } = target.element;
-        if (['NEXIO-EDGELESS-NOTE', 'NEXIO-NOTE'].includes(tagName))
+        if (['AFFINE-EDGELESS-NOTE', 'AFFINE-NOTE'].includes(tagName))
           return 'note';
-        if (tagName === 'NEXIO-EDGELESS-ROOT') return 'canvas';
+        if (tagName === 'AFFINE-EDGELESS-ROOT') return 'canvas';
       }
       return 'other';
     }
 
     const changeDocCardView = (args: MonitorDragEvent<MixedDNDData>) => {
-      if (args.source.data.from?.at === 'canvas-editor') return;
+      if (args.source.data.from?.at === 'blocksuite-editor') return;
 
       const dropTarget = getBSDropTarget(args);
       if (dropTarget === 'other') return;
@@ -147,12 +152,12 @@ export class DndService extends Service {
       const flavour =
         dropTarget === 'canvas'
           ? this.editorSettingService.editorSetting.docCanvasPreferView.value
-          : 'nexio:embed-linked-doc';
+          : 'affine:embed-linked-doc';
 
       const { entity, bsEntity } = args.source.data;
       if (!entity || !bsEntity) return;
 
-      const dndAPI = this.getCanvasDndAPI();
+      const dndAPI = this.getBlocksuiteDndAPI();
       if (!dndAPI) return;
 
       const snapshotSlice = dndAPI.fromEntity({
@@ -168,7 +173,11 @@ export class DndService extends Service {
       monitorForElements({
         canMonitor: (args: MonitorGetFeedback<MixedDNDData>) => {
           if (canMonitor(args)) {
-         
+            // HACK ahead:
+            // canMonitor shall be used a pure function, which means
+            // we may need to adapt the drag event to make sure the data is applied onDragStart.
+            // However, canMonitor in blocksuite is also called BEFORE onDragStart,
+            // so we need to adapt it here in onMonitor
             adaptDragEvent(args);
             return true;
           }
@@ -183,9 +192,9 @@ export class DndService extends Service {
 
   private readonly resolvers: ((
     source: ExternalDragPayload
-  ) => NexioDNDData['draggable'] | null)[] = [];
+  ) => AffineDNDData['draggable'] | null)[] = [];
 
-  getCanvasDndAPI(sourceDocId?: string) {
+  getBlocksuiteDndAPI(sourceDocId?: string) {
     const collection = this.workspaceService.workspace.docCollection;
     sourceDocId ??= collection.docs.keys().next().value;
     const doc = sourceDocId ? collection.getDoc(sourceDocId)?.getStore() : null;
@@ -202,7 +211,7 @@ export class DndService extends Service {
     return dndAPI;
   }
 
-  fromExternalData: fromExternalData<NexioDNDData> = (
+  fromExternalData: fromExternalData<AffineDNDData> = (
     args: ExternalGetDataFeedbackArgs,
     isDropEvent?: boolean
   ) => {
@@ -210,7 +219,7 @@ export class DndService extends Service {
       return {};
     }
 
-    let resolved: NexioDNDData['draggable'] | null = null;
+    let resolved: AffineDNDData['draggable'] | null = null;
 
     // in the order of the resolvers instead of the order of the types
     for (const resolver of this.resolvers) {
@@ -228,7 +237,7 @@ export class DndService extends Service {
     return resolved;
   };
 
-  toExternalData: toExternalData<NexioDNDData> = (args, data) => {
+  toExternalData: toExternalData<AffineDNDData> = (args, data) => {
     const normalData = typeof data === 'function' ? data(args) : data;
 
     if (
@@ -240,7 +249,7 @@ export class DndService extends Service {
       return {};
     }
 
-    const dndAPI = this.getCanvasDndAPI(normalData.entity.id);
+    const dndAPI = this.getBlocksuiteDndAPI(normalData.entity.id);
 
     if (!dndAPI) {
       return {};
@@ -248,7 +257,7 @@ export class DndService extends Service {
 
     const snapshotSlice = dndAPI.fromEntity({
       docId: normalData.entity.id,
-      flavour: 'nexio:embed-linked-doc',
+      flavour: 'affine:embed-linked-doc',
     });
 
     if (!snapshotSlice) {
@@ -288,12 +297,12 @@ export class DndService extends Service {
   };
 
   /**
-   * @deprecated Canvas DND is now using pragmatic-dnd as well
+   * @deprecated Blocksuite DND is now using pragmatic-dnd as well
    */
-  private readonly resolveCanvasExternalData = (
+  private readonly resolveBlocksuiteExternalData = (
     source: ExternalDragPayload
-  ): NexioDNDData['draggable'] | null => {
-    const dndAPI = this.getCanvasDndAPI();
+  ): AffineDNDData['draggable'] | null => {
+    const dndAPI = this.getBlocksuiteDndAPI();
     if (!dndAPI) {
       return null;
     }
@@ -312,7 +321,7 @@ export class DndService extends Service {
     return {
       entity,
       from: {
-        at: 'canvas-editor',
+        at: 'blocksuite-editor',
       },
     };
   };
@@ -338,7 +347,7 @@ export class DndService extends Service {
   ): Entity | null => {
     for (const block of snapshot.content) {
       if (
-        ['nexio:embed-linked-doc', 'nexio:embed-synced-doc'].includes(
+        ['affine:embed-linked-doc', 'affine:embed-synced-doc'].includes(
           block.flavour
         )
       ) {

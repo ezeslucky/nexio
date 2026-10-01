@@ -1,11 +1,11 @@
 {
-  "name": "@types/nexio__env",
+  "name": "@types/affine__env",
   "private": true,
   "types": "./__all.d.ts",
   "type": "module",
   "dependencies": {
-    "@canvas/nexio": "workspace:*",
-    "@nexio/env": "workspace:*"
+    "@affine/env": "workspace:*",
+    "@blocksuite/affine": "workspace:*"
   },
-  "version": "0.22.4"
+  "version": "0.27.5"
 }

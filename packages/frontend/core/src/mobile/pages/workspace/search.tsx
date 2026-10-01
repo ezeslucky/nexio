@@ -3,37 +3,37 @@ import {
   SafeArea,
   startScopedViewTransition,
   useThemeColorV2,
-} from '@nexio/component';
-import { CollectionService } from '@nexio/core/modules/collection';
+} from '@affine/component';
+import { CollectionService } from '@affine/core/modules/collection';
 import {
   type QuickSearchItem,
   QuickSearchTagIcon,
-} from '@nexio/core/modules/quicksearch';
-import { TagService } from '@nexio/core/modules/tag';
-import { UserFriendlyError } from '@nexio/error';
-import { useI18n } from '@nexio/i18n';
-import { sleep } from '@canvas/nexio/global/utils';
+} from '@affine/core/modules/quicksearch';
+import { TagService } from '@affine/core/modules/tag';
+import { UserFriendlyError } from '@affine/error';
+import { useI18n } from '@affine/i18n';
+import { sleep } from '@blocksuite/affine/global/utils';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import {
   LiveData,
   useLiveData,
   useService,
   useServices,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { bodyEmphasized } from '@toeverything/theme/typography';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
 
 import {
   NavigationBackButton,
   SearchInput,
   SearchResLabel,
+  useMobileShellTabs,
 } from '../../components';
 import { searchVTScope } from '../../components/search-input/style.css';
+import { MobileBackCoordinator } from '../../modules/back-coordinator';
 import { MobileSearchService } from '../../modules/search';
 import { SearchResults } from '../../views/search/search-results';
 import * as styles from '../../views/search/style.css';
-
-const searchInput$ = new LiveData('');
 
 const RecentList = () => {
   const { mobileSearchService, collectionService, tagService } = useServices({
@@ -134,31 +134,36 @@ const WithQueryList = () => {
 export const Component = () => {
   const t = useI18n();
   useThemeColorV2('layer/background/mobile/primary');
-  const searchInput = useLiveData(searchInput$);
+  useMobileShellTabs({ hidden: true });
   const searchService = useService(MobileSearchService);
+  const backCoordinator = useService(MobileBackCoordinator);
+  const searchInput = useLiveData(searchService.query$);
 
   const onSearch = useCallback(
     (v: string) => {
-      searchInput$.next(v);
-      searchService.recentDocs.query(v);
-      searchService.collections.query(v);
-      searchService.docs.query(v);
-      searchService.tags.query(v);
+      searchService.query(v);
     },
-    [
-      searchService.collections,
-      searchService.docs,
-      searchService.recentDocs,
-      searchService.tags,
-    ]
+    [searchService]
   );
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      window.scrollTo({ top: searchService.scrollAnchor$.value });
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      searchService.scrollAnchor$.next(window.scrollY);
+    };
+  }, [searchService]);
 
   const transitionBack = useCallback(() => {
     startScopedViewTransition(searchVTScope, async () => {
-      history.back();
+      if (!backCoordinator.request('ui-back')) {
+        backCoordinator.request('ui-up');
+      }
       await sleep(10);
     });
-  }, []);
+  }, [backCoordinator]);
 
   return (
     <>

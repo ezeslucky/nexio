@@ -1,21 +1,21 @@
-import { Button } from '@nexio/component';
-import { AuthHeader } from '@nexio/component/auth-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useWorkspaceName } from '@nexio/core/components/hooks/use-workspace-info';
-import { WorkspaceSelector } from '@nexio/core/components/workspace-selector';
-import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { Button } from '@affine/component';
+import { AuthHeader } from '@affine/component/auth-components';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useWorkspaceName } from '@affine/core/components/hooks/use-workspace-info';
+import { WorkspaceSelector } from '@affine/core/components/workspace-selector';
+import { AuthService, ServerService } from '@affine/core/modules/cloud';
 import {
   type ClipperInput,
   ImportClipperService,
-} from '@nexio/core/modules/import-clipper';
+} from '@affine/core/modules/import-clipper';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import { AllDocsIcon } from '@blocksuite/icons/rc';
-import { LiveData, useLiveData, useService } from '@ezeslucky/infra';
+import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
@@ -27,7 +27,7 @@ const port$ = new LiveData<MessagePort | null>(null);
 window.addEventListener('message', event => {
   if (
     typeof event.data === 'object' &&
-    event.data.type === 'nexio-clipper:import'
+    event.data.type === 'affine-clipper:import'
   ) {
     clipperInput$.value = event.data.payload;
 
@@ -97,7 +97,7 @@ export const Component = () => {
   );
 
   const handleSuccess = useCallback(() => {
-    const arg = { type: 'nexio-clipper:import:success' };
+    const arg = { type: 'affine-clipper:import:success' };
     const port = port$.value;
     track.clipper.$.$.createDoc();
     if (port) {
@@ -139,7 +139,7 @@ export const Component = () => {
     setImporting(true);
     try {
       await importClipperService.importToNewWorkspace(
-        'nexio-cloud',
+        'affine-cloud',
         'Workspace',
         clipperInputSnapshot
       );
@@ -201,7 +201,7 @@ export const Component = () => {
       <div className={styles.container}>
         <AuthHeader
           className={styles.authHeader}
-          title={t['com.nexio.auth.sign.in']()}
+          title={t['com.affine.auth.sign.in']()}
           subTitle={serverConfig.serverName}
         />
         <Button
@@ -209,7 +209,7 @@ export const Component = () => {
           variant="primary"
           onClick={handleClickSignIn}
         >
-          {t['com.nexio.auth.sign.in']()}
+          {t['com.affine.auth.sign.in']()}
         </Button>
       </div>
     );
@@ -219,7 +219,7 @@ export const Component = () => {
     <div className={styles.container}>
       <AllDocsIcon className={styles.mainIcon} />
       <h6 className={styles.mainTitle}>
-        {t['com.nexio.import-clipper.dialog.createDocFromClipper']()}
+        {t['com.affine.import-clipper.dialog.createDocFromClipper']()}
       </h6>
       {noWorkspace ? (
         <p className={styles.desc}>A new workspace will be created.</p>
@@ -247,12 +247,12 @@ export const Component = () => {
       <div className={styles.buttonContainer}>
         {importingError && (
           <span style={{ color: cssVar('warningColor') }}>
-            {t['com.nexio.import-clipper.dialog.errorImport']()}
+            {t['com.affine.import-clipper.dialog.errorImport']()}
           </span>
         )}
         {isMissingInput ? (
           <span style={{ color: cssVar('warningColor') }}>
-            {t['com.nexio.import-clipper.dialog.errorLoad']()}
+            {t['com.affine.import-clipper.dialog.errorLoad']()}
           </span>
         ) : selectedWorkspace ? (
           <Button
@@ -264,7 +264,7 @@ export const Component = () => {
             data-testid="import-clipper-to-workspace-btn"
           >
             {selectedWorkspaceName &&
-              t['com.nexio.import-clipper.dialog.createDocToWorkspace']({
+              t['com.affine.import-clipper.dialog.createDocToWorkspace']({
                 workspace: selectedWorkspaceName,
               })}
           </Button>
@@ -276,7 +276,7 @@ export const Component = () => {
             disabled={disabled}
             onClick={handleImportToNewWorkspace}
           >
-            {t['com.nexio.import-clipper.dialog.createDocToNewWorkspace']()}
+            {t['com.affine.import-clipper.dialog.createDocToNewWorkspace']()}
           </Button>
         )}
       </div>

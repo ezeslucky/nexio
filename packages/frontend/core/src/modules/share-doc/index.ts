@@ -1,10 +1,11 @@
 export { ShareDocsListService } from './services/share-docs-list';
 export { ShareInfoService } from './services/share-info';
 
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { WorkspaceServerService } from '../cloud';
 import { DocScope, DocService } from '../doc';
+import { NbstoreService } from '../storage';
 import {
   WorkspaceLocalCache,
   WorkspaceScope,
@@ -30,5 +31,5 @@ export function configureShareDocsModule(framework: Framework) {
     .scope(DocScope)
     .service(ShareInfoService)
     .entity(ShareInfo, [WorkspaceService, DocService, ShareStore])
-    .store(ShareStore, [WorkspaceServerService]);
+    .store(ShareStore, [WorkspaceServerService, NbstoreService]);
 }

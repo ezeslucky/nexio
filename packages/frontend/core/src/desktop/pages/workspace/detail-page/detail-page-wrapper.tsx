@@ -1,9 +1,9 @@
-import { type Doc, DocsService } from '@nexio/core/modules/doc';
-import type { Editor } from '@nexio/core/modules/editor';
-import { EditorsService } from '@nexio/core/modules/editor';
-import { ViewService } from '@nexio/core/modules/workbench/services/view';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { FrameworkScope, useLiveData, useService } from '@ezeslucky/infra';
+import { type Doc, DocsService } from '@affine/core/modules/doc';
+import type { Editor } from '@affine/core/modules/editor';
+import { EditorsService } from '@affine/core/modules/editor';
+import { ViewService } from '@affine/core/modules/workbench/services/view';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import {
   type PropsWithChildren,
   type ReactNode,
@@ -48,7 +48,7 @@ const useLoadDoc = (pageId: string) => {
 
   useEffect(() => {
     if (doc && isInTrash) {
-      doc.canvasDoc.readonly = true;
+      doc.blockSuiteDoc.readonly = true;
     }
   }, [doc, isInTrash]);
 

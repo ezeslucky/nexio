@@ -1,4 +1,4 @@
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { Fragment, useCallback, useEffect } from 'react';
 
 import { OpenInAppService } from '../services';
@@ -37,6 +37,4 @@ const WebOpenInAppGuard = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export const OpenInAppGuard = environment.isMobile
-  ? Fragment
-  : WebOpenInAppGuard;
+export const OpenInAppGuard = Fragment;

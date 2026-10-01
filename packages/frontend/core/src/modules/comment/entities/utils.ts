@@ -2,7 +2,7 @@ import type {
   BaseTextAttributes,
   BlockSnapshot,
   DeltaInsert,
-} from '@canvas/nexio/store';
+} from '@blocksuite/affine/store';
 
 const MentionAttribute = 'mention';
 type ExtendedTextAttributes = BaseTextAttributes & {

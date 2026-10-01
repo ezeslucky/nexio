@@ -1,7 +1,7 @@
-import { IconButton } from '@nexio/component';
-import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { IconButton } from '@affine/component';
+import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
 import { RightSidebarIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { Suspense, useCallback } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -35,6 +35,7 @@ const ToggleButton = ({
       className={className}
       data-show={show}
       data-testid="right-sidebar-toggle"
+      tooltip="Open sidebar"
     >
       <RightSidebarIcon />
     </IconButton>
@@ -79,11 +80,11 @@ export const RouteContainer = () => {
         )}
       </div>
 
-      <NexioErrorBoundary>
+      <AffineErrorBoundary>
         <Suspense>
           <Outlet />
         </Suspense>
-      </NexioErrorBoundary>
+      </AffineErrorBoundary>
       <ViewBodyTarget viewId={view.id} className={styles.viewBodyContainer} />
     </div>
   );

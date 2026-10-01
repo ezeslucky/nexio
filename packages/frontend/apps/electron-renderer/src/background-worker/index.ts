@@ -1,27 +1,37 @@
-import '@nexio/core/bootstrap/electron';
+import '@affine/core/bootstrap/electron';
 
-import { apis } from '@nexio/electron-api';
-import { broadcastChannelStorages } from '@nexio/nbstore/broadcast-channel';
-import { cloudStorages } from '@nexio/nbstore/cloud';
-import { idbStoragesIndexerOnly } from '@nexio/nbstore/idb';
-import { bindNativeDBApis, sqliteStorages } from '@nexio/nbstore/sqlite';
+import { apis } from '@affine/electron-api';
+import { broadcastChannelStorages } from '@affine/nbstore/broadcast-channel';
+import {
+  cloudStorages,
+  configureSocketAuthMethod,
+} from '@affine/nbstore/cloud';
+import { bindNativeDBApis, sqliteStorages } from '@affine/nbstore/sqlite';
 import {
   bindNativeDBV1Apis,
   sqliteV1Storages,
-} from '@nexio/nbstore/sqlite/v1';
+} from '@affine/nbstore/sqlite/v1';
 import {
   StoreManagerConsumer,
   type WorkerManagerOps,
-} from '@nexio/nbstore/worker/consumer';
-import { OpConsumer } from '@ezeslucky/infra/op';
+} from '@affine/nbstore/worker/consumer';
+import { OpConsumer } from '@toeverything/infra/op';
 
 // oxlint-disable-next-line no-non-null-assertion
 bindNativeDBApis(apis!.nbstore);
 // oxlint-disable-next-line no-non-null-assertion
 bindNativeDBV1Apis(apis!.db);
+configureSocketAuthMethod((endpoint, cb) => {
+  // oxlint-disable-next-line no-non-null-assertion
+  apis!.auth
+    .getValidAccessToken(endpoint)
+    .then(({ token }: { token?: string | null }) => {
+      cb(token ? { token, tokenType: 'jwt' } : {});
+    })
+    .catch(() => cb({ error: 'AUTH_SESSION_TEMPORARILY_UNAVAILABLE' }));
+});
 
 const storeManager = new StoreManagerConsumer([
-  ...idbStoragesIndexerOnly,
   ...sqliteStorages,
   ...sqliteV1Storages,
   ...broadcastChannelStorages,

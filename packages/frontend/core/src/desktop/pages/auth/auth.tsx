@@ -1,4 +1,4 @@
-import { notify } from '@nexio/component';
+import { notify } from '@affine/component';
 import {
   ChangeEmailPage,
   ChangePasswordPage,
@@ -6,13 +6,13 @@ import {
   SetPasswordPage,
   SignInSuccessPage,
   SignUpPage,
-} from '@nexio/component/auth-components';
+} from '@affine/component/auth-components';
 import {
   changePasswordMutation,
   sendVerifyChangeEmailMutation,
-} from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 import type { LoaderFunction } from 'react-router-dom';
 import { redirect, useParams, useSearchParams } from 'react-router-dom';
@@ -73,11 +73,11 @@ export const Component = () => {
       // FIXME: There is not notification
       if (res?.sendVerifyChangeEmail) {
         notify.success({
-          title: t['com.nexio.auth.sent.verify.email.hint'](),
+          title: t['com.affine.auth.sent.verify.email.hint'](),
         });
       } else {
         notify.error({
-          title: t['com.nexio.auth.sent.change.email.fail'](),
+          title: t['com.affine.auth.sent.change.email.fail'](),
         });
       }
 
@@ -96,7 +96,7 @@ export const Component = () => {
     },
     [changePassword, searchParams]
   );
-  const onopenNEXIO = useCallback(() => {
+  const onOpenAffine = useCallback(() => {
     jumpToIndex(RouteLogic.REPLACE);
   }, [jumpToIndex]);
 
@@ -107,7 +107,7 @@ export const Component = () => {
   switch (authType) {
     case 'onboarding':
       return (
-        account && <OnboardingPage user={account} onopenNEXIO={onopenNEXIO} />
+        account && <OnboardingPage user={account} onOpenAffine={onOpenAffine} />
       );
     case 'signUp': {
       return (
@@ -116,20 +116,20 @@ export const Component = () => {
             user={account}
             passwordLimits={passwordLimits}
             onSetPassword={onSetPassword}
-            onopenNEXIO={onopenNEXIO}
+            onOpenAffine={onOpenAffine}
           />
         )
       );
     }
     case 'signIn': {
-      return <SignInSuccessPage onopenNEXIO={onopenNEXIO} />;
+      return <SignInSuccessPage onOpenAffine={onOpenAffine} />;
     }
     case 'changePassword': {
       return (
         <ChangePasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onopenNEXIO={onopenNEXIO}
+          onOpenAffine={onOpenAffine}
         />
       );
     }
@@ -138,7 +138,7 @@ export const Component = () => {
         <SetPasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onopenNEXIO={onopenNEXIO}
+          onOpenAffine={onOpenAffine}
         />
       );
     }
@@ -146,15 +146,15 @@ export const Component = () => {
       return (
         <ChangeEmailPage
           onChangeEmail={onSendVerifyChangeEmail}
-          onopenNEXIO={onopenNEXIO}
+          onOpenAffine={onOpenAffine}
         />
       );
     }
     case 'confirm-change-email': {
-      return <ConfirmChangeEmail onopenNEXIO={onopenNEXIO} />;
+      return <ConfirmChangeEmail onOpenAffine={onOpenAffine} />;
     }
     case 'verify-email': {
-      return <ConfirmVerifiedEmail onopenNEXIO={onopenNEXIO} />;
+      return <ConfirmVerifiedEmail onOpenAffine={onOpenAffine} />;
     }
   }
   return null;

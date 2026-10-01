@@ -1,4 +1,4 @@
-import { Scrollable } from '@nexio/component';
+import { Scrollable } from '@affine/component';
 import clsx from 'clsx';
 import { selectAtom } from 'jotai/utils';
 import type { HTMLAttributes, PropsWithChildren } from 'react';

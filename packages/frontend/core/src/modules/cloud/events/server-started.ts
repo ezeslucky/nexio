@@ -1,3 +1,3 @@
-import { createEvent } from '@ezeslucky/infra';
+import { createEvent } from '@toeverything/infra';
 
 export const ServerStarted = createEvent('ServerStarted');

@@ -1,10 +1,10 @@
-import { IconButton, MobileMenu } from '@nexio/component';
-import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
-import { DocService } from '@nexio/core/modules/doc';
-import { ShareMenuContent } from '@nexio/core/modules/share-menu';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { IconButton, MobileMenu } from '@affine/component';
+import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
+import { DocService } from '@affine/core/modules/doc';
+import { ShareMenuContent } from '@affine/core/modules/share-menu';
+import { WorkspaceService } from '@affine/core/modules/workspace';
 import { ShareiOsIcon } from '@blocksuite/icons/rc';
-import { useServices } from '@ezeslucky/infra';
+import { useServices } from '@toeverything/infra';
 
 import * as styles from './page-header-share-button.css';
 
@@ -14,7 +14,7 @@ export const PageHeaderShareButton = () => {
     DocService,
   });
   const workspace = workspaceService.workspace;
-  const doc = docService.doc.canvasDoc;
+  const doc = docService.doc.blockSuiteDoc;
   const confirmEnableCloud = useEnableCloud();
 
   if (workspace.meta.flavour === 'local') {
@@ -28,7 +28,7 @@ export const PageHeaderShareButton = () => {
           <ShareMenuContent
             workspaceMetadata={workspace.meta}
             currentPage={doc}
-            onEnableNexioCloud={() =>
+            onEnableAffineCloud={() =>
               confirmEnableCloud(workspace, {
                 openPageId: doc.id,
               })

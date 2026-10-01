@@ -1,4 +1,4 @@
-import { DebugLogger } from '@nexio/debug';
+import { DebugLogger } from '@affine/debug';
 import {
   effect,
   Entity,
@@ -6,7 +6,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { catchError, EMPTY, exhaustMap, tap } from 'rxjs';
 
@@ -16,7 +16,7 @@ import type { WorkspaceFlavoursService } from '../services/flavours';
 import type { WorkspaceProfileCacheStore } from '../stores/profile-cache';
 import type { Workspace } from './workspace';
 
-const logger = new DebugLogger('nexio:workspace-profile');
+const logger = new DebugLogger('affine:workspace-profile');
 
 export interface WorkspaceProfileInfo {
   avatar?: string;
@@ -40,7 +40,7 @@ export class WorkspaceProfile extends Entity<{ metadata: WorkspaceMetadata }> {
   }
 
   profile$ = LiveData.from<WorkspaceProfileInfo | null>(
-    this.cache.watchProfileCache(this.props.metadata.id),
+    this.cache.watchProfileCache(this.props.metadata),
     null
   );
 
@@ -65,7 +65,7 @@ export class WorkspaceProfile extends Entity<{ metadata: WorkspaceMetadata }> {
     if (isEqual(this.profile$.value, info)) {
       return;
     }
-    this.cache.setProfileCache(this.props.metadata.id, info);
+    this.cache.setProfileCache(this.props.metadata, info);
   }
 
   revalidate = effect(

@@ -1,5 +1,5 @@
-import { mixpanel } from '@nexio/track';
-import { OnEvent, Service } from '@ezeslucky/infra';
+import { tracker } from '@affine/track';
+import { OnEvent, Service } from '@toeverything/infra';
 
 import { UserQuota } from '../entities/user-quota';
 import { AccountChanged } from '../events/account-changed';
@@ -13,7 +13,7 @@ export class UserQuotaService extends Service {
       .map(q => q?.humanReadable.name)
       .distinctUntilChanged()
       .subscribe(quota => {
-        mixpanel.people.set({
+        tracker.people.set({
           quota,
         });
       });

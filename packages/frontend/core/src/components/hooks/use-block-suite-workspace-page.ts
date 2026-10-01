@@ -1,6 +1,6 @@
-import { DebugLogger } from '@nexio/debug';
-import { DisposableGroup } from '@canvas/nexio/global/disposable';
-import type { Store, Workspace } from '@canvas/nexio/store';
+import { DebugLogger } from '@affine/debug';
+import { DisposableGroup } from '@blocksuite/affine/global/disposable';
+import type { Store, Workspace } from '@blocksuite/affine/store';
 import { useEffect, useState } from 'react';
 
 const logger = new DebugLogger('use-doc-collection-page');

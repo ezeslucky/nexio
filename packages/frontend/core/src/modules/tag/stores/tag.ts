@@ -1,11 +1,11 @@
-import type { DocsPropertiesMeta } from '@canvas/nexio/store';
+import type { DocsPropertiesMeta } from '@blocksuite/affine/store';
 import {
   LiveData,
   Store,
   yjsGetPath,
   yjsObserveDeep,
   yjsObservePath,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { map, switchMap } from 'rxjs';
 import { Array as YArray } from 'yjs';

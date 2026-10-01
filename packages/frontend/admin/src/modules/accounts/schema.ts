@@ -1,4 +1,4 @@
-import type { FeatureType, ListUsersQuery } from '@nexio/graphql';
+import type { FeatureType, ListUsersQuery } from '@affine/graphql';
 
 export type UserType = ListUsersQuery['users'][0];
 export type UserInput = {

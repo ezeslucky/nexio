@@ -1,5 +1,6 @@
 import { Logger } from '@nestjs/common';
 import { Transactional } from '@nestjs-cls/transactional';
+import { TransactionalAdapterPrisma } from '@nestjs-cls/transactional-adapter-prisma';
 import {
   applyUpdate,
   diffUpdate,
@@ -7,13 +8,25 @@ import {
   encodeStateAsUpdate,
   encodeStateVector,
   encodeStateVectorFromUpdate,
-  mergeUpdates,
   UndoManager,
 } from 'yjs';
 
-import { CallMetric } from '../../../base';
+import { CallMetric, metrics } from '../../../base';
+import { validateDocUpdate } from '../../../native';
+import { applyUpdatesWithNative, mergeUpdatesWithYjs } from '../merge-updates';
 import { Connection } from './connection';
 import { SingletonLocker } from './lock';
+
+const DOC_UPDATE_VALIDATE_TIMEOUT_MS = 1000;
+const DOC_UPDATE_VALIDATE_MAX_BYTES = 32 * 1024 * 1024;
+
+async function nativeApplyUpdates(updates: Uint8Array[]): Promise<Uint8Array> {
+  return applyUpdatesWithNative(updates, 'doc.storage.squash.native');
+}
+
+async function yjsMergeUpdates(updates: Uint8Array[]): Promise<Uint8Array> {
+  return mergeUpdatesWithYjs(updates, 'doc.storage.squash.yjs');
+}
 
 export interface DocRecord {
   spaceId: string;
@@ -55,7 +68,7 @@ export abstract class DocStorageAdapter extends Connection {
 
   constructor(
     protected readonly options: DocStorageOptions = {
-      mergeUpdates,
+      mergeUpdates: yjsMergeUpdates,
     }
   ) {
     super();
@@ -72,38 +85,113 @@ export abstract class DocStorageAdapter extends Connection {
     );
   }
 
+  protected async filterValidDocUpdates(
+    spaceId: string,
+    docId: string,
+    updates: Uint8Array[]
+  ) {
+    const valid: Uint8Array[] = [];
+    for (const update of updates) {
+      const reason = await this.invalidDocUpdateReason(update);
+      if (reason) {
+        metrics.doc.counter('doc_update_rejected').add(1, { reason });
+        this.logger.warn(
+          `Dropped invalid doc update, spaceId: ${spaceId}, docId: ${docId}, reason: ${reason}, size: ${update.length}`
+        );
+        continue;
+      }
+      valid.push(update);
+    }
+    return valid;
+  }
+
+  private async invalidDocUpdateReason(update: Uint8Array) {
+    if (update.length === 2 && update[0] === 0 && update[1] === 0) {
+      return null;
+    }
+    if (update.length > DOC_UPDATE_VALIDATE_MAX_BYTES) {
+      return 'oversized';
+    }
+
+    try {
+      return (await validateDocUpdate(Buffer.from(update), {
+        timeoutMs: DOC_UPDATE_VALIDATE_TIMEOUT_MS,
+      }))
+        ? null
+        : 'invalid';
+    } catch (err) {
+      this.logger.warn('Doc update validation failed', err);
+      metrics.doc.counter('doc_update_validation_failed').add(1);
+      return null;
+    }
+  }
+
   async getDoc(spaceId: string, docId: string): Promise<DocRecord | null> {
+    await using _lock = await this.lockDocForUpdate(spaceId, docId);
+
+    return (await this.getDocUnderLock(spaceId, docId)).doc;
+  }
+
+  protected async getDocUnderLock(
+    spaceId: string,
+    docId: string
+  ): Promise<{ doc: DocRecord | null; snapshotUpdated: boolean }> {
+    const snapshot = await this.getDocSnapshot(spaceId, docId);
+    const updates = await this.getDocUpdates(spaceId, docId);
+
+    if (updates.length) {
+      const docUpdate = await this.squash(
+        snapshot ? [snapshot, ...updates] : updates
+      );
+      return await this.squashUpdatesToSnapshot(
+        spaceId,
+        docId,
+        updates,
+        snapshot,
+        docUpdate
+      );
+    }
+
+    return { doc: snapshot, snapshotUpdated: false };
+  }
+
+  /// get final binary only but not updating the snapshot in database
+  async getDocBinNative(
+    spaceId: string,
+    docId: string
+  ): Promise<Uint8Array | undefined> {
     await using _lock = await this.lockDocForUpdate(spaceId, docId);
 
     const snapshot = await this.getDocSnapshot(spaceId, docId);
     const updates = await this.getDocUpdates(spaceId, docId);
 
     if (updates.length) {
-      return await this.squashUpdatesToSnapshot(
-        spaceId,
-        docId,
-        updates,
-        snapshot
+      const docUpdate = await this.squash(
+        snapshot ? [snapshot, ...updates] : updates,
+        nativeApplyUpdates
       );
+      return docUpdate.bin;
     }
 
-    return snapshot;
+    return snapshot?.bin;
   }
 
-  @Transactional()
-  private async squashUpdatesToSnapshot(
+  @Transactional<TransactionalAdapterPrisma>({ timeout: 60000 })
+  protected async squashUpdatesToSnapshot(
     spaceId: string,
     docId: string,
     updates: DocUpdate[],
-    snapshot: DocRecord | null
+    snapshot: DocRecord | null,
+    finalUpdate: DocUpdate
   ) {
-    this.logger.log(
+    this.logger.verbose(
       `Squashing updates, spaceId: ${spaceId}, docId: ${docId}, updates: ${updates.length}`
     );
-    const { timestamp, bin, editor } = await this.squash(
-      snapshot ? [snapshot, ...updates] : updates
-    );
 
+    const { bin, editor } = finalUpdate;
+    const timestamp = snapshot
+      ? Math.max(finalUpdate.timestamp, snapshot.timestamp + 1)
+      : finalUpdate.timestamp;
     const newSnapshot: DocRecord = {
       spaceId,
       docId,
@@ -119,13 +207,14 @@ export abstract class DocStorageAdapter extends Connection {
       await this.createDocHistory(snapshot);
     }
 
-    // always mark updates as merged unless throws
-    const count = await this.markUpdatesMerged(spaceId, docId, updates);
-    this.logger.log(
-      `Marked ${count} updates as merged, spaceId: ${spaceId}, docId: ${docId}, timestamp: ${timestamp}`
-    );
+    if (success) {
+      const count = await this.markUpdatesMerged(spaceId, docId, updates);
+      this.logger.verbose(
+        `Marked ${count} updates as merged, spaceId: ${spaceId}, docId: ${docId}, timestamp: ${timestamp}`
+      );
+    }
 
-    return newSnapshot;
+    return { doc: newSnapshot, snapshotUpdated: success };
   }
 
   async getDocDiff(
@@ -153,6 +242,16 @@ export abstract class DocStorageAdapter extends Connection {
     spaceId: string,
     docId: string,
     updates: Uint8Array[],
+    editorId: string,
+    expectedPermissionGeneration?: number,
+    writeIntent?: 'update_doc' | 'create_doc',
+    permissionDocId?: string
+  ): Promise<number>;
+
+  abstract pushDocUpdatesTrusted(
+    spaceId: string,
+    docId: string,
+    updates: Uint8Array[],
     editorId?: string
   ): Promise<number>;
 
@@ -162,7 +261,7 @@ export abstract class DocStorageAdapter extends Connection {
     spaceId: string,
     docId: string,
     timestamp: number,
-    editorId?: string
+    editorId: string
   ): Promise<void> {
     await using _lock = await this.lockDocForUpdate(spaceId, docId);
     const toSnapshot = await this.getDocHistory(spaceId, docId, timestamp);
@@ -219,8 +318,11 @@ export abstract class DocStorageAdapter extends Connection {
   ): Promise<boolean>;
 
   @CallMetric('doc', 'squash')
-  protected async squash(updates: DocUpdate[]): Promise<DocUpdate> {
-    const merge = this.options?.mergeUpdates ?? mergeUpdates;
+  protected async squash(
+    updates: DocUpdate[],
+    merge?: (updates: Uint8Array[]) => Promise<Uint8Array>
+  ): Promise<DocUpdate> {
+    const mergeFn = merge ?? this.options?.mergeUpdates ?? yjsMergeUpdates;
     const lastUpdate = updates.at(-1);
     if (!lastUpdate) {
       throw new Error('No updates to be squashed.');
@@ -231,7 +333,7 @@ export abstract class DocStorageAdapter extends Connection {
       return lastUpdate;
     }
 
-    const finalUpdate = await merge(updates.map(u => u.bin));
+    const finalUpdate = await mergeFn(updates.map(u => u.bin));
 
     return {
       bin: finalUpdate,

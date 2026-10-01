@@ -1,4 +1,8 @@
-import { Container, Img, Link, Row, Section } from '@react-email/components';
+import { Container } from '@react-email/container';
+import { Img } from '@react-email/img';
+import { Link } from '@react-email/link';
+import { Row } from '@react-email/row';
+import { Section } from '@react-email/section';
 import type { CSSProperties } from 'react';
 
 import { BasicTextStyle } from './common';
@@ -27,10 +31,10 @@ export const Footer = () => {
           {['Github', 'Twitter', 'Discord', 'Youtube', 'Reddit'].map(
             platform => (
               <td key={platform} style={{ padding: '0 10px' }}>
-                <Link href={`https://nexio.pro/${platform.toLowerCase()}`}>
+                <Link href={`https://affine.pro/${platform.toLowerCase()}`}>
                   <Img
-                    src={`https://cdn.affne.pro/mail/2023-8-9/${platform}.png`}
-                    alt={`nexio ${platform.toLowerCase()} link`}
+                    src={`https://cdn.affine.pro/mail/2023-8-9/${platform}.png`}
+                    alt={`affine ${platform.toLowerCase()} link`}
                     height="16px"
                   />
                 </Link>
@@ -49,13 +53,13 @@ export const Footer = () => {
           <td>Copyright</td>
           <td>
             <Img
-              src="https://cdn.nexio.pro/mail/2023-8-9/copyright.png"
+              src="https://cdn.affine.pro/mail/2023-8-9/copyright.png"
               alt="copyright"
               height="14px"
               style={{ verticalAlign: 'middle', margin: '0 4px' }}
             />
           </td>
-          <td>2023-{new Date().getUTCFullYear()} ezeslucky</td>
+          <td>2023-{new Date().getUTCFullYear()} ToEverything</td>
         </Row>
       </Section>
     </Container>

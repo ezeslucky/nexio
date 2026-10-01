@@ -1,11 +1,10 @@
-import { configureQuotaModule } from '@nexio/core/modules/quota';
-import { type Framework } from '@ezeslucky/infra';
+import { configureQuotaModule } from '@affine/core/modules/quota';
+import { type Framework } from '@toeverything/infra';
 
 import {
   configureAIButtonModule,
   configureAIDraftModule,
   configureAIModelModule,
-  configureAINetworkSearchModule,
   configureAIPlaygroundModule,
   configureAIReasoningModule,
   configureAIToolsConfigModule,
@@ -14,6 +13,7 @@ import { configureAppSidebarModule } from './app-sidebar';
 import { configAtMenuConfigModule } from './at-menu-config';
 import { configureBlobManagementModule } from './blob-management';
 import { configureCloudModule } from './cloud';
+import { configureCodeBlockPreviewRendererModule } from './code-block-preview-renderer';
 import { configureCollectionModule } from './collection';
 import { configureCollectionRulesModule } from './collection-rules';
 import { configureCommentModule } from './comment';
@@ -34,6 +34,7 @@ import { configureFeatureFlagModule } from './feature-flag';
 import { configureGlobalContextModule } from './global-context';
 import { configureI18nModule } from './i18n';
 import { configureIconPickerModule } from './icon-picker';
+import { configureImportModule } from './import';
 import { configureImportClipperModule } from './import-clipper';
 import { configureImportTemplateModule } from './import-template';
 import { configureIntegrationModule } from './integration';
@@ -78,6 +79,7 @@ export function configureCommonModules(framework: Framework) {
   configureGlobalContextModule(framework);
   configureLifecycleModule(framework);
   configureFeatureFlagModule(framework);
+  configureCodeBlockPreviewRendererModule(framework);
   configureCollectionModule(framework);
   configureNavigationModule(framework);
   configureTagModule(framework);
@@ -102,6 +104,7 @@ export function configureCommonModules(framework: Framework) {
   configureSystemFontFamilyModule(framework);
   configureEditorSettingModule(framework);
   configureImportTemplateModule(framework);
+  configureImportModule(framework);
   configureUserspaceModule(framework);
   configureAppSidebarModule(framework);
   configureJournalModule(framework);
@@ -114,7 +117,6 @@ export function configureCommonModules(framework: Framework) {
   configSearchMenuModule(framework);
   configureDndModule(framework);
   configureCommonGlobalStorageImpls(framework);
-  configureAINetworkSearchModule(framework);
   configureAIReasoningModule(framework);
   configureAIPlaygroundModule(framework);
   configureAIButtonModule(framework);

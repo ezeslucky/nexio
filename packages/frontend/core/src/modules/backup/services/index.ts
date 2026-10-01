@@ -6,7 +6,7 @@ import {
   onComplete,
   onStart,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { switchMap, tap } from 'rxjs';
 
 import type { DesktopApiService } from '../../desktop-api';
@@ -47,9 +47,11 @@ export class BackupService extends Service {
     )
   );
 
-  async recoverBackupWorkspace(dbPath: string) {
+  async recoverBackupWorkspace(backupWorkspaceId: string) {
     const result =
-      await this.desktopApiService.handler.dialog.loadDBFile(dbPath);
+      await this.desktopApiService.handler.workspace.recoverBackupWorkspace(
+        backupWorkspaceId
+      );
     if (result.workspaceId) {
       _addLocalWorkspace(result.workspaceId);
       this.workspacesService.list.revalidate();

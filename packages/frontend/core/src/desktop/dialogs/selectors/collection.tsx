@@ -1,4 +1,4 @@
-import { Modal, toast } from '@nexio/component';
+import { Modal, toast } from '@affine/component';
 import {
   collectionHeaderColsDef,
   CollectionListItemRenderer,
@@ -6,18 +6,18 @@ import {
   type ListItem,
   ListTableHeader,
   VirtualizedList,
-} from '@nexio/core/components/page-list';
-import { SelectorLayout } from '@nexio/core/components/page-list/selector/selector-layout';
+} from '@affine/core/components/page-list';
+import { SelectorLayout } from '@affine/core/components/page-list/selector/selector-layout';
 import {
   type CollectionMeta,
   CollectionService,
-} from '@nexio/core/modules/collection';
-import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
-import type { WORKSPACE_DIALOG_SCHEMA } from '@nexio/core/modules/dialogs/constant';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/collection';
+import type { DialogComponentProps } from '@affine/core/modules/dialogs';
+import type { WORKSPACE_DIALOG_SCHEMA } from '@affine/core/modules/dialogs/constant';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -32,8 +32,8 @@ const FavoriteOperation = ({ collection }: { collection: ListItem }) => {
     favAdapter.toggle(collection.id, 'collection');
     toast(
       isFavorite
-        ? t['com.nexio.toastMessage.removedFavorites']()
-        : t['com.nexio.toastMessage.addedFavorites']()
+        ? t['com.affine.toastMessage.removedFavorites']()
+        : t['com.affine.toastMessage.addedFavorites']()
     );
   }, [collection.id, favAdapter, isFavorite, t]);
 
@@ -95,7 +95,7 @@ export const CollectionSelectorDialog = ({
     >
       <SelectorLayout
         searchPlaceholder={t[
-          'com.nexio.selector-collection.search.placeholder'
+          'com.affine.selector-collection.search.placeholder'
         ]()}
         selectedCount={selection.length}
         onSearch={setKeyword}

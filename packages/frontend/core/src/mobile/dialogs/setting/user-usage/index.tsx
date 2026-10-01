@@ -1,11 +1,11 @@
-import { Skeleton } from '@nexio/component';
+import { Skeleton } from '@affine/component';
 import {
   AuthService,
   ServerService,
   UserCopilotQuotaService,
   UserQuotaService,
-} from '@nexio/core/modules/cloud';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/cloud';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { type ReactNode, useEffect } from 'react';

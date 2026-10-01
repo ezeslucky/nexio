@@ -1,14 +1,14 @@
-import { Switch } from '@nexio/component';
+import { Switch } from '@affine/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component/setting-components';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 
 export const SharingPanel = () => {
   const workspace = useService(WorkspaceService).workspace;
@@ -21,10 +21,18 @@ export const SharingPanel = () => {
 export const Sharing = () => {
   const t = useI18n();
   const shareSetting = useService(WorkspaceShareSettingService).sharePreview;
+  const enableSharing = useLiveData(shareSetting.enableSharing$);
   const enableUrlPreview = useLiveData(shareSetting.enableUrlPreview$);
   const loading = useLiveData(shareSetting.isLoading$);
   const permissionService = useService(WorkspacePermissionService);
   const isOwner = useLiveData(permissionService.permission.isOwner$);
+
+  const handleToggleSharing = useAsyncCallback(
+    async (checked: boolean) => {
+      await shareSetting.setEnableSharing(checked);
+    },
+    [shareSetting]
+  );
 
   const handleCheck = useAsyncCallback(
     async (checked: boolean) => {
@@ -38,16 +46,30 @@ export const Sharing = () => {
   }
 
   return (
-    <SettingWrapper title={t['com.nexio.settings.workspace.sharing.title']()}>
+    <SettingWrapper title={t['com.affine.settings.workspace.sharing.title']()}>
       <SettingRow
-        name={t['com.nexio.settings.workspace.sharing.url-preview.title']()}
+        name={t['com.affine.settings.workspace.sharing.url-preview.title']()}
         desc={t[
-          'com.nexio.settings.workspace.sharing.url-preview.description'
+          'com.affine.settings.workspace.sharing.url-preview.description'
         ]()}
       >
         <Switch
           checked={enableUrlPreview || false}
           onChange={handleCheck}
+          disabled={loading}
+        />
+      </SettingRow>
+      <SettingRow
+        name={t[
+          'com.affine.settings.workspace.sharing.workspace-sharing.title'
+        ]()}
+        desc={t[
+          'com.affine.settings.workspace.sharing.workspace-sharing.description'
+        ]()}
+      >
+        <Switch
+          checked={enableSharing ?? true}
+          onChange={handleToggleSharing}
           disabled={loading}
         />
       </SettingRow>

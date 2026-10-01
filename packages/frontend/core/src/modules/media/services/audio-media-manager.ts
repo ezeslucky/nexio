@@ -1,5 +1,5 @@
-import { generateUrl } from '@nexio/core/components/hooks/nexio/use-share-url';
-import { AttachmentBlockModel } from '@canvas/nexio/model';
+import { generateUrl } from '@affine/core/components/hooks/affine/use-share-url';
+import { AttachmentBlockModel } from '@blocksuite/affine/model';
 import {
   attachmentBlockAudioMediaKey,
   type AudioMediaDescriptor,
@@ -9,7 +9,7 @@ import {
   parseAudioMediaKey,
   type PlaybackState,
   Service,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { clamp } from 'lodash-es';
 import { distinctUntilChanged } from 'rxjs';
 
@@ -125,7 +125,7 @@ export class AudioMediaManagerService extends Service {
           blobId: descriptor.blobId,
           metadata: new MediaMetadata({
             title: descriptor.name,
-            artist: 'NEXIO',
+            artist: 'AFFiNE',
             // todo: add artwork, like the app icon?
           }),
         })

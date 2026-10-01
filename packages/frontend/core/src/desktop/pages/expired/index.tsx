@@ -1,4 +1,4 @@
-import { ExpiredPage } from '@nexio/component/member-components';
+import { ExpiredPage } from '@affine/component/member-components';
 import { useCallback } from 'react';
 
 import {
@@ -13,9 +13,9 @@ import {
  */
 export const Component = () => {
   const { jumpToIndex } = useNavigateHelper();
-  const onopenNEXIO = useCallback(() => {
+  const onOpenAffine = useCallback(() => {
     jumpToIndex(RouteLogic.REPLACE);
   }, [jumpToIndex]);
 
-  return <ExpiredPage onopenNEXIO={onopenNEXIO} />;
+  return <ExpiredPage onOpenAffine={onOpenAffine} />;
 };

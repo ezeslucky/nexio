@@ -1,23 +1,23 @@
-import { Switch } from '@nexio/component';
+import { Switch } from '@affine/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
-import { UrlService } from '@nexio/core/modules/url';
-import { appIconMap, appNames } from '@nexio/core/utils/channel';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component/setting-components';
+import { useAppUpdater } from '@affine/core/components/hooks/use-app-updater';
+import { UrlService } from '@affine/core/modules/url';
+import { appIconMap, appNames } from '@affine/core/utils/channel';
+import { useI18n } from '@affine/i18n';
 import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
-import { useServices } from '@ezeslucky/infra';
+import { useServices } from '@toeverything/infra';
 import { useCallback } from 'react';
 
-import { useAppSettingHelper } from '../../../../../components/hooks/nexio/use-app-setting-helper';
+import { useAppSettingHelper } from '../../../../../components/hooks/affine/use-app-setting-helper';
 import { relatedLinks } from './config';
 import * as styles from './style.css';
 import { UpdateCheckSection } from './update-check-section';
 
-export const AboutNexio = () => {
+export const AboutAffine = () => {
   const t = useI18n();
   const { appSettings, updateSettings } = useAppSettingHelper();
   const { toggleAutoCheck, toggleAutoDownload } = useAppUpdater();
@@ -54,11 +54,11 @@ export const AboutNexio = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.nexio.aboutnexio.title']()}
-        subtitle={t['com.nexio.aboutnexio.subtitle']()}
+        title={t['com.affine.aboutAFFiNE.title']()}
+        subtitle={t['com.affine.aboutAFFiNE.subtitle']()}
         data-testid="about-title"
       />
-      <SettingWrapper title={t['com.nexio.aboutnexio.version.title']()}>
+      <SettingWrapper title={t['com.affine.aboutAFFiNE.version.title']()}>
         <SettingRow
           name={appName}
           desc={BUILD_CONFIG.appVersion}
@@ -67,15 +67,15 @@ export const AboutNexio = () => {
           <img src={appIcon} alt={appName} width={56} height={56} />
         </SettingRow>
         <SettingRow
-          name={t['com.nexio.aboutnexio.version.editor.title']()}
+          name={t['com.affine.aboutAFFiNE.version.editor.title']()}
           desc={BUILD_CONFIG.editorVersion}
         />
         {BUILD_CONFIG.isElectron ? (
           <>
             <UpdateCheckSection />
             <SettingRow
-              name={t['com.nexio.aboutnexio.autoCheckUpdate.title']()}
-              desc={t['com.nexio.aboutnexio.autoCheckUpdate.description']()}
+              name={t['com.affine.aboutAFFiNE.autoCheckUpdate.title']()}
+              desc={t['com.affine.aboutAFFiNE.autoCheckUpdate.description']()}
             >
               <Switch
                 checked={appSettings.autoCheckUpdate}
@@ -83,9 +83,9 @@ export const AboutNexio = () => {
               />
             </SettingRow>
             <SettingRow
-              name={t['com.nexio.aboutnexio.autoDownloadUpdate.title']()}
+              name={t['com.affine.aboutAFFiNE.autoDownloadUpdate.title']()}
               desc={t[
-                'com.nexio.aboutnexio.autoDownloadUpdate.description'
+                'com.affine.aboutAFFiNE.autoDownloadUpdate.description'
               ]()}
             >
               <Switch
@@ -94,8 +94,8 @@ export const AboutNexio = () => {
               />
             </SettingRow>
             <SettingRow
-              name={t['com.nexio.aboutnexio.changelog.title']()}
-              desc={t['com.nexio.aboutnexio.changelog.description']()}
+              name={t['com.affine.aboutAFFiNE.changelog.title']()}
+              desc={t['com.affine.aboutAFFiNE.changelog.description']()}
               style={{ cursor: 'pointer' }}
               onClick={() => {
                 urlService.openPopupWindow(BUILD_CONFIG.changelogUrl);
@@ -106,8 +106,8 @@ export const AboutNexio = () => {
           </>
         ) : null}
         <SettingRow
-          name={t['com.nexio.telemetry.enable']()}
-          desc={t['com.nexio.telemetry.enable.desc']()}
+          name={t['com.affine.telemetry.enable']()}
+          desc={t['com.affine.telemetry.enable.desc']()}
         >
           <Switch
             checked={appSettings.enableTelemetry !== false}
@@ -115,27 +115,27 @@ export const AboutNexio = () => {
           />
         </SettingRow>
       </SettingWrapper>
-      <SettingWrapper title={t['com.nexio.aboutnexio.contact.title']()}>
+      <SettingWrapper title={t['com.affine.aboutAFFiNE.contact.title']()}>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://nexio.pro"
+          href="https://affine.pro"
           target="_blank"
         >
-          {t['com.nexio.aboutnexio.contact.website']()}
+          {t['com.affine.aboutAFFiNE.contact.website']()}
           <OpenInNewIcon className="icon" />
         </a>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://community.nexio.pro"
+          href="https://affine.pro/redirect/discord"
           target="_blank"
         >
-          {t['com.nexio.aboutnexio.contact.community']()}
+          {t['com.affine.aboutAFFiNE.contact.community']()}
           <OpenInNewIcon className="icon" />
         </a>
       </SettingWrapper>
-      <SettingWrapper title={t['com.nexio.aboutnexio.community.title']()}>
+      <SettingWrapper title={t['com.affine.aboutAFFiNE.community.title']()}>
         <div className={styles.communityWrapper}>
           {relatedLinks.map(({ icon, title, link }) => {
             return (
@@ -153,23 +153,23 @@ export const AboutNexio = () => {
           })}
         </div>
       </SettingWrapper>
-      <SettingWrapper title={t['com.nexio.aboutnexio.legal.title']()}>
+      <SettingWrapper title={t['com.affine.aboutAFFiNE.legal.title']()}>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://nexio.pro/privacy"
+          href="https://affine.pro/privacy"
           target="_blank"
         >
-          {t['com.nexio.aboutnexio.legal.privacy']()}
+          {t['com.affine.aboutAFFiNE.legal.privacy']()}
           <OpenInNewIcon className="icon" />
         </a>
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://nexio.pro/terms"
+          href="https://affine.pro/terms"
           target="_blank"
         >
-          {t['com.nexio.aboutnexio.legal.tos']()}
+          {t['com.affine.aboutAFFiNE.legal.tos']()}
           <OpenInNewIcon className="icon" />
         </a>
       </SettingWrapper>

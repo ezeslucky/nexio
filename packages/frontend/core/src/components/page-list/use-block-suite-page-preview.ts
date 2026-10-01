@@ -1,4 +1,4 @@
-import type { Store } from '@canvas/nexio/store';
+import type { Store } from '@blocksuite/affine/store';
 import type { Atom } from 'jotai';
 import { atom } from 'jotai';
 
@@ -27,7 +27,7 @@ export const getPagePreviewText = (page: Store) => {
       console.error('Unexpected empty block');
       break;
     }
-    if (block.flavour === 'nexio:surface') {
+    if (block.flavour === 'affine:surface') {
       // The surface block is a special block that contains canvas data,
       // it should not be included in the preview.
       continue;
@@ -48,7 +48,7 @@ export const getPagePreviewText = (page: Store) => {
       preview.push(text);
     } else {
       // Other block e.g. image/attachment/bookmark
-      const type = block.flavour.split('nexio:')[1] ?? null;
+      const type = block.flavour.split('affine:')[1] ?? null;
       if (type) {
         previewLenNeeded -= type.length + 2;
         preview.push(`[${type}]`);
@@ -60,7 +60,7 @@ export const getPagePreviewText = (page: Store) => {
 
 const emptyAtom = atom<string>('');
 
-export function useCanvasPagePreview(page: Store | null): Atom<string> {
+export function useBlockSuitePagePreview(page: Store | null): Atom<string> {
   if (page === null) {
     return emptyAtom;
   } else if (weakMap.has(page)) {

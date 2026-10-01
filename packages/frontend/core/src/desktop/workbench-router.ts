@@ -42,6 +42,14 @@ export const workbenchRoutes = [
     lazy: () => import('./pages/workspace/journals'),
   },
   {
+    path: '/workflow',
+    lazy: () => import('./pages/workspace/workflow/index'),
+  },
+  {
+    path: '/workflow/:workflowId',
+    lazy: () => import('./pages/workspace/workflow/index'),
+  },
+  {
     path: '/settings',
     lazy: () => import('./pages/workspace/settings'),
   },

@@ -5,7 +5,7 @@ import type { DNDData, fromExternalData, toExternalData } from './types';
 export const DNDContext = createContext<{
   /**
    * external data adapter.
-   * Convert the external data to the draggable data that are known to nexio.
+   * Convert the external data to the draggable data that are known to affine.
    *
    * if this is provided, the drop target will handle external elements as well.
    *
@@ -15,7 +15,7 @@ export const DNDContext = createContext<{
 
   /**
    * Convert the draggable data to the external data.
-   * Mainly used to be consumed by canvas.
+   * Mainly used to be consumed by blocksuite.
    *
    * @default undefined
    */

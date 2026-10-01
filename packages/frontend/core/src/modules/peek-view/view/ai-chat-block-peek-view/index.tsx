@@ -1,19 +1,22 @@
-import { toReactNode } from '@nexio/component';
-import { AIChatBlockPeekViewTemplate } from '@nexio/core/canvas/ai';
-import type { AIChatBlockModel } from '@nexio/core/canvas/ai/blocks/ai-chat-block/model/ai-chat-model';
-import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
-import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
+import { toReactNode } from '@affine/component';
+import { AIChatBlockPeekViewTemplate } from '@affine/core/blocksuite/ai';
+import type { AIChatBlockModel } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/model/ai-chat-model';
+import { registerAIAppEffects } from '@affine/core/blocksuite/ai/effects/app';
+import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
+import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
 import {
   AIDraftService,
+  AIModelService,
   AIToolsConfigService,
-} from '@nexio/core/modules/ai-button';
-import { AIModelService } from '@nexio/core/modules/ai-button/services/models';
-import { SubscriptionService } from '@nexio/core/modules/cloud';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import type { EditorHost } from '@canvas/nexio/std';
-import { useFramework } from '@ezeslucky/infra';
+} from '@affine/core/modules/ai-button';
+import { ServerService, SubscriptionService } from '@affine/core/modules/cloud';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import type { EditorHost } from '@blocksuite/affine/std';
+import { useFramework } from '@toeverything/infra';
 import { useMemo } from 'react';
+
+registerAIAppEffects();
 
 export type AIChatBlockPeekViewProps = {
   model: AIChatBlockModel;
@@ -24,20 +27,17 @@ export const AIChatBlockPeekView = ({
   model,
   host,
 }: AIChatBlockPeekViewProps) => {
-  const {
-    docDisplayConfig,
-    searchMenuConfig,
-    networkSearchConfig,
-    reasoningConfig,
-  } = useAIChatConfig();
+  const { docDisplayConfig, searchMenuConfig, reasoningConfig } =
+    useAIChatConfig();
 
   const framework = useFramework();
-  const nexioFeatureFlagService = framework.get(FeatureFlagService);
-  const nexioWorkspaceDialogService = framework.get(WorkspaceDialogService);
+  const serverService = framework.get(ServerService);
+  const affineFeatureFlagService = framework.get(FeatureFlagService);
+  const affineWorkspaceDialogService = framework.get(WorkspaceDialogService);
   const aiDraftService = framework.get(AIDraftService);
   const aiToolsConfigService = framework.get(AIToolsConfigService);
-  const subscriptionService = framework.get(SubscriptionService);
   const aiModelService = framework.get(AIModelService);
+  const subscriptionService = framework.get(SubscriptionService);
   const handleAISubscribe = useAISubscribe();
 
   return useMemo(() => {
@@ -46,14 +46,14 @@ export const AIChatBlockPeekView = ({
       host,
       docDisplayConfig,
       searchMenuConfig,
-      networkSearchConfig,
       reasoningConfig,
-      nexioFeatureFlagService,
-      nexioWorkspaceDialogService,
+      serverService,
+      affineFeatureFlagService,
+      affineWorkspaceDialogService,
       aiDraftService,
       aiToolsConfigService,
-      subscriptionService,
       aiModelService,
+      subscriptionService,
       handleAISubscribe
     );
     return toReactNode(template);
@@ -62,14 +62,14 @@ export const AIChatBlockPeekView = ({
     host,
     docDisplayConfig,
     searchMenuConfig,
-    networkSearchConfig,
     reasoningConfig,
-    nexioFeatureFlagService,
-    nexioWorkspaceDialogService,
+    serverService,
+    affineFeatureFlagService,
+    affineWorkspaceDialogService,
     aiDraftService,
     aiToolsConfigService,
-    subscriptionService,
     aiModelService,
+    subscriptionService,
     handleAISubscribe,
   ]);
 };

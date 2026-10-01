@@ -12,22 +12,22 @@ import {
   MenuItem,
   useDraggable,
   useDropTarget,
-} from '@nexio/component';
-import { Guard } from '@nexio/core/components/guard';
-import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
-import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
-import type { ExplorerType } from '@nexio/core/modules/explorer-icon/store/explorer-icon';
-import type { DocPermissionActions } from '@nexio/core/modules/permissions';
-import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import { Guard } from '@affine/core/components/guard';
+import { AppSidebarService } from '@affine/core/modules/app-sidebar';
+import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
+import type { ExplorerType } from '@affine/core/modules/explorer-icon/store/explorer-icon';
+import type { DocPermissionActions } from '@affine/core/modules/permissions';
+import { WorkbenchLink } from '@affine/core/modules/workbench';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
 import {
   ArrowDownSmallIcon,
   EditIcon,
   MoreHorizontalIcon,
 } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import type { To } from 'history';
@@ -48,8 +48,10 @@ import { DropEffect } from './drop-effect';
 import * as styles from './node.css';
 import type { NodeOperation } from './types';
 
+const EMPTY_OPERATIONS: NodeOperation[] = [];
+
 export type NavigationPanelTreeNodeDropEffectData = {
-  source: { data: NexioDNDData['draggable'] };
+  source: { data: AffineDNDData['draggable'] };
   treeInstruction: DropTargetTreeInstruction | null;
 };
 export type NavigationPanelTreeNodeDropEffect = (
@@ -90,8 +92,7 @@ type ExplorerIconConfig = {
   where: ExplorerType;
   id: string;
 };
-interface WebNavigationPanelTreeNodeProps
-  extends BaseNavigationPanelTreeNodeProps {
+interface WebNavigationPanelTreeNodeProps extends BaseNavigationPanelTreeNodeProps {
   renameable?: boolean;
   onRename?: (newName: string) => void;
   renameableGuard?: { docId: string; action: DocPermissionActions };
@@ -99,10 +100,10 @@ interface WebNavigationPanelTreeNodeProps
 
   explorerIconConfig?: ExplorerIconConfig | null;
 
-  canDrop?: DropTargetOptions<NexioDNDData>['canDrop'];
+  canDrop?: DropTargetOptions<AffineDNDData>['canDrop'];
   reorderable?: boolean;
-  dndData?: NexioDNDData;
-  onDrop?: (data: DropTargetDropEvent<NexioDNDData>) => void;
+  dndData?: AffineDNDData;
+  onDrop?: (data: DropTargetDropEvent<AffineDNDData>) => void;
   dropEffect?: NavigationPanelTreeNodeDropEffect;
 }
 
@@ -191,9 +192,9 @@ export const NavigationPanelTreeNode = ({
   collapsible = true,
   canDrop,
   reorderable = true,
-  operations = [],
+  operations = EMPTY_OPERATIONS,
   postfix,
-  childrenOperations = [],
+  childrenOperations = EMPTY_OPERATIONS,
   childrenPlaceholder,
   linkComponent: LinkComponent = WorkbenchLink,
   dndData,
@@ -227,7 +228,7 @@ export const NavigationPanelTreeNode = ({
   );
 
   const { dragRef, dragging, CustomDragPreview } = useDraggable<
-    NexioDNDData & { draggable: { __cid: string } }
+    AffineDNDData & { draggable: { __cid: string } }
   >(
     () => ({
       data: { ...dndData?.draggable, __cid: cid },
@@ -235,7 +236,7 @@ export const NavigationPanelTreeNode = ({
     }),
     [cid, dndData]
   );
-  const handleCanDrop = useMemo<DropTargetOptions<NexioDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
     () => args => {
       if (!reorderable && args.treeInstruction?.type !== 'make-child') {
         return false;
@@ -251,7 +252,7 @@ export const NavigationPanelTreeNode = ({
     draggedOverDraggable,
     draggedOver,
     draggedOverPosition,
-  } = useDropTarget<NexioDNDData & { draggable: { __cid: string } }>(
+  } = useDropTarget<AffineDNDData & { draggable: { __cid: string } }>(
     () => ({
       data: dndData?.dropTarget,
       treeInstruction: {
@@ -358,7 +359,7 @@ export const NavigationPanelTreeNode = ({
                         onClick={() => setRenaming(true)}
                         disabled={!can}
                       >
-                        {t['com.nexio.menu.rename']()}
+                        {t['com.affine.menu.rename']()}
                       </MenuItem>
                     )}
                   </Guard>
@@ -369,7 +370,7 @@ export const NavigationPanelTreeNode = ({
                     prefixIcon={<EditIcon />}
                     onClick={() => setRenaming(true)}
                   >
-                    {t['com.nexio.menu.rename']()}
+                    {t['com.affine.menu.rename']()}
                   </MenuItem>
                 ),
               }

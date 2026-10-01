@@ -1,11 +1,11 @@
-import { Skeleton } from '@nexio/component';
-import { NavigationPanelTreeRoot } from '@nexio/core/desktop/components/navigation-panel';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
-import { OrganizeService } from '@nexio/core/modules/organize';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+import { Skeleton } from '@affine/component';
+import { NavigationPanelTreeRoot } from '@affine/core/desktop/components/navigation-panel';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
+import { OrganizeService } from '@affine/core/modules/organize';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import { AddOrganizeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';
@@ -45,7 +45,7 @@ export const NavigationPanelOrganize = () => {
   return (
     <CollapsibleSection
       path={path}
-      title={t['com.nexio.rootAppSidebar.organize']()}
+      title={t['com.affine.rootAppSidebar.organize']()}
     >
       {/* TODO(@CatsJuice): Organize loading UI */}
       <NavigationPanelTreeRoot placeholder={isLoading ? <Skeleton /> : null}>
@@ -59,7 +59,7 @@ export const NavigationPanelOrganize = () => {
         <AddItemPlaceholder
           icon={<AddOrganizeIcon />}
           data-testid="navigation-panel-bar-add-organize-button"
-          label={t['com.nexio.rootAppSidebar.organize.add-folder']()}
+          label={t['com.affine.rootAppSidebar.organize.add-folder']()}
           onClick={() => setOpenNewFolderDialog(true)}
         />
       </NavigationPanelTreeRoot>

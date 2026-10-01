@@ -10,9 +10,6 @@ export class DevCommand extends PackageSelectorCommand {
     '@nexio/server',
     '@nexio/electron',
     '@nexio/electron-renderer',
-    '@nexio/mobile',
-    '@nexio/ios',
-    '@nexio/android',
     '@nexio/admin',
   ];
 

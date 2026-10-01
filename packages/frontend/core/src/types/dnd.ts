@@ -1,6 +1,6 @@
-import type { DNDData } from '@nexio/component';
+import type { DNDData } from '@affine/component';
 
-export type NexioDNDEntity =
+export type AffineDNDEntity =
   | {
       type: 'doc';
       id: string;
@@ -22,9 +22,9 @@ export type NexioDNDEntity =
       id: string;
     };
 
-export interface NexioDNDData extends DNDData {
+export interface AffineDNDData extends DNDData {
   draggable: {
-    entity?: NexioDNDEntity;
+    entity?: AffineDNDEntity;
     from?:
       | {
           at: 'navigation-panel:organize:folder-node';
@@ -95,7 +95,7 @@ export interface NexioDNDData extends DNDData {
           edge: 'left' | 'right';
         }
       | {
-          at: 'canvas-editor';
+          at: 'blocksuite-editor';
         }
       | {
           at: 'external'; // for external apps

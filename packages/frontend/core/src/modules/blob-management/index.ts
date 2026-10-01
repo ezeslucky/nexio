@@ -1,4 +1,4 @@
-import { type Framework } from '@ezeslucky/infra';
+import { type Framework } from '@toeverything/infra';
 
 import { DocsSearchService } from '../docs-search';
 import { WorkspaceScope, WorkspaceService } from '../workspace';

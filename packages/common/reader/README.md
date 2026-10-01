@@ -1,11 +1,11 @@
-# Nexio canvas format YDoc reader
+# Affine Blocksuite format YDoc reader
 
 ## Usage
 
 ### read rootYDoc
 
 ```ts
-import { readAllDocsFromRootDoc } from '@nexio/reader';
+import { readAllDocsFromRootDoc } from '@affine/reader';
 
 const docs = readAllDocsFromRootDoc(rootDoc);
 console.log(Array.from(docsWithTrash.entries()));
@@ -19,7 +19,7 @@ console.log(Array.from(docsWithTrash.entries()));
 ### read YDoc
 
 ```ts
-import { readAllBlocksFromDoc } from '@nexio/reader';
+import { readAllBlocksFromDoc } from '@affine/reader';
 
 const blocks = readAllBlocksFromDoc(doc);
 ```

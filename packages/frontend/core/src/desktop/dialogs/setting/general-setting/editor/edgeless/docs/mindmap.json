@@ -2,21 +2,21 @@
   "type": "page",
   "meta": {
     "id": "_JUmoI_F28",
-    "title": "Canvas Playground",
+    "title": "BlockSuite Playground",
     "createDate": 1725610677620,
     "tags": []
   },
   "blocks": {
     "type": "block",
     "id": "FnaWN8Zm2_",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
-            "insert": "Canvas Playground"
+            "insert": "BlockSuite Playground"
           }
         ]
       }
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "hevWf4ccWc",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {
@@ -33,7 +33,7 @@
               "index": "a0",
               "seed": 739933670,
               "children": {
-                "nexio:surface:ymap": true,
+                "affine:surface:ymap": true,
                 "json": {
                   "BvanBL7O38": {
                     "index": "a0"
@@ -69,7 +69,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 20,
               "fontWeight": "600",
               "maxWidth": 400,
@@ -89,7 +89,7 @@
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "text": {
-                "nexio:surface:text": true,
+                "affine:surface:text": true,
                 "delta": [
                   {
                     "insert": "Mind Map"
@@ -113,7 +113,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -133,7 +133,7 @@
               "strokeStyle": "solid",
               "strokeWidth": 3,
               "text": {
-                "nexio:surface:text": true,
+                "affine:surface:text": true,
                 "delta": [
                   {
                     "insert": "Text"
@@ -157,7 +157,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -177,7 +177,7 @@
               "strokeStyle": "solid",
               "strokeWidth": 3,
               "text": {
-                "nexio:surface:text": true,
+                "affine:surface:text": true,
                 "delta": [
                   {
                     "insert": "Text"
@@ -201,7 +201,7 @@
                 "light": "#ffffff"
               },
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 16,
               "fontWeight": "500",
               "maxWidth": false,
@@ -221,7 +221,7 @@
               "strokeStyle": "solid",
               "strokeWidth": 3,
               "text": {
-                "nexio:surface:text": true,
+                "affine:surface:text": true,
                 "delta": [
                   {
                     "insert": "Text"
@@ -239,11 +239,11 @@
           {
             "type": "block",
             "id": "bVYX1z2q3T",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

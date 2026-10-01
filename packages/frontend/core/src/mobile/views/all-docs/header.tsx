@@ -1,4 +1,4 @@
-import { IconButton, MobileMenu, SafeArea } from '@nexio/component';
+import { IconButton, MobileMenu, SafeArea } from '@affine/component';
 import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
 
 import { header, headerContent, headerSpace } from './style.css';

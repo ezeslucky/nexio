@@ -1,8 +1,8 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { getBuildConfig } from '@nexio-tools/utils/build-config';
-import { Package } from '@nexio-tools/utils/workspace';
+import { getBuildConfig } from '@affine-tools/utils/build-config';
+import { Package } from '@affine-tools/utils/workspace';
 import { sentryEsbuildPlugin } from '@sentry/esbuild-plugin';
 import type { BuildOptions, Plugin } from 'esbuild';
 
@@ -10,7 +10,7 @@ export const electronDir = fileURLToPath(new URL('..', import.meta.url));
 
 export const rootDir = resolve(electronDir, '..', '..', '..', '..');
 
-export const NODE_MAJOR_VERSION = 18;
+export const NODE_MAJOR_VERSION = 22;
 
 export const mode = (process.env.NODE_ENV =
   process.env.NODE_ENV || 'development');
@@ -24,7 +24,7 @@ export const config = (): BuildOptions => {
     'process.env.NODE_ENV': process.env.NODE_ENV,
     REPLACE_ME_BUILD_ENV: process.env.BUILD_TYPE ?? 'stable',
     ...Object.entries(
-      getBuildConfig(new Package('@nexio/electron'), {
+      getBuildConfig(new Package('@affine/electron'), {
         mode:
           process.env.NODE_ENV === 'production' ? 'production' : 'development',
         channel: (process.env.BUILD_TYPE as any) ?? 'canary',
@@ -62,9 +62,9 @@ export const config = (): BuildOptions => {
 
         const { path, ...rest } = args;
 
-        // mark all canvas packages as side-effect free
+        // mark all blocksuite packages as side-effect free
         // because they will include a lot of files that are not used in node_modules
-        if (rest.resolveDir.includes('canvas')) {
+        if (rest.resolveDir.includes('blocksuite')) {
           rest.pluginData = true; // Avoid infinite recursion
           const result = await build.resolve(path, rest);
 
@@ -98,7 +98,7 @@ export const config = (): BuildOptions => {
           JSON.stringify(val) ??
           String(
             val
-          ) /* JSON.stringify(undefined) == undefined, but we need 'undefined' */;
+          ); /* JSON.stringify(undefined) == undefined, but we need 'undefined' */
         return def;
       },
       {} as Record<string, string>

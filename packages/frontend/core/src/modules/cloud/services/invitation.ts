@@ -1,4 +1,4 @@
-import type { GetInviteInfoQuery } from '@nexio/graphql';
+import type { GetInviteInfoQuery } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -8,7 +8,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { EMPTY, switchMap, tap } from 'rxjs';
 
 import type { AcceptInviteStore } from '../stores/accept-invite';
@@ -47,6 +47,7 @@ export class InvitationService extends Service {
           this.inviteId$.setValue(inviteId);
           this.loading$.setValue(true);
           this.inviteInfo$.setValue(undefined);
+          this.error$.setValue(null);
         }),
         onComplete(() => {
           this.loading$.setValue(false);
@@ -59,6 +60,9 @@ export class InvitationService extends Service {
     this.getInviteInfo({ inviteId });
     await this.loading$.waitFor(f => !f);
     if (!this.inviteInfo$.value) {
+      if (this.error$.value) {
+        throw this.error$.value;
+      }
       throw new Error('Invalid invite id');
     }
     return await this.acceptInviteStore.acceptInvite(

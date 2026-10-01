@@ -1,23 +1,27 @@
-import { Button, notify } from '@nexio/component';
+import { Button, notify } from '@affine/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@nexio/component/auth-components';
-import { OAuth } from '@nexio/core/components/nexio/auth/oauth';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { AuthService, ServerService } from '@nexio/core/modules/cloud';
-import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
-import { ServerDeploymentType } from '@nexio/graphql';
-import { Trans, useI18n } from '@nexio/i18n';
+} from '@affine/component/auth-components';
+import { OAuth } from '@affine/core/components/affine/auth/oauth';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import {
+  AuthService,
+  getSelfHostedServerName,
+  ServerService,
+} from '@affine/core/modules/cloud';
+import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
+import { ServerDeploymentType } from '@affine/graphql';
+import { Trans, useI18n } from '@affine/i18n';
 import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,
   PublishIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import {
   type Dispatch,
@@ -27,7 +31,7 @@ import {
   useState,
 } from 'react';
 
-import { useSelfhostLoginVersionGuard } from '../hooks/nexio/use-selfhost-login-version-guard';
+import { useSelfhostLoginVersionGuard } from '../hooks/affine/use-selfhost-login-version-guard';
 import type { SignInState } from '.';
 import { Back } from './back';
 import * as style from './style.css';
@@ -61,6 +65,9 @@ export const SignInStep = ({
       c => c.type === ServerDeploymentType.Selfhosted
     )
   );
+  const signInServerName = isSelfhosted
+    ? getSelfHostedServerName(serverName)
+    : serverName;
   const authService = useService(AuthService);
   const [isMutating, setIsMutating] = useState(false);
 
@@ -73,8 +80,8 @@ export const SignInStep = ({
   useEffect(() => {
     if (loginStatus === 'authenticated') {
       notify.success({
-        title: t['com.nexio.auth.toast.title.signed-in'](),
-        message: t['com.nexio.auth.toast.message.signed-in'](),
+        title: t['com.affine.auth.toast.title.signed-in'](),
+        message: t['com.affine.auth.toast.message.signed-in'](),
       });
     }
     onAuthenticated?.(loginStatus);
@@ -90,7 +97,9 @@ export const SignInStep = ({
     setIsMutating(true);
 
     try {
-      const { hasPassword } = await authService.checkUserByEmail(email);
+      const { methods } = await authService.checkUserByEmail(email);
+      const hasPassword = methods.password.available;
+      const canUseMagicLink = methods.magicLink.available;
 
       if (hasPassword) {
         changeState(prev => ({
@@ -99,13 +108,18 @@ export const SignInStep = ({
           step: 'signInWithPassword',
           hasPassword: true,
         }));
-      } else {
+      } else if (canUseMagicLink) {
         changeState(prev => ({
           ...prev,
           email,
           step: 'signInWithEmail',
           hasPassword: false,
         }));
+      } else {
+        notify.error({
+          title: 'Failed to sign in',
+          message: 'This email is not available for sign in.',
+        });
       }
     } catch (err: any) {
       console.error(err);
@@ -131,8 +145,8 @@ export const SignInStep = ({
     return (
       <AuthContainer>
         <AuthHeader
-          title={t['com.nexio.auth.sign.in']()}
-          subTitle={serverName}
+          title={t['com.affine.auth.sign.in']()}
+          subTitle={signInServerName}
         />
         <AuthContent>
           <div>{versionError}</div>
@@ -144,46 +158,56 @@ export const SignInStep = ({
   return (
     <AuthContainer>
       <AuthHeader
-        title={t['com.nexio.auth.sign.in']()}
-        subTitle={serverName}
+        title={t['com.affine.auth.sign.in']()}
+        subTitle={signInServerName}
       />
 
       <AuthContent>
         <OAuth redirectUrl={state.redirectUrl} />
 
-        <AuthInput
-          className={style.authInput}
-          label={t['com.nexio.settings.email']()}
-          placeholder={t['com.nexio.auth.sign.email.placeholder']()}
-          onChange={setEmail}
-          error={!isValidEmail}
-          errorHint={
-            isValidEmail ? '' : t['com.nexio.auth.sign.email.error']()
-          }
-          onEnter={onContinue}
-        />
-
-        <Button
-          className={style.signInButton}
-          style={{ width: '100%' }}
-          size="extraLarge"
-          data-testid="continue-login-button"
-          block
-          loading={isMutating}
-          suffix={<ArrowRightBigIcon />}
-          suffixStyle={{ width: 20, height: 20, color: cssVar('blue') }}
-          onClick={onContinue}
+        <form
+          onSubmit={event => {
+            event.preventDefault();
+            onContinue();
+          }}
         >
-          {t['com.nexio.auth.sign.email.continue']()}
-        </Button>
+          <AuthInput
+            className={style.authInput}
+            label={t['com.affine.settings.email']()}
+            placeholder={t['com.affine.auth.sign.email.placeholder']()}
+            onChange={setEmail}
+            error={!isValidEmail}
+            errorHint={
+              isValidEmail ? '' : t['com.affine.auth.sign.email.error']()
+            }
+            onEnter={onContinue}
+            type="email"
+            name="username"
+            autoComplete="username"
+          />
+
+          <Button
+            className={style.signInButton}
+            style={{ width: '100%' }}
+            size="extraLarge"
+            data-testid="continue-login-button"
+            block
+            loading={isMutating}
+            disabled={isMutating}
+            suffix={<ArrowRightBigIcon />}
+            suffixStyle={{ width: 20, height: 20, color: cssVar('blue') }}
+          >
+            {t['com.affine.auth.sign.email.continue']()}
+          </Button>
+        </form>
 
         {!isSelfhosted && (
           <>
             <div className={style.authMessage}>
               {/*prettier-ignore*/}
-              <Trans i18nKey="com.nexio.auth.sign.message">
+              <Trans i18nKey="com.affine.auth.sign.message">
                 By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
-                you agree to NEXIO&apos;s <a href="https://nexio.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://nexio.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
+                you agree to AFFiNE&apos;s <a href="https://affine.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://affine.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
             </Trans>
             </div>
             <div className={style.skipDivider}>
@@ -201,11 +225,11 @@ export const SignInStep = ({
                   }
                   onClick={onAddSelfhosted}
                 >
-                  {t['com.nexio.auth.sign.add-selfhosted']()}
+                  {t['com.affine.auth.sign.add-selfhosted']()}
                 </Button>
               ) : (
                 <div className={style.skipText}>
-                  {t['com.nexio.mobile.sign-in.skip.hint']()}
+                  {t['com.affine.mobile.sign-in.skip.hint']()}
                 </div>
               )}
               <Button
@@ -214,7 +238,7 @@ export const SignInStep = ({
                 className={style.skipLink}
                 prefix={<LocalWorkspaceIcon className={style.skipLinkIcon} />}
               >
-                {t['com.nexio.mobile.sign-in.skip.link']()}
+                {t['com.affine.mobile.sign-in.skip.link']()}
               </Button>
             </div>
           </>

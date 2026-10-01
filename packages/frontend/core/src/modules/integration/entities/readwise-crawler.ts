@@ -4,7 +4,7 @@ import {
   LiveData,
   onComplete,
   onStart,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { catchError, EMPTY, Observable, switchMap, tap } from 'rxjs';
 
 import type { ReadwiseStore } from '../store/readwise';

@@ -1,10 +1,12 @@
-import type { ErrorDataUnion, ErrorNames } from '@nexio/graphql';
+import type { ErrorDataUnion, ErrorNames } from '@affine/graphql';
 import { GraphQLError as BaseGraphQLError } from 'graphql';
 
 export type ErrorName =
   | keyof typeof ErrorNames
   | 'NETWORK_ERROR'
-  | 'CONTENT_TOO_LARGE';
+  | 'CONTENT_TOO_LARGE'
+  | 'REQUEST_ABORTED'
+  | 'UNSUPPORTED_SERVER_VERSION';
 
 export interface UserFriendlyErrorResponse {
   status: number;

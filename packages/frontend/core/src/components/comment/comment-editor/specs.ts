@@ -1,30 +1,30 @@
-import { CloudViewExtension } from '@nexio/core/canvas/view-extensions/cloud';
-import { NexioEditorViewExtension } from '@nexio/core/canvas/view-extensions/editor-view/editor-view';
-import { NexioThemeViewExtension } from '@nexio/core/canvas/view-extensions/theme';
-import { I18n } from '@nexio/i18n';
-import { CodeBlockViewExtension } from '@canvas/nexio/blocks/code/view';
-import { DividerViewExtension } from '@canvas/nexio/blocks/divider/view';
-import { LatexViewExtension as LatexBlockViewExtension } from '@canvas/nexio/blocks/latex/view';
-import { ListViewExtension } from '@canvas/nexio/blocks/list/view';
-import { NoteViewExtension } from '@canvas/nexio/blocks/note/view';
-import { ParagraphViewExtension } from '@canvas/nexio/blocks/paragraph/view';
-import { RootViewExtension } from '@canvas/nexio/blocks/root/view';
+import { CloudViewExtension } from '@affine/core/blocksuite/view-extensions/cloud';
+import { AffineEditorViewExtension } from '@affine/core/blocksuite/view-extensions/editor-view/editor-view';
+import { AffineThemeViewExtension } from '@affine/core/blocksuite/view-extensions/theme';
+import { I18n } from '@affine/i18n';
+import { CodeBlockViewExtension } from '@blocksuite/affine/blocks/code/view';
+import { DividerViewExtension } from '@blocksuite/affine/blocks/divider/view';
+import { LatexViewExtension as LatexBlockViewExtension } from '@blocksuite/affine/blocks/latex/view';
+import { ListViewExtension } from '@blocksuite/affine/blocks/list/view';
+import { NoteViewExtension } from '@blocksuite/affine/blocks/note/view';
+import { ParagraphViewExtension } from '@blocksuite/affine/blocks/paragraph/view';
+import { RootViewExtension } from '@blocksuite/affine/blocks/root/view';
 import {
   PeekViewExtension,
   type PeekViewService,
-} from '@canvas/nexio/components/peek';
+} from '@blocksuite/affine/components/peek';
 import {
   type ViewExtensionContext,
   ViewExtensionManager,
   ViewExtensionProvider,
-} from '@canvas/nexio/ext-loader';
-import { PlainTextClipboardConfig } from '@canvas/nexio/foundation/clipboard';
-import { LatexInlineSpecExtension } from '@canvas/nexio/inlines/latex';
-import { LatexViewExtension as LatexInlineViewExtension } from '@canvas/nexio/inlines/latex/view';
-import { LinkInlineSpecExtension } from '@canvas/nexio/inlines/link';
-import { LinkViewExtension } from '@canvas/nexio/inlines/link/view';
-import { MentionInlineSpecExtension } from '@canvas/nexio/inlines/mention';
-import { MentionViewExtension } from '@canvas/nexio/inlines/mention/view';
+} from '@blocksuite/affine/ext-loader';
+import { PlainTextClipboardConfig } from '@blocksuite/affine/foundation/clipboard';
+import { LatexInlineSpecExtension } from '@blocksuite/affine/inlines/latex';
+import { LatexViewExtension as LatexInlineViewExtension } from '@blocksuite/affine/inlines/latex/view';
+import { LinkInlineSpecExtension } from '@blocksuite/affine/inlines/link';
+import { LinkViewExtension } from '@blocksuite/affine/inlines/link/view';
+import { MentionInlineSpecExtension } from '@blocksuite/affine/inlines/mention';
+import { MentionViewExtension } from '@blocksuite/affine/inlines/mention/view';
 import {
   BackgroundInlineSpecExtension,
   BoldInlineSpecExtension,
@@ -34,9 +34,9 @@ import {
   ItalicInlineSpecExtension,
   StrikeInlineSpecExtension,
   UnderlineInlineSpecExtension,
-} from '@canvas/nexio/inlines/preset';
-import { ReferenceInlineSpecExtension } from '@canvas/nexio/inlines/reference';
-import { ReferenceViewExtension } from '@canvas/nexio/inlines/reference/view';
+} from '@blocksuite/affine/inlines/preset';
+import { ReferenceInlineSpecExtension } from '@blocksuite/affine/inlines/reference';
+import { ReferenceViewExtension } from '@blocksuite/affine/inlines/reference/view';
 import {
   DefaultOpenDocExtension,
   DocDisplayMetaService,
@@ -48,13 +48,13 @@ import {
   PageViewportServiceExtension,
   ThemeService,
   ToolbarRegistryExtension,
-} from '@canvas/nexio/shared/services';
-import type { NexioTextAttributes } from '@canvas/nexio/shared/types';
-import { InlineManagerExtension } from '@canvas/nexio/std/inline';
-import { LinkedDocViewExtension } from '@canvas/nexio/widgets/linked-doc/view';
-import { ToolbarViewExtension } from '@canvas/nexio/widgets/toolbar/view';
-import { ViewportOverlayViewExtension } from '@canvas/nexio/widgets/viewport-overlay/view';
-import type { FrameworkProvider } from '@ezeslucky/infra';
+} from '@blocksuite/affine/shared/services';
+import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
+import { InlineManagerExtension } from '@blocksuite/affine/std/inline';
+import { LinkedDocViewExtension } from '@blocksuite/affine/widgets/linked-doc/view';
+import { ToolbarViewExtension } from '@blocksuite/affine/widgets/toolbar/view';
+import { ViewportOverlayViewExtension } from '@blocksuite/affine/widgets/viewport-overlay/view';
+import type { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 
 import { createCommentLinkedWidgetConfig } from './linked-widget-config';
@@ -89,7 +89,7 @@ class CommentEditorViewExtensionProvider extends ViewExtensionProvider<CommentEd
       FileSizeLimitService,
 
       ...InlineSpecExtensions,
-      InlineManagerExtension<NexioTextAttributes>({
+      InlineManagerExtension<AffineTextAttributes>({
         id: 'DefaultInlineManager',
         specs: [
           BoldInlineSpecExtension.identifier,
@@ -145,9 +145,9 @@ export function getCommentEditorViewManager(framework: FrameworkProvider) {
       ViewportOverlayViewExtension,
       LinkedDocViewExtension,
 
-      // nexio side
-      NexioThemeViewExtension,
-      NexioEditorViewExtension,
+      // Affine side
+      AffineThemeViewExtension,
+      AffineEditorViewExtension,
 
       // for rendering mentions
       CloudViewExtension,
@@ -155,7 +155,7 @@ export function getCommentEditorViewManager(framework: FrameworkProvider) {
 
     manager.configure(ParagraphViewExtension, {
       getPlaceholder: () => {
-        return I18n.t('com.nexio.notification.comment-prompt');
+        return I18n.t('com.affine.notification.comment-prompt');
       },
     });
 

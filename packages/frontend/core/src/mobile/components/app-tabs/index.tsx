@@ -1,10 +1,10 @@
-import { SafeArea } from '@nexio/component';
-import { GlobalCacheService } from '@nexio/core/modules/storage';
+import { SafeArea } from '@affine/component';
+import { GlobalCacheService } from '@affine/core/modules/storage';
 import {
   WorkbenchLink,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workbench';
+import { useLiveData, useService } from '@toeverything/infra';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
@@ -19,9 +19,11 @@ import type { AppTabLink } from './type';
 export const AppTabs = ({
   background,
   fixed = true,
+  hidden = false,
 }: {
   background?: string;
   fixed?: boolean;
+  hidden?: boolean;
 }) => {
   const virtualKeyboardService = useService(VirtualKeyboardService);
   const virtualKeyboardVisible = useLiveData(virtualKeyboardService.visible$);
@@ -47,7 +49,8 @@ export const AppTabs = ({
         ...assignInlineVars({
           [styles.appTabsBackground]: background,
         }),
-        visibility: virtualKeyboardVisible ? 'hidden' : 'visible',
+        visibility: hidden || virtualKeyboardVisible ? 'hidden' : 'visible',
+        pointerEvents: hidden || virtualKeyboardVisible ? 'none' : 'auto',
       }}
     >
       <ul className={styles.appTabsInner} role="tablist">

@@ -1,5 +1,5 @@
-import type { SubscriptionQuery, SubscriptionRecurring } from '@nexio/graphql';
-import { SubscriptionPlan } from '@nexio/graphql';
+import type { SubscriptionQuery, SubscriptionRecurring } from '@affine/graphql';
+import { SubscriptionPlan } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -10,7 +10,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { tap } from 'rxjs';
 
 import type { WorkspaceService } from '../../workspace';

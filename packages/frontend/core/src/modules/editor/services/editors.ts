@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import { Editor } from '../entities/editor';
 import { EditorInitialized } from '../events';

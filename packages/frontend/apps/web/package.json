@@ -1,35 +1,28 @@
 {
-  "name": "@nexio/web",
-  "version": "0.22.4",
-  "description": "NEXIO Desktop Web application",
+  "name": "@affine/web",
+  "version": "0.27.5",
+  "description": "AFFiNE Desktop Web application",
   "private": true,
   "browser": "src/index.tsx",
   "scripts": {
-    "build": "nexio bundle",
-    "dev": "nexio bundle --dev"
+    "build": "affine bundle",
+    "dev": "affine bundle --dev"
   },
   "dependencies": {
+    "@affine/component": "workspace:*",
+    "@affine/core": "workspace:*",
+    "@affine/env": "workspace:*",
+    "@affine/nbstore": "workspace:*",
+    "@affine/track": "workspace:*",
     "@emotion/react": "^11.14.0",
-    "@ezeslucky/infra": "workspace:*",
-    "@nexio/component": "workspace:*",
-    "@nexio/core": "workspace:*",
-    "@nexio/env": "workspace:*",
-    "@nexio/i18n": "workspace:*",
-    "@nexio/nbstore": "workspace:*",
-    "@nexio/track": "workspace:*",
-    "@sentry/react": "^9.2.0",
-    "jotai": "^2.18.0",
-    "react-router-dom": "^6.28.0"
+    "@toeverything/infra": "workspace:*",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-router-dom": "^6.30.4"
   },
   "devDependencies": {
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
-    "@types/webpack-env": "^1.18.8",
-    "cross-env": "^7.0.3",
-    "typescript": "^5.7.2"
-  },
-  "peerDependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   }
 }

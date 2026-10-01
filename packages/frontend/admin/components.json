@@ -11,7 +11,7 @@
     "prefix": ""
   },
   "aliases": {
-    "components": "@nexio/admin/components",
-    "utils": "@nexio/admin/utils"
+    "components": "@affine/admin/components",
+    "utils": "@affine/admin/utils"
   }
 }

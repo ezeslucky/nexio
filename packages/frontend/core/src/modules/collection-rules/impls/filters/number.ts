@@ -1,6 +1,6 @@
-import type { DocsService } from '@nexio/core/modules/doc';
-import type { WorkspacePropertyFilter } from '@nexio/core/modules/workspace-property';
-import { Service } from '@ezeslucky/infra';
+import type { DocsService } from '@affine/core/modules/doc';
+import type { WorkspacePropertyFilter } from '@affine/core/modules/workspace-property';
+import { Service } from '@toeverything/infra';
 import { map, type Observable } from 'rxjs';
 
 import type { FilterProvider } from '../../provider';

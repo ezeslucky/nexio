@@ -1,18 +1,18 @@
-import { notify } from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
+import { notify } from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
 import {
   Button,
   type ButtonProps,
   IconButton,
-} from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { SubscriptionService } from '@nexio/core/modules/cloud';
-import { UrlService } from '@nexio/core/modules/url';
-import { UserFriendlyError } from '@nexio/error';
-import { createCustomerPortalMutation } from '@nexio/graphql';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component/ui/button';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { SubscriptionService } from '@affine/core/modules/cloud';
+import { UrlService } from '@affine/core/modules/url';
+import { UserFriendlyError } from '@affine/error';
+import { createCustomerPortalMutation } from '@affine/graphql';
+import { useI18n } from '@affine/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import { useMutation } from '../../../../../components/hooks/use-mutation';
@@ -29,26 +29,25 @@ export const PaymentMethod = () => {
 
   const proSubscription = useLiveData(subscriptionService.subscription.pro$);
   const isBeliever = useLiveData(subscriptionService.subscription.isBeliever$);
-  const isOnetime = useLiveData(subscriptionService.subscription.isOnetimeAI$);
 
   const [openCancelModal, setOpenCancelModal] = useState(false);
   return (
     <>
       <SettingRow
         className={styles.paymentMethod}
-        name={t['com.nexio.payment.billing-setting.payment-method']()}
+        name={t['com.affine.payment.billing-setting.payment-method']()}
         desc={t[
-          'com.nexio.payment.billing-setting.payment-method.description'
+          'com.affine.payment.billing-setting.payment-method.description'
         ]()}
       >
         <PaymentMethodUpdater />
       </SettingRow>
-      {isBeliever || isOnetime ? null : proSubscription?.end &&
+      {isBeliever ? null : proSubscription?.end &&
         proSubscription?.canceledAt ? (
         <SettingRow
-          name={t['com.nexio.payment.billing-setting.expiration-date']()}
+          name={t['com.affine.payment.billing-setting.expiration-date']()}
           desc={t[
-            'com.nexio.payment.billing-setting.expiration-date.description'
+            'com.affine.payment.billing-setting.expiration-date.description'
           ]({
             expirationDate: new Date(proSubscription.end).toLocaleDateString(),
           })}
@@ -63,9 +62,9 @@ export const PaymentMethod = () => {
               setOpenCancelModal(true);
             }}
             className="dangerous-setting"
-            name={t['com.nexio.payment.billing-setting.cancel-subscription']()}
+            name={t['com.affine.payment.billing-setting.cancel-subscription']()}
             desc={t[
-              'com.nexio.payment.billing-setting.cancel-subscription.description'
+              'com.affine.payment.billing-setting.cancel-subscription.description'
             ]()}
           >
             <CancelSubscription />
@@ -111,8 +110,8 @@ export const PaymentMethodUpdater = ({
       variant={variant}
     >
       {inCardView
-        ? t['com.nexio.payment.billing-setting.payment-method']()
-        : t['com.nexio.payment.billing-setting.payment-method.go']()}
+        ? t['com.affine.payment.billing-setting.payment-method']()
+        : t['com.affine.payment.billing-setting.payment-method.go']()}
     </Button>
   );
 };
@@ -133,7 +132,7 @@ const ResumeSubscription = () => {
         data-event-args-type={subscription.pro$.value?.plan}
         data-event-args-category={subscription.pro$.value?.recurring}
       >
-        {t['com.nexio.payment.billing-setting.resume-subscription']()}
+        {t['com.affine.payment.billing-setting.resume-subscription']()}
       </Button>
     </ResumeAction>
   );

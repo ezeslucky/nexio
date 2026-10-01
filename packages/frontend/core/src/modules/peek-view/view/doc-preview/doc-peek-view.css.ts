@@ -7,19 +7,19 @@ export const root = style({
 
 export const editor = style({
   vars: {
-    '--nexio-editor-side-padding': '96px',
+    '--affine-editor-side-padding': '96px',
   },
   minHeight: '100%',
 });
 
 globalStyle(`[data-full-width-layout="true"] ${editor}`, {
   vars: {
-    '--nexio-editor-width': '100%',
-    '--nexio-editor-side-padding': '72px',
+    '--affine-editor-width': '100%',
+    '--affine-editor-side-padding': '72px',
   },
 });
 
-export const nexioDocViewport = style({
+export const affineDocViewport = style({
   display: 'flex',
   flexDirection: 'column',
   userSelect: 'none',

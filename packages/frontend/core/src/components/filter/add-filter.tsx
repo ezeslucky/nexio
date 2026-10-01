@@ -4,17 +4,17 @@ import {
   Menu,
   MenuItem,
   MenuSeparator,
-} from '@nexio/component';
-import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import type { FilterParams } from '@affine/core/modules/collection-rules';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import { useI18n } from '@affine/i18n';
 import {
   ArrowLeftBigIcon,
   CloudWorkspaceIcon,
   FavoriteIcon,
   PlusIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 
 import { generateExplorerPropertyList } from '../explorer/properties';
@@ -48,7 +48,7 @@ export const AddFilterMenu = ({
           </IconButton>
         )}
         <div className={styles.variableSelectTitleStyle}>
-          {t['com.nexio.filter']()}
+          {t['com.affine.filter']()}
         </div>
       </div>
 
@@ -82,7 +82,7 @@ export const AddFilterMenu = ({
         }}
       >
         <span className={styles.filterTypeItemName}>
-          {t['com.nexio.filter.is-public']()}
+          {t['com.affine.filter.is-public']()}
         </span>
       </MenuItem>
       {explorerPropertyList.map(({ systemProperty, workspaceProperty }) => {
@@ -167,7 +167,7 @@ export const AddFilter = ({
         </IconButton>
       ) : (
         <Button prefix={<PlusIcon />} className={styles.addFilterButton}>
-          {t['com.nexio.filter.add-filter']()}
+          {t['com.affine.filter.add-filter']()}
         </Button>
       )}
     </Menu>

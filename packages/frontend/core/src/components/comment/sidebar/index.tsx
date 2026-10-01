@@ -6,34 +6,34 @@ import {
   MenuItem,
   notify,
   useConfirmModal,
-} from '@nexio/component';
-import { useGuard } from '@nexio/core/components/guard';
-import { ServerService } from '@nexio/core/modules/cloud';
-import { AuthService } from '@nexio/core/modules/cloud/services/auth';
-import { type DocCommentEntity } from '@nexio/core/modules/comment/entities/doc-comment';
-import { CommentPanelService } from '@nexio/core/modules/comment/services/comment-panel-service';
-import { DocCommentManagerService } from '@nexio/core/modules/comment/services/doc-comment-manager';
+} from '@affine/component';
+import { useGuard } from '@affine/core/components/guard';
+import { ServerService } from '@affine/core/modules/cloud';
+import { AuthService } from '@affine/core/modules/cloud/services/auth';
+import { type DocCommentEntity } from '@affine/core/modules/comment/entities/doc-comment';
+import { CommentPanelService } from '@affine/core/modules/comment/services/comment-panel-service';
+import { DocCommentManagerService } from '@affine/core/modules/comment/services/doc-comment-manager';
 import type {
   CommentAttachment,
   DocComment,
   DocCommentReply,
-} from '@nexio/core/modules/comment/types';
-import { DocService } from '@nexio/core/modules/doc';
-import { toDocSearchParams } from '@nexio/core/modules/navigation';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
-import { i18nTime, useI18n } from '@nexio/i18n';
-import type { DocSnapshot, Store } from '@canvas/nexio/store';
+} from '@affine/core/modules/comment/types';
+import { DocService } from '@affine/core/modules/doc';
+import { toDocSearchParams } from '@affine/core/modules/navigation';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { copyTextToClipboard } from '@affine/core/utils/clipboard';
+import { i18nTime, useI18n } from '@affine/i18n';
+import type { DocSnapshot, Store } from '@blocksuite/affine/store';
 import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
   useService,
   useServiceOptional,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
-import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
+import { useAsyncCallback } from '../../hooks/affine-async-hooks';
 import { CommentEditor, type CommentEditorRef } from '../comment-editor';
 import * as styles from './style.css';
 
@@ -66,7 +66,7 @@ const SortFilterButton = ({
               )
             }
           >
-            {t['com.nexio.comment.filter.show-resolved']()}
+            {t['com.affine.comment.filter.show-resolved']()}
           </MenuItem>
           <MenuItem
             checked={filterState.onlyMyReplies}
@@ -74,7 +74,7 @@ const SortFilterButton = ({
               onFilterChange('onlyMyReplies', !filterState.onlyMyReplies)
             }
           >
-            {t['com.nexio.comment.filter.only-my-replies']()}
+            {t['com.affine.comment.filter.only-my-replies']()}
           </MenuItem>
           <MenuItem
             checked={filterState.onlyCurrentMode}
@@ -82,7 +82,7 @@ const SortFilterButton = ({
               onFilterChange('onlyCurrentMode', !filterState.onlyCurrentMode)
             }
           >
-            {t['com.nexio.comment.filter.only-current-mode']()}
+            {t['com.affine.comment.filter.only-current-mode']()}
           </MenuItem>
         </>
       }
@@ -135,12 +135,12 @@ const ActionMenu = ({
         <>
           {canReply ? (
             <MenuItem onClick={onReply} disabled={!!disabled || !!resolved}>
-              {t['com.nexio.comment.reply']()}
+              {t['com.affine.comment.reply']()}
             </MenuItem>
           ) : null}
           {canCopyLink ? (
             <MenuItem onClick={onCopyLink} disabled={disabled}>
-              {t['com.nexio.comment.copy-link']()}
+              {t['com.affine.comment.copy-link']()}
             </MenuItem>
           ) : null}
           {canEdit ? (
@@ -261,8 +261,7 @@ const CommentItem = ({
 
   const docId = entity.props.docId;
   const canCreateComment = useGuard('Doc_Comments_Create', docId);
-  const canDeleteComment = useGuard('Doc_Comments_Delete', docId);
-  const canResolveComment = useGuard('Doc_Comments_Resolve', docId);
+  const canModerateComment = useGuard('Doc_Comments_Moderate', docId);
 
   const pendingReply = useLiveData(entity.pendingReply$);
   // Check if the pending reply belongs to this comment
@@ -284,8 +283,8 @@ const CommentItem = ({
     async (e: React.MouseEvent) => {
       e.stopPropagation();
       openConfirmModal({
-        title: t['com.nexio.comment.delete.confirm.title'](),
-        description: t['com.nexio.comment.delete.confirm.description'](),
+        title: t['com.affine.comment.delete.confirm.title'](),
+        description: t['com.affine.comment.delete.confirm.description'](),
         confirmText: t['Delete'](),
         cancelText: t['Cancel'](),
         confirmButtonOptions: {
@@ -469,7 +468,7 @@ const CommentItem = ({
   const canReply = canCreateComment;
   const canEdit = isMyComment && canCreateComment;
   const canDelete =
-    (isMyComment && canCreateComment) || (!isMyComment && canDeleteComment);
+    (isMyComment && canCreateComment) || (!isMyComment && canModerateComment);
 
   // invalid comment, should not happen
   if (!comment.content) {
@@ -490,7 +489,7 @@ const CommentItem = ({
         data-menu-open={menuOpen}
         data-editing={isEditing}
       >
-        {canResolveComment && (
+        {canModerateComment && (
           <IconButton
             className={styles.actionButton}
             variant="solid"
@@ -670,7 +669,7 @@ const CommentList = ({ entity }: { entity: DocCommentEntity }) => {
     <>
       <div className={styles.header}>
         <div className={styles.headerTitle}>
-          {t['com.nexio.comment.comments']()}
+          {t['com.affine.comment.comments']()}
         </div>
         {comments.length > 0 && (
           <SortFilterButton
@@ -684,7 +683,7 @@ const CommentList = ({ entity }: { entity: DocCommentEntity }) => {
         !newPendingComment &&
         !loading && (
           <div className={styles.empty}>
-            {t['com.nexio.comment.no-comments']()}
+            {t['com.affine.comment.no-comments']()}
           </div>
         )}
       {loading &&
@@ -786,7 +785,7 @@ const ReplyItem = ({
 
   const docId = entity.props.docId;
   const canCreateComment = useGuard('Doc_Comments_Create', docId);
-  const canDeleteComment = useGuard('Doc_Comments_Delete', docId);
+  const canModerateComment = useGuard('Doc_Comments_Moderate', docId);
 
   const handleStartEdit = useAsyncCallback(async () => {
     if (parentComment.resolved || !reply.content) return;
@@ -814,8 +813,8 @@ const ReplyItem = ({
 
   const handleDelete = useAsyncCallback(async () => {
     openConfirmModal({
-      title: t['com.nexio.comment.reply.delete.confirm.title'](),
-      description: t['com.nexio.comment.reply.delete.confirm.description'](),
+      title: t['com.affine.comment.reply.delete.confirm.title'](),
+      description: t['com.affine.comment.reply.delete.confirm.description'](),
       confirmText: t['Delete'](),
       cancelText: t['Cancel'](),
       confirmButtonOptions: {
@@ -848,7 +847,7 @@ const ReplyItem = ({
   const canReply = canCreateComment;
   const canEdit = isMyReply && canCreateComment;
   const canDelete =
-    (isMyReply && canCreateComment) || (!isMyReply && canDeleteComment);
+    (isMyReply && canCreateComment) || (!isMyReply && canModerateComment);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -974,7 +973,7 @@ const ReplyList = ({
           }}
         >
           <div className={styles.collapsedRepliesTitle}>
-            {t['com.nexio.comment.reply.show-more']({
+            {t['com.affine.comment.reply.show-more']({
               count: (sortedReplies.length - 4).toString(),
             })}
           </div>

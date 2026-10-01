@@ -1,4 +1,4 @@
-import { OnEvent, Service } from '@ezeslucky/infra';
+import { OnEvent, Service } from '@toeverything/infra';
 import { throttle } from 'lodash-es';
 import type { Transaction } from 'yjs';
 

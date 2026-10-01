@@ -1,6 +1,6 @@
 import { existsSync } from 'node:fs';
 
-import type { SpaceType } from '@nexio/nbstore';
+import type { SpaceType } from '@affine/nbstore';
 
 import { logger } from '../../logger';
 import { getWorkspaceMeta } from '../../workspace/meta';
@@ -39,7 +39,7 @@ async function getWorkspaceDB(spaceType: SpaceType, id: string) {
     process.on('beforeExit', cleanup);
   }
 
-  // oxlint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // oxlint-disable-next-line typescript/no-non-null-assertion
   return db!;
 }
 

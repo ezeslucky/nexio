@@ -4,15 +4,15 @@ import {
   RadioGroup,
   type RadioItem,
   Slider,
-} from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import { useI18n } from '@affine/i18n';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@canvas/nexio/blocks/surface';
-import type { ShapeElementModel, ShapeName } from '@canvas/nexio/model';
+} from '@blocksuite/affine/blocks/surface';
+import type { ShapeElementModel, ShapeName } from '@blocksuite/affine/model';
 import {
   DefaultTheme,
   FontFamily,
@@ -24,10 +24,10 @@ import {
   ShapeType,
   StrokeStyle,
   TextAlign,
-} from '@canvas/nexio/model';
-import type { EditorHost } from '@canvas/nexio/std';
-import type { Store } from '@canvas/nexio/store';
-import { useFramework, useLiveData } from '@ezeslucky/infra';
+} from '@blocksuite/affine/model';
+import type { EditorHost } from '@blocksuite/affine/std';
+import type { Store } from '@blocksuite/affine/store';
+import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -82,12 +82,12 @@ export const ShapeSettings = () => {
     () => [
       {
         value: ShapeStyle.General,
-        label: t['com.nexio.settings.editorSettings.edgeless.style.general'](),
+        label: t['com.affine.settings.editorSettings.edgeless.style.general'](),
       },
       {
         value: ShapeStyle.Scribbled,
         label:
-          t['com.nexio.settings.editorSettings.edgeless.style.scribbled'](),
+          t['com.affine.settings.editorSettings.edgeless.style.scribbled'](),
       },
     ],
     [t]
@@ -108,17 +108,17 @@ export const ShapeSettings = () => {
       {
         value: StrokeStyle.Solid,
         label:
-          t['com.nexio.settings.editorSettings.edgeless.note.border.solid'](),
+          t['com.affine.settings.editorSettings.edgeless.note.border.solid'](),
       },
       {
         value: StrokeStyle.Dash,
         label:
-          t['com.nexio.settings.editorSettings.edgeless.note.border.dash'](),
+          t['com.affine.settings.editorSettings.edgeless.note.border.dash'](),
       },
       {
         value: StrokeStyle.None,
         label:
-          t['com.nexio.settings.editorSettings.edgeless.note.border.none'](),
+          t['com.affine.settings.editorSettings.edgeless.note.border.none'](),
       },
     ],
     [t]
@@ -140,21 +140,21 @@ export const ShapeSettings = () => {
         value: TextAlign.Left,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.text.alignment.left'
+            'com.affine.settings.editorSettings.edgeless.text.alignment.left'
           ](),
       },
       {
         value: TextAlign.Center,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.text.alignment.center'
+            'com.affine.settings.editorSettings.edgeless.text.alignment.center'
           ](),
       },
       {
         value: TextAlign.Right,
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.text.alignment.right'
+            'com.affine.settings.editorSettings.edgeless.text.alignment.right'
           ](),
       },
     ],
@@ -175,26 +175,26 @@ export const ShapeSettings = () => {
     () => [
       {
         value: ShapeType.Rect,
-        label: t['com.nexio.settings.editorSettings.edgeless.shape.square'](),
+        label: t['com.affine.settings.editorSettings.edgeless.shape.square'](),
       },
       {
         value: ShapeType.Ellipse,
-        label: t['com.nexio.settings.editorSettings.edgeless.shape.ellipse'](),
+        label: t['com.affine.settings.editorSettings.edgeless.shape.ellipse'](),
       },
       {
         value: ShapeType.Diamond,
-        label: t['com.nexio.settings.editorSettings.edgeless.shape.diamond'](),
+        label: t['com.affine.settings.editorSettings.edgeless.shape.diamond'](),
       },
       {
         value: ShapeType.Triangle,
         label:
-          t['com.nexio.settings.editorSettings.edgeless.shape.triangle'](),
+          t['com.affine.settings.editorSettings.edgeless.shape.triangle'](),
       },
       {
         value: 'roundedRect',
         label:
           t[
-            'com.nexio.settings.editorSettings.edgeless.shape.rounded-rectangle'
+            'com.affine.settings.editorSettings.edgeless.shape.rounded-rectangle'
           ](),
       },
     ],
@@ -205,11 +205,11 @@ export const ShapeSettings = () => {
     () => [
       {
         value: 'shape',
-        label: t['com.nexio.settings.editorSettings.edgeless.shape.list'](),
+        label: t['com.affine.settings.editorSettings.edgeless.shape.list'](),
       },
       {
         value: 'flow',
-        label: t['com.nexio.settings.editorSettings.edgeless.shape.flow'](),
+        label: t['com.affine.settings.editorSettings.edgeless.shape.flow'](),
       },
     ],
     [t]
@@ -398,7 +398,7 @@ export const ShapeSettings = () => {
     <>
       <EdgelessSnapshot
         key={currentDoc}
-        title={t['com.nexio.settings.editorSettings.edgeless.shape']()}
+        title={t['com.affine.settings.editorSettings.edgeless.shape']()}
         docName={currentDoc}
         keyName={`shape:${currentShape}`}
         height={height}
@@ -430,7 +430,7 @@ export const ShapeSettings = () => {
         indicatorClassName={shapeIndicator}
       />
       <SettingRow
-        name={t['com.nexio.settings.editorSettings.edgeless.style']()}
+        name={t['com.affine.settings.editorSettings.edgeless.style']()}
         desc={''}
       >
         <RadioGroup
@@ -443,7 +443,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.fill-color'
+          'com.affine.settings.editorSettings.edgeless.shape.fill-color'
         ]()}
         desc={''}
       >
@@ -463,7 +463,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.border-color'
+          'com.affine.settings.editorSettings.edgeless.shape.border-color'
         ]()}
         desc={''}
       >
@@ -483,7 +483,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.border-style'
+          'com.affine.settings.editorSettings.edgeless.shape.border-style'
         ]()}
         desc={''}
       >
@@ -497,7 +497,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.border-thickness'
+          'com.affine.settings.editorSettings.edgeless.shape.border-thickness'
         ]()}
         desc={''}
       >
@@ -513,7 +513,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.text-color'
+          'com.affine.settings.editorSettings.edgeless.shape.text-color'
         ]()}
         desc={''}
       >
@@ -533,7 +533,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.text.font-family'
+          'com.affine.settings.editorSettings.edgeless.text.font-family'
         ]()}
         desc={''}
       >
@@ -548,7 +548,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.font-size'
+          'com.affine.settings.editorSettings.edgeless.shape.font-size'
         ]()}
         desc={''}
       >
@@ -563,7 +563,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.text.font-style'
+          'com.affine.settings.editorSettings.edgeless.text.font-style'
         ]()}
         desc={''}
       >
@@ -578,7 +578,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.text.font-weight'
+          'com.affine.settings.editorSettings.edgeless.text.font-weight'
         ]()}
         desc={''}
       >
@@ -593,7 +593,7 @@ export const ShapeSettings = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.edgeless.shape.text-alignment'
+          'com.affine.settings.editorSettings.edgeless.shape.text-alignment'
         ]()}
         desc={''}
       >

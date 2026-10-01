@@ -9,5 +9,5 @@ export const container = style({
   height: '100vh',
   width: '100%',
   lineHeight: 4,
-  color: cssVar('--nexio-text-secondary-color'),
+  color: cssVar('--affine-text-secondary-color'),
 });

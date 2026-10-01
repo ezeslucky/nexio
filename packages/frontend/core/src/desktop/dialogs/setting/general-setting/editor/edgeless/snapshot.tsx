@@ -1,18 +1,18 @@
-import { Skeleton } from '@nexio/component';
-import { getViewManager } from '@nexio/core/canvas/manager/view';
-import type { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
-import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import { EdgelessCRUDIdentifier } from '@canvas/nexio/blocks/surface';
-import { Bound } from '@canvas/nexio/global/gfx';
-import { ViewportElementExtension } from '@canvas/nexio/shared/services';
-import type { EditorHost } from '@canvas/nexio/std';
-import { BlockStdScope } from '@canvas/nexio/std';
+import { Skeleton } from '@affine/component';
+import { getViewManager } from '@affine/core/blocksuite/manager/view';
+import type { EditorSettingSchema } from '@affine/core/modules/editor-setting';
+import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import { EdgelessCRUDIdentifier } from '@blocksuite/affine/blocks/surface';
+import { Bound } from '@blocksuite/affine/global/gfx';
+import { ViewportElementExtension } from '@blocksuite/affine/shared/services';
+import type { EditorHost } from '@blocksuite/affine/std';
+import { BlockStdScope } from '@blocksuite/affine/std';
 import {
   GfxControllerIdentifier,
   type GfxPrimitiveElementModel,
-} from '@canvas/nexio/std/gfx';
-import type { Block, Store } from '@canvas/nexio/store';
-import { useFramework } from '@ezeslucky/infra';
+} from '@blocksuite/affine/std/gfx';
+import type { Block, Store } from '@blocksuite/affine/store';
+import { useFramework } from '@toeverything/infra';
 import clsx from 'clsx';
 import { isEqual } from 'lodash-es';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
@@ -108,7 +108,7 @@ export const EdgelessSnapshot = (props: Props) => {
       if (
         payload.type !== 'block' ||
         payload.method !== 'add' ||
-        payload.view.model.flavour !== 'nexio:page'
+        payload.view.model.flavour !== 'affine:page'
       ) {
         return;
       }
@@ -130,7 +130,7 @@ export const EdgelessSnapshot = (props: Props) => {
   }, [docName, extensions, firstUpdate, updateElements]);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    // oxlint-disable-next-line typescript/no-floating-promises
     renderEditor();
     return () => editorHostRef.current?.remove();
   }, [renderEditor]);

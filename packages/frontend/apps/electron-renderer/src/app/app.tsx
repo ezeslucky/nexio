@@ -1,15 +1,15 @@
-import { NexioContext } from '@nexio/core/components/context';
-import { WindowsAppControls } from '@nexio/core/components/pure/header/windows-app-controls';
-import { AppContainer } from '@nexio/core/desktop/components/app-container';
-import { router } from '@nexio/core/desktop/router';
-import { I18nProvider } from '@nexio/core/modules/i18n';
-import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
+import { AffineContext } from '@affine/core/components/context';
+import { WindowsAppControls } from '@affine/core/components/pure/header/windows-app-controls';
+import { AppContainer } from '@affine/core/desktop/components/app-container';
+import { router } from '@affine/core/desktop/router';
+import { I18nProvider } from '@affine/core/modules/i18n';
+import createEmotionCache from '@affine/core/utils/create-emotion-cache';
 import { CacheProvider } from '@emotion/react';
-import { FrameworkRoot, getCurrentStore } from '@ezeslucky/infra';
-import { Suspense } from 'react';
+import { FrameworkRoot, getCurrentStore } from '@toeverything/infra';
+import { Suspense, useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 
-import { setupEffects } from './effects';
+import { setupEffects, useIsOnBattery } from './effects';
 import { DesktopLanguageSync } from './language-sync';
 import { DesktopThemeSync } from './theme-sync';
 
@@ -40,12 +40,21 @@ const future = {
 } as const;
 
 export function App() {
+  const isOnBattery = useIsOnBattery();
+
+  useEffect(() => {
+    document.body.classList.toggle('on-battery', isOnBattery);
+    return () => {
+      document.body.classList.remove('on-battery');
+    };
+  }, [isOnBattery]);
+
   return (
     <Suspense>
       <FrameworkRoot framework={frameworkProvider}>
         <CacheProvider value={cache}>
           <I18nProvider>
-            <NexioContext store={getCurrentStore()}>
+            <AffineContext store={getCurrentStore()}>
               <DesktopThemeSync />
               <DesktopLanguageSync />
               <RouterProvider
@@ -58,7 +67,7 @@ export function App() {
                   <WindowsAppControls />
                 </div>
               )}
-            </NexioContext>
+            </AffineContext>
           </I18nProvider>
         </CacheProvider>
       </FrameworkRoot>

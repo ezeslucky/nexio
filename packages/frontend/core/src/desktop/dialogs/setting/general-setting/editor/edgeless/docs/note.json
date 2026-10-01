@@ -9,11 +9,11 @@
   "blocks": {
     "type": "block",
     "id": "hNFCyKIXqH",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
             "insert": "Note"
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "odnFJlKwxt",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {}
@@ -34,11 +34,11 @@
           {
             "type": "block",
             "id": "D1UhpqzS37",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"
@@ -59,7 +59,7 @@
       {
         "type": "block",
         "id": "C5e-RyxlTI",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "version": 1,
         "props": {
           "xywh": "[538.826171875,46.71159362792969,448,180]",
@@ -75,7 +75,7 @@
               "borderRadius": 0,
               "borderSize": 4,
               "borderStyle": "none",
-              "shadowType": "--nexio-note-shadow-sticker"
+              "shadowType": "--affine-note-shadow-sticker"
             }
           }
         },
@@ -83,12 +83,12 @@
           {
             "type": "block",
             "id": "AjSEjoCq1Q",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "version": 1,
             "props": {
               "type": "h1",
               "text": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Write, draw, plan all at once."
@@ -101,15 +101,15 @@
           {
             "type": "block",
             "id": "s5v28mktAO",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "version": 1,
             "props": {
               "type": "text",
               "text": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
-                    "insert": "nexio is a workspace with fully merged docs,"
+                    "insert": "AFFiNE is a workspace with fully merged docs,"
                   }
                 ]
               }
@@ -119,12 +119,12 @@
           {
             "type": "block",
             "id": "Jd9Unn0j4a",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "version": 1,
             "props": {
               "type": "text",
               "text": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "whiteboards and databases."

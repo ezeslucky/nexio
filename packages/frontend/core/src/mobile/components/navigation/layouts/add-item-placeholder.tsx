@@ -1,4 +1,4 @@
-import { NavigationPanelTreeContext } from '@nexio/core/desktop/components/navigation-panel';
+import { NavigationPanelTreeContext } from '@affine/core/desktop/components/navigation-panel';
 import { PlusIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
@@ -7,17 +7,18 @@ import { type HTMLAttributes, useContext } from 'react';
 import { levelIndent } from '../tree/node.css';
 import * as styles from './add-item-placeholder.css';
 
-export interface AddItemPlaceholderProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface AddItemPlaceholderProps extends HTMLAttributes<HTMLDivElement> {
   onClick?: () => void;
   label?: string;
   icon?: React.ReactNode;
 }
 
+const DEFAULT_ICON = <PlusIcon />;
+
 export const AddItemPlaceholder = ({
   onClick,
   label = 'Add Item',
-  icon = <PlusIcon />,
+  icon = DEFAULT_ICON,
   className,
   ...attrs
 }: AddItemPlaceholderProps) => {

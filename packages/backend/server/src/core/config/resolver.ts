@@ -12,7 +12,7 @@ import {
 } from '@nestjs/graphql';
 import { GraphQLJSON, GraphQLJSONObject } from 'graphql-scalars';
 
-import { Config, URLHelper } from '../../base';
+import { Config, hasNewerVersion, URLHelper } from '../../base';
 import { Namespace } from '../../env';
 import { Feature } from '../../models';
 import { CurrentUser, Public } from '../auth';
@@ -75,18 +75,16 @@ export class ServerConfigResolver {
       name:
         this.config.server.name ??
         (env.selfhosted
-          ? 'NEXIO Selfhosted Cloud'
+          ? 'Nexio Self-hosted'
           : env.namespaces.canary
-            ? 'NEXIO Canary Cloud'
+            ? 'Nexio Cloud'
             : env.namespaces.beta
-              ? 'NEXIO Beta Cloud'
-              : 'NEXIO Cloud'),
+              ? 'Nexio Cloud'
+              : 'Nexio Cloud'),
       version: env.version,
       baseUrl: this.url.requestBaseUrl,
       type: env.DEPLOYMENT_TYPE,
       features: this.server.features,
-      // TODO(@fengmk2): remove this field after the feature 0.25.0 is released
-      allowGuestDemoWorkspace: this.config.flags.allowGuestDemoWorkspace,
     };
   }
 
@@ -119,7 +117,7 @@ export class ServerConfigResolver {
     }
 
     const channel = RELEASE_CHANNEL_MAP.get(env.NAMESPACE) ?? 'stable';
-    const url = `https://nexio.pro/api/worker/releases?channel=${channel}`;
+    const url = `https://affine.pro/api/worker/releases?channel=${channel}`;
 
     try {
       const response = await fetch(url, {
@@ -132,7 +130,7 @@ export class ServerConfigResolver {
 
       if (!response.ok) {
         this.logger.error(
-          'failed to fetch nexio releases',
+          'failed to fetch affine releases',
           await response.text()
         );
         return null;
@@ -140,23 +138,23 @@ export class ServerConfigResolver {
       const releases = (await response.json()) as Array<{
         name: string;
         url: string;
-        body: string;
+        body: string | null;
         published_at: string;
       }>;
 
       const latest = releases.at(0);
-      if (!latest || latest.name === env.version) {
+      if (!latest || !hasNewerVersion(env.version, latest.name)) {
         return null;
       }
 
       return {
         version: latest.name,
         url: latest.url,
-        changelog: latest.body,
+        changelog: latest.body ?? '',
         publishedAt: new Date(latest.published_at),
       };
     } catch (e) {
-      this.logger.error('failed to fetch nexio releases', e);
+      this.logger.error('failed to fetch affine releases', e);
       return null;
     }
   }
@@ -225,13 +223,19 @@ export class AppConfigResolver {
     return await this.service.updateConfig(me.id, updates);
   }
 
-  @Mutation(() => [AppConfigValidateResult], {
+  @Query(() => [AppConfigValidateResult], {
     description: 'validate app configuration',
   })
   async validateAppConfig(
     @Args('updates', { type: () => [UpdateAppConfigInput] })
     updates: UpdateAppConfigInput[]
   ): Promise<AppConfigValidateResult[]> {
+    return this.validateConfigInternal(updates);
+  }
+
+  private validateConfigInternal(
+    updates: UpdateAppConfigInput[]
+  ): AppConfigValidateResult[] {
     const errors = this.service.validateConfig(updates);
 
     return updates.map(update => {

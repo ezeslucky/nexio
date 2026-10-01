@@ -1,8 +1,8 @@
-import { UserFeatureService } from '@nexio/core/modules/cloud/services/user-feature';
-import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
-import { useI18n } from '@nexio/i18n';
+import { UserFeatureService } from '@affine/core/modules/cloud/services/user-feature';
+import type { SettingTab } from '@affine/core/modules/dialogs/constant';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
+import { useI18n } from '@affine/i18n';
 import {
   AppearanceIcon,
   ExperimentIcon,
@@ -13,12 +13,12 @@ import {
   NotificationIcon,
   PenIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useEffect, useMemo } from 'react';
 
 import { AuthService, ServerService } from '../../../../modules/cloud';
 import type { SettingSidebarItem, SettingState } from '../types';
-import { AboutNexio } from './about';
+import { AboutAffine } from './about';
 import { AppearanceSettings } from './appearance';
 import { BackupSettingPanel } from './backup';
 import { BillingSettings } from './billing';
@@ -27,7 +27,7 @@ import { ExperimentalFeatures } from './experimental-features';
 import { PaymentIcon, UpgradeIcon } from './icons';
 import { MeetingsSettings } from './meetings';
 import { NotificationSettings } from './notifications';
-import { NEXIOPricingPlans } from './plans';
+import { AFFiNEPricingPlans } from './plans';
 import { Shortcuts } from './shortcuts';
 
 export type GeneralSettingList = SettingSidebarItem[];
@@ -66,13 +66,13 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     const settings: GeneralSettingList = [
       {
         key: 'appearance',
-        title: t['com.nexio.settings.appearance'](),
+        title: t['com.affine.settings.appearance'](),
         icon: <AppearanceIcon />,
         testId: 'appearance-panel-trigger',
       },
       {
         key: 'shortcuts',
-        title: t['com.nexio.keyboardShortcuts.title'](),
+        title: t['com.affine.keyboardShortcuts.title'](),
         icon: <KeyboardIcon />,
         testId: 'shortcuts-panel-trigger',
       },
@@ -80,7 +80,7 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     if (loggedIn) {
       settings.push({
         key: 'notifications',
-        title: t['com.nexio.setting.notifications'](),
+        title: t['com.affine.setting.notifications'](),
         icon: <NotificationIcon />,
         testId: 'notifications-panel-trigger',
       });
@@ -89,7 +89,7 @@ export const useGeneralSettingList = (): GeneralSettingList => {
       // add editor settings to second position
       settings.splice(1, 0, {
         key: 'editor',
-        title: t['com.nexio.settings.editorSettings'](),
+        title: t['com.affine.settings.editorSettings'](),
         icon: <PenIcon />,
         testId: 'editor-panel-trigger',
       });
@@ -101,7 +101,7 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     ) {
       settings.push({
         key: 'meetings',
-        title: t['com.nexio.settings.meetings'](),
+        title: t['com.affine.settings.meetings'](),
         icon: <MeetingIcon />,
         testId: 'meetings-panel-trigger',
         beta: !meetingSettings?.enabled,
@@ -111,14 +111,14 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     if (hasPaymentFeature) {
       settings.splice(4, 0, {
         key: 'plans',
-        title: t['com.nexio.payment.title'](),
+        title: t['com.affine.payment.title'](),
         icon: <UpgradeIcon />,
         testId: 'plans-panel-trigger',
       });
       if (loggedIn) {
         settings.splice(4, 0, {
           key: 'billing',
-          title: t['com.nexio.payment.billing-setting.title'](),
+          title: t['com.affine.payment.billing-setting.title'](),
           icon: <PaymentIcon />,
           testId: 'billing-panel-trigger',
         });
@@ -128,7 +128,7 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     if (BUILD_CONFIG.isElectron) {
       settings.push({
         key: 'backup',
-        title: t['com.nexio.settings.workspace.backup'](),
+        title: t['com.affine.settings.workspace.backup'](),
         icon: <FolderIcon />,
         testId: 'backup-panel-trigger',
       });
@@ -137,13 +137,13 @@ export const useGeneralSettingList = (): GeneralSettingList => {
     settings.push(
       {
         key: 'experimental-features',
-        title: t['com.nexio.settings.workspace.experimental-features'](),
+        title: t['com.affine.settings.workspace.experimental-features'](),
         icon: <ExperimentIcon />,
         testId: 'experimental-features-trigger',
       },
       {
         key: 'about',
-        title: t['com.nexio.AboutNexio.title'](),
+        title: t['com.affine.aboutAFFiNE.title'](),
         icon: <InformationIcon />,
         testId: 'about-panel-trigger',
       }
@@ -179,9 +179,9 @@ export const GeneralSetting = ({
     case 'meetings':
       return <MeetingsSettings />;
     case 'about':
-      return <AboutNexio />;
+      return <AboutAffine />;
     case 'plans':
-      return <NEXIOPricingPlans />;
+      return <AFFiNEPricingPlans />;
     case 'billing':
       return <BillingSettings onChangeSettingState={onChangeSettingState} />;
     case 'experimental-features':

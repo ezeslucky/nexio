@@ -1,10 +1,10 @@
 import {
   SubscriptionService,
   UserCopilotQuotaService,
-} from '@nexio/core/modules/cloud';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/cloud';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
@@ -64,11 +64,11 @@ export const AIUsage = () => {
       >
         <div className={styles.usageLabel}>
           <div className={styles.usageLabelTitle}>
-            {t['com.nexio.user-info.usage.ai']()}
+            {t['com.affine.user-info.usage.ai']()}
           </div>
         </div>
         <div className={styles.usageLabel}>
-          {t['com.nexio.payment.ai.usage-description-purchased']()}
+          {t['com.affine.payment.ai.usage-description-purchased']()}
         </div>
       </div>
     );
@@ -95,7 +95,7 @@ export const AIUsage = () => {
       <div className={styles.usageLabel}>
         <div>
           <span className={styles.usageLabelTitle}>
-            {t['com.nexio.user-info.usage.ai']()}
+            {t['com.affine.user-info.usage.ai']()}
           </span>
           <span>{copilotActionUsed}</span>
           <span>&nbsp;/&nbsp;</span>

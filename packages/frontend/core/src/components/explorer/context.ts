@@ -1,4 +1,4 @@
-import { LiveData } from '@ezeslucky/infra';
+import { LiveData } from '@toeverything/infra';
 import { createContext } from 'react';
 
 import type { ExplorerDisplayPreference } from './types';

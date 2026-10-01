@@ -1,12 +1,27 @@
-import { useLiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@toeverything/infra';
 import type { Location } from 'history';
 import { useEffect } from 'react';
-// eslint-disable-next-line @typescript-eslint/no-restricted-imports
+// oxlint-disable-next-line no-restricted-imports
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import type { Workbench } from '../entities/workbench';
 
-
+/**
+ * This hook binds the workbench to the browser router.
+ * It listens to the active view and updates the browser location accordingly.
+ * It also listens to the browser location and updates the active view accordingly.
+ *
+ * The history of the active view and the browser are two different stacks.
+ *
+ * In the browser, we use browser history as the criterion, and view history is not very important.
+ * So our synchronization strategy is as follows:
+ *
+ * 1. When the active view history changed, we update the browser history, based on the update action.
+ *    - If the update action is PUSH, we navigate to the new location.
+ *    - If the update action is REPLACE, we replace the current location.
+ * 2. When the browser location changed, we update the active view history just in PUSH action.
+ * 3. To avoid infinite loop, we add a state to the location to indicate the source of the change.
+ */
 export function useBindWorkbenchToBrowserRouter(
   workbench: Workbench,
   basename: string
@@ -26,7 +41,8 @@ export function useBindWorkbenchToBrowserRouter(
 
       const newBrowserLocation = viewLocationToBrowserLocation(
         update.location,
-        basename
+        basename,
+        browserLocation.search
       );
 
       navigate(newBrowserLocation, {
@@ -82,12 +98,44 @@ function browserLocationToViewLocation(
   };
 }
 
+function preserveWorkspaceContextSearch(
+  nextSearch: string,
+  currentSearch: string
+) {
+  const nextParams = new URLSearchParams(nextSearch);
+  const currentParams = new URLSearchParams(currentSearch);
+  const currentFlavour = currentParams.get('flavour');
+  const nextFlavour = nextParams.get('flavour');
+
+  if (
+    !nextParams.has('flavour') &&
+    !nextParams.has('server') &&
+    currentFlavour
+  ) {
+    nextParams.set('flavour', currentFlavour);
+  }
+
+  const resolvedNextFlavour = nextParams.get('flavour');
+  const shouldPreserveServer =
+    resolvedNextFlavour !== 'local' &&
+    (!nextFlavour || !currentFlavour || nextFlavour === currentFlavour);
+  const currentServer = currentParams.get('server');
+  if (!nextParams.has('server') && currentServer && shouldPreserveServer) {
+    nextParams.set('server', currentServer);
+  }
+
+  const search = nextParams.toString();
+  return search ? `?${search}` : '';
+}
+
 function viewLocationToBrowserLocation(
   location: Location,
-  basename: string
+  basename: string,
+  currentSearch: string
 ): Location {
   return {
     ...location,
     pathname: `${basename}${location.pathname}`,
+    search: preserveWorkspaceContextSearch(location.search, currentSearch),
   };
 }

@@ -1,6 +1,6 @@
-import { useDropTarget } from '@nexio/component';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useDropTarget } from '@affine/component';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useAtomValue } from 'jotai';
 import type { HTMLAttributes } from 'react';
 import { useCallback } from 'react';
@@ -40,7 +40,7 @@ export const ResizeHandle = ({
   const isLast = index === views.length - 1;
   const isFirst = index === 0;
 
-  const { dropTargetRef } = useDropTarget<NexioDNDData>(() => {
+  const { dropTargetRef } = useDropTarget<AffineDNDData>(() => {
     return {
       data: {
         at: 'workbench:resize-handle',

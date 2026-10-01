@@ -3,14 +3,14 @@
  */
 import 'fake-indexeddb/auto';
 
-import { getStoreManager } from '@nexio/core/canvas/manager/store';
-import { type Store, Text } from '@canvas/nexio/store';
-import { TestWorkspace } from '@canvas/nexio/store/test';
+import { getStoreManager } from '@affine/core/blocksuite/manager/store';
+import { type Store, Text } from '@blocksuite/affine/store';
+import { TestWorkspace } from '@blocksuite/affine/store/test';
 import { renderHook } from '@testing-library/react';
 import { useAtomValue } from 'jotai';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { useCanvasPagePreview } from '../use-block-suite-page-preview';
+import { useBlockSuitePagePreview } from '../use-block-suite-page-preview';
 let docCollection: TestWorkspace;
 
 const extensions = getStoreManager().config.init().value.get('store');
@@ -27,30 +27,30 @@ beforeEach(async () => {
   const initPage = async (page: Store) => {
     page.load();
     expect(page).not.toBeNull();
-    const pageBlockId = page.addBlock('nexio:page', {
+    const pageBlockId = page.addBlock('affine:page', {
       title: new Text(''),
     });
-    const frameId = page.addBlock('nexio:note', {}, pageBlockId);
-    page.addBlock('nexio:paragraph', {}, frameId);
+    const frameId = page.addBlock('affine:note', {}, pageBlockId);
+    page.addBlock('affine:paragraph', {}, frameId);
   };
   const store = docCollection.createDoc('page0').getStore({ extensions });
   await initPage(store);
 });
 
-describe('useCanvasPagePreview', () => {
+describe('useBlockSuitePagePreview', () => {
   test('basic', async () => {
     const page = docCollection.getDoc('page0')?.getStore();
     if (!page) {
       throw new Error('Page not found');
     }
     const id = page.addBlock(
-      'nexio:paragraph',
+      'affine:paragraph',
       {
         text: new Text('Hello, world!'),
       },
-      page.getModelsByFlavour('nexio:note')[0].id
+      page.getModelsByFlavour('affine:note')[0].id
     );
-    const hook = renderHook(() => useAtomValue(useCanvasPagePreview(page)));
+    const hook = renderHook(() => useAtomValue(useBlockSuitePagePreview(page)));
     expect(hook.result.current).toBe('Hello, world!');
     page.transact(() => {
       page.getModelById(id)!.text!.insert('Test', 0);
@@ -61,11 +61,11 @@ describe('useCanvasPagePreview', () => {
 
     // Insert before
     page.addBlock(
-      'nexio:paragraph',
+      'affine:paragraph',
       {
         text: new Text('First block!'),
       },
-      page.getModelsByFlavour('nexio:note')[0].id,
+      page.getModelsByFlavour('affine:note')[0].id,
       0
     );
     await new Promise(resolve => setTimeout(resolve, 100));

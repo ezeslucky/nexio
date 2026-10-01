@@ -1,4 +1,4 @@
-import type { Package } from '@nexio-tools/utils/workspace';
+import type { Package } from '@affine-tools/utils/workspace';
 
 import { PackageToDistribution } from './distribution';
 
@@ -41,20 +41,17 @@ export function getBuildConfig(
 
         appBuildType: 'stable' as const,
         appVersion: pkg.version,
-        // editorVersion: pkg.dependencies['@canvas/nexio'],
+        // editorVersion: pkg.dependencies['@blocksuite/affine'],
         editorVersion: pkg.version,
         githubUrl: 'https://github.com/ezeslucky/nexio',
-        changelogUrl: 'https://nexio.pro/what-is-new',
-        downloadUrl: 'https://nexio.pro/download',
-        pricingUrl: 'https://nexio.pro/pricing',
-        discordUrl: 'https://nexio.pro/redirect/discord',
-        requestLicenseUrl: 'https://nexio.pro/redirect/license',
+        changelogUrl: 'https://affine.pro/what-is-new',
+        downloadUrl: '',
+        pricingUrl: 'https://affine.pro/pricing',
+        discordUrl: 'https://affine.pro/redirect/discord',
+        requestLicenseUrl: 'https://affine.pro/redirect/license',
         imageProxyUrl: '/api/worker/image-proxy',
         linkPreviewUrl: '/api/worker/link-preview',
-        CAPTCHA_SITE_KEY: process.env.CAPTCHA_SITE_KEY ?? '',
         SENTRY_DSN: process.env.SENTRY_DSN ?? '',
-        MIXPANEL_TOKEN: process.env.MIXPANEL_TOKEN ?? '',
-        DEBUG_JOTAI: process.env.DEBUG_JOTAI ?? '',
       };
     },
     get beta() {

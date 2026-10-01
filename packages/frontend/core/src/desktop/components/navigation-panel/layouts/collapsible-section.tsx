@@ -1,7 +1,7 @@
-import { CategoryDivider } from '@nexio/core/modules/app-sidebar/views';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { CategoryDivider } from '@affine/core/modules/app-sidebar/views';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
 import * as Collapsible from '@radix-ui/react-collapsible';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
   type CSSProperties,

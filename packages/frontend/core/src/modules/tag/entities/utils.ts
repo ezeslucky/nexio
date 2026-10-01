@@ -14,7 +14,7 @@ const tagToPaletteLineMap: Record<string, string> = {
   [cssVar('tagGreen')]: cssVar('paletteLineGreen'),
 };
 
-// map var(--nexio-tag-xxx) colors to var(--nexio-chip-label-xxx)
+// map var(--affine-tag-xxx) colors to var(--affine-chip-label-xxx)
 const tagToChipColorMap: Record<string, string> = {
   [cssVar('tagRed')]: cssVarV2('chip/label/red'),
   [cssVar('tagTeal')]: cssVarV2('chip/label/teal'),
@@ -46,8 +46,8 @@ const paletteLineToChipMap: Record<string, string> = Object.fromEntries(
   ])
 );
 
-// hack: map var(--nexio-tag-xxx)/var(--nexio-chip-label-xxx) colors to var(--nexio-palette-line-xxx)
-export const databaseTagColorToNexioLabel = (color: string) => {
+// hack: map var(--affine-tag-xxx)/var(--affine-chip-label-xxx) colors to var(--affine-palette-line-xxx)
+export const databaseTagColorToAffineLabel = (color: string) => {
   return chipToPaletteLineMap[color] || tagToPaletteLineMap[color] || color;
 };
 
@@ -55,6 +55,6 @@ export const databaseTagColorToV2 = (color: string) => {
   return tagToChipColorMap[color] || color;
 };
 
-export const nexioLabelToDatabaseTagColor = (color: string) => {
+export const affineLabelToDatabaseTagColor = (color: string) => {
   return paletteLineToChipMap[color] || color;
 };

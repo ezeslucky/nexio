@@ -1,25 +1,25 @@
-import { MenuItem, notify } from '@nexio/component';
-import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { MenuItem, notify } from '@affine/component';
+import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
 import {
   type Collection,
   CollectionService,
-} from '@nexio/core/modules/collection';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
-import { ShareDocsListService } from '@nexio/core/modules/share-doc';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+} from '@affine/core/modules/collection';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
+import { ShareDocsListService } from '@affine/core/modules/share-doc';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import { FilterMinusIcon, ViewLayersIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { AddItemPlaceholder } from '../../layouts/add-item-placeholder';
 import { NavigationPanelTreeNode } from '../../tree/node';
 import { NavigationPanelDocNode } from '../doc';
 import {
-  useNavigationPanelCollectionNodeOperations,
-  useNavigationPanelCollectionNodeOperationsMenu,
+  NavigationPanelCollectionNodeMenu,
+  useNavigationPanelCollectionAddDoc,
 } from './operations';
 
 const CollectionIcon = () => <ViewLayersIcon />;
@@ -72,24 +72,26 @@ export const NavigationPanelCollectionNode = ({
     });
   }, [collection, workspaceDialogService]);
 
-  const collectionOperations = useNavigationPanelCollectionNodeOperationsMenu(
+  const handleAddDocToCollection = useNavigationPanelCollectionAddDoc(
     collectionId,
-    handleOpenCollapsed,
-    handleEditCollection
+    handleOpenCollapsed
   );
-  const { handleAddDocToCollection } =
-    useNavigationPanelCollectionNodeOperations(
+  const menuTarget = useMemo(
+    () => (
+      <NavigationPanelCollectionNodeMenu
+        collectionId={collectionId}
+        handleAddDocToCollection={handleAddDocToCollection}
+        onOpenEdit={handleEditCollection}
+        additionalOperations={additionalOperations}
+      />
+    ),
+    [
+      additionalOperations,
       collectionId,
-      handleOpenCollapsed,
-      handleEditCollection
-    );
-
-  const finalOperations = useMemo(() => {
-    if (additionalOperations) {
-      return [...additionalOperations, ...collectionOperations];
-    }
-    return collectionOperations;
-  }, [additionalOperations, collectionOperations]);
+      handleAddDocToCollection,
+      handleEditCollection,
+    ]
+  );
 
   if (!collection) {
     return null;
@@ -103,7 +105,7 @@ export const NavigationPanelCollectionNode = ({
       setCollapsed={setCollapsed}
       to={`/collection/${collection.id}`}
       active={active}
-      operations={finalOperations}
+      menuTarget={menuTarget}
       data-testid={`navigation-panel-collection-${collectionId}`}
     >
       <NavigationPanelCollectionNodeChildren
@@ -142,7 +144,7 @@ const NavigationPanelCollectionNodeChildren = ({
       track.$.navigationPanel.collections.removeOrganizeItem({ type: 'doc' });
       collectionService.removeDocFromCollection(collection.id, id);
       notify.success({
-        message: t['com.nexio.collection.removePage.success'](),
+        message: t['com.affine.collection.removePage.success'](),
       });
     },
     [collection.id, collectionService, t]

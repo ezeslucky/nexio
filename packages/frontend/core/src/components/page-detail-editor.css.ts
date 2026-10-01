@@ -3,9 +3,11 @@ export const editor = style({
   flex: 1,
   selectors: {
     '&.full-screen': {
+      width: '100%',
+      minWidth: 0,
       vars: {
-        '--nexio-editor-width': '100%',
-        '--nexio-editor-side-padding': '72px',
+        '--affine-editor-width': '100%',
+        '--affine-editor-side-padding': '72px',
       },
     },
   },
@@ -14,8 +16,8 @@ export const editor = style({
       selectors: {
         '&.is-public': {
           vars: {
-            '--nexio-editor-width': '100%',
-            '--nexio-editor-side-padding': '24px',
+            '--affine-editor-width': '100%',
+            '--affine-editor-side-padding': '24px',
           },
         },
       },

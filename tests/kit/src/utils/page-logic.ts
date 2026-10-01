@@ -37,21 +37,27 @@ export async function waitForAllPagesLoad(page: Page) {
 }
 
 export async function clickNewPageButton(page: Page, title?: string) {
-  await page.getByTestId('sidebar-new-page-button').click({
-    // default timeout is 5000ms, but it's not enough for the CI first page load
-    timeout: 20000,
+  const newPageButton = page.getByTestId('sidebar-new-page-button');
+  await expect(newPageButton).toBeVisible({
+    timeout: 30000,
+  });
+  await newPageButton.click({
+    timeout: 30000,
   });
   await waitForEmptyEditor(page);
   if (title) {
-    await getCanvasEditorTitle(page).fill(title);
+    await getBlockSuiteEditorTitle(page).fill(title);
   }
 }
 
 export async function waitForEmptyEditor(page: Page) {
-  await expect(page.locator('.doc-title-container-empty')).toBeVisible();
+  await page.waitForSelector(
+    '.doc-title-container-empty, doc-title .inline-editor',
+    { timeout: 20000 }
+  );
 }
 
-export function getCanvasEditorTitle(page: Page) {
+export function getBlockSuiteEditorTitle(page: Page) {
   return page.locator('doc-title .inline-editor').nth(0);
 }
 
@@ -171,30 +177,23 @@ export const dragTo = async (
   location: DragLocation = 'center',
   willMoveOnDrag = false
 ) => {
-  await locator.hover();
   const locatorElement = await locator.boundingBox();
   if (!locatorElement) {
     throw new Error('locator element not found');
   }
   const locatorCenter = toPosition(locatorElement, 'center');
-  await page.mouse.move(
-    locatorElement.x + locatorCenter.x,
-    locatorElement.y + locatorCenter.y
-  );
+  const start = {
+    x: locatorElement.x + locatorCenter.x,
+    y: locatorElement.y + locatorCenter.y,
+  };
+  await page.mouse.move(start.x, start.y);
   await page.mouse.down();
   await page.waitForTimeout(100);
-  await page.mouse.move(
-    locatorElement.x + locatorCenter.x + 1,
-    locatorElement.y + locatorCenter.y + 1
-  );
+  await page.mouse.move(start.x + 8, start.y + 8, { steps: 4 });
 
-  await page.mouse.move(1, 1, {
-    steps: 10,
-  });
-
-  await target.hover();
-
-  if (!willMoveOnDrag) {
+  if (willMoveOnDrag) {
+    await target.hover();
+  } else {
     const targetElement = await target.boundingBox();
     if (!targetElement) {
       throw new Error('target element not found');
@@ -204,11 +203,11 @@ export const dragTo = async (
       targetElement.x + targetPosition.x,
       targetElement.y + targetPosition.y,
       {
-        steps: 10,
+        steps: 24,
       }
     );
   }
-  await page.waitForTimeout(100);
+  await page.waitForTimeout(200);
   await page.mouse.up();
 };
 
@@ -217,7 +216,7 @@ export const dragTo = async (
 export const focusInlineEditor = async (page: Page) => {
   await page
     .locator(
-      `.nexio-paragraph-rich-text-wrapper:has(.visible):has-text("Type '/' for commands")`
+      `.affine-paragraph-rich-text-wrapper:has(.visible):has-text("Type '/' for commands")`
     )
     .locator('.inline-editor')
     .focus();
@@ -225,20 +224,20 @@ export const focusInlineEditor = async (page: Page) => {
 
 export const addDatabase = async (page: Page, title?: string) => {
   await page.keyboard.press('/');
-  await expect(page.locator('nexio-slash-menu .slash-menu')).toBeVisible();
+  await expect(page.locator('affine-slash-menu .slash-menu')).toBeVisible();
   await page.keyboard.type('database');
   await page.getByTestId('Table View').click();
 
   if (title) {
-    await page.locator('nexio-database-title').click();
+    await page.locator('affine-database-title').click();
     await page
       .locator(
-        'nexio-database-title textarea[data-block-is-database-title="true"]'
+        'affine-database-title textarea[data-block-is-database-title="true"]'
       )
       .fill(title);
     await page
       .locator(
-        'nexio-database-title textarea[data-block-is-database-title="true"]'
+        'affine-database-title textarea[data-block-is-database-title="true"]'
       )
       .blur();
   }
@@ -246,7 +245,7 @@ export const addDatabase = async (page: Page, title?: string) => {
 
 export const addCodeBlock = async (page: Page) => {
   await page.keyboard.press('/');
-  await expect(page.locator('nexio-slash-menu .slash-menu')).toBeVisible();
+  await expect(page.locator('affine-slash-menu .slash-menu')).toBeVisible();
   await page.keyboard.type('code');
   await page.getByTestId('Code Block').click();
 };

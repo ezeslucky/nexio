@@ -3,7 +3,7 @@ import {
   type GraphQLQuery,
   type QueryOptions,
   type QueryResponse,
-} from '@nexio/graphql';
+} from '@affine/graphql';
 import type { GraphQLError } from 'graphql';
 import { useCallback, useMemo } from 'react';
 import type { SWRConfiguration, SWRResponse } from 'swr';
@@ -17,7 +17,7 @@ import useSWRInfinite from 'swr/infinite';
  * @example
  *
  * ```ts
- * import { someQuery, someQueryWithNoVars } from '@nexio/graphql'
+ * import { someQuery, someQueryWithNoVars } from '@affine/graphql'
  *
  * const swrResponse1 = useQuery({
  *   query: workspaceByIdQuery,

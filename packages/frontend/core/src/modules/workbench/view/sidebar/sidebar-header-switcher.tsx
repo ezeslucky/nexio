@@ -1,5 +1,5 @@
-import { RadioGroup } from '@nexio/component';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { RadioGroup } from '@affine/component';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 import { ViewService } from '../../services/view';

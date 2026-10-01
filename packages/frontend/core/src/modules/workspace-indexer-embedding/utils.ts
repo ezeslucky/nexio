@@ -1,4 +1,4 @@
-import { DebugLogger } from '@nexio/debug';
+import { DebugLogger } from '@affine/debug';
 
 import type {
   AttachmentFile,
@@ -11,7 +11,7 @@ import type {
 export function isPersistedAttachment(
   attachment: AttachmentFile
 ): attachment is PersistedAttachmentFile {
-  return 'fileId' in attachment;
+  return 'artifactId' in attachment;
 }
 
 export function isErrorAttachment(
@@ -34,7 +34,7 @@ export function isLocalAttachment(
 
 export function getAttachmentId(attachment: AttachmentFile): string {
   if (isPersistedAttachment(attachment)) {
-    return attachment.fileId;
+    return attachment.artifactId;
   }
   return attachment.localId;
 }

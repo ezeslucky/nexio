@@ -1,10 +1,10 @@
-/* eslint-disable */
+/* oxlint-disable */
 import '../src/prelude';
 import '../src/app.module';
 
 import fs from 'node:fs';
-import { ProjectRoot } from '@nexio-tools/utils/path';
-import { Package } from '@nexio-tools/utils/workspace';
+import { ProjectRoot } from '@affine-tools/utils/path';
+import { Package } from '@affine-tools/utils/workspace';
 import {
   getDescriptors as getAllDescriptors,
   ConfigDescriptor,
@@ -13,9 +13,12 @@ import {
 const IGNORED_MODULES = new Set(['db', 'redis', 'graphql']);
 
 function getDescriptors() {
-  return getAllDescriptors().filter(
-    ({ module }) => !IGNORED_MODULES.has(module)
-  );
+  return getAllDescriptors()
+    .filter(({ module }) => !IGNORED_MODULES.has(module))
+    .map(({ module, descriptors }) => ({
+      module,
+      descriptors: descriptors.filter(({ descriptor }) => !descriptor.internal),
+    }));
 }
 
 interface PropertySchema {
@@ -41,13 +44,12 @@ function convertDescriptorToSchemaProperty(descriptor: ConfigDescriptor<any>) {
 function generateJsonSchema(outputPath: string) {
   const schema = {
     $schema: 'http://json-schema.org/draft-07/schema#',
-    title: 'Nexio Application Configuration',
+    title: 'AFFiNE Application Configuration',
     type: 'object',
     properties: {},
   };
 
   getDescriptors().forEach(({ module, descriptors }) => {
-    //@ts-ignore
     schema.properties[module] = {
       type: 'object',
       description: `Configuration for ${module} module`,
@@ -55,7 +57,6 @@ function generateJsonSchema(outputPath: string) {
     };
 
     descriptors.forEach(({ key, descriptor }) => {
-      //@ts-ignore
       schema.properties[module].properties[key] =
         convertDescriptorToSchemaProperty(descriptor);
     });
@@ -70,7 +71,6 @@ function generateAdminConfigJson(outputPath: string) {
   const config = {};
   getDescriptors().forEach(({ module, descriptors }) => {
     const modulizedConfig = {};
-    //@ts-ignore
     config[module] = modulizedConfig;
     descriptors.forEach(({ key, descriptor }) => {
       let type: string;
@@ -90,7 +90,7 @@ function generateAdminConfigJson(outputPath: string) {
         default:
           type = 'String';
       }
-//@ts-ignore
+
       modulizedConfig[key] = {
         type,
         desc: descriptor.desc,
@@ -107,7 +107,7 @@ function main() {
     ProjectRoot.join('.docker', 'selfhost', 'schema.json').toString()
   );
   generateAdminConfigJson(
-    new Package('@nexio/admin').join('src/config.json').toString()
+    new Package('@affine/admin').join('src/config.json').toString()
   );
 }
 

@@ -1,6 +1,6 @@
-import { Input, PropertyValue } from '@nexio/component';
-import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import { useI18n } from '@nexio/i18n';
+import { Input, PropertyValue } from '@affine/component';
+import type { FilterParams } from '@affine/core/modules/collection-rules';
+import { useI18n } from '@affine/i18n';
 import { TextIcon, TextTypeIcon } from '@blocksuite/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -41,7 +41,7 @@ const DesktopTextValue = ({
   useEffect(() => {
     ref.current?.addEventListener('blur', handleBlur);
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // oxlint-disable-next-line react/exhaustive-deps
       ref.current?.removeEventListener('blur', handleBlur);
     };
   }, [handleBlur]);
@@ -72,7 +72,7 @@ const DesktopTextValue = ({
         data-empty={!tempValue}
         autoFocus={false}
         placeholder={t[
-          'com.nexio.page-properties.property-value-placeholder'
+          'com.affine.page-properties.property-value-placeholder'
         ]()}
         disabled={readonly}
       />
@@ -108,7 +108,7 @@ const MobileTextValue = ({
   useEffect(() => {
     ref.current?.addEventListener('blur', handleBlur);
     return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+      // oxlint-disable-next-line react/exhaustive-deps
       ref.current?.removeEventListener('blur', handleBlur);
     };
   }, [handleBlur]);
@@ -136,7 +136,7 @@ const MobileTextValue = ({
       >
         <div className={styles.mobileTextareaPlain} data-empty={!tempValue}>
           {tempValue ||
-            t['com.nexio.page-properties.property-value-placeholder']()}
+            t['com.affine.page-properties.property-value-placeholder']()}
         </div>
       </PropertyValue>
       <ConfigModal
@@ -159,7 +159,7 @@ const MobileTextValue = ({
             data-empty={!tempValue}
             autoFocus
             placeholder={t[
-              'com.nexio.page-properties.property-value-placeholder'
+              'com.affine.page-properties.property-value-placeholder'
             ]()}
           />
           <div className={styles.mobileTextInvisible}>
@@ -262,7 +262,7 @@ export const TextFilterValue = ({
         <span>{filter.value}</span>
       ) : (
         <span style={{ color: cssVarV2('text/placeholder') }}>
-          {t['com.nexio.filter.empty']()}
+          {t['com.affine.filter.empty']()}
         </span>
       )}
     </FilterValueMenu>

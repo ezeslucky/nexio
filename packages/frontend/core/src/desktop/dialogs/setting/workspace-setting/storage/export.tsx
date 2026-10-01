@@ -1,14 +1,14 @@
-import { notify } from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { Button } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { DesktopApiService } from '@nexio/core/modules/desktop-api';
-import type { Workspace } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { universalId } from '@nexio/nbstore';
-import track from '@nexio/track';
+import { notify } from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { Button } from '@affine/component/ui/button';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import type { Workspace } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { universalId } from '@affine/nbstore';
+import track from '@affine/track';
 import { ExportIcon } from '@blocksuite/icons/rc';
-import { useService } from '@ezeslucky/infra';
+import { useService } from '@toeverything/infra';
 import { useState } from 'react';
 
 interface ExportPanelProps {
@@ -70,7 +70,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
       >
         <Button
           variant="primary"
-          data-testid="export-nexio-backup"
+          data-testid="export-affine-backup"
           onClick={onExport}
           disabled={saving}
         >
@@ -90,7 +90,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
       >
         <Button
           variant="primary"
-          data-testid="export-nexio-full-sync"
+          data-testid="export-affine-full-sync"
           onClick={fullSync}
           loading={fullSyncing}
           disabled={fullSyncing}
@@ -104,7 +104,7 @@ export const DesktopExportPanel = ({ workspace }: ExportPanelProps) => {
         desc={t['Quick Export Description']()}
       >
         <Button
-          data-testid="export-nexio-backup"
+          data-testid="export-affine-backup"
           onClick={onExport}
           disabled={saving}
         >

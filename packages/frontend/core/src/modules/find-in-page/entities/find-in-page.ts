@@ -1,5 +1,5 @@
-import { DebugLogger } from '@nexio/debug';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { DebugLogger } from '@affine/debug';
+import { Entity, LiveData } from '@toeverything/infra';
 import {
   debounceTime,
   distinctUntilChanged,
@@ -11,7 +11,7 @@ import {
 
 import type { DesktopApiService } from '../../desktop-api';
 
-const logger = new DebugLogger('nexio:find-in-page');
+const logger = new DebugLogger('affine:find-in-page');
 
 export class FindInPage extends Entity {
   readonly searchText$ = new LiveData<string | null>(null);

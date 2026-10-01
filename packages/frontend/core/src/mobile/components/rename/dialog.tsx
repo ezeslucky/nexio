@@ -1,4 +1,4 @@
-import { IconButton, Modal } from '@nexio/component';
+import { IconButton, Modal } from '@affine/component';
 import { CloseIcon } from '@blocksuite/icons/rc';
 import { useCallback } from 'react';
 
@@ -31,6 +31,7 @@ export const RenameDialog = ({
 
   return (
     <Modal
+      preserveEditingFocusOnAction
       width="100%"
       open={open}
       onOpenChange={onOpenChange}

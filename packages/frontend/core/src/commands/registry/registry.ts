@@ -1,9 +1,9 @@
-import { DebugLogger } from '@nexio/debug';
+import { DebugLogger } from '@affine/debug';
 // @ts-expect-error upstream type is wrong
 import { createKeybindingsHandler } from 'tinykeys';
 
-import type { NexioCommand, NexioCommandOptions } from './command';
-import { createNexioCommand } from './command';
+import type { AffineCommand, AffineCommandOptions } from './command';
+import { createAffineCommand } from './command';
 
 const commandLogger = new DebugLogger('command:registry');
 
@@ -45,15 +45,15 @@ const bindKeys = (
   };
 };
 
-export const NexioCommandRegistry = new (class {
-  readonly commands: Map<string, NexioCommand> = new Map();
+export const AffineCommandRegistry = new (class {
+  readonly commands: Map<string, AffineCommand> = new Map();
 
-  register(options: NexioCommandOptions) {
+  register(options: AffineCommandOptions) {
     if (this.commands.has(options.id)) {
       commandLogger.warn(`Command ${options.id} already registered.`);
       return () => {};
     }
-    const command = createNexioCommand(options);
+    const command = createAffineCommand(options);
     this.commands.set(command.id, command);
 
     let unsubKb: (() => void) | undefined;
@@ -68,6 +68,20 @@ export const NexioCommandRegistry = new (class {
         window,
         {
           [keybinding]: (e: Event) => {
+            // Skip when Alt produces a locale input character (e.g. macOS
+            // Polish layout: Option+S → "ś"). The user is typing the
+            // character, not invoking the shortcut bound to the physical
+            // key. Matches the handling in blocksuite's keymap.ts.
+            if (
+              e instanceof KeyboardEvent &&
+              e.altKey &&
+              !e.metaKey &&
+              !e.ctrlKey &&
+              e.key.length === 1 &&
+              e.key.charCodeAt(0) > 0x7e
+            ) {
+              return;
+            }
             e.preventDefault();
             command.run()?.catch(e => {
               console.error(`Failed to run command [${command.id}]`, e);
@@ -88,7 +102,7 @@ export const NexioCommandRegistry = new (class {
     };
   }
 
-  get(id: string): NexioCommand | undefined {
+  get(id: string): AffineCommand | undefined {
     if (!this.commands.has(id)) {
       commandLogger.warn(`Command ${id} not registered.`);
       return undefined;
@@ -96,11 +110,11 @@ export const NexioCommandRegistry = new (class {
     return this.commands.get(id);
   }
 
-  getAll(): NexioCommand[] {
+  getAll(): AffineCommand[] {
     return Array.from(this.commands.values());
   }
 })();
 
-export function registerNexioCommand(options: NexioCommandOptions) {
-  return NexioCommandRegistry.register(options);
+export function registerAffineCommand(options: AffineCommandOptions) {
+  return AffineCommandRegistry.register(options);
 }

@@ -1,4 +1,4 @@
-import { createIdentifier, type Memento } from '@ezeslucky/infra';
+import { createIdentifier, type Memento } from '@toeverything/infra';
 
 export interface AppSidebarState extends Memento {}
 

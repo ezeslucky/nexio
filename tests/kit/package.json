@@ -1,8 +1,8 @@
 {
-  "name": "@nexio-test/kit",
+  "name": "@affine-test/kit",
   "private": true,
   "type": "module",
-  "version": "0.22.4",
+  "version": "0.27.5",
   "exports": {
     "./electron": "./src/electron.ts",
     "./mobile": "./src/mobile.ts",
@@ -11,13 +11,13 @@
     "./bs/*": "./src/bs/*.ts"
   },
   "devDependencies": {
-    "@canvas/nexio": "workspace:*",
-    "@ezeslucky/infra": "workspace:*",
-    "@nexio-tools/utils": "workspace:*",
+    "@affine-tools/utils": "workspace:*",
+    "@blocksuite/affine": "workspace:*",
     "@node-rs/argon2": "^2.0.2",
-    "@playwright/test": "=1.52.0",
-    "express": "^5.0.0",
-    "http-proxy-middleware": "^3.0.3"
+    "@playwright/test": "=1.58.2",
+    "@toeverything/infra": "workspace:*",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5"
   },
   "peerDependencies": {
     "@playwright/test": "*",

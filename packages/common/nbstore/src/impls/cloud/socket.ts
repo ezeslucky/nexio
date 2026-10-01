@@ -1,9 +1,16 @@
 import {
+  type RealtimeEvent,
+  type RealtimeRequestEnvelope,
+  type RealtimeSubscribeEnvelope,
+  type RealtimeUnsubscribeEnvelope,
+} from '@affine/realtime';
+import {
   Manager as SocketIOManager,
   type Socket as SocketIO,
 } from 'socket.io-client';
 
 import { AutoReconnectConnection } from '../../connection';
+import type { TelemetryAck, TelemetryBatch } from '../../telemetry/types';
 import { throwIfAborted } from '../../utils/throw-if-aborted';
 
 // TODO(@forehalo): use [UserFriendlyError]
@@ -21,13 +28,19 @@ type WebsocketResponse<T> =
     };
 
 interface ServerEvents {
-  'space:broadcast-doc-update': {
+  'space:broadcast-doc-updates': {
     spaceType: string;
     spaceId: string;
     docId: string;
-    update: string;
+    updates: string[];
     timestamp: number;
-    editor: string;
+    editor?: string;
+    compressed?: boolean;
+  };
+  'space:broadcast-doc-invalidation': {
+    spaceType: string;
+    spaceId: string;
+    timestamp: number;
   };
 
   'space:collect-awareness': {
@@ -42,29 +55,27 @@ interface ServerEvents {
     docId: string;
     awarenessUpdate: string;
   };
+
+  'realtime:event': RealtimeEvent;
 }
 
 interface ClientEvents {
-  'space:join': [
-    { spaceType: string; spaceId: string; clientVersion: string },
-    { clientId: string },
-  ];
-  'space:leave': { spaceType: string; spaceId: string };
-  'space:join-awareness': [
+  'space:join-batch': [
     {
-      spaceType: string;
-      spaceId: string;
-      docId: string;
+      spaces: Array<{
+        spaceType: string;
+        spaceId: string;
+        docId?: string;
+      }>;
       clientVersion: string;
     },
-    { clientId: string },
+    { clientId: string; success: boolean },
   ];
-  'space:leave-awareness': {
+  'space:leave-batch': {
     spaceType: string;
     spaceId: string;
-    docId: string;
+    docIds: string[];
   };
-
   'space:update-awareness': {
     spaceType: string;
     spaceId: string;
@@ -103,8 +114,28 @@ interface ClientEvents {
       timestamp: number;
     },
   ];
-  'space:delete-doc': { spaceType: string; spaceId: string; docId: string };
+  'space:delete-doc': [
+    { spaceType: string; spaceId: string; docId: string },
+    { success?: true },
+  ];
+  'space:doc-lifecycle': [
+    {
+      spaceType: string;
+      spaceId: string;
+      docId: string;
+      lifecycle: 'trash' | 'restore' | 'delete';
+    },
+    { rootUpdate: string; timestamp: number },
+  ];
+
+  'telemetry:batch': [TelemetryBatch, TelemetryAck];
+
+  'realtime:request': [RealtimeRequestEnvelope, unknown];
+  'realtime:subscribe': [RealtimeSubscribeEnvelope, { subscriptionId: string }];
+  'realtime:unsubscribe': [RealtimeUnsubscribeEnvelope, { ok: true }];
 }
+
+export const SPACE_JOIN_BATCH_LIMIT = 100;
 
 export type ServerEventsMap = {
   [Key in keyof ServerEvents]: (data: ServerEvents[Key]) => void;
@@ -121,33 +152,42 @@ export type ClientEventsMap = {
 
 export type Socket = SocketIO<ServerEventsMap, ClientEventsMap>;
 
-export function uint8ArrayToBase64(array: Uint8Array): Promise<string> {
-  return new Promise<string>(resolve => {
-    // Create a blob from the Uint8Array
-    const blob = new Blob([array]);
+type BufferConstructorLike = {
+  from(
+    data: Uint8Array | string,
+    encoding?: string
+  ): Uint8Array & {
+    toString(encoding: string): string;
+  };
+};
 
-    const reader = new FileReader();
-    reader.onload = function () {
-      const dataUrl = reader.result as string | null;
-      if (!dataUrl) {
-        resolve('');
-        return;
-      }
-      // The result includes the `data:` URL prefix and the MIME type. We only want the Base64 data
-      const base64 = dataUrl.split(',')[1];
-      resolve(base64);
-    };
+const BufferCtor = (globalThis as { Buffer?: BufferConstructorLike }).Buffer;
+const CHUNK_SIZE = 0x8000;
 
-    reader.readAsDataURL(blob);
-  });
+export async function uint8ArrayToBase64(array: Uint8Array): Promise<string> {
+  if (BufferCtor) {
+    return BufferCtor.from(array).toString('base64');
+  }
+
+  let binary = '';
+  for (let i = 0; i < array.length; i += CHUNK_SIZE) {
+    const chunk = array.subarray(i, i + CHUNK_SIZE);
+    binary += String.fromCharCode(...chunk);
+  }
+  return btoa(binary);
 }
 
 export function base64ToUint8Array(base64: string) {
+  if (BufferCtor) {
+    return new Uint8Array(BufferCtor.from(base64, 'base64'));
+  }
+
   const binaryString = atob(base64);
-  const binaryArray = [...binaryString].map(function (char) {
-    return char.charCodeAt(0);
-  });
-  return new Uint8Array(binaryArray);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes;
 }
 
 let authMethod:
@@ -202,14 +242,23 @@ class SocketManager {
       },
     };
   }
+
+  reset() {
+    this.socket.disconnect();
+  }
 }
 
 const SOCKET_MANAGER_CACHE = new Map<string, SocketManager>();
+function getSocketManagerKey(endpoint: string, isSelfHosted: boolean) {
+  return `${endpoint}:${isSelfHosted ? 'selfhosted' : 'cloud'}`;
+}
+
 function getSocketManager(endpoint: string, isSelfHosted: boolean) {
-  let manager = SOCKET_MANAGER_CACHE.get(endpoint);
+  const key = getSocketManagerKey(endpoint, isSelfHosted);
+  let manager = SOCKET_MANAGER_CACHE.get(key);
   if (!manager) {
     manager = new SocketManager(endpoint, isSelfHosted);
-    SOCKET_MANAGER_CACHE.set(endpoint, manager);
+    SOCKET_MANAGER_CACHE.set(key, manager);
   }
   return manager;
 }
@@ -218,6 +267,12 @@ export class SocketConnection extends AutoReconnectConnection<{
   socket: Socket;
   disconnect: () => void;
 }> {
+  static resetSharedConnection(endpoint: string, isSelfHosted: boolean) {
+    SOCKET_MANAGER_CACHE.get(
+      getSocketManagerKey(endpoint, isSelfHosted)
+    )?.reset();
+  }
+
   manager = getSocketManager(this.endpoint, this.isSelfHosted);
 
   constructor(

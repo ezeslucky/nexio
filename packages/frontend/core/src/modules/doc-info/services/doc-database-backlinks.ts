@@ -1,6 +1,6 @@
-import { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
-import type { DatabaseBlockModel } from '@canvas/nexio/model';
-import { LiveData, Service } from '@ezeslucky/infra';
+import { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+import type { DatabaseBlockModel } from '@blocksuite/affine/model';
+import { LiveData, Service } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { combineLatest, distinctUntilChanged, map, Observable } from 'rxjs';
 
@@ -23,8 +23,8 @@ export class DocDatabaseBacklinksService extends Service {
 
   private async ensureDocLoaded(docId: string) {
     const docRef = this.docsService.open(docId);
-    if (!docRef.doc.canvasDoc.ready) {
-      docRef.doc.canvasDoc.load();
+    if (!docRef.doc.blockSuiteDoc.ready) {
+      docRef.doc.blockSuiteDoc.load();
     }
     const disposePriorityLoad = docRef.doc.addPriorityLoad(10);
     await docRef.doc.waitForSyncReady();
@@ -81,10 +81,10 @@ export class DocDatabaseBacklinksService extends Service {
         if (disposed) {
           return;
         }
-        const maybeDatabaseBlock = docRef.doc.canvasDoc.getBlock(
+        const maybeDatabaseBlock = docRef.doc.blockSuiteDoc.getBlock(
           backlink.databaseBlockId
         );
-        if (maybeDatabaseBlock?.flavour === 'nexio:database') {
+        if (maybeDatabaseBlock?.flavour === 'affine:database') {
           const dbModel = maybeDatabaseBlock.model as DatabaseBlockModel;
           const [cells$, dataSource] = this.adaptRowCells(
             dbModel,

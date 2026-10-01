@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "description": "NEXIO Routes Schema",
+  "description": "AFFiNE Routes Schema",
   "definitions": {
     "route": {
       "type": "string",

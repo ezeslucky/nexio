@@ -1,12 +1,13 @@
 export { AIButtonProvider } from './provider/ai-button';
 export { AIButtonService } from './services/ai-button';
 export { AIDraftService } from './services/ai-draft';
+export { AIModelService } from './services/models';
 export {
   type AIToolsConfig,
   AIToolsConfigService,
 } from './services/tools-config';
 
-import type { Framework } from '@ezeslucky/infra';
+import type { Framework } from '@toeverything/infra';
 
 import { GraphQLService, ServerScope, SubscriptionService } from '../cloud';
 import { FeatureFlagService } from '../feature-flag';
@@ -16,7 +17,6 @@ import { AIButtonProvider } from './provider/ai-button';
 import { AIButtonService } from './services/ai-button';
 import { AIDraftService } from './services/ai-draft';
 import { AIModelService } from './services/models';
-import { AINetworkSearchService } from './services/network-search';
 import { AIPlaygroundService } from './services/playground';
 import { AIReasoningService } from './services/reasoning';
 import { AIToolsConfigService } from './services/tools-config';
@@ -26,13 +26,6 @@ export const configureAIButtonModule = (framework: Framework) => {
     return new AIButtonService(container.getOptional(AIButtonProvider));
   });
 };
-
-export function configureAINetworkSearchModule(framework: Framework) {
-  framework.service(AINetworkSearchService, [
-    GlobalStateService,
-    FeatureFlagService,
-  ]);
-}
 
 export function configureAIReasoningModule(framework: Framework) {
   framework.service(AIReasoningService, [GlobalStateService]);

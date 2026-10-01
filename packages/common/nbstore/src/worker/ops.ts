@@ -1,10 +1,25 @@
+import type {
+  RealtimeConfigureInput,
+  RealtimeRequestInputOf,
+  RealtimeRequestName,
+  RealtimeRequestOutputOf,
+  RealtimeStatus,
+  RealtimeSubscriptionReady,
+  RealtimeTopicEventOf,
+  RealtimeTopicInputOf,
+  RealtimeTopicName,
+} from '@affine/realtime';
+
 import type { AvailableStorageImplementations } from '../impls';
 import type {
   AggregateResult,
   BlobRecord,
+  BlobSource,
   DocClock,
   DocClocks,
   DocDiff,
+  DocLifecycle,
+  DocLifecycleResult,
   DocRecord,
   DocUpdate,
   ListedBlobRecord,
@@ -16,6 +31,12 @@ import type { AwarenessRecord } from '../storage/awareness';
 import type { BlobSyncBlobState, BlobSyncState } from '../sync/blob';
 import type { DocSyncDocState, DocSyncState } from '../sync/doc';
 import type { IndexerDocSyncState, IndexerSyncState } from '../sync/indexer';
+import type {
+  TelemetryAck,
+  TelemetryContext,
+  TelemetryEvent,
+  TelemetryQueueState,
+} from '../telemetry/types';
 
 type StorageInitOptions = Values<{
   [key in keyof AvailableStorageImplementations]: {
@@ -37,6 +58,10 @@ interface GroupedWorkerOps {
     getDocTimestamps: [Date | null, DocClocks];
     getDocTimestamp: [string, DocClock | null];
     deleteDoc: [string, void];
+    applyDocLifecycle: [
+      { docId: string; lifecycle: DocLifecycle },
+      DocLifecycleResult,
+    ];
     subscribeDocUpdate: [void, { update: DocRecord; origin?: string }];
     waitForConnected: [void, void];
   };
@@ -79,6 +104,8 @@ interface GroupedWorkerOps {
     state: [void, BlobSyncState];
     blobState: [string, BlobSyncBlobState];
     downloadBlob: [string, boolean];
+    registerSource: [BlobSource, void];
+    unregisterSource: [BlobSource, void];
     uploadBlob: [{ blob: BlobRecord; force?: boolean }, true];
     fullDownload: [string | null, void];
   };
@@ -178,4 +205,30 @@ export type WorkerManagerOps = {
     string,
   ];
   close: [string, void];
+  'telemetry.setContext': [TelemetryContext, void];
+  'telemetry.track': [TelemetryEvent, { queued: boolean }];
+  'telemetry.pageview': [TelemetryEvent, { queued: boolean }];
+  'telemetry.flush': [void, TelemetryAck];
+  'telemetry.getQueueState': [void, TelemetryQueueState];
+  'realtime.configure': [RealtimeConfigureInput, void];
+  'realtime.request': [
+    {
+      [Op in RealtimeRequestName]: {
+        op: Op;
+        input: RealtimeRequestInputOf<Op>;
+        timeoutMs?: number;
+      };
+    }[RealtimeRequestName],
+    RealtimeRequestOutputOf<RealtimeRequestName>,
+  ];
+  'realtime.subscribe': [
+    {
+      [Topic in RealtimeTopicName]: {
+        topic: Topic;
+        input: RealtimeTopicInputOf<Topic>;
+      };
+    }[RealtimeTopicName],
+    RealtimeTopicEventOf<RealtimeTopicName> | RealtimeSubscriptionReady,
+  ];
+  'realtime.status': [void, RealtimeStatus];
 };

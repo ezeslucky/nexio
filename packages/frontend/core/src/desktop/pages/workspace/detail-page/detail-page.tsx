@@ -1,29 +1,29 @@
-import { Scrollable } from '@nexio/component';
-import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import type { AIChatParams, ChatPanel } from '@nexio/core/canvas/ai';
-import { AIProvider } from '@nexio/core/canvas/ai';
-import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
-import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
-// import { PageAIOnboarding } from '@nexio/core/components/nexio/ai-onboarding';
-import { GlobalPageHistoryModal } from '@nexio/core/components/nexio/page-history-modal';
-import { CommentSidebar } from '@nexio/core/components/comment/sidebar';
-import { useGuard } from '@nexio/core/components/guard';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
-import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
-import { useRegisterCanvasEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-canvas-editor-commands';
-import { useActiveCanvasEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
-import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
-import { WorkspacePropertySidebar } from '@nexio/core/components/properties/sidebar';
-import { TrashPageFooter } from '@nexio/core/components/pure/trash-page-footer';
-import { TopTip } from '@nexio/core/components/top-tip';
-import { ServerService } from '@nexio/core/modules/cloud';
-import { DocService } from '@nexio/core/modules/doc';
-import { EditorService } from '@nexio/core/modules/editor';
-import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { PeekViewService } from '@nexio/core/modules/peek-view';
-import { RecentDocsService } from '@nexio/core/modules/quicksearch';
+import { Scrollable } from '@affine/component';
+import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
+import { AIAppEvents, type AIChatParams } from '@affine/core/blocksuite/ai';
+import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
+import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
+// import { PageAIOnboarding } from '@affine/core/components/affine/ai-onboarding';
+import { GlobalPageHistoryModal } from '@affine/core/components/affine/page-history-modal';
+import { CommentSidebar } from '@affine/core/components/comment/sidebar';
+import { useGuard } from '@affine/core/components/guard';
+import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
+import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
+import { useRegisterBlocksuiteEditorCommands } from '@affine/core/components/hooks/affine/use-register-blocksuite-editor-commands';
+import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
+import { PageDetailEditor } from '@affine/core/components/page-detail-editor';
+import { WorkspacePropertySidebar } from '@affine/core/components/properties/sidebar';
+import { TrashPageFooter } from '@affine/core/components/pure/trash-page-footer';
+import { TopTip } from '@affine/core/components/top-tip';
+import { ServerService } from '@affine/core/modules/cloud';
+import { DocService } from '@affine/core/modules/doc';
+import { EditorService } from '@affine/core/modules/editor';
+import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { JournalService } from '@affine/core/modules/journal';
+import { PeekViewService } from '@affine/core/modules/peek-view';
+import { RecentDocsService } from '@affine/core/modules/quicksearch';
 import {
   useIsActiveView,
   ViewBody,
@@ -31,15 +31,18 @@ import {
   ViewService,
   ViewSidebarTab,
   WorkbenchService,
-} from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { isNewTabTrigger } from '@nexio/core/utils';
-import { ServerFeature } from '@nexio/graphql';
-import track from '@nexio/track';
-import { DisposableGroup } from '@canvas/nexio/global/disposable';
-import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
+} from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { isNewTabTrigger } from '@affine/core/utils';
+import { ServerFeature } from '@affine/graphql';
+import track from '@affine/track';
+import { DisposableGroup } from '@blocksuite/affine/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
 import {
   AiIcon,
+  ChartPanelIcon,
   CommentIcon,
   ExportIcon,
   FrameIcon,
@@ -52,7 +55,7 @@ import {
   useLiveData,
   useService,
   useServices,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 import { memo, useCallback, useEffect, useRef, useState } from 'react';
@@ -64,6 +67,7 @@ import * as styles from './detail-page.css';
 import { DetailPageHeader } from './detail-page-header';
 import { DetailPageWrapper } from './detail-page-wrapper';
 import { EditorAdapterPanel } from './tabs/adapter';
+import { EditorAnalyticsPanel } from './tabs/analytics';
 import { EditorChatPanel } from './tabs/chat';
 import { EditorFramePanel } from './tabs/frame';
 import { EditorJournalPanel } from './tabs/journal';
@@ -100,19 +104,21 @@ const DetailPageImpl = memo(function DetailPageImpl() {
 
   const isSideBarOpen = useLiveData(workbench.sidebarOpen$);
   const { appSettings } = useAppSettingHelper();
-  const chatPanelRef = useRef<ChatPanel | null>(null);
 
   const peekView = useService(PeekViewService).peekView;
 
   const isActiveView = useIsActiveView();
   // TODO(@eyhn): remove jotai here
-  const [_, setActiveCanvasEditor] = useActiveCanvasEditor();
+  const [_, setActiveBlockSuiteEditor] = useActiveBlocksuiteEditor();
 
   const enableAI = useEnableAI();
 
   const featureFlagService = useService(FeatureFlagService);
   const enableAdapterPanel = useLiveData(
-    featureFlagService.flags.enable_adapter_panel.$
+    featureFlagService.flags.enable_adapter_panel?.$
+  );
+  const enableViewAnalyticsPanel = useLiveData(
+    featureFlagService.flags.enable_view_analytics_panel?.$
   );
 
   const serverService = useService(ServerService);
@@ -125,9 +131,9 @@ const DetailPageImpl = memo(function DetailPageImpl() {
 
   useEffect(() => {
     if (isActiveView) {
-      setActiveCanvasEditor(editorContainer);
+      setActiveBlockSuiteEditor(editorContainer);
     }
-  }, [editorContainer, isActiveView, setActiveCanvasEditor]);
+  }, [editorContainer, isActiveView, setActiveBlockSuiteEditor]);
 
   useEffect(() => {
     const disposables: Subscription[] = [];
@@ -138,12 +144,8 @@ const DetailPageImpl = memo(function DetailPageImpl() {
       workbench.openSidebar();
       view.activeSidebarTab('chat');
     };
-    disposables.push(
-      AIProvider.slots.requestOpenWithChat.subscribe(openHandler)
-    );
-    disposables.push(
-      AIProvider.slots.requestSendWithChat.subscribe(openHandler)
-    );
+    disposables.push(AIAppEvents.requestOpenWithChat.subscribe(openHandler));
+    disposables.push(AIAppEvents.requestSendWithChat.subscribe(openHandler));
     return () => disposables.forEach(d => d.unsubscribe());
   }, [activeSidebarTab, view, workbench]);
 
@@ -182,17 +184,44 @@ const DetailPageImpl = memo(function DetailPageImpl() {
     return;
   }, [globalContext, isActiveView, isInTrash]);
 
-  useRegisterCanvasEditorCommands(editor, isActiveView);
+  useRegisterBlocksuiteEditorCommands(editor, isActiveView);
+
+  const journalService = useService(JournalService);
+  const isJournal = !!useLiveData(journalService.journalDate$(doc.id));
 
   const onLoad = useCallback(
-    (editorContainer: NexioEditorContainer) => {
+    (editorContainer: AffineEditorContainer) => {
       const std = editorContainer.std;
       const disposable = new DisposableGroup();
+
+      // Check if journal and handle accordingly to set focus on input block.
+      if (isJournal) {
+        const rafId = requestAnimationFrame(() => {
+          try {
+            if (!editorContainer.isConnected) return;
+            const page = editorContainer.page;
+            const note = getLastNoteBlock(page);
+            const std = editorContainer.std;
+            if (note) {
+              const lastBlock = note.lastChild();
+              if (lastBlock) {
+                const focusBlock = std.view.getBlock(lastBlock.id) ?? undefined;
+                std.command.exec(focusBlockEnd, { focusBlock, force: true });
+                return;
+              }
+            }
+            std.command.exec(focusBlockEnd, { force: true });
+          } catch (error) {
+            console.error('Failed to focus journal body', error);
+          }
+        });
+        disposable.add(() => cancelAnimationFrame(rafId));
+      }
       if (std) {
         const refNodeSlots = std.getOptional(RefNodeSlotsProvider);
         if (refNodeSlots) {
           disposable.add(
-            // the event should not be emitted by nexioReference
+            // the event should not be emitted by AffineReference
             refNodeSlots.docLinkClicked.subscribe(
               ({ pageId, params, openMode, event, host }) => {
                 if (host !== editorContainer.host) {
@@ -265,7 +294,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
         disposable.dispose();
       };
     },
-    [editor, workbench, peekView]
+    [editor, workbench, peekView, isJournal]
   );
 
   const [hasScrollTop, setHasScrollTop] = useState(false);
@@ -294,7 +323,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
     <FrameworkScope scope={editor.scope}>
       <ViewHeader>
         <DetailPageHeader
-          page={doc.CanvasDoc}
+          page={doc.blockSuiteDoc}
           workspace={workspace}
           onDragging={setDragging}
         />
@@ -306,7 +335,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           data-has-scroll-top={hasScrollTop}
         >
           {/* Add a key to force rerender when page changed, to avoid error boundary persisting. */}
-          <NexioErrorBoundary key={doc.id}>
+          <AffineErrorBoundary key={doc.id}>
             <TopTip pageId={doc.id} workspace={workspace} />
             <Scrollable.Root>
               <Scrollable.Viewport
@@ -314,9 +343,10 @@ const DetailPageImpl = memo(function DetailPageImpl() {
                 ref={scrollViewportRef}
                 data-dragging={dragging}
                 className={clsx(
-                  'nexio-page-viewport',
-                  styles.nexioDocViewport,
-                  styles.editorContainer
+                  'affine-page-viewport',
+                  styles.affineDocViewport,
+                  styles.editorContainer,
+                  { [styles.pageModeViewportContentBox]: mode === 'page' }
                 )}
               >
                 <PageDetailEditor onLoad={onLoad} readonly={readonly} />
@@ -332,7 +362,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
               show={mode === 'page' && !isSideBarOpen}
               openOutlinePanel={openOutlinePanel}
             />
-          </NexioErrorBoundary>
+          </AffineErrorBoundary>
           {isInTrash ? <TrashPageFooter /> : null}
         </div>
       </ViewBody>
@@ -343,7 +373,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           icon={<AiIcon />}
           unmountOnInactive={false}
         >
-          <EditorChatPanel editor={editorContainer} ref={chatPanelRef} />
+          <EditorChatPanel editor={editorContainer} doc={doc.blockSuiteDoc} />
         </ViewSidebarTab>
       )}
 
@@ -398,6 +428,17 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           <Scrollable.Root className={styles.sidebarScrollArea}>
             <Scrollable.Viewport>
               <CommentSidebar />
+            </Scrollable.Viewport>
+            <Scrollable.Scrollbar />
+          </Scrollable.Root>
+        </ViewSidebarTab>
+      )}
+
+      {workspace.flavour === 'affine-cloud' && enableViewAnalyticsPanel && (
+        <ViewSidebarTab tabId="analytics" icon={<ChartPanelIcon />}>
+          <Scrollable.Root className={styles.sidebarScrollArea}>
+            <Scrollable.Viewport>
+              <EditorAnalyticsPanel workspaceId={workspace.id} docId={doc.id} />
             </Scrollable.Viewport>
             <Scrollable.Scrollbar />
           </Scrollable.Root>

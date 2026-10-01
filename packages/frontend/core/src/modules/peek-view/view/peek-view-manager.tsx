@@ -1,6 +1,6 @@
-import { toReactNode } from '@nexio/component';
-import { BlockComponent } from '@canvas/nexio/std';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { toReactNode } from '@affine/component';
+import { BlockComponent } from '@blocksuite/affine/std';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import type { ActivePeekView } from '../entities/peek-view';

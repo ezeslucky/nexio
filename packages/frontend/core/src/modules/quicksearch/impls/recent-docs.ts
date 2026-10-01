@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 
 import type { DocDisplayMetaService } from '../../doc-display-meta';
 import type { QuickSearchSession } from '../providers/quick-search-provider';
@@ -9,7 +9,7 @@ import type { QuickSearchItem } from '../types/item';
 const group = {
   id: 'recent-docs',
   label: {
-    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.recent',
+    i18nKey: 'com.affine.cmdk.affine.category.affine.recent',
   },
   score: 15,
 } as QuickSearchGroup;

@@ -5,8 +5,8 @@ import {
   type MenuProps,
   MenuSeparator,
   Scrollable,
-} from '@nexio/component';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import { useI18n } from '@affine/i18n';
 import { DeleteIcon, DoneIcon, TagsIcon } from '@blocksuite/icons/rc';
 import type { MouseEventHandler, PropsWithChildren } from 'react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -68,9 +68,7 @@ const DesktopTagEditMenu = ({
           <MenuItem
             prefixIcon={<DeleteIcon />}
             type="danger"
-            onClick={() => {
-              tag?.id ? onTagDelete(tag.id) : null;
-            }}
+            onClick={() => onTagDelete(tag.id)}
           >
             {t['Delete']()}
           </MenuItem>
@@ -81,7 +79,7 @@ const DesktopTagEditMenu = ({
                 jumpToTag(tag.id);
               }}
             >
-              {t['com.nexio.page-properties.tags.open-tags-page']()}
+              {t['com.affine.page-properties.tags.open-tags-page']()}
             </MenuItem>
           ) : null}
           <MenuSeparator />
@@ -203,9 +201,7 @@ const MobileTagEditMenu = ({
         <ConfigModal.RowGroup>
           <ConfigModal.Row
             className={styles.mobileTagEditDeleteRow}
-            onClick={() => {
-              onTagDelete(tag.id);
-            }}
+            onClick={() => onTagDelete(tag.id)}
           >
             <DeleteIcon />
             {t['Delete']()}

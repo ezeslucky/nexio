@@ -1,10 +1,10 @@
 {
-  "name": "@nexio/native",
+  "name": "@affine/native",
   "private": true,
   "main": "index.js",
   "types": "index.d.ts",
   "napi": {
-    "binaryName": "nexio",
+    "binaryName": "affine",
     "targets": [
       "x86_64-apple-darwin",
       "x86_64-unknown-linux-gnu",
@@ -25,24 +25,23 @@
     ]
   },
   "devDependencies": {
-    "@napi-rs/cli": "3.0.0-alpha.89",
+    "@napi-rs/cli": "3.5.0",
     "@napi-rs/whisper": "^0.0.4",
     "@types/node": "^22.0.0",
-    "ava": "^6.2.0",
-    "rxjs": "^7.8.1",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "ava": "^7.0.0",
+    "rxjs": "^7.8.2",
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "engines": {
     "node": ">= 10"
   },
   "scripts": {
     "artifacts": "napi artifacts",
-    "build": "napi build -p nexio_native --platform --release",
-    "build:debug": "napi build -p nexio_native --platform",
+    "build": "napi build -p affine_native --platform --release --strip",
+    "build:debug": "napi build -p affine_native --platform",
     "universal": "napi universal",
-    "test": "ava",
+    "test": "ava --no-worker-threads --concurrency=2",
     "version": "napi version"
   },
-  "version": "0.22.4"
+  "version": "0.27.5"
 }

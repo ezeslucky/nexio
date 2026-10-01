@@ -1,17 +1,16 @@
-import { Avatar } from '@nexio/component';
-import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
-import { WorkspaceAvatar } from '@nexio/core/components/workspace-avatar';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
+import { Avatar } from '@affine/component';
+import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import { WorkspaceAvatar } from '@affine/core/components/workspace-avatar';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
-import { useServiceOptional } from '@ezeslucky/infra';
+import { useServiceOptional } from '@toeverything/infra';
 import clsx from 'clsx';
 import { forwardRef, type HTMLAttributes } from 'react';
 
 import { card, dropdownIcon, label } from './card.css';
 
-export interface CurrentWorkspaceCardProps
-  extends HTMLAttributes<HTMLDivElement> {}
+export interface CurrentWorkspaceCardProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const CurrentWorkspaceCard = forwardRef<
   HTMLDivElement,
@@ -26,6 +25,7 @@ export const CurrentWorkspaceCard = forwardRef<
       ref={ref}
       onClick={onClick}
       className={clsx(card, className)}
+      data-testid="workspace-selector-trigger"
       {...attrs}
     >
       {currentWorkspace ? (

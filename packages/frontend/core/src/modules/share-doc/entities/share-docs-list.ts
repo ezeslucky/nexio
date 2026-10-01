@@ -1,5 +1,5 @@
-import { DebugLogger } from '@nexio/debug';
-import type { GetWorkspacePublicPagesQuery } from '@nexio/graphql';
+import { DebugLogger } from '@affine/debug';
+import type { GetWorkspacePublicPagesQuery } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -10,7 +10,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { map, tap } from 'rxjs';
 
 import type { GlobalCache } from '../../storage';
@@ -19,7 +19,7 @@ import type { ShareDocsStore } from '../stores/share-docs';
 
 type ShareDocListType = GetWorkspacePublicPagesQuery['workspace']['publicDocs'];
 
-export const logger = new DebugLogger('nexio:share-doc-list');
+export const logger = new DebugLogger('affine:share-doc-list');
 
 export class ShareDocsList extends Entity {
   list$ = LiveData.from(

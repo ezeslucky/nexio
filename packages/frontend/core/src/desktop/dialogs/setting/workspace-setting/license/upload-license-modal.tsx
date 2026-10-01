@@ -1,18 +1,18 @@
-import { Button, Modal, notify, useConfirmModal } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { Upload } from '@nexio/core/components/pure/file-upload';
+import { Button, Modal, notify, useConfirmModal } from '@affine/component';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { Upload } from '@affine/core/components/pure/file-upload';
 import {
   SelfhostLicenseService,
   WorkspaceSubscriptionService,
-} from '@nexio/core/modules/cloud';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
-import { UserFriendlyError } from '@nexio/error';
-import { Trans, useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/cloud';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceQuotaService } from '@affine/core/modules/quota';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { copyTextToClipboard } from '@affine/core/utils/clipboard';
+import { UserFriendlyError } from '@affine/error';
+import { Trans, useI18n } from '@affine/i18n';
 import { CopyIcon, FileIcon } from '@blocksuite/icons/rc';
-import { useService } from '@ezeslucky/infra';
+import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 
 import * as styles from './upload-license-modal.css';
@@ -51,11 +51,11 @@ export const UploadLicenseModal = ({
         openConfirmModal({
           title:
             t[
-              'com.nexio.settings.workspace.license.self-host-team.upload-license-file.success.title'
+              'com.affine.settings.workspace.license.self-host-team.upload-license-file.success.title'
             ](),
           description:
             t[
-              'com.nexio.settings.workspace.license.self-host-team.upload-license-file.success.description'
+              'com.affine.settings.workspace.license.self-host-team.upload-license-file.success.description'
             ](),
           confirmText: t['Confirm'](),
           cancelButtonOptions: {
@@ -74,7 +74,7 @@ export const UploadLicenseModal = ({
         openConfirmModal({
           title:
             t[
-              'com.nexio.settings.workspace.license.self-host-team.upload-license-file.failed'
+              'com.affine.settings.workspace.license.self-host-team.upload-license-file.failed'
             ](),
           description: err.message,
           confirmText: t['Confirm'](),
@@ -129,22 +129,22 @@ export const UploadLicenseModal = ({
       open={open}
       onOpenChange={handleOpenChange}
       title={t[
-        'com.nexio.settings.workspace.license.self-host-team.upload-license-file'
+        'com.affine.settings.workspace.license.self-host-team.upload-license-file'
       ]()}
       description={t[
-        'com.nexio.settings.workspace.license.self-host-team.upload-license-file.description'
+        'com.affine.settings.workspace.license.self-host-team.upload-license-file.description'
       ]()}
     >
       <div className={styles.activateModalContent}>
         <div className={styles.tipsContainer}>
           <div className={styles.tipsTitle}>
             {t[
-              'com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.title'
+              'com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.title'
             ]()}
           </div>
           <div className={styles.tipsContent}>
             <Trans
-              i18nKey="com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.content"
+              i18nKey="com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.content"
               components={{
                 1: (
                   <a
@@ -160,7 +160,7 @@ export const UploadLicenseModal = ({
           <div className={styles.workspaceIdContainer}>
             <div className={styles.workspaceIdLabel}>
               {t[
-                'com.nexio.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id'
+                'com.affine.settings.workspace.license.self-host-team.upload-license-file.tips.workspace-id'
               ]()}
             </div>
             <Button
@@ -187,14 +187,14 @@ export const UploadLicenseModal = ({
             <span className={styles.uploadButtonContent}>
               <FileIcon className={styles.uploadButtonIcon} />
               {t[
-                'com.nexio.settings.workspace.license.self-host-team.upload-license-file.click-to-upload'
+                'com.affine.settings.workspace.license.self-host-team.upload-license-file.click-to-upload'
               ]()}
             </span>
           </Button>
         </Upload>
         <div className={styles.footer}>
           {t[
-            'com.nexio.settings.workspace.license.self-host-team.upload-license-file.help'
+            'com.affine.settings.workspace.license.self-host-team.upload-license-file.help'
           ]()}
         </div>
       </div>

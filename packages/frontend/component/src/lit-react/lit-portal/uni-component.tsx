@@ -2,7 +2,7 @@ import type {
   ExposeWrapper,
   UniComponent,
   UniComponentReturn,
-} from '@canvas/nexio-shared/types';
+} from '@blocksuite/affine-shared/types';
 import { nanoid } from 'nanoid';
 import {
   type ComponentType,
@@ -12,7 +12,6 @@ import {
   useState,
 } from 'react';
 import { createPortal } from 'react-dom';
-
 const UniReactNode = memo(
   function UniReactNode(props: {
     ele: HTMLElement;

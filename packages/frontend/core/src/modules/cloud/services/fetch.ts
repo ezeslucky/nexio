@@ -1,10 +1,10 @@
-import { DebugLogger } from '@nexio/debug';
-import { UserFriendlyError } from '@nexio/error';
-import { fromPromise, Service } from '@ezeslucky/infra';
+import { DebugLogger } from '@affine/debug';
+import { UserFriendlyError } from '@affine/error';
+import { fromPromise, Service } from '@toeverything/infra';
 
 import type { ServerService } from './server';
 
-const logger = new DebugLogger('nexio:fetch');
+const logger = new DebugLogger('affine:fetch');
 
 export type FetchInit = RequestInit & { timeout?: number };
 
@@ -58,18 +58,28 @@ export class FetchService extends Service {
           signal: abortController.signal,
           headers: {
             ...init?.headers,
-            'x-nexio-version': BUILD_CONFIG.appVersion,
+            'x-affine-version': BUILD_CONFIG.appVersion,
+            'x-affine-client-kind': BUILD_CONFIG.isNative ? 'native' : 'web',
           },
         }
       );
     } catch (err: any) {
+      const isAbort =
+        err?.name === 'AbortError' ||
+        err?.code === 'ABORT_ERR' ||
+        err?.type === 'aborted' ||
+        abortController.signal.aborted;
+
+      const message =
+        err?.message || (isAbort ? 'Request aborted' : 'Unknown network error');
+
       throw new UserFriendlyError({
-        status: 504,
-        code: 'NETWORK_ERROR',
-        type: 'NETWORK_ERROR',
-        name: 'NETWORK_ERROR',
-        message: `Network error: ${err.message}`,
-        stacktrace: err.stack,
+        status: isAbort ? 499 : 504,
+        code: isAbort ? 'REQUEST_ABORTED' : 'NETWORK_ERROR',
+        type: isAbort ? 'REQUEST_ABORTED' : 'NETWORK_ERROR',
+        name: isAbort ? 'REQUEST_ABORTED' : 'NETWORK_ERROR',
+        message: `Network error: ${message}`,
+        stacktrace: err?.stack,
       });
     } finally {
       clearTimeout(timeoutId);

@@ -1,9 +1,9 @@
-import { Menu, MenuItem, MenuTrigger, Switch } from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { EditorSettingService } from '@nexio/core/modules/editor-setting';
-import type { EdgelessDefaultTheme } from '@nexio/core/modules/editor-setting/schema';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { Menu, MenuItem, MenuTrigger, Switch } from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import type { EdgelessDefaultTheme } from '@affine/core/modules/editor-setting/schema';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
 import { menuTrigger } from '../style.css';
@@ -15,20 +15,20 @@ const getThemeOptions = (
     value: 'specified' as EdgelessDefaultTheme,
     label:
       t[
-        'com.nexio.settings.editorSettings.page.edgeless-default-theme.specified'
+        'com.affine.settings.editorSettings.page.edgeless-default-theme.specified'
       ](),
   },
   {
     value: 'dark' as EdgelessDefaultTheme,
-    label: t['com.nexio.themeSettings.dark'](),
+    label: t['com.affine.themeSettings.dark'](),
   },
   {
     value: 'light' as EdgelessDefaultTheme,
-    label: t['com.nexio.themeSettings.light'](),
+    label: t['com.affine.themeSettings.light'](),
   },
   {
     value: 'auto' as EdgelessDefaultTheme,
-    label: t['com.nexio.themeSettings.auto'](),
+    label: t['com.affine.themeSettings.auto'](),
   },
 ];
 
@@ -38,14 +38,14 @@ const getThemeValue = (
 ) => {
   switch (theme) {
     case 'dark':
-      return t['com.nexio.themeSettings.dark']();
+      return t['com.affine.themeSettings.dark']();
     case 'light':
-      return t['com.nexio.themeSettings.light']();
+      return t['com.affine.themeSettings.light']();
     case 'auto':
-      return t['com.nexio.themeSettings.auto']();
+      return t['com.affine.themeSettings.auto']();
     case 'specified':
       return t[
-        'com.nexio.settings.editorSettings.page.edgeless-default-theme.specified'
+        'com.affine.settings.editorSettings.page.edgeless-default-theme.specified'
       ]();
     default:
       return '';
@@ -89,10 +89,10 @@ export const GeneralEdgelessSetting = () => {
     <>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.page.edgeless-default-theme.title'
+          'com.affine.settings.editorSettings.page.edgeless-default-theme.title'
         ]()}
         desc={t[
-          'com.nexio.settings.editorSettings.page.edgeless-default-theme.description'
+          'com.affine.settings.editorSettings.page.edgeless-default-theme.description'
         ]()}
       >
         <Menu
@@ -112,10 +112,10 @@ export const GeneralEdgelessSetting = () => {
       </SettingRow>
       <SettingRow
         name={t[
-          'com.nexio.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title'
+          'com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.title'
         ]()}
         desc={t[
-          'com.nexio.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description'
+          'com.affine.settings.editorSettings.page.edgeless-scroll-wheel-zoom.description'
         ]()}
       >
         <Switch

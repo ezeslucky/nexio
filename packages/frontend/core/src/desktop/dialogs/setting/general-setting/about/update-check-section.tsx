@@ -1,9 +1,9 @@
-import { Loading } from '@nexio/component';
-import { SettingRow } from '@nexio/component/setting-components';
-import { Button } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
-import { useI18n } from '@nexio/i18n';
+import { Loading } from '@affine/component';
+import { SettingRow } from '@affine/component/setting-components';
+import { Button } from '@affine/component/ui/button';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useAppUpdater } from '@affine/core/components/hooks/use-app-updater';
+import { useI18n } from '@affine/i18n';
 import clsx from 'clsx';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -23,37 +23,37 @@ const useUpdateStatusLabels = (checkUpdateStatus: CheckUpdateStatus) => {
 
   const buttonLabel = useMemo(() => {
     if (updateReady) {
-      return t['com.nexio.aboutnexio.checkUpdate.button.restart']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.button.restart']();
     }
     if (updateAvailable && downloadProgress === null) {
-      return t['com.nexio.aboutnexio.checkUpdate.button.download']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.button.download']();
     }
     if (
       checkUpdateStatus === CheckUpdateStatus.LATEST ||
       checkUpdateStatus === CheckUpdateStatus.ERROR
     ) {
-      return t['com.nexio.aboutnexio.checkUpdate.button.retry']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.button.retry']();
     }
-    return t['com.nexio.aboutnexio.checkUpdate.button.check']();
+    return t['com.affine.aboutAFFiNE.checkUpdate.button.check']();
   }, [checkUpdateStatus, downloadProgress, t, updateAvailable, updateReady]);
 
   const subtitleLabel = useMemo(() => {
     if (updateReady) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.restart']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.restart']();
     } else if (updateAvailable && downloadProgress === null) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.update-available']({
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.update-available']({
         version: updateAvailable.version,
       });
     } else if (checkingForUpdates) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.checking']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.checking']();
     } else if (updateAvailable && downloadProgress !== null) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.downloading']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.downloading']();
     } else if (checkUpdateStatus === CheckUpdateStatus.ERROR) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.error']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.error']();
     } else if (checkUpdateStatus === CheckUpdateStatus.LATEST) {
-      return t['com.nexio.aboutnexio.checkUpdate.subtitle.latest']();
+      return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.latest']();
     }
-    return t['com.nexio.aboutnexio.checkUpdate.subtitle.check']();
+    return t['com.affine.aboutAFFiNE.checkUpdate.subtitle.check']();
   }, [
     checkUpdateStatus,
     downloadProgress,
@@ -145,7 +145,7 @@ export const UpdateCheckSection = () => {
 
   return (
     <SettingRow
-      name={t['com.nexio.aboutnexio.checkUpdate.title']()}
+      name={t['com.affine.aboutAFFiNE.checkUpdate.title']()}
       desc={subtitle}
     >
       <Button

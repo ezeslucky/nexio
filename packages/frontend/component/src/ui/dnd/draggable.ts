@@ -83,7 +83,7 @@ export const useDraggable = <D extends DNDData = DNDData>(
           }
         : undefined,
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [...deps, getOptions, context.toExternalData]);
 
   useEffect(() => {
@@ -110,7 +110,7 @@ export const useDraggable = <D extends DNDData = DNDData>(
       },
     };
 
-    element.dataset.nexioDraggable = 'true';
+    element.dataset.affineDraggable = 'true';
 
     const cleanupDraggable = draggable({
       element,

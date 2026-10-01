@@ -5,14 +5,14 @@ import {
   Tooltip,
   useDraggable,
   useDropTarget,
-} from '@nexio/component';
-import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/component';
+import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
 import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { type HTMLProps, useCallback, useState } from 'react';
 
@@ -51,7 +51,7 @@ const PropertyItem = ({
     setMoreMenuOpen(true);
   }, []);
 
-  const { dragRef } = useDraggable<NexioDNDData>(
+  const { dragRef } = useDraggable<AffineDNDData>(
     () => ({
       canDrag: canEditPropertyInfo,
       data: {
@@ -68,7 +68,7 @@ const PropertyItem = ({
     [propertyInfo, workspaceService, canEditPropertyInfo]
   );
 
-  const { dropTargetRef, closestEdge } = useDropTarget<NexioDNDData>(
+  const { dropTargetRef, closestEdge } = useDropTarget<AffineDNDData>(
     () => ({
       canDrop(data) {
         return (
@@ -133,10 +133,10 @@ const PropertyItem = ({
         </span>
         <span className={styles.itemVisibility}>
           {propertyInfo.show === 'hide-when-empty'
-            ? t['com.nexio.page-properties.property.hide-when-empty']()
+            ? t['com.affine.page-properties.property.hide-when-empty']()
             : propertyInfo.show === 'always-hide'
-              ? t['com.nexio.page-properties.property.always-hide']()
-              : t['com.nexio.page-properties.property.always-show']()}
+              ? t['com.affine.page-properties.property.always-hide']()
+              : t['com.affine.page-properties.property.always-show']()}
         </span>
         <Menu
           rootOptions={{

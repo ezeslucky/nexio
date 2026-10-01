@@ -1,18 +1,18 @@
-import { toast, useConfirmModal } from '@nexio/component';
+import { Button, toast, useConfirmModal } from '@affine/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@nexio/core/components/explorer/context';
-import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import { useCanvasMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
-import { Header } from '@nexio/core/components/pure/header';
-import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
-import { GlobalContextService } from '@nexio/core/modules/global-context';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/components/explorer/context';
+import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
+import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
+import { Header } from '@affine/core/components/pure/header';
+import { CollectionRulesService } from '@affine/core/modules/collection-rules';
+import { GlobalContextService } from '@affine/core/modules/global-context';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { useI18n } from '@affine/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
-import { useCallback, useEffect, useState } from 'react';
+import { useLiveData, useService } from '@toeverything/infra';
+import { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import {
   useIsActiveView,
@@ -24,14 +24,48 @@ import {
 import { EmptyPageList } from './page-list-empty';
 import * as styles from './trash-page.css';
 
-const TrashHeader = () => {
+const TrashHeader = ({ canManageTrash }: { canManageTrash: boolean }) => {
   const t = useI18n();
+  const contextValue = useContext(DocExplorerContext);
+  const groups = useLiveData(contextValue.groups$);
+  const selectMode = useLiveData(contextValue.selectMode$);
+  const selectedDocIds = useLiveData(contextValue.selectedDocIds$);
+
+  const allDocIds = useMemo(
+    () => Array.from(new Set(groups.flatMap(group => group.items))),
+    [groups]
+  );
+  const allSelected = useMemo(() => {
+    const selectedDocIdSet = new Set(selectedDocIds);
+    return (
+      allDocIds.length > 0 && allDocIds.every(id => selectedDocIdSet.has(id))
+    );
+  }, [allDocIds, selectedDocIds]);
+
+  const handleToggleSelectAll = useCallback(() => {
+    contextValue.selectedDocIds$.next(allSelected ? [] : allDocIds);
+    contextValue.prevCheckAnchorId$?.next(null);
+  }, [allDocIds, allSelected, contextValue]);
+
   return (
     <Header
       left={
         <div className={styles.trashTitle}>
           <DeleteIcon className={styles.trashIcon} />
-          {t['com.nexio.workspaceSubPath.trash']()}
+          {t['com.affine.workspaceSubPath.trash']()}
+          {selectMode && canManageTrash && allDocIds.length > 0 ? (
+            <Button
+              className={styles.selectAllButton}
+              data-testid="trash-select-all"
+              onClick={handleToggleSelectAll}
+              size="custom"
+              variant="plain"
+            >
+              {allSelected
+                ? t['com.affine.page.group-header.clear']()
+                : t['com.affine.page.group-header.select-all']()}
+            </Button>
+          ) : null}
         </div>
       }
     />
@@ -44,7 +78,7 @@ export const TrashPage = () => {
   const globalContextService = useService(GlobalContextService);
   const permissionService = useService(WorkspacePermissionService);
 
-  const { restoreFromTrash, permanentlyDeletePage } = useCanvasMetaHelper();
+  const { restoreFromTrash, permanentlyDeletePage } = useBlockSuiteMetaHelper();
   const isActiveView = useIsActiveView();
   const { openConfirmModal } = useConfirmModal();
 
@@ -69,6 +103,7 @@ export const TrashPage = () => {
 
   const isAdmin = useLiveData(permissionService.permission.isAdmin$);
   const isOwner = useLiveData(permissionService.permission.isOwner$);
+  const canManageTrash = !!isAdmin || !!isOwner;
   const groups = useLiveData(explorerContextValue.groups$);
   const isEmpty =
     groups.length === 0 ||
@@ -76,24 +111,27 @@ export const TrashPage = () => {
 
   const handleMultiRestore = useCallback(
     (ids: string[]) => {
-      ids.forEach(id => {
-        restoreFromTrash(id);
-      });
-      toast(
-        t['com.nexio.toastMessage.restored']({
-          title: ids.length > 1 ? 'docs' : 'doc',
+      Promise.all(ids.map(id => restoreFromTrash(id)))
+        .then(() => {
+          toast(
+            t['com.affine.toastMessage.restored']({
+              title: ids.length > 1 ? 'docs' : 'doc',
+            })
+          );
         })
-      );
+        .catch(error => console.error(error));
     },
     [restoreFromTrash, t]
   );
 
   const handleMultiDelete = useCallback(
-    (ids: string[]) => {
-      ids.forEach(pageId => {
-        permanentlyDeletePage(pageId);
-      });
-      toast(t['com.nexio.toastMessage.permanentlyDeleted']());
+    async (ids: string[]) => {
+      await Promise.all(
+        ids.map(async pageId => {
+          await permanentlyDeletePage(pageId);
+        })
+      );
+      toast(t['com.affine.toastMessage.permanentlyDeleted']());
     },
     [permanentlyDeletePage, t]
   );
@@ -110,15 +148,15 @@ export const TrashPage = () => {
         return;
       }
       openConfirmModal({
-        title: `${t['com.nexio.trashOperation.deletePermanently']()}?`,
-        description: t['com.nexio.trashOperation.deleteDescription'](),
+        title: `${t['com.affine.trashOperation.deletePermanently']()}?`,
+        description: t['com.affine.trashOperation.deleteDescription'](),
         cancelText: t['Cancel'](),
-        confirmText: t['com.nexio.trashOperation.delete'](),
+        confirmText: t['com.affine.trashOperation.delete'](),
         confirmButtonOptions: {
           variant: 'error',
         },
-        onConfirm: () => {
-          handleMultiDelete(ids);
+        onConfirm: async () => {
+          await handleMultiDelete(ids);
           callbacks?.onFinished?.();
         },
         onCancel: () => {
@@ -171,7 +209,7 @@ export const TrashPage = () => {
       <ViewTitle title={t['Trash']()} />
       <ViewIcon icon={'trash'} />
       <ViewHeader>
-        <TrashHeader />
+        <TrashHeader canManageTrash={canManageTrash} />
       </ViewHeader>
       <ViewBody>
         <div className={styles.body}>
@@ -179,11 +217,9 @@ export const TrashPage = () => {
             <EmptyPageList type="trash" />
           ) : (
             <DocsExplorer
-              disableMultiDelete={!isAdmin && !isOwner}
-              onRestore={isAdmin || isOwner ? handleMultiRestore : undefined}
-              onDelete={
-                isAdmin || isOwner ? onConfirmPermanentlyDelete : undefined
-              }
+              disableMultiDelete={!canManageTrash}
+              onRestore={canManageTrash ? handleMultiRestore : undefined}
+              onDelete={canManageTrash ? onConfirmPermanentlyDelete : undefined}
             />
           )}
         </div>

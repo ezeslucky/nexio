@@ -1,10 +1,10 @@
-import type { Collection as LegacyCollectionInfo } from '@nexio/env/filter';
+import type { Collection as LegacyCollectionInfo } from '@affine/env/filter';
 import {
   Store,
   yjsGetPath,
   yjsObserve,
   yjsObserveDeep,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import dayjs from 'dayjs';
 import { nanoid } from 'nanoid';
 import { distinctUntilChanged, map, type Observable, switchMap } from 'rxjs';

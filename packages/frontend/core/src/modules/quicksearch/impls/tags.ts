@@ -1,4 +1,4 @@
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import Fuse from 'fuse.js';
 
 import type { TagService } from '../../tag';
@@ -11,7 +11,7 @@ import { QuickSearchTagIcon } from '../views/tag-icon';
 const group: QuickSearchGroup = {
   id: 'tags',
   label: {
-    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.tags',
+    i18nKey: 'com.affine.cmdk.affine.category.affine.tags',
   },
   score: 10,
 };

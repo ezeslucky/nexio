@@ -1,5 +1,5 @@
-import { Dialog, DialogContent } from '@nexio/admin/components/ui/dialog';
-import { cn } from '@nexio/admin/utils';
+import { Dialog, DialogContent } from '@affine/admin/components/ui/dialog';
+import { cn } from '@affine/admin/utils';
 import { type DialogProps } from '@radix-ui/react-dialog';
 import { Command as CommandPrimitive } from 'cmdk';
 import { Search } from 'lucide-react';
@@ -38,7 +38,7 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  // eslint-disable-next-line react/no-unknown-property
+  // oxlint-disable-next-line react/no-unknown-property
   <div className="flex items-center px-3 border-b" cmdk-input-wrapper="">
     <Search className="w-4 h-4 mr-2 opacity-50 shrink-0" />
     <CommandPrimitive.Input

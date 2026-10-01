@@ -1,8 +1,8 @@
-import { Loading, Tooltip, useConfirmModal } from '@nexio/component';
-import { Pagination } from '@nexio/component/setting-components';
-import { useI18n } from '@nexio/i18n';
-import { getAttachmentFileIconRC } from '@canvas/nexio/components/icons';
-import { cssVarV2 } from '@canvas/nexio/shared/theme';
+import { Loading, Tooltip, useConfirmModal } from '@affine/component';
+import { Pagination } from '@affine/component/setting-components';
+import { useI18n } from '@affine/i18n';
+import { getAttachmentFileIconRC } from '@blocksuite/affine/components/icons';
+import { cssVarV2 } from '@blocksuite/affine/shared/theme';
 import { CloseIcon, WarningIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { useCallback } from 'react';
@@ -75,13 +75,19 @@ const ErrorItem: React.FC<{ attachment: ErrorAttachmentFile }> = ({
 const PersistedItem: React.FC<{ attachment: PersistedAttachmentFile }> = ({
   attachment,
 }) => {
-  const Icon = getAttachmentFileIconRC(attachment.mimeType);
+  const Icon = getAttachmentFileIconRC(attachment.mediaType);
   return (
     <div
       className={attachmentTitle}
-      data-testid="workspace-embedding-setting-attachment-persisted-item"
+      data-testid={`workspace-embedding-setting-attachment-${attachment.status}-item`}
     >
-      <Icon style={{ marginRight: 4 }} />
+      {attachment.status === 'processing' ? (
+        <Loading />
+      ) : attachment.status === 'failed' ? (
+        <WarningIcon />
+      ) : (
+        <Icon style={{ marginRight: 4 }} />
+      )}
       <span className="attachment-title-text">{attachment.fileName}</span>
     </div>
   );
@@ -104,11 +110,11 @@ const AttachmentItem: React.FC<AttachmentItemProps> = ({
     openConfirmModal({
       title:
         t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title'
+          'com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.title'
         ](),
       description:
         t[
-          'com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description'
+          'com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.description'
         ](),
       confirmText: t['Confirm'](),
       confirmButtonOptions: {
@@ -138,7 +144,7 @@ const AttachmentItem: React.FC<AttachmentItemProps> = ({
         <div className={attachmentOperation}>
           <Tooltip
             content={t[
-              'com.nexio.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip'
+              'com.affine.settings.workspace.indexer-embedding.embedding.additional-attachments.remove-attachment.tooltip'
             ]()}
           >
             <CloseIcon

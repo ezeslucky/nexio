@@ -1,5 +1,5 @@
-import { NumberValue } from '@nexio/core/components/workspace-property-types/number';
-import { useLiveData } from '@ezeslucky/infra';
+import { NumberValue } from '@affine/core/components/workspace-property-types/number';
+import { useLiveData } from '@toeverything/infra';
 
 import type { DatabaseCellRendererProps } from '../../../types';
 

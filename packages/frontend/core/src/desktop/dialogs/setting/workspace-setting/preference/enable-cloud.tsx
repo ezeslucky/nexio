@@ -1,13 +1,13 @@
-import { SettingRow } from '@nexio/component/setting-components';
-import { Button } from '@nexio/component/ui/button';
-import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
+import { SettingRow } from '@affine/component/setting-components';
+import { Button } from '@affine/component/ui/button';
+import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
 import {
   type Workspace,
   WorkspaceService,
-} from '@nexio/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
 export interface PublishPanelProps {
@@ -48,17 +48,17 @@ export const EnableCloudPanel = ({
       spreadCol={false}
       style={{
         padding: '10px',
-        background: 'var(--nexio-background-secondary-color)',
+        background: 'var(--affine-background-secondary-color)',
         marginTop: '24px',
       }}
     >
       <Button
-        data-testid="publish-enable-nexio-cloud-button"
+        data-testid="publish-enable-affine-cloud-button"
         variant="primary"
         onClick={confirmEnableCloudAndClose}
         style={{ marginTop: '12px' }}
       >
-        {t['Enable NEXIO Cloud']()}
+        {t['Enable AFFiNE Cloud']()}
       </Button>
     </SettingRow>
   );

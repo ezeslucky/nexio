@@ -1,4 +1,5 @@
 import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { StorybookConfig } from '@storybook/react-vite';
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import swc from 'unplugin-swc';
@@ -7,9 +8,7 @@ import { mergeConfig } from 'vite';
 export default {
   stories: ['../src/ui/**/*.@(mdx|stories.@(js|jsx|ts|tsx))'],
 
-  addons: [
-    '@chromatic-com/storybook',
-  ],
+  addons: [],
 
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
@@ -21,8 +20,8 @@ export default {
   docs: {},
 
   async viteFinal(config, _options) {
-    const { getBuildConfig } = await import('@nexio-tools/utils/build-config');
-    const { Package } = await import('@nexio-tools/utils/workspace');
+    const { getBuildConfig } = await import('@affine-tools/utils/build-config');
+    const { Package } = await import('@affine-tools/utils/workspace');
 
     return mergeConfig(config, {
       plugins: [
@@ -51,7 +50,7 @@ export default {
         }),
       ],
       define: Object.entries(
-        getBuildConfig(new Package('@nexio/web'), {
+        getBuildConfig(new Package('@affine/web'), {
           mode: 'development',
           channel: 'canary',
         })
@@ -68,5 +67,6 @@ export default {
 } satisfies StorybookConfig;
 
 function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, 'package.json')));
+  return dirname(fileURLToPath(import.meta.resolve(join(value, 'package.json'))));
 }
+

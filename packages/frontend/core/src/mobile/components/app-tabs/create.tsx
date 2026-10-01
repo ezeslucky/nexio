@@ -1,12 +1,12 @@
-import { usePageHelper } from '@nexio/core/canvas/block-suite-page-list/utils';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import { DocsService } from '@nexio/core/modules/doc';
-import { TemplateDocService } from '@nexio/core/modules/template-doc';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import track from '@nexio/track';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { DocsService } from '@affine/core/modules/doc';
+import { TemplateDocService } from '@affine/core/modules/template-doc';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import track from '@affine/track';
 import { EditIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { useLiveData, useService } from '@toeverything/infra';
 
 import { TabItem } from './tab-item';
 import type { AppTabCustomFCProps } from './type';
@@ -32,10 +32,10 @@ export const AppTabCreate = ({ tab }: AppTabCustomFCProps) => {
       if (enablePageTemplate && pageTemplateDocId) {
         const docId =
           await docsService.duplicateFromTemplate(pageTemplateDocId);
-        workbench.openDoc({ docId, fromTab: 'true' });
+        workbench.openDoc(docId);
       } else {
         const doc = pageHelper.createPage(undefined, { show: false });
-        workbench.openDoc({ docId: doc.id, fromTab: 'true' });
+        workbench.openDoc(doc.id);
       }
       track.$.navigationPanel.$.createDoc();
     },

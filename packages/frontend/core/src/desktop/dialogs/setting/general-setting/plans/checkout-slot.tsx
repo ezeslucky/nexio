@@ -1,11 +1,11 @@
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import {
   SubscriptionService,
   UserQuotaService,
-} from '@nexio/core/modules/cloud';
-import { UrlService } from '@nexio/core/modules/url';
-import type { CreateCheckoutSessionInput } from '@nexio/graphql';
-import { useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/cloud';
+import { UrlService } from '@affine/core/modules/url';
+import type { CreateCheckoutSessionInput } from '@affine/graphql';
+import { useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import {
   type PropsWithChildren,

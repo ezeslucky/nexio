@@ -1,18 +1,18 @@
-import type { IconData } from '@nexio/component';
+import type { IconData } from '@affine/component';
 import {
   type DBSchemaBuilder,
   f,
   type FieldSchemaBuilder,
   type ORMEntity,
   t,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 
 import type { WorkspacePropertyType } from '../../workspace-property';
 
 const integrationType = f.enum('readwise');
 
-export const NEXIO_WORKSPACE_DB_SCHEMA = {
+export const AFFiNE_WORKSPACE_DB_SCHEMA = {
   folders: {
     id: f.string().primaryKey().optional().default(nanoid),
     parentId: f.string().optional(),
@@ -55,14 +55,14 @@ export const NEXIO_WORKSPACE_DB_SCHEMA = {
     icon: f.json<IconData>(),
   },
 } as const satisfies DBSchemaBuilder;
-export type NEXIOWorkspaceDbSchema = typeof NEXIO_WORKSPACE_DB_SCHEMA;
+export type AFFiNEWorkspaceDbSchema = typeof AFFiNE_WORKSPACE_DB_SCHEMA;
 
-export type DocProperties = ORMEntity<NEXIOWorkspaceDbSchema['docProperties']>;
+export type DocProperties = ORMEntity<AFFiNEWorkspaceDbSchema['docProperties']>;
 export type DocCustomPropertyInfo = ORMEntity<
-  NEXIOWorkspaceDbSchema['docCustomPropertyInfo']
+  AFFiNEWorkspaceDbSchema['docCustomPropertyInfo']
 >;
 
-export const NEXIO_WORKSPACE_USERDATA_DB_SCHEMA = {
+export const AFFiNE_WORKSPACE_USERDATA_DB_SCHEMA = {
   favorite: {
     key: f.string().primaryKey(),
     index: f.string(),
@@ -76,15 +76,15 @@ export const NEXIO_WORKSPACE_USERDATA_DB_SCHEMA = {
     id: f.string().primaryKey(),
     type: integrationType,
     /**
-     * Identify **NEXIO user** and **integration type** and **integration account**
+     * Identify **affine user** and **integration type** and **integration account**
      * Used to quickly find user's all integrations
      */
     integrationId: f.string(),
     refMeta: f.json(),
   },
 } as const satisfies DBSchemaBuilder;
-export type NEXIOWorkspaceUserdataDbSchema =
-  typeof NEXIO_WORKSPACE_USERDATA_DB_SCHEMA;
+export type AFFiNEWorkspaceUserdataDbSchema =
+  typeof AFFiNE_WORKSPACE_USERDATA_DB_SCHEMA;
 export type DocIntegrationRef = ORMEntity<
-  NEXIOWorkspaceUserdataDbSchema['docIntegrationRef']
+  AFFiNEWorkspaceUserdataDbSchema['docIntegrationRef']
 >;

@@ -1,10 +1,10 @@
-import type { CommentChangeAction, PublicUserType } from '@nexio/graphql';
-import type { DocMode } from '@canvas/nexio/model';
+import type { CommentChangeAction, PublicUserType } from '@affine/graphql';
+import type { DocMode } from '@blocksuite/affine/model';
 import type {
   BaseSelection,
   DocSnapshot,
   Store,
-} from '@canvas/nexio/store';
+} from '@blocksuite/affine/store';
 
 export type CommentId = string;
 
@@ -45,7 +45,7 @@ export interface DocCommentReply extends BaseComment {
 }
 
 export type DocCommentContent = {
-  snapshot: DocSnapshot; // Canvas snapshot
+  snapshot: DocSnapshot; // blocksuite snapshot
   attachments?: CommentAttachment[];
   mode?: DocMode;
   preview?: string; // text preview of the target

@@ -7,7 +7,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { EMPTY, exhaustMap, tap } from 'rxjs';
 
 import type { Notification, NotificationStore } from '../stores/notification';
@@ -77,6 +77,12 @@ export class NotificationListService extends Service {
     this.isLoading$.setValue(false);
     this.error$.setValue(null);
     this.loadMore.reset();
+  }
+
+  retry() {
+    this.error$.setValue(null);
+    this.loadMore.reset();
+    this.loadMore();
   }
 
   async readNotification(id: string) {

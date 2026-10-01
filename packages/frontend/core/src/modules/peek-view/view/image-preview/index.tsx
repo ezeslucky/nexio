@@ -1,8 +1,8 @@
-import { Divider, Loading, toast } from '@nexio/component';
-import { Button, IconButton } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
-import type { ImageBlockModel } from '@canvas/nexio/model';
-import type { BlockModel, Workspace } from '@canvas/nexio/store';
+import { Divider, Loading, toast } from '@affine/component';
+import { Button, IconButton } from '@affine/component/ui/button';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import type { ImageBlockModel } from '@blocksuite/affine/model';
+import type { BlockModel, Workspace } from '@blocksuite/affine/store';
 import {
   ArrowLeftSmallIcon,
   ArrowRightSmallIcon,
@@ -14,7 +14,7 @@ import {
   PlusIcon,
   ViewBarIcon,
 } from '@blocksuite/icons/rc';
-import { useService } from '@ezeslucky/infra';
+import { useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import type { ImgHTMLAttributes, ReactElement } from 'react';
 import {
@@ -304,15 +304,15 @@ const ImagePreviewModalImpl = ({
   onClose: () => void;
 }): ReactElement | null => {
   const { doc, workspace } = useEditor(docId);
-  const canvasDoc = doc?.canvasDoc;
+  const blocksuiteDoc = doc?.blockSuiteDoc;
   const docCollection = workspace.docCollection;
   const blockModel = useMemo(() => {
-    const block = canvasDoc?.getBlock(blockId);
+    const block = blocksuiteDoc?.getBlock(blockId);
     if (!block) {
       return null;
     }
     return block.model as ImageBlockModel;
-  }, [blockId, canvasDoc]);
+  }, [blockId, blocksuiteDoc]);
 
   const {
     data: blobData,
@@ -339,17 +339,17 @@ const ImagePreviewModalImpl = ({
   const [cursor, setCursor] = useState(0);
 
   useEffect(() => {
-    if (!blockModel || !canvasDoc) {
+    if (!blockModel || !blocksuiteDoc) {
       return;
     }
 
-    const prevs = canvasDoc.getPrevs(blockModel).filter(filterImageBlock);
-    const nexts = canvasDoc.getNexts(blockModel).filter(filterImageBlock);
+    const prevs = blocksuiteDoc.getPrevs(blockModel).filter(filterImageBlock);
+    const nexts = blocksuiteDoc.getNexts(blockModel).filter(filterImageBlock);
 
     const blocks = [...prevs, blockModel, ...nexts];
     setBlocks(blocks);
     setCursor(blocks.length ? prevs.length : 0);
-  }, [blockModel, canvasDoc]);
+  }, [blockModel, blocksuiteDoc]);
 
   if (error || !blobUrl || isLoading || !blockModel) {
     return null;
@@ -385,7 +385,7 @@ const ImagePreviewModalImpl = ({
   const imageData: ImageData = createImageData(cursor);
 
   const handleDelete = () => {
-    if (!canvasDoc) {
+    if (!blocksuiteDoc) {
       return;
     }
 
@@ -394,7 +394,7 @@ const ImagePreviewModalImpl = ({
 
     const newBlocks = blocks.toSpliced(cursor, 1);
     setBlocks(newBlocks);
-    canvasDoc.deleteBlock(currentBlock);
+    blocksuiteDoc.deleteBlock(currentBlock);
 
     let nextBlock = newBlocks[cursor];
 
@@ -424,7 +424,7 @@ const ImagePreviewModalImpl = ({
 };
 
 const filterImageBlock = (block: BlockModel): block is ImageBlockModel => {
-  return block.flavour === 'nexio:image';
+  return block.flavour === 'affine:image';
 };
 
 export const ImagePreviewPeekView = (

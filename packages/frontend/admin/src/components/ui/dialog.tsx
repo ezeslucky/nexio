@@ -1,4 +1,4 @@
-import { cn } from '@nexio/admin/utils';
+import { cn } from '@affine/admin/utils';
 import { CloseIcon } from '@blocksuite/icons/rc';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import { cssVarV2 } from '@toeverything/theme/v2';
@@ -19,7 +19,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      'fixed inset-0 z-50 bg-foreground/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
       className
     )}
     {...props}

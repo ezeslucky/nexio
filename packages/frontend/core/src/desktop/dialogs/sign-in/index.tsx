@@ -1,23 +1,29 @@
-import { Modal } from '@nexio/component';
-import { SignInPanel, type SignInStep } from '@nexio/core/components/sign-in';
-import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
+import { Modal } from '@affine/component';
+import { SignInPanel, type SignInStep } from '@affine/core/components/sign-in';
+import {
+  RouteLogic,
+  useNavigateHelper,
+} from '@affine/core/components/hooks/use-navigate-helper';
+import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@nexio/core/modules/dialogs';
+} from '@affine/core/modules/dialogs';
 import { useCallback } from 'react';
 export const SignInDialog = ({
   close,
   server: initialServerBaseUrl,
   step,
 }: DialogComponentProps<GLOBAL_DIALOG_SCHEMA['sign-in']>) => {
+  const { jumpToIndex } = useNavigateHelper();
   const onAuthenticated = useCallback(
     (status: AuthSessionStatus) => {
       if (status === 'authenticated') {
         close();
+        jumpToIndex(RouteLogic.REPLACE);
       }
     },
-    [close]
+    [close, jumpToIndex]
   );
   return (
     <Modal

@@ -1,3 +1,3 @@
 # web
 
-NEXIO Desktop Edition Web app.
+AFFiNE Desktop Edition Web app.

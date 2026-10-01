@@ -7,7 +7,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { switchMap, tap } from 'rxjs';
 
 import type { TemplateDownloaderStore } from '../store/downloader';

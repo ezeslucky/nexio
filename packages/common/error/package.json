@@ -1,16 +1,16 @@
 {
-  "name": "@nexio/error",
-  "version": "0.22.4",
+  "name": "@affine/error",
+  "version": "0.27.5",
   "private": true,
   "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "peerDependencies": {
-    "@nexio/graphql": "workspace:*",
+    "@affine/graphql": "workspace:*",
     "graphql": "^16.9.0"
   },
   "devDependencies": {
-    "vitest": "3.1.3"
+    "vitest": "^4.1.8"
   }
 }

@@ -46,9 +46,9 @@ export const ImportPage = ({
     <div className={importPageBodyStyle}>
       <div className="title">Import</div>
       <span>
-        NEXIO will gradually support more and more file types for import.&nbsp;
+        AFFiNE will gradually support more and more file types for import.&nbsp;
         <a
-          href="https://community.nexio.pro/c/feature-requests/import-export"
+          href="https://affine.pro/redirect/discord"
           target="_blank"
           rel="noreferrer"
         >
@@ -72,7 +72,7 @@ export const ImportPage = ({
         title="Notion"
         right={
           <Tooltip
-            content={'Learn how to Import your Notion pages into NEXIO.'}
+            content={'Learn how to Import your Notion pages into AFFiNE.'}
           >
             <HelpIcon width={20} height={20} />
           </Tooltip>

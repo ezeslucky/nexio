@@ -2,21 +2,21 @@
   "type": "page",
   "meta": {
     "id": "-obrGMzcTk",
-    "title": "Canvas Playground",
+    "title": "BlockSuite Playground",
     "createDate": 1725457726818,
     "tags": []
   },
   "blocks": {
     "type": "block",
     "id": "1SwQIDauzM",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "version": 2,
     "props": {
       "title": {
-        "$canvas:internal:text$": true,
+        "$blocksuite:internal:text$": true,
         "delta": [
           {
-            "insert": "Canvas Playground"
+            "insert": "BlockSuite Playground"
           }
         ]
       }
@@ -25,7 +25,7 @@
       {
         "type": "block",
         "id": "bU2q2UVXot",
-        "flavour": "nexio:surface",
+        "flavour": "affine:surface",
         "version": 5,
         "props": {
           "elements": {
@@ -2137,11 +2137,11 @@
           {
             "type": "block",
             "id": "TQYDlBlazJ",
-            "flavour": "nexio:frame",
+            "flavour": "affine:frame",
             "version": 1,
             "props": {
               "title": {
-                "$canvas:internal:text$": true,
+                "$blocksuite:internal:text$": true,
                 "delta": [
                   {
                     "insert": "Frame 1"

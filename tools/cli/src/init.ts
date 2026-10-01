@@ -1,13 +1,13 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
-import type { Path } from '@nexio-tools/utils/path';
+import type { Path } from '@affine-tools/utils/path';
 import {
   type Package,
   Workspace,
   yarnList,
-} from '@nexio-tools/utils/workspace';
+} from '@affine-tools/utils/workspace';
 import { applyEdits, modify } from 'jsonc-parser';
-import { type BuiltInParserName, format } from 'prettier';
+import { format, type FormatConfig } from 'oxfmt';
 
 import { Command } from './command';
 
@@ -22,20 +22,15 @@ export class InitCommand extends Command {
 
   async generateWorkspaceFiles() {
     this.workspace = new Workspace(yarnList());
-    const filesToGenerate: [
-      Path,
-      (prev: string) => string,
-      BuiltInParserName?,
-    ][] = [
-      [this.workspace.join('tsconfig.json'), this.genProjectTsConfig, 'json'],
+    const filesToGenerate: [Path, (prev: string) => string][] = [
+      [this.workspace.join('tsconfig.json'), this.genProjectTsConfig],
       [
         this.workspace
-          .getPackage('@nexio-tools/utils')
+          .getPackage('@affine-tools/utils')
           .join('src/workspace.gen.ts'),
         this.genWorkspaceInfo,
-        'typescript',
       ],
-      [this.workspace.join('oxlint.json'), this.genOxlintConfig, 'json'],
+      [this.workspace.join('.oxlintrc.json'), this.genOxlintConfig],
       ...this.workspace.packages
         .filter(p => p.isTsProject)
         .map(
@@ -43,32 +38,34 @@ export class InitCommand extends Command {
             [
               p.join('tsconfig.json'),
               this.genPackageTsConfig.bind(this, p),
-              'json',
-            ] as any
+            ] satisfies [Path, (prev: string) => string]
         ),
     ];
 
-    for (const [path, content, formatter] of filesToGenerate) {
+    for (const [path, content] of filesToGenerate) {
       this.logger.info(`Generating: ${path}`);
       const previous = readFileSync(path.value, 'utf-8');
-      let file = content(previous);
-      if (formatter) {
-        file = await this.format(file, formatter);
-      }
+      const file = await this.format(content(previous), path.value);
       writeFileSync(path.value, file);
     }
   }
 
-  format(content: string, parser: BuiltInParserName) {
+  async format(content: string, fileName: string) {
     const config = JSON.parse(
-      readFileSync(this.workspace.join('.prettierrc').value, 'utf-8')
-    );
-    return format(content, { parser, ...config });
+      readFileSync(this.workspace.join('.oxfmtrc.json').value, 'utf-8')
+    ) as FormatConfig;
+    const result = await format(fileName, content, config);
+    if (result.errors.length) {
+      throw new Error(
+        result.errors.map(error => error.codeframe ?? error.message).join('\n')
+      );
+    }
+    return result.code;
   }
 
   genOxlintConfig = () => {
     const json = JSON.parse(
-      readFileSync(this.workspace.join('oxlint.json').value, 'utf-8')
+      readFileSync(this.workspace.join('.oxlintrc.json').value, 'utf-8')
     );
 
     const ignoreList = readFileSync(
@@ -118,7 +115,7 @@ export class InitCommand extends Command {
     //   currently electron-api => electron => nbstore => electron-api
     //   this is a circular dependency, we need to fix it
     //   basically, the electron app don't need to use nbstore for exposing js bridge apis
-    if (pkg.name === '@nexio/electron-api') {
+    if (pkg.name === '@affine/electron-api') {
       return prev;
     }
 

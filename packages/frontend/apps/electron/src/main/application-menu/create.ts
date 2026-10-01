@@ -20,7 +20,7 @@ import { WorkerManager } from '../worker/pool';
 import { applicationMenuSubjects } from './subject';
 
 // Unique id for menuitems
-const MENUITEM_NEW_PAGE = 'nexio:new-page';
+const MENUITEM_NEW_PAGE = 'affine:new-page';
 
 export function createApplicationMenu() {
   const isMac = isMacOS();
@@ -67,7 +67,7 @@ export function createApplicationMenu() {
           click: async () => {
             await initAndShowMainWindow();
             // fixme: if the window is just created, the new page action will not be triggered
-            applicationMenuSubjects.newPageAction$.next('page');
+            applicationMenuSubjects.newPageAction$.next('default');
           },
         },
       ],
@@ -254,7 +254,7 @@ export function createApplicationMenu() {
           click: async () => {
             // oxlint-disable-next-line no-var-requires
             const { shell } = require('electron');
-            await shell.openExternal('https://nexio.pro/');
+            await shell.openExternal('https://affine.pro/');
           },
         },
         {
@@ -276,7 +276,7 @@ export function createApplicationMenu() {
             // oxlint-disable-next-line no-var-requires
             const { shell } = require('electron');
             await shell.openExternal(
-              'https://docs.nexio.pro/docs/hello-bonjour-aloha-你好'
+              'https://docs.affine.pro/docs/hello-bonjour-aloha-你好'
             );
           },
         },

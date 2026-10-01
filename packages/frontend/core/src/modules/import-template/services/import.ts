@@ -1,10 +1,11 @@
-import type { DocMode } from '@canvas/nexio/model';
-import { ZipTransformer } from '@canvas/nexio/widgets/linked-doc';
-import { Service } from '@ezeslucky/infra';
+import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import type { DocMode } from '@blocksuite/affine/model';
+import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import { Service } from '@toeverything/infra';
 
 import { DocsService } from '../../doc';
 import {
-  getNEXIOWorkspaceSchema,
+  getAFFiNEWorkspaceSchema,
   type WorkspaceMetadata,
   type WorkspacesService,
 } from '../../workspace';
@@ -26,8 +27,8 @@ export class ImportTemplateService extends Service {
     await workspace.engine.doc.waitForDocReady(workspace.id); // wait for root doc ready
     const [importedDoc] = await ZipTransformer.importDocs(
       workspace.docCollection,
-      getNEXIOWorkspaceSchema(),
-      new Blob([docBinary], {
+      getAFFiNEWorkspaceSchema(),
+      new Blob([toArrayBuffer(docBinary)], {
         type: 'application/zip',
       })
     );
@@ -48,7 +49,7 @@ export class ImportTemplateService extends Service {
     docBinary: Uint8Array
     // todo: support doc mode on init
   ) {
-    // oxlint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // oxlint-disable-next-line typescript/no-non-null-assertion
     let docId: string = null!;
     const { id: workspaceId } = await this.workspacesService.create(
       flavour,

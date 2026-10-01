@@ -2,8 +2,8 @@ import {
   type DocPermissionActions,
   GuardService,
   type WorkspacePermissionActions,
-} from '@nexio/core/modules/permissions';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/permissions';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useMemo } from 'react';
 
 export const useGuard = <
@@ -14,17 +14,15 @@ export const useGuard = <
 ) => {
   const guardService = useService(GuardService);
   useEffect(() => {
-    // oxlint-disable-next-line exhaustive-deps
     guardService.revalidateCan(action, ...args);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
   }, [action, guardService, ...args]);
 
   const livedata$ = useMemo(
     () => {
-      // oxlint-disable-next-line exhaustive-deps
       return guardService.can$(action, ...args);
     },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react/exhaustive-deps
     [action, guardService, ...args]
   );
 

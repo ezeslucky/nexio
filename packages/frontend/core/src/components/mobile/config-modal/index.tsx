@@ -1,6 +1,6 @@
-import { Button, Modal } from '@nexio/component';
-import { PageHeader } from '@nexio/core/mobile/components/page-header';
-import { useI18n } from '@nexio/i18n';
+import { Button, Modal } from '@affine/component';
+import { PageHeader } from '@affine/core/mobile/components/page-header';
+import { useI18n } from '@affine/i18n';
 import clsx from 'clsx';
 import {
   type CSSProperties,
@@ -36,6 +36,7 @@ export const ConfigModal = ({
   const t = useI18n();
   return (
     <Modal
+      preserveEditingFocusOnAction
       onOpenChange={onOpenChange}
       open={open}
       fullScreen={variant === 'page'}
@@ -108,8 +109,10 @@ export const ConfigRow = forwardRef<HTMLDivElement, HTMLProps<HTMLDivElement>>(
   }
 );
 
-export interface SettingGroupProps
-  extends Omit<HTMLProps<HTMLDivElement>, 'title'> {
+export interface SettingGroupProps extends Omit<
+  HTMLProps<HTMLDivElement>,
+  'title'
+> {
   title?: ReactNode;
   contentClassName?: string;
   contentStyle?: CSSProperties;

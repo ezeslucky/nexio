@@ -3,17 +3,17 @@ import {
   type DropTargetOptions,
   IconButton,
   toast,
-} from '@nexio/component';
-import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+} from '@affine/component';
+import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
 import {
   type FolderNode,
   OrganizeService,
-} from '@nexio/core/modules/organize';
-import type { NexioDNDData } from '@nexio/core/types/dnd';
-import { useI18n } from '@nexio/i18n';
-import { track } from '@nexio/track';
+} from '@affine/core/modules/organize';
+import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useI18n } from '@affine/i18n';
+import { track } from '@affine/track';
 import { AddOrganizeIcon } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { CollapsibleSection } from '../../layouts/collapsible-section';
@@ -50,7 +50,7 @@ export const NavigationPanelOrganize = () => {
   }, [navigationPanelService, path, rootFolder]);
 
   const handleOnChildrenDrop = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>, node?: FolderNode) => {
+    (data: DropTargetDropEvent<AffineDNDData>, node?: FolderNode) => {
       if (!node || !node.id) {
         return; // never happens
       }
@@ -67,7 +67,7 @@ export const NavigationPanelOrganize = () => {
           );
           track.$.navigationPanel.organize.moveOrganizeItem({ type: 'folder' });
         } else {
-          toast(t['com.nexio.rootAppSidebar.organize.root-folder-only']());
+          toast(t['com.affine.rootAppSidebar.organize.root-folder-only']());
         }
       } else {
         return; // not supported
@@ -77,7 +77,7 @@ export const NavigationPanelOrganize = () => {
   );
 
   const createFolderAndDrop = useCallback(
-    (data: DropTargetDropEvent<NexioDNDData>) => {
+    (data: DropTargetDropEvent<AffineDNDData>) => {
       const newFolderId = handleCreateFolder();
       setNewFolderId(null);
       const newFolder$ = folderTree.folderNode$(newFolderId);
@@ -95,7 +95,7 @@ export const NavigationPanelOrganize = () => {
   );
 
   const handleChildrenCanDrop = useMemo<
-    DropTargetOptions<NexioDNDData>['canDrop']
+    DropTargetOptions<AffineDNDData>['canDrop']
   >(() => args => args.source.data.entity?.type === 'folder', []);
 
   useEffect(() => {
@@ -105,14 +105,14 @@ export const NavigationPanelOrganize = () => {
   return (
     <CollapsibleSection
       path={path}
-      title={t['com.nexio.rootAppSidebar.organize']()}
+      title={t['com.affine.rootAppSidebar.organize']()}
       actions={
         <IconButton
           data-testid="navigation-panel-bar-add-organize-button"
           onClick={handleCreateFolder}
           size="16"
           tooltip={t[
-            'com.nexio.rootAppSidebar.explorer.organize-section-add-tooltip'
+            'com.affine.rootAppSidebar.explorer.organize-section-add-tooltip'
           ]()}
         >
           <AddOrganizeIcon />

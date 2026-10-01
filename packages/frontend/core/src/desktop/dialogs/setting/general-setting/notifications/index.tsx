@@ -1,16 +1,16 @@
-import { notify, Switch } from '@nexio/component';
+import { notify, Switch } from '@affine/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@nexio/component/setting-components';
+} from '@affine/component/setting-components';
 import {
   type UserSettings,
   UserSettingsService,
-} from '@nexio/core/modules/cloud';
-import { UserFriendlyError } from '@nexio/error';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/core/modules/cloud';
+import { UserFriendlyError } from '@affine/error';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as styles from './style.css';
@@ -59,11 +59,11 @@ export const NotificationSettings = () => {
   return (
     <>
       <SettingHeader
-        title={t['com.nexio.setting.notifications.header.title']()}
-        subtitle={t['com.nexio.setting.notifications.header.description']()}
+        title={t['com.affine.setting.notifications.header.title']()}
+        subtitle={t['com.affine.setting.notifications.header.description']()}
       />
       <SettingWrapper
-        title={t['com.nexio.setting.notifications.email.title']()}
+        title={t['com.affine.setting.notifications.email.title']()}
       >
         {!userSettings && errorMessage && (
           <>
@@ -72,8 +72,8 @@ export const NotificationSettings = () => {
           </>
         )}
         <SettingRow
-          name={t['com.nexio.setting.notifications.email.mention.title']()}
-          desc={t['com.nexio.setting.notifications.email.mention.subtitle']()}
+          name={t['com.affine.setting.notifications.email.mention.title']()}
+          desc={t['com.affine.setting.notifications.email.mention.subtitle']()}
         >
           <Switch
             data-testid="notification-email-mention-trigger"
@@ -83,8 +83,8 @@ export const NotificationSettings = () => {
           />
         </SettingRow>
         <SettingRow
-          name={t['com.nexio.setting.notifications.email.invites.title']()}
-          desc={t['com.nexio.setting.notifications.email.invites.subtitle']()}
+          name={t['com.affine.setting.notifications.email.invites.title']()}
+          desc={t['com.affine.setting.notifications.email.invites.subtitle']()}
         >
           <Switch
             data-testid="notification-email-invites-trigger"
@@ -96,8 +96,8 @@ export const NotificationSettings = () => {
           />
         </SettingRow>
         <SettingRow
-          name={t['com.nexio.setting.notifications.email.comments.title']()}
-          desc={t['com.nexio.setting.notifications.email.comments.subtitle']()}
+          name={t['com.affine.setting.notifications.email.comments.title']()}
+          desc={t['com.affine.setting.notifications.email.comments.subtitle']()}
         >
           <Switch
             data-testid="notification-email-comments-trigger"

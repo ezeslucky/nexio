@@ -1,28 +1,28 @@
-import { Scrollable } from '@nexio/component';
-import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import { type AIChatParams, AIProvider } from '@nexio/core/canvas/ai';
-import type { NexioEditorContainer } from '@nexio/core/canvas/block-suite-editor';
-import { EditorOutlineViewer } from '@nexio/core/canvas/outline-viewer';
-import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
-import { useGuard } from '@nexio/core/components/guard';
-import { PageNotFound } from '@nexio/core/desktop/pages/404';
-import { EditorService } from '@nexio/core/modules/editor';
-import { DebugLogger } from '@nexio/debug';
-import { DisposableGroup } from '@canvas/nexio/global/disposable';
-import { Bound } from '@canvas/nexio/global/gfx';
-import { RefNodeSlotsProvider } from '@canvas/nexio/inlines/reference';
-import { GfxControllerIdentifier } from '@canvas/nexio/std/gfx';
+import { Scrollable } from '@affine/component';
+import { PageDetailLoading } from '@affine/component/page-detail-skeleton';
+import { AIAppEvents, type AIChatParams } from '@affine/core/blocksuite/ai';
+import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
+import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
+import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
+import { useGuard } from '@affine/core/components/guard';
+import { PageNotFound } from '@affine/core/desktop/pages/404';
+import { EditorService } from '@affine/core/modules/editor';
+import { DebugLogger } from '@affine/debug';
+import { DisposableGroup } from '@blocksuite/affine/global/disposable';
+import { Bound } from '@blocksuite/affine/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
 import {
   FrameworkScope,
   useLiveData,
   useService,
   useServices,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import clsx from 'clsx';
 import { lazy, Suspense, useCallback, useEffect } from 'react';
 import type { Subscription } from 'rxjs';
 
-import { WorkbenchService } from '../../../workbench';
+import { WorkbenchService } from '../../../workbench/services/workbench';
 import type { DocReferenceInfo } from '../../entities/peek-view';
 import { PeekViewService } from '../../services/peek-view';
 import { useEditor } from '../utils';
@@ -30,15 +30,15 @@ import * as styles from './doc-peek-view.css';
 
 const logger = new DebugLogger('doc-peek-view');
 
-// Lazy load CanvasEditor to break circular dependency
-const CanvasEditor = lazy(() =>
-  import('@nexio/core/canvas/block-suite-editor').then(module => ({
-    default: module.CanvasEditor,
+// Lazy load BlockSuiteEditor to break circular dependency
+const BlockSuiteEditor = lazy(() =>
+  import('@affine/core/blocksuite/block-suite-editor').then(module => ({
+    default: module.BlockSuiteEditor,
   }))
 );
 
 function fitViewport(
-  editor: NexioEditorContainer,
+  editor: AffineEditorContainer,
   xywh?: `[${number},${number},${number},${number}]`
 ) {
   try {
@@ -90,7 +90,7 @@ function DocPeekPreviewEditor({
   const isInTrash = useLiveData(doc.record.trash$);
 
   const handleOnEditorReady = useCallback(
-    (editorContainer: NexioEditorContainer) => {
+    (editorContainer: AffineEditorContainer) => {
       const disposableGroup = new DisposableGroup();
       const refNodeSlots =
         editorContainer.std.getOptional(RefNodeSlotsProvider);
@@ -137,12 +137,8 @@ function DocPeekPreviewEditor({
         // chat panel open is already handled in <DetailPageImpl />
       }
     };
-    disposables.push(
-      AIProvider.slots.requestOpenWithChat.subscribe(openHandler)
-    );
-    disposables.push(
-      AIProvider.slots.requestSendWithChat.subscribe(openHandler)
-    );
+    disposables.push(AIAppEvents.requestOpenWithChat.subscribe(openHandler));
+    disposables.push(AIAppEvents.requestSendWithChat.subscribe(openHandler));
     return () => disposables.forEach(d => d.unsubscribe());
   }, [doc, peekView, workbench, workspace.id]);
 
@@ -158,16 +154,16 @@ function DocPeekPreviewEditor({
   const readonly = !canEdit || isInTrash;
 
   return (
-    <NexioErrorBoundary>
+    <AffineErrorBoundary>
       <Scrollable.Root>
         <Scrollable.Viewport
-          className={clsx('nexio-page-viewport', styles.nexioDocViewport)}
+          className={clsx('affine-page-viewport', styles.affineDocViewport)}
         >
           <Suspense fallback={<PageDetailLoading />}>
-            <CanvasEditor
+            <BlockSuiteEditor
               className={styles.editor}
               mode={mode}
-              page={doc.canvasDoc}
+              page={doc.blockSuiteDoc}
               readonly={readonly}
               onEditorReady={handleOnEditorReady}
               defaultOpenProperty={defaultOpenProperty}
@@ -183,7 +179,7 @@ function DocPeekPreviewEditor({
           openOutlinePanel={openOutlinePanel}
         />
       ) : null}
-    </NexioErrorBoundary>
+    </AffineErrorBoundary>
   );
 }
 

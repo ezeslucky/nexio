@@ -54,7 +54,7 @@ exports[`should get all docs from root doc work 2`] = `
 
 exports[`should parse page doc work 1`] = `
 {
-  "md": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+  "md": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 
 
@@ -62,9 +62,9 @@ exports[`should parse page doc work 1`] = `
 
 ## Local-first & Real-time collaborative
 
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
-Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 
 
@@ -72,11 +72,11 @@ Nexio is a local-first application upon CRDTs with real-time collaboration suppo
 
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
-We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
-If you want to learn more about the product design of Nexio, here goes the concepts:
+If you want to learn more about the product design of AFFiNE, here goes the concepts:
 
-To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ## A true canvas for blocks in any form
 
@@ -91,25 +91,25 @@ To Shape, not to adapt. Nexio is built for individuals & teams who care about th
 * Airtable & Miro with their no-code programable datasheets
 * Miro & Whimiscal with their edgeless visual whiteboard
 * Remnote & Capacities with their object-based tag system
-For more details, please refer to our [RoadMap](https://docs.nexio.pro/docs/core-concepts/roadmap)
+For more details, please refer to our [RoadMap](https://docs.affine.pro/docs/core-concepts/roadmap)
 
 ## Self Host
 
-Self host Nexio
+Self host AFFiNE
 
 ||Title|Tag|
 |---|---|---|
-|Nexio Development|Nexio Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Nexio</span>|
-|For developers or installations guides, please go to Nexio Doc|For developers or installations guides, please go to Nexio Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
-|Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Trello with their Kanban|Trello with their Kanban|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
+|Affine Development|Affine Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">AFFiNE</span>|
+|For developers or installations guides, please go to AFFiNE Doc|For developers or installations guides, please go to AFFiNE Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
+|Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Trello with their Kanban|Trello with their Kanban|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Remnote & Capacities with their object-based tag system|Remnote & Capacities with their object-based tag system||
 
-## Nexio Development
+## Affine Development
 
-For developer or installation guides, please go to [Nexio Development](https://docs.nexio.pro/docs/development/quick-start)
+For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
 
 
 
@@ -120,10 +120,10 @@ For developer or installation guides, please go to [Nexio Development](https://d
         "children": [
           {
             "children": [],
-            "content": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+            "content": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "FoPQcAyV_m",
             "type": "text",
           },
@@ -132,7 +132,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "oz48nn_zp8",
             "type": "text",
           },
@@ -141,7 +141,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "# You own your data, with no compromises
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "g8a-D9-jXS",
             "type": "h1",
           },
@@ -150,25 +150,25 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "## Local-first & Real-time collaborative
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "J8lHN1GR_5",
             "type": "h2",
           },
           {
             "children": [],
-            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+            "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "xCuWdM0VLz",
             "type": "text",
           },
           {
             "children": [],
-            "content": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+            "content": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "zElMi0tViK",
             "type": "text",
           },
@@ -177,13 +177,13 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "Z4rK0OF9Wk",
             "type": "text",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "RX4CG2zsBk",
         "type": undefined,
       },
@@ -194,13 +194,13 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "### Blocks that assemble your next docs, tasks kanban or whiteboard
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "DQ0Ryb-SpW",
             "type": "h3",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "S1mkc8zUoU",
         "type": undefined,
       },
@@ -211,40 +211,40 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "HAZC3URZp_",
             "type": "text",
           },
           {
             "children": [],
-            "content": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+            "content": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "0H87ypiuv8",
             "type": "text",
           },
           {
             "children": [],
-            "content": "If you want to learn more about the product design of Nexio, here goes the concepts:
+            "content": "If you want to learn more about the product design of AFFiNE, here goes the concepts:
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "Sp4G1KD0Wn",
             "type": "text",
           },
           {
             "children": [],
-            "content": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+            "content": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "RsUhDuEqXa",
             "type": "text",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "yGlBdshAqN",
         "type": undefined,
       },
@@ -255,7 +255,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "## A true canvas for blocks in any form
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "Z2HibKzAr-",
             "type": "h2",
           },
@@ -264,7 +264,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "[Many editor apps](http://notion.so) claimed to be a canvas for productivity. Since _the Mother of All Demos,_ Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers.
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "UwvWddamzM",
             "type": "text",
           },
@@ -273,7 +273,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "g9xKUjhJj1",
             "type": "text",
           },
@@ -282,7 +282,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": ""We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "wDTn4YJ4pm",
             "type": "text",
           },
@@ -290,7 +290,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "* Quip & Notion with their great concept of "everything is a block"
 ",
-            "flavour": "nexio:list",
+            "flavour": "affine:list",
             "id": "xFrrdiP3-V",
             "type": "bulleted",
           },
@@ -298,7 +298,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "* Trello with their Kanban
 ",
-            "flavour": "nexio:list",
+            "flavour": "affine:list",
             "id": "Tp9xyN4Okl",
             "type": "bulleted",
           },
@@ -306,7 +306,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "* Airtable & Miro with their no-code programable datasheets
 ",
-            "flavour": "nexio:list",
+            "flavour": "affine:list",
             "id": "K_4hUzKZFQ",
             "type": "bulleted",
           },
@@ -314,7 +314,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "* Miro & Whimiscal with their edgeless visual whiteboard
 ",
-            "flavour": "nexio:list",
+            "flavour": "affine:list",
             "id": "QwMzON2s7x",
             "type": "bulleted",
           },
@@ -322,13 +322,13 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "* Remnote & Capacities with their object-based tag system
 ",
-            "flavour": "nexio:list",
+            "flavour": "affine:list",
             "id": "FFVmit6u1T",
             "type": "bulleted",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "6lDiuDqZGL",
         "type": undefined,
       },
@@ -336,10 +336,10 @@ For developer or installation guides, please go to [Nexio Development](https://d
         "children": [
           {
             "children": [],
-            "content": "For more details, please refer to our [RoadMap](https://docs.nexio.pro/docs/core-concepts/roadmap)
+            "content": "For more details, please refer to our [RoadMap](https://docs.affine.pro/docs/core-concepts/roadmap)
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "YqnG5O6AE6",
             "type": "text",
           },
@@ -348,22 +348,22 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "## Self Host
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "sbDTmZMZcq",
             "type": "h2",
           },
           {
             "children": [],
-            "content": "Self host Nexio
+            "content": "Self host AFFiNE
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "QVvitesfbj",
             "type": "text",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "cauvaHOQmh",
         "type": undefined,
       },
@@ -373,38 +373,38 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "children": [],
             "content": "||Title|Tag|
 |---|---|---|
-|Nexio Development|Nexio Development|<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">Nexio</span>|
-|For developers or installations guides, please go to Nexio Doc|For developers or installations guides, please go to Nexio Doc|<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>|
-|Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Trello with their Kanban|Trello with their Kanban|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
-|Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>|
+|Affine Development|Affine Development|<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">AFFiNE</span>|
+|For developers or installations guides, please go to AFFiNE Doc|For developers or installations guides, please go to AFFiNE Doc|<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>|
+|Quip & Notion with their great concept of "everything is a block"|Quip & Notion with their great concept of "everything is a block"|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Trello with their Kanban|Trello with their Kanban|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Airtable & Miro with their no-code programable datasheets|Airtable & Miro with their no-code programable datasheets|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
+|Miro & Whimiscal with their edgeless visual whiteboard|Miro & Whimiscal with their edgeless visual whiteboard|<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>|
 |Remnote & Capacities with their object-based tag system|Remnote & Capacities with their object-based tag system||
 
 ",
-            "flavour": "nexio:database",
+            "flavour": "affine:database",
             "id": "U_GoHFD9At",
             "rows": [
               {
-                "Tag": "<span data-nexio-option data-value="AxSe-53xjX" data-option-color="var(--nexio-tag-pink)">NEXIO</span>",
-                "Title": "Nexio Development
+                "Tag": "<span data-affine-option data-value="AxSe-53xjX" data-option-color="var(--affine-tag-pink)">AFFiNE</span>",
+                "Title": "Affine Development
 
 ",
-                "undefined": "Nexio Development
-
-",
-              },
-              {
-                "Tag": "<span data-nexio-option data-value="0jh9gNw4Yl" data-option-color="var(--nexio-tag-orange)">Developers</span>",
-                "Title": "For developers or installations guides, please go to Nexio Doc
-
-",
-                "undefined": "For developers or installations guides, please go to Nexio Doc
+                "undefined": "Affine Development
 
 ",
               },
               {
-                "Tag": "<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>",
+                "Tag": "<span data-affine-option data-value="0jh9gNw4Yl" data-option-color="var(--affine-tag-orange)">Developers</span>",
+                "Title": "For developers or installations guides, please go to AFFiNE Doc
+
+",
+                "undefined": "For developers or installations guides, please go to AFFiNE Doc
+
+",
+              },
+              {
+                "Tag": "<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>",
                 "Title": "Quip & Notion with their great concept of "everything is a block"
 
 ",
@@ -413,7 +413,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
 ",
               },
               {
-                "Tag": "<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>",
+                "Tag": "<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>",
                 "Title": "Trello with their Kanban
 
 ",
@@ -422,7 +422,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
 ",
               },
               {
-                "Tag": "<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>",
+                "Tag": "<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>",
                 "Title": "Airtable & Miro with their no-code programable datasheets
 
 ",
@@ -431,7 +431,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
 ",
               },
               {
-                "Tag": "<span data-nexio-option data-value="HgHsKOUINZ" data-option-color="var(--nexio-tag-blue)">Reference</span>",
+                "Tag": "<span data-affine-option data-value="HgHsKOUINZ" data-option-color="var(--affine-tag-blue)">Reference</span>",
                 "Title": "Miro & Whimiscal with their edgeless visual whiteboard
 
 ",
@@ -454,7 +454,7 @@ For developer or installation guides, please go to [Nexio Development](https://d
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "2jwCeO8Yot",
         "type": undefined,
       },
@@ -462,19 +462,19 @@ For developer or installation guides, please go to [Nexio Development](https://d
         "children": [
           {
             "children": [],
-            "content": "## Nexio Development
+            "content": "## Affine Development
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "NyHXrMX3R1",
             "type": "h2",
           },
           {
             "children": [],
-            "content": "For developer or installation guides, please go to [Nexio Development](https://docs.nexio.pro/docs/development/quick-start)
+            "content": "For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "9-K49otbCv",
             "type": "text",
           },
@@ -483,19 +483,19 @@ For developer or installation guides, please go to [Nexio Development](https://d
             "content": "
 
 ",
-            "flavour": "nexio:paragraph",
+            "flavour": "affine:paragraph",
             "id": "faFteK9eG-",
             "type": "text",
           },
         ],
         "content": "",
-        "flavour": "nexio:note",
+        "flavour": "affine:note",
         "id": "c9MF_JiRgx",
         "type": undefined,
       },
     ],
     "content": "",
-    "flavour": "nexio:page",
+    "flavour": "affine:page",
     "id": "TnUgtVg7Eu",
     "type": undefined,
   },
@@ -504,289 +504,289 @@ For developer or installation guides, please go to [Nexio Development](https://d
 `;
 
 exports[`should parse page doc work with ai editable 1`] = `
-"<!-- block_id=FoPQcAyV_m flavour=nexio:paragraph -->
-Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
+"<!-- block_id=FoPQcAyV_m flavour=affine:paragraph -->
+AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro.
 
-<!-- block_id=oz48nn_zp8 flavour=nexio:paragraph -->
+<!-- block_id=oz48nn_zp8 flavour=affine:paragraph -->
 
 
-<!-- block_id=g8a-D9-jXS flavour=nexio:paragraph -->
+<!-- block_id=g8a-D9-jXS flavour=affine:paragraph -->
 # You own your data, with no compromises
 
-<!-- block_id=J8lHN1GR_5 flavour=nexio:paragraph -->
+<!-- block_id=J8lHN1GR_5 flavour=affine:paragraph -->
 ## Local-first & Real-time collaborative
 
-<!-- block_id=xCuWdM0VLz flavour=nexio:paragraph -->
-We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
+<!-- block_id=xCuWdM0VLz flavour=affine:paragraph -->
+We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.
 
-<!-- block_id=zElMi0tViK flavour=nexio:paragraph -->
-Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
+<!-- block_id=zElMi0tViK flavour=affine:paragraph -->
+AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.
 
-<!-- block_id=Z4rK0OF9Wk flavour=nexio:paragraph -->
+<!-- block_id=Z4rK0OF9Wk flavour=affine:paragraph -->
 
 
-<!-- block_id=DQ0Ryb-SpW flavour=nexio:paragraph -->
+<!-- block_id=DQ0Ryb-SpW flavour=affine:paragraph -->
 ### Blocks that assemble your next docs, tasks kanban or whiteboard
 
-<!-- block_id=HAZC3URZp_ flavour=nexio:paragraph -->
+<!-- block_id=HAZC3URZp_ flavour=affine:paragraph -->
 There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further.
 
-<!-- block_id=0H87ypiuv8 flavour=nexio:paragraph -->
-We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
+<!-- block_id=0H87ypiuv8 flavour=affine:paragraph -->
+We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.
 
-<!-- block_id=Sp4G1KD0Wn flavour=nexio:paragraph -->
-If you want to learn more about the product design of Nexio, here goes the concepts:
+<!-- block_id=Sp4G1KD0Wn flavour=affine:paragraph -->
+If you want to learn more about the product design of AFFiNE, here goes the concepts:
 
-<!-- block_id=RsUhDuEqXa flavour=nexio:paragraph -->
-To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
+<!-- block_id=RsUhDuEqXa flavour=affine:paragraph -->
+To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.
 
-<!-- block_id=Z2HibKzAr- flavour=nexio:paragraph -->
+<!-- block_id=Z2HibKzAr- flavour=affine:paragraph -->
 ## A true canvas for blocks in any form
 
-<!-- block_id=UwvWddamzM flavour=nexio:paragraph -->
+<!-- block_id=UwvWddamzM flavour=affine:paragraph -->
 [Many editor apps](http://notion.so) claimed to be a canvas for productivity. Since _the Mother of All Demos,_ Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers.
 
-<!-- block_id=g9xKUjhJj1 flavour=nexio:paragraph -->
+<!-- block_id=g9xKUjhJj1 flavour=affine:paragraph -->
 
 
-<!-- block_id=wDTn4YJ4pm flavour=nexio:paragraph -->
+<!-- block_id=wDTn4YJ4pm flavour=affine:paragraph -->
 "We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:
 
-<!-- block_id=xFrrdiP3-V flavour=nexio:list -->
+<!-- block_id=xFrrdiP3-V flavour=affine:list -->
 * Quip & Notion with their great concept of "everything is a block"
-<!-- block_id=Tp9xyN4Okl flavour=nexio:list -->
+<!-- block_id=Tp9xyN4Okl flavour=affine:list -->
 * Trello with their Kanban
-<!-- block_id=K_4hUzKZFQ flavour=nexio:list -->
+<!-- block_id=K_4hUzKZFQ flavour=affine:list -->
 * Airtable & Miro with their no-code programable datasheets
-<!-- block_id=QwMzON2s7x flavour=nexio:list -->
+<!-- block_id=QwMzON2s7x flavour=affine:list -->
 * Miro & Whimiscal with their edgeless visual whiteboard
-<!-- block_id=FFVmit6u1T flavour=nexio:list -->
+<!-- block_id=FFVmit6u1T flavour=affine:list -->
 * Remnote & Capacities with their object-based tag system
-<!-- block_id=YqnG5O6AE6 flavour=nexio:paragraph -->
-For more details, please refer to our [RoadMap](https://docs.nexio.pro/docs/core-concepts/roadmap)
+<!-- block_id=YqnG5O6AE6 flavour=affine:paragraph -->
+For more details, please refer to our [RoadMap](https://docs.affine.pro/docs/core-concepts/roadmap)
 
-<!-- block_id=sbDTmZMZcq flavour=nexio:paragraph -->
+<!-- block_id=sbDTmZMZcq flavour=affine:paragraph -->
 ## Self Host
 
-<!-- block_id=QVvitesfbj flavour=nexio:paragraph -->
-Self host Nexio
+<!-- block_id=QVvitesfbj flavour=affine:paragraph -->
+Self host AFFiNE
 
-<!-- block_id=U_GoHFD9At flavour=nexio:database placeholder -->
-<!-- block_id=NyHXrMX3R1 flavour=nexio:paragraph -->
-## Nexio Development
+<!-- block_id=U_GoHFD9At flavour=affine:database placeholder -->
+<!-- block_id=NyHXrMX3R1 flavour=affine:paragraph -->
+## Affine Development
 
-<!-- block_id=9-K49otbCv flavour=nexio:paragraph -->
-For developer or installation guides, please go to [NEXIO Development](https://docs.nexio.pro/docs/development/quick-start)
+<!-- block_id=9-K49otbCv flavour=affine:paragraph -->
+For developer or installation guides, please go to [AFFiNE Development](https://docs.affine.pro/docs/development/quick-start)
 
-<!-- block_id=faFteK9eG- flavour=nexio:paragraph -->
+<!-- block_id=faFteK9eG- flavour=affine:paragraph -->
 
 
 "
 `;
 
 exports[`should parse page full doc work with ai editable 1`] = `
-"<!-- block_id=T4qSXc13wz flavour=nexio:paragraph -->
+"<!-- block_id=T4qSXc13wz flavour=affine:paragraph -->
 # H1 text
 
-<!-- block_id=F5eByK8Fx_ flavour=nexio:paragraph -->
+<!-- block_id=F5eByK8Fx_ flavour=affine:paragraph -->
 List all flavours in one document.
 
-<!-- block_id=6_-Ta2Hpsg flavour=nexio:paragraph -->
+<!-- block_id=6_-Ta2Hpsg flavour=affine:paragraph -->
 ## H2 ~ H6
 
-<!-- block_id=QLH8pCeJwr flavour=nexio:paragraph -->
+<!-- block_id=QLH8pCeJwr flavour=affine:paragraph -->
 ### H3
 
-<!-- block_id=eRseB5ilzP flavour=nexio:paragraph -->
+<!-- block_id=eRseB5ilzP flavour=affine:paragraph -->
 #### H4 with emoji 😄
 
-<!-- block_id=xSEIo9I5jQ flavour=nexio:paragraph -->
+<!-- block_id=xSEIo9I5jQ flavour=affine:paragraph -->
 ##### H5
 
-<!-- block_id=h4Fozi-Mvv flavour=nexio:paragraph -->
+<!-- block_id=h4Fozi-Mvv flavour=affine:paragraph -->
 ###### H6
 
-<!-- block_id=U-Hd9O6FEZ flavour=nexio:paragraph -->
+<!-- block_id=U-Hd9O6FEZ flavour=affine:paragraph -->
 max is H6
 
-<!-- block_id=z2aCxUDpOc flavour=nexio:paragraph -->
+<!-- block_id=z2aCxUDpOc flavour=affine:paragraph -->
 ## List
 
-<!-- block_id=z5Zw7lMlD7 flavour=nexio:list -->
+<!-- block_id=z5Zw7lMlD7 flavour=affine:list -->
 * item 1
-<!-- block_id=Opmt3x2Ao0 flavour=nexio:list -->
+<!-- block_id=Opmt3x2Ao0 flavour=affine:list -->
 * item 2
     * sub item 1
     * sub item 2
         * super sub item 1
     * sub item 3
-<!-- block_id=_EF3g4194w flavour=nexio:list -->
+<!-- block_id=_EF3g4194w flavour=affine:list -->
 * item 3
-<!-- block_id=5u-T48lLVF flavour=nexio:paragraph -->
+<!-- block_id=5u-T48lLVF flavour=affine:paragraph -->
 
 
-<!-- block_id=7urxrvhr-p flavour=nexio:paragraph -->
+<!-- block_id=7urxrvhr-p flavour=affine:paragraph -->
 
 
-<!-- block_id=U-96XKGGz7 flavour=nexio:paragraph -->
+<!-- block_id=U-96XKGGz7 flavour=affine:paragraph -->
 
 
-<!-- block_id=hOvvRmDGqN flavour=nexio:paragraph -->
+<!-- block_id=hOvvRmDGqN flavour=affine:paragraph -->
 sort list
 
-<!-- block_id=hcqkMyvKnx flavour=nexio:list -->
+<!-- block_id=hcqkMyvKnx flavour=affine:list -->
 1. item 1
-<!-- block_id=xUsDktnmuD flavour=nexio:list -->
+<!-- block_id=xUsDktnmuD flavour=affine:list -->
 1. item 2
-<!-- block_id=xa5tsLHHJN flavour=nexio:list -->
+<!-- block_id=xa5tsLHHJN flavour=affine:list -->
 1. item 3
     1. sub item 1
     1. sub item 2
         1. super item 1
         1. super item 2
     1. sub item 3
-<!-- block_id=BX05mQdxJ0 flavour=nexio:list -->
+<!-- block_id=BX05mQdxJ0 flavour=affine:list -->
 1. item 4
-<!-- block_id=VYzM3O17th flavour=nexio:paragraph -->
+<!-- block_id=VYzM3O17th flavour=affine:paragraph -->
 
 
-<!-- block_id=epKYpKt5vo flavour=nexio:paragraph -->
+<!-- block_id=epKYpKt5vo flavour=affine:paragraph -->
 
 
-<!-- block_id=5Ghem19uGh flavour=nexio:paragraph -->
+<!-- block_id=5Ghem19uGh flavour=affine:paragraph -->
 Table
 
-<!-- block_id=OXvH-s1Jx4 flavour=nexio:table -->
+<!-- block_id=OXvH-s1Jx4 flavour=affine:table -->
 |c1|c2|c3|c4|
 |---|---|---|---|
 |v1|v2|v3||
 ||||v4|
 ||v6||v5|
 
-<!-- block_id=j2F2hQ3zy9 flavour=nexio:paragraph -->
+<!-- block_id=j2F2hQ3zy9 flavour=affine:paragraph -->
 
 
-<!-- block_id=jLCRD2G_BC flavour=nexio:paragraph -->
+<!-- block_id=jLCRD2G_BC flavour=affine:paragraph -->
 
 
-<!-- block_id=794ZoPeBJM flavour=nexio:paragraph -->
+<!-- block_id=794ZoPeBJM flavour=affine:paragraph -->
 Database
 
-<!-- block_id=xQ7rA57Qxz flavour=nexio:database placeholder -->
-<!-- block_id=RbMSmluZYK flavour=nexio:paragraph -->
+<!-- block_id=xQ7rA57Qxz flavour=affine:database placeholder -->
+<!-- block_id=RbMSmluZYK flavour=affine:paragraph -->
 Code
 
-<!-- block_id=cJ6CMeUWMg flavour=nexio:code -->
+<!-- block_id=cJ6CMeUWMg flavour=affine:code -->
 \`\`\`javascript
 console.log('hello world');
 \`\`\`
 
-<!-- block_id=y1xVwkxlDm flavour=nexio:paragraph -->
+<!-- block_id=y1xVwkxlDm flavour=affine:paragraph -->
 
 
-<!-- block_id=BKy3zmm8SE flavour=nexio:paragraph -->
+<!-- block_id=BKy3zmm8SE flavour=affine:paragraph -->
 Image
 
-<!-- block_id=WFftQ-qXzr flavour=nexio:image -->
+<!-- block_id=WFftQ-qXzr flavour=affine:image -->
 
 ![-HjsQksaVuEaM0KeTEbBYDgWVOmoVzrAeVK0kn4Jfr0=](blob://-HjsQksaVuEaM0KeTEbBYDgWVOmoVzrAeVK0kn4Jfr0=)
 
-<!-- block_id=F-RKpfxL1z flavour=nexio:paragraph -->
+<!-- block_id=F-RKpfxL1z flavour=affine:paragraph -->
 
 
-<!-- block_id=G3LSqjKv8M flavour=nexio:paragraph -->
+<!-- block_id=G3LSqjKv8M flavour=affine:paragraph -->
 File
 
-<!-- block_id=pO8JCsiK4z flavour=nexio:attachment -->
+<!-- block_id=pO8JCsiK4z flavour=affine:attachment -->
 
 ![IrsiJ9XonFXF8fw9tLQXbSsBbUYFfzLgoFpodeidQOU=](blob://IrsiJ9XonFXF8fw9tLQXbSsBbUYFfzLgoFpodeidQOU=)
 
-<!-- block_id=dTKFqQhJuA flavour=nexio:paragraph -->
+<!-- block_id=dTKFqQhJuA flavour=affine:paragraph -->
 
 
-<!-- block_id=nwld7RMYvp flavour=nexio:paragraph -->
+<!-- block_id=nwld7RMYvp flavour=affine:paragraph -->
 > foo bar quote text
 
-<!-- block_id=MwBD3BhRnf flavour=nexio:paragraph -->
+<!-- block_id=MwBD3BhRnf flavour=affine:paragraph -->
 
 
-<!-- block_id=pakOSAm6EU flavour=nexio:paragraph -->
+<!-- block_id=pakOSAm6EU flavour=affine:paragraph -->
 
 
-<!-- block_id=95-NxAyFuo flavour=nexio:divider -->
+<!-- block_id=95-NxAyFuo flavour=affine:divider -->
 
 ---
 
-<!-- block_id=r9EllTNiN1 flavour=nexio:paragraph -->
+<!-- block_id=r9EllTNiN1 flavour=affine:paragraph -->
 
 
-<!-- block_id=OpxZ1kYM40 flavour=nexio:paragraph -->
+<!-- block_id=OpxZ1kYM40 flavour=affine:paragraph -->
 TeX
 
-<!-- block_id=gjFqI97IRc flavour=nexio:paragraph -->
+<!-- block_id=gjFqI97IRc flavour=affine:paragraph -->
 
 
-<!-- block_id=KXBZ1_Pfdw flavour=nexio:paragraph -->
+<!-- block_id=KXBZ1_Pfdw flavour=affine:paragraph -->
 
 
-<!-- block_id=VHj5gMaGa7 flavour=nexio:paragraph -->
+<!-- block_id=VHj5gMaGa7 flavour=affine:paragraph -->
 2025-06-18 13:15
 
-<!-- block_id=JwaUwzuQEH flavour=nexio:paragraph -->
+<!-- block_id=JwaUwzuQEH flavour=affine:paragraph -->
 
 
-<!-- block_id=_zu2kl56FY flavour=nexio:database placeholder -->
-<!-- block_id=Kcbp6BLA-y flavour=nexio:paragraph -->
+<!-- block_id=_zu2kl56FY flavour=affine:database placeholder -->
+<!-- block_id=Kcbp6BLA-y flavour=affine:paragraph -->
 Mind Map
 
-<!-- block_id=R_g1tzqzAU flavour=nexio:paragraph -->
+<!-- block_id=R_g1tzqzAU flavour=affine:paragraph -->
 
 
-<!-- block_id=C8G82uLCz1 flavour=nexio:paragraph -->
+<!-- block_id=C8G82uLCz1 flavour=affine:paragraph -->
 
 
-<!-- block_id=J6gfR8YMGy flavour=nexio:paragraph -->
+<!-- block_id=J6gfR8YMGy flavour=affine:paragraph -->
 A Link
 
-<!-- block_id=yHky0s_H1v flavour=nexio:embed-linked-doc -->
+<!-- block_id=yHky0s_H1v flavour=affine:embed-linked-doc -->
 
 [null](doc://FmHFPAPzp51JjFP89aZ-b)
 
-<!-- block_id=P7w3ka4Amo flavour=nexio:paragraph -->
+<!-- block_id=P7w3ka4Amo flavour=affine:paragraph -->
 Todo List
 
-<!-- block_id=WbeCXu6fcA flavour=nexio:list -->
+<!-- block_id=WbeCXu6fcA flavour=affine:list -->
 - [ ] abc
-<!-- block_id=X_F5fw-MEn flavour=nexio:list -->
+<!-- block_id=X_F5fw-MEn flavour=affine:list -->
 - [ ] edf
     - [x] done1
-<!-- block_id=sdw-couBVA flavour=nexio:list -->
+<!-- block_id=sdw-couBVA flavour=affine:list -->
 - [ ] end
-<!-- block_id=COJiWGOVJu flavour=nexio:paragraph -->
+<!-- block_id=COJiWGOVJu flavour=affine:paragraph -->
 
 
-<!-- block_id=shK7TY-Q3F flavour=nexio:paragraph -->
+<!-- block_id=shK7TY-Q3F flavour=affine:paragraph -->
 ~~delete text~~
 
-<!-- block_id=_NIj4pT_Iy flavour=nexio:paragraph -->
+<!-- block_id=_NIj4pT_Iy flavour=affine:paragraph -->
 
 
-<!-- block_id=CaXXPfEt62 flavour=nexio:paragraph -->
+<!-- block_id=CaXXPfEt62 flavour=affine:paragraph -->
 **Bold text**
 
-<!-- block_id=1WFCwn1708 flavour=nexio:paragraph -->
+<!-- block_id=1WFCwn1708 flavour=affine:paragraph -->
 
 
-<!-- block_id=25f19QUjQI flavour=nexio:paragraph -->
+<!-- block_id=25f19QUjQI flavour=affine:paragraph -->
 Underline
 
-<!-- block_id=GrS-y17iiw flavour=nexio:paragraph -->
+<!-- block_id=GrS-y17iiw flavour=affine:paragraph -->
 
 
-<!-- block_id=dJm5C8KsEg flavour=nexio:paragraph -->
+<!-- block_id=dJm5C8KsEg flavour=affine:paragraph -->
 Youtube
 
-<!-- block_id=epfNja2Txk flavour=nexio:embed-youtube -->
+<!-- block_id=epfNja2Txk flavour=affine:embed-youtube -->
 
         <iframe
           type="text/html"
@@ -799,16 +799,16 @@ Youtube
           credentialless>
         </iframe>
 
-<!-- block_id=wNb6ZRJKMt flavour=nexio:paragraph -->
+<!-- block_id=wNb6ZRJKMt flavour=affine:paragraph -->
 
 
-<!-- block_id=HqKjEGWF_s flavour=nexio:paragraph -->
+<!-- block_id=HqKjEGWF_s flavour=affine:paragraph -->
 ## end
 
-<!-- block_id=FOh_TJmcF1 flavour=nexio:paragraph -->
+<!-- block_id=FOh_TJmcF1 flavour=affine:paragraph -->
 this is end
 
-<!-- block_id=ImCJN2Xint flavour=nexio:paragraph -->
+<!-- block_id=ImCJN2Xint flavour=affine:paragraph -->
 
 
 "
@@ -842,7 +842,7 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "TnUgtVg7Eu",
       "content": "Write, Draw, Plan all at Once.",
       "docId": "test-doc",
-      "flavour": "nexio:page",
+      "flavour": "affine:page",
       "yblock": {
         "prop:title": "Write, Draw, Plan all at Once.",
         "sys:children": [
@@ -855,7 +855,7 @@ exports[`should read doc blocks work 1`] = `
           "c9MF_JiRgx",
           "6x7ALjUDjj",
         ],
-        "sys:flavour": "nexio:page",
+        "sys:flavour": "affine:page",
         "sys:id": "TnUgtVg7Eu",
         "sys:version": 2,
       },
@@ -867,19 +867,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "FoPQcAyV_m",
-      "content": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+      "content": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+        "prop:text": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "FoPQcAyV_m",
         "sys:version": 1,
       },
@@ -893,9 +893,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "oz48nn_zp8",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -903,7 +903,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "oz48nn_zp8",
         "sys:version": 1,
       },
@@ -917,9 +917,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "g8a-D9-jXS",
       "content": "You own your data, with no compromises",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -927,7 +927,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "You own your data, with no compromises",
         "prop:type": "h1",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "g8a-D9-jXS",
         "sys:version": 1,
       },
@@ -941,9 +941,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "J8lHN1GR_5",
       "content": "Local-first & Real-time collaborative",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -951,7 +951,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Local-first & Real-time collaborative",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "J8lHN1GR_5",
         "sys:version": 1,
       },
@@ -963,19 +963,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "xCuWdM0VLz",
-      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, Nexio is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "xCuWdM0VLz",
         "sys:version": 1,
       },
@@ -987,19 +987,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "zElMi0tViK",
-      "content": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+      "content": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+        "prop:text": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "zElMi0tViK",
         "sys:version": 1,
       },
@@ -1013,9 +1013,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "Z4rK0OF9Wk",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1023,7 +1023,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Z4rK0OF9Wk",
         "sys:version": 1,
       },
@@ -1037,9 +1037,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "DQ0Ryb-SpW",
       "content": "Blocks that assemble your next docs, tasks kanban or whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "S1mkc8zUoU",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1047,7 +1047,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Blocks that assemble your next docs, tasks kanban or whiteboard",
         "prop:type": "h3",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "DQ0Ryb-SpW",
         "sys:version": 1,
       },
@@ -1061,9 +1061,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "HAZC3URZp_",
       "content": "There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1071,7 +1071,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "HAZC3URZp_",
         "sys:version": 1,
       },
@@ -1083,19 +1083,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "0H87ypiuv8",
-      "content": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+      "content": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We are building Nexio to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+        "prop:text": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "0H87ypiuv8",
         "sys:version": 1,
       },
@@ -1107,19 +1107,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "Sp4G1KD0Wn",
-      "content": "If you want to learn more about the product design of Nexio, here goes the concepts:",
+      "content": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "If you want to learn more about the product design of Nexio, here goes the concepts:",
+        "prop:text": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Sp4G1KD0Wn",
         "sys:version": 1,
       },
@@ -1131,19 +1131,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "RsUhDuEqXa",
-      "content": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+      "content": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "To Shape, not to adapt. Nexio is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+        "prop:text": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "RsUhDuEqXa",
         "sys:version": 1,
       },
@@ -1157,9 +1157,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "Z2HibKzAr-",
       "content": "A true canvas for blocks in any form",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1167,7 +1167,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "A true canvas for blocks in any form",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Z2HibKzAr-",
         "sys:version": 1,
       },
@@ -1181,9 +1181,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "UwvWddamzM",
       "content": "Many editor apps claimed to be a canvas for productivity. Since the Mother of All Demos, Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1191,7 +1191,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Many editor apps claimed to be a canvas for productivity. Since the Mother of All Demos, Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "UwvWddamzM",
         "sys:version": 1,
       },
@@ -1205,9 +1205,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "g9xKUjhJj1",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1215,7 +1215,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "g9xKUjhJj1",
         "sys:version": 1,
       },
@@ -1229,9 +1229,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "wDTn4YJ4pm",
       "content": ""We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1239,7 +1239,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": ""We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "wDTn4YJ4pm",
         "sys:version": 1,
       },
@@ -1253,9 +1253,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "xFrrdiP3-V",
       "content": "Quip & Notion with their great concept of "everything is a block"",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1265,7 +1265,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Quip & Notion with their great concept of "everything is a block"",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "xFrrdiP3-V",
         "sys:version": 1,
       },
@@ -1279,9 +1279,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "Tp9xyN4Okl",
       "content": "Trello with their Kanban",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1291,7 +1291,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Trello with their Kanban",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "Tp9xyN4Okl",
         "sys:version": 1,
       },
@@ -1305,9 +1305,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "K_4hUzKZFQ",
       "content": "Airtable & Miro with their no-code programable datasheets",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1317,7 +1317,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Airtable & Miro with their no-code programable datasheets",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "K_4hUzKZFQ",
         "sys:version": 1,
       },
@@ -1331,9 +1331,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "QwMzON2s7x",
       "content": "Miro & Whimiscal with their edgeless visual whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1343,7 +1343,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Miro & Whimiscal with their edgeless visual whiteboard",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "QwMzON2s7x",
         "sys:version": 1,
       },
@@ -1357,9 +1357,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "FFVmit6u1T",
       "content": "Remnote & Capacities with their object-based tag system",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1369,7 +1369,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Remnote & Capacities with their object-based tag system",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "FFVmit6u1T",
         "sys:version": 1,
       },
@@ -1383,9 +1383,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "YqnG5O6AE6",
       "content": "For more details, please refer to our RoadMap",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1393,7 +1393,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "For more details, please refer to our RoadMap",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "YqnG5O6AE6",
         "sys:version": 1,
       },
@@ -1407,9 +1407,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "sbDTmZMZcq",
       "content": "Self Host",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1417,7 +1417,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Self Host",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "sbDTmZMZcq",
         "sys:version": 1,
       },
@@ -1429,19 +1429,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "cauvaHOQmh",
       },
       "blockId": "QVvitesfbj",
-      "content": "Self host NEXIO",
+      "content": "Self host AFFiNE",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Self host NEXIO",
+        "prop:text": "Self host AFFiNE",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "QVvitesfbj",
         "sys:version": 1,
       },
@@ -1459,10 +1459,10 @@ exports[`should read doc blocks work 1`] = `
         "Tag",
         "Reference",
         "Developers",
-        "NEXIO",
+        "AFFiNE",
       ],
       "docId": "test-doc",
-      "flavour": "nexio:database",
+      "flavour": "affine:database",
       "yblock": {
         "prop:cells": {
           "3aMlphe2lp": {
@@ -1530,19 +1530,19 @@ exports[`should read doc blocks work 1`] = `
             "data": {
               "options": [
                 {
-                  "color": "var(--nexio-tag-blue)",
+                  "color": "var(--affine-tag-blue)",
                   "id": "HgHsKOUINZ",
                   "value": "Reference",
                 },
                 {
-                  "color": "var(--nexio-tag-orange)",
+                  "color": "var(--affine-tag-orange)",
                   "id": "0jh9gNw4Yl",
                   "value": "Developers",
                 },
                 {
-                  "color": "var(--nexio-tag-pink)",
+                  "color": "var(--affine-tag-pink)",
                   "id": "AxSe-53xjX",
-                  "value": "NEXIO",
+                  "value": "AFFiNE",
                 },
               ],
             },
@@ -1612,7 +1612,7 @@ exports[`should read doc blocks work 1`] = `
           "MiZtUig-fL",
           "erYE2C7cc5",
         ],
-        "sys:flavour": "nexio:database",
+        "sys:flavour": "affine:database",
         "sys:id": "U_GoHFD9At",
         "sys:version": 3,
       },
@@ -1624,19 +1624,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "tpyOZbPc1P",
-      "content": "Nexio Development",
+      "content": "Affine Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio Development",
+        "prop:text": "Affine Development",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "tpyOZbPc1P",
         "sys:version": 1,
       },
@@ -1648,19 +1648,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "VMx9lHw3TR",
-      "content": "For developers or installations guides, please go to Nexio Doc",
+      "content": "For developers or installations guides, please go to AFFiNE Doc",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developers or installations guides, please go to Nexio Doc",
+        "prop:text": "For developers or installations guides, please go to AFFiNE Doc",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "VMx9lHw3TR",
         "sys:version": 1,
       },
@@ -1674,9 +1674,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "Q6LnVyKoGS",
       "content": "Quip & Notion with their great concept of "everything is a block"",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1684,7 +1684,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Quip & Notion with their great concept of "everything is a block"",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Q6LnVyKoGS",
         "sys:version": 1,
       },
@@ -1698,9 +1698,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "EkFHpB-mJi",
       "content": "Trello with their Kanban",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1708,7 +1708,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Trello with their Kanban",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "EkFHpB-mJi",
         "sys:version": 1,
       },
@@ -1722,9 +1722,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "3aMlphe2lp",
       "content": "Airtable & Miro with their no-code programable datasheets",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1732,7 +1732,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Airtable & Miro with their no-code programable datasheets",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "3aMlphe2lp",
         "sys:version": 1,
       },
@@ -1746,9 +1746,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "MiZtUig-fL",
       "content": "Miro & Whimiscal with their edgeless visual whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1756,7 +1756,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Miro & Whimiscal with their edgeless visual whiteboard",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "MiZtUig-fL",
         "sys:version": 1,
       },
@@ -1770,9 +1770,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "erYE2C7cc5",
       "content": "Remnote & Capacities with their object-based tag system",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1780,7 +1780,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "Remnote & Capacities with their object-based tag system",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "erYE2C7cc5",
         "sys:version": 1,
       },
@@ -1792,19 +1792,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "c9MF_JiRgx",
       },
       "blockId": "NyHXrMX3R1",
-      "content": "Nexio Development",
+      "content": "Affine Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio Development",
+        "prop:text": "Affine Development",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "NyHXrMX3R1",
         "sys:version": 1,
       },
@@ -1816,19 +1816,19 @@ exports[`should read doc blocks work 1`] = `
         "noteBlockId": "c9MF_JiRgx",
       },
       "blockId": "9-K49otbCv",
-      "content": "For developer or installation guides, please go to NEXIO Development",
+      "content": "For developer or installation guides, please go to AFFiNE Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developer or installation guides, please go to NEXIO Development",
+        "prop:text": "For developer or installation guides, please go to AFFiNE Development",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "9-K49otbCv",
         "sys:version": 1,
       },
@@ -1842,9 +1842,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "faFteK9eG-",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -1852,7 +1852,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "faFteK9eG-",
         "sys:version": 1,
       },
@@ -1864,27 +1864,27 @@ exports[`should read doc blocks work 1`] = `
       },
       "blockId": "6x7ALjUDjj",
       "content": [
-        "What is NEXIO",
+        "What is AFFiNE",
         "Related Articles",
         " ",
         "Self-host",
         "",
-        "NEXIO ",
+        "AFFiNE ",
         "Development",
-        "You can check these URLs to learn about NEXIO",
+        "You can check these URLs to learn about AFFiNE",
         "Database Reference",
       ],
       "docId": "test-doc",
-      "flavour": "nexio:surface",
+      "flavour": "affine:surface",
       "parentBlockId": "TnUgtVg7Eu",
-      "parentFlavour": "nexio:page",
+      "parentFlavour": "affine:page",
       "yblock": {
         "prop:elements": {
-          "type": "$canvas:internal:native$",
+          "type": "$blocksuite:internal:native$",
           "value": {
             "EkqQL1MU5m": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -1899,8 +1899,8 @@ exports[`should read doc blocks work 1`] = `
               "xywh": "[988.4153663986212,-181.71961053807448,563,168.75]",
             },
             "F-GXtb8ubm": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:Lora",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:Lora",
               "fontSize": 72,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -1957,7 +1957,7 @@ exports[`should read doc blocks work 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -1970,7 +1970,7 @@ exports[`should read doc blocks work 1`] = `
               "type": "connector",
             },
             "Nb_9OXyIT3": {
-              "fillColor": "--nexio-palette-shape-yellow",
+              "fillColor": "--affine-palette-shape-yellow",
               "filled": true,
               "id": "Nb_9OXyIT3",
               "index": "a0",
@@ -1980,15 +1980,15 @@ exports[`should read doc blocks work 1`] = `
               "seed": 97408177,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-line-yellow",
+              "strokeColor": "--affine-palette-line-yellow",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
               "xywh": "[2403.9004515323168,57.24116579067933,955.1393577008388,542.1082071559455]",
             },
             "R2MK4ZzUb3": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-white",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-white",
               "filled": true,
               "id": "R2MK4ZzUb3",
               "index": "a0",
@@ -1998,7 +1998,7 @@ exports[`should read doc blocks work 1`] = `
               "seed": 1558899337,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 2,
               "type": "shape",
@@ -2017,8 +2017,8 @@ exports[`should read doc blocks work 1`] = `
               "xywh": "[-1043.6169874048903,-641.7901035486665,622.6248931928226,667.0980998494529]",
             },
             "UloPoCxt6P": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2056,8 +2056,8 @@ exports[`should read doc blocks work 1`] = `
               "type": "group",
             },
             "Z7D3qrSurD": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2072,8 +2072,8 @@ exports[`should read doc blocks work 1`] = `
               "xywh": "[2478.972284676839,-1231.0379248118952,879.4798583984375,168.75]",
             },
             "_nC65-wkSP": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2082,7 +2082,7 @@ exports[`should read doc blocks work 1`] = `
               "index": "aa",
               "rotate": 0,
               "seed": 994394416,
-              "text": "NEXIO ",
+              "text": "AFFiNE ",
               "textAlign": "left",
               "type": "text",
               "xywh": "[2459.953125798208,88.108859492537,779,147]",
@@ -2104,7 +2104,7 @@ exports[`should read doc blocks work 1`] = `
                   1.0000000000000002,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -2117,8 +2117,8 @@ exports[`should read doc blocks work 1`] = `
               "type": "connector",
             },
             "gPvT0nfbcw": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2133,8 +2133,8 @@ exports[`should read doc blocks work 1`] = `
               "xywh": "[2459.953125798208,208.4260321250699,779,147]",
             },
             "hLAqby4WpD": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-white",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-white",
               "filled": true,
               "id": "hLAqby4WpD",
               "index": "Zz",
@@ -2144,15 +2144,15 @@ exports[`should read doc blocks work 1`] = `
               "seed": 2025695507,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 2,
               "type": "shape",
               "xywh": "[-259.87318248973133,-371.99627945163166,948.0569720935435,876.3267415022492]",
             },
             "istDk5DOMO": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-blue",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-blue",
               "filled": true,
               "id": "istDk5DOMO",
               "index": "aI",
@@ -2162,7 +2162,7 @@ exports[`should read doc blocks work 1`] = `
               "seed": 858601929,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
@@ -2198,7 +2198,7 @@ exports[`should read doc blocks work 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -2207,10 +2207,10 @@ exports[`should read doc blocks work 1`] = `
               "type": "connector",
             },
             "qRCk-vrGXw": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-magenta",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-magenta",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "id": "qRCk-vrGXw",
               "index": "aXG",
               "radius": 0,
@@ -2219,7 +2219,7 @@ exports[`should read doc blocks work 1`] = `
               "seed": 2015167989,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "text": "",
@@ -2243,7 +2243,7 @@ exports[`should read doc blocks work 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -2252,8 +2252,8 @@ exports[`should read doc blocks work 1`] = `
               "type": "connector",
             },
             "saGXC7nPOk": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -2262,7 +2262,7 @@ exports[`should read doc blocks work 1`] = `
               "index": "aJ",
               "rotate": 0,
               "seed": 93054478,
-              "text": "What is NEXIO",
+              "text": "What is AFFiNE",
               "textAlign": "left",
               "type": "text",
               "xywh": "[438.73809335123497,-1467.165331669401,913.75,128]",
@@ -2284,7 +2284,7 @@ exports[`should read doc blocks work 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -2309,7 +2309,7 @@ exports[`should read doc blocks work 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -2318,8 +2318,8 @@ exports[`should read doc blocks work 1`] = `
               "type": "connector",
             },
             "uzfdAcEDxu": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-purple",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-purple",
               "filled": true,
               "id": "uzfdAcEDxu",
               "index": "aTG",
@@ -2329,17 +2329,17 @@ exports[`should read doc blocks work 1`] = `
               "seed": 462401908,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
               "xywh": "[2421.751354148884,-1283.6175127158676,1085.7995880501803,519.0294552479265]",
             },
             "w86OKmzMtn": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-tangerine",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-tangerine",
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 36,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -2351,10 +2351,10 @@ exports[`should read doc blocks work 1`] = `
               "seed": 1298533711,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
-              "text": "You can check these URLs to learn about NEXIO",
+              "text": "You can check these URLs to learn about AFFiNE",
               "textAlign": "left",
               "type": "shape",
               "xywh": "[-1055.7017064945487,-981.0008617000956,702.1470991695091,295.7649942194072]",
@@ -2368,7 +2368,7 @@ exports[`should read doc blocks work 1`] = `
           "JlgVJdWU12",
           "lht7AqBqnF",
         ],
-        "sys:flavour": "nexio:surface",
+        "sys:flavour": "affine:surface",
         "sys:id": "6x7ALjUDjj",
         "sys:version": 5,
       },
@@ -2380,21 +2380,21 @@ exports[`should read doc blocks work 1`] = `
       },
       "blockId": "ECrtbvW6xx",
       "docId": "test-doc",
-      "flavour": "nexio:bookmark",
+      "flavour": "affine:bookmark",
       "yblock": {
         "prop:caption": null,
         "prop:description": "The universal editor that lets you work, play, present or create just about anything.",
         "prop:icon": "/favicon-96.png",
-        "prop:image": "https://nexio.pro/og.png",
+        "prop:image": "https://affine.pro/og.png",
         "prop:index": "a1",
         "prop:lockedBySelf": false,
         "prop:rotate": 0,
         "prop:style": "vertical",
-        "prop:title": "NEXIO - All In One KnowledgeOS",
-        "prop:url": "https://nexio.pro/",
+        "prop:title": "AFFiNE - All In One KnowledgeOS",
+        "prop:url": "https://affine.pro/",
         "prop:xywh": "[-605.1053721621553,-1497.696057920688,606.4771127476911,649.7969065153833]",
         "sys:children": [],
-        "sys:flavour": "nexio:bookmark",
+        "sys:flavour": "affine:bookmark",
         "sys:id": "ECrtbvW6xx",
         "sys:version": 1,
       },
@@ -2406,10 +2406,10 @@ exports[`should read doc blocks work 1`] = `
       },
       "blockId": "5W--UQLN11",
       "docId": "test-doc",
-      "flavour": "nexio:bookmark",
+      "flavour": "affine:bookmark",
       "yblock": {
         "prop:caption": null,
-        "prop:description": "NEXIO is the all-in-one workspace where you can write, draw and plan just about anything - Blend the power of Notion and Miro to enable dynamic note-taking, wikis, tasks, visualized mindmaps and presentations. All you need for productivity and creativity is here!
+        "prop:description": "AFFiNE is the all-in-one workspace where you can write, draw and plan just about anything - Blend the power of Notion and Miro to enable dynamic note-taking, wikis, tasks, visualized mindmaps and presentations. All you need for productivity and creativity is here!
 ",
         "prop:icon": "https://www.youtube.com/s/desktop/8b6c1f4c/img/favicon_32x32.png",
         "prop:image": "https://yt3.googleusercontent.com/H9-Rol_TUq4UmR8cdy-LhxFmWdmz5LIm_KTYoVP2D81I-w9T12ttJHfME6kWUnEresNVo4c8dA=s900-c-k-c0x00ffffff-no-rj",
@@ -2417,11 +2417,11 @@ exports[`should read doc blocks work 1`] = `
         "prop:lockedBySelf": false,
         "prop:rotate": 0,
         "prop:style": "vertical",
-        "prop:title": "NEXIO",
-        "prop:url": "https://www.youtube.com/@nexiopro",
+        "prop:title": "AFFiNE",
+        "prop:url": "https://www.youtube.com/@affinepro",
         "prop:xywh": "[-1043.6169874048903,-641.7901035486665,622.6248931928226,667.0980998494529]",
         "sys:children": [],
-        "sys:flavour": "nexio:bookmark",
+        "sys:flavour": "affine:bookmark",
         "sys:id": "5W--UQLN11",
         "sys:version": 1,
       },
@@ -2437,9 +2437,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "lcZphIJe63",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 728,
@@ -2451,7 +2451,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:width": 1302,
         "prop:xywh": "[-991.0766514037751,-616.4591370809392,505.45950210093383,282.62251730374794]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "lcZphIJe63",
         "sys:version": 1,
       },
@@ -2467,9 +2467,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "JlgVJdWU12",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 374,
@@ -2481,7 +2481,7 @@ exports[`should read doc blocks work 1`] = `
         "prop:width": 1463,
         "prop:xywh": "[281.13294520744034,-2242.095913253297,2001.7110026018645,511.7155946501006]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "JlgVJdWU12",
         "sys:version": 1,
       },
@@ -2497,9 +2497,9 @@ exports[`should read doc blocks work 1`] = `
       "blockId": "lht7AqBqnF",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 1388,
@@ -2511,13 +2511,13 @@ exports[`should read doc blocks work 1`] = `
         "prop:width": 862,
         "prop:xywh": "[3446.6044934637607,-1339.9783466050073,122.45568062094182,197.1792165914935]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "lht7AqBqnF",
         "sys:version": 1,
       },
     },
   ],
-  "summary": "NEXIO is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. You own your data, with no compromisesLocal-first & Real-time collaborativeWe love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, NEXIO is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.NEXIO is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.Blocks that assemble your next docs, tasks kanban or whiteboardThere is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
+  "summary": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. You own your data, with no compromisesLocal-first & Real-time collaborativeWe love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.Blocks that assemble your next docs, tasks kanban or whiteboardThere is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
   "title": "Write, Draw, Plan all at Once.",
 }
 `;
@@ -2533,7 +2533,7 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "TnUgtVg7Eu",
       "content": "Write, Draw, Plan all at Once.",
       "docId": "test-doc",
-      "flavour": "nexio:page",
+      "flavour": "affine:page",
       "yblock": {
         "prop:title": "Write, Draw, Plan all at Once.",
         "sys:children": [
@@ -2546,7 +2546,7 @@ exports[`should read doc blocks work without root doc 1`] = `
           "c9MF_JiRgx",
           "6x7ALjUDjj",
         ],
-        "sys:flavour": "nexio:page",
+        "sys:flavour": "affine:page",
         "sys:id": "TnUgtVg7Eu",
         "sys:version": 2,
       },
@@ -2558,19 +2558,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "FoPQcAyV_m",
-      "content": "NEXIO is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+      "content": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "NEXIO is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
+        "prop:text": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "FoPQcAyV_m",
         "sys:version": 1,
       },
@@ -2584,9 +2584,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "oz48nn_zp8",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2594,7 +2594,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "oz48nn_zp8",
         "sys:version": 1,
       },
@@ -2608,9 +2608,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "g8a-D9-jXS",
       "content": "You own your data, with no compromises",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2618,7 +2618,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "You own your data, with no compromises",
         "prop:type": "h1",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "g8a-D9-jXS",
         "sys:version": 1,
       },
@@ -2632,9 +2632,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "J8lHN1GR_5",
       "content": "Local-first & Real-time collaborative",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2642,7 +2642,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Local-first & Real-time collaborative",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "J8lHN1GR_5",
         "sys:version": 1,
       },
@@ -2654,19 +2654,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "xCuWdM0VLz",
-      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, NEXIO is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+      "content": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, NEXIO is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
+        "prop:text": "We love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "xCuWdM0VLz",
         "sys:version": 1,
       },
@@ -2678,19 +2678,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "RX4CG2zsBk",
       },
       "blockId": "zElMi0tViK",
-      "content": "NEXIO is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+      "content": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "NEXIO is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
+        "prop:text": "AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "zElMi0tViK",
         "sys:version": 1,
       },
@@ -2704,9 +2704,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "Z4rK0OF9Wk",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "RX4CG2zsBk",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2714,7 +2714,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Z4rK0OF9Wk",
         "sys:version": 1,
       },
@@ -2728,9 +2728,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "DQ0Ryb-SpW",
       "content": "Blocks that assemble your next docs, tasks kanban or whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "S1mkc8zUoU",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2738,7 +2738,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Blocks that assemble your next docs, tasks kanban or whiteboard",
         "prop:type": "h3",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "DQ0Ryb-SpW",
         "sys:version": 1,
       },
@@ -2752,9 +2752,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "HAZC3URZp_",
       "content": "There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2762,7 +2762,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "There is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "HAZC3URZp_",
         "sys:version": 1,
       },
@@ -2774,19 +2774,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "0H87ypiuv8",
-      "content": "We are building NEXIO to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+      "content": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "We are building NEXIO to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
+        "prop:text": "We are building AFFiNE to be a fundamental open source platform that contains all the building blocks for docs, task management and visual collaboration, hoping you can shape your next workflow with us that can make your life better and also connect others, too.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "0H87ypiuv8",
         "sys:version": 1,
       },
@@ -2798,19 +2798,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "Sp4G1KD0Wn",
-      "content": "If you want to learn more about the product design of NEXIO, here goes the concepts:",
+      "content": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "If you want to learn more about the product design of NEXIO, here goes the concepts:",
+        "prop:text": "If you want to learn more about the product design of AFFiNE, here goes the concepts:",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Sp4G1KD0Wn",
         "sys:version": 1,
       },
@@ -2822,19 +2822,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "yGlBdshAqN",
       },
       "blockId": "RsUhDuEqXa",
-      "content": "To Shape, not to adapt. NEXIO is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+      "content": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "yGlBdshAqN",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "To Shape, not to adapt. NEXIO is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
+        "prop:text": "To Shape, not to adapt. AFFiNE is built for individuals & teams who care about their data, who refuse vendor lock-in, and who want to have control over their essential tools.",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "RsUhDuEqXa",
         "sys:version": 1,
       },
@@ -2848,9 +2848,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "Z2HibKzAr-",
       "content": "A true canvas for blocks in any form",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2858,7 +2858,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "A true canvas for blocks in any form",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Z2HibKzAr-",
         "sys:version": 1,
       },
@@ -2872,9 +2872,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "UwvWddamzM",
       "content": "Many editor apps claimed to be a canvas for productivity. Since the Mother of All Demos, Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers. ",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2882,7 +2882,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Many editor apps claimed to be a canvas for productivity. Since the Mother of All Demos, Douglas Engelbart, a creative and programable digital workspace has been a pursuit and an ultimate mission for generations of tool makers. ",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "UwvWddamzM",
         "sys:version": 1,
       },
@@ -2896,9 +2896,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "g9xKUjhJj1",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2906,7 +2906,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "g9xKUjhJj1",
         "sys:version": 1,
       },
@@ -2920,9 +2920,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "wDTn4YJ4pm",
       "content": ""We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2930,7 +2930,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": ""We shape our tools and thereafter our tools shape us”. A lot of pioneers have inspired us a long the way, e.g.:",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "wDTn4YJ4pm",
         "sys:version": 1,
       },
@@ -2944,9 +2944,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "xFrrdiP3-V",
       "content": "Quip & Notion with their great concept of "everything is a block"",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2956,7 +2956,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Quip & Notion with their great concept of "everything is a block"",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "xFrrdiP3-V",
         "sys:version": 1,
       },
@@ -2970,9 +2970,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "Tp9xyN4Okl",
       "content": "Trello with their Kanban",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -2982,7 +2982,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Trello with their Kanban",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "Tp9xyN4Okl",
         "sys:version": 1,
       },
@@ -2996,9 +2996,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "K_4hUzKZFQ",
       "content": "Airtable & Miro with their no-code programable datasheets",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3008,7 +3008,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Airtable & Miro with their no-code programable datasheets",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "K_4hUzKZFQ",
         "sys:version": 1,
       },
@@ -3022,9 +3022,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "QwMzON2s7x",
       "content": "Miro & Whimiscal with their edgeless visual whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3034,7 +3034,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Miro & Whimiscal with their edgeless visual whiteboard",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "QwMzON2s7x",
         "sys:version": 1,
       },
@@ -3048,9 +3048,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "FFVmit6u1T",
       "content": "Remnote & Capacities with their object-based tag system",
       "docId": "test-doc",
-      "flavour": "nexio:list",
+      "flavour": "affine:list",
       "parentBlockId": "6lDiuDqZGL",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3060,7 +3060,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Remnote & Capacities with their object-based tag system",
         "prop:type": "bulleted",
         "sys:children": [],
-        "sys:flavour": "nexio:list",
+        "sys:flavour": "affine:list",
         "sys:id": "FFVmit6u1T",
         "sys:version": 1,
       },
@@ -3074,9 +3074,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "YqnG5O6AE6",
       "content": "For more details, please refer to our RoadMap",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3084,7 +3084,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "For more details, please refer to our RoadMap",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "YqnG5O6AE6",
         "sys:version": 1,
       },
@@ -3098,9 +3098,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "sbDTmZMZcq",
       "content": "Self Host",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3108,7 +3108,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Self Host",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "sbDTmZMZcq",
         "sys:version": 1,
       },
@@ -3120,19 +3120,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "cauvaHOQmh",
       },
       "blockId": "QVvitesfbj",
-      "content": "Self host NEXIO",
+      "content": "Self host AFFiNE",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "cauvaHOQmh",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Self host NEXIO",
+        "prop:text": "Self host AFFiNE",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "QVvitesfbj",
         "sys:version": 1,
       },
@@ -3150,10 +3150,10 @@ exports[`should read doc blocks work without root doc 1`] = `
         "Tag",
         "Reference",
         "Developers",
-        "NEXIO",
+        "AFFiNE",
       ],
       "docId": "test-doc",
-      "flavour": "nexio:database",
+      "flavour": "affine:database",
       "yblock": {
         "prop:cells": {
           "3aMlphe2lp": {
@@ -3221,19 +3221,19 @@ exports[`should read doc blocks work without root doc 1`] = `
             "data": {
               "options": [
                 {
-                  "color": "var(--nexio-tag-blue)",
+                  "color": "var(--affine-tag-blue)",
                   "id": "HgHsKOUINZ",
                   "value": "Reference",
                 },
                 {
-                  "color": "var(--nexio-tag-orange)",
+                  "color": "var(--affine-tag-orange)",
                   "id": "0jh9gNw4Yl",
                   "value": "Developers",
                 },
                 {
-                  "color": "var(--nexio-tag-pink)",
+                  "color": "var(--affine-tag-pink)",
                   "id": "AxSe-53xjX",
-                  "value": "NEXIO",
+                  "value": "AFFiNE",
                 },
               ],
             },
@@ -3303,7 +3303,7 @@ exports[`should read doc blocks work without root doc 1`] = `
           "MiZtUig-fL",
           "erYE2C7cc5",
         ],
-        "sys:flavour": "nexio:database",
+        "sys:flavour": "affine:database",
         "sys:id": "U_GoHFD9At",
         "sys:version": 3,
       },
@@ -3315,19 +3315,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "tpyOZbPc1P",
-      "content": "Nexio Development",
+      "content": "Affine Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio Development",
+        "prop:text": "Affine Development",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "tpyOZbPc1P",
         "sys:version": 1,
       },
@@ -3339,19 +3339,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "2jwCeO8Yot",
       },
       "blockId": "VMx9lHw3TR",
-      "content": "For developers or installations guides, please go to NEXIO Doc",
+      "content": "For developers or installations guides, please go to AFFiNE Doc",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developers or installations guides, please go to NEXIO Doc",
+        "prop:text": "For developers or installations guides, please go to AFFiNE Doc",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "VMx9lHw3TR",
         "sys:version": 1,
       },
@@ -3365,9 +3365,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "Q6LnVyKoGS",
       "content": "Quip & Notion with their great concept of "everything is a block"",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3375,7 +3375,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Quip & Notion with their great concept of "everything is a block"",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "Q6LnVyKoGS",
         "sys:version": 1,
       },
@@ -3389,9 +3389,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "EkFHpB-mJi",
       "content": "Trello with their Kanban",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3399,7 +3399,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Trello with their Kanban",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "EkFHpB-mJi",
         "sys:version": 1,
       },
@@ -3413,9 +3413,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "3aMlphe2lp",
       "content": "Airtable & Miro with their no-code programable datasheets",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3423,7 +3423,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Airtable & Miro with their no-code programable datasheets",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "3aMlphe2lp",
         "sys:version": 1,
       },
@@ -3437,9 +3437,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "MiZtUig-fL",
       "content": "Miro & Whimiscal with their edgeless visual whiteboard",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3447,7 +3447,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Miro & Whimiscal with their edgeless visual whiteboard",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "MiZtUig-fL",
         "sys:version": 1,
       },
@@ -3461,9 +3461,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "erYE2C7cc5",
       "content": "Remnote & Capacities with their object-based tag system",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "U_GoHFD9At",
-      "parentFlavour": "nexio:database",
+      "parentFlavour": "affine:database",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3471,7 +3471,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "Remnote & Capacities with their object-based tag system",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "erYE2C7cc5",
         "sys:version": 1,
       },
@@ -3483,19 +3483,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "c9MF_JiRgx",
       },
       "blockId": "NyHXrMX3R1",
-      "content": "Nexio Development",
+      "content": "Affine Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "Nexio Development",
+        "prop:text": "Affine Development",
         "prop:type": "h2",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "NyHXrMX3R1",
         "sys:version": 1,
       },
@@ -3507,19 +3507,19 @@ exports[`should read doc blocks work without root doc 1`] = `
         "noteBlockId": "c9MF_JiRgx",
       },
       "blockId": "9-K49otbCv",
-      "content": "For developer or installation guides, please go to NEXIO Development",
+      "content": "For developer or installation guides, please go to AFFiNE Development",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
         "prop:collapsed": false,
-        "prop:text": "For developer or installation guides, please go to NEXIO Development",
+        "prop:text": "For developer or installation guides, please go to AFFiNE Development",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "9-K49otbCv",
         "sys:version": 1,
       },
@@ -3533,9 +3533,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "faFteK9eG-",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:paragraph",
+      "flavour": "affine:paragraph",
       "parentBlockId": "c9MF_JiRgx",
-      "parentFlavour": "nexio:note",
+      "parentFlavour": "affine:note",
       "ref": [],
       "refDocId": [],
       "yblock": {
@@ -3543,7 +3543,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:text": "",
         "prop:type": "text",
         "sys:children": [],
-        "sys:flavour": "nexio:paragraph",
+        "sys:flavour": "affine:paragraph",
         "sys:id": "faFteK9eG-",
         "sys:version": 1,
       },
@@ -3555,27 +3555,27 @@ exports[`should read doc blocks work without root doc 1`] = `
       },
       "blockId": "6x7ALjUDjj",
       "content": [
-        "What is NEXIO",
+        "What is AFFiNE",
         "Related Articles",
         " ",
         "Self-host",
         "",
-        "NEXIO ",
+        "AFFiNE ",
         "Development",
-        "You can check these URLs to learn about NEXIO",
+        "You can check these URLs to learn about AFFiNE",
         "Database Reference",
       ],
       "docId": "test-doc",
-      "flavour": "nexio:surface",
+      "flavour": "affine:surface",
       "parentBlockId": "TnUgtVg7Eu",
-      "parentFlavour": "nexio:page",
+      "parentFlavour": "affine:page",
       "yblock": {
         "prop:elements": {
-          "type": "$canvas:internal:native$",
+          "type": "$blocksuite:internal:native$",
           "value": {
             "EkqQL1MU5m": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3590,8 +3590,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "xywh": "[988.4153663986212,-181.71961053807448,563,168.75]",
             },
             "F-GXtb8ubm": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:Lora",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:Lora",
               "fontSize": 72,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -3648,7 +3648,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -3661,7 +3661,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "connector",
             },
             "Nb_9OXyIT3": {
-              "fillColor": "--nexio-palette-shape-yellow",
+              "fillColor": "--affine-palette-shape-yellow",
               "filled": true,
               "id": "Nb_9OXyIT3",
               "index": "a0",
@@ -3671,15 +3671,15 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 97408177,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-line-yellow",
+              "strokeColor": "--affine-palette-line-yellow",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
               "xywh": "[2403.9004515323168,57.24116579067933,955.1393577008388,542.1082071559455]",
             },
             "R2MK4ZzUb3": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-white",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-white",
               "filled": true,
               "id": "R2MK4ZzUb3",
               "index": "a0",
@@ -3689,7 +3689,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 1558899337,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 2,
               "type": "shape",
@@ -3708,8 +3708,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "xywh": "[-1043.6169874048903,-641.7901035486665,622.6248931928226,667.0980998494529]",
             },
             "UloPoCxt6P": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3747,8 +3747,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "group",
             },
             "Z7D3qrSurD": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 120,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3763,8 +3763,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "xywh": "[2478.972284676839,-1231.0379248118952,879.4798583984375,168.75]",
             },
             "_nC65-wkSP": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3773,7 +3773,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "index": "aa",
               "rotate": 0,
               "seed": 994394416,
-              "text": "NEXIO ",
+              "text": "AFFiNE ",
               "textAlign": "left",
               "type": "text",
               "xywh": "[2459.953125798208,88.108859492537,779,147]",
@@ -3795,7 +3795,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   1.0000000000000002,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -3808,8 +3808,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "connector",
             },
             "gPvT0nfbcw": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3824,8 +3824,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "xywh": "[2459.953125798208,208.4260321250699,779,147]",
             },
             "hLAqby4WpD": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-white",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-white",
               "filled": true,
               "id": "hLAqby4WpD",
               "index": "Zz",
@@ -3835,15 +3835,15 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 2025695507,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 2,
               "type": "shape",
               "xywh": "[-259.87318248973133,-371.99627945163166,948.0569720935435,876.3267415022492]",
             },
             "istDk5DOMO": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-blue",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-blue",
               "filled": true,
               "id": "istDk5DOMO",
               "index": "aI",
@@ -3853,7 +3853,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 858601929,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
@@ -3889,7 +3889,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -3898,10 +3898,10 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "connector",
             },
             "qRCk-vrGXw": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-magenta",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-magenta",
               "filled": true,
-              "fontFamily": "canvas:surface:Inter",
+              "fontFamily": "blocksuite:surface:Inter",
               "id": "qRCk-vrGXw",
               "index": "aXG",
               "radius": 0,
@@ -3910,7 +3910,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 2015167989,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "text": "",
@@ -3934,7 +3934,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -3943,8 +3943,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "connector",
             },
             "saGXC7nPOk": {
-              "color": "--nexio-palette-line-black",
-              "fontFamily": "canvas:surface:OrelegaOne",
+              "color": "--affine-palette-line-black",
+              "fontFamily": "blocksuite:surface:OrelegaOne",
               "fontSize": 128,
               "fontStyle": "normal",
               "fontWeight": "400",
@@ -3953,7 +3953,7 @@ exports[`should read doc blocks work without root doc 1`] = `
               "index": "aJ",
               "rotate": 0,
               "seed": 93054478,
-              "text": "What is NEXIO",
+              "text": "What is AFFiNE",
               "textAlign": "left",
               "type": "text",
               "xywh": "[438.73809335123497,-1467.165331669401,913.75,128]",
@@ -3975,7 +3975,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -4000,7 +4000,7 @@ exports[`should read doc blocks work without root doc 1`] = `
                   0.5,
                 ],
               },
-              "stroke": "--nexio-palette-line-grey",
+              "stroke": "--affine-palette-line-grey",
               "strokeStyle": "solid",
               "strokeWidth": 8,
               "target": {
@@ -4009,8 +4009,8 @@ exports[`should read doc blocks work without root doc 1`] = `
               "type": "connector",
             },
             "uzfdAcEDxu": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-purple",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-purple",
               "filled": true,
               "id": "uzfdAcEDxu",
               "index": "aTG",
@@ -4020,17 +4020,17 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 462401908,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
               "type": "shape",
               "xywh": "[2421.751354148884,-1283.6175127158676,1085.7995880501803,519.0294552479265]",
             },
             "w86OKmzMtn": {
-              "color": "--nexio-palette-line-black",
-              "fillColor": "--nexio-palette-shape-tangerine",
+              "color": "--affine-palette-line-black",
+              "fillColor": "--affine-palette-shape-tangerine",
               "filled": true,
-              "fontFamily": "canvas:surface:Poppins",
+              "fontFamily": "blocksuite:surface:Poppins",
               "fontSize": 36,
               "fontStyle": "normal",
               "fontWeight": "600",
@@ -4042,10 +4042,10 @@ exports[`should read doc blocks work without root doc 1`] = `
               "seed": 1298533711,
               "shapeStyle": "General",
               "shapeType": "rect",
-              "strokeColor": "--nexio-palette-transparent",
+              "strokeColor": "--affine-palette-transparent",
               "strokeStyle": "solid",
               "strokeWidth": 4,
-              "text": "You can check these URLs to learn about NEXIO",
+              "text": "You can check these URLs to learn about AFFiNE",
               "textAlign": "left",
               "type": "shape",
               "xywh": "[-1055.7017064945487,-981.0008617000956,702.1470991695091,295.7649942194072]",
@@ -4059,7 +4059,7 @@ exports[`should read doc blocks work without root doc 1`] = `
           "JlgVJdWU12",
           "lht7AqBqnF",
         ],
-        "sys:flavour": "nexio:surface",
+        "sys:flavour": "affine:surface",
         "sys:id": "6x7ALjUDjj",
         "sys:version": 5,
       },
@@ -4071,21 +4071,21 @@ exports[`should read doc blocks work without root doc 1`] = `
       },
       "blockId": "ECrtbvW6xx",
       "docId": "test-doc",
-      "flavour": "nexio:bookmark",
+      "flavour": "affine:bookmark",
       "yblock": {
         "prop:caption": null,
         "prop:description": "The universal editor that lets you work, play, present or create just about anything.",
         "prop:icon": "/favicon-96.png",
-        "prop:image": "https://nexio.pro/og.png",
+        "prop:image": "https://affine.pro/og.png",
         "prop:index": "a1",
         "prop:lockedBySelf": false,
         "prop:rotate": 0,
         "prop:style": "vertical",
-        "prop:title": "NEXIO - All In One KnowledgeOS",
-        "prop:url": "https://nexio.pro/",
+        "prop:title": "AFFiNE - All In One KnowledgeOS",
+        "prop:url": "https://affine.pro/",
         "prop:xywh": "[-605.1053721621553,-1497.696057920688,606.4771127476911,649.7969065153833]",
         "sys:children": [],
-        "sys:flavour": "nexio:bookmark",
+        "sys:flavour": "affine:bookmark",
         "sys:id": "ECrtbvW6xx",
         "sys:version": 1,
       },
@@ -4097,10 +4097,10 @@ exports[`should read doc blocks work without root doc 1`] = `
       },
       "blockId": "5W--UQLN11",
       "docId": "test-doc",
-      "flavour": "nexio:bookmark",
+      "flavour": "affine:bookmark",
       "yblock": {
         "prop:caption": null,
-        "prop:description": "NEXIO is the all-in-one workspace where you can write, draw and plan just about anything - Blend the power of Notion and Miro to enable dynamic note-taking, wikis, tasks, visualized mindmaps and presentations. All you need for productivity and creativity is here!
+        "prop:description": "AFFiNE is the all-in-one workspace where you can write, draw and plan just about anything - Blend the power of Notion and Miro to enable dynamic note-taking, wikis, tasks, visualized mindmaps and presentations. All you need for productivity and creativity is here!
 ",
         "prop:icon": "https://www.youtube.com/s/desktop/8b6c1f4c/img/favicon_32x32.png",
         "prop:image": "https://yt3.googleusercontent.com/H9-Rol_TUq4UmR8cdy-LhxFmWdmz5LIm_KTYoVP2D81I-w9T12ttJHfME6kWUnEresNVo4c8dA=s900-c-k-c0x00ffffff-no-rj",
@@ -4108,11 +4108,11 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:lockedBySelf": false,
         "prop:rotate": 0,
         "prop:style": "vertical",
-        "prop:title": "NEXIO",
-        "prop:url": "https://www.youtube.com/@nexiopro",
+        "prop:title": "AFFiNE",
+        "prop:url": "https://www.youtube.com/@affinepro",
         "prop:xywh": "[-1043.6169874048903,-641.7901035486665,622.6248931928226,667.0980998494529]",
         "sys:children": [],
-        "sys:flavour": "nexio:bookmark",
+        "sys:flavour": "affine:bookmark",
         "sys:id": "5W--UQLN11",
         "sys:version": 1,
       },
@@ -4128,9 +4128,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "lcZphIJe63",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 728,
@@ -4142,7 +4142,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:width": 1302,
         "prop:xywh": "[-991.0766514037751,-616.4591370809392,505.45950210093383,282.62251730374794]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "lcZphIJe63",
         "sys:version": 1,
       },
@@ -4158,9 +4158,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "JlgVJdWU12",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 374,
@@ -4172,7 +4172,7 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:width": 1463,
         "prop:xywh": "[281.13294520744034,-2242.095913253297,2001.7110026018645,511.7155946501006]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "JlgVJdWU12",
         "sys:version": 1,
       },
@@ -4188,9 +4188,9 @@ exports[`should read doc blocks work without root doc 1`] = `
       "blockId": "lht7AqBqnF",
       "content": "",
       "docId": "test-doc",
-      "flavour": "nexio:image",
+      "flavour": "affine:image",
       "parentBlockId": "6x7ALjUDjj",
-      "parentFlavour": "nexio:surface",
+      "parentFlavour": "affine:surface",
       "yblock": {
         "prop:caption": "",
         "prop:height": 1388,
@@ -4202,13 +4202,13 @@ exports[`should read doc blocks work without root doc 1`] = `
         "prop:width": 862,
         "prop:xywh": "[3446.6044934637607,-1339.9783466050073,122.45568062094182,197.1792165914935]",
         "sys:children": [],
-        "sys:flavour": "nexio:image",
+        "sys:flavour": "affine:image",
         "sys:id": "lht7AqBqnF",
         "sys:version": 1,
       },
     },
   ],
-  "summary": "NEXIO is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. You own your data, with no compromisesLocal-first & Real-time collaborativeWe love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, NEXIO is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.NEXIO is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.Blocks that assemble your next docs, tasks kanban or whiteboardThere is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
+  "summary": "AFFiNE is an open source all in one workspace, an operating system for all the building blocks of your team wiki, knowledge management and digital assets and a better alternative to Notion and Miro. You own your data, with no compromisesLocal-first & Real-time collaborativeWe love the idea proposed by Ink & Switch in the famous article about you owning your data, despite the cloud. Furthermore, AFFiNE is the first all-in-one workspace that keeps your data ownership with no compromises on real-time collaboration and editing experience.AFFiNE is a local-first application upon CRDTs with real-time collaboration support. Your data is always stored locally while multiple nodes remain synced in real-time.Blocks that assemble your next docs, tasks kanban or whiteboardThere is a large overlap of their atomic "building blocks" between these apps. They are neither open source nor have a plugin system like VS Code for contributors to customize. We want to have something that contains all the features we love and goes one step further. ",
   "title": "Write, Draw, Plan all at Once.",
 }
 `;

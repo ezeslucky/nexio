@@ -32,14 +32,14 @@ export const Empty = ({
   });
   return (
     <div className={styles.emptyContainer}>
-      <div style={{ color: 'var(--nexio-black)' }}>
+      <div style={{ color: 'var(--affine-black)' }}>
         <EmptySvg className={styles.emptySvg} style={cssVar} />
       </div>
       {title && (
         <p
           style={{
             marginTop: '30px',
-            color: 'var(--nexio-text-primary-color)',
+            color: 'var(--affine-text-primary-color)',
             fontWeight: 700,
           }}
         >

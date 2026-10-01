@@ -1,11 +1,11 @@
 import {
   SettingHeader,
   SettingWrapper,
-} from '@nexio/component/setting-components';
-import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
-import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+} from '@affine/component/setting-components';
+import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 
 import { EnableCloudPanel } from '../preference/enable-cloud';
 import { BlobManagementPanel } from './blob-management';
@@ -30,7 +30,7 @@ export const WorkspaceSettingStorage = ({
     <>
       <SettingHeader
         title={t['Storage']()}
-        subtitle={t['com.nexio.settings.workspace.storage.subtitle']()}
+        subtitle={t['com.affine.settings.workspace.storage.subtitle']()}
       />
       {workspace.flavour === 'local' ? (
         <>

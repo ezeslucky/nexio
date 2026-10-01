@@ -8,8 +8,6 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../../../canvas/nexio/all" },
-    { "path": "../../../common/infra" },
     { "path": "../../component" },
     { "path": "../../core" },
     { "path": "../../../common/debug" },
@@ -17,6 +15,7 @@
     { "path": "../../i18n" },
     { "path": "../../../common/nbstore" },
     { "path": "../../track" },
-    { "path": "../../../../tools/utils" }
+    { "path": "../../../../blocksuite/affine/all" },
+    { "path": "../../../common/infra" }
   ]
 }

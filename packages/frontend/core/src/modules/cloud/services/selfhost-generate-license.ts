@@ -1,4 +1,4 @@
-import { type UserFriendlyError } from '@nexio/error';
+import { type UserFriendlyError } from '@affine/error';
 import {
   catchErrorInto,
   effect,
@@ -8,7 +8,7 @@ import {
   onStart,
   Service,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { exhaustMap, tap } from 'rxjs';
 
 import type { SelfhostGenerateLicenseStore } from '../stores/selfhost-generate-license';

@@ -1,12 +1,12 @@
-import { MenuItem } from '@nexio/component';
-import type { FilterParams } from '@nexio/core/modules/collection-rules';
-import type { DocRecord } from '@nexio/core/modules/doc';
-import { IntegrationTypeIcon } from '@nexio/core/modules/integration';
-import { INTEGRATION_TYPE_NAME_MAP } from '@nexio/core/modules/integration/constant';
-import type { IntegrationType } from '@nexio/core/modules/integration/type';
-import { useI18n } from '@nexio/i18n';
+import { MenuItem } from '@affine/component';
+import type { FilterParams } from '@affine/core/modules/collection-rules';
+import type { DocRecord } from '@affine/core/modules/doc';
+import { IntegrationTypeIcon } from '@affine/core/modules/integration';
+import { INTEGRATION_TYPE_NAME_MAP } from '@affine/core/modules/integration/constant';
+import type { IntegrationType } from '@affine/core/modules/integration/type';
+import { useI18n } from '@affine/i18n';
 import { IntegrationsIcon, ReadwiseIcon } from '@blocksuite/icons/rc';
-import { useLiveData } from '@ezeslucky/infra';
+import { useLiveData } from '@toeverything/infra';
 
 import { PlainTextDocGroupHeader } from '../explorer/docs-view/group-header';
 import { StackProperty } from '../explorer/docs-view/stack-property';
@@ -84,7 +84,7 @@ export const IntegrationTypeGroupHeader = ({
   const t = useI18n();
   const text =
     groupId === 'readwise'
-      ? t['com.nexio.integration.readwise.name']()
+      ? t['com.affine.integration.readwise.name']()
       : groupId
         ? groupId
         : 'No integrations';

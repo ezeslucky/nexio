@@ -1,5 +1,5 @@
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
-import { Entity, LiveData } from '@ezeslucky/infra';
+import { Entity, LiveData } from '@toeverything/infra';
 import Fuse from 'fuse.js';
 
 import type { CollectionService } from '../../collection';
@@ -11,7 +11,7 @@ import { highlighter } from '../utils/highlighter';
 const group = {
   id: 'collections',
   label: {
-    i18nKey: 'com.nexio.cmdk.nexio.category.nexio.collections',
+    i18nKey: 'com.affine.cmdk.affine.category.affine.collections',
   },
   score: 10,
 } as QuickSearchGroup;

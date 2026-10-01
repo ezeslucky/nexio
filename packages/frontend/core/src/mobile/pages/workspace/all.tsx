@@ -1,16 +1,18 @@
-import { useThemeColorV2, Wrapper } from '@nexio/component';
-import { EmptyDocs } from '@nexio/core/components/nexio/empty';
+import { useThemeColorV2 } from '@affine/component';
+import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@nexio/core/components/explorer/context';
-import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
-import { useLiveData, useService } from '@ezeslucky/infra';
-import { useEffect, useState } from 'react';
+} from '@affine/core/components/explorer/context';
+import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
+import { CollectionRulesService } from '@affine/core/modules/collection-rules';
+import { WorkspaceService } from '@affine/core/modules/workspace';
+import { inferOpenMode } from '@affine/core/utils';
+import { useLiveData, useService } from '@toeverything/infra';
+import { type MouseEvent, useCallback, useEffect, useState } from 'react';
 
 import { Page } from '../../components/page';
-import { AllDocsHeader } from '../../views';
+import { AllDocsHeader, MobileAllDocsEmptyState } from '../../views';
 
 const AllDocs = () => {
   const [explorerContextValue] = useState(() =>
@@ -29,10 +31,21 @@ const AllDocs = () => {
     })
   );
   const collectionRulesService = useService(CollectionRulesService);
+  const workspace = useService(WorkspaceService).workspace;
+  const pageHelper = usePageHelper(workspace.docCollection);
   const groups = useLiveData(explorerContextValue.groups$);
   const isEmpty =
     groups.length === 0 ||
     (groups.length && groups.every(group => !group.items.length));
+
+  const handleCreateDoc = useCallback(
+    (event: MouseEvent<HTMLButtonElement>) => {
+      pageHelper.createPage(undefined, {
+        at: inferOpenMode(event),
+      });
+    },
+    [pageHelper]
+  );
 
   useEffect(() => {
     const subscription = collectionRulesService
@@ -65,12 +78,7 @@ const AllDocs = () => {
   }, [collectionRulesService, explorerContextValue.groups$]);
 
   if (isEmpty) {
-    return (
-      <>
-        <EmptyDocs absoluteCenter />
-        <Wrapper height={0} flexGrow={1} />
-      </>
-    );
+    return <MobileAllDocsEmptyState type="docs" onAction={handleCreateDoc} />;
   }
 
   return (

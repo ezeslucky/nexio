@@ -15,7 +15,7 @@ export const relatedLinks = [
   {
     icon: <TwitterIcon />,
     title: 'X',
-    link: 'https://twitter.com/ezeslucky',
+    link: 'https://twitter.com/AffineOfficial',
   },
   {
     icon: <DiscordIcon />,
@@ -25,11 +25,11 @@ export const relatedLinks = [
   {
     icon: <YouTubeIcon />,
     title: 'YouTube',
-    link: 'https://www.youtube.com/',
+    link: 'https://www.youtube.com/@affinepro',
   },
   {
     icon: <RedditIcon />,
     title: 'Reddit',
-    link: 'https://www.reddit.com/r/ezeslucky/',
+    link: 'https://www.reddit.com/r/Affine/',
   },
 ];

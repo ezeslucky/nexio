@@ -1,10 +1,10 @@
-import type { MenuItemProps } from '@nexio/component';
-import { Menu, MenuItem, usePromptModal } from '@nexio/component';
-import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { useI18n } from '@nexio/i18n';
-import track from '@nexio/track';
+import type { MenuItemProps } from '@affine/component';
+import { Menu, MenuItem, usePromptModal } from '@affine/component';
+import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
+import { WorkbenchService } from '@affine/core/modules/workbench';
+import { useI18n } from '@affine/i18n';
+import track from '@affine/track';
 import {
   DeleteIcon,
   EditIcon,
@@ -13,7 +13,7 @@ import {
   PlusIcon,
   SplitViewIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useService, useServices } from '@ezeslucky/infra';
+import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { PropsWithChildren, ReactElement } from 'react';
 import { useCallback, useMemo } from 'react';
 
@@ -53,13 +53,13 @@ export const CollectionOperations = ({
       return openRenameModal();
     }
     openPromptModal({
-      title: t['com.nexio.editCollection.renameCollection'](),
-      label: t['com.nexio.editCollectionName.name'](),
+      title: t['com.affine.editCollection.renameCollection'](),
+      label: t['com.affine.editCollectionName.name'](),
       inputOptions: {
-        placeholder: t['com.nexio.editCollectionName.name.placeholder'](),
+        placeholder: t['com.affine.editCollectionName.name.placeholder'](),
       },
-      confirmText: t['com.nexio.editCollection.save'](),
-      cancelText: t['com.nexio.editCollection.button.cancel'](),
+      confirmText: t['com.affine.editCollection.save'](),
+      cancelText: t['com.affine.editCollection.button.cancel'](),
       confirmButtonOptions: {
         variant: 'primary',
       },
@@ -116,12 +116,12 @@ export const CollectionOperations = ({
     () => [
       {
         icon: <EditIcon />,
-        name: t['com.nexio.collection.menu.rename'](),
+        name: t['com.affine.collection.menu.rename'](),
         click: showEditName,
       },
       {
         icon: <FilterIcon />,
-        name: t['com.nexio.collection.menu.edit'](),
+        name: t['com.affine.collection.menu.edit'](),
         click: showEdit,
       },
       ...(onAddDocToCollection
@@ -136,20 +136,20 @@ export const CollectionOperations = ({
       {
         icon: <IsFavoriteIcon favorite={favorite} />,
         name: favorite
-          ? t['com.nexio.favoritePageOperation.remove']()
-          : t['com.nexio.favoritePageOperation.add'](),
+          ? t['com.affine.favoritePageOperation.remove']()
+          : t['com.affine.favoritePageOperation.add'](),
         click: onToggleFavoritePage,
       },
       {
         icon: <OpenInNewIcon />,
-        name: t['com.nexio.workbench.tab.page-menu-open'](),
+        name: t['com.affine.workbench.tab.page-menu-open'](),
         click: openCollectionNewTab,
       },
       ...(BUILD_CONFIG.isElectron
         ? [
             {
               icon: <SplitViewIcon />,
-              name: t['com.nexio.workbench.split-view.page-menu-open'](),
+              name: t['com.affine.workbench.split-view.page-menu-open'](),
               click: openCollectionSplitView,
             },
           ]

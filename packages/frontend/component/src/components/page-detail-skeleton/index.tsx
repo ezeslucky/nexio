@@ -1,4 +1,4 @@
-import { Trans, useI18n } from '@nexio/i18n';
+import { Trans, useI18n } from '@affine/i18n';
 import clsx from 'clsx';
 import { useCallback } from 'react';
 
@@ -19,7 +19,7 @@ export const EditorLoading = ({
     document.location.reload();
   }, []);
   return (
-    <div className={styles.canvasEditorStyle}>
+    <div className={styles.blockSuiteEditorStyle}>
       <ThemedImg
         style={{ width: '300px' }}
         draggable={false}
@@ -31,16 +31,16 @@ export const EditorLoading = ({
         <div className={styles.content} data-longer-loading={true}>
           <div>
             <div className={styles.text} data-longer-loading={true}>
-              {t['com.nexio.error.loading-timeout-error']()}
+              {t['com.affine.error.loading-timeout-error']()}
             </div>
             <div className={styles.text} data-longer-loading={true}>
               <Trans
-                i18nKey="com.nexio.error.contact-us"
+                i18nKey="com.affine.error.contact-us"
                 components={{
                   1: (
                     <a
-                      style={{ color: 'var(--nexio-primary-color)' }}
-                      href="https://community.nexio.pro"
+                      style={{ color: 'var(--affine-primary-color)' }}
+                      href="https://affine.pro/redirect/discord"
                       target="__blank"
                     />
                   ),
@@ -63,17 +63,17 @@ export const EditorLoading = ({
             onClick={reloadPage}
             variant="primary"
           >
-            {t['com.nexio.error.reload']()}
+            {t['com.affine.error.reload']()}
           </Button>
         </div>
       ) : (
         <div className={styles.content}>
           <div className={styles.title}>
             <Loading size={20} className={styles.loadingIcon} />
-            {t['com.nexio.loading']()}
+            {t['com.affine.loading']()}
           </div>
           <div className={styles.text}>
-            {t['com.nexio.loading.description']()}
+            {t['com.affine.loading.description']()}
           </div>
         </div>
       )}

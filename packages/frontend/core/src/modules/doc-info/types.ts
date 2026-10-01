@@ -1,5 +1,5 @@
-import type { DatabaseBlockDataSource } from '@canvas/nexio/blocks/database';
-import type { LiveData } from '@ezeslucky/infra';
+import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+import type { LiveData } from '@toeverything/infra';
 
 import type { Doc } from '../doc';
 

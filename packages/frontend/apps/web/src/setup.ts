@@ -1,3 +1,3 @@
-import '@nexio/core/bootstrap/browser';
-import '@nexio/core/bootstrap/cleanup';
-import '@nexio/component/theme';
+import '@affine/core/bootstrap/browser';
+import '@affine/core/bootstrap/cleanup';
+import '@affine/component/theme';

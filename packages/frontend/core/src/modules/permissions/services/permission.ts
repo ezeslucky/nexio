@@ -1,4 +1,4 @@
-import { Service } from '@ezeslucky/infra';
+import { Service } from '@toeverything/infra';
 
 import type { WorkspaceService, WorkspacesService } from '../../workspace';
 import { WorkspacePermission } from '../entities/permission';

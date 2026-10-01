@@ -35,5 +35,5 @@ export default function LinkInvitationApproved(
 
 LinkInvitationApproved.PreviewProps = {
   workspace: TEST_WORKSPACE,
-  url: 'https://app.nexio.pro',
+  url: 'https://app.affine.pro',
 };

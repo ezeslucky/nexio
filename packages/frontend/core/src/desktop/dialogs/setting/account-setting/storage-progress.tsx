@@ -1,6 +1,6 @@
-import { Button, ErrorMessage, Skeleton, Tooltip } from '@nexio/component';
-import { useI18n } from '@nexio/i18n';
-import { useLiveData, useService } from '@ezeslucky/infra';
+import { Button, ErrorMessage, Skeleton, Tooltip } from '@affine/component';
+import { useI18n } from '@affine/i18n';
+import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useEffect, useMemo } from 'react';
 
@@ -73,10 +73,10 @@ export const StorageProgress = ({ onUpgrade }: StorageProgressProgress) => {
     <div className={styles.storageProgressContainer}>
       <div className={styles.storageProgressWrapper}>
         <div className="storage-progress-desc">
-          <span>{t['com.nexio.storage.used.hint']()}</span>
+          <span>{t['com.affine.storage.used.hint']()}</span>
           <span>
             {usedFormatted}/{maxFormatted}
-            {` (${quotaName} ${t['com.nexio.storage.plan']()})`}
+            {` (${quotaName} ${t['com.affine.storage.plan']()})`}
           </span>
         </div>
 
@@ -96,15 +96,15 @@ export const StorageProgress = ({ onUpgrade }: StorageProgressProgress) => {
           options={{ hidden: percent < 100 }}
           content={
             isFreeUser
-              ? t['com.nexio.storage.maximum-tips']()
-              : t['com.nexio.storage.maximum-tips.pro']()
+              ? t['com.affine.storage.maximum-tips']()
+              : t['com.affine.storage.maximum-tips.pro']()
           }
         >
           <span tabIndex={0}>
             <Button variant={buttonType} onClick={onUpgrade}>
               {isFreeUser
-                ? t['com.nexio.storage.upgrade']()
-                : t['com.nexio.storage.change-plan']()}
+                ? t['com.affine.storage.upgrade']()
+                : t['com.affine.storage.change-plan']()}
             </Button>
           </span>
         </Tooltip>

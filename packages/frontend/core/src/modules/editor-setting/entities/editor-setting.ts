@@ -1,9 +1,9 @@
-import type { DeepPartial } from '@canvas/nexio/global/utils';
+import type { DeepPartial } from '@blocksuite/affine/global/utils';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@canvas/nexio/shared/utils';
-import { Entity, LiveData } from '@ezeslucky/infra';
+} from '@blocksuite/affine/shared/utils';
+import { Entity, LiveData } from '@toeverything/infra';
 import { isObject, merge } from 'lodash-es';
 import type { Observable } from 'rxjs';
 import { map } from 'rxjs';

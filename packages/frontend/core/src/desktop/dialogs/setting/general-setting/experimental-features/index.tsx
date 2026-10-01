@@ -1,19 +1,19 @@
-import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
-import { SettingHeader } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
+import { Button, Checkbox, Loading, Switch, Tooltip } from '@affine/component';
+import { SettingHeader } from '@affine/component/setting-components';
+import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
 import {
-  NEXIO_FLAGS,
+  AFFINE_FLAGS,
   FeatureFlagService,
   type Flag,
-} from '@nexio/core/modules/feature-flag';
-import { useI18n } from '@nexio/i18n';
+} from '@affine/core/modules/feature-flag';
+import { useI18n } from '@affine/i18n';
 import {
   ArrowRightSmallIcon,
   DiscordIcon,
   EmailIcon,
   GithubIcon,
 } from '@blocksuite/icons/rc';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { useLiveData, useServices } from '@toeverything/infra';
 import { useAtom } from 'jotai';
 import { atomWithStorage } from 'jotai/utils';
 import { Suspense, useCallback, useState } from 'react';
@@ -40,7 +40,7 @@ const ExperimentalFeaturesPrompt = ({
     <div className={styles.promptRoot} data-testid="experimental-prompt">
       <div className={styles.promptTitle}>
         {t[
-          'com.nexio.settings.workspace.experimental-features.prompt-header'
+          'com.affine.settings.workspace.experimental-features.prompt-header'
         ]()}
       </div>
       <div className={styles.promptArt}>
@@ -49,11 +49,11 @@ const ExperimentalFeaturesPrompt = ({
       <div className={styles.promptWarning}>
         <div className={styles.promptWarningTitle}>
           {t[
-            'com.nexio.settings.workspace.experimental-features.prompt-warning-title'
+            'com.affine.settings.workspace.experimental-features.prompt-warning-title'
           ]()}
         </div>
         {t[
-          'com.nexio.settings.workspace.experimental-features.prompt-warning'
+          'com.affine.settings.workspace.experimental-features.prompt-warning'
         ]()}
       </div>
 
@@ -66,7 +66,7 @@ const ExperimentalFeaturesPrompt = ({
           data-testid="experimental-prompt-disclaimer"
         />
         {t[
-          'com.nexio.settings.workspace.experimental-features.prompt-disclaimer'
+          'com.affine.settings.workspace.experimental-features.prompt-disclaimer'
         ]()}
       </label>
 
@@ -78,7 +78,7 @@ const ExperimentalFeaturesPrompt = ({
           data-testid="experimental-confirm-button"
         >
           {t[
-            'com.nexio.settings.workspace.experimental-features.get-started'
+            'com.affine.settings.workspace.experimental-features.get-started'
           ]()}
         </Button>
       </div>
@@ -101,7 +101,7 @@ const FeedbackIcon = ({ type }: { type: Flag['feedbackType'] }) => {
 
 const feedbackLink: Record<NonNullable<Flag['feedbackType']>, string> = {
   discord: BUILD_CONFIG.discordUrl,
-  email: 'mailto:support@ezeslucky.info',
+  email: 'mailto:support@toeverything.info',
   github: 'https://github.com/ezeslucky/nexio/issues',
 };
 
@@ -168,21 +168,21 @@ const ExperimentalFeaturesMain = () => {
     <>
       <SettingHeader
         title={t[
-          'com.nexio.settings.workspace.experimental-features.header.plugins'
+          'com.affine.settings.workspace.experimental-features.header.plugins'
         ]()}
         subtitle={t[
-          'com.nexio.settings.workspace.experimental-features.header.subtitle'
+          'com.affine.settings.workspace.experimental-features.header.subtitle'
         ]()}
       />
       <div
         className={styles.settingsContainer}
         data-testid="experimental-settings"
       >
-        {Object.keys(NEXIO_FLAGS).map(key => (
+        {Object.keys(AFFINE_FLAGS).map(key => (
           <ExperimentalFeaturesItem
             key={key}
             flagKey={key}
-            flag={featureFlagService.flags[key as keyof NEXIO_FLAGS]}
+            flag={featureFlagService.flags[key as keyof AFFINE_FLAGS]}
           />
         ))}
       </div>
@@ -192,7 +192,7 @@ const ExperimentalFeaturesMain = () => {
 
 // TODO(@Peng): save to workspace meta instead?
 const experimentalFeaturesDisclaimerAtom = atomWithStorage(
-  'nexio:experimental-features-disclaimer',
+  'affine:experimental-features-disclaimer',
   false
 );
 

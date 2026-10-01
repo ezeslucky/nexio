@@ -7,12 +7,11 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../../common/infra" },
     { "path": "../../component" },
     { "path": "../../core" },
     { "path": "../../../common/env" },
-    { "path": "../../i18n" },
     { "path": "../../../common/nbstore" },
-    { "path": "../../track" }
+    { "path": "../../track" },
+    { "path": "../../../common/infra" }
   ]
 }

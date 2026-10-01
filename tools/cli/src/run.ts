@@ -1,6 +1,6 @@
-import { Path } from '@nexio-tools/utils/path';
-import { execAsync } from '@nexio-tools/utils/process';
-import type { Package, PackageName } from '@nexio-tools/utils/workspace';
+import { Path } from '@affine-tools/utils/path';
+import { execAsync } from '@affine-tools/utils/process';
+import type { Package, PackageName } from '@affine-tools/utils/workspace';
 
 import { Option, PackageCommand } from './command';
 
@@ -11,11 +11,19 @@ interface RunScriptOptions {
 }
 
 const currentDir = Path.dir(import.meta.url);
+const serverRuntimeLoader = currentDir
+  .join('../register.js')
+  .toFileUrl()
+  .toString();
+const tsxRuntimeLoader = currentDir
+  .join('../tsx-register.js')
+  .toFileUrl()
+  .toString();
 
 const ignoreLoaderScripts = [
   'vitest',
   'vite',
-  'ts-node',
+  'tsx',
   'prisma',
   'cap',
   'tsc',
@@ -28,33 +36,33 @@ export class RunCommand extends PackageCommand {
   static override paths = [[], ['run'], ['r']];
 
   static override usage = PackageCommand.Usage({
-    description: 'NEXIO Monorepo scripts',
+    description: 'AFFiNE Monorepo scripts',
     details: `
-      \`nexio web <script>\`    Run any script defined in package's package.json
+      \`affine web <script>\`    Run any script defined in package's package.json
 
-      \`nexio init\`            Generate the required files if there are any package added or removed
+      \`affine init\`            Generate the required files if there are any package added or removed
 
-      \`nexio clean\`           Clean the output files of ts, cargo, webpack, etc.
+      \`affine clean\`           Clean the output files of ts, cargo, bundler outputs, etc.
 
-      \`nexio bundle\`          Bundle the packages
+      \`affine bundle\`          Bundle the packages
 
-      \`nexio build\`           A proxy for <-p package>'s \`build\` script
+      \`affine build\`           A proxy for <-p package>'s \`build\` script
 
-      \`nexio dev\`             A proxy for <-p package>'s \`dev\` script
+      \`affine dev\`             A proxy for <-p package>'s \`dev\` script
     `,
     examples: [
       [`See detail of each command`, '$0 -h'],
       [
-        `Run custom 'xxx' script defined in @nexio/web's package.json`,
+        `Run custom 'xxx' script defined in @affine/web's package.json`,
         '$0 web xxx',
       ],
       [`Run 'init' for workspace`, '$0 init'],
       [`Clean dist of each package`, '$0 clean --dist'],
       [`Clean node_modules under each package`, '$0 clean --node-modules'],
       [`Clean everything`, '$0 clean --all'],
-      [`Run 'build' script for @nexio/web`, '$0 build -p web'],
+      [`Run 'build' script for @affine/web`, '$0 build -p web'],
       [
-        `Run 'build' script for @nexio/web with all deps prebuild before`,
+        `Run 'build' script for @affine/web with all deps prebuild before`,
         '$0 build -p web --deps',
       ],
     ],
@@ -140,9 +148,9 @@ export class RunCommand extends PackageCommand {
       }
     }
 
-    const isNEXIOCommand = args[0] === 'nexio';
-    if (isNEXIOCommand) {
-      // remove 'nexio' from 'nexio xxx' command
+    const isAFFiNECommand = args[0] === 'affine';
+    if (isAFFiNECommand) {
+      // remove 'affine' from 'affine xxx' command
       args.shift();
       args.push('-p', pkg.name);
 
@@ -161,13 +169,17 @@ export class RunCommand extends PackageCommand {
     args = extractedArgs;
 
     const bin = args[0] === 'yarn' ? args[1] : args[0];
-
-    const loader = currentDir.join('../register.js').toFileUrl().toString();
+    const loader =
+      pkg.name === '@affine/server' ? serverRuntimeLoader : tsxRuntimeLoader;
+    const hasKnownLoader =
+      process.env.NODE_OPTIONS?.includes('tsx') ||
+      process.env.NODE_OPTIONS?.includes(tsxRuntimeLoader) ||
+      process.env.NODE_OPTIONS?.includes(serverRuntimeLoader);
 
     // very simple test for auto ts/mjs scripts
     const isLoaderRequired =
       !ignoreLoaderScripts.some(ignore => new RegExp(ignore).test(bin)) ||
-      process.env.NODE_OPTIONS?.includes('ts-node/esm') ||
+      hasKnownLoader ||
       process.env.NODE_OPTIONS?.includes(loader);
 
     let NODE_OPTIONS = process.env.NODE_OPTIONS

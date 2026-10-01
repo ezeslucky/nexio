@@ -30,7 +30,7 @@ export class Workspace {
 
   readonly packageJson: CommonPackageJsonContent;
 
-  private readonly logger = new Logger('NEXIO');
+  private readonly logger = new Logger('AFFiNE');
 
   readonly path = ProjectRoot;
 

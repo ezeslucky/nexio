@@ -7,6 +7,24 @@ import type { Locker } from './lock';
 import { SingletonLocker } from './lock';
 import { type Storage } from './storage';
 
+export interface BlockInfo {
+  blockId: string;
+  flavour: string;
+  content?: string[];
+  blob?: string[];
+  refDocId?: string[];
+  refInfo?: string[];
+  parentFlavour?: string;
+  parentBlockId?: string;
+  additional?: string;
+}
+
+export interface CrawlResult {
+  blocks: BlockInfo[];
+  title: string;
+  summary: string;
+}
+
 export interface DocClock {
   docId: string;
   timestamp: Date;
@@ -27,6 +45,13 @@ export interface DocUpdate {
   docId: string;
   bin: Uint8Array;
   editor?: string;
+}
+
+export type DocLifecycle = 'trash' | 'restore' | 'delete';
+
+export interface DocLifecycleResult {
+  rootUpdate: Uint8Array;
+  timestamp: Date;
 }
 
 export interface Editor {
@@ -78,6 +103,11 @@ export interface DocStorage extends Storage {
    */
   deleteDoc(docId: string): Promise<void>;
 
+  applyDocLifecycle?(
+    docId: string,
+    lifecycle: DocLifecycle
+  ): Promise<DocLifecycleResult>;
+
   /**
    * Subscribe on doc updates emitted from storage itself.
    *
@@ -94,6 +124,8 @@ export interface DocStorage extends Storage {
   subscribeDocUpdate(
     callback: (update: DocRecord, origin?: string) => void
   ): () => void;
+
+  crawlDocData?(docId: string): Promise<CrawlResult | null>;
 }
 
 export abstract class DocStorageBase<Opts = {}> implements DocStorage {
@@ -172,6 +204,10 @@ export abstract class DocStorageBase<Opts = {}> implements DocStorage {
     return () => {
       this.event.off('update', callback);
     };
+  }
+
+  async crawlDocData(_docId: string): Promise<CrawlResult | null> {
+    return null;
   }
 
   // REGION: api for internal usage

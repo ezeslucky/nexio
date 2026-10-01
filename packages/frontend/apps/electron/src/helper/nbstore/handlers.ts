@@ -1,8 +1,8 @@
 import path from 'node:path';
 
-import { DocStoragePool } from '@nexio/native';
-import { parseUniversalId } from '@nexio/nbstore';
-import type { NativeDBApis } from '@nexio/nbstore/sqlite';
+import { DocStoragePool } from '@affine/native';
+import { parseUniversalId } from '@affine/nbstore';
+import type { NativeDBApis } from '@affine/nbstore/sqlite';
 import fs from 'fs-extra';
 
 import { getSpaceDBPath } from '../workspace/meta';
@@ -30,6 +30,9 @@ export const nbstoreHandlers: NativeDBApis = {
   deleteDoc: POOL.deleteDoc.bind(POOL),
   getDocClocks: POOL.getDocClocks.bind(POOL),
   getDocClock: POOL.getDocClock.bind(POOL),
+  getDocIndexedClock: POOL.getDocIndexedClock.bind(POOL),
+  setDocIndexedClock: POOL.setDocIndexedClock.bind(POOL),
+  clearDocIndexedClock: POOL.clearDocIndexedClock.bind(POOL),
   getBlob: POOL.getBlob.bind(POOL),
   setBlob: POOL.setBlob.bind(POOL),
   deleteBlob: POOL.deleteBlob.bind(POOL),
@@ -47,4 +50,13 @@ export const nbstoreHandlers: NativeDBApis = {
   clearClocks: POOL.clearClocks.bind(POOL),
   setBlobUploadedAt: POOL.setBlobUploadedAt.bind(POOL),
   getBlobUploadedAt: POOL.getBlobUploadedAt.bind(POOL),
+  crawlDocData: POOL.crawlDocData.bind(POOL),
+  setDocIndexedClocks: POOL.setDocIndexedClocks.bind(POOL),
+  indexUpsert: POOL.indexUpsert.bind(POOL),
+  indexDelete: POOL.indexDelete.bind(POOL),
+  indexSearch: POOL.indexSearch.bind(POOL),
+  indexAggregate: POOL.indexAggregate.bind(POOL),
+  indexDeleteByQuery: POOL.indexDeleteByQuery.bind(POOL),
+  indexFlush: POOL.indexFlush.bind(POOL),
+  indexVersion: POOL.indexVersion.bind(POOL),
 };

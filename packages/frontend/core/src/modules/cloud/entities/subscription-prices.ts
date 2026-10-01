@@ -1,4 +1,4 @@
-import type { PricesQuery } from '@nexio/graphql';
+import type { PricesQuery } from '@affine/graphql';
 import {
   catchErrorInto,
   effect,
@@ -9,7 +9,7 @@ import {
   onComplete,
   onStart,
   smartRetry,
-} from '@ezeslucky/infra';
+} from '@toeverything/infra';
 import { exhaustMap } from 'rxjs';
 
 import type { ServerService } from '../services/server';

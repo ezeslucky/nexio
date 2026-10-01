@@ -1,5 +1,5 @@
-import { Loading } from '@nexio/component/ui/loading';
-import { i18nTime, isI18nString, useI18n } from '@nexio/i18n';
+import { Loading } from '@affine/component/ui/loading';
+import { i18nTime, isI18nString, useI18n } from '@affine/i18n';
 import clsx from 'clsx';
 import { Command } from 'cmdk';
 import {
@@ -20,10 +20,12 @@ import { HighlightText } from './highlight-text';
 
 type Groups = { group?: QuickSearchGroup; items: QuickSearchItem[] }[];
 
+const EMPTY_GROUPS: Groups = [];
+
 export const CMDK = ({
   className,
   query,
-  groups: newGroups = [],
+  groups: newGroups = EMPTY_GROUPS,
   error,
   inputLabel,
   placeholder,

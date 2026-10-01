@@ -1,6 +1,6 @@
-import { ServerService, SubscriptionService } from '@nexio/core/modules/cloud';
-import { SubscriptionPlan } from '@nexio/graphql';
-import { useLiveData, useServices } from '@ezeslucky/infra';
+import { ServerService, SubscriptionService } from '@affine/core/modules/cloud';
+import { SubscriptionPlan } from '@affine/graphql';
+import { useLiveData, useServices } from '@toeverything/infra';
 import clsx from 'clsx';
 import { forwardRef, type HTMLProps, useEffect } from 'react';
 
