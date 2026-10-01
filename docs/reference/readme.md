@@ -1,7 +1,3 @@
-Welcome to AFFiNE development reference.
+Welcome to the Nexio development reference.
 
-This document is intended for developers who want to contribute to AFFiNE. It contains information about the architecture of AFFiNE, how to build it, and how to contribute to it.
-
-### The Infrastructure of AFFiNE
-
-see {@link @toeverything/infra!}
+This document is intended for developers who want to build, extend, or contribute to Nexio. It covers the architecture, the block suite engine, and the visual AI workflow system.
