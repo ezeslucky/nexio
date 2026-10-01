@@ -17,7 +17,7 @@ Nexio is an open-source, local-first workspace and visual AI automation engine. 
 - Want to add a new workflow node, integration, or large feature? Please open an issue or [Discussion](https://github.com/ezeslucky/nexio/discussions) first to discuss architecture and design before diving into code.
 
 ### 2. Set Up Your Environment
-- Follow the setup guide in [README.md](../README.md) or [BUILDING.md](./BUILDING.md).
+- Follow the setup guide in [README.md](./README.md) or [docs/BUILDING.md](./docs/BUILDING.md).
 - Quick command overview:
   ```bash
   # Install dependencies
@@ -62,7 +62,7 @@ yarn test
 
 ## 🤝 Code of Conduct
 
-We are committed to providing a welcoming, inclusive, and harassment-free environment for all contributors. Please review our [Code of Conduct](./CODE_OF_CONDUCT.md).
+We are committed to providing a welcoming, inclusive, and harassment-free environment for all contributors. Please review our [Code of Conduct](./docs/CODE_OF_CONDUCT.md).
 
 ---
 
@@ -71,4 +71,4 @@ We are committed to providing a welcoming, inclusive, and harassment-free enviro
 - **Repository**: [https://github.com/ezeslucky/nexio](https://github.com/ezeslucky/nexio)
 - **Issues & Bug Reports**: [GitHub Issues](https://github.com/ezeslucky/nexio/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ezeslucky/nexio/discussions)
-- **Security Inquiries**: [SECURITY.md](../SECURITY.md)
+- **Security Inquiries**: [SECURITY.md](./SECURITY.md)
