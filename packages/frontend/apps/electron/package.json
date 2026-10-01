@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.27.5",
   "main": "./dist/main.js",
-  "author": "toeverything",
+  "author": "ezeslucky",
   "repository": {
     "url": "https://github.com/ezeslucky/nexio",
     "type": "git"
   },
-  "description": "AFFiNE Desktop App",
+  "description": "Nexio Desktop App",
   "homepage": "https://github.com/ezeslucky/nexio",
   "exports": {
     "./helper/exposed": "./src/helper/exposed.ts",
