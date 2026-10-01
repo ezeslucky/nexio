@@ -21,17 +21,17 @@ const appName = appNames[BUILD_CONFIG.appBuildType];
 
 const links = [
   {
-    href: BUILD_CONFIG.githubUrl,
+    href: 'https://github.com/ezeslucky/nexio',
     icon: <GithubIcon size={20} />,
     label: 'Star Nexio on GitHub',
   },
   {
-    href: BUILD_CONFIG.githubUrl,
+    href: 'https://github.com/ezeslucky/nexio/issues',
     icon: <MailWarningIcon size={20} />,
     label: 'Report an Issue',
   },
   {
-    href: 'https://docs.affine.pro/docs/self-host-affine',
+    href: 'https://github.com/ezeslucky/nexio#readme',
     icon: <AlbumIcon size={20} />,
     label: 'Self-host Document',
   },

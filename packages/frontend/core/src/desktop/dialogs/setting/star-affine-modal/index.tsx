@@ -27,7 +27,7 @@ export const StarAFFiNEModal = ({
       onOpenChange={setOpen}
       description={t['com.affine.star-affine.description']()}
       cancelText={t['com.affine.star-affine.cancel']()}
-      to={BUILD_CONFIG.githubUrl}
+      to={'https://github.com/ezeslucky/nexio'}
       confirmButtonOptions={{
         variant: 'primary',
       }}

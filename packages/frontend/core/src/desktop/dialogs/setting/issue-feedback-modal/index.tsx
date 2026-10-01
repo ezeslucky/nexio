@@ -27,7 +27,7 @@ export const IssueFeedbackModal = ({
       onOpenChange={setOpen}
       description={t['com.affine.issue-feedback.description']()}
       cancelText={t['com.affine.issue-feedback.cancel']()}
-      to={`${BUILD_CONFIG.githubUrl}/issues/new/choose`}
+      to={'https://github.com/ezeslucky/nexio/issues/new/choose'}
       confirmText={t['com.affine.issue-feedback.confirm']()}
       confirmButtonOptions={{
         variant: 'primary',

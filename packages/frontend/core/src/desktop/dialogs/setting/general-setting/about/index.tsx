@@ -119,7 +119,7 @@ export const AboutAffine = () => {
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro"
+          href="https://github.com/ezeslucky/nexio"
           target="_blank"
         >
           {t['com.affine.aboutAFFiNE.contact.website']()}
@@ -128,7 +128,7 @@ export const AboutAffine = () => {
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro/redirect/discord"
+          href="https://github.com/ezeslucky/nexio/discussions"
           target="_blank"
         >
           {t['com.affine.aboutAFFiNE.contact.community']()}
@@ -157,7 +157,7 @@ export const AboutAffine = () => {
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro/privacy"
+          href="https://github.com/ezeslucky/nexio/blob/main/SECURITY.md"
           target="_blank"
         >
           {t['com.affine.aboutAFFiNE.legal.privacy']()}
@@ -166,7 +166,7 @@ export const AboutAffine = () => {
         <a
           className={styles.link}
           rel="noreferrer"
-          href="https://affine.pro/terms"
+          href="https://github.com/ezeslucky/nexio/blob/main/LICENSE"
           target="_blank"
         >
           {t['com.affine.aboutAFFiNE.legal.tos']()}
