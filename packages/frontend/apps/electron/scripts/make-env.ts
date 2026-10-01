@@ -17,7 +17,7 @@ const ROOT = path.resolve(__dirname, '..');
 const envBuildType = (process.env.BUILD_TYPE || 'canary').trim().toLowerCase();
 const buildType = ReleaseTypeSchema.parse(envBuildType);
 const stableBuild = buildType === 'stable';
-const productName = !stableBuild ? `AFFiNE-${buildType}` : 'AFFiNE';
+const productName = !stableBuild ? `Nexio-${buildType}` : 'Nexio';
 const icoPath = path.join(
   ROOT,
   !stableBuild
