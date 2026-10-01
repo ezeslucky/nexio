@@ -1,5 +1,5 @@
 # ---------- deps layer ----------
-FROM node:20-bullseye-slim AS deps
+FROM node:22-bookworm-slim AS deps
 
 WORKDIR /app
 
@@ -18,7 +18,7 @@ RUN node .yarn/releases/yarn-4.9.1.cjs install \
     --network-timeout 600000
 
 # ---------- builder layer ----------
-FROM node:20-bullseye-slim AS builder
+FROM node:22-bookworm-slim AS builder
 
 WORKDIR /app
 
@@ -33,15 +33,15 @@ COPY --from=deps /app /app
 
 # Build backend
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p @nexio/server --deps
+    -p server --deps
 
 # Build web
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p @nexio/web
+    -p web
 
 # Build admin
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p @nexio/admin
+    -p admin
 
 # Assemble static assets
 RUN rm -rf static \
@@ -50,7 +50,7 @@ RUN rm -rf static \
     && cp -a packages/frontend/admin/dist/. static/admin/
 
 # ---------- runner layer ----------
-FROM node:20-bullseye-slim AS runner
+FROM node:22-bookworm-slim AS runner
 
 WORKDIR /app
 
