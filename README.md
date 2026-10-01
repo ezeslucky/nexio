@@ -1,204 +1,147 @@
-# NEXIO 
-Is a next-generation all-in-one workspace and knowledge operating system that unifies wikis, knowledge management, presentations, and digital assets into a single platform — built to outperform tools like Notion and Miro.
+# NEXIO 🚀
 
-## Features
+> **Next-generation all-in-one workspace, knowledge operating system, and AI automation engine.**  
+> Nexio unifies wikis, knowledge management, presentation canvases, and visual AI workflows into a single platform — built to outperform tools like Notion, Miro, and n8n.
 
-- **Edgeless canvas for every kind of block**  
-  Nexio gives you a true canvas where any block can live together on the same surface: rich text, sticky notes, shapes, multi-view databases, embedded web pages, linked pages, and even presentation slides. Documents and whiteboards are fully merged so you can write, sketch, plan, and present in a single space.
+---
 
-- **Multimodal AI partner for your work**  
-  Draft reports, turn outlines into slide decks, summarize long documents into mind maps, or organize your backlog into clear task boards. Nexio’s AI features are designed to plug into the canvas, helping you brainstorm, refactor structure, and generate content directly where you work.
+## ✨ Features
 
-- **Local‑first with real‑time collaboration**  
-  Your data lives on your own disk first, with optional cloud sync and real‑time collaboration across devices. Nexio is built to feel responsive and reliable offline, while still supporting multi‑user sessions in the browser and desktop apps.
+- **🎨 Edgeless Canvas for Every Kind of Block**  
+  A true infinite canvas where any block can live together on the same surface: rich text, sticky notes, shapes, multi-view databases, embedded web pages, linked pages, and presentation slides. Documents and whiteboards are fully merged so you can write, sketch, plan, and present in a single space.
 
-- **Self‑host and shape your own Nexio**  
-  You can fork, self‑host, and customize Nexio to match your workflows. The architecture is designed for extensions and custom blocks, so teams can add their own integrations and building blocks on top of the core experience.
+- **⚡ Visual AI Automation Workflow Studio (n8n-style)**  
+  Create powerful multi-step AI automations directly inside your workspace:
+  - **Node-Based Canvas**: Drag-and-drop triggers, AI reasoning models, logic branches, and output actions with dynamic bezier connector cables.
+  - **Rich Node Catalog**:
+    - **Triggers**: Webhook, Schedule/Cron, Document Created, Manual run.
+    - **AI Models**: GPT-4o, Claude 3.5 Sonnet, Nexio Copilot, Fal AI image generation.
+    - **Logic & Flow**: Condition branches (`if/else`), custom JavaScript/TypeScript code execution.
+    - **Actions**: Auto-create canvas documents, dispatch emails, send Slack alerts, or trigger webhooks.
+  - **Live Execution Engine**: Test and inspect runs with real-time status pulses, node-by-node execution tracing, and a sliding debug console.
+  - **Templates Included**: Pre-built starter templates for AI content summarization, meeting note triage, and ticket management.
 
-## Architecture Overview
+- **🤖 Multimodal AI Partner for Your Work**  
+  Draft reports, turn outlines into slide decks, summarize long documents into mind maps, or organize your backlog into clear task boards. Nexio’s AI features plug directly into the canvas to brainstorm, refactor structure, and generate content where you work.
 
-Nexio is a **Yarn v4 + Turborepo monorepo**. At a high level, it’s a web/electron client talking to a TypeScript backend, with a shared “document/block” engine and a few native (Rust) accelerators.
+- **🔐 Google & GitHub OAuth Integration**  
+  Seamless single sign-on (SSO) with Google and GitHub accounts. Sign in with one click and get routed straight to your workspace dashboard.
 
-### High-level runtime diagram
+- **💾 Local-First with Real-Time Collaboration**  
+  Your data lives on your own disk first, with optional cloud sync and real-time collaboration across devices. Responsive and reliable offline, while seamlessly supporting multi-user sessions in the browser and desktop apps.
+
+- **🛠️ Self-Host & Shape Your Own Nexio**  
+  Fork, self-host, and customize Nexio to match your workflows. Built with an open, extensible plugin architecture so teams can build custom blocks, node types, and integrations.
+
+---
+
+## 🏛️ Architecture Overview
+
+Nexio is organized as a **Yarn v4 + Turborepo monorepo**. It pairs a web and Electron desktop client with a high-performance TypeScript backend server, a shared block engine, and native Rust accelerators.
+
+### High-Level Runtime Diagram
 
 ```text
                  ┌──────────────────────────────┐
-                 │      Nexio Client Apps        │
-                 │  - Web: @nexio/web            │
-                 │  - Desktop: Electron app      │
-                 └───────────────┬───────────────┘
-                                 │ HTTP (API)
+                 │      Nexio Client Apps       │
+                 │  - Web: @nexio/web           │
+                 │  - Desktop: Electron app     │
+                 │  - Workflow Studio Engine    │
+                 └───────────────┬──────────────┘
+                                 │ HTTP / GraphQL / WebSockets
                                  v
                  ┌──────────────────────────────┐
-                 │        Backend Server         │
-                 │     packages/backend/server   │
-                 └───────┬───────────┬───────────┘
+                 │        Backend Server        │
+                 │    packages/backend/server   │
+                 └───────┬───────────┬──────────┘
                          │           │
                          v           v
                     PostgreSQL      Redis
                          │
                          v
                (optional) Search/Indexer
-        (devcontainer uses Manticore; other setups may vary)
 ```
 
-### Runtime ports & URLs (defaults)
+### Runtime Ports & URLs (Defaults)
 
-- **Backend server**: `http://localhost:3010`
-  - **GraphQL**: `http://localhost:3010/graphql`
-  - **Swagger (dev only)**: `http://localhost:3010/api/docs`
-- **Web dev server**: `http://localhost:8080`
-  - Proxies to backend for `/_` endpoints like `/api`, `/graphql`, and `/socket.io`
-- **Dev services (docker compose)**:
-  - Postgres: `localhost:5432`
+- **Web App**: `http://localhost:8080`
+  - Proxies to backend for `/_` endpoints (`/api`, `/graphql`, `/socket.io`)
+- **Backend Server**: `http://localhost:3010`
+  - **GraphQL Playground**: `http://localhost:3010/graphql`
+  - **Swagger API Docs (Dev)**: `http://localhost:3010/api/docs`
+- **Dev Services**:
+  - PostgreSQL: `localhost:5432`
   - Redis: `localhost:6379`
   - Mailpit UI: `http://localhost:8025` (SMTP: `localhost:1025`)
-  - Manticoresearch: `localhost:9308`
+  - Search/Indexer: `localhost:9308`
 
-### Monorepo layout (what lives where)
+---
 
-- **Backend**: `packages/backend/server`
-  - TypeScript server (API layer + business logic).
-  - Persists data in PostgreSQL; uses Redis for caching/queues/session-like concerns depending on feature.
-  - Main API surface is GraphQL (`/graphql`), with some REST endpoints where needed.
-  - Some capabilities rely on native bindings built from Rust (see “Native” below).
-
-- **Frontend**
-  - **Web app**: `packages/frontend/apps/web` (workspace `@nexio/web`)
-  - **Electron app**: `packages/frontend/apps/electron`
-  - **Electron renderer**: `packages/frontend/apps/electron-renderer`
-  - The UI and editor experience are built around the shared “block/document” engine (see Canvas).
-
-- **Block/document engine**: `canvas/**`
-  - Shared editor/document framework and building blocks used by the client apps.
-
-- **Shared/common packages**: `packages/common/**`
-  - Shared utilities and cross-cutting libraries used across backend and frontend.
-  - Notable examples you’ll see referenced in dev docs include `@nexio/reader` and other shared modules.
-
-- **Native (Rust) accelerators**: `packages/frontend/native` and `packages/backend/server-native`
-  - Built via repo scripts (NAPI.rs bindings). These are required for some features and are typically built during setup.
-
-- **Developer tooling**
-  - **Monorepo runner/CLI**: `tools/cli` (invoked as `yarn nexio ...`)
-  - Repo-wide tasks are orchestrated through this runner + Turborepo pipelines.
-
-### Repository structure (tree-style)
+## 📂 Repository Structure
 
 ```text
 nexio/
-├── packages/                          # 📦 Product code (most workspaces live here)
+├── packages/                          # 📦 Product code (workspaces)
 │   ├── frontend/
 │   │   ├── apps/                      # 📱 Client applications
-│   │   │   ├── web/                   # 🌐 Web app (workspace: @nexio/web)
-│   │   │   └── electron/              # 🖥️ Desktop app (Electron)
-│   │   ├── core/                      # 🧩 Shared frontend “core” modules
+│   │   │   ├── web/                   # 🌐 Web app (@nexio/web)
+│   │   │   ├── electron/              # 🖥️ Desktop app (Electron)
+│   │   │   └── electron-renderer/     # 🖥️ Electron UI renderer
+│   │   ├── core/                      # 🧩 Core UI, routes & workflow studio
+│   │   │   └── src/desktop/pages/workspace/workflow/  # ⚡ Visual AI workflow engine
 │   │   ├── routes/                    # 🧭 Route definitions
-│   │   ├── i18n/                      # 🌍 Localization
-│   │   ├── templates/                 # 🧰 Templates/scaffolding
+│   │   ├── i18n/                      # 🌍 Localization resources
+│   │   ├── templates/                 # 🧰 Document & workspace templates
 │   │   └── native/                    # 🦀 Rust/NAPI native bindings (frontend)
 │   ├── backend/
-│   │   ├── server/                    # 🌐 Backend server (workspace: @nexio/server)
+│   │   ├── server/                    # 🌐 Backend server & OAuth handlers
 │   │   └── server-native/             # 🦀 Rust/NAPI native bindings (server)
-│   └── common/                        # 🔁 Shared libraries used across repo
-│       ├── reader/                    # 📖 Reader/conversion utilities
-│       ├── graphql/                   # 🔌 Shared GraphQL helpers
-│       └── ...                        # (many more shared packages)
-├── canvas/                        # 🧱 Block/document engine and framework
-├── tools/                             # 🛠️ Tooling (includes monorepo CLI)
+│   └── common/                        # 🔁 Shared libraries & utilities
+├── canvas/                            # 🧱 Block/document engine & canvas framework
+├── tools/                             # 🛠️ Monorepo CLI & build tools
 │   └── cli/                           # 🧰 `yarn nexio ...` runner
-├── docs/                              # 📚 Project docs (build/dev guides)
-├── tests/                             # 🧪 Test workspaces (unit/E2E/integration)
-├── .github/                           # 🧾 GitHub metadata (funding, etc.)
-└── .docker/                           # 🐳 Dev/selfhost docker compose examples
+├── docs/                              # 📚 Guides and architecture documentation
+├── tests/                             # 🧪 Unit, integration, and E2E test suites
+└── .docker/                           # 🐳 Docker compose configurations
 ```
 
-### Request / data flow (developer mental model)
+---
 
-1. **Browser/Electron hits the web app on `:8080`** in dev.
-2. The dev server **proxies API traffic** (`/graphql`, `/api`, `/socket.io`) to the backend on `:3010`.
-3. The backend uses:
-   - **PostgreSQL** for persistent storage (`DATABASE_URL`)
-   - **Redis** for background jobs/caching/coordination (`REDIS_SERVER_HOST`, etc.)
-   - **Optional indexer/search provider** (e.g. Manticore) when enabled via `NEXIO_INDEXER_*`
+## 📋 Requirements
 
-### Key configuration knobs (common env vars)
+- **OS**: Linux, macOS, or Windows (WSL2 or native PowerShell)
+- **Node.js**: `v20.x` (`nvm` recommended)
+- **Yarn**: `v4.x` (via Corepack)
+- **PostgreSQL**: `v14+` running on `localhost:5432`
+- **Redis**: running on `localhost:6379`
+- **Git** and **Docker** (optional, for containerized services)
 
-- **Backend**
-  - `NEXIO_SERVER_PORT` (default `3010`)
-  - `DATABASE_URL`
-  - `REDIS_SERVER_HOST`
-- **Frontend/Electron (dev)**
-  - `DEV_SERVER_URL` (Electron points to `http://localhost:8080`)
-  - `SELF_HOSTED=true` (changes dev-server HTML entry)
+---
 
-### Build & task orchestration
+## 🚀 Quick Start (Local Development)
 
-- **Package manager**: Yarn (`packageManager: yarn@4.x`)
-- **Orchestration**: Turborepo (`turbo.json`) for `dev`, `build`, lint/typecheck pipelines
-- **Repo runner**: `yarn nexio ...` is the common entrypoint used in docs and scripts
-
-### Infrastructure dependencies (local/dev)
-
-- **PostgreSQL**: primary datastore
-- **Redis**: required for backend dev in the docker-compose based workflow
-- **Indexer/Search (optional)**: used by indexing/search features; the devcontainer compose uses **Manticore**
-- **Mailhog (dev-only)**: referenced in server dev docs for capturing outbound email locally
-
-## Acknowledgement
-
-“We shape our tools and thereafter our tools shape us.” Nexio is inspired by many pioneers in the knowledge‑work and collaboration space, including:
-
-- **Quip & Notion** for the concept that everything can be a block.
-- **Trello** for Kanban‑style task management.
-- **Airtable & Miro** for programmable datasheets and visual collaboration.
-- **Miro & Whimsical** for edgeless whiteboards and diagramming.
-- **RemNote, Capacities, and others** for object‑based, tag‑centric knowledge graphs.
-
-There is a large overlap in the atomic “building blocks” across these tools, but most are closed‑source and don’t expose a truly open, extensible plugin system. Nexio aims to bring together the best of these ideas in an open, hackable platform that can keep evolving with its community.
-
-## Requirements
-
-- **OS**: Linux (or WSL2 on Windows)
-- **Node.js**: v20.x (managed with `nvm` recommended)
-- **Yarn**: v4 (via Corepack)
-- **PostgreSQL**: running locally on `localhost:5432`
-- **Git** and **Docker** (optional, only if you want containerized deploys)
-
-### Install basic tools
+### 1. Clone & Install Dependencies
 
 ```bash
-# Node + nvm (if you don't have them)
-# see: https://github.com/nvm-sh/nvm
-
-nvm install 20
-nvm use 20
-
-# Enable Yarn via Corepack
-corepack enable
-```
-
-## Quick start (local development)
-
-### 1. Clone and install
-
-```bash
-git clone https://github.com/ezeslucky/nexio.git 
+git clone https://github.com/ezeslucky/nexio.git
 cd nexio
 
-# install dependencies for the monorepo
+# Enable Yarn 4 via Corepack
+corepack enable
+
+# Install monorepo dependencies
 yarn install
 ```
 
-### 2. Set up PostgreSQL
+### 2. Configure PostgreSQL
 
-Create a `nexio` user and database (run in your shell):
+Create the `nexio` user and database:
 
 ```bash
 sudo -u postgres psql
 ```
 
-Then in the `psql` prompt:
+Inside the PostgreSQL prompt:
 
 ```sql
 CREATE ROLE nexio WITH LOGIN PASSWORD 'nexio';
@@ -208,42 +151,71 @@ GRANT ALL PRIVILEGES ON DATABASE nexio TO nexio;
 \q
 ```
 
-Make sure `packages/backend/server/.env` has:
+Ensure `packages/backend/server/.env` includes your database and OAuth credentials (optional):
 
 ```env
 DATABASE_URL="postgres://nexio:nexio@localhost:5432/nexio"
+REDIS_SERVER_HOST="localhost"
+REDIS_SERVER_PORT=6379
+
+# (Optional) Google & GitHub OAuth
+OAUTH_GOOGLE_CLIENT_ID="your-google-client-id"
+OAUTH_GOOGLE_CLIENT_SECRET="your-google-client-secret"
+OAUTH_GITHUB_CLIENT_ID="your-github-client-id"
+OAUTH_GITHUB_CLIENT_SECRET="your-github-client-secret"
 ```
 
-### 3. Run database migrations
-
-From the repo root:
+### 3. Run Database Migrations
 
 ```bash
 yarn run nexio @nexio/server prisma migrate deploy
 ```
 
-### 4. Start Nexio (backend + web)
+### 4. Start the Application
 
-Open **two terminals** in the repo root:
+You can start the backend and frontend in two separate terminals:
 
-**Terminal 1 – backend server**
-
+**Terminal 1 — Backend API Server (`:3010`)**
 ```bash
-yarn nexio dev -p @nexio/server
+yarn dev:server
+# or: yarn nexio dev -p @nexio/server
 ```
 
-This starts the API on `http://localhost:3010`.
-
-**Terminal 2 – web app**
-
+**Terminal 2 — Web Client (`:8080`)**
 ```bash
-export NODE_OPTIONS="--max-old-space-size=8192"
-yarn nexio dev -p @nexio/web
+yarn dev:web
+# or: yarn nexio dev -p @nexio/web
 ```
 
-This starts the web UI on `http://localhost:8080`.
+Once started, navigate to:
+- **Web App**: [http://localhost:8080](http://localhost:8080)
+- **Workflow Studio**: [http://localhost:8080/workflow](http://localhost:8080/workflow)
+- **API Docs (Swagger)**: [http://localhost:3010/api/docs](http://localhost:3010/api/docs)
 
-Then open your browser at:
+---
 
-- `http://localhost:8080` → Nexio web interface
+## ⚡ Using the AI Workflow Studio
 
+1. Open your workspace and click **Workflow** in the left sidebar (or navigate to `/workflow`).
+2. Click **Create Workflow** or pick from the template library (*AI Content Summarizer*, *Meeting Notes Triage*, etc.).
+3. Drag new nodes onto the dot-grid canvas from the catalog:
+   - Connect output ports to input ports to form your pipeline.
+   - Click any node to customize prompts, models, thresholds, or API keys in the **Node Inspector**.
+4. Click **Run Workflow** to watch the live execution engine step through each node with real-time logs in the bottom console drawer.
+
+---
+
+## 🤝 Acknowledgement & Inspiration
+
+Nexio stands on the shoulders of pioneers in knowledge-work, visual collaboration, and automation:
+- **Quip & Notion** — the universal document block model.
+- **n8n & Zapier** — visual node-based workflow orchestration and automation.
+- **Miro & Whimsical** — edgeless whiteboard collaboration.
+- **Airtable & Trello** — programmable datasheets and Kanban workflows.
+- **Capacities & RemNote** — networked knowledge graph and object-based modeling.
+
+---
+
+## 📄 License
+
+Nexio is open-source software licensed under the [MIT License](LICENSE).
