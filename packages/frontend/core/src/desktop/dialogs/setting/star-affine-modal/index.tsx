@@ -1,7 +1,9 @@
 import { OverlayModal } from '@affine/component';
 import { useI18n } from '@affine/i18n';
 
-export const StarAFFiNEModal = ({
+import { NexioStarPreview } from './nexio-star-preview';
+
+export const StarNexioModal = ({
   open,
   setOpen,
 }: {
@@ -13,16 +15,7 @@ export const StarAFFiNEModal = ({
   return (
     <OverlayModal
       open={open}
-      topImage={
-        <video
-          width={400}
-          height={300}
-          style={{ objectFit: 'cover' }}
-          src={'/static/githubStar.mp4'}
-          autoPlay
-          loop
-        />
-      }
+      topImage={<NexioStarPreview />}
       title={t['com.affine.star-affine.title']()}
       onOpenChange={setOpen}
       description={t['com.affine.star-affine.description']()}
@@ -36,3 +29,5 @@ export const StarAFFiNEModal = ({
     />
   );
 };
+
+export const StarAFFiNEModal = StarNexioModal;

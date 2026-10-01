@@ -1,6 +1,8 @@
 import { OverlayModal } from '@affine/component';
 import { useI18n } from '@affine/i18n';
 
+import { NexioIssuePreview } from './nexio-issue-preview';
+
 export const IssueFeedbackModal = ({
   open,
   setOpen,
@@ -13,16 +15,7 @@ export const IssueFeedbackModal = ({
   return (
     <OverlayModal
       open={open}
-      topImage={
-        <video
-          width={400}
-          height={300}
-          style={{ objectFit: 'cover' }}
-          src={'/static/newIssue.mp4'}
-          autoPlay
-          loop
-        />
-      }
+      topImage={<NexioIssuePreview />}
       title={t['com.affine.issue-feedback.title']()}
       onOpenChange={setOpen}
       description={t['com.affine.issue-feedback.description']()}
