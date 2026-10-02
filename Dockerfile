@@ -27,6 +27,8 @@ RUN corepack enable
 # Copy monorepo
 COPY . .
 
+RUN rustup show
+
 # Install dependencies
 RUN node .yarn/releases/yarn-4.9.1.cjs install \
     --network-timeout 600000
