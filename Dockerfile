@@ -6,6 +6,19 @@ WORKDIR /app
 ENV DEBIAN_FRONTEND=noninteractive
 ENV CI=true
 ENV ELECTRON_SKIP_BINARY_DOWNLOAD=1
+ENV YARN_ENABLE_IMMUTABLE_INSTALLS=false
+ENV GITHUB_SHA="83a648d4"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        git \
+        ca-certificates \
+        python3 \
+        make \
+        g++ \
+        cargo \
+        rustc \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN corepack enable
 
@@ -14,22 +27,12 @@ COPY . .
 
 # Install dependencies
 RUN node .yarn/releases/yarn-4.9.1.cjs install \
-    --immutable \
     --network-timeout 600000
 
 # ---------- builder layer ----------
-FROM node:22-bookworm-slim AS builder
+FROM deps AS builder
 
-WORKDIR /app
-
-ENV DEBIAN_FRONTEND=noninteractive
-ENV CI=true
 ENV NODE_OPTIONS="--max-old-space-size=4096"
-ENV ELECTRON_SKIP_BINARY_DOWNLOAD=1
-
-RUN corepack enable
-
-COPY --from=deps /app /app
 
 # Build backend
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \

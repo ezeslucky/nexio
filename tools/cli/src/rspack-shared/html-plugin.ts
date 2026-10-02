@@ -68,15 +68,19 @@ const gitShortHash = once(() => {
   if (GITHUB_SHA) {
     return GITHUB_SHA.substring(0, 9);
   }
-  const repo = new Repository(ProjectRoot.value);
-  const shortSha = repo.head().target()?.substring(0, 9);
-  if (shortSha) {
-    return shortSha;
+  try {
+    const repo = new Repository(ProjectRoot.value);
+    const shortSha = repo.head().target()?.substring(0, 9);
+    if (shortSha) {
+      return shortSha;
+    }
+    const sha = execSync(`git rev-parse --short HEAD`, {
+      encoding: 'utf-8',
+    }).trim();
+    return sha;
+  } catch {
+    return '0.27.5';
   }
-  const sha = execSync(`git rev-parse --short HEAD`, {
-    encoding: 'utf-8',
-  }).trim();
-  return sha;
 });
 
 const currentDir = Path.dir(import.meta.url);
