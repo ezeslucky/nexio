@@ -11,14 +11,16 @@ ENV GITHUB_SHA="83a648d4"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        curl \
         git \
         ca-certificates \
         python3 \
         make \
         g++ \
-        cargo \
-        rustc \
     && rm -rf /var/lib/apt/lists/*
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain stable
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN corepack enable
 
@@ -36,7 +38,8 @@ ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 # Build backend
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p server --deps
+    -p server --deps \
+    && test -f packages/backend/server/dist/main.js
 
 # Build web
 RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \

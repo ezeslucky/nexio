@@ -5,6 +5,8 @@
 # Local dependency/build artifacts
 /node_modules
 /target
+dist
+**/dist
 
 # Yarn v4 artifacts (not needed for image packaging)
 /.yarn/cache

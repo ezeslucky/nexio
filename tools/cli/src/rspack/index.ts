@@ -578,6 +578,8 @@ export function createNodeTargetConfig(
         callback(null, true);
       } else if (
         data.request &&
+        !path.isAbsolute(data.request) &&
+        !data.request.startsWith('.') &&
         // import ... from 'module'
         /^[a-zA-Z@]/.test(data.request) &&
         !options.bundleAllDependencies &&
