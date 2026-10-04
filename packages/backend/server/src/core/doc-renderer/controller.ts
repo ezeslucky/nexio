@@ -294,12 +294,8 @@ export class DocRendererController {
       assets.css = assets.css.map(path => publicPath + path);
 
       return assets;
-    } catch (e) {
-      if (env.prod) {
-        throw e;
-      } else {
-        return defaultAssets;
-      }
+    } catch {
+      return defaultAssets;
     }
   }
 }

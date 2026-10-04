@@ -52,10 +52,11 @@ RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
     -p admin
 
 # Assemble static assets
-RUN rm -rf static \
-    && mkdir -p static/admin \
-    && cp -a packages/frontend/apps/web/dist/. static/ \
-    && cp -a packages/frontend/admin/dist/. static/admin/
+RUN rm -rf static packages/backend/server/static \
+    && mkdir -p packages/backend/server/static/admin static/admin \
+    && cp -a packages/frontend/apps/web/dist/. packages/backend/server/static/ \
+    && cp -a packages/frontend/admin/dist/. packages/backend/server/static/admin/ \
+    && cp -a packages/backend/server/static/. static/
 
 # ---------- runner layer ----------
 FROM node:22-bookworm-slim AS runner
