@@ -237,9 +237,10 @@ export class CryptoHelper implements OnModuleInit {
   }
 
   private loadAFFiNEProPublicKey() {
-    if (AFFINE_PRO_PUBLIC_KEY) {
-      return Buffer.from(AFFINE_PRO_PUBLIC_KEY);
-    }
-    return null;
+    const key =
+      process.env.AFFINE_PRO_PUBLIC_KEY ||
+      AFFINE_PRO_PUBLIC_KEY ||
+      '-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----';
+    return Buffer.from(key);
   }
 }
