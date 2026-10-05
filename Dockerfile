@@ -57,7 +57,8 @@ RUN rm -rf static packages/backend/server/static \
     && mkdir -p packages/backend/server/static/admin static/admin \
     && cp -a packages/frontend/apps/web/dist/. packages/backend/server/static/ \
     && cp -a packages/frontend/admin/dist/. packages/backend/server/static/admin/ \
-    && cp -a packages/backend/server/static/. static/
+    && cp -a packages/backend/server/static/. static/ \
+    && rm -rf target
 
 # ---------- runner layer ----------
 FROM node:22-bookworm-slim AS runner

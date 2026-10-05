@@ -22,6 +22,8 @@ dist
 
 # OS noise
 .DS_Store
+*.deb
+*.log
 
 # Sourcemaps (keep server sourcemap for backend stacktraces)
 **/*.map
