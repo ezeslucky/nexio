@@ -72,25 +72,12 @@ export const ScrollableLayout = ({
       </ScrollableContainer>
       <footer className={styles.footer}>
         <div className={styles.linkGroup}>
-          <a
-            className={styles.link}
-            href="https://affine.pro/terms"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Terms of Conditions
-          </a>
+          <span className={styles.link}>Terms of Conditions</span>
           <Divider orientation="vertical" />
-          <a
-            className={styles.link}
-            href="https://affine.pro/privacy"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Privacy Policy
-          </a>
+          <span className={styles.link}>Privacy Policy</span>
         </div>
       </footer>
+
     </div>
   );
 };

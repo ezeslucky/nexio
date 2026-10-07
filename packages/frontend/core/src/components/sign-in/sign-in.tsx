@@ -207,8 +207,9 @@ export const SignInStep = ({
               {/*prettier-ignore*/}
               <Trans i18nKey="com.affine.auth.sign.message">
                 By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
-                you agree to AFFiNE&apos;s <a href="https://affine.pro/terms" target="_blank" rel="noreferrer">Terms of Conditions</a> and <a href="https://affine.pro/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>.
+                you agree to Nexio&apos;s <a href="#" rel="noreferrer">Terms of Conditions</a> and <a href="#" rel="noreferrer">Privacy Policy</a>.
             </Trans>
+
             </div>
             <div className={style.skipDivider}>
               <div className={style.skipDividerLine} />
