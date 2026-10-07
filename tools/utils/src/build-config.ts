@@ -45,7 +45,7 @@ export function getBuildConfig(
         editorVersion: pkg.version,
         githubUrl: 'https://github.com/ezeslucky/nexio',
         changelogUrl: 'https://github.com/ezeslucky/nexio/releases',
-        downloadUrl: '',
+        downloadUrl: 'https://github.com/ezeslucky/nexio/releases',
         pricingUrl: '',
         discordUrl: 'https://github.com/ezeslucky/nexio/discussions',
         requestLicenseUrl: '',

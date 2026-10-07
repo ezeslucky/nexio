@@ -1,4 +1,5 @@
 import { NexioLogo } from '@affine/component/auth-components';
+import { Button } from '@affine/component/ui/button';
 import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
 import { appIconMap, appNames } from '@affine/core/utils/channel';
 import { Trans, useI18n } from '@affine/i18n';
@@ -18,7 +19,8 @@ interface OpenAppProps {
   mode?: 'auth' | 'open-doc'; // default to 'auth'
 }
 const channel = BUILD_CONFIG.appBuildType;
-const url = '/';
+const url =
+  BUILD_CONFIG.downloadUrl || 'https://github.com/ezeslucky/nexio/releases';
 
 export const OpenInAppPage = ({
   urlToOpen,
@@ -62,6 +64,21 @@ export const OpenInAppPage = ({
         <a href="/" rel="noreferrer" className={styles.affineLogo}>
           <NexioLogo height={28} />
         </a>
+
+        <div className={styles.topNavLinks}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.topNavLink}
+          >
+            Download Desktop
+          </a>
+        </div>
+
+        <Button onClick={openDownloadLink}>
+          {t['com.affine.auth.open.affine.download-app']()}
+        </Button>
       </div>
 
 

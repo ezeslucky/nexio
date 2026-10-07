@@ -114,7 +114,10 @@ export function copyAsImage(std: BlockStdScope) {
           key: 'download',
           label: I18n.t('com.affine.copy.asImage.notAvailable.action'),
           onClick: () => {
-            window.open('/');
+            window.open(
+              BUILD_CONFIG.downloadUrl ||
+                'https://github.com/ezeslucky/nexio/releases'
+            );
           },
         },
       ],

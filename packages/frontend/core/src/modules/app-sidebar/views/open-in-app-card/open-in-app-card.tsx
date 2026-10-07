@@ -60,7 +60,7 @@ export const OpenInAppCard = () => {
           <Trans i18nKey="com.affine.open-in-app.card.subtitle">
             Don&apos;t have the app?
             <a
-              href="#"
+              href={BUILD_CONFIG.downloadUrl || 'https://github.com/ezeslucky/nexio/releases'}
               target="_blank"
               rel="noreferrer"
               className={styles.link}

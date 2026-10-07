@@ -4,6 +4,7 @@ import { cn } from '@affine/admin/utils';
 import {
   AlbumIcon,
   ChevronRightIcon,
+  DownloadIcon,
   GithubIcon,
   MailWarningIcon,
 } from 'lucide-react';
@@ -23,6 +24,11 @@ const links = [
     href: 'https://github.com/ezeslucky/nexio',
     icon: <GithubIcon size={20} />,
     label: 'Star Nexio on GitHub',
+  },
+  {
+    href: 'https://github.com/ezeslucky/nexio/releases',
+    icon: <DownloadIcon size={20} />,
+    label: 'Download Desktop App',
   },
   {
     href: 'https://github.com/ezeslucky/nexio/issues',

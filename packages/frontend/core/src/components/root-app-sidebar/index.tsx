@@ -1,5 +1,6 @@
 import {
   AddPageButton,
+  AppDownloadButton,
   AppSidebar,
   MenuItem,
   MenuLinkItem,
@@ -239,6 +240,10 @@ export const RootAppSidebar = memo((): ReactElement => {
           <WorkflowEntrance />
         </CollapsibleSection>
       </SidebarScrollableContainer>
+      <SidebarContainer className={bottomContainer}>
+        <SidebarAudioPlayer />
+        {BUILD_CONFIG.isElectron ? <UpdaterButton /> : <AppDownloadButton />}
+      </SidebarContainer>
     </AppSidebar>
   );
 });

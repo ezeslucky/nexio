@@ -104,7 +104,21 @@ export const AboutAffine = () => {
               <ArrowRightSmallIcon />
             </SettingRow>
           </>
-        ) : null}
+        ) : (
+          <SettingRow
+            name="Download Desktop App"
+            desc="Get the native desktop app from GitHub Releases"
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              urlService.openPopupWindow(
+                BUILD_CONFIG.downloadUrl ||
+                  'https://github.com/ezeslucky/nexio/releases'
+              );
+            }}
+          >
+            <ArrowRightSmallIcon />
+          </SettingRow>
+        )}
         <SettingRow
           name={t['com.affine.telemetry.enable']()}
           desc={t['com.affine.telemetry.enable.desc']()}

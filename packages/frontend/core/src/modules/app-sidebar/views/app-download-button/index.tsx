@@ -22,7 +22,8 @@ export function AppDownloadButton({
   // TODO(@JimmFly): unify this type of literal value.
   const handleClick = useCallback(() => {
     track.$.navigationPanel.bottomButtons.downloadApp();
-    const url = '/';
+    const url =
+      BUILD_CONFIG.downloadUrl || 'https://github.com/ezeslucky/nexio/releases';
     open(url, '_blank');
   }, []);
 
