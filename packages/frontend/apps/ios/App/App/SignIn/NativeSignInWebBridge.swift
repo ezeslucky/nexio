@@ -202,7 +202,7 @@ final class NativeSignInWebBridge {
   private func call(_ script: String, arguments: [String: Any]) async throws -> Any? {
     try Task.checkCancellation()
     guard let webView else {
-      throw signInError("AFFiNE is still loading. Please try again in a moment.")
+      throw signInError("Nexio is still loading. Please try again in a moment.")
     }
 
     let result = try await webView.callAsyncJavaScript(

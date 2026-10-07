@@ -148,7 +148,7 @@ enum PaywallAuthGuard {
     throw NSError(
       domain: "PaywallAuthGuard",
       code: -1,
-      userInfo: [NSLocalizedDescriptionKey: String(localized: "AFFiNE is still loading. Please wait a moment and try again.")]
+      userInfo: [NSLocalizedDescriptionKey: String(localized: "Nexio is still loading. Please wait a moment and try again.")]
     )
   }
 

@@ -132,7 +132,7 @@ final class FileAttachmentHeaderView: UIView {
     }
 
     if docsCount > 0 {
-      components.append("\(docsCount) AFFiNE doc\(docsCount > 1 ? "s" : "")")
+      components.append("\(docsCount) Nexio doc\(docsCount > 1 ? "s" : "")")
     }
 
     primaryLabel.text = components.joined(separator: ", ")

@@ -15,7 +15,7 @@ class MainHeaderView: UIView {
   }
 
   private lazy var titleLabel = UILabel().then {
-    $0.text = "AFFiNE AI"
+    $0.text = "Nexio AI"
     $0.font = .systemFont(ofSize: 16, weight: .medium)
     $0.textColor = UIColor.affineTextPrimary
     $0.textAlignment = .center

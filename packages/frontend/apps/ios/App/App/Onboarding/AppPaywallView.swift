@@ -138,9 +138,9 @@ private struct AppPaywallPage: View {
 
       AppPaywallLegalLinks(
         palette: palette,
-        onOpenTerms: { openLegalURL("https://affine.pro/terms") },
-        onOpenPrivacy: { openLegalURL("https://affine.pro/privacy") },
-        onOpenSubscriptionTerms: { openLegalURL("https://affine.pro/terms/#subscription") },
+        onOpenTerms: { openLegalURL("#") },
+        onOpenPrivacy: { openLegalURL("#") },
+        onOpenSubscriptionTerms: { openLegalURL("#") },
         onRestore: onRestorePurchases
       )
     }

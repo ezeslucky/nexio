@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <component type="desktop-application">
   <id>affine</id>
-  <name>AFFiNE</name>
+  <name>Nexio</name>
   <summary>Productivity and note-taking app</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT AND LicenseRef-proprietary=https://github.com/ezeslucky/nexio/blob/canary/LICENSE</project_license>
@@ -39,7 +39,7 @@
   </supports>
   <description>
     <p>Write, Draw, Plan, All at Once. With AI.</p>
-    <p>AFFiNE is a workspace with fully merged docs, whiteboards and databases. Get more things done, your creativity isn’t monotone.</p>
+    <p>Nexio is a workspace with fully merged docs, whiteboards and databases. Get more things done, your creativity isn’t monotone.</p>
     <p>Features</p>
     <ul>
       <li>Write your way to better productivity. Build up your content like blocks and let your ideas run wild.</li>

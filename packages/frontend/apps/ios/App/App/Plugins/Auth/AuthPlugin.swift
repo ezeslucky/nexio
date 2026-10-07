@@ -296,7 +296,7 @@ public class AuthPlugin: CAPPlugin, CAPBridgedPlugin {
       }
 
       do {
-        let webView = try self.webView.get("AFFiNE is still loading. Please try again in a moment.")
+        let webView = try self.webView.get("Nexio is still loading. Please try again in a moment.")
         if self.isNativeSignInPresented {
           call.resolve(["success": false])
           return

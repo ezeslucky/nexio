@@ -55,8 +55,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE AI Yearly Subscription",
-              "displayName" : "AFFiNE AI Yearly",
+              "description" : "Nexio AI Yearly Subscription",
+              "displayName" : "Nexio AI Yearly",
               "locale" : "en_US"
             }
           ],
@@ -92,8 +92,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE Pro Monthly Subscription",
-              "displayName" : "AFFiNE Pro Monthly",
+              "description" : "Nexio Pro Monthly Subscription",
+              "displayName" : "Nexio Pro Monthly",
               "locale" : "en_US"
             }
           ],
@@ -120,8 +120,8 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "AFFiNE Pro Yearly Subscription",
-              "displayName" : "AFFiNE Pro Yearly",
+              "description" : "Nexio Pro Yearly Subscription",
+              "displayName" : "Nexio Pro Yearly",
               "locale" : "en_US"
             }
           ],

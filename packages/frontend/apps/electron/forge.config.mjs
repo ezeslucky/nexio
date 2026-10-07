@@ -170,7 +170,7 @@ const makers = [
       config: {
         format: 'ULMO',
         icon: icnsPath,
-        name: 'AFFiNE',
+        name: 'Nexio',
         'icon-size': 128,
         background: path.join(
           __dirname,
@@ -377,7 +377,7 @@ export default {
     asar: true,
     extendInfo: {
       NSAudioCaptureUsageDescription:
-        'Please allow access in order to capture audio from other apps by AFFiNE.',
+        'Please allow access in order to capture audio from other apps by Nexio.',
     },
   },
   makers,

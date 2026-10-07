@@ -9,7 +9,7 @@ export default function ChangeEmailNotification(
 ) {
   return (
     <Template>
-      <Title>Verify your current email for AFFiNE</Title>
+      <Title>Verify your current email for Nexio</Title>
       <Content>
         <P>
           As per your request, we have changed your email. Please make sure

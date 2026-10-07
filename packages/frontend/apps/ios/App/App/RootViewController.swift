@@ -68,7 +68,7 @@ class RootViewController: UINavigationController {
       guard let self else { return }
 
       guard let webView = affineViewController?.webView else {
-        showOnboardingAlert(message: String(localized: "AFFiNE is still loading. Please try again in a moment."))
+        showOnboardingAlert(message: String(localized: "Nexio is still loading. Please try again in a moment."))
         return
       }
 

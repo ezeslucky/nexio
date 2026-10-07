@@ -31,10 +31,16 @@ export const Footer = () => {
           {['Github', 'Twitter', 'Discord', 'Youtube', 'Reddit'].map(
             platform => (
               <td key={platform} style={{ padding: '0 10px' }}>
-                <Link href={`https://affine.pro/${platform.toLowerCase()}`}>
+                <Link
+                  href={
+                    platform === 'Github'
+                      ? 'https://github.com/ezeslucky/nexio'
+                      : '#'
+                  }
+                >
                   <Img
                     src={`https://cdn.affine.pro/mail/2023-8-9/${platform}.png`}
-                    alt={`affine ${platform.toLowerCase()} link`}
+                    alt={`nexio ${platform.toLowerCase()} link`}
                     height="16px"
                   />
                 </Link>

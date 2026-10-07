@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>AFFiNE</string>
+	<string>Nexio</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -38,11 +38,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>AFFiNE requires access to the camera to capture images and insert them into your documents</string>
+	<string>Nexio requires access to the camera to capture images and insert them into your documents</string>
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>AFFiNE needs local network access to connect to your self-hosted workspace on this device's Wi-Fi network.</string>
+	<string>Nexio needs local network access to connect to your self-hosted workspace on this device's Wi-Fi network.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>AFFiNE requires access to select photos from your photo library and insert them into your documents</string>
+	<string>Nexio requires access to select photos from your photo library and insert them into your documents</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>Rest assured, enabling this permission won&apos;t access your private info on other sites. It&apos;s only used to identify your device and improve security and product experience.</string>
 	<key>UILaunchScreen</key>
