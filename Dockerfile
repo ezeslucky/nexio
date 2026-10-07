@@ -60,6 +60,20 @@ RUN rm -rf static packages/backend/server/static \
     && cp -a packages/backend/server/static/. static/ \
     && rm -rf target
 
+# Prune development dependencies and monorepo bloat for compact runner image
+RUN rm -rf static \
+    && ln -s /app/packages/backend/server/static /app/static \
+    && node .yarn/releases/yarn-4.9.1.cjs workspaces focus --production @affine/server \
+    && rm -rf .kilo \
+              blocksuite \
+              tests \
+              packages/frontend \
+              packages/backend/native/src \
+              packages/backend/native/benchmark \
+              packages/backend/native/fixtures \
+              .husky docs tools .devcontainer .vscode .qodo .github .codesandbox .cargo
+
+
 # ---------- runner layer ----------
 FROM node:22-bookworm-slim AS runner
 
