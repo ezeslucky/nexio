@@ -61,6 +61,10 @@ export const topLevelRoutes = [
         lazy: () => import('./pages/404'),
       },
       {
+        path: '/download',
+        lazy: () => import('./pages/download'),
+      },
+      {
         path: '/expired',
         lazy: () => import('./pages/expired'),
       },

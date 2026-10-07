@@ -26,9 +26,9 @@ const links = [
     label: 'Star Nexio on GitHub',
   },
   {
-    href: 'https://github.com/ezeslucky/nexio/releases',
+    href: '/download',
     icon: <DownloadIcon size={20} />,
-    label: 'Download Desktop App',
+    label: 'Download Nexio (Desktop & Mobile)',
   },
   {
     href: 'https://github.com/ezeslucky/nexio/issues',

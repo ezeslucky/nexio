@@ -67,16 +67,14 @@ export const OpenInAppPage = ({
 
         <div className={styles.topNavLinks}>
           <a
-            href={url}
-            target="_blank"
-            rel="noreferrer"
+            href="/download"
             className={styles.topNavLink}
           >
-            Download Desktop
+            Download App
           </a>
         </div>
 
-        <Button onClick={openDownloadLink}>
+        <Button onClick={() => (location.href = '/download')}>
           {t['com.affine.auth.open.affine.download-app']()}
         </Button>
       </div>

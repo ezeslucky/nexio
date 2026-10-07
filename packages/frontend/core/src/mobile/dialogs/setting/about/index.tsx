@@ -19,6 +19,12 @@ export const AboutGroup = () => {
           ? hiddenVersionVariant(BUILD_CONFIG.editorVersion)
           : BUILD_CONFIG.editorVersion}
       </RowLayout>
+
+      <RowLayout
+        label="Download Nexio App"
+        description="Available for Mac, Windows, Linux, Android, and iOS"
+        href="/download"
+      />
     </SettingGroup>
   );
 };

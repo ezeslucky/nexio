@@ -50,6 +50,10 @@ export const topLevelRoutes = [
         lazy: () => import('./pages/404'),
       },
       {
+        path: '/download',
+        lazy: () => import('@affine/core/desktop/pages/download'),
+      },
+      {
         path: '/auth/:authType',
         lazy: () => import('./pages/auth'),
       },

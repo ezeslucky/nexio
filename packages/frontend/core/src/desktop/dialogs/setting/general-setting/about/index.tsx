@@ -106,14 +106,11 @@ export const AboutAffine = () => {
           </>
         ) : (
           <SettingRow
-            name="Download Desktop App"
-            desc="Get the native desktop app from GitHub Releases"
+            name="Download Nexio (Desktop & Mobile)"
+            desc="Download for macOS, Windows, Linux, Android, and iOS"
             style={{ cursor: 'pointer' }}
             onClick={() => {
-              urlService.openPopupWindow(
-                BUILD_CONFIG.downloadUrl ||
-                  'https://github.com/ezeslucky/nexio/releases'
-              );
+              window.open('/download', '_blank');
             }}
           >
             <ArrowRightSmallIcon />

@@ -76,14 +76,11 @@ export const HelpIsland = () => {
         style={{ height: spread ? `${showList.length * 40 + 4}px` : 0 }}
       >
         {showList.includes('download') && (
-          <Tooltip content="Download Desktop App" side="left">
+          <Tooltip content="Download Nexio (Desktop & Mobile)" side="left">
             <StyledIconWrapper
               data-testid="right-bottom-download-icon"
               onClick={() => {
-                urlService.openPopupWindow(
-                  BUILD_CONFIG.downloadUrl ||
-                    'https://github.com/ezeslucky/nexio/releases'
-                );
+                window.open('/download', '_blank');
               }}
             >
               <DownloadIcon />
