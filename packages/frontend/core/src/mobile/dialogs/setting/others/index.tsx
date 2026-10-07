@@ -19,17 +19,17 @@ export const OthersGroup = () => {
 
       <RowLayout
         label={t['com.affine.mobile.setting.others.website']()}
-        href="https://affine.pro/"
+        href="/"
       />
 
       <RowLayout
         label={t['com.affine.mobile.setting.others.privacy']()}
-        href="https://affine.pro/privacy"
+        href="#"
       />
 
       <RowLayout
         label={t['com.affine.mobile.setting.others.terms']()}
-        href="https://affine.pro/terms"
+        href="#"
       />
     </SettingGroup>
   );

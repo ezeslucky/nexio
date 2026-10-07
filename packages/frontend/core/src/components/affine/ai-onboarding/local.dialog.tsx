@@ -45,7 +45,7 @@ export const AIOnboardingLocal = () => {
         key: 'learn-more',
         label: t['com.affine.ai-onboarding.local.action-learn-more'](),
         onClick: () => {
-          window.open('https://ai.affine.pro', '_blank', 'noreferrer');
+          window.open('https://github.com/ezeslucky/nexio', '_blank', 'noreferrer');
         },
       },
     ];

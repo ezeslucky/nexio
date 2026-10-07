@@ -60,7 +60,7 @@ export const OpenInAppCard = () => {
           <Trans i18nKey="com.affine.open-in-app.card.subtitle">
             Don&apos;t have the app?
             <a
-              href="https://affine.pro/download"
+              href="#"
               target="_blank"
               rel="noreferrer"
               className={styles.link}

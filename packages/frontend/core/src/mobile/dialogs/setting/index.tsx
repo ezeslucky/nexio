@@ -24,12 +24,9 @@ import { SwipeDialog } from './swipe-dialog';
 import { UserProfile } from './user-profile';
 import { UserUsage } from './user-usage';
 
-const AFFINE_MOBILE_STORE_URL = BUILD_CONFIG.isIOS
-  ? 'https://apps.apple.com/app/notes-whiteboard-ai-affine/id6736937980'
-  : BUILD_CONFIG.isAndroid
-    ? 'https://play.google.com/store/apps/details?id=app.affine.pro'
-    : undefined;
-const AFFINE_DOWNLOAD_URL = 'https://affine.pro/download';
+const AFFINE_MOBILE_STORE_URL = undefined;
+const AFFINE_DOWNLOAD_URL =
+  typeof window !== 'undefined' ? window.location.origin : '/';
 
 const SupportGroup = () => {
   const t = useI18n();
@@ -37,7 +34,7 @@ const SupportGroup = () => {
 
   const shareApp = useCallback(async () => {
     const shareData = {
-      title: 'AFFiNE',
+      title: 'Nexio',
       text: t['com.affine.mobile.setting.support.invite-message'](),
       url: AFFINE_DOWNLOAD_URL,
     };

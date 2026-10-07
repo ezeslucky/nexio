@@ -1,4 +1,5 @@
 import { Scrollable, uniReactRoot } from '@affine/component';
+import { NexioIcon } from '@affine/component/auth-components';
 import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@affine/core/blocksuite/outline-viewer';
 import { useActiveBlocksuiteEditor } from '@affine/core/components/hooks/use-block-suite-editor';
@@ -430,7 +431,7 @@ const SharePageFooter = () => {
   }
   return (
     <a
-      href="https://affine.pro"
+      href="/"
       target="_blank"
       className={styles.link}
       rel="noreferrer"
@@ -438,7 +439,7 @@ const SharePageFooter = () => {
       <span className={styles.linkText}>
         {t['com.affine.share-page.footer.built-with']()}
       </span>
-      <Logo1Icon fontSize={20} />
+      <NexioIcon size={20} />
     </a>
   );
 };

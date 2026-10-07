@@ -6,7 +6,6 @@ import {
   ChevronRightIcon,
   GithubIcon,
   MailWarningIcon,
-  UploadCloudIcon,
 } from 'lucide-react';
 
 type Channel = 'stable' | 'canary' | 'beta' | 'internal';
@@ -34,11 +33,6 @@ const links = [
     href: 'https://github.com/ezeslucky/nexio#readme',
     icon: <AlbumIcon size={20} />,
     label: 'Self-host Document',
-  },
-  {
-    href: 'https://affine.pro/pricing/?type=selfhost#table',
-    icon: <UploadCloudIcon size={20} />,
-    label: 'Upgrade to Team',
   },
 ];
 

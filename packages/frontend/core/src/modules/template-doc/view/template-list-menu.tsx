@@ -65,7 +65,7 @@ const Empty = () => {
       </span>
       <div className={styles.space} />
       <a
-        href="https://affine.pro/blog/how-to-use-template"
+        href="#"
         target="_blank"
         rel="noopener noreferrer"
         className={styles.link}

@@ -5,11 +5,11 @@
   <summary>Productivity and note-taking app</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT AND LicenseRef-proprietary=https://github.com/ezeslucky/nexio/blob/canary/LICENSE</project_license>
-  <url type="homepage">https://affine.pro</url>
+  <url type="homepage">https://github.com/ezeslucky/nexio</url>
   <url type="bugtracker">https://github.com/ezeslucky/nexio/issues</url>
-  <url type="help">https://docs.affine.pro/</url>
+  <url type="help">https://github.com/ezeslucky/nexio#readme</url>
   <url type="vcs-browser">https://github.com/ezeslucky/nexio</url>
-  <url type="contribute">https://docs.affine.pro/contributing</url>
+  <url type="contribute">https://github.com/ezeslucky/nexio</url>
   <developer id="pro.affine.app">
     <name>affine</name>
   </developer>

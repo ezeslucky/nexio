@@ -22,7 +22,7 @@ const rules = [
           {message}
         </p>
         <a
-          href="https://docs.affine.pro/self-host-affine/install/upgrade"
+          href="https://github.com/ezeslucky/nexio/releases"
           target="_blank"
           rel="noreferrer"
           style={{
@@ -32,7 +32,7 @@ const rules = [
             lineHeight: '16px',
           }}
         >
-          https://docs.affine.pro/self-host-affine/install/upgrade
+          https://github.com/ezeslucky/nexio/releases
         </a>
       </div>
     ),

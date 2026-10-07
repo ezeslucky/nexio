@@ -46,9 +46,9 @@ export const ImportPage = ({
     <div className={importPageBodyStyle}>
       <div className="title">Import</div>
       <span>
-        AFFiNE will gradually support more and more file types for import.&nbsp;
+        Nexio will gradually support more and more file types for import.&nbsp;
         <a
-          href="https://affine.pro/redirect/discord"
+          href="https://github.com/ezeslucky/nexio/discussions"
           target="_blank"
           rel="noreferrer"
         >

@@ -5,7 +5,10 @@ import { ServerDeploymentType } from '@affine/graphql';
 import type { PendingShareItem, ShareLinkPreview } from './types';
 
 const LINK_PREVIEW_PATH = '/api/worker/link-preview';
-const OFFICIAL_LINK_PREVIEW_ENDPOINT = `https://app.affine.pro${LINK_PREVIEW_PATH}`;
+const OFFICIAL_LINK_PREVIEW_ENDPOINT =
+  typeof window !== 'undefined'
+    ? `${window.location.origin}${LINK_PREVIEW_PATH}`
+    : LINK_PREVIEW_PATH;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null;

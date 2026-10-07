@@ -16,8 +16,8 @@ const Template: StoryFn<AvatarProps> = args => <Avatar {...args} />;
 
 export const DefaultAvatar: StoryFn<AvatarProps> = Template.bind(undefined);
 DefaultAvatar.args = {
-  name: 'AFFiNE',
-  url: 'https://affine.pro/favicon-96.png',
+  name: 'Nexio',
+  url: '/favicon-96.png',
   size: 50,
 };
 export const Fallback: StoryFn<AvatarProps> = Template.bind(undefined);

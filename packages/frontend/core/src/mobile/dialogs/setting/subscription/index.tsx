@@ -11,7 +11,7 @@ import { SettingGroup } from '../group';
 import { RowLayout } from '../row.layout';
 import * as styles from './styles.css';
 
-const AFFINE_TEAM_URL = 'https://affine.pro/teamhub';
+const AFFINE_TEAM_URL = '#';
 
 export const PlansGroup = () => {
   const serverService = useService(ServerService);
