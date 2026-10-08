@@ -71,12 +71,12 @@ defineModuleConfig('oauth', {
     desc: 'Google OAuth provider config',
     default: {
       clientId:
-        process.env.AFFINE_OAUTH_GOOGLE_CLIENT_ID ||
         process.env.NEXIO_OAUTH_GOOGLE_CLIENT_ID ||
+        process.env.AFFINE_OAUTH_GOOGLE_CLIENT_ID ||
         '',
       clientSecret:
-        process.env.AFFINE_OAUTH_GOOGLE_CLIENT_SECRET ||
         process.env.NEXIO_OAUTH_GOOGLE_CLIENT_SECRET ||
+        process.env.AFFINE_OAUTH_GOOGLE_CLIENT_SECRET ||
         '',
     },
     schema,
@@ -86,12 +86,12 @@ defineModuleConfig('oauth', {
     desc: 'GitHub OAuth provider config',
     default: {
       clientId:
-        process.env.AFFINE_OAUTH_GITHUB_CLIENT_ID ||
         process.env.NEXIO_OAUTH_GITHUB_CLIENT_ID ||
+        process.env.AFFINE_OAUTH_GITHUB_CLIENT_ID ||
         '',
       clientSecret:
-        process.env.AFFINE_OAUTH_GITHUB_CLIENT_SECRET ||
         process.env.NEXIO_OAUTH_GITHUB_CLIENT_SECRET ||
+        process.env.AFFINE_OAUTH_GITHUB_CLIENT_SECRET ||
         '',
     },
     schema,
