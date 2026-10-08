@@ -86,7 +86,7 @@ const MIN_BATCH_WS_CLIENT_VERSION = new semver.Range('>=0.27.5-0', {
 });
 const MAX_SPACE_JOIN_BATCH_SIZE = 100;
 
-const SOCKET_PRESENCE_USER_ID_KEY = 'affinePresenceUserId';
+const SOCKET_PRESENCE_USER_ID_KEY = 'nexioPresenceUserId';
 
 function normalizeWsClientVersion(clientVersion: string): string | null {
   const canaryCheck = checkCanaryDateClientVersion(clientVersion);
@@ -1087,7 +1087,7 @@ export class SpaceSyncGateway
 
   selectAdapter(client: Socket, spaceType: SpaceType): SyncSocketAdapter {
     let adapters: Record<SpaceType, SyncSocketAdapter> = (client as any)
-      .affineSyncAdapters;
+      .nexioSyncAdapters;
 
     if (!adapters) {
       const workspace = new WorkspaceSyncAdapter(
@@ -1100,7 +1100,7 @@ export class SpaceSyncGateway
       const userspace = new UserspaceSyncAdapter(client, this.userspace);
 
       adapters = { workspace, userspace };
-      (client as any).affineSyncAdapters = adapters;
+      (client as any).nexioSyncAdapters = adapters;
     }
 
     return adapters[spaceType];

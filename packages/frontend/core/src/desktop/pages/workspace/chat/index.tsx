@@ -196,12 +196,12 @@ export const Component = () => {
       content.docDisplayConfig = docDisplayConfig;
       content.searchMenuConfig = searchMenuConfig;
       content.reasoningConfig = reasoningConfig;
-      content.affineFeatureFlagService = framework.get(FeatureFlagService);
-      content.affineWorkspaceDialogService = framework.get(
+      content.nexioFeatureFlagService = framework.get(FeatureFlagService);
+      content.nexioWorkspaceDialogService = framework.get(
         WorkspaceDialogService
       );
       content.peekViewService = framework.get(PeekViewService);
-      content.affineThemeService = framework.get(AppThemeService);
+      content.nexioThemeService = framework.get(AppThemeService);
       content.notificationService = notificationService;
       content.aiDraftService = framework.get(AIDraftService);
       content.aiToolsConfigService = framework.get(AIToolsConfigService);

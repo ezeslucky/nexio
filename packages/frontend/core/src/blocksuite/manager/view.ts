@@ -3,24 +3,24 @@ import { AIViewExtension } from '@nexio/core/blocksuite/view-extensions/ai';
 import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
 import { CodeBlockPreviewViewExtension } from '@nexio/core/blocksuite/view-extensions/code-block-preview';
 import { CommentViewExtension } from '@nexio/core/blocksuite/view-extensions/comment';
-import { AffineDatabaseViewExtension } from '@nexio/core/blocksuite/view-extensions/database';
+import { NexioDatabaseViewExtension } from '@nexio/core/blocksuite/view-extensions/database';
 import {
   EdgelessBlockHeaderConfigViewExtension,
   type EdgelessBlockHeaderViewOptions,
 } from '@nexio/core/blocksuite/view-extensions/edgeless-block-header';
-import { AffineEditorConfigViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-config';
+import { NexioEditorConfigViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-config';
 import { createDatabaseOptionsConfig } from '@nexio/core/blocksuite/view-extensions/editor-config/database';
 import { createLinkedWidgetConfig } from '@nexio/core/blocksuite/view-extensions/editor-config/linked';
 import {
-  AffineEditorViewExtension,
-  type AffineEditorViewOptions,
+  NexioEditorViewExtension,
+  type NexioEditorViewOptions,
 } from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
 import { ElectronViewExtension } from '@nexio/core/blocksuite/view-extensions/electron';
-import { AffineIconPickerExtension } from '@nexio/core/blocksuite/view-extensions/icon-picker';
-import { AffineLinkPreviewExtension } from '@nexio/core/blocksuite/view-extensions/link-preview-service';
+import { NexioIconPickerExtension } from '@nexio/core/blocksuite/view-extensions/icon-picker';
+import { NexioLinkPreviewExtension } from '@nexio/core/blocksuite/view-extensions/link-preview-service';
 import { MobileViewExtension } from '@nexio/core/blocksuite/view-extensions/mobile';
 import { PdfViewExtension } from '@nexio/core/blocksuite/view-extensions/pdf';
-import { AffineThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
+import { NexioThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
 import { TurboRendererViewExtension } from '@nexio/core/blocksuite/view-extensions/turbo-renderer';
 import { PeekViewService } from '@nexio/core/modules/peek-view';
 import { DebugLogger } from '@nexio/debug';
@@ -46,7 +46,7 @@ type Configure = {
   init: () => Configure;
 
   foundation: (framework?: FrameworkProvider) => Configure;
-  editorView: (options?: AffineEditorViewOptions) => Configure;
+  editorView: (options?: NexioEditorViewOptions) => Configure;
   theme: (framework?: FrameworkProvider) => Configure;
   editorConfig: (framework?: FrameworkProvider) => Configure;
   edgelessBlockHeader: (options?: EdgelessBlockHeaderViewOptions) => Configure;
@@ -87,10 +87,10 @@ class ViewProvider {
     this._manager = new ViewExtensionManager([
       ...getInternalViewExtensions(),
 
-      AffineThemeViewExtension,
-      AffineEditorViewExtension,
-      AffineEditorConfigViewExtension,
-      AffineIconPickerExtension,
+      NexioThemeViewExtension,
+      NexioEditorViewExtension,
+      NexioEditorConfigViewExtension,
+      NexioIconPickerExtension,
       CodeBlockPreviewViewExtension,
       EdgelessBlockHeaderConfigViewExtension,
       TurboRendererViewExtension,
@@ -99,8 +99,8 @@ class ViewProvider {
       MobileViewExtension,
       AIViewExtension,
       ElectronViewExtension,
-      AffineLinkPreviewExtension,
-      AffineDatabaseViewExtension,
+      NexioLinkPreviewExtension,
+      NexioDatabaseViewExtension,
       CommentViewExtension,
     ]);
   }
@@ -202,19 +202,19 @@ class ViewProvider {
   };
 
   private readonly _configureEditorView = (
-    options?: AffineEditorViewOptions
+    options?: NexioEditorViewOptions
   ) => {
-    this._manager.configure(AffineEditorViewExtension, options);
+    this._manager.configure(NexioEditorViewExtension, options);
     return this.config;
   };
 
   private readonly _configureTheme = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineThemeViewExtension, { framework });
+    this._manager.configure(NexioThemeViewExtension, { framework });
     return this.config;
   };
 
   private readonly _configureEditorConfig = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineEditorConfigViewExtension, { framework });
+    this._manager.configure(NexioEditorConfigViewExtension, { framework });
     return this.config;
   };
 
@@ -226,7 +226,7 @@ class ViewProvider {
   };
 
   private readonly _configureDatabase = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineDatabaseViewExtension, { framework });
+    this._manager.configure(NexioDatabaseViewExtension, { framework });
     if (framework) {
       this._manager.configure(
         DatabaseViewExtension,
@@ -330,7 +330,7 @@ class ViewProvider {
   };
 
   private readonly _configureLinkPreview = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineLinkPreviewExtension, { framework });
+    this._manager.configure(NexioLinkPreviewExtension, { framework });
     return this.config;
   };
 
@@ -342,7 +342,7 @@ class ViewProvider {
   };
 
   private readonly _configureIconPicker = (framework?: FrameworkProvider) => {
-    this._manager.configure(AffineIconPickerExtension, { framework });
+    this._manager.configure(NexioIconPickerExtension, { framework });
     return this.config;
   };
 

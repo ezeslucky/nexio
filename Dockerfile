@@ -8,7 +8,7 @@ ENV CI=true
 ENV ELECTRON_SKIP_BINARY_DOWNLOAD=1
 ENV YARN_ENABLE_IMMUTABLE_INSTALLS=false
 ENV GITHUB_SHA="83a648d4"
-ENV AFFINE_PRO_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----"
+ENV NEXIO_PRO_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -103,7 +103,7 @@ RUN apt-get update \
 RUN corepack enable
 
 ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
-ENV AFFINE_PRO_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----"
+ENV NEXIO_PRO_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----"
 ENV NODE_ENV=production
 ENV NEXIO_SERVER_PORT=3010
 

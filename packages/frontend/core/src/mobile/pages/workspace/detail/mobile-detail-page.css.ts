@@ -70,7 +70,7 @@ export const editorContainer = style({
   zIndex: 0,
 });
 // brings styles of .affine-page-viewport from blocksuite
-export const affineDocViewport = style({
+export const nexioDocViewport = style({
   display: 'flex',
   flexDirection: 'column',
   containerName: 'viewport',

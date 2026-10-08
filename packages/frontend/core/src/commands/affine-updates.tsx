@@ -5,9 +5,9 @@ import { track } from '@nexio/track';
 import { ResetIcon } from '@blocksuite/icons/rc';
 import type { createStore } from 'jotai';
 
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineUpdatesCommands({
+export function registerNexioUpdatesCommands({
   t,
   store,
   quitAndInstall,
@@ -19,7 +19,7 @@ export function registerAffineUpdatesCommands({
   const unsubs: Array<() => void> = [];
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:restart-to-upgrade',
       category: 'affine:updates',
       icon: <ResetIcon />,

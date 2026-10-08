@@ -1,4 +1,4 @@
-import { AffineContext } from '@nexio/core/components/context';
+import { NexioContext } from '@nexio/core/components/context';
 import { WindowsAppControls } from '@nexio/core/components/pure/header/windows-app-controls';
 import { AppContainer } from '@nexio/core/desktop/components/app-container';
 import { router } from '@nexio/core/desktop/router';
@@ -54,7 +54,7 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <CacheProvider value={cache}>
           <I18nProvider>
-            <AffineContext store={getCurrentStore()}>
+            <NexioContext store={getCurrentStore()}>
               <DesktopThemeSync />
               <DesktopLanguageSync />
               <RouterProvider
@@ -67,7 +67,7 @@ export function App() {
                   <WindowsAppControls />
                 </div>
               )}
-            </AffineContext>
+            </NexioContext>
           </I18nProvider>
         </CacheProvider>
       </FrameworkRoot>

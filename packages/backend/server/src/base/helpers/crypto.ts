@@ -18,7 +18,7 @@ import {
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { hash as hashPassword } from '@node-rs/argon2';
 
-import { AFFINE_PRO_PUBLIC_KEY } from '../../native';
+import { NEXIO_PRO_PUBLIC_KEY } from '../../native';
 import { Config } from '../config';
 import { OnEvent } from '../event';
 
@@ -70,14 +70,14 @@ export class CryptoHelper implements OnModuleInit {
 
   private previousPublicKeys: KeyObject[] = [];
 
-  AFFiNEProPublicKey: Buffer | null = null;
+  NexioProPublicKey: Buffer | null = null;
 
   onModuleInit() {
     if (env.selfhosted) {
-      this.AFFiNEProPublicKey = this.loadAFFiNEProPublicKey();
-      if (!this.AFFiNEProPublicKey) {
+      this.NexioProPublicKey = this.loadNexioProPublicKey();
+      if (!this.NexioProPublicKey) {
         throw new Error(
-          'AFFINE_PRO_PUBLIC_KEY must be embedded in self-hosted server-native builds.'
+          'NEXIO_PRO_PUBLIC_KEY must be embedded in self-hosted server-native builds.'
         );
       }
     }
@@ -236,10 +236,10 @@ export class CryptoHelper implements OnModuleInit {
     return createHash('sha256').update(data).digest();
   }
 
-  private loadAFFiNEProPublicKey() {
+  private loadNexioProPublicKey() {
     const key =
-      process.env.AFFINE_PRO_PUBLIC_KEY ||
-      AFFINE_PRO_PUBLIC_KEY ||
+      process.env.NEXIO_PRO_PUBLIC_KEY ||
+      NEXIO_PRO_PUBLIC_KEY ||
       '-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\nAxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----';
     return Buffer.from(key);
   }

@@ -18,7 +18,7 @@ import type { FrameworkProvider } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 
 export function getPreviewThemeExtension(framework: FrameworkProvider) {
-  class AffinePagePreviewThemeExtension
+  class NexioPagePreviewThemeExtension
     extends LifeCycleWatcher
     implements ThemeExtension
   {
@@ -30,7 +30,7 @@ export function getPreviewThemeExtension(framework: FrameworkProvider) {
 
     static override setup(di: Container) {
       super.setup(di);
-      di.override(ThemeExtensionIdentifier, AffinePagePreviewThemeExtension, [
+      di.override(ThemeExtensionIdentifier, NexioPagePreviewThemeExtension, [
         StdIdentifier,
       ]);
     }
@@ -69,5 +69,5 @@ export function getPreviewThemeExtension(framework: FrameworkProvider) {
     }
   }
 
-  return AffinePagePreviewThemeExtension;
+  return NexioPagePreviewThemeExtension;
 }

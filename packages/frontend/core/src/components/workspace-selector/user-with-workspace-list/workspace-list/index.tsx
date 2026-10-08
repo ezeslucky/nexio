@@ -61,8 +61,8 @@ const WorkspaceServerInfo = ({
 }) => {
   const t = useI18n();
   const isCloud = server !== 'local';
-  const isAffineCloud = server === 'affine-cloud';
-  const Icon = isAffineCloud
+  const isNexioCloud = server === 'affine-cloud';
+  const Icon = isNexioCloud
     ? CloudWorkspaceIcon
     : isCloud
       ? SelfhostIcon
@@ -225,7 +225,7 @@ const LocalWorkspaces = ({
   );
 };
 
-export const AFFiNEWorkspaceList = ({
+export const NexioWorkspaceList = ({
   onEventEnd,
   onClickWorkspace,
   showEnableCloudButton,
@@ -241,7 +241,7 @@ export const AFFiNEWorkspaceList = ({
 
   const serversService = useService(ServersService);
   const servers = useLiveData(serversService.servers$);
-  const affineCloudServer = useMemo(
+  const nexioCloudServer = useMemo(
     () => servers.find(s => s.id === 'affine-cloud') as Server,
     [servers]
   );
@@ -290,13 +290,13 @@ export const AFFiNEWorkspaceList = ({
     <>
       {/* 1. affine-cloud */}
       <FrameworkScope
-        key={affineCloudServer.id}
-        scope={affineCloudServer.scope}
+        key={nexioCloudServer.id}
+        scope={nexioCloudServer.scope}
       >
         <CloudWorkSpaceList
-          server={affineCloudServer}
+          server={nexioCloudServer}
           workspaces={cloudWorkspaces.filter(
-            ({ flavour }) => flavour === affineCloudServer.id
+            ({ flavour }) => flavour === nexioCloudServer.id
           )}
           onClickWorkspace={handleClickWorkspace}
         />

@@ -42,12 +42,12 @@ interface UpdateProviderOptions {
   channel: typeof buildType;
 }
 
-export class AFFiNEUpdateProvider extends Provider<GithubUpdateInfo> {
+export class NexioUpdateProvider extends Provider<GithubUpdateInfo> {
   static configFeed(options: UpdateProviderOptions): CustomPublishOptions {
     return {
       provider: 'custom',
       feedUrl: 'https://affine.pro/api/worker/releases',
-      updateProvider: AFFiNEUpdateProvider,
+      updateProvider: NexioUpdateProvider,
       ...options,
     };
   }

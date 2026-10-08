@@ -1,9 +1,9 @@
 import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import { AIAppEvents, type AIChatParams } from '@nexio/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
-import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { EditorService } from '@nexio/core/modules/editor';
@@ -38,7 +38,7 @@ const BlockSuiteEditor = lazy(() =>
 );
 
 function fitViewport(
-  editor: AffineEditorContainer,
+  editor: NexioEditorContainer,
   xywh?: `[${number},${number},${number},${number}]`
 ) {
   try {
@@ -90,7 +90,7 @@ function DocPeekPreviewEditor({
   const isInTrash = useLiveData(doc.record.trash$);
 
   const handleOnEditorReady = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       const disposableGroup = new DisposableGroup();
       const refNodeSlots =
         editorContainer.std.getOptional(RefNodeSlotsProvider);
@@ -154,10 +154,10 @@ function DocPeekPreviewEditor({
   const readonly = !canEdit || isInTrash;
 
   return (
-    <AffineErrorBoundary>
+    <NexioErrorBoundary>
       <Scrollable.Root>
         <Scrollable.Viewport
-          className={clsx('affine-page-viewport', styles.affineDocViewport)}
+          className={clsx('affine-page-viewport', styles.nexioDocViewport)}
         >
           <Suspense fallback={<PageDetailLoading />}>
             <BlockSuiteEditor
@@ -179,7 +179,7 @@ function DocPeekPreviewEditor({
           openOutlinePanel={openOutlinePanel}
         />
       ) : null}
-    </AffineErrorBoundary>
+    </NexioErrorBoundary>
   );
 }
 

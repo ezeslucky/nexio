@@ -84,10 +84,10 @@ export const ScrollableLayout = ({
 
 export const OnboardingPage = ({
   user,
-  onOpenAffine,
+  onOpenNexio,
 }: {
   user: User;
-  onOpenAffine: () => void;
+  onOpenNexio: () => void;
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -237,14 +237,14 @@ export const OnboardingPage = ({
           you once again for your supports.
         </p>
         <Button
-          className={clsx(styles.button, styles.openAFFiNEButton)}
+          className={clsx(styles.button, styles.openNexioButton)}
           variant="primary"
           size="extraLarge"
           onClick={() => {
             if (callbackUrl) {
               navigate(callbackUrl);
             } else {
-              onOpenAffine();
+              onOpenNexio();
             }
           }}
           suffix={<ArrowRightSmallIcon />}

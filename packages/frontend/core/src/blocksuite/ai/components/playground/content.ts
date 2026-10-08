@@ -94,10 +94,10 @@ export class PlaygroundContent extends SignalWatcher(
   accessor serverService!: ServerService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -109,7 +109,7 @@ export class PlaygroundContent extends SignalWatcher(
   accessor aiModelService!: AIModelService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor subscriptionService!: SubscriptionService;
@@ -378,13 +378,13 @@ export class PlaygroundContent extends SignalWatcher(
                 .docDisplayConfig=${this.docDisplayConfig}
                 .extensions=${this.extensions}
                 .serverService=${this.serverService}
-                .affineFeatureFlagService=${this.affineFeatureFlagService}
-                .affineThemeService=${this.affineThemeService}
+                .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+                .nexioThemeService=${this.nexioThemeService}
                 .notificationService=${this.notificationService}
                 .aiToolsConfigService=${this.aiToolsConfigService}
                 .aiModelService=${this.aiModelService}
-                .affineWorkspaceDialogService=${
-                  this.affineWorkspaceDialogService
+                .nexioWorkspaceDialogService=${
+                  this.nexioWorkspaceDialogService
                 }
                 .subscriptionService=${this.subscriptionService}
                 .addChat=${this.addChat}

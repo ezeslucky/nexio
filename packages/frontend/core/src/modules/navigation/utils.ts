@@ -4,7 +4,7 @@ import { isNil, pick, pickBy } from 'lodash-es';
 import type { ParsedQuery, ParseOptions } from 'query-string';
 import queryString from 'query-string';
 
-function maybeAffineOrigin(origin: string, baseUrl: string) {
+function maybeNexioOrigin(origin: string, baseUrl: string) {
   return (
     origin.startsWith('assets://') ||
     origin.endsWith('affine.pro') || // stable/beta
@@ -20,10 +20,10 @@ export const resolveRouteLinkMeta = (
 ) => {
   try {
     // if href is started with affine protocol, we need to convert it to http protocol to may URL happy
-    const affineProtocol = channelToScheme[BUILD_CONFIG.appBuildType] + '://';
+    const nexioProtocol = channelToScheme[BUILD_CONFIG.appBuildType] + '://';
 
-    if (href.startsWith(affineProtocol)) {
-      href = href.replace(affineProtocol, 'http://');
+    if (href.startsWith(nexioProtocol)) {
+      href = href.replace(nexioProtocol, 'http://');
     }
 
     const url = new URL(href, baseUrl);
@@ -31,7 +31,7 @@ export const resolveRouteLinkMeta = (
     // check if origin is one of affine's origins
     // check if origin is localhost or self-hosted
 
-    if (!maybeAffineOrigin(url.origin, baseUrl)) {
+    if (!maybeNexioOrigin(url.origin, baseUrl)) {
       return null;
     }
 

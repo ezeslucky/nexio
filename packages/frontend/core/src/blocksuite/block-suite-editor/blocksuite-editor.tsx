@@ -35,7 +35,7 @@ import type { DefaultOpenProperty } from '../../components/properties';
 import { BlocksuiteDocEditor, BlocksuiteEdgelessEditor } from './lit-adaper';
 import * as styles from './styles.css';
 
-export interface AffineEditorContainer extends HTMLElement {
+export interface NexioEditorContainer extends HTMLElement {
   page: Store;
   doc: Store;
   docTitle: DocTitle;
@@ -54,7 +54,7 @@ export interface EditorProps extends HTMLAttributes<HTMLDivElement> {
   readonly?: boolean;
   defaultOpenProperty?: DefaultOpenProperty;
   // on Editor ready
-  onEditorReady?: (editor: AffineEditorContainer) => (() => void) | void;
+  onEditorReady?: (editor: NexioEditorContainer) => (() => void) | void;
 }
 
 const BlockSuiteEditorImpl = ({
@@ -84,9 +84,9 @@ const BlockSuiteEditorImpl = ({
   );
 
   /**
-   * mimic an AffineEditorContainer using proxy
+   * mimic an NexioEditorContainer using proxy
    */
-  const affineEditorContainerProxy = useMemo(() => {
+  const nexioEditorContainerProxy = useMemo(() => {
     const api = {
       get page() {
         return page;
@@ -144,14 +144,14 @@ const BlockSuiteEditorImpl = ({
         }
         return undefined;
       },
-    }) as AffineEditorContainer;
+    }) as NexioEditorContainer;
 
     return proxy;
   }, [mode, page]);
 
   const handleClickPageModeBlank = useCallback(() => {
     if (shared || readonly || page.readonly) return;
-    const std = affineEditorContainerProxy.host?.std;
+    const std = nexioEditorContainerProxy.host?.std;
     if (!std) {
       return;
     }
@@ -173,7 +173,7 @@ const BlockSuiteEditorImpl = ({
     }
 
     std.command.exec(appendParagraphCommand);
-  }, [affineEditorContainerProxy.host?.std, page, readonly, shared]);
+  }, [nexioEditorContainerProxy.host?.std, page, readonly, shared]);
 
   useEffect(() => {
     const editorContainer = rootRef.current;
@@ -209,7 +209,7 @@ const BlockSuiteEditorImpl = ({
   }, [enableMiddleClickPaste]);
 
   useEffect(() => {
-    const editor = affineEditorContainerProxy;
+    const editor = nexioEditorContainerProxy;
     globalThis.currentEditor = editor;
     const disposableGroup = new DisposableGroup();
     let canceled = false;
@@ -240,7 +240,7 @@ const BlockSuiteEditorImpl = ({
       canceled = true;
       disposableGroup.dispose();
     };
-  }, [affineEditorContainerProxy, onEditorReady, page, server]);
+  }, [nexioEditorContainerProxy, onEditorReady, page, server]);
 
   return (
     <div

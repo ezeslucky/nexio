@@ -12,7 +12,7 @@ import { useCallback } from 'react';
 
 import { AddWorkspace } from './add-workspace';
 import * as styles from './index.css';
-import { AFFiNEWorkspaceList } from './workspace-list';
+import { NexioWorkspaceList } from './workspace-list';
 
 export const SignInItem = () => {
   const globalDialogService = useService(GlobalDialogService);
@@ -119,7 +119,7 @@ export const UserWithWorkspaceList = ({
         scrollBarClassName={styles.scrollbar}
         scrollThumbClassName={styles.scrollbarThumb}
       >
-        <AFFiNEWorkspaceList
+        <NexioWorkspaceList
           onEventEnd={onEventEnd}
           onClickWorkspace={onClickWorkspace}
           showEnableCloudButton={showEnableCloudButton}

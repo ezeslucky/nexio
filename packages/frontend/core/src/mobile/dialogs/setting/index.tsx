@@ -24,8 +24,8 @@ import { SwipeDialog } from './swipe-dialog';
 import { UserProfile } from './user-profile';
 import { UserUsage } from './user-usage';
 
-const AFFINE_MOBILE_STORE_URL = undefined;
-const AFFINE_DOWNLOAD_URL =
+const NEXIO_MOBILE_STORE_URL = undefined;
+const NEXIO_DOWNLOAD_URL =
   typeof window !== 'undefined' ? window.location.origin : '/';
 
 const SupportGroup = () => {
@@ -36,7 +36,7 @@ const SupportGroup = () => {
     const shareData = {
       title: 'Nexio',
       text: t['com.affine.mobile.setting.support.invite-message'](),
-      url: AFFINE_DOWNLOAD_URL,
+      url: NEXIO_DOWNLOAD_URL,
     };
 
     if ('share' in navigator && typeof navigator.share === 'function') {
@@ -50,21 +50,21 @@ const SupportGroup = () => {
       }
     }
 
-    const copied = await copyTextToClipboard(AFFINE_DOWNLOAD_URL);
+    const copied = await copyTextToClipboard(NEXIO_DOWNLOAD_URL);
     if (copied) {
       notify.success({ title: t['Copied link to clipboard']() });
       return;
     }
 
-    urlService.openExternal(AFFINE_DOWNLOAD_URL);
+    urlService.openExternal(NEXIO_DOWNLOAD_URL);
   }, [t, urlService]);
 
   return (
     <SettingGroup title={t['com.affine.mobile.setting.support.title']()}>
-      {AFFINE_MOBILE_STORE_URL ? (
+      {NEXIO_MOBILE_STORE_URL ? (
         <RowLayout
           label={t['com.affine.mobile.setting.support.rate']()}
-          onClick={() => urlService.openExternal(AFFINE_MOBILE_STORE_URL)}
+          onClick={() => urlService.openExternal(NEXIO_MOBILE_STORE_URL)}
         />
       ) : null}
       <RowLayout

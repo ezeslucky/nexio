@@ -7,8 +7,8 @@ import { property, query } from 'lit/decorators.js';
 import throttle from 'lodash-es/throttle';
 
 import type {
-  AffineAIPanelState,
-  AffineAIPanelWidgetConfig,
+  NexioAIPanelState,
+  NexioAIPanelWidgetConfig,
 } from '../widgets/ai-panel/type';
 import type { TextRendererOptions } from './text-renderer';
 
@@ -82,7 +82,7 @@ export class AIScrollableTextRenderer extends WithDisposable(
   accessor answer!: string;
 
   @property({ attribute: false })
-  accessor state: AffineAIPanelState | undefined;
+  accessor state: NexioAIPanelState | undefined;
 
   @property({ attribute: false })
   accessor textRendererOptions!: TextRendererOptions;
@@ -101,12 +101,12 @@ export const createAIScrollableTextRenderer: (
   textRendererOptions: TextRendererOptions,
   maxHeight: number,
   autoScroll: boolean
-) => AffineAIPanelWidgetConfig['answerRenderer'] = (
+) => NexioAIPanelWidgetConfig['answerRenderer'] = (
   textRendererOptions,
   maxHeight,
   autoScroll
 ) => {
-  return (answer: string, state: AffineAIPanelState | undefined) => {
+  return (answer: string, state: NexioAIPanelState | undefined) => {
     return html`<ai-scrollable-text-renderer
       .answer=${answer}
       .state=${state}

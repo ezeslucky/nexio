@@ -148,8 +148,8 @@ export class RunCommand extends PackageCommand {
       }
     }
 
-    const isAFFiNECommand = args[0] === 'affine';
-    if (isAFFiNECommand) {
+    const isNexioCommand = args[0] === 'affine';
+    if (isNexioCommand) {
       // remove 'affine' from 'affine xxx' command
       args.shift();
       args.push('-p', pkg.name);

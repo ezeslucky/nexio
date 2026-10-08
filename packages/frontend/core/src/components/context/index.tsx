@@ -8,11 +8,11 @@ import { useMemo } from 'react';
 
 import { useImageAntialiasing } from '../hooks/use-image-antialiasing';
 
-export type AffineContextProps = PropsWithChildren<{
+export type NexioContextProps = PropsWithChildren<{
   store?: ReturnType<typeof createStore>;
 }>;
 
-export function AffineContext(props: AffineContextProps) {
+export function NexioContext(props: NexioContextProps) {
   useImageAntialiasing();
   return (
     <ProviderComposer
@@ -31,3 +31,7 @@ export function AffineContext(props: AffineContextProps) {
     </ProviderComposer>
   );
 }
+
+// Backwards compatibility aliases
+export const AffineContext = NexioContext;
+export type AffineContextProps = NexioContextProps;

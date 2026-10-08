@@ -16,7 +16,7 @@ import {
 import { DocsExplorer } from '../../explorer/docs-view/docs-list';
 import { Filters } from '../../filter';
 import { AddFilterMenu } from '../../filter/add-filter';
-import { AffineShapeIcon } from '..';
+import { NexioShapeIcon } from '..';
 import { SelectorLayout } from '../selector/selector-layout';
 import * as styles from './select-page.css';
 
@@ -212,7 +212,7 @@ export const EmptyList = ({ search }: { search?: string }) => {
         flex: 1,
       }}
     >
-      <AffineShapeIcon />
+      <NexioShapeIcon />
       <div
         style={{
           margin: '18px 0',

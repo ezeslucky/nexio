@@ -48,8 +48,8 @@ import {
 } from 'react';
 
 import {
-  AffinePageReference,
-  AffineSharedPageReference,
+  NexioPageReference,
+  NexioSharedPageReference,
 } from '../../components/affine/reference-link';
 import { LitTextRenderer } from '../ai/components/text-renderer';
 import * as styles from './bi-directional-link-panel.css';
@@ -154,7 +154,7 @@ const usePreviewExtensions = () => {
 
       if (workspaceService.workspace.openOptions.isSharedMode) {
         return (
-          <AffineSharedPageReference
+          <NexioSharedPageReference
             docCollection={workspaceService.workspace.docCollection}
             pageId={pageId}
             params={params}
@@ -162,7 +162,7 @@ const usePreviewExtensions = () => {
         );
       }
 
-      return <AffinePageReference pageId={pageId} params={params} />;
+      return <NexioPageReference pageId={pageId} params={params} />;
     };
   }, [workspaceService]);
 
@@ -251,7 +251,7 @@ export const BacklinkGroups = () => {
           <CollapsibleSection
             key={linkGroup.docId}
             title={
-              <AffinePageReference
+              <NexioPageReference
                 pageId={linkGroup.docId}
                 onClick={() => {
                   track.doc.biDirectionalLinksPanel.backlinkTitle.navigate();
@@ -387,7 +387,7 @@ export const LinkPreview = ({
             {edgelessLink ? (
               <>
                 [Edgeless]
-                <AffinePageReference
+                <NexioPageReference
                   key={link.blockId}
                   pageId={linkGroup.docId}
                   params={searchParams}
@@ -458,7 +458,7 @@ export const BiDirectionalLinkPanel = () => {
                 key={`${link.docId}-${link.params?.toString()}-${i}`}
                 className={styles.link}
               >
-                <AffinePageReference pageId={link.docId} params={link.params} />
+                <NexioPageReference pageId={link.docId} params={link.params} />
               </div>
             ))}
           </div>

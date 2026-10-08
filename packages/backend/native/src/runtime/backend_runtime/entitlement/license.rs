@@ -4,7 +4,7 @@ use napi::{Error, Result, Status, bindgen_prelude::Buffer};
 use sqlx::{Postgres, Row, Transaction};
 
 use super::{
-  AFFINE_PRO_PUBLIC_KEY, BackendRuntime, EntitlementWrite, RuntimeEntitlementTarget, RuntimeError, RuntimeResult,
+  NEXIO_PRO_PUBLIC_KEY, BackendRuntime, EntitlementWrite, RuntimeEntitlementTarget, RuntimeError, RuntimeResult,
   apply_transitions, load_decision_time, lock_sources, lock_targets, normalize_license, publish_changes,
   transition_before, upsert,
 };
@@ -104,7 +104,7 @@ pub(super) fn verify(
   workspace_id: &str,
   now: DateTime<Utc>,
 ) -> Result<affine_core::access_control::VerifiedLicenseClaims> {
-  let key = AFFINE_PRO_PUBLIC_KEY.ok_or_else(|| Error::new(Status::GenericFailure, "license_public_key_missing"))?;
+  let key = NEXIO_PRO_PUBLIC_KEY.ok_or_else(|| Error::new(Status::GenericFailure, "license_public_key_missing"))?;
   LicenseVerifier::verify(payload, key, Some(workspace_id), now).map_err(|e| {
     Error::new(
       if e == affine_core::access_control::LicenseError::InvalidPublicKey {

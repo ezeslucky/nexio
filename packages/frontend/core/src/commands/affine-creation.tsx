@@ -5,9 +5,9 @@ import { ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 
 import type { usePageHelper } from '../blocksuite/block-suite-page-list/utils';
 import type { GlobalDialogService } from '../modules/dialogs';
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineCreationCommands({
+export function registerNexioCreationCommands({
   pageHelper,
   t,
   globalDialogService,
@@ -18,7 +18,7 @@ export function registerAffineCreationCommands({
 }) {
   const unsubs: Array<() => void> = [];
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:new-page',
       category: 'affine:creation',
       label: t['com.affine.cmdk.affine.new-page'](),
@@ -38,7 +38,7 @@ export function registerAffineCreationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:new-edgeless-page',
       category: 'affine:creation',
       icon: <PlusIcon />,
@@ -55,7 +55,7 @@ export function registerAffineCreationCommands({
 
   if (!BUILD_CONFIG.isMobileEdition) {
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: 'affine:new-workspace',
         category: 'affine:creation',
         icon: <PlusIcon />,
@@ -69,7 +69,7 @@ export function registerAffineCreationCommands({
     );
   }
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:import-workspace',
       category: 'affine:creation',
       icon: <ImportIcon />,

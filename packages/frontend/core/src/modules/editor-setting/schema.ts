@@ -24,7 +24,7 @@ export const fontStyleOptions = [
   value: string;
 }[];
 
-const AffineEditorSettingSchema = z.object({
+const NexioEditorSettingSchema = z.object({
   fontFamily: z.enum(['Sans', 'Serif', 'Mono', 'Custom']).default('Sans'),
   customFontFamily: z.string().default(''),
   fontSize: z.number().min(12).max(24).default(16),
@@ -54,7 +54,7 @@ const AffineEditorSettingSchema = z.object({
 });
 
 export const EditorSettingSchema = BSEditorSettingSchema.merge(
-  AffineEditorSettingSchema
+  NexioEditorSettingSchema
 );
 
 // oxlint-disable-next-line no-redeclare

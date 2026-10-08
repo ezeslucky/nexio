@@ -1,6 +1,6 @@
 import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
-import { AffineEditorViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
-import { AffineThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
+import { NexioEditorViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
+import { NexioThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
 import { I18n } from '@nexio/i18n';
 import { CodeBlockViewExtension } from '@blocksuite/affine/blocks/code/view';
 import { DividerViewExtension } from '@blocksuite/affine/blocks/divider/view';
@@ -146,8 +146,8 @@ export function getCommentEditorViewManager(framework: FrameworkProvider) {
       LinkedDocViewExtension,
 
       // Affine side
-      AffineThemeViewExtension,
-      AffineEditorViewExtension,
+      NexioThemeViewExtension,
+      NexioEditorViewExtension,
 
       // for rendering mentions
       CloudViewExtension,

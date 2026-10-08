@@ -6,7 +6,7 @@ import {
   type MonitorGetFeedback,
   type toExternalData,
 } from '@nexio/component';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
@@ -21,12 +21,12 @@ import type { EditorSettingService } from '../../editor-setting';
 import { resolveLinkToDoc } from '../../navigation';
 import type { WorkspaceService } from '../../workspace';
 
-type Entity = AffineDNDData['draggable']['entity'];
+type Entity = NexioDNDData['draggable']['entity'];
 type EntityResolver = (data: string) => Entity | null;
 
 type ExternalDragPayload = ExternalGetDataFeedbackArgs['source'];
 
-type MixedDNDData = AffineDNDData & {
+type MixedDNDData = NexioDNDData & {
   draggable: DragBlockPayload;
 };
 
@@ -74,7 +74,7 @@ export class DndService extends Service {
      * Migrate from affine to blocksuite
      * For now, we only support doc
      */
-    const affineToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const nexioToBlocksuite = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (data.entity && !data.bsEntity) {
         if (data.entity.type !== 'doc') {
@@ -102,7 +102,7 @@ export class DndService extends Service {
     /**
      * Migrate from blocksuite to affine
      */
-    const blocksuiteToAffine = (args: MonitorGetFeedback<MixedDNDData>) => {
+    const blocksuiteToNexio = (args: MonitorGetFeedback<MixedDNDData>) => {
       const data = args.source.data;
       if (!data.entity && data.bsEntity) {
         if (data.bsEntity.type !== 'blocks' || !data.bsEntity.snapshot) {
@@ -121,8 +121,8 @@ export class DndService extends Service {
     };
 
     function adaptDragEvent(args: MonitorGetFeedback<MixedDNDData>) {
-      affineToBlocksuite(args);
-      blocksuiteToAffine(args);
+      nexioToBlocksuite(args);
+      blocksuiteToNexio(args);
     }
 
     function canMonitor(args: MonitorGetFeedback<MixedDNDData>) {
@@ -192,7 +192,7 @@ export class DndService extends Service {
 
   private readonly resolvers: ((
     source: ExternalDragPayload
-  ) => AffineDNDData['draggable'] | null)[] = [];
+  ) => NexioDNDData['draggable'] | null)[] = [];
 
   getBlocksuiteDndAPI(sourceDocId?: string) {
     const collection = this.workspaceService.workspace.docCollection;
@@ -211,7 +211,7 @@ export class DndService extends Service {
     return dndAPI;
   }
 
-  fromExternalData: fromExternalData<AffineDNDData> = (
+  fromExternalData: fromExternalData<NexioDNDData> = (
     args: ExternalGetDataFeedbackArgs,
     isDropEvent?: boolean
   ) => {
@@ -219,7 +219,7 @@ export class DndService extends Service {
       return {};
     }
 
-    let resolved: AffineDNDData['draggable'] | null = null;
+    let resolved: NexioDNDData['draggable'] | null = null;
 
     // in the order of the resolvers instead of the order of the types
     for (const resolver of this.resolvers) {
@@ -237,7 +237,7 @@ export class DndService extends Service {
     return resolved;
   };
 
-  toExternalData: toExternalData<AffineDNDData> = (args, data) => {
+  toExternalData: toExternalData<NexioDNDData> = (args, data) => {
     const normalData = typeof data === 'function' ? data(args) : data;
 
     if (
@@ -301,7 +301,7 @@ export class DndService extends Service {
    */
   private readonly resolveBlocksuiteExternalData = (
     source: ExternalDragPayload
-  ): AffineDNDData['draggable'] | null => {
+  ): NexioDNDData['draggable'] | null => {
     const dndAPI = this.getBlocksuiteDndAPI();
     if (!dndAPI) {
       return null;

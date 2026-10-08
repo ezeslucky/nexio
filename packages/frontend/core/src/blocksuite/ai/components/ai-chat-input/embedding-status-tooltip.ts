@@ -36,7 +36,7 @@ export class AIChatEmbeddingStatusTooltip extends SignalWatcher(LitElement) {
   `;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   override connectedCallback() {
     super.connectedCallback();
@@ -44,7 +44,7 @@ export class AIChatEmbeddingStatusTooltip extends SignalWatcher(LitElement) {
 
   private readonly _handleCheckStatusClick = debounce(
     () => {
-      this.affineWorkspaceDialogService.open('setting', {
+      this.nexioWorkspaceDialogService.open('setting', {
         activeTab: 'workspace:embedding',
       });
     },

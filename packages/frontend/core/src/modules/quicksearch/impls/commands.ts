@@ -1,6 +1,6 @@
 import {
-  type AffineCommand,
-  AffineCommandRegistry,
+  type NexioCommand,
+  NexioCommandRegistry,
   type CommandCategory,
   PreconditionStrategy,
 } from '@nexio/core/commands';
@@ -99,7 +99,7 @@ const categories = {
 }>;
 
 function filterCommandByContext(
-  command: AffineCommand,
+  command: NexioCommand,
   context: {
     docMode: DocMode | undefined;
   }
@@ -126,7 +126,7 @@ function filterCommandByContext(
 }
 
 function getAllCommand(context: { docMode: DocMode | undefined }) {
-  const commands = AffineCommandRegistry.getAll();
+  const commands = NexioCommandRegistry.getAll();
   return commands.filter(command => {
     return filterCommandByContext(command, context);
   });
@@ -134,7 +134,7 @@ function getAllCommand(context: { docMode: DocMode | undefined }) {
 
 export class CommandsQuickSearchSession
   extends Entity
-  implements QuickSearchSession<'commands', AffineCommand>
+  implements QuickSearchSession<'commands', NexioCommand>
 {
   constructor(private readonly contextService: GlobalContextService) {
     super();
@@ -160,7 +160,7 @@ export class CommandsQuickSearchSession
       ? fuse.search(query)
       : commands.map(item => ({ item, matches: [], score: 0 }));
 
-    return result.map<QuickSearchItem<'commands', AffineCommand>>(
+    return result.map<QuickSearchItem<'commands', NexioCommand>>(
       ({ item, matches, score = 1 }) => {
         const normalizedRange = ([start, end]: [number, number]) =>
           [

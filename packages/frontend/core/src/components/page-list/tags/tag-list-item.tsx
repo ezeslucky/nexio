@@ -1,6 +1,6 @@
 import { Checkbox, useDraggable } from '@nexio/component';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { stopPropagation } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import type { ForwardedRef, PropsWithChildren } from 'react';
@@ -81,7 +81,7 @@ const TagListOperationsCell = ({
 };
 
 export const TagListItem = (props: TagListItemProps) => {
-  const { dragRef, CustomDragPreview, dragging } = useDraggable<AffineDNDData>(
+  const { dragRef, CustomDragPreview, dragging } = useDraggable<NexioDNDData>(
     () => ({
       canDrag: props.draggable,
       data: {

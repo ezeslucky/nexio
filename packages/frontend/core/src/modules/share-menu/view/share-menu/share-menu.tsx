@@ -31,7 +31,7 @@ import { SharePage } from './share-page';
 export interface ShareMenuProps extends PropsWithChildren {
   workspaceMetadata: WorkspaceMetadata;
   currentPage: Store;
-  onEnableAffineCloud: () => void;
+  onEnableNexioCloud: () => void;
   onOpenShareModal?: (open: boolean) => void;
   openPaywallModal?: () => void;
   hittingPaywall?: boolean;

@@ -61,10 +61,10 @@ export class ChatMessageAssistant extends WithDisposable(ShadowlessElement) {
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor session!: CopilotChatHistoryFragment | null | undefined;
@@ -157,9 +157,9 @@ export class ChatMessageAssistant extends WithDisposable(ShadowlessElement) {
       .state=${this.state}
       .width=${this.width}
       .extensions=${this.extensions}
-      .affineFeatureFlagService=${this.affineFeatureFlagService}
+      .nexioFeatureFlagService=${this.nexioFeatureFlagService}
       .notificationService=${this.notificationService}
-      .theme=${this.affineThemeService.appTheme.themeSignal}
+      .theme=${this.nexioThemeService.appTheme.themeSignal}
       .independentMode=${this.independentMode}
       .docDisplayService=${this.docDisplayService}
       .peekViewService=${this.peekViewService}
@@ -172,8 +172,8 @@ export class ChatMessageAssistant extends WithDisposable(ShadowlessElement) {
       .text=${text}
       .state=${this.state}
       .extensions=${this.extensions}
-      .affineFeatureFlagService=${this.affineFeatureFlagService}
-      .theme=${this.affineThemeService.appTheme.themeSignal}
+      .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+      .theme=${this.nexioThemeService.appTheme.themeSignal}
     ></chat-content-rich-text>`;
   }
 

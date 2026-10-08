@@ -30,8 +30,8 @@ import type { AIItemGroupConfig } from '../../components/ai-item/types.js';
 import { AIAppEvents } from '../../provider/index.js';
 import { extractSelectedContent } from '../../utils/extract.js';
 import {
-  AFFINE_AI_PANEL_WIDGET,
-  AffineAIPanelWidget,
+  NEXIO_AI_PANEL_WIDGET,
+  NexioAIPanelWidget,
 } from '../ai-panel/ai-panel.js';
 import { EdgelessCopilotPanel } from '../edgeless-copilot-panel/index.js';
 import { AFFINE_EDGELESS_COPILOT_WIDGET } from './constant.js';
@@ -92,11 +92,11 @@ export class EdgelessCopilotWidget extends WidgetComponent<RootBlockModel> {
       if (!rootBlockId) return;
 
       const input = this.host.view.getWidget(
-        AFFINE_AI_PANEL_WIDGET,
+        NEXIO_AI_PANEL_WIDGET,
         rootBlockId
       );
 
-      if (input instanceof AffineAIPanelWidget) {
+      if (input instanceof NexioAIPanelWidget) {
         input.setState('input', referenceElement);
         const aiPanel = input;
         // TODO: @xiaojun refactor these scattered config overrides

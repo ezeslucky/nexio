@@ -12,9 +12,9 @@ import type {
   NativeImportBrowserSource,
 } from '../shared/import';
 import {
-  AFFINE_API_CHANNEL_NAME,
-  AFFINE_EVENT_CHANNEL_NAME,
-  AFFINE_EVENT_SUBSCRIBE_CHANNEL_NAME,
+  NEXIO_API_CHANNEL_NAME,
+  NEXIO_EVENT_CHANNEL_NAME,
+  NEXIO_EVENT_SUBSCRIBE_CHANNEL_NAME,
   type ExposedMeta,
   type HelperToRenderer,
   type RendererToHelper,
@@ -69,7 +69,7 @@ function getMainAPIs() {
           name,
           (...args: any[]) => {
             return ipcRenderer.invoke(
-              AFFINE_API_CHANNEL_NAME,
+              NEXIO_API_CHANNEL_NAME,
               channel,
               ...args
             );
@@ -95,7 +95,7 @@ function getMainAPIs() {
       subscribeCounts.set(channel, count);
       if (count === 1) {
         ipcRenderer.send(
-          AFFINE_EVENT_SUBSCRIBE_CHANNEL_NAME,
+          NEXIO_EVENT_SUBSCRIBE_CHANNEL_NAME,
           'subscribe',
           channel
         );
@@ -107,7 +107,7 @@ function getMainAPIs() {
       if (count <= 0) {
         subscribeCounts.delete(channel);
         ipcRenderer.send(
-          AFFINE_EVENT_SUBSCRIBE_CHANNEL_NAME,
+          NEXIO_EVENT_SUBSCRIBE_CHANNEL_NAME,
           'unsubscribe',
           channel
         );
@@ -116,7 +116,7 @@ function getMainAPIs() {
       }
     };
 
-    ipcRenderer.on(AFFINE_EVENT_CHANNEL_NAME, (_event, channel, ...args) => {
+    ipcRenderer.on(NEXIO_EVENT_CHANNEL_NAME, (_event, channel, ...args) => {
       if (typeof channel !== 'string') {
         console.error('invalid ipc event', channel);
         return;

@@ -6,9 +6,9 @@ import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 import type { useNavigateHelper } from '../components/hooks/use-navigate-helper';
 import type { WorkspaceDialogService } from '../modules/dialogs';
 import type { WorkbenchService } from '../modules/workbench';
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineNavigationCommands({
+export function registerNexioNavigationCommands({
   t,
   docCollection,
   navigationHelper,
@@ -23,7 +23,7 @@ export function registerAffineNavigationCommands({
 }) {
   const unsubs: Array<() => void> = [];
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:goto-all-pages',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -39,7 +39,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:goto-collection-list',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -55,7 +55,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:goto-tag-list',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -71,7 +71,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:goto-workspace',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -87,7 +87,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:open-settings',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -103,7 +103,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:open-account',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,
@@ -118,7 +118,7 @@ export function registerAffineNavigationCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:goto-trash',
       category: 'affine:navigation',
       icon: <ArrowRightBigIcon />,

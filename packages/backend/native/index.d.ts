@@ -174,7 +174,7 @@ export declare class Tokenizer {
  */
 export declare function addDocToRootDoc(rootDocBin: Buffer, docId: string, title?: string | undefined | null): Buffer
 
-export const AFFINE_PRO_PUBLIC_KEY: string | undefined | null
+export const NEXIO_PRO_PUBLIC_KEY: string | undefined | null
 
 export interface AggregateHitsOptions {
   fields: Array<string>

@@ -1,5 +1,5 @@
 import { DNDContext } from '@nexio/component';
-import { AffineOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+import { NexioOtherPageLayout } from '@nexio/component/affine-other-page-layout';
 import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
 import {
   DefaultServerService,
@@ -10,7 +10,7 @@ import { DndService } from '@nexio/core/modules/dnd/services';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { OpenInAppGuard } from '@nexio/core/modules/open-in-app';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   type Workspace,
   type WorkspaceMetadata,
   WorkspacesService,
@@ -34,7 +34,7 @@ import {
 import { map } from 'rxjs';
 import * as _Y from 'yjs';
 
-import { AffineErrorBoundary } from '../../../components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '../../../components/affine/affine-error-boundary';
 import { WorkbenchRoot } from '../../../modules/workbench';
 import { AppContainer } from '../../components/app-container';
 import { PageNotFound } from '../404';
@@ -207,9 +207,9 @@ export const Component = (): ReactElement => {
     }
     return (
       <FrameworkScope scope={server?.scope}>
-        <AffineOtherPageLayout>
+        <NexioOtherPageLayout>
           <PageNotFound noPermission />
-        </AffineOtherPageLayout>
+        </NexioOtherPageLayout>
       </FrameworkScope>
     );
   }
@@ -281,7 +281,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
       window.exportWorkspaceSnapshot = async (docs?: string[]) => {
         await ZipTransformer.exportDocs(
           workspace.docCollection,
-          getAFFiNEWorkspaceSchema(),
+          getNexioWorkspaceSchema(),
           Array.from(workspace.docCollection.docs.values())
             .filter(doc => (docs ? docs.includes(doc.id) : true))
             .map(doc => doc.getStore())
@@ -297,7 +297,7 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
             const blob = new Blob([file], { type: 'application/zip' });
             const newDocs = await ZipTransformer.importDocs(
               workspace.docCollection,
-              getAFFiNEWorkspaceSchema(),
+              getNexioWorkspaceSchema(),
               blob
             );
             console.log(
@@ -347,11 +347,11 @@ const WorkspacePage = ({ meta }: { meta: WorkspaceMetadata }) => {
     <FrameworkScope scope={workspace.scope}>
       <DNDContextProvider>
         <OpenInAppGuard>
-          <AffineErrorBoundary height="100vh">
+          <NexioErrorBoundary height="100vh">
             <WorkspaceLayout>
               <WorkbenchRoot />
             </WorkspaceLayout>
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
         </OpenInAppGuard>
       </DNDContextProvider>
     </FrameworkScope>

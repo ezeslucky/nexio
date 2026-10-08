@@ -20,7 +20,7 @@ export class ChatContentRichText extends WithDisposable(ShadowlessElement) {
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor theme!: Signal<ColorScheme>;
@@ -30,7 +30,7 @@ export class ChatContentRichText extends WithDisposable(ShadowlessElement) {
     return html`${createTextRenderer({
       customHeading: true,
       extensions: this.extensions,
-      affineFeatureFlagService: this.affineFeatureFlagService,
+      nexioFeatureFlagService: this.nexioFeatureFlagService,
       theme: this.theme,
       scrollable: false,
     })(text, this.state)}`;

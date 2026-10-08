@@ -28,7 +28,7 @@ import { QuickSearchContainer } from '@nexio/core/modules/quicksearch';
 import { NbstoreService } from '@nexio/core/modules/storage';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   WorkspaceService,
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
@@ -73,7 +73,7 @@ export const WorkspaceSideEffects = () => {
           throwIfAborted(abort);
           const [doc] = await ZipTransformer.importDocs(
             currentWorkspace.docCollection,
-            getAFFiNEWorkspaceSchema(),
+            getNexioWorkspaceSchema(),
             templateBlob
           );
           if (doc) {

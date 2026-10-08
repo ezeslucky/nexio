@@ -14,7 +14,7 @@ import cookieParser from 'cookie-parser';
 import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
 import supertest from 'supertest';
 
-import { AFFiNELogger, ApplyType, GlobalExceptionFilter } from '../../base';
+import { NexioLogger, ApplyType, GlobalExceptionFilter } from '../../base';
 import { SocketIoAdapter } from '../../base/websocket';
 import { AuthService, AuthSigningKeyRing } from '../../core/auth';
 import { BackendRuntimeProvider } from '../../core/backend-runtime';
@@ -38,7 +38,7 @@ export async function createTestingApp(
   moduleDef: TestingAppMetadata = {}
 ): Promise<TestingApp> {
   const module = await createTestingModule(moduleDef, false);
-  const logger = new AFFiNELogger();
+  const logger = new NexioLogger();
   logger.setLogLevels([TEST_LOG_LEVEL]);
 
   const app = module.createNestApplication<NestExpressApplication>({

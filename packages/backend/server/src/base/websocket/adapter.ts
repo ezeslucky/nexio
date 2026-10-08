@@ -12,7 +12,7 @@ import {
 } from '../cors';
 import { AuthenticationRequired } from '../error';
 import { URLHelper } from '../helpers';
-import { AFFiNELogger } from '../logger';
+import { NexioLogger } from '../logger';
 import { SocketIoRedis } from '../redis';
 import { WEBSOCKET_OPTIONS } from './options';
 
@@ -22,7 +22,7 @@ export class SocketIoAdapter extends IoAdapter {
   }
 
   override createIOServer(port: number, options?: any): Server {
-    const logger = this.app.get(AFFiNELogger);
+    const logger = this.app.get(NexioLogger);
     const config = this.app.get(WEBSOCKET_OPTIONS) as Config['websocket'] & {
       canActivate: (socket: Socket) => Promise<boolean>;
     };

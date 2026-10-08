@@ -6,9 +6,9 @@ import type { createStore } from 'jotai';
 import type { useTheme } from 'next-themes';
 
 import type { EditorSettingService } from '../modules/editor-setting';
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineSettingsCommands({
+export function registerNexioSettingsCommands({
   t,
   store,
   theme,
@@ -27,7 +27,7 @@ export function registerAffineSettingsCommands({
 
   // color modes
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-color-mode-to-auto',
       label: `${t['com.affine.cmdk.affine.color-mode.to']()} ${t[
         'com.affine.themeSettings.system'
@@ -45,7 +45,7 @@ export function registerAffineSettingsCommands({
     })
   );
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-color-mode-to-dark',
       label: `${t['com.affine.cmdk.affine.color-mode.to']()} ${t[
         'com.affine.themeSettings.dark'
@@ -64,7 +64,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-color-mode-to-light',
       label: `${t['com.affine.cmdk.affine.color-mode.to']()} ${t[
         'com.affine.themeSettings.light'
@@ -85,7 +85,7 @@ export function registerAffineSettingsCommands({
 
   // Font styles
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-font-style-to-sans',
       label: `${t['com.affine.cmdk.affine.font-style.to']()} ${t[
         'com.affine.appearanceSettings.fontStyle.sans'
@@ -105,7 +105,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-font-style-to-serif',
       label: `${t['com.affine.cmdk.affine.font-style.to']()} ${t[
         'com.affine.appearanceSettings.fontStyle.serif'
@@ -125,7 +125,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:change-font-style-to-mono',
       label: `${t['com.affine.cmdk.affine.font-style.to']()} ${t[
         'com.affine.appearanceSettings.fontStyle.mono'
@@ -146,7 +146,7 @@ export function registerAffineSettingsCommands({
 
   // Layout Style
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: `affine:change-client-border-style`,
       label: () => `${t['com.affine.cmdk.affine.client-border-style.to']()} ${t[
         store.get(appSettingAtom).clientBorder
@@ -171,7 +171,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: `affine:change-full-width-layout`,
       label: () =>
         `${t[
@@ -192,7 +192,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: `affine:change-noise-background-on-the-sidebar`,
       label: () =>
         `${t[
@@ -220,7 +220,7 @@ export function registerAffineSettingsCommands({
   );
 
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: `affine:change-translucent-ui-on-the-sidebar`,
       label: () =>
         `${t['com.affine.cmdk.affine.translucent-ui-on-the-sidebar.to']()} ${t[

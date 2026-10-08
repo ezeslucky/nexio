@@ -23,7 +23,7 @@ import { SharePageButton } from '@nexio/core/modules/share-menu';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { ViewIcon, ViewTitle } from '@nexio/core/modules/workbench';
 import type { Workspace } from '@nexio/core/modules/workspace';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import type { Store } from '@blocksuite/affine/store';
@@ -203,7 +203,7 @@ export function DetailPageHeader(
   });
 
   const { dragRef, dragging, CustomDragPreview } =
-    useDraggable<AffineDNDData>(() => {
+    useDraggable<NexioDNDData>(() => {
       return {
         data: {
           from: {

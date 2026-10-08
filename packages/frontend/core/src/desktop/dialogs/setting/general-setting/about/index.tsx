@@ -17,7 +17,7 @@ import { relatedLinks } from './config';
 import * as styles from './style.css';
 import { UpdateCheckSection } from './update-check-section';
 
-export const AboutAffine = () => {
+export const AboutNexio = () => {
   const t = useI18n();
   const { appSettings, updateSettings } = useAppSettingHelper();
   const { toggleAutoCheck, toggleAutoDownload } = useAppUpdater();

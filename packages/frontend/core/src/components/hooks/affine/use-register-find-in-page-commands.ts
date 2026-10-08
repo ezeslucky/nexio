@@ -1,6 +1,6 @@
 import {
   PreconditionStrategy,
-  registerAffineCommand,
+  registerNexioCommand,
 } from '@nexio/core/commands';
 import { FindInPageService } from '@nexio/core/modules/find-in-page/services/find-in-page';
 import { track } from '@nexio/track';
@@ -23,7 +23,7 @@ export function useRegisterFindInPageCommands() {
     }
     const unsubs: Array<() => void> = [];
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         preconditionStrategy: PreconditionStrategy.Never,
         id: `affine:find-in-page`,
         keyBinding: {

@@ -3,7 +3,7 @@ import { LifeCycleWatcher } from '@blocksuite/affine/std';
 import { buildAIPanelConfig } from '../ai-panel';
 import { setupEdgelessCopilot } from '../entries/edgeless/index';
 import { setupSpaceAIEntry } from '../entries/space/setup-space';
-import { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import { EdgelessCopilotWidget } from '../widgets/edgeless-copilot';
 
 export function getAIEdgelessRootWatcher() {
@@ -18,7 +18,7 @@ export function getAIEdgelessRootWatcher() {
           return;
         }
         const component = payload.view;
-        if (component instanceof AffineAIPanelWidget) {
+        if (component instanceof NexioAIPanelWidget) {
           component.style.width = '430px';
           component.config = buildAIPanelConfig(component);
           setupSpaceAIEntry(component);

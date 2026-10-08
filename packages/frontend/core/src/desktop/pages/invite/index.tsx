@@ -49,7 +49,7 @@ const AcceptInvite = ({ inviteId: targetInviteId }: { inviteId: string }) => {
     jumpToPage(inviteInfo.workspace.id, 'all', RouteLogic.REPLACE);
   }, [inviteInfo, workspacesService, jumpToPage]);
 
-  const onOpenAffine = useCallback(() => {
+  const onOpenNexio = useCallback(() => {
     navigateHelper.jumpToIndex();
   }, [navigateHelper]);
 
@@ -114,7 +114,7 @@ const AcceptInvite = ({ inviteId: targetInviteId }: { inviteId: string }) => {
         user={user}
         switchingAccount={switchingAccount}
         onSwitchAccount={onSwitchAccount}
-        onOpenAffine={onOpenAffine}
+        onOpenNexio={onOpenNexio}
       />
     );
   }
@@ -126,7 +126,7 @@ const AcceptInvite = ({ inviteId: targetInviteId }: { inviteId: string }) => {
       invitationError.is('INVALID_INVITATION') ||
       invitationError.is('NOT_FOUND'))
   ) {
-    return <ExpiredPage onOpenAffine={onOpenAffine} />;
+    return <ExpiredPage onOpenNexio={onOpenNexio} />;
   }
 
   if (invitationError || acceptError) {

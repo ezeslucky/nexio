@@ -4,9 +4,9 @@ import { ContactWithUsIcon, NewIcon } from '@blocksuite/icons/rc';
 
 import type { WorkspaceDialogService } from '../modules/dialogs';
 import type { UrlService } from '../modules/url';
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineHelpCommands({
+export function registerNexioHelpCommands({
   t,
   urlService,
   workspaceDialogService,
@@ -17,7 +17,7 @@ export function registerAffineHelpCommands({
 }) {
   const unsubs: Array<() => void> = [];
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:help-whats-new',
       category: 'affine:help',
       icon: <NewIcon />,
@@ -29,7 +29,7 @@ export function registerAffineHelpCommands({
     })
   );
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:help-contact-us',
       category: 'affine:help',
       icon: <ContactWithUsIcon />,

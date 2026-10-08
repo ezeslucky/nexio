@@ -255,7 +255,7 @@ export const BlocksuiteDocEditor = forwardRef<
 
   return (
     <>
-      <div className={styles.affineDocViewport}>
+      <div className={styles.nexioDocViewport}>
         {!BUILD_CONFIG.isMobileEdition ? (
           <DocIconPicker docId={page.id} readonly={readonly || shared} />
         ) : null}
@@ -333,7 +333,7 @@ export const BlocksuiteEdgelessEditor = forwardRef<
   }, []);
 
   return (
-    <div className={styles.affineEdgelessDocViewport}>
+    <div className={styles.nexioEdgelessDocViewport}>
       <LitEdgelessEditor ref={onDocRef} doc={page} specs={specs} />
       {portals}
     </div>

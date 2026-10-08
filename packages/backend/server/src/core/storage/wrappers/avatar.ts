@@ -7,11 +7,11 @@ import { StorageRuntimeProvider } from '../../storage-runtime';
 @Injectable()
 export class AvatarStorage {
   get config() {
-    return this.AFFiNEConfig.storages.avatar;
+    return this.NexioConfig.storages.avatar;
   }
 
   constructor(
-    private readonly AFFiNEConfig: Config,
+    private readonly NexioConfig: Config,
     private readonly url: URLHelper,
     private readonly rt: StorageRuntimeProvider
   ) {}

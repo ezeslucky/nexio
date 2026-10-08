@@ -77,8 +77,8 @@ export class AIChatBlockMessage extends LitElement {
       .host=${this.host}
       .state=${this.state}
       .extensions=${this.textRendererOptions.extensions}
-      .affineFeatureFlagService=${
-        this.textRendererOptions.affineFeatureFlagService
+      .nexioFeatureFlagService=${
+        this.textRendererOptions.nexioFeatureFlagService
       }
       .notificationService=${notificationService}
       .independentMode=${false}
@@ -91,8 +91,8 @@ export class AIChatBlockMessage extends LitElement {
       .text=${text}
       .state=${this.state}
       .extensions=${this.textRendererOptions.extensions}
-      .affineFeatureFlagService=${
-        this.textRendererOptions.affineFeatureFlagService
+      .nexioFeatureFlagService=${
+        this.textRendererOptions.nexioFeatureFlagService
       }
       .theme=${this.host.std.get(ThemeProvider).app$}
     ></chat-content-rich-text>`;

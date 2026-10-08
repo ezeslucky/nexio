@@ -8,7 +8,7 @@ import {
 import { DocsService } from '@nexio/core/modules/doc';
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { WorkbenchLink } from '@nexio/core/modules/workbench';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
 import {
@@ -148,7 +148,7 @@ export const DocListItem = ({ ...props }: DocListItemProps) => {
     [contextValue, handleMultiSelect, prevCheckAnchorId, props, selectMode]
   );
 
-  const { dragRef, CustomDragPreview } = useDraggable<AffineDNDData>(
+  const { dragRef, CustomDragPreview } = useDraggable<NexioDNDData>(
     () => ({
       canDrag: true,
       data: {

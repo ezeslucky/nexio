@@ -7,14 +7,14 @@ export const docEditorRoot = style({
   flexDirection: 'column',
 });
 
-export const affineDocViewport = style({
+export const nexioDocViewport = style({
   height: '100%',
   flex: 1,
   display: 'flex',
   flexDirection: 'column',
   paddingBottom: '100px',
 });
-export const affineEdgelessDocViewport = style({
+export const nexioEdgelessDocViewport = style({
   height: '100%',
   flex: 1,
 });

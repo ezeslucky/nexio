@@ -33,7 +33,7 @@ import { BlockSuiteEditor } from '../../../blocksuite/block-suite-editor';
 import { PureEditorModeSwitch } from '../../../blocksuite/block-suite-mode-switch';
 import { pageHistoryModalAtom } from '../../atoms/page-history';
 import { useGuard } from '../../guard';
-import { AffineErrorBoundary } from '../affine-error-boundary';
+import { NexioErrorBoundary } from '../affine-error-boundary';
 import {
   historyListGroupByDay,
   useDocSnapshotList,
@@ -126,7 +126,7 @@ const HistoryEditorPreview = ({
         </div>
 
         {snapshotPage ? (
-          <AffineErrorBoundary>
+          <NexioErrorBoundary>
             <Scrollable.Root>
               <Scrollable.Viewport className="affine-page-viewport">
                 <BlockSuiteEditor
@@ -138,7 +138,7 @@ const HistoryEditorPreview = ({
               </Scrollable.Viewport>
               <Scrollable.Scrollbar />
             </Scrollable.Root>
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
         ) : (
           <div className={styles.loadingContainer}>
             <Loading size={24} />

@@ -2,7 +2,7 @@ import { Entity, LiveData } from '@toeverything/infra';
 import { NEVER } from 'rxjs';
 
 import type { GlobalStateService } from '../../storage';
-import { AFFINE_FLAGS } from '../constant';
+import { NEXIO_FLAGS } from '../constant';
 import type { FlagInfo } from '../types';
 
 const FLAG_PREFIX = 'affine-flag:';
@@ -23,7 +23,7 @@ export class Flags extends Entity {
   constructor(private readonly globalStateService: GlobalStateService) {
     super();
 
-    Object.entries(AFFINE_FLAGS).forEach(([flagKey, flag]) => {
+    Object.entries(NEXIO_FLAGS).forEach(([flagKey, flag]) => {
       const configurable = flag.configurable ?? true;
       const defaultState =
         'defaultState' in flag ? flag.defaultState : undefined;
@@ -61,5 +61,5 @@ export class Flags extends Entity {
 }
 
 export type FlagsExt = Flags & {
-  [K in keyof AFFINE_FLAGS]: Flag<AFFINE_FLAGS[K]>;
+  [K in keyof NEXIO_FLAGS]: Flag<NEXIO_FLAGS[K]>;
 };

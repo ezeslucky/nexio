@@ -34,7 +34,7 @@ import { AccountSetting } from './account-setting';
 import { GeneralSetting } from './general-setting';
 import { IssueFeedbackModal } from './issue-feedback-modal';
 import { SettingSidebar } from './setting-sidebar';
-import { StarAFFiNEModal } from './star-affine-modal';
+import { StarNexioModal } from './star-affine-modal';
 import * as style from './style.css';
 import {
   SubPageContext,
@@ -143,15 +143,15 @@ const SettingModalInner = ({
     [setSettingState]
   );
   const [openIssueFeedbackModal, setOpenIssueFeedbackModal] = useState(false);
-  const [openStarAFFiNEModal, setOpenStarAFFiNEModal] = useState(false);
+  const [openStarNexioModal, setOpenStarNexioModal] = useState(false);
 
   const handleOpenIssueFeedbackModal = useCallback(() => {
     setOpenIssueFeedbackModal(true);
   }, [setOpenIssueFeedbackModal]);
 
-  const handleOpenStarAFFiNEModal = useCallback(() => {
-    setOpenStarAFFiNEModal(true);
-  }, [setOpenStarAFFiNEModal]);
+  const handleOpenStarNexioModal = useCallback(() => {
+    setOpenStarNexioModal(true);
+  }, [setOpenStarNexioModal]);
 
   const addSubPageIsland = useCallback(() => {
     const island = createIsland();
@@ -241,7 +241,7 @@ const SettingModalInner = ({
                     1: (
                       <span
                         className={style.link}
-                        onClick={handleOpenStarAFFiNEModal}
+                        onClick={handleOpenStarNexioModal}
                       />
                     ),
                     2: (
@@ -253,9 +253,9 @@ const SettingModalInner = ({
                   }}
                 />
               </div>
-              <StarAFFiNEModal
-                open={openStarAFFiNEModal}
-                setOpen={setOpenStarAFFiNEModal}
+              <StarNexioModal
+                open={openStarNexioModal}
+                setOpen={setOpenStarNexioModal}
               />
               <IssueFeedbackModal
                 open={openIssueFeedbackModal}

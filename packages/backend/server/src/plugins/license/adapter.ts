@@ -84,7 +84,7 @@ export function resolveWorkspaceTeamLicense(
   workspaceId: string | null,
   buf: Buffer
 ): LicensePreview {
-  if (!crypto.AFFiNEProPublicKey) {
+  if (!crypto.NexioProPublicKey) {
     throw new InternalServerError(
       'License public key is not loaded. Please contact with Affine support.'
     );
@@ -97,7 +97,7 @@ export function resolveWorkspaceTeamLicense(
       targetType: 'workspace',
       targetId: workspaceId ?? undefined,
       signedPayload: buf,
-      publicKey: crypto.AFFiNEProPublicKey.toString(),
+      publicKey: crypto.NexioProPublicKey.toString(),
       now: new Date().toISOString(),
     });
   } catch (error) {

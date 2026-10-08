@@ -26,7 +26,7 @@ use super::{
   BackendRuntime, InvalidationHintV1, RuntimeError, RuntimeResult, entitlement_input_error, parse_quantity,
   parse_target_type,
 };
-use crate::{AFFINE_PRO_PUBLIC_KEY, license_import::normalize_license, runtime::Deployment};
+use crate::{NEXIO_PRO_PUBLIC_KEY, license_import::normalize_license, runtime::Deployment};
 
 pub(super) async fn load_decision_time(
   tx: &mut Transaction<'_, Postgres>,
@@ -116,7 +116,7 @@ fn resolve_grant(
       target_type,
       workspace_id: Some(workspace_id),
       now,
-      license_public_key: AFFINE_PRO_PUBLIC_KEY,
+      license_public_key: NEXIO_PRO_PUBLIC_KEY,
     },
     &facts,
   )

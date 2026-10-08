@@ -1,7 +1,7 @@
 import { toast, useConfirmModal } from '@nexio/component';
 import {
   PreconditionStrategy,
-  registerAffineCommand,
+  registerNexioCommand,
 } from '@nexio/core/commands';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { DocService } from '@nexio/core/modules/doc';
@@ -114,7 +114,7 @@ export function useRegisterBlocksuiteEditorCommands(
 
     // this is pretty hack and easy to break. need a better way to communicate with blocksuite editor
     // unsubs.push(
-    //   registerAffineCommand({
+    //   registerNexioCommand({
     //     id: 'editor:edgeless-presentation-start',
     //     preconditionStrategy: () => PreconditionStrategy.InEdgeless && !trash,
     //     category: 'editor:edgeless',
@@ -132,7 +132,7 @@ export function useRegisterBlocksuiteEditorCommands(
     // );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-view-info`,
         preconditionStrategy: () =>
           PreconditionStrategy.InPaperOrEdgeless && !trash,
@@ -148,7 +148,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-${favorite ? 'remove-from' : 'add-to'}-favourites`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -170,7 +170,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-convert-to-${
           mode === 'page' ? 'edgeless' : 'page'
         }`,
@@ -198,7 +198,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:page-set-width`,
         preconditionStrategy: () => mode === 'page',
         category: `editor:page`,
@@ -222,7 +222,7 @@ export function useRegisterBlocksuiteEditorCommands(
 
     // TODO(@Peng): should not show duplicate for journal
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-duplicate`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -238,7 +238,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-export-to-html`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -255,7 +255,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-export-to-png`,
         preconditionStrategy: () => mode === 'page' && !trash,
         category: `editor:${mode}`,
@@ -272,7 +272,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-export-to-markdown`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -289,7 +289,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-export-to-snapshot`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -306,7 +306,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-move-to-trash`,
         preconditionStrategy,
         category: `editor:${mode}`,
@@ -321,7 +321,7 @@ export function useRegisterBlocksuiteEditorCommands(
     );
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `editor:${mode}-restore-from-trash`,
         preconditionStrategy: () =>
           PreconditionStrategy.InPaperOrEdgeless && trash,
@@ -343,7 +343,7 @@ export function useRegisterBlocksuiteEditorCommands(
 
     if (isCloudWorkspace) {
       unsubs.push(
-        registerAffineCommand({
+        registerNexioCommand({
           id: `editor:${mode}-page-history`,
           category: `editor:${mode}`,
           icon: <HistoryIcon />,
@@ -359,7 +359,7 @@ export function useRegisterBlocksuiteEditorCommands(
 
     if (isCloudWorkspace && BUILD_CONFIG.isWeb) {
       unsubs.push(
-        registerAffineCommand({
+        registerNexioCommand({
           id: 'editor:open-in-app',
           category: `editor:${mode}`,
           icon: <LocalWorkspaceIcon />,
@@ -372,7 +372,7 @@ export function useRegisterBlocksuiteEditorCommands(
     }
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: 'alert-ctrl-s',
         category: 'affine:general',
         preconditionStrategy: PreconditionStrategy.Never,

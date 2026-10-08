@@ -31,12 +31,12 @@ function getErrorFallbackComponent(error: any): FC<FallbackProps> {
   return AnyErrorFallback;
 }
 
-export interface AffineErrorFallbackProps extends FallbackProps {
+export interface NexioErrorFallbackProps extends FallbackProps {
   height?: number | string;
   className?: string;
 }
 
-export const AffineErrorFallback: FC<AffineErrorFallbackProps> = props => {
+export const NexioErrorFallback: FC<NexioErrorFallbackProps> = props => {
   const { error, resetError, height } = props;
   const Component = useMemo(() => getErrorFallbackComponent(error), [error]);
 
@@ -50,7 +50,7 @@ export const AffineErrorFallback: FC<AffineErrorFallbackProps> = props => {
   );
 };
 
-export const AffineErrorComponent = () => {
+export const NexioErrorComponent = () => {
   const error = useRouteError() as Error;
 
   const t = useI18n();
@@ -71,3 +71,8 @@ export const AffineErrorComponent = () => {
     />
   );
 };
+
+// Backwards compatibility aliases
+export const AffineErrorComponent = NexioErrorComponent;
+export const AffineErrorFallback = NexioErrorFallback;
+export type AffineErrorFallbackProps = NexioErrorFallbackProps;

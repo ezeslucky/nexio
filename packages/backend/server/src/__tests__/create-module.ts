@@ -7,7 +7,7 @@ import {
 import { PrismaClient } from '@prisma/client';
 
 import { FunctionalityModules } from '../app.module';
-import { AFFiNELogger, ConfigFactory, EventBus } from '../base';
+import { NexioLogger, ConfigFactory, EventBus } from '../base';
 import {
   BACKEND_RUNTIME_CONFIG_PATHS,
   BackendRuntimeProvider,
@@ -62,7 +62,7 @@ export async function createModule(
     throw error;
   }
 
-  const logger = new AFFiNELogger();
+  const logger = new NexioLogger();
   // we got a lot smoking tests try to break nestjs
   // can't tolerate the noisy logs
   logger.setLogLevels([TEST_LOG_LEVEL]);

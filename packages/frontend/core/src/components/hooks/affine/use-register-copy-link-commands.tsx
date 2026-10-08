@@ -1,6 +1,6 @@
 import {
   PreconditionStrategy,
-  registerAffineCommand,
+  registerNexioCommand,
 } from '@nexio/core/commands';
 import { useSharingUrl } from '@nexio/core/components/hooks/affine/use-share-url';
 import { getDefaultShareMode } from '@nexio/core/components/hooks/affine/use-share-url.utils';
@@ -35,7 +35,7 @@ export function useRegisterCopyLinkCommands({
     const unsubs: Array<() => void> = [];
 
     unsubs.push(
-      registerAffineCommand({
+      registerNexioCommand({
         id: `affine:share-private-link:${docId}`,
         category: 'affine:general',
         preconditionStrategy: PreconditionStrategy.Never,

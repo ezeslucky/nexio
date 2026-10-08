@@ -474,7 +474,7 @@ export class AIChatBlockPeekView extends LitElement {
 
     this._textRendererOptions = {
       extensions,
-      affineFeatureFlagService: this.affineFeatureFlagService,
+      nexioFeatureFlagService: this.nexioFeatureFlagService,
     };
     this._historyMessages = this._deserializeHistoryChatMessages(
       this.historyMessagesString
@@ -585,11 +585,11 @@ export class AIChatBlockPeekView extends LitElement {
         .updateContext=${updateContext}
         .docDisplayConfig=${this.docDisplayConfig}
         .searchMenuConfig=${this.searchMenuConfig}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
+        .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
         .notificationService=${notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .aiModelService=${this.aiModelService}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
         .onChatSuccess=${this._onChatSuccess}
         .trackOptions=${{
           where: 'ai-chat-block',
@@ -626,10 +626,10 @@ export class AIChatBlockPeekView extends LitElement {
   accessor searchMenuConfig!: SearchMenuConfig;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor aiDraftService!: AIDraftService;
@@ -681,8 +681,8 @@ export const AIChatBlockPeekViewTemplate = (
   searchMenuConfig: SearchMenuConfig,
   reasoningConfig: AIReasoningConfig,
   serverService: ServerService,
-  affineFeatureFlagService: FeatureFlagService,
-  affineWorkspaceDialogService: WorkspaceDialogService,
+  nexioFeatureFlagService: FeatureFlagService,
+  nexioWorkspaceDialogService: WorkspaceDialogService,
   aiDraftService: AIDraftService,
   aiToolsConfigService: AIToolsConfigService,
   aiModelService: AIModelService,
@@ -696,8 +696,8 @@ export const AIChatBlockPeekViewTemplate = (
     .searchMenuConfig=${searchMenuConfig}
     .reasoningConfig=${reasoningConfig}
     .serverService=${serverService}
-    .affineFeatureFlagService=${affineFeatureFlagService}
-    .affineWorkspaceDialogService=${affineWorkspaceDialogService}
+    .nexioFeatureFlagService=${nexioFeatureFlagService}
+    .nexioWorkspaceDialogService=${nexioWorkspaceDialogService}
     .aiDraftService=${aiDraftService}
     .aiToolsConfigService=${aiToolsConfigService}
     .aiModelService=${aiModelService}

@@ -14,7 +14,7 @@ import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
 import supertest from 'supertest';
 
 import {
-  AFFiNELogger,
+  NexioLogger,
   CacheInterceptor,
   CloudThrottlerGuard,
   ConfigFactory,
@@ -326,7 +326,7 @@ export async function createApp(
     })());
   };
 
-  const logger = new AFFiNELogger();
+  const logger = new NexioLogger();
   logger.setLogLevels([TEST_LOG_LEVEL]);
   app.useLogger(logger);
   app.use(cookieParser());

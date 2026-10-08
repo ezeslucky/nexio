@@ -13,7 +13,7 @@ import {
 } from '@nexio/core/modules/import';
 import { UrlService } from '@nexio/core/modules/url';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   type WorkspaceMetadata,
   WorkspaceService,
 } from '@nexio/core/modules/workspace';
@@ -101,7 +101,7 @@ type ImportedWorkspacePayload = {
 type ImportFunctionArgs = {
   docCollection: Workspace;
   files: File[];
-  importAffineFile: () => Promise<WorkspaceMetadata | undefined>;
+  importNexioFile: () => Promise<WorkspaceMetadata | undefined>;
   importService?: ImportService;
   context: ImportRunContext;
 };
@@ -293,7 +293,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await MarkdownTransformer.importMarkdownToDoc({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNexioWorkspaceSchema(),
           markdown: text,
           fileName,
           extensions: getStoreManager().config.init().value.get('store'),
@@ -327,7 +327,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
         const fileName = file.name.split('.').slice(0, -1).join('.');
         const docId = await HtmlTransformer.importHTMLToDoc({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNexioWorkspaceSchema(),
           extensions: getStoreManager().config.init().value.get('store'),
           html: text,
           fileName,
@@ -389,7 +389,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       for (const file of files) {
         const docId = await DocxTransformer.importDocx({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNexioWorkspaceSchema(),
           imported: file,
           extensions: getStoreManager().config.init().value.get('store'),
         });
@@ -408,7 +408,7 @@ const importConfigs: Record<ImportType, ImportConfig> = {
       const docIds = (
         await ZipTransformer.importDocs(
           docCollection,
-          getAFFiNEWorkspaceSchema(),
+          getNexioWorkspaceSchema(),
           file
         )
       )
@@ -422,8 +422,8 @@ const importConfigs: Record<ImportType, ImportConfig> = {
   },
   dotaffinefile: {
     fileOptions: { acceptType: 'Skip', multiple: false },
-    importFunction: async ({ importAffineFile }) => {
-      const workspace = await importAffineFile();
+    importFunction: async ({ importNexioFile }) => {
+      const workspace = await importNexioFile();
       return {
         docIds: [],
         entryId: undefined,
@@ -682,7 +682,7 @@ export const ImportDialog = ({
     [jumpToPage]
   );
 
-  const handleImportAffineFile = useMemo(() => {
+  const handleImportNexioFile = useMemo(() => {
     return async () => {
       track.$.navigationPanel.workspaceList.createWorkspace({
         control: 'import',
@@ -753,7 +753,7 @@ export const ImportDialog = ({
         } = await importConfig.importFunction({
           docCollection,
           files,
-          importAffineFile: handleImportAffineFile,
+          importNexioFile: handleImportNexioFile,
           importService,
           context: {
             signal: abortController.signal,
@@ -796,7 +796,7 @@ export const ImportDialog = ({
         logger.error('Failed to import', error);
       }
     },
-    [docCollection, handleImportAffineFile, importService, t]
+    [docCollection, handleImportNexioFile, importService, t]
   );
 
   const finishImport = useCallback(() => {

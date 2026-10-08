@@ -19,7 +19,7 @@ globalStyle(`[data-full-width-layout="true"] ${editor}`, {
   },
 });
 
-export const affineDocViewport = style({
+export const nexioDocViewport = style({
   display: 'flex',
   flexDirection: 'column',
   userSelect: 'none',

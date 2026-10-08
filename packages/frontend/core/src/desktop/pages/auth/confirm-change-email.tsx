@@ -12,8 +12,8 @@ import { useSearchParams } from 'react-router-dom';
 import { AppContainer } from '../../components/app-container';
 
 export const ConfirmChangeEmail: FC<{
-  onOpenAffine: () => void;
-}> = ({ onOpenAffine }) => {
+  onOpenNexio: () => void;
+}> = ({ onOpenNexio }) => {
   const t = useI18n();
   const [searchParams] = useSearchParams();
   const navigateHelper = useNavigateHelper();
@@ -57,7 +57,7 @@ export const ConfirmChangeEmail: FC<{
       title={t['com.affine.auth.change.email.page.success.title']()}
       subtitle={t['com.affine.auth.change.email.page.success.subtitle']()}
     >
-      <Button variant="primary" size="large" onClick={onOpenAffine}>
+      <Button variant="primary" size="large" onClick={onOpenNexio}>
         {t['com.affine.auth.open.affine']()}
       </Button>
     </AuthPageContainer>

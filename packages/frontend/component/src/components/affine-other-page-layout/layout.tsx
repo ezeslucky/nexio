@@ -8,7 +8,7 @@ import { DesktopNavbar } from './desktop-navbar';
 import * as styles from './index.css';
 import { MobileNavbar } from './mobile-navbar';
 
-export const AffineOtherPageLayout = ({
+export const NexioOtherPageLayout = ({
   children,
 }: {
   children: ReactNode;
@@ -26,7 +26,7 @@ export const AffineOtherPageLayout = ({
         <div className={styles.draggableHeader} />
       ) : (
         <div className={styles.topNav}>
-          <a href="/" rel="noreferrer" className={styles.affineLogo}>
+          <a href="/" rel="noreferrer" className={styles.nexioLogo}>
             <NexioLogo height={28} />
           </a>
 
@@ -42,3 +42,6 @@ export const AffineOtherPageLayout = ({
   );
 };
 
+
+// Backwards compatibility alias
+export const AffineOtherPageLayout = NexioOtherPageLayout;

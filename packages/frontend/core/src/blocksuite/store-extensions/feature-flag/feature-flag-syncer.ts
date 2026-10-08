@@ -1,5 +1,5 @@
 import {
-  AFFINE_FLAGS,
+  NEXIO_FLAGS,
   type FeatureFlagService,
 } from '@nexio/core/modules/feature-flag';
 import { FeatureFlagService as BSFeatureFlagService } from '@blocksuite/affine/shared/services';
@@ -13,10 +13,10 @@ export function getFeatureFlagSyncer(
 
     override loaded() {
       const bsFeatureFlagService = this.store.get(BSFeatureFlagService);
-      Object.entries(AFFINE_FLAGS).forEach(([key, flag]) => {
+      Object.entries(NEXIO_FLAGS).forEach(([key, flag]) => {
         if (flag.category === 'blocksuite') {
           const value =
-            featureFlagService.flags[key as keyof AFFINE_FLAGS].value;
+            featureFlagService.flags[key as keyof NEXIO_FLAGS].value;
           if (value !== undefined) {
             bsFeatureFlagService.setFlag(flag.bsFlag, value);
           }

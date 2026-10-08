@@ -42,8 +42,8 @@ import { AIContext } from './utils/context';
 import { findNoteBlockModel } from './utils/edgeless';
 import { copyTextAnswer } from './utils/editor-actions';
 import { getSelections } from './utils/selection-utils';
-import type { AffineAIPanelWidget } from './widgets/ai-panel/ai-panel';
-import type { AffineAIPanelWidgetConfig } from './widgets/ai-panel/type';
+import type { NexioAIPanelWidget } from './widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidgetConfig } from './widgets/ai-panel/type';
 
 function asCaption<T extends keyof BlockSuitePresets.AIActions>(
   host: EditorHost,
@@ -139,7 +139,7 @@ function createNewNote(host: EditorHost): AIItemConfig {
 }
 
 function buildPageResponseConfig<T extends keyof BlockSuitePresets.AIActions>(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   id: T,
   ctx: AIContext
 ) {
@@ -226,7 +226,7 @@ function buildPageResponseConfig<T extends keyof BlockSuitePresets.AIActions>(
   ];
 }
 
-export function buildErrorResponseConfig(panel: AffineAIPanelWidget) {
+export function buildErrorResponseConfig(panel: NexioAIPanelWidget) {
   return [
     {
       name: '',
@@ -256,7 +256,7 @@ export function buildErrorResponseConfig(panel: AffineAIPanelWidget) {
 }
 
 export function buildFinishConfig<T extends keyof BlockSuitePresets.AIActions>(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   id: T,
   ctx: AIContext
 ) {
@@ -266,7 +266,7 @@ export function buildFinishConfig<T extends keyof BlockSuitePresets.AIActions>(
   };
 }
 
-export function buildErrorConfig(panel: AffineAIPanelWidget) {
+export function buildErrorConfig(panel: NexioAIPanelWidget) {
   return {
     upgrade: () => {
       AIAppEvents.requestUpgradePlan.next({ host: panel.host });
@@ -289,7 +289,7 @@ export function buildGeneratingConfig(generatingIcon?: TemplateResult<1>) {
   };
 }
 
-export function buildCopyConfig(panel: AffineAIPanelWidget) {
+export function buildCopyConfig(panel: NexioAIPanelWidget) {
   return {
     allowed: true,
     onCopy: () => {
@@ -299,8 +299,8 @@ export function buildCopyConfig(panel: AffineAIPanelWidget) {
 }
 
 export function buildAIPanelConfig(
-  panel: AffineAIPanelWidget
-): AffineAIPanelWidgetConfig {
+  panel: NexioAIPanelWidget
+): NexioAIPanelWidgetConfig {
   const ctx = new AIContext();
   return {
     answerRenderer: createAIScrollableTextRenderer(

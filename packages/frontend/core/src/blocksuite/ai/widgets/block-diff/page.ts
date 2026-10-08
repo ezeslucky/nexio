@@ -13,10 +13,10 @@ import { literal, unsafeStatic } from 'lit/static-html.js';
 
 import { BlockDiffProvider } from '../../services/block-diff';
 
-export const AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE =
+export const NEXIO_BLOCK_DIFF_WIDGET_FOR_PAGE =
   'affine-block-diff-widget-for-page';
 
-export class AffineBlockDiffWidgetForPage extends WidgetComponent {
+export class NexioBlockDiffWidgetForPage extends WidgetComponent {
   static override styles = css`
     .ai-block-diff-scroller-container {
       position: fixed;
@@ -162,6 +162,6 @@ export class AffineBlockDiffWidgetForPage extends WidgetComponent {
 
 export const blockDiffWidgetForPage = WidgetViewExtension(
   'affine:page',
-  AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE,
-  literal`${unsafeStatic(AFFINE_BLOCK_DIFF_WIDGET_FOR_PAGE)}`
+  NEXIO_BLOCK_DIFF_WIDGET_FOR_PAGE,
+  literal`${unsafeStatic(NEXIO_BLOCK_DIFF_WIDGET_FOR_PAGE)}`
 );

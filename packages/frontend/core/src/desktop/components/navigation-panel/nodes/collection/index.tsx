@@ -12,7 +12,7 @@ import {
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { FilterMinusIcon } from '@blocksuite/icons/rc';
@@ -89,7 +89,7 @@ export const NavigationPanelCollectionNode = ({
       dropTarget: {
         at: 'navigation-panel:doc',
       },
-    } satisfies AffineDNDData;
+    } satisfies NexioDNDData;
   }, [collectionId, location]);
 
   const handleRename = useCallback(
@@ -123,7 +123,7 @@ export const NavigationPanelCollectionNode = ({
   );
 
   const handleDropOnCollection = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<NexioDNDData>) => {
       if (collection && data.treeInstruction?.type === 'make-child') {
         if (data.source.data.entity?.type === 'doc') {
           handleAddDocToCollection(data.source.data.entity.id);
@@ -159,7 +159,7 @@ export const NavigationPanelCollectionNode = ({
     );
 
   const handleDropOnPlaceholder = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<NexioDNDData>) => {
       if (collection && data.source.data.entity?.type === 'doc') {
         handleAddDocToCollection(data.source.data.entity.id);
         track.$.navigationPanel.organize.createOrganizeItem({
@@ -197,7 +197,7 @@ export const NavigationPanelCollectionNode = ({
     return collectionOperations;
   }, [collectionOperations, additionalOperations]);
 
-  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<NexioDNDData>['canDrop']>(
     () => args => {
       const entityType = args.source.data.entity?.type;
       return args.treeInstruction?.type !== 'make-child'

@@ -23,7 +23,7 @@ vi.mock('../../modules/organize', () => ({
   OrganizeService: organizeServiceToken,
 }));
 vi.mock('../../modules/workspace', () => ({
-  getAFFiNEWorkspaceSchema: () => 'schema',
+  getNexioWorkspaceSchema: () => 'schema',
 }));
 
 const originalBuildConfig = globalThis.BUILD_CONFIG;

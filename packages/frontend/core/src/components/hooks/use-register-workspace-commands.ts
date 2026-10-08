@@ -21,21 +21,21 @@ import { useEffect } from 'react';
 import { usePageHelper } from '../../blocksuite/block-suite-page-list/utils';
 import {
   PreconditionStrategy,
-  registerAffineCommand,
-  registerAffineCreationCommands,
-  registerAffineHelpCommands,
-  registerAffineLanguageCommands,
-  registerAffineLayoutCommands,
-  registerAffineNavigationCommands,
-  registerAffineSettingsCommands,
-  registerAffineUpdatesCommands,
+  registerNexioCommand,
+  registerNexioCreationCommands,
+  registerNexioHelpCommands,
+  registerNexioLanguageCommands,
+  registerNexioLayoutCommands,
+  registerNexioNavigationCommands,
+  registerNexioSettingsCommands,
+  registerNexioUpdatesCommands,
 } from '../../commands';
 import { EditorSettingService } from '../../modules/editor-setting';
 import { CMDKQuickSearchService } from '../../modules/quicksearch/services/cmdk';
 import { useNavigateHelper } from './use-navigate-helper';
 
 function registerCMDKCommand(service: CMDKQuickSearchService) {
-  return registerAffineCommand({
+  return registerNexioCommand({
     id: 'affine:show-quick-search',
     preconditionStrategy: PreconditionStrategy.Never,
     category: 'affine:general',
@@ -95,7 +95,7 @@ export function useRegisterWorkspaceCommands() {
       return;
     }
 
-    const unsub = registerAffineUpdatesCommands({
+    const unsub = registerNexioUpdatesCommands({
       store,
       t,
       quitAndInstall,
@@ -108,7 +108,7 @@ export function useRegisterWorkspaceCommands() {
 
   // register AffineNavigationCommands
   useEffect(() => {
-    const unsub = registerAffineNavigationCommands({
+    const unsub = registerNexioNavigationCommands({
       t,
       docCollection: currentWorkspace.docCollection,
       navigationHelper,
@@ -131,7 +131,7 @@ export function useRegisterWorkspaceCommands() {
 
   // register AffineSettingsCommands
   useEffect(() => {
-    const unsub = registerAffineSettingsCommands({
+    const unsub = registerNexioSettingsCommands({
       store,
       t,
       theme,
@@ -144,7 +144,7 @@ export function useRegisterWorkspaceCommands() {
   }, [editorSettingService, store, t, theme]);
 
   useEffect(() => {
-    const unsub = registerAffineLanguageCommands({
+    const unsub = registerNexioLanguageCommands({
       i18n,
       t,
     });
@@ -156,7 +156,7 @@ export function useRegisterWorkspaceCommands() {
 
   // register AffineLayoutCommands
   useEffect(() => {
-    const unsub = registerAffineLayoutCommands({ t, appSidebarService });
+    const unsub = registerNexioLayoutCommands({ t, appSidebarService });
 
     return () => {
       unsub();
@@ -165,7 +165,7 @@ export function useRegisterWorkspaceCommands() {
 
   // register AffineCreationCommands
   useEffect(() => {
-    const unsub = registerAffineCreationCommands({
+    const unsub = registerNexioCreationCommands({
       globalDialogService,
       pageHelper: pageHelper,
       t,
@@ -178,7 +178,7 @@ export function useRegisterWorkspaceCommands() {
 
   // register AffineHelpCommands
   useEffect(() => {
-    const unsub = registerAffineHelpCommands({
+    const unsub = registerNexioHelpCommands({
       t,
       urlService,
       workspaceDialogService,

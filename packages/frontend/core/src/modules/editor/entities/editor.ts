@@ -1,4 +1,4 @@
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import type { DefaultOpenProperty } from '@nexio/core/components/properties';
 import { PresentTool } from '@blocksuite/affine/blocks/frame';
 import { DefaultTool } from '@blocksuite/affine/blocks/surface';
@@ -37,7 +37,7 @@ export class Editor extends Entity {
   readonly doc = this.docService.doc;
   readonly isSharedMode =
     this.workspaceService.workspace.openOptions.isSharedMode;
-  readonly editorContainer$ = new LiveData<AffineEditorContainer | null>(null);
+  readonly editorContainer$ = new LiveData<NexioEditorContainer | null>(null);
   readonly defaultOpenProperty$ = new LiveData<DefaultOpenProperty | undefined>(
     undefined
   );
@@ -269,7 +269,7 @@ export class Editor extends Entity {
   }
 
   bindEditorContainer(
-    editorContainer: AffineEditorContainer,
+    editorContainer: NexioEditorContainer,
     docTitle?: DocTitle | null,
     scrollViewport?: HTMLElement | null
   ) {

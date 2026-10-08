@@ -42,7 +42,7 @@ const links = [
   },
 ];
 
-export function AboutAFFiNE() {
+export function AboutNexio() {
   return (
     <div className="flex flex-col h-full gap-3 py-5 px-6 w-full">
       <div className="flex items-center">

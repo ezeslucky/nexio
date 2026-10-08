@@ -9,7 +9,7 @@ import {
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
@@ -51,7 +51,7 @@ const PropertyItem = ({
     setMoreMenuOpen(true);
   }, []);
 
-  const { dragRef } = useDraggable<AffineDNDData>(
+  const { dragRef } = useDraggable<NexioDNDData>(
     () => ({
       canDrag: canEditPropertyInfo,
       data: {
@@ -68,7 +68,7 @@ const PropertyItem = ({
     [propertyInfo, workspaceService, canEditPropertyInfo]
   );
 
-  const { dropTargetRef, closestEdge } = useDropTarget<AffineDNDData>(
+  const { dropTargetRef, closestEdge } = useDropTarget<NexioDNDData>(
     () => ({
       canDrop(data) {
         return (

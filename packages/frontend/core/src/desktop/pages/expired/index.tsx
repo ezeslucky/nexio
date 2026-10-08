@@ -13,9 +13,9 @@ import {
  */
 export const Component = () => {
   const { jumpToIndex } = useNavigateHelper();
-  const onOpenAffine = useCallback(() => {
+  const onOpenNexio = useCallback(() => {
     jumpToIndex(RouteLogic.REPLACE);
   }, [jumpToIndex]);
 
-  return <ExpiredPage onOpenAffine={onOpenAffine} />;
+  return <ExpiredPage onOpenNexio={onOpenNexio} />;
 };

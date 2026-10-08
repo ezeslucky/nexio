@@ -18,7 +18,7 @@ import { combineLatest, map } from 'rxjs';
 export function getThemeExtension(
   framework: FrameworkProvider
 ): typeof LifeCycleWatcher {
-  class AffineThemeExtension
+  class NexioThemeExtension
     extends LifeCycleWatcher
     implements ThemeExtension
   {
@@ -30,7 +30,7 @@ export function getThemeExtension(
 
     static override setup(di: Container) {
       super.setup(di);
-      di.override(ThemeExtensionIdentifier, AffineThemeExtension, [
+      di.override(ThemeExtensionIdentifier, NexioThemeExtension, [
         StdIdentifier,
       ]);
     }
@@ -93,5 +93,5 @@ export function getThemeExtension(
     }
   }
 
-  return AffineThemeExtension;
+  return NexioThemeExtension;
 }

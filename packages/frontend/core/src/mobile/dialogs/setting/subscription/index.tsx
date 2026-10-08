@@ -11,7 +11,7 @@ import { SettingGroup } from '../group';
 import { RowLayout } from '../row.layout';
 import * as styles from './styles.css';
 
-const AFFINE_TEAM_URL = '#';
+const NEXIO_TEAM_URL = '#';
 
 export const PlansGroup = () => {
   const serverService = useService(ServerService);
@@ -56,7 +56,7 @@ export const PlansGroup = () => {
         prefix={<MultiPeopleIcon />}
         label={t['com.affine.mobile.setting.promo.title']()}
         description={t['com.affine.mobile.setting.promo.description']()}
-        onClick={() => urlService.openExternal(AFFINE_TEAM_URL)}
+        onClick={() => urlService.openExternal(NEXIO_TEAM_URL)}
       />
     </SettingGroup>
   );

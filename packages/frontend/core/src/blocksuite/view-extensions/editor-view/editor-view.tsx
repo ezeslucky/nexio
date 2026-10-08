@@ -1,7 +1,7 @@
 import type { ConfirmModalProps, ElementOrFactory } from '@nexio/component';
 import {
-  AffinePageReference,
-  AffineSharedPageReference,
+  NexioPageReference,
+  NexioSharedPageReference,
 } from '@nexio/core/components/affine/reference-link';
 import { DocService, DocsService } from '@nexio/core/modules/doc';
 import { EditorService } from '@nexio/core/modules/editor';
@@ -48,9 +48,9 @@ const optionsSchema = z.object({
   scope: z.enum(['doc', 'workspace']).optional(),
 });
 
-export type AffineEditorViewOptions = z.infer<typeof optionsSchema>;
+export type NexioEditorViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEditorViewOptions> {
+export class NexioEditorViewExtension extends ViewExtensionProvider<NexioEditorViewOptions> {
   override name = 'affine-editor-view';
 
   override schema = optionsSchema;
@@ -72,7 +72,7 @@ export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEdito
 
       if (workspaceService.workspace.openOptions.isSharedMode) {
         return (
-          <AffineSharedPageReference
+          <NexioSharedPageReference
             docCollection={workspaceService.workspace.docCollection}
             pageId={pageId}
             params={params}
@@ -82,14 +82,14 @@ export class AffineEditorViewExtension extends ViewExtensionProvider<AffineEdito
       }
 
       return (
-        <AffinePageReference pageId={pageId} params={params} title={title} />
+        <NexioPageReference pageId={pageId} params={params} title={title} />
       );
     };
   };
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineEditorViewOptions
+    options?: NexioEditorViewOptions
   ) {
     super.setup(context, options);
     if (!options) {

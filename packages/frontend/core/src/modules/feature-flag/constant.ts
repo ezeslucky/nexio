@@ -5,7 +5,7 @@ const isCanaryBuild = BUILD_CONFIG.appBuildType === 'canary';
 const isMobile = BUILD_CONFIG.isMobileEdition;
 const isIOS = BUILD_CONFIG.isIOS;
 
-export const AFFINE_FLAGS = {
+export const NEXIO_FLAGS = {
   enable_ai: {
     category: 'affine',
     displayName:
@@ -311,7 +311,7 @@ export const AFFINE_FLAGS = {
 } satisfies { [key in string]: FlagInfo };
 
 // oxlint-disable-next-line no-redeclare
-export type AFFINE_FLAGS = typeof AFFINE_FLAGS;
-export const NEXIO_FLAGS = AFFINE_FLAGS;
-export type NEXIO_FLAGS = AFFINE_FLAGS;
+export type NEXIO_FLAGS = typeof NEXIO_FLAGS;
+export const AFFINE_FLAGS = NEXIO_FLAGS;
+export type AFFINE_FLAGS = NEXIO_FLAGS;
 

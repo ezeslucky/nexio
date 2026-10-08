@@ -1,7 +1,7 @@
 import * as allIcons from '@blocksuite/icons/rc';
 import type { SVGProps } from 'react';
 
-export const AffineIconRenderer = ({
+export const NexioIconRenderer = ({
   name,
   ...props
 }: {
@@ -17,3 +17,6 @@ export const AffineIconRenderer = ({
 
   return <Icon {...props} />;
 };
+
+// Backwards compatibility alias
+export const AffineIconRenderer = NexioIconRenderer;

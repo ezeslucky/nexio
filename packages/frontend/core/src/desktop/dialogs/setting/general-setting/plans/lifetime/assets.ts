@@ -1,9 +1,9 @@
 import {
-  affineIconGradientStart,
-  affineIconGradientStop,
+  nexioIconGradientStart,
+  nexioIconGradientStop,
 } from './believer-card.css';
 
-export const bgAFFiNERaw = `<svg 
+export const bgNexioRaw = `<svg 
   width="352" 
   height="320" 
   viewBox="0 0 352 320" 
@@ -13,7 +13,7 @@ export const bgAFFiNERaw = `<svg
 >
   <g filter="url(#filter0_dddd_782_4147)">
     <path 
-      fill="url(#believerAffineIconGradient)"
+      fill="url(#believerNexioIconGradient)"
       class="affine"
       fill-rule="evenodd" 
       clip-rule="evenodd" 
@@ -22,15 +22,15 @@ export const bgAFFiNERaw = `<svg
   </g>
   <defs>
     <linearGradient 
-      id="believerAffineIconGradient" 
+      id="believerNexioIconGradient" 
       x1="0" 
       y1="0" 
       x2="352" 
       y2="320" 
       gradientUnits="userSpaceOnUse"
     >
-      <stop stop-color="${affineIconGradientStart}"/>
-      <stop offset="1" stop-color="${affineIconGradientStop}"/>
+      <stop stop-color="${nexioIconGradientStart}"/>
+      <stop offset="1" stop-color="${nexioIconGradientStop}"/>
     </linearGradient>
     <filter id="filter0_dddd_782_4147" x="0" y="0" width="351.209" height="319.144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>

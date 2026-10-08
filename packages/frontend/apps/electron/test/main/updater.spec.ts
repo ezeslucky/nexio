@@ -18,7 +18,7 @@ import {
 } from 'vitest';
 
 import {
-  AFFiNEUpdateProvider,
+  NexioUpdateProvider,
   availableForMyPlatformAndInstaller,
 } from '../../src/main/updater/affine-update-provider';
 import { MockedAppAdapter, MockedUpdater } from './mocks';
@@ -88,7 +88,7 @@ describe('testing for client update', () => {
         const updater = new MockedUpdater(null, app);
 
         updater.setFeedURL(
-          AFFiNEUpdateProvider.configFeed({
+          NexioUpdateProvider.configFeed({
             channel: buildType as any,
           })
         );

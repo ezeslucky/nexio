@@ -16,8 +16,8 @@ import { isEqual } from 'lodash-es';
 import { Subject } from 'rxjs';
 
 import {
-  AFFINE_AI_PANEL_WIDGET,
-  type AffineAIPanelWidget,
+  NEXIO_AI_PANEL_WIDGET,
+  type NexioAIPanelWidget,
 } from '../widgets/ai-panel/ai-panel.js';
 
 export class CopilotTool extends BaseTool {
@@ -50,9 +50,9 @@ export class CopilotTool extends BaseTool {
   // AI processing
   get processing() {
     const aiPanel = this.gfx.std.view.getWidget(
-      AFFINE_AI_PANEL_WIDGET,
+      NEXIO_AI_PANEL_WIDGET,
       this.doc.root!.id
-    ) as AffineAIPanelWidget;
+    ) as NexioAIPanelWidget;
     return aiPanel && aiPanel.state !== 'hidden';
   }
 

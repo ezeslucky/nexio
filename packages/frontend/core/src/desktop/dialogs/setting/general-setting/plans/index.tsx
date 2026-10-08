@@ -27,7 +27,7 @@ const Settings = () => {
   return <PlanLayout cloud={<CloudPlans />} ai={<AIPlan />} />;
 };
 
-export const AFFiNEPricingPlans = () => {
+export const NexioPricingPlans = () => {
   return (
     <SWRErrorBoundary FallbackComponent={PlansErrorBoundary}>
       <Settings />

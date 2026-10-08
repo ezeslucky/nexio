@@ -28,7 +28,7 @@ export const PageHeaderShareButton = () => {
           <ShareMenuContent
             workspaceMetadata={workspace.meta}
             currentPage={doc}
-            onEnableAffineCloud={() =>
+            onEnableNexioCloud={() =>
               confirmEnableCloud(workspace, {
                 openPageId: doc.id,
               })

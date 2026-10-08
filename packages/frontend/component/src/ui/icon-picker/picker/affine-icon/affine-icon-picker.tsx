@@ -13,7 +13,7 @@ import { IconButton } from '../../../button';
 import Input from '../../../input';
 import { Menu } from '../../../menu';
 import { Scrollable } from '../../../scrollbar';
-import { AffineIconRenderer } from '../../renderer/affine-icon';
+import { NexioIconRenderer } from '../../renderer/affine-icon';
 import * as pickerStyles from '../picker.css';
 import * as styles from './affine-icon-picker.css';
 
@@ -61,7 +61,7 @@ const useRecentIcons = () => {
   };
 };
 
-export const AffineIconPicker = ({
+export const NexioIconPicker = ({
   onSelect,
 }: {
   onSelect?: (icon: string, color: string) => void;
@@ -177,7 +177,7 @@ export const AffineIconPicker = ({
                     style={{ padding: 4 }}
                     key={iconName}
                     icon={
-                      <AffineIconRenderer style={{ color }} name={iconName} />
+                      <NexioIconRenderer style={{ color }} name={iconName} />
                     }
                     onClick={() => handleIconSelect(iconName)}
                   />
@@ -199,7 +199,7 @@ export const AffineIconPicker = ({
                     style={{ padding: 4 }}
                     key={icon.name}
                     icon={
-                      <AffineIconRenderer style={{ color }} name={icon.name} />
+                      <NexioIconRenderer style={{ color }} name={icon.name} />
                     }
                     onClick={() => handleIconSelect(icon.name)}
                   />
@@ -213,3 +213,6 @@ export const AffineIconPicker = ({
     </div>
   );
 };
+
+// Backwards compatibility alias
+export const AffineIconPicker = NexioIconPicker;

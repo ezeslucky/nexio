@@ -3,9 +3,9 @@ import type { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { SettingsIcon } from '@blocksuite/icons/rc';
 
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineLanguageCommands({
+export function registerNexioLanguageCommands({
   i18n,
   t,
 }: {
@@ -14,7 +14,7 @@ export function registerAffineLanguageCommands({
 }) {
   // Display Language
   const disposables = i18n.languageList.map(language => {
-    return registerAffineCommand({
+    return registerNexioCommand({
       id: `affine:change-display-language-to-${language.name}`,
       label: `${t['com.affine.cmdk.affine.display-language.to']()} ${
         language.originalName

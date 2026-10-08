@@ -18,7 +18,7 @@ import { useEffect, useMemo } from 'react';
 
 import { AuthService, ServerService } from '../../../../modules/cloud';
 import type { SettingSidebarItem, SettingState } from '../types';
-import { AboutAffine } from './about';
+import { AboutNexio } from './about';
 import { AppearanceSettings } from './appearance';
 import { BackupSettingPanel } from './backup';
 import { BillingSettings } from './billing';
@@ -27,7 +27,7 @@ import { ExperimentalFeatures } from './experimental-features';
 import { PaymentIcon, UpgradeIcon } from './icons';
 import { MeetingsSettings } from './meetings';
 import { NotificationSettings } from './notifications';
-import { AFFiNEPricingPlans } from './plans';
+import { NexioPricingPlans } from './plans';
 import { Shortcuts } from './shortcuts';
 
 export type GeneralSettingList = SettingSidebarItem[];
@@ -179,9 +179,9 @@ export const GeneralSetting = ({
     case 'meetings':
       return <MeetingsSettings />;
     case 'about':
-      return <AboutAffine />;
+      return <AboutNexio />;
     case 'plans':
-      return <AFFiNEPricingPlans />;
+      return <NexioPricingPlans />;
     case 'billing':
       return <BillingSettings onChangeSettingState={onChangeSettingState} />;
     case 'experimental-features':

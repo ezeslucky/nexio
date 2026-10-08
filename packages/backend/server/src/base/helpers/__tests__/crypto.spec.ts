@@ -103,19 +103,19 @@ test('uses the native verifier public key', t => {
   globalThis.env.DEPLOYMENT_TYPE = 'selfhosted';
   const loadKey = Sinon.stub(
     t.context.crypto as unknown as {
-      loadAFFiNEProPublicKey(): Buffer | null;
+      loadNexioProPublicKey(): Buffer | null;
     },
-    'loadAFFiNEProPublicKey'
+    'loadNexioProPublicKey'
   );
   loadKey.onFirstCall().returns(null);
   loadKey.onSecondCall().returns(Buffer.from('public-key'));
   try {
     t.throws(() => t.context.crypto.onModuleInit(), {
       message:
-        'AFFINE_PRO_PUBLIC_KEY must be embedded in self-hosted server-native builds.',
+        'NEXIO_PRO_PUBLIC_KEY must be embedded in self-hosted server-native builds.',
     });
     t.context.crypto.onModuleInit();
-    t.is(t.context.crypto.AFFiNEProPublicKey?.toString(), 'public-key');
+    t.is(t.context.crypto.NexioProPublicKey?.toString(), 'public-key');
   } finally {
     // @ts-expect-error test restores deployment mode after the lifecycle hook
     globalThis.env.DEPLOYMENT_TYPE = deployment;

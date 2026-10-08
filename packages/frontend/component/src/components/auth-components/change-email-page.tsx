@@ -11,7 +11,7 @@ export const ChangeEmailPage = ({
   onChangeEmail: propsOnChangeEmail,
 }: {
   onChangeEmail: (email: string) => Promise<boolean>;
-  onOpenAffine: () => void;
+  onOpenNexio: () => void;
 }) => {
   const t = useI18n();
   const [hasSetUp, setHasSetUp] = useState(false);

@@ -5,7 +5,7 @@ import { Service } from '@toeverything/infra';
 
 import { DocsService } from '../../doc';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   type WorkspaceMetadata,
   type WorkspacesService,
 } from '../../workspace';
@@ -27,7 +27,7 @@ export class ImportTemplateService extends Service {
     await workspace.engine.doc.waitForDocReady(workspace.id); // wait for root doc ready
     const [importedDoc] = await ZipTransformer.importDocs(
       workspace.docCollection,
-      getAFFiNEWorkspaceSchema(),
+      getNexioWorkspaceSchema(),
       new Blob([toArrayBuffer(docBinary)], {
         type: 'application/zip',
       })

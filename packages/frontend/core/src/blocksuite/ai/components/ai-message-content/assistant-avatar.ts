@@ -6,7 +6,7 @@ import { property } from 'lit/decorators.js';
 
 import type { ChatStatus } from '../ai-chat-messages';
 
-const AffineAvatarIcon = AiIcon({
+const NexioAvatarIcon = AiIcon({
   width: '20px',
   height: '20px',
   style: 'color: var(--affine-primary-color)',
@@ -28,7 +28,7 @@ export class AssistantAvatar extends ShadowlessElement {
     return html`${
       this.status === 'transmitting'
         ? AIStarIconWithAnimation
-        : AffineAvatarIcon
+        : NexioAvatarIcon
     }
     AFFiNE AI`;
   }

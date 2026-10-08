@@ -103,7 +103,7 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
   const [params] = useSearchParams();
   const isTeam = workspaceInfo?.isTeam;
 
-  const openAFFiNE = useCallback(() => {
+  const openNexio = useCallback(() => {
     if (params.get('client')) {
       jumpToOpenInApp(`/workspace/${selectedWorkspace?.id}/all`);
     } else if (selectedWorkspace) {
@@ -124,9 +124,9 @@ export const UpgradeToTeam = ({ recurring }: { recurring: string | null }) => {
 
   useEffect(() => {
     if (isTeam && selectedWorkspace) {
-      return openAFFiNE();
+      return openNexio();
     }
-  }, [isTeam, jumpToPage, openAFFiNE, selectedWorkspace]);
+  }, [isTeam, jumpToPage, openNexio, selectedWorkspace]);
 
   return (
     <AuthPageContainer title={t['com.affine.upgrade-to-team-page.title']()}>

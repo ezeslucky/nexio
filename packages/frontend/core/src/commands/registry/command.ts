@@ -36,7 +36,7 @@ export interface KeybindingOptions {
   skipRegister?: boolean;
 }
 
-export interface AffineCommandOptions {
+export interface NexioCommandOptions {
   id: string;
   // a set of predefined precondition strategies, but also allow user to customize their own
   // note: this only controls the visibility of the command, not the availability (e.g., shortcut keybinding still works)
@@ -62,7 +62,7 @@ export interface AffineCommandOptions {
   run: () => void | Promise<void>;
 }
 
-export interface AffineCommand {
+export interface NexioCommand {
   readonly id: string;
   readonly preconditionStrategy: PreconditionStrategy | (() => boolean);
   readonly label: {
@@ -75,9 +75,9 @@ export interface AffineCommand {
   run(): void | Promise<void>;
 }
 
-export function createAffineCommand(
-  options: AffineCommandOptions
-): AffineCommand {
+export function createNexioCommand(
+  options: NexioCommandOptions
+): NexioCommand {
   return {
     id: options.id,
     run: options.run,
@@ -102,3 +102,8 @@ export function createAffineCommand(
         : options.keyBinding,
   };
 }
+
+// Backwards compatibility aliases
+export type AffineCommand = NexioCommand;
+export type AffineCommandOptions = NexioCommandOptions;
+export const createAffineCommand = createNexioCommand;

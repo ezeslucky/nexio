@@ -72,7 +72,7 @@ const DEFAULT_AFFINE_PRO_PUBLIC_KEY: &str =
    AxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----";
 
 #[napi]
-pub const AFFINE_PRO_PUBLIC_KEY: Option<&'static str> = match std::option_env!("AFFINE_PRO_PUBLIC_KEY") {
+pub const NEXIO_PRO_PUBLIC_KEY: Option<&'static str> = match std::option_env!("NEXIO_PRO_PUBLIC_KEY") {
   Some(key) => Some(key),
   None => Some(DEFAULT_AFFINE_PRO_PUBLIC_KEY),
 };

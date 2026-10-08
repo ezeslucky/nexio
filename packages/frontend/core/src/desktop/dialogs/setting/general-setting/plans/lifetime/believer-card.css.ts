@@ -1,8 +1,8 @@
 import { cssVar } from '@toeverything/theme';
 import { createVar, globalStyle, style } from '@vanilla-extract/css';
 
-export const affineIconGradientStart = createVar();
-export const affineIconGradientStop = createVar();
+export const nexioIconGradientStart = createVar();
+export const nexioIconGradientStop = createVar();
 
 const colorSchemes = {
   light: {
@@ -81,16 +81,16 @@ export const bg = style({
 });
 globalStyle(`.${bg} > svg.affine-svg`, {
   vars: {
-    [affineIconGradientStart]: colorSchemes.light.affine.start,
-    [affineIconGradientStop]: colorSchemes.light.affine.stop,
+    [nexioIconGradientStart]: colorSchemes.light.affine.start,
+    [nexioIconGradientStop]: colorSchemes.light.affine.stop,
   },
   position: 'absolute',
   zIndex: 0,
 });
 globalStyle(`[data-theme='dark'] .${bg} > svg.affine-svg`, {
   vars: {
-    [affineIconGradientStart]: colorSchemes.dark.affine.start,
-    [affineIconGradientStop]: colorSchemes.dark.affine.stop,
+    [nexioIconGradientStart]: colorSchemes.dark.affine.start,
+    [nexioIconGradientStop]: colorSchemes.dark.affine.stop,
   },
 });
 globalStyle(` .${bg} > svg.icons-svg`, {

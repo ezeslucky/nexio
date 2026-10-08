@@ -8,7 +8,7 @@ import { raw } from 'express';
 import graphqlUploadExpress from 'graphql-upload/graphqlUploadExpress.mjs';
 
 import {
-  AFFiNELogger,
+  NexioLogger,
   buildCorsAllowedOrigins,
   CacheInterceptor,
   CloudThrottlerGuard,
@@ -63,7 +63,7 @@ export async function run() {
   const config = app.get(Config);
   configureBodyParsers(app, config.server.path);
 
-  const logger = app.get(AFFiNELogger);
+  const logger = app.get(NexioLogger);
   app.useLogger(logger);
   const url = app.get(URLHelper);
   let telemetry: TelemetryService | null = null;

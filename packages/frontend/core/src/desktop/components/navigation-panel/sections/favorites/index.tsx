@@ -11,7 +11,7 @@ import {
 } from '@nexio/core/modules/favorite';
 import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
@@ -54,7 +54,7 @@ export const NavigationPanelFavorites = () => {
   );
 
   const handleDrop = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<NexioDNDData>) => {
       if (
         data.source.data.entity?.type &&
         isFavoriteSupportType(data.source.data.entity.type)
@@ -93,7 +93,7 @@ export const NavigationPanelFavorites = () => {
   const handleOnChildrenDrop = useCallback(
     (
       favorite: { id: string; type: FavoriteSupportTypeUnion },
-      data: DropTargetDropEvent<AffineDNDData>
+      data: DropTargetDropEvent<NexioDNDData>
     ) => {
       if (
         data.treeInstruction?.type === 'reorder-above' ||
@@ -148,7 +148,7 @@ export const NavigationPanelFavorites = () => {
   );
 
   const { dropTargetRef, draggedOverDraggable, draggedOverPosition } =
-    useDropTarget<AffineDNDData>(
+    useDropTarget<NexioDNDData>(
       () => ({
         data: {
           at: 'navigation-panel:favorite:root',
@@ -228,11 +228,11 @@ const NavigationPanelFavoriteNode = ({
       id: string;
       type: FavoriteSupportTypeUnion;
     },
-    data: DropTargetDropEvent<AffineDNDData>
+    data: DropTargetDropEvent<NexioDNDData>
   ) => void;
 }) => {
   const handleOnChildrenDrop = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<NexioDNDData>) => {
       onDrop(favorite, data);
     },
     [favorite, onDrop]

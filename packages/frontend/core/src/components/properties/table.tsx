@@ -18,7 +18,7 @@ import type {
 import { DocIntegrationPropertiesTable } from '@nexio/core/modules/integration';
 import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
@@ -164,7 +164,7 @@ export const WorkspacePropertyRow = ({
   );
 
   const docId = docService.doc.id;
-  const { dragRef } = useDraggable<AffineDNDData>(
+  const { dragRef } = useDraggable<NexioDNDData>(
     () => ({
       canDrag: !propertyInfoReadonly,
       data: {
@@ -180,7 +180,7 @@ export const WorkspacePropertyRow = ({
     }),
     [docId, propertyInfo.id, propertyInfoReadonly]
   );
-  const { dropTargetRef, closestEdge } = useDropTarget<AffineDNDData>(
+  const { dropTargetRef, closestEdge } = useDropTarget<NexioDNDData>(
     () => ({
       closestEdge: {
         allowedEdges: ['bottom', 'top'],

@@ -1,7 +1,7 @@
 import { useThemeColorV2 } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
 import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
@@ -157,7 +157,7 @@ const DetailPageImpl = ({
   const server = useService(ServerService).server;
 
   const onLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       // provide image proxy endpoint to blocksuite
       const imageProxyUrl = new URL(
         BUILD_CONFIG.imageProxyUrl,
@@ -238,16 +238,16 @@ const DetailPageImpl = ({
           style={immersiveViewportStyle}
           className={clsx(
             'affine-page-viewport',
-            styles.affineDocViewport,
+            styles.nexioDocViewport,
             styles.editorContainer
           )}
           onPointerDown={immersiveTapHandlers?.onPointerDown}
           onPointerUp={immersiveTapHandlers?.onPointerUp}
           onPointerCancel={immersiveTapHandlers?.onPointerCancel}
         >
-          <AffineErrorBoundary key={doc.id} className={styles.errorBoundary}>
+          <NexioErrorBoundary key={doc.id} className={styles.errorBoundary}>
             <PageDetailEditor onLoad={onLoad} readonly={readonly} />
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
         </div>
       </div>
     </FrameworkScope>

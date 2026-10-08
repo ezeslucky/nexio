@@ -3,9 +3,9 @@ import { track } from '@nexio/track';
 import { SidebarIcon } from '@blocksuite/icons/rc';
 
 import type { AppSidebarService } from '../modules/app-sidebar';
-import { registerAffineCommand } from './registry';
+import { registerNexioCommand } from './registry';
 
-export function registerAffineLayoutCommands({
+export function registerNexioLayoutCommands({
   t,
   appSidebarService,
 }: {
@@ -14,7 +14,7 @@ export function registerAffineLayoutCommands({
 }) {
   const unsubs: Array<() => void> = [];
   unsubs.push(
-    registerAffineCommand({
+    registerNexioCommand({
       id: 'affine:toggle-left-sidebar',
       category: 'affine:layout',
       icon: <SidebarIcon />,

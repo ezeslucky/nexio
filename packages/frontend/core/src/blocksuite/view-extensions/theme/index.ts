@@ -11,16 +11,16 @@ const optionsSchema = z.object({
   framework: z.instanceof(FrameworkProvider).optional(),
 });
 
-type AffineThemeViewOptions = z.infer<typeof optionsSchema>;
+type NexioThemeViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineThemeViewExtension extends ViewExtensionProvider<AffineThemeViewOptions> {
+export class NexioThemeViewExtension extends ViewExtensionProvider<NexioThemeViewOptions> {
   override name = 'affine-view-theme';
 
   override schema = optionsSchema;
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineThemeViewOptions
+    options?: NexioThemeViewOptions
   ) {
     super.setup(context, options);
     const framework = options?.framework;

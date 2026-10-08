@@ -9,7 +9,7 @@ import {
   type FolderNode,
   OrganizeService,
 } from '@nexio/core/modules/organize';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { AddOrganizeIcon } from '@blocksuite/icons/rc';
@@ -50,7 +50,7 @@ export const NavigationPanelOrganize = () => {
   }, [navigationPanelService, path, rootFolder]);
 
   const handleOnChildrenDrop = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>, node?: FolderNode) => {
+    (data: DropTargetDropEvent<NexioDNDData>, node?: FolderNode) => {
       if (!node || !node.id) {
         return; // never happens
       }
@@ -77,7 +77,7 @@ export const NavigationPanelOrganize = () => {
   );
 
   const createFolderAndDrop = useCallback(
-    (data: DropTargetDropEvent<AffineDNDData>) => {
+    (data: DropTargetDropEvent<NexioDNDData>) => {
       const newFolderId = handleCreateFolder();
       setNewFolderId(null);
       const newFolder$ = folderTree.folderNode$(newFolderId);
@@ -95,7 +95,7 @@ export const NavigationPanelOrganize = () => {
   );
 
   const handleChildrenCanDrop = useMemo<
-    DropTargetOptions<AffineDNDData>['canDrop']
+    DropTargetOptions<NexioDNDData>['canDrop']
   >(() => args => args.source.data.entity?.type === 'folder', []);
 
   useEffect(() => {

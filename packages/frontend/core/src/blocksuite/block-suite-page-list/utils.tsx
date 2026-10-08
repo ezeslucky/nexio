@@ -7,7 +7,7 @@ import {
   resolveNewDocTitle,
 } from '@nexio/core/modules/editor-setting';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { getAFFiNEWorkspaceSchema } from '@nexio/core/modules/workspace';
+import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace';
 import { type DocMode } from '@blocksuite/affine/model';
 import type { Workspace } from '@blocksuite/affine/store';
 import { LiveData, useLiveData, useServices } from '@toeverything/infra';
@@ -122,7 +122,7 @@ export const usePageHelper = (docCollection: Workspace) => {
       };
       showImportModal({
         collection: docCollection,
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNexioWorkspaceSchema(),
         extensions: getStoreManager().config.init().value.get('store'),
         onSuccess,
         onFail: message => {

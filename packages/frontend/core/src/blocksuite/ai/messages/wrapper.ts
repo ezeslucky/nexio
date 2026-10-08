@@ -4,7 +4,7 @@ import { property } from 'lit/decorators.js';
 
 import { getAIPanelWidget } from '../utils/ai-widgets';
 import { preprocessHtml } from '../utils/html';
-import type { AffineAIPanelWidgetConfig } from '../widgets/ai-panel/type';
+import type { NexioAIPanelWidgetConfig } from '../widgets/ai-panel/type';
 
 type AIAnswerWrapperOptions = {
   height: number;
@@ -59,7 +59,7 @@ declare global {
 export const createIframeRenderer: (
   host: EditorHost,
   options?: AIAnswerWrapperOptions
-) => AffineAIPanelWidgetConfig['answerRenderer'] = (host, options) => {
+) => NexioAIPanelWidgetConfig['answerRenderer'] = (host, options) => {
   return (answer, state) => {
     if (state === 'generating') {
       const panel = getAIPanelWidget(host);
@@ -87,7 +87,7 @@ export const createIframeRenderer: (
 export const createImageRenderer: (
   host: EditorHost,
   options?: AIAnswerWrapperOptions
-) => AffineAIPanelWidgetConfig['answerRenderer'] = (host, options) => {
+) => NexioAIPanelWidgetConfig['answerRenderer'] = (host, options) => {
   return (answer, state) => {
     if (state === 'generating') {
       const panel = getAIPanelWidget(host);

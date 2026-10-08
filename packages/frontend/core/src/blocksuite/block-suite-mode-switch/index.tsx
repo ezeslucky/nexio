@@ -1,5 +1,5 @@
 import { RadioGroup, type RadioItem } from '@nexio/component';
-import { registerAffineCommand } from '@nexio/core/commands';
+import { registerNexioCommand } from '@nexio/core/commands';
 import { EditorService } from '@nexio/core/modules/editor';
 import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
@@ -73,7 +73,7 @@ export const EditorModeSwitch = () => {
 
   useEffect(() => {
     if (trash || currentMode === undefined || !isActiveView) return;
-    return registerAffineCommand({
+    return registerNexioCommand({
       id: 'affine:doc-mode-switch',
       category: 'editor:page',
       label:

@@ -8,7 +8,7 @@ import { MenuLinkItem } from '@nexio/core/modules/app-sidebar/views';
 import { DocsService } from '@nexio/core/modules/doc';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { GuardService } from '@nexio/core/modules/permissions';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
@@ -21,7 +21,7 @@ export const TrashButton = () => {
   const trashActive = useLiveData(globalContextService.globalContext.isTrash.$);
   const guardService = useService(GuardService);
 
-  const { dropTargetRef, draggedOver } = useDropTarget<AffineDNDData>(
+  const { dropTargetRef, draggedOver } = useDropTarget<NexioDNDData>(
     () => ({
       data: {
         at: 'app-sidebar:trash',

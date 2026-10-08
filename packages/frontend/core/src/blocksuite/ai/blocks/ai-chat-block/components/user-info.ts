@@ -6,7 +6,7 @@ import type {
   MessageRole,
   MessageUserInfo,
 } from '../../../components/ai-chat-messages';
-import { AffineAIIcon } from './icon';
+import { NexioAIIcon } from './icon';
 
 export class UserInfo extends LitElement {
   static override styles = css`
@@ -112,7 +112,7 @@ export function UserInfoTemplate(
       ></user-info>`
     : html`<user-info
         .userName=${'AFFiNE AI'}
-        .avatarIcon=${AffineAIIcon}
+        .avatarIcon=${NexioAIIcon}
       ></user-info>`;
 
   return userInfoTemplate;

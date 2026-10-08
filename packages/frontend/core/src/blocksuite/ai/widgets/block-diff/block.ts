@@ -9,10 +9,10 @@ import { BlockDiffProvider } from '../../services/block-diff';
 import type { Block } from '../../utils/apply-model/markdown-diff';
 import { blockDiffWidgetForPage } from './page';
 
-export const AFFINE_BLOCK_DIFF_WIDGET_FOR_BLOCK =
+export const NEXIO_BLOCK_DIFF_WIDGET_FOR_BLOCK =
   'affine-block-diff-widget-for-block';
 
-export class AffineBlockDiffWidgetForBlock extends WidgetComponent {
+export class NexioBlockDiffWidgetForBlock extends WidgetComponent {
   static override styles = css`
     .ai-block-diff {
       position: relative;
@@ -232,6 +232,6 @@ export class AffineBlockDiffWidgetForBlock extends WidgetComponent {
 
 export const blockDiffWidgetForBlock = WidgetViewExtension(
   'affine:note/*',
-  AFFINE_BLOCK_DIFF_WIDGET_FOR_BLOCK,
-  literal`${unsafeStatic(AFFINE_BLOCK_DIFF_WIDGET_FOR_BLOCK)}`
+  NEXIO_BLOCK_DIFF_WIDGET_FOR_BLOCK,
+  literal`${unsafeStatic(NEXIO_BLOCK_DIFF_WIDGET_FOR_BLOCK)}`
 );

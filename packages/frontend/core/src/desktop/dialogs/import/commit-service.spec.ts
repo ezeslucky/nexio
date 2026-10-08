@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto';
 
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { getAFFiNEWorkspaceSchema } from '@nexio/core/modules/workspace';
+import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace';
 import type { DocSnapshot } from '@blocksuite/affine/store';
 import { TestWorkspace } from '@blocksuite/affine/store/test';
 import type { ImportBatch } from '@blocksuite/affine/widgets/linked-doc';
@@ -105,7 +105,7 @@ function createCommitService(
 ) {
   return new ImportCommitService({
     collection,
-    schema: getAFFiNEWorkspaceSchema(),
+    schema: getNexioWorkspaceSchema(),
     extensions: getStoreManager().config.init().value.get('store'),
     organizeService: options.organizeService as never,
     explorerIconService: options.explorerIconService as never,

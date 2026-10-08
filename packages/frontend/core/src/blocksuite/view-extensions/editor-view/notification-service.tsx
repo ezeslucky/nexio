@@ -111,7 +111,7 @@ export class NotificationServiceImpl implements NotificationService {
       throw new Error('Invalid notification accent');
     }
 
-    const toAffineNotificationActions = (
+    const toNexioNotificationActions = (
       actions: (typeof notification)['actions']
     ): Notification['actions'] => {
       if (!actions) return undefined;
@@ -129,7 +129,7 @@ export class NotificationServiceImpl implements NotificationService {
       {
         title: toReactNode(notification.title),
         message: toReactNode(notification.message),
-        actions: toAffineNotificationActions(notification.actions),
+        actions: toNexioNotificationActions(notification.actions),
         onDismiss: notification.onClose,
       },
       {

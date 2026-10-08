@@ -312,7 +312,7 @@ const PageHeaderMenuItem = ({
               <ShareMenuContent
                 workspaceMetadata={workspace.meta}
                 currentPage={page}
-                onEnableAffineCloud={() =>
+                onEnableNexioCloud={() =>
                   confirmEnableCloud(workspace, {
                     openPageId: page.id,
                   })

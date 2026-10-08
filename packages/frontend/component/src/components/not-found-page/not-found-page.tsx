@@ -5,7 +5,7 @@ import type { JSX } from 'react';
 import { Avatar } from '../../ui/avatar';
 import { Button, IconButton } from '../../ui/button';
 import { ThemedImg } from '../../ui/themed-img';
-import { AffineOtherPageLayout } from '../affine-other-page-layout';
+import { NexioOtherPageLayout } from '../affine-other-page-layout';
 import illustrationDark from '../affine-other-page-layout/assets/other-page.dark.png';
 import illustrationLight from '../affine-other-page-layout/assets/other-page.light.png';
 import type { User } from '../auth-components';
@@ -32,7 +32,7 @@ export const NoPermissionOrNotFound = ({
   const t = useI18n();
 
   return (
-    <AffineOtherPageLayout>
+    <NexioOtherPageLayout>
       <div className={notFoundPageContainer} data-testid="not-found">
         {user ? (
           <>
@@ -73,7 +73,7 @@ export const NoPermissionOrNotFound = ({
           signInComponent
         )}
       </div>
-    </AffineOtherPageLayout>
+    </NexioOtherPageLayout>
   );
 };
 
@@ -85,7 +85,7 @@ export const NotFoundPage = ({
   const t = useI18n();
 
   return (
-    <AffineOtherPageLayout>
+    <NexioOtherPageLayout>
       <div className={notFoundPageContainer} data-testid="not-found">
         <div className={info}>
           <p className={wrapper}>{t['404.hint']()}</p>
@@ -122,6 +122,6 @@ export const NotFoundPage = ({
           />
         </div>
       </div>
-    </AffineOtherPageLayout>
+    </NexioOtherPageLayout>
   );
 };

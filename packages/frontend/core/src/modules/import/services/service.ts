@@ -21,7 +21,7 @@ import type { ExplorerIconService } from '../../explorer-icon/services/explorer-
 import type { OrganizeService } from '../../organize';
 import type { TagService } from '../../tag';
 import type { WorkspaceService } from '../../workspace';
-import { getAFFiNEWorkspaceSchema } from '../../workspace';
+import { getNexioWorkspaceSchema } from '../../workspace';
 
 const logger = new DebugLogger('import');
 
@@ -51,7 +51,7 @@ export class ImportService extends Service {
     const snapshot = await snapshotFile(file);
     const { batch } = await MarkdownTransformer.planMarkdownZip({
       collection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       imported: snapshot,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -74,7 +74,7 @@ export class ImportService extends Service {
     if (format === 'markdown') {
       const { batch } = await MarkdownTransformer.planNotionMarkdownZip({
         collection,
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNexioWorkspaceSchema(),
         imported: snapshot,
         extensions: getStoreManager().config.init().value.get('store'),
       });
@@ -82,7 +82,7 @@ export class ImportService extends Service {
     }
     const { batch } = await NotionHtmlTransformer.planNotionHtmlZip({
       collection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       imported: snapshot,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -108,7 +108,7 @@ export class ImportService extends Service {
 
     const { batch } = await ObsidianTransformer.planObsidianVault({
       collection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       importedFiles: snapshots,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -130,7 +130,7 @@ export class ImportService extends Service {
     const snapshot = await snapshotFile(file);
     const { batch } = await BearTransformer.planBearBackup({
       collection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       imported: snapshot,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -154,7 +154,7 @@ export class ImportService extends Service {
   }) {
     return new ImportCommitService({
       collection: this.workspaceService.workspace.docCollection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       extensions: getStoreManager().config.init().value.get('store'),
       organizeService: options.organize ? this.organizeService : undefined,
       explorerIconService: options.explorerIcon

@@ -11,7 +11,7 @@ import {
 } from '@nexio/core/components/explorer/context';
 import { DocListItemComponent } from '@nexio/core/components/explorer/docs-view/docs-list';
 import { Filters } from '@nexio/core/components/filter';
-import { AffineShapeIcon } from '@nexio/core/components/page-list';
+import { NexioShapeIcon } from '@nexio/core/components/page-list';
 import type { CollectionInfo } from '@nexio/core/modules/collection';
 import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
 import { DocsService } from '@nexio/core/modules/doc';
@@ -327,7 +327,7 @@ const RulesEmpty = ({
         padding: '48px 0',
       }}
     >
-      <AffineShapeIcon />
+      <NexioShapeIcon />
       <strong style={{ fontSize: 20, lineHeight: '28px' }}>
         {noRules
           ? t['com.affine.editCollection.rules.empty.noRules']()

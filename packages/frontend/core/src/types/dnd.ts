@@ -1,6 +1,6 @@
 import type { DNDData } from '@nexio/component';
 
-export type AffineDNDEntity =
+export type NexioDNDEntity =
   | {
       type: 'doc';
       id: string;
@@ -22,9 +22,9 @@ export type AffineDNDEntity =
       id: string;
     };
 
-export interface AffineDNDData extends DNDData {
+export interface NexioDNDData extends DNDData {
   draggable: {
-    entity?: AffineDNDEntity;
+    entity?: NexioDNDEntity;
     from?:
       | {
           at: 'navigation-panel:organize:folder-node';
@@ -135,3 +135,7 @@ export interface AffineDNDData extends DNDData {
       }
     | Record<string, unknown>;
 }
+
+// Backwards compatibility aliases
+export type AffineDNDData = NexioDNDData;
+export type AffineDNDEntity = NexioDNDEntity;

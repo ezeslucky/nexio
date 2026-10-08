@@ -12,8 +12,8 @@ import { useSearchParams } from 'react-router-dom';
 import { AppContainer } from '../../components/app-container';
 
 export const ConfirmVerifiedEmail: FC<{
-  onOpenAffine: () => void;
-}> = ({ onOpenAffine }) => {
+  onOpenNexio: () => void;
+}> = ({ onOpenNexio }) => {
   const t = useI18n();
   const graphqlService = useService(GraphQLService);
   const [isLoading, setIsLoading] = useState(false);
@@ -53,7 +53,7 @@ export const ConfirmVerifiedEmail: FC<{
       title={t['com.affine.auth.change.email.page.success.title']()}
       subtitle={t['com.affine.auth.change.email.page.success.subtitle']()}
     >
-      <Button variant="primary" size="large" onClick={onOpenAffine}>
+      <Button variant="primary" size="large" onClick={onOpenNexio}>
         {t['com.affine.auth.open.affine']()}
       </Button>
     </AuthPageContainer>

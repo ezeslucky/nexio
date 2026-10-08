@@ -24,7 +24,7 @@ import {
   markDownToDoc,
   markdownToSnapshot,
 } from '../../utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 
 const getNoteId = (blockElement: BlockComponent) => {
   let element = blockElement;
@@ -187,7 +187,7 @@ export const replace = async (
   }
 };
 
-export const copyTextAnswer = async (panel: AffineAIPanelWidget) => {
+export const copyTextAnswer = async (panel: NexioAIPanelWidget) => {
   if (!panel.answer) {
     return false;
   }

@@ -17,7 +17,7 @@ import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import { GuardService } from '@nexio/core/modules/permissions';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import {
@@ -161,7 +161,7 @@ export const NavigationPanelDocNode = ({
       dropTarget: {
         at: 'navigation-panel:doc',
       },
-    } satisfies AffineDNDData;
+    } satisfies NexioDNDData;
   }, [docId, location]);
 
   const handleRename = useAsyncCallback(
@@ -173,7 +173,7 @@ export const NavigationPanelDocNode = ({
   );
 
   const handleDropOnDoc = useAsyncCallback(
-    async (data: DropTargetDropEvent<AffineDNDData>) => {
+    async (data: DropTargetDropEvent<NexioDNDData>) => {
       if (data.treeInstruction?.type === 'make-child') {
         if (data.source.data.entity?.type === 'doc') {
           const canEdit = await guardService.can('Doc_Update', docId);
@@ -213,7 +213,7 @@ export const NavigationPanelDocNode = ({
   );
 
   const handleDropOnPlaceholder = useAsyncCallback(
-    async (data: DropTargetDropEvent<AffineDNDData>) => {
+    async (data: DropTargetDropEvent<NexioDNDData>) => {
       if (data.source.data.entity?.type === 'doc') {
         const canEdit = await guardService.can('Doc_Update', docId);
         if (!canEdit) {
@@ -235,7 +235,7 @@ export const NavigationPanelDocNode = ({
     [docId, docsService, guardService, t]
   );
 
-  const handleCanDrop = useMemo<DropTargetOptions<AffineDNDData>['canDrop']>(
+  const handleCanDrop = useMemo<DropTargetOptions<NexioDNDData>['canDrop']>(
     () => args => {
       const entityType = args.source.data.entity?.type;
       return args.treeInstruction?.type !== 'make-child'

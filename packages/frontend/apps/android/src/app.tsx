@@ -1,6 +1,6 @@
 import { notify } from '@nexio/component';
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { AffineContext } from '@nexio/core/components/context';
+import { NexioContext } from '@nexio/core/components/context';
 import { AppFallback } from '@nexio/core/mobile/components/app-fallback';
 import { MobileModalConfigProvider } from '@nexio/core/mobile/components/mobile-modal-config-provider';
 import { configureMobileModules } from '@nexio/core/mobile/modules';
@@ -477,7 +477,7 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <I18nProvider>
           <MobileModalConfigProvider>
-            <AffineContext store={getCurrentStore()}>
+            <NexioContext store={getCurrentStore()}>
               <ThemeProvider />
               <AndroidBackAdapter />
               <RouterProvider
@@ -485,7 +485,7 @@ export function App() {
                 router={router}
                 future={future}
               />
-            </AffineContext>
+            </NexioContext>
           </MobileModalConfigProvider>
         </I18nProvider>
       </FrameworkRoot>

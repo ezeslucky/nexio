@@ -76,7 +76,7 @@ export const ImportDialog = ({ onClose }: { onClose: () => void }) => {
 
       const startTime = Date.now();
       readwise
-        .highlightsToAffineDocs(selectedHighlights.reverse(), books, {
+        .highlightsToNexioDocs(selectedHighlights.reverse(), books, {
           signal,
           onProgress: setImportProgress,
           onComplete: () => {

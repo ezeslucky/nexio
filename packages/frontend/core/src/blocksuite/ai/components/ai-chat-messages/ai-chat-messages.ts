@@ -191,10 +191,10 @@ export class AIChatMessages extends WithDisposable(ShadowlessElement) {
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -382,8 +382,8 @@ export class AIChatMessages extends WithDisposable(ShadowlessElement) {
                       .status=${isLast ? status : 'idle'}
                       .error=${isLast ? error : null}
                       .extensions=${this.extensions}
-                      .affineFeatureFlagService=${this.affineFeatureFlagService}
-                      .affineThemeService=${this.affineThemeService}
+                      .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+                      .nexioThemeService=${this.nexioThemeService}
                       .notificationService=${this.notificationService}
                       .retry=${() => this.retry()}
                       .width=${this.width}

@@ -17,7 +17,7 @@ export const Component = () => {
   const [params] = useSearchParams();
 
   const { jumpToIndex, jumpToOpenInApp } = useNavigateHelper();
-  const openAFFiNE = useCallback(() => {
+  const openNexio = useCallback(() => {
     if (params.get('client')) {
       return jumpToOpenInApp('bring-to-front');
     } else {
@@ -49,7 +49,7 @@ export const Component = () => {
       title={t['com.affine.payment.ai-upgrade-success-page.title']()}
       subtitle={subtitle}
     >
-      <Button variant="primary" size="extraLarge" onClick={openAFFiNE}>
+      <Button variant="primary" size="extraLarge" onClick={openNexio}>
         {t['com.affine.other-page.nav.open-affine']()}
       </Button>
     </AuthPageContainer>

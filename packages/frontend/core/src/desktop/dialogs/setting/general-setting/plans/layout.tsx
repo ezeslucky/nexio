@@ -71,7 +71,7 @@ export const CloudPlanLayout = ({
 }: PlanCardProps) => {
   return (
     <CollapsibleWrapper title={title} caption={caption}>
-      <div className={styles.affineCloudHeader}>
+      <div className={styles.nexioCloudHeader}>
         <div>{select}</div>
         <div>{toggle}</div>
       </div>

@@ -6,10 +6,10 @@ import { UserFriendlyError } from '../error';
 // DO NOT use this Logger directly
 // Use it via this way: `private readonly logger = new Logger(MyService.name)`
 @Injectable()
-export class AFFiNELogger extends ConsoleLogger {
+export class NexioLogger extends ConsoleLogger {
   override stringifyMessage(message: unknown, logLevel: LogLevel) {
     const messageString = super.stringifyMessage(message, logLevel);
-    const requestId = AFFiNELogger.getRequestId();
+    const requestId = NexioLogger.getRequestId();
     if (!requestId) {
       return messageString;
     }
@@ -53,6 +53,10 @@ export class AFFiNELogger extends ConsoleLogger {
     stackOrError?: Error | string | unknown,
     context?: string
   ) {
-    super.error(message, AFFiNELogger.formatStack(stackOrError), context);
+    super.error(message, NexioLogger.formatStack(stackOrError), context);
   }
 }
+
+// Backwards compatibility alias
+export const AFFiNELogger = NexioLogger;
+export type AFFiNELogger = NexioLogger;

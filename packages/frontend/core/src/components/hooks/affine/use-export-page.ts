@@ -3,9 +3,9 @@ import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
 } from '@nexio/component/global-loading';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor/blocksuite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor/blocksuite-editor';
 import { EditorService } from '@nexio/core/modules/editor';
-import { getAFFiNEWorkspaceSchema } from '@nexio/core/modules/workspace/global-schema';
+import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace/global-schema';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
 import { ExportManager } from '@blocksuite/affine/blocks/surface';
@@ -44,7 +44,7 @@ type ExportType =
 
 interface ExportHandlerOptions {
   page: Store;
-  editorContainer: AffineEditorContainer;
+  editorContainer: NexioEditorContainer;
   type: ExportType;
 }
 
@@ -66,7 +66,7 @@ interface AdapterConfig {
 
 function createTransformer(doc: Store) {
   return new Transformer({
-    schema: getAFFiNEWorkspaceSchema(),
+    schema: getNexioWorkspaceSchema(),
     blobCRUD: doc.workspace.blobSync,
     docCRUD: {
       create: (id: string) => doc.workspace.createDoc(id).getStore({ id }),
@@ -192,7 +192,7 @@ async function exportHandler({
     case 'snapshot':
       await ZipTransformer.exportDocs(
         page.workspace,
-        getAFFiNEWorkspaceSchema(),
+        getNexioWorkspaceSchema(),
         [page]
       );
       return true;
@@ -228,7 +228,7 @@ export const useExportPage = () => {
 
       // editor container is wrapped by a proxy, we need to get the origin
       const originEditorContainer = (editorContainer as any)
-        .origin as AffineEditorContainer;
+        .origin as NexioEditorContainer;
 
       const globalLoadingID = nanoid();
       pushGlobalLoadingEvent({

@@ -150,13 +150,13 @@ export class AIChatContent extends SignalWatcher(
   accessor serverService!: ServerService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
-  accessor affineThemeService!: AppThemeService;
+  accessor nexioThemeService!: AppThemeService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -369,8 +369,8 @@ export class AIChatContent extends SignalWatcher(
         .updateContext=${this.updateContext}
         .isHistoryLoading=${this.isHistoryLoading}
         .extensions=${this.extensions}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
-        .affineThemeService=${this.affineThemeService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
+        .nexioThemeService=${this.nexioThemeService}
         .notificationService=${this.notificationService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .reasoningConfig=${this.reasoningConfig}
@@ -386,7 +386,7 @@ export class AIChatContent extends SignalWatcher(
           [this.onboardingOffsetY > 0 ? 'paddingTop' : 'paddingBottom']:
             `${this.messages.length === 0 ? Math.abs(this.onboardingOffsetY) * 2 : 0}px`,
         })}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
         .independentMode=${this.independentMode}
         .host=${this.host}
         .workspaceId=${this.workspaceId}
@@ -400,7 +400,7 @@ export class AIChatContent extends SignalWatcher(
         .docDisplayConfig=${this.docDisplayConfig}
         .searchMenuConfig=${this.searchMenuConfig}
         .serverService=${this.serverService}
-        .affineWorkspaceDialogService=${this.affineWorkspaceDialogService}
+        .nexioWorkspaceDialogService=${this.nexioWorkspaceDialogService}
         .notificationService=${this.notificationService}
         .aiDraftService=${this.aiDraftService}
         .aiToolsConfigService=${this.aiToolsConfigService}

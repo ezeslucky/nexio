@@ -14,7 +14,7 @@ import type { FrameworkProvider } from '@toeverything/infra';
 export function KeyboardToolbarExtension(
   framework: FrameworkProvider
 ): ExtensionType {
-  const affineVirtualKeyboardProvider = framework.get(VirtualKeyboardProvider);
+  const nexioVirtualKeyboardProvider = framework.get(VirtualKeyboardProvider);
 
   class BSVirtualKeyboardService
     extends LifeCycleWatcher
@@ -41,7 +41,7 @@ export function KeyboardToolbarExtension(
 
     override mounted() {
       this._disposables.add(
-        affineVirtualKeyboardProvider.onChange(
+        nexioVirtualKeyboardProvider.onChange(
           ({ visible, height, overlaysContent }) => {
             const layoutHeight = overlaysContent === false ? 0 : height;
 
@@ -62,8 +62,8 @@ export function KeyboardToolbarExtension(
     }
   }
 
-  if ('show' in affineVirtualKeyboardProvider) {
-    const providerWithAction = affineVirtualKeyboardProvider;
+  if ('show' in nexioVirtualKeyboardProvider) {
+    const providerWithAction = nexioVirtualKeyboardProvider;
 
     class BSVirtualKeyboardServiceWithShowAndHide
       extends BSVirtualKeyboardService

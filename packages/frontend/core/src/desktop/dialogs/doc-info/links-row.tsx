@@ -1,5 +1,5 @@
 import { PropertyCollapsibleSection } from '@nexio/component';
-import { AffinePageReference } from '@nexio/core/components/affine/reference-link';
+import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
 import type { Backlink, Link } from '@nexio/core/modules/doc-link';
 import type { MouseEvent, ReactNode } from 'react';
 
@@ -25,7 +25,7 @@ export const LinksRow = ({
     >
       {Array.isArray(references)
         ? references.map(link => (
-            <AffinePageReference
+            <NexioPageReference
               key={link.docId}
               pageId={link.docId}
               params={'params' in link ? link.params : undefined}

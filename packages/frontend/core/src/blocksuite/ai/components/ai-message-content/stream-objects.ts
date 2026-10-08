@@ -22,7 +22,7 @@ import { css, html, nothing } from 'lit';
 import { property, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';
 
-import type { AffineAIPanelState } from '../../widgets/ai-panel/type';
+import type { NexioAIPanelState } from '../../widgets/ai-panel/type';
 import type { DocDisplayConfig } from '../ai-chat-chips';
 import type { StreamObject } from '../ai-chat-messages';
 
@@ -265,7 +265,7 @@ export class ChatContentStreamObjects extends WithDisposable(
   accessor std: BlockStdScope | null | undefined;
 
   @property({ attribute: false })
-  accessor state: AffineAIPanelState = 'finished';
+  accessor state: NexioAIPanelState = 'finished';
 
   @property({ attribute: false })
   accessor width: Signal<number | undefined> | undefined;
@@ -274,7 +274,7 @@ export class ChatContentStreamObjects extends WithDisposable(
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor theme!: Signal<ColorScheme>;
@@ -510,7 +510,7 @@ export class ChatContentStreamObjects extends WithDisposable(
           <section-edit-tool
             .data=${streamObject}
             .extensions=${this.extensions}
-            .affineFeatureFlagService=${this.affineFeatureFlagService}
+            .nexioFeatureFlagService=${this.nexioFeatureFlagService}
             .notificationService=${this.notificationService}
             .theme=${this.theme}
             .host=${this.host}
@@ -620,7 +620,7 @@ export class ChatContentStreamObjects extends WithDisposable(
           <section-edit-tool
             .data=${streamObject}
             .extensions=${this.extensions}
-            .affineFeatureFlagService=${this.affineFeatureFlagService}
+            .nexioFeatureFlagService=${this.nexioFeatureFlagService}
             .notificationService=${this.notificationService}
             .theme=${this.theme}
             .host=${this.host}
@@ -644,7 +644,7 @@ export class ChatContentStreamObjects extends WithDisposable(
       .text=${text}
       .state=${this.state}
       .extensions=${this.extensions}
-      .affineFeatureFlagService=${this.affineFeatureFlagService}
+      .nexioFeatureFlagService=${this.nexioFeatureFlagService}
       .theme=${this.theme}
     ></chat-content-rich-text>`;
   }

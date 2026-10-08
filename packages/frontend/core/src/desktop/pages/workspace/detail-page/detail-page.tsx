@@ -1,9 +1,9 @@
 import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import { AIAppEvents, type AIChatParams } from '@nexio/core/blocksuite/ai';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
-import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
 // import { PageAIOnboarding } from '@nexio/core/components/affine/ai-onboarding';
 import { GlobalPageHistoryModal } from '@nexio/core/components/affine/page-history-modal';
 import { CommentSidebar } from '@nexio/core/components/comment/sidebar';
@@ -190,7 +190,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
   const isJournal = !!useLiveData(journalService.journalDate$(doc.id));
 
   const onLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       const std = editorContainer.std;
       const disposable = new DisposableGroup();
 
@@ -335,7 +335,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           data-has-scroll-top={hasScrollTop}
         >
           {/* Add a key to force rerender when page changed, to avoid error boundary persisting. */}
-          <AffineErrorBoundary key={doc.id}>
+          <NexioErrorBoundary key={doc.id}>
             <TopTip pageId={doc.id} workspace={workspace} />
             <Scrollable.Root>
               <Scrollable.Viewport
@@ -344,7 +344,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
                 data-dragging={dragging}
                 className={clsx(
                   'affine-page-viewport',
-                  styles.affineDocViewport,
+                  styles.nexioDocViewport,
                   styles.editorContainer,
                   { [styles.pageModeViewportContentBox]: mode === 'page' }
                 )}
@@ -362,7 +362,7 @@ const DetailPageImpl = memo(function DetailPageImpl() {
               show={mode === 'page' && !isSideBarOpen}
               openOutlinePanel={openOutlinePanel}
             />
-          </AffineErrorBoundary>
+          </NexioErrorBoundary>
           {isInTrash ? <TrashPageFooter /> : null}
         </div>
       </ViewBody>

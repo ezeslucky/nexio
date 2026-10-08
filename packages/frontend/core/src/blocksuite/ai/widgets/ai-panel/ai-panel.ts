@@ -38,14 +38,14 @@ import { literal, unsafeStatic } from 'lit/static-html.js';
 import { type AIError } from '../../provider';
 import type { AIPanelGenerating } from './components/index.js';
 import type {
-  AffineAIPanelState,
-  AffineAIPanelWidgetConfig,
+  NexioAIPanelState,
+  NexioAIPanelWidgetConfig,
   AIActionAnswer,
 } from './type.js';
 import { mergeAIActionAnswer } from './utils';
-export const AFFINE_AI_PANEL_WIDGET = 'affine-ai-panel-widget';
+export const NEXIO_AI_PANEL_WIDGET = 'affine-ai-panel-widget';
 
-export class AffineAIPanelWidget extends WidgetComponent {
+export class NexioAIPanelWidget extends WidgetComponent {
   static override styles = css`
     :host {
       display: flex;
@@ -286,7 +286,7 @@ export class AffineAIPanelWidget extends WidgetComponent {
     }
   };
 
-  setState = (state: AffineAIPanelState, reference: Element) => {
+  setState = (state: NexioAIPanelState, reference: Element) => {
     this.state = state;
     this._autoUpdatePosition(reference);
   };
@@ -615,13 +615,13 @@ export class AffineAIPanelWidget extends WidgetComponent {
   }
 
   @property({ attribute: false })
-  accessor config: AffineAIPanelWidgetConfig | null = null;
+  accessor config: NexioAIPanelWidgetConfig | null = null;
 
   @query('ai-panel-generating')
   accessor generatingElement: AIPanelGenerating | null = null;
 
   @property()
-  accessor state: AffineAIPanelState = 'hidden';
+  accessor state: NexioAIPanelState = 'hidden';
 
   @property({ attribute: 'data-app-theme', reflect: true })
   accessor appTheme: ColorScheme = ColorScheme.Light;
@@ -629,6 +629,6 @@ export class AffineAIPanelWidget extends WidgetComponent {
 
 export const aiPanelWidget = WidgetViewExtension(
   'affine:page',
-  AFFINE_AI_PANEL_WIDGET,
-  literal`${unsafeStatic(AFFINE_AI_PANEL_WIDGET)}`
+  NEXIO_AI_PANEL_WIDGET,
+  literal`${unsafeStatic(NEXIO_AI_PANEL_WIDGET)}`
 );

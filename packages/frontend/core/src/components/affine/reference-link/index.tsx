@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
 
 import * as styles from './styles.css';
 
-interface AffinePageReferenceProps {
+interface NexioPageReferenceProps {
   pageId: string;
   params?: URLSearchParams;
   title?: string; // title alias
@@ -31,12 +31,12 @@ interface AffinePageReferenceProps {
   onClick?: (e: MouseEvent) => void;
 }
 
-function AffinePageReferenceInner({
+function NexioPageReferenceInner({
   pageId,
   params,
   title,
   Icon: UserIcon,
-}: AffinePageReferenceProps) {
+}: NexioPageReferenceProps) {
   const docDisplayMetaService = useService(DocDisplayMetaService);
   const docsService = useService(DocsService);
 
@@ -80,14 +80,14 @@ function AffinePageReferenceInner({
   );
 }
 
-export function AffinePageReference({
+export function NexioPageReference({
   pageId,
   params,
   title,
   className,
   Icon,
   onClick: userOnClick,
-}: AffinePageReferenceProps) {
+}: NexioPageReferenceProps) {
   const journalService = useService(JournalService);
   const isJournal = !!useLiveData(journalService.journalDate$(pageId));
 
@@ -149,7 +149,7 @@ export function AffinePageReference({
       onClick={onClick}
       className={clsx(styles.pageReferenceLink, className)}
     >
-      <AffinePageReferenceInner
+      <NexioPageReferenceInner
         pageId={pageId}
         params={params}
         title={title}
@@ -159,14 +159,14 @@ export function AffinePageReference({
   );
 }
 
-export function AffineSharedPageReference({
+export function NexioSharedPageReference({
   pageId,
   docCollection,
   params,
   title,
   Icon,
   onClick: userOnClick,
-}: AffinePageReferenceProps & {
+}: NexioPageReferenceProps & {
   docCollection: Workspace;
 }) {
   const journalService = useService(JournalService);
@@ -216,7 +216,7 @@ export function AffineSharedPageReference({
       onClick={onClick}
       className={styles.pageReferenceLink}
     >
-      <AffinePageReferenceInner
+      <NexioPageReferenceInner
         pageId={pageId}
         params={params}
         title={title}
@@ -225,3 +225,9 @@ export function AffineSharedPageReference({
     </Link>
   );
 }
+
+// Backwards compatibility aliases
+export const AffinePageReference = NexioPageReference;
+export const AffinePageReferenceInner = NexioPageReferenceInner;
+export const AffineSharedPageReference = NexioSharedPageReference;
+export type AffinePageReferenceProps = NexioPageReferenceProps;

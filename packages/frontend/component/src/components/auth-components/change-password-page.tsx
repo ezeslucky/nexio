@@ -11,8 +11,8 @@ import { SetPassword } from './set-password';
 export const ChangePasswordPage: FC<{
   passwordLimits: PasswordLimitsFragment;
   onSetPassword: (password: string) => Promise<void>;
-  onOpenAffine: () => void;
-}> = ({ passwordLimits, onSetPassword: propsOnSetPassword, onOpenAffine }) => {
+  onOpenNexio: () => void;
+}> = ({ passwordLimits, onSetPassword: propsOnSetPassword, onOpenNexio }) => {
   const t = useI18n();
   const [hasSetUp, setHasSetUp] = useState(false);
 
@@ -47,7 +47,7 @@ export const ChangePasswordPage: FC<{
       }
     >
       {hasSetUp ? (
-        <Button variant="primary" size="large" onClick={onOpenAffine}>
+        <Button variant="primary" size="large" onClick={onOpenNexio}>
           {t['com.affine.auth.open.affine']()}
         </Button>
       ) : (

@@ -9,7 +9,7 @@ import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
 import { DocsService } from '../modules/doc';
 import { OrganizeService } from '../modules/organize';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   type WorkspacesService,
 } from '../modules/workspace';
 
@@ -25,7 +25,7 @@ export async function buildShowcaseWorkspace(
 
     await ZipTransformer.importDocs(
       docCollection,
-      getAFFiNEWorkspaceSchema(),
+      getNexioWorkspaceSchema(),
       blob
     );
   });

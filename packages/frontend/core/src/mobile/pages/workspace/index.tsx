@@ -1,5 +1,5 @@
-import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
-import { AffineErrorComponent } from '@nexio/core/components/affine/affine-error-boundary/affine-error-fallback';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorComponent } from '@nexio/core/components/affine/affine-error-boundary/affine-error-fallback';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { SharePage } from '@nexio/core/desktop/pages/workspace/share/share-page';
 import { workbenchRoutes } from '@nexio/core/mobile/workbench-router';
@@ -31,11 +31,11 @@ type Route = { Component: React.ComponentType };
  **/
 const MobileRouteContainer = ({ route }: { route: Route }) => {
   return (
-    <AffineErrorBoundary>
+    <NexioErrorBoundary>
       <Suspense>
         <route.Component />
       </Suspense>
-    </AffineErrorBoundary>
+    </NexioErrorBoundary>
   );
 };
 
@@ -60,7 +60,7 @@ const warpedRoutes = workbenchRoutes.map((originalRoute: RouteObject) => {
     Component: () => {
       return <MobileRouteContainer route={route} />;
     },
-    errorElement: <AffineErrorComponent />,
+    errorElement: <NexioErrorComponent />,
   };
 });
 

@@ -404,7 +404,7 @@ export class AIChatInput extends SignalWatcher(
   accessor aiModelService!: AIModelService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;

@@ -2,7 +2,7 @@ import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
 import { SettingHeader } from '@nexio/component/setting-components';
 import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
-  AFFINE_FLAGS,
+  NEXIO_FLAGS,
   FeatureFlagService,
   type Flag,
 } from '@nexio/core/modules/feature-flag';
@@ -178,11 +178,11 @@ const ExperimentalFeaturesMain = () => {
         className={styles.settingsContainer}
         data-testid="experimental-settings"
       >
-        {Object.keys(AFFINE_FLAGS).map(key => (
+        {Object.keys(NEXIO_FLAGS).map(key => (
           <ExperimentalFeaturesItem
             key={key}
             flagKey={key}
-            flag={featureFlagService.flags[key as keyof AFFINE_FLAGS]}
+            flag={featureFlagService.flags[key as keyof NEXIO_FLAGS]}
           />
         ))}
       </div>

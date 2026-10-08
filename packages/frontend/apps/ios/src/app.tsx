@@ -1,6 +1,6 @@
 import { notify } from '@nexio/component';
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { AffineContext } from '@nexio/core/components/context';
+import { NexioContext } from '@nexio/core/components/context';
 import { AppFallback } from '@nexio/core/mobile/components/app-fallback';
 import { MobileModalConfigProvider } from '@nexio/core/mobile/components/mobile-modal-config-provider';
 import { ShareImportController } from '@nexio/core/mobile/components/share-import-controller';
@@ -40,7 +40,7 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
 import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
@@ -632,7 +632,7 @@ const showNativeSignIn = async () => {
     await workspace.engine.doc.waitForDocReady(workspace.id);
     const docId = await MarkdownTransformer.importMarkdownToDoc({
       collection: workspace.docCollection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       markdown,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -875,7 +875,7 @@ export function App() {
       <FrameworkRoot framework={frameworkProvider}>
         <I18nProvider>
           <MobileModalConfigProvider>
-            <AffineContext store={getCurrentStore()}>
+            <NexioContext store={getCurrentStore()}>
               <KeyboardThemeProvider />
               <IOSBackAdapter />
               <ShareImportController provider={shareInboxProvider} />
@@ -886,7 +886,7 @@ export function App() {
                   future={future}
                 />
               </BlocksuiteMenuConfigProvider>
-            </AffineContext>
+            </NexioContext>
           </MobileModalConfigProvider>
         </I18nProvider>
       </FrameworkRoot>

@@ -3,7 +3,7 @@ import {
   Skeleton,
   useDropTarget,
 } from '@nexio/component';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { FavoriteIcon } from '@blocksuite/icons/rc';
 
@@ -12,7 +12,7 @@ import { DropEffect } from '../../tree';
 import { favoriteRootCanDrop, favoriteRootDropEffect } from './dnd';
 
 interface RootEmptyProps {
-  onDrop?: (data: DropTargetDropEvent<AffineDNDData>) => void;
+  onDrop?: (data: DropTargetDropEvent<NexioDNDData>) => void;
   isLoading?: boolean;
 }
 
@@ -23,7 +23,7 @@ const RootEmptyReady = ({ onDrop }: Omit<RootEmptyProps, 'isLoading'>) => {
   const t = useI18n();
 
   const { dropTargetRef, draggedOverDraggable, draggedOverPosition } =
-    useDropTarget<AffineDNDData>(
+    useDropTarget<NexioDNDData>(
       () => ({
         data: {
           at: 'navigation-panel:favorite:root',

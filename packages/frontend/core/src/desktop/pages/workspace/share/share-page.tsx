@@ -1,6 +1,6 @@
 import { Scrollable, uniReactRoot } from '@nexio/component';
 import { NexioIcon } from '@nexio/component/auth-components';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
 import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
@@ -328,7 +328,7 @@ const SharePageInner = ({
   useUpdateBasename(workspace);
 
   const onEditorLoad = useCallback(
-    (editorContainer: AffineEditorContainer) => {
+    (editorContainer: NexioEditorContainer) => {
       setActiveBlocksuiteEditor(editorContainer);
       if (!editor) {
         return;

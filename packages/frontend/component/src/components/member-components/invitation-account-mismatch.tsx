@@ -12,12 +12,12 @@ export const InvitationAccountMismatchPage = ({
   user,
   switchingAccount,
   onSwitchAccount,
-  onOpenAffine,
+  onOpenNexio,
 }: {
   user: User | null;
   switchingAccount: boolean;
   onSwitchAccount: () => void;
-  onOpenAffine: () => void;
+  onOpenNexio: () => void;
 }) => {
   const t = useI18n();
 
@@ -43,7 +43,7 @@ export const InvitationAccountMismatchPage = ({
         >
           {t['com.affine.invitation.account-mismatch.switch-account']()}
         </Button>
-        <Button size="large" onClick={onOpenAffine} block>
+        <Button size="large" onClick={onOpenNexio} block>
           {t['com.affine.invitation.account-mismatch.back-to-affine']()}
         </Button>
       </div>

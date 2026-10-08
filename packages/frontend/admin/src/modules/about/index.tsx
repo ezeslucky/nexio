@@ -1,14 +1,14 @@
 import { ScrollArea } from '@nexio/admin/components/ui/scroll-area';
 
 import { Header } from '../header';
-import { AboutAFFiNE } from './about';
+import { AboutNexio } from './about';
 
 export function ConfigPage() {
   return (
     <div className="h-dvh flex-1 space-y-1 flex-col flex">
       <Header title="Server" />
       <ScrollArea>
-        <AboutAFFiNE />
+        <AboutNexio />
       </ScrollArea>
     </div>
   );

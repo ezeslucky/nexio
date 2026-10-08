@@ -117,7 +117,7 @@ function extractTextFromSelection(
   }
 }
 
-class AffineCommentService implements CommentProvider {
+class NexioCommentService implements CommentProvider {
   private readonly docCommentManager: DocCommentManagerService;
 
   constructor(
@@ -187,7 +187,7 @@ class AffineCommentService implements CommentProvider {
   }
 }
 
-export function AffineCommentProvider(
+export function NexioCommentProvider(
   framework: FrameworkProvider
 ): ExtensionType {
   return {
@@ -195,7 +195,7 @@ export function AffineCommentProvider(
       di.addImpl(
         CommentProviderIdentifier,
         provider =>
-          new AffineCommentService(provider.get(StdIdentifier), framework)
+          new NexioCommentService(provider.get(StdIdentifier), framework)
       );
     },
   };

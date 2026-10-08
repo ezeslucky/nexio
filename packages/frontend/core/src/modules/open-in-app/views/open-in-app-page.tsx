@@ -61,7 +61,7 @@ export const OpenInAppPage = ({
   return (
     <div className={styles.root}>
       <div className={styles.topNav}>
-        <a href="/" rel="noreferrer" className={styles.affineLogo}>
+        <a href="/" rel="noreferrer" className={styles.nexioLogo}>
           <NexioLogo height={28} />
         </a>
 

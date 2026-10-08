@@ -47,17 +47,17 @@ import {
   getCopilotSelectedElems,
   getSurfaceElementFromEditor,
 } from '../utils/selection-utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type { EdgelessCopilotWidget } from '../widgets/edgeless-copilot';
 import { EXCLUDING_INSERT_ACTIONS, generatingStages } from './consts';
 
 type FinishConfig = Exclude<
-  AffineAIPanelWidget['config'],
+  NexioAIPanelWidget['config'],
   null
 >['finishStateConfig'];
 
 type ErrorConfig = Exclude<
-  AffineAIPanelWidget['config'],
+  NexioAIPanelWidget['config'],
   null
 >['errorStateConfig'];
 
@@ -78,7 +78,7 @@ export function getTriggerEntry(host: EditorHost) {
 }
 
 export function discard(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   _: EdgelessCopilotWidget
 ): AIItemConfig {
   return {
@@ -92,7 +92,7 @@ export function discard(
   };
 }
 
-export function retry(panel: AffineAIPanelWidget): AIItemConfig {
+export function retry(panel: NexioAIPanelWidget): AIItemConfig {
   return {
     name: 'Retry',
     icon: ResetIcon(),
@@ -721,7 +721,7 @@ export function actionToGenerating<T extends keyof BlockSuitePresets.AIActions>(
 export function actionToErrorResponse<
   T extends keyof BlockSuitePresets.AIActions,
 >(
-  panel: AffineAIPanelWidget,
+  panel: NexioAIPanelWidget,
   id: T,
   host: EditorHost,
   ctx: AIContext,

@@ -1,5 +1,5 @@
 import { uniReactRoot } from '@nexio/component';
-import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
 import { AiLoginRequiredModal } from '@nexio/core/components/affine/auth/ai-login-required';
 import { SWRConfigProvider } from '@nexio/core/components/providers/swr-config-provider';
 import { WorkspaceSideEffects } from '@nexio/core/components/providers/workspace-side-effects';
@@ -139,7 +139,7 @@ export const WorkspaceLayout = ({
     <FrameworkScope scope={workspaceServer?.scope}>
       <FrameworkScope scope={workspace.scope}>
         <WorkspaceBackReset workspaceId={workspace.id} />
-        <AffineErrorBoundary height="100dvh">
+        <NexioErrorBoundary height="100dvh">
           <SWRConfigProvider>
             <MobileShellHost>
               <WorkspaceDialogs />
@@ -152,7 +152,7 @@ export const WorkspaceLayout = ({
               {children}
             </MobileShellHost>
           </SWRConfigProvider>
-        </AffineErrorBoundary>
+        </NexioErrorBoundary>
       </FrameworkScope>
     </FrameworkScope>
   );

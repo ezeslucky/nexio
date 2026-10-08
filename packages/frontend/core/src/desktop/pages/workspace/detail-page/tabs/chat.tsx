@@ -17,7 +17,7 @@ import {
 } from '@nexio/core/blocksuite/ai/components/ai-chat-toolbar';
 import { createPlaygroundModal } from '@nexio/core/blocksuite/ai/components/playground/modal';
 import { registerAIAppEffects } from '@nexio/core/blocksuite/ai/effects/app';
-import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
 import { useAIChatConfig } from '@nexio/core/components/hooks/affine/use-ai-chat-config';
 import { useAISpecs } from '@nexio/core/components/hooks/affine/use-ai-specs';
@@ -65,7 +65,7 @@ const shouldResetChatPanelOnUserInfoChange = ({
 }) => previousUserId !== undefined && previousUserId !== nextUserId;
 
 export interface SidebarTabProps {
-  editor: AffineEditorContainer | null;
+  editor: NexioEditorContainer | null;
   doc: Store;
   onLoad?: ((component: HTMLElement) => void) | null;
 }
@@ -316,11 +316,11 @@ export const EditorChatPanel = ({
       content.docDisplayConfig = docDisplayConfig;
       content.extensions = specs;
       content.serverService = framework.get(ServerService);
-      content.affineFeatureFlagService = framework.get(FeatureFlagService);
-      content.affineWorkspaceDialogService = framework.get(
+      content.nexioFeatureFlagService = framework.get(FeatureFlagService);
+      content.nexioWorkspaceDialogService = framework.get(
         WorkspaceDialogService
       );
-      content.affineThemeService = framework.get(AppThemeService);
+      content.nexioThemeService = framework.get(AppThemeService);
       content.notificationService = notificationService;
       content.aiDraftService = framework.get(AIDraftService);
       content.aiToolsConfigService = framework.get(AIToolsConfigService);
@@ -435,10 +435,10 @@ export const EditorChatPanel = ({
         .docDisplayConfig=${docDisplayConfig}
         .extensions=${specs}
         .serverService=${framework.get(ServerService)}
-        .affineFeatureFlagService=${framework.get(FeatureFlagService)}
-        .affineThemeService=${framework.get(AppThemeService)}
+        .nexioFeatureFlagService=${framework.get(FeatureFlagService)}
+        .nexioThemeService=${framework.get(AppThemeService)}
         .notificationService=${notificationService}
-        .affineWorkspaceDialogService=${framework.get(WorkspaceDialogService)}
+        .nexioWorkspaceDialogService=${framework.get(WorkspaceDialogService)}
         .aiToolsConfigService=${framework.get(AIToolsConfigService)}
         .aiModelService=${framework.get(AIModelService)}
         .subscriptionService=${framework.get(SubscriptionService)}

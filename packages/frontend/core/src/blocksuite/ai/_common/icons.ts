@@ -7,7 +7,7 @@ if (typeof window !== 'undefined') {
   import('@lottiefiles/dotlottie-wc').catch(console.error);
 }
 
-export const AffineIcon = (color: string) =>
+export const NexioIcon = (color: string) =>
   html`<svg
     width="63"
     height="62"
@@ -205,3 +205,6 @@ export const MakeItRealIconWithAnimation = html`<dotlottie-wc
   loop
   autoplay
 ></dotlottie-wc>`;
+
+// Backwards compatibility alias
+export const AffineIcon = NexioIcon;

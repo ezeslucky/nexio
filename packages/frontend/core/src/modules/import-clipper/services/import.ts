@@ -10,7 +10,7 @@ import { DocsService } from '../../doc';
 import { GuardService } from '../../permissions';
 import { TagService } from '../../tag';
 import {
-  getAFFiNEWorkspaceSchema,
+  getNexioWorkspaceSchema,
   type WorkspaceMetadata,
   type WorkspacesService,
 } from '../../workspace';
@@ -384,7 +384,7 @@ export class ImportClipperService extends Service {
     await workspace.engine.doc.waitForDocReady(workspace.id); // wait for root doc ready
     const docId = await MarkdownTransformer.importMarkdownToDoc({
       collection: workspace.docCollection,
-      schema: getAFFiNEWorkspaceSchema(),
+      schema: getNexioWorkspaceSchema(),
       markdown: clipperInput.contentMarkdown,
       extensions: getStoreManager().config.init().value.get('store'),
     });
@@ -418,7 +418,7 @@ export class ImportClipperService extends Service {
         docCollection.doc.getMap('meta').set('name', workspaceName);
         docId = await MarkdownTransformer.importMarkdownToDoc({
           collection: docCollection,
-          schema: getAFFiNEWorkspaceSchema(),
+          schema: getNexioWorkspaceSchema(),
           markdown: clipperInput.contentMarkdown,
           extensions: getStoreManager().config.init().value.get('store'),
         });

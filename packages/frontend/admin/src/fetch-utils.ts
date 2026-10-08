@@ -29,7 +29,7 @@ function getCookieValue(name: string) {
   return null;
 }
 
-export const affineFetch = (
+export const nexioFetch = (
   input: RequestInfo | URL,
   init?: RequestInit
 ): Promise<Response> => {

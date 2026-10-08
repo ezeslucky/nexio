@@ -47,7 +47,7 @@ const paletteLineToChipMap: Record<string, string> = Object.fromEntries(
 );
 
 // hack: map var(--affine-tag-xxx)/var(--affine-chip-label-xxx) colors to var(--affine-palette-line-xxx)
-export const databaseTagColorToAffineLabel = (color: string) => {
+export const databaseTagColorToNexioLabel = (color: string) => {
   return chipToPaletteLineMap[color] || tagToPaletteLineMap[color] || color;
 };
 
@@ -55,6 +55,6 @@ export const databaseTagColorToV2 = (color: string) => {
   return tagToChipColorMap[color] || color;
 };
 
-export const affineLabelToDatabaseTagColor = (color: string) => {
+export const nexioLabelToDatabaseTagColor = (color: string) => {
   return paletteLineToChipMap[color] || color;
 };

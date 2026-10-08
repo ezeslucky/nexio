@@ -2,7 +2,7 @@ import { PropertyValue } from '@nexio/component';
 import { type TagLike, TagsInlineEditor } from '@nexio/core/components/tags';
 import { TagService } from '@nexio/core/modules/tag';
 import {
-  affineLabelToDatabaseTagColor,
+  nexioLabelToDatabaseTagColor,
   databaseTagColorToV2,
 } from '@nexio/core/modules/tag/entities/utils';
 import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
@@ -201,7 +201,7 @@ const BlocksuiteDatabaseSelector = ({
   const tagColors = useMemo(() => {
     return tagService.tagColors.map(([name, color]) => ({
       id: name,
-      value: affineLabelToDatabaseTagColor(color),
+      value: nexioLabelToDatabaseTagColor(color),
       name,
     }));
   }, [tagService.tagColors]);
@@ -210,7 +210,7 @@ const BlocksuiteDatabaseSelector = ({
     (tagId: string, property: string, value: string) => {
       adapter.updateTag(selectCell, dataSource, tagId, old => {
         if (property === 'color') {
-          value = affineLabelToDatabaseTagColor(value);
+          value = nexioLabelToDatabaseTagColor(value);
         }
         return {
           ...old,

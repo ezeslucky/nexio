@@ -10,16 +10,16 @@ const optionsSchema = z.object({
   framework: z.instanceof(FrameworkProvider).optional(),
 });
 
-type AffineEditorConfigViewOptions = z.infer<typeof optionsSchema>;
+type NexioEditorConfigViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineEditorConfigViewExtension extends ViewExtensionProvider<AffineEditorConfigViewOptions> {
+export class NexioEditorConfigViewExtension extends ViewExtensionProvider<NexioEditorConfigViewOptions> {
   override name = 'affine-view-editor-config';
 
   override schema = optionsSchema;
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineEditorConfigViewOptions
+    options?: NexioEditorConfigViewOptions
   ) {
     super.setup(context, options);
     const framework = options?.framework;

@@ -24,7 +24,7 @@ import {
   selectAboveBlocks,
 } from '../utils/selection-utils';
 import { mergeStreamObjects } from '../utils/stream-objects';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type { AIActionAnswer } from '../widgets/ai-panel/type';
 import { actionToAnswerRenderer } from './answer-renderer';
 
@@ -175,7 +175,7 @@ function actionToGenerateAnswer<T extends keyof BlockSuitePresets.AIActions>(
  * Currently, only support text action
  */
 function updateAIPanelConfig<T extends keyof BlockSuitePresets.AIActions>(
-  aiPanel: AffineAIPanelWidget,
+  aiPanel: NexioAIPanelWidget,
   id: T,
   generatingIcon: TemplateResult<1>,
   variants?: Omit<

@@ -9,7 +9,7 @@ use sqlx::{Executor, PgPool, Postgres, Row, Transaction};
 
 use super::{telemetry::PermissionTelemetry, types::PermissionSnapshot};
 use crate::{
-  AFFINE_PRO_PUBLIC_KEY,
+  NEXIO_PRO_PUBLIC_KEY,
   permission::AuthorizePermissionInputV1,
   runtime::{Deployment, RuntimeError, RuntimeResult},
 };
@@ -62,7 +62,7 @@ impl PermissionStore {
   pub(super) fn with_telemetry(pool: PgPool, deployment: Deployment, telemetry: PermissionTelemetry) -> Self {
     Self {
       pool,
-      license_public_key: AFFINE_PRO_PUBLIC_KEY.map(str::to_string),
+      license_public_key: NEXIO_PRO_PUBLIC_KEY.map(str::to_string),
       deployment,
       telemetry,
     }

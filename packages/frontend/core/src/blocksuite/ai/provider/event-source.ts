@@ -5,12 +5,12 @@ export function delay(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export type AffineTextEvent = {
+export type NexioTextEvent = {
   type: 'attachment' | 'message';
   data: string;
 };
 
-type AffineTextStream = AsyncIterable<AffineTextEvent>;
+type NexioTextStream = AsyncIterable<NexioTextEvent>;
 
 type toTextStreamOptions = {
   timeout?: number;
@@ -31,10 +31,10 @@ const safeParseError = (data: string): { status: number } => {
 export function toTextStream(
   eventSource: EventSource,
   { timeout, signal }: toTextStreamOptions = {}
-): AffineTextStream {
+): NexioTextStream {
   return {
     [Symbol.asyncIterator]: async function* () {
-      const messageQueue: AffineTextEvent[] = [];
+      const messageQueue: NexioTextEvent[] = [];
       let resolveMessagePromise: () => void;
       let rejectMessagePromise: (err: Error) => void;
 

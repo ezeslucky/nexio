@@ -291,7 +291,7 @@ export const SelectorMenu = ({ onClose }: { onClose?: () => void }) => {
     globalContextService.globalContext.workspaceFlavour.$
   );
   const servers = useLiveData(serversService.servers$);
-  const affineCloudServer = useMemo(
+  const nexioCloudServer = useMemo(
     () => servers.find(s => s.id === 'affine-cloud') as Server,
     [servers]
   );
@@ -357,13 +357,13 @@ export const SelectorMenu = ({ onClose }: { onClose?: () => void }) => {
       <main className={styles.body}>
         {/* 1. affine-cloud  */}
         <FrameworkScope
-          key={affineCloudServer.id}
-          scope={affineCloudServer.scope}
+          key={nexioCloudServer.id}
+          scope={nexioCloudServer.scope}
         >
           <CloudWorkSpaceList
-            server={affineCloudServer}
+            server={nexioCloudServer}
             workspaces={cloudWorkspaces.filter(
-              ({ flavour }) => flavour === affineCloudServer.id
+              ({ flavour }) => flavour === nexioCloudServer.id
             )}
             onClickWorkspace={handleClickWorkspace}
           />

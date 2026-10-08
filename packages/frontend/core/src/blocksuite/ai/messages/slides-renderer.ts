@@ -11,12 +11,12 @@ import { Doc as YDoc } from 'yjs';
 import { PPTBuilder } from '../slides/index';
 import { getAIPanelWidget } from '../utils/ai-widgets';
 import type { AIContext } from '../utils/context';
-import type { AffineAIPanelWidgetConfig } from '../widgets/ai-panel/type';
+import type { NexioAIPanelWidgetConfig } from '../widgets/ai-panel/type';
 
 export const createSlidesRenderer: (
   host: EditorHost,
   ctx: AIContext
-) => AffineAIPanelWidgetConfig['answerRenderer'] = (host, ctx) => {
+) => NexioAIPanelWidgetConfig['answerRenderer'] = (host, ctx) => {
   return (answer, state) => {
     if (state === 'generating') {
       const panel = getAIPanelWidget(host);

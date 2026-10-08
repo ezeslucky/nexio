@@ -19,11 +19,11 @@ export class CurrentUserDBEditorSettingProvider
   ) {
     super();
 
-    const affineCloudServer = this.serversService.server$('affine-cloud').value; // TODO: support multiple servers
-    if (!affineCloudServer) {
+    const nexioCloudServer = this.serversService.server$('affine-cloud').value; // TODO: support multiple servers
+    if (!nexioCloudServer) {
       throw new Error('affine-cloud server not found');
     }
-    const userDBService = affineCloudServer.scope.get(UserDBService);
+    const userDBService = nexioCloudServer.scope.get(UserDBService);
     this.currentUserDB$ = userDBService.currentUserDB.db$;
   }
 

@@ -117,7 +117,7 @@ export class AIChatComposer extends SignalWatcher(
   accessor serverService!: ServerService;
 
   @property({ attribute: false })
-  accessor affineWorkspaceDialogService!: WorkspaceDialogService;
+  accessor nexioWorkspaceDialogService!: WorkspaceDialogService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -132,7 +132,7 @@ export class AIChatComposer extends SignalWatcher(
   accessor aiModelService!: AIModelService;
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor subscriptionService!: SubscriptionService;
@@ -177,7 +177,7 @@ export class AIChatComposer extends SignalWatcher(
         .docDisplayConfig=${this.docDisplayConfig}
         .searchMenuConfig=${this.searchMenuConfig}
         .serverService=${this.serverService}
-        .affineFeatureFlagService=${this.affineFeatureFlagService}
+        .nexioFeatureFlagService=${this.nexioFeatureFlagService}
         .aiDraftService=${this.aiDraftService}
         .aiToolsConfigService=${this.aiToolsConfigService}
         .aiModelService=${this.aiModelService}

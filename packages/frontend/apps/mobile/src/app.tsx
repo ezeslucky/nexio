@@ -1,4 +1,4 @@
-import { AffineContext } from '@nexio/core/components/context';
+import { NexioContext } from '@nexio/core/components/context';
 import { AppFallback } from '@nexio/core/mobile/components/app-fallback';
 import { configureMobileModules } from '@nexio/core/mobile/modules';
 import { HapticProvider } from '@nexio/core/mobile/modules/haptics';
@@ -151,13 +151,13 @@ export function App() {
     <Suspense>
       <FrameworkRoot framework={frameworkProvider}>
         <I18nProvider>
-          <AffineContext store={getCurrentStore()}>
+          <NexioContext store={getCurrentStore()}>
             <RouterProvider
               fallbackElement={<AppFallback />}
               router={router}
               future={future}
             />
-          </AffineContext>
+          </NexioContext>
         </I18nProvider>
       </FrameworkRoot>
     </Suspense>

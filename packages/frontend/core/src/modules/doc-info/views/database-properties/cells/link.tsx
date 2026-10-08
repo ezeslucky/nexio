@@ -1,5 +1,5 @@
 import { PropertyValue } from '@nexio/component';
-import { AffinePageReference } from '@nexio/core/components/affine/reference-link';
+import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
 import { ConfigModal } from '@nexio/core/components/mobile';
 import { resolveLinkToDoc } from '@nexio/core/modules/navigation';
 import { useI18n } from '@nexio/i18n';
@@ -143,7 +143,7 @@ export const LinkCell = ({
       >
         {!editing ? (
           resolvedDocLink ? (
-            <AffinePageReference
+            <NexioPageReference
               pageId={resolvedDocLink.docId}
               params={resolvedDocLink.params}
             />

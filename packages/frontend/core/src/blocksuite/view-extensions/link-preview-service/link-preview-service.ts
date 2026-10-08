@@ -18,14 +18,14 @@ export function resolveLinkPreviewEndpoint(value: string, baseUrl: string) {
   return endpoint.pathname === LINK_PREVIEW_PATH ? endpoint.toString() : null;
 }
 
-class AffineLinkPreviewService extends LinkPreviewService {
+class NexioLinkPreviewService extends LinkPreviewService {
   constructor(endpoint: string | null, cache: LinkPreviewCacheProvider) {
-    super(cache, createAffineLinkPreviewFetch(BUILD_CONFIG.appVersion));
+    super(cache, createNexioLinkPreviewFetch(BUILD_CONFIG.appVersion));
     this.setEndpoint(endpoint);
   }
 }
 
-export function createAffineLinkPreviewFetch(
+export function createNexioLinkPreviewFetch(
   version: string,
   fetcher: typeof globalThis.fetch = globalThis.fetch
 ): typeof globalThis.fetch {
@@ -53,7 +53,7 @@ export function patchLinkPreviewService(
   return {
     setup: (di: Container) => {
       di.override(LinkPreviewServiceIdentifier, provider => {
-        return new AffineLinkPreviewService(
+        return new NexioLinkPreviewService(
           linkPreviewUrl,
           provider.get(LinkPreviewCacheIdentifier)
         );

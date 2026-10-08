@@ -14,8 +14,8 @@ import { pageAIGroups } from '../_common/config';
 import { handleInlineAskAIAction } from '../actions/doc-handler';
 import type { AIItemConfig } from '../components/ai-item/types';
 import {
-  AFFINE_AI_PANEL_WIDGET,
-  type AffineAIPanelWidget,
+  NEXIO_AI_PANEL_WIDGET,
+  type NexioAIPanelWidget,
 } from '../widgets/ai-panel/ai-panel';
 
 export function AiSlashMenuConfigExtension() {
@@ -32,11 +32,11 @@ export function AiSlashMenuConfigExtension() {
     ({ std }: SlashMenuContext) => {
       const root = std.host.store.root;
       if (!root) return false;
-      const affineAIPanelWidget = std.view.getWidget(
-        AFFINE_AI_PANEL_WIDGET,
+      const nexioAIPanelWidget = std.view.getWidget(
+        NEXIO_AI_PANEL_WIDGET,
         root.id
       );
-      if (affineAIPanelWidget === null) return false;
+      if (nexioAIPanelWidget === null) return false;
 
       const chain = std.host.command.chain();
       const docModeService = std.get(DocModeProvider);
@@ -82,11 +82,11 @@ export function AiSlashMenuConfigExtension() {
       action: ({ std }) => {
         const root = std.host.store.root;
         if (!root) return;
-        const affineAIPanelWidget = std.view.getWidget(
-          AFFINE_AI_PANEL_WIDGET,
+        const nexioAIPanelWidget = std.view.getWidget(
+          NEXIO_AI_PANEL_WIDGET,
           root.id
-        ) as AffineAIPanelWidget;
-        handleInlineAskAIAction(affineAIPanelWidget.host);
+        ) as NexioAIPanelWidget;
+        handleInlineAskAIAction(nexioAIPanelWidget.host);
       },
     },
     ...AIItems.filter(({ name }) =>

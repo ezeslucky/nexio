@@ -221,9 +221,9 @@ export async function replaceFromMarkdown(
 export async function markDownToDoc(
   answer: string,
   middlewares?: TransformerMiddleware[],
-  affineFeatureFlagService?: FeatureFlagService
+  nexioFeatureFlagService?: FeatureFlagService
 ) {
-  const { collection, std } = getMarkdownWorkspace(affineFeatureFlagService);
+  const { collection, std } = getMarkdownWorkspace(nexioFeatureFlagService);
 
   const transformer = new Transformer({
     schema: std.store.schema,

@@ -18,17 +18,17 @@ const webDir = path.join(
   'apps',
   'electron-renderer'
 );
-const affineWebOutDir = path.join(webDir, 'dist');
-const publicAffineOutDir = path.join(publicDistDir, `web-static`);
+const nexioWebOutDir = path.join(webDir, 'dist');
+const publicNexioOutDir = path.join(publicDistDir, `web-static`);
 const releaseVersionEnv = process.env.RELEASE_VERSION || '';
 
 console.log('build with following variables', {
   repoRootDir,
   electronRootDir,
   publicDistDir,
-  affineSrcDir: webDir,
-  affineSrcOutDir: affineWebOutDir,
-  publicAffineOutDir,
+  nexioSrcDir: webDir,
+  nexioSrcOutDir: nexioWebOutDir,
+  publicNexioOutDir,
   releaseVersionEnv,
 });
 
@@ -59,7 +59,7 @@ if (!process.env.SKIP_WEB_BUILD) {
     shell: true,
   });
 
-  await fs.move(affineWebOutDir, publicAffineOutDir, { overwrite: true });
+  await fs.move(nexioWebOutDir, publicNexioOutDir, { overwrite: true });
 }
 
 // step 2: update app-updater.yml content with build type in resources folder

@@ -4,7 +4,7 @@ import {
   PropertyCollapsibleSection,
   PropertyName,
 } from '@nexio/component';
-import { AffinePageReference } from '@nexio/core/components/affine/reference-link';
+import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
 import { DocService } from '@nexio/core/modules/doc';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { useI18n } from '@nexio/i18n';
@@ -142,7 +142,7 @@ const DatabaseBacklinkRow = ({
         defaultCollapsed={!defaultOpen}
         icon={<DatabaseTableViewIcon />}
         suffix={
-          <AffinePageReference
+          <NexioPageReference
             className={
               BUILD_CONFIG.isMobileEdition
                 ? styles.mobileDocRefLink

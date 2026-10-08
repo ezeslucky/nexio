@@ -1,14 +1,17 @@
 import { Global, Module } from '@nestjs/common';
 
 import { ConfigModule } from '../config';
-import { AFFiNELogger } from './service';
+import { NexioLogger } from './service';
 
 @Global()
 @Module({
   imports: [ConfigModule],
-  providers: [AFFiNELogger],
-  exports: [AFFiNELogger],
+  providers: [NexioLogger],
+  exports: [NexioLogger],
 })
 export class LoggerModule {}
 
-export { AFFiNELogger } from './service';
+export { NexioLogger } from './service';
+
+// Backwards compatibility alias
+export { NexioLogger as AFFiNELogger } from './service';

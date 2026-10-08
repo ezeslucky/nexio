@@ -55,7 +55,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
   const t = useI18n();
   const openInAppService = useService(OpenInAppService);
 
-  const openAFFiNE = useCallback(() => {
+  const openNexio = useCallback(() => {
     openInAppService.showOpenInAppPage();
   }, [openInAppService]);
 
@@ -114,7 +114,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
         </div>
         <div>{t['com.affine.payment.license-success.hint']()}</div>
         <div>
-          <Button variant="primary" size="extraLarge" onClick={openAFFiNE}>
+          <Button variant="primary" size="extraLarge" onClick={openNexio}>
             {t['com.affine.payment.license-success.open-affine']()}
           </Button>
         </div>

@@ -11,16 +11,16 @@ const optionsSchema = z.object({
   framework: z.instanceof(FrameworkProvider).optional(),
 });
 
-export type AffineDatabaseViewOptions = z.infer<typeof optionsSchema>;
+export type NexioDatabaseViewOptions = z.infer<typeof optionsSchema>;
 
-export class AffineDatabaseViewExtension extends ViewExtensionProvider<AffineDatabaseViewOptions> {
+export class NexioDatabaseViewExtension extends ViewExtensionProvider<NexioDatabaseViewOptions> {
   override name = 'affine-database-view';
 
   override schema = optionsSchema;
 
   override setup(
     context: ViewExtensionContext,
-    options?: AffineDatabaseViewOptions
+    options?: NexioDatabaseViewOptions
   ) {
     super.setup(context, options);
 

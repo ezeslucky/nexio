@@ -3,7 +3,7 @@ import { ResizePanel } from '@nexio/component/resize-panel';
 import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
 import { NavigateContext } from '@nexio/core/components/hooks/use-navigate-helper';
 import { WorkspaceNavigator } from '@nexio/core/components/workspace-selector';
-import type { AffineDNDData } from '@nexio/core/types/dnd';
+import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import {
   useLiveData,
@@ -128,7 +128,7 @@ export function AppSidebar({ children }: PropsWithChildren) {
           viewId: firstView.id,
         };
       },
-      canDrop: (data: DropTargetGetFeedback<AffineDNDData>) => {
+      canDrop: (data: DropTargetGetFeedback<NexioDNDData>) => {
         return (
           (!!data.source.data.entity?.type &&
             allowedSplitViewEntityTypes.has(data.source.data.entity?.type)) ||

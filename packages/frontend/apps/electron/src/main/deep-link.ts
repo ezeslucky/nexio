@@ -64,7 +64,7 @@ export function setupDeepLink(app: App) {
       event.preventDefault();
       app
         .whenReady()
-        .then(() => handleAffineUrl(url))
+        .then(() => handleNexioUrl(url))
         .catch(e => {
           logDeepLinkFailure(url, e);
         });
@@ -78,7 +78,7 @@ export function setupDeepLink(app: App) {
         const url = commandLine.pop();
         if (url?.startsWith(`${protocol}://`)) {
           event.preventDefault();
-          handleAffineUrl(url).catch(e => {
+          handleNexioUrl(url).catch(e => {
             logDeepLinkFailure(url, e);
           });
         }
@@ -97,14 +97,14 @@ export function setupDeepLink(app: App) {
         : { deepLink: false, argumentCount: process.argv.length }
     );
     if (url?.startsWith(`${protocol}://`)) {
-      handleAffineUrl(url).catch(e => {
+      handleNexioUrl(url).catch(e => {
         logDeepLinkFailure(url, e);
       });
     }
   });
 }
 
-async function handleAffineUrl(url: string) {
+async function handleNexioUrl(url: string) {
   await showMainWindow();
 
   logger.info('open affine url', summarizeDeepLink(url));

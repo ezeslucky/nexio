@@ -3,7 +3,7 @@ import { type EditorHost, TextSelection } from '@blocksuite/affine/std';
 
 import { handleInlineAskAIAction } from '../../actions/doc-handler';
 import { hasAIRequestService } from '../../runtime/request';
-import type { AffineAIPanelWidget } from '../../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../../widgets/ai-panel/ai-panel';
 
 function isSpaceEvent(event: KeyboardEvent) {
   return event.key === ' ' && event.which === 32 && !event.isComposing;
@@ -29,7 +29,7 @@ function insertSpace(host: EditorHost) {
   );
 }
 
-export function setupSpaceAIEntry(panel: AffineAIPanelWidget) {
+export function setupSpaceAIEntry(panel: NexioAIPanelWidget) {
   // Background: The keydown event triggered by a space may originate from:
   // 1. Normal space insertion
   // 2. Space triggered by input method confirming candidate words

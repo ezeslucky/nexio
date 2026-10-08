@@ -34,7 +34,7 @@ import React from 'react';
 import { filter } from 'rxjs/operators';
 
 import { markDownToDoc } from '../../utils';
-import type { AffineAIPanelState } from '../widgets/ai-panel/type';
+import type { NexioAIPanelState } from '../widgets/ai-panel/type';
 import { getCustomPageEditorBlockSpecs } from './page-editor-block-specs';
 
 const customHeadingStyles = css`
@@ -83,7 +83,7 @@ export type TextRendererOptions = {
   extensions?: ExtensionType[];
   additionalMiddlewares?: TransformerMiddleware[];
   testId?: string;
-  affineFeatureFlagService?: FeatureFlagService;
+  nexioFeatureFlagService?: FeatureFlagService;
   theme?: Signal<ColorScheme>;
   scrollable?: boolean;
 };
@@ -265,7 +265,7 @@ export class TextRenderer extends SignalWatcher(
         markDownToDoc(
           latestAnswer,
           middlewares,
-          this.options.affineFeatureFlagService
+          this.options.nexioFeatureFlagService
         )
           .then(doc => {
             this.disposeDoc();
@@ -391,11 +391,11 @@ export class TextRenderer extends SignalWatcher(
   accessor options!: TextRendererOptions;
 
   @property({ attribute: false })
-  accessor state: AffineAIPanelState | undefined = undefined;
+  accessor state: NexioAIPanelState | undefined = undefined;
 }
 
 export const createTextRenderer = (options: TextRendererOptions) => {
-  return (answer: string, state?: AffineAIPanelState) => {
+  return (answer: string, state?: NexioAIPanelState) => {
     return html`<text-renderer
       contenteditable="false"
       .answer=${answer}

@@ -115,7 +115,7 @@ export class SectionEditTool extends WithDisposable(ShadowlessElement) {
   accessor extensions!: ExtensionType[];
 
   @property({ attribute: false })
-  accessor affineFeatureFlagService!: FeatureFlagService;
+  accessor nexioFeatureFlagService!: FeatureFlagService;
 
   @property({ attribute: false })
   accessor notificationService!: NotificationService;
@@ -227,7 +227,7 @@ export class SectionEditTool extends WithDisposable(ShadowlessElement) {
             .text=${result.content}
             .state=${'finished'}
             .extensions=${this.extensions}
-            .affineFeatureFlagService=${this.affineFeatureFlagService}
+            .nexioFeatureFlagService=${this.nexioFeatureFlagService}
             .theme=${this.theme}
           ></chat-content-rich-text>
         </div>

@@ -25,7 +25,7 @@ export {
 } from './graphql';
 export * from './guard';
 export { CryptoHelper, URLHelper } from './helpers';
-export { AFFiNELogger } from './logger';
+export { NexioLogger } from './logger';
 export { CallMetric, metrics } from './metrics';
 export { Lock, Locker, Mutex, RequestMutex } from './mutex';
 export * from './nestjs';

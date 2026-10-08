@@ -96,7 +96,7 @@ export const Component = () => {
     },
     [changePassword, searchParams]
   );
-  const onOpenAffine = useCallback(() => {
+  const onOpenNexio = useCallback(() => {
     jumpToIndex(RouteLogic.REPLACE);
   }, [jumpToIndex]);
 
@@ -107,7 +107,7 @@ export const Component = () => {
   switch (authType) {
     case 'onboarding':
       return (
-        account && <OnboardingPage user={account} onOpenAffine={onOpenAffine} />
+        account && <OnboardingPage user={account} onOpenNexio={onOpenNexio} />
       );
     case 'signUp': {
       return (
@@ -116,20 +116,20 @@ export const Component = () => {
             user={account}
             passwordLimits={passwordLimits}
             onSetPassword={onSetPassword}
-            onOpenAffine={onOpenAffine}
+            onOpenNexio={onOpenNexio}
           />
         )
       );
     }
     case 'signIn': {
-      return <SignInSuccessPage onOpenAffine={onOpenAffine} />;
+      return <SignInSuccessPage onOpenNexio={onOpenNexio} />;
     }
     case 'changePassword': {
       return (
         <ChangePasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onOpenAffine={onOpenAffine}
+          onOpenNexio={onOpenNexio}
         />
       );
     }
@@ -138,7 +138,7 @@ export const Component = () => {
         <SetPasswordPage
           passwordLimits={passwordLimits}
           onSetPassword={onSetPassword}
-          onOpenAffine={onOpenAffine}
+          onOpenNexio={onOpenNexio}
         />
       );
     }
@@ -146,15 +146,15 @@ export const Component = () => {
       return (
         <ChangeEmailPage
           onChangeEmail={onSendVerifyChangeEmail}
-          onOpenAffine={onOpenAffine}
+          onOpenNexio={onOpenNexio}
         />
       );
     }
     case 'confirm-change-email': {
-      return <ConfirmChangeEmail onOpenAffine={onOpenAffine} />;
+      return <ConfirmChangeEmail onOpenNexio={onOpenNexio} />;
     }
     case 'verify-email': {
-      return <ConfirmVerifiedEmail onOpenAffine={onOpenAffine} />;
+      return <ConfirmVerifiedEmail onOpenNexio={onOpenNexio} />;
     }
   }
   return null;

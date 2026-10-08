@@ -8,7 +8,7 @@ import { ObjectPool, Service } from '@toeverything/infra';
 import { combineLatest, map } from 'rxjs';
 
 import { initDocFromProps } from '../../../blocksuite/initialization';
-import { getAFFiNEWorkspaceSchema } from '../../workspace/global-schema';
+import { getNexioWorkspaceSchema } from '../../workspace/global-schema';
 import type { Doc } from '../entities/doc';
 import { DocRecordList } from '../entities/record-list';
 import { DocCreated, DocInitialized } from '../events';
@@ -241,7 +241,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNexioWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {
@@ -335,7 +335,7 @@ export class DocsService extends Service {
 
       const collection = this.store.getBlocksuiteCollection();
       const transformer = new Transformer({
-        schema: getAFFiNEWorkspaceSchema(),
+        schema: getNexioWorkspaceSchema(),
         blobCRUD: collection.blobSync,
         docCRUD: {
           create: (id: string) => {

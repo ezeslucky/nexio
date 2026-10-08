@@ -34,7 +34,7 @@ function createProxy(initValue: (key: string) => any) {
         },
     });
 }
-export function useAFFiNEI18N(): {
+export function useNexioI18N(): {
     /**
       * `Back to my Content`
       */
@@ -11214,3 +11214,6 @@ export const TypedTrans: {
         ["1"]: JSX.Element;
     }>>;
 } = /*#__PURE__*/ createProxy(createComponent);
+
+// Backwards compatibility alias
+export const useAFFiNEI18N = useNexioI18N;

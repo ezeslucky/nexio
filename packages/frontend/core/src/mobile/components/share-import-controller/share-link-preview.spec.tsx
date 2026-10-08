@@ -26,7 +26,7 @@ import type * as Infra from '@toeverything/infra';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 
 import {
-  createAffineLinkPreviewFetch,
+  createNexioLinkPreviewFetch,
   resolveLinkPreviewEndpoint,
 } from '../../../blocksuite/view-extensions/link-preview-service/link-preview-service';
 import { createShareMarkdown } from '../../../modules/import-clipper/services/import';
@@ -96,7 +96,7 @@ describe('link preview transport and route ownership', () => {
       );
     const service = new LinkPreviewService(
       cache,
-      createAffineLinkPreviewFetch('0.27.0', fetch)
+      createNexioLinkPreviewFetch('0.27.0', fetch)
     );
     service.setEndpoint('https://self.example/api/worker/link-preview');
 

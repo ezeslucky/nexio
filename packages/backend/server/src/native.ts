@@ -319,7 +319,7 @@ export const parsePageDocFromBinary = serverNativeModule.parsePageDoc;
 export const parseWorkspaceDocFromBinary = serverNativeModule.parseWorkspaceDoc;
 export const readAllDocIdsFromRootDoc =
   serverNativeModule.readAllDocIdsFromRootDoc;
-export const AFFINE_PRO_PUBLIC_KEY = serverNativeModule.AFFINE_PRO_PUBLIC_KEY;
+export const NEXIO_PRO_PUBLIC_KEY = serverNativeModule.NEXIO_PRO_PUBLIC_KEY;
 export const BackendRuntime = serverNativeModule.BackendRuntime;
 export const StorageRuntime = serverNativeModule.StorageRuntime;
 

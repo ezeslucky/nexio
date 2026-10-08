@@ -1,6 +1,6 @@
 import { Switch } from '@nexio/component';
 import {
-  AFFINE_FLAGS,
+  NEXIO_FLAGS,
   FeatureFlagService,
   type Flag,
 } from '@nexio/core/modules/feature-flag';
@@ -38,11 +38,11 @@ const ExperimentalFeatureList = () => {
 
   return (
     <ul className={styles.content}>
-      {Object.keys(AFFINE_FLAGS).map(key => (
+      {Object.keys(NEXIO_FLAGS).map(key => (
         <ExperimentalFeaturesItem
           key={key}
           flagKey={key}
-          flag={featureFlagService.flags[key as keyof AFFINE_FLAGS]}
+          flag={featureFlagService.flags[key as keyof NEXIO_FLAGS]}
         />
       ))}
     </ul>

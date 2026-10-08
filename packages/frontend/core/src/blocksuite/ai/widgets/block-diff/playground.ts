@@ -8,8 +8,8 @@ import { literal, unsafeStatic } from 'lit/static-html.js';
 
 import { BlockDiffProvider } from '../../services/block-diff';
 
-export const AFFINE_BLOCK_DIFF_PLAYGROUND = 'affine-block-diff-playground';
-export const AFFINE_BLOCK_DIFF_PLAYGROUND_MODAL =
+export const NEXIO_BLOCK_DIFF_PLAYGROUND = 'affine-block-diff-playground';
+export const NEXIO_BLOCK_DIFF_PLAYGROUND_MODAL =
   'affine-block-diff-playground-modal';
 
 export class BlockDiffPlaygroundModal extends WithDisposable(LitElement) {
@@ -225,6 +225,6 @@ export class BlockDiffPlayground extends WidgetComponent {
 
 export const blockDiffPlayground = WidgetViewExtension(
   'affine:page',
-  AFFINE_BLOCK_DIFF_PLAYGROUND,
-  literal`${unsafeStatic(AFFINE_BLOCK_DIFF_PLAYGROUND)}`
+  NEXIO_BLOCK_DIFF_PLAYGROUND,
+  literal`${unsafeStatic(NEXIO_BLOCK_DIFF_PLAYGROUND)}`
 );

@@ -37,7 +37,7 @@ import {
   getSelectedNoteAnchor,
   getSelections,
 } from '../utils/selection-utils';
-import type { AffineAIPanelWidget } from '../widgets/ai-panel/ai-panel';
+import type { NexioAIPanelWidget } from '../widgets/ai-panel/ai-panel';
 import type { AIActionAnswer } from '../widgets/ai-panel/type';
 import type { EdgelessCopilotWidget } from '../widgets/edgeless-copilot';
 import { actionToAnswerRenderer } from './answer-renderer';
@@ -306,7 +306,7 @@ function actionToGeneration<T extends keyof BlockSuitePresets.AIActions>(
 function updateEdgelessAIPanelConfig<
   T extends keyof BlockSuitePresets.AIActions,
 >(
-  aiPanel: AffineAIPanelWidget,
+  aiPanel: NexioAIPanelWidget,
   edgelessCopilot: EdgelessCopilotWidget,
   id: T,
   generatingIcon: TemplateResult<1>,

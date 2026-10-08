@@ -11,7 +11,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 
-import { affineFetch } from '../../fetch-utils';
+import { nexioFetch } from '../../fetch-utils';
 import { useRevalidateServerConfig, useServerConfig } from '../common';
 import { CreateAdmin } from './create-admin';
 
@@ -96,7 +96,7 @@ export const Form = () => {
 
   const createAdmin = useCallback(async () => {
     try {
-      const createResponse = await affineFetch('/api/setup/create-admin-user', {
+      const createResponse = await nexioFetch('/api/setup/create-admin-user', {
         method: 'POST',
         body: JSON.stringify({
           name: nameValue,

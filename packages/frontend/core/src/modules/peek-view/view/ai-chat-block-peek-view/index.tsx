@@ -32,8 +32,8 @@ export const AIChatBlockPeekView = ({
 
   const framework = useFramework();
   const serverService = framework.get(ServerService);
-  const affineFeatureFlagService = framework.get(FeatureFlagService);
-  const affineWorkspaceDialogService = framework.get(WorkspaceDialogService);
+  const nexioFeatureFlagService = framework.get(FeatureFlagService);
+  const nexioWorkspaceDialogService = framework.get(WorkspaceDialogService);
   const aiDraftService = framework.get(AIDraftService);
   const aiToolsConfigService = framework.get(AIToolsConfigService);
   const aiModelService = framework.get(AIModelService);
@@ -48,8 +48,8 @@ export const AIChatBlockPeekView = ({
       searchMenuConfig,
       reasoningConfig,
       serverService,
-      affineFeatureFlagService,
-      affineWorkspaceDialogService,
+      nexioFeatureFlagService,
+      nexioWorkspaceDialogService,
       aiDraftService,
       aiToolsConfigService,
       aiModelService,
@@ -64,8 +64,8 @@ export const AIChatBlockPeekView = ({
     searchMenuConfig,
     reasoningConfig,
     serverService,
-    affineFeatureFlagService,
-    affineWorkspaceDialogService,
+    nexioFeatureFlagService,
+    nexioWorkspaceDialogService,
     aiDraftService,
     aiToolsConfigService,
     aiModelService,
