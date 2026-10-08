@@ -35,6 +35,10 @@ import { map } from 'rxjs';
 import * as _Y from 'yjs';
 
 import { NexioErrorBoundary } from '../../../components/affine/affine-error-boundary';
+import {
+  RouteLogic,
+  useNavigateHelper,
+} from '../../../components/hooks/use-navigate-helper';
 import { WorkbenchRoot } from '../../../modules/workbench';
 import { AppContainer } from '../../components/app-container';
 import { PageNotFound } from '../404';
@@ -78,6 +82,7 @@ export const Component = (): ReactElement => {
   const params = useParams();
   const location = useLocation();
   const [searchParams] = useSearchParams();
+  const { openPage } = useNavigateHelper();
 
   // check if we are in detail doc route, if so, maybe render share page
   const detailDocRoute = useMemo(() => {
@@ -113,12 +118,16 @@ export const Component = (): ReactElement => {
   // if listLoading is false, we can show 404 page, otherwise we should show loading page.
   useEffect(() => {
     if (listLoading === false && meta === undefined) {
+      if (workspaces && workspaces.length > 0 && !detailDocRoute) {
+        openPage(workspaces[0].id, 'all', RouteLogic.REPLACE);
+        return;
+      }
       setWorkspaceNotFound(true);
     }
     if (meta) {
       setWorkspaceNotFound(false);
     }
-  }, [listLoading, meta, workspacesService]);
+  }, [detailDocRoute, listLoading, meta, openPage, workspaces, workspacesService]);
 
   // if workspace is not found, we should retry
   const retryTimesRef = useRef(3);

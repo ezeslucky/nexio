@@ -15,6 +15,11 @@ export class PreviewRendererFeatureSyncService extends Service {
     const mermaidFlag =
       this.featureFlagService.flags.enable_mermaid_wasm_native_renderer;
 
+    if (!mermaidFlag) {
+      setMermaidWasmNativeRendererEnabled(false);
+      return;
+    }
+
     setMermaidWasmNativeRendererEnabled(!!mermaidFlag.value);
     const subscription = mermaidFlag.$.pipe(distinctUntilChanged()).subscribe(
       enabled => {

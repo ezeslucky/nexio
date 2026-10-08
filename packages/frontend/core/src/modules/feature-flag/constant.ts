@@ -26,6 +26,15 @@ export const NEXIO_FLAGS = {
     configurable: false,
     defaultState: true,
   },
+  enable_mermaid_wasm_native_renderer: {
+    category: 'affine',
+    displayName:
+      'com.affine.settings.workspace.experimental-features.enable-mermaid-wasm-native-renderer.name',
+    description:
+      'com.affine.settings.workspace.experimental-features.enable-mermaid-wasm-native-renderer.description',
+    configurable: false,
+    defaultState: false,
+  },
   enable_ai_playground: {
     category: 'affine',
     displayName:

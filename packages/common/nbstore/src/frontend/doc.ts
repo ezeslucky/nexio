@@ -324,10 +324,9 @@ export class DocFrontend {
 
       if (docRecord && !isEmptyUpdate(docRecord.bin)) {
         this.applyUpdate(job.docId, docRecord.bin);
-
-        this.status.readyDocs.add(job.docId);
       }
 
+      this.status.readyDocs.add(job.docId);
       this.status.connectedDocs.add(job.docId);
       this.statusUpdatedSubject$.next(job.docId);
     },
