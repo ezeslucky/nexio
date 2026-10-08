@@ -24,6 +24,7 @@ interface LoaderData {
   code: string;
   flow: OAuthFlowMode;
   provider: string;
+  clientNonce?: string;
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
@@ -37,7 +38,8 @@ export const loader: LoaderFunction = async ({ request }) => {
   }
 
   try {
-    const { state, client, flow, provider } = parseOAuthCallbackState(stateStr);
+    const { state, client, flow, provider, clientNonce } =
+      parseOAuthCallbackState(stateStr);
 
     if (!state || !provider) {
       return redirect('/sign-in?error=Invalid oauth callback parameters');
@@ -50,6 +52,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       code,
       flow,
       provider,
+      clientNonce,
     };
 
     if (!client || client === 'web') {
@@ -90,7 +93,7 @@ export const Component = () => {
     }
     triggeredRef.current = true;
     auth
-      .signInOauth(data.code, data.state, data.provider)
+      .signInOauth(data.code, data.state, data.provider, data.clientNonce)
       .then(({ redirectUri }) => {
         if (data.flow === 'popup') {
           window.close();

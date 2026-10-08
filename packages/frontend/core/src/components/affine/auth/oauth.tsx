@@ -15,6 +15,8 @@ import {
 import { useLiveData, useService } from '@toeverything/infra';
 import { type ReactElement, type SVGAttributes, useCallback, useMemo } from 'react';
 
+import { attachOAuthNonceToAuthUrl } from '../../../desktop/pages/auth/oauth-flow';
+
 const OAuthProviderMap: Record<
   OAuthProviderType,
   {
@@ -79,7 +81,11 @@ export function OAuth({ redirectUrl }: { redirectUrl?: string }) {
                 redirectUrl
               );
               if (res?.url) {
-                location.href = res.url;
+                const nonce = auth.getClientNonce();
+                const targetUrl = nonce
+                  ? attachOAuthNonceToAuthUrl(res.url, nonce)
+                  : res.url;
+                location.href = targetUrl;
               } else {
                 const params = new URLSearchParams();
                 params.set('provider', provider);

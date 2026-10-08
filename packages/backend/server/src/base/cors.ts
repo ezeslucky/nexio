@@ -100,7 +100,7 @@ export function isCorsOriginAllowed(
     return true;
   }
 
-  if ((env.dev || env.testing) && isDevLoopbackOrigin(origin)) {
+  if ((env.dev || env.testing || env.selfhosted) && isDevLoopbackOrigin(origin)) {
     return true;
   }
 

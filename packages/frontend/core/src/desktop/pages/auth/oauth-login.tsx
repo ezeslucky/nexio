@@ -11,8 +11,11 @@ import {
 } from 'react-router-dom';
 import { z } from 'zod';
 
-import { supportedClient } from './common';
-import { attachOAuthFlowToAuthUrl, resolveOAuthFlowMode } from './oauth-flow';
+import {
+  attachOAuthFlowToAuthUrl,
+  attachOAuthNonceToAuthUrl,
+  resolveOAuthFlowMode,
+} from './oauth-flow';
 
 const supportedProvider = z.nativeEnum(OAuthProviderType);
 const CSRF_COOKIE_NAME = 'affine_csrf_token';
@@ -96,10 +99,15 @@ export const Component = () => {
       .oauthPreflight(data.provider, data.client, data.redirectUri)
       .then(({ url }) => {
         // this is the url of oauth provider auth page, can't navigate with react-router
-        location.href = attachOAuthFlowToAuthUrl(
+        const nonce = auth.getClientNonce();
+        let targetUrl = attachOAuthFlowToAuthUrl(
           url,
           resolveOAuthFlowMode(data.flow)
         );
+        if (nonce) {
+          targetUrl = attachOAuthNonceToAuthUrl(targetUrl, nonce);
+        }
+        location.href = targetUrl;
       })
       .catch(e => {
         nav(`/sign-in?error=${encodeURIComponent(e.message)}`);

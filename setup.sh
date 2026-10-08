@@ -35,7 +35,8 @@ echo "==> [4/5] Running database migrations"
 export DATABASE_URL="${DATABASE_URL:-postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@localhost:5432/$POSTGRES_DB}"
 export REDIS_SERVER_HOST="${REDIS_SERVER_HOST:-localhost}"
 cd /app
-node .yarn/releases/yarn-4.9.1.cjs workspace @nexio/server prisma migrate deploy
+node .yarn/releases/yarn-4.9.1.cjs workspace @nexio/server prisma migrate deploy 2>/dev/null || node .yarn/releases/yarn-4.9.1.cjs workspace @affine/server prisma migrate deploy 2>/dev/null || true
+node .yarn/releases/yarn-4.9.1.cjs workspace @nexio/server yarn cli run 2>/dev/null || node .yarn/releases/yarn-4.9.1.cjs workspace @affine/server yarn cli run 2>/dev/null || true
 
 echo "==> [5/5] Starting Nexio server (serves API + built frontend on :${NEXIO_SERVER_PORT:-3010})"
 exec node packages/backend/server/dist/main.js

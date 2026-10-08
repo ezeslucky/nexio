@@ -91,11 +91,27 @@ export class AuthStore extends Store {
   }
 
   getClientNonce() {
-    return this.globalState.get<string>('auth-client-nonce');
+    let nonce = this.globalState.get<string>('auth-client-nonce');
+    if (!nonce && typeof document !== 'undefined') {
+      const match = document.cookie.match(
+        /(?:^|;\s*)auth-client-nonce=([^;]+)/
+      );
+      if (match) {
+        nonce = decodeURIComponent(match[1]);
+      }
+    }
+    return nonce;
   }
 
   setClientNonce(nonce: string) {
     this.globalState.set('auth-client-nonce', nonce);
+    if (typeof document !== 'undefined') {
+      try {
+        document.cookie = `auth-client-nonce=${encodeURIComponent(
+          nonce
+        )}; path=/; max-age=600; SameSite=Lax`;
+      } catch {}
+    }
   }
 
   async fetchSession() {
@@ -132,12 +148,17 @@ export class AuthStore extends Store {
     );
   }
 
-  async signInOauth(code: string, state: string, provider: string) {
+  async signInOauth(
+    code: string,
+    state: string,
+    provider: string,
+    clientNonce?: string
+  ) {
     return await this.authProvider.signInOauth(
       code,
       state,
       provider,
-      this.getClientNonce()
+      clientNonce || this.getClientNonce()
     );
   }
 

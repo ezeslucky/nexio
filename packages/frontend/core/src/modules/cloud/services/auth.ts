@@ -210,12 +210,18 @@ export class AuthService extends Service {
     }
   }
 
-  async signInOauth(code: string, state: string, provider: string) {
+  async signInOauth(
+    code: string,
+    state: string,
+    provider: string,
+    clientNonce?: string
+  ) {
     try {
       const { redirectUri } = await this.store.signInOauth(
         code,
         state,
-        provider
+        provider,
+        clientNonce
       );
 
       await this.session.revalidateOnce();
@@ -345,6 +351,10 @@ export class AuthService extends Service {
     }
 
     return headers;
+  }
+
+  getClientNonce(): string | undefined {
+    return this.store.getClientNonce();
   }
 
   private setClientNonce(): string {

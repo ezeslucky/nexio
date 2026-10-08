@@ -92,10 +92,13 @@ export class OAuthController {
         name: fields.has('code') ? 'code' : 'state',
       });
     }
+    const clientNonce =
+      input.data.client_nonce ||
+      (req.cookies ? req.cookies['auth-client-nonce'] : undefined);
     const result = await this.oauth.callback({
       code: input.data.code,
       state: input.data.state,
-      clientNonce: input.data.client_nonce,
+      clientNonce,
       issue: this.sessionIssuer.target(req),
     });
     if (result.type === 'handoff') {
@@ -113,6 +116,9 @@ export class OAuthController {
       return res.redirect(
         this.url.link('/open-app/url?', { url: clientUrl.toString() })
       );
+    }
+    if (req.cookies?.['auth-client-nonce']) {
+      res.clearCookie('auth-client-nonce', { path: '/' });
     }
     this.sessionIssuer.apply(res, result);
     if (

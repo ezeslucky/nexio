@@ -1,5 +1,6 @@
 import {
   attachOAuthFlowToAuthUrl,
+  attachOAuthNonceToAuthUrl,
   parseOAuthCallbackState,
   resolveOAuthFlowMode,
   resolveOAuthRedirect,
@@ -29,6 +30,23 @@ describe('oauth flow mode', () => {
     });
   });
 
+  test('persists clientNonce in oauth state', () => {
+    const url = attachOAuthNonceToAuthUrl(
+      'https://example.com/auth?state=%7B%22state%22%3A%22nonce%22%2C%22provider%22%3A%22Google%22%2C%22client%22%3A%22web%22%7D',
+      'my-test-nonce-123'
+    );
+
+    expect(
+      parseOAuthCallbackState(new URL(url).searchParams.get('state')!)
+    ).toEqual({
+      client: 'web',
+      flow: 'popup',
+      provider: 'Google',
+      state: 'nonce',
+      clientNonce: 'my-test-nonce-123',
+    });
+  });
+
   test('falls back to popup when callback state has no flow', () => {
     expect(
       parseOAuthCallbackState(
@@ -50,6 +68,15 @@ describe('oauth flow mode', () => {
     ).toBe('https://app.affine.pro/workspace?from=oauth');
   });
 
+  test('keeps loopback redirects direct on current origin', () => {
+    expect(
+      resolveOAuthRedirect(
+        'http://localhost:3010/workspace/CBdG2zZTBOsRKKI03pxDm/all',
+        'http://localhost:8080'
+      )
+    ).toBe('http://localhost:8080/workspace/CBdG2zZTBOsRKKI03pxDm/all');
+  });
+
   test('wraps external redirects with redirect-proxy', () => {
     expect(
       resolveOAuthRedirect(
@@ -57,7 +84,7 @@ describe('oauth flow mode', () => {
         'https://app.affine.pro'
       )
     ).toBe(
-      'https://app.affine.pro/redirect-proxy?redirect_uri=https%3A%2F%2Fgithub.com%2Ftoeverything%2FAFFiNE'
+      'https://app.affine.pro/redirect-proxy?redirect_uri=https%3A%2F%2Fgithub.com%2Fezeslucky%2Fnexio'
     );
   });
 });
