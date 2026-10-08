@@ -1,11 +1,11 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { createTable, getCellText } from '@affine-test/kit/bs/table';
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { waitNextFrame } from '@nexio-test/kit/bs/misc';
+import { createTable, getCellText } from '@nexio-test/kit/bs/table';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 /**

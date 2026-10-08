@@ -1,6 +1,6 @@
-import { type DropTargetDropEvent, useDropTarget } from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+import { type DropTargetDropEvent, useDropTarget } from '@nexio/component';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
 
 import { EmptyNodeChildren } from '../../layouts/empty-node-children';
 

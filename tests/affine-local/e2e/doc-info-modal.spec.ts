@@ -1,5 +1,5 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
@@ -7,7 +7,7 @@ import {
   getPageByTitle,
   getPageOperationButton,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   addCustomProperty,
   closeTagsEditor,
@@ -15,8 +15,8 @@ import {
   expectTagsVisible,
   filterTags,
   removeSelectedTag,
-} from '@affine-test/kit/utils/properties';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@nexio-test/kit/utils/properties';
+import { getCurrentDocIdFromUrl } from '@nexio-test/kit/utils/url';
 import { expect, type Page } from '@playwright/test';
 
 const searchAndCreateTag = async (page: Page, name: string) => {

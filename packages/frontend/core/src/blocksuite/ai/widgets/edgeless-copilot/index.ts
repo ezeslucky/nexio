@@ -1,4 +1,4 @@
-import { CopilotTool } from '@affine/core/blocksuite/ai/tool/copilot-tool';
+import { CopilotTool } from '@nexio/core/blocksuite/ai/tool/copilot-tool';
 import { EdgelessLegacySlotIdentifier } from '@blocksuite/affine/blocks/surface';
 import {
   Bound,

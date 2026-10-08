@@ -1,5 +1,5 @@
 {
-  "name": "@affine/s3-compat",
+  "name": "@nexio/s3-compat",
   "private": true,
   "type": "module",
   "exports": {

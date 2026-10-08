@@ -1,4 +1,4 @@
-import { AdminWorkspaceSort } from '@affine/graphql';
+import { AdminWorkspaceSort } from '@nexio/graphql';
 import { useState } from 'react';
 
 import { Header } from '../header';

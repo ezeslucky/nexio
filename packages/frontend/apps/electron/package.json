@@ -1,5 +1,5 @@
 {
-  "name": "@affine/electron",
+  "name": "@nexio/electron",
   "private": true,
   "version": "0.27.5",
   "main": "./dist/main.js",
@@ -33,11 +33,6 @@
     "make-nsis": "node ./scripts/make-nsis.ts"
   },
   "devDependencies": {
-    "@affine-tools/utils": "workspace:*",
-    "@affine/auth": "workspace:*",
-    "@affine/i18n": "workspace:*",
-    "@affine/native": "workspace:*",
-    "@affine/nbstore": "workspace:*",
     "@electron-forge/cli": "^7.11.1",
     "@electron-forge/core": "^7.11.1",
     "@electron-forge/maker-deb": "^7.11.1",
@@ -48,6 +43,11 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.11.1",
     "@electron-forge/plugin-fuses": "^7.11.1",
     "@electron-forge/shared-types": "^7.11.1",
+    "@nexio-tools/utils": "workspace:*",
+    "@nexio/auth": "workspace:*",
+    "@nexio/i18n": "workspace:*",
+    "@nexio/native": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
     "@reforged/maker-appimage": "^5.2.0",
     "@sentry/electron": "^7.13.0",
     "@sentry/esbuild-plugin": "^5.3.0",

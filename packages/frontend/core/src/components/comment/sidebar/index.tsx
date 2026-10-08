@@ -6,23 +6,23 @@ import {
   MenuItem,
   notify,
   useConfirmModal,
-} from '@affine/component';
-import { useGuard } from '@affine/core/components/guard';
-import { ServerService } from '@affine/core/modules/cloud';
-import { AuthService } from '@affine/core/modules/cloud/services/auth';
-import { type DocCommentEntity } from '@affine/core/modules/comment/entities/doc-comment';
-import { CommentPanelService } from '@affine/core/modules/comment/services/comment-panel-service';
-import { DocCommentManagerService } from '@affine/core/modules/comment/services/doc-comment-manager';
+} from '@nexio/component';
+import { useGuard } from '@nexio/core/components/guard';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { AuthService } from '@nexio/core/modules/cloud/services/auth';
+import { type DocCommentEntity } from '@nexio/core/modules/comment/entities/doc-comment';
+import { CommentPanelService } from '@nexio/core/modules/comment/services/comment-panel-service';
+import { DocCommentManagerService } from '@nexio/core/modules/comment/services/doc-comment-manager';
 import type {
   CommentAttachment,
   DocComment,
   DocCommentReply,
-} from '@affine/core/modules/comment/types';
-import { DocService } from '@affine/core/modules/doc';
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { i18nTime, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/comment/types';
+import { DocService } from '@nexio/core/modules/doc';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import type { DocSnapshot, Store } from '@blocksuite/affine/store';
 import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import {

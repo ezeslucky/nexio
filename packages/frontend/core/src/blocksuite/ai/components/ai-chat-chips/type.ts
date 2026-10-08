@@ -1,4 +1,4 @@
-import type { TagMeta } from '@affine/core/components/page-list';
+import type { TagMeta } from '@nexio/core/components/page-list';
 import type { DocMeta, Store } from '@blocksuite/affine/store';
 import type { Signal } from '@preact/signals-core';
 

@@ -1,4 +1,4 @@
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import { UploadIcon } from '@blocksuite/icons/rc';
 import {
   type ChangeEvent,

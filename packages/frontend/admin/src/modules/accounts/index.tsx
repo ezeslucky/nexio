@@ -1,4 +1,4 @@
-import type { FeatureType } from '@affine/graphql';
+import type { FeatureType } from '@nexio/graphql';
 import { useEffect, useMemo, useState } from 'react';
 
 import { Header } from '../header';

@@ -1,5 +1,5 @@
-import { Modal } from '@affine/component';
-import type { ModalProps } from '@affine/component';
+import { Modal } from '@nexio/component';
+import type { ModalProps } from '@nexio/component';
 
 import { DownloadContent } from './download-content';
 

@@ -6,7 +6,7 @@
 - Replace literal text with translation keys
 
 ```tsx
-import { useI18n, LOCALES } from '@affine/i18n';
+import { useI18n, LOCALES } from '@nexio/i18n';
 // src/resources/en.json
 // {
 //     'Text': 'some text',

@@ -1,15 +1,15 @@
 /** @vitest-environment happy-dom */
 
-import { type Server, ServersService } from '@affine/core/modules/cloud';
+import { type Server, ServersService } from '@nexio/core/modules/cloud';
 import {
   ImportClipperService,
   type ShareImportInput,
-} from '@affine/core/modules/import-clipper';
+} from '@nexio/core/modules/import-clipper';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { ServerDeploymentType } from '@affine/graphql';
+} from '@nexio/core/modules/workspace';
+import { ServerDeploymentType } from '@nexio/graphql';
 import { ToggleButton } from '@blocksuite/affine/components/toggle-button';
 import {
   type LinkPreviewCacheProvider,

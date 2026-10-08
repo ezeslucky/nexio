@@ -1,4 +1,4 @@
-import serverNativeModule from '@affine/server-native';
+import serverNativeModule from '@nexio/server-native';
 import { z } from 'zod';
 
 import type { LlmToolLoopStreamEvent } from '../../../../native';

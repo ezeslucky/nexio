@@ -452,7 +452,7 @@
           "error",
           {
             "includeInternal": true,
-            "whitelist": ["@affine/admin"]
+            "whitelist": ["@nexio/admin"]
           }
         ]
       }
@@ -464,7 +464,7 @@
           "error",
           {
             "includeInternal": true,
-            "whitelist": ["@affine/core"]
+            "whitelist": ["@nexio/core"]
           }
         ]
       }
@@ -476,7 +476,7 @@
           "error",
           {
             "includeInternal": true,
-            "whitelist": ["@affine/component"]
+            "whitelist": ["@nexio/component"]
           }
         ]
       }

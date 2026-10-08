@@ -4,10 +4,10 @@ import {
   Input,
   Modal,
   notify,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { IntegrationService } from '@affine/core/modules/integration';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { IntegrationService } from '@nexio/core/modules/integration';
+import { Trans, useI18n } from '@nexio/i18n';
 import { ReadwiseLogoDuotoneIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import clsx from 'clsx';

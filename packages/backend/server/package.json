@@ -1,12 +1,12 @@
 {
-  "name": "@affine/server",
+  "name": "@nexio/server",
   "private": true,
   "version": "0.27.5",
   "description": "Nexio Node.js server",
   "author": "ezeslucky",
   "type": "module",
   "scripts": {
-    "build": "affine bundle -p @affine/server",
+    "build": "affine bundle -p @nexio/server",
     "dev": "nodemon ./src/index.ts",
     "dev:mail": "email dev -d src/mails",
     "test": "ava --concurrency 1 --serial",
@@ -24,8 +24,6 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "@affine/s3-compat": "workspace:*",
-    "@affine/server-native": "workspace:*",
     "@apollo/server": "^5.5.1",
     "@as-integrations/express5": "^1.1.2",
     "@google-cloud/opentelemetry-cloud-trace-exporter": "^3.0.0",
@@ -42,6 +40,8 @@
     "@nestjs/schedule": "^6.1.1",
     "@nestjs/throttler": "^6.5.0",
     "@nestjs/websockets": "^11.1.18",
+    "@nexio/s3-compat": "workspace:*",
+    "@nexio/server-native": "workspace:*",
     "@node-rs/argon2": "^2.0.2",
     "@node-rs/crc32": "^1.10.6",
     "@opentelemetry/api": "^1.9.0",
@@ -115,13 +115,13 @@
     "zod-to-json-schema": "^3.20.0"
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
-    "@affine-tools/utils": "workspace:*",
-    "@affine/graphql": "workspace:*",
-    "@affine/realtime": "workspace:*",
     "@faker-js/faker": "^10.1.0",
     "@nestjs/swagger": "^11.2.7",
     "@nestjs/testing": "patch:@nestjs/testing@npm%3A11.1.18#~/.yarn/patches/@nestjs-testing-npm-11.1.18-32c0f6af12.patch",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
+    "@nexio/graphql": "workspace:*",
+    "@nexio/realtime": "workspace:*",
     "@react-email/render": "1.4.0",
     "@types/cookie-parser": "^1.4.8",
     "@types/express": "^5.0.1",

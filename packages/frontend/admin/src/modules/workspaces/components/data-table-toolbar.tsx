@@ -1,6 +1,6 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { AdminWorkspaceSort } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Input } from '@nexio/admin/components/ui/input';
+import { AdminWorkspaceSort } from '@nexio/graphql';
 import type { Table } from '@tanstack/react-table';
 import {
   type ChangeEvent,

@@ -31,7 +31,7 @@ vi.doMock('nanoid', () => ({
   nanoid: () => 'workspace-1',
 }));
 
-vi.doMock('@affine/native', () => {
+vi.doMock('@nexio/native', () => {
   const ValidationResult = {
     MissingTables: 'MissingTables',
     MissingDocIdColumn: 'MissingDocIdColumn',
@@ -83,7 +83,7 @@ vi.doMock('@affine/native', () => {
   };
 });
 
-vi.doMock('@affine/electron/helper/nbstore', () => ({
+vi.doMock('@nexio/electron/helper/nbstore', () => ({
   getDocStoragePool: () => ({
     connect,
     checkpoint,
@@ -91,7 +91,7 @@ vi.doMock('@affine/electron/helper/nbstore', () => ({
   }),
 }));
 
-vi.doMock('@affine/electron/helper/main-rpc', () => ({
+vi.doMock('@nexio/electron/helper/main-rpc', () => ({
   mainRPC: {
     getPath,
     showItemInFolder,
@@ -100,13 +100,13 @@ vi.doMock('@affine/electron/helper/main-rpc', () => ({
   },
 }));
 
-vi.doMock('@affine/electron/helper/workspace/meta', () => ({
+vi.doMock('@nexio/electron/helper/workspace/meta', () => ({
   getSpaceDBPath,
   getWorkspaceDBPath,
   getWorkspacesBasePath,
 }));
 
-vi.doMock('@affine/electron/helper/workspace', () => ({
+vi.doMock('@nexio/electron/helper/workspace', () => ({
   storeWorkspaceMeta,
 }));
 
@@ -141,7 +141,7 @@ describe('dialog export', () => {
     showSaveDialog.mockResolvedValue({ canceled: false, filePath: exportPath });
 
     const { saveDBFileAs } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await saveDBFileAs(id, 'My Space');
 
@@ -165,7 +165,7 @@ describe('dialog export', () => {
     showSaveDialog.mockResolvedValue({ canceled: false, filePath: dbPath });
 
     const { saveDBFileAs } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await saveDBFileAs(id, 'My Space');
 
@@ -187,7 +187,7 @@ describe('dialog export', () => {
     showSaveDialog.mockResolvedValue({ canceled: false, filePath: exportPath });
 
     const { saveDBFileAs } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await saveDBFileAs(id, 'My Space');
 
@@ -217,7 +217,7 @@ describe('dialog import', () => {
     ensureDir.mockResolvedValue(undefined);
 
     const { loadDBFile } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await loadDBFile();
 
@@ -243,7 +243,7 @@ describe('dialog import', () => {
     docValidateImportSchema.mockResolvedValue(false);
 
     const { loadDBFile } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await loadDBFile();
 
@@ -271,7 +271,7 @@ describe('dialog import', () => {
     ensureDir.mockResolvedValue(undefined);
 
     const { loadDBFile } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await loadDBFile();
 
@@ -303,7 +303,7 @@ describe('dialog import', () => {
     sqliteValidateImportSchema.mockResolvedValue(false);
 
     const { loadDBFile } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await loadDBFile();
 
@@ -330,7 +330,7 @@ describe('dialog import', () => {
     getWorkspacesBasePath.mockResolvedValue('/app/workspaces');
 
     const { loadDBFile } =
-      await import('@affine/electron/helper/dialog/dialog');
+      await import('@nexio/electron/helper/dialog/dialog');
 
     const result = await loadDBFile();
 

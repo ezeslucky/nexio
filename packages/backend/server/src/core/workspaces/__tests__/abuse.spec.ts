@@ -4,7 +4,7 @@ import {
   createInviteLinkMutation,
   inviteByEmailsMutation,
   WorkspaceInviteLinkExpireTime,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { PrismaClient, WorkspaceMemberStatus } from '@prisma/client';
 import ava from 'ava';
 import type { Request } from 'express';

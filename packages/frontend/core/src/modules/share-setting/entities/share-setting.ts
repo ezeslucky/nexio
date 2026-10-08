@@ -1,9 +1,9 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import type {
   RealtimeTopicEventOf,
   WorkspaceConfigSnapshot,
   WorkspaceInviteLinkSnapshot,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Entity, LiveData } from '@toeverything/infra';
 
 import { RealtimeLiveQuery } from '../../cloud/realtime/live-query';

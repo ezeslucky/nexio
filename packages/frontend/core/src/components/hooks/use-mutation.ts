@@ -1,11 +1,11 @@
-import { GraphQLService } from '@affine/core/modules/cloud';
+import { GraphQLService } from '@nexio/core/modules/cloud';
 import type {
   GraphQLQuery,
   MutationOptions,
   QueryResponse,
   QueryVariables,
   RecursiveMaybeFields,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { useService } from '@toeverything/infra';
 import type { GraphQLError } from 'graphql';
 import { useMemo } from 'react';
@@ -23,7 +23,7 @@ import useSWRMutation from 'swr/mutation';
  * @example
  *
  * ```ts
- * import { someMutation } from '@affine/graphql'
+ * import { someMutation } from '@nexio/graphql'
  *
  * const { trigger } = useMutation({
  *  mutation: someMutation,

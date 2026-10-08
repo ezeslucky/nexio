@@ -4,19 +4,19 @@ import {
   MenuSeparator,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { FavoriteService } from '@affine/core/modules/favorite';
-import { GlobalCacheService } from '@affine/core/modules/storage';
-import { TagService } from '@affine/core/modules/tag';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { DocsService } from '@nexio/core/modules/doc';
+import { FavoriteService } from '@nexio/core/modules/favorite';
+import { GlobalCacheService } from '@nexio/core/modules/storage';
+import { TagService } from '@nexio/core/modules/tag';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   FolderIcon,

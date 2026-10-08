@@ -1,5 +1,5 @@
-import { Button, ThemedImg } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { Button, ThemedImg } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import { PlusIcon } from '@blocksuite/icons/rc';
 import type { MouseEventHandler } from 'react';
 

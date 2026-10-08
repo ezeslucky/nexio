@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@nexio-test/kit/playwright';
 import type {
   PlaywrightTestConfig,
   PlaywrightWorkerOptions,
@@ -34,7 +34,7 @@ const config: PlaywrightTestConfig = {
   reporter: process.env.CI ? 'github' : 'list',
   webServer: [
     {
-      command: 'yarn run -T affine dev -p @affine/web',
+      command: 'yarn run -T affine dev -p @nexio/web',
       stdout: 'pipe',
       stderr: 'pipe',
       timeout: 240 * 1000,
@@ -45,7 +45,7 @@ const config: PlaywrightTestConfig = {
       url: 'http://localhost:8080',
     },
     {
-      command: 'yarn run -T affine dev -p @affine/server',
+      command: 'yarn run -T affine dev -p @nexio/server',
       timeout: 240 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'pipe',

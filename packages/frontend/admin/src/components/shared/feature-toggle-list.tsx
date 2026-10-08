@@ -1,8 +1,8 @@
-import { Checkbox } from '@affine/admin/components/ui/checkbox';
-import { Label } from '@affine/admin/components/ui/label';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { Switch } from '@affine/admin/components/ui/switch';
-import type { FeatureType } from '@affine/graphql';
+import { Checkbox } from '@nexio/admin/components/ui/checkbox';
+import { Label } from '@nexio/admin/components/ui/label';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { Switch } from '@nexio/admin/components/ui/switch';
+import type { FeatureType } from '@nexio/graphql';
 import { useCallback } from 'react';
 
 import { cn } from '../../utils';

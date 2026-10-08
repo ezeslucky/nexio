@@ -1,10 +1,10 @@
-import { type Notification, notify } from '@affine/component';
+import { type Notification, notify } from '@nexio/component';
 import {
   RouteLogic,
   useNavigateHelper,
-} from '@affine/core/components/hooks/use-navigate-helper';
-import { AuthService } from '@affine/core/modules/cloud';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/components/hooks/use-navigate-helper';
+import { AuthService } from '@nexio/core/modules/cloud';
+import { useI18n } from '@nexio/i18n';
 import { AiIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';

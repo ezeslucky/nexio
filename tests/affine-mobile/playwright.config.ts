@@ -1,4 +1,4 @@
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@nexio-test/kit/playwright';
 import { devices, type PlaywrightTestConfig } from '@playwright/test';
 
 /**
@@ -49,7 +49,7 @@ const config: PlaywrightTestConfig = {
   webServer: [
     // Intentionally not building the web, reminds you to run it by yourself.
     {
-      command: 'yarn run -T affine dev -p @affine/mobile',
+      command: 'yarn run -T affine dev -p @nexio/mobile',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {

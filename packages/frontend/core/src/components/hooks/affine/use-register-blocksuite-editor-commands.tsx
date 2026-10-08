@@ -1,19 +1,19 @@
-import { toast, useConfirmModal } from '@affine/component';
+import { toast, useConfirmModal } from '@nexio/component';
 import {
   PreconditionStrategy,
   registerAffineCommand,
-} from '@affine/core/commands';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocService } from '@affine/core/modules/doc';
-import type { Editor } from '@affine/core/modules/editor';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { OpenInAppService } from '@affine/core/modules/open-in-app';
-import { GuardService } from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/commands';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { DocService } from '@nexio/core/modules/doc';
+import type { Editor } from '@nexio/core/modules/editor';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { OpenInAppService } from '@nexio/core/modules/open-in-app';
+import { GuardService } from '@nexio/core/modules/permissions';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   EdgelessIcon,
   HistoryIcon,

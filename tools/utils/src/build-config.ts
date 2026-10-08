@@ -1,4 +1,4 @@
-import type { Package } from '@affine-tools/utils/workspace';
+import type { Package } from '@nexio-tools/utils/workspace';
 
 import { PackageToDistribution } from './distribution';
 

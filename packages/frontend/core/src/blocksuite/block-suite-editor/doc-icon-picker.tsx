@@ -1,7 +1,7 @@
-import { IconEditor, IconRenderer } from '@affine/component';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import { useI18n } from '@affine/i18n';
+import { IconEditor, IconRenderer } from '@nexio/component';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
+import { useI18n } from '@nexio/i18n';
 import { SmileSolidIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 

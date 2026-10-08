@@ -1,5 +1,5 @@
-import { ConfirmModal } from '@affine/component/ui/modal';
-import { useI18n } from '@affine/i18n';
+import { ConfirmModal } from '@nexio/component/ui/modal';
+import { useI18n } from '@nexio/i18n';
 import { useCallback } from 'react';
 
 import * as styles from './member-limit-modal.css';

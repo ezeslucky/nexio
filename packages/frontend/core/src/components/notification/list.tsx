@@ -8,17 +8,17 @@ import {
   observeIntersection,
   Scrollable,
   Skeleton,
-} from '@affine/component';
-import { AuthService, InvitationService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
+} from '@nexio/component';
+import { AuthService, InvitationService } from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import {
   type Notification,
   NotificationListService,
   NotificationType,
-} from '@affine/core/modules/notification';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { extractEmojiIcon } from '@affine/core/utils';
-import { UserFriendlyError } from '@affine/error';
+} from '@nexio/core/modules/notification';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { extractEmojiIcon } from '@nexio/core/utils';
+import { UserFriendlyError } from '@nexio/error';
 import type {
   InvitationAcceptedNotificationBodyType,
   InvitationBlockedNotificationBodyType,
@@ -27,9 +27,9 @@ import type {
   InvitationReviewDeclinedNotificationBodyType,
   InvitationReviewRequestNotificationBodyType,
   MentionNotificationBodyType,
-} from '@affine/graphql';
-import { i18nTime, Trans, useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/graphql';
+import { i18nTime, Trans, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   CollaborationIcon,
   DeleteIcon,

@@ -1,11 +1,11 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { ImportCommitService } from '@affine/core/desktop/dialogs/import/commit-service';
-import { commitNativeImport } from '@affine/core/desktop/dialogs/import/native-backend';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { ImportCommitService } from '@nexio/core/desktop/dialogs/import/commit-service';
+import { commitNativeImport } from '@nexio/core/desktop/dialogs/import/native-backend';
 import {
   preflightWebFilesImport,
   preflightWebZipImport,
-} from '@affine/core/desktop/dialogs/import/web-limits';
-import { DebugLogger } from '@affine/debug';
+} from '@nexio/core/desktop/dialogs/import/web-limits';
+import { DebugLogger } from '@nexio/debug';
 import { snapshotFile } from '@blocksuite/affine/shared/utils';
 import {
   BearTransformer,

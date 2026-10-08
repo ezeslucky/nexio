@@ -1,9 +1,9 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   AuthService,
   type DeviceAuthSession,
-} from '@affine/core/modules/cloud';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useRef, useState } from 'react';
 

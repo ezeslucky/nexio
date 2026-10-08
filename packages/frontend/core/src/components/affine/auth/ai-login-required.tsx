@@ -1,6 +1,6 @@
-import { useConfirmModal } from '@affine/component';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
+import { useConfirmModal } from '@nexio/component';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { atom, useAtom } from 'jotai';
 import { useCallback, useEffect } from 'react';

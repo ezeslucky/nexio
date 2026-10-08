@@ -1,19 +1,19 @@
-import { test } from '@affine-test/kit/playwright';
-import { clickEdgelessModeButton } from '@affine-test/kit/utils/editor';
+import { test } from '@nexio-test/kit/playwright';
+import { clickEdgelessModeButton } from '@nexio-test/kit/utils/editor';
 import {
   copyByKeyboard,
   pasteByKeyboard,
   selectAllByKeyboard,
   withCtrlOrMeta,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

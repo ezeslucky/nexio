@@ -1,9 +1,9 @@
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { NbstoreService } from '@affine/core/modules/storage';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { NbstoreService } from '@nexio/core/modules/storage';
 import {
   WorkspaceScope,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workspace';
 import { type Framework } from '@toeverything/infra';
 
 import { AdditionalAttachments } from './entities/additional-attachments';

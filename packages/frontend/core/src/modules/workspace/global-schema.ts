@@ -1,5 +1,5 @@
-import { AIChatBlockSchema } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/model';
-import { TranscriptionBlockSchema } from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
+import { AIChatBlockSchema } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/model';
+import { TranscriptionBlockSchema } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
 import { AffineSchemas } from '@blocksuite/affine/schemas';
 import { Schema } from '@blocksuite/affine/store';
 

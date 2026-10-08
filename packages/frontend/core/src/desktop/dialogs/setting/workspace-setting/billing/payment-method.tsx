@@ -1,11 +1,11 @@
-import { Button, notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useMutation } from '@affine/core/components/hooks/use-mutation';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { createCustomerPortalMutation } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Button, notify } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useMutation } from '@nexio/core/components/hooks/use-mutation';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
+import { createCustomerPortalMutation } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 
 import * as styles from './styles.css';

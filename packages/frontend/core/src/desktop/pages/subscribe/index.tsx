@@ -1,8 +1,8 @@
-import { Button, Loading } from '@affine/component';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { track } from '@affine/track';
+import { Button, Loading } from '@nexio/component';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
+import { track } from '@nexio/track';
 import { effect, fromPromise, useServices } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useEffect, useMemo, useState } from 'react';

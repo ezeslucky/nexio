@@ -1,9 +1,9 @@
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   addCodeBlock,
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import type { Page } from '@playwright/test';
 
 export const gotoContentFromTitle = async (page: Page) => {

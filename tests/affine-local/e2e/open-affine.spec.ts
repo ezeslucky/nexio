@@ -1,7 +1,7 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test('Open last workspace when back to affine', async ({ page }) => {

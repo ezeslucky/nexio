@@ -1,9 +1,9 @@
-import type { NbstoreService } from '@affine/core/modules/storage';
+import type { NbstoreService } from '@nexio/core/modules/storage';
 import type {
   DelegatedToolCancel,
   DelegatedToolName,
   DelegatedToolRequest,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import type { EditorHost } from '@blocksuite/affine/std';
 import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
 import type { Subscription } from 'rxjs';

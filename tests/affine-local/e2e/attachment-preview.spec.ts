@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
-import { importAttachment } from '@affine-test/kit/utils/attachment';
-import { locateToolbar } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { importAttachment } from '@nexio-test/kit/utils/attachment';
+import { locateToolbar } from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   confirmExperimentalPrompt,
   openEditorSetting,
   openExperimentalFeaturesPanel,
-} from '@affine-test/kit/utils/setting';
+} from '@nexio-test/kit/utils/setting';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

@@ -1,13 +1,13 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
-import { locateEditorContainer } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { waitNextFrame } from '@nexio-test/kit/bs/misc';
+import { test } from '@nexio-test/kit/playwright';
+import { locateEditorContainer } from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   addDatabase,
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('database is useable', async ({ page }) => {

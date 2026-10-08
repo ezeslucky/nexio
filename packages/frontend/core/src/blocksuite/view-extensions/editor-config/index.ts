@@ -1,4 +1,4 @@
-import { getEditorConfigExtension } from '@affine/core/blocksuite/view-extensions/editor-config/get-config';
+import { getEditorConfigExtension } from '@nexio/core/blocksuite/view-extensions/editor-config/get-config';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,

@@ -1,6 +1,6 @@
-import { Button } from '@affine/component';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { i18nTime, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 

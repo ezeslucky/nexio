@@ -1,7 +1,7 @@
 import './setup';
 
-import { Telemetry } from '@affine/core/components/telemetry';
-import { bindNativeDBApis } from '@affine/nbstore/sqlite';
+import { Telemetry } from '@nexio/core/components/telemetry';
+import { bindNativeDBApis } from '@nexio/nbstore/sqlite';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 

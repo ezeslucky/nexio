@@ -1,4 +1,4 @@
-import { I18n } from '@affine/i18n';
+import { I18n } from '@nexio/i18n';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
 import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';

@@ -20,23 +20,23 @@ const workspaceState = vi.hoisted(() => ({
 
 const WorkspaceServiceToken = vi.hoisted(() => class WorkspaceService {});
 
-vi.mock('@affine/component/setting-components', () => ({
+vi.mock('@nexio/component/setting-components', () => ({
   SettingHeader: ({ title }: { title: string }) => <h1>{title}</h1>,
 }));
 
-vi.mock('@affine/core/components/hooks/use-workspace-info', () => ({
+vi.mock('@nexio/core/components/hooks/use-workspace-info', () => ({
   useWorkspaceInfo: () => workspaceInfoState.info,
 }));
 
-vi.mock('@affine/core/modules/integration', () => ({
+vi.mock('@nexio/core/modules/integration', () => ({
   IntegrationTypeIcon: () => null,
 }));
 
-vi.mock('@affine/core/modules/workspace', () => ({
+vi.mock('@nexio/core/modules/workspace', () => ({
   WorkspaceService: WorkspaceServiceToken,
 }));
 
-vi.mock('@affine/i18n', () => {
+vi.mock('@nexio/i18n', () => {
   const messages: Record<string, string> = {
     'com.affine.integration.integrations': 'Integrations',
     'com.affine.integration.setting.description': 'Integration settings',

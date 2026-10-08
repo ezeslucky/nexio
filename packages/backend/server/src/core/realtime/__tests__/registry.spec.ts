@@ -1,4 +1,4 @@
-import { getRealtimeInputKey } from '@affine/realtime';
+import { getRealtimeInputKey } from '@nexio/realtime';
 import test from 'ava';
 import { z } from 'zod';
 

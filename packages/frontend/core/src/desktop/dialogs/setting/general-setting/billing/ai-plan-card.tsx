@@ -1,8 +1,8 @@
-import { Skeleton } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionStatus } from '@affine/graphql';
-import { i18nTime, Trans, useI18n } from '@affine/i18n';
+import { Skeleton } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { SubscriptionStatus } from '@nexio/graphql';
+import { i18nTime, Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useMemo } from 'react';
 

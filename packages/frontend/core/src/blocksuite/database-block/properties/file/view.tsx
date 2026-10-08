@@ -1,7 +1,7 @@
-import { Popover, uniReactRoot } from '@affine/component';
-import { Button } from '@affine/component/ui/button';
-import { Menu, MenuItem } from '@affine/component/ui/menu';
-import { PeekViewService } from '@affine/core/modules/peek-view/services/peek-view';
+import { Popover, uniReactRoot } from '@nexio/component';
+import { Button } from '@nexio/component/ui/button';
+import { Menu, MenuItem } from '@nexio/component/ui/menu';
+import { PeekViewService } from '@nexio/core/modules/peek-view/services/peek-view';
 import {
   type Cell,
   type CellRenderProps,

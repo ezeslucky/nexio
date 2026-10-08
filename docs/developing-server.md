@@ -1,4 +1,4 @@
-This document explains how to start server (@affine/server) locally with Docker
+This document explains how to start server (@nexio/server) locally with Docker
 
 > **Warning**:
 >
@@ -7,7 +7,7 @@ This document explains how to start server (@affine/server) locally with Docker
 
 ## Run required dev services in docker compose
 
-Running yarn's server package (@affine/server) requires some dev services to be running, i.e.:
+Running yarn's server package (@nexio/server) requires some dev services to be running, i.e.:
 
 - postgres
 - redis
@@ -32,7 +32,7 @@ Server also requires native packages to be built, you can build them by running 
 
 ```sh
 # build native
-yarn affine @affine/server-native build
+yarn affine @nexio/server-native build
 ```
 
 ## Prepare dev environment

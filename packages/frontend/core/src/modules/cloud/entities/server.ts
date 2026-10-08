@@ -1,4 +1,4 @@
-import type { ServerFeature } from '@affine/graphql';
+import type { ServerFeature } from '@nexio/graphql';
 import {
   backoffRetry,
   effect,

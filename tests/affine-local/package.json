@@ -1,12 +1,12 @@
 {
-  "name": "@affine-test/affine-local",
+  "name": "@nexio-test/affine-local",
   "private": true,
   "type": "module",
   "scripts": {
     "e2e": "yarn playwright test"
   },
   "devDependencies": {
-    "@affine-test/kit": "workspace:*",
+    "@nexio-test/kit": "workspace:*",
     "@playwright/test": "=1.58.2"
   },
   "version": "0.27.5"

@@ -1,8 +1,8 @@
-import { IconButton } from '@affine/component';
-import { useSharingUrl } from '@affine/core/components/hooks/affine/use-share-url';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { IconButton } from '@nexio/component';
+import { useSharingUrl } from '@nexio/core/components/hooks/affine/use-share-url';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { type DocMode } from '@blocksuite/affine/model';
 import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';

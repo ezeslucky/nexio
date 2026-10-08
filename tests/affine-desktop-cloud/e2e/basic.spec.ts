@@ -1,11 +1,11 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@nexio-test/kit/electron';
 import {
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/cloud';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 
 process.env.DEV_SERVER_URL = 'http://localhost:8080';
 

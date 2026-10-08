@@ -1,4 +1,4 @@
-import { Button } from '@affine/component';
+import { Button } from '@nexio/component';
 
 import * as styles from './animate-in-tooltip.css';
 

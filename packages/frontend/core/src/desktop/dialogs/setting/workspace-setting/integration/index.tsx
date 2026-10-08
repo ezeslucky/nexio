@@ -1,7 +1,7 @@
-import { SettingHeader } from '@affine/component/setting-components';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { SettingHeader } from '@nexio/component/setting-components';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import {
   type ReactNode,

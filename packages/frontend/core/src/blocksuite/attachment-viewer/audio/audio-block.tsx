@@ -3,18 +3,18 @@ import {
   Button,
   Tooltip,
   useConfirmModal,
-} from '@affine/component';
-import { AudioPlayer } from '@affine/component/ui/audio-player';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useSeekTime } from '@affine/core/components/hooks/use-seek-time';
-import { CurrentServerScopeProvider } from '@affine/core/components/providers/current-server-scope';
-import { PublicUserLabel } from '@affine/core/modules/cloud/views/public-user';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import type { AudioAttachmentBlock } from '@affine/core/modules/media/entities/audio-attachment-block';
-import { AudioAttachmentService } from '@affine/core/modules/media/services/audio-attachment';
-import { Trans, useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component';
+import { AudioPlayer } from '@nexio/component/ui/audio-player';
+import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useSeekTime } from '@nexio/core/components/hooks/use-seek-time';
+import { CurrentServerScopeProvider } from '@nexio/core/components/providers/current-server-scope';
+import { PublicUserLabel } from '@nexio/core/modules/cloud/views/public-user';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/audio-attachment-block';
+import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
+import { Trans, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 import { ResetIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';

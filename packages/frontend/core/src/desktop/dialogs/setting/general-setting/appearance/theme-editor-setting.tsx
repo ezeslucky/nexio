@@ -1,9 +1,9 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { ThemeEditorService } from '@affine/core/modules/theme-editor';
-import { UrlService } from '@affine/core/modules/url';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { ThemeEditorService } from '@nexio/core/modules/theme-editor';
+import { UrlService } from '@nexio/core/modules/url';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,

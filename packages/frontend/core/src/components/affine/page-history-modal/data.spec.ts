@@ -23,7 +23,7 @@ vi.mock('@toeverything/infra', async importOriginal => ({
 vi.mock('swr/immutable', () => ({ default: () => ({ data: undefined }) }));
 
 vi.mock(
-  '@affine/core/modules/workspace/impls/workspace',
+  '@nexio/core/modules/workspace/impls/workspace',
   async importOriginal => {
     const actual = await importOriginal<typeof WorkspaceModule>();
     return {

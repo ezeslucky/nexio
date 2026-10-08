@@ -84,7 +84,7 @@ This also initializes the workspace (`yarn nexio init`) and installs the git hoo
 Run the following script. It will build the native module at [`packages/frontend/native`](../packages/frontend/native) and build Node.js bindings using [NAPI.rs](https://napi.rs/).
 
 ```sh
-yarn nexio @affine/native build
+yarn nexio @nexio/native build
 ```
 
 ### Build Server Dependencies
@@ -92,7 +92,7 @@ yarn nexio @affine/native build
 Only needed if you plan to run the local server or the cloud E2E suites:
 
 ```sh
-yarn nexio @affine/server-native build
+yarn nexio @nexio/server-native build
 ```
 
 ## Start Development Server
@@ -110,10 +110,10 @@ yarn dev:web
 Or target individual packages directly using `yarn nexio dev`:
 
 ```sh
-yarn nexio dev -p @affine/web
+yarn nexio dev -p @nexio/web
 ```
 
-Running `@affine/web` is enough for editor and visual AI workflow work — workspaces are stored locally in the browser. To work on **cloud** features (accounts, sync, collaboration, AI), run the local backend server as well.
+Running `@nexio/web` is enough for editor and visual AI workflow work — workspaces are stored locally in the browser. To work on **cloud** features (accounts, sync, collaboration, AI), run the local backend server as well.
 
 ## Testing
 
@@ -137,9 +137,9 @@ The E2E suites live in [`tests`](../tests):
 
 | Suite                  | Run with                                               | Notes                                               |
 | ---------------------- | ------------------------------------------------------ | --------------------------------------------------- |
-| `affine-local`         | `yarn workspace @affine-test/affine-local e2e`         | Web app, no server needed                           |
-| `affine-cloud`         | `yarn workspace @affine-test/affine-cloud e2e`         | Requires the local server                           |
-| `affine-desktop`       | `yarn workspace @affine-test/affine-desktop e2e`       | Desktop (Electron) app                              |
+| `affine-local`         | `yarn workspace @nexio-test/affine-local e2e`         | Web app, no server needed                           |
+| `affine-cloud`         | `yarn workspace @nexio-test/affine-cloud e2e`         | Requires the local server                           |
+| `affine-desktop`       | `yarn workspace @nexio-test/affine-desktop e2e`       | Desktop (Electron) app                              |
 
 ## Linting and Type Checking
 

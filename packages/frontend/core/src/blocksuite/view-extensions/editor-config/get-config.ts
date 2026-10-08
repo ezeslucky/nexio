@@ -1,9 +1,9 @@
 import {
   createCustomToolbarExtension,
   createToolbarMoreMenuConfig,
-} from '@affine/core/blocksuite/view-extensions/editor-config/toolbar';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
+} from '@nexio/core/blocksuite/view-extensions/editor-config/toolbar';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { ToolbarMoreMenuConfigExtension } from '@blocksuite/affine/components/toolbar';
 import { EditorSettingExtension } from '@blocksuite/affine/shared/services';
 import type { ExtensionType } from '@blocksuite/store';

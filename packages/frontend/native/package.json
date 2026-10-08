@@ -1,5 +1,5 @@
 {
-  "name": "@affine/native",
+  "name": "@nexio/native",
   "private": true,
   "main": "index.js",
   "types": "index.d.ts",

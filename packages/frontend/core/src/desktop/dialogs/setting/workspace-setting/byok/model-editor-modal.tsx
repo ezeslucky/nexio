@@ -1,5 +1,5 @@
-import { Button, Checkbox, Input, Modal } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { Button, Checkbox, Input, Modal } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import { useEffect, useMemo, useState } from 'react';
 
 import * as styles from './index.css';

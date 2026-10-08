@@ -5,19 +5,19 @@ import {
   toast,
   useConfirmModal,
   usePromptModal,
-} from '@affine/component';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
+} from '@nexio/component';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { DocsService } from '@nexio/core/modules/doc';
 import {
   CompatibleFavoriteItemsAdapter,
   FavoriteService,
-} from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/favorite';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import type { DocMeta } from '@blocksuite/affine/store';
 import {
   DeleteIcon,

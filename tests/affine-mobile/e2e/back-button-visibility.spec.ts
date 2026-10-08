@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/mobile';
+import { test } from '@nexio-test/kit/mobile';
 import { expect, type Page } from '@playwright/test';
 
 import { expandCollapsibleSection, openTab, pageBack } from './utils';

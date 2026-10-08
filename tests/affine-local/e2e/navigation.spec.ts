@@ -1,12 +1,12 @@
-import { test } from '@affine-test/kit/playwright';
-import { withCtrlOrMeta } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { withCtrlOrMeta } from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

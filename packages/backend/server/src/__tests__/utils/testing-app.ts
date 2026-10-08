@@ -4,8 +4,8 @@ import type {
   GraphQLQuery,
   QueryOptions,
   QueryResponse,
-} from '@affine/graphql';
-import { transformToForm } from '@affine/graphql';
+} from '@nexio/graphql';
+import { transformToForm } from '@nexio/graphql';
 import { INestApplication, ModuleMetadata } from '@nestjs/common';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { TestingModuleBuilder } from '@nestjs/testing';
@@ -223,7 +223,7 @@ export class TestingApp extends ApplyType<INestApplication>() {
     return this.request('patch', path);
   }
 
-  // TODO(@forehalo): directly make proxy for graphql queries defined in `@affine/graphql`
+  // TODO(@forehalo): directly make proxy for graphql queries defined in `@nexio/graphql`
   // by calling with `app.apis.createWorkspace({ ...variables })`
   async gql<Data = any>(query: string, variables?: any): Promise<Data>;
   async gql<Query extends GraphQLQuery>(

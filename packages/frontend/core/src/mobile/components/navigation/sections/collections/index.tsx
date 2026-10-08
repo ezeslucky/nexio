@@ -1,9 +1,9 @@
-import { NavigationPanelTreeRoot } from '@affine/core/desktop/components/navigation-panel';
-import { CollectionService } from '@affine/core/modules/collection';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { NavigationPanelTreeRoot } from '@nexio/core/desktop/components/navigation-panel';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { AddCollectionIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo, useState } from 'react';

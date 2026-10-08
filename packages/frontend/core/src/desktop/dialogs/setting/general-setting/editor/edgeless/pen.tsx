@@ -1,7 +1,7 @@
-import { MenuItem, MenuTrigger, Slider } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
+import { MenuItem, MenuTrigger, Slider } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
 import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
 import { DefaultTheme } from '@blocksuite/affine/model';
 import type { Store } from '@blocksuite/affine/store';

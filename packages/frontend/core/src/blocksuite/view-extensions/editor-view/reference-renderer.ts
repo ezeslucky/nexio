@@ -1,4 +1,4 @@
-import type { ReactToLit } from '@affine/component';
+import type { ReactToLit } from '@nexio/component';
 import type { AffineReference } from '@blocksuite/affine/inlines/reference';
 import { ReferenceNodeConfigExtension } from '@blocksuite/affine/inlines/reference';
 import type { ExtensionType } from '@blocksuite/affine/store';

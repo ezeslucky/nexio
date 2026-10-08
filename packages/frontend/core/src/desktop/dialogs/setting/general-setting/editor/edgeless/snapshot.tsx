@@ -1,7 +1,7 @@
-import { Skeleton } from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
-import type { EditorSettingSchema } from '@affine/core/modules/editor-setting';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
+import { Skeleton } from '@nexio/component';
+import { getViewManager } from '@nexio/core/blocksuite/manager/view';
+import type { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { EdgelessCRUDIdentifier } from '@blocksuite/affine/blocks/surface';
 import { Bound } from '@blocksuite/affine/global/gfx';
 import { ViewportElementExtension } from '@blocksuite/affine/shared/services';

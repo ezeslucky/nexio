@@ -1,14 +1,14 @@
-import { notify } from '@affine/component';
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { AffineContext } from '@affine/core/components/context';
-import { AppFallback } from '@affine/core/mobile/components/app-fallback';
-import { MobileModalConfigProvider } from '@affine/core/mobile/components/mobile-modal-config-provider';
-import { configureMobileModules } from '@affine/core/mobile/modules';
-import { MobileBackCoordinator } from '@affine/core/mobile/modules/back-coordinator';
-import { VirtualKeyboardProvider } from '@affine/core/mobile/modules/virtual-keyboard';
-import { router } from '@affine/core/mobile/router';
-import { configureCommonModules } from '@affine/core/modules';
-import { AIButtonProvider } from '@affine/core/modules/ai-button';
+import { notify } from '@nexio/component';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { AffineContext } from '@nexio/core/components/context';
+import { AppFallback } from '@nexio/core/mobile/components/app-fallback';
+import { MobileModalConfigProvider } from '@nexio/core/mobile/components/mobile-modal-config-provider';
+import { configureMobileModules } from '@nexio/core/mobile/modules';
+import { MobileBackCoordinator } from '@nexio/core/mobile/modules/back-coordinator';
+import { VirtualKeyboardProvider } from '@nexio/core/mobile/modules/virtual-keyboard';
+import { router } from '@nexio/core/mobile/router';
+import { configureCommonModules } from '@nexio/core/modules';
+import { AIButtonProvider } from '@nexio/core/modules/ai-button';
 import {
   AuthProvider,
   AuthService,
@@ -17,26 +17,26 @@ import {
   ServerService,
   ServersService,
   ValidatorProvider,
-} from '@affine/core/modules/cloud';
-import { registerNativePreviewHandlers } from '@affine/core/modules/code-block-preview-renderer';
-import { DocsService } from '@affine/core/modules/doc';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
+} from '@nexio/core/modules/cloud';
+import { registerNativePreviewHandlers } from '@nexio/core/modules/code-block-preview-renderer';
+import { DocsService } from '@nexio/core/modules/doc';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { I18nProvider } from '@nexio/core/modules/i18n';
+import { LifecycleService } from '@nexio/core/modules/lifecycle';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { ClientSchemeProvider } from '@affine/core/modules/url/providers/client-schema';
-import { configureBrowserWorkbenchModule } from '@affine/core/modules/workbench';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import { getWorkerUrl } from '@affine/env/worker';
-import { I18n } from '@affine/i18n';
-import { serveAuthRequests } from '@affine/mobile-shared/auth/channel';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
-import { setTelemetryTransport } from '@affine/track';
+} from '@nexio/core/modules/storage';
+import { PopupWindowProvider } from '@nexio/core/modules/url';
+import { ClientSchemeProvider } from '@nexio/core/modules/url/providers/client-schema';
+import { configureBrowserWorkbenchModule } from '@nexio/core/modules/workbench';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
+import { getWorkerUrl } from '@nexio/env/worker';
+import { I18n } from '@nexio/i18n';
+import { serveAuthRequests } from '@nexio/mobile-shared/auth/channel';
+import { StoreManagerClient } from '@nexio/nbstore/worker/client';
+import { setTelemetryTransport } from '@nexio/track';
 import { Container } from '@blocksuite/affine/global/di';
 import {
   docLinkBaseURLMiddleware,

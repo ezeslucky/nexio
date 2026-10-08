@@ -1,29 +1,29 @@
-import { notify } from '@affine/component';
-import { configureElectronStateStorageImpls } from '@affine/core/desktop/storage';
-import { configureCommonModules } from '@affine/core/modules';
-import { configureAppTabsHeaderModule } from '@affine/core/modules/app-tabs-header';
-import { configureDesktopBackupModule } from '@affine/core/modules/backup';
+import { notify } from '@nexio/component';
+import { configureElectronStateStorageImpls } from '@nexio/core/desktop/storage';
+import { configureCommonModules } from '@nexio/core/modules';
+import { configureAppTabsHeaderModule } from '@nexio/core/modules/app-tabs-header';
+import { configureDesktopBackupModule } from '@nexio/core/modules/backup';
 import {
   AuthProvider,
   ServerScope,
   ServerService,
   ValidatorProvider,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   configureDesktopApiModule,
   DesktopApiService,
-} from '@affine/core/modules/desktop-api';
+} from '@nexio/core/modules/desktop-api';
 import {
   configureSpellCheckSettingModule,
   configureTraySettingModule,
-} from '@affine/core/modules/editor-setting';
-import { configureFindInPageModule } from '@affine/core/modules/find-in-page';
+} from '@nexio/core/modules/editor-setting';
+import { configureFindInPageModule } from '@nexio/core/modules/find-in-page';
 import {
   ClientSchemeProvider,
   PopupWindowProvider,
-} from '@affine/core/modules/url';
-import { configureDesktopWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
+} from '@nexio/core/modules/url';
+import { configureDesktopWorkbenchModule } from '@nexio/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
 import { Framework } from '@toeverything/infra';
 
 function notifySessionOnlySignIn(sessionOnly?: boolean) {

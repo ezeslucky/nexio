@@ -1,5 +1,5 @@
-import { renderMermaidSvg } from '@affine/core/modules/code-block-preview-renderer/bridge';
-import type { MermaidRenderTheme } from '@affine/core/modules/mermaid/renderer';
+import { renderMermaidSvg } from '@nexio/core/modules/code-block-preview-renderer/bridge';
+import type { MermaidRenderTheme } from '@nexio/core/modules/mermaid/renderer';
 import { CodeBlockPreviewExtension } from '@blocksuite/affine/blocks/code';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import type { CodeBlockModel } from '@blocksuite/affine/model';

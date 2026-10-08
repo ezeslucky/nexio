@@ -1,4 +1,4 @@
-import type { ShareInboxProvider } from '@affine/core/mobile/components/share-import-controller';
+import type { ShareInboxProvider } from '@nexio/core/mobile/components/share-import-controller';
 import { Capacitor, registerPlugin } from '@capacitor/core';
 
 import type { ShareInboxPlugin } from './definitions';

@@ -21,7 +21,7 @@ const editorSettingService = {
   },
 };
 
-vi.mock('@affine/i18n', () => {
+vi.mock('@nexio/i18n', () => {
   const translations: Record<string, string> = {
     'com.affine.settings.editorSettings.general.auto-date-title.title':
       'Auto-title new docs with current date',

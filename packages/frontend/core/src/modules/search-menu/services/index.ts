@@ -1,6 +1,6 @@
-import type { TagMeta } from '@affine/core/components/page-list';
-import { UserFriendlyError } from '@affine/error';
-import { I18n } from '@affine/i18n';
+import type { TagMeta } from '@nexio/core/components/page-list';
+import { UserFriendlyError } from '@nexio/error';
+import { I18n } from '@nexio/i18n';
 import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
 import type { DocMeta } from '@blocksuite/affine/store';
 import type {

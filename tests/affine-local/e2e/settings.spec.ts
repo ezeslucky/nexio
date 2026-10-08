@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
 import {
   confirmExperimentalPrompt,
   openAboutPanel,
@@ -9,7 +9,7 @@ import {
   openExperimentalFeaturesPanel,
   openSettingModal,
   openShortcutsPanel,
-} from '@affine-test/kit/utils/setting';
+} from '@nexio-test/kit/utils/setting';
 import { expect } from '@playwright/test';
 
 test('Open settings modal', async ({ page }) => {

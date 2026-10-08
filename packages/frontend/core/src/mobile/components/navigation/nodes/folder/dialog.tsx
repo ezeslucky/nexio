@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 import { EditIcon } from '@blocksuite/icons/rc';
 
 import type { RenameDialogProps, RenameSubMenuProps } from '../../../rename';

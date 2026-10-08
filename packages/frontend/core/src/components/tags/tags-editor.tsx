@@ -6,9 +6,9 @@ import {
   type MenuRef,
   RowInput,
   Scrollable,
-} from '@affine/component';
-import { TagService, useDeleteTagConfirmModal } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { TagService, useDeleteTagConfirmModal } from '@nexio/core/modules/tag';
+import { useI18n } from '@nexio/i18n';
 import { DoneIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

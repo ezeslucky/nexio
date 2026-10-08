@@ -1,5 +1,5 @@
-import { registerNativeImportSessionHandlers } from '@affine/core/modules/import';
-import { apis } from '@affine/electron-api';
+import { registerNativeImportSessionHandlers } from '@nexio/core/modules/import';
+import { apis } from '@nexio/electron-api';
 
 const importApis = apis?.import;
 

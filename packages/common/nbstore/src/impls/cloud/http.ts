@@ -1,5 +1,5 @@
-import { UserFriendlyError } from '@affine/error';
-import { gqlFetcherFactory } from '@affine/graphql';
+import { UserFriendlyError } from '@nexio/error';
+import { gqlFetcherFactory } from '@nexio/graphql';
 
 import { DummyConnection } from '../../connection';
 

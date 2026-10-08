@@ -1,4 +1,4 @@
-import type { WorkspaceService } from '@affine/core/modules/workspace';
+import type { WorkspaceService } from '@nexio/core/modules/workspace';
 import {
   catchErrorInto,
   effect,

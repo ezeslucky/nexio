@@ -7,7 +7,7 @@ import {
   revokeInviteLinkMutation,
   revokeMemberPermissionMutation,
   type WorkspaceInviteLinkExpireTime,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { WorkspaceServerService } from '../../cloud';

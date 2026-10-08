@@ -1,6 +1,6 @@
-import { BlocksuiteHeaderTitle } from '@affine/core/blocksuite/block-suite-header/title';
-import { EditorModeSwitch } from '@affine/core/blocksuite/block-suite-mode-switch';
-import ShareHeaderRightItem from '@affine/core/components/cloud/share-header-right-item';
+import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
+import { EditorModeSwitch } from '@nexio/core/blocksuite/block-suite-mode-switch';
+import ShareHeaderRightItem from '@nexio/core/components/cloud/share-header-right-item';
 import type { DocMode } from '@blocksuite/affine/model';
 
 import * as styles from './share-header.css';

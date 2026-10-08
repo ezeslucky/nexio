@@ -1,8 +1,8 @@
 import type {
   AuthService,
   PublicUserService,
-} from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
+} from '@nexio/core/modules/cloud';
+import { UserFriendlyError } from '@nexio/error';
 import {
   type AffineUserInfo,
   UserServiceExtension,

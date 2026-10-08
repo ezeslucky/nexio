@@ -1,4 +1,4 @@
-import { setWorkspacePublicByIdMutation } from '@affine/graphql';
+import { setWorkspacePublicByIdMutation } from '@nexio/graphql';
 import { useCallback } from 'react';
 
 import { useMutation } from '../use-mutation';

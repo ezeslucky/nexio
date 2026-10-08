@@ -1,5 +1,5 @@
-import { SubscriptionStatus } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { SubscriptionStatus } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import {
   InformationFillDuotoneIcon,
   SingleSelectCheckSolidIcon,

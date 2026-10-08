@@ -1,4 +1,4 @@
-import { ModalConfigContext } from '@affine/component';
+import { ModalConfigContext } from '@nexio/component';
 import { useService } from '@toeverything/infra';
 import { fallbackVar } from '@vanilla-extract/css';
 import { useCallback, useMemo } from 'react';

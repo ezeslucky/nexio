@@ -1,4 +1,4 @@
-import { AIChatBlockSchema } from '@affine/core/blocksuite/ai/blocks';
+import { AIChatBlockSchema } from '@nexio/core/blocksuite/ai/blocks';
 import { EdgelessClipboardConfig } from '@blocksuite/affine/blocks/surface';
 import type { BlockSnapshot } from '@blocksuite/affine/store';
 

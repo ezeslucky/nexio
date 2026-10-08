@@ -1,6 +1,6 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { PeekViewService } from '@affine/core/modules/peek-view';
-import { I18n } from '@affine/i18n';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { PeekViewService } from '@nexio/core/modules/peek-view';
+import { I18n } from '@nexio/i18n';
 import { WithDisposable } from '@blocksuite/affine/global/lit';
 import type { ColorScheme } from '@blocksuite/affine/model';
 import {

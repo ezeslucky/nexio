@@ -1,4 +1,4 @@
-import { ServerFeature } from '@affine/graphql';
+import { ServerFeature } from '@nexio/graphql';
 import { SearchIcon } from '@blocksuite/icons/rc';
 import {
   effect,

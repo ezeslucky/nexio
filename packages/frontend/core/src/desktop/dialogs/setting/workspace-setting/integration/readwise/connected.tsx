@@ -1,7 +1,7 @@
-import { Button, Modal } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { IntegrationService } from '@affine/core/modules/integration';
-import { useI18n } from '@affine/i18n';
+import { Button, Modal } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { IntegrationService } from '@nexio/core/modules/integration';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 

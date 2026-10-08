@@ -1,10 +1,10 @@
-import { IconButton, Menu } from '@affine/component';
+import { IconButton, Menu } from '@nexio/component';
 import {
   CollectionRulesService,
   type FilterParams,
-} from '@affine/core/modules/collection-rules';
-import { ShareDocsListService } from '@affine/core/modules/share-doc';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection-rules';
+import { ShareDocsListService } from '@nexio/core/modules/share-doc';
+import { Trans, useI18n } from '@nexio/i18n';
 import { FilterIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { memo, type ReactNode, useCallback, useEffect, useState } from 'react';

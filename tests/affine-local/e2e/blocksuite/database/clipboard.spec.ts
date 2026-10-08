@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 
 import {
   addColumn,

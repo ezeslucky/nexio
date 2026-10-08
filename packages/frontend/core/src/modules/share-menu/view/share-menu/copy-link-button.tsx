@@ -1,11 +1,11 @@
-import { Button, Menu, MenuItem, MenuTrigger } from '@affine/component';
+import { Button, Menu, MenuItem, MenuTrigger } from '@nexio/component';
 import {
   getSelectedNodes,
   useSharingUrl,
-} from '@affine/core/components/hooks/affine/use-share-url';
-import { getDefaultShareMode } from '@affine/core/components/hooks/affine/use-share-url.utils';
-import { EditorService } from '@affine/core/modules/editor';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/components/hooks/affine/use-share-url';
+import { getDefaultShareMode } from '@nexio/core/components/hooks/affine/use-share-url.utils';
+import { EditorService } from '@nexio/core/modules/editor';
+import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@blocksuite/affine/model';
 import { BlockIcon, EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';

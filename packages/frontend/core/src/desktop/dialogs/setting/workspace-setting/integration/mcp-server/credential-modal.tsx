@@ -1,8 +1,8 @@
-import { Button, Input, Modal, notify } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import type { McpCredential } from '@affine/core/modules/cloud/services/mcp-credential';
-import { McpAccessMode } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Button, Input, Modal, notify } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import type { McpCredential } from '@nexio/core/modules/cloud/services/mcp-credential';
+import { McpAccessMode } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useEffect, useState } from 'react';
 
 import * as styles from './setting-panel.css';

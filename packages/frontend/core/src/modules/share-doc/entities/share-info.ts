@@ -1,8 +1,8 @@
-import type { DocRole, PublicDocMode } from '@affine/graphql';
+import type { DocRole, PublicDocMode } from '@nexio/graphql';
 import type {
   DocShareStateSnapshot,
   RealtimeTopicEventOf,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Entity, LiveData } from '@toeverything/infra';
 
 import { RealtimeLiveQuery } from '../../cloud/realtime/live-query';

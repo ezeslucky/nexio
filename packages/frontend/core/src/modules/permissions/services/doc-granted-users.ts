@@ -1,5 +1,5 @@
-import { DocRole } from '@affine/graphql';
-import type { DocGrantedUserSnapshot } from '@affine/realtime';
+import { DocRole } from '@nexio/graphql';
+import type { DocGrantedUserSnapshot } from '@nexio/realtime';
 import {
   catchErrorInto,
   effect,

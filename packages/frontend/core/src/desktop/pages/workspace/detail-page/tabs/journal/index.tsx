@@ -1,4 +1,4 @@
-import type { DateCell } from '@affine/component';
+import type { DateCell } from '@nexio/component';
 import {
   DatePicker,
   IconButton,
@@ -7,24 +7,24 @@ import {
   MenuSeparator,
   Scrollable,
   useConfirmModal,
-} from '@affine/component';
-import { Guard } from '@affine/core/components/guard';
-import { MoveToTrash } from '@affine/core/components/page-list';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
+} from '@nexio/component';
+import { Guard } from '@nexio/core/components/guard';
+import { MoveToTrash } from '@nexio/core/components/page-list';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import {
   type DocRecord,
   DocService,
   DocsService,
-} from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { IntegrationService } from '@affine/core/modules/integration';
-import { JournalService } from '@affine/core/modules/journal';
+} from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { IntegrationService } from '@nexio/core/modules/integration';
+import { JournalService } from '@nexio/core/modules/journal';
 import {
   ViewService,
   WorkbenchLink,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { CalendarXmarkIcon, EditIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,

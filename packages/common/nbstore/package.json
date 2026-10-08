@@ -1,5 +1,5 @@
 {
-  "name": "@affine/nbstore",
+  "name": "@nexio/nbstore",
   "type": "module",
   "version": "0.27.5",
   "private": true,
@@ -18,8 +18,8 @@
     "./frontend": "./src/frontend/index.ts"
   },
   "dependencies": {
-    "@affine/reader": "workspace:*",
-    "@affine/realtime": "workspace:*",
+    "@nexio/reader": "workspace:*",
+    "@nexio/realtime": "workspace:*",
     "@toeverything/infra": "workspace:*",
     "eventemitter2": "^6.4.9",
     "graphemer": "^1.4.0",
@@ -31,20 +31,20 @@
     "yjs": "^13.6.27"
   },
   "devDependencies": {
-    "@affine/error": "workspace:*",
-    "@affine/graphql": "workspace:*",
-    "@affine/realtime": "workspace:*",
     "@blocksuite/affine": "workspace:*",
+    "@nexio/error": "workspace:*",
+    "@nexio/graphql": "workspace:*",
+    "@nexio/realtime": "workspace:*",
     "fake-indexeddb": "^6.0.0",
     "idb": "^8.0.0",
     "socket.io-client": "^4.8.3",
     "vitest": "^4.1.8"
   },
   "peerDependencies": {
-    "@affine/error": "workspace:*",
-    "@affine/graphql": "workspace:*",
-    "@affine/realtime": "workspace:*",
     "@blocksuite/affine": "workspace:*",
+    "@nexio/error": "workspace:*",
+    "@nexio/graphql": "workspace:*",
+    "@nexio/realtime": "workspace:*",
     "idb": "^8.0.0",
     "socket.io-client": "^4.8.3"
   }

@@ -1,5 +1,5 @@
-import { channelToScheme } from '@affine/core/utils/channel';
-import { DebugLogger } from '@affine/debug';
+import { channelToScheme } from '@nexio/core/utils/channel';
+import { DebugLogger } from '@nexio/debug';
 
 const logger = new DebugLogger('open-in-app');
 

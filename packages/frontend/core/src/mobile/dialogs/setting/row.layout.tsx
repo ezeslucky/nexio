@@ -1,4 +1,4 @@
-import { ConfigModal } from '@affine/core/components/mobile';
+import { ConfigModal } from '@nexio/core/components/mobile';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { KeyboardEvent, PropsWithChildren, ReactNode } from 'react';

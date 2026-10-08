@@ -1,5 +1,5 @@
 {
-  "name": "@affine/i18n",
+  "name": "@nexio/i18n",
   "version": "0.27.5",
   "description": "",
   "type": "module",
@@ -18,16 +18,16 @@
     "url": "git+https://github.com/ezeslucky/nexio.git"
   },
   "dependencies": {
-    "@affine/debug": "workspace:*",
     "@magic-works/i18n-codegen": "^0.6.1",
+    "@nexio/debug": "workspace:*",
     "dayjs": "^1.11.13",
     "i18next": "^25.0.0",
     "react": "^19.2.1",
     "react-i18next": "^15.2.0"
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
-    "@affine-tools/utils": "workspace:*",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
     "glob": "^11.0.0",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "vitest": "^4.1.8"

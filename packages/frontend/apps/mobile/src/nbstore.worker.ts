@@ -1,13 +1,13 @@
-import '@affine/core/bootstrap/browser';
+import '@nexio/core/bootstrap/browser';
 
-import { broadcastChannelStorages } from '@affine/nbstore/broadcast-channel';
-import { cloudStorages } from '@affine/nbstore/cloud';
-import { idbStorages } from '@affine/nbstore/idb';
-import { idbV1Storages } from '@affine/nbstore/idb/v1';
+import { broadcastChannelStorages } from '@nexio/nbstore/broadcast-channel';
+import { cloudStorages } from '@nexio/nbstore/cloud';
+import { idbStorages } from '@nexio/nbstore/idb';
+import { idbV1Storages } from '@nexio/nbstore/idb/v1';
 import {
   StoreManagerConsumer,
   type WorkerManagerOps,
-} from '@affine/nbstore/worker/consumer';
+} from '@nexio/nbstore/worker/consumer';
 import { type MessageCommunicapable, OpConsumer } from '@toeverything/infra/op';
 
 const consumer = new StoreManagerConsumer([

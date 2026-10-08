@@ -1,8 +1,8 @@
-import { UserFeatureService } from '@affine/core/modules/cloud/services/user-feature';
-import type { SettingTab } from '@affine/core/modules/dialogs/constant';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
-import { useI18n } from '@affine/i18n';
+import { UserFeatureService } from '@nexio/core/modules/cloud/services/user-feature';
+import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
+import { useI18n } from '@nexio/i18n';
 import {
   AppearanceIcon,
   ExperimentIcon,

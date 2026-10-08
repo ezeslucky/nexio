@@ -46,7 +46,7 @@ yarn affine init
 
 ```json
 {
-  "name": "@affine/demo",
+  "name": "@nexio/demo",
   "scripts": {
     "dev": "node ./dev.ts"
   }
@@ -54,19 +54,19 @@ yarn affine init
 ```
 
 ```bash
-affine @affine/demo dev
+affine @nexio/demo dev
 ```
 
 or
 
 ```json
 {
-  "name": "@affine/demo",
+  "name": "@nexio/demo",
   "scripts": {
     "dev": "r ./src/index.ts"
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*"
+    "@nexio-tools/cli": "workspace:*"
   }
 }
 ```

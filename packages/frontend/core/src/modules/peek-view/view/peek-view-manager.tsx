@@ -1,4 +1,4 @@
-import { toReactNode } from '@affine/component';
+import { toReactNode } from '@nexio/component';
 import { BlockComponent } from '@blocksuite/affine/std';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';

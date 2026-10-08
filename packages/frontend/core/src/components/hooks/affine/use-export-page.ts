@@ -1,13 +1,13 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
-} from '@affine/component/global-loading';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor/blocksuite-editor';
-import { EditorService } from '@affine/core/modules/editor';
-import { getAFFiNEWorkspaceSchema } from '@affine/core/modules/workspace/global-schema';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/global-loading';
+import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor/blocksuite-editor';
+import { EditorService } from '@nexio/core/modules/editor';
+import { getAFFiNEWorkspaceSchema } from '@nexio/core/modules/workspace/global-schema';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ExportManager } from '@blocksuite/affine/blocks/surface';
 import {
   docLinkBaseURLMiddleware,

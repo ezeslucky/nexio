@@ -1,4 +1,4 @@
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import { createLitPortal } from '@blocksuite/affine/components/portal';
 import { WithDisposable } from '@blocksuite/affine/global/lit';
 import type { NotificationService } from '@blocksuite/affine/shared/services';

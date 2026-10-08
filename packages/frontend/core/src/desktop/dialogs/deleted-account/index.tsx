@@ -1,10 +1,10 @@
-import { ConfirmModal } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { ConfirmModal } from '@nexio/component';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs';
+import { useI18n } from '@nexio/i18n';
 import { useCallback } from 'react';
 
 import * as styles from './index.css';

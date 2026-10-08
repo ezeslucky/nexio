@@ -12,14 +12,14 @@ import {
   Slider,
   Switch,
   useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
+} from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import {
   type EditorSettingSchema,
   EditorSettingService,
@@ -27,14 +27,14 @@ import {
   fontStyleOptions,
   type NewDocDateTitleFormat,
   newDocDateTitleFormatOptions,
-} from '@affine/core/modules/editor-setting';
-import { SpellCheckSettingService } from '@affine/core/modules/editor-setting/services/spell-check-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
+} from '@nexio/core/modules/editor-setting';
+import { SpellCheckSettingService } from '@nexio/core/modules/editor-setting/services/spell-check-setting';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import {
   type FontData,
   SystemFontFamilyService,
-} from '@affine/core/modules/system-font-family';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/system-font-family';
+import { Trans, useI18n } from '@nexio/i18n';
 import { DoneIcon, SearchIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import clsx from 'clsx';

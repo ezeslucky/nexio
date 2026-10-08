@@ -1,19 +1,19 @@
-import { IconButton, Menu, MenuItem } from '@affine/component';
-import { Divider } from '@affine/component/ui/divider';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useSignOut } from '@affine/core/components/hooks/affine/use-sign-out';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import type { AuthAccountInfo, Server } from '@affine/core/modules/cloud';
-import { AuthService, ServersService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { GlobalContextService } from '@affine/core/modules/global-context';
+import { IconButton, Menu, MenuItem } from '@nexio/component';
+import { Divider } from '@nexio/component/ui/divider';
+import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useSignOut } from '@nexio/core/components/hooks/affine/use-sign-out';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import type { AuthAccountInfo, Server } from '@nexio/core/modules/cloud';
+import { AuthService, ServersService } from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
 import {
   type WorkspaceMetadata,
   WorkspaceService,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import {
   AccountIcon,
   CloudWorkspaceIcon,

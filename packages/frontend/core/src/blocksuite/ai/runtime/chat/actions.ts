@@ -1,4 +1,4 @@
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 
 import type { AIChatScope, AIChatScopeSelector } from './state';
 

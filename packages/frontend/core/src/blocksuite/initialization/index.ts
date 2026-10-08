@@ -1,4 +1,4 @@
-import type { DocCreateOptions } from '@affine/core/modules/doc/types';
+import type { DocCreateOptions } from '@nexio/core/modules/doc/types';
 import {
   NoteDisplayMode,
   type NoteProps,

@@ -1,8 +1,8 @@
 import type {
   InviteLink,
   WorkspaceInviteLinkExpireTime,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { EmailIcon, LinkIcon } from '@blocksuite/icons/rc';
 
 import { RadioGroup } from '../../../ui/radio';

@@ -1,8 +1,8 @@
-import { Button } from '@affine/component/ui/button';
-import { ConfirmModal } from '@affine/component/ui/modal';
-import { DocService } from '@affine/core/modules/doc';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component/ui/button';
+import { ConfirmModal } from '@nexio/component/ui/modal';
+import { DocService } from '@nexio/core/modules/doc';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';

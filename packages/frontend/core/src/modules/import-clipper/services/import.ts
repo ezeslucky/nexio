@@ -1,5 +1,5 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { createBlockStdScope } from '@affine/core/blocksuite/manager/view';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { createBlockStdScope } from '@nexio/core/blocksuite/manager/view';
 import { EmbedOptionProvider } from '@blocksuite/affine/shared/services';
 import { Text } from '@blocksuite/affine/store';
 import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';

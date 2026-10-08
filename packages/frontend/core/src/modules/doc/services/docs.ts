@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import { Unreachable } from '@affine/env/constant';
+import { DebugLogger } from '@nexio/debug';
+import { Unreachable } from '@nexio/env/constant';
 import { replaceIdMiddleware } from '@blocksuite/affine/shared/adapters';
 import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
 import type { DeltaInsert } from '@blocksuite/affine/store';

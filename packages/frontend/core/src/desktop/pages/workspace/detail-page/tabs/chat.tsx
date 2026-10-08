@@ -1,4 +1,4 @@
-import { useConfirmModal } from '@affine/component';
+import { useConfirmModal } from '@nexio/component';
 import {
   AIAppEvents,
   AIChatRuntime,
@@ -7,41 +7,41 @@ import {
   DocAIChatSessionStrategy,
   useAIChatElement,
   useAIChatRuntime,
-} from '@affine/core/blocksuite/ai';
-import type { AppSidebarConfig } from '@affine/core/blocksuite/ai/chat-panel/chat-config';
-import { AIChatContent } from '@affine/core/blocksuite/ai/components/ai-chat-content';
+} from '@nexio/core/blocksuite/ai';
+import type { AppSidebarConfig } from '@nexio/core/blocksuite/ai/chat-panel/chat-config';
+import { AIChatContent } from '@nexio/core/blocksuite/ai/components/ai-chat-content';
 import {
   AIChatTabs,
   AIChatToolbar,
   configureAIChatToolbar,
-} from '@affine/core/blocksuite/ai/components/ai-chat-toolbar';
-import { createPlaygroundModal } from '@affine/core/blocksuite/ai/components/playground/modal';
-import { registerAIAppEffects } from '@affine/core/blocksuite/ai/effects/app';
-import type { AffineEditorContainer } from '@affine/core/blocksuite/block-suite-editor';
-import { NotificationServiceImpl } from '@affine/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@affine/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@affine/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@affine/core/components/hooks/affine/use-ai-subscribe';
+} from '@nexio/core/blocksuite/ai/components/ai-chat-toolbar';
+import { createPlaygroundModal } from '@nexio/core/blocksuite/ai/components/playground/modal';
+import { registerAIAppEffects } from '@nexio/core/blocksuite/ai/effects/app';
+import type { AffineEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
+import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
+import { useAIChatConfig } from '@nexio/core/components/hooks/affine/use-ai-chat-config';
+import { useAISpecs } from '@nexio/core/components/hooks/affine/use-ai-specs';
+import { useAISubscribe } from '@nexio/core/components/hooks/affine/use-ai-subscribe';
 import {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
+} from '@nexio/core/modules/ai-button';
 import {
   EventSourceService,
   GraphQLService,
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { useSignalValue } from '@affine/core/modules/doc-info/utils';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { NbstoreService } from '@affine/core/modules/storage';
-import { AppThemeService } from '@affine/core/modules/theme';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { useSignalValue } from '@nexio/core/modules/doc-info/utils';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { PeekViewService } from '@nexio/core/modules/peek-view';
+import { NbstoreService } from '@nexio/core/modules/storage';
+import { AppThemeService } from '@nexio/core/modules/theme';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
 import { DocModeProvider } from '@blocksuite/affine/shared/services';
 import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';

@@ -1,16 +1,16 @@
-import { notify } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
+import { notify } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
 import {
   Button,
   type ButtonProps,
   IconButton,
-} from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { createCustomerPortalMutation } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/ui/button';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
+import { createCustomerPortalMutation } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';

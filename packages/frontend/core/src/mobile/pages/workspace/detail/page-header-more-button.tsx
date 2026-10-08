@@ -1,21 +1,21 @@
-import { IconButton, notify, toast, useConfirmModal } from '@affine/component';
+import { IconButton, notify, toast, useConfirmModal } from '@nexio/component';
 import {
   MenuSeparator,
   MenuSub,
   MobileMenu,
   MobileMenuItem,
-} from '@affine/component/ui/menu';
-import { useFavorite } from '@affine/core/blocksuite/block-suite-header/favorite';
-import { Guard, useGuard } from '@affine/core/components/guard';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { DocInfoSheet } from '@affine/core/mobile/components';
-import { MobileTocMenu } from '@affine/core/mobile/components/toc-menu';
-import { DocService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { preventDefault } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/ui/menu';
+import { useFavorite } from '@nexio/core/blocksuite/block-suite-header/favorite';
+import { Guard, useGuard } from '@nexio/core/components/guard';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { DocInfoSheet } from '@nexio/core/mobile/components';
+import { MobileTocMenu } from '@nexio/core/mobile/components/toc-menu';
+import { DocService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { preventDefault } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   EdgelessIcon,

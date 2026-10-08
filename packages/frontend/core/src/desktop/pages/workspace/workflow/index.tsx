@@ -4,8 +4,8 @@ import {
   ViewIcon,
   ViewTitle,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useLiveData, useService } from '@toeverything/infra';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

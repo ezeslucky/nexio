@@ -1,24 +1,24 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { Button } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/component/auth-components';
+import { Button } from '@nexio/component/ui/button';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   CaptchaService,
   getSelfHostedServerName,
   ServerService,
-} from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { Unreachable } from '@affine/env/constant';
-import { UserFriendlyError } from '@affine/error';
-import { ServerDeploymentType } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
+import { Unreachable } from '@nexio/env/constant';
+import { UserFriendlyError } from '@nexio/error';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback, useEffect, useState } from 'react';

@@ -1,7 +1,7 @@
-import { Button, RadioGroup } from '@affine/component';
-import { SelectPage } from '@affine/core/components/page-list/docs/select-page';
-import type { CollectionInfo } from '@affine/core/modules/collection';
-import { useI18n } from '@affine/i18n';
+import { Button, RadioGroup } from '@nexio/component';
+import { SelectPage } from '@nexio/core/components/page-list/docs/select-page';
+import type { CollectionInfo } from '@nexio/core/modules/collection';
+import { useI18n } from '@nexio/i18n';
 import { useCallback, useMemo, useState } from 'react';
 
 import * as styles from './edit-collection.css';

@@ -3,11 +3,11 @@ import {
   PropertyCollapsibleContent,
   PropertyCollapsibleSection,
   PropertyName,
-} from '@affine/component';
-import { AffinePageReference } from '@affine/core/components/affine/reference-link';
-import { DocService } from '@affine/core/modules/doc';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { AffinePageReference } from '@nexio/core/components/affine/reference-link';
+import { DocService } from '@nexio/core/modules/doc';
+import { TemplateDocService } from '@nexio/core/modules/template-doc';
+import { useI18n } from '@nexio/i18n';
 import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
 import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';

@@ -63,7 +63,7 @@ RUN rm -rf static packages/backend/server/static \
 # Prune development dependencies and monorepo bloat for compact runner image
 RUN rm -rf static \
     && ln -s /app/packages/backend/server/static /app/static \
-    && node .yarn/releases/yarn-4.9.1.cjs workspaces focus --production @affine/server \
+    && node .yarn/releases/yarn-4.9.1.cjs workspaces focus --production @nexio/server \
     && rm -rf .kilo \
               blocksuite \
               tests \

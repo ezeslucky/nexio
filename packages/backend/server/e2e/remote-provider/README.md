@@ -8,7 +8,7 @@ provider latency without changing production code.
 docker compose -f packages/backend/server/e2e/remote-provider/compose.yml up -d --wait
 
 DATABASE_URL=postgresql://ds:ds@localhost:55432/affine_remote_provider_e2e \
-yarn workspace @affine/server prisma migrate deploy
+yarn workspace @nexio/server prisma migrate deploy
 ```
 
 Configure `packages/backend/server/config.json` with:

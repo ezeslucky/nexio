@@ -1,7 +1,7 @@
-import { TagService } from '@affine/core/modules/tag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { inferOpenMode } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
+import { TagService } from '@nexio/core/modules/tag';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { inferOpenMode } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
 import { AllDocsIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type MouseEvent, useCallback } from 'react';

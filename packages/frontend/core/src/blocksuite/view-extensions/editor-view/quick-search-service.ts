@@ -1,14 +1,14 @@
-import { DocsService } from '@affine/core/modules/doc';
+import { DocsService } from '@nexio/core/modules/doc';
 import {
   CreationQuickSearchSession,
   DocsQuickSearchSession,
   LinksQuickSearchSession,
   QuickSearchService,
   RecentDocsQuickSearchSession,
-} from '@affine/core/modules/quicksearch';
-import { ExternalLinksQuickSearchSession } from '@affine/core/modules/quicksearch/impls/external-links';
-import { JournalsQuickSearchSession } from '@affine/core/modules/quicksearch/impls/journals';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/quicksearch';
+import { ExternalLinksQuickSearchSession } from '@nexio/core/modules/quicksearch/impls/external-links';
+import { JournalsQuickSearchSession } from '@nexio/core/modules/quicksearch/impls/journals';
+import { track } from '@nexio/track';
 import {
   BookmarkSlashMenuConfigIdentifier,
   insertLinkByQuickSearchCommand,

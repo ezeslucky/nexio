@@ -1,8 +1,8 @@
-import { Menu, MenuItem, MenuTrigger, Switch } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import type { EdgelessDefaultTheme } from '@affine/core/modules/editor-setting/schema';
-import { useI18n } from '@affine/i18n';
+import { Menu, MenuItem, MenuTrigger, Switch } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import type { EdgelessDefaultTheme } from '@nexio/core/modules/editor-setting/schema';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 

@@ -4,7 +4,7 @@ import {
   type RealtimeTopicEventOf,
   type RealtimeTopicInputOf,
   type RealtimeTopicName,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Injectable, Logger } from '@nestjs/common';
 import type { Server } from 'socket.io';
 

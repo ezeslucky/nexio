@@ -1,5 +1,5 @@
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import type { IndexerPreferOptions, IndexerSyncState } from '@affine/nbstore';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import type { IndexerPreferOptions, IndexerSyncState } from '@nexio/nbstore';
 import {
   type ReferenceParams,
   ReferenceParamsSchema,

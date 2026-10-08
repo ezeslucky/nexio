@@ -1,4 +1,4 @@
-import { Workspace } from '@affine-tools/utils/workspace';
+import { Workspace } from '@nexio-tools/utils/workspace';
 import { Cli } from 'clipanion';
 
 import { BuildCommand } from './build';

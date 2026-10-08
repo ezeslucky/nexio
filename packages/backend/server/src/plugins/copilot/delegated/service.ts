@@ -5,7 +5,7 @@ import type {
   DelegatedToolIdentity,
   DelegatedToolName,
   DelegatedToolResponse,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Injectable } from '@nestjs/common';
 
 import { OnEvent } from '../../../base';

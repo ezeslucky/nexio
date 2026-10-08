@@ -1,11 +1,11 @@
-import { notify } from '@affine/component';
-import { DebugLogger } from '@affine/debug';
+import { notify } from '@nexio/component';
+import { DebugLogger } from '@nexio/debug';
 import {
   getOrCreateI18n,
   i18nCompletenesses,
   type Language,
   SUPPORTED_LANGUAGES,
-} from '@affine/i18n';
+} from '@nexio/i18n';
 import { effect, Entity, fromPromise, LiveData } from '@toeverything/infra';
 import { catchError, EMPTY, exhaustMap } from 'rxjs';
 

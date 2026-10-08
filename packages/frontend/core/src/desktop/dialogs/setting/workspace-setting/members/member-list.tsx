@@ -1,14 +1,14 @@
-import { Avatar, IconButton, Loading, Menu, notify } from '@affine/component';
-import { Pagination } from '@affine/component/setting-components';
-import { type AuthAccountInfo, AuthService } from '@affine/core/modules/cloud';
+import { Avatar, IconButton, Loading, Menu, notify } from '@nexio/component';
+import { Pagination } from '@nexio/component/setting-components';
+import { type AuthAccountInfo, AuthService } from '@nexio/core/modules/cloud';
 import {
   type Member,
   WorkspaceMembersService,
-} from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { Permission, WorkspaceMemberStatus } from '@affine/graphql';
-import { type I18nString, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/permissions';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
+import { type I18nString, useI18n } from '@nexio/i18n';
 import { MoreVerticalIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

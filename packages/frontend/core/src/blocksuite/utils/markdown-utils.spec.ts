@@ -1,6 +1,6 @@
 import 'fake-indexeddb/auto';
 
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { Text } from '@blocksuite/affine/store';
 import { TestWorkspace } from '@blocksuite/affine/store/test';
 import { describe, expect, test } from 'vitest';

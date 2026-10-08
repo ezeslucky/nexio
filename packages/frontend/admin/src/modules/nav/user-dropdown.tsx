@@ -2,8 +2,8 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from '@affine/admin/components/ui/avatar';
-import { Button } from '@affine/admin/components/ui/button';
+} from '@nexio/admin/components/ui/avatar';
+import { Button } from '@nexio/admin/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@affine/admin/components/ui/dropdown-menu';
+} from '@nexio/admin/components/ui/dropdown-menu';
 import { MoreVerticalIcon } from '@blocksuite/icons/rc';
 import { CircleUser } from 'lucide-react';
 import { useCallback } from 'react';

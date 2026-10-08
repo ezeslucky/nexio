@@ -1,11 +1,11 @@
-import { MenuItem, MenuSeparator } from '@affine/component';
-import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
+import { MenuItem, MenuSeparator } from '@nexio/component';
+import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import {
   WorkspacePropertyService,
   type WorkspacePropertyType,
-} from '@affine/core/modules/workspace-property';
-import { generateUniqueNameInSequence } from '@affine/core/utils/unique-name';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace-property';
+import { generateUniqueNameInSequence } from '@nexio/core/utils/unique-name';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 

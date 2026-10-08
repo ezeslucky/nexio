@@ -7,7 +7,7 @@ const { mockBase64ToUint8Array, mockConvertFileSrc } = vi.hoisted(() => ({
   mockConvertFileSrc: vi.fn((path: string) => `capacitor://localhost${path}`),
 }));
 
-vi.mock('@affine/core/modules/workspace-engine', () => ({
+vi.mock('@nexio/core/modules/workspace-engine', () => ({
   base64ToUint8Array: mockBase64ToUint8Array,
 }));
 

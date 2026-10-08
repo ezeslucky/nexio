@@ -1,14 +1,14 @@
 import type { Configuration as RspackDevServerConfiguration } from '@rspack/dev-server';
 
 export const RSPACK_SUPPORTED_PACKAGES = [
-  '@affine/admin',
-  '@affine/web',
-  '@affine/mobile',
-  '@affine/ios',
-  '@affine/android',
-  '@affine/electron-renderer',
-  '@affine/server',
-  '@affine/reader',
+  '@nexio/admin',
+  '@nexio/web',
+  '@nexio/mobile',
+  '@nexio/ios',
+  '@nexio/android',
+  '@nexio/electron-renderer',
+  '@nexio/server',
+  '@nexio/reader',
 ] as const;
 
 const rspackSupportedPackageSet = new Set<string>(RSPACK_SUPPORTED_PACKAGES);

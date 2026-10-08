@@ -1,5 +1,5 @@
-import { JournalService } from '@affine/core/modules/journal';
-import { i18nTime, useI18n } from '@affine/i18n';
+import { JournalService } from '@nexio/core/modules/journal';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import type { Store } from '@blocksuite/affine/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import dayjs from 'dayjs';

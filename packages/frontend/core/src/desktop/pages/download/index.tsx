@@ -1,5 +1,5 @@
-import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
-import { DownloadContent } from '@affine/core/components/download-modal/download-content';
+import { AffineOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+import { DownloadContent } from '@nexio/core/components/download-modal/download-content';
 
 import * as styles from './styles.css';
 

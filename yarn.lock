@@ -12,1077 +12,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@affine-test/affine-cloud-copilot@workspace:tests/affine-cloud-copilot":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-cloud-copilot@workspace:tests/affine-cloud-copilot"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/affine-cloud@workspace:tests/affine-cloud":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-cloud@workspace:tests/affine-cloud"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/affine-desktop-cloud@workspace:tests/affine-desktop-cloud":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-desktop-cloud@workspace:tests/affine-desktop-cloud"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/affine-desktop@workspace:tests/affine-desktop":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-desktop@workspace:tests/affine-desktop"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@affine/electron-api": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-    "@types/fs-extra": "npm:^11.0.4"
-    fs-extra: "npm:^11.2.0"
-    playwright: "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/affine-local@workspace:tests/affine-local":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-local@workspace:tests/affine-local"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/affine-mobile@workspace:tests/affine-mobile":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/affine-mobile@workspace:tests/affine-mobile"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/blocksuite@workspace:tests/blocksuite":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/blocksuite@workspace:tests/blocksuite"
-  dependencies:
-    "@affine-test/kit": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@blocksuite/integration-test": "workspace:*"
-    "@playwright/test": "npm:=1.58.2"
-    "@toeverything/theme": "npm:^1.1.23"
-    json-stable-stringify: "npm:^1.2.1"
-  languageName: unknown
-  linkType: soft
-
-"@affine-test/kit@workspace:*, @affine-test/kit@workspace:tests/kit":
-  version: 0.0.0-use.local
-  resolution: "@affine-test/kit@workspace:tests/kit"
-  dependencies:
-    "@affine-tools/utils": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@node-rs/argon2": "npm:^2.0.2"
-    "@playwright/test": "npm:=1.58.2"
-    "@toeverything/infra": "workspace:*"
-    express: "npm:^5.1.0"
-    http-proxy-middleware: "npm:^3.0.5"
-  peerDependencies:
-    "@playwright/test": "*"
-    express: "*"
-    http-proxy-middleware: "*"
-  languageName: unknown
-  linkType: soft
-
-"@affine-tools/cli@workspace:*, @affine-tools/cli@workspace:tools/cli":
-  version: 0.0.0-use.local
-  resolution: "@affine-tools/cli@workspace:tools/cli"
-  dependencies:
-    "@affine-tools/utils": "workspace:*"
-    "@affine/s3-compat": "workspace:*"
-    "@napi-rs/simple-git": "npm:^1.0.0"
-    "@rspack/core": "npm:^2.0.8"
-    "@rspack/dev-server": "npm:^2.1.0"
-    "@sentry/webpack-plugin": "npm:^5.3.0"
-    "@swc/core": "npm:^1.10.1"
-    "@tailwindcss/postcss": "npm:^4.3.0"
-    "@types/lodash-es": "npm:^4.17.12"
-    "@types/mime-types": "npm:^3.0.0"
-    "@types/node": "npm:^22.0.0"
-    "@vanilla-extract/webpack-plugin": "npm:^2.3.15"
-    autoprefixer: "npm:^10.4.20"
-    clipanion: "npm:^3.2.1"
-    css-loader: "npm:^7.1.4"
-    cssnano: "npm:^7.0.6"
-    inquirer: "npm:^12.3.0"
-    jsonc-parser: "npm:^3.3.1"
-    lodash-es: "npm:^4.17.23"
-    mime-types: "npm:^3.0.0"
-    oxfmt: "npm:0.63.0"
-    postcss: "npm:^8.5.18"
-    postcss-loader: "npm:^8.2.1"
-    postcss-selector-parser: "npm:^7.1.0"
-    source-map-loader: "npm:^5.0.0"
-    style-loader: "npm:^4.0.0"
-    swc-loader: "npm:^0.2.6"
-    tailwindcss: "npm:^4.1.17"
-    tsx: "npm:^4.21.0"
-    typanion: "npm:^3.14.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  bin:
-    affine: ./bin/cli.js
-    r: ./bin/runner.js
-  languageName: unknown
-  linkType: soft
-
-"@affine-tools/utils@workspace:*, @affine-tools/utils@workspace:tools/utils":
-  version: 0.0.0-use.local
-  resolution: "@affine-tools/utils@workspace:tools/utils"
-  dependencies:
-    "@types/lodash-es": "npm:^4.17.12"
-    "@types/node": "npm:^22.0.0"
-    chalk: "npm:^5.3.0"
-    lodash-es: "npm:^4.17.23"
-    oxfmt: "npm:0.63.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine/admin@workspace:packages/frontend/admin":
-  version: 0.0.0-use.local
-  resolution: "@affine/admin@workspace:packages/frontend/admin"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/error": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/routes": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@radix-ui/react-accordion": "npm:^1.2.2"
-    "@radix-ui/react-alert-dialog": "npm:^1.1.3"
-    "@radix-ui/react-aspect-ratio": "npm:^1.1.1"
-    "@radix-ui/react-avatar": "npm:^1.1.2"
-    "@radix-ui/react-checkbox": "npm:^1.1.3"
-    "@radix-ui/react-collapsible": "npm:^1.1.2"
-    "@radix-ui/react-context-menu": "npm:^2.2.3"
-    "@radix-ui/react-dialog": "npm:^1.1.3"
-    "@radix-ui/react-dropdown-menu": "npm:^2.1.3"
-    "@radix-ui/react-hover-card": "npm:^1.1.3"
-    "@radix-ui/react-label": "npm:^2.1.1"
-    "@radix-ui/react-menubar": "npm:^1.1.3"
-    "@radix-ui/react-navigation-menu": "npm:^1.2.2"
-    "@radix-ui/react-popover": "npm:^1.1.3"
-    "@radix-ui/react-progress": "npm:^1.1.1"
-    "@radix-ui/react-radio-group": "npm:^1.2.2"
-    "@radix-ui/react-scroll-area": "npm:^1.2.2"
-    "@radix-ui/react-select": "npm:^2.1.3"
-    "@radix-ui/react-separator": "npm:^1.1.1"
-    "@radix-ui/react-slider": "npm:^1.2.2"
-    "@radix-ui/react-slot": "npm:^1.1.1"
-    "@radix-ui/react-switch": "npm:^1.1.2"
-    "@radix-ui/react-tabs": "npm:^1.1.2"
-    "@radix-ui/react-toast": "npm:^1.2.3"
-    "@radix-ui/react-toggle": "npm:^1.1.1"
-    "@radix-ui/react-toggle-group": "npm:^1.1.1"
-    "@radix-ui/react-tooltip": "npm:^1.1.5"
-    "@sentry/react": "npm:^10.53.1"
-    "@tanstack/react-table": "npm:^8.20.5"
-    "@testing-library/react": "npm:^16.3.2"
-    "@toeverything/theme": "npm:^1.1.23"
-    "@types/lodash-es": "npm:^4.17.12"
-    class-variance-authority: "npm:^0.7.1"
-    clsx: "npm:^2.1.1"
-    cmdk: "npm:^1.0.4"
-    embla-carousel-react: "npm:^8.5.1"
-    input-otp: "npm:^1.4.1"
-    lodash-es: "npm:^4.17.23"
-    lucide-react: "npm:^0.508.0"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-day-picker: "npm:^9.4.3"
-    react-dom: "npm:^19.2.1"
-    react-hook-form: "npm:^7.54.1"
-    react-resizable-panels: "npm:^3.0.6"
-    react-router-dom: "npm:^7.18.2"
-    recharts: "npm:^2.15.4"
-    sonner: "npm:^2.0.7"
-    swr: "npm:^2.3.7"
-    tailwind-merge: "npm:^3.4.0"
-    tailwindcss: "npm:^4.1.17"
-    tailwindcss-animate: "npm:^1.0.7"
-    vaul: "npm:^1.1.2"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/android@workspace:packages/frontend/apps/android":
-  version: 0.0.0-use.local
-  resolution: "@affine/android@workspace:packages/frontend/apps/android"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@affine/mobile-shared": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@capacitor/android": "npm:^8.4.2"
-    "@capacitor/app": "npm:^8.0.0"
-    "@capacitor/cli": "npm:^8.4.2"
-    "@capacitor/core": "npm:^8.4.2"
-    "@capacitor/keyboard": "npm:^8.0.0"
-    "@capacitor/status-bar": "npm:^8.0.0"
-    "@capgo/inappbrowser": "npm:^8.6.14"
-    "@toeverything/infra": "workspace:*"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    async-call-rpc: "npm:^6.4.2"
-    idb: "npm:^8.0.0"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine/auth@workspace:*, @affine/auth@workspace:packages/common/auth":
-  version: 0.0.0-use.local
-  resolution: "@affine/auth@workspace:packages/common/auth"
-  dependencies:
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/changelog@workspace:tools/changelog":
-  version: 0.0.0-use.local
-  resolution: "@affine/changelog@workspace:tools/changelog"
-  dependencies:
-    "@napi-rs/simple-git": "npm:^1.0.0"
-    "@slack/web-api": "npm:^8.0.0"
-    "@types/node": "npm:^22.0.0"
-    changelogithub: "npm:^13.0.0"
-    jsx-slack: "npm:^6.1.2"
-    marked: "npm:^15.0.12"
-  languageName: unknown
-  linkType: soft
-
-"@affine/commitlint-config@workspace:tools/commitlint":
-  version: 0.0.0-use.local
-  resolution: "@affine/commitlint-config@workspace:tools/commitlint"
-  dependencies:
-    "@commitlint/cli": "npm:^19.8.1"
-    "@commitlint/config-conventional": "npm:^19.8.1"
-    commitlint: "npm:^19.6.0"
-  languageName: unknown
-  linkType: soft
-
-"@affine/component@workspace:*, @affine/component@workspace:packages/frontend/component":
-  version: 0.0.0-use.local
-  resolution: "@affine/component@workspace:packages/frontend/component"
-  dependencies:
-    "@affine-tools/utils": "workspace:*"
-    "@affine/debug": "workspace:*"
-    "@affine/error": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@atlaskit/pragmatic-drag-and-drop": "npm:^2.0.0"
-    "@atlaskit/pragmatic-drag-and-drop-hitbox": "npm:^2.0.0"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@emotion/react": "npm:^11.14.0"
-    "@emotion/styled": "npm:^11.14.0"
-    "@radix-ui/react-avatar": "npm:^1.1.11"
-    "@radix-ui/react-collapsible": "npm:^1.1.12"
-    "@radix-ui/react-context-menu": "npm:^2.2.16"
-    "@radix-ui/react-dialog": "npm:^1.1.15"
-    "@radix-ui/react-dropdown-menu": "npm:^2.1.16"
-    "@radix-ui/react-popover": "npm:^1.1.15"
-    "@radix-ui/react-progress": "npm:^1.1.8"
-    "@radix-ui/react-radio-group": "npm:^1.2.4"
-    "@radix-ui/react-scroll-area": "npm:^1.2.10"
-    "@radix-ui/react-slider": "npm:^1.2.4"
-    "@radix-ui/react-slot": "npm:^1.1.2"
-    "@radix-ui/react-tabs": "npm:^1.1.13"
-    "@radix-ui/react-toast": "npm:^1.2.15"
-    "@radix-ui/react-tooltip": "npm:^1.1.8"
-    "@radix-ui/react-visually-hidden": "npm:^1.1.3"
-    "@storybook/react": "npm:^10.2.14"
-    "@storybook/react-vite": "npm:^10.2.14"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/react": "npm:^16.1.0"
-    "@toeverything/theme": "npm:^1.1.23"
-    "@types/bytes": "npm:^3.1.5"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    "@vanilla-extract/css": "npm:^1.17.0"
-    "@vanilla-extract/dynamic": "npm:^2.1.2"
-    bytes: "npm:^3.1.2"
-    check-password-strength: "npm:^3.0.0"
-    clsx: "npm:^2.1.1"
-    dayjs: "npm:^1.11.13"
-    emojibase-data: "npm:^16.0.3"
-    foxact: "npm:^0.2.49"
-    jotai: "npm:^2.10.3"
-    lit: "npm:^3.2.1"
-    lodash-es: "npm:^4.17.23"
-    lottie-react: "npm:^2.4.0"
-    lottie-web: "npm:^5.12.2"
-    nanoid: "npm:^5.1.6"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-dom: "npm:19.2.1"
-    react-paginate: "npm:^8.3.0"
-    react-router-dom: "npm:^6.30.4"
-    react-transition-state: "npm:^2.2.0"
-    sonner: "npm:^2.0.7"
-    storybook: "npm:^10.2.14"
-    swr: "npm:^2.3.7"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    unplugin-swc: "npm:^1.5.9"
-    vite: "npm:^7.3.5"
-    vitest: "npm:^4.1.8"
-    zod: "npm:^3.25.76"
-  peerDependencies:
-    "@blocksuite/affine": "*"
-    "@swc/core": ^1.0.0
-    react: ^19.2.1
-    react-dom: ^19.2.1
-  languageName: unknown
-  linkType: soft
-
-"@affine/copilot-result@workspace:tools/copilot-result":
-  version: 0.0.0-use.local
-  resolution: "@affine/copilot-result@workspace:tools/copilot-result"
-  dependencies:
-    "@slack/web-api": "npm:^8.0.0"
-    "@types/node": "npm:^22.0.0"
-    jsx-slack: "npm:^6.1.2"
-    marked: "npm:^15.0.12"
-  languageName: unknown
-  linkType: soft
-
-"@affine/core@workspace:*, @affine/core@workspace:packages/frontend/core":
-  version: 0.0.0-use.local
-  resolution: "@affine/core@workspace:packages/frontend/core"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/debug": "workspace:*"
-    "@affine/electron-api": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/error": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/reader": "workspace:*"
-    "@affine/templates": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@atlaskit/pragmatic-drag-and-drop": "npm:^2.0.0"
-    "@blocksuite/affine": "workspace:*"
-    "@blocksuite/affine-block-root": "workspace:*"
-    "@blocksuite/affine-components": "workspace:*"
-    "@blocksuite/affine-ext-loader": "workspace:*"
-    "@blocksuite/affine-shared": "workspace:*"
-    "@blocksuite/data-view": "workspace:*"
-    "@blocksuite/global": "workspace:*"
-    "@blocksuite/icons": "npm:^2.2.17"
-    "@blocksuite/std": "workspace:*"
-    "@emotion/cache": "npm:^11.14.0"
-    "@emotion/css": "npm:^11.13.5"
-    "@floating-ui/dom": "npm:^1.6.13"
-    "@juggle/resize-observer": "npm:^3.4.0"
-    "@lottiefiles/dotlottie-wc": "npm:^0.9.4"
-    "@marsidev/react-turnstile": "npm:^1.1.0"
-    "@myriaddreamin/typst-ts-renderer": "npm:^0.7.0-rc2"
-    "@myriaddreamin/typst-ts-web-compiler": "npm:^0.7.0-rc2"
-    "@myriaddreamin/typst.ts": "npm:^0.7.0-rc2"
-    "@playwright/test": "npm:=1.58.2"
-    "@preact/signals-core": "npm:^1.8.0"
-    "@radix-ui/react-collapsible": "npm:^1.1.2"
-    "@radix-ui/react-dialog": "npm:^1.1.3"
-    "@radix-ui/react-popover": "npm:^1.1.3"
-    "@radix-ui/react-scroll-area": "npm:^1.2.2"
-    "@radix-ui/react-slot": "npm:^1.1.1"
-    "@radix-ui/react-toolbar": "npm:^1.1.1"
-    "@sentry/react": "npm:^10.53.1"
-    "@testing-library/dom": "npm:^10.4.0"
-    "@testing-library/react": "npm:^16.1.0"
-    "@toeverything/infra": "workspace:*"
-    "@toeverything/mermaid-wasm": "npm:^0.1.0"
-    "@toeverything/pdf-viewer": "npm:^0.1.1"
-    "@toeverything/theme": "npm:^1.1.23"
-    "@types/bytes": "npm:^3.1.5"
-    "@types/image-blob-reduce": "npm:^4.1.4"
-    "@types/lodash-es": "npm:^4.17.12"
-    "@types/semver": "npm:^7"
-    "@vanilla-extract/css": "npm:^1.17.0"
-    "@vanilla-extract/dynamic": "npm:^2.1.2"
-    animejs: "npm:^4.0.0"
-    bytes: "npm:^3.1.2"
-    clsx: "npm:^2.1.1"
-    cmdk: "npm:^1.0.4"
-    core-js: "npm:^3.39.0"
-    dayjs: "npm:^1.11.13"
-    dompurify: "npm:^3.4.11"
-    eventemitter2: "npm:^6.4.9"
-    fake-indexeddb: "npm:^6.0.0"
-    file-type: "npm:^21.0.0"
-    filesize: "npm:^10.1.6"
-    foxact: "npm:^0.2.49"
-    fuse.js: "npm:^7.0.0"
-    graphemer: "npm:^1.4.0"
-    graphql: "npm:^16.9.0"
-    happy-dom: "npm:^20.3.0"
-    history: "npm:^5.3.0"
-    idb: "npm:^8.0.0"
-    image-blob-reduce: "npm:^4.1.0"
-    is-svg: "npm:^6.1.0"
-    jotai: "npm:^2.10.3"
-    jotai-scope: "npm:^0.7.2"
-    katex: "npm:^0.16.27"
-    lit: "npm:^3.2.1"
-    lodash-es: "npm:^4.17.23"
-    lottie-react: "npm:^2.4.0"
-    mermaid: "npm:^11.15.0"
-    mp4-muxer: "npm:^5.2.2"
-    nanoid: "npm:^5.1.6"
-    next-themes: "npm:^0.4.4"
-    query-string: "npm:^9.1.1"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-error-boundary: "npm:^6.0.0"
-    react-router-dom: "npm:^6.30.4"
-    react-transition-state: "npm:^2.2.0"
-    react-virtuoso: "npm:^4.12.3"
-    recharts: "npm:^2.15.4"
-    rxjs: "npm:^7.8.2"
-    semver: "npm:^7.7.3"
-    shiki: "npm:^3.19.0"
-    socket.io-client: "npm:^4.8.3"
-    swr: "npm:^2.3.7"
-    tinykeys: "patch:tinykeys@npm%3A2.1.0#~/.yarn/patches/tinykeys-npm-2.1.0-819feeaed0.patch"
-    vite: "npm:^7.3.5"
-    vitest: "npm:^4.1.8"
-    y-protocols: "npm:^1.0.6"
-    yjs: "npm:^13.6.27"
-    zod: "npm:^3.25.76"
-  languageName: unknown
-  linkType: soft
-
-"@affine/debug@workspace:*, @affine/debug@workspace:packages/common/debug":
-  version: 0.0.0-use.local
-  resolution: "@affine/debug@workspace:packages/common/debug"
-  dependencies:
-    "@types/debug": "npm:^4.1.12"
-    debug: "npm:^4.4.0"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/doc-diff@workspace:tools/doc-diff":
-  version: 0.0.0-use.local
-  resolution: "@affine/doc-diff@workspace:tools/doc-diff"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@types/node": "npm:^22.0.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    yjs: "npm:^13.6.27"
-  languageName: unknown
-  linkType: soft
-
-"@affine/docs@workspace:docs/reference":
-  version: 0.0.0-use.local
-  resolution: "@affine/docs@workspace:docs/reference"
-  dependencies:
-    nodemon: "npm:^3.1.14"
-    serve: "npm:^14.2.6"
-    typedoc: "npm:^0.28.18"
-  languageName: unknown
-  linkType: soft
-
-"@affine/electron-api@workspace:*, @affine/electron-api@workspace:packages/frontend/electron-api":
-  version: 0.0.0-use.local
-  resolution: "@affine/electron-api@workspace:packages/frontend/electron-api"
-  dependencies:
-    "@affine/electron": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@affine/electron-renderer@workspace:packages/frontend/apps/electron-renderer":
-  version: 0.0.0-use.local
-  resolution: "@affine/electron-renderer@workspace:packages/frontend/apps/electron-renderer"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/debug": "workspace:*"
-    "@affine/electron-api": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@emotion/react": "npm:^11.14.0"
-    "@toeverything/infra": "workspace:*"
-    "@toeverything/theme": "npm:^1.1.23"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    "@vanilla-extract/css": "npm:^1.17.0"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    uuid: "npm:^14.0.0"
-  languageName: unknown
-  linkType: soft
-
-"@affine/electron@workspace:*, @affine/electron@workspace:packages/frontend/apps/electron":
-  version: 0.0.0-use.local
-  resolution: "@affine/electron@workspace:packages/frontend/apps/electron"
-  dependencies:
-    "@affine-tools/utils": "workspace:*"
-    "@affine/auth": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@affine/native": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@electron-forge/cli": "npm:^7.11.1"
-    "@electron-forge/core": "npm:^7.11.1"
-    "@electron-forge/maker-deb": "npm:^7.11.1"
-    "@electron-forge/maker-dmg": "npm:^7.11.1"
-    "@electron-forge/maker-flatpak": "npm:^7.11.1"
-    "@electron-forge/maker-squirrel": "npm:^7.11.1"
-    "@electron-forge/maker-zip": "npm:^7.11.1"
-    "@electron-forge/plugin-auto-unpack-natives": "npm:^7.11.1"
-    "@electron-forge/plugin-fuses": "npm:^7.11.1"
-    "@electron-forge/shared-types": "npm:^7.11.1"
-    "@reforged/maker-appimage": "npm:^5.2.0"
-    "@sentry/electron": "npm:^7.13.0"
-    "@sentry/esbuild-plugin": "npm:^5.3.0"
-    "@toeverything/infra": "workspace:*"
-    "@types/set-cookie-parser": "npm:^2.4.10"
-    app-builder-lib: "npm:^26.15.0"
-    async-call-rpc: "npm:^6.4.2"
-    builder-util-runtime: "npm:^9.7.0"
-    cross-env: "npm:^10.1.0"
-    debug: "npm:^4.4.0"
-    electron: "npm:^39.0.0"
-    electron-log: "npm:^5.4.3"
-    electron-squirrel-startup: "npm:1.0.1"
-    electron-updater: "npm:^6.8.9"
-    electron-window-state: "npm:^5.0.3"
-    esbuild: "npm:^0.28.0"
-    fs-extra: "npm:^11.2.0"
-    glob: "npm:^11.0.0"
-    link-preview-js: "npm:^4.0.0"
-    lodash-es: "npm:^4.17.23"
-    msw: "npm:^2.13.2"
-    nanoid: "npm:^5.1.6"
-    rxjs: "npm:^7.8.2"
-    semver: "npm:^7.7.3"
-    set-cookie-parser: "npm:^2.7.1"
-    tree-kill: "npm:^1.2.2"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    uuid: "npm:^14.0.0"
-    vitest: "npm:^4.1.8"
-    yjs: "npm:^13.6.27"
-    zod: "npm:^3.25.76"
-  languageName: unknown
-  linkType: soft
-
-"@affine/env@workspace:*, @affine/env@workspace:packages/common/env":
-  version: 0.0.0-use.local
-  resolution: "@affine/env@workspace:packages/common/env"
-  dependencies:
-    vitest: "npm:^4.1.8"
-    zod: "npm:^3.25.76"
-  peerDependencies:
-    "@affine/templates": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@affine/error@workspace:*, @affine/error@workspace:packages/common/error":
-  version: 0.0.0-use.local
-  resolution: "@affine/error@workspace:packages/common/error"
-  dependencies:
-    vitest: "npm:^4.1.8"
-  peerDependencies:
-    "@affine/graphql": "workspace:*"
-    graphql: ^16.9.0
-  languageName: unknown
-  linkType: soft
-
-"@affine/graphql@workspace:*, @affine/graphql@workspace:packages/common/graphql":
-  version: 0.0.0-use.local
-  resolution: "@affine/graphql@workspace:packages/common/graphql"
-  dependencies:
-    "@affine/debug": "workspace:*"
-    "@affine/error": "workspace:*"
-    "@graphql-codegen/cli": "npm:^6.2.1"
-    "@graphql-codegen/typescript": "npm:^5.0.9"
-    "@graphql-codegen/typescript-operations": "npm:^5.0.9"
-    "@types/lodash-es": "npm:^4.17.12"
-    graphql: "npm:^16.9.0"
-    lodash: "npm:^4.18.1"
-    lodash-es: "npm:^4.17.23"
-    oxfmt: "npm:0.63.0"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/i18n@workspace:*, @affine/i18n@workspace:packages/frontend/i18n":
-  version: 0.0.0-use.local
-  resolution: "@affine/i18n@workspace:packages/frontend/i18n"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@affine-tools/utils": "workspace:*"
-    "@affine/debug": "workspace:*"
-    "@magic-works/i18n-codegen": "npm:^0.6.1"
-    dayjs: "npm:^1.11.13"
-    glob: "npm:^11.0.0"
-    i18next: "npm:^25.0.0"
-    react: "npm:^19.2.1"
-    react-i18next: "npm:^15.2.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/ios@workspace:packages/frontend/apps/ios":
-  version: 0.0.0-use.local
-  resolution: "@affine/ios@workspace:packages/frontend/apps/ios"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@affine-tools/utils": "workspace:*"
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/i18n": "workspace:*"
-    "@affine/mobile-shared": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@capacitor/app": "npm:^8.0.0"
-    "@capacitor/browser": "npm:^8.0.0"
-    "@capacitor/cli": "npm:^8.4.2"
-    "@capacitor/core": "npm:^8.4.2"
-    "@capacitor/haptics": "npm:^8.0.0"
-    "@capacitor/ios": "npm:^8.4.2"
-    "@capacitor/keyboard": "npm:^8.0.0"
-    "@toeverything/infra": "workspace:^"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    async-call-rpc: "npm:^6.4.2"
-    capacitor-plugin-app-tracking-transparency: "npm:^3.0.0"
-    idb: "npm:^8.0.0"
-    next-themes: "npm:^0.4.4"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine/mobile-shared@workspace:*, @affine/mobile-shared@workspace:packages/frontend/apps/mobile-shared":
-  version: 0.0.0-use.local
-  resolution: "@affine/mobile-shared@workspace:packages/frontend/apps/mobile-shared"
-  dependencies:
-    "@affine/core": "workspace:*"
-    "@capacitor/core": "npm:^8.4.2"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/mobile@workspace:packages/frontend/apps/mobile":
-  version: 0.0.0-use.local
-  resolution: "@affine/mobile@workspace:packages/frontend/apps/mobile"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@toeverything/infra": "workspace:*"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@nexio/monorepo@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@nexio/monorepo@workspace:."
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@capacitor/cli": "npm:^8.4.2"
-    "@faker-js/faker": "npm:^10.1.0"
-    "@istanbuljs/schema": "npm:^0.1.3"
-    "@playwright/test": "npm:=1.58.2"
-    "@taplo/cli": "npm:^0.7.0"
-    "@toeverything/infra": "workspace:*"
-    "@types/node": "npm:^22.0.0"
-    "@typescript/native": "npm:typescript@7.0.2"
-    "@vanilla-extract/vite-plugin": "npm:^5.0.0"
-    "@vitest/browser": "npm:^4.1.10"
-    "@vitest/coverage-istanbul": "npm:^4.1.10"
-    "@vitest/ui": "npm:^4.1.10"
-    electron: "npm:^39.0.0"
-    eslint: "npm:9.39.2"
-    eslint-plugin-import-x: "npm:^4.16.1"
-    eslint-plugin-lit: "npm:^2.2.1"
-    eslint-plugin-react: "npm:^7.37.5"
-    eslint-plugin-react-hooks: "npm:^7.0.1"
-    eslint-plugin-simple-import-sort: "npm:^12.1.1"
-    eslint-plugin-sonarjs: "npm:^4.0.2"
-    happy-dom: "npm:^20.0.0"
-    husky: "npm:^9.1.7"
-    lint-staged: "npm:^16.0.0"
-    msw: "npm:^2.13.2"
-    oxfmt: "npm:0.63.0"
-    oxlint: "npm:1.78.0"
-    oxlint-tsgolint: "npm:7.0.2001"
-    semver: "npm:^7.7.3"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    unplugin-swc: "npm:^1.5.9"
-    vite: "npm:^7.3.5"
-    vitest: "npm:^4.1.10"
-  dependenciesMeta:
-    "@apollo/protobufjs":
-      built: false
-    "@prisma/client":
-      built: true
-    "@prisma/engines":
-      built: true
-    "@scarf/scarf":
-      built: false
-    "@sentry/cli":
-      built: true
-    "@swc/core":
-      built: false
-    core-js:
-      built: false
-    electron:
-      built: true
-    electron-winstaller:
-      built: true
-    esbuild:
-      built: true
-    msgpackr-extract:
-      built: false
-    msw:
-      built: false
-    prisma:
-      built: false
-    protobufjs:
-      built: false
-    unrs-resolver:
-      built: false
-  languageName: unknown
-  linkType: soft
-
-"@affine/native@workspace:*, @affine/native@workspace:packages/frontend/native":
-  version: 0.0.0-use.local
-  resolution: "@affine/native@workspace:packages/frontend/native"
-  dependencies:
-    "@napi-rs/cli": "npm:3.5.0"
-    "@napi-rs/whisper": "npm:^0.0.4"
-    "@types/node": "npm:^22.0.0"
-    ava: "npm:^7.0.0"
-    rxjs: "npm:^7.8.2"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine/nbstore@workspace:*, @affine/nbstore@workspace:packages/common/nbstore":
-  version: 0.0.0-use.local
-  resolution: "@affine/nbstore@workspace:packages/common/nbstore"
-  dependencies:
-    "@affine/error": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/reader": "workspace:*"
-    "@affine/realtime": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    "@toeverything/infra": "workspace:*"
-    eventemitter2: "npm:^6.4.9"
-    fake-indexeddb: "npm:^6.0.0"
-    graphemer: "npm:^1.4.0"
-    idb: "npm:^8.0.0"
-    lodash-es: "npm:^4.17.23"
-    nanoid: "npm:^5.1.6"
-    rxjs: "npm:^7.8.2"
-    socket.io-client: "npm:^4.8.3"
-    uuid: "npm:^14.0.0"
-    vitest: "npm:^4.1.8"
-    y-protocols: "npm:^1.0.6"
-    yjs: "npm:^13.6.27"
-  peerDependencies:
-    "@affine/error": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/realtime": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-    idb: ^8.0.0
-    socket.io-client: ^4.8.3
-  languageName: unknown
-  linkType: soft
-
-"@affine/playstore-auto-bump@workspace:tools/playstore-auto-bump":
-  version: 0.0.0-use.local
-  resolution: "@affine/playstore-auto-bump@workspace:tools/playstore-auto-bump"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@affine-tools/utils": "workspace:*"
-    "@googleapis/androidpublisher": "npm:^36.0.0"
-    "@types/node": "npm:^22.0.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@affine/reader@workspace:*, @affine/reader@workspace:packages/common/reader":
-  version: 0.0.0-use.local
-  resolution: "@affine/reader@workspace:packages/common/reader"
-  dependencies:
-    "@blocksuite/affine": "workspace:*"
-    lodash-es: "npm:^4.17.23"
-    vitest: "npm:^4.1.8"
-    yjs: "npm:^13.6.27"
-  peerDependencies:
-    "@blocksuite/affine": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@affine/realtime@workspace:*, @affine/realtime@workspace:packages/common/realtime":
-  version: 0.0.0-use.local
-  resolution: "@affine/realtime@workspace:packages/common/realtime"
-  dependencies:
-    "@affine/graphql": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@affine/revert-update@workspace:tools/revert-update":
-  version: 0.0.0-use.local
-  resolution: "@affine/revert-update@workspace:tools/revert-update"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@types/node": "npm:^22.0.0"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    yjs: "npm:^13.6.27"
-  languageName: unknown
-  linkType: soft
-
-"@affine/routes@workspace:*, @affine/routes@workspace:packages/frontend/routes":
-  version: 0.0.0-use.local
-  resolution: "@affine/routes@workspace:packages/frontend/routes"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@affine-tools/utils": "workspace:*"
-    path-to-regexp: "npm:^8.4.2"
-    vitest: "npm:^4.1.8"
-  peerDependencies:
-    react: ^19.2.1
-  languageName: unknown
-  linkType: soft
-
-"@affine/s3-compat@workspace:*, @affine/s3-compat@workspace:packages/common/s3-compat":
-  version: 0.0.0-use.local
-  resolution: "@affine/s3-compat@workspace:packages/common/s3-compat"
-  dependencies:
-    "@types/aws4": "npm:^1.11.6"
-    aws4: "npm:^1.13.2"
-    fast-xml-parser: "npm:^5.8.0"
-    s3mini: "npm:^0.9.1"
-  languageName: unknown
-  linkType: soft
-
-"@affine/server-native@workspace:*, @affine/server-native@workspace:packages/backend/native":
-  version: 0.0.0-use.local
-  resolution: "@affine/server-native@workspace:packages/backend/native"
-  dependencies:
-    "@napi-rs/cli": "npm:3.5.0"
-    tiktoken: "npm:^1.0.17"
-  languageName: unknown
-  linkType: soft
-
-"@affine/server@workspace:packages/backend/server":
-  version: 0.0.0-use.local
-  resolution: "@affine/server@workspace:packages/backend/server"
-  dependencies:
-    "@affine-tools/cli": "workspace:*"
-    "@affine-tools/utils": "workspace:*"
-    "@affine/graphql": "workspace:*"
-    "@affine/realtime": "workspace:*"
-    "@affine/s3-compat": "workspace:*"
-    "@affine/server-native": "workspace:*"
-    "@apollo/server": "npm:^5.5.1"
-    "@as-integrations/express5": "npm:^1.1.2"
-    "@faker-js/faker": "npm:^10.1.0"
-    "@google-cloud/opentelemetry-cloud-trace-exporter": "npm:^3.0.0"
-    "@google-cloud/opentelemetry-resource-util": "npm:^3.0.0"
-    "@inquirer/prompts": "npm:^8.0.0"
-    "@nestjs-cls/transactional": "npm:^3.2.0"
-    "@nestjs-cls/transactional-adapter-prisma": "npm:^1.3.4"
-    "@nestjs/apollo": "npm:^13.2.4"
-    "@nestjs/common": "npm:^11.1.18"
-    "@nestjs/core": "npm:^11.1.18"
-    "@nestjs/graphql": "npm:^13.2.5"
-    "@nestjs/platform-express": "npm:^11.1.18"
-    "@nestjs/platform-socket.io": "npm:^11.1.18"
-    "@nestjs/schedule": "npm:^6.1.1"
-    "@nestjs/swagger": "npm:^11.2.7"
-    "@nestjs/testing": "patch:@nestjs/testing@npm%3A11.1.18#~/.yarn/patches/@nestjs-testing-npm-11.1.18-32c0f6af12.patch"
-    "@nestjs/throttler": "npm:^6.5.0"
-    "@nestjs/websockets": "npm:^11.1.18"
-    "@node-rs/argon2": "npm:^2.0.2"
-    "@node-rs/crc32": "npm:^1.10.6"
-    "@opentelemetry/api": "npm:^1.9.0"
-    "@opentelemetry/core": "npm:^2.10.0"
-    "@opentelemetry/exporter-prometheus": "npm:^0.221.0"
-    "@opentelemetry/exporter-zipkin": "npm:^2.10.0"
-    "@opentelemetry/host-metrics": "npm:^0.39.0"
-    "@opentelemetry/instrumentation": "npm:^0.221.0"
-    "@opentelemetry/instrumentation-graphql": "npm:^0.69.0"
-    "@opentelemetry/instrumentation-http": "npm:^0.221.0"
-    "@opentelemetry/instrumentation-ioredis": "npm:^0.69.0"
-    "@opentelemetry/instrumentation-nestjs-core": "npm:^0.67.0"
-    "@opentelemetry/instrumentation-socket.io": "npm:^0.68.0"
-    "@opentelemetry/resources": "npm:^2.10.0"
-    "@opentelemetry/sdk-metrics": "npm:^2.10.0"
-    "@opentelemetry/sdk-node": "npm:^0.221.0"
-    "@opentelemetry/sdk-trace-base": "npm:^2.10.0"
-    "@opentelemetry/sdk-trace-node": "npm:^2.10.0"
-    "@opentelemetry/semantic-conventions": "npm:^1.41.1"
-    "@prisma/client": "npm:^6.6.0"
-    "@prisma/instrumentation": "npm:^6.7.0"
-    "@react-email/body": "npm:0.3.0"
-    "@react-email/button": "npm:0.2.1"
-    "@react-email/container": "npm:0.0.16"
-    "@react-email/head": "npm:0.0.13"
-    "@react-email/html": "npm:0.0.12"
-    "@react-email/img": "npm:0.0.12"
-    "@react-email/link": "npm:0.0.13"
-    "@react-email/render": "npm:1.4.0"
-    "@react-email/row": "npm:0.0.13"
-    "@react-email/section": "npm:0.0.17"
-    "@react-email/text": "npm:0.1.6"
-    "@socket.io/redis-adapter": "npm:^8.3.0"
-    "@types/cookie-parser": "npm:^1.4.8"
-    "@types/express": "npm:^5.0.1"
-    "@types/express-serve-static-core": "npm:^5.0.6"
-    "@types/graphql-upload": "npm:^17.0.0"
-    "@types/http-errors": "npm:^2.0.4"
-    "@types/jsonwebtoken": "npm:^9.0.9"
-    "@types/lodash-es": "npm:^4.17.12"
-    "@types/mustache": "npm:^4.2.5"
-    "@types/node": "npm:^22.0.0"
-    "@types/nodemailer": "npm:^8.0.0"
-    "@types/on-headers": "npm:^1.0.3"
-    "@types/react": "npm:^19.0.1"
-    "@types/semver": "npm:^7.7.1"
-    "@types/sinon": "npm:^21.0.0"
-    "@types/supertest": "npm:^7.0.0"
-    ava: "npm:^7.0.0"
-    c8: "npm:^10.1.3"
-    commander: "npm:^13.1.0"
-    cookie-parser: "npm:^1.4.7"
-    cross-env: "npm:^10.1.0"
-    dotenv: "npm:^16.4.7"
-    eventemitter2: "npm:^6.4.9"
-    exa-js: "npm:^2.4.0"
-    express: "npm:^5.0.1"
-    fast-xml-parser: "npm:^5.8.0"
-    get-stream: "npm:^9.0.1"
-    google-auth-library: "npm:^10.2.0"
-    graphql: "npm:^16.13.2"
-    graphql-scalars: "npm:^1.24.0"
-    graphql-upload: "npm:^17.0.0"
-    htmlrewriter: "npm:^0.0.12"
-    http-errors: "npm:^2.0.0"
-    ioredis: "npm:^5.11.1"
-    is-mobile: "npm:^5.0.0"
-    jose: "npm:^6.1.3"
-    jsonwebtoken: "npm:^9.0.3"
-    lodash-es: "npm:^4.17.23"
-    mustache: "npm:^4.2.0"
-    nanoid: "npm:^5.1.6"
-    nest-winston: "npm:^1.9.7"
-    nestjs-cls: "npm:^6.0.0"
-    nodemailer: "npm:^9.0.0"
-    nodemon: "npm:^3.1.14"
-    on-headers: "npm:^1.1.0"
-    piscina: "npm:^5.1.4"
-    prisma: "npm:^6.6.0"
-    react: "npm:^19.2.1"
-    react-dom: "npm:19.2.1"
-    react-email: "npm:^4.3.2"
-    reflect-metadata: "npm:^0.2.2"
-    rxjs: "npm:^7.8.2"
-    semver: "npm:^7.7.4"
-    sinon: "npm:^21.0.1"
-    socket.io: "npm:^4.8.3"
-    socket.io-client: "npm:^4.8.3"
-    supertest: "npm:^7.1.4"
-    tldts: "npm:^7.0.19"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-    winston: "npm:^3.17.0"
-    yjs: "npm:^13.6.27"
-    zod: "npm:^3.25.76"
-    zod-to-json-schema: "npm:^3.20.0"
-  languageName: unknown
-  linkType: soft
-
-"@affine/templates@workspace:*, @affine/templates@workspace:packages/frontend/templates":
-  version: 0.0.0-use.local
-  resolution: "@affine/templates@workspace:packages/frontend/templates"
-  dependencies:
-    jszip: "npm:^3.10.1"
-  languageName: unknown
-  linkType: soft
-
-"@affine/track@workspace:*, @affine/track@workspace:packages/frontend/track":
-  version: 0.0.0-use.local
-  resolution: "@affine/track@workspace:packages/frontend/track"
-  dependencies:
-    "@affine/debug": "workspace:*"
-    "@sentry/react": "npm:^10.53.1"
-    "@types/react": "npm:^19.0.1"
-    nanoid: "npm:^5.1.6"
-    react: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    vitest: "npm:^4.1.8"
-  languageName: unknown
-  linkType: soft
-
-"@affine/web@workspace:packages/frontend/apps/web":
-  version: 0.0.0-use.local
-  resolution: "@affine/web@workspace:packages/frontend/apps/web"
-  dependencies:
-    "@affine/component": "workspace:*"
-    "@affine/core": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/nbstore": "workspace:*"
-    "@affine/track": "workspace:*"
-    "@emotion/react": "npm:^11.14.0"
-    "@toeverything/infra": "workspace:*"
-    "@types/react": "npm:^19.0.1"
-    "@types/react-dom": "npm:^19.0.2"
-    react: "npm:^19.2.1"
-    react-dom: "npm:^19.2.1"
-    react-router-dom: "npm:^6.30.4"
-    typescript: "npm:@typescript/typescript6@6.0.2"
-  languageName: unknown
-  linkType: soft
-
 "@algolia/abtesting@npm:1.25.0":
   version: 1.25.0
   resolution: "@algolia/abtesting@npm:1.25.0"
@@ -9408,6 +8337,1078 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nexio-test/affine-cloud-copilot@workspace:tests/affine-cloud-copilot":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-cloud-copilot@workspace:tests/affine-cloud-copilot"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/affine-cloud@workspace:tests/affine-cloud":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-cloud@workspace:tests/affine-cloud"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/affine-desktop-cloud@workspace:tests/affine-desktop-cloud":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-desktop-cloud@workspace:tests/affine-desktop-cloud"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/affine-desktop@workspace:tests/affine-desktop":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-desktop@workspace:tests/affine-desktop"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@nexio/electron-api": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+    "@types/fs-extra": "npm:^11.0.4"
+    fs-extra: "npm:^11.2.0"
+    playwright: "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/affine-local@workspace:tests/affine-local":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-local@workspace:tests/affine-local"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/affine-mobile@workspace:tests/affine-mobile":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/affine-mobile@workspace:tests/affine-mobile"
+  dependencies:
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/blocksuite@workspace:tests/blocksuite":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/blocksuite@workspace:tests/blocksuite"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/integration-test": "workspace:*"
+    "@nexio-test/kit": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+    "@toeverything/theme": "npm:^1.1.23"
+    json-stable-stringify: "npm:^1.2.1"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-test/kit@workspace:*, @nexio-test/kit@workspace:tests/kit":
+  version: 0.0.0-use.local
+  resolution: "@nexio-test/kit@workspace:tests/kit"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    "@node-rs/argon2": "npm:^2.0.2"
+    "@playwright/test": "npm:=1.58.2"
+    "@toeverything/infra": "workspace:*"
+    express: "npm:^5.1.0"
+    http-proxy-middleware: "npm:^3.0.5"
+  peerDependencies:
+    "@playwright/test": "*"
+    express: "*"
+    http-proxy-middleware: "*"
+  languageName: unknown
+  linkType: soft
+
+"@nexio-tools/cli@workspace:*, @nexio-tools/cli@workspace:tools/cli":
+  version: 0.0.0-use.local
+  resolution: "@nexio-tools/cli@workspace:tools/cli"
+  dependencies:
+    "@napi-rs/simple-git": "npm:^1.0.0"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/s3-compat": "workspace:*"
+    "@rspack/core": "npm:^2.0.8"
+    "@rspack/dev-server": "npm:^2.1.0"
+    "@sentry/webpack-plugin": "npm:^5.3.0"
+    "@swc/core": "npm:^1.10.1"
+    "@tailwindcss/postcss": "npm:^4.3.0"
+    "@types/lodash-es": "npm:^4.17.12"
+    "@types/mime-types": "npm:^3.0.0"
+    "@types/node": "npm:^22.0.0"
+    "@vanilla-extract/webpack-plugin": "npm:^2.3.15"
+    autoprefixer: "npm:^10.4.20"
+    clipanion: "npm:^3.2.1"
+    css-loader: "npm:^7.1.4"
+    cssnano: "npm:^7.0.6"
+    inquirer: "npm:^12.3.0"
+    jsonc-parser: "npm:^3.3.1"
+    lodash-es: "npm:^4.17.23"
+    mime-types: "npm:^3.0.0"
+    oxfmt: "npm:0.63.0"
+    postcss: "npm:^8.5.18"
+    postcss-loader: "npm:^8.2.1"
+    postcss-selector-parser: "npm:^7.1.0"
+    source-map-loader: "npm:^5.0.0"
+    style-loader: "npm:^4.0.0"
+    swc-loader: "npm:^0.2.6"
+    tailwindcss: "npm:^4.1.17"
+    tsx: "npm:^4.21.0"
+    typanion: "npm:^3.14.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  bin:
+    affine: ./bin/cli.js
+    nexio: ./bin/cli.js
+    r: ./bin/runner.js
+  languageName: unknown
+  linkType: soft
+
+"@nexio-tools/utils@workspace:*, @nexio-tools/utils@workspace:tools/utils":
+  version: 0.0.0-use.local
+  resolution: "@nexio-tools/utils@workspace:tools/utils"
+  dependencies:
+    "@types/lodash-es": "npm:^4.17.12"
+    "@types/node": "npm:^22.0.0"
+    chalk: "npm:^5.3.0"
+    lodash-es: "npm:^4.17.23"
+    oxfmt: "npm:0.63.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/admin@workspace:packages/frontend/admin":
+  version: 0.0.0-use.local
+  resolution: "@nexio/admin@workspace:packages/frontend/admin"
+  dependencies:
+    "@blocksuite/icons": "npm:^2.2.17"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/routes": "workspace:*"
+    "@radix-ui/react-accordion": "npm:^1.2.2"
+    "@radix-ui/react-alert-dialog": "npm:^1.1.3"
+    "@radix-ui/react-aspect-ratio": "npm:^1.1.1"
+    "@radix-ui/react-avatar": "npm:^1.1.2"
+    "@radix-ui/react-checkbox": "npm:^1.1.3"
+    "@radix-ui/react-collapsible": "npm:^1.1.2"
+    "@radix-ui/react-context-menu": "npm:^2.2.3"
+    "@radix-ui/react-dialog": "npm:^1.1.3"
+    "@radix-ui/react-dropdown-menu": "npm:^2.1.3"
+    "@radix-ui/react-hover-card": "npm:^1.1.3"
+    "@radix-ui/react-label": "npm:^2.1.1"
+    "@radix-ui/react-menubar": "npm:^1.1.3"
+    "@radix-ui/react-navigation-menu": "npm:^1.2.2"
+    "@radix-ui/react-popover": "npm:^1.1.3"
+    "@radix-ui/react-progress": "npm:^1.1.1"
+    "@radix-ui/react-radio-group": "npm:^1.2.2"
+    "@radix-ui/react-scroll-area": "npm:^1.2.2"
+    "@radix-ui/react-select": "npm:^2.1.3"
+    "@radix-ui/react-separator": "npm:^1.1.1"
+    "@radix-ui/react-slider": "npm:^1.2.2"
+    "@radix-ui/react-slot": "npm:^1.1.1"
+    "@radix-ui/react-switch": "npm:^1.1.2"
+    "@radix-ui/react-tabs": "npm:^1.1.2"
+    "@radix-ui/react-toast": "npm:^1.2.3"
+    "@radix-ui/react-toggle": "npm:^1.1.1"
+    "@radix-ui/react-toggle-group": "npm:^1.1.1"
+    "@radix-ui/react-tooltip": "npm:^1.1.5"
+    "@sentry/react": "npm:^10.53.1"
+    "@tanstack/react-table": "npm:^8.20.5"
+    "@testing-library/react": "npm:^16.3.2"
+    "@toeverything/theme": "npm:^1.1.23"
+    "@types/lodash-es": "npm:^4.17.12"
+    class-variance-authority: "npm:^0.7.1"
+    clsx: "npm:^2.1.1"
+    cmdk: "npm:^1.0.4"
+    embla-carousel-react: "npm:^8.5.1"
+    input-otp: "npm:^1.4.1"
+    lodash-es: "npm:^4.17.23"
+    lucide-react: "npm:^0.508.0"
+    next-themes: "npm:^0.4.4"
+    react: "npm:^19.2.1"
+    react-day-picker: "npm:^9.4.3"
+    react-dom: "npm:^19.2.1"
+    react-hook-form: "npm:^7.54.1"
+    react-resizable-panels: "npm:^3.0.6"
+    react-router-dom: "npm:^7.18.2"
+    recharts: "npm:^2.15.4"
+    sonner: "npm:^2.0.7"
+    swr: "npm:^2.3.7"
+    tailwind-merge: "npm:^3.4.0"
+    tailwindcss: "npm:^4.1.17"
+    tailwindcss-animate: "npm:^1.0.7"
+    vaul: "npm:^1.1.2"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/android@workspace:packages/frontend/apps/android":
+  version: 0.0.0-use.local
+  resolution: "@nexio/android@workspace:packages/frontend/apps/android"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@capacitor/android": "npm:^8.4.2"
+    "@capacitor/app": "npm:^8.0.0"
+    "@capacitor/cli": "npm:^8.4.2"
+    "@capacitor/core": "npm:^8.4.2"
+    "@capacitor/keyboard": "npm:^8.0.0"
+    "@capacitor/status-bar": "npm:^8.0.0"
+    "@capgo/inappbrowser": "npm:^8.6.14"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@nexio/mobile-shared": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@toeverything/infra": "workspace:*"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    async-call-rpc: "npm:^6.4.2"
+    idb: "npm:^8.0.0"
+    next-themes: "npm:^0.4.4"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/auth@workspace:*, @nexio/auth@workspace:packages/common/auth":
+  version: 0.0.0-use.local
+  resolution: "@nexio/auth@workspace:packages/common/auth"
+  dependencies:
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/changelog@workspace:tools/changelog":
+  version: 0.0.0-use.local
+  resolution: "@nexio/changelog@workspace:tools/changelog"
+  dependencies:
+    "@napi-rs/simple-git": "npm:^1.0.0"
+    "@slack/web-api": "npm:^8.0.0"
+    "@types/node": "npm:^22.0.0"
+    changelogithub: "npm:^13.0.0"
+    jsx-slack: "npm:^6.1.2"
+    marked: "npm:^15.0.12"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/commitlint-config@workspace:tools/commitlint":
+  version: 0.0.0-use.local
+  resolution: "@nexio/commitlint-config@workspace:tools/commitlint"
+  dependencies:
+    "@commitlint/cli": "npm:^19.8.1"
+    "@commitlint/config-conventional": "npm:^19.8.1"
+    commitlint: "npm:^19.6.0"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/component@workspace:*, @nexio/component@workspace:packages/frontend/component":
+  version: 0.0.0-use.local
+  resolution: "@nexio/component@workspace:packages/frontend/component"
+  dependencies:
+    "@atlaskit/pragmatic-drag-and-drop": "npm:^2.0.0"
+    "@atlaskit/pragmatic-drag-and-drop-hitbox": "npm:^2.0.0"
+    "@blocksuite/icons": "npm:^2.2.17"
+    "@emotion/react": "npm:^11.14.0"
+    "@emotion/styled": "npm:^11.14.0"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/debug": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@radix-ui/react-avatar": "npm:^1.1.11"
+    "@radix-ui/react-collapsible": "npm:^1.1.12"
+    "@radix-ui/react-context-menu": "npm:^2.2.16"
+    "@radix-ui/react-dialog": "npm:^1.1.15"
+    "@radix-ui/react-dropdown-menu": "npm:^2.1.16"
+    "@radix-ui/react-popover": "npm:^1.1.15"
+    "@radix-ui/react-progress": "npm:^1.1.8"
+    "@radix-ui/react-radio-group": "npm:^1.2.4"
+    "@radix-ui/react-scroll-area": "npm:^1.2.10"
+    "@radix-ui/react-slider": "npm:^1.2.4"
+    "@radix-ui/react-slot": "npm:^1.1.2"
+    "@radix-ui/react-tabs": "npm:^1.1.13"
+    "@radix-ui/react-toast": "npm:^1.2.15"
+    "@radix-ui/react-tooltip": "npm:^1.1.8"
+    "@radix-ui/react-visually-hidden": "npm:^1.1.3"
+    "@storybook/react": "npm:^10.2.14"
+    "@storybook/react-vite": "npm:^10.2.14"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@toeverything/theme": "npm:^1.1.23"
+    "@types/bytes": "npm:^3.1.5"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    "@vanilla-extract/css": "npm:^1.17.0"
+    "@vanilla-extract/dynamic": "npm:^2.1.2"
+    bytes: "npm:^3.1.2"
+    check-password-strength: "npm:^3.0.0"
+    clsx: "npm:^2.1.1"
+    dayjs: "npm:^1.11.13"
+    emojibase-data: "npm:^16.0.3"
+    foxact: "npm:^0.2.49"
+    jotai: "npm:^2.10.3"
+    lit: "npm:^3.2.1"
+    lodash-es: "npm:^4.17.23"
+    lottie-react: "npm:^2.4.0"
+    lottie-web: "npm:^5.12.2"
+    nanoid: "npm:^5.1.6"
+    next-themes: "npm:^0.4.4"
+    react: "npm:^19.2.1"
+    react-dom: "npm:19.2.1"
+    react-paginate: "npm:^8.3.0"
+    react-router-dom: "npm:^6.30.4"
+    react-transition-state: "npm:^2.2.0"
+    sonner: "npm:^2.0.7"
+    storybook: "npm:^10.2.14"
+    swr: "npm:^2.3.7"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    unplugin-swc: "npm:^1.5.9"
+    vite: "npm:^7.3.5"
+    vitest: "npm:^4.1.8"
+    zod: "npm:^3.25.76"
+  peerDependencies:
+    "@blocksuite/affine": "*"
+    "@swc/core": ^1.0.0
+    react: ^19.2.1
+    react-dom: ^19.2.1
+  languageName: unknown
+  linkType: soft
+
+"@nexio/copilot-result@workspace:tools/copilot-result":
+  version: 0.0.0-use.local
+  resolution: "@nexio/copilot-result@workspace:tools/copilot-result"
+  dependencies:
+    "@slack/web-api": "npm:^8.0.0"
+    "@types/node": "npm:^22.0.0"
+    jsx-slack: "npm:^6.1.2"
+    marked: "npm:^15.0.12"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/core@workspace:*, @nexio/core@workspace:packages/frontend/core":
+  version: 0.0.0-use.local
+  resolution: "@nexio/core@workspace:packages/frontend/core"
+  dependencies:
+    "@atlaskit/pragmatic-drag-and-drop": "npm:^2.0.0"
+    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/affine-block-root": "workspace:*"
+    "@blocksuite/affine-components": "workspace:*"
+    "@blocksuite/affine-ext-loader": "workspace:*"
+    "@blocksuite/affine-shared": "workspace:*"
+    "@blocksuite/data-view": "workspace:*"
+    "@blocksuite/global": "workspace:*"
+    "@blocksuite/icons": "npm:^2.2.17"
+    "@blocksuite/std": "workspace:*"
+    "@emotion/cache": "npm:^11.14.0"
+    "@emotion/css": "npm:^11.13.5"
+    "@floating-ui/dom": "npm:^1.6.13"
+    "@juggle/resize-observer": "npm:^3.4.0"
+    "@lottiefiles/dotlottie-wc": "npm:^0.9.4"
+    "@marsidev/react-turnstile": "npm:^1.1.0"
+    "@myriaddreamin/typst-ts-renderer": "npm:^0.7.0-rc2"
+    "@myriaddreamin/typst-ts-web-compiler": "npm:^0.7.0-rc2"
+    "@myriaddreamin/typst.ts": "npm:^0.7.0-rc2"
+    "@nexio/component": "workspace:*"
+    "@nexio/debug": "workspace:*"
+    "@nexio/electron-api": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/reader": "workspace:*"
+    "@nexio/templates": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+    "@preact/signals-core": "npm:^1.8.0"
+    "@radix-ui/react-collapsible": "npm:^1.1.2"
+    "@radix-ui/react-dialog": "npm:^1.1.3"
+    "@radix-ui/react-popover": "npm:^1.1.3"
+    "@radix-ui/react-scroll-area": "npm:^1.2.2"
+    "@radix-ui/react-slot": "npm:^1.1.1"
+    "@radix-ui/react-toolbar": "npm:^1.1.1"
+    "@sentry/react": "npm:^10.53.1"
+    "@testing-library/dom": "npm:^10.4.0"
+    "@testing-library/react": "npm:^16.1.0"
+    "@toeverything/infra": "workspace:*"
+    "@toeverything/mermaid-wasm": "npm:^0.1.0"
+    "@toeverything/pdf-viewer": "npm:^0.1.1"
+    "@toeverything/theme": "npm:^1.1.23"
+    "@types/bytes": "npm:^3.1.5"
+    "@types/image-blob-reduce": "npm:^4.1.4"
+    "@types/lodash-es": "npm:^4.17.12"
+    "@types/semver": "npm:^7"
+    "@vanilla-extract/css": "npm:^1.17.0"
+    "@vanilla-extract/dynamic": "npm:^2.1.2"
+    animejs: "npm:^4.0.0"
+    bytes: "npm:^3.1.2"
+    clsx: "npm:^2.1.1"
+    cmdk: "npm:^1.0.4"
+    core-js: "npm:^3.39.0"
+    dayjs: "npm:^1.11.13"
+    dompurify: "npm:^3.4.11"
+    eventemitter2: "npm:^6.4.9"
+    fake-indexeddb: "npm:^6.0.0"
+    file-type: "npm:^21.0.0"
+    filesize: "npm:^10.1.6"
+    foxact: "npm:^0.2.49"
+    fuse.js: "npm:^7.0.0"
+    graphemer: "npm:^1.4.0"
+    graphql: "npm:^16.9.0"
+    happy-dom: "npm:^20.3.0"
+    history: "npm:^5.3.0"
+    idb: "npm:^8.0.0"
+    image-blob-reduce: "npm:^4.1.0"
+    is-svg: "npm:^6.1.0"
+    jotai: "npm:^2.10.3"
+    jotai-scope: "npm:^0.7.2"
+    katex: "npm:^0.16.27"
+    lit: "npm:^3.2.1"
+    lodash-es: "npm:^4.17.23"
+    lottie-react: "npm:^2.4.0"
+    mermaid: "npm:^11.15.0"
+    mp4-muxer: "npm:^5.2.2"
+    nanoid: "npm:^5.1.6"
+    next-themes: "npm:^0.4.4"
+    query-string: "npm:^9.1.1"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-error-boundary: "npm:^6.0.0"
+    react-router-dom: "npm:^6.30.4"
+    react-transition-state: "npm:^2.2.0"
+    react-virtuoso: "npm:^4.12.3"
+    recharts: "npm:^2.15.4"
+    rxjs: "npm:^7.8.2"
+    semver: "npm:^7.7.3"
+    shiki: "npm:^3.19.0"
+    socket.io-client: "npm:^4.8.3"
+    swr: "npm:^2.3.7"
+    tinykeys: "patch:tinykeys@npm%3A2.1.0#~/.yarn/patches/tinykeys-npm-2.1.0-819feeaed0.patch"
+    vite: "npm:^7.3.5"
+    vitest: "npm:^4.1.8"
+    y-protocols: "npm:^1.0.6"
+    yjs: "npm:^13.6.27"
+    zod: "npm:^3.25.76"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/debug@workspace:*, @nexio/debug@workspace:packages/common/debug":
+  version: 0.0.0-use.local
+  resolution: "@nexio/debug@workspace:packages/common/debug"
+  dependencies:
+    "@types/debug": "npm:^4.1.12"
+    debug: "npm:^4.4.0"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/doc-diff@workspace:tools/doc-diff":
+  version: 0.0.0-use.local
+  resolution: "@nexio/doc-diff@workspace:tools/doc-diff"
+  dependencies:
+    "@nexio-tools/cli": "workspace:*"
+    "@types/node": "npm:^22.0.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    yjs: "npm:^13.6.27"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/docs@workspace:docs/reference":
+  version: 0.0.0-use.local
+  resolution: "@nexio/docs@workspace:docs/reference"
+  dependencies:
+    nodemon: "npm:^3.1.14"
+    serve: "npm:^14.2.6"
+    typedoc: "npm:^0.28.18"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/electron-api@workspace:*, @nexio/electron-api@workspace:packages/frontend/electron-api":
+  version: 0.0.0-use.local
+  resolution: "@nexio/electron-api@workspace:packages/frontend/electron-api"
+  dependencies:
+    "@nexio/electron": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/electron-renderer@workspace:packages/frontend/apps/electron-renderer":
+  version: 0.0.0-use.local
+  resolution: "@nexio/electron-renderer@workspace:packages/frontend/apps/electron-renderer"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@emotion/react": "npm:^11.14.0"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/debug": "workspace:*"
+    "@nexio/electron-api": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@toeverything/infra": "workspace:*"
+    "@toeverything/theme": "npm:^1.1.23"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    "@vanilla-extract/css": "npm:^1.17.0"
+    next-themes: "npm:^0.4.4"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    uuid: "npm:^14.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/electron@workspace:*, @nexio/electron@workspace:packages/frontend/apps/electron":
+  version: 0.0.0-use.local
+  resolution: "@nexio/electron@workspace:packages/frontend/apps/electron"
+  dependencies:
+    "@electron-forge/cli": "npm:^7.11.1"
+    "@electron-forge/core": "npm:^7.11.1"
+    "@electron-forge/maker-deb": "npm:^7.11.1"
+    "@electron-forge/maker-dmg": "npm:^7.11.1"
+    "@electron-forge/maker-flatpak": "npm:^7.11.1"
+    "@electron-forge/maker-squirrel": "npm:^7.11.1"
+    "@electron-forge/maker-zip": "npm:^7.11.1"
+    "@electron-forge/plugin-auto-unpack-natives": "npm:^7.11.1"
+    "@electron-forge/plugin-fuses": "npm:^7.11.1"
+    "@electron-forge/shared-types": "npm:^7.11.1"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/auth": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@nexio/native": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@reforged/maker-appimage": "npm:^5.2.0"
+    "@sentry/electron": "npm:^7.13.0"
+    "@sentry/esbuild-plugin": "npm:^5.3.0"
+    "@toeverything/infra": "workspace:*"
+    "@types/set-cookie-parser": "npm:^2.4.10"
+    app-builder-lib: "npm:^26.15.0"
+    async-call-rpc: "npm:^6.4.2"
+    builder-util-runtime: "npm:^9.7.0"
+    cross-env: "npm:^10.1.0"
+    debug: "npm:^4.4.0"
+    electron: "npm:^39.0.0"
+    electron-log: "npm:^5.4.3"
+    electron-squirrel-startup: "npm:1.0.1"
+    electron-updater: "npm:^6.8.9"
+    electron-window-state: "npm:^5.0.3"
+    esbuild: "npm:^0.28.0"
+    fs-extra: "npm:^11.2.0"
+    glob: "npm:^11.0.0"
+    link-preview-js: "npm:^4.0.0"
+    lodash-es: "npm:^4.17.23"
+    msw: "npm:^2.13.2"
+    nanoid: "npm:^5.1.6"
+    rxjs: "npm:^7.8.2"
+    semver: "npm:^7.7.3"
+    set-cookie-parser: "npm:^2.7.1"
+    tree-kill: "npm:^1.2.2"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    uuid: "npm:^14.0.0"
+    vitest: "npm:^4.1.8"
+    yjs: "npm:^13.6.27"
+    zod: "npm:^3.25.76"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/env@workspace:*, @nexio/env@workspace:packages/common/env":
+  version: 0.0.0-use.local
+  resolution: "@nexio/env@workspace:packages/common/env"
+  dependencies:
+    vitest: "npm:^4.1.8"
+    zod: "npm:^3.25.76"
+  peerDependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio/templates": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/error@workspace:*, @nexio/error@workspace:packages/common/error":
+  version: 0.0.0-use.local
+  resolution: "@nexio/error@workspace:packages/common/error"
+  dependencies:
+    vitest: "npm:^4.1.8"
+  peerDependencies:
+    "@nexio/graphql": "workspace:*"
+    graphql: ^16.9.0
+  languageName: unknown
+  linkType: soft
+
+"@nexio/graphql@workspace:*, @nexio/graphql@workspace:packages/common/graphql":
+  version: 0.0.0-use.local
+  resolution: "@nexio/graphql@workspace:packages/common/graphql"
+  dependencies:
+    "@graphql-codegen/cli": "npm:^6.2.1"
+    "@graphql-codegen/typescript": "npm:^5.0.9"
+    "@graphql-codegen/typescript-operations": "npm:^5.0.9"
+    "@nexio/debug": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@types/lodash-es": "npm:^4.17.12"
+    graphql: "npm:^16.9.0"
+    lodash: "npm:^4.18.1"
+    lodash-es: "npm:^4.17.23"
+    oxfmt: "npm:0.63.0"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/i18n@workspace:*, @nexio/i18n@workspace:packages/frontend/i18n":
+  version: 0.0.0-use.local
+  resolution: "@nexio/i18n@workspace:packages/frontend/i18n"
+  dependencies:
+    "@magic-works/i18n-codegen": "npm:^0.6.1"
+    "@nexio-tools/cli": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/debug": "workspace:*"
+    dayjs: "npm:^1.11.13"
+    glob: "npm:^11.0.0"
+    i18next: "npm:^25.0.0"
+    react: "npm:^19.2.1"
+    react-i18next: "npm:^15.2.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/ios@workspace:packages/frontend/apps/ios":
+  version: 0.0.0-use.local
+  resolution: "@nexio/ios@workspace:packages/frontend/apps/ios"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@capacitor/app": "npm:^8.0.0"
+    "@capacitor/browser": "npm:^8.0.0"
+    "@capacitor/cli": "npm:^8.4.2"
+    "@capacitor/core": "npm:^8.4.2"
+    "@capacitor/haptics": "npm:^8.0.0"
+    "@capacitor/ios": "npm:^8.4.2"
+    "@capacitor/keyboard": "npm:^8.0.0"
+    "@nexio-tools/cli": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/i18n": "workspace:*"
+    "@nexio/mobile-shared": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@toeverything/infra": "workspace:^"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    async-call-rpc: "npm:^6.4.2"
+    capacitor-plugin-app-tracking-transparency: "npm:^3.0.0"
+    idb: "npm:^8.0.0"
+    next-themes: "npm:^0.4.4"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/mobile-shared@workspace:*, @nexio/mobile-shared@workspace:packages/frontend/apps/mobile-shared":
+  version: 0.0.0-use.local
+  resolution: "@nexio/mobile-shared@workspace:packages/frontend/apps/mobile-shared"
+  dependencies:
+    "@capacitor/core": "npm:^8.4.2"
+    "@nexio/core": "workspace:*"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/mobile@workspace:packages/frontend/apps/mobile":
+  version: 0.0.0-use.local
+  resolution: "@nexio/mobile@workspace:packages/frontend/apps/mobile"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@toeverything/infra": "workspace:*"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/monorepo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@nexio/monorepo@workspace:."
+  dependencies:
+    "@capacitor/cli": "npm:^8.4.2"
+    "@faker-js/faker": "npm:^10.1.0"
+    "@istanbuljs/schema": "npm:^0.1.3"
+    "@nexio-tools/cli": "workspace:*"
+    "@playwright/test": "npm:=1.58.2"
+    "@taplo/cli": "npm:^0.7.0"
+    "@toeverything/infra": "workspace:*"
+    "@types/node": "npm:^22.0.0"
+    "@typescript/native": "npm:typescript@7.0.2"
+    "@vanilla-extract/vite-plugin": "npm:^5.0.0"
+    "@vitest/browser": "npm:^4.1.10"
+    "@vitest/coverage-istanbul": "npm:^4.1.10"
+    "@vitest/ui": "npm:^4.1.10"
+    electron: "npm:^39.0.0"
+    eslint: "npm:9.39.2"
+    eslint-plugin-import-x: "npm:^4.16.1"
+    eslint-plugin-lit: "npm:^2.2.1"
+    eslint-plugin-react: "npm:^7.37.5"
+    eslint-plugin-react-hooks: "npm:^7.0.1"
+    eslint-plugin-simple-import-sort: "npm:^12.1.1"
+    eslint-plugin-sonarjs: "npm:^4.0.2"
+    happy-dom: "npm:^20.0.0"
+    husky: "npm:^9.1.7"
+    lint-staged: "npm:^16.0.0"
+    msw: "npm:^2.13.2"
+    oxfmt: "npm:0.63.0"
+    oxlint: "npm:1.78.0"
+    oxlint-tsgolint: "npm:7.0.2001"
+    semver: "npm:^7.7.3"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    unplugin-swc: "npm:^1.5.9"
+    vite: "npm:^7.3.5"
+    vitest: "npm:^4.1.10"
+  dependenciesMeta:
+    "@apollo/protobufjs":
+      built: false
+    "@prisma/client":
+      built: true
+    "@prisma/engines":
+      built: true
+    "@scarf/scarf":
+      built: false
+    "@sentry/cli":
+      built: true
+    "@swc/core":
+      built: false
+    core-js:
+      built: false
+    electron:
+      built: true
+    electron-winstaller:
+      built: true
+    esbuild:
+      built: true
+    msgpackr-extract:
+      built: false
+    msw:
+      built: false
+    prisma:
+      built: false
+    protobufjs:
+      built: false
+    unrs-resolver:
+      built: false
+  languageName: unknown
+  linkType: soft
+
+"@nexio/native@workspace:*, @nexio/native@workspace:packages/frontend/native":
+  version: 0.0.0-use.local
+  resolution: "@nexio/native@workspace:packages/frontend/native"
+  dependencies:
+    "@napi-rs/cli": "npm:3.5.0"
+    "@napi-rs/whisper": "npm:^0.0.4"
+    "@types/node": "npm:^22.0.0"
+    ava: "npm:^7.0.0"
+    rxjs: "npm:^7.8.2"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/nbstore@workspace:*, @nexio/nbstore@workspace:packages/common/nbstore":
+  version: 0.0.0-use.local
+  resolution: "@nexio/nbstore@workspace:packages/common/nbstore"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/reader": "workspace:*"
+    "@nexio/realtime": "workspace:*"
+    "@toeverything/infra": "workspace:*"
+    eventemitter2: "npm:^6.4.9"
+    fake-indexeddb: "npm:^6.0.0"
+    graphemer: "npm:^1.4.0"
+    idb: "npm:^8.0.0"
+    lodash-es: "npm:^4.17.23"
+    nanoid: "npm:^5.1.6"
+    rxjs: "npm:^7.8.2"
+    socket.io-client: "npm:^4.8.3"
+    uuid: "npm:^14.0.0"
+    vitest: "npm:^4.1.8"
+    y-protocols: "npm:^1.0.6"
+    yjs: "npm:^13.6.27"
+  peerDependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/realtime": "workspace:*"
+    idb: ^8.0.0
+    socket.io-client: ^4.8.3
+  languageName: unknown
+  linkType: soft
+
+"@nexio/playstore-auto-bump@workspace:tools/playstore-auto-bump":
+  version: 0.0.0-use.local
+  resolution: "@nexio/playstore-auto-bump@workspace:tools/playstore-auto-bump"
+  dependencies:
+    "@googleapis/androidpublisher": "npm:^36.0.0"
+    "@nexio-tools/cli": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    "@types/node": "npm:^22.0.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/reader@workspace:*, @nexio/reader@workspace:packages/common/reader":
+  version: 0.0.0-use.local
+  resolution: "@nexio/reader@workspace:packages/common/reader"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    lodash-es: "npm:^4.17.23"
+    vitest: "npm:^4.1.8"
+    yjs: "npm:^13.6.27"
+  peerDependencies:
+    "@blocksuite/affine": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/realtime@workspace:*, @nexio/realtime@workspace:packages/common/realtime":
+  version: 0.0.0-use.local
+  resolution: "@nexio/realtime@workspace:packages/common/realtime"
+  dependencies:
+    "@nexio/graphql": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/revert-update@workspace:tools/revert-update":
+  version: 0.0.0-use.local
+  resolution: "@nexio/revert-update@workspace:tools/revert-update"
+  dependencies:
+    "@nexio-tools/cli": "workspace:*"
+    "@types/node": "npm:^22.0.0"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    yjs: "npm:^13.6.27"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/routes@workspace:*, @nexio/routes@workspace:packages/frontend/routes":
+  version: 0.0.0-use.local
+  resolution: "@nexio/routes@workspace:packages/frontend/routes"
+  dependencies:
+    "@nexio-tools/cli": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    path-to-regexp: "npm:^8.4.2"
+    vitest: "npm:^4.1.8"
+  peerDependencies:
+    react: ^19.2.1
+  languageName: unknown
+  linkType: soft
+
+"@nexio/s3-compat@workspace:*, @nexio/s3-compat@workspace:packages/common/s3-compat":
+  version: 0.0.0-use.local
+  resolution: "@nexio/s3-compat@workspace:packages/common/s3-compat"
+  dependencies:
+    "@types/aws4": "npm:^1.11.6"
+    aws4: "npm:^1.13.2"
+    fast-xml-parser: "npm:^5.8.0"
+    s3mini: "npm:^0.9.1"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/server-native@workspace:*, @nexio/server-native@workspace:packages/backend/native":
+  version: 0.0.0-use.local
+  resolution: "@nexio/server-native@workspace:packages/backend/native"
+  dependencies:
+    "@napi-rs/cli": "npm:3.5.0"
+    tiktoken: "npm:^1.0.17"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/server@workspace:packages/backend/server":
+  version: 0.0.0-use.local
+  resolution: "@nexio/server@workspace:packages/backend/server"
+  dependencies:
+    "@apollo/server": "npm:^5.5.1"
+    "@as-integrations/express5": "npm:^1.1.2"
+    "@faker-js/faker": "npm:^10.1.0"
+    "@google-cloud/opentelemetry-cloud-trace-exporter": "npm:^3.0.0"
+    "@google-cloud/opentelemetry-resource-util": "npm:^3.0.0"
+    "@inquirer/prompts": "npm:^8.0.0"
+    "@nestjs-cls/transactional": "npm:^3.2.0"
+    "@nestjs-cls/transactional-adapter-prisma": "npm:^1.3.4"
+    "@nestjs/apollo": "npm:^13.2.4"
+    "@nestjs/common": "npm:^11.1.18"
+    "@nestjs/core": "npm:^11.1.18"
+    "@nestjs/graphql": "npm:^13.2.5"
+    "@nestjs/platform-express": "npm:^11.1.18"
+    "@nestjs/platform-socket.io": "npm:^11.1.18"
+    "@nestjs/schedule": "npm:^6.1.1"
+    "@nestjs/swagger": "npm:^11.2.7"
+    "@nestjs/testing": "patch:@nestjs/testing@npm%3A11.1.18#~/.yarn/patches/@nestjs-testing-npm-11.1.18-32c0f6af12.patch"
+    "@nestjs/throttler": "npm:^6.5.0"
+    "@nestjs/websockets": "npm:^11.1.18"
+    "@nexio-tools/cli": "workspace:*"
+    "@nexio-tools/utils": "workspace:*"
+    "@nexio/graphql": "workspace:*"
+    "@nexio/realtime": "workspace:*"
+    "@nexio/s3-compat": "workspace:*"
+    "@nexio/server-native": "workspace:*"
+    "@node-rs/argon2": "npm:^2.0.2"
+    "@node-rs/crc32": "npm:^1.10.6"
+    "@opentelemetry/api": "npm:^1.9.0"
+    "@opentelemetry/core": "npm:^2.10.0"
+    "@opentelemetry/exporter-prometheus": "npm:^0.221.0"
+    "@opentelemetry/exporter-zipkin": "npm:^2.10.0"
+    "@opentelemetry/host-metrics": "npm:^0.39.0"
+    "@opentelemetry/instrumentation": "npm:^0.221.0"
+    "@opentelemetry/instrumentation-graphql": "npm:^0.69.0"
+    "@opentelemetry/instrumentation-http": "npm:^0.221.0"
+    "@opentelemetry/instrumentation-ioredis": "npm:^0.69.0"
+    "@opentelemetry/instrumentation-nestjs-core": "npm:^0.67.0"
+    "@opentelemetry/instrumentation-socket.io": "npm:^0.68.0"
+    "@opentelemetry/resources": "npm:^2.10.0"
+    "@opentelemetry/sdk-metrics": "npm:^2.10.0"
+    "@opentelemetry/sdk-node": "npm:^0.221.0"
+    "@opentelemetry/sdk-trace-base": "npm:^2.10.0"
+    "@opentelemetry/sdk-trace-node": "npm:^2.10.0"
+    "@opentelemetry/semantic-conventions": "npm:^1.41.1"
+    "@prisma/client": "npm:^6.6.0"
+    "@prisma/instrumentation": "npm:^6.7.0"
+    "@react-email/body": "npm:0.3.0"
+    "@react-email/button": "npm:0.2.1"
+    "@react-email/container": "npm:0.0.16"
+    "@react-email/head": "npm:0.0.13"
+    "@react-email/html": "npm:0.0.12"
+    "@react-email/img": "npm:0.0.12"
+    "@react-email/link": "npm:0.0.13"
+    "@react-email/render": "npm:1.4.0"
+    "@react-email/row": "npm:0.0.13"
+    "@react-email/section": "npm:0.0.17"
+    "@react-email/text": "npm:0.1.6"
+    "@socket.io/redis-adapter": "npm:^8.3.0"
+    "@types/cookie-parser": "npm:^1.4.8"
+    "@types/express": "npm:^5.0.1"
+    "@types/express-serve-static-core": "npm:^5.0.6"
+    "@types/graphql-upload": "npm:^17.0.0"
+    "@types/http-errors": "npm:^2.0.4"
+    "@types/jsonwebtoken": "npm:^9.0.9"
+    "@types/lodash-es": "npm:^4.17.12"
+    "@types/mustache": "npm:^4.2.5"
+    "@types/node": "npm:^22.0.0"
+    "@types/nodemailer": "npm:^8.0.0"
+    "@types/on-headers": "npm:^1.0.3"
+    "@types/react": "npm:^19.0.1"
+    "@types/semver": "npm:^7.7.1"
+    "@types/sinon": "npm:^21.0.0"
+    "@types/supertest": "npm:^7.0.0"
+    ava: "npm:^7.0.0"
+    c8: "npm:^10.1.3"
+    commander: "npm:^13.1.0"
+    cookie-parser: "npm:^1.4.7"
+    cross-env: "npm:^10.1.0"
+    dotenv: "npm:^16.4.7"
+    eventemitter2: "npm:^6.4.9"
+    exa-js: "npm:^2.4.0"
+    express: "npm:^5.0.1"
+    fast-xml-parser: "npm:^5.8.0"
+    get-stream: "npm:^9.0.1"
+    google-auth-library: "npm:^10.2.0"
+    graphql: "npm:^16.13.2"
+    graphql-scalars: "npm:^1.24.0"
+    graphql-upload: "npm:^17.0.0"
+    htmlrewriter: "npm:^0.0.12"
+    http-errors: "npm:^2.0.0"
+    ioredis: "npm:^5.11.1"
+    is-mobile: "npm:^5.0.0"
+    jose: "npm:^6.1.3"
+    jsonwebtoken: "npm:^9.0.3"
+    lodash-es: "npm:^4.17.23"
+    mustache: "npm:^4.2.0"
+    nanoid: "npm:^5.1.6"
+    nest-winston: "npm:^1.9.7"
+    nestjs-cls: "npm:^6.0.0"
+    nodemailer: "npm:^9.0.0"
+    nodemon: "npm:^3.1.14"
+    on-headers: "npm:^1.1.0"
+    piscina: "npm:^5.1.4"
+    prisma: "npm:^6.6.0"
+    react: "npm:^19.2.1"
+    react-dom: "npm:19.2.1"
+    react-email: "npm:^4.3.2"
+    reflect-metadata: "npm:^0.2.2"
+    rxjs: "npm:^7.8.2"
+    semver: "npm:^7.7.4"
+    sinon: "npm:^21.0.1"
+    socket.io: "npm:^4.8.3"
+    socket.io-client: "npm:^4.8.3"
+    supertest: "npm:^7.1.4"
+    tldts: "npm:^7.0.19"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+    winston: "npm:^3.17.0"
+    yjs: "npm:^13.6.27"
+    zod: "npm:^3.25.76"
+    zod-to-json-schema: "npm:^3.20.0"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/templates@workspace:*, @nexio/templates@workspace:packages/frontend/templates":
+  version: 0.0.0-use.local
+  resolution: "@nexio/templates@workspace:packages/frontend/templates"
+  dependencies:
+    jszip: "npm:^3.10.1"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/track@workspace:*, @nexio/track@workspace:packages/frontend/track":
+  version: 0.0.0-use.local
+  resolution: "@nexio/track@workspace:packages/frontend/track"
+  dependencies:
+    "@nexio/debug": "workspace:*"
+    "@sentry/react": "npm:^10.53.1"
+    "@types/react": "npm:^19.0.1"
+    nanoid: "npm:^5.1.6"
+    react: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    vitest: "npm:^4.1.8"
+  languageName: unknown
+  linkType: soft
+
+"@nexio/web@workspace:packages/frontend/apps/web":
+  version: 0.0.0-use.local
+  resolution: "@nexio/web@workspace:packages/frontend/apps/web"
+  dependencies:
+    "@emotion/react": "npm:^11.14.0"
+    "@nexio/component": "workspace:*"
+    "@nexio/core": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/nbstore": "workspace:*"
+    "@nexio/track": "workspace:*"
+    "@toeverything/infra": "workspace:*"
+    "@types/react": "npm:^19.0.1"
+    "@types/react-dom": "npm:^19.0.2"
+    react: "npm:^19.2.1"
+    react-dom: "npm:^19.2.1"
+    react-router-dom: "npm:^6.30.4"
+    typescript: "npm:@typescript/typescript6@6.0.2"
+  languageName: unknown
+  linkType: soft
+
 "@noble/hashes@npm:1.8.0, @noble/hashes@npm:^1.1.5, @noble/hashes@npm:^1.8.0":
   version: 1.8.0
   resolution: "@noble/hashes@npm:1.8.0"
@@ -15652,10 +15653,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@toeverything/infra@workspace:packages/common/infra"
   dependencies:
-    "@affine/debug": "workspace:*"
-    "@affine/env": "workspace:*"
-    "@affine/error": "workspace:*"
-    "@affine/templates": "workspace:*"
+    "@nexio/debug": "workspace:*"
+    "@nexio/env": "workspace:*"
+    "@nexio/error": "workspace:*"
+    "@nexio/templates": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/react": "npm:^16.1.0"
@@ -15772,15 +15773,6 @@ __metadata:
   checksum: 10/7678cf74976e16093aff6e6f9755826faf069ac1e30179276158ce46ea246348ff22ca6bdd46cef08428881337d9ceefbf00bab08a7731646eb9fc9449d6a1e7
   languageName: node
   linkType: hard
-
-"@types/affine__env@workspace:tools/@types/env":
-  version: 0.0.0-use.local
-  resolution: "@types/affine__env@workspace:tools/@types/env"
-  dependencies:
-    "@affine/env": "workspace:*"
-    "@blocksuite/affine": "workspace:*"
-  languageName: unknown
-  linkType: soft
 
 "@types/appdmg@npm:^0.5.5":
   version: 0.5.5
@@ -16664,6 +16656,15 @@ __metadata:
   checksum: 10/af8d83ad7b68ea05d9357985daf81b6c9b73af4feacb2f5c2693c7fd3e13e5135ef1bd083ce8d5bdc8e97acd28563b61bb32dec4e4508a8067fcd31b8a098632
   languageName: node
   linkType: hard
+
+"@types/nexio__env@workspace:tools/@types/env":
+  version: 0.0.0-use.local
+  resolution: "@types/nexio__env@workspace:tools/@types/env"
+  dependencies:
+    "@blocksuite/affine": "workspace:*"
+    "@nexio/env": "workspace:*"
+  languageName: unknown
+  linkType: soft
 
 "@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:>=13.7.0, @types/node@npm:>=20.0.0":
   version: 25.3.3

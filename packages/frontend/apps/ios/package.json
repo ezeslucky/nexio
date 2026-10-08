@@ -1,5 +1,5 @@
 {
-  "name": "@affine/ios",
+  "name": "@nexio/ios",
   "version": "0.27.5",
   "description": "AFFiNE Desktop Web application",
   "type": "module",
@@ -14,14 +14,6 @@
     "codegen": "r ./codegen.ts"
   },
   "dependencies": {
-    "@affine/component": "workspace:*",
-    "@affine/core": "workspace:*",
-    "@affine/env": "workspace:*",
-    "@affine/graphql": "workspace:*",
-    "@affine/i18n": "workspace:*",
-    "@affine/mobile-shared": "workspace:*",
-    "@affine/nbstore": "workspace:*",
-    "@affine/track": "workspace:*",
     "@blocksuite/affine": "workspace:*",
     "@capacitor/app": "^8.0.0",
     "@capacitor/browser": "^8.0.0",
@@ -29,6 +21,14 @@
     "@capacitor/haptics": "^8.0.0",
     "@capacitor/ios": "^8.4.2",
     "@capacitor/keyboard": "^8.0.0",
+    "@nexio/component": "workspace:*",
+    "@nexio/core": "workspace:*",
+    "@nexio/env": "workspace:*",
+    "@nexio/graphql": "workspace:*",
+    "@nexio/i18n": "workspace:*",
+    "@nexio/mobile-shared": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
+    "@nexio/track": "workspace:*",
     "@toeverything/infra": "workspace:^",
     "async-call-rpc": "^6.4.2",
     "capacitor-plugin-app-tracking-transparency": "^3.0.0",
@@ -39,9 +39,9 @@
     "react-router-dom": "^6.30.4"
   },
   "devDependencies": {
-    "@affine-tools/cli": "workspace:*",
-    "@affine-tools/utils": "workspace:*",
     "@capacitor/cli": "^8.4.2",
+    "@nexio-tools/cli": "workspace:*",
+    "@nexio-tools/utils": "workspace:*",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.2",
     "typescript": "npm:@typescript/typescript6@6.0.2"

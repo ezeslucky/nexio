@@ -1,10 +1,10 @@
-import { useExportPage } from '@affine/core/components/hooks/affine/use-export-page';
+import { useExportPage } from '@nexio/core/components/hooks/affine/use-export-page';
 import {
   ExportMenuItems,
   PrintMenuItems,
-} from '@affine/core/components/page-list';
-import { EditorService } from '@affine/core/modules/editor';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/components/page-list';
+import { EditorService } from '@nexio/core/modules/editor';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './index.css';

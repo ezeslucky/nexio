@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@nexio/error';
 import { type DocMode, DocModes } from '@blocksuite/affine/model';
 import { TimeoutError } from 'rxjs';
 

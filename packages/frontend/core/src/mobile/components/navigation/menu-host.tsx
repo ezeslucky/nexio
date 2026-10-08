@@ -1,6 +1,6 @@
-import { MobileMenu } from '@affine/component';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { MobileMenu } from '@nexio/component';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { useLiveData, useService } from '@toeverything/infra';
 import {
   createContext,

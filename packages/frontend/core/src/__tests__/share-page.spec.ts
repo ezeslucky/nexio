@@ -1,8 +1,8 @@
 // @vitest-environment happy-dom
 
-import { UserFriendlyError } from '@affine/error';
-import type * as AffineI18n from '@affine/i18n';
-import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
+import { UserFriendlyError } from '@nexio/error';
+import type * as AffineI18n from '@nexio/i18n';
+import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
 import { act, render, waitFor } from '@testing-library/react';
 import type * as Infra from '@toeverything/infra';
 import { createElement } from 'react';
@@ -24,22 +24,22 @@ const sharePageMocks = vi.hoisted(() => ({
   services: new Map<string, unknown>(),
 }));
 
-vi.mock('@affine/core/desktop/components/app-container', () => ({
+vi.mock('@nexio/core/desktop/components/app-container', () => ({
   AppContainer: ({ children }: { children: unknown }) => children,
 }));
 
-vi.mock('@affine/core/components/hooks/use-block-suite-editor', () => ({
+vi.mock('@nexio/core/components/hooks/use-block-suite-editor', () => ({
   useActiveBlocksuiteEditor: () => [null, vi.fn()],
 }));
 
-vi.mock('@affine/core/components/hooks/use-navigate-helper', () => ({
+vi.mock('@nexio/core/components/hooks/use-navigate-helper', () => ({
   useNavigateHelper: () => ({
     jumpToPageBlock: vi.fn(),
     openPage: vi.fn(),
   }),
 }));
 
-vi.mock('@affine/i18n', async importOriginal => ({
+vi.mock('@nexio/i18n', async importOriginal => ({
   ...(await importOriginal<typeof AffineI18n>()),
   useI18n: () => new Proxy({}, { get: () => () => '' }),
 }));

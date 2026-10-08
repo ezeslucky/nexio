@@ -1,8 +1,8 @@
 import {
   type UpdateUserSettingsInput,
   updateUserSettingsMutation,
-} from '@affine/graphql';
-import type { UserSettingsSnapshot } from '@affine/realtime';
+} from '@nexio/graphql';
+import type { UserSettingsSnapshot } from '@nexio/realtime';
 import { Store } from '@toeverything/infra';
 
 import type { NbstoreService } from '../../storage';

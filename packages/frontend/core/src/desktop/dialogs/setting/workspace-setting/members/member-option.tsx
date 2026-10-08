@@ -1,11 +1,11 @@
-import { MenuItem, notify, useConfirmModal } from '@affine/component';
+import { MenuItem, notify, useConfirmModal } from '@nexio/component';
 import {
   type Member,
   WorkspaceMembersService,
   WorkspacePermissionService,
-} from '@affine/core/modules/permissions';
-import { Permission, WorkspaceMemberStatus } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/permissions';
+import { Permission, WorkspaceMemberStatus } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 

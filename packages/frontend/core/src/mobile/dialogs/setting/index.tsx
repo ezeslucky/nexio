@@ -1,12 +1,12 @@
-import { notify } from '@affine/component';
-import { AuthService } from '@affine/core/modules/cloud';
+import { notify } from '@nexio/component';
+import { AuthService } from '@nexio/core/modules/cloud';
 import type {
   DialogComponentProps,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { UrlService } from '@affine/core/modules/url';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs';
+import { UrlService } from '@nexio/core/modules/url';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 

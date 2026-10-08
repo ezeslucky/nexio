@@ -1,4 +1,4 @@
-import { getCurrentUserQuery } from '@affine/graphql';
+import { getCurrentUserQuery } from '@nexio/graphql';
 import type { RawBodyRequest } from '@nestjs/common';
 import type { NestExpressApplication } from '@nestjs/platform-express';
 import { Test } from '@nestjs/testing';

@@ -2,7 +2,7 @@ import type {
   SearchCollectionMenuAction,
   SearchDocMenuAction,
   SearchTagMenuAction,
-} from '@affine/core/modules/search-menu/services';
+} from '@nexio/core/modules/search-menu/services';
 import type { LinkedMenuGroup } from '@blocksuite/affine/widgets/linked-doc';
 
 export interface SearchMenuConfig {

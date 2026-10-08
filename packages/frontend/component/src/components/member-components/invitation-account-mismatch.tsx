@@ -1,8 +1,8 @@
 import {
   AuthPageContainer,
   type User,
-} from '@affine/component/auth-components';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/auth-components';
+import { useI18n } from '@nexio/i18n';
 
 import { Avatar } from '../../ui/avatar';
 import { Button } from '../../ui/button';

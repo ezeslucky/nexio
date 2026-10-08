@@ -2,7 +2,7 @@ import { createHash } from 'node:crypto';
 import { EventEmitter } from 'node:events';
 import { PassThrough, Readable } from 'node:stream';
 
-import type { DelegatedToolRequest } from '@affine/realtime';
+import type { DelegatedToolRequest } from '@nexio/realtime';
 import type { PrismaClient } from '@prisma/client';
 import ava from 'ava';
 import type { Response } from 'express';

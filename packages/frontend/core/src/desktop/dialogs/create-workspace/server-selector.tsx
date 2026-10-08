@@ -1,6 +1,6 @@
-import { Menu, MenuItem } from '@affine/component';
-import { type Server, ServersService } from '@affine/core/modules/cloud';
-import { useI18n } from '@affine/i18n';
+import { Menu, MenuItem } from '@nexio/component';
+import { type Server, ServersService } from '@nexio/core/modules/cloud';
+import { useI18n } from '@nexio/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,

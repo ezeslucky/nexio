@@ -1,7 +1,7 @@
-import { MenuItem } from '@affine/component';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { useI18n } from '@affine/i18n';
+import { MenuItem } from '@nexio/component';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';
 

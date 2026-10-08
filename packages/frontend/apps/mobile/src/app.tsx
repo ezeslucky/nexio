@@ -1,22 +1,22 @@
-import { AffineContext } from '@affine/core/components/context';
-import { AppFallback } from '@affine/core/mobile/components/app-fallback';
-import { configureMobileModules } from '@affine/core/mobile/modules';
-import { HapticProvider } from '@affine/core/mobile/modules/haptics';
-import { VirtualKeyboardProvider } from '@affine/core/mobile/modules/virtual-keyboard';
-import { router } from '@affine/core/mobile/router';
-import { configureCommonModules } from '@affine/core/modules';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
+import { AffineContext } from '@nexio/core/components/context';
+import { AppFallback } from '@nexio/core/mobile/components/app-fallback';
+import { configureMobileModules } from '@nexio/core/mobile/modules';
+import { HapticProvider } from '@nexio/core/mobile/modules/haptics';
+import { VirtualKeyboardProvider } from '@nexio/core/mobile/modules/virtual-keyboard';
+import { router } from '@nexio/core/mobile/router';
+import { configureCommonModules } from '@nexio/core/modules';
+import { I18nProvider } from '@nexio/core/modules/i18n';
+import { LifecycleService } from '@nexio/core/modules/lifecycle';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { configureBrowserWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import { getWorkerUrl } from '@affine/env/worker';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
-import { setTelemetryTransport } from '@affine/track';
+} from '@nexio/core/modules/storage';
+import { PopupWindowProvider } from '@nexio/core/modules/url';
+import { configureBrowserWorkbenchModule } from '@nexio/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
+import { getWorkerUrl } from '@nexio/env/worker';
+import { StoreManagerClient } from '@nexio/nbstore/worker/client';
+import { setTelemetryTransport } from '@nexio/track';
 import { Framework, FrameworkRoot, getCurrentStore } from '@toeverything/infra';
 import { OpClient } from '@toeverything/infra/op';
 import { Suspense } from 'react';

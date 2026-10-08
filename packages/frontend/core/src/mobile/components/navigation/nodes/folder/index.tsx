@@ -4,22 +4,22 @@ import {
   MenuSeparator,
   MenuSub,
   notify,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
 import type {
   NavigationPanelTreeNodeIcon,
   NodeOperation,
-} from '@affine/core/desktop/components/navigation-panel';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
+} from '@nexio/core/desktop/components/navigation-panel';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
 import {
   type FolderNode,
   OrganizeService,
-} from '@affine/core/modules/organize';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/organize';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   DeleteIcon,
   FolderIcon,

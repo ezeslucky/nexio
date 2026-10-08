@@ -1,7 +1,7 @@
-import { Switch } from '@affine/component';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+import { Switch } from '@nexio/component';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import { AfFiNeIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import {

@@ -1,4 +1,4 @@
-import type { TextRendererOptions } from '@affine/core/blocksuite/ai/components/text-renderer';
+import type { TextRendererOptions } from '@nexio/core/blocksuite/ai/components/text-renderer';
 import type { EditorHost } from '@blocksuite/affine/std';
 import {
   NotificationProvider,

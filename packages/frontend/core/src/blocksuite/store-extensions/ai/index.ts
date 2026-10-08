@@ -1,5 +1,5 @@
-import { AIChatBlockSchemaExtension } from '@affine/core/blocksuite/ai/blocks';
-import { TranscriptionBlockSchemaExtension } from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
+import { AIChatBlockSchemaExtension } from '@nexio/core/blocksuite/ai/blocks';
+import { TranscriptionBlockSchemaExtension } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
 import {
   type StoreExtensionContext,
   StoreExtensionProvider,

@@ -1,8 +1,8 @@
-import { NexioLogo } from '@affine/component/auth-components';
-import { Button } from '@affine/component/ui/button';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { appIconMap, appNames } from '@affine/core/utils/channel';
-import { Trans, useI18n } from '@affine/i18n';
+import { NexioLogo } from '@nexio/component/auth-components';
+import { Button } from '@nexio/component/ui/button';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { appIconMap, appNames } from '@nexio/core/utils/channel';
+import { Trans, useI18n } from '@nexio/i18n';
 import { LocalWorkspaceIcon } from '@blocksuite/icons/rc';
 import { useServiceOptional } from '@toeverything/infra';
 import type { MouseEvent } from 'react';

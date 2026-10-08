@@ -1,12 +1,12 @@
-import { notify } from '@affine/component';
-import { UserFriendlyError } from '@affine/error';
+import { notify } from '@nexio/component';
+import { UserFriendlyError } from '@nexio/error';
 import {
   type DocMode as GraphqlDocMode,
   DocRole,
   ErrorNames,
-} from '@affine/graphql';
-import { I18n, i18nTime } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/graphql';
+import { I18n, i18nTime } from '@nexio/i18n';
+import track from '@nexio/track';
 import type { DocMode } from '@blocksuite/affine/model';
 import { DocModeProvider } from '@blocksuite/affine/shared/services';
 import type { AffineInlineEditor } from '@blocksuite/affine/shared/types';

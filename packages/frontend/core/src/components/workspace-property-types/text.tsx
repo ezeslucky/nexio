@@ -1,6 +1,6 @@
-import { Input, PropertyValue } from '@affine/component';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { useI18n } from '@affine/i18n';
+import { Input, PropertyValue } from '@nexio/component';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { useI18n } from '@nexio/i18n';
 import { TextIcon, TextTypeIcon } from '@blocksuite/icons/rc';
 import { cssVar } from '@toeverything/theme';
 import { cssVarV2 } from '@toeverything/theme/v2';

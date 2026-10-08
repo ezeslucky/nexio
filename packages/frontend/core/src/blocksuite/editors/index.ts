@@ -1,4 +1,4 @@
-import { createReactComponentFromLit } from '@affine/component';
+import { createReactComponentFromLit } from '@nexio/component';
 import { DocTitle } from '@blocksuite/affine/fragments/doc-title';
 import React from 'react';
 

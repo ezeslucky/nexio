@@ -1,5 +1,5 @@
-import { AIStoreExtension } from '@affine/core/blocksuite/store-extensions/ai';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import { AIStoreExtension } from '@nexio/core/blocksuite/store-extensions/ai';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { StoreExtensionManager } from '@blocksuite/affine/ext-loader';
 import { getInternalStoreExtensions } from '@blocksuite/affine/extensions/store';
 

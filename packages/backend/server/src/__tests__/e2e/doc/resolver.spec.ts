@@ -5,7 +5,7 @@ import {
   getWorkspacePageByIdQuery,
   type GraphQLQuery,
   publishPageMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { DocRole, WorkspaceRole } from '../../../models';
 import { Mockers } from '../../mocks';

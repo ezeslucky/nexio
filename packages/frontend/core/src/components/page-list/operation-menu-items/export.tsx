@@ -1,7 +1,7 @@
-import { MenuItem, MenuSeparator, MenuSub } from '@affine/component';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { MenuItem, MenuSeparator, MenuSub } from '@nexio/component';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   ExportIcon,
   ExportToHtmlIcon,

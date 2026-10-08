@@ -7,20 +7,20 @@ import {
   PropertyRoot,
   useDraggable,
   useDropTarget,
-} from '@affine/component';
-import type { DocCustomPropertyInfo } from '@affine/core/modules/db';
-import { DocService } from '@affine/core/modules/doc';
-import { DocDatabaseBacklinkInfo } from '@affine/core/modules/doc-info';
+} from '@nexio/component';
+import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
+import { DocService } from '@nexio/core/modules/doc';
+import { DocDatabaseBacklinkInfo } from '@nexio/core/modules/doc-info';
 import type {
   DatabaseRow,
   DatabaseValueCell,
-} from '@affine/core/modules/doc-info/types';
-import { DocIntegrationPropertiesTable } from '@affine/core/modules/integration';
-import { ViewService, WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/doc-info/types';
+import { DocIntegrationPropertiesTable } from '@nexio/core/modules/integration';
+import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { PlusIcon, PropertyIcon, ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {

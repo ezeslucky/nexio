@@ -1,10 +1,10 @@
-import type { NativeImportSessionHandlers } from '@affine/electron-api';
+import type { NativeImportSessionHandlers } from '@nexio/electron-api';
 
 export type {
   NativeImportBrowserSource,
   NativeImportFormat,
   NativeImportSessionHandlers,
-} from '@affine/electron-api';
+} from '@nexio/electron-api';
 
 let nativeImportSessionHandlers: NativeImportSessionHandlers | null = null;
 

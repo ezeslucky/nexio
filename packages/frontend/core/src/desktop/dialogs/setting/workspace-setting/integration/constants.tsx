@@ -1,5 +1,5 @@
-import { IntegrationTypeIcon } from '@affine/core/modules/integration';
-import type { I18nString } from '@affine/i18n';
+import { IntegrationTypeIcon } from '@nexio/core/modules/integration';
+import type { I18nString } from '@nexio/i18n';
 import { AiIcon, Logo1Icon, TodayIcon } from '@blocksuite/icons/rc';
 import type { ReactNode } from 'react';
 

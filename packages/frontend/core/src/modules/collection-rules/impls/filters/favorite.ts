@@ -1,5 +1,5 @@
-import type { DocsService } from '@affine/core/modules/doc';
-import type { FavoriteService } from '@affine/core/modules/favorite';
+import type { DocsService } from '@nexio/core/modules/doc';
+import type { FavoriteService } from '@nexio/core/modules/favorite';
 import { Service } from '@toeverything/infra';
 import { combineLatest, map, type Observable } from 'rxjs';
 

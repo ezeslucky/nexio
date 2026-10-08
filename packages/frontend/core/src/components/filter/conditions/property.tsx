@@ -1,6 +1,6 @@
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
-import { useI18n } from '@affine/i18n';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { WorkspacePropertyIcon, WorkspacePropertyName } from '../../properties';

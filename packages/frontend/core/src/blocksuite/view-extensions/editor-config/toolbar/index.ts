@@ -1,14 +1,14 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   generateUrl,
   type UseSharingUrl,
-} from '@affine/core/components/hooks/affine/use-share-url';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { EditorService } from '@affine/core/modules/editor';
-import type { EditorSettingExt } from '@affine/core/modules/editor-setting/entities/editor-setting';
-import { copyLinkToBlockStdScopeClipboard } from '@affine/core/utils/clipboard';
-import { I18n, i18nTime } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/components/hooks/affine/use-share-url';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { EditorService } from '@nexio/core/modules/editor';
+import type { EditorSettingExt } from '@nexio/core/modules/editor-setting/entities/editor-setting';
+import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
+import { I18n, i18nTime } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { BookmarkBlockComponent } from '@blocksuite/affine/blocks/bookmark';
 import {
   EmbedFigmaBlockComponent,

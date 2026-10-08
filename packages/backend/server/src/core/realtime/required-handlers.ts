@@ -1,4 +1,4 @@
-import type { RealtimeRequestName, RealtimeTopicName } from '@affine/realtime';
+import type { RealtimeRequestName, RealtimeTopicName } from '@nexio/realtime';
 
 export const REALTIME_GATEWAY_REQUIRED_REQUESTS = [
   'workspace.access.get',

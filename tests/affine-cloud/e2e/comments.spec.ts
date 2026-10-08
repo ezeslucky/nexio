@@ -1,15 +1,15 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
+} from '@nexio-test/kit/utils/cloud';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test.describe('comments', () => {

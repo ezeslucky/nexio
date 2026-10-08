@@ -1,7 +1,7 @@
-import { Button, Divider } from '@affine/component';
-import { WorkspacePropertyService } from '@affine/core/modules/workspace-property';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Button, Divider } from '@nexio/component';
+import { WorkspacePropertyService } from '@nexio/core/modules/workspace-property';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 

@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { clickPageModeButton } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { clickPageModeButton } from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
@@ -9,8 +9,8 @@ import {
   getPageByTitle,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@nexio-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@nexio-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 test('Show favorite items in sidebar', async ({ page, workspace }) => {

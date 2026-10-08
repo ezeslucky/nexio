@@ -1,4 +1,4 @@
-import { Avatar, uniReactRoot } from '@affine/component';
+import { Avatar, uniReactRoot } from '@nexio/component';
 import {
   createGroupByConfig,
   type GroupRenderProps,

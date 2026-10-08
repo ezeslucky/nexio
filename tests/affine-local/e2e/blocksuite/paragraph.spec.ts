@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
-import { locateToolbar } from '@affine-test/kit/utils/editor';
+import { test } from '@nexio-test/kit/playwright';
+import { locateToolbar } from '@nexio-test/kit/utils/editor';
 import {
   pressEnter,
   pressShiftTab,
   pressTab,
   selectAllByKeyboard,
   undoByKeyboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import type { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
 import { expect, type Locator } from '@playwright/test';
 

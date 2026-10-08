@@ -4,12 +4,12 @@ import {
   Loading,
   templateToString,
   useConfirmModal,
-} from '@affine/component';
-import { Pagination } from '@affine/component/setting-components';
-import { BlobManagementService } from '@affine/core/modules/blob-management/services';
-import { useI18n } from '@affine/i18n';
-import type { ListedBlobRecord } from '@affine/nbstore';
-import track from '@affine/track';
+} from '@nexio/component';
+import { Pagination } from '@nexio/component/setting-components';
+import { BlobManagementService } from '@nexio/core/modules/blob-management/services';
+import { useI18n } from '@nexio/i18n';
+import type { ListedBlobRecord } from '@nexio/nbstore';
+import track from '@nexio/track';
 import { getAttachmentFileIcon } from '@blocksuite/affine/components/icons';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';

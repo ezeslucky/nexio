@@ -4,14 +4,14 @@ import {
   MenuTrigger,
   notify,
   Tooltip,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocGrantedUsersService } from '@affine/core/modules/permissions';
-import { ShareInfoService } from '@affine/core/modules/share-doc';
-import { UserFriendlyError } from '@affine/error';
-import { DocRole } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { DocGrantedUsersService } from '@nexio/core/modules/permissions';
+import { ShareInfoService } from '@nexio/core/modules/share-doc';
+import { UserFriendlyError } from '@nexio/error';
+import { DocRole } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { InformationIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

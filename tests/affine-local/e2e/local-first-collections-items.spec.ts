@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   clickSideBarAllPageButton,
   clickSideBarCurrentWorkspaceBanner,
-} from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

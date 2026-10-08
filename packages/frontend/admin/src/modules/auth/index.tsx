@@ -1,7 +1,7 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
-import { FeatureType, getUserFeaturesQuery } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Input } from '@nexio/admin/components/ui/input';
+import { Label } from '@nexio/admin/components/ui/label';
+import { FeatureType, getUserFeaturesQuery } from '@nexio/graphql';
 import type { FormEvent } from 'react';
 import { useCallback, useRef } from 'react';
 import { Navigate } from 'react-router-dom';

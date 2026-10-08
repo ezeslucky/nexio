@@ -3,14 +3,14 @@ import {
   toast,
   useConfirmModal,
   useDropTarget,
-} from '@affine/component';
-import { MenuLinkItem } from '@affine/core/modules/app-sidebar/views';
-import { DocsService } from '@affine/core/modules/doc';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { GuardService } from '@affine/core/modules/permissions';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { MenuLinkItem } from '@nexio/core/modules/app-sidebar/views';
+import { DocsService } from '@nexio/core/modules/doc';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { GuardService } from '@nexio/core/modules/permissions';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 export const TrashButton = () => {

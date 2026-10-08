@@ -1,4 +1,4 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
+import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
 import { ViewExtensionManagerIdentifier } from '@blocksuite/affine/ext-loader';
 import { WithDisposable } from '@blocksuite/affine/global/lit';
 import { BlockStdScope, type EditorHost } from '@blocksuite/affine/std';

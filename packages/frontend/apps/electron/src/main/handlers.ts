@@ -1,4 +1,4 @@
-import { I18n } from '@affine/i18n';
+import { I18n } from '@nexio/i18n';
 import { ipcMain } from 'electron';
 
 import { AFFINE_API_CHANNEL_NAME } from '../shared/type';

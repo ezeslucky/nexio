@@ -1,6 +1,6 @@
-import { useConfirmModal } from '@affine/component';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { type I18nString, useI18n } from '@affine/i18n';
+import { useConfirmModal } from '@nexio/component';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { type I18nString, useI18n } from '@nexio/i18n';
 import { InformationFillDuotoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';

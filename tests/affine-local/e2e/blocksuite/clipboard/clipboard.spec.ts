@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { importFile } from '@affine-test/kit/utils/attachment';
-import { pasteContent } from '@affine-test/kit/utils/clipboard';
+import { test } from '@nexio-test/kit/playwright';
+import { importFile } from '@nexio-test/kit/utils/attachment';
+import { pasteContent } from '@nexio-test/kit/utils/clipboard';
 import {
   clickEdgelessModeButton,
   clickPageModeButton,
@@ -9,21 +9,21 @@ import {
   getParagraphIds,
   locateEditorContainer,
   toViewCoord,
-} from '@affine-test/kit/utils/editor';
+} from '@nexio-test/kit/utils/editor';
 import {
   copyByKeyboard,
   cutByKeyboard,
   pasteByKeyboard,
   pressEnter,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   addCodeBlock,
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { setSelection } from '@affine-test/kit/utils/selection';
+} from '@nexio-test/kit/utils/page-logic';
+import { setSelection } from '@nexio-test/kit/utils/selection';
 import type { CodeBlockComponent } from '@blocksuite/affine-block-code';
 import type { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
 import type { PageRootBlockComponent } from '@blocksuite/affine-block-root';

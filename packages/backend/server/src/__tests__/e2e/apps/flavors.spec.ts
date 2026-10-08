@@ -1,4 +1,4 @@
-import { getCurrentUserQuery } from '@affine/graphql';
+import { getCurrentUserQuery } from '@nexio/graphql';
 
 import { DatabaseDocReader, DocReader } from '../../../core/doc';
 import { RealtimeGateway } from '../../../core/realtime/gateway';

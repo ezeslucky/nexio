@@ -1,7 +1,7 @@
-import { Button } from '@affine/component';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import { SignUpAction, Upgrade } from '../plan-card';

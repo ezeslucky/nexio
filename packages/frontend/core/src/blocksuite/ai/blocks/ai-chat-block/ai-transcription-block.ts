@@ -1,4 +1,4 @@
-import type { TranscriptionBlockModel } from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
+import type { TranscriptionBlockModel } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
 import { BlockComponent, BlockViewExtension } from '@blocksuite/affine/std';
 import type { ExtensionType } from '@blocksuite/affine/store';
 import { css, type PropertyValues } from 'lit';

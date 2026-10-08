@@ -1,11 +1,11 @@
-import { Button } from '@affine/component/ui/button';
-import { notify } from '@affine/component/ui/notification';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { OAuthProviderType } from '@affine/graphql';
-import track from '@affine/track';
+import { Button } from '@nexio/component/ui/button';
+import { notify } from '@nexio/component/ui/notification';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
+import { OAuthProviderType } from '@nexio/graphql';
+import track from '@nexio/track';
 import {
   AppleIcon,
   GithubIcon,

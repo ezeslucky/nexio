@@ -3,16 +3,16 @@ import {
   MenuSeparator,
   MenuTrigger,
   Switch,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { DocsService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
-import { TemplateListMenu } from '@affine/core/modules/template-doc/view/template-list-menu';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { DocsService } from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { TemplateDocService } from '@nexio/core/modules/template-doc';
+import { TemplateListMenu } from '@nexio/core/modules/template-doc/view/template-list-menu';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';

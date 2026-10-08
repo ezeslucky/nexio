@@ -1,4 +1,4 @@
-import { Menu } from '@affine/component';
+import { Menu } from '@nexio/component';
 import { type ReactNode } from 'react';
 
 export const DropdownMenu = ({

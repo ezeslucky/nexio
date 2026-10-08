@@ -1,4 +1,4 @@
-import { Button, Input, Modal, notify } from '@affine/component';
+import { Button, Input, Modal, notify } from '@nexio/component';
 import {
   ByokCustomEndpointMode,
   ByokEndpointKind,
@@ -7,8 +7,8 @@ import {
   createWorkspaceByokProfileMutation,
   probeWorkspaceByokDraftMutation,
   replaceWorkspaceByokProfileMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { logByokError } from './errors';

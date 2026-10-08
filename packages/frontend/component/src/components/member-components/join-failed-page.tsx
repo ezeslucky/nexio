@@ -1,7 +1,7 @@
-import { AuthPageContainer } from '@affine/component/auth-components';
-import { UserFriendlyError } from '@affine/error';
-import { ErrorNames, type GetInviteInfoQuery } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+import { AuthPageContainer } from '@nexio/component/auth-components';
+import { UserFriendlyError } from '@nexio/error';
+import { ErrorNames, type GetInviteInfoQuery } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 
 import { Avatar } from '../../ui/avatar';
 import * as styles from './styles.css';

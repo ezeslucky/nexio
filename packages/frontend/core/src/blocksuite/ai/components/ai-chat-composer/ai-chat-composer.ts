@@ -4,13 +4,13 @@ import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
+} from '@nexio/core/modules/ai-button';
 import type {
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+} from '@nexio/core/modules/cloud';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import type { EditorHost } from '@blocksuite/affine/std';
 import { ShadowlessElement } from '@blocksuite/affine/std';

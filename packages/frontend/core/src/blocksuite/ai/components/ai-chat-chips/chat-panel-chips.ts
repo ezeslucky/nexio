@@ -1,4 +1,4 @@
-import type { TagMeta } from '@affine/core/components/page-list';
+import type { TagMeta } from '@nexio/core/components/page-list';
 import { createLitPortal } from '@blocksuite/affine/components/portal';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';

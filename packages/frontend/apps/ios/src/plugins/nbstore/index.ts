@@ -1,11 +1,11 @@
 import {
   base64ToUint8Array,
   uint8ArrayToBase64,
-} from '@affine/core/modules/workspace-engine';
+} from '@nexio/core/modules/workspace-engine';
 import {
   decodePayload,
   MOBILE_BLOB_FILE_PREFIX,
-} from '@affine/mobile-shared/nbstore/payload';
+} from '@nexio/mobile-shared/nbstore/payload';
 import {
   type BlobRecord,
   type CrawlResult,
@@ -14,8 +14,8 @@ import {
   type DocRecord,
   type ListedBlobRecord,
   parseUniversalId,
-} from '@affine/nbstore';
-import { type NativeDBApis } from '@affine/nbstore/sqlite';
+} from '@nexio/nbstore';
+import { type NativeDBApis } from '@nexio/nbstore/sqlite';
 import { registerPlugin } from '@capacitor/core';
 
 import type { NbStorePlugin } from './definitions';

@@ -1,10 +1,10 @@
-import { Button } from '@affine/component';
-import { AuthPageContainer } from '@affine/component/auth-components';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { GraphQLService } from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
-import { verifyEmailMutation } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthPageContainer } from '@nexio/component/auth-components';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { GraphQLService } from '@nexio/core/modules/cloud';
+import { UserFriendlyError } from '@nexio/error';
+import { verifyEmailMutation } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { type FC, useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';

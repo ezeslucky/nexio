@@ -4,7 +4,7 @@ import {
   type QueryOptions,
   type QueryResponse,
   type WorkspaceByokSettingsQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 export const ByokStorage = {
   server: 'server',

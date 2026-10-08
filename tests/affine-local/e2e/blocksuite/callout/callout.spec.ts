@@ -3,13 +3,13 @@ import {
   pressArrowUp,
   pressBackspace,
   pressEnter,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect, test } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

@@ -1,9 +1,9 @@
 import {
   type BaseNavigationPanelTreeNodeProps,
   NavigationPanelTreeContext,
-} from '@affine/core/desktop/components/navigation-panel';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { extractEmojiIcon } from '@affine/core/utils';
+} from '@nexio/core/desktop/components/navigation-panel';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import { extractEmojiIcon } from '@nexio/core/utils';
 import { ArrowDownSmallIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import {

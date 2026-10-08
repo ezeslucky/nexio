@@ -1,8 +1,8 @@
 import {
   PreconditionStrategy,
   registerAffineCommand,
-} from '@affine/core/commands';
-import { track } from '@affine/track';
+} from '@nexio/core/commands';
+import { track } from '@nexio/track';
 import { useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 

@@ -2,12 +2,12 @@ import {
   Button,
   WeekDatePicker,
   type WeekDatePickerHandle,
-} from '@affine/component';
-import { BlocksuiteEditorJournalDocTitleUI } from '@affine/core/blocksuite/block-suite-editor/journal-doc-title';
+} from '@nexio/component';
+import { BlocksuiteEditorJournalDocTitleUI } from '@nexio/core/blocksuite/block-suite-editor/journal-doc-title';
 import {
   JOURNAL_DATE_FORMAT,
   JournalService,
-} from '@affine/core/modules/journal';
+} from '@nexio/core/modules/journal';
 import {
   ViewBody,
   ViewHeader,
@@ -15,8 +15,8 @@ import {
   ViewService,
   ViewTitle,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { PlusIcon, TodayIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import dayjs from 'dayjs';

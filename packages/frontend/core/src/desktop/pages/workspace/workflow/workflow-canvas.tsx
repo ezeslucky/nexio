@@ -1,5 +1,5 @@
-import { Button, IconButton, Switch } from '@affine/component';
-import { notify } from '@affine/component/ui/notification';
+import { Button, IconButton, Switch } from '@nexio/component';
+import { notify } from '@nexio/component/ui/notification';
 import { ArrowLeftBigIcon, CloseIcon, DeleteIcon, PlusIcon } from '@blocksuite/icons/rc';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 

@@ -3,7 +3,7 @@ import type {
   CalendarEventsQuery,
   WorkspaceCalendarItemInput,
   WorkspaceCalendarsQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Entity, LiveData } from '@toeverything/infra';
 import dayjs, { type Dayjs } from 'dayjs';
 

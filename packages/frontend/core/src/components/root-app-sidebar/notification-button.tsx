@@ -1,8 +1,8 @@
-import { Menu } from '@affine/component';
-import { MenuItem } from '@affine/core/modules/app-sidebar/views';
-import { NotificationCountService } from '@affine/core/modules/notification';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { Menu } from '@nexio/component';
+import { MenuItem } from '@nexio/core/modules/app-sidebar/views';
+import { NotificationCountService } from '@nexio/core/modules/notification';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { NotificationIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';

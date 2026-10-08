@@ -1,6 +1,6 @@
 import assert from 'node:assert';
 
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@nexio-test/kit/playwright';
 import type { PlaywrightTestConfig } from '@playwright/test';
 // import { devices } from '@playwright/test';
 
@@ -40,7 +40,7 @@ if (process.env.DEV_SERVER_URL) {
   );
   config.webServer = [
     {
-      command: 'yarn run -T affine bundle -p @affine/electron-renderer --dev',
+      command: 'yarn run -T affine bundle -p @nexio/electron-renderer --dev',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {

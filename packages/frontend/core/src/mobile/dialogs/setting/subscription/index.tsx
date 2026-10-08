@@ -1,8 +1,8 @@
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { NativePaywallService } from '@affine/core/modules/paywall';
-import { UrlService } from '@affine/core/modules/url';
-import { useI18n } from '@affine/i18n';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { NativePaywallService } from '@nexio/core/modules/paywall';
+import { UrlService } from '@nexio/core/modules/url';
+import { useI18n } from '@nexio/i18n';
 import { DiamondIcon, MultiPeopleIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';

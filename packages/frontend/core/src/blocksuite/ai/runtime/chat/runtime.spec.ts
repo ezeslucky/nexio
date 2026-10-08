@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import { describe, expect, test, vi } from 'vitest';
 
 import { SelectedSourcesProcessingError } from '../../provider/error';

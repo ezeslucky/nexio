@@ -1,28 +1,28 @@
-import { notify, toast, useConfirmModal } from '@affine/component';
+import { notify, toast, useConfirmModal } from '@nexio/component';
 import {
   Menu,
   MenuItem,
   MenuSeparator,
   MenuSub,
-} from '@affine/component/ui/menu';
-import { PageHistoryModal } from '@affine/core/components/affine/page-history-modal';
-import { useGuard } from '@affine/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useEnableCloud } from '@affine/core/components/hooks/affine/use-enable-cloud';
-import { useExportPage } from '@affine/core/components/hooks/affine/use-export-page';
-import { Export, MoveToTrash } from '@affine/core/components/page-list';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { useDetailPageHeaderResponsive } from '@affine/core/desktop/pages/workspace/detail-page/use-header-responsive';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { EditorService } from '@affine/core/modules/editor';
-import { OpenInAppService } from '@affine/core/modules/open-in-app/services';
-import { GuardService } from '@affine/core/modules/permissions';
-import { ShareMenuContent } from '@affine/core/modules/share-menu';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/ui/menu';
+import { PageHistoryModal } from '@nexio/core/components/affine/page-history-modal';
+import { useGuard } from '@nexio/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useExportPage } from '@nexio/core/components/hooks/affine/use-export-page';
+import { Export, MoveToTrash } from '@nexio/core/components/page-list';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { useDetailPageHeaderResponsive } from '@nexio/core/desktop/pages/workspace/detail-page/use-header-responsive';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { EditorService } from '@nexio/core/modules/editor';
+import { OpenInAppService } from '@nexio/core/modules/open-in-app/services';
+import { GuardService } from '@nexio/core/modules/permissions';
+import { ShareMenuContent } from '@nexio/core/modules/share-menu';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import type { Store } from '@blocksuite/affine/store';
 import {
   DuplicateIcon,

@@ -1,5 +1,5 @@
-import { OverlayModal } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { OverlayModal } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 
 import { NexioIssuePreview } from './nexio-issue-preview';
 

@@ -1,17 +1,17 @@
-import { toolbarButtons } from '@affine-test/kit/bs/linked-toolbar';
-import { test } from '@affine-test/kit/playwright';
+import { toolbarButtons } from '@nexio-test/kit/bs/linked-toolbar';
+import { test } from '@nexio-test/kit/playwright';
 import {
   pressArrowUp,
   pressEnter,
   pressTab,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

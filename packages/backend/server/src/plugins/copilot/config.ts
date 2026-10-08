@@ -1,4 +1,4 @@
-import serverNativeModule from '@affine/server-native';
+import serverNativeModule from '@nexio/server-native';
 
 import {
   defineNativeModuleConfig,

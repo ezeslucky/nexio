@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto';
 
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { getAFFiNEWorkspaceSchema } from '@affine/core/modules/workspace';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getAFFiNEWorkspaceSchema } from '@nexio/core/modules/workspace';
 import type { DocSnapshot } from '@blocksuite/affine/store';
 import { TestWorkspace } from '@blocksuite/affine/store/test';
 import type { ImportBatch } from '@blocksuite/affine/widgets/linked-doc';

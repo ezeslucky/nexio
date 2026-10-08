@@ -1,4 +1,4 @@
-import { AppThemeService } from '@affine/core/modules/theme';
+import { AppThemeService } from '@nexio/core/modules/theme';
 import { ColorScheme } from '@blocksuite/affine/model';
 import {
   type ThemeExtension,

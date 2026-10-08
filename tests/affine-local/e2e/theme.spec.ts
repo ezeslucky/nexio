@@ -1,8 +1,8 @@
 import { resolve } from 'node:path';
 
-import { test, testResultDir } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test, testResultDir } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.use({

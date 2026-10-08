@@ -1,4 +1,4 @@
-import track from '@affine/track';
+import track from '@nexio/track';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { ShadowlessElement } from '@blocksuite/affine/std';
 import { Signal } from '@preact/signals-core';

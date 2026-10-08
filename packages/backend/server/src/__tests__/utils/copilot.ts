@@ -7,7 +7,7 @@ import {
   settleTranscriptTaskMutation,
   submitTranscriptTaskMutation,
   updateCopilotSessionMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { TestingApp } from './testing-app';
 

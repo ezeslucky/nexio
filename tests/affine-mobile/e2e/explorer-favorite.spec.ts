@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/mobile';
-import { getBlockSuiteEditorTitle } from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+import { test } from '@nexio-test/kit/mobile';
+import { getBlockSuiteEditorTitle } from '@nexio-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@nexio-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 import {

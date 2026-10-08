@@ -1,10 +1,10 @@
-import type { CreateImportSessionOptions } from '@affine/native';
+import type { CreateImportSessionOptions } from '@nexio/native';
 import {
   cancelImportSession,
   createImportSession,
   disposeImportSession,
   nextImportBatch,
-} from '@affine/native';
+} from '@nexio/native';
 
 export const importHandlers = {
   createImportSession: (

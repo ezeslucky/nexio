@@ -1,8 +1,8 @@
-import { focusDocTitle } from '@affine-test/kit/utils/editor';
+import { focusDocTitle } from '@nexio-test/kit/utils/editor';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

@@ -1,18 +1,18 @@
 // packages/frontend/core/src/blocksuite/ai/hooks/useChatPanelConfig.ts
-import { AIPlaygroundService } from '@affine/core/modules/ai-button/services/playground';
-import { AIReasoningService } from '@affine/core/modules/ai-button/services/reasoning';
-import { CollectionService } from '@affine/core/modules/collection';
-import { DocsService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { DocsSearchService } from '@affine/core/modules/docs-search';
+import { AIPlaygroundService } from '@nexio/core/modules/ai-button/services/playground';
+import { AIReasoningService } from '@nexio/core/modules/ai-button/services/reasoning';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { DocsService } from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { DocsSearchService } from '@nexio/core/modules/docs-search';
 import {
   type SearchCollectionMenuAction,
   type SearchDocMenuAction,
   SearchMenuService,
   type SearchTagMenuAction,
-} from '@affine/core/modules/search-menu/services';
-import { TagService } from '@affine/core/modules/tag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/search-menu/services';
+import { TagService } from '@nexio/core/modules/tag';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
 import { useFramework } from '@toeverything/infra';
 

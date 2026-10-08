@@ -4,7 +4,7 @@ import {
   revokeMemberPermissionMutation,
   revokePublicPageMutation,
   WorkspaceMemberStatus,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { BackendRuntimeProvider } from '../../../core/backend-runtime';
 import { EntitlementService } from '../../../core/entitlement';

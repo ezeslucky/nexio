@@ -1,4 +1,4 @@
-import { getWorkerUrl } from '@affine/env/worker';
+import { getWorkerUrl } from '@nexio/env/worker';
 import { CodeLayoutHandlerExtension } from '@blocksuite/affine/blocks/code';
 import { ImageLayoutHandlerExtension } from '@blocksuite/affine/blocks/image';
 import { ListLayoutHandlerExtension } from '@blocksuite/affine/blocks/list';

@@ -1,4 +1,4 @@
-import { IconButton } from '@affine/component';
+import { IconButton } from '@nexio/component';
 
 import * as styles from './sidebar-header.css';
 

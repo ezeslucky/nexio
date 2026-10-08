@@ -1,20 +1,20 @@
-import { Badge } from '@affine/admin/components/ui/badge';
-import { Button } from '@affine/admin/components/ui/button';
+import { Badge } from '@nexio/admin/components/ui/badge';
+import { Button } from '@nexio/admin/components/ui/button';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@affine/admin/components/ui/card';
-import { useMutation } from '@affine/admin/use-mutation';
-import { useQuery } from '@affine/admin/use-query';
-import { notify } from '@affine/component';
-import type { UserFriendlyError } from '@affine/error';
+} from '@nexio/admin/components/ui/card';
+import { useMutation } from '@nexio/admin/use-mutation';
+import { useQuery } from '@nexio/admin/use-query';
+import { notify } from '@nexio/component';
+import type { UserFriendlyError } from '@nexio/error';
 import {
   authSigningKeysQuery,
   deleteAuthSigningKeyMutation,
   rotateAuthSigningKeyMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { useMemo, useState } from 'react';
 
 import { ConfirmDialog } from '../../../components/shared/confirm-dialog';

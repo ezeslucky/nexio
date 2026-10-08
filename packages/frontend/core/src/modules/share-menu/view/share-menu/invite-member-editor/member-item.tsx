@@ -1,5 +1,5 @@
-import { Avatar } from '@affine/component';
-import type { Member } from '@affine/core/modules/permissions';
+import { Avatar } from '@nexio/component';
+import type { Member } from '@nexio/core/modules/permissions';
 import { useCallback } from 'react';
 
 import * as styles from './member-item.css';

@@ -1,4 +1,4 @@
-import { generateUrl } from '@affine/core/components/hooks/affine/use-share-url';
+import { generateUrl } from '@nexio/core/components/hooks/affine/use-share-url';
 import { AttachmentBlockModel } from '@blocksuite/affine/model';
 import {
   attachmentBlockAudioMediaKey,

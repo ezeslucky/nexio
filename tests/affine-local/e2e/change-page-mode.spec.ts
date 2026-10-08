@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   ensureInEdgelessMode,
   ensureInPageMode,
   getPageMode,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   clickPageMoreActions,
   getBlockSuiteEditorTitle,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('Switch to edgeless by switch edgeless item', async ({ page }) => {

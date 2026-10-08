@@ -3,7 +3,7 @@ import {
   indexerSearchQuery,
   SearchQueryType,
   SearchTable,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { Config } from '../../../base';
 import { DocRole } from '../../../models';

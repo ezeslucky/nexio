@@ -1,8 +1,8 @@
-import { IconButton } from '@affine/component';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import type { Tag } from '@affine/core/modules/tag';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
+import { IconButton } from '@nexio/component';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import type { Tag } from '@nexio/core/modules/tag';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type MouseEvent, useCallback } from 'react';
 

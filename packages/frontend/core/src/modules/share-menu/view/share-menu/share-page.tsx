@@ -1,10 +1,10 @@
-import { Divider, Skeleton } from '@affine/component';
-import { Button } from '@affine/component/ui/button';
-import { useGuard } from '@affine/core/components/guard';
-import { ServerService } from '@affine/core/modules/cloud';
-import { DocService } from '@affine/core/modules/doc';
-import { ShareInfoService } from '@affine/core/modules/share-doc';
-import { useI18n } from '@affine/i18n';
+import { Divider, Skeleton } from '@nexio/component';
+import { Button } from '@nexio/component/ui/button';
+import { useGuard } from '@nexio/core/components/guard';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { DocService } from '@nexio/core/modules/doc';
+import { ShareInfoService } from '@nexio/core/modules/share-doc';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { Suspense, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';

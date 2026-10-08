@@ -1,7 +1,7 @@
 import type {
   TranscriptionQualityInput,
   TranscriptionSourceAudioInput,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import {
   BlockModel,
   BlockSchemaExtension,

@@ -1,7 +1,7 @@
-import { showAILoginRequiredAtom } from '@affine/core/components/affine/auth/ai-login-required';
-import type { AIToolsConfig } from '@affine/core/modules/ai-button';
-import type { NbstoreService } from '@affine/core/modules/storage';
-import { UserFriendlyError } from '@affine/error';
+import { showAILoginRequiredAtom } from '@nexio/core/components/affine/auth/ai-login-required';
+import type { AIToolsConfig } from '@nexio/core/modules/ai-button';
+import type { NbstoreService } from '@nexio/core/modules/storage';
+import { UserFriendlyError } from '@nexio/error';
 import {
   cleanupCopilotSessionMutation,
   createCopilotMessageMutation,
@@ -19,7 +19,7 @@ import {
   type QueryResponse,
   type RequestOptions,
   updateCopilotSessionMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { getCurrentStore } from '@toeverything/infra';
 
 import {

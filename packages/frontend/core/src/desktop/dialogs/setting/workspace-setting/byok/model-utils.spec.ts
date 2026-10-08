@@ -4,7 +4,7 @@ import {
   ByokModelFeature,
   ByokModelInput,
   ByokModelOutput,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { describe, expect, test } from 'vitest';
 
 import {

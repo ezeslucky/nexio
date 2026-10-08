@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/playwright';
-import { importFile } from '@affine-test/kit/utils/attachment';
+import { test } from '@nexio-test/kit/playwright';
+import { importFile } from '@nexio-test/kit/utils/attachment';
 import {
   clickEdgelessModeButton,
   dragView,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

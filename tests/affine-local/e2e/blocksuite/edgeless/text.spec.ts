@@ -1,15 +1,15 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateEditorContainer,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect, type Locator } from '@playwright/test';
 
 function getEdgelessTextColor(text: Locator) {

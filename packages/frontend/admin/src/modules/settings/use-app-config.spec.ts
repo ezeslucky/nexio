@@ -53,20 +53,20 @@ const mocked = vi.hoisted(() => {
   };
 });
 
-vi.mock('@affine/admin/use-query', () => ({
+vi.mock('@nexio/admin/use-query', () => ({
   useQuery: () => ({
     data: mocked.getQueryState(),
     mutate: mocked.mutateMock,
   }),
 }));
 
-vi.mock('@affine/admin/use-mutation', () => ({
+vi.mock('@nexio/admin/use-mutation', () => ({
   useMutation: () => ({
     trigger: mocked.saveUpdatesMock,
   }),
 }));
 
-vi.mock('@affine/component', () => ({
+vi.mock('@nexio/component', () => ({
   notify: {
     success: mocked.notifySuccessMock,
     error: mocked.notifyErrorMock,

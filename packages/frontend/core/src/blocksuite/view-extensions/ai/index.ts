@@ -1,15 +1,15 @@
-import { toolbarAIEntryConfig } from '@affine/core/blocksuite/ai';
-import { AIChatBlockSpec } from '@affine/core/blocksuite/ai/blocks';
-import { AITranscriptionBlockSpec } from '@affine/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
-import { edgelessToolbarAIEntryConfig } from '@affine/core/blocksuite/ai/entries/edgeless';
-import { imageToolbarAIEntryConfig } from '@affine/core/blocksuite/ai/entries/image-toolbar/setup-image-toolbar';
-import { AICodeBlockWatcher } from '@affine/core/blocksuite/ai/extensions/ai-code';
-import { getAIEdgelessRootWatcher } from '@affine/core/blocksuite/ai/extensions/ai-edgeless-root';
-import { getAIPageRootWatcher } from '@affine/core/blocksuite/ai/extensions/ai-page-root';
-import { AiSlashMenuConfigExtension } from '@affine/core/blocksuite/ai/extensions/ai-slash-menu';
-import { CopilotTool } from '@affine/core/blocksuite/ai/tool/copilot-tool';
-import { aiPanelWidget } from '@affine/core/blocksuite/ai/widgets/ai-panel/ai-panel';
-import { edgelessCopilotWidget } from '@affine/core/blocksuite/ai/widgets/edgeless-copilot';
+import { toolbarAIEntryConfig } from '@nexio/core/blocksuite/ai';
+import { AIChatBlockSpec } from '@nexio/core/blocksuite/ai/blocks';
+import { AITranscriptionBlockSpec } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
+import { edgelessToolbarAIEntryConfig } from '@nexio/core/blocksuite/ai/entries/edgeless';
+import { imageToolbarAIEntryConfig } from '@nexio/core/blocksuite/ai/entries/image-toolbar/setup-image-toolbar';
+import { AICodeBlockWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-code';
+import { getAIEdgelessRootWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-edgeless-root';
+import { getAIPageRootWatcher } from '@nexio/core/blocksuite/ai/extensions/ai-page-root';
+import { AiSlashMenuConfigExtension } from '@nexio/core/blocksuite/ai/extensions/ai-slash-menu';
+import { CopilotTool } from '@nexio/core/blocksuite/ai/tool/copilot-tool';
+import { aiPanelWidget } from '@nexio/core/blocksuite/ai/widgets/ai-panel/ai-panel';
+import { edgelessCopilotWidget } from '@nexio/core/blocksuite/ai/widgets/edgeless-copilot';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,

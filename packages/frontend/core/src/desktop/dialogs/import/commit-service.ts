@@ -1,7 +1,7 @@
-import type { IconData } from '@affine/component';
-import type { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import type { OrganizeService } from '@affine/core/modules/organize';
-import type { TagService } from '@affine/core/modules/tag';
+import type { IconData } from '@nexio/component';
+import type { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
+import type { OrganizeService } from '@nexio/core/modules/organize';
+import type { TagService } from '@nexio/core/modules/tag';
 import {
   type ExtensionType,
   type Schema,

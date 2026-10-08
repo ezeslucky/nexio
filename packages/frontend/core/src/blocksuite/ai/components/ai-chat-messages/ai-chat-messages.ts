@@ -1,7 +1,7 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { PeekViewService } from '@affine/core/modules/peek-view';
-import type { AppThemeService } from '@affine/core/modules/theme';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { PeekViewService } from '@nexio/core/modules/peek-view';
+import type { AppThemeService } from '@nexio/core/modules/theme';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import { WithDisposable } from '@blocksuite/affine/global/lit';
 import {
   DocModeProvider,

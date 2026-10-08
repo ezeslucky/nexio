@@ -1,4 +1,4 @@
-import type { DelegatedToolName } from '@affine/realtime';
+import type { DelegatedToolName } from '@nexio/realtime';
 import { z } from 'zod';
 
 import type { DelegatedEditorService } from '../delegated/service';

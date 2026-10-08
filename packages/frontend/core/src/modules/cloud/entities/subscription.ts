@@ -2,7 +2,7 @@ import {
   SubscriptionPlan,
   type SubscriptionQuery,
   SubscriptionRecurring,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

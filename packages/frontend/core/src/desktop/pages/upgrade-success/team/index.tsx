@@ -1,7 +1,7 @@
-import { Button } from '@affine/component';
-import { AuthPageContainer } from '@affine/component/auth-components';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { AuthPageContainer } from '@nexio/component/auth-components';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useCallback } from 'react';
 
 import * as styles from './styles.css';

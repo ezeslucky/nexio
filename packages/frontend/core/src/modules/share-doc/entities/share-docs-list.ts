@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import type { GetWorkspacePublicPagesQuery } from '@affine/graphql';
+import { DebugLogger } from '@nexio/debug';
+import type { GetWorkspacePublicPagesQuery } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

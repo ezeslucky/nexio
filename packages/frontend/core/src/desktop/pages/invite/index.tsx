@@ -1,4 +1,4 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   AcceptInvitePage,
   ExpiredPage,
@@ -6,11 +6,11 @@ import {
   JoinFailedPage,
   RequestToJoinPage,
   SentRequestPage,
-} from '@affine/component/member-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { WorkspaceMemberStatus } from '@affine/graphql';
+} from '@nexio/component/member-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { WorkspaceMemberStatus } from '@nexio/graphql';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';

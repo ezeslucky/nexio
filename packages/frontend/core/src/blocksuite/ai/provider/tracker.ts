@@ -1,4 +1,4 @@
-import { track, tracker } from '@affine/track';
+import { track, tracker } from '@nexio/track';
 import type { EditorHost } from '@blocksuite/affine/std';
 import type { GfxPrimitiveElementModel } from '@blocksuite/affine/std/gfx';
 import type { BlockModel } from '@blocksuite/affine/store';

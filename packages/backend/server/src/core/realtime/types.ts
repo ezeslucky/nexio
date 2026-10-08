@@ -5,7 +5,7 @@ import type {
   RealtimeTopicEventOf,
   RealtimeTopicInputOf,
   RealtimeTopicName,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import type { z } from 'zod';
 
 import type { CurrentUser } from '../auth';

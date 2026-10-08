@@ -1,4 +1,4 @@
-import { copyByKeyboard } from '@affine-test/kit/utils/keyboard';
+import { copyByKeyboard } from '@nexio-test/kit/utils/keyboard';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

@@ -1,4 +1,4 @@
-import { oauthProvidersQuery } from '@affine/graphql';
+import { oauthProvidersQuery } from '@nexio/graphql';
 
 import { ConfigModule } from '../../../base/config';
 import { createApp, e2e, TestingApp } from '../test';

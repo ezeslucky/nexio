@@ -6,18 +6,18 @@ import {
   notify,
   Skeleton,
   useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   Pagination,
   SettingHeader,
-} from '@affine/component/setting-components';
-import { Avatar } from '@affine/component/ui/avatar';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { BackupService } from '@affine/core/modules/backup/services';
-import { toArrayBuffer } from '@affine/core/utils/array-buffer';
-import { i18nTime, useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component/setting-components';
+import { Avatar } from '@nexio/component/ui/avatar';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { BackupService } from '@nexio/core/modules/backup/services';
+import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
+import { i18nTime, useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   DeleteIcon,
   LocalWorkspaceIcon,

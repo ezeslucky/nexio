@@ -1,7 +1,7 @@
-import { MenuItem } from '@affine/component/ui/menu';
-import { DefaultServerService } from '@affine/core/modules/cloud';
-import { ServerFeature } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { MenuItem } from '@nexio/component/ui/menu';
+import { DefaultServerService } from '@nexio/core/modules/cloud';
+import { ServerFeature } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 

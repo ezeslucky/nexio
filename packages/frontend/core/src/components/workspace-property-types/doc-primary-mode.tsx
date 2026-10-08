@@ -3,10 +3,10 @@ import {
   notify,
   PropertyValue,
   type RadioItem,
-} from '@affine/component';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { DocService } from '@affine/core/modules/doc';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { DocService } from '@nexio/core/modules/doc';
+import { useI18n } from '@nexio/i18n';
 import type { DocMode } from '@blocksuite/affine/model';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';

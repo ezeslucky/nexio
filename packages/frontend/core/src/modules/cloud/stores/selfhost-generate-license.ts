@@ -1,4 +1,4 @@
-import { generateLicenseKeyMutation } from '@affine/graphql';
+import { generateLicenseKeyMutation } from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 import type { GraphQLService } from '../services/graphql';

@@ -1,5 +1,5 @@
 {
-  "name": "@affine/reader",
+  "name": "@nexio/reader",
   "type": "module",
   "version": "0.27.5",
   "private": true,
@@ -10,8 +10,8 @@
     "./dist": "./dist/index.js"
   },
   "scripts": {
-    "build": "affine bundle -p @affine/reader",
-    "bundle": "affine bundle -p @affine/reader"
+    "build": "affine bundle -p @nexio/reader",
+    "bundle": "affine bundle -p @nexio/reader"
   },
   "dependencies": {
     "lodash-es": "^4.17.23",

@@ -1,4 +1,4 @@
-import { WorkspaceImpl } from '@affine/core/modules/workspace/impls/workspace';
+import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
 import { clipboardConfigs } from '@blocksuite/affine/foundation/clipboard';
 import { defaultImageProxyMiddleware } from '@blocksuite/affine/shared/adapters';
 import { replaceSelectedTextWithBlocksCommand } from '@blocksuite/affine/shared/commands';

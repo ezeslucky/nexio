@@ -1,6 +1,6 @@
-import { DownloadModal } from '@affine/core/components/download-modal';
-import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
-import { track } from '@affine/track';
+import { DownloadModal } from '@nexio/core/components/download-modal';
+import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
+import { track } from '@nexio/track';
 import { CloseIcon, DownloadIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import { useCallback, useState } from 'react';

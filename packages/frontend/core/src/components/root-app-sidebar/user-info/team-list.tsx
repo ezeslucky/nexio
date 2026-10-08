@@ -1,10 +1,10 @@
-import { Divider, Tooltip } from '@affine/component';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { Divider, Tooltip } from '@nexio/component';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import {
   useLiveData,
   useService,

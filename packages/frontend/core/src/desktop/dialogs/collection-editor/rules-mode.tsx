@@ -4,19 +4,19 @@ import {
   Masonry,
   type MasonryGroup,
   Tooltip,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocListItemComponent } from '@affine/core/components/explorer/docs-view/docs-list';
-import { Filters } from '@affine/core/components/filter';
-import { AffineShapeIcon } from '@affine/core/components/page-list';
-import type { CollectionInfo } from '@affine/core/modules/collection';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import { DocsService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/components/explorer/context';
+import { DocListItemComponent } from '@nexio/core/components/explorer/docs-view/docs-list';
+import { Filters } from '@nexio/core/components/filter';
+import { AffineShapeIcon } from '@nexio/core/components/page-list';
+import type { CollectionInfo } from '@nexio/core/modules/collection';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import { DocsService } from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { Trans, useI18n } from '@nexio/i18n';
 import {
   CloseIcon,
   EdgelessIcon,

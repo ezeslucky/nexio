@@ -1,4 +1,4 @@
-import type { InvoicesQuery } from '@affine/graphql';
+import type { InvoicesQuery } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

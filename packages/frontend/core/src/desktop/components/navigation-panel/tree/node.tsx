@@ -12,15 +12,15 @@ import {
   MenuItem,
   useDraggable,
   useDropTarget,
-} from '@affine/component';
-import { Guard } from '@affine/core/components/guard';
-import { AppSidebarService } from '@affine/core/modules/app-sidebar';
-import { ExplorerIconService } from '@affine/core/modules/explorer-icon/services/explorer-icon';
-import type { ExplorerType } from '@affine/core/modules/explorer-icon/store/explorer-icon';
-import type { DocPermissionActions } from '@affine/core/modules/permissions';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { Guard } from '@nexio/core/components/guard';
+import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
+import { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
+import type { ExplorerType } from '@nexio/core/modules/explorer-icon/store/explorer-icon';
+import type { DocPermissionActions } from '@nexio/core/modules/permissions';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
 import {
   ArrowDownSmallIcon,
   EditIcon,

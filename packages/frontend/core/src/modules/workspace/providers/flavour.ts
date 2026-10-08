@@ -3,8 +3,8 @@ import type {
   BlobStorage,
   DocStorage,
   ListedBlobRecord,
-} from '@affine/nbstore';
-import type { WorkerInitOptions } from '@affine/nbstore/worker/client';
+} from '@nexio/nbstore';
+import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
 import type { Workspace as BSWorkspace } from '@blocksuite/affine/store';
 import { createIdentifier, type LiveData } from '@toeverything/infra';
 

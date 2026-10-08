@@ -1,12 +1,12 @@
 import {
   AuthPageContainer,
   type User,
-} from '@affine/component/auth-components';
+} from '@nexio/component/auth-components';
 import {
   type GetInviteInfoQuery,
   WorkspaceMemberStatus,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { SignOutIcon } from '@blocksuite/icons/rc';
 
 import { Avatar } from '../../ui/avatar';

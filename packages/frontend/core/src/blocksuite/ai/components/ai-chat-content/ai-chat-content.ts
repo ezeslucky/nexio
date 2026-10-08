@@ -2,17 +2,17 @@ import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
-import type { AIDraftState } from '@affine/core/modules/ai-button/services/ai-draft';
+} from '@nexio/core/modules/ai-button';
+import type { AIDraftState } from '@nexio/core/modules/ai-button/services/ai-draft';
 import type {
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { PeekViewService } from '@affine/core/modules/peek-view';
-import type { AppThemeService } from '@affine/core/modules/theme';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+} from '@nexio/core/modules/cloud';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { PeekViewService } from '@nexio/core/modules/peek-view';
+import type { AppThemeService } from '@nexio/core/modules/theme';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { type EditorHost, ShadowlessElement } from '@blocksuite/affine/std';
 import type { ExtensionType } from '@blocksuite/affine/store';

@@ -7,7 +7,7 @@ import {
   type ToastOptions,
   toReactNode,
   type useConfirmModal,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   NotificationExtension,
   type NotificationService,

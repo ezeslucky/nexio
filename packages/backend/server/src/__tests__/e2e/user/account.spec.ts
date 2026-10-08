@@ -3,7 +3,7 @@ import {
   disableUserMutation,
   getCurrentUserQuery,
   getWorkspaceQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { PrismaClient, WorkspaceMemberStatus } from '@prisma/client';
 import Sinon from 'sinon';
 

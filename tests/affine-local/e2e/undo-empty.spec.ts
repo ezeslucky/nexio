@@ -1,10 +1,10 @@
-import { clickEdgelessModeButton } from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { clickEdgelessModeButton } from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import test, { expect } from '@playwright/test';
 
 test('should be able to undo on empty page', async ({ page }) => {

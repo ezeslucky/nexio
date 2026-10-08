@@ -1,12 +1,12 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
 import {
   SubscriptionService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
-import { WorkspaceQuotaService } from '@affine/core/modules/quota';
-import { SubscriptionRecurring } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
+import { SubscriptionRecurring } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

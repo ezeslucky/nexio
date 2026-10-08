@@ -1,4 +1,4 @@
-import { track } from '@affine/track';
+import { track } from '@nexio/track';
 import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';

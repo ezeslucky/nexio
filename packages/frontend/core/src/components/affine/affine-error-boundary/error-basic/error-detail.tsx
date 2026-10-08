@@ -1,6 +1,6 @@
-import { Scrollable, ThemedImg } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { Trans, useI18n } from '@affine/i18n';
+import { Scrollable, ThemedImg } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { Trans, useI18n } from '@nexio/i18n';
 import { ArrowDownSmallIcon } from '@blocksuite/icons/rc';
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 import { useCallback, useState } from 'react';

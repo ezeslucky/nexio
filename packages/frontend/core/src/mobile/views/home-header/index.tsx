@@ -3,12 +3,12 @@ import {
   Menu,
   SafeArea,
   startScopedViewTransition,
-} from '@affine/component';
-import { NotificationList } from '@affine/core/components/notification/list';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { NotificationCountService } from '@affine/core/modules/notification';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { NotificationList } from '@nexio/core/components/notification/list';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { NotificationCountService } from '@nexio/core/modules/notification';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { NotificationIcon, SettingsIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';

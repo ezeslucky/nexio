@@ -12,7 +12,7 @@ import {
   resolveCommentMutation,
   updateCommentMutation,
   updateReplyMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import {
   type CommentNotification,

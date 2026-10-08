@@ -6,7 +6,7 @@ import {
   ByokModelOutput,
   ByokProbeOperation,
   type ByokProvider,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import type { ByokDefinition, ByokSettings } from './types';
 

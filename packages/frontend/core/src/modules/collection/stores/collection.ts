@@ -1,4 +1,4 @@
-import type { Collection as LegacyCollectionInfo } from '@affine/env/filter';
+import type { Collection as LegacyCollectionInfo } from '@nexio/env/filter';
 import {
   Store,
   yjsGetPath,

@@ -1,4 +1,4 @@
-import { I18n } from '@affine/i18n';
+import { I18n } from '@nexio/i18n';
 import { createLitPortal } from '@blocksuite/affine/components/portal';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { ShadowlessElement } from '@blocksuite/affine/std';

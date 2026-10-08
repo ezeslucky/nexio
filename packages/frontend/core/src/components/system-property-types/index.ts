@@ -1,6 +1,6 @@
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import type { DocRecord } from '@affine/core/modules/doc';
-import type { I18nString } from '@affine/i18n';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import type { DocRecord } from '@nexio/core/modules/doc';
+import type { I18nString } from '@nexio/i18n';
 import {
   CloudWorkspaceIcon,
   DateTimeIcon,

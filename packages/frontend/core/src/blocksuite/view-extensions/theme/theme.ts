@@ -1,5 +1,5 @@
-import { DocService, DocsService } from '@affine/core/modules/doc';
-import { AppThemeService } from '@affine/core/modules/theme';
+import { DocService, DocsService } from '@nexio/core/modules/doc';
+import { AppThemeService } from '@nexio/core/modules/theme';
 import type { Container } from '@blocksuite/affine/global/di';
 import { ColorScheme } from '@blocksuite/affine/model';
 import {

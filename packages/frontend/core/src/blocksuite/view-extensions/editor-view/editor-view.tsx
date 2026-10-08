@@ -1,12 +1,12 @@
-import type { ConfirmModalProps, ElementOrFactory } from '@affine/component';
+import type { ConfirmModalProps, ElementOrFactory } from '@nexio/component';
 import {
   AffinePageReference,
   AffineSharedPageReference,
-} from '@affine/core/components/affine/reference-link';
-import { DocService, DocsService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@nexio/core/components/affine/reference-link';
+import { DocService, DocsService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,

@@ -1,6 +1,6 @@
-import { Tooltip } from '@affine/component/ui/tooltip';
-import { SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Tooltip } from '@nexio/component/ui/tooltip';
+import { SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type SyntheticEvent, useEffect } from 'react';
 

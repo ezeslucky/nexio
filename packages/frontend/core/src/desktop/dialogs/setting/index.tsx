@@ -1,21 +1,21 @@
-import { Loading, Scrollable } from '@affine/component';
-import { WorkspaceDetailSkeleton } from '@affine/component/setting-components';
-import type { ModalProps } from '@affine/component/ui/modal';
-import { Modal } from '@affine/component/ui/modal';
+import { Loading, Scrollable } from '@nexio/component';
+import { WorkspaceDetailSkeleton } from '@nexio/component/setting-components';
+import type { ModalProps } from '@nexio/component/ui/modal';
+import { Modal } from '@nexio/component/ui/modal';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
-import type { DialogComponentProps } from '@affine/core/modules/dialogs';
+} from '@nexio/core/modules/cloud';
+import type { DialogComponentProps } from '@nexio/core/modules/dialogs';
 import type {
   SettingTab,
   WORKSPACE_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs/constant';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { createIsland, type Island } from '@affine/core/utils/island';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans, useTranslation } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs/constant';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { createIsland, type Island } from '@nexio/core/utils/island';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { Trans, useTranslation } from '@nexio/i18n';
 import { ContactWithUsIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { debounce } from 'lodash-es';

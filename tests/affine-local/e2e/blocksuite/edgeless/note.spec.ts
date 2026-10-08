@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   assertTitle,
   clickEdgelessModeButton,
@@ -14,7 +14,7 @@ import {
   moveToView,
   resizeElementByHandle,
   toViewCoord,
-} from '@affine-test/kit/utils/editor';
+} from '@nexio-test/kit/utils/editor';
 import {
   pasteByKeyboard,
   pressBackspace,
@@ -22,14 +22,14 @@ import {
   pressEscape,
   selectAllByKeyboard,
   undoByKeyboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickLocatorByRatio } from '@affine-test/kit/utils/utils';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickLocatorByRatio } from '@nexio-test/kit/utils/utils';
 import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
 import type { IVec } from '@blocksuite/affine/global/gfx';
 import type { NoteBlockModel } from '@blocksuite/affine/model';

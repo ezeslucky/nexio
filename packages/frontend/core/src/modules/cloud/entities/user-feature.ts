@@ -1,4 +1,4 @@
-import { FeatureType } from '@affine/graphql';
+import { FeatureType } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

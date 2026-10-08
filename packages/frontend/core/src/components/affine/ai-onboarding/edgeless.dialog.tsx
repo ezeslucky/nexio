@@ -1,10 +1,10 @@
-import { notify } from '@affine/component';
-import { type Notification } from '@affine/component/ui/notification';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { EditorService } from '@affine/core/modules/editor';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { notify } from '@nexio/component';
+import { type Notification } from '@nexio/component/ui/notification';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { EditorService } from '@nexio/core/modules/editor';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { AiIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';

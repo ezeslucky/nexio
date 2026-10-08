@@ -1,19 +1,19 @@
-import { Button } from '@affine/component';
-import { AuthHeader } from '@affine/component/auth-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useWorkspaceName } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspaceSelector } from '@affine/core/components/workspace-selector';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
+import { Button } from '@nexio/component';
+import { AuthHeader } from '@nexio/component/auth-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useWorkspaceName } from '@nexio/core/components/hooks/use-workspace-info';
+import { WorkspaceSelector } from '@nexio/core/components/workspace-selector';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
 import {
   type ClipperInput,
   ImportClipperService,
-} from '@affine/core/modules/import-clipper';
+} from '@nexio/core/modules/import-clipper';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { AllDocsIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';

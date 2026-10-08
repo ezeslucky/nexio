@@ -1,11 +1,11 @@
 import {
   getNativeImportSessionHandlers,
   type NativeImportSessionHandlers,
-} from '@affine/core/modules/import/runtime-config';
+} from '@nexio/core/modules/import/runtime-config';
 import type {
   NativeImportBrowserSource,
   NativeImportFormat,
-} from '@affine/electron-api';
+} from '@nexio/electron-api';
 import type {
   ImportBatch,
   ImportCommitResult,

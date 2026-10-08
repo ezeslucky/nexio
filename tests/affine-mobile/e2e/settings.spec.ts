@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/mobile';
+import { test } from '@nexio-test/kit/mobile';
 import { expect, type Page } from '@playwright/test';
 
 const openSettings = async (page: Page) => {

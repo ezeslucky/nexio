@@ -1,4 +1,4 @@
-import type { AIToolsConfig } from '@affine/core/modules/ai-button';
+import type { AIToolsConfig } from '@nexio/core/modules/ai-button';
 import type {
   CopilotChatHistoryFragment,
   CopilotHistories,
@@ -7,7 +7,7 @@ import type {
   RequestOptions,
   StreamObject,
   UpdateChatSessionInput,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import type { EditorHost } from '@blocksuite/affine/std';
 import type { GfxModel } from '@blocksuite/affine/std/gfx';
 import type { BlockModel } from '@blocksuite/affine/store';

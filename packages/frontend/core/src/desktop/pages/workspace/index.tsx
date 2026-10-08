@@ -1,20 +1,20 @@
-import { DNDContext } from '@affine/component';
-import { AffineOtherPageLayout } from '@affine/component/affine-other-page-layout';
-import { workbenchRoutes } from '@affine/core/desktop/workbench-router';
+import { DNDContext } from '@nexio/component';
+import { AffineOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
 import {
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { DndService } from '@affine/core/modules/dnd/services';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { OpenInAppGuard } from '@affine/core/modules/open-in-app';
+} from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { DndService } from '@nexio/core/modules/dnd/services';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { OpenInAppGuard } from '@nexio/core/modules/open-in-app';
 import {
   getAFFiNEWorkspaceSchema,
   type Workspace,
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workspace';
 import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
 import {
   FrameworkScope,

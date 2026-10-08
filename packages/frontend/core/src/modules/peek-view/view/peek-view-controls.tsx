@@ -1,7 +1,7 @@
-import { IconButton, notify } from '@affine/component';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { IconButton, notify } from '@nexio/component';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type { DocMode } from '@blocksuite/affine/model';
 import {
   CloseIcon,

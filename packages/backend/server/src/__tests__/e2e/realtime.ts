@@ -3,7 +3,7 @@ import type {
   RealtimeRequestInputOf,
   RealtimeRequestName,
   RealtimeRequestOutputOf,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { io, type Socket as SocketIOClient } from 'socket.io-client';
 import type { Response } from 'supertest';
 

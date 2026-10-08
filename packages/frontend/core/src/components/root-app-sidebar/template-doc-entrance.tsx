@@ -1,11 +1,11 @@
-import { Menu, MenuSeparator } from '@affine/component';
-import { MenuItem as SidebarMenuItem } from '@affine/core/modules/app-sidebar/views';
+import { Menu, MenuSeparator } from '@nexio/component';
+import { MenuItem as SidebarMenuItem } from '@nexio/core/modules/app-sidebar/views';
 import {
   TemplateListMenuAdd,
   TemplateListMenuContentScrollable,
-} from '@affine/core/modules/template-doc/view/template-list-menu';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/template-doc/view/template-list-menu';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { TemplateIcon } from '@blocksuite/icons/rc';
 import { useCallback, useState } from 'react';
 

@@ -4,17 +4,17 @@ import {
   notify,
   Skeleton,
   useConfirmModal,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
   McpCredentialService,
   ServerService,
-} from '@affine/core/modules/cloud';
-import type { McpCredential } from '@affine/core/modules/cloud/services/mcp-credential';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { McpAccessMode } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import type { McpCredential } from '@nexio/core/modules/cloud/services/mcp-credential';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { McpAccessMode } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

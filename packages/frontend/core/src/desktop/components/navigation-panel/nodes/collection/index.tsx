@@ -4,17 +4,17 @@ import {
   type DropTargetOptions,
   MenuItem,
   toast,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   type Collection,
   CollectionService,
-} from '@affine/core/modules/collection';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/collection';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { FilterMinusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';

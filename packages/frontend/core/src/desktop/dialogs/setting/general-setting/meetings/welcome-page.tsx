@@ -1,6 +1,6 @@
-import { Button } from '@affine/component';
-import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
-import { Trans, useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
+import { Trans, useI18n } from '@nexio/i18n';
 import { DualLinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';

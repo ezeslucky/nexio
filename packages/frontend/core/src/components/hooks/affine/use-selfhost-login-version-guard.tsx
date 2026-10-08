@@ -1,9 +1,9 @@
-import type { Server } from '@affine/core/modules/cloud';
+import type { Server } from '@nexio/core/modules/cloud';
 import {
   isSupportedServerVersion,
   MIN_SUPPORTED_SERVER_VERSION,
-} from '@affine/core/modules/cloud/stores/server-config';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud/stores/server-config';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 

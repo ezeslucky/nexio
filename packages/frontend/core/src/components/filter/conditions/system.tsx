@@ -1,5 +1,5 @@
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { useI18n } from '@affine/i18n';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { useI18n } from '@nexio/i18n';
 
 import {
   isSupportedSystemPropertyType,

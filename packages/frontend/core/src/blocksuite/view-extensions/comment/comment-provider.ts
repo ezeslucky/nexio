@@ -1,4 +1,4 @@
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { getSelectedBlocksCommand } from '@blocksuite/affine/shared/commands';
 import type { CommentProvider } from '@blocksuite/affine/shared/services';
 import { CommentProviderIdentifier } from '@blocksuite/affine/shared/services';

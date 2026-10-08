@@ -1,7 +1,7 @@
 import {
   WorkbenchLink,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
+} from '@nexio/core/modules/workbench';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './style.css';

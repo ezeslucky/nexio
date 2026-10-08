@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { createRandomUser, loginUser } from '@affine-test/kit/utils/cloud';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test } from '@nexio-test/kit/playwright';
+import { createRandomUser, loginUser } from '@nexio-test/kit/utils/cloud';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
 
 test.beforeEach(async ({ page }) => {
   const user = await createRandomUser();

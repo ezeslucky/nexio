@@ -1,5 +1,5 @@
-import { type CreateCheckoutSessionInput } from '@affine/graphql';
-import { tracker } from '@affine/track';
+import { type CreateCheckoutSessionInput } from '@nexio/graphql';
+import { tracker } from '@nexio/track';
 import { OnEvent, Service } from '@toeverything/infra';
 
 import { Subscription } from '../entities/subscription';

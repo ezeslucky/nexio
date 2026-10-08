@@ -1,5 +1,5 @@
 {
-  "name": "@affine/mobile",
+  "name": "@nexio/mobile",
   "version": "0.27.5",
   "description": "AFFiNE Desktop Web application",
   "private": true,
@@ -9,12 +9,12 @@
     "dev": "affine bundle --dev"
   },
   "dependencies": {
-    "@affine/component": "workspace:*",
-    "@affine/core": "workspace:*",
-    "@affine/env": "workspace:*",
-    "@affine/nbstore": "workspace:*",
-    "@affine/track": "workspace:*",
     "@blocksuite/affine": "workspace:*",
+    "@nexio/component": "workspace:*",
+    "@nexio/core": "workspace:*",
+    "@nexio/env": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
+    "@nexio/track": "workspace:*",
     "@toeverything/infra": "workspace:*",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",

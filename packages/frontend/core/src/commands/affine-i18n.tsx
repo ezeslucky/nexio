@@ -1,6 +1,6 @@
-import type { I18n } from '@affine/core/modules/i18n';
-import type { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import type { I18n } from '@nexio/core/modules/i18n';
+import type { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { SettingsIcon } from '@blocksuite/icons/rc';
 
 import { registerAffineCommand } from './registry';

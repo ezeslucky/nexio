@@ -1,25 +1,25 @@
-import { Button, Modal, notify } from '@affine/component';
+import { Button, Modal, notify } from '@nexio/component';
 import {
   AuthContent,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/component/auth-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   DefaultServerService,
   ServersService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { Unreachable } from '@affine/env/constant';
+} from '@nexio/core/modules/dialogs';
+import { Unreachable } from '@nexio/env/constant';
 import {
   sendChangeEmailMutation,
   sendVerifyEmailMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useState } from 'react';
 

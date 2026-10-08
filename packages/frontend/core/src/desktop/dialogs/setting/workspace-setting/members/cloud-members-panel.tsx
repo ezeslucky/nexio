@@ -1,30 +1,30 @@
-import { Button, notify, useConfirmModal } from '@affine/component';
+import { Button, notify, useConfirmModal } from '@nexio/component';
 import {
   InviteTeamMemberModal,
   type InviteTeamMemberModalProps,
   MemberLimitModal,
-} from '@affine/component/member-components';
-import { SettingRow } from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { Upload } from '@affine/core/components/pure/file-upload';
+} from '@nexio/component/member-components';
+import { SettingRow } from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { Upload } from '@nexio/core/components/pure/file-upload';
 import {
   ServerService,
   SubscriptionService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   WorkspaceMembersService,
   WorkspacePermissionService,
-} from '@affine/core/modules/permissions';
-import { WorkspaceQuotaService } from '@affine/core/modules/quota';
-import { WorkspaceShareSettingService } from '@affine/core/modules/share-setting';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { emailRegex } from '@affine/core/utils/email-regex';
-import { UserFriendlyError } from '@affine/error';
-import type { WorkspaceInviteLinkExpireTime } from '@affine/graphql';
-import { ServerDeploymentType, SubscriptionPlan } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/permissions';
+import { WorkspaceQuotaService } from '@nexio/core/modules/quota';
+import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { emailRegex } from '@nexio/core/utils/email-regex';
+import { UserFriendlyError } from '@nexio/error';
+import type { WorkspaceInviteLinkExpireTime } from '@nexio/graphql';
+import { ServerDeploymentType, SubscriptionPlan } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ExportIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';

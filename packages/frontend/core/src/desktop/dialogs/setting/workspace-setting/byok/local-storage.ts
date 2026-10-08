@@ -1,4 +1,4 @@
-import { apis } from '@affine/electron-api';
+import { apis } from '@nexio/electron-api';
 
 import { capabilitiesFor } from './metadata';
 import {

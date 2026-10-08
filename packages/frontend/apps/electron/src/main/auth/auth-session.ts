@@ -7,7 +7,7 @@ import {
   type AuthTokenPair,
   type AuthTokenResponse,
   classifyAuthError,
-} from '@affine/auth';
+} from '@nexio/auth';
 import { app, safeStorage } from 'electron';
 
 import { logger } from '../logger';

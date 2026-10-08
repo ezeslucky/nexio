@@ -1,6 +1,6 @@
 import os from 'node:os';
 
-import type { AuthTokenResponse } from '@affine/auth';
+import type { AuthTokenResponse } from '@nexio/auth';
 import { session } from 'electron';
 
 import { logger } from '../logger';

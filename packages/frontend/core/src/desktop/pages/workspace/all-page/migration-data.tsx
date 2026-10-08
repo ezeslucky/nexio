@@ -1,7 +1,7 @@
-import { Button } from '@affine/component';
-import { DocCreatedByUpdatedBySyncService } from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
+import { Button } from '@nexio/component';
+import { DocCreatedByUpdatedBySyncService } from '@nexio/core/modules/cloud';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';

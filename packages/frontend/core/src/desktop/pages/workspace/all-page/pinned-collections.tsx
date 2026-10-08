@@ -4,17 +4,17 @@ import {
   Menu,
   MenuItem,
   Tooltip,
-} from '@affine/component';
-import { AddFilterMenu } from '@affine/core/components/filter/add-filter';
+} from '@nexio/component';
+import { AddFilterMenu } from '@nexio/core/components/filter/add-filter';
 import {
   CollectionService,
   type PinnedCollectionRecord,
   PinnedCollectionService,
-} from '@affine/core/modules/collection';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/collection';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   CloseIcon,
   CollectionsIcon,

@@ -1,13 +1,13 @@
-import { useThemeColorV2 } from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
+import { useThemeColorV2 } from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { inferOpenMode } from '@affine/core/utils';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { inferOpenMode } from '@nexio/core/utils';
 import { useLiveData, useService } from '@toeverything/infra';
 import { type MouseEvent, useCallback, useEffect, useState } from 'react';
 

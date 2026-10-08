@@ -1,11 +1,11 @@
-import { Menu, MenuItem, MenuTrigger, notify } from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { EditorService } from '@affine/core/modules/editor';
-import { ShareInfoService } from '@affine/core/modules/share-doc';
-import { UserFriendlyError } from '@affine/error';
-import { PublicDocMode } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { Menu, MenuItem, MenuTrigger, notify } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { EditorService } from '@nexio/core/modules/editor';
+import { ShareInfoService } from '@nexio/core/modules/share-doc';
+import { UserFriendlyError } from '@nexio/error';
+import { PublicDocMode } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   LockIcon,
   SingleSelectCheckSolidIcon,

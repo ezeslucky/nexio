@@ -37,4 +37,4 @@ export function buildAttachmentProps(
   return { model, name, ext, size };
 }
 
-export { getAttachmentType } from '@affine/core/modules/media/utils';
+export { getAttachmentType } from '@nexio/core/modules/media/utils';

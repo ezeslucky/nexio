@@ -1,20 +1,20 @@
-import { Button, notify, Skeleton, Tooltip } from '@affine/component';
-import { Loading } from '@affine/component/ui/loading';
-import { useSystemOnline } from '@affine/core/components/hooks/use-system-online';
-import { useWorkspace } from '@affine/core/components/hooks/use-workspace';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
+import { Button, notify, Skeleton, Tooltip } from '@nexio/component';
+import { Loading } from '@nexio/component/ui/loading';
+import { useSystemOnline } from '@nexio/core/components/hooks/use-system-online';
+import { useWorkspace } from '@nexio/core/components/hooks/use-workspace';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import {
   getSelfHostedServerName,
   ServersService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   type WorkspaceMetadata,
   type WorkspaceProfileInfo,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
-import { ServerDeploymentType } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import {
   ArrowDownSmallIcon,
   CloudWorkspaceIcon,

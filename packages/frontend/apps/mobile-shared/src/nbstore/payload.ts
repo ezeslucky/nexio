@@ -1,4 +1,4 @@
-import { base64ToUint8Array } from '@affine/core/modules/workspace-engine';
+import { base64ToUint8Array } from '@nexio/core/modules/workspace-engine';
 import { Capacitor } from '@capacitor/core';
 
 export const MOBILE_BLOB_FILE_PREFIX = '__AFFINE_BLOB_FILE__:';

@@ -1,4 +1,4 @@
-import serverNativeModule from '@affine/server-native';
+import serverNativeModule from '@nexio/server-native';
 import { type Prisma, PrismaClient } from '@prisma/client';
 
 const PROFILE_KEY = 'copilot.providers.profiles';

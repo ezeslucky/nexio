@@ -1,9 +1,9 @@
-import { Button } from '@affine/component';
+import { Button } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { useI18n } from '@nexio/i18n';
 
 export const Preferences = () => {
   const t = useI18n();

@@ -1,9 +1,9 @@
-import { Loading } from '@affine/component';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { useI18n } from '@affine/i18n';
+import { Loading } from '@nexio/component';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo } from 'react';
 

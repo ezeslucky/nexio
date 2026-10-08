@@ -1,7 +1,7 @@
 import type {
   PendingShareItem,
   ShareImportTarget,
-} from '@affine/core/mobile/components/share-import-controller/types';
+} from '@nexio/core/mobile/components/share-import-controller/types';
 
 export interface ShareInboxPlugin {
   updateWorkspaceMode(options: {

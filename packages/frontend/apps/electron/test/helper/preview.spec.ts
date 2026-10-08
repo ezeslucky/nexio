@@ -10,7 +10,7 @@ const { native } = vi.hoisted(() => ({
   },
 }));
 
-vi.mock('@affine/native', () => native);
+vi.mock('@nexio/native', () => native);
 
 const tmpDir = path.join(__dirname, 'tmp');
 const typstFontDirA = path.join(tmpDir, 'fonts-a');

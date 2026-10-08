@@ -4,8 +4,8 @@ import {
   ByokModelInput,
   ByokModelOutput,
   ByokProvider,
-} from '@affine/graphql';
-import type { I18nInstance } from '@affine/i18n';
+} from '@nexio/graphql';
+import type { I18nInstance } from '@nexio/i18n';
 
 import { type ByokKey, ByokStorage } from './types';
 

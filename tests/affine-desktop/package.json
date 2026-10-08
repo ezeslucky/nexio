@@ -1,13 +1,13 @@
 {
-  "name": "@affine-test/affine-desktop",
+  "name": "@nexio-test/affine-desktop",
   "private": true,
   "type": "module",
   "scripts": {
     "e2e": "yarn playwright test --reporter=list"
   },
   "devDependencies": {
-    "@affine-test/kit": "workspace:*",
-    "@affine/electron-api": "workspace:*",
+    "@nexio-test/kit": "workspace:*",
+    "@nexio/electron-api": "workspace:*",
     "@playwright/test": "=1.58.2",
     "@types/fs-extra": "^11.0.4",
     "fs-extra": "^11.2.0",

@@ -1,30 +1,30 @@
-import type { ReactToLit } from '@affine/component';
-import { AIViewExtension } from '@affine/core/blocksuite/view-extensions/ai';
-import { CloudViewExtension } from '@affine/core/blocksuite/view-extensions/cloud';
-import { CodeBlockPreviewViewExtension } from '@affine/core/blocksuite/view-extensions/code-block-preview';
-import { CommentViewExtension } from '@affine/core/blocksuite/view-extensions/comment';
-import { AffineDatabaseViewExtension } from '@affine/core/blocksuite/view-extensions/database';
+import type { ReactToLit } from '@nexio/component';
+import { AIViewExtension } from '@nexio/core/blocksuite/view-extensions/ai';
+import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
+import { CodeBlockPreviewViewExtension } from '@nexio/core/blocksuite/view-extensions/code-block-preview';
+import { CommentViewExtension } from '@nexio/core/blocksuite/view-extensions/comment';
+import { AffineDatabaseViewExtension } from '@nexio/core/blocksuite/view-extensions/database';
 import {
   EdgelessBlockHeaderConfigViewExtension,
   type EdgelessBlockHeaderViewOptions,
-} from '@affine/core/blocksuite/view-extensions/edgeless-block-header';
-import { AffineEditorConfigViewExtension } from '@affine/core/blocksuite/view-extensions/editor-config';
-import { createDatabaseOptionsConfig } from '@affine/core/blocksuite/view-extensions/editor-config/database';
-import { createLinkedWidgetConfig } from '@affine/core/blocksuite/view-extensions/editor-config/linked';
+} from '@nexio/core/blocksuite/view-extensions/edgeless-block-header';
+import { AffineEditorConfigViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-config';
+import { createDatabaseOptionsConfig } from '@nexio/core/blocksuite/view-extensions/editor-config/database';
+import { createLinkedWidgetConfig } from '@nexio/core/blocksuite/view-extensions/editor-config/linked';
 import {
   AffineEditorViewExtension,
   type AffineEditorViewOptions,
-} from '@affine/core/blocksuite/view-extensions/editor-view/editor-view';
-import { ElectronViewExtension } from '@affine/core/blocksuite/view-extensions/electron';
-import { AffineIconPickerExtension } from '@affine/core/blocksuite/view-extensions/icon-picker';
-import { AffineLinkPreviewExtension } from '@affine/core/blocksuite/view-extensions/link-preview-service';
-import { MobileViewExtension } from '@affine/core/blocksuite/view-extensions/mobile';
-import { PdfViewExtension } from '@affine/core/blocksuite/view-extensions/pdf';
-import { AffineThemeViewExtension } from '@affine/core/blocksuite/view-extensions/theme';
-import { TurboRendererViewExtension } from '@affine/core/blocksuite/view-extensions/turbo-renderer';
-import { PeekViewService } from '@affine/core/modules/peek-view';
-import { DebugLogger } from '@affine/debug';
-import { tracker } from '@affine/track';
+} from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
+import { ElectronViewExtension } from '@nexio/core/blocksuite/view-extensions/electron';
+import { AffineIconPickerExtension } from '@nexio/core/blocksuite/view-extensions/icon-picker';
+import { AffineLinkPreviewExtension } from '@nexio/core/blocksuite/view-extensions/link-preview-service';
+import { MobileViewExtension } from '@nexio/core/blocksuite/view-extensions/mobile';
+import { PdfViewExtension } from '@nexio/core/blocksuite/view-extensions/pdf';
+import { AffineThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
+import { TurboRendererViewExtension } from '@nexio/core/blocksuite/view-extensions/turbo-renderer';
+import { PeekViewService } from '@nexio/core/modules/peek-view';
+import { DebugLogger } from '@nexio/debug';
+import { tracker } from '@nexio/track';
 import { DatabaseViewExtension } from '@blocksuite/affine/blocks/database/view';
 import { ParagraphViewExtension } from '@blocksuite/affine/blocks/paragraph/view';
 import type {

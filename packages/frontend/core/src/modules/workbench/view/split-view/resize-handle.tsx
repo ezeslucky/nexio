@@ -1,5 +1,5 @@
-import { useDropTarget } from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
+import { useDropTarget } from '@nexio/component';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useAtomValue } from 'jotai';
 import type { HTMLAttributes } from 'react';

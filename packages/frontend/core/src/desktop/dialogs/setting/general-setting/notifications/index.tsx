@@ -1,15 +1,15 @@
-import { notify, Switch } from '@affine/component';
+import { notify, Switch } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
+} from '@nexio/component/setting-components';
 import {
   type UserSettings,
   UserSettingsService,
-} from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

@@ -1,21 +1,21 @@
-import { Button, notify } from '@affine/component';
+import { Button, notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { OAuth } from '@affine/core/components/affine/auth/oauth';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/component/auth-components';
+import { OAuth } from '@nexio/core/components/affine/auth/oauth';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   getSelfHostedServerName,
   ServerService,
-} from '@affine/core/modules/cloud';
-import type { AuthSessionStatus } from '@affine/core/modules/cloud/entities/session';
-import { ServerDeploymentType } from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
+import { ServerDeploymentType } from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
 import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,

@@ -14,7 +14,7 @@ Use a disposable PostgreSQL database and run the provider-gated E2E:
 
 ```bash
 DATABASE_URL=postgresql://ds:ds@localhost:55433/affine_manticore_provider_e2e \
-yarn workspace @affine/server prisma migrate deploy
+yarn workspace @nexio/server prisma migrate deploy
 ```
 
 Configure `packages/backend/server/config.json` with:

@@ -1,7 +1,7 @@
-import { Avatar } from '@affine/component/ui/avatar';
-import { Menu, MenuItem, MenuSeparator } from '@affine/component/ui/menu';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useI18n } from '@affine/i18n';
+import { Avatar } from '@nexio/component/ui/avatar';
+import { Menu, MenuItem, MenuSeparator } from '@nexio/component/ui/menu';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useI18n } from '@nexio/i18n';
 import { SignOutIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect, useMemo } from 'react';

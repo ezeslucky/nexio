@@ -4,16 +4,16 @@ import {
   MenuSeparator,
   notify,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { CollectionService } from '@affine/core/modules/collection';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   FilterIcon,

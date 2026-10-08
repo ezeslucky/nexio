@@ -1,5 +1,5 @@
 /* oxlint-disable typescript/no-non-null-assertion */
-import { apis, appInfo, events, sharedStorage } from '@affine/electron-api';
+import { apis, appInfo, events, sharedStorage } from '@nexio/electron-api';
 import { Service } from '@toeverything/infra';
 
 import type { DesktopApiProvider } from '../provider';

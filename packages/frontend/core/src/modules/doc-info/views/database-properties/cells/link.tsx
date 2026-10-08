@@ -1,8 +1,8 @@
-import { PropertyValue } from '@affine/component';
-import { AffinePageReference } from '@affine/core/components/affine/reference-link';
-import { ConfigModal } from '@affine/core/components/mobile';
-import { resolveLinkToDoc } from '@affine/core/modules/navigation';
-import { useI18n } from '@affine/i18n';
+import { PropertyValue } from '@nexio/component';
+import { AffinePageReference } from '@nexio/core/components/affine/reference-link';
+import { ConfigModal } from '@nexio/core/components/mobile';
+import { resolveLinkToDoc } from '@nexio/core/modules/navigation';
+import { useI18n } from '@nexio/i18n';
 import { LinkIcon } from '@blocksuite/icons/rc';
 import type { LiveData } from '@toeverything/infra';
 import { useLiveData } from '@toeverything/infra';

@@ -1,11 +1,11 @@
-import { skipOnboarding } from '@affine-test/kit/playwright';
-import { createRandomAIUser } from '@affine-test/kit/utils/cloud';
-import { openHomePage, setCoreUrl } from '@affine-test/kit/utils/load-page';
+import { skipOnboarding } from '@nexio-test/kit/playwright';
+import { createRandomAIUser } from '@nexio-test/kit/utils/cloud';
+import { openHomePage, setCoreUrl } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import type { Store } from '@blocksuite/affine/store';
 import type { Page } from '@playwright/test';
 

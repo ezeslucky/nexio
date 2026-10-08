@@ -1,6 +1,6 @@
-import type { TagMeta } from '@affine/core/components/page-list';
-import type { CollectionMeta } from '@affine/core/modules/collection';
-import track, { type EventArgs } from '@affine/track';
+import type { TagMeta } from '@nexio/core/components/page-list';
+import type { CollectionMeta } from '@nexio/core/modules/collection';
+import track, { type EventArgs } from '@nexio/track';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';

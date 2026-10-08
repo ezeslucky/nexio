@@ -1,4 +1,4 @@
-import { channelToScheme } from '@affine/core/utils';
+import { channelToScheme } from '@nexio/core/utils';
 import type { ReferenceParams } from '@blocksuite/affine/model';
 import { isNil, pick, pickBy } from 'lodash-es';
 import type { ParsedQuery, ParseOptions } from 'query-string';

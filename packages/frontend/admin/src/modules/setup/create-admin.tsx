@@ -1,5 +1,5 @@
-import { Input } from '@affine/admin/components/ui/input';
-import { Label } from '@affine/admin/components/ui/label';
+import { Input } from '@nexio/admin/components/ui/input';
+import { Label } from '@nexio/admin/components/ui/label';
 import { useCallback } from 'react';
 
 type CreateAdminProps = {

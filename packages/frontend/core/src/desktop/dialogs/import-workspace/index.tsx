@@ -1,13 +1,13 @@
-import { toast } from '@affine/component';
+import { toast } from '@nexio/component';
 import {
   type DialogComponentProps,
   type GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { _addLocalWorkspace } from '@affine/core/modules/workspace-engine';
-import { DebugLogger } from '@affine/debug';
-import { apis } from '@affine/electron-api';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { _addLocalWorkspace } from '@nexio/core/modules/workspace-engine';
+import { DebugLogger } from '@nexio/debug';
+import { apis } from '@nexio/electron-api';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { useLayoutEffect, useRef } from 'react';
 

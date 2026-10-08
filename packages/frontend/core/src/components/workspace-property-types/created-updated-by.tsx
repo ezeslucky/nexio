@@ -1,9 +1,9 @@
-import { type MenuRef, PropertyValue } from '@affine/component';
-import { PublicUserLabel } from '@affine/core/modules/cloud/views/public-user';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { type DocRecord, DocService } from '@affine/core/modules/doc';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { type MenuRef, PropertyValue } from '@nexio/component';
+import { PublicUserLabel } from '@nexio/core/modules/cloud/views/public-user';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { type DocRecord, DocService } from '@nexio/core/modules/doc';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import { type ReactNode, useCallback, useEffect, useMemo, useRef } from 'react';

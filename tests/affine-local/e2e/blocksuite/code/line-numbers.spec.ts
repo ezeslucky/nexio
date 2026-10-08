@@ -1,13 +1,13 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   addCodeBlock,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   closeSettingModal,
   openEditorSetting,
-} from '@affine-test/kit/utils/setting';
+} from '@nexio-test/kit/utils/setting';
 import { expect, type Page } from '@playwright/test';
 
 import { initCodeBlockByOneStep, openCodeBlockMoreMenu } from './utils';

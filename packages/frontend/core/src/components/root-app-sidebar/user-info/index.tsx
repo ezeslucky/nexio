@@ -4,13 +4,13 @@ import {
   IconButton,
   Menu,
   type MenuProps,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   type AuthAccountInfo,
   AuthService,
   ServerService,
-} from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
+} from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 

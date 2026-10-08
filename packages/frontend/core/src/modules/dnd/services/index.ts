@@ -5,8 +5,8 @@ import {
   monitorForElements,
   type MonitorGetFeedback,
   type toExternalData,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
+} from '@nexio/component';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,

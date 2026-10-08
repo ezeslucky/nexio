@@ -1,22 +1,22 @@
-import { Button, type ButtonProps } from '@affine/component/ui/button';
-import { Tooltip } from '@affine/component/ui/tooltip';
-import { generateSubscriptionCallbackLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+import { Button, type ButtonProps } from '@nexio/component/ui/button';
+import { Tooltip } from '@nexio/component/ui/tooltip';
+import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import {
   AuthService,
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import { UrlService } from '@affine/core/modules/url';
+} from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import { UrlService } from '@nexio/core/modules/url';
 import {
   type CreateCheckoutSessionInput,
   SubscriptionPlan,
   type SubscriptionRecurring,
   SubscriptionStatus,
-} from '@affine/graphql';
-import { Trans, useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/graphql';
+import { Trans, useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { DoneIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

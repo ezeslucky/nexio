@@ -1,4 +1,4 @@
-import { toast } from '@affine/component';
+import { toast } from '@nexio/component';
 
 import type { ChatChip } from './type';
 

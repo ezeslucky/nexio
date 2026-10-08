@@ -1,9 +1,9 @@
 import {
   useBindWorkbenchToBrowserRouter,
   WorkbenchService,
-} from '@affine/core/modules/workbench';
-import { ViewRoot } from '@affine/core/modules/workbench/view/view-root';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workbench';
+import { ViewRoot } from '@nexio/core/modules/workbench/view/view-root';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import {
   type PropsWithChildren,

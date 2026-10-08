@@ -8,7 +8,7 @@ import {
   renderTypstSvg,
   type TypstRenderRequest,
   type TypstRenderResult,
-} from '@affine/native';
+} from '@nexio/native';
 
 const TYPST_FONT_DIRS_ENV = 'AFFINE_TYPST_FONT_DIRS';
 

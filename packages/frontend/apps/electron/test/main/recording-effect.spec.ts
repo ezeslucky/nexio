@@ -43,26 +43,26 @@ let onRecordingImportQueueChanged:
   | ((queue: RecordingImportStatus[]) => void)
   | undefined;
 
-vi.mock('@affine/core/modules/doc', () => ({
+vi.mock('@nexio/core/modules/doc', () => ({
   DocsService: class DocsService {},
 }));
 
-vi.mock('@affine/core/modules/media/services/audio-attachment', () => ({
+vi.mock('@nexio/core/modules/media/services/audio-attachment', () => ({
   AudioAttachmentService: class AudioAttachmentService {},
 }));
 
-vi.mock('@affine/core/modules/workbench', () => ({
+vi.mock('@nexio/core/modules/workbench', () => ({
   WorkbenchService: class WorkbenchService {},
 }));
 
-vi.mock('@affine/debug', () => ({
+vi.mock('@nexio/debug', () => ({
   DebugLogger: class DebugLogger {
     debug = vi.fn();
     error = vi.fn();
   },
 }));
 
-vi.mock('@affine/electron-api', () => ({
+vi.mock('@nexio/electron-api', () => ({
   apis: {
     ui: {
       isActiveTab,
@@ -89,11 +89,11 @@ vi.mock('@affine/electron-api', () => ({
   },
 }));
 
-vi.mock('@affine/i18n', () => ({
+vi.mock('@nexio/i18n', () => ({
   i18nTime: vi.fn(() => 'Jan 1 09:00'),
 }));
 
-vi.mock('@affine/track', () => ({
+vi.mock('@nexio/track', () => ({
   default: {
     doc: {
       editor: {

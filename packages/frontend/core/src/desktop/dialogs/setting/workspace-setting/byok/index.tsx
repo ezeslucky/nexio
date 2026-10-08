@@ -1,18 +1,18 @@
-import { Button, notify } from '@affine/component';
+import { Button, notify } from '@nexio/component';
 import {
   SettingHeader,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { WorkspaceService } from '@affine/core/modules/workspace';
+} from '@nexio/component/setting-components';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
 import {
   deleteWorkspaceByokProfileMutation,
   type GraphQLQuery,
   probeWorkspaceByokProfileMutation,
   reorderWorkspaceByokProfilesMutation,
   workspaceByokSettingsQuery as byokSettingsQuery,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

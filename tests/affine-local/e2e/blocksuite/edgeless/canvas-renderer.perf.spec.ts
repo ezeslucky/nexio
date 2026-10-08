@@ -1,11 +1,11 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   type CanvasRendererPerfSnapshot,
   deleteEdgelessElements,
   getCanvasRendererPerfSnapshot,
   resetCanvasRendererPerfMetrics,
   seedEdgelessPerfScene,
-} from '@affine-test/kit/utils/edgeless-perf';
+} from '@nexio-test/kit/utils/edgeless-perf';
 import {
   clickEdgelessModeButton,
   dragView,
@@ -15,12 +15,12 @@ import {
   locateEditorContainer,
   setEdgelessTool,
   setViewportZoom,
-} from '@affine-test/kit/utils/editor';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 const PERF_ENV = 'AFFINE_RUN_PERF_E2E';

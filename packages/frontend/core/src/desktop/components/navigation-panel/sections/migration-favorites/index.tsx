@@ -1,8 +1,8 @@
-import { IconButton, useConfirmModal } from '@affine/component';
-import { DocsService } from '@affine/core/modules/doc';
-import { MigrationFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { Trans, useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { IconButton, useConfirmModal } from '@nexio/component';
+import { DocsService } from '@nexio/core/modules/doc';
+import { MigrationFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { Trans, useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { BroomIcon, HelpIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';

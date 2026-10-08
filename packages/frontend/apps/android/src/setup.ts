@@ -1,6 +1,6 @@
-import '@affine/core/bootstrap/browser';
-import '@affine/component/theme';
-import '@affine/core/mobile/styles/mobile.css';
+import '@nexio/core/bootstrap/browser';
+import '@nexio/component/theme';
+import '@nexio/core/mobile/styles/mobile.css';
 import './proxy';
 
 import { viewportRuntimeConfig } from '@blocksuite/affine/std/gfx';

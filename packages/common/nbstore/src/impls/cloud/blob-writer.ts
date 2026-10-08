@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@nexio/error';
 import {
   abortBlobUploadMutation,
   BlobUploadMethod,
@@ -10,7 +10,7 @@ import {
   releaseDeletedBlobsMutation,
   setBlobMutation,
   workspaceBlobQuotaQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import {
   type BlobRecord,

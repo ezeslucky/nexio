@@ -5,15 +5,15 @@ import {
   Menu,
   MenuItem,
   toast,
-} from '@affine/component';
-import { useQuery } from '@affine/core/components/hooks/use-query';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
+} from '@nexio/component';
+import { useQuery } from '@nexio/core/components/hooks/use-query';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import {
   getDocLastAccessedMembersQuery,
   getDocPageAnalyticsQuery,
-} from '@affine/graphql';
-import { i18nTime, useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import {
   ArrowDownSmallIcon,
   CalendarPanelIcon,

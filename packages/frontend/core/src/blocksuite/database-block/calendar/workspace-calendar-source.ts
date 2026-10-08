@@ -1,7 +1,7 @@
-import { CALENDAR_INTEGRATION_SCROLL_ANCHOR } from '@affine/core/desktop/dialogs/setting/navigation-constants';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { IntegrationService } from '@affine/core/modules/integration';
+import { CALENDAR_INTEGRATION_SCROLL_ANCHOR } from '@nexio/core/desktop/dialogs/setting/navigation-constants';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { IntegrationService } from '@nexio/core/modules/integration';
 import type {
   CalendarEntryRange,
   CalendarExternalEntry,

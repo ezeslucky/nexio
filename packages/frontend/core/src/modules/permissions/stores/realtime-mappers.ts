@@ -1,8 +1,8 @@
-import { DocRole, Permission, WorkspaceMemberStatus } from '@affine/graphql';
+import { DocRole, Permission, WorkspaceMemberStatus } from '@nexio/graphql';
 import type {
   DocGrantedUserSnapshot,
   WorkspaceMemberSnapshot,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 
 import { mapRealtimeEnum } from '../../cloud/realtime/enum';
 

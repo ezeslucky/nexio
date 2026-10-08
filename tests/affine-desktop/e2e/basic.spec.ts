@@ -1,15 +1,15 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@nexio-test/kit/electron';
 import {
   ensureInEdgelessMode,
   ensureInPageMode,
-} from '@affine-test/kit/utils/editor';
+} from '@nexio-test/kit/utils/editor';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

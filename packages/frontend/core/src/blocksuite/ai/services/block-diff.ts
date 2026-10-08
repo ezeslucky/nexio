@@ -1,5 +1,5 @@
-import { sourceScopedBlobUrl } from '@affine/nbstore/cloud';
-import { parsePageDoc } from '@affine/reader';
+import { sourceScopedBlobUrl } from '@nexio/nbstore/cloud';
+import { parsePageDoc } from '@nexio/reader';
 import { LifeCycleWatcher } from '@blocksuite/affine/std';
 import { Extension, type Store } from '@blocksuite/affine/store';
 import { type Container, createIdentifier } from '@blocksuite/global/di';

@@ -4,20 +4,20 @@ import {
   MenuSub,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { Guard } from '@affine/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { IsFavoriteIcon } from '@affine/core/components/pure/icons';
-import type { NodeOperation } from '@affine/core/desktop/components/navigation-panel';
-import { DocsService } from '@affine/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { preventDefault } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { Guard } from '@nexio/core/components/guard';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
+import type { NodeOperation } from '@nexio/core/desktop/components/navigation-panel';
+import { DocsService } from '@nexio/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { preventDefault } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   DeleteIcon,
   DuplicateIcon,

@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@nexio/error';
 import {
   gqlFetcherFactory,
   type OauthProvidersQuery,
@@ -6,7 +6,7 @@ import {
   type ServerConfigQuery,
   serverConfigQuery,
   ServerFeature,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 import semver from 'semver';
 

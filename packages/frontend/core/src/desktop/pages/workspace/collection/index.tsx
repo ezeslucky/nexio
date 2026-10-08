@@ -1,20 +1,20 @@
-import { FlexWrapper } from '@affine/component';
-import { EmptyCollectionDetail } from '@affine/core/components/affine/empty/collection-detail';
+import { FlexWrapper } from '@nexio/component';
+import { EmptyCollectionDetail } from '@nexio/core/components/affine/empty/collection-detail';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import type { ExplorerDisplayPreference } from '@affine/core/components/explorer/types';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import type { ExplorerDisplayPreference } from '@nexio/core/components/explorer/types';
 import {
   type Collection,
   CollectionService,
-} from '@affine/core/modules/collection';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';

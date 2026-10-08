@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { Package } from '@affine-tools/utils/workspace';
+import { Package } from '@nexio-tools/utils/workspace';
 import type { INestApplication } from '@nestjs/common';
 import type { TestFn } from 'ava';
 import ava from 'ava';
@@ -45,7 +45,7 @@ function initTestStaticFiles(staticPath: string) {
 }
 
 test.before(async t => {
-  const staticPath = new Package('@affine/server').join('static').value;
+  const staticPath = new Package('@nexio/server').join('static').value;
   initTestStaticFiles(staticPath);
 
   const app = await createTestingApp();

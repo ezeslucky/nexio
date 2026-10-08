@@ -1,6 +1,6 @@
-import { Button } from '@affine/admin/components/ui/button';
-import { Input } from '@affine/admin/components/ui/input';
-import type { FeatureType } from '@affine/graphql';
+import { Button } from '@nexio/admin/components/ui/button';
+import { Input } from '@nexio/admin/components/ui/input';
+import type { FeatureType } from '@nexio/graphql';
 import { ExportIcon, ImportIcon, PlusIcon } from '@blocksuite/icons/rc';
 import type { Table } from '@tanstack/react-table';
 import {

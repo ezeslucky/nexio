@@ -1,5 +1,5 @@
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import track from '@affine/track';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import track from '@nexio/track';
 import type { Container } from '@blocksuite/affine/global/di';
 import {
   FileSizeLimitProvider,

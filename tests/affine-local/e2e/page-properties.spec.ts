@@ -1,9 +1,9 @@
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
+import { waitNextFrame } from '@nexio-test/kit/bs/misc';
+import { test } from '@nexio-test/kit/playwright';
 import {
   openHomePage,
   openJournalsPage,
-} from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/load-page';
 import {
   addDatabase,
   addDatabaseRow,
@@ -12,7 +12,7 @@ import {
   dragTo,
   waitForEditorLoad,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   addCustomProperty,
   changePropertyVisibility,
@@ -26,7 +26,7 @@ import {
   removeSelectedTag,
   searchAndCreateTag,
   togglePropertyListVisibility,
-} from '@affine-test/kit/utils/properties';
+} from '@nexio-test/kit/utils/properties';
 import { expect } from '@playwright/test';
 
 import { addColumn } from './blocksuite/database/utils';

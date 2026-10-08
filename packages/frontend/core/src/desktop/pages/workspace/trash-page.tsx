@@ -1,15 +1,15 @@
-import { Button, toast, useConfirmModal } from '@affine/component';
+import { Button, toast, useConfirmModal } from '@nexio/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
-} from '@affine/core/components/explorer/context';
-import { DocsExplorer } from '@affine/core/components/explorer/docs-view/docs-list';
-import { useBlockSuiteMetaHelper } from '@affine/core/components/hooks/affine/use-block-suite-meta-helper';
-import { Header } from '@affine/core/components/pure/header';
-import { CollectionRulesService } from '@affine/core/modules/collection-rules';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { WorkspacePermissionService } from '@affine/core/modules/permissions';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/components/explorer/context';
+import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { Header } from '@nexio/core/components/pure/header';
+import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
+import { useI18n } from '@nexio/i18n';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react';

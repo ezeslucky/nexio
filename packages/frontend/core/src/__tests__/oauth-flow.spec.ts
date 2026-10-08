@@ -3,7 +3,7 @@ import {
   parseOAuthCallbackState,
   resolveOAuthFlowMode,
   resolveOAuthRedirect,
-} from '@affine/core/desktop/pages/auth/oauth-flow';
+} from '@nexio/core/desktop/pages/auth/oauth-flow';
 import { describe, expect, test } from 'vitest';
 
 describe('oauth flow mode', () => {

@@ -1,5 +1,5 @@
 {
-  "name": "@affine/web",
+  "name": "@nexio/web",
   "version": "0.27.5",
   "description": "Nexio Web Application",
   "author": "ezeslucky",
@@ -10,12 +10,12 @@
     "dev": "affine bundle --dev"
   },
   "dependencies": {
-    "@affine/component": "workspace:*",
-    "@affine/core": "workspace:*",
-    "@affine/env": "workspace:*",
-    "@affine/nbstore": "workspace:*",
-    "@affine/track": "workspace:*",
     "@emotion/react": "^11.14.0",
+    "@nexio/component": "workspace:*",
+    "@nexio/core": "workspace:*",
+    "@nexio/env": "workspace:*",
+    "@nexio/nbstore": "workspace:*",
+    "@nexio/track": "workspace:*",
     "@toeverything/infra": "workspace:*",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",

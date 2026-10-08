@@ -2,7 +2,7 @@ import {
   settleTranscriptTaskMutation,
   submitTranscriptTaskMutation,
   type TranscriptionResultType,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Entity } from '@toeverything/infra';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';

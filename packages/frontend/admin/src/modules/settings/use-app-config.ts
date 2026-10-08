@@ -1,12 +1,12 @@
-import { useMutation } from '@affine/admin/use-mutation';
-import { useQuery } from '@affine/admin/use-query';
-import { notify } from '@affine/component';
-import { UserFriendlyError } from '@affine/error';
+import { useMutation } from '@nexio/admin/use-mutation';
+import { useQuery } from '@nexio/admin/use-query';
+import { notify } from '@nexio/component';
+import { UserFriendlyError } from '@nexio/error';
 import {
   appConfigQuery,
   type UpdateAppConfigInput,
   updateAppConfigMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { cloneDeep, get, merge, set } from 'lodash-es';
 import { useCallback, useEffect, useState } from 'react';
 

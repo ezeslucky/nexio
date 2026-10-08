@@ -1,15 +1,15 @@
-import { Button, notify } from '@affine/component';
+import { Button, notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
   AuthFooter,
   AuthHeader,
   AuthInput,
-} from '@affine/component/auth-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { ServersService } from '@affine/core/modules/cloud';
-import { UserFriendlyError } from '@affine/error';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/component/auth-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { ServersService } from '@nexio/core/modules/cloud';
+import { UserFriendlyError } from '@nexio/error';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import {
   type Dispatch,

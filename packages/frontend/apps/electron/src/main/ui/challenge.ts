@@ -1,4 +1,4 @@
-import { mintChallengeResponse } from '@affine/native';
+import { mintChallengeResponse } from '@nexio/native';
 
 export const getChallengeResponse = async (resource: string) => {
   // 20 bits challenge is a balance between security and user experience

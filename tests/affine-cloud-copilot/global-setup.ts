@@ -1,12 +1,12 @@
 import fs from 'node:fs';
 
-import { skipOnboarding } from '@affine-test/kit/playwright';
+import { skipOnboarding } from '@nexio-test/kit/playwright';
 import {
   createRandomAIUser,
   enableCloudWorkspace,
   loginUserDirectly,
-} from '@affine-test/kit/utils/cloud';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/cloud';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import type { Page } from '@playwright/test';
 import { chromium } from '@playwright/test';
 

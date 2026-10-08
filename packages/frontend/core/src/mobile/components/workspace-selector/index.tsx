@@ -1,6 +1,6 @@
-import { MobileMenu } from '@affine/component';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { track } from '@affine/track';
+import { MobileMenu } from '@nexio/component';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { track } from '@nexio/track';
 import { useServiceOptional } from '@toeverything/infra';
 import {
   forwardRef,

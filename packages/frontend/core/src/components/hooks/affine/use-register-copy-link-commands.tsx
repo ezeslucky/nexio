@@ -1,13 +1,13 @@
 import {
   PreconditionStrategy,
   registerAffineCommand,
-} from '@affine/core/commands';
-import { useSharingUrl } from '@affine/core/components/hooks/affine/use-share-url';
-import { getDefaultShareMode } from '@affine/core/components/hooks/affine/use-share-url.utils';
-import { EditorService } from '@affine/core/modules/editor';
-import { useIsActiveView } from '@affine/core/modules/workbench';
-import type { WorkspaceMetadata } from '@affine/core/modules/workspace';
-import { track } from '@affine/track';
+} from '@nexio/core/commands';
+import { useSharingUrl } from '@nexio/core/components/hooks/affine/use-share-url';
+import { getDefaultShareMode } from '@nexio/core/components/hooks/affine/use-share-url.utils';
+import { EditorService } from '@nexio/core/modules/editor';
+import { useIsActiveView } from '@nexio/core/modules/workbench';
+import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 

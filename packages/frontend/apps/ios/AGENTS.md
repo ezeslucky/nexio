@@ -20,15 +20,15 @@ This is the AFFiNE iOS application built with Capacitor, React, and TypeScript. 
 
 ### iOS Build Process
 
-1. `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @affine/ios build` - Build web assets
-2. `yarn affine @affine/ios cap sync` - Sync with iOS project
-3. `yarn affine @affine/ios cap open ios` - Open in Xcode
+1. `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @nexio/ios build` - Build web assets
+2. `yarn affine @nexio/ios cap sync` - Sync with iOS project
+3. `yarn affine @nexio/ios cap open ios` - Open in Xcode
 
 ### Live Reload Setup
 
 1. Run `yarn dev` and select `ios` for Distribution option
-2. Run `yarn affine @affine/ios sync:dev`
-3. Run `yarn affine @affine/ios cap open ios`
+2. Run `yarn affine @nexio/ios sync:dev`
+3. Run `yarn affine @nexio/ios cap open ios`
 
 ## Architecture
 
@@ -72,14 +72,14 @@ Follow the guidelines in `AGENTS.md`:
 ### Build Configuration
 
 - TypeScript config extends `../../../../tsconfig.web.json`
-- Webpack bundling via `@affine-tools/cli`
+- Webpack bundling via `@nexio-tools/cli`
 - Capacitor config in `capacitor.config.ts`
 - GraphQL codegen via Apollo
 - Rust bindings generated via Uniffi
 
 ### Dependencies
 
-- Workspace packages: `@affine/core`, `@affine/component`, `@affine/env`
+- Workspace packages: `@nexio/core`, `@nexio/component`, `@nexio/env`
 - Capacitor plugins: App, Browser, Haptics, Keyboard
 - React ecosystem: React Router, Next Themes
 - Storage: IDB, Yjs for collaborative editing

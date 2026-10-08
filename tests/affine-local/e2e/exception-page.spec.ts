@@ -1,5 +1,5 @@
-import { test } from '@affine-test/kit/playwright';
-import { open404Page } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { open404Page } from '@nexio-test/kit/utils/load-page';
 import { expect } from '@playwright/test';
 
 test('visit 404 page', async ({ page }) => {

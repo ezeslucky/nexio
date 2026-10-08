@@ -1,4 +1,4 @@
-import serverNativeModule from '@affine/server-native';
+import serverNativeModule from '@nexio/server-native';
 import { Logger } from '@nestjs/common';
 import type { ExecutionContext, TestFn } from 'ava';
 import ava from 'ava';

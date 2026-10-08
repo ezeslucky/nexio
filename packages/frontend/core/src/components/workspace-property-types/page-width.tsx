@@ -1,8 +1,8 @@
-import { MenuItem, PropertyValue, type RadioItem } from '@affine/component';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { type DocRecord, DocService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
+import { MenuItem, PropertyValue, type RadioItem } from '@nexio/component';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { type DocRecord, DocService } from '@nexio/core/modules/doc';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
 import { LongerIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';

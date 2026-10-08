@@ -1,4 +1,4 @@
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import { NativeClipboardExtension } from '@blocksuite/affine/shared/services';
 import type { FrameworkProvider } from '@toeverything/infra';
 

@@ -1,5 +1,5 @@
-import { IconButton, observeResize, RowInput } from '@affine/component';
-import { FindInPageService } from '@affine/core/modules/find-in-page';
+import { IconButton, observeResize, RowInput } from '@nexio/component';
+import { FindInPageService } from '@nexio/core/modules/find-in-page';
 import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,

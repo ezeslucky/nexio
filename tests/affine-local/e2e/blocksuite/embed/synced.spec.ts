@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   clickView,
@@ -10,14 +10,14 @@ import {
   locateEditorContainer,
   resizeElementByHandle,
   scaleElementByHandle,
-} from '@affine-test/kit/utils/editor';
-import { pressEnter } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { pressEnter } from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 const title = 'Synced Block Test';

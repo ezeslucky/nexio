@@ -1,16 +1,16 @@
-import { MenuItem, SafeArea, usePromptModal } from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import { NavigationPanelTreeRoot } from '@affine/core/desktop/components/navigation-panel';
-import { CollectionService } from '@affine/core/modules/collection';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { FavoriteService } from '@affine/core/modules/favorite';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { OrganizeService } from '@affine/core/modules/organize';
-import { TagService } from '@affine/core/modules/tag';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { MenuItem, SafeArea, usePromptModal } from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { NavigationPanelTreeRoot } from '@nexio/core/desktop/components/navigation-panel';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { FavoriteService } from '@nexio/core/modules/favorite';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { OrganizeService } from '@nexio/core/modules/organize';
+import { TagService } from '@nexio/core/modules/tag';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   AddCollectionIcon,
   AddOrganizeIcon,

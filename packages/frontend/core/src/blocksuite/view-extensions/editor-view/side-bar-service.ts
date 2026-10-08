@@ -1,4 +1,4 @@
-import { WorkbenchService } from '@affine/core/modules/workbench';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { SidebarExtension } from '@blocksuite/affine/shared/services';
 import type { FrameworkProvider } from '@toeverything/infra';
 

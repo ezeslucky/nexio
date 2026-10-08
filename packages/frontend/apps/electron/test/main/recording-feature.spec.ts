@@ -29,7 +29,7 @@ beforeEach(() => {
   storageState.clear();
   watchSubjects.clear();
 
-  vi.doMock('@affine/native', () => ({
+  vi.doMock('@nexio/native', () => ({
     ShareableContent: class ShareableContent {
       static applications() {
         return [];

@@ -1,6 +1,6 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { toArrayBuffer } from '@affine/core/utils/array-buffer';
-import { DebugLogger } from '@affine/debug';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
+import { DebugLogger } from '@nexio/debug';
 import type { Workspace as WorkspaceInterface } from '@blocksuite/affine/store';
 import { Entity, LiveData, yjsGetPath } from '@toeverything/infra';
 import type { Observable } from 'rxjs';

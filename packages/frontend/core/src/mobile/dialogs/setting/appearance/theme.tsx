@@ -1,5 +1,5 @@
-import { getThemeOptions } from '@affine/core/desktop/dialogs/setting/general-setting/appearance';
-import { useI18n } from '@affine/i18n';
+import { getThemeOptions } from '@nexio/core/desktop/dialogs/setting/general-setting/appearance';
+import { useI18n } from '@nexio/i18n';
 import { useTheme } from 'next-themes';
 import { useMemo } from 'react';
 

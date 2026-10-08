@@ -1,12 +1,12 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { SubscriptionService } from '@affine/core/modules/cloud';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
 import {
   SubscriptionPlan,
   SubscriptionRecurring,
   SubscriptionStatus,
-} from '@affine/graphql';
-import { type I18nString, i18nTime, Trans, useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { type I18nString, i18nTime, Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useEffect } from 'react';
 

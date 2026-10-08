@@ -1,9 +1,9 @@
-import { useQuery } from '@affine/admin/use-query';
-import type { AdminWorkspaceSort } from '@affine/graphql';
+import { useQuery } from '@nexio/admin/use-query';
+import type { AdminWorkspaceSort } from '@nexio/graphql';
 import {
   adminWorkspacesCountQuery,
   adminWorkspacesQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { useEffect, useMemo, useState } from 'react';
 
 import type { WorkspaceFlagFilter } from './schema';

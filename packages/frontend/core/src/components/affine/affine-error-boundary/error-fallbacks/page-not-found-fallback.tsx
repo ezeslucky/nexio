@@ -1,4 +1,4 @@
-import { useI18n } from '@affine/i18n';
+import { useI18n } from '@nexio/i18n';
 import type { Workspace } from '@blocksuite/affine/store';
 import { useCallback } from 'react';
 

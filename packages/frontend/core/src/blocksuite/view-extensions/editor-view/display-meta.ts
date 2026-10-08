@@ -1,4 +1,4 @@
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import type { Container } from '@blocksuite/affine/global/di';
 import type {
   DocDisplayMetaExtension,

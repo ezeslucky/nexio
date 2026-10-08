@@ -1,10 +1,10 @@
-import { test } from '@affine-test/kit/electron';
-import { importImage } from '@affine-test/kit/utils/image';
-import { pasteByKeyboard } from '@affine-test/kit/utils/keyboard';
+import { test } from '@nexio-test/kit/electron';
+import { importImage } from '@nexio-test/kit/utils/image';
+import { pasteByKeyboard } from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('should be able to insert SVG images', async ({ page }) => {

@@ -13,7 +13,7 @@ vi.mock('@blocksuite/affine/widgets/linked-doc', () => ({
     importDocs,
   },
 }));
-vi.mock('@affine/templates/onboarding.zip', () => ({
+vi.mock('@nexio/templates/onboarding.zip', () => ({
   default: '/onboarding.zip',
 }));
 vi.mock('../../modules/doc', () => ({

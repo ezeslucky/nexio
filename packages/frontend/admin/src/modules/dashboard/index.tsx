@@ -1,17 +1,17 @@
-import { Button } from '@affine/admin/components/ui/button';
+import { Button } from '@nexio/admin/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@affine/admin/components/ui/card';
+} from '@nexio/admin/components/ui/card';
 import {
   type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from '@affine/admin/components/ui/chart';
+} from '@nexio/admin/components/ui/chart';
 import {
   Dialog,
   DialogContent,
@@ -19,22 +19,22 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@affine/admin/components/ui/dialog';
+} from '@nexio/admin/components/ui/dialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@affine/admin/components/ui/dropdown-menu';
+} from '@nexio/admin/components/ui/dropdown-menu';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@affine/admin/components/ui/select';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { Skeleton } from '@affine/admin/components/ui/skeleton';
+} from '@nexio/admin/components/ui/select';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { Skeleton } from '@nexio/admin/components/ui/skeleton';
 import {
   Table,
   TableBody,
@@ -42,15 +42,15 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from '@affine/admin/components/ui/table';
-import { useMutation } from '@affine/admin/use-mutation';
-import { useQuery } from '@affine/admin/use-query';
+} from '@nexio/admin/components/ui/table';
+import { useMutation } from '@nexio/admin/use-mutation';
+import { useQuery } from '@nexio/admin/use-query';
 import {
   adminDashboardQuery,
   adminMailDeliveriesQuery,
   previewLicenseMutation,
-} from '@affine/graphql';
-import { ROUTES } from '@affine/routes';
+} from '@nexio/graphql';
+import { ROUTES } from '@nexio/routes';
 import {
   ChevronDownIcon,
   DatabaseIcon,

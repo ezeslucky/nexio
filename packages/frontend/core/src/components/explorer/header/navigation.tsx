@@ -1,6 +1,6 @@
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 
 import * as styles from './navigation.css';
 

@@ -1,8 +1,8 @@
-import { Tooltip } from '@affine/component';
-import { useCatchEventCallback } from '@affine/core/components/hooks/use-catch-event-hook';
-import { UrlService } from '@affine/core/modules/url';
-import { Unreachable } from '@affine/env/constant';
-import { useI18n } from '@affine/i18n';
+import { Tooltip } from '@nexio/component';
+import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
+import { UrlService } from '@nexio/core/modules/url';
+import { Unreachable } from '@nexio/env/constant';
+import { useI18n } from '@nexio/i18n';
 import {
   CloseIcon,
   DownloadIcon,

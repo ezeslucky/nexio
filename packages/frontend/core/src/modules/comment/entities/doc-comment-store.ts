@@ -10,11 +10,11 @@ import {
   updateCommentMutation,
   updateReplyMutation,
   uploadCommentAttachmentMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import type {
   RealtimeSubscriptionReady,
   RealtimeTopicEventOf,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Entity } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 

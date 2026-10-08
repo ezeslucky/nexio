@@ -1,11 +1,11 @@
-import { DefaultServerService } from '@affine/core/modules/cloud';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+import { DefaultServerService } from '@nexio/core/modules/cloud';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
 import {
   buildShowcaseWorkspace,
   createFirstAppData,
-} from '@affine/core/utils/first-app-data';
-import { ServerFeature } from '@affine/graphql';
+} from '@nexio/core/utils/first-app-data';
+import { ServerFeature } from '@nexio/graphql';
 import {
   useLiveData,
   useService,

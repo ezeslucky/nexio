@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 
-import { Path, ProjectRoot } from '@affine-tools/utils/path';
+import { Path, ProjectRoot } from '@nexio-tools/utils/path';
 import type { BrowserContext } from '@playwright/test';
 import { test as baseTest } from '@playwright/test';
 

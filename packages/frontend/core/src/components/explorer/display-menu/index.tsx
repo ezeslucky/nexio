@@ -4,12 +4,12 @@ import {
   Menu,
   type MenuProps,
   MenuSub,
-} from '@affine/component';
+} from '@nexio/component';
 import type {
   GroupByParams,
   OrderByParams,
-} from '@affine/core/modules/collection-rules/types';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/collection-rules/types';
+import { useI18n } from '@nexio/i18n';
 import type React from 'react';
 import { useCallback } from 'react';
 

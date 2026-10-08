@@ -1,4 +1,4 @@
-import { i18nTime } from '@affine/i18n';
+import { i18nTime } from '@nexio/i18n';
 import {
   AliasIcon as LitAliasIcon,
   BlockLinkIcon as LitBlockLinkIcon,

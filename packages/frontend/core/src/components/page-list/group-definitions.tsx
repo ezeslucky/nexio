@@ -1,7 +1,7 @@
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import type { Tag } from '@affine/core/modules/tag';
-import { TagService } from '@affine/core/modules/tag';
-import { useI18n } from '@affine/i18n';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import type { Tag } from '@nexio/core/modules/tag';
+import { TagService } from '@nexio/core/modules/tag';
+import { useI18n } from '@nexio/i18n';
 import type { DocMeta } from '@blocksuite/affine/store';
 import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';

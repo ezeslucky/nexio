@@ -1,5 +1,5 @@
-import { BrowserWarning, LocalDemoTips } from '@affine/component/affine-banner';
-import { Trans, useI18n } from '@affine/i18n';
+import { BrowserWarning, LocalDemoTips } from '@nexio/component/affine-banner';
+import { Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 

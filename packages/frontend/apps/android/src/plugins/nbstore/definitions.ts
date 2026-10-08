@@ -1,11 +1,11 @@
-import type { CrawlResult, DocIndexedClock } from '@affine/nbstore';
+import type { CrawlResult, DocIndexedClock } from '@nexio/nbstore';
 import type {
   NativeIndexField,
   NativeIndexHit,
   NativeIndexQuery,
   NativeIndexSearchOptions,
   NativeIndexSearchResult,
-} from '@affine/nbstore/sqlite';
+} from '@nexio/nbstore/sqlite';
 
 type NativeIndexDocument = { id: string; fields: NativeIndexField[] };
 type NativeIndexAggregateResult = {

@@ -14,7 +14,7 @@ const setNativeSignIn = (implementation: ReturnType<typeof vi.fn>) => {
   });
 };
 
-vi.mock('@affine/component', () => ({
+vi.mock('@nexio/component', () => ({
   Modal: ({ open, children }: { open: boolean; children: ReactNode }) =>
     open ? <div role="dialog">{children}</div> : null,
 }));

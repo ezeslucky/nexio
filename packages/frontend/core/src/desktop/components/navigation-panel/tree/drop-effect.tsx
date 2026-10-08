@@ -1,5 +1,5 @@
-import type { useDropTarget } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import type { useDropTarget } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import { CopyIcon, LinkIcon, MoveToIcon } from '@blocksuite/icons/rc';
 import { createPortal } from 'react-dom';
 

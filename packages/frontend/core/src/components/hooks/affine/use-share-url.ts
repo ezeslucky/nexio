@@ -1,9 +1,9 @@
-import { notify } from '@affine/component';
-import { ServerService } from '@affine/core/modules/cloud';
-import { toDocSearchParams } from '@affine/core/modules/navigation';
-import { copyTextToClipboard } from '@affine/core/utils/clipboard';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { notify } from '@nexio/component';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { toDocSearchParams } from '@nexio/core/modules/navigation';
+import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import type { SerializedXYWH } from '@blocksuite/affine/global/gfx';
 import { type DocMode } from '@blocksuite/affine/model';
 import {

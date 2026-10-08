@@ -1,3 +1,3 @@
-# @affine/error
+# @nexio/error
 
 AFFiNE error handler utilities

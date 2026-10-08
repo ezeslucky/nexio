@@ -1,4 +1,4 @@
-import type { WorkspaceInviteLinkSnapshot } from '@affine/realtime';
+import type { WorkspaceInviteLinkSnapshot } from '@nexio/realtime';
 import { Framework } from '@toeverything/infra';
 import { NEVER } from 'rxjs';
 import { afterEach, expect, test, vi } from 'vitest';

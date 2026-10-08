@@ -1,13 +1,13 @@
-import { notify } from '@affine/component';
+import { notify } from '@nexio/component';
 import {
   generateUrl,
   type UseSharingUrl,
-} from '@affine/core/components/hooks/affine/use-share-url';
-import { ServerService } from '@affine/core/modules/cloud';
-import { EditorService } from '@affine/core/modules/editor';
-import { copyLinkToBlockStdScopeClipboard } from '@affine/core/utils/clipboard';
-import { I18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/components/hooks/affine/use-share-url';
+import { ServerService } from '@nexio/core/modules/cloud';
+import { EditorService } from '@nexio/core/modules/editor';
+import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
+import { I18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   menu,
   type MenuOptions,

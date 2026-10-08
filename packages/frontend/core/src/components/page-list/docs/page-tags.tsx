@@ -1,5 +1,5 @@
-import { TagItem as TagItemComponent } from '@affine/core/components/tags';
-import type { Tag } from '@affine/core/modules/tag';
+import { TagItem as TagItemComponent } from '@nexio/core/components/tags';
+import type { Tag } from '@nexio/core/modules/tag';
 import { useLiveData } from '@toeverything/infra';
 
 export interface PageTagsProps {

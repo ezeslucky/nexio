@@ -1,10 +1,10 @@
-import type { MenuItemProps } from '@affine/component';
-import { Menu, MenuItem, usePromptModal } from '@affine/component';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+import type { MenuItemProps } from '@nexio/component';
+import { Menu, MenuItem, usePromptModal } from '@nexio/component';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   DeleteIcon,
   EditIcon,

@@ -1,4 +1,4 @@
-import { getRealtimeInputKey, type RealtimeEvent } from '@affine/realtime';
+import { getRealtimeInputKey, type RealtimeEvent } from '@nexio/realtime';
 import { beforeEach, expect, test, vi } from 'vitest';
 
 import { RealtimeManager } from '../manager';

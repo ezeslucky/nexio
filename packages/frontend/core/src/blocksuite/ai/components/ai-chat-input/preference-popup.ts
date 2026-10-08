@@ -1,5 +1,5 @@
-import type { AIToolsConfigService } from '@affine/core/modules/ai-button';
-import type { AIModelService } from '@affine/core/modules/ai-button/services/models';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
 import {
   menu,
   popMenu,

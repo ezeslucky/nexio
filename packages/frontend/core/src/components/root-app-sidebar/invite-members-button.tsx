@@ -1,7 +1,7 @@
-import { MenuItem } from '@affine/core/modules/app-sidebar/views';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { MenuItem } from '@nexio/core/modules/app-sidebar/views';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { CollaborationIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';

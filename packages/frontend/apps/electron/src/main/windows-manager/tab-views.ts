@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { I18n } from '@affine/i18n';
+import { I18n } from '@nexio/i18n';
 import {
   app,
   BrowserWindow,

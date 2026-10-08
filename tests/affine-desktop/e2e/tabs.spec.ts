@@ -1,17 +1,17 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@nexio-test/kit/electron';
 import {
   closeTab,
   expectActiveTab,
   expectTabCount,
   expectTabTitle,
-} from '@affine-test/kit/utils/app-tabs';
+} from '@nexio-test/kit/utils/app-tabs';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   getPageByTitle,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('create new tab', async ({ views }) => {

@@ -1,16 +1,16 @@
-import { EditorLoading } from '@affine/component/page-detail-skeleton';
+import { EditorLoading } from '@nexio/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
   PageEditor,
-} from '@affine/core/blocksuite/editors';
-import { ServerService } from '@affine/core/modules/cloud';
+} from '@nexio/core/blocksuite/editors';
+import { ServerService } from '@nexio/core/modules/cloud';
 import {
   EditorSettingService,
   fontStyleOptions,
-} from '@affine/core/modules/editor-setting';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import track from '@affine/track';
+} from '@nexio/core/modules/editor-setting';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import track from '@nexio/track';
 import { appendParagraphCommand } from '@blocksuite/affine/blocks/paragraph';
 import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
 import { DisposableGroup } from '@blocksuite/affine/global/disposable';

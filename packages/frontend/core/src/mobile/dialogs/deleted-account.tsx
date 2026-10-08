@@ -1,13 +1,13 @@
-import { ConfirmModal } from '@affine/component';
+import { ConfirmModal } from '@nexio/component';
 import {
   RouteLogic,
   useNavigateHelper,
-} from '@affine/core/components/hooks/use-navigate-helper';
+} from '@nexio/core/components/hooks/use-navigate-helper';
 import type {
   DialogComponentProps,
   GLOBAL_DIALOG_SCHEMA,
-} from '@affine/core/modules/dialogs';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/dialogs';
+import { useI18n } from '@nexio/i18n';
 import { useCallback } from 'react';
 
 export const DeletedAccountDialog = ({

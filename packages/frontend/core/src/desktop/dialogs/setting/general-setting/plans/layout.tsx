@@ -1,6 +1,6 @@
-import { Divider } from '@affine/component';
-import { SettingHeader } from '@affine/component/setting-components';
-import { useI18n } from '@affine/i18n';
+import { Divider } from '@nexio/component';
+import { SettingHeader } from '@nexio/component/setting-components';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { type ReactNode, useRef } from 'react';

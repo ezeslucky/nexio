@@ -1,18 +1,18 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
-import { clickUserInfoCard } from '@affine-test/kit/utils/setting';
+} from '@nexio-test/kit/utils/cloud';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
+import { clickUserInfoCard } from '@nexio-test/kit/utils/setting';
 import {
   clickSideBarAllPageButton,
   clickSideBarSettingButton,
   clickSideBarUseAvatar,
-} from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 test('can open login modal in workspace list', async ({ page }) => {

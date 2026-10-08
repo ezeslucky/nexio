@@ -1,4 +1,4 @@
-import { ServerDeploymentType } from '@affine/graphql';
+import { ServerDeploymentType } from '@nexio/graphql';
 import { Service } from '@toeverything/infra';
 
 import type { Server } from '../entities/server';

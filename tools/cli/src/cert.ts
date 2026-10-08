@@ -1,4 +1,4 @@
-import { type Path, ProjectRoot } from '@affine-tools/utils/path';
+import { type Path, ProjectRoot } from '@nexio-tools/utils/path';
 
 import { Command, Option } from './command';
 

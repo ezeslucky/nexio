@@ -1,20 +1,20 @@
-import { skipOnboarding, test } from '@affine-test/kit/playwright';
-import { importAttachment } from '@affine-test/kit/utils/attachment';
+import { skipOnboarding, test } from '@nexio-test/kit/playwright';
+import { importAttachment } from '@nexio-test/kit/utils/attachment';
 import {
   createRandomUser,
   enableCloudWorkspaceFromShareButton,
   enableShare,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { getParagraphIds, locateToolbar } from '@affine-test/kit/utils/editor';
-import { copyByKeyboard } from '@affine-test/kit/utils/keyboard';
+} from '@nexio-test/kit/utils/cloud';
+import { getParagraphIds, locateToolbar } from '@nexio-test/kit/utils/editor';
+import { copyByKeyboard } from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { setSelection } from '@affine-test/kit/utils/selection';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { setSelection } from '@nexio-test/kit/utils/selection';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {

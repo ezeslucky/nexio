@@ -1,11 +1,11 @@
 import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
-} from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
-import { insertFromMarkdown } from '@affine/core/blocksuite/utils';
-import { preprocessAudioBlobForTranscription } from '@affine/core/utils/opus-encoding';
-import { DebugLogger } from '@affine/debug';
-import track from '@affine/track';
+} from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
+import { insertFromMarkdown } from '@nexio/core/blocksuite/utils';
+import { preprocessAudioBlobForTranscription } from '@nexio/core/utils/opus-encoding';
+import { DebugLogger } from '@nexio/debug';
+import track from '@nexio/track';
 import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
 import { type DeltaInsert, Text } from '@blocksuite/affine/store';

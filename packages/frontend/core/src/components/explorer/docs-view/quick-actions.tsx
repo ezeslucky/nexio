@@ -4,14 +4,14 @@ import {
   type IconButtonProps,
   toast,
   useConfirmModal,
-} from '@affine/component';
-import type { DocRecord } from '@affine/core/modules/doc';
-import { CompatibleFavoriteItemsAdapter } from '@affine/core/modules/favorite';
-import { GuardService } from '@affine/core/modules/permissions';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { UserFriendlyError } from '@affine/error';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component';
+import type { DocRecord } from '@nexio/core/modules/doc';
+import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+import { GuardService } from '@nexio/core/modules/permissions';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { UserFriendlyError } from '@nexio/error';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   DeleteIcon,
   OpenInNewIcon,

@@ -4,7 +4,7 @@ import {
   type WorkspaceConfigSnapshot,
   type WorkspaceInviteLinkSnapshot,
   type WorkspaceMemberSnapshot,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Injectable, OnModuleInit, Optional } from '@nestjs/common';
 import { z } from 'zod';
 

@@ -3,7 +3,7 @@ import {
   indexerAggregateQuery,
   indexerSearchQuery,
   type SearchInput,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { Observable } from 'rxjs';
 
 import {

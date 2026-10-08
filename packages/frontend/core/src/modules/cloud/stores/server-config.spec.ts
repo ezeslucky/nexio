@@ -1,4 +1,4 @@
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@nexio/error';
 import { describe, expect, test } from 'vitest';
 
 import {

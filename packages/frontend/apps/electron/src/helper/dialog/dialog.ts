@@ -1,7 +1,7 @@
 import { parse, resolve } from 'node:path';
 
-import { DocStorage, ValidationResult } from '@affine/native';
-import { parseUniversalId } from '@affine/nbstore';
+import { DocStorage, ValidationResult } from '@nexio/native';
+import { parseUniversalId } from '@nexio/nbstore';
 import fs from 'fs-extra';
 import { nanoid } from 'nanoid';
 
@@ -270,7 +270,7 @@ async function cpV1DBFile(
   originalPath: string,
   workspaceId: string
 ): Promise<LoadDBFileResult> {
-  const { SqliteConnection } = await import('@affine/native');
+  const { SqliteConnection } = await import('@nexio/native');
 
   const validationResult = await SqliteConnection.validate(originalPath);
 

@@ -1,6 +1,6 @@
-import { test } from '@affine-test/kit/playwright';
-import { coreUrl, openHomePage } from '@affine-test/kit/utils/load-page';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+import { test } from '@nexio-test/kit/playwright';
+import { coreUrl, openHomePage } from '@nexio-test/kit/utils/load-page';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 test('goto not found page', async ({ page }) => {

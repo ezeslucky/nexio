@@ -1,4 +1,4 @@
-import { focusDocTitle } from '@affine-test/kit/utils/editor';
+import { focusDocTitle } from '@nexio-test/kit/utils/editor';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

@@ -1,13 +1,13 @@
-import { ConfirmModal, Input, notify } from '@affine/component';
+import { ConfirmModal, Input, notify } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { AuthService, ServerService } from '@affine/core/modules/cloud';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { UserFriendlyError } from '@affine/error';
-import { Trans, useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/setting-components';
+import { AuthService, ServerService } from '@nexio/core/modules/cloud';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { UserFriendlyError } from '@nexio/error';
+import { Trans, useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';

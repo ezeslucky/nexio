@@ -1,10 +1,10 @@
-import { shallowEqual } from '@affine/component';
-import type { TranscriptionBlockProps } from '@affine/core/blocksuite/ai/blocks/transcription-block/model';
-import { RealtimeLiveQuery } from '@affine/core/modules/cloud/realtime/live-query';
-import { DebugLogger } from '@affine/debug';
-import { UserFriendlyError } from '@affine/error';
-import { AiJobStatus, type TranscriptionResultType } from '@affine/graphql';
-import type { RealtimeTopicEventOf } from '@affine/realtime';
+import { shallowEqual } from '@nexio/component';
+import type { TranscriptionBlockProps } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
+import { RealtimeLiveQuery } from '@nexio/core/modules/cloud/realtime/live-query';
+import { DebugLogger } from '@nexio/debug';
+import { UserFriendlyError } from '@nexio/error';
+import { AiJobStatus, type TranscriptionResultType } from '@nexio/graphql';
+import type { RealtimeTopicEventOf } from '@nexio/realtime';
 import { Entity, LiveData } from '@toeverything/infra';
 
 import type { DefaultServerService, WorkspaceServerService } from '../../cloud';

@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@nexio-test/kit/playwright';
 import type { PlaywrightTestConfig } from '@playwright/test';
 // import { devices } from '@playwright/test';
 
@@ -29,7 +29,7 @@ const config: PlaywrightTestConfig = {
   webServer: [
     // Intentionally not building the web, reminds you to run it by yourself.
     {
-      command: 'yarn run -T affine dev -p @affine/electron-renderer',
+      command: 'yarn run -T affine dev -p @nexio/electron-renderer',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'pipe',
@@ -40,7 +40,7 @@ const config: PlaywrightTestConfig = {
       url: 'http://localhost:8080',
     },
     {
-      command: 'yarn run -T affine dev -p @affine/server',
+      command: 'yarn run -T affine dev -p @nexio/server',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       stdout: 'pipe',

@@ -2,12 +2,12 @@ import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { UNTITLED_WORKSPACE_NAME } from '@affine/env/constant';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { UNTITLED_WORKSPACE_NAME } from '@nexio/env/constant';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon } from '@blocksuite/icons/rc';
 import { FrameworkScope, useService } from '@toeverything/infra';
 import { useCallback } from 'react';

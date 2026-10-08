@@ -1,12 +1,12 @@
-import { Button } from '@affine/admin/components/ui/button';
-import type { CarouselApi } from '@affine/admin/components/ui/carousel';
+import { Button } from '@nexio/admin/components/ui/button';
+import type { CarouselApi } from '@nexio/admin/components/ui/carousel';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@affine/admin/components/ui/carousel';
-import { validateEmailAndPassword } from '@affine/admin/utils';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
+} from '@nexio/admin/components/ui/carousel';
+import { validateEmailAndPassword } from '@nexio/admin/utils';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';

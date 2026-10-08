@@ -1,11 +1,11 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   createRandomUser,
   deleteUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { waitForEditorLoad } from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/cloud';
+import { waitForEditorLoad } from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 let user: {

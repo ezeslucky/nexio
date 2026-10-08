@@ -1,9 +1,9 @@
-import { notify, useConfirmModal } from '@affine/component';
-import { AuthService, ServersService } from '@affine/core/modules/cloud';
-import { GlobalDialogService } from '@affine/core/modules/dialogs';
-import type { Workspace } from '@affine/core/modules/workspace';
-import { WorkspacesService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { notify, useConfirmModal } from '@nexio/component';
+import { AuthService, ServersService } from '@nexio/core/modules/cloud';
+import { GlobalDialogService } from '@nexio/core/modules/dialogs';
+import type { Workspace } from '@nexio/core/modules/workspace';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 

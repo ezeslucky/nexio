@@ -1,5 +1,5 @@
-import { type Notification, notify } from '@affine/component';
-import { useI18n } from '@affine/i18n';
+import { type Notification, notify } from '@nexio/component';
+import { useI18n } from '@nexio/i18n';
 import clsx from 'clsx';
 import { useCallback, useRef } from 'react';
 

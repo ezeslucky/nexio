@@ -1,9 +1,9 @@
 import { createRequire } from 'node:module';
 import path from 'node:path';
 
-import { getBuildConfig } from '@affine-tools/utils/build-config';
-import { Path, ProjectRoot } from '@affine-tools/utils/path';
-import { Package } from '@affine-tools/utils/workspace';
+import { getBuildConfig } from '@nexio-tools/utils/build-config';
+import { Path, ProjectRoot } from '@nexio-tools/utils/path';
+import { Package } from '@nexio-tools/utils/workspace';
 import rspack, {
   type Configuration as RspackConfiguration,
 } from '@rspack/core';
@@ -165,7 +165,7 @@ export function createHTMLTargetConfig(
           '@preact',
           'signals-core'
         ).value,
-        '@affine/core/modules/code-block-preview-renderer/platform-backend':
+        '@nexio/core/modules/code-block-preview-renderer/platform-backend':
           codeBlockPreviewBackendAlias,
       },
     },
@@ -326,7 +326,7 @@ export function createHTMLTargetConfig(
           patterns: [
             {
               // copy the shared public assets into dist
-              from: new Package('@affine/core').join('public').value,
+              from: new Package('@nexio/core').join('public').value,
             },
           ],
         }),

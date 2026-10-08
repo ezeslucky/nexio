@@ -4,7 +4,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { UserFriendlyError } from '@affine/error';
+import { UserFriendlyError } from '@nexio/error';
 import type { EditorHost } from '@blocksuite/affine/std';
 import type { GfxModel } from '@blocksuite/affine/std/gfx';
 import { BehaviorSubject, Subject } from 'rxjs';
@@ -50,11 +50,11 @@ const createWorkspaceByokLocalLeaseMutation = vi.hoisted(() =>
   Symbol('createWorkspaceByokLocalLeaseMutation')
 );
 
-vi.mock('@affine/electron-api', () => ({
+vi.mock('@nexio/electron-api', () => ({
   apis: electronApis,
 }));
 
-vi.mock('@affine/graphql', () => ({
+vi.mock('@nexio/graphql', () => ({
   ByokProvider: {
     openai: 'openai',
     anthropic: 'anthropic',

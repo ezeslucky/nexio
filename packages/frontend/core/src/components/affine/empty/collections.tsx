@@ -1,8 +1,8 @@
-import { usePromptModal } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
-import { CollectionService } from '@affine/core/modules/collection';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { usePromptModal } from '@nexio/component';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
+import { CollectionService } from '@nexio/core/modules/collection';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';

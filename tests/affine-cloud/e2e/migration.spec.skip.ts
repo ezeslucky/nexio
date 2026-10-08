@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-import { Path, test } from '@affine-test/kit/playwright';
+import { Path, test } from '@nexio-test/kit/playwright';
 import {
   createRandomUser,
   deleteUser,
@@ -8,13 +8,13 @@ import {
   getLoginCookie,
   loginUser,
   runPrisma,
-} from '@affine-test/kit/utils/cloud';
-import { coreUrl } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/cloud';
+import { coreUrl } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {

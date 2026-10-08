@@ -2,7 +2,7 @@ import {
   createWorkspaceMutation,
   publishPageMutation,
   revokePublicPageMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { PrismaClient } from '@prisma/client';
 
 import { WorkspaceRole } from '../../core/permission/types';

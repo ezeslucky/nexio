@@ -1,12 +1,12 @@
-import { Button, Loading } from '@affine/component';
+import { Button, Loading } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { WorkspaceSubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { WorkspaceSubscriptionService } from '@nexio/core/modules/cloud';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import type { RealtimeRequestName, RealtimeTopicName } from '@affine/realtime';
+import type { RealtimeRequestName, RealtimeTopicName } from '@nexio/realtime';
 import { Injectable } from '@nestjs/common';
 
 import type { RealtimeRequestHandler, RealtimeTopicHandler } from './types';

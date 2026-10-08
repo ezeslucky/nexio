@@ -1,6 +1,6 @@
-import type { Server } from '@affine/core/modules/cloud';
-import type { WorkspaceMetadata } from '@affine/core/modules/workspace';
-import { ServerDeploymentType } from '@affine/graphql';
+import type { Server } from '@nexio/core/modules/cloud';
+import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
+import { ServerDeploymentType } from '@nexio/graphql';
 
 import type { PendingShareItem, ShareLinkPreview } from './types';
 

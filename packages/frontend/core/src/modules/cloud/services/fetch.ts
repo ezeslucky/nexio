@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import { UserFriendlyError } from '@affine/error';
+import { DebugLogger } from '@nexio/debug';
+import { UserFriendlyError } from '@nexio/error';
 import { fromPromise, Service } from '@toeverything/infra';
 
 import type { ServerService } from './server';

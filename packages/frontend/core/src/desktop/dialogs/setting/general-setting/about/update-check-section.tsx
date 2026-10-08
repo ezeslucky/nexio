@@ -1,9 +1,9 @@
-import { Loading } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { Button } from '@affine/component/ui/button';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { useAppUpdater } from '@affine/core/components/hooks/use-app-updater';
-import { useI18n } from '@affine/i18n';
+import { Loading } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { Button } from '@nexio/component/ui/button';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
+import { useI18n } from '@nexio/i18n';
 import clsx from 'clsx';
 import { useCallback, useMemo, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { SignalWatcher } from '@blocksuite/affine/global/lit';
 import { unsafeCSSVar } from '@blocksuite/affine/shared/theme';
 import { css, html, LitElement } from 'lit';

@@ -1,19 +1,19 @@
-import { uniReactRoot } from '@affine/component';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { AiLoginRequiredModal } from '@affine/core/components/affine/auth/ai-login-required';
-import { SWRConfigProvider } from '@affine/core/components/providers/swr-config-provider';
-import { WorkspaceSideEffects } from '@affine/core/components/providers/workspace-side-effects';
+import { uniReactRoot } from '@nexio/component';
+import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { AiLoginRequiredModal } from '@nexio/core/components/affine/auth/ai-login-required';
+import { SWRConfigProvider } from '@nexio/core/components/providers/swr-config-provider';
+import { WorkspaceSideEffects } from '@nexio/core/components/providers/workspace-side-effects';
 import {
   DefaultServerService,
   WorkspaceServerService,
-} from '@affine/core/modules/cloud';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { PeekViewManagerModal } from '@affine/core/modules/peek-view';
+} from '@nexio/core/modules/cloud';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { PeekViewManagerModal } from '@nexio/core/modules/peek-view';
 import type {
   Workspace,
   WorkspaceMetadata,
-} from '@affine/core/modules/workspace';
-import { WorkspacesService } from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workspace';
+import { WorkspacesService } from '@nexio/core/modules/workspace';
 import {
   FrameworkScope,
   LiveData,

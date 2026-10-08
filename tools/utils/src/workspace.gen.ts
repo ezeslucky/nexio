@@ -1097,17 +1097,17 @@ export const PackageList = [
   },
   {
     location: 'docs/reference',
-    name: '@affine/docs',
+    name: '@nexio/docs',
     workspaceDependencies: [],
   },
   {
     location: 'packages/backend/native',
-    name: '@affine/server-native',
+    name: '@nexio/server-native',
     workspaceDependencies: [],
   },
   {
     location: 'packages/backend/server',
-    name: '@affine/server',
+    name: '@nexio/server',
     workspaceDependencies: [
       'packages/common/s3-compat',
       'packages/backend/native',
@@ -1119,27 +1119,27 @@ export const PackageList = [
   },
   {
     location: 'packages/common/auth',
-    name: '@affine/auth',
+    name: '@nexio/auth',
     workspaceDependencies: [],
   },
   {
     location: 'packages/common/debug',
-    name: '@affine/debug',
+    name: '@nexio/debug',
     workspaceDependencies: [],
   },
   {
     location: 'packages/common/env',
-    name: '@affine/env',
+    name: '@nexio/env',
     workspaceDependencies: [],
   },
   {
     location: 'packages/common/error',
-    name: '@affine/error',
+    name: '@nexio/error',
     workspaceDependencies: [],
   },
   {
     location: 'packages/common/graphql',
-    name: '@affine/graphql',
+    name: '@nexio/graphql',
     workspaceDependencies: ['packages/common/debug', 'packages/common/error'],
   },
   {
@@ -1154,34 +1154,34 @@ export const PackageList = [
   },
   {
     location: 'packages/common/nbstore',
-    name: '@affine/nbstore',
+    name: '@nexio/nbstore',
     workspaceDependencies: [
       'packages/common/reader',
       'packages/common/realtime',
       'packages/common/infra',
+      'blocksuite/affine/all',
       'packages/common/error',
       'packages/common/graphql',
-      'blocksuite/affine/all',
     ],
   },
   {
     location: 'packages/common/reader',
-    name: '@affine/reader',
+    name: '@nexio/reader',
     workspaceDependencies: ['blocksuite/affine/all'],
   },
   {
     location: 'packages/common/realtime',
-    name: '@affine/realtime',
+    name: '@nexio/realtime',
     workspaceDependencies: ['packages/common/graphql'],
   },
   {
     location: 'packages/common/s3-compat',
-    name: '@affine/s3-compat',
+    name: '@nexio/s3-compat',
     workspaceDependencies: [],
   },
   {
     location: 'packages/frontend/admin',
-    name: '@affine/admin',
+    name: '@nexio/admin',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1192,8 +1192,9 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/apps/android',
-    name: '@affine/android',
+    name: '@nexio/android',
     workspaceDependencies: [
+      'blocksuite/affine/all',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/env',
@@ -1201,13 +1202,12 @@ export const PackageList = [
       'packages/frontend/apps/mobile-shared',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'blocksuite/affine/all',
       'packages/common/infra',
     ],
   },
   {
     location: 'packages/frontend/apps/electron',
-    name: '@affine/electron',
+    name: '@nexio/electron',
     workspaceDependencies: [
       'tools/utils',
       'packages/common/auth',
@@ -1219,8 +1219,9 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/apps/electron-renderer',
-    name: '@affine/electron-renderer',
+    name: '@nexio/electron-renderer',
     workspaceDependencies: [
+      'blocksuite/affine/all',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/debug',
@@ -1228,14 +1229,14 @@ export const PackageList = [
       'packages/frontend/i18n',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'blocksuite/affine/all',
       'packages/common/infra',
     ],
   },
   {
     location: 'packages/frontend/apps/ios',
-    name: '@affine/ios',
+    name: '@nexio/ios',
     workspaceDependencies: [
+      'blocksuite/affine/all',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/env',
@@ -1244,7 +1245,6 @@ export const PackageList = [
       'packages/frontend/apps/mobile-shared',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'blocksuite/affine/all',
       'packages/common/infra',
       'tools/cli',
       'tools/utils',
@@ -1252,25 +1252,25 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/apps/mobile',
-    name: '@affine/mobile',
+    name: '@nexio/mobile',
     workspaceDependencies: [
+      'blocksuite/affine/all',
       'packages/frontend/component',
       'packages/frontend/core',
       'packages/common/env',
       'packages/common/nbstore',
       'packages/frontend/track',
-      'blocksuite/affine/all',
       'packages/common/infra',
     ],
   },
   {
     location: 'packages/frontend/apps/mobile-shared',
-    name: '@affine/mobile-shared',
+    name: '@nexio/mobile-shared',
     workspaceDependencies: ['packages/frontend/core'],
   },
   {
     location: 'packages/frontend/apps/web',
-    name: '@affine/web',
+    name: '@nexio/web',
     workspaceDependencies: [
       'packages/frontend/component',
       'packages/frontend/core',
@@ -1282,7 +1282,7 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/component',
-    name: '@affine/component',
+    name: '@nexio/component',
     workspaceDependencies: [
       'packages/common/debug',
       'packages/common/error',
@@ -1293,8 +1293,15 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/core',
-    name: '@affine/core',
+    name: '@nexio/core',
     workspaceDependencies: [
+      'blocksuite/affine/all',
+      'blocksuite/affine/blocks/root',
+      'blocksuite/affine/components',
+      'blocksuite/affine/shared',
+      'blocksuite/affine/data-view',
+      'blocksuite/framework/global',
+      'blocksuite/framework/std',
       'packages/frontend/component',
       'packages/common/debug',
       'packages/frontend/electron-api',
@@ -1306,25 +1313,18 @@ export const PackageList = [
       'packages/common/reader',
       'packages/frontend/templates',
       'packages/frontend/track',
-      'blocksuite/affine/all',
-      'blocksuite/affine/blocks/root',
-      'blocksuite/affine/components',
-      'blocksuite/affine/shared',
-      'blocksuite/affine/data-view',
-      'blocksuite/framework/global',
-      'blocksuite/framework/std',
       'packages/common/infra',
       'blocksuite/affine/ext-loader',
     ],
   },
   {
     location: 'packages/frontend/electron-api',
-    name: '@affine/electron-api',
+    name: '@nexio/electron-api',
     workspaceDependencies: ['packages/frontend/apps/electron'],
   },
   {
     location: 'packages/frontend/i18n',
-    name: '@affine/i18n',
+    name: '@nexio/i18n',
     workspaceDependencies: [
       'packages/common/debug',
       'tools/cli',
@@ -1333,69 +1333,69 @@ export const PackageList = [
   },
   {
     location: 'packages/frontend/native',
-    name: '@affine/native',
+    name: '@nexio/native',
     workspaceDependencies: [],
   },
   {
     location: 'packages/frontend/routes',
-    name: '@affine/routes',
+    name: '@nexio/routes',
     workspaceDependencies: ['tools/cli', 'tools/utils'],
   },
   {
     location: 'packages/frontend/templates',
-    name: '@affine/templates',
+    name: '@nexio/templates',
     workspaceDependencies: [],
   },
   {
     location: 'packages/frontend/track',
-    name: '@affine/track',
+    name: '@nexio/track',
     workspaceDependencies: ['packages/common/debug'],
   },
   {
     location: 'tests/affine-cloud',
-    name: '@affine-test/affine-cloud',
+    name: '@nexio-test/affine-cloud',
     workspaceDependencies: ['tests/kit'],
   },
   {
     location: 'tests/affine-cloud-copilot',
-    name: '@affine-test/affine-cloud-copilot',
+    name: '@nexio-test/affine-cloud-copilot',
     workspaceDependencies: ['tests/kit'],
   },
   {
     location: 'tests/affine-desktop',
-    name: '@affine-test/affine-desktop',
+    name: '@nexio-test/affine-desktop',
     workspaceDependencies: ['tests/kit', 'packages/frontend/electron-api'],
   },
   {
     location: 'tests/affine-desktop-cloud',
-    name: '@affine-test/affine-desktop-cloud',
+    name: '@nexio-test/affine-desktop-cloud',
     workspaceDependencies: ['tests/kit'],
   },
   {
     location: 'tests/affine-local',
-    name: '@affine-test/affine-local',
+    name: '@nexio-test/affine-local',
     workspaceDependencies: ['tests/kit'],
   },
   {
     location: 'tests/affine-mobile',
-    name: '@affine-test/affine-mobile',
+    name: '@nexio-test/affine-mobile',
     workspaceDependencies: ['tests/kit'],
   },
   {
     location: 'tests/blocksuite',
-    name: '@affine-test/blocksuite',
+    name: '@nexio-test/blocksuite',
     workspaceDependencies: [
-      'tests/kit',
       'blocksuite/affine/all',
       'blocksuite/integration-test',
+      'tests/kit',
     ],
   },
   {
     location: 'tests/kit',
-    name: '@affine-test/kit',
+    name: '@nexio-test/kit',
     workspaceDependencies: [
-      'tools/utils',
       'blocksuite/affine/all',
+      'tools/utils',
       'packages/common/infra',
     ],
   },
@@ -1411,47 +1411,47 @@ export const PackageList = [
   },
   {
     location: 'tools/@types/env',
-    name: '@types/affine__env',
-    workspaceDependencies: ['packages/common/env', 'blocksuite/affine/all'],
+    name: '@types/nexio__env',
+    workspaceDependencies: ['blocksuite/affine/all', 'packages/common/env'],
   },
   {
     location: 'tools/changelog',
-    name: '@affine/changelog',
+    name: '@nexio/changelog',
     workspaceDependencies: [],
   },
   {
     location: 'tools/cli',
-    name: '@affine-tools/cli',
+    name: '@nexio-tools/cli',
     workspaceDependencies: ['tools/utils', 'packages/common/s3-compat'],
   },
   {
     location: 'tools/commitlint',
-    name: '@affine/commitlint-config',
+    name: '@nexio/commitlint-config',
     workspaceDependencies: [],
   },
   {
     location: 'tools/copilot-result',
-    name: '@affine/copilot-result',
+    name: '@nexio/copilot-result',
     workspaceDependencies: [],
   },
   {
     location: 'tools/doc-diff',
-    name: '@affine/doc-diff',
+    name: '@nexio/doc-diff',
     workspaceDependencies: ['tools/cli'],
   },
   {
     location: 'tools/playstore-auto-bump',
-    name: '@affine/playstore-auto-bump',
+    name: '@nexio/playstore-auto-bump',
     workspaceDependencies: ['tools/cli', 'tools/utils'],
   },
   {
     location: 'tools/revert-update',
-    name: '@affine/revert-update',
+    name: '@nexio/revert-update',
     workspaceDependencies: ['tools/cli'],
   },
   {
     location: 'tools/utils',
-    name: '@affine-tools/utils',
+    name: '@nexio-tools/utils',
     workspaceDependencies: [],
   },
 ];
@@ -1531,51 +1531,51 @@ export type PackageName =
   | '@blocksuite/sync'
   | '@blocksuite/integration-test'
   | '@blocksuite/playground'
-  | '@affine/docs'
-  | '@affine/server-native'
-  | '@affine/server'
-  | '@affine/auth'
-  | '@affine/debug'
-  | '@affine/env'
-  | '@affine/error'
-  | '@affine/graphql'
+  | '@nexio/docs'
+  | '@nexio/server-native'
+  | '@nexio/server'
+  | '@nexio/auth'
+  | '@nexio/debug'
+  | '@nexio/env'
+  | '@nexio/error'
+  | '@nexio/graphql'
   | '@toeverything/infra'
-  | '@affine/nbstore'
-  | '@affine/reader'
-  | '@affine/realtime'
-  | '@affine/s3-compat'
-  | '@affine/admin'
-  | '@affine/android'
-  | '@affine/electron'
-  | '@affine/electron-renderer'
-  | '@affine/ios'
-  | '@affine/mobile'
-  | '@affine/mobile-shared'
-  | '@affine/web'
-  | '@affine/component'
-  | '@affine/core'
-  | '@affine/electron-api'
-  | '@affine/i18n'
-  | '@affine/native'
-  | '@affine/routes'
-  | '@affine/templates'
-  | '@affine/track'
-  | '@affine-test/affine-cloud'
-  | '@affine-test/affine-cloud-copilot'
-  | '@affine-test/affine-desktop'
-  | '@affine-test/affine-desktop-cloud'
-  | '@affine-test/affine-local'
-  | '@affine-test/affine-mobile'
-  | '@affine-test/blocksuite'
-  | '@affine-test/kit'
+  | '@nexio/nbstore'
+  | '@nexio/reader'
+  | '@nexio/realtime'
+  | '@nexio/s3-compat'
+  | '@nexio/admin'
+  | '@nexio/android'
+  | '@nexio/electron'
+  | '@nexio/electron-renderer'
+  | '@nexio/ios'
+  | '@nexio/mobile'
+  | '@nexio/mobile-shared'
+  | '@nexio/web'
+  | '@nexio/component'
+  | '@nexio/core'
+  | '@nexio/electron-api'
+  | '@nexio/i18n'
+  | '@nexio/native'
+  | '@nexio/routes'
+  | '@nexio/templates'
+  | '@nexio/track'
+  | '@nexio-test/affine-cloud'
+  | '@nexio-test/affine-cloud-copilot'
+  | '@nexio-test/affine-desktop'
+  | '@nexio-test/affine-desktop-cloud'
+  | '@nexio-test/affine-local'
+  | '@nexio-test/affine-mobile'
+  | '@nexio-test/blocksuite'
+  | '@nexio-test/kit'
   | '@types/assets'
   | '@types/build-config'
-  | '@types/affine__env'
-  | '@affine/changelog'
-  | '@affine-tools/cli'
-  | '@affine/commitlint-config'
-  | '@affine/copilot-result'
-  | '@affine/doc-diff'
-  | '@affine/playstore-auto-bump'
-  | '@affine/revert-update'
-  | '@affine-tools/utils';
+  | '@types/nexio__env'
+  | '@nexio/changelog'
+  | '@nexio-tools/cli'
+  | '@nexio/commitlint-config'
+  | '@nexio/copilot-result'
+  | '@nexio/doc-diff'
+  | '@nexio/playstore-auto-bump'
+  | '@nexio/revert-update'
+  | '@nexio-tools/utils';

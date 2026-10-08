@@ -1,10 +1,10 @@
-import { RadioGroup, type RadioItem, Switch } from '@affine/component';
+import { RadioGroup, type RadioItem, Switch } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 

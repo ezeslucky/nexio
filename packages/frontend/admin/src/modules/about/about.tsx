@@ -1,6 +1,6 @@
-import { buttonVariants } from '@affine/admin/components/ui/button';
-import { Separator } from '@affine/admin/components/ui/separator';
-import { cn } from '@affine/admin/utils';
+import { buttonVariants } from '@nexio/admin/components/ui/button';
+import { Separator } from '@nexio/admin/components/ui/separator';
+import { cn } from '@nexio/admin/utils';
 import {
   AlbumIcon,
   ChevronRightIcon,

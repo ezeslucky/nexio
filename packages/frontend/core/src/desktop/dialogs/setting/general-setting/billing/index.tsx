@@ -1,11 +1,11 @@
-import { Skeleton } from '@affine/component';
+import { Skeleton } from '@nexio/component';
 import {
   SettingHeader,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { SubscriptionService } from '@affine/core/modules/cloud';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component/setting-components';
+import { SubscriptionService } from '@nexio/core/modules/cloud';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 

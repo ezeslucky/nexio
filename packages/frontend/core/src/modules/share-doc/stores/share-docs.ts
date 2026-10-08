@@ -1,5 +1,5 @@
-import type { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { getWorkspacePublicPagesQuery } from '@affine/graphql';
+import type { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { getWorkspacePublicPagesQuery } from '@nexio/graphql';
 import { Store } from '@toeverything/infra';
 
 export class ShareDocsStore extends Store {

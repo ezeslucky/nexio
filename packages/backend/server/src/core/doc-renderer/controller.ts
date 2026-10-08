@@ -209,7 +209,7 @@ export class DocRendererController {
     assets: HtmlAssets,
     indexable: boolean
   ): string {
-    // TODO(@forehalo): how can we enable the type reference to @affine/env
+    // TODO(@forehalo): how can we enable the type reference to @nexio/env
     const envMeta: Record<string, any> = {
       publicPath: assets.publicPath,
       subPath: this.config.server.path,

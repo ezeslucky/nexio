@@ -1,8 +1,8 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import type {
   RealtimeTopicEventOf,
   WorkspaceQuotaStateSnapshot,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';
 import bytes from 'bytes';

@@ -1,17 +1,17 @@
-import { skipOnboarding, test } from '@affine-test/kit/playwright';
+import { skipOnboarding, test } from '@nexio-test/kit/playwright';
 import {
   createRandomUser,
   enableCloudWorkspaceFromShareButton,
   enableShare,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
-import { clickEdgelessModeButton } from '@affine-test/kit/utils/editor';
-import { importImage } from '@affine-test/kit/utils/image';
+} from '@nexio-test/kit/utils/cloud';
+import { clickEdgelessModeButton } from '@nexio-test/kit/utils/editor';
+import { importImage } from '@nexio-test/kit/utils/image';
 import {
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {

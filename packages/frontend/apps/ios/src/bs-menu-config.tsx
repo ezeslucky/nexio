@@ -1,4 +1,4 @@
-import { MobileBackCoordinator } from '@affine/core/mobile/modules/back-coordinator';
+import { MobileBackCoordinator } from '@nexio/core/mobile/modules/back-coordinator';
 import { onMenuOpen } from '@blocksuite/affine/components/context-menu';
 import { useService } from '@toeverything/infra';
 import { type PropsWithChildren, useEffect } from 'react';

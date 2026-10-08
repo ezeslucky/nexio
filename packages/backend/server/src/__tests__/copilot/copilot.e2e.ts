@@ -2,7 +2,7 @@ import '../../plugins/copilot';
 
 import { createHash, randomUUID } from 'node:crypto';
 
-import { createCopilotMessageMutation } from '@affine/graphql';
+import { createCopilotMessageMutation } from '@nexio/graphql';
 import { McpAccessMode, PrismaClient } from '@prisma/client';
 import type { TestFn } from 'ava';
 import ava from 'ava';

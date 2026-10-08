@@ -1,13 +1,13 @@
-import { Button, Modal, notify, SafeArea, Scrollable } from '@affine/component';
-import { type Server, ServersService } from '@affine/core/modules/cloud';
+import { Button, Modal, notify, SafeArea, Scrollable } from '@nexio/component';
+import { type Server, ServersService } from '@nexio/core/modules/cloud';
 import {
   ImportClipperService,
   type ShareDestinationOptions,
-} from '@affine/core/modules/import-clipper';
+} from '@nexio/core/modules/import-clipper';
 import {
   type WorkspaceMetadata,
   WorkspacesService,
-} from '@affine/core/modules/workspace';
+} from '@nexio/core/modules/workspace';
 import { ImageIcon, LinkIcon, TextIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useRef, useState } from 'react';

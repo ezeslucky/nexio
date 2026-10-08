@@ -2,14 +2,14 @@ import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
-} from '@affine/core/modules/ai-button';
+} from '@nexio/core/modules/ai-button';
 import type {
   ServerService,
   SubscriptionService,
-} from '@affine/core/modules/cloud';
-import type { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import type { CopilotChatHistoryFragment } from '@affine/graphql';
+} from '@nexio/core/modules/cloud';
+import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import {
   CanvasElementType,
   EdgelessCRUDIdentifier,

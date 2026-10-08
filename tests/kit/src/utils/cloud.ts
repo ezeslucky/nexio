@@ -1,13 +1,13 @@
 import { createRequire } from 'node:module';
 
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { Package } from '@affine-tools/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
+import { Package } from '@nexio-tools/utils/workspace';
 import { faker } from '@faker-js/faker';
 import { hash } from '@node-rs/argon2';
 import type { BrowserContext, Cookie, Page } from '@playwright/test';
@@ -54,7 +54,7 @@ const cloudUserSchema = z.object({
   password: z.string(),
 });
 
-const server = new Package('@affine/server');
+const server = new Package('@nexio/server');
 const require = createRequire(server.srcPath.join('index.ts').toFileUrl());
 
 export const runPrisma = async <T>(

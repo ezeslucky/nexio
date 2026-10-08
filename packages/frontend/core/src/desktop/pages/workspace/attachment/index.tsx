@@ -1,6 +1,6 @@
-import { Skeleton } from '@affine/component';
-import { AttachmentViewerView } from '@affine/core/blocksuite/attachment-viewer';
-import { type Doc, DocsService } from '@affine/core/modules/doc';
+import { Skeleton } from '@nexio/component';
+import { AttachmentViewerView } from '@nexio/core/blocksuite/attachment-viewer';
+import { type Doc, DocsService } from '@nexio/core/modules/doc';
 import { type AttachmentBlockModel } from '@blocksuite/affine/model';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import { type ReactElement, useLayoutEffect, useState } from 'react';

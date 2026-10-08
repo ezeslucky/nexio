@@ -5,9 +5,9 @@ AFFiNE iOS app.
 ## Build
 
 - `yarn install`
-- `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @affine/ios build`
-- `yarn affine @affine/ios cap sync`
-- `yarn affine @affine/ios cap open ios`
+- `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @nexio/ios build`
+- `yarn affine @nexio/ios cap sync`
+- `yarn affine @nexio/ios cap open ios`
 
 ## Live Reload
 
@@ -16,5 +16,5 @@ AFFiNE iOS app.
 - `yarn install`
 - `yarn dev`
   - select `ios` for the "Distribution" option
-- `yarn affine @affine/ios sync:dev`
-- `yarn affine @affine/ios cap open ios`
+- `yarn affine @nexio/ios sync:dev`
+- `yarn affine @nexio/ios cap open ios`

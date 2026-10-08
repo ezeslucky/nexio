@@ -1,9 +1,9 @@
-import { Tooltip } from '@affine/component/ui/tooltip';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import type { SettingTab } from '@affine/core/modules/dialogs/constant';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { UrlService } from '@affine/core/modules/url';
-import { useI18n } from '@affine/i18n';
+import { Tooltip } from '@nexio/component/ui/tooltip';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { UrlService } from '@nexio/core/modules/url';
+import { useI18n } from '@nexio/i18n';
 import { CloseIcon, DownloadIcon, NewIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import { useCallback, useState } from 'react';

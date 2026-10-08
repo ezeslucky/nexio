@@ -1,7 +1,7 @@
-import { notify } from '@affine/component';
-import { updateReadyAtom } from '@affine/core/components/hooks/use-app-updater';
-import type { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { notify } from '@nexio/component';
+import { updateReadyAtom } from '@nexio/core/components/hooks/use-app-updater';
+import type { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ResetIcon } from '@blocksuite/icons/rc';
 import type { createStore } from 'jotai';
 

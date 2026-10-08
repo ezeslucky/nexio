@@ -1,20 +1,20 @@
-import { AffineContext } from '@affine/core/components/context';
-import { AppContainer } from '@affine/core/desktop/components/app-container';
-import { router } from '@affine/core/desktop/router';
-import { configureCommonModules } from '@affine/core/modules';
-import { I18nProvider } from '@affine/core/modules/i18n';
-import { LifecycleService } from '@affine/core/modules/lifecycle';
+import { AffineContext } from '@nexio/core/components/context';
+import { AppContainer } from '@nexio/core/desktop/components/app-container';
+import { router } from '@nexio/core/desktop/router';
+import { configureCommonModules } from '@nexio/core/modules';
+import { I18nProvider } from '@nexio/core/modules/i18n';
+import { LifecycleService } from '@nexio/core/modules/lifecycle';
 import {
   configureLocalStorageStateStorageImpls,
   NbstoreProvider,
-} from '@affine/core/modules/storage';
-import { PopupWindowProvider } from '@affine/core/modules/url';
-import { configureBrowserWorkbenchModule } from '@affine/core/modules/workbench';
-import { configureBrowserWorkspaceFlavours } from '@affine/core/modules/workspace-engine';
-import createEmotionCache from '@affine/core/utils/create-emotion-cache';
-import { getWorkerUrl } from '@affine/env/worker';
-import { StoreManagerClient } from '@affine/nbstore/worker/client';
-import { setTelemetryTransport } from '@affine/track';
+} from '@nexio/core/modules/storage';
+import { PopupWindowProvider } from '@nexio/core/modules/url';
+import { configureBrowserWorkbenchModule } from '@nexio/core/modules/workbench';
+import { configureBrowserWorkspaceFlavours } from '@nexio/core/modules/workspace-engine';
+import createEmotionCache from '@nexio/core/utils/create-emotion-cache';
+import { getWorkerUrl } from '@nexio/env/worker';
+import { StoreManagerClient } from '@nexio/nbstore/worker/client';
+import { setTelemetryTransport } from '@nexio/track';
 import { CacheProvider } from '@emotion/react';
 import { Framework, FrameworkRoot, getCurrentStore } from '@toeverything/infra';
 import { OpClient } from '@toeverything/infra/op';

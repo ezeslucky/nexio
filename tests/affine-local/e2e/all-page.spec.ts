@@ -1,15 +1,15 @@
 /* oxlint-disable unicorn/prefer-dom-node-dataset */
-import { test } from '@affine-test/kit/playwright';
-import { getPagesCount } from '@affine-test/kit/utils/filter';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { getPagesCount } from '@nexio-test/kit/utils/filter';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getAllPage,
   getBlockSuiteEditorTitle,
   waitForAllPagesLoad,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 test('all page', async ({ page }) => {

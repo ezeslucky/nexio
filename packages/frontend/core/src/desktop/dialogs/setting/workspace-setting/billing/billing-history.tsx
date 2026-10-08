@@ -1,10 +1,10 @@
-import { Button, Loading } from '@affine/component';
-import { Pagination, SettingRow } from '@affine/component/setting-components';
-import { WorkspaceInvoicesService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
-import { type InvoicesQuery, InvoiceStatus } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+import { Button, Loading } from '@nexio/component';
+import { Pagination, SettingRow } from '@nexio/component/setting-components';
+import { WorkspaceInvoicesService } from '@nexio/core/modules/cloud';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
+import { type InvoicesQuery, InvoiceStatus } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
 import { useCallback, useEffect } from 'react';

@@ -1,5 +1,5 @@
-import type { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import type { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import type { Workspace } from '@blocksuite/affine/store';
 import { ArrowRightBigIcon } from '@blocksuite/icons/rc';
 

@@ -1,18 +1,18 @@
-import { Path, skipOnboarding, test } from '@affine-test/kit/playwright';
+import { Path, skipOnboarding, test } from '@nexio-test/kit/playwright';
 import {
   addUserToWorkspace,
   createRandomUser,
   enableCloudWorkspace,
   loginUser,
-} from '@affine-test/kit/utils/cloud';
+} from '@nexio-test/kit/utils/cloud';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickUserInfoCard } from '@affine-test/kit/utils/setting';
-import { clickSideBarSettingButton } from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickUserInfoCard } from '@nexio-test/kit/utils/setting';
+import { clickSideBarSettingButton } from '@nexio-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 let user: {

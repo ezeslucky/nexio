@@ -1,5 +1,5 @@
-import { AuthService, PublicUserService } from '@affine/core/modules/cloud';
-import { MemberSearchService } from '@affine/core/modules/permissions';
+import { AuthService, PublicUserService } from '@nexio/core/modules/cloud';
+import { MemberSearchService } from '@nexio/core/modules/permissions';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,

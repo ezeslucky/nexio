@@ -1,5 +1,5 @@
-import { DebugLogger } from '@affine/debug';
-import { Unreachable } from '@affine/env/constant';
+import { DebugLogger } from '@nexio/debug';
+import { Unreachable } from '@nexio/env/constant';
 import { type OperatorFunction, Subject, type Subscription } from 'rxjs';
 
 const logger = new DebugLogger('effect');

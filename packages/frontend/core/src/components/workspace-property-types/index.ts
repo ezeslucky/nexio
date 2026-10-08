@@ -1,9 +1,9 @@
-import type { FilterParams } from '@affine/core/modules/collection-rules';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import type {
   WorkspacePropertyFilter,
   WorkspacePropertyType,
-} from '@affine/core/modules/workspace-property';
-import type { I18nString } from '@affine/i18n';
+} from '@nexio/core/modules/workspace-property';
+import type { I18nString } from '@nexio/i18n';
 import {
   CheckBoxCheckLinearIcon,
   DateTimeIcon,

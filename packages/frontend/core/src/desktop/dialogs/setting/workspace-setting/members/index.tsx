@@ -1,9 +1,9 @@
-import { Button, Tooltip } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { AffineErrorBoundary } from '@affine/core/components/affine/affine-error-boundary';
-import { useWorkspaceInfo } from '@affine/core/components/hooks/use-workspace-info';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+import { Button, Tooltip } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { AffineErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';
 import type { ReactElement } from 'react';
 

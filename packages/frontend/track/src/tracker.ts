@@ -1,4 +1,4 @@
-import { DebugLogger } from '@affine/debug';
+import { DebugLogger } from '@nexio/debug';
 import { nanoid } from 'nanoid';
 
 import { type Middleware, trackerState, type TrackProperties } from './state';

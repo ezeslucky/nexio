@@ -45,7 +45,7 @@ const AuthServiceToken = vi.hoisted(() => class AuthService {});
 const ServerServiceToken = vi.hoisted(() => class ServerService {});
 const WorkspacesServiceToken = vi.hoisted(() => class WorkspacesService {});
 
-vi.mock('@affine/component', () => ({
+vi.mock('@nexio/component', () => ({
   ConfirmModal: ({
     open,
     title,
@@ -111,22 +111,22 @@ vi.mock('@affine/component', () => ({
   },
 }));
 
-vi.mock('@affine/core/modules/cloud', () => ({
+vi.mock('@nexio/core/modules/cloud', () => ({
   AuthService: AuthServiceToken,
   ServerService: ServerServiceToken,
 }));
 
-vi.mock('@affine/core/modules/workspace', () => ({
+vi.mock('@nexio/core/modules/workspace', () => ({
   WorkspacesService: WorkspacesServiceToken,
 }));
 
-vi.mock('@affine/error', () => ({
+vi.mock('@nexio/error', () => ({
   UserFriendlyError: {
     fromAny: (error: unknown) => error,
   },
 }));
 
-vi.mock('@affine/i18n', () => ({
+vi.mock('@nexio/i18n', () => ({
   Trans: ({ i18nKey }: { i18nKey: string }) => <span>{i18nKey}</span>,
   useI18n: () =>
     new Proxy(
@@ -137,7 +137,7 @@ vi.mock('@affine/i18n', () => ({
     ),
 }));
 
-vi.mock('@affine/track', () => ({
+vi.mock('@nexio/track', () => ({
   track: {
     ['$']: {
       ['$']: {

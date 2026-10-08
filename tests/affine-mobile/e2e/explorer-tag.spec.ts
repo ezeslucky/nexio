@@ -1,4 +1,4 @@
-import { test } from '@affine-test/kit/mobile';
+import { test } from '@nexio-test/kit/mobile';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 import {

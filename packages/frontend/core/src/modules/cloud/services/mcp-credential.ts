@@ -1,7 +1,7 @@
 import type {
   CreateMcpCredentialMutationVariables,
   McpCredentialsQuery,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 import { LiveData, Service } from '@toeverything/infra';
 
 import type { McpCredentialStore } from '../stores/mcp-credential';

@@ -3,7 +3,7 @@ import {
   type RealtimeRequestEnvelope,
   type RealtimeSubscribeEnvelope,
   type RealtimeUnsubscribeEnvelope,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import {
   Manager as SocketIOManager,
   type Socket as SocketIO,

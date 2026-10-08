@@ -1,6 +1,6 @@
-import { NexioLogo } from '@affine/component/auth-components';
-import { Button } from '@affine/component/ui/button';
-import { useI18n } from '@affine/i18n';
+import { NexioLogo } from '@nexio/component/auth-components';
+import { Button } from '@nexio/component/ui/button';
+import { useI18n } from '@nexio/i18n';
 import { useTheme } from 'next-themes';
 import { type ReactNode, useCallback } from 'react';
 

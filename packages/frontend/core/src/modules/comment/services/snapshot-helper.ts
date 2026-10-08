@@ -1,5 +1,5 @@
-import { getStoreManager } from '@affine/core/blocksuite/manager/store';
-import { toArrayBuffer } from '@affine/core/utils/array-buffer';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
 import { Container } from '@blocksuite/affine/global/di';
 import {
   customImageProxyMiddleware,

@@ -1,7 +1,7 @@
 /**
  * @vitest-environment happy-dom
  */
-import { ServerFeature } from '@affine/graphql';
+import { ServerFeature } from '@nexio/graphql';
 import { renderHook, waitFor } from '@testing-library/react';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
@@ -11,7 +11,7 @@ const jumpToIndex = vi.fn();
 const jumpToSignIn = vi.fn();
 let allowGuestDemo: boolean | undefined = true;
 
-vi.mock('@affine/core/modules/cloud', () => ({
+vi.mock('@nexio/core/modules/cloud', () => ({
   AuthService: class {},
   DefaultServerService: class {},
 }));
@@ -37,7 +37,7 @@ vi.mock('@toeverything/infra', () => {
   };
 });
 
-vi.mock('@affine/component', () => {
+vi.mock('@nexio/component', () => {
   return {
     useConfirmModal: () => ({
       openConfirmModal: ({ onConfirm }: { onConfirm?: () => unknown }) => {
@@ -48,7 +48,7 @@ vi.mock('@affine/component', () => {
   };
 });
 
-vi.mock('@affine/i18n', () => ({
+vi.mock('@nexio/i18n', () => ({
   useI18n: () => new Proxy({}, { get: () => () => '' }),
 }));
 

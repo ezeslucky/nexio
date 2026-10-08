@@ -1,9 +1,9 @@
-import { AuthProvider } from '@affine/core/modules/cloud/provider/auth';
-import { FetchService } from '@affine/core/modules/cloud/services/fetch';
-import { GraphQLService } from '@affine/core/modules/cloud/services/graphql';
-import { ServerService } from '@affine/core/modules/cloud/services/server';
-import { AuthStore } from '@affine/core/modules/cloud/stores/auth';
-import { GlobalState, NbstoreService } from '@affine/core/modules/storage';
+import { AuthProvider } from '@nexio/core/modules/cloud/provider/auth';
+import { FetchService } from '@nexio/core/modules/cloud/services/fetch';
+import { GraphQLService } from '@nexio/core/modules/cloud/services/graphql';
+import { ServerService } from '@nexio/core/modules/cloud/services/server';
+import { AuthStore } from '@nexio/core/modules/cloud/stores/auth';
+import { GlobalState, NbstoreService } from '@nexio/core/modules/storage';
 import { Framework } from '@toeverything/infra';
 import { describe, expect, test, vi } from 'vitest';
 

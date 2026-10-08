@@ -4,26 +4,26 @@ import {
   observeIntersection,
   Skeleton,
   useLitPortalFactory,
-} from '@affine/component';
-import { getViewManager } from '@affine/core/blocksuite/manager/view';
+} from '@nexio/component';
+import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import {
   patchReferenceRenderer,
   type ReferenceReactRenderer,
-} from '@affine/core/blocksuite/view-extensions/editor-view/reference-renderer';
-import { useGuard } from '@affine/core/components/guard';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { DocService } from '@affine/core/modules/doc';
+} from '@nexio/core/blocksuite/view-extensions/editor-view/reference-renderer';
+import { useGuard } from '@nexio/core/components/guard';
+import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { DocService } from '@nexio/core/modules/doc';
 import {
   type Backlink,
   DocLinksService,
   type Link,
-} from '@affine/core/modules/doc-link';
-import { toDocSearchParams } from '@affine/core/modules/navigation/utils';
-import { GlobalSessionStateService } from '@affine/core/modules/storage';
-import { WorkbenchLink } from '@affine/core/modules/workbench';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/doc-link';
+import { toDocSearchParams } from '@nexio/core/modules/navigation/utils';
+import { GlobalSessionStateService } from '@nexio/core/modules/storage';
+import { WorkbenchLink } from '@nexio/core/modules/workbench';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type {
   ExtensionType,
   TransformerMiddleware,

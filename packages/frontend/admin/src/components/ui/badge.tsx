@@ -1,4 +1,4 @@
-import { cn } from '@affine/admin/utils';
+import { cn } from '@nexio/admin/utils';
 import { cva, type VariantProps } from 'class-variance-authority';
 import type * as React from 'react';
 

@@ -1,5 +1,5 @@
-import { notify } from '@affine/component';
-import { I18n } from '@affine/i18n';
+import { notify } from '@nexio/component';
+import { I18n } from '@nexio/i18n';
 import { OnEvent, Service } from '@toeverything/infra';
 import type { To } from 'history';
 import { debounce } from 'lodash-es';

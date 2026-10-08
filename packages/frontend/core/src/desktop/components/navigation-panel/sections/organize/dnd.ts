@@ -1,6 +1,6 @@
-import type { DropTargetOptions } from '@affine/component';
-import { isOrganizeSupportType } from '@affine/core/modules/organize/constants';
-import type { AffineDNDData } from '@affine/core/types/dnd';
+import type { DropTargetOptions } from '@nexio/component';
+import { isOrganizeSupportType } from '@nexio/core/modules/organize/constants';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
 
 import type { NavigationPanelTreeNodeDropEffect } from '../../tree';
 

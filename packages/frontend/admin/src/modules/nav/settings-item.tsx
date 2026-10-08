@@ -1,4 +1,4 @@
-import { ROUTES } from '@affine/routes';
+import { ROUTES } from '@nexio/routes';
 import { SettingsIcon } from '@blocksuite/icons/rc';
 
 import { NavItem } from './nav-item';

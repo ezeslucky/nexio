@@ -1,5 +1,5 @@
-import { VirtualKeyboardProvider } from '@affine/core/mobile/modules/virtual-keyboard';
-import { globalVars } from '@affine/core/mobile/styles/variables.css';
+import { VirtualKeyboardProvider } from '@nexio/core/mobile/modules/virtual-keyboard';
+import { globalVars } from '@nexio/core/mobile/styles/variables.css';
 import type { Container } from '@blocksuite/affine/global/di';
 import { DisposableGroup } from '@blocksuite/affine/global/disposable';
 import {

@@ -1,6 +1,6 @@
-import { useQuery } from '@affine/admin/use-query';
-import type { FeatureType } from '@affine/graphql';
-import { listUsersQuery } from '@affine/graphql';
+import { useQuery } from '@nexio/admin/use-query';
+import type { FeatureType } from '@nexio/graphql';
+import { listUsersQuery } from '@nexio/graphql';
 import { useEffect, useMemo, useState } from 'react';
 
 export const useUserList = (filter?: {

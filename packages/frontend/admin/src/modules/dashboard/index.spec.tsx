@@ -8,7 +8,7 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 const useQueryMock = vi.fn();
 const mutateQueryResourceMock = vi.fn();
 
-vi.mock('@affine/admin/use-query', () => ({
+vi.mock('@nexio/admin/use-query', () => ({
   useQuery: (...args: unknown[]) => useQueryMock(...args),
 }));
 

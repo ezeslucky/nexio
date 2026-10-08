@@ -1,5 +1,5 @@
-import { PropertyValue } from '@affine/component';
-import { ConfigModal } from '@affine/core/components/mobile';
+import { PropertyValue } from '@nexio/component';
+import { ConfigModal } from '@nexio/core/components/mobile';
 import { DefaultInlineManagerExtension } from '@blocksuite/affine/inlines/preset';
 import { RichText } from '@blocksuite/affine/rich-text';
 import type { BlockStdScope } from '@blocksuite/affine/std';

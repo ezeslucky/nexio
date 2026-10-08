@@ -1,18 +1,18 @@
-import { MenuSeparator } from '@affine/component';
+import { MenuSeparator } from '@nexio/component';
 import {
   handleInlineAskAIAction,
   pageAIGroups,
-} from '@affine/core/blocksuite/ai';
-import { useEnableAI } from '@affine/core/components/hooks/affine/use-enable-ai';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorService } from '@affine/core/modules/editor';
-import { TemplateDocService } from '@affine/core/modules/template-doc';
+} from '@nexio/core/blocksuite/ai';
+import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { DocsService } from '@nexio/core/modules/doc';
+import { EditorService } from '@nexio/core/modules/editor';
+import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import {
   TemplateListMenu,
   TemplateListMenuAdd,
-} from '@affine/core/modules/template-doc/view/template-list-menu';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/template-doc/view/template-list-menu';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { PageRootBlockComponent } from '@blocksuite/affine/blocks/root';
 import type { Store } from '@blocksuite/affine/store';
 import {

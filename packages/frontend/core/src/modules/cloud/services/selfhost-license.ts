@@ -1,4 +1,4 @@
-import type { License } from '@affine/graphql';
+import type { License } from '@nexio/graphql';
 import {
   catchErrorInto,
   effect,

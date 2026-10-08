@@ -1,4 +1,4 @@
-import '@affine/core/bootstrap/browser';
-import '@affine/core/bootstrap/cleanup';
-import '@affine/component/theme';
-import '@affine/core/mobile/styles/mobile.css';
+import '@nexio/core/bootstrap/browser';
+import '@nexio/core/bootstrap/cleanup';
+import '@nexio/component/theme';
+import '@nexio/core/mobile/styles/mobile.css';

@@ -1,5 +1,5 @@
-import { Button, Switch } from '@affine/component';
-import { notify } from '@affine/component/ui/notification';
+import { Button, Switch } from '@nexio/component';
+import { notify } from '@nexio/component/ui/notification';
 import { DeleteIcon, PlusIcon } from '@blocksuite/icons/rc';
 import React, { useState } from 'react';
 

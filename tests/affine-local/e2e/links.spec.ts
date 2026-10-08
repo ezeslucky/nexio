@@ -1,10 +1,10 @@
-import { toolbarButtons } from '@affine-test/kit/bs/linked-toolbar';
-import { waitNextFrame } from '@affine-test/kit/bs/misc';
-import { test } from '@affine-test/kit/playwright';
+import { toolbarButtons } from '@nexio-test/kit/bs/linked-toolbar';
+import { waitNextFrame } from '@nexio-test/kit/bs/misc';
+import { test } from '@nexio-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
+} from '@nexio-test/kit/utils/editor';
 import {
   pasteByKeyboard,
   pressArrowUp,
@@ -12,8 +12,8 @@ import {
   pressEnter,
   selectAllByKeyboard,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { coreUrl, openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { coreUrl, openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
@@ -21,12 +21,12 @@ import {
   getBlockSuiteEditorTitle,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   confirmExperimentalPrompt,
   openEditorSetting,
   openExperimentalFeaturesPanel,
-} from '@affine-test/kit/utils/setting';
+} from '@nexio-test/kit/utils/setting';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {

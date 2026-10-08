@@ -1,4 +1,4 @@
-import { IconButton, Menu, MenuItem } from '@affine/component';
+import { IconButton, Menu, MenuItem } from '@nexio/component';
 import type { AttachmentBlockModel } from '@blocksuite/affine/model';
 import {
   //EditIcon,

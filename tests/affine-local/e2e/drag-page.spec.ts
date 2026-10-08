@@ -1,23 +1,23 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   locateToolbar,
-} from '@affine-test/kit/utils/editor';
-import { pressBackspace, pressEnter } from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/editor';
+import { pressBackspace, pressEnter } from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   type,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import {
   getCurrentCollectionIdFromUrl,
   getCurrentDocIdFromUrl,
   getDocIdFromUrl,
-} from '@affine-test/kit/utils/url';
+} from '@nexio-test/kit/utils/url';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

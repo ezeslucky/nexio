@@ -1,14 +1,14 @@
-import type { RadioItem } from '@affine/component';
-import { RadioGroup, Switch } from '@affine/component';
+import type { RadioItem } from '@nexio/component';
+import { RadioGroup, Switch } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { LanguageMenu } from '@affine/core/components/affine/language-menu';
-import { TraySettingService } from '@affine/core/modules/editor-setting/services/tray-settings';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { LanguageMenu } from '@nexio/core/components/affine/language-menu';
+import { TraySettingService } from '@nexio/core/modules/editor-setting/services/tray-settings';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useTheme } from 'next-themes';
 import { useCallback, useMemo } from 'react';

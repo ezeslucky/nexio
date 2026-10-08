@@ -2,7 +2,7 @@ import {
   indexerAggregateQuery,
   SearchQueryType,
   SearchTable,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { Config } from '../../../base';
 import { createDocWithMarkdown } from '../../../native';

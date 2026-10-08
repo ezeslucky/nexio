@@ -1,8 +1,8 @@
-import { generateSubscriptionCallbackLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { NativePaywallService } from '@affine/core/modules/paywall';
-import { UrlService } from '@affine/core/modules/url';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
+import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { NativePaywallService } from '@nexio/core/modules/paywall';
+import { UrlService } from '@nexio/core/modules/url';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { useFramework } from '@toeverything/infra';
 import { nanoid } from 'nanoid';
 import { useCallback } from 'react';

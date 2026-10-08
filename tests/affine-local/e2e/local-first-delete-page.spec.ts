@@ -1,5 +1,5 @@
-import { test } from '@affine-test/kit/playwright';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+import { test } from '@nexio-test/kit/playwright';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
@@ -7,8 +7,8 @@ import {
   getPageItem,
   getPageOperationButton,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { getCurrentDocIdFromUrl } from '@affine-test/kit/utils/url';
+} from '@nexio-test/kit/utils/page-logic';
+import { getCurrentDocIdFromUrl } from '@nexio-test/kit/utils/url';
 import { expect } from '@playwright/test';
 
 test('page delete -> refresh page -> it should be disappear', async ({

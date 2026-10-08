@@ -1,4 +1,4 @@
-# @affine/templates
+# @nexio/templates
 
 Manages template files for use in AFFiNE. For now we only support onboarding templates.
 

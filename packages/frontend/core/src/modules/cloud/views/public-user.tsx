@@ -1,6 +1,6 @@
-import { Avatar, Tooltip } from '@affine/component';
-import { useCurrentServerService } from '@affine/core/components/providers/current-server-scope';
-import { useI18n } from '@affine/i18n';
+import { Avatar, Tooltip } from '@nexio/component';
+import { useCurrentServerService } from '@nexio/core/components/providers/current-server-scope';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData } from '@toeverything/infra';
 import {
   type ComponentType,

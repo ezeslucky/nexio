@@ -2,8 +2,8 @@ import type {
   RealtimeRequestEnvelope,
   RealtimeSubscribeEnvelope,
   RealtimeUnsubscribeEnvelope,
-} from '@affine/realtime';
-import { getRealtimeInputKey } from '@affine/realtime';
+} from '@nexio/realtime';
+import { getRealtimeInputKey } from '@nexio/realtime';
 import {
   applyDecorators,
   Logger,

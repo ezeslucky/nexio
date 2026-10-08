@@ -1,4 +1,4 @@
-import { indexerSearchDocsQuery } from '@affine/graphql';
+import { indexerSearchDocsQuery } from '@nexio/graphql';
 
 import { Config } from '../../../base';
 import { createDocWithMarkdown } from '../../../native';

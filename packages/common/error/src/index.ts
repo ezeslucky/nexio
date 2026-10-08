@@ -1,4 +1,4 @@
-import type { ErrorDataUnion, ErrorNames } from '@affine/graphql';
+import type { ErrorDataUnion, ErrorNames } from '@nexio/graphql';
 import { GraphQLError as BaseGraphQLError } from 'graphql';
 
 export type ErrorName =

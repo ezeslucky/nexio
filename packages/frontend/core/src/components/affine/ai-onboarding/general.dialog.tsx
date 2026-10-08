@@ -1,9 +1,9 @@
-import { Button, IconButton, Modal } from '@affine/component';
-import { useBlurRoot } from '@affine/core/components/hooks/use-blur-root';
-import { AuthService, SubscriptionService } from '@affine/core/modules/cloud';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { Trans, useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+import { Button, IconButton, Modal } from '@nexio/component';
+import { useBlurRoot } from '@nexio/core/components/hooks/use-blur-root';
+import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { Trans, useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ArrowLeftSmallIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import type { ReactNode } from 'react';

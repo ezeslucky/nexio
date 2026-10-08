@@ -1,13 +1,13 @@
-import { Switch } from '@affine/component';
+import { Switch } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAppUpdater } from '@affine/core/components/hooks/use-app-updater';
-import { UrlService } from '@affine/core/modules/url';
-import { appIconMap, appNames } from '@affine/core/utils/channel';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
+import { UrlService } from '@nexio/core/modules/url';
+import { appIconMap, appNames } from '@nexio/core/utils/channel';
+import { useI18n } from '@nexio/i18n';
 import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
 import { useServices } from '@toeverything/infra';
 import { useCallback } from 'react';

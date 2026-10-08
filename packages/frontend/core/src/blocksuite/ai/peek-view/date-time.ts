@@ -1,4 +1,4 @@
-import { i18nTime } from '@affine/i18n';
+import { i18nTime } from '@nexio/i18n';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 

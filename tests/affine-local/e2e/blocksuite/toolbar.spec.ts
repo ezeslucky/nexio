@@ -1,21 +1,21 @@
-import { test } from '@affine-test/kit/playwright';
+import { test } from '@nexio-test/kit/playwright';
 import {
   clickEdgelessModeButton,
   dragView,
   locateToolbar,
   setEdgelessTool,
-} from '@affine-test/kit/utils/editor';
-import { importImage } from '@affine-test/kit/utils/image';
+} from '@nexio-test/kit/utils/editor';
+import { importImage } from '@nexio-test/kit/utils/image';
 import {
   selectAllByKeyboard,
   writeTextToClipboard,
-} from '@affine-test/kit/utils/keyboard';
-import { openHomePage } from '@affine-test/kit/utils/load-page';
+} from '@nexio-test/kit/utils/keyboard';
+import { openHomePage } from '@nexio-test/kit/utils/load-page';
 import {
   clickNewPageButton,
   type,
   waitForEmptyEditor,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import { expect } from '@playwright/test';
 
 function hexToRGB(hex: string) {

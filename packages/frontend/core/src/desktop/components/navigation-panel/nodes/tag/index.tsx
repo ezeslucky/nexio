@@ -2,14 +2,14 @@ import {
   type DropTargetDropEvent,
   type DropTargetOptions,
   toast,
-} from '@affine/component';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import type { Tag } from '@affine/core/modules/tag';
-import { TagService } from '@affine/core/modules/tag';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import type { Tag } from '@nexio/core/modules/tag';
+import { TagService } from '@nexio/core/modules/tag';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { useLiveData, useService, useServices } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';

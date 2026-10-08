@@ -4,10 +4,10 @@ import {
   shallowUpdater,
   useDraggable,
   useDropTarget,
-} from '@affine/component';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/component';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import {
   CloseIcon,
   ExpandFullIcon,

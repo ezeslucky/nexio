@@ -1,4 +1,4 @@
-import type { RealtimeSubscriptionReady } from '@affine/realtime';
+import type { RealtimeSubscriptionReady } from '@nexio/realtime';
 import type { Observable, Subscription } from 'rxjs';
 
 export type RealtimeLiveQueryEventResult = 'applied' | 'revalidate';

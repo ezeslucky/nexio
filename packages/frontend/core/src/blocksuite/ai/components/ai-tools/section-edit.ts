@@ -1,4 +1,4 @@
-import type { FeatureFlagService } from '@affine/core/modules/feature-flag';
+import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WithDisposable } from '@blocksuite/affine/global/lit';
 import type { ColorScheme } from '@blocksuite/affine/model';
 import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';

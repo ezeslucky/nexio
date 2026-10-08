@@ -9,7 +9,7 @@ import {
   NotificationType,
   readAllNotificationsMutation,
   readNotificationMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import { Mockers } from '../../mocks';
 import { createRealtimeClient, realtimeRequest } from '../realtime';

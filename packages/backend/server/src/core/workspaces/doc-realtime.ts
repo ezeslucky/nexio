@@ -1,7 +1,7 @@
 import type {
   DocShareStateSnapshot,
   PaginatedDocGrantedUsersSnapshot,
-} from '@affine/realtime';
+} from '@nexio/realtime';
 import { Injectable, OnModuleInit, Optional } from '@nestjs/common';
 import { z } from 'zod';
 

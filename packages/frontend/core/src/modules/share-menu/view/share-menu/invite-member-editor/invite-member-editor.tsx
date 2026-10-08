@@ -6,18 +6,18 @@ import {
   MenuTrigger,
   notify,
   RowInput,
-} from '@affine/component';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
+} from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import {
   DocGrantedUsersService,
   type Member,
   MemberSearchService,
-} from '@affine/core/modules/permissions';
-import { UserFriendlyError } from '@affine/error';
-import { DocRole, WorkspaceMemberStatus } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/permissions';
+import { UserFriendlyError } from '@nexio/error';
+import { DocRole, WorkspaceMemberStatus } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { ArrowLeftBigIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';

@@ -1,38 +1,38 @@
-import { notify, toast } from '@affine/component';
+import { notify, toast } from '@nexio/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
-} from '@affine/component/global-loading';
+} from '@nexio/component/global-loading';
 import {
   AIAppEvents,
   createAIRequestService,
   setupAIProvider,
-} from '@affine/core/blocksuite/ai';
-import { useRegisterFindInPageCommands } from '@affine/core/components/hooks/affine/use-register-find-in-page-commands';
-import { useRegisterWorkspaceCommands } from '@affine/core/components/hooks/use-register-workspace-commands';
-import { OverCapacityNotification } from '@affine/core/components/over-capacity';
+} from '@nexio/core/blocksuite/ai';
+import { useRegisterFindInPageCommands } from '@nexio/core/components/hooks/affine/use-register-find-in-page-commands';
+import { useRegisterWorkspaceCommands } from '@nexio/core/components/hooks/use-register-workspace-commands';
+import { OverCapacityNotification } from '@nexio/core/components/over-capacity';
 import {
   AuthService,
   EventSourceService,
   GraphQLService,
   RealtimeService,
-} from '@affine/core/modules/cloud';
+} from '@nexio/core/modules/cloud';
 import {
   GlobalDialogService,
   WorkspaceDialogService,
-} from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { EditorSettingService } from '@affine/core/modules/editor-setting';
-import { useRegisterNavigationCommands } from '@affine/core/modules/navigation/view/use-register-navigation-commands';
-import { QuickSearchContainer } from '@affine/core/modules/quicksearch';
-import { NbstoreService } from '@affine/core/modules/storage';
-import { WorkbenchService } from '@affine/core/modules/workbench';
+} from '@nexio/core/modules/dialogs';
+import { DocsService } from '@nexio/core/modules/doc';
+import { EditorSettingService } from '@nexio/core/modules/editor-setting';
+import { useRegisterNavigationCommands } from '@nexio/core/modules/navigation/view/use-register-navigation-commands';
+import { QuickSearchContainer } from '@nexio/core/modules/quicksearch';
+import { NbstoreService } from '@nexio/core/modules/storage';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
 import {
   getAFFiNEWorkspaceSchema,
   WorkspaceService,
-} from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type { DocMode } from '@blocksuite/affine/model';
 import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
 import {

@@ -5,17 +5,17 @@ import {
   MenuItem,
   MenuTrigger,
   Switch,
-} from '@affine/component';
+} from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
   SettingWrapper,
-} from '@affine/component/setting-components';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DesktopApiService } from '@affine/core/modules/desktop-api';
-import { MeetingSettingsService } from '@affine/core/modules/media/services/meeting-settings';
-import type { MeetingSettingsSchema } from '@affine/electron/main/shared-state-schema';
-import { Trans, useI18n } from '@affine/i18n';
+} from '@nexio/component/setting-components';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { DesktopApiService } from '@nexio/core/modules/desktop-api';
+import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
+import type { MeetingSettingsSchema } from '@nexio/electron/main/shared-state-schema';
+import { Trans, useI18n } from '@nexio/i18n';
 import {
   ArrowRightSmallIcon,
   DoneIcon,

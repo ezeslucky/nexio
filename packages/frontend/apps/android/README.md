@@ -16,6 +16,6 @@ AFFiNE Android app.
 ## Build
 
 - yarn install
-- BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @affine/android build
-- yarn affine @affine/android cap sync
-- yarn affine @affine/android cap open android
+- BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @nexio/android build
+- yarn affine @nexio/android cap sync
+- yarn affine @nexio/android cap open android

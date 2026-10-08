@@ -1,17 +1,17 @@
 import path from 'node:path';
 
-import type { apis } from '@affine/electron-api';
-import { test } from '@affine-test/kit/electron';
+import type { apis } from '@nexio/electron-api';
+import { test } from '@nexio-test/kit/electron';
 import {
   getBlockSuiteEditorTitle,
   getPageByTitle,
   waitForEditorLoad,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import {
   clickNewPageButton,
   clickSideBarCurrentWorkspaceBanner,
-} from '@affine-test/kit/utils/sidebar';
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+} from '@nexio-test/kit/utils/sidebar';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 import fs from 'fs-extra';
 import type { ElectronApplication } from 'playwright';

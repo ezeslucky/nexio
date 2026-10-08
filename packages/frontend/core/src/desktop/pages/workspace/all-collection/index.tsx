@@ -1,15 +1,15 @@
-import { usePromptModal } from '@affine/component';
-import { useNavigateHelper } from '@affine/core/components/hooks/use-navigate-helper';
+import { usePromptModal } from '@nexio/component';
+import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import {
   CollectionListHeader,
   VirtualizedCollectionList,
-} from '@affine/core/components/page-list';
+} from '@nexio/core/components/page-list';
 import {
   ViewIcon,
   ViewTitle,
-} from '@affine/core/modules/workbench/view/view-meta';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/workbench/view/view-meta';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 

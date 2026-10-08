@@ -44,7 +44,7 @@ vi.mock('../../src/main/logger', () => ({
 // import doesn't race the default 60s test timeout on loaded CI shards, where
 // cold-transforming the heavy `@toeverything/infra` graph can starve.
 beforeAll(async () => {
-  await import('@affine/electron/main/byok-storage/handlers');
+  await import('@nexio/electron/main/byok-storage/handlers');
 }, 120_000);
 
 beforeEach(async () => {
@@ -95,7 +95,7 @@ describe('byok storage handlers', () => {
   };
   test('stores encrypted local keys and keeps lease providers sorted', async () => {
     const { byokStorageHandlers, disposeWorkspaceByokStorage: dispose } =
-      await import('@affine/electron/main/byok-storage/handlers');
+      await import('@nexio/electron/main/byok-storage/handlers');
     disposeWorkspaceByokStorage = dispose;
     const ipcEvent = undefined;
 
@@ -152,7 +152,7 @@ describe('byok storage handlers', () => {
     electronMock.isEncryptionAvailable.mockReturnValue(false);
 
     const { byokStorageHandlers, disposeWorkspaceByokStorage: dispose } =
-      await import('@affine/electron/main/byok-storage/handlers');
+      await import('@nexio/electron/main/byok-storage/handlers');
     disposeWorkspaceByokStorage = dispose;
     const ipcEvent = undefined;
 
@@ -211,7 +211,7 @@ describe('byok storage handlers', () => {
     ],
   ])('rejects %s from IPC input', async (_name, malformedDefinition) => {
     const { byokStorageHandlers, disposeWorkspaceByokStorage: dispose } =
-      await import('@affine/electron/main/byok-storage/handlers');
+      await import('@nexio/electron/main/byok-storage/handlers');
     disposeWorkspaceByokStorage = dispose;
 
     await expect(
@@ -228,7 +228,7 @@ describe('byok storage handlers', () => {
 
   test('preserves existing local key fields during partial updates', async () => {
     const { byokStorageHandlers, disposeWorkspaceByokStorage: dispose } =
-      await import('@affine/electron/main/byok-storage/handlers');
+      await import('@nexio/electron/main/byok-storage/handlers');
     disposeWorkspaceByokStorage = dispose;
     const ipcEvent = undefined;
 

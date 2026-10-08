@@ -1,4 +1,4 @@
-import { installLicenseMutation, SubscriptionVariant } from '@affine/graphql';
+import { installLicenseMutation, SubscriptionVariant } from '@nexio/graphql';
 import Sinon from 'sinon';
 
 import { EventBus } from '../../../base';

@@ -1,4 +1,4 @@
-import { Button } from '@affine/component/ui/button';
+import { Button } from '@nexio/component/ui/button';
 import { DownloadIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
 import { useCallback, useMemo, useState } from 'react';
 

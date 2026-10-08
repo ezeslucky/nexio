@@ -1,4 +1,4 @@
-import { renderTypstSvg } from '@affine/core/modules/code-block-preview-renderer/bridge';
+import { renderTypstSvg } from '@nexio/core/modules/code-block-preview-renderer/bridge';
 import { CodeBlockPreviewExtension } from '@blocksuite/affine/blocks/code';
 import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
 import type { CodeBlockModel } from '@blocksuite/affine/model';

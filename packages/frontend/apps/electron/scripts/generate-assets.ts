@@ -45,14 +45,14 @@ const cwd = repoRootDir;
 
 // step 1: build web dist
 if (!process.env.SKIP_WEB_BUILD) {
-  spawnSync('yarn', ['affine', '@affine/electron-renderer', 'build'], {
+  spawnSync('yarn', ['affine', '@nexio/electron-renderer', 'build'], {
     stdio: 'inherit',
     env: process.env,
     cwd,
     shell: true,
   });
 
-  spawnSync('yarn', ['affine', '@affine/electron', 'build'], {
+  spawnSync('yarn', ['affine', '@nexio/electron', 'build'], {
     stdio: 'inherit',
     env: process.env,
     cwd,

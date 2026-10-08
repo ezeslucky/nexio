@@ -1,7 +1,7 @@
-import { Button, notify } from '@affine/component';
-import { WorkspaceServerService } from '@affine/core/modules/cloud';
-import { IntegrationService } from '@affine/core/modules/integration';
-import { useI18n } from '@affine/i18n';
+import { Button, notify } from '@nexio/component';
+import { WorkspaceServerService } from '@nexio/core/modules/cloud';
+import { IntegrationService } from '@nexio/core/modules/integration';
+import { useI18n } from '@nexio/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect, useMemo, useState } from 'react';

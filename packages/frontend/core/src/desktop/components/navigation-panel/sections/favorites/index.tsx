@@ -2,19 +2,19 @@ import {
   type DropTargetDropEvent,
   IconButton,
   useDropTarget,
-} from '@affine/component';
-import { usePageHelper } from '@affine/core/blocksuite/block-suite-page-list/utils';
-import type { FavoriteSupportTypeUnion } from '@affine/core/modules/favorite';
+} from '@nexio/component';
+import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import type { FavoriteSupportTypeUnion } from '@nexio/core/modules/favorite';
 import {
   FavoriteService,
   isFavoriteSupportType,
-} from '@affine/core/modules/favorite';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { inferOpenMode } from '@affine/core/utils';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/core/modules/favorite';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { inferOpenMode } from '@nexio/core/utils';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import { PlusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { type MouseEventHandler, useCallback, useMemo } from 'react';

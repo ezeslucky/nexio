@@ -1,4 +1,4 @@
-import { serverConfigQuery, ServerFeature } from '@affine/graphql';
+import { serverConfigQuery, ServerFeature } from '@nexio/graphql';
 
 import { Config } from '../../../base';
 import { app, e2e } from '../test';

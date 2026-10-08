@@ -1,12 +1,12 @@
-import { Button } from '@affine/component';
-import { SettingRow } from '@affine/component/setting-components';
-import { getUpgradeQuestionnaireLink } from '@affine/core/components/hooks/affine/use-subscription-notify';
+import { Button } from '@nexio/component';
+import { SettingRow } from '@nexio/component/setting-components';
+import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
 import {
   AuthService,
   WorkspaceSubscriptionService,
-} from '@affine/core/modules/cloud';
-import { SubscriptionPlan, SubscriptionRecurring } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/core/modules/cloud';
+import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 
 import * as styles from './styles.css';

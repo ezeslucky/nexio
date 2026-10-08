@@ -7,19 +7,19 @@ import {
   notify,
   Tooltip,
   useConfirmModal,
-} from '@affine/component';
-import { useGuard } from '@affine/core/components/guard';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { DocService } from '@affine/core/modules/doc';
+} from '@nexio/component';
+import { useGuard } from '@nexio/core/components/guard';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { DocService } from '@nexio/core/modules/doc';
 import {
   DocGrantedUsersService,
   type GrantedUser,
   WorkspacePermissionService,
-} from '@affine/core/modules/permissions';
-import { UserFriendlyError } from '@affine/error';
-import { DocRole } from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
-import track from '@affine/track';
+} from '@nexio/core/modules/permissions';
+import { UserFriendlyError } from '@nexio/error';
+import { DocRole } from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useMemo } from 'react';

@@ -1,7 +1,7 @@
-import { MemberSearchService } from '@affine/core/modules/permissions';
-import { highlighter } from '@affine/core/modules/quicksearch/utils/highlighter';
-import { I18n } from '@affine/i18n';
-import track from '@affine/track';
+import { MemberSearchService } from '@nexio/core/modules/permissions';
+import { highlighter } from '@nexio/core/modules/quicksearch/utils/highlighter';
+import { I18n } from '@nexio/i18n';
+import track from '@nexio/track';
 import type { AffineInlineEditor } from '@blocksuite/affine/shared/types';
 import type {
   LinkedMenuItem,

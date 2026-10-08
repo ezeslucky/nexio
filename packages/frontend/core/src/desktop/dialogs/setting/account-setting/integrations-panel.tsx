@@ -6,15 +6,15 @@ import {
   MenuItem,
   Modal,
   notify,
-} from '@affine/component';
-import { buildWorkspaceSettingsRedirectUri } from '@affine/core/components/hooks/use-navigate-helper';
+} from '@nexio/component';
+import { buildWorkspaceSettingsRedirectUri } from '@nexio/core/components/hooks/use-navigate-helper';
 import {
   useQuery,
   type UseQueryConfig,
-} from '@affine/core/components/hooks/use-query';
-import { GraphQLService } from '@affine/core/modules/cloud';
-import { UrlService } from '@affine/core/modules/url';
-import { UserFriendlyError } from '@affine/error';
+} from '@nexio/core/components/hooks/use-query';
+import { GraphQLService } from '@nexio/core/modules/cloud';
+import { UrlService } from '@nexio/core/modules/url';
+import { UserFriendlyError } from '@nexio/error';
 import {
   type CalendarAccountsQuery,
   calendarAccountsQuery,
@@ -25,8 +25,8 @@ import {
   linkCalDavAccountMutation,
   linkCalendarAccountMutation,
   unlinkCalendarAccountMutation,
-} from '@affine/graphql';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/graphql';
+import { useI18n } from '@nexio/i18n';
 import { GoogleIcon, LinkIcon, TodayIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import {

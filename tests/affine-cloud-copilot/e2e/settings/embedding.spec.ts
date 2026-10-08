@@ -1,4 +1,4 @@
-import { createLocalWorkspace } from '@affine-test/kit/utils/workspace';
+import { createLocalWorkspace } from '@nexio-test/kit/utils/workspace';
 import { expect } from '@playwright/test';
 
 import { test } from '../base/base-test';

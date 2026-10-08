@@ -1,7 +1,7 @@
-import { IconButton } from '@affine/component';
-import { MenuLinkItem } from '@affine/core/modules/app-sidebar/views';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { useI18n } from '@affine/i18n';
+import { IconButton } from '@nexio/component';
+import { MenuLinkItem } from '@nexio/core/modules/app-sidebar/views';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { useI18n } from '@nexio/i18n';
 import { PlusIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import type React from 'react';

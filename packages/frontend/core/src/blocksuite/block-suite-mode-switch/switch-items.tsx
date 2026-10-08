@@ -1,9 +1,9 @@
-import { Tooltip } from '@affine/component';
+import { Tooltip } from '@nexio/component';
 import {
   type CustomLottieProps,
   InternalLottie,
-} from '@affine/component/internal-lottie';
-import { useI18n } from '@affine/i18n';
+} from '@nexio/component/internal-lottie';
+import { useI18n } from '@nexio/i18n';
 import type { HTMLAttributes } from 'react';
 import type React from 'react';
 import { cloneElement, useState } from 'react';

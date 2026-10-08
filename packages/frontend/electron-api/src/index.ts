@@ -1,14 +1,14 @@
 import type {
   events as helperEvents,
   handlers as helperHandlers,
-} from '@affine/electron/helper/exposed';
+} from '@nexio/electron/helper/exposed';
 import type {
   events as mainEvents,
   handlers as mainHandlers,
-} from '@affine/electron/main/exposed';
-import type { AppInfo } from '@affine/electron/preload/electron-api';
-import type { SharedStorage } from '@affine/electron/preload/shared-storage';
-import type { CreateImportSessionFromSourceOptions } from '@affine/electron/shared/import';
+} from '@nexio/electron/main/exposed';
+import type { AppInfo } from '@nexio/electron/preload/electron-api';
+import type { SharedStorage } from '@nexio/electron/preload/shared-storage';
+import type { CreateImportSessionFromSourceOptions } from '@nexio/electron/shared/import';
 
 type MainHandlers = typeof mainHandlers;
 type HelperHandlers = typeof helperHandlers;
@@ -57,15 +57,15 @@ export {
   type WorkbenchMeta,
   type WorkbenchViewMeta,
   type WorkbenchViewModule,
-} from '@affine/electron/main/shared-state-schema';
-export type { UpdateMeta } from '@affine/electron/main/updater/event';
+} from '@nexio/electron/main/shared-state-schema';
+export type { UpdateMeta } from '@nexio/electron/main/updater/event';
 export type {
   AddTabOption,
   TabAction,
-} from '@affine/electron/main/windows-manager';
+} from '@nexio/electron/main/windows-manager';
 export type {
   CreateImportSessionFromSourceOptions,
   NativeImportBrowserSource,
   NativeImportFormat,
   NativeImportSessionHandlers,
-} from '@affine/electron/shared/import';
+} from '@nexio/electron/shared/import';

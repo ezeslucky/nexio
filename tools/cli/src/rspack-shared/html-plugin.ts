@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 
-import { Path, ProjectRoot } from '@affine-tools/utils/path';
+import { Path, ProjectRoot } from '@nexio-tools/utils/path';
 import { Repository } from '@napi-rs/simple-git';
 import { HtmlRspackPlugin, type HtmlRspackPluginOptions } from '@rspack/core';
 import { once } from 'lodash-es';

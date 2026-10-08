@@ -1,4 +1,4 @@
-import type { Editor } from '@affine/core/modules/editor';
+import type { Editor } from '@nexio/core/modules/editor';
 import type { DocMode } from '@blocksuite/affine/model';
 import { useLiveData } from '@toeverything/infra';
 import { useEffect, useRef } from 'react';

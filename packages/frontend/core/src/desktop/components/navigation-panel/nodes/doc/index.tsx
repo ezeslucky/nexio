@@ -4,22 +4,22 @@ import {
   Loading,
   toast,
   Tooltip,
-} from '@affine/component';
-import { Guard } from '@affine/core/components/guard';
-import { useAppSettingHelper } from '@affine/core/components/hooks/affine/use-app-setting-helper';
-import { useAsyncCallback } from '@affine/core/components/hooks/affine-async-hooks';
-import { WorkspaceDialogService } from '@affine/core/modules/dialogs';
-import { DocsService } from '@affine/core/modules/doc';
-import { DocDisplayMetaService } from '@affine/core/modules/doc-display-meta';
-import { DocsSearchService } from '@affine/core/modules/docs-search';
-import { FeatureFlagService } from '@affine/core/modules/feature-flag';
-import { GlobalContextService } from '@affine/core/modules/global-context';
-import { NavigationPanelService } from '@affine/core/modules/navigation-panel';
-import { GuardService } from '@affine/core/modules/permissions';
-import { WorkspaceService } from '@affine/core/modules/workspace';
-import type { AffineDNDData } from '@affine/core/types/dnd';
-import { useI18n } from '@affine/i18n';
-import { track } from '@affine/track';
+} from '@nexio/component';
+import { Guard } from '@nexio/core/components/guard';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
+import { DocsService } from '@nexio/core/modules/doc';
+import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
+import { DocsSearchService } from '@nexio/core/modules/docs-search';
+import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+import { GlobalContextService } from '@nexio/core/modules/global-context';
+import { NavigationPanelService } from '@nexio/core/modules/navigation-panel';
+import { GuardService } from '@nexio/core/modules/permissions';
+import { WorkspaceService } from '@nexio/core/modules/workspace';
+import type { AffineDNDData } from '@nexio/core/types/dnd';
+import { useI18n } from '@nexio/i18n';
+import { track } from '@nexio/track';
 import {
   LiveData,
   MANUALLY_STOP,

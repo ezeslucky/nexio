@@ -1,15 +1,15 @@
 import {
   createEdgelessNoteBlock,
   setEdgelessTool,
-} from '@affine-test/kit/utils/editor';
+} from '@nexio-test/kit/utils/editor';
 import {
   pressEscape,
   selectAllByKeyboard,
-} from '@affine-test/kit/utils/keyboard';
+} from '@nexio-test/kit/utils/keyboard';
 import {
   clickNewPageButton,
   getBlockSuiteEditorTitle,
-} from '@affine-test/kit/utils/page-logic';
+} from '@nexio-test/kit/utils/page-logic';
 import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
 import type {
   MindmapElementModel,

@@ -4,14 +4,14 @@ import {
   Menu,
   MenuItem,
   PropertyValue,
-} from '@affine/component';
-import { MobileJournalConflictList } from '@affine/core/mobile/pages/workspace/detail/menu/journal-conflicts';
-import type { FilterParams } from '@affine/core/modules/collection-rules';
-import { DocService } from '@affine/core/modules/doc';
-import { JournalService } from '@affine/core/modules/journal';
-import { WorkbenchService } from '@affine/core/modules/workbench';
-import { ViewService } from '@affine/core/modules/workbench/services/view';
-import { i18nTime, useI18n } from '@affine/i18n';
+} from '@nexio/component';
+import { MobileJournalConflictList } from '@nexio/core/mobile/pages/workspace/detail/menu/journal-conflicts';
+import type { FilterParams } from '@nexio/core/modules/collection-rules';
+import { DocService } from '@nexio/core/modules/doc';
+import { JournalService } from '@nexio/core/modules/journal';
+import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { ViewService } from '@nexio/core/modules/workbench/services/view';
+import { i18nTime, useI18n } from '@nexio/i18n';
 import { TodayIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,

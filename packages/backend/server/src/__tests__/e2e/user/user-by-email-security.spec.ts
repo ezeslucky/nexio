@@ -1,4 +1,4 @@
-import { getUserQuery } from '@affine/graphql';
+import { getUserQuery } from '@nexio/graphql';
 import Sinon from 'sinon';
 
 import { ThrottlerStorage } from '../../../base/throttler';

@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'node:url';
 
-import { testResultDir } from '@affine-test/kit/playwright';
+import { testResultDir } from '@nexio-test/kit/playwright';
 import type {
   PlaywrightTestConfig,
   PlaywrightWorkerOptions,
@@ -37,7 +37,7 @@ const config: PlaywrightTestConfig = {
       //   in ci, all the target will be built,
       //   we could download the builds from archives
       //   and then run the web with simple http serve, it's will be faster
-      command: 'yarn run -T affine dev -p @affine/web',
+      command: 'yarn run -T affine dev -p @nexio/web',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {
@@ -46,7 +46,7 @@ const config: PlaywrightTestConfig = {
       url: 'http://localhost:8080',
     },
     {
-      command: 'yarn run -T affine dev -p @affine/server',
+      command: 'yarn run -T affine dev -p @nexio/server',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {

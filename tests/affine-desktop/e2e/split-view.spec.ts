@@ -1,16 +1,16 @@
-import { test } from '@affine-test/kit/electron';
+import { test } from '@nexio-test/kit/electron';
 import {
   expectActiveTab,
   expectTabTitle,
-} from '@affine-test/kit/utils/app-tabs';
+} from '@nexio-test/kit/utils/app-tabs';
 import {
   clickNewPageButton,
   createLinkedPage,
   dragTo,
   getPageByTitle,
   waitForAllPagesLoad,
-} from '@affine-test/kit/utils/page-logic';
-import { clickSideBarAllPageButton } from '@affine-test/kit/utils/sidebar';
+} from '@nexio-test/kit/utils/page-logic';
+import { clickSideBarAllPageButton } from '@nexio-test/kit/utils/sidebar';
 import { expect } from '@playwright/test';
 
 const SPLIT_VIEW_READY_TIMEOUT = 30_000;

@@ -1,5 +1,5 @@
-import { apis, type ClientHandler } from '@affine/electron-api';
-import { UserFriendlyError } from '@affine/error';
+import { apis, type ClientHandler } from '@nexio/electron-api';
+import { UserFriendlyError } from '@nexio/error';
 import {
   type ByokAttachmentKind,
   type ByokAttachmentSource,
@@ -10,7 +10,7 @@ import {
   type ByokOpenAiDialect,
   ByokProvider,
   createWorkspaceByokLocalLeaseMutation,
-} from '@affine/graphql';
+} from '@nexio/graphql';
 
 import type { CopilotClient } from './copilot-client';
 

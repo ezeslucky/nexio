@@ -64,7 +64,7 @@ const linkCalDavAccountMutation = vi.hoisted(() =>
   Symbol('linkCalDavAccountMutation')
 );
 
-vi.mock('@affine/component', () => ({
+vi.mock('@nexio/component', () => ({
   Button: ({
     children,
     onClick,
@@ -100,7 +100,7 @@ vi.mock('@affine/component', () => ({
   },
 }));
 
-vi.mock('@affine/core/components/hooks/use-query', () => ({
+vi.mock('@nexio/core/components/hooks/use-query', () => ({
   useQuery: ({ query }: { query: symbol }) => {
     if (query === calendarAccountsQuery) {
       return {
@@ -127,19 +127,19 @@ vi.mock('@affine/core/components/hooks/use-query', () => ({
   },
 }));
 
-vi.mock('@affine/core/modules/cloud', () => ({
+vi.mock('@nexio/core/modules/cloud', () => ({
   GraphQLService: GraphQLServiceToken,
 }));
 
-vi.mock('@affine/core/modules/url', () => ({
+vi.mock('@nexio/core/modules/url', () => ({
   UrlService: UrlServiceToken,
 }));
 
-vi.mock('@affine/core/modules/workspace', () => ({
+vi.mock('@nexio/core/modules/workspace', () => ({
   WorkspaceService: WorkspaceServiceToken,
 }));
 
-vi.mock('@affine/graphql', () => ({
+vi.mock('@nexio/graphql', () => ({
   calendarAccountsQuery,
   calendarProvidersQuery,
   CalendarProviderType,
@@ -148,7 +148,7 @@ vi.mock('@affine/graphql', () => ({
   linkCalDavAccountMutation,
 }));
 
-vi.mock('@affine/i18n', () => ({
+vi.mock('@nexio/i18n', () => ({
   useI18n: () =>
     new Proxy(
       {},

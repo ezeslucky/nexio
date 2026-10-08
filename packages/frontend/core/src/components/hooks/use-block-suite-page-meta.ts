@@ -1,4 +1,4 @@
-import { DocsService } from '@affine/core/modules/doc';
+import { DocsService } from '@nexio/core/modules/doc';
 import type { DocMeta, Workspace } from '@blocksuite/affine/store';
 import { useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
