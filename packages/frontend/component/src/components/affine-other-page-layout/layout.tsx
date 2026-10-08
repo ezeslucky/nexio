@@ -1,8 +1,6 @@
 import { NexioLogo } from '@nexio/component/auth-components';
-import { Button } from '@nexio/component/ui/button';
-import { useI18n } from '@nexio/i18n';
 import { useTheme } from 'next-themes';
-import { type ReactNode, useCallback } from 'react';
+import type { ReactNode } from 'react';
 
 import dotBgDark from './assets/dot-bg.dark.png';
 import dotBgLight from './assets/dot-bg.light.png';
@@ -15,15 +13,6 @@ export const AffineOtherPageLayout = ({
 }: {
   children: ReactNode;
 }) => {
-  const t = useI18n();
-  const openDownloadLink = useCallback(() => {
-    open(
-      BUILD_CONFIG.downloadUrl ||
-        'https://github.com/ezeslucky/nexio/releases',
-      '_blank'
-    );
-  }, []);
-
   const { resolvedTheme } = useTheme();
   const backgroundImage =
     resolvedTheme === 'dark' && dotBgDark ? dotBgDark : dotBgLight;
@@ -42,12 +31,8 @@ export const AffineOtherPageLayout = ({
           </a>
 
           <DesktopNavbar />
-          <Button
-            onClick={openDownloadLink}
-            className={styles.hideInSmallScreen}
-          >
-            {t['com.affine.auth.open.affine.download-app']()}
-          </Button>
+
+          <div className={styles.hideInSmallScreen} style={{ width: 100 }} />
           <MobileNavbar />
         </div>
       )}
