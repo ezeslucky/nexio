@@ -40,19 +40,19 @@ describe('oauth flow mode', () => {
       parseOAuthCallbackState(new URL(url).searchParams.get('state')!)
     ).toEqual({
       client: 'web',
-      flow: 'popup',
+      flow: 'redirect',
       provider: 'Google',
       state: 'nonce',
       clientNonce: 'my-test-nonce-123',
     });
   });
 
-  test('falls back to popup when callback state has no flow', () => {
+  test('falls back to redirect when callback state has no flow', () => {
     expect(
       parseOAuthCallbackState(
         JSON.stringify({ client: 'web', provider: 'Google', state: 'nonce' })
       ).flow
-    ).toBe('popup');
+    ).toBe('redirect');
   });
 
   test('keeps same-origin redirects direct', () => {

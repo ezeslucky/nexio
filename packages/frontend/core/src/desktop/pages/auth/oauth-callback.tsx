@@ -95,17 +95,63 @@ export const Component = () => {
     auth
       .signInOauth(data.code, data.state, data.provider, data.clientNonce)
       .then(({ redirectUri }) => {
-        if (data.flow === 'popup') {
-          window.close();
+        const destination = resolveOAuthRedirect(redirectUri, location.origin);
+
+        if (
+          data.flow === 'popup' &&
+          typeof window !== 'undefined' &&
+          window.opener &&
+          window.opener !== window
+        ) {
+          try {
+            window.close();
+          } catch {}
+          setTimeout(() => {
+            location.replace(destination);
+          }, 500);
           return;
         }
 
-        location.replace(resolveOAuthRedirect(redirectUri, location.origin));
+        location.replace(destination);
       })
       .catch(e => {
         nav(`/sign-in?error=${encodeURIComponent(e.message)}`);
       });
   }, [data, auth, nav]);
 
-  return null;
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        width: '100vw',
+        fontFamily:
+          '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        color: 'var(--affine-text-primary-color, #1e293b)',
+        backgroundColor: 'var(--affine-background-primary-color, #ffffff)',
+      }}
+    >
+      <div
+        style={{
+          width: '36px',
+          height: '36px',
+          border: '3px solid #e2e8f0',
+          borderTopColor: '#1e96eb',
+          borderRadius: '50%',
+          animation: 'spin 0.8s linear infinite',
+          marginBottom: '16px',
+        }}
+      />
+      <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
+      <div style={{ fontSize: '16px', fontWeight: 600, marginBottom: '6px' }}>
+        Signing in to Nexio...
+      </div>
+      <div style={{ fontSize: '13px', color: '#64748b' }}>
+        Redirecting to your workspace, please wait.
+      </div>
+    </div>
+  );
 };

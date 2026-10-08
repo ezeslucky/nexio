@@ -24,13 +24,13 @@ export function attachOAuthFlowToAuthUrl(url: string, flow: OAuthFlowMode) {
 }
 
 export function readOAuthFlowModeFromCallbackState(state: string | null) {
-  if (!state) return 'popup';
+  if (!state) return 'redirect';
 
   try {
     const payload = JSON.parse(state) as { flow?: string };
-    return resolveOAuthFlowMode(payload.flow, 'popup');
+    return resolveOAuthFlowMode(payload.flow, 'redirect');
   } catch {
-    return 'popup';
+    return 'redirect';
   }
 }
 
