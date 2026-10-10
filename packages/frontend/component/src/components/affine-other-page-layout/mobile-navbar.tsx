@@ -9,6 +9,7 @@ import { useNavConfig } from './use-nav-config';
 export const MobileNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const navConfig = useNavConfig();
+  if (!navConfig.length) return null;
 
   const menuItems = (
     <>

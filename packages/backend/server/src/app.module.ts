@@ -7,6 +7,7 @@ import { Request, Response } from 'express';
 import { ClsModule } from 'nestjs-cls';
 
 import { AppController } from './app.controller';
+import { DocsController } from './docs.controller';
 import {
   getRequestFromHost,
   getRequestIdFromHost,
@@ -153,7 +154,7 @@ export class AppModuleBuilder {
     return {
       module: AppModule,
       imports: this.modules,
-      controllers: [AppController],
+      controllers: [AppController, DocsController],
     };
   }
 }

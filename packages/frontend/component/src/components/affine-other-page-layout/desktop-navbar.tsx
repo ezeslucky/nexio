@@ -3,6 +3,7 @@ import { useNavConfig } from './use-nav-config';
 
 export const DesktopNavbar = () => {
   const config = useNavConfig();
+  if (!config.length) return null;
 
   return (
     <div className={styles.topNavLinks}>
