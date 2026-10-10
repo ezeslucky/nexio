@@ -56,6 +56,11 @@ def patch_main():
     if 'if(!env.prod)return tx;throw e' in content:
         content = content.replace('if(!env.prod)return tx;throw e', 'return tx;')
 
+    old_env_code = 'if(a.env){let[e,r]=a.env,o=t[e];o&&(i=function(e,t){if(void 0!==e)return p[t](e)}(o,r))}'
+    new_env_code = 'if(a.env){let[e,r]=a.env,n=e.replace(/^AFFINE_/,"NEXIO_"),o=t[n]??t[e];o&&(i=function(e,t){if(void 0!==e)return p[t](e)}(o,r))}'
+    if old_env_code in content:
+        content = content.replace(old_env_code, new_env_code, 1)
+
     with open('packages/backend/server/dist/main.js', 'w', encoding='utf-8') as f:
         f.write(content)
 

@@ -358,7 +358,8 @@ export function getDefaultConfig(): AppConfig {
 
       if (desc.env) {
         const [env, parser] = desc.env;
-        const envValue = envs[env];
+        const nexioEnv = env.startsWith('AFFINE_') ? env.replace(/^AFFINE_/, 'NEXIO_') : env;
+        const envValue = envs[nexioEnv] ?? envs[env];
         if (envValue) {
           defaultValue = parseEnvValue(envValue, parser);
         }

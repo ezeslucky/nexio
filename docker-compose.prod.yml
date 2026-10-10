@@ -1,0 +1,33 @@
+services:
+  nexio:
+    image: ezeslucky441/nexio:latest
+    container_name: nexio
+    restart: unless-stopped
+    ports:
+      # Bind to 127.0.0.1 so it is only accessible via Nginx reverse proxy
+      - "127.0.0.1:3010:3010"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NEXIO_SERVER_PORT=3010
+      - NEXIO_SERVER_EXTERNAL_URL=${NEXIO_SERVER_EXTERNAL_URL:-https://app.technexio.me}
+      - AFFINE_SERVER_EXTERNAL_URL=${NEXIO_SERVER_EXTERNAL_URL:-https://app.technexio.me}
+      - NEXIO_SERVER_HOST=${NEXIO_SERVER_HOST:-app.technexio.me}
+      - AFFINE_SERVER_HOST=${NEXIO_SERVER_HOST:-app.technexio.me}
+      - NEXIO_SERVER_HTTPS=true
+      - AFFINE_SERVER_HTTPS=true
+
+      # Internal Postgres & Redis inside all-in-one container
+      - POSTGRES_USER=nexio
+      - POSTGRES_PASSWORD=nexio
+      - POSTGRES_DB=nexio
+      - DATABASE_URL=postgres://nexio:nexio@localhost:5432/nexio
+      - REDIS_SERVER_HOST=localhost
+    volumes:
+      # Persistent PostgreSQL data storage
+      - nexio_pgdata:/var/lib/postgresql/data
+
+volumes:
+  nexio_pgdata:
+    name: nexio_pgdata
