@@ -15,8 +15,8 @@ interface AppConfig {
 }
 
 const config: CapacitorConfig & AppConfig = {
-  appId: 'app.affine.pro',
-  appName: 'AFFiNE',
+  appId: 'me.technexio.app',
+  appName: 'Nexio',
   webDir: 'dist',
   affineVersion: packageJson.version,
   android: {
@@ -26,7 +26,7 @@ const config: CapacitorConfig & AppConfig = {
       keystorePassword: process.env.AFFINE_ANDROID_KEYSTORE_PASSWORD,
       keystoreAlias: 'key0',
       keystoreAliasPassword: process.env.AFFINE_ANDROID_KEYSTORE_ALIAS_PASSWORD,
-      releaseType: 'AAB',
+      releaseType: 'APK',
     },
   },
   plugins: {
