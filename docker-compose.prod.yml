@@ -28,6 +28,16 @@ services:
       # Persistent PostgreSQL data storage
       - nexio_pgdata:/var/lib/postgresql/data
 
+  # Automated live updates: checks for new Docker image every 5 mins and restarts seamlessly
+  watchtower:
+    image: containrrr/watchtower
+    container_name: nexio-watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 300 --cleanup nexio
+
 volumes:
   nexio_pgdata:
     name: nexio_pgdata
+
