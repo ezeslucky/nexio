@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test('import from template should work', async ({ page }) => {
-  await page.goto('https://affine.pro/templates', { waitUntil: 'load' });
+  await page.goto('https://www.technexio.me/templates', { waitUntil: 'load' });
 
   await page.click('.template-list > a:first-child');
   const importButton = page.getByRole('button', {

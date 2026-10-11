@@ -181,7 +181,7 @@ mod tests {
     let params = serde_json::from_value(json!({
       "src": "invalid",
       "content": "hello",
-      "links": ["https://affine.pro", "https://github.com/ezeslucky/nexio"]
+      "links": ["https://www.technexio.me/", "https://github.com/ezeslucky/nexio"]
     }))
     .unwrap();
 
@@ -190,7 +190,7 @@ mod tests {
     assert_eq!(rendered.messages[0].content, "translate eng to chs: hello");
     assert_eq!(
       rendered.messages[1].content,
-      "links:\n- https://affine.pro\n- https://github.com/ezeslucky/nexio\n"
+      "links:\n- https://www.technexio.me/\n- https://github.com/ezeslucky/nexio\n"
     );
     assert_eq!(rendered.warnings.len(), 2);
   }

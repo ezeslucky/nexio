@@ -207,11 +207,11 @@ fun MarkdownPreview() {
         
         ---
         
-        ![示例图片](https://affine.pro/_next/static/media/logo.1e7b6b7e.svg)
+        ![示例图片](https://www.technexio.me/favicon-192.png)
         
         ---
         
-        [这是一个链接，点我访问 AFFiNE 官网](https://affine.pro)
+        [这是一个链接，点我访问 Nexio 官网](https://www.technexio.me/)
         
         ---
         

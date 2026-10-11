@@ -138,7 +138,7 @@ mod tests {
             "attachments": [
               {
                 "kind": "url",
-                "url": "https://affine.pro/image.png"
+                "url": "https://www.technexio.me/image.png"
               }
             ]
           },
@@ -175,7 +175,7 @@ mod tests {
               {
                 "type": "image",
                 "source": {
-                  "url": "https://affine.pro/image.png",
+                  "url": "https://www.technexio.me/image.png",
                   "media_type": "image/png"
                 }
               }
@@ -279,7 +279,7 @@ mod tests {
             "attachments": [
               {
                 "kind": "url",
-                "url": "https://affine.pro/doc.pdf",
+                "url": "https://www.technexio.me/doc.pdf",
                 "mimeType": "application/pdf"
               }
             ]
@@ -310,7 +310,7 @@ mod tests {
             "attachments": [
               {
                 "kind": "url",
-                "url": "https://affine.pro/image.png",
+                "url": "https://www.technexio.me/image.png",
                 "mimeType": "image/png"
               }
             ]
@@ -340,7 +340,7 @@ mod tests {
           "attachments": [
             {
               "kind": "url",
-              "url": "https://affine.pro/image.png"
+              "url": "https://www.technexio.me/image.png"
             },
             {
               "kind": "file_handle",

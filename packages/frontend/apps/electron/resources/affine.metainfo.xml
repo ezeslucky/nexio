@@ -51,15 +51,15 @@
   <launchable type="desktop-id">affine.desktop</launchable>
   <screenshots>
     <screenshot type="default">
-      <image>https://affine.pro/overview/Write.jpg</image>
+      <image>https://www.technexio.me/overview/Write.jpg</image>
       <caption>Document writing interface with block-based editing</caption>
     </screenshot>
     <screenshot>
-      <image>https://affine.pro/overview/Draw.jpg</image>
+      <image>https://www.technexio.me/overview/Draw.jpg</image>
       <caption>Whiteboard drawing and visualization capabilities</caption>
     </screenshot>
     <screenshot>
-      <image>https://affine.pro/overview/Plan.jpg</image>
+      <image>https://www.technexio.me/overview/Plan.jpg</image>
       <caption>Project planning and task management view</caption>
     </screenshot>
   </screenshots>

@@ -37,6 +37,6 @@ export default function SignUp(props: SignUpProps) {
 }
 
 SignUp.PreviewProps = {
-  url: 'https://app.affine.pro/magic-link?token=123456&email=test@test.com',
+  url: 'https://www.technexio.me/magic-link?token=123456&email=test@test.com',
   otp: '123456',
 };

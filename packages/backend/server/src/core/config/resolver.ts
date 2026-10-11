@@ -117,7 +117,7 @@ export class ServerConfigResolver {
     }
 
     const channel = RELEASE_CHANNEL_MAP.get(env.NAMESPACE) ?? 'stable';
-    const url = `https://affine.pro/api/worker/releases?channel=${channel}`;
+    const url = `https://www.technexio.me/api/worker/releases?channel=${channel}`;
 
     try {
       const response = await fetch(url, {

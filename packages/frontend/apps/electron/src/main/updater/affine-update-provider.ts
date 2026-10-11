@@ -46,7 +46,7 @@ export class NexioUpdateProvider extends Provider<GithubUpdateInfo> {
   static configFeed(options: UpdateProviderOptions): CustomPublishOptions {
     return {
       provider: 'custom',
-      feedUrl: 'https://affine.pro/api/worker/releases',
+      feedUrl: 'https://www.technexio.me/api/worker/releases',
       updateProvider: NexioUpdateProvider,
       ...options,
     };

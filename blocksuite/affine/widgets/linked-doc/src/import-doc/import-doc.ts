@@ -194,7 +194,7 @@ export class ImportDoc extends WithDisposable(LitElement) {
         </header>
         <div>
           AFFiNE will gradually support more file formats for import.
-          <a href="https://affine.pro/redirect/discord" target="_blank"
+          <a href="https://www.technexio.me/" target="_blank"
             >Provide feedback.</a
           >
         </div>
