@@ -40,3 +40,36 @@ export const NavItem = ({ icon, label, to, isCollapsed }: NavItemProps) => {
     </NavLink>
   );
 };
+
+export const ExternalNavItem = ({
+  icon,
+  label,
+  href,
+  isCollapsed,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  href: string;
+  isCollapsed?: boolean;
+}) => {
+  const className = cn(
+    navItemBaseClass,
+    navItemStateClass,
+    isCollapsed ? 'w-9 justify-center px-0' : 'w-full justify-start px-2'
+  );
+
+  if (isCollapsed) {
+    return (
+      <a href={href} className={className} title={label}>
+        {icon}
+      </a>
+    );
+  }
+
+  return (
+    <a href={href} className={className}>
+      <span className="flex items-center p-0.5">{icon}</span>
+      <span className="truncate">{label}</span>
+    </a>
+  );
+};

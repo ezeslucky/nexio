@@ -120,6 +120,9 @@ export function UserDropdown({ isCollapsed }: UserDropdownProps) {
             ) : null}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
+          <DropdownMenuItem onSelect={() => (window.location.href = '/all')}>
+            Open Workspace
+          </DropdownMenuItem>
           <DropdownMenuItem onSelect={handleLogout}>Logout</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
@@ -159,6 +162,9 @@ export function UserDropdown({ isCollapsed }: UserDropdownProps) {
             ) : null}
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
+          <DropdownMenuItem onSelect={() => (window.location.href = '/all')}>
+            Open Workspace
+          </DropdownMenuItem>
           <DropdownMenuItem onSelect={handleLogout}>Logout</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

@@ -8,7 +8,8 @@ export function Setup() {
   const config = useServerConfig();
 
   if (config.initialized) {
-    return <Navigate to="/admin" />;
+    window.location.href = '/all';
+    return null;
   }
 
   return (

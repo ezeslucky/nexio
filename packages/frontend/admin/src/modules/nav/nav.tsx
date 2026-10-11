@@ -3,7 +3,7 @@ import { ROUTES } from '@nexio/routes';
 import { AccountIcon, SelfhostIcon } from '@blocksuite/icons/rc';
 import { BarChart3Icon, LayoutDashboardIcon } from 'lucide-react';
 
-import { NavItem } from './nav-item';
+import { ExternalNavItem, NavItem } from './nav-item';
 import { ServerVersion } from './server-version';
 import { SettingsItem } from './settings-item';
 import { UserDropdown } from './user-dropdown';
@@ -26,6 +26,12 @@ export function Nav({ isCollapsed = false }: NavProps) {
           isCollapsed && 'items-center px-0 gap-1 overflow-visible'
         )}
       >
+        <ExternalNavItem
+          href="/all"
+          icon={<LayoutDashboardIcon size={18} />}
+          label="Open Workspace"
+          isCollapsed={isCollapsed}
+        />
         {environment.isSelfHosted ? null : (
           <NavItem
             to={ROUTES.admin.dashboard}

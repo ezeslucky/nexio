@@ -150,7 +150,8 @@ export const Form = () => {
     }
 
     if (current === count) {
-      return navigate('/', { replace: true });
+      window.location.href = '/all';
+      return;
     }
 
     api?.scrollNext();

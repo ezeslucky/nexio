@@ -23,9 +23,9 @@ export class SetupMiddleware implements NestMiddleware {
           return;
         }
 
-        // redirect to admin page if initialized
+        // redirect to workspace page if initialized
         if (initialized && req.path === '/admin/setup') {
-          res.redirect('/admin');
+          res.redirect('/all');
           return;
         }
 
