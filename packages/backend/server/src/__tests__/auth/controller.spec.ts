@@ -599,7 +599,7 @@ test('should not issue jwt for browser-origin credential sign in', async t => {
 
   const res = await app
     .POST('/api/auth/sign-in')
-    .set('origin', 'https://app.affine.pro')
+    .set('origin', 'https://app.technexio.me')
     .set('x-affine-client-kind', 'native')
     .send({ email: u1.email, password: u1.password })
     .expect(200);

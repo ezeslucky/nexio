@@ -61,7 +61,7 @@ describe('SignInDialog', () => {
     render(
       <SignInDialog
         close={close}
-        server="https://app.affine.pro"
+        server="https://app.technexio.me"
         step="signIn"
       />
     );
@@ -78,7 +78,7 @@ describe('SignInDialog', () => {
     render(
       <SignInDialog
         close={close}
-        server="https://app.affine.pro"
+        server="https://app.technexio.me"
         step="signIn"
       />
     );
@@ -96,7 +96,7 @@ describe('SignInDialog', () => {
     render(
       <SignInDialog
         close={close}
-        server="https://app.affine.pro"
+        server="https://app.technexio.me"
         step="signIn"
       />
     );

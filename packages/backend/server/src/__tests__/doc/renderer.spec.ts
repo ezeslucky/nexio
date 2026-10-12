@@ -22,7 +22,7 @@ function initTestStaticFiles(staticPath: string) {
     'assets-manifest.json': JSON.stringify({
       js: ['main.a.js'],
       css: [],
-      publicPath: 'https://app.affine.pro/',
+      publicPath: 'https://app.technexio.me/',
       gitHash: '',
       description: '',
     }),
@@ -31,7 +31,7 @@ function initTestStaticFiles(staticPath: string) {
     'mobile/assets-manifest.json': JSON.stringify({
       js: ['main.c.js'],
       css: [],
-      publicPath: 'https://app.affine.pro/',
+      publicPath: 'https://app.technexio.me/',
       gitHash: '',
       description: '',
     }),
@@ -64,7 +64,7 @@ test('should render correct html', async t => {
 
   t.true(
     res.text.includes(
-      `<script src="https://app.affine.pro/main.a.js" crossorigin></script>`
+      `<script src="https://app.technexio.me/main.a.js" crossorigin></script>`
     )
   );
 });
@@ -78,7 +78,7 @@ test.skip('should render correct mobile html', async t => {
 
   t.true(
     res.text.includes(
-      `<script src="https://app.affine.pro/main.c.js" crossorigin></script>`
+      `<script src="https://app.technexio.me/main.c.js" crossorigin></script>`
     )
   );
 });

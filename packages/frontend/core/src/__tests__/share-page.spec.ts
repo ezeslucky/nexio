@@ -93,7 +93,7 @@ describe('fetchSharedPublishMode', () => {
 
     await expect(
       fetchSharedPublishMode({
-        serverBaseUrl: 'https://app.affine.pro',
+        serverBaseUrl: 'https://app.technexio.me',
         workspaceId: 'workspace-id',
         docId: 'doc-id',
       })
@@ -102,7 +102,7 @@ describe('fetchSharedPublishMode', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       new URL(
         '/api/workspaces/workspace-id/public-docs/doc-id',
-        'https://app.affine.pro'
+        'https://app.technexio.me'
       ),
       expect.objectContaining({ method: 'HEAD' })
     );
@@ -120,7 +120,7 @@ describe('fetchSharedPublishMode', () => {
 
     await expect(
       fetchSharedPublishMode({
-        serverBaseUrl: 'https://app.affine.pro',
+        serverBaseUrl: 'https://app.technexio.me',
         workspaceId: 'workspace-id',
         docId: 'doc-id',
       })
@@ -214,7 +214,7 @@ describe('share workspace lifecycle', () => {
         })
       );
       sharePageMocks.services.set('ServerService', {
-        server: { baseUrl: 'https://app.affine.pro' },
+        server: { baseUrl: 'https://app.technexio.me' },
       });
       sharePageMocks.services.set('WorkspacesService', { open });
 
@@ -276,7 +276,7 @@ describe('share workspace lifecycle', () => {
             "name": "CloudBlobStorage",
             "opts": {
               "id": "workspace-id",
-              "serverBaseUrl": "https://app.affine.pro",
+              "serverBaseUrl": "https://app.technexio.me",
             },
           },
         },

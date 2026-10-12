@@ -56,16 +56,16 @@ describe('oauth flow mode', () => {
   });
 
   test('keeps same-origin redirects direct', () => {
-    expect(resolveOAuthRedirect('/workspace', 'https://app.affine.pro')).toBe(
+    expect(resolveOAuthRedirect('/workspace', 'https://app.technexio.me')).toBe(
       '/workspace'
     );
 
     expect(
       resolveOAuthRedirect(
-        'https://app.affine.pro/workspace?from=oauth',
-        'https://app.affine.pro'
+        'https://app.technexio.me/workspace?from=oauth',
+        'https://app.technexio.me'
       )
-    ).toBe('https://app.affine.pro/workspace?from=oauth');
+    ).toBe('https://app.technexio.me/workspace?from=oauth');
   });
 
   test('keeps loopback redirects direct on current origin', () => {
@@ -81,10 +81,10 @@ describe('oauth flow mode', () => {
     expect(
       resolveOAuthRedirect(
         'https://github.com/ezeslucky/nexio',
-        'https://app.affine.pro'
+        'https://app.technexio.me'
       )
     ).toBe(
-      'https://app.affine.pro/redirect-proxy?redirect_uri=https%3A%2F%2Fgithub.com%2Fezeslucky%2Fnexio'
+      'https://app.technexio.me/redirect-proxy?redirect_uri=https%3A%2F%2Fgithub.com%2Fezeslucky%2Fnexio'
     );
   });
 });

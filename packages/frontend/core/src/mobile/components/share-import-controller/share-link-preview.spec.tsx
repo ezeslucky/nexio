@@ -159,7 +159,7 @@ describe('link preview transport and route ownership', () => {
       'official' as const,
       workspace('local'),
       [] as Server[],
-      'https://app.affine.pro/api/worker/link-preview',
+      'https://app.technexio.me/api/worker/link-preview',
     ],
     [
       'self-hosted route',
@@ -179,7 +179,7 @@ describe('link preview transport and route ownership', () => {
       'deferred' as const,
       workspace('cloud'),
       [server('cloud', 'https://cloud.example/', ServerDeploymentType.Affine)],
-      'https://app.affine.pro/api/worker/link-preview',
+      'https://app.technexio.me/api/worker/link-preview',
     ],
     [
       'local deferred route',
@@ -279,7 +279,7 @@ describe('link preview transport and route ownership', () => {
     expect(second).not.toBe(first);
     expect(fetch.mock.calls.map(([url]) => url)).toEqual([
       'https://self.example/api/worker/link-preview',
-      'https://app.affine.pro/api/worker/link-preview',
+      'https://app.technexio.me/api/worker/link-preview',
     ]);
   });
 
@@ -332,7 +332,7 @@ describe('link preview transport and route ownership', () => {
       server('cloud', 'https://cloud.example/', ServerDeploymentType.Affine),
     ]);
     expect(owner.routeEndpoint).toBe(
-      'https://app.affine.pro/api/worker/link-preview'
+      'https://app.technexio.me/api/worker/link-preview'
     );
     await owner.load();
     expect(fetch).toHaveBeenCalledTimes(1);
@@ -549,7 +549,7 @@ describe('share preview presentation', () => {
     ],
   ])('renders the %s state', async (_name, load, expected, url) => {
     const owner = {
-      routeEndpoint: 'https://app.affine.pro/api/worker/link-preview',
+      routeEndpoint: 'https://app.technexio.me/api/worker/link-preview',
       selectWorkspace: vi.fn(),
       load,
     } as unknown as SharePreviewRouteOwner;
@@ -638,7 +638,7 @@ describe('share preview presentation', () => {
       },
     } satisfies PendingShareItem;
     const owner = {
-      routeEndpoint: 'https://app.affine.pro/api/worker/link-preview',
+      routeEndpoint: 'https://app.technexio.me/api/worker/link-preview',
       selectWorkspace: vi.fn(),
       load: () =>
         Promise.resolve({
@@ -690,7 +690,7 @@ describe('share preview presentation', () => {
 
   test('keeps failure compact without an empty media region', async () => {
     const owner = {
-      routeEndpoint: 'https://app.affine.pro/api/worker/link-preview',
+      routeEndpoint: 'https://app.technexio.me/api/worker/link-preview',
       selectWorkspace: vi.fn(),
       load: () => Promise.reject(new Error('unavailable')),
     } as unknown as SharePreviewRouteOwner;

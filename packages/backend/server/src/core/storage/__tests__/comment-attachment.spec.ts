@@ -39,7 +39,7 @@ function setup() {
     },
   };
   const storage = new CommentAttachmentStorage(
-    { link: (path: string) => `https://app.affine.pro${path}` } as never,
+    { link: (path: string) => `https://app.technexio.me${path}` } as never,
     rt as never,
     runtime as never,
     models as never
@@ -161,6 +161,6 @@ test('comment attachment reads require a live ledger projection', async t => {
   t.is(rt.getObject.callCount, 1);
   t.is(
     storage.getUrl(workspaceId, docId, key),
-    `https://app.affine.pro/api/workspaces/${workspaceId}/docs/${docId}/comment-attachments/${key}`
+    `https://app.technexio.me/api/workspaces/${workspaceId}/docs/${docId}/comment-attachments/${key}`
   );
 });

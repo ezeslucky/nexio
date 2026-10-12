@@ -7,6 +7,8 @@ export const TRUSTED_REDIRECT_DOMAINS = [
   'youtube.com',
   't.me',
   'reddit.com',
+  'technexio.me',
+  'app.technexio.me',
   'affine.pro',
 ].map(d => d.toLowerCase());
 

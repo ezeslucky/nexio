@@ -174,7 +174,7 @@ const topSharedLinksData = {
         workspaceId: 'workspace-1',
         docId: 'doc-1',
         title: 'Public doc',
-        shareUrl: 'https://app.affine.pro/workspace/workspace-1/doc-1',
+        shareUrl: 'https://app.technexio.me/workspace/workspace-1/doc-1',
         publishedAt: '2026-02-16T10:00:00.000Z',
         views: 12,
         uniqueViews: 8,

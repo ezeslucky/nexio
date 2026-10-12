@@ -12,7 +12,7 @@ enum ShareInboxConstants {
   static let invalidDirectoryName = "Invalid"
   static let workspaceModeFileName = "ShareWorkspaceMode.json"
   static let officialLinkPreviewURL = URL(
-    string: "https://app.affine.pro/api/worker/link-preview"
+    string: "https://app.technexio.me/api/worker/link-preview"
   )!
   static let openInboxURL = URL(string: "affine://share-inbox")!
 }

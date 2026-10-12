@@ -15,7 +15,8 @@ const GENERIC_DEFAULT_HEIGHT_IN_NOTE = 400;
  * These are based on the centralized cloud constants and known AFFiNE domains
  */
 const AFFINE_DOMAINS = [
-  'app.affine.pro', // Stable cloud domain
+  'app.technexio.me', // Stable cloud domain
+  'app.affine.pro', // Legacy cloud domain
   'insider.affine.pro', // Beta/internal cloud domain
   'affine.fail', // Canary cloud domain
   'toeverything.app', // Safety measure for potential future use

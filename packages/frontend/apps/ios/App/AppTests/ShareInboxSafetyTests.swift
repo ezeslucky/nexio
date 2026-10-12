@@ -253,7 +253,7 @@ final class ShareInboxSafetyTests: XCTestCase {
     let imageLoaded = expectation(description: "image loaded")
     SharePreviewURLProtocol.onStart = { protocolInstance, request in
       XCTAssertEqual(request.httpMethod, "GET")
-      XCTAssertEqual(request.url?.absoluteString, "https://app.affine.pro/api/worker/image-proxy")
+      XCTAssertEqual(request.url?.absoluteString, "https://app.technexio.me/api/worker/image-proxy")
       XCTAssertEqual(request.value(forHTTPHeaderField: "User-Agent"), "AFFiNE/0.27.0")
       XCTAssertEqual(request.value(forHTTPHeaderField: "x-affine-version"), "0.27.0")
       let response = HTTPURLResponse(

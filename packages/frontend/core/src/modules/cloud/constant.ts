@@ -68,7 +68,7 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
               baseUrl: BUILD_CONFIG.isNative
                 ? BUILD_CONFIG.isIOS
                   ? 'https://apple.getaffineapp.com'
-                  : 'https://app.affine.pro'
+                  : 'https://app.technexio.me'
                 : location.origin,
               config: {
                 serverName: 'Nexio Cloud',
@@ -197,7 +197,7 @@ export type TelemetryChannel =
   | 'local';
 
 const OFFICIAL_TELEMETRY_ENDPOINTS: Record<TelemetryChannel, string> = {
-  stable: 'https://app.affine.pro',
+  stable: 'https://app.technexio.me',
   beta: 'https://insider.affine.pro',
   internal: 'https://insider.affine.pro',
   canary: 'https://affine.fail',

@@ -525,7 +525,7 @@ test('workspace realtime providers register access, config, members and invite l
     ttl: async () => 10,
   };
   const url = {
-    link: (path: string) => `https://app.affine.pro${path}`,
+    link: (path: string) => `https://app.technexio.me${path}`,
   };
 
   new WorkspaceAccessRealtimeProvider(
@@ -584,7 +584,7 @@ test('workspace realtime providers register access, config, members and invite l
     }),
     {
       inviteLink: {
-        link: 'https://app.affine.pro/invite/invite-link',
+        link: 'https://app.technexio.me/invite/invite-link',
       },
     }
   );

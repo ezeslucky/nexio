@@ -7,7 +7,8 @@ import queryString from 'query-string';
 function maybeNexioOrigin(origin: string, baseUrl: string) {
   return (
     origin.startsWith('assets://') ||
-    origin.endsWith('affine.pro') || // stable/beta
+    origin.endsWith('technexio.me') || // stable/beta
+    origin.endsWith('affine.pro') || // fallback
     origin.endsWith('apple.getaffineapp.com') || // stable/beta
     origin.endsWith('affine.fail') || // canary
     origin === baseUrl // localhost or self-hosted

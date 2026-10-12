@@ -24,36 +24,36 @@ describe('use-navigate-helper utilities', () => {
   test('buildWorkspaceSettingsRedirectUri builds a settings redirect from a workspace page', () => {
     expect(
       buildWorkspaceSettingsRedirectUri(
-        'https://app.affine.pro/workspace/workspace-1/all',
+        'https://app.technexio.me/workspace/workspace-1/all',
         {
           tab: 'workspace:integrations',
           scrollAnchor: 'integration-calendar',
         }
       )
     ).toBe(
-      'https://app.affine.pro/workspace/workspace-1/settings?tab=workspace%3Aintegrations&scrollAnchor=integration-calendar'
+      'https://app.technexio.me/workspace/workspace-1/settings?tab=workspace%3Aintegrations&scrollAnchor=integration-calendar'
     );
   });
 
   test('buildWorkspaceSettingsRedirectUri preserves app subpaths before the workspace route', () => {
     expect(
       buildWorkspaceSettingsRedirectUri(
-        'https://app.affine.pro/app/workspace/workspace-1/collection',
+        'https://app.technexio.me/app/workspace/workspace-1/collection',
         {
           tab: 'workspace:integrations',
           scrollAnchor: 'integration-calendar',
         }
       )
     ).toBe(
-      'https://app.affine.pro/app/workspace/workspace-1/settings?tab=workspace%3Aintegrations&scrollAnchor=integration-calendar'
+      'https://app.technexio.me/app/workspace/workspace-1/settings?tab=workspace%3Aintegrations&scrollAnchor=integration-calendar'
     );
   });
 
   test('buildWorkspaceSettingsRedirectUri falls back to the current url when no workspace route is present', () => {
     expect(
-      buildWorkspaceSettingsRedirectUri('https://app.affine.pro/sign-in', {
+      buildWorkspaceSettingsRedirectUri('https://app.technexio.me/sign-in', {
         tab: 'workspace:integrations',
       })
-    ).toBe('https://app.affine.pro/sign-in');
+    ).toBe('https://app.technexio.me/sign-in');
   });
 });

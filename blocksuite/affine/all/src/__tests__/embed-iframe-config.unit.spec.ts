@@ -80,6 +80,9 @@ describe('embed iframe provider config', () => {
       false
     );
     expect(
+      genericConfig.validateIframeUrl?.('https://app.technexio.me/embed')
+    ).toBe(false);
+    expect(
       genericConfig.validateIframeUrl?.('https://app.affine.pro/embed')
     ).toBe(false);
     expect(genericConfig.validateIframeUrl?.('https://127.0.0.1/embed')).toBe(

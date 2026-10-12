@@ -283,7 +283,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &pool,
     &config,
     &magic_email,
-    "https://app.affine.pro/magic-link?redirect_uri=https%3A%2F%2Fapp.affine.pro%2Fworkspace",
+    "https://app.technexio.me/magic-link?redirect_uri=https%3A%2F%2Fapp.affine.pro%2Fworkspace",
     Some("magic-nonce"),
     "AFFiNE Cloud",
     Some(&auth_source),
@@ -311,7 +311,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
       &pool,
       &config,
       &blocked_email,
-      "https://app.affine.pro/magic-link",
+      "https://app.technexio.me/magic-link",
       None,
       "AFFiNE Cloud",
       Some(&auth_source),
@@ -398,7 +398,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &pool,
     &config,
     &magic_email,
-    "https://app.affine.pro/magic-link",
+    "https://app.technexio.me/magic-link",
     Some("existing-magic-nonce"),
     "AFFiNE Cloud",
     None,
@@ -936,9 +936,9 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
       "web",
       "rejected-oauth-nonce",
       Some("0.27.5"),
-      "https://app.affine.pro/oauth/callback",
-      "https://app.affine.pro",
-      &["https://app.affine.pro".to_string()],
+      "https://app.technexio.me/oauth/callback",
+      "https://app.technexio.me",
+      &["https://app.technexio.me".to_string()],
       &[],
     )
     .await
@@ -948,13 +948,13 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &pool,
     &config,
     "Google",
-    Some("https://app.affine.pro/redirect"),
+    Some("https://app.technexio.me/redirect"),
     "web",
     "oauth-nonce",
     Some("0.27.5"),
-    "https://app.affine.pro/oauth/callback",
-    "https://app.affine.pro",
-    &["https://app.affine.pro".to_string()],
+    "https://app.technexio.me/oauth/callback",
+    "https://app.technexio.me",
+    &["https://app.technexio.me".to_string()],
     &[],
   )
   .await
@@ -991,9 +991,9 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     "affine",
     "apple-nonce",
     None,
-    "https://app.affine.pro/api/oauth/callback",
-    "https://app.affine.pro",
-    &["https://app.affine.pro".to_string()],
+    "https://app.technexio.me/api/oauth/callback",
+    "https://app.technexio.me",
+    &["https://app.technexio.me".to_string()],
     &[],
   )
   .await
@@ -1037,9 +1037,9 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     "web",
     "oidc-client-nonce",
     Some("0.27.5"),
-    "https://app.affine.pro/oauth/callback",
-    "https://app.affine.pro",
-    &["https://app.affine.pro".to_string()],
+    "https://app.technexio.me/oauth/callback",
+    "https://app.technexio.me",
+    &["https://app.technexio.me".to_string()],
     &[],
   )
   .await
@@ -1118,7 +1118,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     client: "web".to_string(),
     client_nonce: "nonce".to_string(),
     client_version: Some("0.27.5".to_string()),
-    callback_url: "https://app.affine.pro/oauth/callback".to_string(),
+    callback_url: "https://app.technexio.me/oauth/callback".to_string(),
     pkce_verifier: None,
   };
   let oauth_namespace =
@@ -1201,7 +1201,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &config,
     security_challenge::SecurityChallengeKind::ChangePassword,
     &user_id,
-    "https://app.affine.pro/change-password",
+    "https://app.technexio.me/change-password",
     None,
   )
   .await
@@ -1249,7 +1249,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &config,
     security_challenge::SecurityChallengeKind::ChangePassword,
     &user_id,
-    "https://app.affine.pro/change-password",
+    "https://app.technexio.me/change-password",
     None,
   )
   .await
@@ -1324,7 +1324,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &config,
     security_challenge::SecurityChallengeKind::ChangeEmail,
     &user_id,
-    "https://app.affine.pro/change-email",
+    "https://app.technexio.me/change-email",
     None,
   )
   .await
@@ -1351,7 +1351,7 @@ async fn session_kernel_serializes_refresh_replay_revocation_and_key_rotation() 
     &user_id,
     &change_token,
     &changed_email,
-    "https://app.affine.pro/verify-email",
+    "https://app.technexio.me/verify-email",
     None,
   )
   .await
