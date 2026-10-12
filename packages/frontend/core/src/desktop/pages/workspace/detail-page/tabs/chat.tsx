@@ -46,7 +46,8 @@ import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
 import { DocModeProvider } from '@blocksuite/affine/shared/services';
 import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
 import type { Store } from '@blocksuite/affine/store';
-import { CenterPeekIcon, Logo1Icon } from '@blocksuite/icons/rc';
+import { NexioIcon } from '@nexio/component/auth-components';
+import { CenterPeekIcon } from '@blocksuite/icons/rc';
 import type { Signal } from '@preact/signals-core';
 import { useFramework, useService } from '@toeverything/infra';
 import { html } from 'lit';
@@ -487,7 +488,7 @@ export const EditorChatPanel = ({
       {!hasRuntimeSnapshot ? (
         <div className={styles.loadingContainer}>
           <div className={styles.loading}>
-            <Logo1Icon className={styles.loadingIcon} />
+            <NexioIcon size={24} className={styles.loadingIcon} />
             <div className={styles.loadingTitle}>
               {t['com.affine.ai.chat-panel.loading-history']()}
             </div>

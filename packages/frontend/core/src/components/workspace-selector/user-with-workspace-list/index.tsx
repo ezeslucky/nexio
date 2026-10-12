@@ -6,7 +6,7 @@ import { type WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { ServerFeature } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
+import { NexioIcon } from '@nexio/component/auth-components';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 
@@ -32,7 +32,7 @@ export const SignInItem = () => {
     >
       <div className={styles.signInWrapper}>
         <div className={styles.iconContainer}>
-          <Logo1Icon />
+          <NexioIcon size={20} />
         </div>
 
         <div className={styles.signInTextContainer}>

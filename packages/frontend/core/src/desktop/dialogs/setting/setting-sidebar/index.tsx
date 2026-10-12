@@ -8,7 +8,7 @@ import type { SettingTab } from '@nexio/core/modules/dialogs/constant';
 import { type WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { Logo1Icon } from '@blocksuite/icons/rc';
+import { NexioIcon } from '@nexio/component/auth-components';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {
@@ -91,7 +91,7 @@ export const SignInButton = () => {
       }, [globalDialogService])}
     >
       <div className="avatar not-sign">
-        <Logo1Icon />
+        <NexioIcon size={24} />
       </div>
 
       <div className="content">

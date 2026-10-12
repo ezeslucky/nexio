@@ -1,22 +1,10 @@
 // The icons here have been specially adjusted, they’re different from the ones in the @blocksuite/icons/rc.
 
+import { NexioIcon } from '@nexio/component/auth-components';
+
 export { TwitterIcon } from '@blocksuite/icons/rc';
 export const LogoIcon = () => {
-  return (
-    <svg
-      width="50"
-      height="50"
-      viewBox="0 0 50 50"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M21.1996 0L4 50H14.0741L25.0146 15.4186L35.96 50H46L28.7978 0H21.1996Z"
-      />
-    </svg>
-  );
+  return <NexioIcon size={50} />;
 };
 export const DocIcon = () => {
   return (

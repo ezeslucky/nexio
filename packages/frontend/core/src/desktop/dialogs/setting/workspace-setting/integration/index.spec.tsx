@@ -65,8 +65,11 @@ vi.mock('@nexio/i18n', () => {
 
 vi.mock('@blocksuite/icons/rc', () => ({
   AiIcon: () => null,
-  Logo1Icon: () => null,
   TodayIcon: () => null,
+}));
+
+vi.mock('@nexio/component/auth-components', () => ({
+  NexioIcon: () => null,
 }));
 
 vi.mock('@toeverything/infra', () => ({
