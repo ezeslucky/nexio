@@ -99,7 +99,7 @@ export const Component = ({
       return;
     }
 
-    if (!enableLocalWorkspace && !loggedIn) {
+    if (!loggedIn) {
       localStorage.removeItem('last_workspace_id');
       jumpToSignIn();
       return;
@@ -122,10 +122,7 @@ export const Component = ({
       }
     } else {
       if (list.length === 0) {
-        if (BUILD_CONFIG.isMobileEdition && enableLocalWorkspace) {
-          return;
-        }
-        setNavigating(false);
+        createCloudWorkspace();
         return;
       }
       // open last workspace

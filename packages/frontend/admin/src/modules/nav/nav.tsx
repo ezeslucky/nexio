@@ -27,7 +27,7 @@ export function Nav({ isCollapsed = false }: NavProps) {
         )}
       >
         <ExternalNavItem
-          href="/all"
+          href="/"
           icon={<LayoutDashboardIcon size={18} />}
           label="Open Workspace"
           isCollapsed={isCollapsed}

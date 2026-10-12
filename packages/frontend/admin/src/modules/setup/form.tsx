@@ -150,7 +150,7 @@ export const Form = () => {
     }
 
     if (current === count) {
-      window.location.href = '/all';
+      window.location.href = '/';
       return;
     }
 

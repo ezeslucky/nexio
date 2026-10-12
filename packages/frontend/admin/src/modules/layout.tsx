@@ -252,7 +252,7 @@ export const LeftPanel = ({
     >
       <div className="flex h-full max-w-56 flex-col">
         <a
-          href="/all"
+          href="/"
           className={cn(
             'flex h-14 items-center px-4 text-base font-semibold text-sidebar-foreground hover:opacity-85 transition-opacity',
             isCollapsed && 'justify-center px-2'

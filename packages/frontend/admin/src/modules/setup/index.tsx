@@ -8,7 +8,7 @@ export function Setup() {
   const config = useServerConfig();
 
   if (config.initialized) {
-    window.location.href = '/all';
+    window.location.href = '/';
     return null;
   }
 

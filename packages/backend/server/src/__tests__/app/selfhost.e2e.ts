@@ -145,8 +145,6 @@ test('should be able to call apis', async t => {
 });
 
 const blockedPages = [
-  '/',
-  '/workspace',
   '/admin',
   '/admin/',
   '/admin/accounts',
@@ -200,7 +198,7 @@ test('should redirect to admin if initialized', async t => {
     .get('/admin/setup')
     .expect(302);
 
-  t.is(res.header.location, '/admin');
+  t.is(res.header.location, '/');
 });
 
 // TODO(@forehalo): return mobile when it's ready

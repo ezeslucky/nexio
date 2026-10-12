@@ -17,16 +17,16 @@ export class SetupMiddleware implements NestMiddleware {
     this.server
       .initialized()
       .then(initialized => {
-        // Redirect to setup page if not initialized
-        if (!initialized && req.path !== '/admin/setup') {
-          res.redirect('/admin/setup');
-          return;
-        }
-
-        // redirect to workspace page if initialized
-        if (initialized && req.path === '/admin/setup') {
-          res.redirect('/all');
-          return;
+        // Only guard /admin paths for setup wizard
+        if (req.path.startsWith('/admin')) {
+          if (!initialized && req.path !== '/admin/setup') {
+            res.redirect('/admin/setup');
+            return;
+          }
+          if (initialized && req.path === '/admin/setup') {
+            res.redirect('/');
+            return;
+          }
         }
 
         next();
