@@ -37,7 +37,12 @@ jobs:
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: aarch64-linux-android, x86_64-linux-android
+          targets: aarch64-linux-android,x86_64-linux-android
+
+      - name: Install Rust Android Targets
+        run: |
+          rustup target add aarch64-linux-android x86_64-linux-android
+          rustup show
 
       - name: Set up Android SDK & NDK
         uses: android-actions/setup-android@v4
@@ -104,6 +109,8 @@ jobs:
           AFFINE_ANDROID_NATIVE_TARGET: arm64
           NEXIO_ANDROID_NATIVE_TARGET: arm64
         run: |
+          rustup target add aarch64-linux-android x86_64-linux-android || true
+          rustup show || true
           chmod +x ./gradlew
           find . -type f \( -name "*.xml" -o -name "*.kt" -o -name "*.java" \) -exec sed -i '1s/^\xEF\xBB\xBF//' {} + 2>/dev/null || true
           FLAVOR="${{ github.event.inputs.flavor || 'canary' }}"
