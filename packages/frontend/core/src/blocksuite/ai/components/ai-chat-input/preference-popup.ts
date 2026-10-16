@@ -1,13 +1,13 @@
-import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+﻿import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
 import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
 import {
   menu,
   popMenu,
   popupTargetFromElement,
-} from '@blocksuite/affine/components/context-menu';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/components/context-menu';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   AiOutlineIcon,
   ArrowDownSmallIcon,

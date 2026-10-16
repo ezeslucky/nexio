@@ -1,15 +1,15 @@
-import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+﻿import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
 import { I18n } from '@nexio/i18n';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import type { ColorScheme } from '@blocksuite/affine/model';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { ColorScheme } from '@blocksuite/nexio/model';
 import {
   type BlockStdScope,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/affine/std';
-import type { ExtensionType } from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/std';
+import type { ExtensionType } from '@blocksuite/nexio/store';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   EdgelessIcon,
   PageIcon,

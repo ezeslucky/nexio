@@ -1,5 +1,5 @@
-import { Button, type ButtonProps, Skeleton } from '@nexio/component';
-import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
+﻿import { Button, type ButtonProps, Skeleton } from '@nexio/component';
+import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';

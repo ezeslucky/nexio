@@ -1,10 +1,10 @@
-import {
+﻿import {
   Button,
   type ButtonProps,
   notify,
   useConfirmModal,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';

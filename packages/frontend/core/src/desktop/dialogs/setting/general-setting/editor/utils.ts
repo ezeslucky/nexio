@@ -1,10 +1,10 @@
-import {
+﻿import {
   type Color,
   ColorScheme,
   FontWeight,
   type Palette,
   resolveColor,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import { isEqual } from 'lodash-es';
 import { useTheme } from 'next-themes';
 

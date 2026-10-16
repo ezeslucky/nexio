@@ -1,4 +1,4 @@
-import type { Page } from '@playwright/test';
+﻿import type { Page } from '@playwright/test';
 
 export async function getStringFromRichText(
   page: Page,
@@ -21,6 +21,6 @@ export async function getStringFromRichText(
   );
 }
 
-// Why? we can't import from `@blocksuite/affine/std/inline` because playwright will throw an error
+// Why? we can't import from `@blocksuite/nexio/std/inline` because playwright will throw an error
 export const ZERO_WIDTH_FOR_EMPTY_LINE =
   process.env.BROWSER === 'webkit' ? '\u200C' : '\u200B';

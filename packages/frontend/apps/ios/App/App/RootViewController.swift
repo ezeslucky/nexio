@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class RootViewController: UINavigationController {
-  private var affineViewController: AFFiNEViewController?
+  private var nexioViewController: NexioViewController?
   private var didScheduleOnboardingPresentation = false
 
   override init(rootViewController _: UIViewController) {
@@ -32,9 +32,9 @@ class RootViewController: UINavigationController {
 
   func commitInit() {
     assert(viewControllers.isEmpty)
-    let affineViewController = AFFiNEViewController()
-    self.affineViewController = affineViewController
-    viewControllers = [affineViewController]
+    let nexioViewController = NexioViewController()
+    self.nexioViewController = nexioViewController
+    viewControllers = [nexioViewController]
   }
 
   override func viewDidLoad() {

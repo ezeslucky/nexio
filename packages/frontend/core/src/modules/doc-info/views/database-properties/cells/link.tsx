@@ -1,5 +1,5 @@
-import { PropertyValue } from '@nexio/component';
-import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
+﻿import { PropertyValue } from '@nexio/component';
+import { NexioPageReference } from '@nexio/core/components/nexio/reference-link';
 import { ConfigModal } from '@nexio/core/components/mobile';
 import { resolveLinkToDoc } from '@nexio/core/modules/navigation';
 import { useI18n } from '@nexio/i18n';

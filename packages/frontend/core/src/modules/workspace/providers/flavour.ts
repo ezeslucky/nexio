@@ -1,11 +1,11 @@
-import type {
+﻿import type {
   BlobSource,
   BlobStorage,
   DocStorage,
   ListedBlobRecord,
 } from '@nexio/nbstore';
 import type { WorkerInitOptions } from '@nexio/nbstore/worker/client';
-import type { Workspace as BSWorkspace } from '@blocksuite/affine/store';
+import type { Workspace as BSWorkspace } from '@blocksuite/nexio/store';
 import { createIdentifier, type LiveData } from '@toeverything/infra';
 
 import type { WorkspaceProfileInfo } from '../entities/profile';

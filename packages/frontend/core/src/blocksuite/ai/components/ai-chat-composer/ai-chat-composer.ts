@@ -1,4 +1,4 @@
-import './ai-chat-composer-tip';
+﻿import './ai-chat-composer-tip';
 
 import type {
   AIDraftService,
@@ -11,14 +11,14 @@ import type {
 } from '@nexio/core/modules/cloud';
 import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { uuidv4 } from '@blocksuite/affine/store';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { uuidv4 } from '@blocksuite/nexio/store';
 import type {
   FeatureFlagService,
   NotificationService,
-} from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio-shared/services';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';
 

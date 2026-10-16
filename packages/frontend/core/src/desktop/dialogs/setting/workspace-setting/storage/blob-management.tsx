@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   Checkbox,
   Loading,
@@ -10,7 +10,7 @@ import { BlobManagementService } from '@nexio/core/modules/blob-management/servi
 import { useI18n } from '@nexio/i18n';
 import type { ListedBlobRecord } from '@nexio/nbstore';
 import track from '@nexio/track';
-import { getAttachmentFileIcon } from '@blocksuite/affine/components/icons';
+import { getAttachmentFileIcon } from '@blocksuite/nexio/components/icons';
 import { DeleteIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';

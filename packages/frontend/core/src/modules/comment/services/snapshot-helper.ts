@@ -1,10 +1,10 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+﻿import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
-import { Container } from '@blocksuite/affine/global/di';
+import { Container } from '@blocksuite/nexio/global/di';
 import {
   customImageProxyMiddleware,
   MarkdownAdapter,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import {
   type BlockModel,
   type DocSnapshot,
@@ -12,7 +12,7 @@ import {
   type Store,
   Text,
   Transformer,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { Service } from '@toeverything/infra';
 import { Doc as YDoc } from 'yjs';
 

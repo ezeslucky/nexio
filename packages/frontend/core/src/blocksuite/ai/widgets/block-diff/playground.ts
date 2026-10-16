@@ -1,7 +1,7 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
-import { createLitPortal } from '@blocksuite/affine-components/portal';
+﻿import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
+import type { Store } from '@blocksuite/nexio/store';
+import { createLitPortal } from '@blocksuite/nexio-components/portal';
 import { css, html, LitElement } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';

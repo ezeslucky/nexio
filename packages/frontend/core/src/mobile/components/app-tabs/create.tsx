@@ -1,5 +1,5 @@
-import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocsService } from '@nexio/core/modules/doc';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { WorkbenchService } from '@nexio/core/modules/workbench';

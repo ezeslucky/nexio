@@ -1,4 +1,4 @@
-import '../../components/ask-ai-button';
+﻿import '../../components/ask-ai-button';
 
 import { html } from 'lit';
 
@@ -8,8 +8,8 @@ const buttonOptions: AskAIButtonOptions = {
   panelWidth: 240,
 };
 
-import type { AffineCodeToolbarWidget } from '@blocksuite/affine/blocks/code';
-import { BlockSelection } from '@blocksuite/affine/std';
+import type { AffineCodeToolbarWidget } from '@blocksuite/nexio/blocks/code';
+import { BlockSelection } from '@blocksuite/nexio/std';
 
 import { buildAICodeItemGroups } from '../../_common/config';
 import type { AskAIButtonOptions } from '../../components/ask-ai-button';

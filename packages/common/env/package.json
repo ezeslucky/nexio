@@ -15,7 +15,7 @@
     "./worker": "./src/worker.ts"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@nexio/templates": "workspace:*"
   },
   "dependencies": {

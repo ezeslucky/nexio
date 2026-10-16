@@ -137,9 +137,9 @@ The E2E suites live in [`tests`](../tests):
 
 | Suite                  | Run with                                               | Notes                                               |
 | ---------------------- | ------------------------------------------------------ | --------------------------------------------------- |
-| `affine-local`         | `yarn workspace @nexio-test/affine-local e2e`         | Web app, no server needed                           |
-| `affine-cloud`         | `yarn workspace @nexio-test/affine-cloud e2e`         | Requires the local server                           |
-| `affine-desktop`       | `yarn workspace @nexio-test/affine-desktop e2e`       | Desktop (Electron) app                              |
+| `nexio-local`          | `yarn workspace @nexio-test/nexio-local e2e`          | Web app, no server needed                           |
+| `nexio-cloud`          | `yarn workspace @nexio-test/nexio-cloud e2e`          | Requires the local server                           |
+| `nexio-desktop`        | `yarn workspace @nexio-test/nexio-desktop e2e`        | Desktop (Electron) app                              |
 
 ## Linting and Type Checking
 

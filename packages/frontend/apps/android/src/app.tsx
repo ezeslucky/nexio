@@ -37,12 +37,12 @@ import { I18n } from '@nexio/i18n';
 import { serveAuthRequests } from '@nexio/mobile-shared/auth/channel';
 import { StoreManagerClient } from '@nexio/nbstore/worker/client';
 import { setTelemetryTransport } from '@nexio/track';
-import { Container } from '@blocksuite/affine/global/di';
+import { Container } from '@blocksuite/nexio/global/di';
 import {
   docLinkBaseURLMiddleware,
   MarkdownAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import { App as CapacitorApp } from '@capacitor/app';
 import { Keyboard } from '@capacitor/keyboard';
 import { StatusBar, Style } from '@capacitor/status-bar';
@@ -60,7 +60,7 @@ import { useTheme } from 'next-themes';
 import { Suspense, useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
 
-import { AffineTheme } from './plugins/affine-theme';
+import { AffineTheme } from './plugins/nexio-theme';
 import { AIButton } from './plugins/ai-button';
 import { Auth } from './plugins/auth';
 import { HashCash } from './plugins/hashcash';

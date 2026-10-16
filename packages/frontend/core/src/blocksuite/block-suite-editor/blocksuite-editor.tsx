@@ -1,4 +1,4 @@
-import { EditorLoading } from '@nexio/component/page-detail-skeleton';
+﻿import { EditorLoading } from '@nexio/component/page-detail-skeleton';
 import type {
   EdgelessEditor,
   PageEditor,
@@ -11,19 +11,19 @@ import {
 import { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import track from '@nexio/track';
-import { appendParagraphCommand } from '@blocksuite/affine/blocks/paragraph';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { IS_LINUX } from '@blocksuite/affine/global/env';
-import type { DocMode, RootBlockModel } from '@blocksuite/affine/model';
+import { appendParagraphCommand } from '@blocksuite/nexio/blocks/paragraph';
+import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { IS_LINUX } from '@blocksuite/nexio/global/env';
+import type { DocMode, RootBlockModel } from '@blocksuite/nexio/model';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
-import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
-import type { BlockStdScope, EditorHost } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/adapters';
+import { focusBlockEnd } from '@blocksuite/nexio/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/nexio/shared/utils';
+import type { BlockStdScope, EditorHost } from '@blocksuite/nexio/std';
+import type { Store } from '@blocksuite/nexio/store';
 import { Slot } from '@radix-ui/react-slot';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';

@@ -1,4 +1,4 @@
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+﻿import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import { WindowsAppControls } from '@nexio/core/components/pure/header/windows-app-controls';
 import { ThemeProvider } from '@nexio/core/components/theme-provider';
 import { configureElectronStateStorageImpls } from '@nexio/core/desktop/storage';

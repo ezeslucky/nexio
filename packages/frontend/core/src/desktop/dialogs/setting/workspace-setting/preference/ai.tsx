@@ -1,9 +1,9 @@
-import { Switch } from '@nexio/component';
+﻿import { Switch } from '@nexio/component';
 import {
   SettingRow,
   SettingWrapper,
 } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { ServerService } from '@nexio/core/modules/cloud';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';

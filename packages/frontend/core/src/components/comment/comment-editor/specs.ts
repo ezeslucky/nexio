@@ -1,30 +1,30 @@
-import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
+﻿import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
 import { NexioEditorViewExtension } from '@nexio/core/blocksuite/view-extensions/editor-view/editor-view';
 import { NexioThemeViewExtension } from '@nexio/core/blocksuite/view-extensions/theme';
 import { I18n } from '@nexio/i18n';
-import { CodeBlockViewExtension } from '@blocksuite/affine/blocks/code/view';
-import { DividerViewExtension } from '@blocksuite/affine/blocks/divider/view';
-import { LatexViewExtension as LatexBlockViewExtension } from '@blocksuite/affine/blocks/latex/view';
-import { ListViewExtension } from '@blocksuite/affine/blocks/list/view';
-import { NoteViewExtension } from '@blocksuite/affine/blocks/note/view';
-import { ParagraphViewExtension } from '@blocksuite/affine/blocks/paragraph/view';
-import { RootViewExtension } from '@blocksuite/affine/blocks/root/view';
+import { CodeBlockViewExtension } from '@blocksuite/nexio/blocks/code/view';
+import { DividerViewExtension } from '@blocksuite/nexio/blocks/divider/view';
+import { LatexViewExtension as LatexBlockViewExtension } from '@blocksuite/nexio/blocks/latex/view';
+import { ListViewExtension } from '@blocksuite/nexio/blocks/list/view';
+import { NoteViewExtension } from '@blocksuite/nexio/blocks/note/view';
+import { ParagraphViewExtension } from '@blocksuite/nexio/blocks/paragraph/view';
+import { RootViewExtension } from '@blocksuite/nexio/blocks/root/view';
 import {
   PeekViewExtension,
   type PeekViewService,
-} from '@blocksuite/affine/components/peek';
+} from '@blocksuite/nexio/components/peek';
 import {
   type ViewExtensionContext,
   ViewExtensionManager,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
-import { PlainTextClipboardConfig } from '@blocksuite/affine/foundation/clipboard';
-import { LatexInlineSpecExtension } from '@blocksuite/affine/inlines/latex';
-import { LatexViewExtension as LatexInlineViewExtension } from '@blocksuite/affine/inlines/latex/view';
-import { LinkInlineSpecExtension } from '@blocksuite/affine/inlines/link';
-import { LinkViewExtension } from '@blocksuite/affine/inlines/link/view';
-import { MentionInlineSpecExtension } from '@blocksuite/affine/inlines/mention';
-import { MentionViewExtension } from '@blocksuite/affine/inlines/mention/view';
+} from '@blocksuite/nexio/ext-loader';
+import { PlainTextClipboardConfig } from '@blocksuite/nexio/foundation/clipboard';
+import { LatexInlineSpecExtension } from '@blocksuite/nexio/inlines/latex';
+import { LatexViewExtension as LatexInlineViewExtension } from '@blocksuite/nexio/inlines/latex/view';
+import { LinkInlineSpecExtension } from '@blocksuite/nexio/inlines/link';
+import { LinkViewExtension } from '@blocksuite/nexio/inlines/link/view';
+import { MentionInlineSpecExtension } from '@blocksuite/nexio/inlines/mention';
+import { MentionViewExtension } from '@blocksuite/nexio/inlines/mention/view';
 import {
   BackgroundInlineSpecExtension,
   BoldInlineSpecExtension,
@@ -34,9 +34,9 @@ import {
   ItalicInlineSpecExtension,
   StrikeInlineSpecExtension,
   UnderlineInlineSpecExtension,
-} from '@blocksuite/affine/inlines/preset';
-import { ReferenceInlineSpecExtension } from '@blocksuite/affine/inlines/reference';
-import { ReferenceViewExtension } from '@blocksuite/affine/inlines/reference/view';
+} from '@blocksuite/nexio/inlines/preset';
+import { ReferenceInlineSpecExtension } from '@blocksuite/nexio/inlines/reference';
+import { ReferenceViewExtension } from '@blocksuite/nexio/inlines/reference/view';
 import {
   DefaultOpenDocExtension,
   DocDisplayMetaService,
@@ -48,12 +48,12 @@ import {
   PageViewportServiceExtension,
   ThemeService,
   ToolbarRegistryExtension,
-} from '@blocksuite/affine/shared/services';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import { InlineManagerExtension } from '@blocksuite/affine/std/inline';
-import { LinkedDocViewExtension } from '@blocksuite/affine/widgets/linked-doc/view';
-import { ToolbarViewExtension } from '@blocksuite/affine/widgets/toolbar/view';
-import { ViewportOverlayViewExtension } from '@blocksuite/affine/widgets/viewport-overlay/view';
+} from '@blocksuite/nexio/shared/services';
+import type { AffineTextAttributes } from '@blocksuite/nexio/shared/types';
+import { InlineManagerExtension } from '@blocksuite/nexio/std/inline';
+import { LinkedDocViewExtension } from '@blocksuite/nexio/widgets/linked-doc/view';
+import { ToolbarViewExtension } from '@blocksuite/nexio/widgets/toolbar/view';
+import { ViewportOverlayViewExtension } from '@blocksuite/nexio/widgets/viewport-overlay/view';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 

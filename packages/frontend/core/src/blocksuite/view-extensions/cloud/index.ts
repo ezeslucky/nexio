@@ -1,9 +1,9 @@
-import { AuthService, PublicUserService } from '@nexio/core/modules/cloud';
+﻿import { AuthService, PublicUserService } from '@nexio/core/modules/cloud';
 import { MemberSearchService } from '@nexio/core/modules/permissions';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 

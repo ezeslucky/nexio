@@ -1,6 +1,6 @@
-import './utils/declare-test-window.js';
+﻿import './utils/declare-test-window.js';
 
-import type { BookmarkBlockComponent } from '@blocksuite/affine/blocks/bookmark';
+import type { BookmarkBlockComponent } from '@blocksuite/nexio/blocks/bookmark';
 import type { BlockSnapshot } from '@blocksuite/store';
 import type { Page } from '@playwright/test';
 import { expect } from '@playwright/test';

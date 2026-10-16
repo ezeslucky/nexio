@@ -1,5 +1,5 @@
-import { createBlockStdScope } from '@nexio/core/blocksuite/manager/view';
-import type { Store } from '@blocksuite/affine/store';
+﻿import { createBlockStdScope } from '@nexio/core/blocksuite/manager/view';
+import type { Store } from '@blocksuite/nexio/store';
 import { useMemo } from 'react';
 
 export function useBlockStdScope(doc: Store) {

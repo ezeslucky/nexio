@@ -1,4 +1,4 @@
-// todo(@pengx17): remove jotai
+﻿// todo(@pengx17): remove jotai
 import { UrlService } from '@nexio/core/modules/url';
 import type { UpdateMeta } from '@nexio/electron-api';
 import { apis, events } from '@nexio/electron-api';
@@ -9,7 +9,7 @@ import { atomWithObservable, atomWithStorage } from 'jotai/utils';
 import { useCallback, useState } from 'react';
 import { Observable } from 'rxjs';
 
-import { useAsyncCallback } from './affine-async-hooks';
+import { useAsyncCallback } from './nexio-async-hooks';
 
 function rpcToObservable<
   T,

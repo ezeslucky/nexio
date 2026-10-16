@@ -1,12 +1,12 @@
-import {
+﻿import {
   AnimatedTranscribeIcon,
   Button,
   Tooltip,
   useConfirmModal,
 } from '@nexio/component';
 import { AudioPlayer } from '@nexio/component/ui/audio-player';
-import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useSeekTime } from '@nexio/core/components/hooks/use-seek-time';
 import { CurrentServerScopeProvider } from '@nexio/core/components/providers/current-server-scope';
 import { PublicUserLabel } from '@nexio/core/modules/cloud/views/public-user';
@@ -15,7 +15,7 @@ import type { AudioAttachmentBlock } from '@nexio/core/modules/media/entities/au
 import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
 import { Trans, useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import { ResetIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import bytes from 'bytes';

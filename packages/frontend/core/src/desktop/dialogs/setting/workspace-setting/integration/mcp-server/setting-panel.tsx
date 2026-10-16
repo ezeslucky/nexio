@@ -1,11 +1,11 @@
-import {
+﻿import {
   Button,
   ErrorMessage,
   notify,
   Skeleton,
   useConfirmModal,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   McpCredentialService,
   ServerService,

@@ -27,17 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidBecomeActive(_: UIApplication) {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     if let root = window?.rootViewController {
-      findAffineViewController(from: root)?.processShareInboxIfNeeded()
+      findNexioViewController(from: root)?.processShareInboxIfNeeded()
     }
   }
 
-  private func findAffineViewController(from root: UIViewController) -> AFFiNEViewController? {
-    if let affine = root as? AFFiNEViewController {
-      return affine
+  private func findNexioViewController(from root: UIViewController) -> NexioViewController? {
+    if let nexio = root as? NexioViewController {
+      return nexio
     }
     if let navigation = root as? UINavigationController {
       for controller in navigation.viewControllers {
-        if let found = findAffineViewController(from: controller) {
+        if let found = findNexioViewController(from: controller) {
           return found
         }
       }

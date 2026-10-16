@@ -1,8 +1,8 @@
-import track from '@nexio/track';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+﻿import track from '@nexio/track';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   CloseIcon,
   CopyIcon,

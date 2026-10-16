@@ -1,10 +1,10 @@
-import { Button, notify } from '@nexio/component';
+﻿import { Button, notify } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
 } from '@nexio/component/setting-components';
-import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useMutation } from '@nexio/core/components/hooks/use-mutation';
 import {
   AuthService,

@@ -1,4 +1,4 @@
-import {
+﻿import {
   Avatar,
   IconButton,
   Loading,
@@ -23,7 +23,7 @@ import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { i18nTime, useI18n } from '@nexio/i18n';
-import type { DocSnapshot, Store } from '@blocksuite/affine/store';
+import type { DocSnapshot, Store } from '@blocksuite/nexio/store';
 import { DoneIcon, FilterIcon, MoreHorizontalIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,
@@ -33,7 +33,7 @@ import {
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
-import { useAsyncCallback } from '../../hooks/affine-async-hooks';
+import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
 import { CommentEditor, type CommentEditorRef } from '../comment-editor';
 import * as styles from './style.css';
 

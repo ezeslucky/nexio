@@ -1,8 +1,8 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { GenerateDocUrlProvider } from '@blocksuite/affine/shared/services';
-import { createDefaultDoc } from '@blocksuite/affine/shared/utils';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { Doc, Workspace } from '@blocksuite/affine/store';
+﻿import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { GenerateDocUrlProvider } from '@blocksuite/nexio/shared/services';
+import { createDefaultDoc } from '@blocksuite/nexio/shared/utils';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { Doc, Workspace } from '@blocksuite/nexio/store';
 import { CloseIcon } from '@blocksuite/icons/lit';
 import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
 import { css, html, nothing } from 'lit';

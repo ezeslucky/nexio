@@ -1,7 +1,7 @@
-import '@nexio/env/constant';
-import '@blocksuite/affine/global/types'
+﻿import '@nexio/env/constant';
+import '@blocksuite/nexio/global/types'
 
-declare module '@blocksuite/affine/store' {
+declare module '@blocksuite/nexio/store' {
   interface DocMeta {
     /**
      * @deprecated

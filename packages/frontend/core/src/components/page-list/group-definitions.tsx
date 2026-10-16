@@ -1,8 +1,8 @@
-import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
+﻿import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';
 import type { Tag } from '@nexio/core/modules/tag';
 import { TagService } from '@nexio/core/modules/tag';
 import { useI18n } from '@nexio/i18n';
-import type { DocMeta } from '@blocksuite/affine/store';
+import type { DocMeta } from '@blocksuite/nexio/store';
 import { FavoritedIcon, FavoriteIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { type ReactNode, useMemo } from 'react';

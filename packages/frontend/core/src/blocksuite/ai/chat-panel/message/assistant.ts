@@ -1,16 +1,16 @@
-import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+﻿import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
 import type { AppThemeService } from '@nexio/core/modules/theme';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { isInsidePageEditor } from '@blocksuite/affine/shared/utils';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { isInsidePageEditor } from '@blocksuite/nexio/shared/utils';
 import {
   type BlockStdScope,
   type EditorHost,
   ShadowlessElement,
-} from '@blocksuite/affine/std';
-import type { ExtensionType } from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/std';
+import type { ExtensionType } from '@blocksuite/nexio/store';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import type { Signal } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';

@@ -1,6 +1,6 @@
-import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
-import type { DocMode } from '@blocksuite/affine/model';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+﻿import { toArrayBuffer } from '@nexio/core/utils/array-buffer';
+import type { DocMode } from '@blocksuite/nexio/model';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import { Service } from '@toeverything/infra';
 
 import { DocsService } from '../../doc';

@@ -14,7 +14,7 @@
     "build:storybook": "storybook build"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "*",
+    "@blocksuite/nexio": "*",
     "@swc/core": "^1.0.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1"

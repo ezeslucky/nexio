@@ -5,9 +5,9 @@ import type { JSX } from 'react';
 import { Avatar } from '../../ui/avatar';
 import { Button, IconButton } from '../../ui/button';
 import { ThemedImg } from '../../ui/themed-img';
-import { NexioOtherPageLayout } from '../affine-other-page-layout';
-import illustrationDark from '../affine-other-page-layout/assets/other-page.dark.png';
-import illustrationLight from '../affine-other-page-layout/assets/other-page.light.png';
+import { NexioOtherPageLayout } from '../nexio-other-page-layout';
+import illustrationDark from '../nexio-other-page-layout/assets/other-page.dark.png';
+import illustrationLight from '../nexio-other-page-layout/assets/other-page.light.png';
 import type { User } from '../auth-components';
 import {
   illustration,

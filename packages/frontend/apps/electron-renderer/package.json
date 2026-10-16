@@ -8,7 +8,7 @@
     "dev": "affine bundle --dev"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@nexio/component": "workspace:*",
     "@nexio/core": "workspace:*",

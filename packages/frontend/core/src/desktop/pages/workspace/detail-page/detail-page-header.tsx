@@ -1,4 +1,4 @@
-import {
+﻿import {
   Divider,
   DragHandle,
   type InlineEditHandle,
@@ -13,7 +13,7 @@ import { PageHeaderMenuButton } from '@nexio/core/blocksuite/block-suite-header/
 import { DetailPageHeaderPresentButton } from '@nexio/core/blocksuite/block-suite-header/present/detail-header-present-button';
 import { BlocksuiteHeaderTitle } from '@nexio/core/blocksuite/block-suite-header/title';
 import { EditorModeSwitch } from '@nexio/core/blocksuite/block-suite-mode-switch';
-import { useRegisterCopyLinkCommands } from '@nexio/core/components/hooks/affine/use-register-copy-link-commands';
+import { useRegisterCopyLinkCommands } from '@nexio/core/components/hooks/nexio/use-register-copy-link-commands';
 import { HeaderDivider } from '@nexio/core/components/pure/header';
 import { DocService } from '@nexio/core/modules/doc';
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
@@ -26,7 +26,7 @@ import type { Workspace } from '@nexio/core/modules/workspace';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/affine/store';
+import type { Store } from '@blocksuite/nexio/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import {

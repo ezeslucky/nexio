@@ -1,8 +1,8 @@
-import {
+﻿import {
   useMutateQueryResource,
   useMutation,
 } from '@nexio/admin/use-mutation';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   createChangePasswordUrlMutation,
   createUserMutation,

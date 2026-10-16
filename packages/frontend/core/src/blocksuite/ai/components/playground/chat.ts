@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AIModelService,
   AIToolsConfigService,
 } from '@nexio/core/modules/ai-button';
@@ -10,12 +10,12 @@ import type { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { AppThemeService } from '@nexio/core/modules/theme';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type NotificationService } from '@blocksuite/affine/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType, Store } from '@blocksuite/affine/store';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { type NotificationService } from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType, Store } from '@blocksuite/nexio/store';
 import { DeleteIcon, NewPageIcon } from '@blocksuite/icons/lit';
 import { css, html, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

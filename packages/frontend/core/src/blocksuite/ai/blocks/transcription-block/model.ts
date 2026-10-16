@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   TranscriptionQualityInput,
   TranscriptionSourceAudioInput,
 } from '@nexio/graphql';
@@ -6,7 +6,7 @@ import {
   BlockModel,
   BlockSchemaExtension,
   defineBlockSchema,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 
 export const TranscriptionBlockFlavour = 'affine:transcription';
 

@@ -1,11 +1,11 @@
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
-import type { EditorHost } from '@blocksuite/affine/std';
+﻿import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
   isPrimitiveModel,
-} from '@blocksuite/affine/std/gfx';
-import type { BlockModel } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/gfx';
+import type { BlockModel } from '@blocksuite/nexio/store';
 import { Bound } from '@blocksuite/global/gfx';
 
 import {

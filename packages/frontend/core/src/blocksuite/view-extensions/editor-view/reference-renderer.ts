@@ -1,7 +1,7 @@
-import type { ReactToLit } from '@nexio/component';
-import type { AffineReference } from '@blocksuite/affine/inlines/reference';
-import { ReferenceNodeConfigExtension } from '@blocksuite/affine/inlines/reference';
-import type { ExtensionType } from '@blocksuite/affine/store';
+﻿import type { ReactToLit } from '@nexio/component';
+import type { AffineReference } from '@blocksuite/nexio/inlines/reference';
+import { ReferenceNodeConfigExtension } from '@blocksuite/nexio/inlines/reference';
+import type { ExtensionType } from '@blocksuite/nexio/store';
 
 export type ReferenceReactRenderer = (
   reference: AffineReference

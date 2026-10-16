@@ -1,5 +1,5 @@
-import { Avatar } from '@nexio/component';
-import { useSignOut } from '@nexio/core/components/hooks/affine/use-sign-out';
+﻿import { Avatar } from '@nexio/component';
+import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
 import { AuthService } from '@nexio/core/modules/cloud';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';

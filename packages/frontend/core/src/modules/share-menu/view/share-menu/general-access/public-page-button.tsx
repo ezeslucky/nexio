@@ -1,5 +1,5 @@
-import { Menu, MenuItem, MenuTrigger, notify } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Menu, MenuItem, MenuTrigger, notify } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { EditorService } from '@nexio/core/modules/editor';
 import { ShareInfoService } from '@nexio/core/modules/share-doc';
 import { UserFriendlyError } from '@nexio/error';

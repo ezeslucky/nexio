@@ -1,4 +1,4 @@
-import { useConfirmModal } from '@nexio/component';
+﻿import { useConfirmModal } from '@nexio/component';
 import {
   AIAppEvents,
   AIChatRuntime,
@@ -19,9 +19,9 @@ import { createPlaygroundModal } from '@nexio/core/blocksuite/ai/components/play
 import { registerAIAppEffects } from '@nexio/core/blocksuite/ai/effects/app';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@nexio/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@nexio/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@nexio/core/components/hooks/affine/use-ai-subscribe';
+import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
+import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
+import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
 import {
   AIDraftService,
   AIModelService,
@@ -42,10 +42,10 @@ import { AppThemeService } from '@nexio/core/modules/theme';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
-import { createSignalFromObservable } from '@blocksuite/affine/shared/utils';
-import type { Store } from '@blocksuite/affine/store';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import { createSignalFromObservable } from '@blocksuite/nexio/shared/utils';
+import type { Store } from '@blocksuite/nexio/store';
 import { NexioIcon } from '@nexio/component/auth-components';
 import { CenterPeekIcon } from '@blocksuite/icons/rc';
 import type { Signal } from '@preact/signals-core';

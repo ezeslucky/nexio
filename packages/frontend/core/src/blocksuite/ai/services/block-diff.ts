@@ -1,7 +1,7 @@
-import { sourceScopedBlobUrl } from '@nexio/nbstore/cloud';
+﻿import { sourceScopedBlobUrl } from '@nexio/nbstore/cloud';
 import { parsePageDoc } from '@nexio/reader';
-import { LifeCycleWatcher } from '@blocksuite/affine/std';
-import { Extension, type Store } from '@blocksuite/affine/store';
+import { LifeCycleWatcher } from '@blocksuite/nexio/std';
+import { Extension, type Store } from '@blocksuite/nexio/store';
 import { type Container, createIdentifier } from '@blocksuite/global/di';
 import { LiveData } from '@toeverything/infra';
 import type { Subscription } from 'rxjs';

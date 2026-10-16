@@ -1,16 +1,16 @@
-import { Scrollable } from '@nexio/component';
+﻿import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import { AIAppEvents, type AIChatParams } from '@nexio/core/blocksuite/ai';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
-// import { PageAIOnboarding } from '@nexio/core/components/affine/ai-onboarding';
-import { GlobalPageHistoryModal } from '@nexio/core/components/affine/page-history-modal';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+// import { PageAIOnboarding } from '@nexio/core/components/nexio/ai-onboarding';
+import { GlobalPageHistoryModal } from '@nexio/core/components/nexio/page-history-modal';
 import { CommentSidebar } from '@nexio/core/components/comment/sidebar';
 import { useGuard } from '@nexio/core/components/guard';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
-import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
-import { useRegisterBlocksuiteEditorCommands } from '@nexio/core/components/hooks/affine/use-register-blocksuite-editor-commands';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
+import { useRegisterBlocksuiteEditorCommands } from '@nexio/core/components/hooks/nexio/use-register-blocksuite-editor-commands';
 import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { PageDetailEditor } from '@nexio/core/components/page-detail-editor';
 import { WorkspacePropertySidebar } from '@nexio/core/components/properties/sidebar';
@@ -36,10 +36,10 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { isNewTabTrigger } from '@nexio/core/utils';
 import { ServerFeature } from '@nexio/graphql';
 import track from '@nexio/track';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { focusBlockEnd } from '@blocksuite/affine/shared/commands';
-import { getLastNoteBlock } from '@blocksuite/affine/shared/utils';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { focusBlockEnd } from '@blocksuite/nexio/shared/commands';
+import { getLastNoteBlock } from '@blocksuite/nexio/shared/utils';
 import {
   AiIcon,
   ChartPanelIcon,

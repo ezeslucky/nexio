@@ -1,6 +1,6 @@
-import { type DropTargetGetFeedback, Skeleton } from '@nexio/component';
+﻿import { type DropTargetGetFeedback, Skeleton } from '@nexio/component';
 import { ResizePanel } from '@nexio/component/resize-panel';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import { NavigateContext } from '@nexio/core/components/hooks/use-navigate-helper';
 import { WorkspaceNavigator } from '@nexio/core/components/workspace-selector';
 import type { NexioDNDData } from '@nexio/core/types/dnd';

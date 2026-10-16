@@ -1,4 +1,4 @@
-import {
+﻿import {
   MenuItem,
   MenuTrigger,
   RadioGroup,
@@ -11,8 +11,8 @@ import { useI18n } from '@nexio/i18n';
 import {
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/affine/blocks/surface';
-import type { ShapeElementModel, ShapeName } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/blocks/surface';
+import type { ShapeElementModel, ShapeName } from '@blocksuite/nexio/model';
 import {
   DefaultTheme,
   FontFamily,
@@ -24,9 +24,9 @@ import {
   ShapeType,
   StrokeStyle,
   TextAlign,
-} from '@blocksuite/affine/model';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo, useState } from 'react';

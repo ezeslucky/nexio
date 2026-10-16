@@ -1,4 +1,4 @@
-import {
+﻿import {
   MenuItem,
   MenuTrigger,
   RadioGroup,
@@ -7,9 +7,9 @@ import {
 import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
-import { LayoutType, MindmapStyle } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
+import { LayoutType, MindmapStyle } from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 

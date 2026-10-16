@@ -1,13 +1,13 @@
-import '../declare-test-window.js';
+﻿import '../declare-test-window.js';
 
-import type { DatabaseBlockModel, ListType } from '@blocksuite/affine/model';
-import type { RichText } from '@blocksuite/affine/rich-text';
+import type { DatabaseBlockModel, ListType } from '@blocksuite/nexio/model';
+import type { RichText } from '@blocksuite/nexio/rich-text';
 import type {
   InlineRange,
   InlineRootElement,
-} from '@blocksuite/affine/std/inline';
-import type { BlockModel } from '@blocksuite/affine/store';
-import { uuidv4 } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/inline';
+import type { BlockModel } from '@blocksuite/nexio/store';
+import { uuidv4 } from '@blocksuite/nexio/store';
 import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
 import type { ConsoleMessage, Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';

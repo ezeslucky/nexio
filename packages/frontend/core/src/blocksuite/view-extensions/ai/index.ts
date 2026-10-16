@@ -1,4 +1,4 @@
-import { toolbarAIEntryConfig } from '@nexio/core/blocksuite/ai';
+﻿import { toolbarAIEntryConfig } from '@nexio/core/blocksuite/ai';
 import { AIChatBlockSpec } from '@nexio/core/blocksuite/ai/blocks';
 import { AITranscriptionBlockSpec } from '@nexio/core/blocksuite/ai/blocks/ai-chat-block/ai-transcription-block';
 import { edgelessToolbarAIEntryConfig } from '@nexio/core/blocksuite/ai/entries/edgeless';
@@ -13,9 +13,9 @@ import { edgelessCopilotWidget } from '@nexio/core/blocksuite/ai/widgets/edgeles
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
-import { ToolbarModuleExtension } from '@blocksuite/affine/shared/services';
-import { BlockFlavourIdentifier } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/ext-loader';
+import { ToolbarModuleExtension } from '@blocksuite/nexio/shared/services';
+import { BlockFlavourIdentifier } from '@blocksuite/nexio/std';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 

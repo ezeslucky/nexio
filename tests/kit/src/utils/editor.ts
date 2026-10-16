@@ -1,8 +1,8 @@
-import '@blocksuite/affine/effects';
+﻿import '@blocksuite/nexio/effects';
 
-import type { IVec, XYWH } from '@blocksuite/affine/global/gfx';
-import type { CodeBlockComponent } from '@blocksuite/affine-block-code';
-import type { ParagraphBlockComponent } from '@blocksuite/affine-block-paragraph';
+import type { IVec, XYWH } from '@blocksuite/nexio/global/gfx';
+import type { CodeBlockComponent } from '@blocksuite/nexio-block-code';
+import type { ParagraphBlockComponent } from '@blocksuite/nexio-block-paragraph';
 import type { BlockComponent } from '@blocksuite/std';
 import { expect, type Locator, type Page } from '@playwright/test';
 

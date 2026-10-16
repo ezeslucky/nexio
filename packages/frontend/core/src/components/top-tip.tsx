@@ -1,9 +1,9 @@
-import { BrowserWarning, LocalDemoTips } from '@nexio/component/affine-banner';
+﻿import { BrowserWarning, LocalDemoTips } from '@nexio/component/nexio-banner';
 import { Trans, useI18n } from '@nexio/i18n';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
-import { useEnableCloud } from '../components/hooks/affine/use-enable-cloud';
+import { useEnableCloud } from '../components/hooks/nexio/use-enable-cloud';
 import { AuthService } from '../modules/cloud';
 import { GlobalDialogService } from '../modules/dialogs';
 import type { Workspace } from '../modules/workspace';

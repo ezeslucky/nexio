@@ -1,5 +1,5 @@
-import { Button, Modal, notify } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, Modal, notify } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import { ServerSelector } from '@nexio/core/components/server-selector';
 import {

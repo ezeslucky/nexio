@@ -9,7 +9,7 @@
     "dev": "affine bundle --dev"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@nexio/component": "workspace:*",
     "@nexio/core": "workspace:*",
     "@nexio/env": "workspace:*",

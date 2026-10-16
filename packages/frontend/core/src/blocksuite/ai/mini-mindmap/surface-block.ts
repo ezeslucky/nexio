@@ -1,14 +1,14 @@
-/* oxlint-disable typescript/no-non-null-assertion */
+﻿/* oxlint-disable typescript/no-non-null-assertion */
 import {
   CanvasRenderer,
   type SurfaceBlockModel,
-} from '@blocksuite/affine/blocks/surface';
-import { fitContent } from '@blocksuite/affine/gfx/shape';
-import type { Bound } from '@blocksuite/affine/global/gfx';
-import type { Color, ShapeElementModel } from '@blocksuite/affine/model';
-import { ThemeProvider } from '@blocksuite/affine/shared/services';
-import { BlockComponent } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/blocks/surface';
+import { fitContent } from '@blocksuite/nexio/gfx/shape';
+import type { Bound } from '@blocksuite/nexio/global/gfx';
+import type { Color, ShapeElementModel } from '@blocksuite/nexio/model';
+import { ThemeProvider } from '@blocksuite/nexio/shared/services';
+import { BlockComponent } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import { html } from 'lit';
 import { query } from 'lit/decorators.js';
 

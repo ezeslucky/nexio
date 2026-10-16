@@ -1,5 +1,5 @@
-import { Wrapper } from '@nexio/component';
-import { EmptyDocs } from '@nexio/core/components/affine/empty';
+﻿import { Wrapper } from '@nexio/component';
+import { EmptyDocs } from '@nexio/core/components/nexio/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,

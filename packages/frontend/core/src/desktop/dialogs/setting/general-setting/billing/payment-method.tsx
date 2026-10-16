@@ -1,11 +1,11 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
 import {
   Button,
   type ButtonProps,
   IconButton,
 } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { SubscriptionService } from '@nexio/core/modules/cloud';
 import { UrlService } from '@nexio/core/modules/url';
 import { UserFriendlyError } from '@nexio/error';

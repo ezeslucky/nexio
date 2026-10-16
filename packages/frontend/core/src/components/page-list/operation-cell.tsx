@@ -1,4 +1,4 @@
-import {
+﻿import {
   IconButton,
   Menu,
   MenuItem,
@@ -6,7 +6,7 @@ import {
   useConfirmModal,
   usePromptModal,
 } from '@nexio/component';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { DocsService } from '@nexio/core/modules/doc';
@@ -18,7 +18,7 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { DocMeta } from '@blocksuite/affine/store';
+import type { DocMeta } from '@blocksuite/nexio/store';
 import {
   DeleteIcon,
   DeletePermanentlyIcon,

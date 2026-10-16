@@ -1,9 +1,9 @@
-import { DebugLogger } from '@nexio/debug';
+﻿import { DebugLogger } from '@nexio/debug';
 import { Unreachable } from '@nexio/env/constant';
-import { replaceIdMiddleware } from '@blocksuite/affine/shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import type { DeltaInsert } from '@blocksuite/affine/store';
-import { Slice, Text, Transformer } from '@blocksuite/affine/store';
+import { replaceIdMiddleware } from '@blocksuite/nexio/shared/adapters';
+import type { AffineTextAttributes } from '@blocksuite/nexio/shared/types';
+import type { DeltaInsert } from '@blocksuite/nexio/store';
+import { Slice, Text, Transformer } from '@blocksuite/nexio/store';
 import { ObjectPool, Service } from '@toeverything/infra';
 import { combineLatest, map } from 'rxjs';
 

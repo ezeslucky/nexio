@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   Divider,
   observeIntersection,
@@ -11,7 +11,7 @@ import {
   type ReferenceReactRenderer,
 } from '@nexio/core/blocksuite/view-extensions/editor-view/reference-renderer';
 import { useGuard } from '@nexio/core/components/guard';
-import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
 import { DocService } from '@nexio/core/modules/doc';
 import {
   type Backlink,
@@ -27,7 +27,7 @@ import track from '@nexio/track';
 import type {
   ExtensionType,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { ToggleDownIcon } from '@blocksuite/icons/rc';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import {
@@ -50,7 +50,7 @@ import {
 import {
   NexioPageReference,
   NexioSharedPageReference,
-} from '../../components/affine/reference-link';
+} from '../../components/nexio/reference-link';
 import { LitTextRenderer } from '../ai/components/text-renderer';
 import * as styles from './bi-directional-link-panel.css';
 

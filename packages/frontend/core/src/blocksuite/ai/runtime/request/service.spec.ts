@@ -1,12 +1,12 @@
-/**
+﻿/**
  * @vitest-environment happy-dom
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { UserFriendlyError } from '@nexio/error';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { GfxModel } from '@blocksuite/affine/std/gfx';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { GfxModel } from '@blocksuite/nexio/std/gfx';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 

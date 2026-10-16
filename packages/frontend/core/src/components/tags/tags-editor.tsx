@@ -1,4 +1,4 @@
-import {
+﻿import {
   Divider,
   IconButton,
   Menu,
@@ -23,7 +23,7 @@ import {
   useState,
 } from 'react';
 
-import { useAsyncCallback } from '../hooks/affine-async-hooks';
+import { useAsyncCallback } from '../hooks/nexio-async-hooks';
 import { ConfigModal } from '../mobile';
 import { InlineTagList } from './inline-tag-list';
 import * as styles from './styles.css';

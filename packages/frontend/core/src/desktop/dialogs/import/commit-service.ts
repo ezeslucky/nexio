@@ -1,4 +1,4 @@
-import type { IconData } from '@nexio/component';
+﻿import type { IconData } from '@nexio/component';
 import type { ExplorerIconService } from '@nexio/core/modules/explorer-icon/services/explorer-icon';
 import type { OrganizeService } from '@nexio/core/modules/organize';
 import type { TagService } from '@nexio/core/modules/tag';
@@ -7,13 +7,13 @@ import {
   type Schema,
   Transformer,
   type Workspace,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import type {
   ImportBatch,
   ImportCommitResult,
   ImportFolder,
   ImportIconData,
-} from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/nexio/widgets/linked-doc';
 
 type Logger = {
   warn: (message: string, ...args: unknown[]) => void;

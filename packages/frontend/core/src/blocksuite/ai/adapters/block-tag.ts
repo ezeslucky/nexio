@@ -1,7 +1,7 @@
-import {
+﻿import {
   BlockMarkdownAdapterExtension,
   type BlockMarkdownAdapterMatcher,
-} from '@blocksuite/affine-shared/adapters';
+} from '@blocksuite/nexio-shared/adapters';
 
 export const blockTagMarkdownAdapterMatcher: BlockMarkdownAdapterMatcher = {
   flavour: 'affine:page/affine:note/*',

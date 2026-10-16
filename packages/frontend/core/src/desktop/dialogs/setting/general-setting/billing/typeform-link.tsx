@@ -1,6 +1,6 @@
-import { SettingRow } from '@nexio/component/setting-components';
+﻿import { SettingRow } from '@nexio/component/setting-components';
 import { Button } from '@nexio/component/ui/button';
-import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
+import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
 import { AuthService, SubscriptionService } from '@nexio/core/modules/cloud';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';

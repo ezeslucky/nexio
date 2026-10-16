@@ -1,6 +1,6 @@
-import type * as Effect from '@blocksuite/affine/effects';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { Store, Transformer, Workspace } from '@blocksuite/affine/store';
+﻿import type * as Effect from '@blocksuite/nexio/effects';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { Store, Transformer, Workspace } from '@blocksuite/nexio/store';
 import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
 
 declare type _GLOBAL_ = typeof Effect;
@@ -11,18 +11,18 @@ declare global {
      * the following instance are initialized in `packages/playground/apps/starter/main.ts`
      */
     $blocksuite: {
-      store: typeof import('@blocksuite/affine/store');
+      store: typeof import('@blocksuite/nexio/store');
       blocks: {
-        database: typeof import('@blocksuite/affine/blocks/database');
-        note: typeof import('@blocksuite/affine/blocks/note');
+        database: typeof import('@blocksuite/nexio/blocks/database');
+        note: typeof import('@blocksuite/nexio/blocks/note');
       };
       global: {
-        utils: typeof import('@blocksuite/affine/global/utils');
+        utils: typeof import('@blocksuite/nexio/global/utils');
       };
-      services: typeof import('@blocksuite/affine/shared/services');
+      services: typeof import('@blocksuite/nexio/shared/services');
       editor: typeof import('@blocksuite/integration-test');
-      blockStd: typeof import('@blocksuite/affine/std');
-      affineModel: typeof import('@blocksuite/affine-model');
+      blockStd: typeof import('@blocksuite/nexio/std');
+      affineModel: typeof import('@blocksuite/nexio-model');
     };
     collection: Workspace;
     doc: Store;

@@ -1,8 +1,8 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+﻿import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { createBlockStdScope } from '@nexio/core/blocksuite/manager/view';
-import { EmbedOptionProvider } from '@blocksuite/affine/shared/services';
-import { Text } from '@blocksuite/affine/store';
-import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import { EmbedOptionProvider } from '@blocksuite/nexio/shared/services';
+import { Text } from '@blocksuite/nexio/store';
+import { MarkdownTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import { Service } from '@toeverything/infra';
 
 import { CollectionService } from '../../collection';

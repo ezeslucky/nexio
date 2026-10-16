@@ -1,5 +1,5 @@
-import { Button, ConfirmModal, notify, RowInput } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, ConfirmModal, notify, RowInput } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   AuthService,
   type Server,

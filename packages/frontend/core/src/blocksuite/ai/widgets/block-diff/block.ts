@@ -1,6 +1,6 @@
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+﻿import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
+import { ThemeProvider } from '@blocksuite/nexio-shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import { css, html, nothing, type TemplateResult } from 'lit';
 import { repeat } from 'lit/directives/repeat.js';
 import { literal, unsafeStatic } from 'lit/static-html.js';

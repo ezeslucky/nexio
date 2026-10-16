@@ -1,7 +1,7 @@
-import { track, tracker } from '@nexio/track';
-import type { EditorHost } from '@blocksuite/affine/std';
-import type { GfxPrimitiveElementModel } from '@blocksuite/affine/std/gfx';
-import type { BlockModel } from '@blocksuite/affine/store';
+﻿import { track, tracker } from '@nexio/track';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import type { GfxPrimitiveElementModel } from '@blocksuite/nexio/std/gfx';
+import type { BlockModel } from '@blocksuite/nexio/store';
 import { lowerCase, omit } from 'lodash-es';
 
 import type {

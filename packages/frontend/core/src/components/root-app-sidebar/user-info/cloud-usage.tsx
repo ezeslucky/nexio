@@ -7,7 +7,7 @@ import { assignInlineVars } from '@vanilla-extract/dynamic';
 import clsx from 'clsx';
 import { useEffect } from 'react';
 
-import { UserPlanButton } from '../../affine/auth/user-plan-button';
+import { UserPlanButton } from '../../nexio/auth/user-plan-button';
 import { useCatchEventCallback } from '../../hooks/use-catch-event-hook';
 import * as styles from './index.css';
 

@@ -1,5 +1,5 @@
-import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import type { NotificationService } from '@blocksuite/affine/shared/services';
+﻿import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import type { NotificationService } from '@blocksuite/nexio/shared/services';
 
 import type { AIChatRuntime, AIChatSnapshot } from '../../runtime/chat';
 import type { DocDisplayConfig } from '../ai-chat-chips';

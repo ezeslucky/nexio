@@ -1,5 +1,5 @@
-import type { AffineReference } from '@blocksuite/affine/inlines/reference';
-import type { EmbedSyncedDocBlockProps } from '@blocksuite/affine/model';
+﻿import type { AffineReference } from '@blocksuite/nexio/inlines/reference';
+import type { EmbedSyncedDocBlockProps } from '@blocksuite/nexio/model';
 import { expect, type Page } from '@playwright/test';
 
 import { clickView } from '../utils/actions/click.js';

@@ -1,9 +1,9 @@
 import type { FC, PropsWithChildren, ReactNode } from 'react';
 
 import { ThemedImg } from '../../ui/themed-img';
-import { NexioOtherPageLayout } from '../affine-other-page-layout';
-import illustrationDark from '../affine-other-page-layout/assets/other-page.dark.png';
-import illustrationLight from '../affine-other-page-layout/assets/other-page.light.png';
+import { NexioOtherPageLayout } from '../nexio-other-page-layout';
+import illustrationDark from '../nexio-other-page-layout/assets/other-page.dark.png';
+import illustrationLight from '../nexio-other-page-layout/assets/other-page.light.png';
 import {
   authPageContainer,
   hideInSmallScreen,

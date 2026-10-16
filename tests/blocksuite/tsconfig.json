@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../tsconfig.web.json",
   "compilerOptions": {
     "rootDir": "./e2e",
@@ -7,8 +7,8 @@
   },
   "include": ["e2e"],
   "references": [
-    { "path": "../../blocksuite/affine/all" },
     { "path": "../../blocksuite/integration-test" },
+    { "path": "../../blocksuite/nexio/all" },
     { "path": "../kit" }
   ]
 }

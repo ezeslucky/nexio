@@ -11,7 +11,7 @@
     "studio": "cap open android"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@capacitor/android": "^8.4.2",
     "@capacitor/app": "^8.0.0",
     "@capacitor/core": "^8.4.2",

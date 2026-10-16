@@ -1,4 +1,4 @@
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
+﻿import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
 import { RootAppSidebar } from '@nexio/core/components/root-app-sidebar';
 import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
 import {

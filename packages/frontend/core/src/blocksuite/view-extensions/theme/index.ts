@@ -1,9 +1,9 @@
-import { getPreviewThemeExtension } from '@nexio/core/blocksuite/view-extensions/theme/preview-theme';
+﻿import { getPreviewThemeExtension } from '@nexio/core/blocksuite/view-extensions/theme/preview-theme';
 import { getThemeExtension } from '@nexio/core/blocksuite/view-extensions/theme/theme';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 

@@ -1,17 +1,17 @@
-import { Scrollable } from '@nexio/component';
+﻿import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import { AIAppEvents, type AIChatParams } from '@nexio/core/blocksuite/ai';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { EditorService } from '@nexio/core/modules/editor';
 import { DebugLogger } from '@nexio/debug';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { Bound } from '@blocksuite/affine/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { Bound } from '@blocksuite/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import {
   FrameworkScope,
   useLiveData,

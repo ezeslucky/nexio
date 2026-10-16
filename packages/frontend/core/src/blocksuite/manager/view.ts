@@ -1,4 +1,4 @@
-import type { ReactToLit } from '@nexio/component';
+﻿import type { ReactToLit } from '@nexio/component';
 import { AIViewExtension } from '@nexio/core/blocksuite/view-extensions/ai';
 import { CloudViewExtension } from '@nexio/core/blocksuite/view-extensions/cloud';
 import { CodeBlockPreviewViewExtension } from '@nexio/core/blocksuite/view-extensions/code-block-preview';
@@ -25,20 +25,20 @@ import { TurboRendererViewExtension } from '@nexio/core/blocksuite/view-extensio
 import { PeekViewService } from '@nexio/core/modules/peek-view';
 import { DebugLogger } from '@nexio/debug';
 import { tracker } from '@nexio/track';
-import { DatabaseViewExtension } from '@blocksuite/affine/blocks/database/view';
-import { ParagraphViewExtension } from '@blocksuite/affine/blocks/paragraph/view';
+import { DatabaseViewExtension } from '@blocksuite/nexio/blocks/database/view';
+import { ParagraphViewExtension } from '@blocksuite/nexio/blocks/paragraph/view';
 import type {
   PeekOptions,
   PeekViewService as BSPeekViewService,
-} from '@blocksuite/affine/components/peek';
-import { ViewExtensionManager } from '@blocksuite/affine/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/affine/extensions/view';
-import { FoundationViewExtension } from '@blocksuite/affine/foundation/view';
-import { InlineCommentViewExtension } from '@blocksuite/affine/inlines/comment';
-import { AffineCanvasTextFonts } from '@blocksuite/affine/shared/services';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { Store } from '@blocksuite/affine/store';
-import { LinkedDocViewExtension } from '@blocksuite/affine/widgets/linked-doc/view';
+} from '@blocksuite/nexio/components/peek';
+import { ViewExtensionManager } from '@blocksuite/nexio/ext-loader';
+import { getInternalViewExtensions } from '@blocksuite/nexio/extensions/view';
+import { FoundationViewExtension } from '@blocksuite/nexio/foundation/view';
+import { InlineCommentViewExtension } from '@blocksuite/nexio/inlines/comment';
+import { AffineCanvasTextFonts } from '@blocksuite/nexio/shared/services';
+import { BlockStdScope } from '@blocksuite/nexio/std';
+import type { Store } from '@blocksuite/nexio/store';
+import { LinkedDocViewExtension } from '@blocksuite/nexio/widgets/linked-doc/view';
 import type { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 

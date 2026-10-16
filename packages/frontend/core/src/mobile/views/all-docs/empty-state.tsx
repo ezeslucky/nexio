@@ -1,14 +1,14 @@
-import { Button, ThemedImg } from '@nexio/component';
+﻿import { Button, ThemedImg } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
 import { PlusIcon } from '@blocksuite/icons/rc';
 import type { MouseEventHandler } from 'react';
 
-import collectionIllustrationDark from '../../../components/affine/empty/assets/collection-list.dark.png';
-import collectionIllustrationLight from '../../../components/affine/empty/assets/collection-list.light.png';
-import docsIllustrationDark from '../../../components/affine/empty/assets/docs.dark.png';
-import docsIllustrationLight from '../../../components/affine/empty/assets/docs.light.png';
-import tagsIllustrationDark from '../../../components/affine/empty/assets/tag-list.dark.png';
-import tagsIllustrationLight from '../../../components/affine/empty/assets/tag-list.light.png';
+import collectionIllustrationDark from '../../../components/nexio/empty/assets/collection-list.dark.png';
+import collectionIllustrationLight from '../../../components/nexio/empty/assets/collection-list.light.png';
+import docsIllustrationDark from '../../../components/nexio/empty/assets/docs.dark.png';
+import docsIllustrationLight from '../../../components/nexio/empty/assets/docs.light.png';
+import tagsIllustrationDark from '../../../components/nexio/empty/assets/tag-list.dark.png';
+import tagsIllustrationLight from '../../../components/nexio/empty/assets/tag-list.light.png';
 import * as styles from './empty-state.css';
 
 type EmptyStateType = 'docs' | 'collections' | 'tags';

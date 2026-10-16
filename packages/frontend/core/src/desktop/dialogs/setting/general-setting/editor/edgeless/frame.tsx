@@ -1,9 +1,9 @@
-import { MenuItem, MenuTrigger } from '@nexio/component';
+﻿import { MenuItem, MenuTrigger } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { DefaultTheme } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+import { DefaultTheme } from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';

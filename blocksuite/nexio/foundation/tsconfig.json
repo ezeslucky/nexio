@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noUncheckedIndexedAccess": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo"
+  },
+  "include": ["./src"],
+  "references": [
+    { "path": "../data-view" },
+    { "path": "../components" },
+    { "path": "../ext-loader" },
+    { "path": "../rich-text" },
+    { "path": "../shared" },
+    { "path": "../../framework/std" },
+    { "path": "../../framework/store" }
+  ]
+}

@@ -1,4 +1,4 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
@@ -7,7 +7,7 @@ import {
   AuthInput,
 } from '@nexio/component/auth-components';
 import { Button } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { AuthService, CaptchaService } from '@nexio/core/modules/cloud';
 import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
 import { Unreachable } from '@nexio/env/constant';

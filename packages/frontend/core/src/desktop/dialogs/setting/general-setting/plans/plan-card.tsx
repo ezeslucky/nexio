@@ -1,7 +1,7 @@
-import { Button, type ButtonProps } from '@nexio/component/ui/button';
+﻿import { Button, type ButtonProps } from '@nexio/component/ui/button';
 import { Tooltip } from '@nexio/component/ui/tooltip';
-import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { generateSubscriptionCallbackLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   AuthService,
   ServerService,

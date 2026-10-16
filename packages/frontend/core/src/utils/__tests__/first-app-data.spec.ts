@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @vitest-environment happy-dom
  */
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
@@ -8,7 +8,7 @@ const docsServiceToken = Symbol('DocsService');
 const organizeServiceToken = Symbol('OrganizeService');
 
 vi.mock('../../blocksuite/block-suite-editor', () => ({}));
-vi.mock('@blocksuite/affine/widgets/linked-doc', () => ({
+vi.mock('@blocksuite/nexio/widgets/linked-doc', () => ({
   ZipTransformer: {
     importDocs,
   },

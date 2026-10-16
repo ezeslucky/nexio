@@ -1,6 +1,6 @@
-// oxlint-disable-next-line import-x-js/no-extraneous-dependencies
-import { PanTool } from '@blocksuite/affine-gfx-pointer';
-import { on } from '@blocksuite/affine-shared/utils';
+﻿// oxlint-disable-next-line import-x-js/no-extraneous-dependencies
+import { PanTool } from '@blocksuite/nexio-gfx-pointer';
+import { on } from '@blocksuite/nexio-shared/utils';
 import type { PointerEventState } from '@blocksuite/std';
 import {
   type BaseTool,
@@ -20,8 +20,8 @@ type SelectionEntry = {
 const pointerUpHandlers: unknown[] = [];
 const pointerUpDisposers: Array<ReturnType<typeof vi.fn>> = [];
 
-vi.mock('@blocksuite/affine-shared/utils', async () => {
-  const actual = await vi.importActual('@blocksuite/affine-shared/utils');
+vi.mock('@blocksuite/nexio-shared/utils', async () => {
+  const actual = await vi.importActual('@blocksuite/nexio-shared/utils');
 
   return {
     ...actual,

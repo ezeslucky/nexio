@@ -1,5 +1,5 @@
-import type { FrameBlockModel } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+﻿import type { FrameBlockModel } from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 
 export function getFrameBlock(doc: Store) {
   const blocks = doc.getBlocksByFlavour('affine:frame');

@@ -1,11 +1,11 @@
-import { Button, notify, useConfirmModal } from '@nexio/component';
+﻿import { Button, notify, useConfirmModal } from '@nexio/component';
 import {
   InviteTeamMemberModal,
   type InviteTeamMemberModalProps,
   MemberLimitModal,
 } from '@nexio/component/member-components';
 import { SettingRow } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { Upload } from '@nexio/core/components/pure/file-upload';
 import {
   ServerService,

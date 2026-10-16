@@ -1,8 +1,8 @@
-import { I18n } from '@nexio/i18n';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type EditorHost } from '@blocksuite/affine/std';
+﻿import { I18n } from '@nexio/i18n';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { type EditorHost } from '@blocksuite/nexio/std';
 import { InformationIcon, ToggleDownIcon } from '@blocksuite/icons/lit';
 import { signal } from '@preact/signals-core';
 import { baseTheme } from '@toeverything/theme';

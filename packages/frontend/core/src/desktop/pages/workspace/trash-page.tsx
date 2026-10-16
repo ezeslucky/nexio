@@ -1,10 +1,10 @@
-import { Button, toast, useConfirmModal } from '@nexio/component';
+﻿import { Button, toast, useConfirmModal } from '@nexio/component';
 import {
   createDocExplorerContext,
   DocExplorerContext,
 } from '@nexio/core/components/explorer/context';
 import { DocsExplorer } from '@nexio/core/components/explorer/docs-view/docs-list';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
 import { Header } from '@nexio/core/components/pure/header';
 import { CollectionRulesService } from '@nexio/core/modules/collection-rules';
 import { GlobalContextService } from '@nexio/core/modules/global-context';

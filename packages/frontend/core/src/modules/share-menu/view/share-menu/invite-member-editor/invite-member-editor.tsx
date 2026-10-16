@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   Loading,
   Menu,
@@ -7,7 +7,7 @@ import {
   notify,
   RowInput,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import {
   DocGrantedUsersService,

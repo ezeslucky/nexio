@@ -1,4 +1,4 @@
-import { Button, notify, Skeleton, Tooltip } from '@nexio/component';
+﻿import { Button, notify, Skeleton, Tooltip } from '@nexio/component';
 import { Loading } from '@nexio/component/ui/loading';
 import { useSystemOnline } from '@nexio/core/components/hooks/use-system-online';
 import { useWorkspace } from '@nexio/core/components/hooks/use-workspace';
@@ -34,7 +34,7 @@ import clsx from 'clsx';
 import type { HTMLAttributes } from 'react';
 import { forwardRef, useCallback, useEffect, useMemo, useState } from 'react';
 
-import { useAsyncCallback } from '../../hooks/affine-async-hooks';
+import { useAsyncCallback } from '../../hooks/nexio-async-hooks';
 import { useCatchEventCallback } from '../../hooks/use-catch-event-hook';
 import { useNavigateHelper } from '../../hooks/use-navigate-helper';
 import { WorkspaceAvatar } from '../../workspace-avatar';

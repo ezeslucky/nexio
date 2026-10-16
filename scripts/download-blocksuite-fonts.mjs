@@ -1,8 +1,8 @@
-import { writeFile } from 'node:fs/promises';
+﻿import { writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { AffineCanvasTextFonts } from '@blocksuite/affine/shared/services';
+import { AffineCanvasTextFonts } from '@blocksuite/nexio/shared/services';
 
 const fontPath = join(
   fileURLToPath(import.meta.url),

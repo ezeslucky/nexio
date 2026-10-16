@@ -1,12 +1,12 @@
-import {
+﻿import {
   type GfxCommonBlockProps,
   GfxCompatible,
-} from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/std/gfx';
 import {
   BlockModel,
   BlockSchemaExtension,
   defineBlockSchema,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 
 type AIChatProps = {
   messages: string; // JSON string of ChatMessage[]

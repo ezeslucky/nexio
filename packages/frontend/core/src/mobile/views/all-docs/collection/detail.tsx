@@ -1,8 +1,8 @@
-import { Wrapper } from '@nexio/component';
+﻿import { Wrapper } from '@nexio/component';
 import {
   EmptyCollectionDetail,
   EmptyDocs,
-} from '@nexio/core/components/affine/empty';
+} from '@nexio/core/components/nexio/empty';
 import {
   createDocExplorerContext,
   DocExplorerContext,

@@ -1,4 +1,4 @@
-import { Button } from '@nexio/admin/components/ui/button';
+﻿import { Button } from '@nexio/admin/components/ui/button';
 import { Checkbox } from '@nexio/admin/components/ui/checkbox';
 import {
   Dialog,
@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from '@nexio/admin/components/ui/dialog';
 import { Label } from '@nexio/admin/components/ui/label';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { CopyIcon } from '@blocksuite/icons/rc';
 import { useCallback, useState } from 'react';
 import { toast } from 'sonner';

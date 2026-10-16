@@ -1,4 +1,4 @@
-import { toggleGeneralAIOnboarding } from '@nexio/core/components/affine/ai-onboarding/apis';
+﻿import { toggleGeneralAIOnboarding } from '@nexio/core/components/nexio/ai-onboarding/apis';
 import type { AuthAccountInfo, AuthService } from '@nexio/core/modules/cloud';
 import type { GlobalDialogService } from '@nexio/core/modules/dialogs';
 

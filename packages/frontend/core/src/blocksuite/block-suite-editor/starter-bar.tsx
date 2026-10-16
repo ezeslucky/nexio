@@ -1,9 +1,9 @@
-import { MenuSeparator } from '@nexio/component';
+﻿import { MenuSeparator } from '@nexio/component';
 import {
   handleInlineAskAIAction,
   pageAIGroups,
 } from '@nexio/core/blocksuite/ai';
-import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
 import { DocsService } from '@nexio/core/modules/doc';
 import { EditorService } from '@nexio/core/modules/editor';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
@@ -13,8 +13,8 @@ import {
 } from '@nexio/core/modules/template-doc/view/template-list-menu';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { PageRootBlockComponent } from '@blocksuite/affine/blocks/root';
-import type { Store } from '@blocksuite/affine/store';
+import { PageRootBlockComponent } from '@blocksuite/nexio/blocks/root';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   AiIcon,
   EdgelessIcon,
@@ -31,7 +31,7 @@ import {
   useState,
 } from 'react';
 
-import { useAsyncCallback } from '../../components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '../../components/hooks/nexio-async-hooks';
 import * as styles from './starter-bar.css';
 
 const Badge = forwardRef<

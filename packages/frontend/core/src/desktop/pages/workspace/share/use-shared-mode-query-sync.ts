@@ -1,5 +1,5 @@
-import type { Editor } from '@nexio/core/modules/editor';
-import type { DocMode } from '@blocksuite/affine/model';
+﻿import type { Editor } from '@nexio/core/modules/editor';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { useLiveData } from '@toeverything/infra';
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

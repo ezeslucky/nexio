@@ -18,10 +18,10 @@
     "yjs": "^13.6.27"
   },
   "devDependencies": {
-    "@blocksuite/affine": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "vitest": "^4.1.8"
   },
   "peerDependencies": {
-    "@blocksuite/affine": "workspace:*"
+    "@blocksuite/nexio": "workspace:*"
   }
 }

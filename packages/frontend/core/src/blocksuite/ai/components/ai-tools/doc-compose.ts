@@ -1,11 +1,11 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+﻿import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace';
-import { getEmbedLinkedDocIcons } from '@blocksuite/affine/blocks/embed-doc';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import type { ColorScheme } from '@blocksuite/affine/model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { MarkdownTransformer } from '@blocksuite/affine/widgets/linked-doc';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import { getEmbedLinkedDocIcons } from '@blocksuite/nexio/blocks/embed-doc';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import type { ColorScheme } from '@blocksuite/nexio/model';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { MarkdownTransformer } from '@blocksuite/nexio/widgets/linked-doc';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { CopyIcon, PageIcon, ToolIcon } from '@blocksuite/icons/lit';
 import type { BlockStdScope } from '@blocksuite/std';
 import { css, html } from 'lit';

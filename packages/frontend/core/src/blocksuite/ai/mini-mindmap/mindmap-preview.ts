@@ -1,20 +1,20 @@
-import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace.js';
-import type { SurfaceBlockModel } from '@blocksuite/affine/blocks/surface';
+﻿import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace.js';
+import type { SurfaceBlockModel } from '@blocksuite/nexio/blocks/surface';
 import {
   MindmapStyleFour,
   MindmapStyleOne,
   MindmapStyleThree,
   MindmapStyleTwo,
-} from '@blocksuite/affine/gfx/mindmap';
-import type { ServiceProvider } from '@blocksuite/affine/global/di';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
+} from '@blocksuite/nexio/gfx/mindmap';
+import type { ServiceProvider } from '@blocksuite/nexio/global/di';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
 import {
   type MindmapElementModel,
   MindmapStyle,
-} from '@blocksuite/affine/model';
-import { MarkdownAdapter } from '@blocksuite/affine/shared/adapters';
-import { BlockStdScope, type EditorHost } from '@blocksuite/affine/std';
-import { Schema, type Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import { MarkdownAdapter } from '@blocksuite/nexio/shared/adapters';
+import { BlockStdScope, type EditorHost } from '@blocksuite/nexio/std';
+import { Schema, type Store } from '@blocksuite/nexio/store';
 import { css, html, LitElement, nothing } from 'lit';
 import { property, query } from 'lit/decorators.js';
 import { repeat } from 'lit/directives/repeat.js';

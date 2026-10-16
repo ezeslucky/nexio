@@ -1,10 +1,10 @@
-import {
+﻿import {
   type NexioCommand,
   NexioCommandRegistry,
   type CommandCategory,
   PreconditionStrategy,
 } from '@nexio/core/commands';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { Entity, LiveData } from '@toeverything/infra';
 import Fuse from 'fuse.js';
 

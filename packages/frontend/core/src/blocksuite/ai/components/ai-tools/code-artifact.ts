@@ -1,15 +1,15 @@
-import { CodeBlockHighlighter } from '@blocksuite/affine/blocks/code';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { ColorScheme } from '@blocksuite/affine/model';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { type BlockStdScope } from '@blocksuite/affine/std';
+﻿import { CodeBlockHighlighter } from '@blocksuite/nexio/blocks/code';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ColorScheme } from '@blocksuite/nexio/model';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { type BlockStdScope } from '@blocksuite/nexio/std';
 import {
   type BlockSnapshot,
   nanoid,
   type SliceSnapshot,
   Text,
-} from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/store';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import {
   CodeBlockIcon,
   CopyIcon,

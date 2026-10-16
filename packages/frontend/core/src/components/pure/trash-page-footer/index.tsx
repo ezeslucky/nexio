@@ -1,4 +1,4 @@
-import { Button } from '@nexio/component/ui/button';
+﻿import { Button } from '@nexio/component/ui/button';
 import { ConfirmModal } from '@nexio/component/ui/modal';
 import { DocService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
@@ -7,8 +7,8 @@ import { DeleteIcon, ResetIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback, useState } from 'react';
 
-import { useAppSettingHelper } from '../../../components/hooks/affine/use-app-setting-helper';
-import { useBlockSuiteMetaHelper } from '../../../components/hooks/affine/use-block-suite-meta-helper';
+import { useAppSettingHelper } from '../../../components/hooks/nexio/use-app-setting-helper';
+import { useBlockSuiteMetaHelper } from '../../../components/hooks/nexio/use-block-suite-meta-helper';
 import { useNavigateHelper } from '../../../components/hooks/use-navigate-helper';
 import { toast } from '../../../utils';
 import * as styles from './styles.css';

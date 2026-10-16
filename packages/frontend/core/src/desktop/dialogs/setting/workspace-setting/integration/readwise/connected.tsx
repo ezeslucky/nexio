@@ -1,5 +1,5 @@
-import { Button, Modal } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, Modal } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { IntegrationService } from '@nexio/core/modules/integration';
 import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';

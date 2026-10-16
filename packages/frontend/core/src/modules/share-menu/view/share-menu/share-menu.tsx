@@ -1,4 +1,4 @@
-import { Tabs, Tooltip, useConfirmModal } from '@nexio/component';
+﻿import { Tabs, Tooltip, useConfirmModal } from '@nexio/component';
 import { Button } from '@nexio/component/ui/button';
 import { Menu } from '@nexio/component/ui/menu';
 import { ServerService } from '@nexio/core/modules/cloud';
@@ -9,7 +9,7 @@ import { ShareInfoService } from '@nexio/core/modules/share-doc';
 import type { WorkspaceMetadata } from '@nexio/core/modules/workspace';
 import { ServerDeploymentType, SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
-import type { Store } from '@blocksuite/affine/store';
+import type { Store } from '@blocksuite/nexio/store';
 import { LockIcon, PublishIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import {

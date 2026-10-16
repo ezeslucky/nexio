@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
@@ -12,11 +12,11 @@ import type { CopilotChatHistoryFragment } from '@nexio/graphql';
 import track, { type EventArgs } from '@nexio/track';
 import { combine } from '@atlaskit/pragmatic-drag-and-drop/combine';
 import { dropTargetForElements } from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { ArrowUpBigIcon, CloseIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

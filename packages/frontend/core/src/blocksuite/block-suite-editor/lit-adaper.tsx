@@ -1,4 +1,4 @@
-// oxlint-disable-next-line no-restricted-imports
+﻿// oxlint-disable-next-line no-restricted-imports
 import 'katex/dist/katex.min.css';
 
 import { useConfirmModal, useLitPortalFactory } from '@nexio/component';
@@ -10,7 +10,7 @@ import {
   type PageEditor,
 } from '@nexio/core/blocksuite/editors';
 import { getViewManager } from '@nexio/core/blocksuite/manager/view';
-import { useEnableAI } from '@nexio/core/components/hooks/affine/use-enable-ai';
+import { useEnableAI } from '@nexio/core/components/hooks/nexio/use-enable-ai';
 import { ServerService } from '@nexio/core/modules/cloud';
 import type { DocCustomPropertyInfo } from '@nexio/core/modules/db';
 import type {
@@ -24,9 +24,9 @@ import { useInsidePeekView } from '@nexio/core/modules/peek-view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { ServerFeature } from '@nexio/graphql';
 import track from '@nexio/track';
-import type { DocTitle } from '@blocksuite/affine/fragments/doc-title';
-import type { DocMode } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+import type { DocTitle } from '@blocksuite/nexio/fragments/doc-title';
+import type { DocMode } from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   useFramework,
   useLiveData,

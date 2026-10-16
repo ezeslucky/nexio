@@ -1,6 +1,6 @@
-import { Button, notify } from '@nexio/component';
+﻿import { Button, notify } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useMutation } from '@nexio/core/components/hooks/use-mutation';
 import { UrlService } from '@nexio/core/modules/url';
 import { UserFriendlyError } from '@nexio/error';

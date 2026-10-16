@@ -1,7 +1,7 @@
-import { ViewExtensionManager } from '@blocksuite/affine/ext-loader';
-import { getInternalViewExtensions } from '@blocksuite/affine/extensions/view';
-import { BlockViewIdentifier } from '@blocksuite/affine/std';
-import type { ExtensionType } from '@blocksuite/affine/store';
+﻿import { ViewExtensionManager } from '@blocksuite/nexio/ext-loader';
+import { getInternalViewExtensions } from '@blocksuite/nexio/extensions/view';
+import { BlockViewIdentifier } from '@blocksuite/nexio/std';
+import type { ExtensionType } from '@blocksuite/nexio/store';
 import { literal } from 'lit/static-html.js';
 
 const manager = new ViewExtensionManager([...getInternalViewExtensions()]);

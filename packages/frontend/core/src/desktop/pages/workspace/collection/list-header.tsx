@@ -1,4 +1,4 @@
-import { Button, useConfirmModal } from '@nexio/component';
+﻿import { Button, useConfirmModal } from '@nexio/component';
 import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
 import { PageListNewPageButton } from '@nexio/core/components/page-list';
 import {
@@ -11,7 +11,7 @@ import { WorkbenchLink } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useServices } from '@toeverything/infra';
 import { useCallback } from 'react';

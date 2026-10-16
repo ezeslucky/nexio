@@ -1,4 +1,4 @@
-import { Popover, uniReactRoot } from '@nexio/component';
+﻿import { Popover, uniReactRoot } from '@nexio/component';
 import { Button } from '@nexio/component/ui/button';
 import { Menu, MenuItem } from '@nexio/component/ui/menu';
 import { PeekViewService } from '@nexio/core/modules/peek-view/services/peek-view';
@@ -8,9 +8,9 @@ import {
   createIcon,
   type DataViewCellLifeCycle,
   EditorHostKey,
-} from '@blocksuite/affine/blocks/database';
-import { openFilesWith } from '@blocksuite/affine/shared/utils';
-import type { BlobEngine } from '@blocksuite/affine/sync';
+} from '@blocksuite/nexio/blocks/database';
+import { openFilesWith } from '@blocksuite/nexio/shared/utils';
+import type { BlobEngine } from '@blocksuite/nexio/sync';
 import {
   DeleteIcon,
   DownloadIcon,

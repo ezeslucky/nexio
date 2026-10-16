@@ -1,7 +1,7 @@
-import { useThemeColorV2 } from '@nexio/component';
+﻿import { useThemeColorV2 } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { useGuard } from '@nexio/core/components/guard';
 import { useActiveBlocksuiteEditor } from '@nexio/core/components/hooks/use-block-suite-editor';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
@@ -20,12 +20,12 @@ import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { i18nTime } from '@nexio/i18n';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import {
   customImageProxyMiddleware,
   ImageProxyService,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import {
   FrameworkScope,
   useLiveData,

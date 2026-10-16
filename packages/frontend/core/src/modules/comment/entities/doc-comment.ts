@@ -1,11 +1,11 @@
-import { type CommentChangeAction, DocMode } from '@nexio/graphql';
+﻿import { type CommentChangeAction, DocMode } from '@nexio/graphql';
 import { track } from '@nexio/track';
-import { InlineCommentManager } from '@blocksuite/affine/inlines/comment';
+import { InlineCommentManager } from '@blocksuite/nexio/inlines/comment';
 import type {
   BaseSelection,
   DocSnapshot,
   Store,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import type { BlockStdScope } from '@blocksuite/std';
 import {
   effect,

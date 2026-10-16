@@ -1,13 +1,13 @@
-import { MemberSearchService } from '@nexio/core/modules/permissions';
+﻿import { MemberSearchService } from '@nexio/core/modules/permissions';
 import { highlighter } from '@nexio/core/modules/quicksearch/utils/highlighter';
 import { I18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { AffineInlineEditor } from '@blocksuite/affine/shared/types';
+import type { AffineInlineEditor } from '@blocksuite/nexio/shared/types';
 import type {
   LinkedMenuItem,
   LinkedWidgetConfig,
-} from '@blocksuite/affine/widgets/linked-doc';
-import { unsafeHTML } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/nexio/widgets/linked-doc';
+import { unsafeHTML } from '@blocksuite/nexio-shared/utils';
 import { UserIcon } from '@blocksuite/icons/lit';
 import { BLOCK_ID_ATTR, type BlockComponent } from '@blocksuite/std';
 import { computed } from '@preact/signals-core';

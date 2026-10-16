@@ -1,4 +1,4 @@
-import type { DatabaseBlockModel } from '@blocksuite/affine/model';
+﻿import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
 import type { DeltaInsert } from '@blocksuite/store';
 import { expect, type Page } from '@playwright/test';
 

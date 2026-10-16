@@ -1,16 +1,16 @@
-import { DocService, DocsService } from '@nexio/core/modules/doc';
+﻿import { DocService, DocsService } from '@nexio/core/modules/doc';
 import { AppThemeService } from '@nexio/core/modules/theme';
-import type { Container } from '@blocksuite/affine/global/di';
-import { ColorScheme } from '@blocksuite/affine/model';
+import type { Container } from '@blocksuite/nexio/global/di';
+import { ColorScheme } from '@blocksuite/nexio/model';
 import {
   type ThemeExtension,
   ThemeExtensionIdentifier,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   createSignalFromObservable,
   type Signal,
-} from '@blocksuite/affine/shared/utils';
-import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/shared/utils';
+import { LifeCycleWatcher, StdIdentifier } from '@blocksuite/nexio/std';
 import { type FrameworkProvider } from '@toeverything/infra';
 import type { Observable } from 'rxjs';
 import { combineLatest, map } from 'rxjs';

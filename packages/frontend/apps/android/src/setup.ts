@@ -1,9 +1,9 @@
-import '@nexio/core/bootstrap/browser';
+﻿import '@nexio/core/bootstrap/browser';
 import '@nexio/component/theme';
 import '@nexio/core/mobile/styles/mobile.css';
 import './proxy';
 
-import { viewportRuntimeConfig } from '@blocksuite/affine/std/gfx';
+import { viewportRuntimeConfig } from '@blocksuite/nexio/std/gfx';
 
 // Android WebView is less prone to the iOS WKWebView process kill, so keep the
 // user-facing zoom range unchanged. These knobs only reduce gesture-time work

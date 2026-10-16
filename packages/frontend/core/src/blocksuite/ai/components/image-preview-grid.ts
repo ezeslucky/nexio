@@ -1,4 +1,4 @@
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
+﻿import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
 import { CloseIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';

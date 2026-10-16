@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/affine/std';
+﻿import type { EditorHost } from '@blocksuite/nexio/std';
 
 import type { ChatContextValue } from '../components/ai-chat-content';
 

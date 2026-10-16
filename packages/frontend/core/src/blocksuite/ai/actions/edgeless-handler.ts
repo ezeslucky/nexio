@@ -1,5 +1,5 @@
-import { splitElements } from '@blocksuite/affine/blocks/root';
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
+﻿import { splitElements } from '@blocksuite/nexio/blocks/root';
+import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
 import {
   CodeBlockModel,
   EdgelessTextBlockModel,
@@ -9,14 +9,14 @@ import {
   NoteBlockModel,
   ShapeElementModel,
   TextElementModel,
-} from '@blocksuite/affine/model';
-import { matchModels } from '@blocksuite/affine/shared/utils';
-import type { EditorHost } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/model';
+import { matchModels } from '@blocksuite/nexio/shared/utils';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import {
   GfxControllerIdentifier,
   type GfxModel,
-} from '@blocksuite/affine/std/gfx';
-import { type BlockModel, Slice } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/gfx';
+import { type BlockModel, Slice } from '@blocksuite/nexio/store';
 import type { TemplateResult } from 'lit';
 
 import { getContentFromSlice } from '../../utils';

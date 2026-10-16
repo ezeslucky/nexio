@@ -1,24 +1,24 @@
-import { ColorScheme } from '@blocksuite/affine/model';
+﻿import { ColorScheme } from '@blocksuite/nexio/model';
 import {
   DocModeProvider,
   NotificationProvider,
   ThemeProvider,
   ToolbarFlag,
   ToolbarRegistryIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { unsafeCSSVar } from '@blocksuite/affine/shared/theme';
+} from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
 import {
   getPageRootByElement,
   stopPropagation,
-} from '@blocksuite/affine/shared/utils';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/affine/std/inline';
-import type { BaseSelection } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/utils';
+import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { RANGE_SYNC_EXCLUDE_ATTR } from '@blocksuite/nexio/std/inline';
+import type { BaseSelection } from '@blocksuite/nexio/store';
 import {
   AFFINE_VIEWPORT_OVERLAY_WIDGET,
   type AffineViewportOverlayWidget,
-} from '@blocksuite/affine/widgets/viewport-overlay';
+} from '@blocksuite/nexio/widgets/viewport-overlay';
 import {
   autoPlacement,
   autoUpdate,

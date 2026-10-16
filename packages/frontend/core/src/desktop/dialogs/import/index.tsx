@@ -1,6 +1,6 @@
-import { Button, IconButton, Modal } from '@nexio/component';
+﻿import { Button, IconButton, Modal } from '@nexio/component';
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import {
   type DialogComponentProps,
@@ -20,15 +20,15 @@ import {
 import { DebugLogger } from '@nexio/debug';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import { openDirectory, openFilesWith } from '@blocksuite/affine/shared/utils';
-import type { Workspace } from '@blocksuite/affine/store';
+import { openDirectory, openFilesWith } from '@blocksuite/nexio/shared/utils';
+import type { Workspace } from '@blocksuite/nexio/store';
 import {
   DocxTransformer,
   HtmlTransformer,
   type ImportWarning,
   MarkdownTransformer,
   ZipTransformer,
-} from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/nexio/widgets/linked-doc';
 import {
   ExportToHtmlIcon,
   ExportToMarkdownIcon,

@@ -1,15 +1,15 @@
-import { notify, toast, useConfirmModal } from '@nexio/component';
+﻿import { notify, toast, useConfirmModal } from '@nexio/component';
 import {
   Menu,
   MenuItem,
   MenuSeparator,
   MenuSub,
 } from '@nexio/component/ui/menu';
-import { PageHistoryModal } from '@nexio/core/components/affine/page-history-modal';
+import { PageHistoryModal } from '@nexio/core/components/nexio/page-history-modal';
 import { useGuard } from '@nexio/core/components/guard';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
-import { useExportPage } from '@nexio/core/components/hooks/affine/use-export-page';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
+import { useExportPage } from '@nexio/core/components/hooks/nexio/use-export-page';
 import { Export, MoveToTrash } from '@nexio/core/components/page-list';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import { useDetailPageHeaderResponsive } from '@nexio/core/desktop/pages/workspace/detail-page/use-header-responsive';
@@ -23,7 +23,7 @@ import { ViewService } from '@nexio/core/modules/workbench/services/view';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/affine/store';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   DuplicateIcon,
   EdgelessIcon,

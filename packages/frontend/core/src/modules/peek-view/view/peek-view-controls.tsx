@@ -1,8 +1,8 @@
-import { IconButton, notify } from '@nexio/component';
+﻿import { IconButton, notify } from '@nexio/component';
 import { copyTextToClipboard } from '@nexio/core/utils/clipboard';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import {
   CloseIcon,
   ExpandFullIcon,

@@ -1,7 +1,7 @@
-import { Loading } from '@nexio/component';
+﻿import { Loading } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
 import { Button } from '@nexio/component/ui/button';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useAppUpdater } from '@nexio/core/components/hooks/use-app-updater';
 import { useI18n } from '@nexio/i18n';
 import clsx from 'clsx';

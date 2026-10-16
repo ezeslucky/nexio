@@ -1,4 +1,4 @@
-import { FlexWrapper, Input, notify } from '@nexio/component';
+﻿import { FlexWrapper, Input, notify } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
@@ -6,8 +6,8 @@ import {
 } from '@nexio/component/setting-components';
 import { Avatar } from '@nexio/component/ui/avatar';
 import { Button } from '@nexio/component/ui/button';
-import { useSignOut } from '@nexio/core/components/hooks/affine/use-sign-out';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { Upload } from '@nexio/core/components/pure/file-upload';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';

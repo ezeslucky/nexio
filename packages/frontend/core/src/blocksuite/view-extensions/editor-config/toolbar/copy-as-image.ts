@@ -1,18 +1,18 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import { isMindmapChild, isMindMapRoot } from '@nexio/core/blocksuite/ai';
 import { EditorService } from '@nexio/core/modules/editor';
 import { apis } from '@nexio/electron-api';
 import { I18n } from '@nexio/i18n';
-import type { MenuContext } from '@blocksuite/affine/components/toolbar';
-import { Bound, getCommonBound } from '@blocksuite/affine/global/gfx';
-import type { BlockStdScope } from '@blocksuite/affine/std';
+import type { MenuContext } from '@blocksuite/nexio/components/toolbar';
+import { Bound, getCommonBound } from '@blocksuite/nexio/global/gfx';
+import type { BlockStdScope } from '@blocksuite/nexio/std';
 import {
   type GfxBlockElementModel,
   GfxControllerIdentifier,
   type GfxModel,
   GfxPrimitiveElementModel,
   isGfxGroupCompatibleModel,
-} from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/std/gfx';
 import { CopyAsImgaeIcon } from '@blocksuite/icons/lit';
 import type { FrameworkProvider } from '@toeverything/infra';
 

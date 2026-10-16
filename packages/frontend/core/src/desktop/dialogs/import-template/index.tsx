@@ -1,5 +1,5 @@
-import { Button, Modal } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, Modal } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import { useWorkspaceName } from '@nexio/core/components/hooks/use-workspace-info';
 import { WorkspaceSelector } from '@nexio/core/components/workspace-selector';
@@ -17,7 +17,7 @@ import {
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { AllDocsIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';

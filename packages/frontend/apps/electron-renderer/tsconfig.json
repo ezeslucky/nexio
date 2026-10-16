@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../../../tsconfig.web.json",
   "compilerOptions": {
     "rootDir": "./src",
@@ -8,7 +8,7 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../../../blocksuite/affine/all" },
+    { "path": "../../../../blocksuite/nexio/all" },
     { "path": "../../component" },
     { "path": "../../core" },
     { "path": "../../../common/debug" },

@@ -1,5 +1,5 @@
-import { FlexWrapper } from '@nexio/component';
-import { EmptyCollectionDetail } from '@nexio/core/components/affine/empty/collection-detail';
+﻿import { FlexWrapper } from '@nexio/component';
+import { EmptyCollectionDetail } from '@nexio/core/components/nexio/empty/collection-detail';
 import {
   createDocExplorerContext,
   DocExplorerContext,

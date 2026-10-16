@@ -20,7 +20,7 @@ import {
 import {
   NexioUpdateProvider,
   availableForMyPlatformAndInstaller,
-} from '../../src/main/updater/affine-update-provider';
+} from '../../src/main/updater/nexio-update-provider';
 import { MockedAppAdapter, MockedUpdater } from './mocks';
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url));

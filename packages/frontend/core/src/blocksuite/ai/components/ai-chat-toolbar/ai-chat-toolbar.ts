@@ -1,9 +1,9 @@
-import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { createLitPortal } from '@blocksuite/affine/components/portal';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import type { NotificationService } from '@blocksuite/affine/shared/services';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+﻿import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { createLitPortal } from '@blocksuite/nexio/components/portal';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { NotificationService } from '@blocksuite/nexio/shared/services';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import {
   HistoryIcon,
   PinedIcon,

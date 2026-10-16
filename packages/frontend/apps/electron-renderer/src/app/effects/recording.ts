@@ -1,4 +1,4 @@
-import type { DocProps } from '@nexio/core/blocksuite/initialization';
+﻿import type { DocProps } from '@nexio/core/blocksuite/initialization';
 import { DocsService } from '@nexio/core/modules/doc';
 import { AudioAttachmentService } from '@nexio/core/modules/media/services/audio-attachment';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
@@ -6,9 +6,9 @@ import { DebugLogger } from '@nexio/debug';
 import { apis, events } from '@nexio/electron-api';
 import { i18nTime } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
-import type { BlobEngine } from '@blocksuite/affine/sync';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
+import type { BlobEngine } from '@blocksuite/nexio/sync';
 import type { FrameworkProvider } from '@toeverything/infra';
 
 import { getCurrentWorkspace, isAiEnabled } from './utils';

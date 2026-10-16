@@ -1,4 +1,4 @@
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
+﻿import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
 import {
   css,

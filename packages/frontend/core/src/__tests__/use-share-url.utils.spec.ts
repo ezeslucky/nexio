@@ -1,6 +1,6 @@
-import { describe, expect, test } from 'vitest';
+﻿import { describe, expect, test } from 'vitest';
 
-import { getDefaultShareMode } from '../components/hooks/affine/use-share-url.utils';
+import { getDefaultShareMode } from '../components/hooks/nexio/use-share-url.utils';
 
 describe('getDefaultShareMode', () => {
   test('returns edgeless when the current mode is edgeless', () => {

@@ -1,4 +1,4 @@
-import { Switch } from '@nexio/component';
+﻿import { Switch } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
@@ -12,7 +12,7 @@ import { ArrowRightSmallIcon, OpenInNewIcon } from '@blocksuite/icons/rc';
 import { useServices } from '@toeverything/infra';
 import { useCallback } from 'react';
 
-import { useAppSettingHelper } from '../../../../../components/hooks/affine/use-app-setting-helper';
+import { useAppSettingHelper } from '../../../../../components/hooks/nexio/use-app-setting-helper';
 import { relatedLinks } from './config';
 import * as styles from './style.css';
 import { UpdateCheckSection } from './update-check-section';

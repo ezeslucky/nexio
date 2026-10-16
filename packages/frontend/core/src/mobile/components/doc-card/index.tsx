@@ -1,4 +1,4 @@
-import { IconButton, Skeleton } from '@nexio/component';
+﻿import { IconButton, Skeleton } from '@nexio/component';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { PagePreview } from '@nexio/core/components/page-list/page-content-preview';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
@@ -8,7 +8,7 @@ import {
   WorkbenchLink,
   type WorkbenchLinkProps,
 } from '@nexio/core/modules/workbench';
-import type { DocMeta } from '@blocksuite/affine/store';
+import type { DocMeta } from '@blocksuite/nexio/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { forwardRef, type ReactNode, useMemo, useRef } from 'react';

@@ -1,4 +1,4 @@
----
+﻿---
 title: Building Document-Centric, CRDT-Native Editors
 date: 2024-01-10
 authors:
@@ -19,7 +19,7 @@ Hence, when discussing front-end collaborative editing (or rich text editing), t
 
 In the past years, our team has been dedicated to building a notable open-source knowledge base product ([26k stars on GitHub](https://github.com/ezeslucky/nexio)). To visualize and organize complex knowledge structures better, we wanted our the editor in our product to be powerful enough, so as to provide an immersive editing and collaboration experience - imagine nesting Google Docs or Notion in an infinite canvas like Figma, as shown below:
 
-![affine-demo](../images/affine-demo.jpg)
+![affine-demo](../images/nexio-demo.jpg)
 
 However, before finding the best practice, our journey in developing editors was full of challenges. At first glance, the front-end community offers many great rich text editors (like [Slate](https://github.com/ianstormtaylor/slate), [Tiptap](https://tiptap.dev/), [Lexical](https://lexical.dev/)) and whiteboard editors (like [tldraw](https://github.com/tldraw/tldraw)), which usually allows the _embedding_ of React components. Bundling various React-compatible editors together seemed convenient - but proved impractical. To some extent, this is like trying to cram several devices supporting the USB protocol into the same shell. Despite sharing the same interface, there's no guarantee the resulting product will work correctly.
 

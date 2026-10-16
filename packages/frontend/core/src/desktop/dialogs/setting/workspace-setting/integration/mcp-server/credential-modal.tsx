@@ -1,5 +1,5 @@
-import { Button, Input, Modal, notify } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, Input, Modal, notify } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import type { McpCredential } from '@nexio/core/modules/cloud/services/mcp-credential';
 import { McpAccessMode } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';

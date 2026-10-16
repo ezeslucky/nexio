@@ -1,5 +1,5 @@
-import { IconButton, MobileMenu } from '@nexio/component';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+﻿import { IconButton, MobileMenu } from '@nexio/component';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import { DocService } from '@nexio/core/modules/doc';
 import { ShareMenuContent } from '@nexio/core/modules/share-menu';
 import { WorkspaceService } from '@nexio/core/modules/workspace';

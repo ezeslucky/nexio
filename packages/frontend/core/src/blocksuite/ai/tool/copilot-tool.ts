@@ -1,17 +1,17 @@
-/* oxlint-disable typescript/no-non-null-assertion */
-import { DefaultTool } from '@blocksuite/affine/blocks/surface';
-import { IS_MAC } from '@blocksuite/affine/global/env';
+﻿/* oxlint-disable typescript/no-non-null-assertion */
+import { DefaultTool } from '@blocksuite/nexio/blocks/surface';
+import { IS_MAC } from '@blocksuite/nexio/global/env';
 import {
   Bound,
   getCommonBoundWithRotation,
-} from '@blocksuite/affine/global/gfx';
-import type { PointerEventState } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/global/gfx';
+import type { PointerEventState } from '@blocksuite/nexio/std';
 import {
   BaseTool,
   type GfxModel,
   MouseButton,
-} from '@blocksuite/affine/std/gfx';
-import { on } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/nexio/std/gfx';
+import { on } from '@blocksuite/nexio-shared/utils';
 import { isEqual } from 'lodash-es';
 import { Subject } from 'rxjs';
 

@@ -1,4 +1,4 @@
-import {
+﻿import {
   type DropTargetDropEvent,
   type DropTargetOptions,
   Loading,
@@ -6,8 +6,8 @@ import {
   Tooltip,
 } from '@nexio/component';
 import { Guard } from '@nexio/core/components/guard';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { DocsService } from '@nexio/core/modules/doc';
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';

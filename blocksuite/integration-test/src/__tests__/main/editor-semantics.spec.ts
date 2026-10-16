@@ -1,23 +1,23 @@
-import { LinkExtension } from '@blocksuite/affine-inline-link';
-import { textKeymap } from '@blocksuite/affine-inline-preset';
-import type { AffineReference } from '@blocksuite/affine-inline-reference';
+import { LinkExtension } from '@blocksuite/nexio-inline-link';
+import { textKeymap } from '@blocksuite/nexio-inline-preset';
+import type { AffineReference } from '@blocksuite/nexio-inline-reference';
 import type {
   ListBlockModel,
   ParagraphBlockModel,
-} from '@blocksuite/affine-model';
-import { insertContent } from '@blocksuite/affine-rich-text';
-import { REFERENCE_NODE } from '@blocksuite/affine-shared/consts';
-import { createDefaultDoc } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/nexio-model';
+import { insertContent } from '@blocksuite/nexio-rich-text';
+import { REFERENCE_NODE } from '@blocksuite/nexio-shared/consts';
+import { createDefaultDoc } from '@blocksuite/nexio-shared/utils';
 import { TextSelection } from '@blocksuite/std';
 import type { InlineMarkdownMatch } from '@blocksuite/std/inline';
 import { Text } from '@blocksuite/store';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
-import { defaultSlashMenuConfig } from '../../../../affine/widgets/slash-menu/src/config.js';
+import { defaultSlashMenuConfig } from '../../../../nexio/widgets/slash-menu/src/config.js';
 import type {
   SlashMenuActionItem,
   SlashMenuItem,
-} from '../../../../affine/widgets/slash-menu/src/types.js';
+} from '../../../../nexio/widgets/slash-menu/src/types.js';
 import { wait } from '../utils/common.js';
 import { addNote } from '../utils/edgeless.js';
 import { setupEditor } from '../utils/setup.js';

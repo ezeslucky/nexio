@@ -1,4 +1,4 @@
-import {
+﻿import {
   Loading,
   Menu,
   MenuItem,
@@ -17,7 +17,7 @@ import {
   SettingRow,
   SettingWrapper,
 } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { ServerService } from '@nexio/core/modules/cloud';
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import {

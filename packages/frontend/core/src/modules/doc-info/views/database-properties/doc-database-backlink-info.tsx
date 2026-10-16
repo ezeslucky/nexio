@@ -1,14 +1,14 @@
-import {
+﻿import {
   Divider,
   PropertyCollapsibleContent,
   PropertyCollapsibleSection,
   PropertyName,
 } from '@nexio/component';
-import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
+import { NexioPageReference } from '@nexio/core/components/nexio/reference-link';
 import { DocService } from '@nexio/core/modules/doc';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
 import { useI18n } from '@nexio/i18n';
-import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
 import { DatabaseTableViewIcon, PageIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';
 import { useMemo } from 'react';

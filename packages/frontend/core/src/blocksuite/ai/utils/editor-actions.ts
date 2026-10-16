@@ -1,8 +1,8 @@
-import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
-import { clipboardConfigs } from '@blocksuite/affine/foundation/clipboard';
-import { defaultImageProxyMiddleware } from '@blocksuite/affine/shared/adapters';
-import { replaceSelectedTextWithBlocksCommand } from '@blocksuite/affine/shared/commands';
-import { isInsideEdgelessEditor } from '@blocksuite/affine/shared/utils';
+﻿import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
+import { clipboardConfigs } from '@blocksuite/nexio/foundation/clipboard';
+import { defaultImageProxyMiddleware } from '@blocksuite/nexio/shared/adapters';
+import { replaceSelectedTextWithBlocksCommand } from '@blocksuite/nexio/shared/commands';
+import { isInsideEdgelessEditor } from '@blocksuite/nexio/shared/utils';
 import {
   type BlockComponent,
   BlockSelection,
@@ -11,12 +11,12 @@ import {
   type EditorHost,
   SurfaceSelection,
   type TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import {
   type BlockModel,
   type BlockSnapshot,
   Slice,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { Doc as YDoc } from 'yjs';
 
 import {

@@ -1,4 +1,4 @@
-import {
+﻿import {
   type ExternalGetDataFeedbackArgs,
   type fromExternalData,
   type MonitorDragEvent,
@@ -10,10 +10,10 @@ import type { NexioDNDData } from '@nexio/core/types/dnd';
 import {
   DNDAPIExtension,
   DndApiExtensionIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { SliceSnapshot } from '@blocksuite/affine/store';
-import type { DragBlockPayload } from '@blocksuite/affine/widgets/drag-handle';
+} from '@blocksuite/nexio/shared/services';
+import { BlockStdScope } from '@blocksuite/nexio/std';
+import type { SliceSnapshot } from '@blocksuite/nexio/store';
+import type { DragBlockPayload } from '@blocksuite/nexio/widgets/drag-handle';
 import { Service } from '@toeverything/infra';
 
 import type { DocsService } from '../../doc';

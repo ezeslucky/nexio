@@ -1,11 +1,11 @@
-import {
+﻿import {
   IconButton,
   Menu,
   MenuItem,
   type MenuProps,
   Scrollable,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import {

@@ -1,4 +1,4 @@
-import {
+﻿import {
   MenuItem,
   notify,
   PropertyValue,
@@ -7,7 +7,7 @@ import {
 import type { FilterParams } from '@nexio/core/modules/collection-rules';
 import { DocService } from '@nexio/core/modules/doc';
 import { useI18n } from '@nexio/i18n';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';

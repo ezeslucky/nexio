@@ -1,5 +1,5 @@
 import { notify } from '@nexio/component';
-import { NexioOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
 import { SignInPageContainer } from '@nexio/component/auth-components';
 import { SignInPanel } from '@nexio/core/components/sign-in';
 import { SignInBackgroundArts } from '@nexio/core/components/sign-in/background-arts';

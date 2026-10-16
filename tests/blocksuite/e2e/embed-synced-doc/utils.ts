@@ -1,9 +1,9 @@
-import type {
+﻿import type {
   EmbedSyncedDocBlockProps,
   NoteBlockModel,
   ParagraphProps,
   RootBlockProps,
-} from '@blocksuite/affine-model';
+} from '@blocksuite/nexio-model';
 import type { Store } from '@blocksuite/store';
 import type { Page } from '@playwright/test';
 /**

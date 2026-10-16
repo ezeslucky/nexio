@@ -1,4 +1,4 @@
-import { MenuItem } from '@nexio/component';
+﻿import { MenuItem } from '@nexio/component';
 import { ServerService, UserFeatureService } from '@nexio/core/modules/cloud';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { useI18n } from '@nexio/i18n';
@@ -7,7 +7,7 @@ import { AccountIcon, AdminIcon, SignOutIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 
-import { useSignOut } from '../../hooks/affine/use-sign-out';
+import { useSignOut } from '../../hooks/nexio/use-sign-out';
 
 export const AccountMenu = () => {
   const workspaceDialogService = useService(WorkspaceDialogService);

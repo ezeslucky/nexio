@@ -1,16 +1,16 @@
-import { Bound } from '@blocksuite/affine/global/gfx';
+﻿import { Bound } from '@blocksuite/nexio/global/gfx';
 import {
   ImageBlockModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import {
   isInsideEdgelessEditor,
   matchModels,
-} from '@blocksuite/affine/shared/utils';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/shared/utils';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { ThemeProvider } from '@blocksuite/nexio-shared/services';
 import {
   ChatWithAiIcon,
   DeleteIcon,

@@ -1,11 +1,11 @@
-import { WorkbenchService } from '@nexio/core/modules/workbench';
-import { getSelectedBlocksCommand } from '@blocksuite/affine/shared/commands';
-import type { CommentProvider } from '@blocksuite/affine/shared/services';
-import { CommentProviderIdentifier } from '@blocksuite/affine/shared/services';
-import type { BlockStdScope } from '@blocksuite/affine/std';
-import { StdIdentifier } from '@blocksuite/affine/std';
-import type { BaseSelection, ExtensionType } from '@blocksuite/affine/store';
-import { ImageSelection } from '@blocksuite/affine-shared/selection';
+﻿import { WorkbenchService } from '@nexio/core/modules/workbench';
+import { getSelectedBlocksCommand } from '@blocksuite/nexio/shared/commands';
+import type { CommentProvider } from '@blocksuite/nexio/shared/services';
+import { CommentProviderIdentifier } from '@blocksuite/nexio/shared/services';
+import type { BlockStdScope } from '@blocksuite/nexio/std';
+import { StdIdentifier } from '@blocksuite/nexio/std';
+import type { BaseSelection, ExtensionType } from '@blocksuite/nexio/store';
+import { ImageSelection } from '@blocksuite/nexio-shared/selection';
 import { type Container } from '@blocksuite/global/di';
 import {
   BlockSelection,

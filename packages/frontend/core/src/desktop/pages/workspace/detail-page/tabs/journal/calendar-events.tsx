@@ -1,6 +1,6 @@
-import { Loading, toast, Tooltip } from '@nexio/component';
+﻿import { Loading, toast, Tooltip } from '@nexio/component';
 import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocsService } from '@nexio/core/modules/doc';
 import {
   type CalendarEvent,

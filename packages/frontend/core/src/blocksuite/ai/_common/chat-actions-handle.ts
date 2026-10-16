@@ -1,36 +1,36 @@
-import { EdgelessCRUDIdentifier } from '@blocksuite/affine/blocks/surface';
+﻿import { EdgelessCRUDIdentifier } from '@blocksuite/nexio/blocks/surface';
 import {
   Bound,
   getCommonBoundWithRotation,
   type SerializedXYWH,
-} from '@blocksuite/affine/global/gfx';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+} from '@blocksuite/nexio/global/gfx';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import {
   type DocMode,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import {
   getFirstBlockCommand,
   getLastBlockCommand,
   getSelectedBlocksCommand,
-} from '@blocksuite/affine/shared/commands';
-import type { ImageSelection } from '@blocksuite/affine/shared/selection';
+} from '@blocksuite/nexio/shared/commands';
+import type { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import {
   DocModeProvider,
   EditPropsStore,
   NotificationProvider,
   TelemetryProvider,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   type BlockComponent,
   type BlockSelection,
   type BlockStdScope,
   type EditorHost,
   type TextSelection,
-} from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import type { Store } from '@blocksuite/nexio/store';
 import {
   BlockIcon,
   EdgelessIcon,

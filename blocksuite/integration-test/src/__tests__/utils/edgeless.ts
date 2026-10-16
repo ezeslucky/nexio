@@ -1,8 +1,8 @@
-import type {
+﻿import type {
   EdgelessRootBlockComponent,
   PageRootBlockComponent,
-} from '@blocksuite/affine/blocks/root';
-import type { SurfaceBlockComponent } from '@blocksuite/affine/blocks/surface';
+} from '@blocksuite/nexio/blocks/root';
+import type { SurfaceBlockComponent } from '@blocksuite/nexio/blocks/surface';
 import type { Store } from '@blocksuite/store';
 
 import type { TestAffineEditorContainer } from '../../index.js';

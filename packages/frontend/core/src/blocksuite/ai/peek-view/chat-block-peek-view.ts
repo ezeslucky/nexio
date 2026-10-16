@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
@@ -14,15 +14,15 @@ import {
   CanvasElementType,
   EdgelessCRUDIdentifier,
   getSurfaceBlock,
-} from '@blocksuite/affine/blocks/surface';
-import { ViewExtensionManagerIdentifier } from '@blocksuite/affine/ext-loader';
-import { ConnectorMode } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/blocks/surface';
+import { ViewExtensionManagerIdentifier } from '@blocksuite/nexio/ext-loader';
+import { ConnectorMode } from '@blocksuite/nexio/model';
 import {
   DocModeProvider,
   NotificationProvider,
   TelemetryProvider,
-} from '@blocksuite/affine/shared/services';
-import type { EditorHost } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/shared/services';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import { html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

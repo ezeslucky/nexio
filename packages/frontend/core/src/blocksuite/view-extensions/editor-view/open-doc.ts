@@ -1,10 +1,10 @@
-import { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
+﻿import { EditorSettingSchema } from '@nexio/core/modules/editor-setting';
 import { I18n } from '@nexio/i18n';
 import {
   type OpenDocConfig,
   type OpenDocConfigItem,
   OpenDocExtension,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   CenterPeekIcon,
   ExpandFullIcon,

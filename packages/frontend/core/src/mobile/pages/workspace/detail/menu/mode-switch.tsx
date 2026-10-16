@@ -1,11 +1,11 @@
-import {
+﻿import {
   RadioGroup,
   type RadioItem,
   useMobileMenuController,
 } from '@nexio/component';
 import { EditorService } from '@nexio/core/modules/editor';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback } from 'react';
 

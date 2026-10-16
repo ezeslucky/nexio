@@ -1,4 +1,4 @@
-import {
+﻿import {
   MenuItem,
   MenuTrigger,
   RadioGroup,
@@ -14,8 +14,8 @@ import {
   NoteShadow,
   NoteShadowMap,
   StrokeStyle,
-} from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';

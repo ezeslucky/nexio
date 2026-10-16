@@ -1,4 +1,4 @@
-import {
+﻿import {
   Avatar,
   Button,
   Divider,
@@ -12,8 +12,8 @@ import {
   Scrollable,
 } from '@nexio/component';
 import { AuthPageContainer } from '@nexio/component/auth-components';
-import { useSignOut } from '@nexio/core/components/hooks/affine/use-sign-out';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
 import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import { PureWorkspaceCard } from '@nexio/core/components/workspace-selector/workspace-card';

@@ -1,15 +1,15 @@
-import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { Tooltip } from '@blocksuite/affine/components/tooltip';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { noop } from '@blocksuite/affine/global/utils';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { createButtonPopper } from '@blocksuite/affine/shared/utils';
+﻿import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { Tooltip } from '@blocksuite/nexio/components/tooltip';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { noop } from '@blocksuite/nexio/global/utils';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { createButtonPopper } from '@blocksuite/nexio/shared/utils';
 import type {
   BlockSelection,
   EditorHost,
   TextSelection,
-} from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { CopyIcon, MoreHorizontalIcon, ResetIcon } from '@blocksuite/icons/lit';
 import { css, html, LitElement, nothing, type PropertyValues } from 'lit';
 import { property, query, state } from 'lit/decorators.js';

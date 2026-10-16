@@ -1,5 +1,5 @@
-import type { RichText } from '@blocksuite/affine/rich-text';
-import { type EditorHost, TextSelection } from '@blocksuite/affine/std';
+﻿import type { RichText } from '@blocksuite/nexio/rich-text';
+import { type EditorHost, TextSelection } from '@blocksuite/nexio/std';
 
 import { handleInlineAskAIAction } from '../../actions/doc-handler';
 import { hasAIRequestService } from '../../runtime/request';

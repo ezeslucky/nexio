@@ -1,7 +1,7 @@
-import type { InlineEditProps } from '@nexio/component';
+﻿import type { InlineEditProps } from '@nexio/component';
 import { InlineEdit } from '@nexio/component';
 import { useGuard } from '@nexio/core/components/guard';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocService, DocsService } from '@nexio/core/modules/doc';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { track } from '@nexio/track';

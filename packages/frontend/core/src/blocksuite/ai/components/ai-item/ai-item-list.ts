@@ -1,11 +1,11 @@
-import { createLitPortal } from '@blocksuite/affine/components/portal';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ThemeProvider } from '@blocksuite/affine/shared/services';
+﻿import { createLitPortal } from '@blocksuite/nexio/components/portal';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ThemeProvider } from '@blocksuite/nexio/shared/services';
 import {
   EditorHost,
   PropTypes,
   requiredProperties,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import { flip, offset } from '@floating-ui/dom';
 import { baseTheme } from '@toeverything/theme';
 import { css, html, LitElement, nothing, unsafeCSS } from 'lit';

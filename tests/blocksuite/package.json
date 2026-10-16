@@ -6,8 +6,8 @@
     "test": "yarn playwright test"
   },
   "dependencies": {
-    "@blocksuite/affine": "workspace:*",
     "@blocksuite/integration-test": "workspace:*",
+    "@blocksuite/nexio": "workspace:*",
     "@nexio-test/kit": "workspace:*",
     "@playwright/test": "=1.58.2",
     "@toeverything/theme": "^1.1.23",

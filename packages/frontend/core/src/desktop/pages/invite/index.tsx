@@ -1,4 +1,4 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import {
   AcceptInvitePage,
   ExpiredPage,
@@ -7,7 +7,7 @@ import {
   RequestToJoinPage,
   SentRequestPage,
 } from '@nexio/component/member-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { WorkspacesService } from '@nexio/core/modules/workspace';
 import { UserFriendlyError } from '@nexio/error';
 import { WorkspaceMemberStatus } from '@nexio/graphql';

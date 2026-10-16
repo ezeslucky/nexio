@@ -1,4 +1,4 @@
-// !$*UTF8*$!
+﻿// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		2E0DD47B57B994A104B25EED /* Pods_AFFiNE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF48636D7DB5BEE00770FD9A /* Pods_AFFiNE.framework */; };
 		500D72F72E825064006E553F /* Intelligents in Frameworks */ = {isa = PBXBuildFile; productRef = 500D72F62E825064006E553F /* Intelligents */; };
-		5027D4782E7C5FBD00ADD25A /* AffinePaywall in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D4772E7C5FBD00ADD25A /* AffinePaywall */; };
-		5027D47A2E7C5FC100ADD25A /* AffineResources in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D4792E7C5FC100ADD25A /* AffineResources */; };
-		5027D47C2E7C5FC400ADD25A /* AffineGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D47B2E7C5FC400ADD25A /* AffineGraphQL */; };
+		5027D4782E7C5FBD00ADD25A /* NexioPaywall in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D4772E7C5FBD00ADD25A /* NexioPaywall */; };
+		5027D47A2E7C5FC100ADD25A /* NexioResources in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D4792E7C5FC100ADD25A /* NexioResources */; };
+		5027D47C2E7C5FC400ADD25A /* NexioGraphQL in Frameworks */ = {isa = PBXBuildFile; productRef = 5027D47B2E7C5FC400ADD25A /* NexioGraphQL */; };
 		5027D4802E7C611900ADD25A /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027D47F2E7C611900ADD25A /* Tools.swift */; };
 		5075136A2D1924C600AD60C0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507513692D1924C600AD60C0 /* RootViewController.swift */; };
 		50A285D72D112A5E000D5A6D /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 50A285D62D112A5E000D5A6D /* Localizable.xcstrings */; };
@@ -34,9 +34,9 @@
 		50C000122F02000000000000 /* NativeSignInHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C000132F02000000000000 /* NativeSignInHUD.swift */; };
 		50C000142F02000000000000 /* NativeSignInComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C000152F02000000000000 /* NativeSignInComponents.swift */; };
 		50FF428A2D2E757E0050AA83 /* ApplicationBridgedWindowScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF42892D2E757E0050AA83 /* ApplicationBridgedWindowScript.swift */; };
-		50FF428C2D2E77CC0050AA83 /* AffineViewController+AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF428B2D2E77CC0050AA83 /* AffineViewController+AIButton.swift */; };
+		50FF428C2D2E77CC0050AA83 /* NexioViewController+AIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FF428B2D2E77CC0050AA83 /* NexioViewController+AIButton.swift */; };
 		9D52FC432D26CDBF00105D0A /* JSValueContainerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D52FC422D26CDB600105D0A /* JSValueContainerExt.swift */; };
-		9D90BE272CCB9876006677DB /* AffineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D90BE1B2CCB9876006677DB /* AffineViewController.swift */; };
+		9D90BE272CCB9876006677DB /* NexioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D90BE1B2CCB9876006677DB /* NexioViewController.swift */; };
 		9D90BE282CCB9876006677DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D90BE1C2CCB9876006677DB /* AppDelegate.swift */; };
 		9D90BE292CCB9876006677DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D90BE1D2CCB9876006677DB /* Assets.xcassets */; };
 		9D90BE2A2CCB9876006677DB /* capacitor.config.json in Resources */ = {isa = PBXBuildFile; fileRef = 9D90BE1E2CCB9876006677DB /* capacitor.config.json */; };
@@ -96,9 +96,9 @@
 
 /* Begin PBXFileReference section */
 		3256F4410D881A03FE77D092 /* Pods-AFFiNE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFFiNE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFFiNE/Pods-AFFiNE.debug.xcconfig"; sourceTree = "<group>"; };
-		5027D4762E7C5FB700ADD25A /* AffinePaywall */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AffinePaywall; sourceTree = "<group>"; };
+		5027D4762E7C5FB700ADD25A /* NexioPaywall */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NexioPaywall; sourceTree = "<group>"; };
 		5027D47F2E7C611900ADD25A /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
-		5039CC962D1D42C700874F32 /* AffineGraphQL */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AffineGraphQL; sourceTree = "<group>"; };
+		5039CC962D1D42C700874F32 /* NexioGraphQL */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NexioGraphQL; sourceTree = "<group>"; };
 		504EC3041FED79650016851F /* AFFiNE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFFiNE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507513692D1924C600AD60C0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		50802D5E2D112F7D00694021 /* Intelligents */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Intelligents; sourceTree = "<group>"; };
@@ -122,11 +122,11 @@
 		50C000112F02000000000000 /* NativeSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSignInView.swift; sourceTree = "<group>"; };
 		50C000132F02000000000000 /* NativeSignInHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSignInHUD.swift; sourceTree = "<group>"; };
 		50C000152F02000000000000 /* NativeSignInComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeSignInComponents.swift; sourceTree = "<group>"; };
-		50CECF1E2E7C1084004487AA /* AffineResources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AffineResources; sourceTree = "<group>"; };
+		50CECF1E2E7C1084004487AA /* NexioResources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NexioResources; sourceTree = "<group>"; };
 		50FF42892D2E757E0050AA83 /* ApplicationBridgedWindowScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationBridgedWindowScript.swift; sourceTree = "<group>"; };
-		50FF428B2D2E77CC0050AA83 /* AffineViewController+AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffineViewController+AIButton.swift"; sourceTree = "<group>"; };
+		50FF428B2D2E77CC0050AA83 /* NexioViewController+AIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NexioViewController+AIButton.swift"; sourceTree = "<group>"; };
 		9D52FC422D26CDB600105D0A /* JSValueContainerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSValueContainerExt.swift; sourceTree = "<group>"; };
-		9D90BE1B2CCB9876006677DB /* AffineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffineViewController.swift; sourceTree = "<group>"; };
+		9D90BE1B2CCB9876006677DB /* NexioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NexioViewController.swift; sourceTree = "<group>"; };
 		9D90BE1C2CCB9876006677DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D90BE1D2CCB9876006677DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D90BE1E2CCB9876006677DB /* capacitor.config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = capacitor.config.json; sourceTree = "<group>"; };
@@ -198,11 +198,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5027D47A2E7C5FC100ADD25A /* AffineResources in Frameworks */,
+				5027D47A2E7C5FC100ADD25A /* NexioResources in Frameworks */,
 				50A485DE2E840A8000F220CE /* StoreKit.framework in Frameworks */,
-				5027D4782E7C5FBD00ADD25A /* AffinePaywall in Frameworks */,
+				5027D4782E7C5FBD00ADD25A /* NexioPaywall in Frameworks */,
 				9DFCD1462D27D1D70028C92B /* libaffine_mobile_native.a in Frameworks */,
-				5027D47C2E7C5FC400ADD25A /* AffineGraphQL in Frameworks */,
+				5027D47C2E7C5FC400ADD25A /* NexioGraphQL in Frameworks */,
 				500D72F72E825064006E553F /* Intelligents in Frameworks */,
 				2E0DD47B57B994A104B25EED /* Pods_AFFiNE.framework in Frameworks */,
 			);
@@ -266,9 +266,9 @@
 		50802D5F2D112F7D00694021 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				5039CC962D1D42C700874F32 /* AffineGraphQL */,
-				5027D4762E7C5FB700ADD25A /* AffinePaywall */,
-				50CECF1E2E7C1084004487AA /* AffineResources */,
+				5039CC962D1D42C700874F32 /* NexioGraphQL */,
+				5027D4762E7C5FB700ADD25A /* NexioPaywall */,
+				50CECF1E2E7C1084004487AA /* NexioResources */,
 				50802D5E2D112F7D00694021 /* Intelligents */,
 			);
 			path = Packages;
@@ -327,8 +327,8 @@
 				9DAE85B72E7BAC3B00DB9F1D /* Plugins */,
 				9D90BE1C2CCB9876006677DB /* AppDelegate.swift */,
 				507513692D1924C600AD60C0 /* RootViewController.swift */,
-				9D90BE1B2CCB9876006677DB /* AffineViewController.swift */,
-				50FF428B2D2E77CC0050AA83 /* AffineViewController+AIButton.swift */,
+				9D90BE1B2CCB9876006677DB /* NexioViewController.swift */,
+				50FF428B2D2E77CC0050AA83 /* NexioViewController+AIButton.swift */,
 				50FF42892D2E757E0050AA83 /* ApplicationBridgedWindowScript.swift */,
 				5027D47F2E7C611900ADD25A /* Tools.swift */,
 				50BBC54E2E840DBC0067C5E2 /* Products.storekit */,
@@ -396,9 +396,9 @@
 			);
 			name = AFFiNE;
 			packageProductDependencies = (
-				5027D4792E7C5FC100ADD25A /* AffineResources */,
-				5027D4772E7C5FBD00ADD25A /* AffinePaywall */,
-				5027D47B2E7C5FC400ADD25A /* AffineGraphQL */,
+				5027D4792E7C5FC100ADD25A /* NexioResources */,
+				5027D4772E7C5FBD00ADD25A /* NexioPaywall */,
+				5027D47B2E7C5FC400ADD25A /* NexioGraphQL */,
 				500D72F62E825064006E553F /* Intelligents */,
 			);
 			productName = App;
@@ -485,9 +485,9 @@
 			mainGroup = 504EC2FB1FED79650016851F;
 			packageReferences = (
 				50B0000A2F01000000000000 /* XCLocalSwiftPackageReference "Intelligents" */,
-				50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "AffinePaywall" */,
-				50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "AffineResources" */,
-				50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "AffineGraphQL" */,
+				50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "NexioPaywall" */,
+				50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "NexioResources" */,
+				50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "NexioGraphQL" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 504EC3051FED79650016851F /* Products */;
@@ -616,8 +616,8 @@
 				C4C97C7D2D030BE000BC2AD1 /* affine_mobile_nativeFFI.h in Sources */,
 				C4C97C7E2D030BE000BC2AD1 /* affine_mobile_nativeFFI.modulemap in Sources */,
 				9DEC59432D323EE40027CEBD /* Mutex.swift in Sources */,
-				50FF428C2D2E77CC0050AA83 /* AffineViewController+AIButton.swift in Sources */,
-				9D90BE272CCB9876006677DB /* AffineViewController.swift in Sources */,
+				50FF428C2D2E77CC0050AA83 /* NexioViewController+AIButton.swift in Sources */,
+				9D90BE272CCB9876006677DB /* NexioViewController.swift in Sources */,
 				9D90BE282CCB9876006677DB /* AppDelegate.swift in Sources */,
 				5027D4802E7C611900ADD25A /* Tools.swift in Sources */,
 			);
@@ -1002,17 +1002,17 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Intelligents;
 		};
-		50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "AffinePaywall" */ = {
+		50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "NexioPaywall" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/AffinePaywall;
+			relativePath = Packages/NexioPaywall;
 		};
-		50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "AffineResources" */ = {
+		50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "NexioResources" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/AffineResources;
+			relativePath = Packages/NexioResources;
 		};
-		50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "AffineGraphQL" */ = {
+		50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "NexioGraphQL" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/AffineGraphQL;
+			relativePath = Packages/NexioGraphQL;
 		};
 /* End XCLocalSwiftPackageReference section */
 
@@ -1022,20 +1022,20 @@
 			package = 50B0000A2F01000000000000 /* XCLocalSwiftPackageReference "Intelligents" */;
 			productName = Intelligents;
 		};
-		5027D4772E7C5FBD00ADD25A /* AffinePaywall */ = {
+		5027D4772E7C5FBD00ADD25A /* NexioPaywall */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "AffinePaywall" */;
-			productName = AffinePaywall;
+			package = 50B0000B2F01000000000000 /* XCLocalSwiftPackageReference "NexioPaywall" */;
+			productName = NexioPaywall;
 		};
-		5027D4792E7C5FC100ADD25A /* AffineResources */ = {
+		5027D4792E7C5FC100ADD25A /* NexioResources */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "AffineResources" */;
-			productName = AffineResources;
+			package = 50B0000C2F01000000000000 /* XCLocalSwiftPackageReference "NexioResources" */;
+			productName = NexioResources;
 		};
-		5027D47B2E7C5FC400ADD25A /* AffineGraphQL */ = {
+		5027D47B2E7C5FC400ADD25A /* NexioGraphQL */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "AffineGraphQL" */;
-			productName = AffineGraphQL;
+			package = 50B0000D2F01000000000000 /* XCLocalSwiftPackageReference "NexioGraphQL" */;
+			productName = NexioGraphQL;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

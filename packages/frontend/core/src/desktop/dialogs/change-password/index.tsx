@@ -1,10 +1,10 @@
-import { Button, Modal, notify } from '@nexio/component';
+﻿import { Button, Modal, notify } from '@nexio/component';
 import {
   AuthContent,
   AuthHeader,
   AuthInput,
 } from '@nexio/component/auth-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   AuthService,
   DefaultServerService,

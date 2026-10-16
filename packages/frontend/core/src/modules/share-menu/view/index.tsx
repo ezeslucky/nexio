@@ -1,9 +1,9 @@
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+﻿import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import { WorkspaceShareSettingService } from '@nexio/core/modules/share-setting';
 import type { Workspace } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { Store } from '@blocksuite/affine/store';
+import type { Store } from '@blocksuite/nexio/store';
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useEffect } from 'react';
 

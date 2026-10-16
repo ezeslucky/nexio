@@ -1,11 +1,11 @@
-import {
+﻿import {
   Menu,
   MenuItem,
   MenuTrigger,
   notify,
   Tooltip,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocGrantedUsersService } from '@nexio/core/modules/permissions';
 import { ShareInfoService } from '@nexio/core/modules/share-doc';
 import { UserFriendlyError } from '@nexio/error';

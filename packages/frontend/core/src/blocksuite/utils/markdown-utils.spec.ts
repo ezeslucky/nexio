@@ -1,8 +1,8 @@
-import 'fake-indexeddb/auto';
+﻿import 'fake-indexeddb/auto';
 
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
-import { Text } from '@blocksuite/affine/store';
-import { TestWorkspace } from '@blocksuite/affine/store/test';
+import { Text } from '@blocksuite/nexio/store';
+import { TestWorkspace } from '@blocksuite/nexio/store/test';
 import { describe, expect, test } from 'vitest';
 
 import { insertFromMarkdown } from './markdown-utils';

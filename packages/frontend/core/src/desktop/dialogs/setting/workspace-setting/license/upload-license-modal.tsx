@@ -1,5 +1,5 @@
-import { Button, Modal, notify, useConfirmModal } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { Button, Modal, notify, useConfirmModal } from '@nexio/component';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { Upload } from '@nexio/core/components/pure/file-upload';
 import {
   SelfhostLicenseService,

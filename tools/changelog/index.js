@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+﻿import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -117,7 +117,7 @@ const pkgJsonPath = 'packages/frontend/core/package.json';
 
 const content = await readFile(join(rootDir, pkgJsonPath), 'utf8');
 const { dependencies } = JSON.parse(content);
-const blocksuiteVersion = dependencies['@blocksuite/affine'];
+const blocksuiteVersion = dependencies['@blocksuite/nexio'];
 
 const prevCommit = repo.findCommit(PREV_VERSION);
 
@@ -137,7 +137,7 @@ const previousPkgJson = JSON.parse(
   Buffer.from(previousPkgJsonBlob.content()).toString('utf8')
 );
 const previousBlocksuiteVersion =
-  previousPkgJson.dependencies['@blocksuite/affine'];
+  previousPkgJson.dependencies['@blocksuite/nexio'];
 
 if (blocksuiteVersion !== previousBlocksuiteVersion) {
   const blockSuiteRepo = new Repository(

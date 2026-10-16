@@ -1,11 +1,11 @@
-import type { NbstoreService } from '@nexio/core/modules/storage';
+﻿import type { NbstoreService } from '@nexio/core/modules/storage';
 import type {
   DelegatedToolCancel,
   DelegatedToolName,
   DelegatedToolRequest,
 } from '@nexio/realtime';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import type { Subscription } from 'rxjs';
 
 import {

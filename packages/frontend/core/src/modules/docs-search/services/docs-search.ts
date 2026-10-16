@@ -1,9 +1,9 @@
-import { toDocSearchParams } from '@nexio/core/modules/navigation';
+﻿import { toDocSearchParams } from '@nexio/core/modules/navigation';
 import type { IndexerPreferOptions, IndexerSyncState } from '@nexio/nbstore';
 import {
   type ReferenceParams,
   ReferenceParamsSchema,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import { fromPromise, LiveData, Service } from '@toeverything/infra';
 import { isEmpty, omit } from 'lodash-es';
 import {

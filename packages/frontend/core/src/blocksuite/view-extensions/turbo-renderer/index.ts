@@ -1,7 +1,7 @@
-import {
+﻿import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { z } from 'zod';
 
 import { turboRendererExtension } from './turbo-renderer';

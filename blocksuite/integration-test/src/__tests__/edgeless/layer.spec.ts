@@ -1,15 +1,15 @@
-import type { EdgelessRootBlockComponent } from '@blocksuite/affine/blocks/root';
+﻿import type { EdgelessRootBlockComponent } from '@blocksuite/nexio/blocks/root';
 import type {
   CanvasRenderer,
   SurfaceElementModel,
-} from '@blocksuite/affine/blocks/surface';
-import { ungroupCommand } from '@blocksuite/affine/gfx/group';
+} from '@blocksuite/nexio/blocks/surface';
+import { ungroupCommand } from '@blocksuite/nexio/gfx/group';
 import type {
   GroupElementModel,
   MindmapElementModel,
   NoteBlockModel,
-} from '@blocksuite/affine/model';
-import { generateKeyBetween } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/model';
+import { generateKeyBetween } from '@blocksuite/nexio/std/gfx';
 import type { BlockComponent } from '@blocksuite/std';
 import type { BlockModel, Store } from '@blocksuite/store';
 import { beforeEach, describe, expect, test } from 'vitest';

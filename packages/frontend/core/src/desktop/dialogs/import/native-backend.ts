@@ -1,4 +1,4 @@
-import {
+﻿import {
   getNativeImportSessionHandlers,
   type NativeImportSessionHandlers,
 } from '@nexio/core/modules/import/runtime-config';
@@ -9,7 +9,7 @@ import type {
 import type {
   ImportBatch,
   ImportCommitResult,
-} from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/nexio/widgets/linked-doc';
 
 import type { ImportCommitService } from './commit-service';
 

@@ -1,0 +1,42 @@
+{
+  "name": "@blocksuite/nexio-block-paragraph",
+  "description": "Paragraph block for BlockSuite.",
+  "type": "module",
+  "scripts": {
+    "build": "yarn run -T tsc"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "toeverything",
+  "license": "MIT",
+  "dependencies": {
+    "@blocksuite/global": "workspace:*",
+    "@blocksuite/nexio-components": "workspace:*",
+    "@blocksuite/nexio-ext-loader": "workspace:*",
+    "@blocksuite/nexio-gfx-turbo-renderer": "workspace:*",
+    "@blocksuite/nexio-inline-preset": "workspace:*",
+    "@blocksuite/nexio-model": "workspace:*",
+    "@blocksuite/nexio-rich-text": "workspace:*",
+    "@blocksuite/nexio-shared": "workspace:*",
+    "@blocksuite/std": "workspace:*",
+    "@blocksuite/store": "workspace:*",
+    "@preact/signals-core": "^1.8.0",
+    "@toeverything/theme": "^1.1.23",
+    "@types/mdast": "^4.0.4",
+    "lit": "^3.2.0",
+    "zod": "^3.25.76"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./turbo-painter": "./src/turbo/paragraph-painter.worker.ts",
+    "./store": "./src/store.ts",
+    "./view": "./src/view.ts"
+  },
+  "files": [
+    "src",
+    "dist",
+    "!src/__tests__",
+    "!dist/__tests__"
+  ],
+  "version": "0.27.5"
+}

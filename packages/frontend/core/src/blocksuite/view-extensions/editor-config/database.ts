@@ -1,8 +1,8 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import {
   generateUrl,
   type UseSharingUrl,
-} from '@nexio/core/components/hooks/affine/use-share-url';
+} from '@nexio/core/components/hooks/nexio/use-share-url';
 import { ServerService } from '@nexio/core/modules/cloud';
 import { EditorService } from '@nexio/core/modules/editor';
 import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
@@ -11,8 +11,8 @@ import { track } from '@nexio/track';
 import {
   menu,
   type MenuOptions,
-} from '@blocksuite/affine/components/context-menu';
-import type { DatabaseBlockModel } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/components/context-menu';
+import type { DatabaseBlockModel } from '@blocksuite/nexio/model';
 import { LinkIcon } from '@blocksuite/icons/lit';
 import type { FrameworkProvider } from '@toeverything/infra';
 

@@ -1,15 +1,15 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import {
   generateUrl,
   type UseSharingUrl,
-} from '@nexio/core/components/hooks/affine/use-share-url';
+} from '@nexio/core/components/hooks/nexio/use-share-url';
 import { WorkspaceServerService } from '@nexio/core/modules/cloud';
 import { EditorService } from '@nexio/core/modules/editor';
 import type { EditorSettingExt } from '@nexio/core/modules/editor-setting/entities/editor-setting';
 import { copyLinkToBlockStdScopeClipboard } from '@nexio/core/utils/clipboard';
 import { I18n, i18nTime } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import { BookmarkBlockComponent } from '@blocksuite/affine/blocks/bookmark';
+import { BookmarkBlockComponent } from '@blocksuite/nexio/blocks/bookmark';
 import {
   EmbedFigmaBlockComponent,
   EmbedGithubBlockComponent,
@@ -17,38 +17,38 @@ import {
   EmbedLoomBlockComponent,
   EmbedYoutubeBlockComponent,
   getDocContentWithMaxLength,
-} from '@blocksuite/affine/blocks/embed';
+} from '@blocksuite/nexio/blocks/embed';
 import {
   EmbedLinkedDocBlockComponent,
   EmbedSyncedDocBlockComponent,
-} from '@blocksuite/affine/blocks/embed-doc';
-import { SurfaceRefBlockComponent } from '@blocksuite/affine/blocks/surface-ref';
-import { toggleEmbedCardEditModal } from '@blocksuite/affine/components/embed-card-modal';
-import { notifyLinkedDocClearedAliases } from '@blocksuite/affine/components/notification';
-import { isPeekable, peek } from '@blocksuite/affine/components/peek';
-import { toast } from '@blocksuite/affine/components/toast';
+} from '@blocksuite/nexio/blocks/embed-doc';
+import { SurfaceRefBlockComponent } from '@blocksuite/nexio/blocks/surface-ref';
+import { toggleEmbedCardEditModal } from '@blocksuite/nexio/components/embed-card-modal';
+import { notifyLinkedDocClearedAliases } from '@blocksuite/nexio/components/notification';
+import { isPeekable, peek } from '@blocksuite/nexio/components/peek';
+import { toast } from '@blocksuite/nexio/components/toast';
 import {
   EditorChevronDown,
   type MenuContext,
   type MenuItemGroup,
-} from '@blocksuite/affine/components/toolbar';
-import { watch } from '@blocksuite/affine/global/lit';
+} from '@blocksuite/nexio/components/toolbar';
+import { watch } from '@blocksuite/nexio/global/lit';
 import {
   AffineReference,
   toggleReferencePopup,
-} from '@blocksuite/affine/inlines/reference';
+} from '@blocksuite/nexio/inlines/reference';
 import {
   BookmarkBlockModel,
   EmbedIframeBlockModel,
   EmbedLinkedDocModel,
   EmbedSyncedDocModel,
   SurfaceRefBlockSchema,
-} from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/model';
 import {
   draftSelectedModelsCommand,
   getSelectedModelsCommand,
-} from '@blocksuite/affine/shared/commands';
-import { ImageSelection } from '@blocksuite/affine/shared/selection';
+} from '@blocksuite/nexio/shared/commands';
+import { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import {
   ActionPlacement,
   CitationProvider,
@@ -63,18 +63,18 @@ import {
   type ToolbarModuleConfig,
   ToolbarModuleExtension,
   UserProvider,
-} from '@blocksuite/affine/shared/services';
-import { matchModels } from '@blocksuite/affine/shared/utils';
+} from '@blocksuite/nexio/shared/services';
+import { matchModels } from '@blocksuite/nexio/shared/utils';
 import {
   BlockFlavourIdentifier,
   BlockSelection,
   TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import {
   GfxBlockElementModel,
   GfxPrimitiveElementModel,
-} from '@blocksuite/affine/std/gfx';
-import { type ExtensionType, Slice } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std/gfx';
+import { type ExtensionType, Slice } from '@blocksuite/nexio/store';
 import {
   CopyAsImgaeIcon,
   CopyIcon,

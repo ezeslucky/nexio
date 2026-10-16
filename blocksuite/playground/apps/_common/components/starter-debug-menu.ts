@@ -1,4 +1,4 @@
-/* oxlint-disable no-restricted-imports */
+﻿/* oxlint-disable no-restricted-imports */
 import '@shoelace-style/shoelace/dist/components/button/button.js';
 import '@shoelace-style/shoelace/dist/components/button-group/button-group.js';
 import '@shoelace-style/shoelace/dist/components/color-picker/color-picker.js';
@@ -16,16 +16,16 @@ import '@shoelace-style/shoelace/dist/themes/light.css';
 import '@shoelace-style/shoelace/dist/themes/dark.css';
 import './left-side-panel.js';
 
-import { PresentTool } from '@blocksuite/affine/blocks/frame';
-import { ExportManager } from '@blocksuite/affine/blocks/surface';
-import { toast } from '@blocksuite/affine/components/toast';
-import { StoreExtensionManagerIdentifier } from '@blocksuite/affine/ext-loader';
+import { PresentTool } from '@blocksuite/nexio/blocks/frame';
+import { ExportManager } from '@blocksuite/nexio/blocks/surface';
+import { toast } from '@blocksuite/nexio/components/toast';
+import { StoreExtensionManagerIdentifier } from '@blocksuite/nexio/ext-loader';
 import {
   BlockSuiteError,
   ErrorCode,
-} from '@blocksuite/affine/global/exceptions';
-import type { SerializedXYWH } from '@blocksuite/affine/global/gfx';
-import { ColorScheme, type DocMode } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/global/exceptions';
+import type { SerializedXYWH } from '@blocksuite/nexio/global/gfx';
+import { ColorScheme, type DocMode } from '@blocksuite/nexio/model';
 import {
   defaultImageProxyMiddleware,
   docLinkBaseURLMiddleware,
@@ -33,26 +33,26 @@ import {
   MarkdownAdapterFactoryIdentifier,
   PlainTextAdapterFactoryIdentifier,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/adapters';
+import { DocModeProvider } from '@blocksuite/nexio/shared/services';
 import {
   ColorVariables,
   FontFamilyVariables,
   SizeVariables,
   StyleVariables,
-} from '@blocksuite/affine/shared/theme';
+} from '@blocksuite/nexio/shared/theme';
 import {
   openFilesWith,
   openSingleFileWith,
   printToPdf,
-} from '@blocksuite/affine/shared/utils';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/shared/utils';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
 import {
   type DeltaInsert,
   Text,
   type Workspace,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import {
   commitImportBatchToWorkspace,
   createAssetsArchive,
@@ -61,9 +61,9 @@ import {
   MarkdownTransformer,
   NotionHtmlTransformer,
   ZipTransformer,
-} from '@blocksuite/affine/widgets/linked-doc';
-import { NotionHtmlAdapter } from '@blocksuite/affine-shared/adapters';
-import type { AffineTextAttributes } from '@blocksuite/affine-shared/types';
+} from '@blocksuite/nexio/widgets/linked-doc';
+import { NotionHtmlAdapter } from '@blocksuite/nexio-shared/adapters';
+import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
 import { TestAffineEditorContainer } from '@blocksuite/integration-test';
 import type { SlDropdown } from '@shoelace-style/shoelace';
 import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';

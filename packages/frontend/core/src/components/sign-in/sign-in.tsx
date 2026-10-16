@@ -1,4 +1,4 @@
-import { Button, notify } from '@nexio/component';
+﻿import { Button, notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
@@ -6,8 +6,8 @@ import {
   AuthHeader,
   AuthInput,
 } from '@nexio/component/auth-components';
-import { OAuth } from '@nexio/core/components/affine/auth/oauth';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { OAuth } from '@nexio/core/components/nexio/auth/oauth';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   AuthService,
   getSelfHostedServerName,
@@ -31,7 +31,7 @@ import {
   useState,
 } from 'react';
 
-import { useSelfhostLoginVersionGuard } from '../hooks/affine/use-selfhost-login-version-guard';
+import { useSelfhostLoginVersionGuard } from '../hooks/nexio/use-selfhost-login-version-guard';
 import type { SignInState } from '.';
 import { Back } from './back';
 import * as style from './style.css';

@@ -1,4 +1,4 @@
-import { observeResize, useConfirmModal } from '@nexio/component';
+﻿import { observeResize, useConfirmModal } from '@nexio/component';
 import {
   AIChatRuntime,
   createAIRequestService,
@@ -14,9 +14,9 @@ import {
 } from '@nexio/core/blocksuite/ai/components/ai-chat-toolbar';
 import { getViewManager } from '@nexio/core/blocksuite/manager/view';
 import { NotificationServiceImpl } from '@nexio/core/blocksuite/view-extensions/editor-view/notification-service';
-import { useAIChatConfig } from '@nexio/core/components/hooks/affine/use-ai-chat-config';
-import { useAISpecs } from '@nexio/core/components/hooks/affine/use-ai-specs';
-import { useAISubscribe } from '@nexio/core/components/hooks/affine/use-ai-subscribe';
+import { useAIChatConfig } from '@nexio/core/components/hooks/nexio/use-ai-chat-config';
+import { useAISpecs } from '@nexio/core/components/hooks/nexio/use-ai-specs';
+import { useAISubscribe } from '@nexio/core/components/hooks/nexio/use-ai-subscribe';
 import {
   AIDraftService,
   AIModelService,
@@ -43,9 +43,9 @@ import {
 } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { BlockStdScope } from '@blocksuite/affine/std';
-import type { Workspace } from '@blocksuite/affine/store';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { BlockStdScope } from '@blocksuite/nexio/std';
+import type { Workspace } from '@blocksuite/nexio/store';
 import { type Signal, signal } from '@preact/signals-core';
 import { useFramework, useService } from '@toeverything/infra';
 import { nanoid } from 'nanoid';

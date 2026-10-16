@@ -1,5 +1,5 @@
-import { PropertyCollapsibleSection } from '@nexio/component';
-import { NexioPageReference } from '@nexio/core/components/affine/reference-link';
+﻿import { PropertyCollapsibleSection } from '@nexio/component';
+import { NexioPageReference } from '@nexio/core/components/nexio/reference-link';
 import type { Backlink, Link } from '@nexio/core/modules/doc-link';
 import type { MouseEvent, ReactNode } from 'react';
 

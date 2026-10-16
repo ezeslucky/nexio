@@ -1,5 +1,5 @@
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
-import { NexioErrorComponent } from '@nexio/core/components/affine/affine-error-boundary/affine-error-fallback';
+﻿import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { NexioErrorComponent } from '@nexio/core/components/nexio/nexio-error-boundary/nexio-error-fallback';
 import { PageNotFound } from '@nexio/core/desktop/pages/404';
 import { SharePage } from '@nexio/core/desktop/pages/workspace/share/share-page';
 import { workbenchRoutes } from '@nexio/core/mobile/workbench-router';

@@ -1,11 +1,11 @@
-import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import type { ImageSelection } from '@blocksuite/affine/shared/selection';
+﻿import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import type { ImageSelection } from '@blocksuite/nexio/shared/selection';
 import type {
   BlockSelection,
   EditorHost,
   TextSelection,
-} from '@blocksuite/affine/std';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+} from '@blocksuite/nexio/std';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { css, html, LitElement, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 import { classMap } from 'lit/directives/class-map.js';

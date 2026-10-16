@@ -1,10 +1,10 @@
-import {
+﻿import {
   LinkPreviewCacheIdentifier,
   type LinkPreviewCacheProvider,
   LinkPreviewService,
   LinkPreviewServiceIdentifier,
-} from '@blocksuite/affine/shared/services';
-import { type ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import { type ExtensionType } from '@blocksuite/nexio/store';
 import type { Container } from '@blocksuite/global/di';
 import type { FrameworkProvider } from '@toeverything/infra';
 

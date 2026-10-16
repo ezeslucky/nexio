@@ -1,9 +1,9 @@
-import { IconButton } from '@nexio/component';
-import { useSharingUrl } from '@nexio/core/components/hooks/affine/use-share-url';
+﻿import { IconButton } from '@nexio/component';
+import { useSharingUrl } from '@nexio/core/components/hooks/nexio/use-share-url';
 import { WorkspaceDialogService } from '@nexio/core/modules/dialogs';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { type DocMode } from '@blocksuite/affine/model';
+import { type DocMode } from '@blocksuite/nexio/model';
 import { InformationIcon, LinkIcon } from '@blocksuite/icons/rc';
 import { useService } from '@toeverything/infra';
 import { useCallback } from 'react';

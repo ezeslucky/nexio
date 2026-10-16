@@ -1,4 +1,4 @@
-# BlockSuite Framework Overview
+﻿# BlockSuite Framework Overview
 
 > _People who are really serious about editor should make their own framework._
 
@@ -32,7 +32,7 @@ During the development of AFFiNE, it became clear that BlockSuite was advancing 
 
 With BlockSuite editors, you can selectively reuse all the editing features in [Nexio](https://www.technexio.me/):
 
-[![affine-demo](../images/affine-demo.jpg)](https://www.technexio.me/)
+[![affine-demo](../images/nexio-demo.jpg)](https://www.technexio.me/)
 
 And under the hood, the vanilla BlockSuite framework supports:
 

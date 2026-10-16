@@ -1,6 +1,6 @@
-import { I18n } from '@nexio/i18n';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+﻿import { I18n } from '@nexio/i18n';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { css, html, nothing } from 'lit';
 import { property } from 'lit/decorators.js';
 

@@ -1,16 +1,16 @@
-import {
+﻿import {
   SettingHeader,
   SettingWrapper,
 } from '@nexio/component/setting-components';
 import { useI18n } from '@nexio/i18n';
 
-import type { ShortcutsInfo } from '../../../../../components/hooks/affine/use-shortcuts';
+import type { ShortcutsInfo } from '../../../../../components/hooks/nexio/use-shortcuts';
 import {
   useEdgelessShortcuts,
   useGeneralShortcuts,
   useMarkdownShortcuts,
   usePageShortcuts,
-} from '../../../../../components/hooks/affine/use-shortcuts';
+} from '../../../../../components/hooks/nexio/use-shortcuts';
 import { shortcutKey, shortcutKeyContainer, shortcutRow } from './style.css';
 
 const ShortcutsPanel = ({

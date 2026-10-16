@@ -1,4 +1,4 @@
-import { notify, toast } from '@nexio/component';
+﻿import { notify, toast } from '@nexio/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
@@ -8,7 +8,7 @@ import {
   createAIRequestService,
   setupAIProvider,
 } from '@nexio/core/blocksuite/ai';
-import { useRegisterFindInPageCommands } from '@nexio/core/components/hooks/affine/use-register-find-in-page-commands';
+import { useRegisterFindInPageCommands } from '@nexio/core/components/hooks/nexio/use-register-find-in-page-commands';
 import { useRegisterWorkspaceCommands } from '@nexio/core/components/hooks/use-register-workspace-commands';
 import { OverCapacityNotification } from '@nexio/core/components/over-capacity';
 import {
@@ -33,8 +33,8 @@ import {
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import type { DocMode } from '@blocksuite/nexio/model';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import {
   effect,
   fromPromise,

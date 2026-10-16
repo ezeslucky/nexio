@@ -1,8 +1,8 @@
-import { LoadingIcon } from '@blocksuite/affine/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { ColorScheme } from '@blocksuite/affine/model';
-import { ShadowlessElement } from '@blocksuite/affine/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+﻿import { LoadingIcon } from '@blocksuite/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { ColorScheme } from '@blocksuite/nexio/model';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import type { Signal } from '@preact/signals-core';
 import {
   css,

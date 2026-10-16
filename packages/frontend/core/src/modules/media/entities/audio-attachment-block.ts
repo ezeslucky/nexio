@@ -1,4 +1,4 @@
-import {
+﻿import {
   TranscriptionBlockFlavour,
   type TranscriptionBlockModel,
 } from '@nexio/core/blocksuite/ai/blocks/transcription-block/model';
@@ -6,9 +6,9 @@ import { insertFromMarkdown } from '@nexio/core/blocksuite/utils';
 import { preprocessAudioBlobForTranscription } from '@nexio/core/utils/opus-encoding';
 import { DebugLogger } from '@nexio/debug';
 import track from '@nexio/track';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
-import type { AffineTextAttributes } from '@blocksuite/affine/shared/types';
-import { type DeltaInsert, Text } from '@blocksuite/affine/store';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
+import type { AffineTextAttributes } from '@blocksuite/nexio/shared/types';
+import { type DeltaInsert, Text } from '@blocksuite/nexio/store';
 import { computed } from '@preact/signals-core';
 import { Entity, LiveData } from '@toeverything/infra';
 import { cssVarV2 } from '@toeverything/theme/v2';

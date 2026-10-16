@@ -1,4 +1,4 @@
-import { Scrollable, uniReactRoot } from '@nexio/component';
+﻿import { Scrollable, uniReactRoot } from '@nexio/component';
 import { NexioIcon } from '@nexio/component/auth-components';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
 import { EditorOutlineViewer } from '@nexio/core/blocksuite/outline-viewer';
@@ -25,9 +25,9 @@ import {
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
-import { DisposableGroup } from '@blocksuite/affine/global/disposable';
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
-import { type DocMode, DocModes } from '@blocksuite/affine/model';
+import { DisposableGroup } from '@blocksuite/nexio/global/disposable';
+import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
+import { type DocMode, DocModes } from '@blocksuite/nexio/model';
 import { FrameworkScope, useLiveData, useService } from '@toeverything/infra';
 import clsx from 'clsx';
 import { useCallback, useEffect, useMemo, useState } from 'react';

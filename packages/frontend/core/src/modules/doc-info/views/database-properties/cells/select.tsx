@@ -1,11 +1,11 @@
-import { PropertyValue } from '@nexio/component';
+﻿import { PropertyValue } from '@nexio/component';
 import { type TagLike, TagsInlineEditor } from '@nexio/core/components/tags';
 import { TagService } from '@nexio/core/modules/tag';
 import {
   nexioLabelToDatabaseTagColor,
   databaseTagColorToV2,
 } from '@nexio/core/modules/tag/entities/utils';
-import type { DatabaseBlockDataSource } from '@blocksuite/affine/blocks/database';
+import type { DatabaseBlockDataSource } from '@blocksuite/nexio/blocks/database';
 import type { SelectTag } from '@blocksuite/data-view';
 import { MultiSelectIcon, SingleSelectIcon } from '@blocksuite/icons/rc';
 import { LiveData, useLiveData, useService } from '@toeverything/infra';

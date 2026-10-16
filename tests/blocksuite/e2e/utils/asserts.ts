@@ -1,16 +1,16 @@
-import './declare-test-window.js';
+﻿import './declare-test-window.js';
 
-import type { EdgelessNoteBackground } from '@blocksuite/affine/blocks/note';
-import type { NoteBlockModel, RootBlockModel } from '@blocksuite/affine/model';
-import type { RichText } from '@blocksuite/affine/rich-text';
-import type { AffineInlineEditor } from '@blocksuite/affine/shared/types';
+import type { EdgelessNoteBackground } from '@blocksuite/nexio/blocks/note';
+import type { NoteBlockModel, RootBlockModel } from '@blocksuite/nexio/model';
+import type { RichText } from '@blocksuite/nexio/rich-text';
+import type { AffineInlineEditor } from '@blocksuite/nexio/shared/types';
 import type {
   BlockComponent,
   EditorHost,
   TextSelection,
-} from '@blocksuite/affine/std';
-import type { InlineRootElement } from '@blocksuite/affine/std/inline';
-import type { BlockModel } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std';
+import type { InlineRootElement } from '@blocksuite/nexio/std/inline';
+import type { BlockModel } from '@blocksuite/nexio/store';
 import { expect, type Locator, type Page } from '@playwright/test';
 
 import {

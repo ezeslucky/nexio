@@ -1,8 +1,8 @@
-import { AIStarIcon } from '@blocksuite/affine/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { ColorScheme } from '@blocksuite/affine/model';
-import { unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { stopPropagation } from '@blocksuite/affine/shared/utils';
+﻿import { AIStarIcon } from '@blocksuite/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ColorScheme } from '@blocksuite/nexio/model';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { stopPropagation } from '@blocksuite/nexio/shared/utils';
 import { SendIcon } from '@blocksuite/icons/lit';
 import {
   darkCssVariablesV2,

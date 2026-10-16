@@ -1,4 +1,4 @@
-import { useExportPage } from '@nexio/core/components/hooks/affine/use-export-page';
+﻿import { useExportPage } from '@nexio/core/components/hooks/nexio/use-export-page';
 import {
   ExportMenuItems,
   PrintMenuItems,

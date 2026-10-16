@@ -1,5 +1,5 @@
-import type { DocModeProvider } from '@blocksuite/affine/shared/services';
-import type { Doc, Store, Workspace } from '@blocksuite/affine/store';
+﻿import type { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import type { Doc, Store, Workspace } from '@blocksuite/nexio/store';
 import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
 
 export function getDocFromUrlParams(collection: Workspace, url: URL) {

@@ -1,4 +1,4 @@
-import { LifeCycleWatcher } from '@blocksuite/affine/std';
+﻿import { LifeCycleWatcher } from '@blocksuite/nexio/std';
 
 import { buildAIPanelConfig } from '../ai-panel';
 import { setupSpaceAIEntry } from '../entries/space/setup-space';

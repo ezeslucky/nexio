@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AuthService,
   PublicUserService,
 } from '@nexio/core/modules/cloud';
@@ -6,7 +6,7 @@ import { UserFriendlyError } from '@nexio/error';
 import {
   type AffineUserInfo,
   UserServiceExtension,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 
 export function patchUserExtensions(
   publicUserService: PublicUserService,

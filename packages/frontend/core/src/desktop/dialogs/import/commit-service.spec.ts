@@ -1,10 +1,10 @@
-import 'fake-indexeddb/auto';
+﻿import 'fake-indexeddb/auto';
 
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace';
-import type { DocSnapshot } from '@blocksuite/affine/store';
-import { TestWorkspace } from '@blocksuite/affine/store/test';
-import type { ImportBatch } from '@blocksuite/affine/widgets/linked-doc';
+import type { DocSnapshot } from '@blocksuite/nexio/store';
+import { TestWorkspace } from '@blocksuite/nexio/store/test';
+import type { ImportBatch } from '@blocksuite/nexio/widgets/linked-doc';
 import { describe, expect, test, vi } from 'vitest';
 
 import { ImportCommitService } from './commit-service';

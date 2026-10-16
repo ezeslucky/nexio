@@ -1,7 +1,7 @@
-import { getAttachmentFileIcon } from '@blocksuite/affine/components/icons';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import type { AttachmentBlockModel } from '@blocksuite/affine-model';
-import { formatSize } from '@blocksuite/affine-shared/utils';
+﻿import { getAttachmentFileIcon } from '@blocksuite/nexio/components/icons';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import type { AttachmentBlockModel } from '@blocksuite/nexio-model';
+import { formatSize } from '@blocksuite/nexio-shared/utils';
 import {
   ArrowDownBigIcon,
   ArrowUpBigIcon,

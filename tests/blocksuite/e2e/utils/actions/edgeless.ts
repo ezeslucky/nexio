@@ -1,15 +1,15 @@
-import '../declare-test-window.js';
+﻿import '../declare-test-window.js';
 
-import { ConnectorTool } from '@blocksuite/affine/gfx/connector';
-import { ShapeTool } from '@blocksuite/affine/gfx/shape';
-import type { IPoint, IVec } from '@blocksuite/affine/global/gfx';
-import { sleep } from '@blocksuite/affine/global/utils';
+import { ConnectorTool } from '@blocksuite/nexio/gfx/connector';
+import { ShapeTool } from '@blocksuite/nexio/gfx/shape';
+import type { IPoint, IVec } from '@blocksuite/nexio/global/gfx';
+import { sleep } from '@blocksuite/nexio/global/utils';
 import type {
   ConnectorElementModel,
   NoteBlockModel,
   NoteDisplayMode,
-} from '@blocksuite/affine/model';
-import type { ToolOptions } from '@blocksuite/affine/std/gfx';
+} from '@blocksuite/nexio/model';
+import type { ToolOptions } from '@blocksuite/nexio/std/gfx';
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 

@@ -1,9 +1,9 @@
-import type {
+﻿import type {
   SearchCollectionMenuAction,
   SearchDocMenuAction,
   SearchTagMenuAction,
 } from '@nexio/core/modules/search-menu/services';
-import type { LinkedMenuGroup } from '@blocksuite/affine/widgets/linked-doc';
+import type { LinkedMenuGroup } from '@blocksuite/nexio/widgets/linked-doc';
 
 export interface SearchMenuConfig {
   addContextAvailable: boolean;

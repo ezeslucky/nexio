@@ -1,0 +1,45 @@
+{
+  "name": "@blocksuite/nexio-inline-preset",
+  "description": "Inline preset for BlockSuite.",
+  "type": "module",
+  "scripts": {
+    "build": "yarn run -T tsc"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "toeverything",
+  "license": "MIT",
+  "dependencies": {
+    "@blocksuite/nexio-components": "workspace:*",
+    "@blocksuite/nexio-ext-loader": "workspace:*",
+    "@blocksuite/nexio-inline-comment": "workspace:*",
+    "@blocksuite/nexio-inline-footnote": "workspace:*",
+    "@blocksuite/nexio-inline-latex": "workspace:*",
+    "@blocksuite/nexio-inline-link": "workspace:*",
+    "@blocksuite/nexio-inline-mention": "workspace:*",
+    "@blocksuite/nexio-inline-reference": "workspace:*",
+    "@blocksuite/nexio-model": "workspace:*",
+    "@blocksuite/nexio-rich-text": "workspace:*",
+    "@blocksuite/nexio-shared": "workspace:*",
+    "@blocksuite/std": "workspace:*",
+    "@blocksuite/store": "workspace:*",
+    "@ctrl/tinycolor": "^4.1.0",
+    "@toeverything/theme": "^1.1.23",
+    "@types/hast": "^3.0.4",
+    "collapse-white-space": "^2.1.0",
+    "lit": "^3.2.0",
+    "zod": "^3.25.76"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./store": "./src/store.ts",
+    "./view": "./src/view.ts"
+  },
+  "files": [
+    "src",
+    "dist",
+    "!src/__tests__",
+    "!dist/__tests__"
+  ],
+  "version": "0.27.5"
+}

@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../../tsconfig.web.json",
   "compilerOptions": {
     "rootDir": "./src",
@@ -7,12 +7,12 @@
   },
   "include": ["./src", "src/**/*.json"],
   "references": [
-    { "path": "../../../blocksuite/affine/all" },
-    { "path": "../../../blocksuite/affine/blocks/root" },
-    { "path": "../../../blocksuite/affine/components" },
-    { "path": "../../../blocksuite/affine/shared" },
-    { "path": "../../../blocksuite/affine/data-view" },
+    { "path": "../../../blocksuite/nexio/data-view" },
     { "path": "../../../blocksuite/framework/global" },
+    { "path": "../../../blocksuite/nexio/all" },
+    { "path": "../../../blocksuite/nexio/blocks/root" },
+    { "path": "../../../blocksuite/nexio/components" },
+    { "path": "../../../blocksuite/nexio/shared" },
     { "path": "../../../blocksuite/framework/std" },
     { "path": "../component" },
     { "path": "../../common/debug" },
@@ -25,6 +25,6 @@
     { "path": "../../common/reader" },
     { "path": "../track" },
     { "path": "../../common/infra" },
-    { "path": "../../../blocksuite/affine/ext-loader" }
+    { "path": "../../../blocksuite/nexio/ext-loader" }
   ]
 }

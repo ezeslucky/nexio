@@ -1,4 +1,4 @@
-import {
+﻿import {
   IconButton,
   type IconButtonProps,
   Menu,
@@ -24,7 +24,7 @@ import {
 import { useLiveData, useService } from '@toeverything/infra';
 import { useCallback, useContext } from 'react';
 
-import { useBlockSuiteMetaHelper } from '../../hooks/affine/use-block-suite-meta-helper';
+import { useBlockSuiteMetaHelper } from '../../hooks/nexio/use-block-suite-meta-helper';
 import { IsFavoriteIcon } from '../../pure/icons';
 import { DocExplorerContext } from '../context';
 

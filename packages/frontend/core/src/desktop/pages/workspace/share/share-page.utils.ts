@@ -1,5 +1,5 @@
-import { UserFriendlyError } from '@nexio/error';
-import { type DocMode, DocModes } from '@blocksuite/affine/model';
+﻿import { UserFriendlyError } from '@nexio/error';
+import { type DocMode, DocModes } from '@blocksuite/nexio/model';
 import { TimeoutError } from 'rxjs';
 
 export const getResolvedPublishMode = (

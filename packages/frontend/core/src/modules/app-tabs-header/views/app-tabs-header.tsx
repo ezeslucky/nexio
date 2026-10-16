@@ -1,4 +1,4 @@
-// credits: tab overlay impl inspired by Figma desktop
+﻿// credits: tab overlay impl inspired by Figma desktop
 import {
   type DropTargetDropEvent,
   type DropTargetOptions,
@@ -7,7 +7,7 @@ import {
   useDraggable,
   useDropTarget,
 } from '@nexio/component';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import type { NexioDNDData } from '@nexio/core/types/dnd';
 import { useI18n } from '@nexio/i18n';

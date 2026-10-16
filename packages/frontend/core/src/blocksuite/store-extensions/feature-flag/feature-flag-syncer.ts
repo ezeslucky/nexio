@@ -1,9 +1,9 @@
-import {
+﻿import {
   NEXIO_FLAGS,
   type FeatureFlagService,
 } from '@nexio/core/modules/feature-flag';
-import { FeatureFlagService as BSFeatureFlagService } from '@blocksuite/affine/shared/services';
-import { type ExtensionType, StoreExtension } from '@blocksuite/affine/store';
+import { FeatureFlagService as BSFeatureFlagService } from '@blocksuite/nexio/shared/services';
+import { type ExtensionType, StoreExtension } from '@blocksuite/nexio/store';
 
 export function getFeatureFlagSyncer(
   featureFlagService: FeatureFlagService

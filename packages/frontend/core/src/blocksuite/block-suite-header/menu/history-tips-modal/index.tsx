@@ -1,5 +1,5 @@
-import { OverlayModal } from '@nexio/component';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+﻿import { OverlayModal } from '@nexio/component';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';
 import { useService } from '@toeverything/infra';

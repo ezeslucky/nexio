@@ -1,6 +1,6 @@
-import { Button } from '@nexio/component';
+﻿import { Button } from '@nexio/component';
 import { useI18n } from '@nexio/i18n';
-import type { AttachmentBlockModel } from '@blocksuite/affine/model';
+import type { AttachmentBlockModel } from '@blocksuite/nexio/model';
 import { ArrowDownBigIcon } from '@blocksuite/icons/rc';
 import clsx from 'clsx';
 import type { PropsWithChildren, ReactElement } from 'react';

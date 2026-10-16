@@ -1,4 +1,4 @@
-import type { EditorHost } from '@blocksuite/affine/std';
+﻿import type { EditorHost } from '@blocksuite/nexio/std';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 import type { AIChatParams, AISendParams, AIUserInfo } from './ai-provider';

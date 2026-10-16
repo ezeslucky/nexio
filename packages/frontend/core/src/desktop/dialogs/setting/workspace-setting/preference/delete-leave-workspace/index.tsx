@@ -1,7 +1,7 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
 import { ConfirmModal } from '@nexio/component/ui/modal';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { GlobalContextService } from '@nexio/core/modules/global-context';
 import { WorkspacePermissionService } from '@nexio/core/modules/permissions';
 import {

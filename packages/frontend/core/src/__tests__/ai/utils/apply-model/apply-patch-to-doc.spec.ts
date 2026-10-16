@@ -1,10 +1,10 @@
-/**
+﻿/**
  * @vitest-environment happy-dom
  */
 
-import { getInternalStoreExtensions } from '@blocksuite/affine/extensions/store';
-import { StoreExtensionManager } from '@blocksuite/affine-ext-loader';
-import { createAffineTemplate } from '@blocksuite/affine-shared/test-utils';
+import { getInternalStoreExtensions } from '@blocksuite/nexio/extensions/store';
+import { StoreExtensionManager } from '@blocksuite/nexio-ext-loader';
+import { createAffineTemplate } from '@blocksuite/nexio-shared/test-utils';
 import type { Store } from '@blocksuite/store';
 import { describe, expect, it } from 'vitest';
 

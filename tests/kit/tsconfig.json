@@ -1,4 +1,4 @@
-{
+﻿{
   "extends": "../../tsconfig.web.json",
   "compilerOptions": {
     "rootDir": "./src",
@@ -7,7 +7,7 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../blocksuite/affine/all" },
+    { "path": "../../blocksuite/nexio/all" },
     { "path": "../../tools/utils" },
     { "path": "../../packages/common/infra" }
   ]

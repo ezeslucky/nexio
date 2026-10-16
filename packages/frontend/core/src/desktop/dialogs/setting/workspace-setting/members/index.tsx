@@ -1,6 +1,6 @@
-import { Button, Tooltip } from '@nexio/component';
+﻿import { Button, Tooltip } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
 import { useWorkspaceInfo } from '@nexio/core/components/hooks/use-workspace-info';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useI18n } from '@nexio/i18n';

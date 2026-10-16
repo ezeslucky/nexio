@@ -1,6 +1,6 @@
-import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
+﻿import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
 import { SettingHeader } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
   NEXIO_FLAGS,
   FeatureFlagService,

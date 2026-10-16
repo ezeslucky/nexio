@@ -1,5 +1,5 @@
-import type { MindmapStyle } from '@blocksuite/affine/model';
-import type { EditorHost } from '@blocksuite/affine/std';
+﻿import type { MindmapStyle } from '@blocksuite/nexio/model';
+import type { EditorHost } from '@blocksuite/nexio/std';
 import { html, nothing } from 'lit';
 
 import { markdownToMindmap } from '../mini-mindmap';

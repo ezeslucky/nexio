@@ -1,6 +1,6 @@
-import { Avatar } from '@nexio/component/ui/avatar';
+﻿import { Avatar } from '@nexio/component/ui/avatar';
 import { Menu, MenuItem, MenuSeparator } from '@nexio/component/ui/menu';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useI18n } from '@nexio/i18n';
 import { SignOutIcon } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';

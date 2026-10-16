@@ -1,12 +1,12 @@
-import {
+﻿import {
   EditorHostKey,
   propertyType,
   t,
-} from '@blocksuite/affine/blocks/database';
+} from '@blocksuite/nexio/blocks/database';
 import {
   UserListProvider,
   UserProvider,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import zod from 'zod';
 
 export const memberColumnType = propertyType('member');

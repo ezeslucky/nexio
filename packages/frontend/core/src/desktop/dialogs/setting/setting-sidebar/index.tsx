@@ -1,6 +1,6 @@
-import { Scrollable } from '@nexio/component';
+﻿import { Scrollable } from '@nexio/component';
 import { Avatar } from '@nexio/component/ui/avatar';
-import { UserPlanButton } from '@nexio/core/components/affine/auth/user-plan-button';
+import { UserPlanButton } from '@nexio/core/components/nexio/auth/user-plan-button';
 import { useCatchEventCallback } from '@nexio/core/components/hooks/use-catch-event-hook';
 import { AuthService } from '@nexio/core/modules/cloud';
 import { GlobalDialogService } from '@nexio/core/modules/dialogs';

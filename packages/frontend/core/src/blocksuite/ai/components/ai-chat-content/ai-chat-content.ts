@@ -1,4 +1,4 @@
-import type {
+﻿import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
@@ -13,10 +13,10 @@ import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import type { PeekViewService } from '@nexio/core/modules/peek-view';
 import type { AppThemeService } from '@nexio/core/modules/theme';
 import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { SignalWatcher, WithDisposable } from '@blocksuite/affine/global/lit';
-import { type EditorHost, ShadowlessElement } from '@blocksuite/affine/std';
-import type { ExtensionType } from '@blocksuite/affine/store';
-import type { NotificationService } from '@blocksuite/affine-shared/services';
+import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
+import { type EditorHost, ShadowlessElement } from '@blocksuite/nexio/std';
+import type { ExtensionType } from '@blocksuite/nexio/store';
+import type { NotificationService } from '@blocksuite/nexio-shared/services';
 import { type Signal } from '@preact/signals-core';
 import { css, html, type PropertyValues, type TemplateResult } from 'lit';
 import { property, state } from 'lit/decorators.js';

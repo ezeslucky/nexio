@@ -1,4 +1,4 @@
-import {
+﻿import {
   MenuItem,
   MenuTrigger,
   RadioGroup,
@@ -8,7 +8,7 @@ import {
 import { SettingRow } from '@nexio/component/setting-components';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { useI18n } from '@nexio/i18n';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
+import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
 import {
   ConnectorMode,
   DefaultTheme,
@@ -19,8 +19,8 @@ import {
   PointStyle,
   StrokeStyle,
   TextAlign,
-} from '@blocksuite/affine/model';
-import type { Store } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import type { Store } from '@blocksuite/nexio/store';
 import { useFramework, useLiveData } from '@toeverything/infra';
 import { isEqual } from 'lodash-es';
 import { useCallback, useMemo } from 'react';

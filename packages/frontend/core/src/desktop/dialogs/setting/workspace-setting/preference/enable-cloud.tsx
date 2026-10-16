@@ -1,6 +1,6 @@
-import { SettingRow } from '@nexio/component/setting-components';
+﻿import { SettingRow } from '@nexio/component/setting-components';
 import { Button } from '@nexio/component/ui/button';
-import { useEnableCloud } from '@nexio/core/components/hooks/affine/use-enable-cloud';
+import { useEnableCloud } from '@nexio/core/components/hooks/nexio/use-enable-cloud';
 import {
   type Workspace,
   WorkspaceService,

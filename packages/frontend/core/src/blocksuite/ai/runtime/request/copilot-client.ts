@@ -1,4 +1,4 @@
-import { showAILoginRequiredAtom } from '@nexio/core/components/affine/auth/ai-login-required';
+﻿import { showAILoginRequiredAtom } from '@nexio/core/components/nexio/auth/ai-login-required';
 import type { AIToolsConfig } from '@nexio/core/modules/ai-button';
 import type { NbstoreService } from '@nexio/core/modules/storage';
 import { UserFriendlyError } from '@nexio/error';

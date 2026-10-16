@@ -1,8 +1,8 @@
-import {
+﻿import {
   DatabaseBlockDataSource,
   ExternalGroupByConfigProvider,
-} from '@blocksuite/affine/blocks/database';
-import type { ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/blocks/database';
+import type { ExtensionType } from '@blocksuite/nexio/store';
 import { CalendarExternalSourceProvider } from '@blocksuite/data-view/view-presets';
 import type { FrameworkProvider } from '@toeverything/infra';
 

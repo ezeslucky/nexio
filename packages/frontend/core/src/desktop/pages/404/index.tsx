@@ -1,8 +1,8 @@
-import {
+﻿import {
   NoPermissionOrNotFound,
   NotFoundPage,
 } from '@nexio/component/not-found-page';
-import { useSignOut } from '@nexio/core/components/hooks/affine/use-sign-out';
+import { useSignOut } from '@nexio/core/components/hooks/nexio/use-sign-out';
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import {
   FrameworkScope,

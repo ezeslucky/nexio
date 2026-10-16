@@ -1,4 +1,4 @@
-import { toast } from '@nexio/component';
+﻿import { toast } from '@nexio/component';
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { AppSidebarService } from '@nexio/core/modules/app-sidebar';
 import { DocsService } from '@nexio/core/modules/doc';
@@ -8,8 +8,8 @@ import {
 } from '@nexio/core/modules/editor-setting';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { getNexioWorkspaceSchema } from '@nexio/core/modules/workspace';
-import { type DocMode } from '@blocksuite/affine/model';
-import type { Workspace } from '@blocksuite/affine/store';
+import { type DocMode } from '@blocksuite/nexio/model';
+import type { Workspace } from '@blocksuite/nexio/store';
 import { LiveData, useLiveData, useServices } from '@toeverything/infra';
 import { useCallback, useMemo } from 'react';
 
@@ -92,7 +92,7 @@ export const usePageHelper = (docCollection: Workspace) => {
   const importFileAndOpen = useMemo(
     () => async () => {
       const { showImportModal } =
-        await import('@blocksuite/affine/widgets/linked-doc');
+        await import('@blocksuite/nexio/widgets/linked-doc');
       const { promise, resolve, reject } =
         Promise.withResolvers<
           Parameters<

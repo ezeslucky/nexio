@@ -1,8 +1,8 @@
-import type { CopilotChatHistoryFragment } from '@nexio/graphql';
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine/shared/theme';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+﻿import type { CopilotChatHistoryFragment } from '@nexio/graphql';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { DeleteIcon } from '@blocksuite/icons/lit';
 import { css, html, nothing, type PropertyValues } from 'lit';
 import { property, state } from 'lit/decorators.js';

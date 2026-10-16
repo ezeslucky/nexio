@@ -1,5 +1,5 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { ShadowlessElement } from '@blocksuite/affine/std';
+﻿import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { ShadowlessElement } from '@blocksuite/nexio/std';
 import type { TestAffineEditorContainer } from '@blocksuite/integration-test';
 import { effect } from '@preact/signals-core';
 import { css, html, nothing } from 'lit';

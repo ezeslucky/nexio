@@ -1,5 +1,5 @@
-import { AffineCodeToolbarWidget } from '@blocksuite/affine/blocks/code';
-import { LifeCycleWatcher } from '@blocksuite/affine/std';
+﻿import { AffineCodeToolbarWidget } from '@blocksuite/nexio/blocks/code';
+import { LifeCycleWatcher } from '@blocksuite/nexio/std';
 
 import { setupCodeToolbarAIEntry } from '../entries/code-toolbar/setup-code-toolbar';
 

@@ -1,4 +1,4 @@
-import { notify } from '@nexio/component';
+﻿import { notify } from '@nexio/component';
 import { UserFriendlyError } from '@nexio/error';
 import {
   type DocMode as GraphqlDocMode,
@@ -7,22 +7,22 @@ import {
 } from '@nexio/graphql';
 import { I18n, i18nTime } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
-import { DocModeProvider } from '@blocksuite/affine/shared/services';
-import type { AffineInlineEditor } from '@blocksuite/affine/shared/types';
+import type { DocMode } from '@blocksuite/nexio/model';
+import { DocModeProvider } from '@blocksuite/nexio/shared/services';
+import type { AffineInlineEditor } from '@blocksuite/nexio/shared/types';
 import {
   BLOCK_ID_ATTR,
   type BlockComponent,
   type EditorHost,
-} from '@blocksuite/affine/std';
-import type { DocMeta } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/std';
+import type { DocMeta } from '@blocksuite/nexio/store';
 import {
   type LinkedMenuGroup,
   type LinkedMenuItem,
   type LinkedWidgetConfig,
   LinkedWidgetUtils,
-} from '@blocksuite/affine/widgets/linked-doc';
-import { unsafeHTML } from '@blocksuite/affine-shared/utils';
+} from '@blocksuite/nexio/widgets/linked-doc';
+import { unsafeHTML } from '@blocksuite/nexio-shared/utils';
 import {
   DateTimeIcon,
   NewXxxEdgelessIcon,

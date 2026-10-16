@@ -1,10 +1,10 @@
-import { WithDisposable } from '@blocksuite/affine/global/lit';
+﻿import { WithDisposable } from '@blocksuite/nexio/global/lit';
 import {
   DocModeProvider,
   ThemeProvider,
-} from '@blocksuite/affine/shared/services';
-import { scrollbarStyle } from '@blocksuite/affine/shared/styles';
-import { type EditorHost } from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/shared/services';
+import { scrollbarStyle } from '@blocksuite/nexio/shared/styles';
+import { type EditorHost } from '@blocksuite/nexio/std';
 import { cssVar } from '@toeverything/theme';
 import { css, html, LitElement, unsafeCSS } from 'lit';
 import { property } from 'lit/decorators.js';

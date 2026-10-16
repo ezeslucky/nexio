@@ -1,8 +1,8 @@
-import type { ConfirmModalProps, ElementOrFactory } from '@nexio/component';
+﻿import type { ConfirmModalProps, ElementOrFactory } from '@nexio/component';
 import {
   NexioPageReference,
   NexioSharedPageReference,
-} from '@nexio/core/components/affine/reference-link';
+} from '@nexio/core/components/nexio/reference-link';
 import { DocService, DocsService } from '@nexio/core/modules/doc';
 import { EditorService } from '@nexio/core/modules/editor';
 import { toDocSearchParams } from '@nexio/core/modules/navigation';
@@ -10,7 +10,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 import { z } from 'zod';

@@ -1,19 +1,19 @@
-import { SurfaceBlockSchema } from '@blocksuite/affine/blocks/surface';
-import { ConnectorElementRendererExtension } from '@blocksuite/affine/gfx/connector';
+﻿import { SurfaceBlockSchema } from '@blocksuite/nexio/blocks/surface';
+import { ConnectorElementRendererExtension } from '@blocksuite/nexio/gfx/connector';
 import {
   MindmapElementRendererExtension,
   MindMapView,
-} from '@blocksuite/affine/gfx/mindmap';
-import { ShapeElementRendererExtension } from '@blocksuite/affine/gfx/shape';
-import { TextElementRendererExtension } from '@blocksuite/affine/gfx/text';
-import { RootBlockSchema } from '@blocksuite/affine/model';
+} from '@blocksuite/nexio/gfx/mindmap';
+import { ShapeElementRendererExtension } from '@blocksuite/nexio/gfx/shape';
+import { TextElementRendererExtension } from '@blocksuite/nexio/gfx/text';
+import { RootBlockSchema } from '@blocksuite/nexio/model';
 import {
   DocModeService,
   ThemeService,
-} from '@blocksuite/affine/shared/services';
-import { BlockViewExtension, FlavourExtension } from '@blocksuite/affine/std';
-import { ToolController } from '@blocksuite/affine/std/gfx';
-import type { BlockSchema, ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import { BlockViewExtension, FlavourExtension } from '@blocksuite/nexio/std';
+import { ToolController } from '@blocksuite/nexio/std/gfx';
+import type { BlockSchema, ExtensionType } from '@blocksuite/nexio/store';
 import { literal } from 'lit/static-html.js';
 import type { z } from 'zod';
 

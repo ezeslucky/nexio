@@ -1,4 +1,4 @@
-import type { Package } from '@nexio-tools/utils/workspace';
+﻿import type { Package } from '@nexio-tools/utils/workspace';
 
 import { PackageToDistribution } from './distribution';
 
@@ -41,7 +41,7 @@ export function getBuildConfig(
 
         appBuildType: 'stable' as const,
         appVersion: pkg.version,
-        // editorVersion: pkg.dependencies['@blocksuite/affine'],
+        // editorVersion: pkg.dependencies['@blocksuite/nexio'],
         editorVersion: pkg.version,
         githubUrl: 'https://github.com/ezeslucky/nexio',
         changelogUrl: 'https://github.com/ezeslucky/nexio/releases',

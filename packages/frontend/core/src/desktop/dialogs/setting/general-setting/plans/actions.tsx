@@ -1,7 +1,7 @@
-import { notify } from '@nexio/component';
-import { useDowngradeNotify } from '@nexio/core/components/affine/subscription-landing/notify';
-import { getDowngradeQuestionnaireLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+﻿import { notify } from '@nexio/component';
+import { useDowngradeNotify } from '@nexio/core/components/nexio/subscription-landing/notify';
+import { getDowngradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { SubscriptionPlan } from '@nexio/graphql';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';

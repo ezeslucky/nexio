@@ -1,4 +1,4 @@
-import { DocsService } from '@nexio/core/modules/doc';
+﻿import { DocsService } from '@nexio/core/modules/doc';
 import {
   CreationQuickSearchSession,
   DocsQuickSearchSession,
@@ -12,18 +12,18 @@ import { track } from '@nexio/track';
 import {
   BookmarkSlashMenuConfigIdentifier,
   insertLinkByQuickSearchCommand,
-} from '@blocksuite/affine/blocks/bookmark';
-import { LinkedDocSlashMenuConfigIdentifier } from '@blocksuite/affine/blocks/embed-doc';
-import type { ServiceIdentifier } from '@blocksuite/affine/global/di';
+} from '@blocksuite/nexio/blocks/bookmark';
+import { LinkedDocSlashMenuConfigIdentifier } from '@blocksuite/nexio/blocks/embed-doc';
+import type { ServiceIdentifier } from '@blocksuite/nexio/global/di';
 import {
   QuickSearchExtension,
   type QuickSearchResult,
-} from '@blocksuite/affine/shared/services';
-import { type ExtensionType } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import { type ExtensionType } from '@blocksuite/nexio/store';
 import type {
   SlashMenuConfig,
   SlashMenuItem,
-} from '@blocksuite/affine/widgets/slash-menu';
+} from '@blocksuite/nexio/widgets/slash-menu';
 import type { FrameworkProvider } from '@toeverything/infra';
 import { pick } from 'lodash-es';
 

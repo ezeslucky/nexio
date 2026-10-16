@@ -1,4 +1,4 @@
-import {
+﻿import {
   IconButton,
   MenuItem,
   MenuSeparator,
@@ -7,9 +7,9 @@ import {
 } from '@nexio/component';
 import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
 import { Guard } from '@nexio/core/components/guard';
-import { useAppSettingHelper } from '@nexio/core/components/hooks/affine/use-app-setting-helper';
-import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/affine/use-block-suite-meta-helper';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAppSettingHelper } from '@nexio/core/components/hooks/nexio/use-app-setting-helper';
+import { useBlockSuiteMetaHelper } from '@nexio/core/components/hooks/nexio/use-block-suite-meta-helper';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { IsFavoriteIcon } from '@nexio/core/components/pure/icons';
 import { DocsService } from '@nexio/core/modules/doc';
 import { CompatibleFavoriteItemsAdapter } from '@nexio/core/modules/favorite';

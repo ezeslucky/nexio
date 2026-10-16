@@ -1,10 +1,10 @@
-import { RadioGroup, type RadioItem } from '@nexio/component';
+﻿import { RadioGroup, type RadioItem } from '@nexio/component';
 import { registerNexioCommand } from '@nexio/core/commands';
 import { EditorService } from '@nexio/core/modules/editor';
 import { ViewService, WorkbenchService } from '@nexio/core/modules/workbench';
 import { useI18n } from '@nexio/i18n';
 import { track } from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { EdgelessIcon, PageIcon } from '@blocksuite/icons/rc';
 import {
   useLiveData,

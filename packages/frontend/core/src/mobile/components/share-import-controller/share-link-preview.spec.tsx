@@ -1,4 +1,4 @@
-/** @vitest-environment happy-dom */
+﻿/** @vitest-environment happy-dom */
 
 import { type Server, ServersService } from '@nexio/core/modules/cloud';
 import {
@@ -10,11 +10,11 @@ import {
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
 import { ServerDeploymentType } from '@nexio/graphql';
-import { ToggleButton } from '@blocksuite/affine/components/toggle-button';
+import { ToggleButton } from '@blocksuite/nexio/components/toggle-button';
 import {
   type LinkPreviewCacheProvider,
   LinkPreviewService,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 import {
   cleanup,
   fireEvent,

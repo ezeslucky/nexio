@@ -1,4 +1,4 @@
-import { Button, Loading } from '@nexio/component';
+﻿import { Button, Loading } from '@nexio/component';
 import { UrlService } from '@nexio/core/modules/url';
 import { UserFriendlyError } from '@nexio/error';
 import { SubscriptionPlan, SubscriptionRecurring } from '@nexio/graphql';
@@ -9,7 +9,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { switchMap } from 'rxjs';
 
-import { generateSubscriptionCallbackLink } from '../../../components/hooks/affine/use-subscription-notify';
+import { generateSubscriptionCallbackLink } from '../../../components/hooks/nexio/use-subscription-notify';
 import {
   RouteLogic,
   useNavigateHelper,

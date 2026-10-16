@@ -1,6 +1,6 @@
-import { Button } from '@nexio/component';
+﻿import { Button } from '@nexio/component';
 import { SettingRow } from '@nexio/component/setting-components';
-import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/affine/use-subscription-notify';
+import { getUpgradeQuestionnaireLink } from '@nexio/core/components/hooks/nexio/use-subscription-notify';
 import {
   AuthService,
   WorkspaceSubscriptionService,

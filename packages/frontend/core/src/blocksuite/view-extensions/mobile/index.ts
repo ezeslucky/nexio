@@ -1,9 +1,9 @@
-import { KeyboardToolbarExtension } from '@nexio/core/blocksuite/view-extensions/mobile/keyboard-toolbar-extension';
+﻿import { KeyboardToolbarExtension } from '@nexio/core/blocksuite/view-extensions/mobile/keyboard-toolbar-extension';
 import { MobileFeatureFlagControl } from '@nexio/core/blocksuite/view-extensions/mobile/mobile-feature-flag-control';
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import { z } from 'zod';
 

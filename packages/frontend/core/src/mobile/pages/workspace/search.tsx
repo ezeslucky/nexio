@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   SafeArea,
   startScopedViewTransition,
@@ -12,7 +12,7 @@ import {
 import { TagService } from '@nexio/core/modules/tag';
 import { UserFriendlyError } from '@nexio/error';
 import { useI18n } from '@nexio/i18n';
-import { sleep } from '@blocksuite/affine/global/utils';
+import { sleep } from '@blocksuite/nexio/global/utils';
 import { ViewLayersIcon } from '@blocksuite/icons/rc';
 import {
   LiveData,

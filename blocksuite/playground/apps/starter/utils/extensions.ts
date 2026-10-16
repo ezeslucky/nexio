@@ -1,4 +1,4 @@
-import { RefNodeSlotsProvider } from '@blocksuite/affine/inlines/reference';
+﻿import { RefNodeSlotsProvider } from '@blocksuite/nexio/inlines/reference';
 import {
   CommunityCanvasTextFonts,
   DocModeProvider,
@@ -6,8 +6,8 @@ import {
   FeatureFlagService,
   FontConfigExtension,
   ParseDocUrlExtension,
-} from '@blocksuite/affine/shared/services';
-import type { ExtensionType, Store, Workspace } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/shared/services';
+import type { ExtensionType, Store, Workspace } from '@blocksuite/nexio/store';
 import { type TestAffineEditorContainer } from '@blocksuite/integration-test';
 import { getTestViewManager } from '@blocksuite/integration-test/view';
 

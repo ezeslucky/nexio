@@ -1,4 +1,4 @@
-import {
+﻿import {
   Avatar,
   Menu,
   MenuItem,
@@ -9,7 +9,7 @@ import {
   useConfirmModal,
 } from '@nexio/component';
 import { useGuard } from '@nexio/core/components/guard';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocService } from '@nexio/core/modules/doc';
 import {
   DocGrantedUsersService,

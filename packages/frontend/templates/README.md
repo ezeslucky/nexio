@@ -1,4 +1,4 @@
-# @nexio/templates
+﻿# @nexio/templates
 
 Manages template files for use in AFFiNE. For now we only support onboarding templates.
 
@@ -7,7 +7,7 @@ Manages template files for use in AFFiNE. For now we only support onboarding tem
 Before we offer a better solution, to update the onboarding templates:
 
 1. run AFFiNE core locally (dev mode)
-2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@blocksuite/affine/blocks/root'; window.ZipTransformer = ZipTransformer;`
+2. expose `ZipTransformer` to window. e.g., `import {ZipTransformer} from '@blocksuite/nexio/blocks/root'; window.ZipTransformer = ZipTransformer;`
 3. run the following script
    ```js
    (async () => {

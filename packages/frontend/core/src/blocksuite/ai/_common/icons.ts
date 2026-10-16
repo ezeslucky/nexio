@@ -1,6 +1,6 @@
-import { html } from 'lit';
+﻿import { html } from 'lit';
 
-export { AIStarIconWithAnimation } from '@blocksuite/affine/components/icons';
+export { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
 
 // dotlottie-wc can only be used in the browser
 if (typeof window !== 'undefined') {

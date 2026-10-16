@@ -1,4 +1,4 @@
-import {
+﻿import {
   Button,
   IconButton,
   Menu,
@@ -11,7 +11,7 @@ import {
   SettingRow,
   SettingWrapper,
 } from '@nexio/component/setting-components';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DesktopApiService } from '@nexio/core/modules/desktop-api';
 import { MeetingSettingsService } from '@nexio/core/modules/media/services/meeting-settings';
 import type { MeetingSettingsSchema } from '@nexio/electron/main/shared-state-schema';

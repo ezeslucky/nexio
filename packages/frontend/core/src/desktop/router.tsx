@@ -1,4 +1,4 @@
-import { wrapCreateBrowserRouterV6 } from '@sentry/react';
+﻿import { wrapCreateBrowserRouterV6 } from '@sentry/react';
 import { useEffect, useState } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import {
@@ -7,7 +7,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 
-import { NexioErrorComponent } from '../components/affine/affine-error-boundary/affine-error-fallback';
+import { NexioErrorComponent } from '../components/nexio/nexio-error-boundary/nexio-error-fallback';
 import { NavigateContext } from '../components/hooks/use-navigate-helper';
 import { RootWrapper } from './pages/root';
 import {

@@ -1,4 +1,4 @@
-import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
+﻿import type { FeatureFlagService } from '@nexio/core/modules/feature-flag';
 import { WorkspaceImpl } from '@nexio/core/modules/workspace/impls/workspace';
 import {
   defaultImageProxyMiddleware,
@@ -7,13 +7,13 @@ import {
   pasteMiddleware,
   PlainTextAdapter,
   titleMiddleware,
-} from '@blocksuite/affine/shared/adapters';
+} from '@blocksuite/nexio/shared/adapters';
 import {
   BlockStdScope,
   type EditorHost,
   type TextRangePoint,
   TextSelection,
-} from '@blocksuite/affine/std';
+} from '@blocksuite/nexio/std';
 import type {
   BlockModel,
   BlockSnapshot,
@@ -22,8 +22,8 @@ import type {
   SliceSnapshot,
   Store,
   TransformerMiddleware,
-} from '@blocksuite/affine/store';
-import { toDraftModel, Transformer } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
+import { toDraftModel, Transformer } from '@blocksuite/nexio/store';
 import { Doc as YDoc } from 'yjs';
 
 import { getStoreManager } from '../manager/store';

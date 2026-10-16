@@ -1,11 +1,11 @@
-import { CodeBlockPreviewIdentifier } from '@blocksuite/affine/blocks/code';
-import { addImages } from '@blocksuite/affine/blocks/image';
-import { getSurfaceBlock } from '@blocksuite/affine/blocks/surface';
-import { LoadingIcon } from '@blocksuite/affine/components/icons';
-import { addTree } from '@blocksuite/affine/gfx/mindmap';
-import { fitContent } from '@blocksuite/affine/gfx/shape';
-import { createTemplateJob } from '@blocksuite/affine/gfx/template';
-import { Bound } from '@blocksuite/affine/global/gfx';
+﻿import { CodeBlockPreviewIdentifier } from '@blocksuite/nexio/blocks/code';
+import { addImages } from '@blocksuite/nexio/blocks/image';
+import { getSurfaceBlock } from '@blocksuite/nexio/blocks/surface';
+import { LoadingIcon } from '@blocksuite/nexio/components/icons';
+import { addTree } from '@blocksuite/nexio/gfx/mindmap';
+import { fitContent } from '@blocksuite/nexio/gfx/shape';
+import { createTemplateJob } from '@blocksuite/nexio/gfx/template';
+import { Bound } from '@blocksuite/nexio/global/gfx';
 import {
   EDGELESS_TEXT_BLOCK_MIN_HEIGHT,
   EDGELESS_TEXT_BLOCK_MIN_WIDTH,
@@ -14,15 +14,15 @@ import {
   type MindmapElementModel,
   NoteDisplayMode,
   type ShapeElementModel,
-} from '@blocksuite/affine/model';
-import { TelemetryProvider } from '@blocksuite/affine/shared/services';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { GfxControllerIdentifier } from '@blocksuite/affine/std/gfx';
-import { Text } from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/model';
+import { TelemetryProvider } from '@blocksuite/nexio/shared/services';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { GfxControllerIdentifier } from '@blocksuite/nexio/std/gfx';
+import { Text } from '@blocksuite/nexio/store';
 import {
   AFFINE_TOOLBAR_WIDGET,
   type AffineToolbarWidget,
-} from '@blocksuite/affine/widgets/toolbar';
+} from '@blocksuite/nexio/widgets/toolbar';
 import {
   ChatWithAiIcon,
   DeleteIcon,

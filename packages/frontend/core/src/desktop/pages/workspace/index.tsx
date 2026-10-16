@@ -1,5 +1,5 @@
-import { DNDContext } from '@nexio/component';
-import { NexioOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+﻿import { DNDContext } from '@nexio/component';
+import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
 import { workbenchRoutes } from '@nexio/core/desktop/workbench-router';
 import {
   DefaultServerService,
@@ -15,7 +15,7 @@ import {
   type WorkspaceMetadata,
   WorkspacesService,
 } from '@nexio/core/modules/workspace';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 import {
   FrameworkScope,
   LiveData,
@@ -34,7 +34,7 @@ import {
 import { map } from 'rxjs';
 import * as _Y from 'yjs';
 
-import { NexioErrorBoundary } from '../../../components/affine/affine-error-boundary';
+import { NexioErrorBoundary } from '../../../components/nexio/nexio-error-boundary';
 import {
   RouteLogic,
   useNavigateHelper,

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useAppSettingHelper } from './affine/use-app-setting-helper';
+import { useAppSettingHelper } from './nexio/use-app-setting-helper';
 
 export function useImageAntialiasing() {
   const { appSettings } = useAppSettingHelper();

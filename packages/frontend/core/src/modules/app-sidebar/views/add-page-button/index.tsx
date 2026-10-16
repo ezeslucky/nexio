@@ -1,6 +1,6 @@
-import { Button, IconButton, Menu, MenuItem, MenuSub } from '@nexio/component';
+﻿import { Button, IconButton, Menu, MenuItem, MenuSub } from '@nexio/component';
 import { usePageHelper } from '@nexio/core/blocksuite/block-suite-page-list/utils';
-import { useAsyncCallback } from '@nexio/core/components/hooks/affine-async-hooks';
+import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { DocsService } from '@nexio/core/modules/doc';
 import { EditorSettingService } from '@nexio/core/modules/editor-setting';
 import { TemplateDocService } from '@nexio/core/modules/template-doc';
@@ -10,7 +10,7 @@ import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { inferOpenMode } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
 import track from '@nexio/track';
-import type { DocMode } from '@blocksuite/affine/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import {
   ArrowDownSmallIcon,
   EdgelessIcon,

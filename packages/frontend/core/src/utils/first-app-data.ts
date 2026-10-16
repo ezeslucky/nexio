@@ -1,10 +1,10 @@
-// the following import is used to ensure the block suite editor effects are run
+﻿// the following import is used to ensure the block suite editor effects are run
 import '../blocksuite/block-suite-editor';
 
 import { DebugLogger } from '@nexio/debug';
 import { DEFAULT_WORKSPACE_NAME } from '@nexio/env/constant';
 import onboardingUrl from '@nexio/templates/onboarding.zip';
-import { ZipTransformer } from '@blocksuite/affine/widgets/linked-doc';
+import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
 
 import { DocsService } from '../modules/doc';
 import { OrganizeService } from '../modules/organize';

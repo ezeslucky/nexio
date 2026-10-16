@@ -216,7 +216,7 @@ const makers = [
       name: productName,
       setupIcon: icoPath,
       iconUrl: iconUrl,
-      loadingGif: './resources/icons/affine_installing.gif',
+      loadingGif: './resources/icons/nexio_installing.gif',
     },
   },
   !process.env.SKIP_BUNDLE && {
@@ -280,8 +280,8 @@ const makers = [
         baseVersion: '25.08',
         files: [
           [
-            './resources/affine.metainfo.xml',
-            '/usr/share/metainfo/affine.metainfo.xml',
+            './resources/nexio.metainfo.xml',
+            '/usr/share/metainfo/nexio.metainfo.xml',
           ],
         ],
         modules: [
@@ -344,7 +344,7 @@ export default {
     // We need the following line for updater
     extraResource: [
       './resources/app-update.yml',
-      ...(platform === 'linux' ? ['./resources/affine.metainfo.xml'] : []),
+      ...(platform === 'linux' ? ['./resources/nexio.metainfo.xml'] : []),
     ],
     protocols: [
       {

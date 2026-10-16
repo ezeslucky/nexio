@@ -1,4 +1,4 @@
-import {
+﻿import {
   renderMermaidSvgBackend,
   renderTypstSvgBackend,
 } from '@nexio/core/modules/code-block-preview-renderer/platform-backend';
@@ -10,7 +10,7 @@ import type {
   TypstRenderRequest,
   TypstRenderResult,
 } from '@nexio/core/modules/typst/renderer';
-import { sanitizeSvg as sanitizeSvgDocument } from '@blocksuite/affine-shared/utils';
+import { sanitizeSvg as sanitizeSvgDocument } from '@blocksuite/nexio-shared/utils';
 
 export function sanitizeSvg(svg: string): string {
   return sanitizeSvgDocument(svg);

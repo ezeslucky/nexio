@@ -1,4 +1,4 @@
-import { existsSync, readdirSync } from 'node:fs';
+﻿import { existsSync, readdirSync } from 'node:fs';
 import { join, parse } from 'node:path';
 
 import type { DefaultTheme } from 'vitepress';
@@ -114,7 +114,7 @@ function getApiReferenceItems(): DefaultTheme.NavItem[] {
     return [
       { text: '@blocksuite/store', link: 'api/@blocksuite/store' },
       { text: '@blocksuite/std', link: 'api/@blocksuite/std/index' },
-      { text: '@blocksuite/affine', link: 'api/@blocksuite/affine' },
+      { text: '@blocksuite/nexio', link: 'api/@blocksuite/nexio' },
     ];
   }
 

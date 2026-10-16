@@ -1,4 +1,4 @@
-import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+﻿import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { ImportCommitService } from '@nexio/core/desktop/dialogs/import/commit-service';
 import { commitNativeImport } from '@nexio/core/desktop/dialogs/import/native-backend';
 import {
@@ -6,7 +6,7 @@ import {
   preflightWebZipImport,
 } from '@nexio/core/desktop/dialogs/import/web-limits';
 import { DebugLogger } from '@nexio/debug';
-import { snapshotFile } from '@blocksuite/affine/shared/utils';
+import { snapshotFile } from '@blocksuite/nexio/shared/utils';
 import {
   BearTransformer,
   type ImportWarning,
@@ -14,7 +14,7 @@ import {
   NotionHtmlTransformer,
   ObsidianTransformer,
   Unzip,
-} from '@blocksuite/affine/widgets/linked-doc';
+} from '@blocksuite/nexio/widgets/linked-doc';
 import { Service } from '@toeverything/infra';
 
 import type { ExplorerIconService } from '../../explorer-icon/services/explorer-icon';

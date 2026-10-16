@@ -1,6 +1,6 @@
-import { uniReactRoot } from '@nexio/component';
-import { NexioErrorBoundary } from '@nexio/core/components/affine/affine-error-boundary';
-import { AiLoginRequiredModal } from '@nexio/core/components/affine/auth/ai-login-required';
+﻿import { uniReactRoot } from '@nexio/component';
+import { NexioErrorBoundary } from '@nexio/core/components/nexio/nexio-error-boundary';
+import { AiLoginRequiredModal } from '@nexio/core/components/nexio/auth/ai-login-required';
 import { SWRConfigProvider } from '@nexio/core/components/providers/swr-config-provider';
 import { WorkspaceSideEffects } from '@nexio/core/components/providers/workspace-side-effects';
 import {

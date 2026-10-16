@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { NexioIconRenderer } from './renderer/affine-icon';
+import { NexioIconRenderer } from './renderer/nexio-icon';
 import { type IconData, IconType } from './type';
 
 export const IconRenderer = ({

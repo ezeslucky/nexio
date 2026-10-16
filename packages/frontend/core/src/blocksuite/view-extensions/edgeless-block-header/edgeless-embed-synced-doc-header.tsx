@@ -1,11 +1,11 @@
-import { Button, IconButton, Menu, MenuItem } from '@nexio/component';
+﻿import { Button, IconButton, Menu, MenuItem } from '@nexio/component';
 import { DocDisplayMetaService } from '@nexio/core/modules/doc-display-meta';
 import { WorkbenchService } from '@nexio/core/modules/workbench';
 import { stopPropagation } from '@nexio/core/utils';
 import { useI18n } from '@nexio/i18n';
-import { EmbedSyncedDocBlockComponent } from '@blocksuite/affine/blocks/embed-doc';
-import { isPeekable, peek } from '@blocksuite/affine/components/peek';
-import type { EmbedSyncedDocModel } from '@blocksuite/affine-model';
+import { EmbedSyncedDocBlockComponent } from '@blocksuite/nexio/blocks/embed-doc';
+import { isPeekable, peek } from '@blocksuite/nexio/components/peek';
+import type { EmbedSyncedDocModel } from '@blocksuite/nexio-model';
 import {
   ArrowDownSmallIcon,
   CenterPeekIcon,

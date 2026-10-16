@@ -1,9 +1,9 @@
-import './action-wrapper';
+﻿import './action-wrapper';
 
-import { WithDisposable } from '@blocksuite/affine/global/lit';
-import { unsafeCSSVar } from '@blocksuite/affine/shared/theme';
-import type { EditorHost } from '@blocksuite/affine/std';
-import { ThemeProvider } from '@blocksuite/affine-shared/services';
+import { WithDisposable } from '@blocksuite/nexio/global/lit';
+import { unsafeCSSVar } from '@blocksuite/nexio/shared/theme';
+import type { EditorHost } from '@blocksuite/nexio/std';
+import { ThemeProvider } from '@blocksuite/nexio-shared/services';
 import { css, html, LitElement } from 'lit';
 import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';

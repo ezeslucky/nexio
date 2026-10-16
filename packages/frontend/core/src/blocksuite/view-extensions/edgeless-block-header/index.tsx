@@ -1,4 +1,4 @@
-import type { ElementOrFactory } from '@nexio/component';
+﻿import type { ElementOrFactory } from '@nexio/component';
 import {
   patchForEdgelessNoteConfig,
   patchForEmbedSyncedDocConfig,
@@ -6,7 +6,7 @@ import {
 import {
   type ViewExtensionContext,
   ViewExtensionProvider,
-} from '@blocksuite/affine/ext-loader';
+} from '@blocksuite/nexio/ext-loader';
 import { FrameworkProvider } from '@toeverything/infra';
 import type { TemplateResult } from 'lit';
 import { z } from 'zod';

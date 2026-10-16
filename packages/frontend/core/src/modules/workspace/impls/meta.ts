@@ -1,9 +1,9 @@
-import {
+﻿import {
   createYProxy,
   type DocMeta,
   type DocsPropertiesMeta,
   type WorkspaceMeta,
-} from '@blocksuite/affine/store';
+} from '@blocksuite/nexio/store';
 import { Subject } from 'rxjs';
 import type * as Y from 'yjs';
 

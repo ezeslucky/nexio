@@ -34,7 +34,7 @@ import { AccountSetting } from './account-setting';
 import { GeneralSetting } from './general-setting';
 import { IssueFeedbackModal } from './issue-feedback-modal';
 import { SettingSidebar } from './setting-sidebar';
-import { StarNexioModal } from './star-affine-modal';
+import { StarNexioModal } from './star-nexio-modal';
 import * as style from './style.css';
 import {
   SubPageContext,

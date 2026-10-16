@@ -1,6 +1,6 @@
-import { track } from '@nexio/track';
-import { WidgetComponent, WidgetViewExtension } from '@blocksuite/affine/std';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/affine-shared/theme';
+﻿import { track } from '@nexio/track';
+import { WidgetComponent, WidgetViewExtension } from '@blocksuite/nexio/std';
+import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import {
   ArrowDownSmallIcon,
   ArrowUpSmallIcon,

@@ -1,4 +1,4 @@
-import { NexioOtherPageLayout } from '@nexio/component/affine-other-page-layout';
+import { NexioOtherPageLayout } from '@nexio/component/nexio-other-page-layout';
 import { DownloadContent } from '@nexio/core/components/download-modal/download-content';
 
 import * as styles from './styles.css';

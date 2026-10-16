@@ -1,4 +1,4 @@
-import {
+﻿import {
   type ConfirmModalProps,
   Input,
   type Notification,
@@ -11,7 +11,7 @@ import {
 import {
   NotificationExtension,
   type NotificationService,
-} from '@blocksuite/affine/shared/services';
+} from '@blocksuite/nexio/shared/services';
 
 export class NotificationServiceImpl implements NotificationService {
   constructor(
