@@ -50,6 +50,10 @@ export const topLevelRoutes = [
         loader: () => redirect('/'),
       },
       {
+        path: '/workspace',
+        loader: () => redirect('/'),
+      },
+      {
         path: '/log-auditor',
         async lazy() {
           const { Component } = await import('./pages/index');
