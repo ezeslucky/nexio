@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      flavor:
+        description: 'Flavor to build (canary, stable, beta, all)'
+        required: false
+        default: 'canary'
 
 permissions:
   contents: write
@@ -23,50 +28,111 @@ jobs:
         with:
           node-version: 22
 
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
-      - name: Set up Android SDK
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android, x86_64-linux-android
+
+      - name: Set up Android SDK & NDK
         uses: android-actions/setup-android@v4
+        with:
+          packages: 'ndk;27.0.12077973'
+
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | sdkmanager --licenses || true
 
       - name: Install Dependencies
         run: |
           corepack enable
-          yarn install --network-timeout 600000
+          node .yarn/releases/yarn-4.9.1.cjs install --network-timeout 600000
 
-      - name: Build Web Application
+      - name: Build Android Bundle Assets
         run: |
-          node .yarn/releases/yarn-4.9.1.cjs nexio build -p web
-
-      - name: Copy Web Dist to Android Assets
-        run: |
-          mkdir -p packages/frontend/apps/android/dist
-          cp -r packages/frontend/apps/web/dist/* packages/frontend/apps/android/dist/
+          node .yarn/releases/yarn-4.9.1.cjs nexio bundle -p android
 
       - name: Sync Capacitor Android
         working-directory: packages/frontend/apps/android
         run: |
           npx cap sync android
+      - name: Configure Google Services for Build
+        working-directory: packages/frontend/apps/android/App/app
+        run: |
+          if [ ! -f "google-services.json" ]; then
+            cat << 'EOF' > google-services.json
+          {
+            "project_info": {
+              "project_number": "123456789012",
+              "project_id": "nexio-app",
+              "storage_bucket": "nexio-app.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:123456789012:android:abcdef0123456789abcdef",
+                  "android_client_info": {
+                    "package_name": "app.nexio.pro"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [
+                  {
+                    "current_key": "dummy_api_key_for_build"
+                  }
+                ],
+                "services": {
+                  "appinvite_service": {
+                    "other_platform_oauth_client": []
+                  }
+                }
+              }
+            ],
+            "configuration_version": "1"
+          }
+          EOF
+          fi
 
       - name: Build Android APK
         working-directory: packages/frontend/apps/android/App
+        env:
+          AFFINE_ANDROID_NATIVE_TARGET: arm64
+          NEXIO_ANDROID_NATIVE_TARGET: arm64
         run: |
           chmod +x ./gradlew
-          ./gradlew assembleDebug --stacktrace
+          FLAVOR="${{ github.event.inputs.flavor || 'canary' }}"
+          if [ "$FLAVOR" = "canary" ]; then
+            ./gradlew assembleCanaryDebug --stacktrace
+          elif [ "$FLAVOR" = "stable" ]; then
+            ./gradlew assembleStableDebug --stacktrace
+          elif [ "$FLAVOR" = "beta" ]; then
+            ./gradlew assembleBetaDebug --stacktrace
+          else
+            ./gradlew assembleDebug --stacktrace
+          fi
+
+      - name: Locate Generated APKs
+        working-directory: packages/frontend/apps/android/App
+        run: |
+          mkdir -p ../../../../build-artifacts
+          find app/build/outputs/apk -name "*.apk" -exec cp {} ../../../../build-artifacts/ \;
+          ls -la ../../../../build-artifacts
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Nexio-debug-apk
-          path: packages/frontend/apps/android/App/app/build/outputs/apk/debug/*.apk
+          name: Nexio-Android-APK
+          path: build-artifacts/*.apk
 
       - name: Upload APK to GitHub Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: packages/frontend/apps/android/App/app/build/outputs/apk/debug/*.apk
+          files: build-artifacts/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

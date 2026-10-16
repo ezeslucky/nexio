@@ -5,8 +5,8 @@
   "private": true,
   "browser": "src/index.tsx",
   "scripts": {
-    "build": "affine bundle",
-    "dev": "affine bundle --dev"
+    "build": "nexio bundle",
+    "dev": "nexio bundle --dev"
   },
   "dependencies": {
     "@blocksuite/nexio": "workspace:*",

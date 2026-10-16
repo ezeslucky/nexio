@@ -1,14 +1,15 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import com.getcapacitor.Bridge
 import com.getcapacitor.BridgeWebViewClient
 
-internal class AffineWebViewClient(
+internal class NexioWebViewClient(
     bridge: Bridge,
     private val trustedOrigin: String?,
 ) : BridgeWebViewClient(bridge) {
+
     override fun shouldOverrideUrlLoading(
         view: WebView,
         request: WebResourceRequest,
@@ -23,3 +24,5 @@ internal class AffineWebViewClient(
         return shouldOverride
     }
 }
+
+internal typealias AffineWebViewClient = NexioWebViewClient

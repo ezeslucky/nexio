@@ -6,8 +6,8 @@
   "private": true,
   "browser": "src/index.tsx",
   "scripts": {
-    "build": "affine bundle",
-    "dev": "affine bundle --dev"
+    "build": "nexio bundle",
+    "dev": "nexio bundle --dev"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

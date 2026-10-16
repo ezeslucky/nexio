@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <queries>
@@ -38,6 +38,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
+                <data
+                    android:host="authentication"
+                    android:pathPattern=".*"
+                    android:scheme="nexio" />
                 <data
                     android:host="authentication"
                     android:pathPattern=".*"

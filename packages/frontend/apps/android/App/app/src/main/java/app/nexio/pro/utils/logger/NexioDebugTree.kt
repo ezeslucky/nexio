@@ -1,10 +1,12 @@
-﻿package app.nexio.pro.utils.logger
+package app.nexio.pro.utils.logger
 
 import timber.log.Timber
 
-class AffineDebugTree : Timber.DebugTree() {
+class NexioDebugTree : Timber.DebugTree() {
 
     override fun createStackElementTag(element: StackTraceElement): String {
-        return "Affine:${super.createStackElementTag(element)}:${element.lineNumber}"
+        return "Nexio:${super.createStackElementTag(element)}:${element.lineNumber}"
     }
 }
+
+typealias AffineDebugTree = NexioDebugTree
