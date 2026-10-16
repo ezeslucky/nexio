@@ -918,14 +918,54 @@ impl AppConfigFile {
     }
     if let Some(oauth) = &self.oauth {
       for (name, provider) in &oauth.providers {
-        if provider.client_id.trim().is_empty() {
+        let env_client_id = match name.as_str() {
+          "google" => oauth_env_var(&[
+            "NEXIO_OAUTH_GOOGLE_CLIENT_ID",
+            "AFFINE_OAUTH_GOOGLE_CLIENT_ID",
+            "OAUTH_GOOGLE_CLIENT_ID",
+          ]),
+          "github" => oauth_env_var(&[
+            "NEXIO_OAUTH_GITHUB_CLIENT_ID",
+            "AFFINE_OAUTH_GITHUB_CLIENT_ID",
+            "OAUTH_GITHUB_CLIENT_ID",
+          ]),
+          _ => None,
+        };
+        let client_id = if !provider.client_id.trim().is_empty() {
+          provider.client_id.clone()
+        } else if let Some(env_id) = env_client_id {
+          env_id
+        } else {
           continue;
-        }
+        };
+
         let mut args = provider.args.clone();
         let apple_private_key = args.remove("privateKey").map(|value| Arc::new(Zeroizing::new(value)));
         let apple_key_id = args.remove("keyId");
         let apple_team_id = args.remove("teamId");
-        if provider.client_secret.trim().is_empty()
+
+        let env_client_secret = match name.as_str() {
+          "google" => oauth_env_var(&[
+            "NEXIO_OAUTH_GOOGLE_CLIENT_SECRET",
+            "AFFINE_OAUTH_GOOGLE_CLIENT_SECRET",
+            "OAUTH_GOOGLE_CLIENT_SECRET",
+          ]),
+          "github" => oauth_env_var(&[
+            "NEXIO_OAUTH_GITHUB_CLIENT_SECRET",
+            "AFFINE_OAUTH_GITHUB_CLIENT_SECRET",
+            "OAUTH_GITHUB_CLIENT_SECRET",
+          ]),
+          _ => None,
+        };
+        let client_secret = if !provider.client_secret.trim().is_empty() {
+          provider.client_secret.clone()
+        } else if let Some(env_sec) = env_client_secret {
+          env_sec
+        } else {
+          String::new()
+        };
+
+        if client_secret.trim().is_empty()
           && (name != "apple"
             || apple_private_key.is_none()
             || apple_key_id.as_deref().is_none_or(str::is_empty)
@@ -936,14 +976,72 @@ impl AppConfigFile {
         config.oauth.providers.insert(
           name.clone(),
           OAuthProviderRuntimeConfig {
-            client_id: provider.client_id.clone(),
-            client_secret: Arc::new(Zeroizing::new(provider.client_secret.clone())),
+            client_id,
+            client_secret: Arc::new(Zeroizing::new(client_secret)),
             args,
             issuer: non_empty_string(provider.issuer.clone()),
             allow_private_network: provider.allow_private_network,
             apple_private_key,
             apple_key_id,
             apple_team_id,
+          },
+        );
+      }
+    }
+
+    if !config.oauth.providers.contains_key("google") {
+      if let (Some(client_id), Some(client_secret)) = (
+        oauth_env_var(&[
+          "NEXIO_OAUTH_GOOGLE_CLIENT_ID",
+          "AFFINE_OAUTH_GOOGLE_CLIENT_ID",
+          "OAUTH_GOOGLE_CLIENT_ID",
+        ]),
+        oauth_env_var(&[
+          "NEXIO_OAUTH_GOOGLE_CLIENT_SECRET",
+          "AFFINE_OAUTH_GOOGLE_CLIENT_SECRET",
+          "OAUTH_GOOGLE_CLIENT_SECRET",
+        ]),
+      ) {
+        config.oauth.providers.insert(
+          "google".to_string(),
+          OAuthProviderRuntimeConfig {
+            client_id,
+            client_secret: Arc::new(Zeroizing::new(client_secret)),
+            args: Default::default(),
+            issuer: None,
+            allow_private_network: false,
+            apple_private_key: None,
+            apple_key_id: None,
+            apple_team_id: None,
+          },
+        );
+      }
+    }
+
+    if !config.oauth.providers.contains_key("github") {
+      if let (Some(client_id), Some(client_secret)) = (
+        oauth_env_var(&[
+          "NEXIO_OAUTH_GITHUB_CLIENT_ID",
+          "AFFINE_OAUTH_GITHUB_CLIENT_ID",
+          "OAUTH_GITHUB_CLIENT_ID",
+        ]),
+        oauth_env_var(&[
+          "NEXIO_OAUTH_GITHUB_CLIENT_SECRET",
+          "AFFINE_OAUTH_GITHUB_CLIENT_SECRET",
+          "OAUTH_GITHUB_CLIENT_SECRET",
+        ]),
+      ) {
+        config.oauth.providers.insert(
+          "github".to_string(),
+          OAuthProviderRuntimeConfig {
+            client_id,
+            client_secret: Arc::new(Zeroizing::new(client_secret)),
+            args: Default::default(),
+            issuer: None,
+            allow_private_network: false,
+            apple_private_key: None,
+            apple_key_id: None,
+            apple_team_id: None,
           },
         );
       }
@@ -958,6 +1056,17 @@ fn database_url_from_env() -> Option<String> {
 
 fn private_key_from_env() -> Option<String> {
   env::var("AFFINE_PRIVATE_KEY").ok().and_then(non_empty_string)
+}
+
+fn oauth_env_var(names: &[&str]) -> Option<String> {
+  for name in names {
+    if let Ok(val) = env::var(name) {
+      if let Some(s) = non_empty_string(val) {
+        return Some(s);
+      }
+    }
+  }
+  None
 }
 
 fn non_empty_string(value: String) -> Option<String> {
@@ -1022,7 +1131,14 @@ fn merge_config_value(base: &mut serde_json::Value, overrides: serde_json::Value
         }
       }
     }
-    (base, overrides) => *base = overrides,
+    (base, overrides) => {
+      if let (serde_json::Value::String(b), serde_json::Value::String(o)) = (&base, &overrides) {
+        if !b.trim().is_empty() && o.trim().is_empty() {
+          return;
+        }
+      }
+      *base = overrides;
+    }
   }
 }
 

@@ -58,7 +58,50 @@ declare global {
 
 function runtimeAuthConfig(config?: Config) {
   if (!config) return undefined;
-  return JSON.stringify({ auth: config.auth, oauth: config.oauth });
+  const oauth = structuredClone(config.oauth ?? { providers: {} });
+  if (!oauth.providers) {
+    oauth.providers = {} as any;
+  }
+  const googleClientId =
+    oauth.providers.google?.clientId ||
+    process.env.NEXIO_OAUTH_GOOGLE_CLIENT_ID ||
+    process.env.AFFINE_OAUTH_GOOGLE_CLIENT_ID ||
+    process.env.OAUTH_GOOGLE_CLIENT_ID ||
+    '';
+  const googleClientSecret =
+    oauth.providers.google?.clientSecret ||
+    process.env.NEXIO_OAUTH_GOOGLE_CLIENT_SECRET ||
+    process.env.AFFINE_OAUTH_GOOGLE_CLIENT_SECRET ||
+    process.env.OAUTH_GOOGLE_CLIENT_SECRET ||
+    '';
+  if (googleClientId) {
+    oauth.providers.google = {
+      ...oauth.providers.google,
+      clientId: googleClientId,
+      clientSecret: googleClientSecret,
+    };
+  }
+  const githubClientId =
+    oauth.providers.github?.clientId ||
+    process.env.NEXIO_OAUTH_GITHUB_CLIENT_ID ||
+    process.env.AFFINE_OAUTH_GITHUB_CLIENT_ID ||
+    process.env.OAUTH_GITHUB_CLIENT_ID ||
+    '';
+  const githubClientSecret =
+    oauth.providers.github?.clientSecret ||
+    process.env.NEXIO_OAUTH_GITHUB_CLIENT_SECRET ||
+    process.env.AFFINE_OAUTH_GITHUB_CLIENT_SECRET ||
+    process.env.OAUTH_GITHUB_CLIENT_SECRET ||
+    '';
+  if (githubClientId) {
+    oauth.providers.github = {
+      ...oauth.providers.github,
+      clientId: githubClientId,
+      clientSecret: githubClientSecret,
+    };
+  }
+
+  return JSON.stringify({ auth: config.auth, oauth });
 }
 
 @Injectable()
@@ -129,6 +172,7 @@ export class BackendRuntimeProvider
       !updates.crypto &&
       !updates.db &&
       !updates.auth &&
+      !updates.oauth &&
       !updates.payment &&
       !updates.indexer &&
       !updates.storages

@@ -91,18 +91,22 @@ export class OAuthService {
       const envClientId =
         name === OAuthProviderName.Google
           ? process.env.NEXIO_OAUTH_GOOGLE_CLIENT_ID ||
-            process.env.AFFINE_OAUTH_GOOGLE_CLIENT_ID
+            process.env.AFFINE_OAUTH_GOOGLE_CLIENT_ID ||
+            process.env.OAUTH_GOOGLE_CLIENT_ID
           : name === OAuthProviderName.GitHub
             ? process.env.NEXIO_OAUTH_GITHUB_CLIENT_ID ||
-              process.env.AFFINE_OAUTH_GITHUB_CLIENT_ID
+              process.env.AFFINE_OAUTH_GITHUB_CLIENT_ID ||
+              process.env.OAUTH_GITHUB_CLIENT_ID
             : undefined;
       const envClientSecret =
         name === OAuthProviderName.Google
           ? process.env.NEXIO_OAUTH_GOOGLE_CLIENT_SECRET ||
-            process.env.AFFINE_OAUTH_GOOGLE_CLIENT_SECRET
+            process.env.AFFINE_OAUTH_GOOGLE_CLIENT_SECRET ||
+            process.env.OAUTH_GOOGLE_CLIENT_SECRET
           : name === OAuthProviderName.GitHub
             ? process.env.NEXIO_OAUTH_GITHUB_CLIENT_SECRET ||
-              process.env.AFFINE_OAUTH_GITHUB_CLIENT_SECRET
+              process.env.AFFINE_OAUTH_GITHUB_CLIENT_SECRET ||
+              process.env.OAUTH_GITHUB_CLIENT_SECRET
             : undefined;
 
       const clientId = provider?.clientId || envClientId;

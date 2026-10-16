@@ -325,6 +325,20 @@ export function override(config: AppConfig, update: DeepPartial<AppConfig>) {
       // if we found the key in the config keys
       // we should use the override object instead of merge it with left
       if (configKeys.has(path)) {
+        if (
+          path.startsWith('providers.') &&
+          typeof left === 'object' &&
+          left !== null &&
+          typeof right === 'object' &&
+          right !== null
+        ) {
+          return {
+            ...left,
+            ...right,
+            clientId: right.clientId || left.clientId || '',
+            clientSecret: right.clientSecret || left.clientSecret || '',
+          };
+        }
         return right;
       }
 

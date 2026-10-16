@@ -335,7 +335,15 @@ fn provider_name(input: &str) -> RuntimeResult<(&'static str, &'static str)> {
 fn validate_preflight(client: &str, nonce: &str, redirect: Option<&str>, callback: &str) -> RuntimeResult<()> {
   if !matches!(
     client,
-    "web" | "affine" | "affine-canary" | "affine-beta" | "affine-dev"
+    "web"
+      | "affine"
+      | "affine-canary"
+      | "affine-beta"
+      | "affine-dev"
+      | "nexio"
+      | "nexio-canary"
+      | "nexio-beta"
+      | "nexio-dev"
   ) || nonce.is_empty()
     || nonce.len() > 512
     || redirect.is_some_and(|value| value.len() > 2048)

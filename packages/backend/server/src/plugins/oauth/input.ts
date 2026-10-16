@@ -13,6 +13,10 @@ export const OAuthClientSchema = z.enum([
   'affine-canary',
   'affine-beta',
   'affine-dev',
+  'nexio',
+  'nexio-canary',
+  'nexio-beta',
+  'nexio-dev',
 ]);
 
 export const OAuthPreflightBodySchema = z
