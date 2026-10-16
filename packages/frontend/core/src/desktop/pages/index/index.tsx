@@ -90,6 +90,23 @@ export const Component = ({
       .catch(err => console.error('Failed to create cloud workspace', err));
   }, [defaultIndexRoute, jumpToPage, openPage, workspacesService]);
 
+  const createLocalWorkspace = useCallback(() => {
+    if (createOnceRef.current) return;
+    createOnceRef.current = true;
+    buildShowcaseWorkspace(workspacesService, 'local', 'Nexio Workspace')
+      .then(({ meta, defaultDocId }) => {
+        if (defaultDocId) {
+          jumpToPage(meta.id, defaultDocId);
+        } else {
+          openPage(meta.id, defaultIndexRoute);
+        }
+      })
+      .catch(err => {
+        console.error('Failed to create local workspace', err);
+        createCloudWorkspace();
+      });
+  }, [defaultIndexRoute, jumpToPage, openPage, workspacesService, createCloudWorkspace]);
+
   useLayoutEffect(() => {
     if (!navigating) {
       return;
@@ -100,8 +117,13 @@ export const Component = ({
     }
 
     if (!loggedIn) {
-      localStorage.removeItem('last_workspace_id');
-      jumpToSignIn();
+      if (list.length === 0) {
+        createLocalWorkspace();
+        return;
+      }
+      const lastId = localStorage.getItem('last_workspace_id');
+      const openWorkspace = list.find(w => w.id === lastId) ?? list[0];
+      openPage(openWorkspace.id, defaultIndexRoute, RouteLogic.REPLACE);
       return;
     }
 

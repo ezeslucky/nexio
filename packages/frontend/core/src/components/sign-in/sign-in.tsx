@@ -1,4 +1,4 @@
-﻿import { Button, notify } from '@nexio/component';
+import { Button, notify } from '@nexio/component';
 import {
   AuthContainer,
   AuthContent,
@@ -201,49 +201,22 @@ export const SignInStep = ({
           </Button>
         </form>
 
-        {!isSelfhosted && (
-          <>
-            <div className={style.authMessage}>
-              {/*prettier-ignore*/}
-              <Trans i18nKey="com.affine.auth.sign.message">
-                By clicking &quot;Continue with Google/Email&quot; above, you acknowledge that
-                you agree to Nexio&apos;s <a href="#" rel="noreferrer">Terms of Conditions</a> and <a href="#" rel="noreferrer">Privacy Policy</a>.
-            </Trans>
-
-            </div>
-            <div className={style.skipDivider}>
-              <div className={style.skipDividerLine} />
-              <span className={style.skipDividerText}>or</span>
-              <div className={style.skipDividerLine} />
-            </div>
-            <div className={style.skipSection}>
-              {BUILD_CONFIG.isNative ? (
-                <Button
-                  variant="plain"
-                  className={style.addSelfhostedButton}
-                  prefix={
-                    <PublishIcon className={style.addSelfhostedButtonPrefix} />
-                  }
-                  onClick={onAddSelfhosted}
-                >
-                  {t['com.affine.auth.sign.add-selfhosted']()}
-                </Button>
-              ) : (
-                <div className={style.skipText}>
-                  {t['com.affine.mobile.sign-in.skip.hint']()}
-                </div>
-              )}
-              <Button
-                variant="plain"
-                onClick={onSkip}
-                className={style.skipLink}
-                prefix={<LocalWorkspaceIcon className={style.skipLinkIcon} />}
-              >
-                {t['com.affine.mobile.sign-in.skip.link']()}
-              </Button>
-            </div>
-          </>
-        )}
+        <div className={style.skipDivider}>
+          <div className={style.skipDividerLine} />
+          <span className={style.skipDividerText}>or</span>
+          <div className={style.skipDividerLine} />
+        </div>
+        <div className={style.skipSection}>
+          <Button
+            variant="plain"
+            onClick={onSkip}
+            className={style.skipLink}
+            prefix={<LocalWorkspaceIcon className={style.skipLinkIcon} />}
+            style={{ fontWeight: 600, color: '#2563eb' }}
+          >
+            Continue to Workspace directly →
+          </Button>
+        </div>
       </AuthContent>
       {isSelfhosted && (
         <AuthFooter>
