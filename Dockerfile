@@ -45,12 +45,14 @@ RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
     && test -f packages/backend/server/dist/main.js
 
 # Build web
-RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p web
+RUN node .yarn/releases/yarn-4.9.1.cjs nexio bundle \
+    -p web \
+    && test -d packages/frontend/apps/web/dist
 
 # Build admin
-RUN node .yarn/releases/yarn-4.9.1.cjs nexio build \
-    -p admin
+RUN node .yarn/releases/yarn-4.9.1.cjs nexio bundle \
+    -p admin \
+    && test -d packages/frontend/admin/dist
 
 # Assemble static assets
 RUN rm -rf static packages/backend/server/static \

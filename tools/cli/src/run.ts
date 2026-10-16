@@ -148,17 +148,22 @@ export class RunCommand extends PackageCommand {
       }
     }
 
-    const isNexioCommand = args[0] === 'affine';
+    const isNexioCommand = args[0] === 'affine' || args[0] === 'nexio';
     if (isNexioCommand) {
-      // remove 'affine' from 'affine xxx' command
+      // remove 'affine' or 'nexio' from command
       args.shift();
-      args.push('-p', pkg.name);
+      if (!args.includes('-p') && !args.includes('--package')) {
+        args.push('-p', pkg.name);
+      }
 
       process.env = {
         ...process.env,
         ...envs,
       };
-      await this.cli.run(args);
+      const exitCode = await this.cli.run(args);
+      if (exitCode !== 0) {
+        process.exit(exitCode ?? 1);
+      }
     } else {
       await this.runCommand(pkg, rawArgs);
     }

@@ -67,8 +67,8 @@
     "vitest": "^4.1.8"
   },
   "scripts": {
-    "build": "affine bundle",
-    "dev": "affine bundle --dev",
+    "build": "nexio bundle",
+    "dev": "nexio bundle --dev",
     "update-shadcn": "yarn dlx shadcn@latest add -p src/components/ui"
   },
   "exports": {

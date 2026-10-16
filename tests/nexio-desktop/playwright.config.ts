@@ -40,7 +40,7 @@ if (process.env.DEV_SERVER_URL) {
   );
   config.webServer = [
     {
-      command: 'yarn run -T affine bundle -p @nexio/electron-renderer --dev',
+      command: 'yarn run -T nexio bundle -p @nexio/electron-renderer --dev',
       timeout: 120 * 1000,
       reuseExistingServer: !process.env.CI,
       env: {

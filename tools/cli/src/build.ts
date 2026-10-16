@@ -12,6 +12,9 @@ export class BuildCommand extends PackageCommand {
 
     args.push(this.package, 'build');
 
-    await this.cli.run(args);
+    const exitCode = await this.cli.run(args);
+    if (exitCode !== 0) {
+      process.exit(exitCode ?? 1);
+    }
   }
 }

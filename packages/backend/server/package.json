@@ -6,7 +6,7 @@
   "author": "ezeslucky",
   "type": "module",
   "scripts": {
-    "build": "affine bundle -p @nexio/server",
+    "build": "nexio bundle -p @nexio/server",
     "dev": "nodemon ./src/index.ts",
     "dev:mail": "email dev -d src/mails",
     "test": "ava --concurrency 1 --serial",

@@ -10,8 +10,8 @@
     "./dist": "./dist/index.js"
   },
   "scripts": {
-    "build": "affine bundle -p @nexio/reader",
-    "bundle": "affine bundle -p @nexio/reader"
+    "build": "nexio bundle -p @nexio/reader",
+    "bundle": "nexio bundle -p @nexio/reader"
   },
   "dependencies": {
     "lodash-es": "^4.17.23",
