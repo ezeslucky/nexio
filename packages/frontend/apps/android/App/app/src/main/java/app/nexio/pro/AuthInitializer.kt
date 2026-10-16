@@ -1,4 +1,4 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 import android.webkit.WebView
 import app.nexio.pro.utils.getCurrentServerBaseUrl

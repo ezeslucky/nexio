@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.service
+package app.nexio.pro.service
 
 import app.nexio.pro.utils.getCurrentServerBaseUrl
 import com.getcapacitor.Bridge

@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.plugin
+package app.nexio.pro.plugin
 
 import com.getcapacitor.JSObject
 import com.getcapacitor.Plugin

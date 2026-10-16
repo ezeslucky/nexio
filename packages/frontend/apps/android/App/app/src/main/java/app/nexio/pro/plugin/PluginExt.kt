@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.plugin
+package app.nexio.pro.plugin
 
 import androidx.lifecycle.lifecycleScope
 import com.getcapacitor.Plugin

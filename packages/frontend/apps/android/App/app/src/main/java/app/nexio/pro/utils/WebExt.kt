@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.utils
+package app.nexio.pro.utils
 
 import com.getcapacitor.Bridge
 import kotlin.coroutines.resume

@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai.chat.ui
+package app.nexio.pro.ai.chat.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.ExperimentalFoundationApi

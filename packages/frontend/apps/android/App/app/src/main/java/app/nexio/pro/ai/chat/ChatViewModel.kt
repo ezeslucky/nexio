@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai.chat
+package app.nexio.pro.ai.chat
 
 import android.widget.Toast
 import androidx.lifecycle.ViewModel

@@ -105,6 +105,7 @@ jobs:
           NEXIO_ANDROID_NATIVE_TARGET: arm64
         run: |
           chmod +x ./gradlew
+          find . -type f \( -name "*.xml" -o -name "*.kt" -o -name "*.java" \) -exec sed -i '1s/^\xEF\xBB\xBF//' {} + 2>/dev/null || true
           FLAVOR="${{ github.event.inputs.flavor || 'canary' }}"
           if [ "$FLAVOR" = "canary" ]; then
             ./gradlew assembleCanaryDebug --stacktrace

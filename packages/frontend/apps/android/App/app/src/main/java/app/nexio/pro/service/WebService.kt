@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.service
+package app.nexio.pro.service
 
 import app.nexio.pro.utils.getCurrentDocContentInMarkdown
 import app.nexio.pro.utils.getCurrentDocId

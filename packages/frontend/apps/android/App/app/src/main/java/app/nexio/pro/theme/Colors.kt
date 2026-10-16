@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.theme
+package app.nexio.pro.theme
 
 import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.staticCompositionLocalOf

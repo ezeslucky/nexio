@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai.chat.ui
+package app.nexio.pro.ai.chat.ui
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size

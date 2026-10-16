@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.utils
+package app.nexio.pro.utils
 
 import android.content.Context
 import androidx.datastore.core.DataStore

@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.utils.logger
+package app.nexio.pro.utils.logger
 
 import android.util.Log
 import com.google.firebase.crashlytics.ktx.crashlytics

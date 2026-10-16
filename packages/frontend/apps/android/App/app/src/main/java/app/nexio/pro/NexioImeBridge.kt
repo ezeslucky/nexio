@@ -1,4 +1,4 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 import android.net.Uri
 import android.webkit.JavascriptInterface

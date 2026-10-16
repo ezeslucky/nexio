@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.components
+package app.nexio.pro.components
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Box

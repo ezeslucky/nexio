@@ -1,4 +1,4 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 import androidx.activity.BackEventCompat
 import androidx.activity.OnBackPressedCallback

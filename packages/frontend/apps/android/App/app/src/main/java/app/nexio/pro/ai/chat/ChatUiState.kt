@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai.chat
+package app.nexio.pro.ai.chat
 
 import com.affine.pro.graphql.fragment.CopilotChatHistory
 import kotlinx.datetime.Clock

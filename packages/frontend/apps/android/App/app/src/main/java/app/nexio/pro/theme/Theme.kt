@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.theme
+package app.nexio.pro.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai
+package app.nexio.pro.ai
 
 import android.content.Intent
 import android.os.Bundle

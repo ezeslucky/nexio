@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.ai.chat.ui
+package app.nexio.pro.ai.chat.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

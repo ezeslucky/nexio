@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.plugin
+package app.nexio.pro.plugin
 
 import android.content.Context
 import androidx.datastore.preferences.preferencesDataStore

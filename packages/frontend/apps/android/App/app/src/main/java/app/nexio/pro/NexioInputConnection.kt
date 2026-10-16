@@ -1,4 +1,4 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 import android.view.KeyEvent
 import android.view.inputmethod.ExtractedTextRequest

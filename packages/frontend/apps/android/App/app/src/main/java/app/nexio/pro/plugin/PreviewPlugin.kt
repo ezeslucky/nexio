@@ -1,4 +1,4 @@
-﻿package app.nexio.pro.plugin
+package app.nexio.pro.plugin
 
 import android.net.Uri
 import com.getcapacitor.JSObject

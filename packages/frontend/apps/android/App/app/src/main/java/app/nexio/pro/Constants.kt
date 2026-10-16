@@ -1,4 +1,4 @@
-﻿package app.nexio.pro
+package app.nexio.pro
 
 enum class Prompt(val value: String) {
     Summary("Summary"),
