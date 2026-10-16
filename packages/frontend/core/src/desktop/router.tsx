@@ -1,10 +1,11 @@
-﻿import { wrapCreateBrowserRouterV6 } from '@sentry/react';
+import { wrapCreateBrowserRouterV6 } from '@sentry/react';
 import { useEffect, useState } from 'react';
 import type { RouteObject } from 'react-router-dom';
 import {
   createBrowserRouter as reactRouterCreateBrowserRouter,
   redirect,
   useNavigate,
+  useParams,
 } from 'react-router-dom';
 
 import { NexioErrorComponent } from '../components/nexio/nexio-error-boundary/nexio-error-fallback';
@@ -47,6 +48,36 @@ export const topLevelRoutes = [
       {
         path: '/all',
         loader: () => redirect('/'),
+      },
+      {
+        path: '/log-auditor',
+        async lazy() {
+          const { Component } = await import('./pages/index');
+          return {
+            Component: () => <Component defaultIndexRoute="log-auditor" />,
+          };
+        },
+      },
+      {
+        path: '/workflow',
+        async lazy() {
+          const { Component } = await import('./pages/index');
+          return {
+            Component: () => <Component defaultIndexRoute="workflow" />,
+          };
+        },
+      },
+      {
+        path: '/workflow/:workflowId',
+        async lazy() {
+          const { Component } = await import('./pages/index');
+          return {
+            Component: () => {
+              const { workflowId } = useParams();
+              return <Component defaultIndexRoute={`workflow/${workflowId}`} />;
+            },
+          };
+        },
       },
       {
         path: WORKSPACE_ROUTE_PATH,
