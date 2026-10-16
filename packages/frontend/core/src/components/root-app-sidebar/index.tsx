@@ -1,4 +1,4 @@
-﻿import {
+import {
   AddPageButton,
   AppDownloadButton,
   AppSidebar,
@@ -52,6 +52,7 @@ import { TrashButton } from './trash-button';
 import { UpdaterButton } from './updater-button';
 import UserInfo from './user-info';
 import { WorkflowEntrance } from './workflow-entrance';
+import { LogAuditorEntrance } from './log-auditor-entrance';
 
 export type RootAppSidebarProps = {
   isPublicWorkspace: boolean;
@@ -238,6 +239,7 @@ export const RootAppSidebar = memo((): ReactElement => {
           <InviteMembersButton />
           <TemplateDocEntrance />
           <WorkflowEntrance />
+          <LogAuditorEntrance />
         </CollapsibleSection>
       </SidebarScrollableContainer>
       <SidebarContainer className={bottomContainer}>
