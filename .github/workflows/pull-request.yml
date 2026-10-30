@@ -1,0 +1,85 @@
+name: Pull Request CI
+
+on:
+  pull_request:
+    branches:
+      - main
+      - candly
+
+# Cancels older in-progress runs when new commits are pushed to the PR
+concurrency:
+  group: pr-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-and-typecheck:
+    name: Lint & Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Enable Corepack & Install Dependencies
+        run: |
+          corepack enable
+          yarn install --immutable
+
+      - name: Run Linters (oxlint & oxfmt)
+        run: yarn lint
+
+      - name: Run Typecheck
+        run: yarn typecheck
+
+  build:
+    name: Build Packages
+    needs: lint-and-typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Enable Corepack & Install Dependencies
+        run: |
+          corepack enable
+          yarn install --immutable
+
+      - name: Build Server
+        run: yarn build:server
+
+      - name: Build All (Web, Admin, Server)
+        run: yarn build:all
+
+  test:
+    name: Run Unit Tests
+    needs: lint-and-typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Enable Corepack & Install Dependencies
+        run: |
+          corepack enable
+          yarn install --immutable
+
+      - name: Run Tests (Vitest)
+        run: yarn test
+
