@@ -85,8 +85,9 @@
   "build": {
     "protocols": [
       {
-        "name": "affine",
+        "name": "nexio",
         "schemes": [
+          "nexio",
           "affine"
         ]
       }

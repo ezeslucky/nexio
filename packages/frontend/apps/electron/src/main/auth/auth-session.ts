@@ -112,6 +112,8 @@ async function refresh(endpoint: string, refreshToken: string) {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'x-nexio-client-kind': 'native',
+        'x-nexio-version': BUILD_CONFIG.appVersion,
         'x-affine-client-kind': 'native',
         'x-affine-version': BUILD_CONFIG.appVersion,
       },
@@ -209,6 +211,8 @@ export async function revokeAuthSession(endpoint: string) {
           method: 'POST',
           headers: {
             'content-type': 'application/json',
+            'x-nexio-client-kind': 'native',
+            'x-nexio-version': BUILD_CONFIG.appVersion,
             'x-affine-client-kind': 'native',
             'x-affine-version': BUILD_CONFIG.appVersion,
           },

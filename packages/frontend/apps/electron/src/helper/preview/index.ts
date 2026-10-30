@@ -10,10 +10,12 @@ import {
   type TypstRenderResult,
 } from '@nexio/native';
 
-const TYPST_FONT_DIRS_ENV = 'AFFINE_TYPST_FONT_DIRS';
+const TYPST_FONT_DIRS_ENV = 'NEXIO_TYPST_FONT_DIRS';
+const LEGACY_TYPST_FONT_DIRS_ENV = 'AFFINE_TYPST_FONT_DIRS';
 
 function parseTypstFontDirsFromEnv() {
-  const value = process.env[TYPST_FONT_DIRS_ENV];
+  const value =
+    process.env[TYPST_FONT_DIRS_ENV] ?? process.env[LEGACY_TYPST_FONT_DIRS_ENV];
   if (!value) {
     return [];
   }

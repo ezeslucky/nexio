@@ -36,6 +36,9 @@ export interface PasswordSignInResponse extends SignInResponse {
 }
 
 const authCookieNames = [
+  'nexio_session',
+  'nexio_user_id',
+  'nexio_csrf_token',
   'affine_session',
   'affine_user_id',
   'affine_csrf_token',
@@ -66,6 +69,8 @@ async function fetchAuth(endpoint: string, path: string, body?: unknown) {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
+      'x-nexio-client-kind': 'native',
+      'x-nexio-version': BUILD_CONFIG.appVersion,
       'x-affine-client-kind': 'native',
       'x-affine-version': BUILD_CONFIG.appVersion,
     },
@@ -163,6 +168,8 @@ export const authHandlers = {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
+        'x-nexio-client-kind': 'native',
+        'x-nexio-version': BUILD_CONFIG.appVersion,
         'x-affine-client-kind': 'native',
         'x-affine-version': BUILD_CONFIG.appVersion,
         ...(credential.verifyToken

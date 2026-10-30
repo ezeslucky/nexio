@@ -153,7 +153,7 @@ const needRefererDomains = [
   /^(?:[a-zA-Z0-9-]+\.)*youtube-nocookie\.com$/,
   /^(?:[a-zA-Z0-9-]+\.)*googlevideo\.com$/,
 ];
-const defaultReferer = 'https://client.affine.local/';
+const defaultReferer = 'https://client.nexio.local/';
 const affineDomains = [
   /^(?:[a-z0-9-]+\.)*usercontent\.technexio\.me$/i,
   /^(?:[a-z0-9-]+\.)*technexio\.me$/i,

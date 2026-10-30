@@ -1,4 +1,4 @@
-﻿import { CodeBlockPreviewExtension } from '@blocksuite/nexio/blocks/code';
+import { CodeBlockPreviewExtension } from '@blocksuite/nexio/blocks/code';
 import { SignalWatcher, WithDisposable } from '@blocksuite/nexio/global/lit';
 import type { CodeBlockModel } from '@blocksuite/nexio/model';
 import { unsafeCSSVarV2 } from '@blocksuite/nexio/shared/theme';
@@ -136,7 +136,7 @@ export class HTMLPreview extends SignalWatcher(
             () =>
               html`<div class="html-preview-fallback">
                 This feature is not supported in your browser. Please download
-                the AFFiNE Desktop App to use it.
+                the Nexio Desktop App to use it.
               </div>`,
           ],
         ])}

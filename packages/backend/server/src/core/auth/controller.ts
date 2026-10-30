@@ -210,7 +210,8 @@ export class AuthController {
     }
 
     const csrfCookie = getRequestCookie(req, AuthService.csrfCookieName);
-    const csrfHeader = req.get('x-affine-csrf-token');
+    const csrfHeader =
+      req.get('x-nexio-csrf-token') ?? req.get('x-affine-csrf-token');
     if (!csrfHeader || !csrfCookie || csrfCookie !== csrfHeader) {
       throw new ActionForbidden();
     }
@@ -381,7 +382,8 @@ export class AuthController {
       if (principal?.authSessionId) return;
     } else if (req.authType === 'session') {
       const csrfCookie = getRequestCookie(req, AuthService.csrfCookieName);
-      const csrfHeader = req.get('x-affine-csrf-token');
+      const csrfHeader =
+        req.get('x-nexio-csrf-token') ?? req.get('x-affine-csrf-token');
       if (csrfHeader && csrfCookie && csrfCookie === csrfHeader) return;
     }
     throw new ActionForbidden();

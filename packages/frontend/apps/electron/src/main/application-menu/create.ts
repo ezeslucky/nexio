@@ -20,7 +20,7 @@ import { WorkerManager } from '../worker/pool';
 import { applicationMenuSubjects } from './subject';
 
 // Unique id for menuitems
-const MENUITEM_NEW_PAGE = 'affine:new-page';
+const MENUITEM_NEW_PAGE = 'nexio:new-page';
 
 export function createApplicationMenu() {
   const isMac = isMacOS();

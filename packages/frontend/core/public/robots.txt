@@ -1,4 +1,4 @@
-# If you would like to crawl AFFiNE public workspace contact us via developer@toeverything.info
+# If you would like to crawl Nexio public workspace contact us via developer@technexio.me
 
 User-agent: *
 Allow: /

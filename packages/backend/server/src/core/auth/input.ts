@@ -84,10 +84,12 @@ export const AuthSessionRefreshBodySchema = z
 
 export function getSessionOptionsFromRequest(req: Request) {
   const sessionId = SessionIdSchema.safeParse(
-    getRequestCookie(req, SESSION_COOKIE_NAME)
+    getRequestCookie(req, 'nexio_session') ??
+      getRequestCookie(req, SESSION_COOKIE_NAME)
   );
   const userId = UserIdSchema.safeParse(
-    getRequestCookie(req, USER_COOKIE_NAME)
+    getRequestCookie(req, 'nexio_user_id') ??
+      getRequestCookie(req, USER_COOKIE_NAME)
   );
 
   return {
@@ -98,7 +100,9 @@ export function getSessionOptionsFromRequest(req: Request) {
 
 export function isNativeClientRequest(req: Request) {
   return NativeClientHeadersSchema.safeParse({
-    clientKind: getRequestHeader(req, CLIENT_KIND_HEADER),
+    clientKind:
+      getRequestHeader(req, 'x-nexio-client-kind') ??
+      getRequestHeader(req, CLIENT_KIND_HEADER),
     origin: getRequestHeader(req, 'origin'),
   }).success;
 }
