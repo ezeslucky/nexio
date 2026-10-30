@@ -12,10 +12,11 @@ import {
   showMainWindow,
 } from './windows-manager';
 
-let protocol = buildType === 'stable' ? 'affine' : `affine-${buildType}`;
+let protocol = buildType === 'stable' ? 'nexio' : `nexio-${buildType}`;
 if (isDev) {
-  protocol = 'affine-dev';
+  protocol = 'nexio-dev';
 }
+const fallbackProtocol = buildType === 'stable' ? 'affine' : `affine-${buildType}`;
 
 const authMethods = new Set(['magic-link', 'oauth', 'open-app-signin']);
 
@@ -41,8 +42,18 @@ function summarizeDeepLink(rawUrl: string) {
   }
 }
 
+function isNexioUrl(url?: string | null): boolean {
+  if (!url) return false;
+  return (
+    url.startsWith(`${protocol}://`) ||
+    url.startsWith(`${fallbackProtocol}://`) ||
+    url.startsWith('nexio://') ||
+    url.startsWith('affine://')
+  );
+}
+
 function logDeepLinkFailure(rawUrl: string, error: unknown) {
-  logger.error('failed to handle affine url', summarizeDeepLink(rawUrl), {
+  logger.error('failed to handle nexio url', summarizeDeepLink(rawUrl), {
     error: error instanceof Error ? error.name : typeof error,
   });
 }
@@ -50,17 +61,18 @@ function logDeepLinkFailure(rawUrl: string, error: unknown) {
 export function setupDeepLink(app: App) {
   if (process.defaultApp) {
     if (process.argv.length >= 2) {
-      app.setAsDefaultProtocolClient(protocol, process.execPath, [
-        path.resolve(process.argv[1]),
-      ]);
+      const scriptArg = [path.resolve(process.argv[1])];
+      app.setAsDefaultProtocolClient(protocol, process.execPath, scriptArg);
+      app.setAsDefaultProtocolClient(fallbackProtocol, process.execPath, scriptArg);
     }
   } else {
     app.setAsDefaultProtocolClient(protocol);
+    app.setAsDefaultProtocolClient(fallbackProtocol);
   }
 
   app.on('open-url', (event, url) => {
     logger.log('open-url', summarizeDeepLink(url));
-    if (url.startsWith(`${protocol}://`)) {
+    if (isNexioUrl(url)) {
       event.preventDefault();
       app
         .whenReady()
@@ -76,10 +88,10 @@ export function setupDeepLink(app: App) {
     showMainWindow()
       .then(() => {
         const url = commandLine.pop();
-        if (url?.startsWith(`${protocol}://`)) {
+        if (isNexioUrl(url)) {
           event.preventDefault();
-          handleNexioUrl(url).catch(e => {
-            logDeepLinkFailure(url, e);
+          handleNexioUrl(url!).catch(e => {
+            logDeepLinkFailure(url!, e);
           });
         }
       })
@@ -92,13 +104,13 @@ export function setupDeepLink(app: App) {
     const url = process.argv.at(-1);
     logger.log(
       'url from argv',
-      url?.startsWith(`${protocol}://`)
-        ? summarizeDeepLink(url)
+      isNexioUrl(url)
+        ? summarizeDeepLink(url!)
         : { deepLink: false, argumentCount: process.argv.length }
     );
-    if (url?.startsWith(`${protocol}://`)) {
-      handleNexioUrl(url).catch(e => {
-        logDeepLinkFailure(url, e);
+    if (isNexioUrl(url)) {
+      handleNexioUrl(url!).catch(e => {
+        logDeepLinkFailure(url!, e);
       });
     }
   });
@@ -107,7 +119,7 @@ export function setupDeepLink(app: App) {
 async function handleNexioUrl(url: string) {
   await showMainWindow();
 
-  logger.info('open affine url', summarizeDeepLink(url));
+  logger.info('open nexio url', summarizeDeepLink(url));
   const urlObj = new URL(url);
 
   if (urlObj.hostname === 'authentication') {

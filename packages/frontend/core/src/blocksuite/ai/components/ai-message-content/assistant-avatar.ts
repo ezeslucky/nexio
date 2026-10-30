@@ -1,4 +1,4 @@
-﻿import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
+import { AIStarIconWithAnimation } from '@blocksuite/nexio/components/icons';
 import { ShadowlessElement } from '@blocksuite/nexio/std';
 import { AiIcon } from '@blocksuite/icons/lit';
 import { css, html } from 'lit';
@@ -30,7 +30,7 @@ export class AssistantAvatar extends ShadowlessElement {
         ? AIStarIconWithAnimation
         : NexioAvatarIcon
     }
-    AFFiNE AI`;
+    Nexio AI`;
   }
 }
 

@@ -1,4 +1,4 @@
-﻿import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
+import type { AIToolsConfigService } from '@nexio/core/modules/ai-button';
 import type { AIModelService } from '@nexio/core/modules/ai-button/services/models';
 import {
   menu,
@@ -169,7 +169,7 @@ export class ChatInputPreference extends SignalWatcher(
                   select: () => {
                     if (!model.available) {
                       this.notificationService.toast(
-                        'This model requires an AFFiNE AI subscription.'
+                        'This model requires a Nexio AI subscription.'
                       );
                       this.onAISubscribe().catch(console.error);
                       return;

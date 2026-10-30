@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   AIModelService,
   AIToolsConfigService,
 } from '@nexio/core/modules/ai-button';
@@ -336,7 +336,7 @@ export class PlaygroundChat extends SignalWatcher(
               ? html`<span data-testid="chat-panel-embedding-progress"
                   >Synchronizing sources</span
                 >`
-              : 'AFFiNE AI'
+              : 'Nexio AI'
           }
         </div>
         <div class="chat-panel-add" @click=${this.addChat}>

@@ -39,7 +39,7 @@ export interface SelectDBFileLocationResult {
   canceled?: boolean;
 }
 
-const extension = 'affine';
+const extension = 'nexio';
 
 function getDefaultDBFileName(name: string, id: string) {
   const fileName = `${name}_${id}.${extension}`;
@@ -214,7 +214,7 @@ export async function loadDBFile(): Promise<LoadDBFileResult> {
         {
           name: 'SQLite Database',
           // do we want to support other file format?
-          extensions: ['db', 'affine'],
+          extensions: ['db', 'nexio', 'affine'],
         },
       ],
       message: 'Load Workspace from a Nexio file',
