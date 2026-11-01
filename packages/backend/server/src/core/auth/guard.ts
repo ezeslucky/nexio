@@ -4,7 +4,7 @@ import type {
   FactoryProvider,
   OnModuleInit,
 } from '@nestjs/common';
-import { Injectable, SetMetadata } from '@nestjs/common';
+import { Injectable, Logger, SetMetadata } from '@nestjs/common';
 import { ModuleRef, Reflector } from '@nestjs/core';
 import type { Request, Response } from 'express';
 import semver from 'semver';
@@ -287,6 +287,8 @@ export class AuthGuard implements CanActivate, OnModuleInit {
  */
 export const Public = () => SetMetadata(PUBLIC_ENTRYPOINT_SYMBOL, true);
 
+const wsLogger = new Logger('AuthWebsocket');
+
 export const AuthWebsocketOptionsProvider: FactoryProvider = {
   provide: WEBSOCKET_OPTIONS,
   useFactory: (config: Config, guard: AuthGuard) => {
@@ -306,7 +308,10 @@ export const AuthWebsocketOptionsProvider: FactoryProvider = {
         const session = await (async () => {
           try {
             return await guard.signIn(upgradeReq);
-          } catch {
+          } catch (error) {
+            wsLogger.warn(
+              `WebSocket upgrade handshake rejected due to auth failure: ${error instanceof Error ? error.message : String(error)}`
+            );
             return null;
           }
         })();

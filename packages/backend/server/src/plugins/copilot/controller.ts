@@ -2,6 +2,7 @@ import {
   BeforeApplicationShutdown,
   Controller,
   Get,
+  Logger,
   Param,
   Query,
   Req,
@@ -52,6 +53,7 @@ const PING_INTERVAL = 5000;
 @CopilotEnabled()
 @Controller('/api/copilot')
 export class CopilotController implements BeforeApplicationShutdown {
+  private readonly logger = new Logger(CopilotController.name);
   private readonly ongoingStreamCount$ = new BehaviorSubject(0);
 
   constructor(
@@ -295,13 +297,30 @@ export class CopilotController implements BeforeApplicationShutdown {
     }
 
     const query = new URLSearchParams(params);
-    const response = await fetch(
-      `https://api.unsplash.com/search/photos?${query}`,
-      {
-        headers: { Authorization: `Client-ID ${key}` },
-        signal: getSignal(req).signal,
-      }
-    );
+    const start = performance.now();
+    let response: globalThis.Response;
+    try {
+      response = await fetch(
+        `https://api.unsplash.com/search/photos?${query}`,
+        {
+          headers: { Authorization: `Client-ID ${key}` },
+          signal: getSignal(req).signal,
+        }
+      );
+    } catch (error) {
+      const durationMs = Math.round(performance.now() - start);
+      this.logger.error(
+        `Unsplash photo search network request failed after ${durationMs}ms: ${error instanceof Error ? error.message : String(error)}`
+      );
+      throw error;
+    }
+
+    const durationMs = Math.round(performance.now() - start);
+    if (!response.ok) {
+      this.logger.warn(
+        `Unsplash API returned HTTP ${response.status} after ${durationMs}ms (Remaining rate limit: ${response.headers.get('X-Ratelimit-Remaining') ?? 'unknown'})`
+      );
+    }
 
     res.set({
       'Content-Type': response.headers.get('Content-Type'),
