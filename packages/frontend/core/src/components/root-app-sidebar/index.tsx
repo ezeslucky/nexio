@@ -47,12 +47,13 @@ import { InviteMembersButton } from './invite-members-button';
 import { AppSidebarJournalButton } from './journal-button';
 import { NotificationButton } from './notification-button';
 import { SidebarAudioPlayer } from './sidebar-audio-player';
+import { AiDiagramEntrance } from './ai-diagram-entrance';
+import { LogAuditorEntrance } from './log-auditor-entrance';
 import { TemplateDocEntrance } from './template-doc-entrance';
 import { TrashButton } from './trash-button';
 import { UpdaterButton } from './updater-button';
 import UserInfo from './user-info';
 import { WorkflowEntrance } from './workflow-entrance';
-import { LogAuditorEntrance } from './log-auditor-entrance';
 
 export type RootAppSidebarProps = {
   isPublicWorkspace: boolean;
@@ -239,6 +240,7 @@ export const RootAppSidebar = memo((): ReactElement => {
           <InviteMembersButton />
           <TemplateDocEntrance />
           <WorkflowEntrance />
+          <AiDiagramEntrance />
           <LogAuditorEntrance />
         </CollapsibleSection>
       </SidebarScrollableContainer>

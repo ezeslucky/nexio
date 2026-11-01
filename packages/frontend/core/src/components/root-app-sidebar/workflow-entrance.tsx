@@ -53,7 +53,7 @@ export const WorkflowEntrance = () => {
       to={'/workflow'}
       postfix={
         <IconButton
-          size="small"
+          size="20"
           onClick={onOpenNew}
           tooltip="Workflow Studio (n8n Automations)"
         >

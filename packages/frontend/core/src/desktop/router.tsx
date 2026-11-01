@@ -84,6 +84,27 @@ export const topLevelRoutes = [
         },
       },
       {
+        path: '/ai-diagram',
+        async lazy() {
+          const { Component } = await import('./pages/index');
+          return {
+            Component: () => <Component defaultIndexRoute="ai-diagram" />,
+          };
+        },
+      },
+      {
+        path: '/ai-diagram/:diagramId',
+        async lazy() {
+          const { Component } = await import('./pages/index');
+          return {
+            Component: () => {
+              const { diagramId } = useParams();
+              return <Component defaultIndexRoute={`ai-diagram/${diagramId}`} />;
+            },
+          };
+        },
+      },
+      {
         path: WORKSPACE_ROUTE_PATH,
         lazy: () => import('./pages/workspace/index'),
       },

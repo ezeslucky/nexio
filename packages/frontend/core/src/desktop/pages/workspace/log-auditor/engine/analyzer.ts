@@ -204,7 +204,59 @@ export function analyzeRepositoryFiles(
         }
       }
 
-      // Check 2: Database Operations without failure/success observability
+      // Check 2: Blind Database Transactions (multi-step operations without timings or failure handling)
+      const isTransaction =
+        trimmed.includes('$transaction(') ||
+        trimmed.includes('.transaction(') ||
+        trimmed.includes('beginTransaction(') ||
+        trimmed.includes('startTransaction(') ||
+        trimmed.includes('session.begin(');
+
+      if (isTransaction && !trimmed.startsWith('//') && !trimmed.startsWith('#')) {
+        const surrounding = lines.slice(Math.max(0, i - 4), Math.min(lines.length, i + 10)).join('\n');
+        const hasTiming = surrounding.includes('performance.now()') || surrounding.includes('Date.now()') || surrounding.includes('time.time()');
+        const hasErrorLog = surrounding.includes('error(') || surrounding.includes('exception(');
+
+        if (!hasTiming || !hasErrorLog) {
+          const recLog = file.language === 'Python'
+            ? `start_time = time.time()\ntry:\n    # execute transaction\nexcept Exception as err:\n    logger.error(f"Transaction failed after {time.time() - start_time:.3f}s: {err}", exc_info=True)\n    raise`
+            : `const start = performance.now();\ntry {\n  // execute transaction\n} catch (error) {\n  ${detectedLogger}.error({ durationMs: Math.round(performance.now() - start), error }, 'Transaction failed or aborted');\n  throw error;\n}`;
+
+          const context = getCodeContext(lines, i);
+          const originalLines = [line];
+          const patchedLines = [`    const txStart = performance.now();`, line];
+
+          findings.push({
+            id: `gap-${file.id}-${i + 1}`,
+            fileId: file.id,
+            filePath: file.path,
+            functionName: fnName,
+            lineNumber: i + 1,
+            severity: 'critical',
+            category: 'blind-transaction',
+            categoryLabel: 'Blind Database Transaction',
+            title: `Multi-step transaction in '${fnName}' lacks execution timing & failure diagnostics`,
+            explanation: `Database transaction is executed without wrapping duration metrics (performance.now()) or failure rollback logging. If deadlocks, connection exhaustion, or lock timeouts occur, they will produce untraceable database stalls.`,
+            impactRisk: 'High risk of undetected database deadlocks, contested locks, and silent rollback data inconsistencies.',
+            recommendedLocation: `Around transaction block at line ${i + 1}`,
+            recommendedCode: recLog,
+            confidenceScore: 96,
+            codeContext: context,
+            suggestedPatch: {
+              originalCode: originalLines.join('\n'),
+              patchedCode: patchedLines.join('\n'),
+              unifiedDiff: generateUnifiedDiff(file.path, i + 1, originalLines, patchedLines),
+            },
+            patchStatus: 'pending',
+            detectedFramework: detectedFrameworks.find(f => f.includes('Prisma') || f.includes('SQL')) || 'ORM',
+            detectedLanguage: file.language,
+          });
+          fileGaps++;
+          continue;
+        }
+      }
+
+      // Check 3: Database Operations without failure/success observability
       const isDbQuery =
         trimmed.includes('prisma.') ||
         trimmed.includes('.create(') ||
@@ -304,7 +356,65 @@ export function analyzeRepositoryFiles(
         }
       }
 
-      // Check 4: Critical Business Logic State Transitions
+      // Check 5: Missing Trace Context in Async Queues, Events & Schedules
+      const isAsyncDispatcher =
+        trimmed.includes('queue.add(') ||
+        trimmed.includes('bullmq') ||
+        trimmed.includes('redis.publish(') ||
+        trimmed.includes('pubsub.publish(') ||
+        trimmed.includes('.emit(') ||
+        trimmed.includes('agenda.now(') ||
+        trimmed.includes('agenda.define(') ||
+        trimmed.includes('cron.schedule(');
+
+      if (isAsyncDispatcher && !trimmed.startsWith('//') && !trimmed.startsWith('#')) {
+        const surrounding = lines.slice(Math.max(0, i - 4), Math.min(lines.length, i + 6)).join('\n');
+        const hasTraceContext =
+          surrounding.includes('traceparent') ||
+          surrounding.includes('traceId') ||
+          surrounding.includes('context.active()') ||
+          surrounding.includes('span');
+
+        if (!hasTraceContext) {
+          const recLog = file.language === 'Python'
+            ? `trace_ctx = {"traceparent": opentelemetry.trace.get_current_span().get_span_context().trace_id}`
+            : `const traceContext = { traceparent: opentelemetry?.trace?.getActiveSpan()?.spanContext()?.traceId };`;
+
+          const context = getCodeContext(lines, i);
+          const originalLines = [line];
+          const patchedLines = [`    // Injected trace context for async correlation\n    ${recLog}`, line];
+
+          findings.push({
+            id: `gap-${file.id}-${i + 1}`,
+            fileId: file.id,
+            filePath: file.path,
+            functionName: fnName,
+            lineNumber: i + 1,
+            severity: 'high',
+            category: 'missing-trace-context',
+            categoryLabel: 'Missing Trace Context Propagation',
+            title: `Async workload dispatch in '${fnName}' drops distributed trace context`,
+            explanation: `Asynchronous message, queue job, or event dispatched without injecting OpenTelemetry correlation tokens (traceparent / spanId). Worker threads or background consumers will emit orphan traces that cannot be correlated to the originating user request.`,
+            impactRisk: 'Broken distributed traces and inability to track end-to-end request latency across queues and background workers.',
+            recommendedLocation: `Before event or queue dispatch at line ${i + 1}`,
+            recommendedCode: recLog,
+            confidenceScore: 92,
+            codeContext: context,
+            suggestedPatch: {
+              originalCode: originalLines.join('\n'),
+              patchedCode: patchedLines.join('\n'),
+              unifiedDiff: generateUnifiedDiff(file.path, i + 1, originalLines, patchedLines),
+            },
+            patchStatus: 'pending',
+            detectedFramework: 'Async Event/Queue',
+            detectedLanguage: file.language,
+          });
+          fileGaps++;
+          continue;
+        }
+      }
+
+      // Check 6: Critical Business Logic State Transitions
       const isCriticalState =
         (trimmed.includes('tier:') ||
           trimmed.includes('isSuspended:') ||
@@ -418,8 +528,10 @@ export function analyzeRepositoryFiles(
 
   const categoryCounts: Record<GapCategory, number> = {
     'swallowed-error': findings.filter(f => f.category === 'swallowed-error').length,
+    'blind-transaction': findings.filter(f => f.category === 'blind-transaction').length,
     'database-operation': findings.filter(f => f.category === 'database-operation').length,
     'external-api': findings.filter(f => f.category === 'external-api').length,
+    'missing-trace-context': findings.filter(f => f.category === 'missing-trace-context').length,
     'critical-business-logic': findings.filter(f => f.category === 'critical-business-logic').length,
     'complex-function': findings.filter(f => f.category === 'complex-function').length,
     'retry-timeout': findings.filter(f => f.category === 'retry-timeout').length,

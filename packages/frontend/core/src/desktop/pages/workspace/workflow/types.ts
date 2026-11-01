@@ -1,6 +1,22 @@
-export type NodeCategory = 'trigger' | 'ai' | 'logic' | 'action';
+export type NodeCategory =
+  | 'trigger'
+  | 'ai'
+  | 'logic'
+  | 'data'
+  | 'developer'
+  | 'browser'
+  | 'human'
+  | 'utility'
+  | 'integration'
+  | 'action';
 
-export type NodeStatus = 'idle' | 'running' | 'success' | 'error';
+export type NodeStatus = 'idle' | 'running' | 'success' | 'error' | 'waiting_approval';
+
+export interface WorkflowPort {
+  id: string;
+  label: string;
+  color?: string;
+}
 
 export interface WorkflowNode {
   id: string;
@@ -13,6 +29,11 @@ export interface WorkflowNode {
   config: Record<string, any>;
   outputData?: any;
   error?: string;
+  icon?: string;
+  ports?: {
+    inputs?: WorkflowPort[];
+    outputs?: WorkflowPort[];
+  };
 }
 
 export interface WorkflowConnection {
@@ -44,5 +65,10 @@ export interface NodeDefinition {
   description: string;
   icon: string;
   color: string;
+  tags?: string[];
   defaultConfig: Record<string, any>;
+  defaultPorts?: {
+    inputs?: WorkflowPort[];
+    outputs?: WorkflowPort[];
+  };
 }
