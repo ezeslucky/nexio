@@ -15,11 +15,10 @@ import {
 } from '@nexio/core/modules/cloud';
 import type { AuthSessionStatus } from '@nexio/core/modules/cloud/entities/session';
 import { ServerDeploymentType } from '@nexio/graphql';
-import { Trans, useI18n } from '@nexio/i18n';
+import { useI18n } from '@nexio/i18n';
 import {
   ArrowRightBigIcon,
   LocalWorkspaceIcon,
-  PublishIcon,
 } from '@blocksuite/icons/rc';
 import { useLiveData, useService } from '@toeverything/infra';
 import { cssVar } from '@toeverything/theme';
@@ -134,7 +133,7 @@ export const SignInStep = ({
     setIsMutating(false);
   }, [authService, changeState, email]);
 
-  const onAddSelfhosted = useCallback(() => {
+  const _onAddSelfhosted = useCallback(() => {
     changeState(prev => ({
       ...prev,
       step: 'addSelfhosted',

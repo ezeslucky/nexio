@@ -6,7 +6,7 @@ import { Trans, useI18n } from '@nexio/i18n';
 import { LocalWorkspaceIcon } from '@blocksuite/icons/rc';
 import { useServiceOptional } from '@toeverything/infra';
 import type { MouseEvent } from 'react';
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { getOpenUrlInDesktopAppLink } from '../utils';
 import * as styles from './open-in-app-page.css';
@@ -32,7 +32,7 @@ export const OpenInAppPage = ({
   const workspaceDialogService = useServiceOptional(WorkspaceDialogService);
   const t = useI18n();
 
-  const openDownloadLink = useCallback(() => {
+  const _openDownloadLink = useCallback(() => {
     open(url, '_blank');
   }, []);
 
@@ -49,10 +49,12 @@ export const OpenInAppPage = ({
     [workspaceDialogService, openHereClicked]
   );
 
-  if (urlToOpen && lastOpened !== urlToOpen) {
-    lastOpened = urlToOpen;
-    location.href = urlToOpen;
-  }
+  useEffect(() => {
+    if (urlToOpen && lastOpened !== urlToOpen) {
+      lastOpened = urlToOpen;
+      location.href = urlToOpen;
+    }
+  }, [urlToOpen]);
 
   if (!urlToOpen) {
     return null;

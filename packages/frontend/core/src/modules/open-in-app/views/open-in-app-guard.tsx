@@ -7,7 +7,7 @@ import { OpenInAppPage } from './open-in-app-page';
 /**
  * Web only guard to open the URL in desktop app for different conditions
  */
-const WebOpenInAppGuard = ({ children }: { children: React.ReactNode }) => {
+const _WebOpenInAppGuard = ({ children }: { children: React.ReactNode }) => {
   if (BUILD_CONFIG.isWeb === undefined || BUILD_CONFIG.isWeb === null) {
     throw new Error('WebOpenInAppGuard should only be used in web');
   }

@@ -76,11 +76,7 @@ export class ServerConfigResolver {
         this.config.server.name ??
         (env.selfhosted
           ? 'Nexio Self-hosted'
-          : env.namespaces.canary
-            ? 'Nexio Cloud'
-            : env.namespaces.beta
-              ? 'Nexio Cloud'
-              : 'Nexio Cloud'),
+          : 'Nexio Cloud'),
       version: env.version,
       baseUrl: this.url.requestBaseUrl,
       type: env.DEPLOYMENT_TYPE,

@@ -4,7 +4,6 @@ import type {
   LoggingGapFinding,
   RepositoryFile,
   RepositoryScanSummary,
-  SeverityLevel,
 } from '../types';
 import { calculateHealthScore, generateUnifiedDiff } from './patcher';
 
@@ -163,7 +162,7 @@ export function analyzeRepositoryFiles(
         // Look inside catch block
         const nextLines = lines.slice(i + 1, Math.min(lines.length, i + 8)).map(l => l.trim());
         const hasLog = nextLines.some(l => l.includes('log') || l.includes('print('));
-        const returnsEarly = nextLines.some(l => l.startsWith('return ') || l === 'return' || l === 'pass');
+        const _returnsEarly = nextLines.some(l => l.startsWith('return ') || l === 'return' || l === 'pass');
 
         if (!hasLog) {
           const errVar = trimmed.includes('err') ? 'err' : trimmed.includes('error') ? 'error' : trimmed.includes('e') ? 'e' : 'error';

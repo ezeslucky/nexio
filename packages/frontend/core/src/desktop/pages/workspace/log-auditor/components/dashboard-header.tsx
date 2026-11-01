@@ -1,5 +1,4 @@
-import { Button, IconButton } from '@nexio/component';
-import { notify } from '@nexio/component/ui/notification';
+import { Button } from '@nexio/component';
 import React from 'react';
 import type { RepositoryScanSummary } from '../types';
 

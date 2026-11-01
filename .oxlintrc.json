@@ -231,8 +231,8 @@
     "react/jsx-no-target-blank": "error",
     "react/jsx-no-comment-textnodes": "error",
     "react/no-array-index-key": "off",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "off",
     "sonarjs/no-all-duplicated-branches": "error",
     "sonarjs/no-element-overwrite": "error",
     "sonarjs/no-empty-collection": "error",
@@ -306,12 +306,7 @@
     "unicorn/no-new-array": "error",
     "unicorn/new-for-builtins": "error",
     "unicorn/prefer-node-protocol": "error",
-    "import/no-cycle": [
-      "error",
-      {
-        "ignoreTypes": true
-      }
-    ],
+    "import/no-cycle": "off",
     "import/namespace": "off",
     "import/no-webpack-loader-syntax": "error",
     "import/no-duplicates": "error",

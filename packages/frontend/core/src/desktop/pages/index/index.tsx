@@ -47,7 +47,7 @@ export const Component = ({
   createErrorFallback?: (retry: () => void) => ReactNode;
 }) => {
   // navigating and creating may be slow, to avoid flickering, we show workspace fallback
-  const [navigating, setNavigating] = useState(true);
+  const [navigating, _setNavigating] = useState(true);
   const [creating, setCreating] = useState(false);
   const [createError, setCreateError] = useState(false);
   const [createAttempt, setCreateAttempt] = useState(0);

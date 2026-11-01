@@ -4,7 +4,6 @@ import { join } from 'node:path';
 
 import { Controller, Get, Logger, Req, Res } from '@nestjs/common';
 import type { Request, Response } from 'express';
-import isMobile from 'is-mobile';
 
 import { Config, getRequestTrackerId, metrics } from '../../base';
 import { Models } from '../../models';
