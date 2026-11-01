@@ -1,5 +1,4 @@
-import { Controller, Get, Header, Res } from '@nestjs/common';
-import type { Response } from 'express';
+import { Controller, Get, Header } from '@nestjs/common';
 
 import { SkipThrottle } from './base';
 import { Public } from './core/auth';

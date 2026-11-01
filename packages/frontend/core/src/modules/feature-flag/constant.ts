@@ -3,7 +3,7 @@ import type { FlagInfo } from './types';
 // const isNotStableBuild = BUILD_CONFIG.appBuildType !== 'stable';
 const isCanaryBuild = BUILD_CONFIG.appBuildType === 'canary';
 const isMobile = BUILD_CONFIG.isMobileEdition;
-const isIOS = BUILD_CONFIG.isIOS;
+const _isIOS = BUILD_CONFIG.isIOS;
 
 export const NEXIO_FLAGS = {
   enable_ai: {

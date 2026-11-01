@@ -1,7 +1,7 @@
 import { Button, IconButton, Switch } from '@nexio/component';
 import { notify } from '@nexio/component/ui/notification';
 import { ArrowLeftBigIcon, CloseIcon, DeleteIcon, PlusIcon } from '@blocksuite/icons/rc';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
 import { NODE_CATALOG } from './defaults';
 import type { NodeCategory, NodeDefinition, WorkflowConnection, WorkflowItem, WorkflowNode } from './types';
@@ -107,7 +107,7 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
     });
   };
 
-  const handleEndConnect = (e: React.MouseEvent, targetNodeId: string, targetPort: string) => {
+  const handleEndConnect = useCallback((e: React.MouseEvent, targetNodeId: string, targetPort: string) => {
     e.stopPropagation();
     if (!connectingFrom || connectingFrom.nodeId === targetNodeId) {
       setConnectingFrom(null);
@@ -135,18 +135,18 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
     });
 
     setConnectingFrom(null);
-  };
+  }, [connectingFrom]);
 
   // Delete Connection
-  const handleDeleteConnection = (connId: string) => {
+  const handleDeleteConnection = useCallback((connId: string) => {
     updateWorkflowState(prev => ({
       ...prev,
       connections: prev.connections.filter(c => c.id !== connId),
     }));
-  };
+  }, []);
 
   // Add node from palette
-  const handleAddNode = (def: NodeDefinition) => {
+  const handleAddNode = useCallback((def: NodeDefinition) => {
     const newNode: WorkflowNode = {
       id: `node-${Date.now()}`,
       type: def.category,
@@ -169,7 +169,7 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
       title: 'Node Added',
       message: `Added ${def.name} to the workflow canvas.`,
     });
-  };
+  }, []);
 
   // Delete Node
   const handleDeleteNode = (nodeId: string) => {

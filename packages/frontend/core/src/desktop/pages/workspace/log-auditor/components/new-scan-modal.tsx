@@ -377,7 +377,6 @@ export const NewScanModal: React.FC<NewScanModalProps> = ({
                     ref={folderInputRef}
                     // @ts-expect-error webkitdirectory supported in all modern browsers
                     webkitdirectory=""
-                    directory=""
                     multiple
                     onChange={handleFolderUpload}
                     style={{ display: 'none' }}

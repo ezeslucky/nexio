@@ -1,4 +1,3 @@
-import { Button } from '@nexio/component';
 import { notify } from '@nexio/component/ui/notification';
 import {
   ViewBody,
@@ -8,7 +7,7 @@ import {
   WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
-import { useLiveData, useService } from '@toeverything/infra';
+import { useService } from '@toeverything/infra';
 import React, { useCallback, useEffect, useState } from 'react';
 import { DashboardHeader } from './components/dashboard-header';
 import { FileTreeView } from './components/file-tree-view';
@@ -22,7 +21,7 @@ import { applyPatchToFile, calculateHealthScore } from './engine/patcher';
 import type { RepositoryScanSummary, SeverityLevel } from './types';
 
 export const Component = () => {
-  const workbench = useService(WorkbenchService).workbench;
+  const _workbench = useService(WorkbenchService).workbench;
   const workspaceService = useService(WorkspaceService);
   const currentWorkspace = workspaceService.workspace;
 
@@ -208,9 +207,9 @@ export const Component = () => {
     const link = document.createElement('a');
     link.href = url;
     link.download = `${currentScan.repositoryName.toLowerCase().replace(/[^a-z0-9]/g, '-')}-logging-patches.diff`;
-    document.body.appendChild(link);
+    document.body.append(link);
     link.click();
-    document.body.removeChild(link);
+    link.remove();
     URL.revokeObjectURL(url);
 
     notify({

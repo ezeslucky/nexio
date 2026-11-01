@@ -42,7 +42,7 @@ function summarizeDeepLink(rawUrl: string) {
   }
 }
 
-function isNexioUrl(url?: string | null): boolean {
+function isNexioUrl(url?: string | null): url is string {
   if (!url) return false;
   return (
     url.startsWith(`${protocol}://`) ||
@@ -90,8 +90,8 @@ export function setupDeepLink(app: App) {
         const url = commandLine.pop();
         if (isNexioUrl(url)) {
           event.preventDefault();
-          handleNexioUrl(url!).catch(e => {
-            logDeepLinkFailure(url!, e);
+          handleNexioUrl(url).catch(e => {
+            logDeepLinkFailure(url, e);
           });
         }
       })
@@ -105,12 +105,12 @@ export function setupDeepLink(app: App) {
     logger.log(
       'url from argv',
       isNexioUrl(url)
-        ? summarizeDeepLink(url!)
+        ? summarizeDeepLink(url)
         : { deepLink: false, argumentCount: process.argv.length }
     );
     if (isNexioUrl(url)) {
-      handleNexioUrl(url!).catch(e => {
-        logDeepLinkFailure(url!, e);
+      handleNexioUrl(url).catch(e => {
+        logDeepLinkFailure(url, e);
       });
     }
   });

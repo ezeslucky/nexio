@@ -4,7 +4,6 @@ import { Injectable, OnModuleInit } from '@nestjs/common';
 import { HttpAdapterHost } from '@nestjs/core';
 import type { Application } from 'express';
 import { static as serveStatic } from 'express';
-import isMobile from 'is-mobile';
 
 import { Config } from '../../base';
 import { SetupMiddleware } from './setup';

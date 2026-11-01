@@ -11,7 +11,8 @@ export interface ExtractedFile {
 export async function loadFilesFromZip(file: File): Promise<ExtractedFile[]> {
   try {
     // Dynamic import of JSZip
-    const JSZipModule = await import('jszip');
+    // @ts-expect-error optional runtime dependency
+    const JSZipModule = await import(/* @vite-ignore */ 'jszip');
     const JSZip = (JSZipModule.default || JSZipModule) as any;
     const zip = await JSZip.loadAsync(file);
 
@@ -46,8 +47,7 @@ export async function loadFilesFromZip(file: File): Promise<ExtractedFile[]> {
 export async function loadFilesFromDirectoryInput(fileList: FileList): Promise<ExtractedFile[]> {
   const extractedFiles: ExtractedFile[] = [];
 
-  for (let i = 0; i < fileList.length; i++) {
-    const file = fileList[i];
+  for (const file of Array.from(fileList)) {
     const path = file.webkitRelativePath || file.name;
 
     if (isSourceFile(path)) {

@@ -1,4 +1,4 @@
-import type { LoggingGapFinding, RepositoryFile } from '../types';
+import type { LoggingGapFinding } from '../types';
 
 /**
  * Calculates a repository's Logging Health Score from 0 to 100 based on detected gaps and their severities.
