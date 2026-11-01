@@ -50,8 +50,10 @@ export const FindingsList: React.FC<FindingsListProps> = ({
   const categories: { key: GapCategory | 'all'; label: string }[] = [
     { key: 'all', label: 'All Categories' },
     { key: 'swallowed-error', label: 'Swallowed Errors' },
+    { key: 'blind-transaction', label: 'Blind Transactions' },
     { key: 'database-operation', label: 'Database Ops' },
     { key: 'external-api', label: 'External APIs' },
+    { key: 'missing-trace-context', label: 'Missing Traces' },
     { key: 'critical-business-logic', label: 'Business Logic' },
     { key: 'unlogged-error-response', label: 'Error Responses' },
   ];

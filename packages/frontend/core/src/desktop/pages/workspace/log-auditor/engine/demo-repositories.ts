@@ -325,4 +325,119 @@ export class CopilotService {
       },
     ],
   },
+  {
+    id: 'nexio-core-monorepo',
+    name: '⚡ Nexio Server & Copilot Core',
+    description: 'Real-world backend services from this repository featuring real payment syncing, WebSocket auth handshakes, PostgreSQL advisory lock transactions, and external AI fetch calls.',
+    primaryLanguage: 'TypeScript',
+    frameworks: ['NestJS', 'Prisma', 'Socket.IO', 'OpenTelemetry'],
+    files: [
+      {
+        id: 'nexio-file-1',
+        name: 'read-resolver.ts',
+        path: 'packages/backend/server/src/plugins/payment/read-resolver.ts',
+        language: 'typescript',
+        lineCount: 42,
+        sizeBytes: 1650,
+        gapsCount: 0,
+        content: `import { Logger } from '@nestjs/common';
+import { Resolver } from '@nestjs/graphql';
+
+@Resolver()
+export class UserSubscriptionResolver {
+  private readonly logger = new Logger(UserSubscriptionResolver.name);
+
+  async currentUserSubscriptions(userId: string) {
+    const current = await this.db.providerSubscription.findMany({ where: { targetId: userId } });
+    if (current.length === 0) {
+      try {
+        await this.runtime.executePaymentCommandV1({
+          action: 'refresh_revenuecat',
+          userId,
+        });
+      } catch {}
+    }
+    return current;
+  }
+}
+`,
+      },
+      {
+        id: 'nexio-file-2',
+        name: 'guard.ts',
+        path: 'packages/backend/server/src/core/auth/guard.ts',
+        language: 'typescript',
+        lineCount: 38,
+        sizeBytes: 1420,
+        gapsCount: 0,
+        content: `import { Socket } from 'socket.io';
+
+export const AuthWebsocketOptionsProvider = {
+  canActivate: async (socket: Socket) => {
+    const upgradeReq = socket.client.request;
+    const session = await (async () => {
+      try {
+        return await guard.signIn(upgradeReq);
+      } catch {
+        return null;
+      }
+    })();
+    return !!session;
+  },
+};
+`,
+      },
+      {
+        id: 'nexio-file-3',
+        name: 'stats.job.ts',
+        path: 'packages/backend/server/src/core/workspaces/stats.job.ts',
+        language: 'typescript',
+        lineCount: 52,
+        sizeBytes: 1980,
+        gapsCount: 0,
+        content: `import { Prisma } from '@prisma/client';
+
+export class WorkspaceStatsJob {
+  private async withAdvisoryLock<T>(lockKey: number, callback: (tx: any) => Promise<T>) {
+    return await this.prisma.$transaction(
+      async tx => {
+        const [lock] = await tx.$queryRaw\`SELECT pg_try_advisory_xact_lock(\${lockKey}) AS locked\`;
+        if (!lock?.locked) return null;
+        return await callback(tx);
+      },
+      { maxWait: 5000, timeout: 10000 }
+    );
+  }
+
+  async dispatchStatsWorker(workspaceId: string) {
+    // Missing trace context across background queue dispatch
+    queue.add('workspace-stats-aggregation', { workspaceId });
+  }
+}
+`,
+      },
+      {
+        id: 'nexio-file-4',
+        name: 'controller.ts',
+        path: 'packages/backend/server/src/plugins/copilot/controller.ts',
+        language: 'typescript',
+        lineCount: 36,
+        sizeBytes: 1350,
+        gapsCount: 0,
+        content: `import { Controller, Get, Req, Res } from '@nestjs/common';
+
+@Controller('/api/copilot')
+export class CopilotController {
+  @Get('/unsplash/photos')
+  async unsplashPhotos(@Req() req: any, @Res() res: any) {
+    const response = await fetch('https://api.unsplash.com/search/photos?query=workspace', {
+      headers: { Authorization: 'Client-ID dummy_key' },
+    });
+    res.status(response.status).send(await response.json());
+  }
+}
+`,
+      },
+    ],
+  },
 ];

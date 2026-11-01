@@ -1,7 +1,9 @@
 import type { NodeDefinition, WorkflowItem } from './types';
 
 export const NODE_CATALOG: NodeDefinition[] = [
+  // ==========================================
   // --- TRIGGERS ---
+  // ==========================================
   {
     subType: 'webhook',
     category: 'trigger',
@@ -9,10 +11,14 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Trigger automation on incoming HTTP POST/GET request',
     icon: '⚡',
     color: '#3b82f6',
+    tags: ['trigger', 'core'],
     defaultConfig: {
       path: '/api/workflow/webhook-1',
       method: 'POST',
       auth: 'none',
+    },
+    defaultPorts: {
+      outputs: [{ id: 'output', label: 'Trigger Output' }],
     },
   },
   {
@@ -22,9 +28,33 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Run automation at set intervals (e.g., hourly, daily)',
     icon: '⏱️',
     color: '#8b5cf6',
+    tags: ['trigger', 'utility'],
     defaultConfig: {
       cron: '0 9 * * 1-5',
       timezone: 'UTC',
+    },
+    defaultPorts: {
+      outputs: [{ id: 'output', label: 'Trigger Output' }],
+    },
+  },
+  {
+    subType: 'smart_scheduler',
+    category: 'trigger',
+    name: 'Smart Scheduler',
+    description: 'Schedule dynamic runs with timezone, business hours, and holiday rules',
+    icon: '📅',
+    color: '#3b82f6',
+    tags: ['trigger', 'utility'],
+    defaultConfig: {
+      scheduleType: 'business_hours',
+      timezone: 'America/New_York',
+      businessHoursStart: '09:00',
+      businessHoursEnd: '17:00',
+      excludeWeekends: true,
+      excludeHolidays: true,
+    },
+    defaultPorts: {
+      outputs: [{ id: 'output', label: 'Scheduled Trigger' }],
     },
   },
   {
@@ -34,9 +64,13 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Triggers when a new page or doc is added to Nexio',
     icon: '📄',
     color: '#06b6d4',
+    tags: ['trigger', 'integration'],
     defaultConfig: {
       workspaceFilter: 'current',
       tagFilter: '',
+    },
+    defaultPorts: {
+      outputs: [{ id: 'output', label: 'Doc Payload' }],
     },
   },
   {
@@ -46,12 +80,217 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Trigger workflow manually with custom test input',
     icon: '▶️',
     color: '#10b981',
+    tags: ['trigger', 'utility'],
     defaultConfig: {
       testInput: '{"query": "Summarize the latest AI research trends"}',
     },
+    defaultPorts: {
+      outputs: [{ id: 'output', label: 'Manual Input' }],
+    },
   },
 
-  // --- AI & LLM ---
+  // ==========================================
+  // --- ADVANCED AI & AGENTS ---
+  // ==========================================
+  {
+    subType: 'ai_decision_maker',
+    category: 'ai',
+    name: 'AI Decision Maker',
+    description: 'Analyze incoming data using AI to dynamically route to different branches',
+    icon: '⚖️',
+    color: '#ec4899',
+    tags: ['ai', 'logic'],
+    defaultConfig: {
+      model: 'gpt-4o',
+      decisionPrompt: 'Evaluate urgency, risk, and impact to choose the appropriate path.',
+      rules: [
+        { id: 'branch-1', label: 'Urgent Action', condition: 'High priority or immediate action needed' },
+        { id: 'branch-2', label: 'Standard Routine', condition: 'Routine update or general informational request' },
+        { id: 'branch-3', label: 'Security Escalation', condition: 'Security, privacy, or credential risk' },
+      ],
+      defaultRoute: 'fallback',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'branch-1', label: 'Urgent Action', color: '#ef4444' },
+        { id: 'branch-2', label: 'Standard Routine', color: '#10b981' },
+        { id: 'branch-3', label: 'Security Escalation', color: '#f59e0b' },
+        { id: 'default', label: 'Fallback Path', color: '#94a3b8' },
+      ],
+    },
+  },
+  {
+    subType: 'multi_agent_coordinator',
+    category: 'ai',
+    name: 'Multi-Agent Coordinator',
+    description: 'Orchestrate specialized AI agents (Researcher, Critic, Writer) with shared context',
+    icon: '👥',
+    color: '#ec4899',
+    tags: ['ai'],
+    defaultConfig: {
+      executionMode: 'sequential',
+      roles: 'Researcher (GPT-4o), Analyst (Claude 3.5), Synthesizer (GPT-4o-mini)',
+      sharedContext: true,
+      maxRounds: 3,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Goal / Context In' }],
+      outputs: [{ id: 'output', label: 'Consolidated Agent Output' }],
+    },
+  },
+  {
+    subType: 'prompt_optimizer',
+    category: 'ai',
+    name: 'Prompt Optimizer',
+    description: 'Automatically enhance prompts using few-shot, chain-of-thought, or brevity strategies',
+    icon: '🪄',
+    color: '#a855f7',
+    tags: ['ai', 'developer'],
+    defaultConfig: {
+      strategy: 'chain_of_thought',
+      targetModel: 'gpt-4o',
+      inputPrompt: '{{$json.prompt || "Write an executive summary of our infrastructure audit"}}',
+      preserveOriginal: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Raw Prompt In' }],
+      outputs: [{ id: 'output', label: 'Optimized Prompt' }],
+    },
+  },
+  {
+    subType: 'ai_memory',
+    category: 'ai',
+    name: 'AI Memory',
+    description: 'Store and retrieve contextual conversation buffer and persistent state',
+    icon: '💾',
+    color: '#a855f7',
+    tags: ['ai', 'data'],
+    defaultConfig: {
+      memoryType: 'window_buffer',
+      sessionId: '{{$json.sessionId || "default-session"}}',
+      maxTokens: 2048,
+      persistDuration: '7d',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Context Out' }],
+    },
+  },
+  {
+    subType: 'ai_classifier',
+    category: 'ai',
+    name: 'AI Classifier',
+    description: 'Categorize text and tickets using AI zero-shot classification',
+    icon: '🏷️',
+    color: '#ec4899',
+    tags: ['ai', 'logic'],
+    defaultConfig: {
+      model: 'gpt-4o-mini',
+      inputField: '{{$json.text || $json.content}}',
+      categories: 'Urgent, Bug Report, Feature Request, Billing, General Inquiry',
+      multiLabel: false,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Classification' }],
+    },
+  },
+  {
+    subType: 'embeddings_generator',
+    category: 'ai',
+    name: 'Embeddings Generator',
+    description: 'Generate high-dimensional vector embeddings for text and docs',
+    icon: '🧬',
+    color: '#3b82f6',
+    tags: ['ai', 'data'],
+    defaultConfig: {
+      model: 'text-embedding-3-small',
+      inputField: '{{$json.content}}',
+      dimensions: 1536,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Vector Out' }],
+    },
+  },
+  {
+    subType: 'vector_search',
+    category: 'ai',
+    name: 'Vector Search / RAG',
+    description: 'Retrieve relevant context and documents from knowledge base collections',
+    icon: '🔎',
+    color: '#8b5cf6',
+    tags: ['ai', 'data'],
+    defaultConfig: {
+      knowledgeBase: 'nexio-docs-kb',
+      topK: 5,
+      similarityThreshold: 0.75,
+      query: '{{$json.query || $json.prompt}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Retrieved Docs' }],
+    },
+  },
+  {
+    subType: 'image_analyzer',
+    category: 'ai',
+    name: 'Image Analyzer',
+    description: 'Analyze uploaded images, OCR text, and inspect visual details',
+    icon: '👁️',
+    color: '#f97316',
+    tags: ['ai', 'data'],
+    defaultConfig: {
+      model: 'gpt-4o',
+      imageUrl: '{{$json.imageUrl}}',
+      taskPrompt: 'Describe this image in detail, extract any text visible, and identify key objects.',
+      detailLevel: 'high',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Image URL' }],
+      outputs: [{ id: 'output', label: 'Vision Insights' }],
+    },
+  },
+  {
+    subType: 'speech_to_text',
+    category: 'ai',
+    name: 'Speech-to-Text',
+    description: 'Convert audio recordings into transcribed text via Whisper Large v3',
+    icon: '🎙️',
+    color: '#06b6d4',
+    tags: ['ai', 'data'],
+    defaultConfig: {
+      model: 'whisper-large-v3',
+      audioUrl: '{{$json.audioUrl}}',
+      language: 'auto',
+      format: 'verbose_json',
+      timestamps: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Audio In' }],
+      outputs: [{ id: 'output', label: 'Transcript' }],
+    },
+  },
+  {
+    subType: 'text_to_speech',
+    category: 'ai',
+    name: 'Text-to-Speech',
+    description: 'Generate natural human-like voice audio from text via ElevenLabs or OpenAI',
+    icon: '🔊',
+    color: '#10b981',
+    tags: ['ai', 'integration'],
+    defaultConfig: {
+      provider: 'elevenlabs',
+      voice: 'Adam (Deep & Confident)',
+      text: '{{$json.summary || $json.text}}',
+      speed: 1.0,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Text In' }],
+      outputs: [{ id: 'output', label: 'Audio Out' }],
+    },
+  },
   {
     subType: 'llm_chat',
     category: 'ai',
@@ -59,11 +298,16 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Prompt GPT-4o, Claude 3.5, or Nexio Copilot',
     icon: '🧠',
     color: '#ec4899',
+    tags: ['ai'],
     defaultConfig: {
       model: 'gpt-4o',
       temperature: 0.7,
       systemPrompt: 'You are an advanced AI automation assistant. Process the input and provide structured markdown output.',
       prompt: '{{$json.query || $json.body}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'AI Output' }],
     },
   },
   {
@@ -73,10 +317,15 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Multi-step autonomous agent with web search & tools',
     icon: '🤖',
     color: '#f43f5e',
+    tags: ['ai'],
     defaultConfig: {
       model: 'claude-3-5-sonnet',
       maxSteps: 5,
       goal: 'Analyze the topic, fetch context, and generate a comprehensive executive summary.',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Agent Report' }],
     },
   },
   {
@@ -86,9 +335,14 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Extract bullet points, key takeaways, and action items',
     icon: '✨',
     color: '#a855f7',
+    tags: ['ai'],
     defaultConfig: {
       format: 'bullet-points',
       maxLength: 500,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Summary' }],
     },
   },
   {
@@ -98,14 +352,420 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Generate stunning illustrations via Flux or SDXL',
     icon: '🎨',
     color: '#f97316',
+    tags: ['ai'],
     defaultConfig: {
       model: 'flux-schnell',
       prompt: 'Clean modern minimalist SaaS workflow illustration, high resolution',
       aspectRatio: '16:9',
     },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Prompt In' }],
+      outputs: [{ id: 'output', label: 'Image URL' }],
+    },
   },
 
-  // --- LOGIC ---
+  // ==========================================
+  // --- HUMAN INTERACTION ---
+  // ==========================================
+  {
+    subType: 'human_approval',
+    category: 'human',
+    name: 'Human Approval',
+    description: 'Pause execution for manual approval (Approve, Reject, Request Changes) with timeout',
+    icon: '👤',
+    color: '#14b8a6',
+    tags: ['human', 'logic'],
+    defaultConfig: {
+      approverEmail: 'team-lead@company.com',
+      approvalTitle: 'Approve Critical Operation',
+      approvalDetails: 'Review the generated summary and confirm authorization to proceed.',
+      timeoutMinutes: 60,
+      timeoutAction: 'reject',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'approved', label: 'Approved', color: '#10b981' },
+        { id: 'rejected', label: 'Rejected', color: '#ef4444' },
+        { id: 'changes_requested', label: 'Changes Requested', color: '#f59e0b' },
+      ],
+    },
+  },
+
+  // ==========================================
+  // --- BROWSER AUTOMATION ---
+  // ==========================================
+  {
+    subType: 'browser_automation',
+    category: 'browser',
+    name: 'Browser Automation',
+    description: 'Headless browser navigation, element clicking, form fills, and screenshots',
+    icon: '🌐',
+    color: '#f97316',
+    tags: ['browser', 'developer'],
+    defaultConfig: {
+      action: 'scrape_page',
+      targetUrl: 'https://docs.nexio.dev',
+      selector: 'article.main-content',
+      waitForTimeoutMs: 3000,
+      captureScreenshot: true,
+      viewport: '1920x1080',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Scraped Data & Screenshot' }],
+    },
+  },
+
+  // ==========================================
+  // --- DEVELOPER TOOLS & PROTOCOLS ---
+  // ==========================================
+  {
+    subType: 'graphql_request',
+    category: 'developer',
+    name: 'GraphQL Request',
+    description: 'Execute GraphQL queries and mutations with variables and authentication',
+    icon: '◈',
+    color: '#6366f1',
+    tags: ['developer', 'data'],
+    defaultConfig: {
+      endpoint: 'https://api.github.com/graphql',
+      query: 'query GetRepo($owner: String!, $name: String!) {\n  repository(owner: $owner, name: $name) {\n    stargazerCount\n    forkCount\n  }\n}',
+      variables: '{\n  "owner": "ezeslucky",\n  "name": "nexio"\n}',
+      authToken: 'Bearer YOUR_TOKEN',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'GraphQL Data' }],
+    },
+  },
+  {
+    subType: 'regex_extractor',
+    category: 'developer',
+    name: 'Regex Extractor',
+    description: 'Match, extract capture groups, or perform text replacements using regular expressions',
+    icon: '🔤',
+    color: '#6366f1',
+    tags: ['developer', 'data'],
+    defaultConfig: {
+      pattern: '([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})',
+      flags: 'gmi',
+      operation: 'match_all',
+      replacementString: '[MASKED_EMAIL]',
+      inputString: '{{$json.text}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Text In' }],
+      outputs: [{ id: 'output', label: 'Extracted Matches' }],
+    },
+  },
+  {
+    subType: 'rate_limiter',
+    category: 'developer',
+    name: 'Rate Limiter',
+    description: 'Throttle throughput to adhere to external API limits (requests per minute/second)',
+    icon: '⏱️',
+    color: '#6366f1',
+    tags: ['developer', 'logic'],
+    defaultConfig: {
+      maxRequests: 30,
+      timeWindowSeconds: 60,
+      overflowStrategy: 'queue',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Throttled Stream' }],
+    },
+  },
+  {
+    subType: 'code',
+    category: 'developer',
+    name: 'Code (JavaScript)',
+    description: 'Transform data using custom JavaScript functions',
+    icon: '💻',
+    color: '#14b8a6',
+    tags: ['developer', 'utility'],
+    defaultConfig: {
+      code: '// Return transformed payload\nreturn {\n  ...items[0],\n  timestamp: Date.now(),\n  processed: true\n};',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Out' }],
+    },
+  },
+
+  // ==========================================
+  // --- DATA PROCESSING ---
+  // ==========================================
+  {
+    subType: 'xml_parser',
+    category: 'data',
+    name: 'XML Parser',
+    description: 'Parse XML feeds, SOAP payloads, or RSS documents into structured JSON',
+    icon: '📄',
+    color: '#06b6d4',
+    tags: ['data', 'developer'],
+    defaultConfig: {
+      xmlSource: '{{$json.xmlContent}}',
+      targetTag: 'item',
+      ignoreAttributes: false,
+      trimWhitespace: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'XML In' }],
+      outputs: [{ id: 'output', label: 'JSON Out' }],
+    },
+  },
+  {
+    subType: 'csv_processor',
+    category: 'data',
+    name: 'CSV Processor',
+    description: 'Import, export, filter columns, and transform CSV rows into JSON arrays',
+    icon: '📑',
+    color: '#06b6d4',
+    tags: ['data'],
+    defaultConfig: {
+      operation: 'csv_to_json',
+      delimiter: ',',
+      hasHeader: true,
+      columnsToKeep: 'id, name, email, score',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'CSV Data' }],
+      outputs: [{ id: 'output', label: 'Parsed Records' }],
+    },
+  },
+  {
+    subType: 'html_extractor',
+    category: 'data',
+    name: 'HTML Extractor',
+    description: 'Extract text, links, image URLs, and metadata from HTML using CSS selectors',
+    icon: '🏷️',
+    color: '#06b6d4',
+    tags: ['data', 'browser'],
+    defaultConfig: {
+      htmlSource: '{{$json.html || $json.body}}',
+      cssSelector: 'h1, h2, a.article-link, meta[name="description"]',
+      extractAttribute: 'text',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'HTML In' }],
+      outputs: [{ id: 'output', label: 'Extracted Elements' }],
+    },
+  },
+  {
+    subType: 'data_transformer',
+    category: 'data',
+    name: 'Data Transformer',
+    description: 'Map fields, rename properties, transform data types, and normalize objects',
+    icon: '🔄',
+    color: '#06b6d4',
+    tags: ['data'],
+    defaultConfig: {
+      fieldMappings: '{\n  "user_id": "id",\n  "first_name": "firstName",\n  "contact_email": "email"\n}',
+      removeNulls: true,
+      flattenNested: false,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Transformed' }],
+    },
+  },
+  {
+    subType: 'deduplication',
+    category: 'data',
+    name: 'Deduplication',
+    description: 'Detect and purge duplicate records from arrays using custom key fields or hashing',
+    icon: '🧹',
+    color: '#06b6d4',
+    tags: ['data', 'logic'],
+    defaultConfig: {
+      keyFields: 'id, email',
+      caseSensitive: false,
+      keepStrategy: 'keep_first',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Records In' }],
+      outputs: [{ id: 'output', label: 'Unique Records' }],
+    },
+  },
+  {
+    subType: 'json_parser',
+    category: 'data',
+    name: 'JSON Parser',
+    description: 'Parse, validate, and transform JSON payloads using JSONPath',
+    icon: '📦',
+    color: '#06b6d4',
+    tags: ['data', 'utility'],
+    defaultConfig: {
+      mode: 'parse',
+      jsonPath: '$.items[*].name',
+      strictValidation: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Parsed JSON' }],
+    },
+  },
+  {
+    subType: 'variable_node',
+    category: 'data',
+    name: 'Variable Node',
+    description: 'Store, retrieve, and mutate workflow variables across steps',
+    icon: '🏷️',
+    color: '#6366f1',
+    tags: ['data', 'utility'],
+    defaultConfig: {
+      operation: 'set',
+      variableName: 'userSummary',
+      variableValue: '{{$json.summary}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Out' }],
+    },
+  },
+
+  // ==========================================
+  // --- ADVANCED WORKFLOW & LOGIC & FLOW ---
+  // ==========================================
+  {
+    subType: 'parallel_execution',
+    category: 'logic',
+    name: 'Parallel Execution',
+    description: 'Execute multiple downstream workflow branches concurrently and synchronize outputs',
+    icon: '⫴',
+    color: '#eab308',
+    tags: ['logic'],
+    defaultConfig: {
+      completionStrategy: 'wait_all',
+      concurrencyLimit: 4,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'branch-1', label: 'Parallel Branch 1', color: '#3b82f6' },
+        { id: 'branch-2', label: 'Parallel Branch 2', color: '#10b981' },
+        { id: 'branch-3', label: 'Parallel Branch 3', color: '#ec4899' },
+      ],
+    },
+  },
+  {
+    subType: 'sub_workflow',
+    category: 'logic',
+    name: 'Sub-workflow',
+    description: 'Execute another saved workflow modularly, pass inputs, and collect outputs',
+    icon: '⎘',
+    color: '#eab308',
+    tags: ['logic', 'developer'],
+    defaultConfig: {
+      targetWorkflowId: 'wf-doc-ai-summarizer',
+      inputMapping: '{\n  "query": "{{$json.topic}}"\n}',
+      waitForCompletion: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Sub-workflow Output' }],
+    },
+  },
+  {
+    subType: 'wait_for_event',
+    category: 'logic',
+    name: 'Wait for Event',
+    description: 'Pause execution until an external event or webhook arrives with matching filters',
+    icon: '⏳',
+    color: '#eab308',
+    tags: ['logic', 'trigger'],
+    defaultConfig: {
+      eventType: 'payment.completed',
+      matchingKey: 'transactionId',
+      timeoutHours: 24,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'event_received', label: 'On Event', color: '#10b981' },
+        { id: 'timeout', label: 'On Timeout', color: '#f59e0b' },
+      ],
+    },
+  },
+  {
+    subType: 'switch_router',
+    category: 'logic',
+    name: 'Switch / Router',
+    description: 'Route execution into multiple branches based on rules and values',
+    icon: '🔀',
+    color: '#eab308',
+    tags: ['logic'],
+    defaultConfig: {
+      property: 'status',
+      route1Value: 'approved',
+      route2Value: 'rejected',
+      defaultRoute: 'fallback',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'branch-1', label: 'Branch 1 (Approved)', color: '#10b981' },
+        { id: 'branch-2', label: 'Branch 2 (Rejected)', color: '#f59e0b' },
+        { id: 'default', label: 'Default Fallback', color: '#94a3b8' },
+      ],
+    },
+  },
+  {
+    subType: 'loop_iterator',
+    category: 'logic',
+    name: 'Loop / Iterator',
+    description: 'Iterate over arrays and process items sequentially or in batches',
+    icon: '🔁',
+    color: '#f59e0b',
+    tags: ['logic', 'data'],
+    defaultConfig: {
+      fieldPath: 'items',
+      batchSize: 5,
+      concurrency: 1,
+      maxIterations: 100,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Item / Batch' }],
+    },
+  },
+  {
+    subType: 'merge_node',
+    category: 'logic',
+    name: 'Merge Node',
+    description: 'Combine multiple workflow branches and wait for upstream data',
+    icon: '🔗',
+    color: '#8b5cf6',
+    tags: ['logic'],
+    defaultConfig: {
+      mode: 'wait_all',
+      outputKey: 'merged_results',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In (Multi-branch)' }],
+      outputs: [{ id: 'output', label: 'Merged Stream' }],
+    },
+  },
+  {
+    subType: 'filter_node',
+    category: 'logic',
+    name: 'Filter Node',
+    description: 'Filter records and items using configurable conditions',
+    icon: '🎯',
+    color: '#14b8a6',
+    tags: ['logic', 'data'],
+    defaultConfig: {
+      field: 'score',
+      operator: 'greater_than',
+      value: '80',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Filtered' }],
+    },
+  },
   {
     subType: 'condition',
     category: 'logic',
@@ -113,89 +773,349 @@ export const NODE_CATALOG: NodeDefinition[] = [
     description: 'Branch your workflow based on rules and values',
     icon: '🔀',
     color: '#eab308',
+    tags: ['logic'],
     defaultConfig: {
       field: 'status',
       operator: 'equals',
       value: 'success',
     },
-  },
-  {
-    subType: 'code',
-    category: 'logic',
-    name: 'Code (JavaScript)',
-    description: 'Transform data using custom JavaScript functions',
-    icon: '💻',
-    color: '#14b8a6',
-    defaultConfig: {
-      code: '// Return transformed payload\nreturn {\n  ...items[0],\n  timestamp: Date.now(),\n  processed: true\n};',
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'true', label: 'True (Yes)', color: '#10b981' },
+        { id: 'false', label: 'False (No)', color: '#ef4444' },
+      ],
     },
   },
   {
     subType: 'delay',
-    category: 'logic',
+    category: 'utility',
     name: 'Delay (Wait)',
     description: 'Pause execution for a specified duration',
     icon: '⏳',
     color: '#64748b',
+    tags: ['logic', 'utility'],
     defaultConfig: {
       durationSeconds: 5,
     },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Resume' }],
+    },
   },
 
-  // --- ACTIONS ---
+  // ==========================================
+  // --- MONITORING, UTILITIES & RELIABILITY ---
+  // ==========================================
+  {
+    subType: 'retry_backoff',
+    category: 'utility',
+    name: 'Retry with Backoff',
+    description: 'Retry failed operations with exponential backoff, jitter, and maximum retry limits',
+    icon: '🔄',
+    color: '#8b5cf6',
+    tags: ['utility', 'logic'],
+    defaultConfig: {
+      maxRetries: 4,
+      initialDelayMs: 1000,
+      backoffMultiplier: 2.0,
+      maxDelayMs: 30000,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'success', label: 'On Success', color: '#10b981' },
+        { id: 'exhausted', label: 'Retries Exhausted', color: '#ef4444' },
+      ],
+    },
+  },
+  {
+    subType: 'workflow_cancel',
+    category: 'utility',
+    name: 'Workflow Cancel',
+    description: 'Safely abort the running workflow, execute cleanup handlers, and record cancel reason',
+    icon: '⏹️',
+    color: '#ef4444',
+    tags: ['utility', 'logic'],
+    defaultConfig: {
+      cancelReason: 'Threshold violated or manual abort triggered.',
+      cleanupAction: 'notify_and_terminate',
+      exitCode: 400,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Trigger Cancel' }],
+      outputs: [],
+    },
+  },
+  {
+    subType: 'execution_logger',
+    category: 'utility',
+    name: 'Execution Logger',
+    description: 'Record step execution history, capture inputs/outputs/metrics, and sanitize credentials',
+    icon: '📊',
+    color: '#8b5cf6',
+    tags: ['utility', 'developer'],
+    defaultConfig: {
+      logLevel: 'info',
+      logDestination: 'internal_audit_store',
+      maskSensitiveFields: 'password, token, apiKey, secret, authorization',
+      captureDurationMs: true,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Logged Stream' }],
+    },
+  },
+  {
+    subType: 'error_handler',
+    category: 'utility',
+    name: 'Error Handler',
+    description: 'Catch errors, configure retries, and execute fallback paths',
+    icon: '🛡️',
+    color: '#ef4444',
+    tags: ['utility', 'logic'],
+    defaultConfig: {
+      retryAttempts: 3,
+      retryDelayMs: 1000,
+      continueOnFail: true,
+      fallbackAction: 'log_and_continue',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [
+        { id: 'success', label: 'On Success', color: '#10b981' },
+        { id: 'catch', label: 'On Error (Catch)', color: '#ef4444' },
+      ],
+    },
+  },
+
+  // ==========================================
+  // --- INTEGRATIONS & SERVICES ---
+  // ==========================================
+  {
+    subType: 'http_request',
+    category: 'integration',
+    name: 'HTTP Request',
+    description: 'GET, POST, PUT, PATCH, DELETE API requests with headers & auth',
+    icon: '🌐',
+    color: '#0284c7',
+    tags: ['integration', 'developer'],
+    defaultConfig: {
+      method: 'POST',
+      url: 'https://api.example.com/v1/webhook',
+      headers: '{\n  "Authorization": "Bearer YOUR_API_KEY",\n  "Content-Type": "application/json"\n}',
+      bodyType: 'json',
+      body: '{\n  "event": "nexio.workflow.event",\n  "data": {{$json}}\n}',
+      timeoutMs: 5000,
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Response' }],
+    },
+  },
+  {
+    subType: 'database_query',
+    category: 'integration',
+    name: 'Database Query',
+    description: 'Execute queries on PostgreSQL, MySQL, MongoDB, or Supabase',
+    icon: '🗄️',
+    color: '#3b82f6',
+    tags: ['integration', 'data'],
+    defaultConfig: {
+      engine: 'postgresql',
+      connectionString: 'postgresql://user:secret@localhost:5432/nexio_db',
+      query: 'SELECT id, title, updated_at FROM documents WHERE status = $1 LIMIT 50;',
+      parameters: '["active"]',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Rows' }],
+    },
+  },
+  {
+    subType: 'send_email',
+    category: 'integration',
+    name: 'Send Email',
+    description: 'Deliver email notifications with HTML/Markdown via Gmail or SMTP',
+    icon: '📧',
+    color: '#6366f1',
+    tags: ['integration'],
+    defaultConfig: {
+      service: 'gmail',
+      to: 'team@nexio.internal',
+      subject: 'Nexio Automation Alert: New AI Report',
+      bodyType: 'html',
+      body: '<h2>Automated Summary</h2><p>{{$json.summary || $json.output}}</p>',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Email Status' }],
+    },
+  },
+  {
+    subType: 'notification',
+    category: 'integration',
+    name: 'Notification',
+    description: 'Send alerts to Slack, Discord, Telegram, or WhatsApp',
+    icon: '🔔',
+    color: '#f59e0b',
+    tags: ['integration'],
+    defaultConfig: {
+      platform: 'slack',
+      webhookUrl: 'https://hooks.slack.com/services/T00/B00/XXXX',
+      recipient: '#alerts',
+      message: '🚀 Nexio Workflow: completed successfully for {{$json.node || "Task"}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Sent Alert' }],
+    },
+  },
+  {
+    subType: 'file_storage',
+    category: 'integration',
+    name: 'File Upload / Download',
+    description: 'Handle files, attachments, and exports in AWS S3 or Cloudflare R2',
+    icon: '📁',
+    color: '#0ea5e9',
+    tags: ['integration', 'data'],
+    defaultConfig: {
+      action: 'upload',
+      provider: 's3',
+      bucket: 'nexio-workflow-assets',
+      fileKey: 'exports/report.json',
+      fileContent: '{{$json}}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'File Data' }],
+      outputs: [{ id: 'output', label: 'Storage URL' }],
+    },
+  },
+  {
+    subType: 'webhook_response',
+    category: 'integration',
+    name: 'Webhook Response',
+    description: 'Return custom HTTP status code, headers, and responses to caller',
+    icon: '↩️',
+    color: '#10b981',
+    tags: ['integration', 'utility'],
+    defaultConfig: {
+      statusCode: 200,
+      headers: '{\n  "Content-Type": "application/json"\n}',
+      responseBody: '{\n  "success": true,\n  "data": {{$json}}\n}',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Response Body' }],
+      outputs: [{ id: 'output', label: 'Sent' }],
+    },
+  },
   {
     subType: 'create_doc',
-    category: 'action',
+    category: 'integration',
     name: 'Create Nexio Doc',
     description: 'Automatically create a new page or whiteboard in Nexio',
     icon: '📝',
     color: '#2563eb',
+    tags: ['integration'],
     defaultConfig: {
       docTitle: 'AI Generated Report - {{new Date().toLocaleDateString()}}',
       content: '{{$json.output || $json.summary}}',
       mode: 'page',
     },
-  },
-  {
-    subType: 'http_request',
-    category: 'action',
-    name: 'HTTP Request (API)',
-    description: 'Make REST API calls to external services',
-    icon: '🌐',
-    color: '#0284c7',
-    defaultConfig: {
-      method: 'POST',
-      url: 'https://api.example.com/v1/data',
-      headers: '{\n  "Content-Type": "application/json"\n}',
-    },
-  },
-  {
-    subType: 'send_email',
-    category: 'action',
-    name: 'Send Email',
-    description: 'Deliver email notifications with HTML/Markdown content',
-    icon: '📧',
-    color: '#6366f1',
-    defaultConfig: {
-      to: 'team@nexio.internal',
-      subject: 'Nexio Automation Alert: New AI Report',
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'Doc Content' }],
+      outputs: [{ id: 'output', label: 'Doc Link' }],
     },
   },
   {
     subType: 'slack_message',
-    category: 'action',
+    category: 'integration',
     name: 'Slack Notification',
     description: 'Send messages to Slack channels or users',
     icon: '💬',
     color: '#4a154b',
+    tags: ['integration'],
     defaultConfig: {
       channel: '#general',
       text: '🤖 *Nexio Automation:* Completed workflow execution successfully.',
+    },
+    defaultPorts: {
+      inputs: [{ id: 'input', label: 'In' }],
+      outputs: [{ id: 'output', label: 'Out' }],
     },
   },
 ];
 
 export const STARTER_WORKFLOWS: WorkflowItem[] = [
+  {
+    id: 'wf-enterprise-multi-agent',
+    name: 'Enterprise Multi-Agent Pipeline & Human In the Loop',
+    description: 'Orchestrates multi-agent research with smart scheduling, automated decision routing, and interactive human sign-off.',
+    active: true,
+    createdAt: Date.now() - 86400000,
+    updatedAt: Date.now() - 1800000,
+    executionCount: 42,
+    lastRunAt: Date.now() - 360000,
+    lastRunStatus: 'success',
+    nodes: [
+      {
+        id: 'node-sch',
+        type: 'trigger',
+        subType: 'smart_scheduler',
+        name: 'Smart Business Hours Scheduler',
+        description: 'Triggers on business days at 9:00 AM EST',
+        position: { x: 60, y: 160 },
+        status: 'idle',
+        config: { scheduleType: 'business_hours', timezone: 'America/New_York', businessHoursStart: '09:00' },
+      },
+      {
+        id: 'node-agents',
+        type: 'ai',
+        subType: 'multi_agent_coordinator',
+        name: 'Research & Analyst Agents',
+        description: 'Orchestrates specialized subagents with shared context',
+        position: { x: 360, y: 160 },
+        status: 'idle',
+        config: { executionMode: 'sequential', roles: 'Researcher (GPT-4o), Analyst (Claude 3.5)' },
+      },
+      {
+        id: 'node-decision',
+        type: 'ai',
+        subType: 'ai_decision_maker',
+        name: 'AI Risk & Priority Router',
+        description: 'Routes execution based on risk classification',
+        position: { x: 660, y: 160 },
+        status: 'idle',
+        config: { model: 'gpt-4o', decisionPrompt: 'Evaluate output priority' },
+      },
+      {
+        id: 'node-human',
+        type: 'human',
+        subType: 'human_approval',
+        name: 'Human Executive Sign-off',
+        description: 'Requires sign-off before publishing sensitive findings',
+        position: { x: 960, y: 120 },
+        status: 'idle',
+        config: { approverEmail: 'ciso@company.com', approvalTitle: 'Authorize Publication' },
+      },
+      {
+        id: 'node-logger',
+        type: 'utility',
+        subType: 'execution_logger',
+        name: 'Audit Execution Logger',
+        description: 'Logs telemetry and sanitizes credentials',
+        position: { x: 1240, y: 120 },
+        status: 'idle',
+        config: { logLevel: 'info', captureDurationMs: true },
+      },
+    ],
+    connections: [
+      { id: 'c-e1', fromNodeId: 'node-sch', fromPort: 'output', toNodeId: 'node-agents', toPort: 'input' },
+      { id: 'c-e2', fromNodeId: 'node-agents', fromPort: 'output', toNodeId: 'node-decision', toPort: 'input' },
+      { id: 'c-e3', fromNodeId: 'node-decision', fromPort: 'branch-1', toNodeId: 'node-human', toPort: 'input' },
+      { id: 'c-e4', fromNodeId: 'node-human', fromPort: 'approved', toNodeId: 'node-logger', toPort: 'input' },
+    ],
+  },
   {
     id: 'wf-doc-ai-summarizer',
     name: 'AI Document Summarizer & Insights',
@@ -234,7 +1154,7 @@ export const STARTER_WORKFLOWS: WorkflowItem[] = [
       },
       {
         id: 'node-3',
-        type: 'action',
+        type: 'integration',
         subType: 'create_doc',
         name: 'Save Executive Summary',
         description: 'Creates a summary page in Nexio',
@@ -289,7 +1209,7 @@ export const STARTER_WORKFLOWS: WorkflowItem[] = [
       },
       {
         id: 'w2-node-3',
-        type: 'action',
+        type: 'integration',
         subType: 'create_doc',
         name: 'Publish Research Doc',
         description: 'Generates formatted Nexio Doc',
@@ -303,15 +1223,17 @@ export const STARTER_WORKFLOWS: WorkflowItem[] = [
       },
       {
         id: 'w2-node-4',
-        type: 'action',
-        subType: 'slack_message',
-        name: 'Slack Notification',
+        type: 'integration',
+        subType: 'notification',
+        name: 'Team Alert',
         description: 'Alerts the team channel with the new doc link',
         position: { x: 700, y: 320 },
         status: 'idle',
         config: {
-          channel: '#research',
-          text: '🚀 *New AI Whitepaper Generated:* {{$json.docTitle}}',
+          platform: 'slack',
+          webhookUrl: 'https://hooks.slack.com/services/T00/B00/XXXX',
+          recipient: '#research',
+          message: '🚀 *New AI Whitepaper Generated:* {{$json.docTitle}}',
         },
       },
     ],
@@ -345,54 +1267,54 @@ export const STARTER_WORKFLOWS: WorkflowItem[] = [
       {
         id: 'w3-node-2',
         type: 'ai',
-        subType: 'llm_chat',
-        name: 'Sentiment & Priority Classifier',
-        description: 'Evaluates priority: High, Medium, or Low',
+        subType: 'ai_classifier',
+        name: 'Urgency & Category Classifier',
+        description: 'Classifies ticket into categories',
         position: { x: 380, y: 200 },
         status: 'idle',
         config: {
-          model: 'gpt-4o',
-          temperature: 0.2,
-          systemPrompt: 'Classify priority as high/medium/low and summarize sentiment.',
-          prompt: '{{$json.issue}}',
+          model: 'gpt-4o-mini',
+          inputField: '{{$json.issue}}',
+          categories: 'Urgent, Bug Report, Feature Request, Billing',
+          multiLabel: false,
         },
       },
       {
         id: 'w3-node-3',
         type: 'logic',
-        subType: 'condition',
-        name: 'Check If High Priority',
-        description: 'Branches based on priority level',
+        subType: 'switch_router',
+        name: 'Route by Category',
+        description: 'Branches based on classified category',
         position: { x: 680, y: 200 },
         status: 'idle',
-        config: { field: 'priority', operator: 'equals', value: 'high' },
+        config: { property: 'classification', route1Value: 'Urgent', route2Value: 'Bug Report', defaultRoute: 'fallback' },
       },
       {
         id: 'w3-node-4',
-        type: 'action',
-        subType: 'slack_message',
+        type: 'integration',
+        subType: 'notification',
         name: 'Urgent Slack Ping',
         description: 'Pings on-call engineering',
         position: { x: 960, y: 140 },
         status: 'idle',
-        config: { channel: '#support-urgent', text: '🚨 *High Priority Issue:* {{$json.issue}}' },
+        config: { platform: 'slack', webhookUrl: 'https://hooks.slack.com/services/T00/B00/XXXX', recipient: '#support-urgent', message: '🚨 *High Priority Issue:* {{$json.issue}}' },
       },
       {
         id: 'w3-node-5',
-        type: 'action',
+        type: 'integration',
         subType: 'send_email',
         name: 'Send Acknowledgement',
         description: 'Auto-reply to user',
         position: { x: 960, y: 280 },
         status: 'idle',
-        config: { to: '{{$json.email}}', subject: 'We received your report' },
+        config: { service: 'gmail', to: 'client@acme.com', subject: 'We received your report', body: 'We have received your request and our engineers are looking into it.' },
       },
     ],
     connections: [
       { id: 'cw3-1', fromNodeId: 'w3-node-1', fromPort: 'output', toNodeId: 'w3-node-2', toPort: 'input' },
       { id: 'cw3-2', fromNodeId: 'w3-node-2', fromPort: 'output', toNodeId: 'w3-node-3', toPort: 'input' },
-      { id: 'cw3-3', fromNodeId: 'w3-node-3', fromPort: 'output', toNodeId: 'w3-node-4', toPort: 'input' },
-      { id: 'cw3-4', fromNodeId: 'w3-node-3', fromPort: 'output', toNodeId: 'w3-node-5', toPort: 'input' },
+      { id: 'cw3-3', fromNodeId: 'w3-node-3', fromPort: 'branch-1', toNodeId: 'w3-node-4', toPort: 'input' },
+      { id: 'cw3-4', fromNodeId: 'w3-node-3', fromPort: 'default', toNodeId: 'w3-node-5', toPort: 'input' },
     ],
   },
 ];

@@ -50,6 +50,14 @@ export const workbenchRoutes = [
     lazy: () => import('./pages/workspace/workflow/index'),
   },
   {
+    path: '/ai-diagram',
+    lazy: () => import('./pages/workspace/ai-diagram/index'),
+  },
+  {
+    path: '/ai-diagram/:diagramId',
+    lazy: () => import('./pages/workspace/ai-diagram/index'),
+  },
+  {
     path: '/log-auditor',
     lazy: () => import('./pages/workspace/log-auditor/index'),
   },

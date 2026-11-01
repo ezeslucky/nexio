@@ -2,8 +2,10 @@ export type SeverityLevel = 'critical' | 'high' | 'medium' | 'low';
 
 export type GapCategory =
   | 'swallowed-error'
+  | 'blind-transaction'
   | 'database-operation'
   | 'external-api'
+  | 'missing-trace-context'
   | 'critical-business-logic'
   | 'complex-function'
   | 'retry-timeout'

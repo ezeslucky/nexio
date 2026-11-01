@@ -261,7 +261,7 @@ export const WorkflowList: React.FC<WorkflowListProps> = ({
                   checked={wf.active}
                   onChange={checked => {
                     onUpdateWorkflow({ ...wf, active: checked });
-                    notify.info({
+                    notify({
                       title: checked ? 'Workflow Activated' : 'Workflow Deactivated',
                       message: `${wf.name} is ${checked ? 'now active' : 'paused'}.`,
                     });
@@ -345,7 +345,6 @@ export const WorkflowList: React.FC<WorkflowListProps> = ({
                   <DeleteIcon />
                 </button>
                 <Button
-                  size="small"
                   variant="secondary"
                   onClick={e => {
                     e.stopPropagation();
