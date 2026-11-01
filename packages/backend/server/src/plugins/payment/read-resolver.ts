@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
+import { Logger } from '@nestjs/common';
 import {
   Args,
   Int,
@@ -34,6 +35,8 @@ import { SubscriptionPlan } from './types';
 
 @Resolver(() => UserType)
 export class UserSubscriptionResolver {
+  private readonly logger = new Logger(UserSubscriptionResolver.name);
+
   constructor(
     private readonly db: PrismaClient,
     private readonly runtime: BackendRuntimeProvider
@@ -184,7 +187,11 @@ export class UserSubscriptionResolver {
           action: 'refresh_revenuecat',
           userId: user.id,
         });
-      } catch {}
+      } catch (error) {
+        this.logger.warn(
+          `Failed to refresh RevenueCat subscription status for user ${user.id}: ${error instanceof Error ? error.message : String(error)}`
+        );
+      }
     }
     return this.currentUserSubscriptions(user.id);
   }

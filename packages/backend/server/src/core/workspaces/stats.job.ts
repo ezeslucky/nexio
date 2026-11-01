@@ -168,24 +168,34 @@ export class WorkspaceStatsJob {
     callback: (tx: Prisma.TransactionClient) => Promise<T>
   ): Promise<T | null> {
     const lockIdSql = Prisma.sql`(${LOCK_NAMESPACE}::bigint << 32) + ${lockKey}::bigint`;
+    const start = performance.now();
 
-    return await this.prisma.$transaction(
-      async tx => {
-        const [lock] = await tx.$queryRaw<{ locked: boolean }[]>`
-          SELECT pg_try_advisory_xact_lock(${lockIdSql}) AS locked
-        `;
+    try {
+      return await this.prisma.$transaction(
+        async tx => {
+          const [lock] = await tx.$queryRaw<{ locked: boolean }[]>`
+            SELECT pg_try_advisory_xact_lock(${lockIdSql}) AS locked
+          `;
 
-        if (!lock?.locked) {
-          return null;
+          if (!lock?.locked) {
+            return null;
+          }
+
+          return await callback(tx);
+        },
+        {
+          maxWait: 5_000,
+          timeout: TRANSACTION_TIMEOUT_MS,
         }
-
-        return await callback(tx);
-      },
-      {
-        maxWait: 5_000,
-        timeout: TRANSACTION_TIMEOUT_MS,
-      }
-    );
+      );
+    } catch (error) {
+      const durationMs = Math.round(performance.now() - start);
+      this.logger.error(
+        `Failed advisory lock transaction for lockKey ${lockKey} after ${durationMs}ms: ${error instanceof Error ? error.message : String(error)}`,
+        error instanceof Error ? error.stack : undefined
+      );
+      throw error;
+    }
   }
 
   private async withRefreshLockRetry<T>(
