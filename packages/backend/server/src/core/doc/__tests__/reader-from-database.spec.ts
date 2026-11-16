@@ -92,7 +92,7 @@ test('should return doc diff', async t => {
     updates.map((update, index) => ({
       spaceId: workspace.id,
       docId,
-      blob: update,
+      blob: update as any,
       timestamp: timestamp + index,
       editorId: user.id,
     }))
@@ -125,7 +125,7 @@ test('should return doc diff', async t => {
     updates.map((update, index) => ({
       spaceId: workspace.id,
       docId,
-      blob: update,
+      blob: update as any,
       timestamp: Date.now() + index + 1000,
       editorId: user.id,
     }))

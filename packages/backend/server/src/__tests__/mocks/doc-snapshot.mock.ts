@@ -35,7 +35,7 @@ export class MockDocSnapshot extends Mocker<
       data: {
         id: input.docId ?? faker.string.nanoid(),
         workspaceId: input.workspaceId,
-        blob: input.blob,
+        blob: input.blob as any,
         createdAt: new Date(),
         updatedAt: input.updatedAt ?? new Date(),
         createdBy: input.user.id,

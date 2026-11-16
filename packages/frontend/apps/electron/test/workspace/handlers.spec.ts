@@ -8,6 +8,47 @@ import { afterAll, afterEach, describe, expect, test, vi } from 'vitest';
 const tmpDir = path.join(__dirname, 'tmp');
 const appDataPath = path.join(tmpDir, 'app-data');
 
+vi.doMock('@nexio/native', () => ({
+  DocStorage: class {
+    validate() {
+      return true;
+    }
+    close() {}
+  },
+  DocStoragePool: class {
+    constructor() {
+      return new Proxy(this, {
+        get: (_target, prop) => {
+          if (typeof prop === 'string') {
+            return vi.fn().mockResolvedValue(undefined);
+          }
+          return undefined;
+        },
+      });
+    }
+  },
+  SqliteConnection: {
+    validate: vi.fn().mockResolvedValue(1),
+  },
+  ValidationResult: { Valid: 1, MissingDocRecord: 2 },
+}));
+
+vi.doMock('@nexio/electron/helper/nbstore', () => ({
+  getDocStoragePool: () =>
+    new Proxy(
+      {},
+      {
+        get: () => vi.fn().mockResolvedValue(undefined),
+      }
+    ),
+  nbstoreHandlers: new Proxy(
+    {},
+    {
+      get: () => vi.fn().mockResolvedValue(undefined),
+    }
+  ),
+}));
+
 vi.doMock('@nexio/electron/helper/db/ensure-db', () => ({
   ensureSQLiteDB: async () => ({
     destroy: () => {},

@@ -239,6 +239,9 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
   const [connectingFrom, setConnectingFrom] = useState<{
     nodeId: string;
     port: string;
+    direction?: 'output' | 'input';
+    startX?: number;
+    startY?: number;
     x: number;
     y: number;
   } | null>(null);
@@ -349,13 +352,31 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
     }
   };
 
-  const handleMouseUp = () => {
+  const handleMouseUp = (e: React.MouseEvent) => {
     setDraggingNode(null);
-    setConnectingFrom(null);
+    if (connectingFrom) {
+      if (
+        connectingFrom.startX !== undefined &&
+        connectingFrom.startY !== undefined
+      ) {
+        const dist = Math.hypot(
+          e.clientX - connectingFrom.startX,
+          e.clientY - connectingFrom.startY
+        );
+        if (dist > 8) {
+          setConnectingFrom(null);
+        }
+      }
+    }
   };
 
   // Port connection handler
-  const handleStartConnect = (e: React.MouseEvent, nodeId: string, port: string) => {
+  const handleStartConnect = (
+    e: React.MouseEvent,
+    nodeId: string,
+    port: string,
+    direction: 'output' | 'input' = 'output'
+  ) => {
     e.stopPropagation();
     if (!canvasRef.current) return;
     const rect = canvasRef.current.getBoundingClientRect();
@@ -363,26 +384,36 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
     setConnectingFrom({
       nodeId,
       port,
+      direction,
+      startX: e.clientX,
+      startY: e.clientY,
       x: handleRect.left + handleRect.width / 2 - rect.left,
       y: handleRect.top + handleRect.height / 2 - rect.top,
     });
   };
 
   const handleEndConnect = useCallback(
-    (e: React.MouseEvent, targetNodeId: string, targetPort: string) => {
+    (e: React.MouseEvent, targetNodeId: string, targetPort = 'input') => {
       e.stopPropagation();
       if (!connectingFrom || connectingFrom.nodeId === targetNodeId) {
         setConnectingFrom(null);
         return;
       }
 
+      // Determine correct from and to based on connection direction
+      const isInputSource = connectingFrom.direction === 'input';
+      const fromNodeId = isInputSource ? targetNodeId : connectingFrom.nodeId;
+      const fromPort = isInputSource ? targetPort : connectingFrom.port;
+      const toNodeId = isInputSource ? connectingFrom.nodeId : targetNodeId;
+      const toPort = isInputSource ? connectingFrom.port : targetPort;
+
       // Add new connection if not duplicate
       const newConn: WorkflowConnection = {
         id: `conn-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-        fromNodeId: connectingFrom.nodeId,
-        fromPort: connectingFrom.port,
-        toNodeId: targetNodeId,
-        toPort: targetPort,
+        fromNodeId,
+        fromPort,
+        toNodeId,
+        toPort,
       };
 
       updateWorkflowState(prev => {
@@ -1238,6 +1269,9 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
         onClick={() => {
           setSelectedNodeId(null);
           setValidationErrors([]);
+          if (connectingFrom) {
+            setConnectingFrom(null);
+          }
         }}
         style={{
           flex: 1,
@@ -1318,17 +1352,23 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
           })}
 
           {/* Pending connection being dragged */}
-          {connectingFrom && (
-            <path
-              d={`M ${connectingFrom.x} ${connectingFrom.y} C ${connectingFrom.x + 60} ${connectingFrom.y}, ${
-                mousePos.x - 60
-              } ${mousePos.y}, ${mousePos.x} ${mousePos.y}`}
-              fill="none"
-              stroke="#3b82f6"
-              strokeWidth="2.5"
-              strokeDasharray="4,4"
-            />
-          )}
+          {connectingFrom && (() => {
+            const dx = Math.max(Math.abs(mousePos.x - connectingFrom.x) / 2, 40);
+            const d =
+              connectingFrom.direction === 'input'
+                ? `M ${mousePos.x} ${mousePos.y} C ${mousePos.x + dx} ${mousePos.y}, ${connectingFrom.x - dx} ${connectingFrom.y}, ${connectingFrom.x} ${connectingFrom.y}`
+                : `M ${connectingFrom.x} ${connectingFrom.y} C ${connectingFrom.x + dx} ${connectingFrom.y}, ${mousePos.x - dx} ${mousePos.y}, ${mousePos.x} ${mousePos.y}`;
+            return (
+              <path
+                d={d}
+                fill="none"
+                stroke="#3b82f6"
+                strokeWidth="2.5"
+                strokeDasharray="5,5"
+                style={{ filter: 'drop-shadow(0 0 6px rgba(59, 130, 246, 0.6))' }}
+              />
+            );
+          })()}
         </svg>
 
         {/* Nodes Render */}
@@ -1354,11 +1394,22 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
           return (
             <div
               key={node.id}
+              className="workflow-node-card"
               onMouseDown={e => handleNodeMouseDown(e, node)}
               onClick={e => {
                 e.stopPropagation();
+                if (connectingFrom && connectingFrom.nodeId !== node.id) {
+                  handleEndConnect(e, node.id, connectingFrom.direction === 'input' ? 'output' : 'input');
+                  return;
+                }
                 setSelectedNodeId(node.id);
                 setValidationErrors([]);
+              }}
+              onMouseUp={e => {
+                if (connectingFrom && connectingFrom.nodeId !== node.id) {
+                  e.stopPropagation();
+                  handleEndConnect(e, node.id, connectingFrom.direction === 'input' ? 'output' : 'input');
+                }
               }}
               style={{
                 position: 'absolute',
@@ -1390,27 +1441,45 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
                 transition: 'border 0.2s, box-shadow 0.2s',
               }}
             >
-              {/* Input Port (Left Handle) */}
-              {node.type !== 'trigger' && (
+              {/* Input Port (Left Handle - enabled on all nodes for full connectability) */}
+              <div
+                className="port-handle-hit-area"
+                onMouseDown={e => handleStartConnect(e, node.id, 'input', 'input')}
+                onMouseUp={e => handleEndConnect(e, node.id, 'input')}
+                onClick={e => {
+                  e.stopPropagation();
+                  if (connectingFrom && connectingFrom.nodeId !== node.id) {
+                    handleEndConnect(e, node.id, 'input');
+                  }
+                }}
+                title="Input Connection"
+                style={{
+                  position: 'absolute',
+                  left: '-14px',
+                  top: '24px',
+                  width: '28px',
+                  height: '34px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'crosshair',
+                  zIndex: 15,
+                }}
+              >
                 <div
-                  className="port-handle"
-                  onMouseUp={e => handleEndConnect(e, node.id, 'input')}
-                  title="Connect Input"
+                  className="port-handle-dot"
                   style={{
-                    position: 'absolute',
-                    left: '-7px',
-                    top: '36px',
                     width: '14px',
                     height: '14px',
                     borderRadius: '50%',
                     backgroundColor: '#fff',
                     border: '3px solid #3b82f6',
-                    cursor: 'crosshair',
-                    boxShadow: '0 0 6px rgba(59, 130, 246, 0.5)',
-                    zIndex: 10,
+                    boxShadow: connectingFrom ? '0 0 10px #3b82f6' : '0 0 6px rgba(59, 130, 246, 0.5)',
+                    transform: connectingFrom ? 'scale(1.25)' : 'scale(1)',
+                    transition: 'transform 0.15s ease, box-shadow 0.15s ease',
                   }}
                 />
-              )}
+              </div>
 
               {/* Node Card Header */}
               <div
@@ -1532,23 +1601,44 @@ export const WorkflowCanvas: React.FC<WorkflowCanvasProps> = ({
                 return (
                   <div
                     key={port.id}
-                    className="port-handle"
-                    onMouseDown={e => handleStartConnect(e, node.id, port.id)}
+                    className="port-handle-hit-area"
+                    onMouseDown={e => handleStartConnect(e, node.id, port.id, 'output')}
+                    onMouseUp={e => handleEndConnect(e, node.id, port.id)}
+                    onClick={e => {
+                      e.stopPropagation();
+                      if (connectingFrom && connectingFrom.nodeId !== node.id) {
+                        handleEndConnect(e, node.id, port.id);
+                      }
+                    }}
                     title={`Output: ${port.label}`}
                     style={{
                       position: 'absolute',
-                      right: '-7px',
-                      top: `${topPos}px`,
-                      width: '14px',
-                      height: '14px',
-                      borderRadius: '50%',
-                      backgroundColor: '#fff',
-                      border: `3px solid ${portColor}`,
+                      right: '-14px',
+                      top: `${topPos - 10}px`,
+                      width: '28px',
+                      height: '34px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       cursor: 'crosshair',
-                      boxShadow: `0 0 6px ${portColor}`,
-                      zIndex: 10,
+                      zIndex: 15,
                     }}
-                  />
+                  >
+                    <div
+                      className="port-handle-dot"
+                      style={{
+                        width: '14px',
+                        height: '14px',
+                        borderRadius: '50%',
+                        backgroundColor: '#fff',
+                        border: `3px solid ${portColor}`,
+                        cursor: 'crosshair',
+                        boxShadow: `0 0 6px ${portColor}`,
+                        transform: connectingFrom ? 'scale(1.25)' : 'scale(1)',
+                        transition: 'transform 0.15s ease, box-shadow 0.15s ease',
+                      }}
+                    />
+                  </div>
                 );
               })}
             </div>

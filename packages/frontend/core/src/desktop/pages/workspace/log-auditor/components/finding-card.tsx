@@ -178,7 +178,7 @@ export const FindingCard: React.FC<FindingCardProps> = ({
         <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
           💡 Proposed: <strong style={{ color: '#059669' }}>{finding.recommendedCode}</strong>
         </span>
-        <Button size="small" onClick={handleCopyCode} style={{ flexShrink: 0, marginLeft: '12px' }}>
+        <Button size="default" onClick={handleCopyCode} style={{ flexShrink: 0, marginLeft: '12px' }}>
           Copy
         </Button>
       </div>
@@ -218,24 +218,24 @@ export const FindingCard: React.FC<FindingCardProps> = ({
         }}
       >
         {finding.patchStatus === 'accepted' ? (
-          <Button size="small" onClick={() => onResetPatch(finding.id)}>
+          <Button size="default" onClick={() => onResetPatch(finding.id)}>
             Undo Patch
           </Button>
         ) : finding.patchStatus === 'rejected' ? (
-          <Button size="small" onClick={() => onResetPatch(finding.id)}>
+          <Button size="default" onClick={() => onResetPatch(finding.id)}>
             Restore Suggestion
           </Button>
         ) : (
           <>
             <Button
-              size="small"
+              size="default"
               onClick={() => onRejectPatch(finding.id)}
               style={{ color: 'var(--affine-text-secondary-color)' }}
             >
               Reject
             </Button>
             <Button
-              size="small"
+              size="default"
               variant="primary"
               onClick={() => onAcceptPatch(finding.id)}
               style={{

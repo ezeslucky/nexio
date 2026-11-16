@@ -47,7 +47,6 @@ import { InviteMembersButton } from './invite-members-button';
 import { AppSidebarJournalButton } from './journal-button';
 import { NotificationButton } from './notification-button';
 import { SidebarAudioPlayer } from './sidebar-audio-player';
-import { AiDiagramEntrance } from './ai-diagram-entrance';
 import { LogAuditorEntrance } from './log-auditor-entrance';
 import { TemplateDocEntrance } from './template-doc-entrance';
 import { TrashButton } from './trash-button';
@@ -208,6 +207,7 @@ export const RootAppSidebar = memo((): ReactElement => {
         <AppSidebarJournalButton />
         {sessionStatus === 'authenticated' && <NotificationButton />}
         <AIChatButton />
+        <WorkflowEntrance />
         <MenuItem
           data-testid="slider-bar-workspace-setting-button"
           icon={<SettingsIcon />}
@@ -217,6 +217,7 @@ export const RootAppSidebar = memo((): ReactElement => {
             {t['com.affine.settingSidebar.title']()}
           </span>
         </MenuItem>
+        <LogAuditorEntrance />
       </SidebarContainer>
       <SidebarScrollableContainer>
         <NavigationPanelFavorites />
@@ -239,9 +240,6 @@ export const RootAppSidebar = memo((): ReactElement => {
           </MenuItem>
           <InviteMembersButton />
           <TemplateDocEntrance />
-          <WorkflowEntrance />
-          <AiDiagramEntrance />
-          <LogAuditorEntrance />
         </CollapsibleSection>
       </SidebarScrollableContainer>
       <SidebarContainer className={bottomContainer}>

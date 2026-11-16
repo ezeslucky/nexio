@@ -71,7 +71,7 @@ export class MockWorkspace extends Mocker<MockWorkspaceInput, MockedWorkspace> {
         data: {
           id: workspace.id,
           workspaceId: workspace.id,
-          blob: snapshot,
+          blob: snapshot as any,
           createdAt: new Date(),
           updatedAt: new Date(),
           createdBy: owner?.id,

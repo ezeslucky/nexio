@@ -38,7 +38,7 @@ function getCookieValue(name: string) {
 
 const oauthParameters = z.object({
   provider: supportedProvider,
-  client: supportedClient,
+  client: z.string(),
   redirectUri: z.string().optional().nullable(),
   flow: z.string().optional().nullable(),
 });

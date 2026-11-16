@@ -1,4 +1,4 @@
-﻿import { createLitPortal } from '@blocksuite/nexio-components/portal';
+import { createLitPortal } from '@blocksuite/nexio-components/portal';
 import type {
   EditorIconButton,
   MenuItemGroup,
@@ -36,8 +36,15 @@ export class AffineCodeToolbar extends WithDisposable(LitElement) {
     .code-toolbar-button {
       color: ${unsafeCSSVarV2('icon/primary')};
       background-color: ${unsafeCSSVarV2('button/secondary')};
-      box-shadow: var(--affine-shadow-1);
-      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+      border-radius: 6px;
+      transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+    }
+
+    .code-toolbar-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     }
   `;
 

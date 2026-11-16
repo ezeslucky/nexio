@@ -120,7 +120,7 @@ export const ScanHistoryModal: React.FC<ScanHistoryModalProps> = ({
                   </div>
 
                   <Button
-                    size="small"
+                    size="default"
                     onClick={() => {
                       onSelectScan(item);
                       onClose();
@@ -143,7 +143,7 @@ export const ScanHistoryModal: React.FC<ScanHistoryModalProps> = ({
               justifyContent: 'flex-end',
             }}
           >
-            <Button size="small" onClick={onClearHistory} style={{ color: '#ef4444' }}>
+            <Button size="default" onClick={onClearHistory} style={{ color: '#ef4444' }}>
               Clear History
             </Button>
           </div>

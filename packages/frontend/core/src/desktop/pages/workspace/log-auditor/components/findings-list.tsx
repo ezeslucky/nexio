@@ -154,7 +154,7 @@ export const FindingsList: React.FC<FindingsListProps> = ({
           <span>
             Filtering by file: <strong>{selectedFileFilter}</strong>
           </span>
-          <Button size="small" onClick={onClearFileFilter}>
+          <Button size="default" onClick={onClearFileFilter}>
             Clear File Filter
           </Button>
         </div>
@@ -167,7 +167,7 @@ export const FindingsList: React.FC<FindingsListProps> = ({
         </div>
 
         {selectedSeverity !== 'all' && (
-          <Button size="small" onClick={() => onSelectSeverity('all')}>
+          <Button size="default" onClick={() => onSelectSeverity('all')}>
             Reset Severity Filter ({selectedSeverity})
           </Button>
         )}

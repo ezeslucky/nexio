@@ -4,11 +4,10 @@ import {
   ViewHeader,
   ViewIcon,
   ViewTitle,
-  WorkbenchService,
 } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useService } from '@toeverything/infra';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { DashboardHeader } from './components/dashboard-header';
 import { FileTreeView } from './components/file-tree-view';
 import { FindingsList } from './components/findings-list';
@@ -21,7 +20,6 @@ import { applyPatchToFile, calculateHealthScore } from './engine/patcher';
 import type { RepositoryScanSummary, SeverityLevel } from './types';
 
 export const Component = () => {
-  const _workbench = useService(WorkbenchService).workbench;
   const workspaceService = useService(WorkspaceService);
   const currentWorkspace = workspaceService.workspace;
 
@@ -223,10 +221,8 @@ export const Component = () => {
   return (
     <>
       <ViewHeader>
-        <ViewIcon>
-          <span style={{ fontSize: '18px' }}>🛡️</span>
-        </ViewIcon>
-        <ViewTitle>AI Logging Sentinel</ViewTitle>
+        <ViewTitle title="AI Logging Sentinel" />
+        <ViewIcon icon="ai" />
       </ViewHeader>
 
       <ViewBody>

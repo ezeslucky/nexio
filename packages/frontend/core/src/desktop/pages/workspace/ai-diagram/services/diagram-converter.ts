@@ -1,4 +1,4 @@
-import type { CodebaseAnalysisResult, DiagramEdge, DiagramItem, DiagramNode, ERDColumn } from '../types';
+import type { CodebaseAnalysisResult, DiagramEdge, DiagramNode, ERDColumn } from '../types';
 
 /**
  * Parses SQL DDL statements (e.g. CREATE TABLE) into an interactive ERD Diagram
@@ -132,7 +132,6 @@ export function convertTerraformToDiagram(hcl: string): { nodes: DiagramNode[]; 
   while ((match = resourceRegex.exec(hcl)) !== null) {
     const resType = match[1];
     const resName = match[2];
-    const body = match[3];
     const nodeId = `tf-${resName}`;
     resourceMap.set(`${resType}.${resName}`, nodeId);
 

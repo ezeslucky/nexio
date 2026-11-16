@@ -54,7 +54,7 @@ const markdownType = new Set([
 export class DocRendererController {
   private readonly logger = new Logger(DocRendererController.name);
   private readonly webAssets: HtmlAssets = defaultAssets;
-  private readonly mobileAssets: HtmlAssets = defaultAssets;
+  protected readonly mobileAssets: HtmlAssets = defaultAssets;
 
   constructor(
     private readonly doc: DocReader,

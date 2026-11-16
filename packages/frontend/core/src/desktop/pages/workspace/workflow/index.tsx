@@ -7,7 +7,7 @@ import {
 } from '@nexio/core/modules/workbench';
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { useService } from '@toeverything/infra';
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { STARTER_WORKFLOWS } from './defaults';
@@ -134,12 +134,14 @@ export const Component = () => {
   return (
     <>
       <ViewHeader>
-        <ViewTitle>
-          {activeWorkflow ? `Workflow / ${activeWorkflow.name}` : 'Workflow Studio'}
-        </ViewTitle>
-        <ViewIcon>
-          <span style={{ fontSize: '16px' }}>⚡</span>
-        </ViewIcon>
+        <ViewTitle
+          title={
+            activeWorkflow
+              ? `Workflow / ${activeWorkflow.name}`
+              : 'Workflow Studio'
+          }
+        />
+        <ViewIcon icon="edgeless" />
       </ViewHeader>
 
       <ViewBody>

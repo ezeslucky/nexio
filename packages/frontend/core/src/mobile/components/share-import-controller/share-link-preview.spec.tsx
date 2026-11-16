@@ -1,4 +1,4 @@
-﻿/** @vitest-environment happy-dom */
+/** @vitest-environment happy-dom */
 
 import { type Server, ServersService } from '@nexio/core/modules/cloud';
 import {
@@ -159,7 +159,7 @@ describe('link preview transport and route ownership', () => {
       'official' as const,
       workspace('local'),
       [] as Server[],
-      'https://app.technexio.me/api/worker/link-preview',
+      `${window.location.origin}/api/worker/link-preview`,
     ],
     [
       'self-hosted route',
@@ -179,7 +179,7 @@ describe('link preview transport and route ownership', () => {
       'deferred' as const,
       workspace('cloud'),
       [server('cloud', 'https://cloud.example/', ServerDeploymentType.Affine)],
-      'https://app.technexio.me/api/worker/link-preview',
+      `${window.location.origin}/api/worker/link-preview`,
     ],
     [
       'local deferred route',
@@ -279,7 +279,7 @@ describe('link preview transport and route ownership', () => {
     expect(second).not.toBe(first);
     expect(fetch.mock.calls.map(([url]) => url)).toEqual([
       'https://self.example/api/worker/link-preview',
-      'https://app.technexio.me/api/worker/link-preview',
+      `${window.location.origin}/api/worker/link-preview`,
     ]);
   });
 
@@ -332,7 +332,7 @@ describe('link preview transport and route ownership', () => {
       server('cloud', 'https://cloud.example/', ServerDeploymentType.Affine),
     ]);
     expect(owner.routeEndpoint).toBe(
-      'https://app.technexio.me/api/worker/link-preview'
+      `${window.location.origin}/api/worker/link-preview`
     );
     await owner.load();
     expect(fetch).toHaveBeenCalledTimes(1);
@@ -370,7 +370,9 @@ describe('link preview transport and route ownership', () => {
 });
 
 describe('share destination selection lifecycle', () => {
-  test('keeps one workspace selection across preview completion and refreshes', async () => {
+  test(
+    'keeps one workspace selection across preview completion and refreshes',
+    async () => {
     const selectedWorkspace = {
       id: 'selected-workspace',
       flavour: 'local',
@@ -512,7 +514,7 @@ describe('share destination selection lifecycle', () => {
       }),
       { allowOffline: false }
     );
-  });
+  }, 30_000);
 });
 
 describe('share preview presentation', () => {

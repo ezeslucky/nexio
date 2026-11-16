@@ -8,8 +8,14 @@ export const calloutHostStyles = css({
 export const calloutBlockContainerStyles = css({
   display: 'flex',
   alignItems: 'flex-start',
-  padding: '5px 10px',
-  borderRadius: '8px',
+  padding: '10px 14px',
+  borderRadius: '10px',
+  border: '1px solid var(--affine-border-color, rgba(0, 0, 0, 0.06))',
+  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.02)',
+  transition: 'box-shadow 0.2s ease, border-color 0.2s ease',
+  ':hover': {
+    boxShadow: '0 2px 6px rgba(0, 0, 0, 0.04)',
+  },
 });
 
 export const calloutEmojiContainerStyles = css({
@@ -30,16 +36,18 @@ export const calloutEmojiStyles = css({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  transition: 'transform 0.15s ease, opacity 0.15s ease',
   ':hover': {
     cursor: 'pointer',
-    opacity: 0.7,
+    transform: 'scale(1.1)',
+    opacity: 0.85,
   },
 });
 
 export const calloutChildrenStyles = css({
   flex: 1,
   minWidth: 0,
-  paddingLeft: '10px',
+  paddingLeft: '12px',
 });
 
 export const iconPickerContainerStyles = css({

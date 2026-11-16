@@ -9,7 +9,7 @@ export interface DocHistorySimple {
 }
 
 export interface DocHistory {
-  blob: Uint8Array;
+  blob: Uint8Array<ArrayBuffer>;
   timestamp: number;
   editor: DocEditor | null;
 }

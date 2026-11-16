@@ -25,7 +25,6 @@ import { cssVar } from '@toeverything/theme';
 import {
   type Dispatch,
   type SetStateAction,
-  useCallback,
   useEffect,
   useState,
 } from 'react';
@@ -132,13 +131,6 @@ export const SignInStep = ({
 
     setIsMutating(false);
   }, [authService, changeState, email]);
-
-  const _onAddSelfhosted = useCallback(() => {
-    changeState(prev => ({
-      ...prev,
-      step: 'addSelfhosted',
-    }));
-  }, [changeState]);
 
   if (versionError && isSelfhosted) {
     return (
