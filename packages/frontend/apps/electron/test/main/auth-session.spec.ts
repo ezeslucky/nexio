@@ -170,7 +170,7 @@ test('shares one refresh across concurrent main-process callers', async () => {
 
   expect(tokens.every(token => token === 'fresh')).toBe(true);
   expect(runtime.fetch).toHaveBeenCalledTimes(1);
-  expect(runtime.fromPartition).toHaveBeenCalledWith('affine-auth-transport', {
+  expect(runtime.fromPartition).toHaveBeenCalledWith('nexio-auth-transport', {
     cache: false,
   });
 });

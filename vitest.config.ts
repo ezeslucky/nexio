@@ -36,6 +36,12 @@ export default defineConfig({
     }),
   ],
   assetsInclude: ['**/*.md', '**/*.zip'],
+  server: {
+    fs: {
+      strict: false,
+      deny: ['.env', '.env.*', '*.{crt,pem}'],
+    },
+  },
   resolve: {
     alias: {
       // prevent tests using two different sources of yjs

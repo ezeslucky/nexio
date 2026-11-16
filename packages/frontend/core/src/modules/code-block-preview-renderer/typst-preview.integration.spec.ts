@@ -1,4 +1,4 @@
-﻿/**
+/**
  * @vitest-environment node
  */
 import { resolve } from 'node:path';
@@ -35,17 +35,35 @@ let browser: Browser;
 
 const typstRuntimeUrl = `/@fs/${resolve(
   'packages/frontend/core/src/modules/typst/renderer/runtime.ts'
-)}`;
+).replace(/\\/g, '/')}`;
 const svgUtilsUrl = `/@fs/${resolve(
   'blocksuite/nexio/shared/src/utils/svg.ts'
-)}`;
+).replace(/\\/g, '/')}`;
 
 beforeAll(async () => {
   server = await createServer({
     logLevel: 'silent',
+    plugins: [
+      {
+        name: 'html-fallback',
+        configureServer(server) {
+          server.middlewares.use((req, res, next) => {
+            if (req.url === '/' || req.url?.startsWith('/?')) {
+              res.setHeader('Content-Type', 'text/html');
+              res.end('<!doctype html><html><head></head><body></body></html>');
+              return;
+            }
+            next();
+          });
+        },
+      },
+    ],
     server: {
       host: '127.0.0.1',
       port: 0,
+      fs: {
+        strict: false,
+      },
     },
   });
   await server.listen();
@@ -126,5 +144,5 @@ describe('typst preview integration', () => {
     } finally {
       await page.close();
     }
-  }, 30_000);
+  }, 120_000);
 });

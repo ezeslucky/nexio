@@ -12,7 +12,12 @@ declare global {
   const REPLACE_ME_BUILD_ENV: string;
 }
 
-export const envBuildType = (process.env.BUILD_TYPE || REPLACE_ME_BUILD_ENV)
+export const envBuildType = (
+  process.env.BUILD_TYPE ||
+  (typeof REPLACE_ME_BUILD_ENV !== 'undefined'
+    ? REPLACE_ME_BUILD_ENV
+    : 'canary')
+)
   .trim()
   .toLowerCase();
 

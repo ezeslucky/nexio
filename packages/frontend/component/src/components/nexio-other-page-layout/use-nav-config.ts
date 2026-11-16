@@ -1,6 +1,11 @@
 import { useMemo } from 'react';
 
-export const useNavConfig = () => {
+export interface NavItem {
+  title: string;
+  path: string;
+}
+
+export const useNavConfig = (): NavItem[] => {
   return useMemo(
     () => [],
     []

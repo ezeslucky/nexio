@@ -174,8 +174,6 @@ export declare class Tokenizer {
  */
 export declare function addDocToRootDoc(rootDocBin: Buffer, docId: string, title?: string | undefined | null): Buffer
 
-export const NEXIO_PRO_PUBLIC_KEY: string | undefined | null
-
 export interface AggregateHitsOptions {
   fields: Array<string>
   highlights: Array<SearchHighlight>
@@ -954,6 +952,8 @@ export interface NativeWorkspaceDocContent {
   name: string
   avatarKey: string
 }
+
+export const NEXIO_PRO_PUBLIC_KEY: string | undefined | null
 
 export interface ParsedDoc {
   name: string

@@ -12,7 +12,7 @@ export function autoLayoutDiagram(
 ): DiagramItem;
 export function autoLayoutDiagram(
   nodesOrDiagram: DiagramNode[] | DiagramItem,
-  edges?: DiagramEdge[]
+  _edges?: DiagramEdge[]
 ): DiagramNode[] | DiagramItem {
   let nodes: DiagramNode[];
   let isFullDiagram = false;

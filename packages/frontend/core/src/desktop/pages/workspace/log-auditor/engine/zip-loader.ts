@@ -11,7 +11,6 @@ export interface ExtractedFile {
 export async function loadFilesFromZip(file: File): Promise<ExtractedFile[]> {
   try {
     // Dynamic import of JSZip
-    // @ts-expect-error optional runtime dependency
     const JSZipModule = await import(/* @vite-ignore */ 'jszip');
     const JSZip = (JSZipModule.default || JSZipModule) as any;
     const zip = await JSZip.loadAsync(file);

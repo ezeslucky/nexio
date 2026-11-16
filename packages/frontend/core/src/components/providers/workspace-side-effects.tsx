@@ -1,4 +1,4 @@
-﻿import { notify, toast } from '@nexio/component';
+import { notify, toast } from '@nexio/component';
 import {
   pushGlobalLoadingEventAtom,
   resolveGlobalLoadingEventAtom,
@@ -150,6 +150,16 @@ export const WorkspaceSideEffects = () => {
 
   useEffect(() => {
     if (!realtimeConnectionError) return;
+    const notificationId = `realtime-connection-error:${realtimeConnectionError.endpoint}`;
+    if (
+      currentWorkspace.flavour === 'local' ||
+      (BUILD_CONFIG.debug &&
+        (realtimeConnectionError.type === 'timeout' ||
+          realtimeConnectionError.type === 'network'))
+    ) {
+      notify.dismiss(notificationId);
+      return;
+    }
     const message = {
       authentication:
         t['com.affine.realtime.connection-error.authentication'](),
@@ -162,12 +172,12 @@ export const WorkspaceSideEffects = () => {
         title: t['com.affine.realtime.connection-error.title'](),
         message,
       },
-      { id: `realtime-connection-error:${realtimeConnectionError.endpoint}` }
+      { id: notificationId }
     );
     return () => {
       notify.dismiss(id);
     };
-  }, [realtimeConnectionError, t]);
+  }, [currentWorkspace.flavour, realtimeConnectionError, t]);
 
   useEffect(() => {
     const dispose = setupAIProvider(

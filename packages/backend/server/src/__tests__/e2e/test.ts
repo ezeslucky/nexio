@@ -27,7 +27,7 @@ export async function addDocumentToRoot(workspaceId: string, docId: string) {
   await db.snapshot.update({
     where,
     data: {
-      blob: mergeUpdatesInApplyWay([rootBlob, update]),
+      blob: mergeUpdatesInApplyWay([rootBlob, update]) as any,
       updatedAt: new Date(),
     },
   });

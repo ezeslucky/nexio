@@ -332,7 +332,7 @@ export const NewScanModal: React.FC<NewScanModalProps> = ({
                         </div>
                       </div>
 
-                      <Button variant="primary" size="small" style={{ flexShrink: 0, marginLeft: '16px' }}>
+                      <Button variant="primary" size="default" style={{ flexShrink: 0, marginLeft: '16px' }}>
                         Scan Now →
                       </Button>
                     </div>

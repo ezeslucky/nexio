@@ -14,6 +14,5 @@
     { "path": "../../common/error" },
     { "path": "../../common/graphql" },
     { "path": "../routes" }
-
   ]
 }

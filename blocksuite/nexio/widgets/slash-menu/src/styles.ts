@@ -1,5 +1,5 @@
-﻿import { scrollbarStyle } from '@blocksuite/nexio-shared/styles';
-import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
+import { scrollbarStyle } from '@blocksuite/nexio-shared/styles';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import { baseTheme } from '@toeverything/theme';
 import { css, unsafeCSS } from 'lit';
 
@@ -19,14 +19,17 @@ export const styles = css`
     left: 0;
     top: 0;
     box-sizing: border-box;
-    padding: 8px 4px 8px 8px;
+    padding: 8px 6px;
     width: 280px;
     overflow-y: auto;
     font-family: ${unsafeCSS(baseTheme.fontSansFamily)};
 
     background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
-    box-shadow: ${unsafeCSSVar('overlayPanelShadow')};
-    border-radius: 8px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
     z-index: var(--affine-z-index-popover);
     user-select: none;
     /* transition: max-height 0.2s ease-in-out; */
@@ -36,10 +39,12 @@ export const styles = css`
 
   .slash-menu-group-name {
     box-sizing: border-box;
-    padding: 2px 8px;
+    padding: 6px 10px 4px;
 
-    font-size: var(--affine-font-xs);
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
     line-height: var(--affine-line-height);
     text-align: left;
     color: var(
@@ -49,9 +54,12 @@ export const styles = css`
   }
 
   .slash-menu-item {
-    padding: 2px 8px 2px 8px;
+    padding: 3px 8px;
     justify-content: flex-start;
     gap: 10px;
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: background-color 0.15s cubic-bezier(0.16, 1, 0.3, 1), transform 0.1s ease;
   }
 
   .slash-menu-item-icon {
@@ -59,14 +67,21 @@ export const styles = css`
     width: 28px;
     height: 28px;
     padding: 4px;
-    border: 1px solid var(--affine-border-color, #e3e2e4);
-    border-radius: 4px;
+    border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    border-radius: 6px;
     color: var(--affine-icon-color);
-    background: ${unsafeCSSVarV2('layer/background/overlayPanel')};
+    background: ${unsafeCSSVarV2('layer/background/primary')};
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+
+  .slash-menu-item:hover .slash-menu-item-icon {
+    transform: scale(1.05);
+    border-color: var(--affine-border-color);
   }
 
   .slash-menu-item-icon svg {

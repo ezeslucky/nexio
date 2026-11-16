@@ -1,4 +1,4 @@
-﻿/* oxlint-disable typescript/no-non-null-assertion */
+/* oxlint-disable typescript/no-non-null-assertion */
 import {
   DefaultTool,
   EdgelessLegacySlotIdentifier,
@@ -111,6 +111,8 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
       align-items: center;
       padding: 0 ${unsafeCSS(TOOLBAR_PADDING_X)}px;
       height: ${unsafeCSS(TOOLBAR_HEIGHT)}px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
     :host([disabled]) .edgeless-toolbar-container {
       pointer-events: none;
@@ -142,8 +144,10 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
       content: '';
       display: block;
       width: 1px;
-      height: 100%;
+      height: 24px;
       background-color: var(--affine-border-color);
+      border-radius: 1px;
+      opacity: 0.6;
     }
     .pen-and-eraser {
       display: flex;
@@ -166,6 +170,10 @@ export class EdgelessToolbarWidget extends WidgetComponent<RootBlockModel> {
       justify-content: center;
       align-items: center;
       flex-shrink: 0;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .quick-tool-item:hover {
+      transform: translateY(-1px);
     }
     .quick-tool-more {
       width: 0;

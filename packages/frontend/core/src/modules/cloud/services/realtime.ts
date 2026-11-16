@@ -149,10 +149,17 @@ export class RealtimeService extends Service {
         }
         failures++;
         if (failures >= CONNECTION_FAILURE_THRESHOLD) {
+          const errorType = getConnectionErrorType(error);
+          if (
+            BUILD_CONFIG.debug &&
+            (errorType === 'timeout' || errorType === 'network')
+          ) {
+            return;
+          }
           this.connectionError$.next({
             endpoint: context.endpoint,
             error,
-            type: getConnectionErrorType(error),
+            type: errorType,
           });
         }
       }

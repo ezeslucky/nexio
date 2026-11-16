@@ -9,25 +9,28 @@ export class EditorToolbarSeparator extends LitElement {
       align-self: stretch;
       flex-shrink: 0;
 
-      width: 4px;
+      width: 8px;
     }
 
     :host::after {
       content: '';
-      display: flex;
-      width: 0.5px;
-      height: 100%;
+      display: block;
+      width: 1px;
+      height: 16px;
+      margin: auto;
       background-color: var(--affine-border-color);
+      border-radius: 1px;
+      opacity: 0.6;
     }
 
     :host([data-orientation='horizontal']) {
       height: 8px;
-      width: unset;
+      width: 100%;
     }
 
     :host([data-orientation='horizontal'])::after {
-      height: 0.5px;
-      width: 100%;
+      height: 1px;
+      width: calc(100% - 8px);
     }
   `;
 }

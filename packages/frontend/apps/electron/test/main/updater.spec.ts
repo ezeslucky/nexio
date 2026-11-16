@@ -39,7 +39,7 @@ describe('testing for client update', () => {
   ];
 
   const basicRequestHandlers = [
-    http.get('https://affine.pro/api/worker/releases', async ({ request }) => {
+    http.get(/\/api\/worker\/releases/, async ({ request }) => {
       const url = new URL(request.url);
       const buffer = await fs.readFile(
         path.join(

@@ -15,7 +15,7 @@ import {
   convertTerraformToDiagram,
 } from '../services/diagram-converter';
 import { generateDiagramFromPrompt } from '../services/ai-diagram-service';
-import type { DiagramItem, DiagramTemplate, DiagramType, ImportFormat } from '../types';
+import type { DiagramItem, DiagramType, ImportFormat } from '../types';
 
 interface DiagramDashboardProps {
   diagrams: DiagramItem[];

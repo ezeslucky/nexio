@@ -66,13 +66,13 @@ test('should visit public page', async t => {
   const rootDoc = addDocToRootDoc(Buffer.from([0, 0]), 'doc1', 'doc1');
   await client.snapshot.update({
     where: { workspaceId_id: { workspaceId: workspace.id, id: workspace.id } },
-    data: { blob: rootDoc },
+    data: { blob: rootDoc as any },
   });
   await client.snapshot.create({
     data: {
       workspaceId: workspace.id,
       id: 'doc1',
-      blob: Buffer.from([0, 0]),
+      blob: Buffer.from([0, 0]) as any,
       updatedAt: new Date(),
     },
   });

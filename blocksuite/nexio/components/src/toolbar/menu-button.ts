@@ -1,4 +1,4 @@
-﻿import {
+import {
   panelBaseStyle,
   scrollbarStyle,
 } from '@blocksuite/nexio-shared/styles';
@@ -187,16 +187,18 @@ export class EditorMenuAction extends LitElement {
       align-items: center;
       white-space: nowrap;
       box-sizing: border-box;
-      padding: 4px 8px;
-      border-radius: 4px;
+      padding: 5px 8px;
+      border-radius: 6px;
+      margin: 1px 0;
       overflow: hidden;
       text-overflow: ellipsis;
       cursor: pointer;
       gap: 8px;
       color: var(--affine-text-primary-color);
       font-weight: 400;
-      min-height: 30px; // 22 + 8
+      min-height: 30px;
       user-select: none;
+      transition: background-color 0.15s ease, color 0.15s ease;
     }
 
     :host(:hover),

@@ -46,7 +46,7 @@ export const LogAuditorEntrance = () => {
       to={'/log-auditor'}
       postfix={
         <IconButton
-          size="small"
+          size="16"
           onClick={onOpenNew}
           tooltip="AI Logging Sentinel (Codebase Auditor)"
         >

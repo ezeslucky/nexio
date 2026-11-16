@@ -232,7 +232,7 @@ export const DiagramInspector: React.FC<DiagramInspectorProps> = ({
                       textAlign: 'center',
                     }}
                   >
-                    {SHAPE_LABELS[shape]}
+                    {SHAPE_LABELS[shape].icon} {SHAPE_LABELS[shape].label}
                   </button>
                 ))}
               </div>

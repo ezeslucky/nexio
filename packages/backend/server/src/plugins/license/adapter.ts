@@ -35,7 +35,7 @@ export function installedLicense(
   return {
     ...input,
     variant: input.variant ?? null,
-    license: input.license ?? null,
+    license: (input.license as any) ?? null,
     installedAt: new Date(input.installedAt),
     validatedAt: new Date(input.validatedAt),
     expiredAt: input.expiredAt ? new Date(input.expiredAt) : null,

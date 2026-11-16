@@ -3,7 +3,6 @@ import type { FlagInfo } from './types';
 // const isNotStableBuild = BUILD_CONFIG.appBuildType !== 'stable';
 const isCanaryBuild = BUILD_CONFIG.appBuildType === 'canary';
 const isMobile = BUILD_CONFIG.isMobileEdition;
-const _isIOS = BUILD_CONFIG.isIOS;
 
 export const NEXIO_FLAGS = {
   enable_ai: {
@@ -105,14 +104,23 @@ export const NEXIO_FLAGS = {
     defaultState: true,
   },
   enable_callout: {
-    category: 'blocksuite',
-    bsFlag: 'enable_callout',
+    category: 'affine',
     displayName:
       'com.affine.settings.workspace.experimental-features.enable-callout.name',
     description:
       'com.affine.settings.workspace.experimental-features.enable-callout.description',
     configurable: isCanaryBuild,
     defaultState: isCanaryBuild,
+  },
+  enable_pdfmake_export: {
+    category: 'blocksuite',
+    bsFlag: 'enable_pdfmake_export',
+    displayName:
+      'com.affine.settings.workspace.experimental-features.enable-pdfmake-export.name',
+    description:
+      'com.affine.settings.workspace.experimental-features.enable-pdfmake-export.description',
+    configurable: isCanaryBuild,
+    defaultState: false,
   },
 
   enable_emoji_folder_icon: {

@@ -233,8 +233,8 @@ async function createSnapshot(
     data: {
       id: input.docId,
       workspaceId: input.workspaceId,
-      blob: input.blob ?? Buffer.from([1, 1]),
-      state: input.state ?? Buffer.from([1, 1]),
+      blob: (input.blob ?? Buffer.from([1, 1])) as any,
+      state: (input.state ?? Buffer.from([1, 1])) as any,
       createdAt: input.updatedAt ?? new Date(),
       updatedAt: input.updatedAt ?? new Date(),
       createdBy: input.userId,

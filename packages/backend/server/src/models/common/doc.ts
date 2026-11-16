@@ -6,7 +6,7 @@ export interface Doc {
    */
   spaceId: string;
   docId: string;
-  blob: Uint8Array;
+  blob: Uint8Array<ArrayBuffer>;
   timestamp: number;
   editorId?: string;
 }

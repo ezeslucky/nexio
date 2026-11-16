@@ -1,4 +1,4 @@
-﻿import { scrollbarStyle } from '@blocksuite/nexio-shared/styles';
+import { scrollbarStyle } from '@blocksuite/nexio-shared/styles';
 import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import { css } from 'lit';
 
@@ -13,8 +13,11 @@ export const codeBlockStyles = css`
     position: relative;
     padding: 32px 20px;
     background: var(--affine-background-code-block);
-    border-radius: 10px;
+    border-radius: 12px;
+    border: 1px solid ${unsafeCSSVarV2('layer/insideBorder/border')};
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
   .affine-code-block-container.mobile {

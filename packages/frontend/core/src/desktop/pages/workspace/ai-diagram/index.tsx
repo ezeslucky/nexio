@@ -8,10 +8,10 @@ import {
 import { WorkspaceService } from '@nexio/core/modules/workspace';
 import { notify } from '@nexio/component';
 import { useService } from '@toeverything/infra';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import type { DiagramEdge, DiagramItem, DiagramNode } from './types';
+import type { DiagramItem, DiagramNode } from './types';
 import { STARTER_DIAGRAMS } from './defaults';
 import { autoLayoutDiagram } from './services/ai-diagram-service';
 
@@ -339,14 +339,14 @@ export const Component = () => {
   return (
     <>
       <ViewHeader>
-        <ViewTitle>
-          {activeDiagram
-            ? `AI Diagram Studio / ${activeDiagram.title}`
-            : 'AI Diagram Studio'}
-        </ViewTitle>
-        <ViewIcon>
-          <span style={{ fontSize: '16px' }}>🏗️</span>
-        </ViewIcon>
+        <ViewTitle
+          title={
+            activeDiagram
+              ? `AI Diagram Studio / ${activeDiagram.title}`
+              : 'AI Diagram Studio'
+          }
+        />
+        <ViewIcon icon="edgeless" />
       </ViewHeader>
 
       <ViewBody>

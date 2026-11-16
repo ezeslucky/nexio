@@ -1,4 +1,4 @@
-﻿import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
+import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import type { Placement } from '@floating-ui/dom';
 import type { TemplateResult } from 'lit';
 import { css, html, LitElement, nothing } from 'lit';
@@ -21,7 +21,7 @@ export class EditorIconButton extends LitElement {
       align-items: center;
       padding: var(--icon-container-padding);
       color: ${unsafeCSSVarV2('icon/primary')};
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       white-space: nowrap;
       box-sizing: border-box;
@@ -29,6 +29,7 @@ export class EditorIconButton extends LitElement {
       height: var(--icon-container-height, unset);
       justify-content: var(--justify, unset);
       user-select: none;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
     }
 
     :host([active]) .icon-container.active-mode-color {
@@ -79,7 +80,8 @@ export class EditorIconButton extends LitElement {
       height: 100%;
       top: 0;
       left: 0;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: opacity 0.15s ease;
     }
   `;
 

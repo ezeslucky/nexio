@@ -1,4 +1,4 @@
-﻿import type { RadioItem } from '@nexio/component';
+import type { RadioItem } from '@nexio/component';
 import { RadioGroup, Switch } from '@nexio/component';
 import {
   SettingHeader,
@@ -61,7 +61,7 @@ export const ThemeSettings = () => {
 const MenubarSetting = () => {
   const t = useI18n();
   const traySettingService = useService(TraySettingService);
-  const { enabled } = useLiveData(traySettingService.setting$);
+  const { enabled } = useLiveData(traySettingService.settings$);
   return (
     <SettingWrapper
       id="menubar"
