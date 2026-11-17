@@ -1,4 +1,4 @@
-﻿import {
+import {
   BlockSuiteError,
   ErrorCode,
 } from '@blocksuite/nexio/global/exceptions';
@@ -88,6 +88,7 @@ export class WorkspaceImpl implements Workspace {
     this.idGenerator = nanoid;
 
     this.meta = new WorkspaceMetaImpl(this.doc);
+    this.meta.initialize();
     this._bindDocMetaEvents();
   }
 
@@ -109,6 +110,18 @@ export class WorkspaceImpl implements Workspace {
       this.blockCollections.delete(id);
       doc.remove();
     });
+
+    // Populate existing docs into blockCollections
+    for (const docMeta of this.meta.docMetas) {
+      if (!this.blockCollections.has(docMeta.id)) {
+        const doc = new DocImpl({
+          id: docMeta.id,
+          collection: this,
+          doc: this.doc,
+        });
+        this.blockCollections.set(doc.id, doc);
+      }
+    }
   }
 
   private _hasDoc(docId: string) {
@@ -123,12 +136,14 @@ export class WorkspaceImpl implements Workspace {
   createDoc(docId?: string): Doc {
     if (this.onCreateDoc) {
       const id = this.onCreateDoc(docId);
-      const doc = this.getDoc(id);
+      let doc = this.getDoc(id);
       if (!doc) {
-        throw new BlockSuiteError(
-          ErrorCode.DocCollectionError,
-          'create doc failed'
-        );
+        doc = new DocImpl({
+          id,
+          collection: this,
+          doc: this.doc,
+        });
+        this.blockCollections.set(id, doc);
       }
       return doc;
     }
@@ -146,7 +161,16 @@ export class WorkspaceImpl implements Workspace {
       createDate: Date.now(),
       tags: [],
     });
-    return this.getDoc(id) as Doc;
+    let doc = this.getDoc(id);
+    if (!doc) {
+      doc = new DocImpl({
+        id,
+        collection: this,
+        doc: this.doc,
+      });
+      this.blockCollections.set(id, doc);
+    }
+    return doc;
   }
 
   private _getDoc(docId: string): Doc | null {
@@ -155,7 +179,18 @@ export class WorkspaceImpl implements Workspace {
   }
 
   getDoc(docId: string): Doc | null {
-    const doc = this._getDoc(docId);
+    let doc = this._getDoc(docId);
+    if (!doc) {
+      const meta = this.meta.getDocMeta(docId);
+      if (meta) {
+        doc = new DocImpl({
+          id: docId,
+          collection: this,
+          doc: this.doc,
+        });
+        this.blockCollections.set(doc.id, doc);
+      }
+    }
     return doc;
   }
 

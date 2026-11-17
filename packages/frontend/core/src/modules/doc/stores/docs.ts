@@ -1,4 +1,4 @@
-﻿import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import type { DocMeta } from '@blocksuite/nexio/store';
 import {
   Store,
@@ -12,6 +12,8 @@ import { distinctUntilChanged, map, switchMap } from 'rxjs';
 import { applyUpdate, Array as YArray, Map as YMap, transact } from 'yjs';
 
 import type { WorkspaceService } from '../../workspace';
+import { DocImpl } from '../../workspace/impls/doc';
+import type { WorkspaceImpl } from '../../workspace/impls/workspace';
 import type { DocPropertiesStore } from './doc-properties';
 
 export class DocsStore extends Store {
@@ -23,11 +25,22 @@ export class DocsStore extends Store {
   }
 
   getBlockSuiteDoc(id: string) {
-    return (
-      this.workspaceService.workspace.docCollection
-        .getDoc(id)
-        ?.getStore({ id }) ?? null
-    );
+    let doc = this.workspaceService.workspace.docCollection.getDoc(id);
+    if (!doc) {
+      const col = this.workspaceService.workspace.docCollection as unknown as WorkspaceImpl;
+      if (col && typeof col.getDoc === 'function') {
+        doc = col.getDoc(id);
+      }
+      if (!doc && col && col.blockCollections) {
+        doc = new DocImpl({
+          id,
+          collection: col,
+          doc: this.workspaceService.workspace.rootYDoc,
+        });
+        col.blockCollections.set(id, doc);
+      }
+    }
+    return doc?.getStore({ id }) ?? null;
   }
 
   getBlocksuiteCollection() {
@@ -40,15 +53,19 @@ export class DocsStore extends Store {
     transact(
       this.workspaceService.workspace.rootYDoc,
       () => {
-        const docs = this.workspaceService.workspace.rootYDoc
+        let docs = this.workspaceService.workspace.rootYDoc
           .getMap('meta')
           .get('pages');
 
-        if (!docs || !(docs instanceof YArray)) {
-          return;
+        if (!(docs instanceof YArray)) {
+          const newDocs = new YArray();
+          this.workspaceService.workspace.rootYDoc
+            .getMap('meta')
+            .set('pages', newDocs);
+          docs = newDocs;
         }
 
-        docs.push([
+        (docs as YArray<unknown>).push([
           new YMap([
             ['id', id],
             ['title', ''],

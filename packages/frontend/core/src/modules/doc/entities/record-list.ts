@@ -1,4 +1,4 @@
-﻿import type { DocMode } from '@blocksuite/nexio/model';
+import type { DocMode } from '@blocksuite/nexio/model';
 import { Entity, LiveData } from '@toeverything/infra';
 import { map } from 'rxjs';
 
@@ -62,7 +62,17 @@ export class DocRecordList extends Entity {
   );
 
   public doc$(id: string) {
-    return this.docsMap$.selector(map => map.get(id));
+    return this.docsMap$.selector(map => {
+      let record = map.get(id);
+      if (!record) {
+        record = this.pool.get(id);
+        if (!record) {
+          record = this.framework.createEntity(DocRecord, { id });
+          this.pool.set(id, record);
+        }
+      }
+      return record;
+    });
   }
 
   public setPrimaryMode(id: string, mode: DocMode) {
