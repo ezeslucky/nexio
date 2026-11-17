@@ -1,4 +1,4 @@
-﻿import {
+import {
   createYProxy,
   type DocMeta,
   type DocsPropertiesMeta,
@@ -143,6 +143,9 @@ export class WorkspaceMetaImpl implements WorkspaceMeta {
 
   addDocMeta(doc: DocMeta, index?: number) {
     this._assertValidDocTitle(doc);
+    if (!this.docs) {
+      this.initialize();
+    }
     this._doc.transact(() => {
       if (!this.docs) {
         return;
@@ -157,7 +160,18 @@ export class WorkspaceMetaImpl implements WorkspaceMeta {
   }
 
   getDocMeta(id: string) {
-    return this.docMetas.find(doc => doc.id === id);
+    const fromProxy = this.docMetas.find(doc => doc.id === id);
+    if (fromProxy) return fromProxy;
+    const yDocs = this.yDocs;
+    if (yDocs && typeof (yDocs as any).toArray === 'function') {
+      const list = (yDocs as any).toArray();
+      for (const item of list) {
+        if (item && typeof item.get === 'function' && item.get('id') === id) {
+          return (item.toJSON ? item.toJSON() : item) as DocMeta;
+        }
+      }
+    }
+    return undefined;
   }
 
   initialize() {

@@ -1,10 +1,10 @@
 const newE2E = process.env.TEST_MODE === 'e2e';
 const newE2ETests = './src/__tests__/e2e/**/*.spec.ts';
 
-const preludes = ['./src/prelude.ts'];
+const preludes = [new URL('./src/prelude.ts', import.meta.url).href];
 
 if (newE2E) {
-  preludes.push('./src/__tests__/e2e/prelude.ts');
+  preludes.push(new URL('./src/__tests__/e2e/prelude.ts', import.meta.url).href);
 }
 
 export default {

@@ -2,7 +2,7 @@ import { shallowEqual } from '@nexio/component';
 import { DEFAULT_SORT_KEY } from '@nexio/env/constant';
 import { atom } from 'jotai';
 import { selectAtom } from 'jotai/utils';
-import { createIsolation } from 'jotai-scope';
+import { createIsolation } from './create-isolation';
 
 import { itemsToItemGroups } from './items-to-item-group';
 import type {

@@ -69,6 +69,9 @@ import serverNativeModule, {
 
 import * as goNative from './go-native-client';
 import * as urlPolicy from './url-policy';
+import { nativeRouter } from './native-router';
+
+export { nativeRouter };
 
 const USE_GO_NATIVE = process.env.NEXIO_USE_GO_NATIVE !== 'false';
 
@@ -279,76 +282,38 @@ export const evaluateLocalRedirect = (
 
 export async function validateDocUpdate(
   update: Buffer,
-  options: { signal?: AbortSignal; timeoutMs?: number } = {}
+  _options: { signal?: AbortSignal; timeoutMs?: number } = {}
 ): Promise<boolean> {
-  if (USE_GO_NATIVE) {
-    return goNative.validateDocUpdate(update);
-  }
-  const signals = [];
-  if (options.signal) {
-    signals.push(options.signal);
-  }
-  if (options.timeoutMs !== undefined) {
-    signals.push(AbortSignal.timeout(options.timeoutMs));
-  }
-  const signal =
-    signals.length === 0
-      ? undefined
-      : signals.length === 1
-        ? signals[0]
-        : AbortSignal.any(signals);
-
-  if (signal?.aborted) {
-    throw signal.reason;
-  }
-
-  return await new Promise<boolean>((resolve, reject) => {
-    let settled = false;
-    const settle = (callback: () => void) => {
-      if (settled) return;
-      settled = true;
-      callback();
-    };
-    const onAbort = () => {
-      settle(() =>
-        reject(
-          signal?.reason instanceof Error
-            ? signal.reason
-            : new Error('Doc update validation aborted')
-        )
-      );
-    };
-    signal?.addEventListener('abort', onAbort, { once: true });
-    serverNativeModule
-      .validateDocUpdate(update)
-      .then(
-        result => settle(() => resolve(result)),
-        error => settle(() => reject(error))
-      )
-      .finally(() => {
-        signal?.removeEventListener('abort', onAbort);
-      });
-  });
+  return nativeRouter.execute(
+    'validateDocUpdate',
+    () => goNative.validateDocUpdate(update),
+    () => serverNativeModule.validateDocUpdate(update)
+  );
 }
 
 export const verifyChallengeResponse = async (
   response: any,
   bits: number,
   resource: string
-) => {
+): Promise<boolean> => {
   if (typeof response !== 'string' || !response || !resource) return false;
-  if (USE_GO_NATIVE) {
-    return goNative.verifyChallengeResponse(response, bits, resource);
-  }
-  return serverNativeModule.verifyChallengeResponse(response, bits, resource);
+  return nativeRouter.execute(
+    'verifyChallengeResponse',
+    () => goNative.verifyChallengeResponse(response, bits, resource),
+    () => serverNativeModule.verifyChallengeResponse(response, bits, resource)
+  );
 };
 
-export const mintChallengeResponse = async (resource: string, bits: number) => {
+export const mintChallengeResponse = async (
+  resource: string,
+  bits: number
+): Promise<string | null> => {
   if (!resource) return null;
-  if (USE_GO_NATIVE) {
-    return goNative.mintChallengeResponse(resource, bits);
-  }
-  return serverNativeModule.mintChallengeResponse(resource, bits);
+  return nativeRouter.execute(
+    'mintChallengeResponse',
+    () => goNative.mintChallengeResponse(resource, bits),
+    () => serverNativeModule.mintChallengeResponse(resource, bits)
+  );
 };
 
 const ENCODER_CACHE = new Map<string, Tokenizer>();
