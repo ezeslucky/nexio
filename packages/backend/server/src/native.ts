@@ -67,6 +67,11 @@ import serverNativeModule, {
   type Tokenizer,
 } from '@nexio/server-native';
 
+import * as goNative from './go-native-client';
+import * as urlPolicy from './url-policy';
+
+const USE_GO_NATIVE = process.env.NEXIO_USE_GO_NATIVE !== 'false';
+
 export type {
   BuiltInManagedTarget,
   BuiltInManagedTargetTier,
@@ -206,18 +211,79 @@ import type {
 } from './plugins/copilot/runtime/contracts/tool-contract';
 
 export const mergeUpdatesInApplyWay = serverNativeModule.mergeUpdatesInApplyWay;
-export const authorizeReservedDocSubject =
-  serverNativeModule.authorizeReservedDocSubject;
+
+const allowedDbDocKinds = new Set(['docProperties']);
+const allowedUserdataDocKinds = new Set(['favorite']);
+
+export const authorizeReservedDocSubject = (
+  userId: string,
+  workspaceId: string,
+  docId: string
+): boolean => {
+  if (docId.startsWith('userdata$')) {
+    const parts = docId.split('$');
+    if (parts.length !== 4) return false;
+    const [_, docUserId, docWorkspaceId, kind] = parts;
+    if (docUserId === '__local__') return false;
+    if (docUserId !== userId || docWorkspaceId !== workspaceId) return false;
+    return allowedUserdataDocKinds.has(kind);
+  }
+  if (docId.startsWith('db$')) {
+    const parts = docId.split('$');
+    if (parts.length !== 3) return false;
+    const [_, docWorkspaceId, kind] = parts;
+    if (docWorkspaceId !== workspaceId) return false;
+    return allowedDbDocKinds.has(kind);
+  }
+  return true;
+};
+
 export const canonicalizeDocumentIdentity =
   serverNativeModule.canonicalizeDocumentIdentity;
-export const buildSafeCallbackUrl = serverNativeModule.buildSafeCallbackUrl;
-export const evaluateRedirectUri = serverNativeModule.evaluateRedirectUri;
-export const evaluateLocalRedirect = serverNativeModule.evaluateLocalRedirect;
+
+export const buildSafeCallbackUrl = (
+  input: string,
+  baseUrl: string,
+  allowedOrigins: string[],
+  queryPairs: Array<{ name: string; value: string }> = []
+): string => {
+  if (USE_GO_NATIVE) {
+    return urlPolicy.buildSafeCallbackUrl(input, baseUrl, allowedOrigins, queryPairs);
+  }
+  return serverNativeModule.buildSafeCallbackUrl(input, baseUrl, allowedOrigins, queryPairs);
+};
+
+export const evaluateRedirectUri = (
+  input: string,
+  baseUrl: string,
+  allowedOrigins: string[],
+  trustedDomains: string[],
+  queryPairs: Array<{ name: string; value: string }> = []
+): string => {
+  if (USE_GO_NATIVE) {
+    return urlPolicy.evaluateRedirectUri(input, baseUrl, allowedOrigins, trustedDomains, queryPairs);
+  }
+  return serverNativeModule.evaluateRedirectUri(input, baseUrl, allowedOrigins, trustedDomains, queryPairs);
+};
+
+export const evaluateLocalRedirect = (
+  input: string,
+  baseUrl: string,
+  allowedBases: string[]
+): string => {
+  if (USE_GO_NATIVE) {
+    return urlPolicy.evaluateLocalRedirect(input, baseUrl, allowedBases);
+  }
+  return serverNativeModule.evaluateLocalRedirect(input, baseUrl, allowedBases);
+};
 
 export async function validateDocUpdate(
   update: Buffer,
   options: { signal?: AbortSignal; timeoutMs?: number } = {}
 ): Promise<boolean> {
+  if (USE_GO_NATIVE) {
+    return goNative.validateDocUpdate(update);
+  }
   const signals = [];
   if (options.signal) {
     signals.push(options.signal);
@@ -271,11 +337,17 @@ export const verifyChallengeResponse = async (
   resource: string
 ) => {
   if (typeof response !== 'string' || !response || !resource) return false;
+  if (USE_GO_NATIVE) {
+    return goNative.verifyChallengeResponse(response, bits, resource);
+  }
   return serverNativeModule.verifyChallengeResponse(response, bits, resource);
 };
 
 export const mintChallengeResponse = async (resource: string, bits: number) => {
   if (!resource) return null;
+  if (USE_GO_NATIVE) {
+    return goNative.mintChallengeResponse(resource, bits);
+  }
   return serverNativeModule.mintChallengeResponse(resource, bits);
 };
 
@@ -300,7 +372,18 @@ export function getTokenEncoder(model?: string | null): Tokenizer | null {
   }
 }
 
-export const getMime = serverNativeModule.getMime;
+export const getMime = (input: Uint8Array | Buffer): string => {
+  if (USE_GO_NATIVE) {
+    const h = input.subarray(0, 16);
+    if (h[0] === 0x89 && h[1] === 0x50 && h[2] === 0x4e && h[3] === 0x47) return 'image/png';
+    if (h[0] === 0xff && h[1] === 0xd8 && h[2] === 0xff) return 'image/jpeg';
+    if (h[0] === 0x47 && h[1] === 0x49 && h[2] === 0x46) return 'image/gif';
+    if (h[0] === 0x52 && h[1] === 0x49 && h[2] === 0x46 && h[3] === 0x46 &&
+        h[8] === 0x57 && h[9] === 0x45 && h[10] === 0x42 && h[11] === 0x50) return 'image/webp';
+    if (h[0] === 0x25 && h[1] === 0x50 && h[2] === 0x44 && h[3] === 0x46) return 'application/pdf';
+  }
+  return serverNativeModule.getMime(input);
+};
 export const inspectImageForProxy = serverNativeModule.inspectImageForProxy;
 export const fetchRemoteAttachment = serverNativeModule.fetchRemoteAttachment;
 export const inferRemoteMimeType = serverNativeModule.inferRemoteMimeType;
@@ -308,7 +391,14 @@ export const assertSafeUrl = serverNativeModule.assertSafeUrl;
 export const scanContentPolicyV1 = serverNativeModule.scanContentPolicyV1;
 export const safeFetch = serverNativeModule.safeFetch;
 export const parseDoc = serverNativeModule.parseDoc;
-export const htmlSanitize = serverNativeModule.htmlSanitize;
+export const htmlSanitize = (input: string): string => {
+  return input
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+};
 export const processImage = serverNativeModule.processImage;
 export const projectDocCanvasFromBinary =
   serverNativeModule.projectDocCanvasFromBinary;
@@ -319,7 +409,15 @@ export const parsePageDocFromBinary = serverNativeModule.parsePageDoc;
 export const parseWorkspaceDocFromBinary = serverNativeModule.parseWorkspaceDoc;
 export const readAllDocIdsFromRootDoc =
   serverNativeModule.readAllDocIdsFromRootDoc;
-export const NEXIO_PRO_PUBLIC_KEY = serverNativeModule.NEXIO_PRO_PUBLIC_KEY;
+
+const DEFAULT_AFFINE_PRO_PUBLIC_KEY =
+  `-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl
+otcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/AxpoR5X9yfoHkauIBuuMQ==
+-----END PUBLIC KEY-----`;
+
+export const NEXIO_PRO_PUBLIC_KEY: string | null =
+  process.env.NEXIO_PRO_PUBLIC_KEY || DEFAULT_AFFINE_PRO_PUBLIC_KEY;
 export const BackendRuntime = serverNativeModule.BackendRuntime;
 export const StorageRuntime = serverNativeModule.StorageRuntime;
 
