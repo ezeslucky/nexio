@@ -52,7 +52,7 @@ fn render_prompt_messages(
 ) -> std::result::Result<Vec<PromptMessageContract>, String> {
   let mut render_context = params.clone();
   render_context.remove("attachments");
-  render_context.retain(|key, _| !key.starts_with("affine::"));
+  render_context.retain(|key, _| !key.starts_with("affine::") && !key.starts_with("nexio::"));
   render_context.extend(create_prompt_builtins(params));
 
   let input_attachments = params
@@ -88,36 +88,38 @@ pub(super) fn create_prompt_builtins(params: &Map<String, Value>) -> Map<String,
     .map(|value| !value.trim().is_empty())
     .unwrap_or(false);
 
+  let date_val = Value::String(Local::now().format("%-m/%-d/%Y").to_string());
+  let lang_val = Value::String(
+    params
+      .get("language")
+      .and_then(Value::as_str)
+      .filter(|value| !value.is_empty())
+      .unwrap_or("same language as the user query")
+      .to_string(),
+  );
+  let tz_val = Value::String(
+    params
+      .get("timezone")
+      .and_then(Value::as_str)
+      .filter(|value| !value.is_empty())
+      .unwrap_or("no preference")
+      .to_string(),
+  );
+
   Map::from_iter([
-    (
-      "affine::date".to_string(),
-      Value::String(Local::now().format("%-m/%-d/%Y").to_string()),
-    ),
-    (
-      "affine::language".to_string(),
-      Value::String(
-        params
-          .get("language")
-          .and_then(Value::as_str)
-          .filter(|value| !value.is_empty())
-          .unwrap_or("same language as the user query")
-          .to_string(),
-      ),
-    ),
-    (
-      "affine::timezone".to_string(),
-      Value::String(
-        params
-          .get("timezone")
-          .and_then(Value::as_str)
-          .filter(|value| !value.is_empty())
-          .unwrap_or("no preference")
-          .to_string(),
-      ),
-    ),
+    ("nexio::date".to_string(), date_val.clone()),
+    ("affine::date".to_string(), date_val),
+    ("nexio::language".to_string(), lang_val.clone()),
+    ("affine::language".to_string(), lang_val),
+    ("nexio::timezone".to_string(), tz_val.clone()),
+    ("affine::timezone".to_string(), tz_val),
+    ("nexio::hasDocsRef".to_string(), Value::Bool(has_docs)),
     ("affine::hasDocsRef".to_string(), Value::Bool(has_docs)),
+    ("nexio::hasFilesRef".to_string(), Value::Bool(has_files)),
     ("affine::hasFilesRef".to_string(), Value::Bool(has_files)),
+    ("nexio::hasSelected".to_string(), Value::Bool(has_selected)),
     ("affine::hasSelected".to_string(), Value::Bool(has_selected)),
+    ("nexio::hasCurrentDoc".to_string(), Value::Bool(has_current_doc)),
     ("affine::hasCurrentDoc".to_string(), Value::Bool(has_current_doc)),
   ])
 }

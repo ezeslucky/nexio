@@ -1,4 +1,4 @@
-﻿import { HoverController } from '@blocksuite/nexio-components/hover';
+import { HoverController } from '@blocksuite/nexio-components/hover';
 import { PeekViewProvider } from '@blocksuite/nexio-components/peek';
 import type { FootNote } from '@blocksuite/nexio-model';
 import { CitationProvider } from '@blocksuite/nexio-shared/services';
@@ -33,7 +33,7 @@ const POPUP_SHIFT_PADDING = 8;
 // The offset between the footnote node and the popup.
 const POPUP_OFFSET = 4;
 
-export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
+export class NexioFootnoteNode extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     .footnote-node {
       padding: 0 2px;
@@ -282,3 +282,6 @@ export class AffineFootnoteNode extends WithDisposable(ShadowlessElement) {
   @property({ attribute: false })
   accessor std!: BlockStdScope;
 }
+
+export const AffineFootnoteNode = NexioFootnoteNode;
+export type AffineFootnoteNode = NexioFootnoteNode;

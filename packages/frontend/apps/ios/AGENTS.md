@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the AFFiNE iOS application built with Capacitor, React, and TypeScript. It's a hybrid mobile app that wraps a React web application in a native iOS shell.
+This is the Nexio iOS application built with Capacitor, React, and TypeScript. It's a hybrid mobile app that wraps a React web application in a native iOS shell.
 
 ## Development Commands
 
@@ -20,15 +20,15 @@ This is the AFFiNE iOS application built with Capacitor, React, and TypeScript. 
 
 ### iOS Build Process
 
-1. `BUILD_TYPE=canary PUBLIC_PATH="/" yarn affine @nexio/ios build` - Build web assets
-2. `yarn affine @nexio/ios cap sync` - Sync with iOS project
-3. `yarn affine @nexio/ios cap open ios` - Open in Xcode
+1. `BUILD_TYPE=canary PUBLIC_PATH="/" yarn nexio @nexio/ios build` - Build web assets
+2. `yarn nexio @nexio/ios cap sync` - Sync with iOS project
+3. `yarn nexio @nexio/ios cap open ios` - Open in Xcode
 
 ### Live Reload Setup
 
 1. Run `yarn dev` and select `ios` for Distribution option
-2. Run `yarn affine @nexio/ios sync:dev`
-3. Run `yarn affine @nexio/ios cap open ios`
+2. Run `yarn nexio @nexio/ios sync:dev`
+3. Run `yarn nexio @nexio/ios cap open ios`
 
 ## Architecture
 

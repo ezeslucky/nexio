@@ -144,9 +144,9 @@ fi
 
 echo "iOS MARKETING_VERSION: $ios_new_version (app version: $new_version)"
 
-update_app_version_in_helm_charts ".github/helm/affine/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/graphql/Chart.yaml" "$new_version"
-update_app_version_in_helm_charts ".github/helm/affine/charts/front/Chart.yaml" "$new_version"
+[ -f ".github/helm/nexio/Chart.yaml" ] && update_app_version_in_helm_charts ".github/helm/nexio/Chart.yaml" "$new_version"
+[ -f ".github/helm/nexio/charts/graphql/Chart.yaml" ] && update_app_version_in_helm_charts ".github/helm/nexio/charts/graphql/Chart.yaml" "$new_version"
+[ -f ".github/helm/nexio/charts/front/Chart.yaml" ] && update_app_version_in_helm_charts ".github/helm/nexio/charts/front/Chart.yaml" "$new_version"
 
 update_app_stream_version "packages/frontend/apps/electron/resources/nexio.metainfo.xml" "$new_version"
 

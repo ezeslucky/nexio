@@ -82,14 +82,22 @@ export const builtInTemplates = {
         }
 
         if (categroy.templates instanceof Function) {
-          return categroy.templates();
+          const list = await categroy.templates();
+          for (const item of list) {
+            const name = (item.name || '').toLowerCase();
+            if (name.includes(keyword) || lcs(keyword, name) === keyword.length) {
+              candidates.push(item);
+            }
+          }
+          return;
         }
 
         return Promise.all(
           Object.entries(categroy.templates).map(async ([name, template]) => {
+            const lowerName = (name as string).toLowerCase();
             if (
-              lcs(keyword, (name as string).toLocaleLowerCase()) ===
-              keyword.length
+              lowerName.includes(keyword) ||
+              lcs(keyword, lowerName) === keyword.length
             ) {
               candidates.push(template);
             }

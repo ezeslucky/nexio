@@ -1,4 +1,4 @@
-﻿import {
+import {
   type NexioCommand,
   NexioCommandRegistry,
   type CommandCategory,
@@ -91,6 +91,70 @@ const categories = {
   },
   'affine:results': {
     id: 'command:affine:results',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.results' },
+    score: 10,
+  },
+  'nexio:recent': {
+    id: 'command:nexio:recent',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.recent' },
+    score: 10,
+  },
+  'nexio:navigation': {
+    id: 'command:nexio:navigation',
+    label: {
+      i18nKey: 'com.affine.cmdk.affine.category.affine.navigation',
+    },
+    score: 10,
+  },
+  'nexio:creation': {
+    id: 'command:nexio:creation',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.creation' },
+    score: 10,
+  },
+  'nexio:general': {
+    id: 'command:nexio:general',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.general' },
+    score: 10,
+  },
+  'nexio:layout': {
+    id: 'command:nexio:layout',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.layout' },
+    score: 10,
+  },
+  'nexio:pages': {
+    id: 'command:nexio:pages',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.pages' },
+    score: 10,
+  },
+  'nexio:edgeless': {
+    id: 'command:nexio:edgeless',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.edgeless' },
+    score: 10,
+  },
+  'nexio:collections': {
+    id: 'command:nexio:collections',
+    label: {
+      i18nKey: 'com.affine.cmdk.affine.category.affine.collections',
+    },
+    score: 10,
+  },
+  'nexio:settings': {
+    id: 'command:nexio:settings',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.settings' },
+    score: 10,
+  },
+  'nexio:updates': {
+    id: 'command:nexio:updates',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.updates' },
+    score: 10,
+  },
+  'nexio:help': {
+    id: 'command:nexio:help',
+    label: { i18nKey: 'com.affine.cmdk.affine.category.affine.help' },
+    score: 10,
+  },
+  'nexio:results': {
+    id: 'command:nexio:results',
     label: { i18nKey: 'com.affine.cmdk.affine.category.results' },
     score: 10,
   },

@@ -6,14 +6,16 @@ import { property } from 'lit/decorators.js';
 import { uniMap } from './uni-component/operation.js';
 import { createUniComponentFromWebComponent } from './uni-component/uni-component.js';
 
-export class AffineLitIcon extends ShadowlessElement {
+export class NexioLitIcon extends ShadowlessElement {
   static override styles = css`
+    nexio-lit-icon,
     affine-lit-icon {
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
+    nexio-lit-icon svg,
     affine-lit-icon svg {
       fill: var(--affine-icon-color);
     }
@@ -28,8 +30,11 @@ export class AffineLitIcon extends ShadowlessElement {
   accessor name!: keyof typeof icons;
 }
 
+export const AffineLitIcon = NexioLitIcon;
+export type AffineLitIcon = NexioLitIcon;
+
 const litIcon = createUniComponentFromWebComponent<{ name: string }>(
-  AffineLitIcon
+  NexioLitIcon
 );
 export const createIcon = (name: keyof typeof icons) => {
   return uniMap(litIcon, () => ({ name }));

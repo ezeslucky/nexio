@@ -66,15 +66,18 @@ pub fn authorize_reserved_doc_subject(user_id: String, workspace_id: String, doc
   )
 }
 
-const DEFAULT_AFFINE_PRO_PUBLIC_KEY: &str =
+const DEFAULT_NEXIO_PRO_PUBLIC_KEY: &str =
   "-----BEGIN PUBLIC \
    KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEObwJiTmbui7rkWfPJ7Lozvuy2Rcl\notcrb0V6dlS2ijKEShm7ZttTwQn08xzesdjX/\
    AxpoR5X9yfoHkauIBuuMQ==\n-----END PUBLIC KEY-----";
 
+#[allow(dead_code)]
+const DEFAULT_AFFINE_PRO_PUBLIC_KEY: &str = DEFAULT_NEXIO_PRO_PUBLIC_KEY;
+
 #[napi]
 pub const NEXIO_PRO_PUBLIC_KEY: Option<&'static str> = match std::option_env!("NEXIO_PRO_PUBLIC_KEY") {
   Some(key) => Some(key),
-  None => Some(DEFAULT_AFFINE_PRO_PUBLIC_KEY),
+  None => Some(DEFAULT_NEXIO_PRO_PUBLIC_KEY),
 };
 
 #[cfg(test)]

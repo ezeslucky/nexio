@@ -21,5 +21,5 @@ export default function ChangeEmailNotification(
 }
 
 ChangeEmailNotification.PreviewProps = {
-  to: 'test@affine.pro',
+  to: 'test@technexio.me',
 };

@@ -1,4 +1,4 @@
-﻿import { affineTextStyles } from '@blocksuite/nexio-shared/styles';
+import { affineTextStyles } from '@blocksuite/nexio-shared/styles';
 import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
 import { ShadowlessElement } from '@blocksuite/std';
 import { ZERO_WIDTH_FOR_EMPTY_LINE } from '@blocksuite/std/inline';
@@ -8,7 +8,7 @@ import { property } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import type { ThemedToken } from 'shiki';
 
-export class AffineCodeUnit extends ShadowlessElement {
+export class NexioCodeUnit extends ShadowlessElement {
   get codeBlock() {
     return this.closest('affine-code');
   }
@@ -117,8 +117,12 @@ export class AffineCodeUnit extends ShadowlessElement {
   };
 }
 
+export const AffineCodeUnit = NexioCodeUnit;
+export type AffineCodeUnit = NexioCodeUnit;
+
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-code-unit': AffineCodeUnit;
+    'nexio-code-unit': NexioCodeUnit;
+    'affine-code-unit': NexioCodeUnit;
   }
 }

@@ -1,8 +1,8 @@
 import { css, html, LitElement } from 'lit';
 
-export class AffineTemplateLoading extends LitElement {
+export class NexioTemplateLoading extends LitElement {
   static override styles = css`
-    @keyframes affine-template-block-rotate {
+    @keyframes nexio-template-block-rotate {
       from {
         rotate: 0deg;
       }
@@ -11,12 +11,14 @@ export class AffineTemplateLoading extends LitElement {
       }
     }
 
+    .nexio-template-block-container,
     .affine-template-block-container {
       width: 20px;
       height: 20px;
       overflow: hidden;
     }
 
+    .nexio-template-block-loading,
     .affine-template-block-loading {
       display: inline-block;
       width: 20px;
@@ -27,9 +29,10 @@ export class AffineTemplateLoading extends LitElement {
         rgba(0, 0, 0, 0.1) 90deg 360deg
       );
       border-radius: 50%;
-      animation: affine-template-block-rotate 1s infinite ease-in;
+      animation: nexio-template-block-rotate 1s infinite ease-in;
     }
 
+    .nexio-template-block-loading::before,
     .affine-template-block-loading::before {
       content: '';
       width: 14px;
@@ -43,8 +46,10 @@ export class AffineTemplateLoading extends LitElement {
   `;
 
   override render() {
-    return html`<div class="affine-template-block-container">
-      <div class="affine-template-block-loading"></div>
+    return html`<div class="nexio-template-block-container affine-template-block-container">
+      <div class="nexio-template-block-loading affine-template-block-loading"></div>
     </div>`;
   }
 }
+
+export class AffineTemplateLoading extends NexioTemplateLoading {}

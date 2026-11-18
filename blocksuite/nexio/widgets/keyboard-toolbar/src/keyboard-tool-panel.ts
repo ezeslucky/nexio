@@ -17,12 +17,13 @@ import type {
 } from './config.js';
 import { keyboardToolPanelStyles } from './styles.js';
 
+export const NEXIO_KEYBOARD_TOOL_PANEL = 'nexio-keyboard-tool-panel';
 export const AFFINE_KEYBOARD_TOOL_PANEL = 'affine-keyboard-tool-panel';
 
 @requiredProperties({
   context: PropTypes.object,
 })
-export class AffineKeyboardToolPanel extends SignalWatcher(
+export class NexioKeyboardToolPanel extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = keyboardToolPanelStyles;
@@ -86,3 +87,6 @@ export class AffineKeyboardToolPanel extends SignalWatcher(
   @property({ attribute: false })
   accessor context!: KeyboardToolbarContext;
 }
+
+export const AffineKeyboardToolPanel = NexioKeyboardToolPanel;
+export type AffineKeyboardToolPanel = NexioKeyboardToolPanel;

@@ -118,7 +118,7 @@ framework.impl(PopupWindowProvider, {
 
 framework.impl(ClientSchemeProvider, {
   getClientScheme() {
-    return 'affine';
+    return 'nexio';
   },
 });
 

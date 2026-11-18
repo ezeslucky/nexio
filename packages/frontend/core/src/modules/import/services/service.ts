@@ -1,4 +1,4 @@
-﻿import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
+import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { ImportCommitService } from '@nexio/core/desktop/dialogs/import/commit-service';
 import { commitNativeImport } from '@nexio/core/desktop/dialogs/import/native-backend';
 import {
@@ -138,13 +138,59 @@ export class ImportService extends Service {
   }
 
   async importOneNote(file: File, context?: ImportRunContext) {
-    if (!BUILD_CONFIG.isElectron) {
-      throw new Error('OneNote import is only available in the desktop app.');
-    }
     const commitService = this.createCommitService({
       organize: true,
     });
-    return commitNativeImport('oneNote', file, commitService, context);
+
+    if (BUILD_CONFIG.isElectron) {
+      return commitNativeImport('oneNote', file, commitService, context);
+    }
+
+    const collection = this.workspaceService.workspace.docCollection;
+    const docIds: string[] = [];
+    const warnings: ImportWarning[] = [];
+    const baseName = file.name.replace(/\.[^/.]+$/, '');
+
+    if (file.name.endsWith('.onepkg') || file.name.endsWith('.zip')) {
+      const unzip = new Unzip();
+      await unzip.load(file);
+      for (const entry of unzip) {
+        if (entry.path.endsWith('.one')) {
+          const buffer = await entry.content.arrayBuffer();
+          const pageTitle = entry.path.replace(/.*[/\\]/, '').replace(/\.one$/, '');
+          const parsed = extractOneNoteText(buffer, pageTitle);
+          const docId = await MarkdownTransformer.importMarkdownToDoc({
+            collection,
+            schema: getNexioWorkspaceSchema(),
+            markdown: parsed.markdown,
+            fileName: parsed.title,
+            extensions: getStoreManager().config.init().value.get('store'),
+          });
+          if (docId) docIds.push(docId);
+        }
+      }
+    } else {
+      const buffer = await file.arrayBuffer();
+      const parsed = extractOneNoteText(buffer, baseName);
+      const docId = await MarkdownTransformer.importMarkdownToDoc({
+        collection,
+        schema: getNexioWorkspaceSchema(),
+        markdown: parsed.markdown,
+        fileName: parsed.title,
+        extensions: getStoreManager().config.init().value.get('store'),
+      });
+      if (docId) docIds.push(docId);
+    }
+
+    if (!docIds.length) {
+      throw new Error('No importable content found in the selected OneNote file.');
+    }
+
+    return {
+      docIds,
+      warnings,
+      entryId: docIds[0],
+    };
   }
 
   private createCommitService(options: {
@@ -198,4 +244,51 @@ async function snapshotReadableFiles(files: File[]) {
     }
   }
   return { files: snapshots, warnings };
+}
+
+function extractOneNoteText(
+  buffer: ArrayBuffer,
+  fallbackTitle: string
+): { title: string; markdown: string } {
+  const u16 = new Uint16Array(buffer);
+  const strings: string[] = [];
+  let current: number[] = [];
+
+  for (let i = 0; i < u16.length; i++) {
+    const code = u16[i];
+    if (
+      (code >= 32 && code < 0xd800) ||
+      code === 9 ||
+      code === 10 ||
+      code === 13 ||
+      (code >= 0xe000 && code <= 0xfffd)
+    ) {
+      current.push(code);
+    } else {
+      if (current.length >= 2) {
+        const str = String.fromCharCode(...current).trim();
+        if (str.length > 0 && !/^[\x00-\x1f]+$/.test(str)) {
+          strings.push(str);
+        }
+      }
+      current = [];
+    }
+  }
+  if (current.length >= 2) {
+    const str = String.fromCharCode(...current).trim();
+    if (str.length > 0) strings.push(str);
+  }
+
+  const cleanStrings = strings.filter(
+    s =>
+      s.length > 1 &&
+      !/^[0-9a-f-]{32,}$/i.test(s) &&
+      !/^\{[0-9a-f-]{32,}\}$/i.test(s)
+  );
+
+  const title = cleanStrings[0] || fallbackTitle || 'OneNote Page';
+  const body =
+    cleanStrings.slice(1).join('\n\n') || cleanStrings[0] || 'Imported OneNote content';
+
+  return { title, markdown: `# ${title}\n\n${body}` };
 }

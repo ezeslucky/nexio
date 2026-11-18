@@ -1,4 +1,4 @@
-﻿import type { RootBlockModel } from '@blocksuite/nexio-model';
+import type { RootBlockModel } from '@blocksuite/nexio-model';
 import {
   getRangeRects,
   type SelectionRect,
@@ -34,7 +34,7 @@ import {
 } from './config.js';
 import { linkedDocWidgetStyles } from './styles.js';
 
-export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
+export class NexioLinkedDocWidget extends WidgetComponent<RootBlockModel> {
   static override styles = linkedDocWidgetStyles;
 
   private _context: LinkedDocContext | null = null;
@@ -330,6 +330,9 @@ export class AffineLinkedDocWidget extends WidgetComponent<RootBlockModel> {
       ></blocksuite-portal>`;
   }
 }
+
+export const AffineLinkedDocWidget = NexioLinkedDocWidget;
+export type AffineLinkedDocWidget = NexioLinkedDocWidget;
 
 export const linkedDocWidget = WidgetViewExtension(
   'affine:page',

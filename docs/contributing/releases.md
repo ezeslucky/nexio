@@ -1,12 +1,12 @@
-## AFFiNE Release Process
+## Nexio Release Process
 
-> In order to make a stable/beta release, you need to get authorization from the AFFiNE test team.
+> In order to make a stable/beta release, you need to get authorization from the Nexio test team.
 
 ## Who Can Make a Release?
 
-The AFFiNE core team grants release authorization and enforces the following requirements:
+The Nexio core team grants release authorization and enforces the following requirements:
 
-- Commit access to the AFFiNE repository.
+- Commit access to the Nexio repository.
 - Access to GitHub Actions.
 
 ## How to Make a Release

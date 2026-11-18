@@ -204,6 +204,7 @@ export const RootAppSidebar = memo((): ReactElement => {
           <AddPageButton />
         </div>
         <AllDocsButton />
+        <TemplateDocEntrance />
         <AppSidebarJournalButton />
         {sessionStatus === 'authenticated' && <NotificationButton />}
         <AIChatButton />
@@ -239,7 +240,6 @@ export const RootAppSidebar = memo((): ReactElement => {
             <span data-testid="import-modal-trigger">{t['Import']()}</span>
           </MenuItem>
           <InviteMembersButton />
-          <TemplateDocEntrance />
         </CollapsibleSection>
       </SidebarScrollableContainer>
       <SidebarContainer className={bottomContainer}>

@@ -36,17 +36,17 @@ export class RunCommand extends PackageCommand {
   static override paths = [[], ['run'], ['r']];
 
   static override usage = PackageCommand.Usage({
-    description: 'AFFiNE Monorepo scripts',
+    description: 'Nexio Monorepo scripts',
     details: `
-      \`affine web <script>\`    Run any script defined in package's package.json
+      \`nexio web <script>\`    Run any script defined in package's package.json
 
-      \`affine init\`            Generate the required files if there are any package added or removed
+      \`nexio init\`            Generate the required files if there are any package added or removed
 
-      \`affine clean\`           Clean the output files of ts, cargo, bundler outputs, etc.
+      \`nexio clean\`           Clean the output files of ts, cargo, bundler outputs, etc.
 
-      \`affine bundle\`          Bundle the packages
+      \`nexio bundle\`          Bundle the packages
 
-      \`affine build\`           A proxy for <-p package>'s \`build\` script
+      \`nexio build\`           A proxy for <-p package>'s \`build\` script
 
       \`affine dev\`             A proxy for <-p package>'s \`dev\` script
     `,

@@ -1943,17 +1943,21 @@ export const builtInTemplates = {
     return Object.keys(templates)
   },
 
-  search: async(query: string) => {
+  search: async(query: string, cateName?: string) => {
     const candidates: unknown[] = [];
     const cates = Object.keys(templates);
 
-    query = query.toLowerCase();
+    query = query.toLowerCase().trim();
 
     for(const cate of cates) {
+      if (cateName && cate !== cateName) {
+        continue;
+      }
       const templatesOfCate = templates[cate];
 
       for(const temp of templatesOfCate) {
-        if(lcs(query, temp.name.toLowerCase()) === query.length) {
+        const name = (temp.name || '').toLowerCase();
+        if(name.includes(query) || lcs(query, name) === query.length) {
           candidates.push(temp);
         }
       }

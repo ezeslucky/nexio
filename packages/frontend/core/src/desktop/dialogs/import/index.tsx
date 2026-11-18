@@ -1,4 +1,4 @@
-﻿import { Button, IconButton, Modal } from '@nexio/component';
+import { Button, IconButton, Modal } from '@nexio/component';
 import { getStoreManager } from '@nexio/core/blocksuite/manager/store';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { useNavigateHelper } from '@nexio/core/components/hooks/use-navigate-helper';
@@ -373,7 +373,6 @@ const importConfigs: Record<ImportType, ImportConfig> = {
   },
   oneNote: {
     fileOptions: { acceptType: 'OneNote', multiple: false },
-    nativeOnly: true,
     importFunction: async ({ files, importService, context }) => {
       const file = files.length === 1 ? files[0] : null;
       if (!file) {

@@ -1,4 +1,4 @@
-﻿import type { FootNote, ReferenceInfo } from '@blocksuite/nexio-model';
+import type { FootNote, ReferenceInfo } from '@blocksuite/nexio-model';
 import type { InlineEditor } from '@blocksuite/std/inline';
 import type { BlockModel } from '@blocksuite/store';
 export * from './uni-component';
@@ -35,7 +35,7 @@ export type IndentContext = {
   type: 'indent' | 'dedent';
 };
 
-export type AffineTextStyleAttributes = {
+export type NexioTextStyleAttributes = {
   bold?: true | null;
   italic?: true | null;
   underline?: true | null;
@@ -44,8 +44,9 @@ export type AffineTextStyleAttributes = {
   color?: string | null;
   background?: string | null;
 };
+export type AffineTextStyleAttributes = NexioTextStyleAttributes;
 
-export type AffineTextAttributes = AffineTextStyleAttributes & {
+export type NexioTextAttributes = NexioTextStyleAttributes & {
   link?: string | null;
   reference?:
     | ({
@@ -60,8 +61,10 @@ export type AffineTextAttributes = AffineTextStyleAttributes & {
   } | null;
   [key: `comment-${string}`]: boolean | null;
 };
+export type AffineTextAttributes = NexioTextAttributes;
 
-export type AffineInlineEditor = InlineEditor<AffineTextAttributes>;
+export type NexioInlineEditor = InlineEditor<NexioTextAttributes>;
+export type AffineInlineEditor = NexioInlineEditor;
 
 export type SelectedRect = {
   left: number;

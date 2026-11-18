@@ -1,4 +1,4 @@
-﻿import type { MenuItemGroup } from '@blocksuite/nexio-components/toolbar';
+import type { MenuItemGroup } from '@blocksuite/nexio-components/toolbar';
 import { renderGroups } from '@blocksuite/nexio-components/toolbar';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
 import { ShadowlessElement } from '@blocksuite/std';
@@ -8,7 +8,7 @@ import { styleMap } from 'lit/directives/style-map.js';
 
 import type { CodeBlockToolbarContext } from '../context.js';
 
-export class AffineCodeMoreMenu extends SignalWatcher(
+export class NexioCodeMoreMenu extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   override firstUpdated() {
@@ -45,8 +45,12 @@ export class AffineCodeMoreMenu extends SignalWatcher(
   accessor moreGroups!: MenuItemGroup<CodeBlockToolbarContext>[];
 }
 
+export const AffineCodeMoreMenu = NexioCodeMoreMenu;
+export type AffineCodeMoreMenu = NexioCodeMoreMenu;
+
 declare global {
   interface HTMLElementTagNameMap {
-    'affine-code-more-menu': AffineCodeMoreMenu;
+    'nexio-code-more-menu': NexioCodeMoreMenu;
+    'affine-code-more-menu': NexioCodeMoreMenu;
   }
 }

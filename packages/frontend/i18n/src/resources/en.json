@@ -662,7 +662,7 @@
   "com.affine.import.notion": "Notion (Experimental)",
   "com.affine.import.notion.tooltip": "Import your Notion data. Supported import formats: HTML with subpages.",
   "com.affine.import.onenote": "OneNote (Experimental)",
-  "com.affine.import.onenote.tooltip": "Import a OneNote .one, .onetoc2, or .onepkg file. Available in the desktop app.",
+  "com.affine.import.onenote.tooltip": "Import a OneNote .one, .onetoc2, or .onepkg file.",
   "com.affine.import.onenote.desktop-only": "This format importer is available in the Nexio desktop app.",
   "com.affine.import.obsidian": "Obsidian Vault (Experimental)",
   "com.affine.import.obsidian.tooltip": "Import an Obsidian vault. Select a folder to import all notes, images, and assets with wikilinks resolved.",

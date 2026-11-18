@@ -1,13 +1,13 @@
-﻿import { AffineSchemas } from '@blocksuite/nexio/schemas';
+import { AffineSchemas } from '@blocksuite/nexio/schemas';
 import { Schema, Text, type Workspace } from '@blocksuite/nexio/store';
 import { ZipTransformer } from '@blocksuite/nexio/widgets/linked-doc';
-export async function affineSnapshot(collection: Workspace, id: string) {
+export async function nexioSnapshot(collection: Workspace, id: string) {
   const doc = collection.createDoc(id);
   doc.load();
   const store = doc.getStore();
   // Add root block and surface block at root level
   const rootId = store.addBlock('affine:page', {
-    title: new Text('Affine Snapshot Test'),
+    title: new Text('Nexio Snapshot Test'),
   });
   store.addBlock('affine:surface', {}, rootId);
 
@@ -19,6 +19,8 @@ export async function affineSnapshot(collection: Workspace, id: string) {
   await ZipTransformer.importDocs(collection, schema, file);
 }
 
-affineSnapshot.id = 'affine-snapshot';
-affineSnapshot.displayName = 'Affine Snapshot Test';
-affineSnapshot.description = 'Affine Snapshot Test';
+nexioSnapshot.id = 'nexio-snapshot';
+nexioSnapshot.displayName = 'Nexio Snapshot Test';
+nexioSnapshot.description = 'Nexio Snapshot Test';
+
+export const affineSnapshot = nexioSnapshot;

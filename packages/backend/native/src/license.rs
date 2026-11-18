@@ -9,10 +9,19 @@ use anyhow::{Context, Result as AnyResult, bail};
 use serde::de::DeserializeOwned;
 use url::Url;
 
-const AFFINE_PRO_ENDPOINT: &str = "https://app.technexio.me";
-const AFFINE_PRO_HOST: &str = "app.technexio.me";
-const AFFINE_PRO_REQUEST_TIMEOUT_MS: u32 = 10_000;
-const AFFINE_PRO_MAX_BYTES: u32 = 1024 * 1024;
+const NEXIO_PRO_ENDPOINT: &str = "https://app.technexio.me";
+const NEXIO_PRO_HOST: &str = "app.technexio.me";
+const NEXIO_PRO_REQUEST_TIMEOUT_MS: u32 = 10_000;
+const NEXIO_PRO_MAX_BYTES: u32 = 1024 * 1024;
+
+#[allow(dead_code)]
+const AFFINE_PRO_ENDPOINT: &str = NEXIO_PRO_ENDPOINT;
+#[allow(dead_code)]
+const AFFINE_PRO_HOST: &str = NEXIO_PRO_HOST;
+#[allow(dead_code)]
+const AFFINE_PRO_REQUEST_TIMEOUT_MS: u32 = NEXIO_PRO_REQUEST_TIMEOUT_MS;
+#[allow(dead_code)]
+const AFFINE_PRO_MAX_BYTES: u32 = NEXIO_PRO_MAX_BYTES;
 #[cfg(not(test))]
 const ECH_DNS_QUERY_TIMEOUT_MS: u32 = 5_000;
 
@@ -230,16 +239,16 @@ fn command(
   })
 }
 
-fn affine_pro_request(
+fn nexio_pro_request(
   path: &str,
   method: safefetch::SafeFetchMethod,
   headers: Option<HashMap<String, String>>,
   body: Option<Vec<u8>>,
 ) -> AnyResult<safefetch::SafeFetchResponse> {
-  let url = Url::parse(AFFINE_PRO_ENDPOINT)
-    .context("invalid affine pro endpoint")?
+  let url = Url::parse(NEXIO_PRO_ENDPOINT)
+    .context("invalid nexio pro endpoint")?
     .join(path)
-    .context("invalid affine pro path")?;
+    .context("invalid nexio pro path")?;
   let mut headers = headers.unwrap_or_default();
   headers.insert("Content-Type".to_string(), "application/json".to_string());
 
@@ -248,15 +257,15 @@ fn affine_pro_request(
     method: Some(method),
     headers: Some(headers),
     body,
-    timeout_ms: Some(AFFINE_PRO_REQUEST_TIMEOUT_MS),
+    timeout_ms: Some(NEXIO_PRO_REQUEST_TIMEOUT_MS),
     max_redirects: Some(3),
-    max_bytes: Some(AFFINE_PRO_MAX_BYTES),
+    max_bytes: Some(NEXIO_PRO_MAX_BYTES),
     allowed_headers: Some(vec![
       "authorization".to_string(),
       "content-type".to_string(),
       "x-validate-key".to_string(),
     ]),
-    allowed_hosts: Some(vec![AFFINE_PRO_HOST.to_string()]),
+    allowed_hosts: Some(vec![NEXIO_PRO_HOST.to_string(), AFFINE_PRO_HOST.to_string()]),
     allow_http: Some(false),
     allow_private_target_origin: None,
     ech_config_list: None,
@@ -271,6 +280,16 @@ fn affine_pro_request(
     request.ech_config_list = Some(affine_pro_ech_config()?);
     safefetch::safe_fetch(&request)
   }
+}
+
+#[allow(dead_code)]
+fn affine_pro_request(
+  path: &str,
+  method: safefetch::SafeFetchMethod,
+  headers: Option<HashMap<String, String>>,
+  body: Option<Vec<u8>>,
+) -> AnyResult<safefetch::SafeFetchResponse> {
+  nexio_pro_request(path, method, headers, body)
 }
 
 fn parse_license_info(response: &safefetch::SafeFetchResponse) -> AnyResult<LicenseInfo> {
