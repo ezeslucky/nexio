@@ -39,7 +39,7 @@ export const Footer = () => {
                   }
                 >
                   <Img
-                    src={`https://cdn.affine.pro/mail/2023-8-9/${platform}.png`}
+                    src={`https://cdn.technexio.me/mail/2023-8-9/${platform}.png`}
                     alt={`nexio ${platform.toLowerCase()} link`}
                     height="16px"
                   />

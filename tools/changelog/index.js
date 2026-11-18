@@ -1,4 +1,4 @@
-﻿import { readFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -159,7 +159,7 @@ const messageHead =
 
 - [${DEPLOYED_URL}](${DEPLOYED_URL})
 `
-    : `# AFFiNE Client ${FLAVOR} released`;
+    : `# Nexio Client ${FLAVOR} released`;
 
 let changelogMessage = `${messageHead}
 

@@ -22,7 +22,7 @@ DefaultAvatar.args = {
 };
 export const Fallback: StoryFn<AvatarProps> = Template.bind(undefined);
 Fallback.args = {
-  name: 'AFFiNE',
+  name: 'Nexio',
   size: 50,
 };
 export const ColorfulFallback: StoryFn<AvatarProps> = Template.bind(undefined);
@@ -33,9 +33,9 @@ ColorfulFallback.args = {
 };
 export const ColorfulFallbackWithDifferentSize: StoryFn<AvatarProps> = args => (
   <>
-    <Avatar {...args} size={20} colorfulFallback name="AFFiNE" />
-    <Avatar {...args} size={40} colorfulFallback name="AFFiNE" />
-    <Avatar {...args} size={60} colorfulFallback name="AFFiNE" />
+    <Avatar {...args} size={20} colorfulFallback name="Nexio" />
+    <Avatar {...args} size={40} colorfulFallback name="Nexio" />
+    <Avatar {...args} size={60} colorfulFallback name="Nexio" />
   </>
 );
 export const WithHover: StoryFn<AvatarProps> = Template.bind(undefined);

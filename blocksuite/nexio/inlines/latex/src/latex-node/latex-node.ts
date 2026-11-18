@@ -1,4 +1,4 @@
-﻿import { createLitPortal } from '@blocksuite/nexio-components/portal';
+import { createLitPortal } from '@blocksuite/nexio-components/portal';
 import { unsafeCSSVar, unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
@@ -18,7 +18,7 @@ import katex from 'katex';
 import { css, html, type PropertyValues, render } from 'lit';
 import { property } from 'lit/decorators.js';
 
-export class AffineLatexNode extends SignalWatcher(
+export class NexioLatexNode extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
@@ -283,3 +283,6 @@ export class AffineLatexNode extends SignalWatcher(
   @property({ attribute: false })
   accessor std!: BlockStdScope;
 }
+
+export const AffineLatexNode = NexioLatexNode;
+export type AffineLatexNode = NexioLatexNode;

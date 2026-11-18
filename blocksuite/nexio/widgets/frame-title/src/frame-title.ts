@@ -1,4 +1,4 @@
-﻿import { parseStringToRgba } from '@blocksuite/nexio-components/color-picker';
+import { parseStringToRgba } from '@blocksuite/nexio-components/color-picker';
 import {
   ColorScheme,
   FrameBlockModel,
@@ -23,12 +23,13 @@ import { property, state } from 'lit/decorators.js';
 import { mountFrameTitleEditor } from './mount-frame-title-editor.js';
 import { frameTitleStyle, frameTitleStyleVars } from './styles.js';
 
+export const NEXIO_FRAME_TITLE = 'nexio-frame-title';
 export const AFFINE_FRAME_TITLE = 'affine-frame-title';
 
 @requiredProperties({
   model: PropTypes.instanceOf(FrameBlockModel),
 })
-export class AffineFrameTitle extends SignalWatcher(
+export class NexioFrameTitle extends SignalWatcher(
   WithDisposable(LitElement)
 ) {
   static override styles = frameTitleStyle;
@@ -291,3 +292,6 @@ export class AffineFrameTitle extends SignalWatcher(
   @consume({ context: stdContext })
   accessor std!: BlockStdScope;
 }
+
+export const AffineFrameTitle = NexioFrameTitle;
+export type AffineFrameTitle = NexioFrameTitle;

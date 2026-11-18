@@ -1,4 +1,4 @@
-﻿import { whenHover } from '@blocksuite/nexio-components/hover';
+import { whenHover } from '@blocksuite/nexio-components/hover';
 import { RefNodeSlotsProvider } from '@blocksuite/nexio-inline-reference';
 import type { ReferenceInfo } from '@blocksuite/nexio-model';
 import {
@@ -21,7 +21,7 @@ import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 import { type StyleInfo, styleMap } from 'lit/directives/style-map.js';
 
-export class AffineLink extends WithDisposable(ShadowlessElement) {
+export class NexioLink extends WithDisposable(ShadowlessElement) {
   static override styles = css`
     affine-link a:hover [data-v-text='true'] {
       text-decoration: underline;
@@ -185,3 +185,6 @@ export class AffineLink extends WithDisposable(ShadowlessElement) {
   @property({ attribute: false })
   accessor std!: BlockStdScope;
 }
+
+export const AffineLink = NexioLink;
+export type AffineLink = NexioLink;

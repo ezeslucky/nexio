@@ -1,9 +1,9 @@
 import type { StyleInfo } from 'lit/directives/style-map.js';
 
-import type { AffineTextAttributes } from '../types';
+import type { NexioTextAttributes } from '../types';
 
-export function affineTextStyles(
-  props: AffineTextAttributes,
+export function nexioTextStyles(
+  props: NexioTextAttributes,
   override?: Readonly<StyleInfo>
 ): StyleInfo {
   let textDecorations = '';
@@ -38,3 +38,5 @@ export function affineTextStyles(
     ...override,
   };
 }
+
+export const affineTextStyles = nexioTextStyles;

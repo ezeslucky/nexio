@@ -1,4 +1,4 @@
-﻿import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
+import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
 import {
   type InlineRootElement,
   InlineSpecExtension,
@@ -7,7 +7,8 @@ import type { ExtensionType } from '@blocksuite/store';
 import { html } from 'lit';
 import { z } from 'zod';
 
-export type AffineInlineRootElement = InlineRootElement<AffineTextAttributes>;
+export type NexioInlineRootElement = InlineRootElement<AffineTextAttributes>;
+export type AffineInlineRootElement = NexioInlineRootElement;
 
 export const BoldInlineSpecExtension =
   InlineSpecExtension<AffineTextAttributes>({

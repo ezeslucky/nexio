@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/toeverything/nexio/packages/backend/go-native/pkg/authsession"
@@ -97,6 +98,9 @@ func (s *Server) routes() {
 
 	// Realtime WebSocket Collaboration
 	s.mux.HandleFunc("GET /ws", s.hub.HandleWS)
+
+	// GraphQL Gateway
+	s.mux.HandleFunc("/graphql", s.handleGraphQL)
 }
 
 func (s *Server) getStorage(workspaceID string) (*nbstore.SqliteDocStorage, error) {
@@ -348,6 +352,79 @@ func (s *Server) handleTokenCount(w http.ResponseWriter, r *http.Request) {
 	count := tok.Count(req.Content, nil)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]any{"count": count})
+}
+
+type GraphQLRequest struct {
+	Query         string         `json:"query"`
+	OperationName string         `json:"operationName"`
+	Variables     map[string]any `json:"variables"`
+}
+
+func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+
+	if r.Method == http.MethodGet {
+		json.NewEncoder(w).Encode(map[string]any{
+			"status": "ok",
+			"info":   "Nexio GraphQL Gateway",
+		})
+		return
+	}
+
+	var req GraphQLRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		w.WriteHeader(http.StatusOK)
+		json.NewEncoder(w).Encode(map[string]any{
+			"data": map[string]any{},
+		})
+		return
+	}
+
+	op := req.OperationName
+	query := strings.ToLower(req.Query)
+	data := make(map[string]any)
+
+	if op == "readNotification" || strings.Contains(query, "readnotification") {
+		data["readNotification"] = true
+	} else if op == "readAllNotifications" || strings.Contains(query, "readallnotifications") {
+		data["readAllNotifications"] = true
+	} else if op == "listNotifications" || strings.Contains(query, "listnotifications") || strings.Contains(query, "notifications") {
+		data["currentUser"] = map[string]any{
+			"__typename": "UserType",
+			"notifications": map[string]any{
+				"__typename": "NotificationConnection",
+				"totalCount": 0,
+				"edges":      []any{},
+				"pageInfo": map[string]any{
+					"__typename":      "PageInfo",
+					"startCursor":     nil,
+					"endCursor":       nil,
+					"hasNextPage":     false,
+					"hasPreviousPage": false,
+				},
+			},
+		}
+	} else if strings.Contains(query, "currentuser") {
+		data["currentUser"] = map[string]any{
+			"__typename":    "UserType",
+			"id":            "user-dev",
+			"name":          "Nexio User",
+			"email":         "user@technexio.me",
+			"avatarUrl":     "",
+			"hasPassword":   true,
+			"emailVerified": true,
+		}
+	} else if strings.Contains(query, "serverconfig") || op == "serverConfig" {
+		data["serverConfig"] = map[string]any{
+			"version":     "0.27.5",
+			"flavor":      "canary",
+			"initialized": true,
+		}
+	}
+
+	json.NewEncoder(w).Encode(map[string]any{
+		"data": data,
+	})
 }
 
 // Global CORS Middleware

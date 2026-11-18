@@ -6,11 +6,11 @@ const CERT_DIR = ProjectRoot.join('.docker/dev/certs');
 const CA_DIR = CERT_DIR.join('ca');
 const TEMPLATES_DIR = ProjectRoot.join('.docker/dev/templates');
 const NGINX_CONF_DIR = ProjectRoot.join('.docker/dev/nginx/conf.d');
-const CA_PEM_PATH = CA_DIR.join('affine-self-signed.pem');
-const CA_KEY_PATH = CA_DIR.join('affine-self-signed.key');
+const CA_PEM_PATH = CA_DIR.join('nexio-self-signed.pem');
+const CA_KEY_PATH = CA_DIR.join('nexio-self-signed.key');
 
-const CA_ORG = 'AFFiNE Dev CA Self Signed Org';
-const CA_NAME = 'AFFiNE Dev CA Self Signed CN';
+const CA_ORG = 'Nexio Dev CA Self Signed Org';
+const CA_NAME = 'Nexio Dev CA Self Signed CN';
 
 export class CertCommand extends Command {
   static override paths = [['cert']];

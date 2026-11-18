@@ -30,8 +30,8 @@ CURRENT_VERSION=$(grep "objectVersion = " "$XCPROJ_PATH" | awk -F ' = ' '{print 
 echo "[*] current object version: $CURRENT_VERSION"
 sed -i '' "s/objectVersion = $CURRENT_VERSION/objectVersion = 56/" "$XCPROJ_PATH"
 
-yarn affine @nexio/ios build
-yarn affine @nexio/ios sync
+yarn nexio @nexio/ios build
+yarn nexio @nexio/ios sync
 
 echo "[*] interacting with rust..."
 rustup target add aarch64-apple-ios

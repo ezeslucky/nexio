@@ -1,4 +1,4 @@
-﻿import {
+import {
   cleanSpecifiedTail,
   getTextContentFromInlineRange,
 } from '@blocksuite/nexio-rich-text';
@@ -21,12 +21,13 @@ import type {
 import { mobileLinkedDocMenuStyles } from './styles.js';
 import { resolveSignal } from './utils.js';
 
+export const NEXIO_MOBILE_LINKED_DOC_MENU = 'nexio-mobile-linked-doc-menu';
 export const AFFINE_MOBILE_LINKED_DOC_MENU = 'affine-mobile-linked-doc-menu';
 
 @requiredProperties({
   context: PropTypes.object,
 })
-export class AffineMobileLinkedDocMenu extends SignalWatcher(
+export class NexioMobileLinkedDocMenu extends SignalWatcher(
   WithDisposable(LitElement)
 ) {
   static override styles = mobileLinkedDocMenuStyles;
@@ -214,3 +215,6 @@ export class AffineMobileLinkedDocMenu extends SignalWatcher(
   @property({ attribute: false })
   accessor context!: LinkedDocContext;
 }
+
+export const AffineMobileLinkedDocMenu = NexioMobileLinkedDocMenu;
+export type AffineMobileLinkedDocMenu = NexioMobileLinkedDocMenu;

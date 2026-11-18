@@ -1,4 +1,4 @@
-﻿import { UserProvider } from '@blocksuite/nexio-shared/services';
+import { UserProvider } from '@blocksuite/nexio-shared/services';
 import { unsafeCSSVarV2 } from '@blocksuite/nexio-shared/theme';
 import type { AffineTextAttributes } from '@blocksuite/nexio-shared/types';
 import { SignalWatcher, WithDisposable } from '@blocksuite/global/lit';
@@ -12,7 +12,7 @@ import type { DeltaInsert } from '@blocksuite/store';
 import { css, html } from 'lit';
 import { property } from 'lit/decorators.js';
 
-export class AffineMention extends SignalWatcher(
+export class NexioMention extends SignalWatcher(
   WithDisposable(ShadowlessElement)
 ) {
   static override styles = css`
@@ -148,3 +148,6 @@ export class AffineMention extends SignalWatcher(
   @property({ attribute: false })
   accessor std!: BlockStdScope;
 }
+
+export const AffineMention = NexioMention;
+export type AffineMention = NexioMention;
