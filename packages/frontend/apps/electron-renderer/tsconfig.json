@@ -8,7 +8,7 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../../../blocksuite/nexio/all" },
+    { "path": "../../../../editor/nexio/all" },
     { "path": "../../component" },
     { "path": "../../core" },
     { "path": "../../../common/debug" },

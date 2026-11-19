@@ -68,5 +68,9 @@ export const DEFAULT_DEV_SERVER_CONFIG: RspackDevServerConfiguration = {
       context: '/graphql',
       target: 'http://localhost:3010',
     },
+    {
+      context: '/oauth',
+      target: 'http://localhost:3010',
+    },
   ],
 };

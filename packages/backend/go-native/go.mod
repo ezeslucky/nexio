@@ -1,4 +1,4 @@
-module github.com/toeverything/nexio/packages/backend/go-native
+module github.com/ezeslucky/nexio/packages/backend/go-native
 
 go 1.26.3
 

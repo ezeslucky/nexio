@@ -55,7 +55,7 @@ export default defineConfig({
     projects: [
       '.',
       './packages/frontend/apps/electron',
-      './blocksuite/**/*/vitest.config.ts',
+      './editor/**/*/vitest.config.ts',
     ],
     setupFiles: [
       resolve(rootDir, './scripts/setup/polyfill.ts'),

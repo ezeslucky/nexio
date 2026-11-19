@@ -943,18 +943,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/bs-docs@workspace:blocksuite/docs":
+"@blocksuite/bs-docs@workspace:editor/docs":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/bs-docs@workspace:blocksuite/docs"
+  resolution: "@blocksuite/bs-docs@workspace:editor/docs"
   dependencies:
     typedoc: "npm:^0.28.18"
     typedoc-plugin-markdown: "npm:^4.5.0"
   languageName: unknown
   linkType: soft
 
-"@blocksuite/data-view@workspace:*, @blocksuite/data-view@workspace:blocksuite/nexio/data-view":
+"@blocksuite/data-view@workspace:*, @blocksuite/data-view@workspace:editor/nexio/data-view":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/data-view@workspace:blocksuite/nexio/data-view"
+  resolution: "@blocksuite/data-view@workspace:editor/nexio/data-view"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -978,9 +978,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/docs@workspace:blocksuite/docs-site":
+"@blocksuite/docs@workspace:editor/docs-site":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/docs@workspace:blocksuite/docs-site"
+  resolution: "@blocksuite/docs@workspace:editor/docs-site"
   dependencies:
     "@blocksuite/nexio": "workspace:*"
     "@types/markdown-it-container": "npm:^4.0.0"
@@ -995,9 +995,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/global@workspace:*, @blocksuite/global@workspace:blocksuite/framework/global":
+"@blocksuite/global@workspace:*, @blocksuite/global@workspace:editor/framework/global":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/global@workspace:blocksuite/framework/global"
+  resolution: "@blocksuite/global@workspace:editor/framework/global"
   dependencies:
     "@preact/signals-core": "npm:^1.8.0"
     lib0: "npm:^0.2.114"
@@ -1024,9 +1024,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@blocksuite/integration-test@workspace:*, @blocksuite/integration-test@workspace:blocksuite/integration-test":
+"@blocksuite/integration-test@workspace:*, @blocksuite/integration-test@workspace:editor/integration-test":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/integration-test@workspace:blocksuite/integration-test"
+  resolution: "@blocksuite/integration-test@workspace:editor/integration-test"
   dependencies:
     "@blocksuite/nexio": "workspace:*"
     "@preact/signals-core": "npm:^1.8.0"
@@ -1043,9 +1043,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-attachment@workspace:*, @blocksuite/nexio-block-attachment@workspace:blocksuite/nexio/blocks/attachment":
+"@blocksuite/nexio-block-attachment@workspace:*, @blocksuite/nexio-block-attachment@workspace:editor/nexio/blocks/attachment":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-attachment@workspace:blocksuite/nexio/blocks/attachment"
+  resolution: "@blocksuite/nexio-block-attachment@workspace:editor/nexio/blocks/attachment"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1065,9 +1065,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-bookmark@workspace:*, @blocksuite/nexio-block-bookmark@workspace:blocksuite/nexio/blocks/bookmark":
+"@blocksuite/nexio-block-bookmark@workspace:*, @blocksuite/nexio-block-bookmark@workspace:editor/nexio/blocks/bookmark":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-bookmark@workspace:blocksuite/nexio/blocks/bookmark"
+  resolution: "@blocksuite/nexio-block-bookmark@workspace:editor/nexio/blocks/bookmark"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1092,9 +1092,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-callout@workspace:*, @blocksuite/nexio-block-callout@workspace:blocksuite/nexio/blocks/callout":
+"@blocksuite/nexio-block-callout@workspace:*, @blocksuite/nexio-block-callout@workspace:editor/nexio/blocks/callout":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-callout@workspace:blocksuite/nexio/blocks/callout"
+  resolution: "@blocksuite/nexio-block-callout@workspace:editor/nexio/blocks/callout"
   dependencies:
     "@blocksuite/icons": "npm:^2.2.17"
     "@blocksuite/nexio-components": "workspace:*"
@@ -1113,9 +1113,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-code@workspace:*, @blocksuite/nexio-block-code@workspace:blocksuite/nexio/blocks/code":
+"@blocksuite/nexio-block-code@workspace:*, @blocksuite/nexio-block-code@workspace:editor/nexio/blocks/code":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-code@workspace:blocksuite/nexio/blocks/code"
+  resolution: "@blocksuite/nexio-block-code@workspace:editor/nexio/blocks/code"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1141,9 +1141,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-data-view@workspace:*, @blocksuite/nexio-block-data-view@workspace:blocksuite/nexio/blocks/data-view":
+"@blocksuite/nexio-block-data-view@workspace:*, @blocksuite/nexio-block-data-view@workspace:editor/nexio/blocks/data-view":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-data-view@workspace:blocksuite/nexio/blocks/data-view"
+  resolution: "@blocksuite/nexio-block-data-view@workspace:editor/nexio/blocks/data-view"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -1162,9 +1162,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-database@workspace:*, @blocksuite/nexio-block-database@workspace:blocksuite/nexio/blocks/database":
+"@blocksuite/nexio-block-database@workspace:*, @blocksuite/nexio-block-database@workspace:editor/nexio/blocks/database":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-database@workspace:blocksuite/nexio/blocks/database"
+  resolution: "@blocksuite/nexio-block-database@workspace:editor/nexio/blocks/database"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -1192,9 +1192,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-divider@workspace:*, @blocksuite/nexio-block-divider@workspace:blocksuite/nexio/blocks/divider":
+"@blocksuite/nexio-block-divider@workspace:*, @blocksuite/nexio-block-divider@workspace:editor/nexio/blocks/divider":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-divider@workspace:blocksuite/nexio/blocks/divider"
+  resolution: "@blocksuite/nexio-block-divider@workspace:editor/nexio/blocks/divider"
   dependencies:
     "@blocksuite/nexio-components": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -1208,9 +1208,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-edgeless-text@workspace:*, @blocksuite/nexio-block-edgeless-text@workspace:blocksuite/nexio/blocks/edgeless-text":
+"@blocksuite/nexio-block-edgeless-text@workspace:*, @blocksuite/nexio-block-edgeless-text@workspace:editor/nexio/blocks/edgeless-text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-edgeless-text@workspace:blocksuite/nexio/blocks/edgeless-text"
+  resolution: "@blocksuite/nexio-block-edgeless-text@workspace:editor/nexio/blocks/edgeless-text"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-block-surface": "workspace:*"
@@ -1227,9 +1227,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-embed-doc@workspace:*, @blocksuite/nexio-block-embed-doc@workspace:blocksuite/nexio/blocks/embed-doc":
+"@blocksuite/nexio-block-embed-doc@workspace:*, @blocksuite/nexio-block-embed-doc@workspace:editor/nexio/blocks/embed-doc":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-embed-doc@workspace:blocksuite/nexio/blocks/embed-doc"
+  resolution: "@blocksuite/nexio-block-embed-doc@workspace:editor/nexio/blocks/embed-doc"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1253,9 +1253,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-embed@workspace:*, @blocksuite/nexio-block-embed@workspace:blocksuite/nexio/blocks/embed":
+"@blocksuite/nexio-block-embed@workspace:*, @blocksuite/nexio-block-embed@workspace:editor/nexio/blocks/embed":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-embed@workspace:blocksuite/nexio/blocks/embed"
+  resolution: "@blocksuite/nexio-block-embed@workspace:editor/nexio/blocks/embed"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1275,9 +1275,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-frame@workspace:*, @blocksuite/nexio-block-frame@workspace:blocksuite/nexio/blocks/frame":
+"@blocksuite/nexio-block-frame@workspace:*, @blocksuite/nexio-block-frame@workspace:editor/nexio/blocks/frame":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-frame@workspace:blocksuite/nexio/blocks/frame"
+  resolution: "@blocksuite/nexio-block-frame@workspace:editor/nexio/blocks/frame"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1298,9 +1298,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-image@workspace:*, @blocksuite/nexio-block-image@workspace:blocksuite/nexio/blocks/image":
+"@blocksuite/nexio-block-image@workspace:*, @blocksuite/nexio-block-image@workspace:editor/nexio/blocks/image":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-image@workspace:blocksuite/nexio/blocks/image"
+  resolution: "@blocksuite/nexio-block-image@workspace:editor/nexio/blocks/image"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1321,9 +1321,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-latex@workspace:*, @blocksuite/nexio-block-latex@workspace:blocksuite/nexio/blocks/latex":
+"@blocksuite/nexio-block-latex@workspace:*, @blocksuite/nexio-block-latex@workspace:editor/nexio/blocks/latex":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-latex@workspace:blocksuite/nexio/blocks/latex"
+  resolution: "@blocksuite/nexio-block-latex@workspace:editor/nexio/blocks/latex"
   dependencies:
     "@blocksuite/icons": "npm:^2.2.17"
     "@blocksuite/nexio-block-note": "workspace:*"
@@ -1343,9 +1343,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-list@workspace:*, @blocksuite/nexio-block-list@workspace:blocksuite/nexio/blocks/list":
+"@blocksuite/nexio-block-list@workspace:*, @blocksuite/nexio-block-list@workspace:editor/nexio/blocks/list":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-list@workspace:blocksuite/nexio/blocks/list"
+  resolution: "@blocksuite/nexio-block-list@workspace:editor/nexio/blocks/list"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1364,9 +1364,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-note@workspace:*, @blocksuite/nexio-block-note@workspace:blocksuite/nexio/blocks/note":
+"@blocksuite/nexio-block-note@workspace:*, @blocksuite/nexio-block-note@workspace:editor/nexio/blocks/note":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-note@workspace:blocksuite/nexio/blocks/note"
+  resolution: "@blocksuite/nexio-block-note@workspace:editor/nexio/blocks/note"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1395,9 +1395,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-paragraph@workspace:*, @blocksuite/nexio-block-paragraph@workspace:blocksuite/nexio/blocks/paragraph":
+"@blocksuite/nexio-block-paragraph@workspace:*, @blocksuite/nexio-block-paragraph@workspace:editor/nexio/blocks/paragraph":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-paragraph@workspace:blocksuite/nexio/blocks/paragraph"
+  resolution: "@blocksuite/nexio-block-paragraph@workspace:editor/nexio/blocks/paragraph"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-components": "workspace:*"
@@ -1417,9 +1417,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-root@workspace:*, @blocksuite/nexio-block-root@workspace:blocksuite/nexio/blocks/root":
+"@blocksuite/nexio-block-root@workspace:*, @blocksuite/nexio-block-root@workspace:editor/nexio/blocks/root":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-root@workspace:blocksuite/nexio/blocks/root"
+  resolution: "@blocksuite/nexio-block-root@workspace:editor/nexio/blocks/root"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -1462,9 +1462,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-surface-ref@workspace:*, @blocksuite/nexio-block-surface-ref@workspace:blocksuite/nexio/blocks/surface-ref":
+"@blocksuite/nexio-block-surface-ref@workspace:*, @blocksuite/nexio-block-surface-ref@workspace:editor/nexio/blocks/surface-ref":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-surface-ref@workspace:blocksuite/nexio/blocks/surface-ref"
+  resolution: "@blocksuite/nexio-block-surface-ref@workspace:editor/nexio/blocks/surface-ref"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1483,9 +1483,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-surface@workspace:*, @blocksuite/nexio-block-surface@workspace:blocksuite/nexio/blocks/surface":
+"@blocksuite/nexio-block-surface@workspace:*, @blocksuite/nexio-block-surface@workspace:editor/nexio/blocks/surface":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-surface@workspace:blocksuite/nexio/blocks/surface"
+  resolution: "@blocksuite/nexio-block-surface@workspace:editor/nexio/blocks/surface"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -1507,9 +1507,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-block-table@workspace:*, @blocksuite/nexio-block-table@workspace:blocksuite/nexio/blocks/table":
+"@blocksuite/nexio-block-table@workspace:*, @blocksuite/nexio-block-table@workspace:editor/nexio/blocks/table":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-block-table@workspace:blocksuite/nexio/blocks/table"
+  resolution: "@blocksuite/nexio-block-table@workspace:editor/nexio/blocks/table"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1530,9 +1530,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-components@workspace:*, @blocksuite/nexio-components@workspace:blocksuite/nexio/components":
+"@blocksuite/nexio-components@workspace:*, @blocksuite/nexio-components@workspace:editor/nexio/components":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-components@workspace:blocksuite/nexio/components"
+  resolution: "@blocksuite/nexio-components@workspace:editor/nexio/components"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1556,9 +1556,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-ext-loader@workspace:*, @blocksuite/nexio-ext-loader@workspace:blocksuite/nexio/ext-loader":
+"@blocksuite/nexio-ext-loader@workspace:*, @blocksuite/nexio-ext-loader@workspace:editor/nexio/ext-loader":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-ext-loader@workspace:blocksuite/nexio/ext-loader"
+  resolution: "@blocksuite/nexio-ext-loader@workspace:editor/nexio/ext-loader"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/store": "workspace:*"
@@ -1567,9 +1567,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-foundation@workspace:*, @blocksuite/nexio-foundation@workspace:blocksuite/nexio/foundation":
+"@blocksuite/nexio-foundation@workspace:*, @blocksuite/nexio-foundation@workspace:editor/nexio/foundation":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-foundation@workspace:blocksuite/nexio/foundation"
+  resolution: "@blocksuite/nexio-foundation@workspace:editor/nexio/foundation"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/nexio-components": "workspace:*"
@@ -1582,9 +1582,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-adapter-panel@workspace:*, @blocksuite/nexio-fragment-adapter-panel@workspace:blocksuite/nexio/fragments/adapter-panel":
+"@blocksuite/nexio-fragment-adapter-panel@workspace:*, @blocksuite/nexio-fragment-adapter-panel@workspace:editor/nexio/fragments/adapter-panel":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-adapter-panel@workspace:blocksuite/nexio/fragments/adapter-panel"
+  resolution: "@blocksuite/nexio-fragment-adapter-panel@workspace:editor/nexio/fragments/adapter-panel"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1600,9 +1600,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-doc-title@workspace:*, @blocksuite/nexio-fragment-doc-title@workspace:blocksuite/nexio/fragments/doc-title":
+"@blocksuite/nexio-fragment-doc-title@workspace:*, @blocksuite/nexio-fragment-doc-title@workspace:editor/nexio/fragments/doc-title":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-doc-title@workspace:blocksuite/nexio/fragments/doc-title"
+  resolution: "@blocksuite/nexio-fragment-doc-title@workspace:editor/nexio/fragments/doc-title"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -1616,9 +1616,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-frame-panel@workspace:*, @blocksuite/nexio-fragment-frame-panel@workspace:blocksuite/nexio/fragments/frame-panel":
+"@blocksuite/nexio-fragment-frame-panel@workspace:*, @blocksuite/nexio-fragment-frame-panel@workspace:editor/nexio/fragments/frame-panel":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-frame-panel@workspace:blocksuite/nexio/fragments/frame-panel"
+  resolution: "@blocksuite/nexio-fragment-frame-panel@workspace:editor/nexio/fragments/frame-panel"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1637,9 +1637,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-fragment-outline@workspace:*, @blocksuite/nexio-fragment-outline@workspace:blocksuite/nexio/fragments/outline":
+"@blocksuite/nexio-fragment-outline@workspace:*, @blocksuite/nexio-fragment-outline@workspace:editor/nexio/fragments/outline":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-fragment-outline@workspace:blocksuite/nexio/fragments/outline"
+  resolution: "@blocksuite/nexio-fragment-outline@workspace:editor/nexio/fragments/outline"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1658,9 +1658,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-brush@workspace:*, @blocksuite/nexio-gfx-brush@workspace:blocksuite/nexio/gfx/brush":
+"@blocksuite/nexio-gfx-brush@workspace:*, @blocksuite/nexio-gfx-brush@workspace:editor/nexio/gfx/brush":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-brush@workspace:blocksuite/nexio/gfx/brush"
+  resolution: "@blocksuite/nexio-gfx-brush@workspace:editor/nexio/gfx/brush"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-block-surface": "workspace:*"
@@ -1675,9 +1675,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-connector@workspace:*, @blocksuite/nexio-gfx-connector@workspace:blocksuite/nexio/gfx/connector":
+"@blocksuite/nexio-gfx-connector@workspace:*, @blocksuite/nexio-gfx-connector@workspace:editor/nexio/gfx/connector":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-connector@workspace:blocksuite/nexio/gfx/connector"
+  resolution: "@blocksuite/nexio-gfx-connector@workspace:editor/nexio/gfx/connector"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1700,9 +1700,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-group@workspace:*, @blocksuite/nexio-gfx-group@workspace:blocksuite/nexio/gfx/group":
+"@blocksuite/nexio-gfx-group@workspace:*, @blocksuite/nexio-gfx-group@workspace:editor/nexio/gfx/group":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-group@workspace:blocksuite/nexio/gfx/group"
+  resolution: "@blocksuite/nexio-gfx-group@workspace:editor/nexio/gfx/group"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1722,9 +1722,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-link@workspace:*, @blocksuite/nexio-gfx-link@workspace:blocksuite/nexio/gfx/link":
+"@blocksuite/nexio-gfx-link@workspace:*, @blocksuite/nexio-gfx-link@workspace:editor/nexio/gfx/link":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-link@workspace:blocksuite/nexio/gfx/link"
+  resolution: "@blocksuite/nexio-gfx-link@workspace:editor/nexio/gfx/link"
   dependencies:
     "@blocksuite/nexio-block-bookmark": "workspace:*"
     "@blocksuite/nexio-block-embed": "workspace:*"
@@ -1738,9 +1738,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-mindmap@workspace:*, @blocksuite/nexio-gfx-mindmap@workspace:blocksuite/nexio/gfx/mindmap":
+"@blocksuite/nexio-gfx-mindmap@workspace:*, @blocksuite/nexio-gfx-mindmap@workspace:editor/nexio/gfx/mindmap":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-mindmap@workspace:blocksuite/nexio/gfx/mindmap"
+  resolution: "@blocksuite/nexio-gfx-mindmap@workspace:editor/nexio/gfx/mindmap"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1768,9 +1768,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-note@workspace:*, @blocksuite/nexio-gfx-note@workspace:blocksuite/nexio/gfx/note":
+"@blocksuite/nexio-gfx-note@workspace:*, @blocksuite/nexio-gfx-note@workspace:editor/nexio/gfx/note":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-note@workspace:blocksuite/nexio/gfx/note"
+  resolution: "@blocksuite/nexio-gfx-note@workspace:editor/nexio/gfx/note"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1791,9 +1791,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-pointer@workspace:*, @blocksuite/nexio-gfx-pointer@workspace:blocksuite/nexio/gfx/pointer":
+"@blocksuite/nexio-gfx-pointer@workspace:*, @blocksuite/nexio-gfx-pointer@workspace:editor/nexio/gfx/pointer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-pointer@workspace:blocksuite/nexio/gfx/pointer"
+  resolution: "@blocksuite/nexio-gfx-pointer@workspace:editor/nexio/gfx/pointer"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1809,9 +1809,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-shape@workspace:*, @blocksuite/nexio-gfx-shape@workspace:blocksuite/nexio/gfx/shape":
+"@blocksuite/nexio-gfx-shape@workspace:*, @blocksuite/nexio-gfx-shape@workspace:editor/nexio/gfx/shape":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-shape@workspace:blocksuite/nexio/gfx/shape"
+  resolution: "@blocksuite/nexio-gfx-shape@workspace:editor/nexio/gfx/shape"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1835,9 +1835,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-template@workspace:*, @blocksuite/nexio-gfx-template@workspace:blocksuite/nexio/gfx/template":
+"@blocksuite/nexio-gfx-template@workspace:*, @blocksuite/nexio-gfx-template@workspace:editor/nexio/gfx/template":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-template@workspace:blocksuite/nexio/gfx/template"
+  resolution: "@blocksuite/nexio-gfx-template@workspace:editor/nexio/gfx/template"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-block-surface": "workspace:*"
@@ -1856,9 +1856,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-text@workspace:*, @blocksuite/nexio-gfx-text@workspace:blocksuite/nexio/gfx/text":
+"@blocksuite/nexio-gfx-text@workspace:*, @blocksuite/nexio-gfx-text@workspace:editor/nexio/gfx/text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-text@workspace:blocksuite/nexio/gfx/text"
+  resolution: "@blocksuite/nexio-gfx-text@workspace:editor/nexio/gfx/text"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1877,9 +1877,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-gfx-turbo-renderer@workspace:*, @blocksuite/nexio-gfx-turbo-renderer@workspace:blocksuite/nexio/gfx/turbo-renderer":
+"@blocksuite/nexio-gfx-turbo-renderer@workspace:*, @blocksuite/nexio-gfx-turbo-renderer@workspace:editor/nexio/gfx/turbo-renderer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-gfx-turbo-renderer@workspace:blocksuite/nexio/gfx/turbo-renderer"
+  resolution: "@blocksuite/nexio-gfx-turbo-renderer@workspace:editor/nexio/gfx/turbo-renderer"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-shared": "workspace:*"
@@ -1889,9 +1889,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-comment@workspace:*, @blocksuite/nexio-inline-comment@workspace:blocksuite/nexio/inlines/comment":
+"@blocksuite/nexio-inline-comment@workspace:*, @blocksuite/nexio-inline-comment@workspace:editor/nexio/inlines/comment":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-comment@workspace:blocksuite/nexio/inlines/comment"
+  resolution: "@blocksuite/nexio-inline-comment@workspace:editor/nexio/inlines/comment"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -1909,9 +1909,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-footnote@workspace:*, @blocksuite/nexio-inline-footnote@workspace:blocksuite/nexio/inlines/footnote":
+"@blocksuite/nexio-inline-footnote@workspace:*, @blocksuite/nexio-inline-footnote@workspace:editor/nexio/inlines/footnote":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-footnote@workspace:blocksuite/nexio/inlines/footnote"
+  resolution: "@blocksuite/nexio-inline-footnote@workspace:editor/nexio/inlines/footnote"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-components": "workspace:*"
@@ -1932,9 +1932,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-latex@workspace:*, @blocksuite/nexio-inline-latex@workspace:blocksuite/nexio/inlines/latex":
+"@blocksuite/nexio-inline-latex@workspace:*, @blocksuite/nexio-inline-latex@workspace:editor/nexio/inlines/latex":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-latex@workspace:blocksuite/nexio/inlines/latex"
+  resolution: "@blocksuite/nexio-inline-latex@workspace:editor/nexio/inlines/latex"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1955,9 +1955,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-link@workspace:*, @blocksuite/nexio-inline-link@workspace:blocksuite/nexio/inlines/link":
+"@blocksuite/nexio-inline-link@workspace:*, @blocksuite/nexio-inline-link@workspace:editor/nexio/inlines/link":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-link@workspace:blocksuite/nexio/inlines/link"
+  resolution: "@blocksuite/nexio-inline-link@workspace:editor/nexio/inlines/link"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -1976,9 +1976,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-mention@workspace:*, @blocksuite/nexio-inline-mention@workspace:blocksuite/nexio/inlines/mention":
+"@blocksuite/nexio-inline-mention@workspace:*, @blocksuite/nexio-inline-mention@workspace:editor/nexio/inlines/mention":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-mention@workspace:blocksuite/nexio/inlines/mention"
+  resolution: "@blocksuite/nexio-inline-mention@workspace:editor/nexio/inlines/mention"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -1990,9 +1990,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-preset@workspace:*, @blocksuite/nexio-inline-preset@workspace:blocksuite/nexio/inlines/preset":
+"@blocksuite/nexio-inline-preset@workspace:*, @blocksuite/nexio-inline-preset@workspace:editor/nexio/inlines/preset":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-preset@workspace:blocksuite/nexio/inlines/preset"
+  resolution: "@blocksuite/nexio-inline-preset@workspace:editor/nexio/inlines/preset"
   dependencies:
     "@blocksuite/nexio-components": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -2016,9 +2016,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-inline-reference@workspace:*, @blocksuite/nexio-inline-reference@workspace:blocksuite/nexio/inlines/reference":
+"@blocksuite/nexio-inline-reference@workspace:*, @blocksuite/nexio-inline-reference@workspace:editor/nexio/inlines/reference":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-inline-reference@workspace:blocksuite/nexio/inlines/reference"
+  resolution: "@blocksuite/nexio-inline-reference@workspace:editor/nexio/inlines/reference"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2037,9 +2037,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-model@workspace:*, @blocksuite/nexio-model@workspace:blocksuite/nexio/model":
+"@blocksuite/nexio-model@workspace:*, @blocksuite/nexio-model@workspace:editor/nexio/model":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-model@workspace:blocksuite/nexio/model"
+  resolution: "@blocksuite/nexio-model@workspace:editor/nexio/model"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/std": "workspace:*"
@@ -2053,9 +2053,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-rich-text@workspace:*, @blocksuite/nexio-rich-text@workspace:blocksuite/nexio/rich-text":
+"@blocksuite/nexio-rich-text@workspace:*, @blocksuite/nexio-rich-text@workspace:editor/nexio/rich-text":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-rich-text@workspace:blocksuite/nexio/rich-text"
+  resolution: "@blocksuite/nexio-rich-text@workspace:editor/nexio/rich-text"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2071,9 +2071,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-shared@workspace:*, @blocksuite/nexio-shared@workspace:blocksuite/nexio/shared":
+"@blocksuite/nexio-shared@workspace:*, @blocksuite/nexio-shared@workspace:editor/nexio/shared":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-shared@workspace:blocksuite/nexio/shared"
+  resolution: "@blocksuite/nexio-shared@workspace:editor/nexio/shared"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2122,9 +2122,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-drag-handle@workspace:*, @blocksuite/nexio-widget-drag-handle@workspace:blocksuite/nexio/widgets/drag-handle":
+"@blocksuite/nexio-widget-drag-handle@workspace:*, @blocksuite/nexio-widget-drag-handle@workspace:editor/nexio/widgets/drag-handle":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-drag-handle@workspace:blocksuite/nexio/widgets/drag-handle"
+  resolution: "@blocksuite/nexio-widget-drag-handle@workspace:editor/nexio/widgets/drag-handle"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2148,9 +2148,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-auto-connect@workspace:*, @blocksuite/nexio-widget-edgeless-auto-connect@workspace:blocksuite/nexio/widgets/edgeless-auto-connect":
+"@blocksuite/nexio-widget-edgeless-auto-connect@workspace:*, @blocksuite/nexio-widget-edgeless-auto-connect@workspace:editor/nexio/widgets/edgeless-auto-connect":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-auto-connect@workspace:blocksuite/nexio/widgets/edgeless-auto-connect"
+  resolution: "@blocksuite/nexio-widget-edgeless-auto-connect@workspace:editor/nexio/widgets/edgeless-auto-connect"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2164,9 +2164,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-dragging-area@workspace:*, @blocksuite/nexio-widget-edgeless-dragging-area@workspace:blocksuite/nexio/widgets/edgeless-dragging-area":
+"@blocksuite/nexio-widget-edgeless-dragging-area@workspace:*, @blocksuite/nexio-widget-edgeless-dragging-area@workspace:editor/nexio/widgets/edgeless-dragging-area":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-dragging-area@workspace:blocksuite/nexio/widgets/edgeless-dragging-area"
+  resolution: "@blocksuite/nexio-widget-edgeless-dragging-area@workspace:editor/nexio/widgets/edgeless-dragging-area"
   dependencies:
     "@blocksuite/nexio-block-surface": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -2177,9 +2177,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-selected-rect@workspace:*, @blocksuite/nexio-widget-edgeless-selected-rect@workspace:blocksuite/nexio/widgets/edgeless-selected-rect":
+"@blocksuite/nexio-widget-edgeless-selected-rect@workspace:*, @blocksuite/nexio-widget-edgeless-selected-rect@workspace:editor/nexio/widgets/edgeless-selected-rect":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-selected-rect@workspace:blocksuite/nexio/widgets/edgeless-selected-rect"
+  resolution: "@blocksuite/nexio-widget-edgeless-selected-rect@workspace:editor/nexio/widgets/edgeless-selected-rect"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2200,9 +2200,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-toolbar@workspace:blocksuite/nexio/widgets/edgeless-toolbar":
+"@blocksuite/nexio-widget-edgeless-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-toolbar@workspace:editor/nexio/widgets/edgeless-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-toolbar@workspace:blocksuite/nexio/widgets/edgeless-toolbar"
+  resolution: "@blocksuite/nexio-widget-edgeless-toolbar@workspace:editor/nexio/widgets/edgeless-toolbar"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2223,9 +2223,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:blocksuite/nexio/widgets/edgeless-zoom-toolbar":
+"@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:*, @blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:editor/nexio/widgets/edgeless-zoom-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:blocksuite/nexio/widgets/edgeless-zoom-toolbar"
+  resolution: "@blocksuite/nexio-widget-edgeless-zoom-toolbar@workspace:editor/nexio/widgets/edgeless-zoom-toolbar"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2244,9 +2244,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-frame-title@workspace:*, @blocksuite/nexio-widget-frame-title@workspace:blocksuite/nexio/widgets/frame-title":
+"@blocksuite/nexio-widget-frame-title@workspace:*, @blocksuite/nexio-widget-frame-title@workspace:editor/nexio/widgets/frame-title":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-frame-title@workspace:blocksuite/nexio/widgets/frame-title"
+  resolution: "@blocksuite/nexio-widget-frame-title@workspace:editor/nexio/widgets/frame-title"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-block-surface": "workspace:*"
@@ -2262,9 +2262,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-keyboard-toolbar@workspace:*, @blocksuite/nexio-widget-keyboard-toolbar@workspace:blocksuite/nexio/widgets/keyboard-toolbar":
+"@blocksuite/nexio-widget-keyboard-toolbar@workspace:*, @blocksuite/nexio-widget-keyboard-toolbar@workspace:editor/nexio/widgets/keyboard-toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-keyboard-toolbar@workspace:blocksuite/nexio/widgets/keyboard-toolbar"
+  resolution: "@blocksuite/nexio-widget-keyboard-toolbar@workspace:editor/nexio/widgets/keyboard-toolbar"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -2296,9 +2296,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-linked-doc@workspace:*, @blocksuite/nexio-widget-linked-doc@workspace:blocksuite/nexio/widgets/linked-doc":
+"@blocksuite/nexio-widget-linked-doc@workspace:*, @blocksuite/nexio-widget-linked-doc@workspace:editor/nexio/widgets/linked-doc":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-linked-doc@workspace:blocksuite/nexio/widgets/linked-doc"
+  resolution: "@blocksuite/nexio-widget-linked-doc@workspace:editor/nexio/widgets/linked-doc"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2324,9 +2324,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-note-slicer@workspace:*, @blocksuite/nexio-widget-note-slicer@workspace:blocksuite/nexio/widgets/note-slicer":
+"@blocksuite/nexio-widget-note-slicer@workspace:*, @blocksuite/nexio-widget-note-slicer@workspace:editor/nexio/widgets/note-slicer":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-note-slicer@workspace:blocksuite/nexio/widgets/note-slicer"
+  resolution: "@blocksuite/nexio-widget-note-slicer@workspace:editor/nexio/widgets/note-slicer"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2341,9 +2341,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-page-dragging-area@workspace:*, @blocksuite/nexio-widget-page-dragging-area@workspace:blocksuite/nexio/widgets/page-dragging-area":
+"@blocksuite/nexio-widget-page-dragging-area@workspace:*, @blocksuite/nexio-widget-page-dragging-area@workspace:editor/nexio/widgets/page-dragging-area":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-page-dragging-area@workspace:blocksuite/nexio/widgets/page-dragging-area"
+  resolution: "@blocksuite/nexio-widget-page-dragging-area@workspace:editor/nexio/widgets/page-dragging-area"
   dependencies:
     "@blocksuite/nexio-ext-loader": "workspace:*"
     "@blocksuite/nexio-model": "workspace:*"
@@ -2353,9 +2353,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-remote-selection@workspace:*, @blocksuite/nexio-widget-remote-selection@workspace:blocksuite/nexio/widgets/remote-selection":
+"@blocksuite/nexio-widget-remote-selection@workspace:*, @blocksuite/nexio-widget-remote-selection@workspace:editor/nexio/widgets/remote-selection":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-remote-selection@workspace:blocksuite/nexio/widgets/remote-selection"
+  resolution: "@blocksuite/nexio-widget-remote-selection@workspace:editor/nexio/widgets/remote-selection"
   dependencies:
     "@blocksuite/icons": "npm:^2.2.17"
     "@blocksuite/nexio-block-surface": "workspace:*"
@@ -2370,9 +2370,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-scroll-anchoring@workspace:*, @blocksuite/nexio-widget-scroll-anchoring@workspace:blocksuite/nexio/widgets/scroll-anchoring":
+"@blocksuite/nexio-widget-scroll-anchoring@workspace:*, @blocksuite/nexio-widget-scroll-anchoring@workspace:editor/nexio/widgets/scroll-anchoring":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-scroll-anchoring@workspace:blocksuite/nexio/widgets/scroll-anchoring"
+  resolution: "@blocksuite/nexio-widget-scroll-anchoring@workspace:editor/nexio/widgets/scroll-anchoring"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/nexio-ext-loader": "workspace:*"
@@ -2385,9 +2385,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-slash-menu@workspace:*, @blocksuite/nexio-widget-slash-menu@workspace:blocksuite/nexio/widgets/slash-menu":
+"@blocksuite/nexio-widget-slash-menu@workspace:*, @blocksuite/nexio-widget-slash-menu@workspace:editor/nexio/widgets/slash-menu":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-slash-menu@workspace:blocksuite/nexio/widgets/slash-menu"
+  resolution: "@blocksuite/nexio-widget-slash-menu@workspace:editor/nexio/widgets/slash-menu"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2405,9 +2405,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-toolbar@workspace:*, @blocksuite/nexio-widget-toolbar@workspace:blocksuite/nexio/widgets/toolbar":
+"@blocksuite/nexio-widget-toolbar@workspace:*, @blocksuite/nexio-widget-toolbar@workspace:editor/nexio/widgets/toolbar":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-toolbar@workspace:blocksuite/nexio/widgets/toolbar"
+  resolution: "@blocksuite/nexio-widget-toolbar@workspace:editor/nexio/widgets/toolbar"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2427,9 +2427,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio-widget-viewport-overlay@workspace:*, @blocksuite/nexio-widget-viewport-overlay@workspace:blocksuite/nexio/widgets/viewport-overlay":
+"@blocksuite/nexio-widget-viewport-overlay@workspace:*, @blocksuite/nexio-widget-viewport-overlay@workspace:editor/nexio/widgets/viewport-overlay":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio-widget-viewport-overlay@workspace:blocksuite/nexio/widgets/viewport-overlay"
+  resolution: "@blocksuite/nexio-widget-viewport-overlay@workspace:editor/nexio/widgets/viewport-overlay"
   dependencies:
     "@blocksuite/nexio-ext-loader": "workspace:*"
     "@blocksuite/nexio-model": "workspace:*"
@@ -2438,9 +2438,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/nexio@workspace:*, @blocksuite/nexio@workspace:blocksuite/nexio/all":
+"@blocksuite/nexio@workspace:*, @blocksuite/nexio@workspace:editor/nexio/all":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/nexio@workspace:blocksuite/nexio/all"
+  resolution: "@blocksuite/nexio@workspace:editor/nexio/all"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/global": "workspace:*"
@@ -2517,9 +2517,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/playground@workspace:blocksuite/playground":
+"@blocksuite/playground@workspace:editor/playground":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/playground@workspace:blocksuite/playground"
+  resolution: "@blocksuite/playground@workspace:editor/playground"
   dependencies:
     "@blocksuite/data-view": "workspace:*"
     "@blocksuite/icons": "npm:^2.2.17"
@@ -2550,9 +2550,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/std@workspace:*, @blocksuite/std@workspace:blocksuite/framework/std":
+"@blocksuite/std@workspace:*, @blocksuite/std@workspace:editor/framework/std":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/std@workspace:blocksuite/framework/std"
+  resolution: "@blocksuite/std@workspace:editor/framework/std"
   dependencies:
     "@atlaskit/pragmatic-drag-and-drop": "npm:^2.0.0"
     "@atlaskit/pragmatic-drag-and-drop-auto-scroll": "npm:^3.0.0"
@@ -2581,9 +2581,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/store@workspace:*, @blocksuite/store@workspace:blocksuite/framework/store":
+"@blocksuite/store@workspace:*, @blocksuite/store@workspace:editor/framework/store":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/store@workspace:blocksuite/framework/store"
+  resolution: "@blocksuite/store@workspace:editor/framework/store"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@blocksuite/sync": "workspace:*"
@@ -2602,9 +2602,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@blocksuite/sync@workspace:*, @blocksuite/sync@workspace:blocksuite/framework/sync":
+"@blocksuite/sync@workspace:*, @blocksuite/sync@workspace:editor/framework/sync":
   version: 0.0.0-use.local
-  resolution: "@blocksuite/sync@workspace:blocksuite/framework/sync"
+  resolution: "@blocksuite/sync@workspace:editor/framework/sync"
   dependencies:
     "@blocksuite/global": "workspace:*"
     "@types/lodash-es": "npm:^4.17.12"
@@ -8941,6 +8941,12 @@ __metadata:
   peerDependencies:
     "@nexio/graphql": "workspace:*"
     graphql: ^16.9.0
+  languageName: unknown
+  linkType: soft
+
+"@nexio/go-native@workspace:packages/backend/go-native":
+  version: 0.0.0-use.local
+  resolution: "@nexio/go-native@workspace:packages/backend/go-native"
   languageName: unknown
   linkType: soft
 

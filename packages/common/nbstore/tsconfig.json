@@ -11,7 +11,7 @@
     { "path": "../reader" },
     { "path": "../realtime" },
     { "path": "../infra" },
-    { "path": "../../../blocksuite/nexio/all" },
+    { "path": "../../../editor/nexio/all" },
     { "path": "../error" },
     { "path": "../graphql" }
   ]

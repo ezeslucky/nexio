@@ -39,9 +39,9 @@ packages/frontend/native/index.js
 packages/frontend/apps/android/App/**
 packages/frontend/apps/ios/App/**
 tests/blocksuite/snapshots
-blocksuite/docs/api/**
-blocksuite/docs-site/.vitepress/.temp/**
-blocksuite/docs-site/api/**
+editor/docs/api/**
+editor/docs-site/.vitepress/.temp/**
+editor/docs-site/api/**
 packages/frontend/admin/src/config.json
 **/test-docs.json
 **/test-blocks.json

@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/server"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/server"
 )
 
 func main() {

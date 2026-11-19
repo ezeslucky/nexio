@@ -6,7 +6,7 @@ import (
 	"sync"
 
 	"github.com/gorilla/websocket"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/nbstore"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/nbstore"
 )
 
 var upgrader = websocket.Upgrader{
