@@ -7,8 +7,8 @@
   },
   "include": ["e2e"],
   "references": [
-    { "path": "../../blocksuite/integration-test" },
-    { "path": "../../blocksuite/nexio/all" },
+    { "path": "../../editor/integration-test" },
+    { "path": "../../editor/nexio/all" },
     { "path": "../kit" }
   ]
 }

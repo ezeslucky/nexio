@@ -7,7 +7,7 @@
   },
   "include": ["./src"],
   "references": [
-    { "path": "../../blocksuite/nexio/all" },
+    { "path": "../../editor/nexio/all" },
     { "path": "../../tools/utils" },
     { "path": "../../packages/common/infra" }
   ]

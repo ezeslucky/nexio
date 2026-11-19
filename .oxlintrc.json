@@ -70,9 +70,9 @@
     "packages/frontend/apps/android/App/**",
     "packages/frontend/apps/ios/App/**",
     "tests/blocksuite/snapshots",
-    "blocksuite/docs/api/**",
-    "blocksuite/docs-site/.vitepress/.temp/**",
-    "blocksuite/docs-site/api/**",
+    "editor/docs/api/**",
+    "editor/docs-site/.vitepress/.temp/**",
+    "editor/docs-site/api/**",
     "packages/frontend/admin/src/config.json",
     "**/test-docs.json",
     "**/test-blocks.json"
@@ -347,7 +347,7 @@
       }
     },
     {
-      "files": ["blocksuite/**/*.ts"],
+      "files": ["editor/**/*.ts"],
       "rules": {
         "eqeqeq": "off",
         "typescript/no-non-null-assertion": "off",
@@ -367,7 +367,7 @@
       "files": [
         "packages/**/*.{ts,tsx}",
         "tools/**/*.{ts,tsx}",
-        "blocksuite/**/*.{ts,tsx}"
+        "editor/**/*.{ts,tsx}"
       ],
       "rules": {
         "typescript/await-thenable": "error",
@@ -419,7 +419,7 @@
       }
     },
     {
-      "files": ["blocksuite/framework/std/src/view/element/lit-host.ts"],
+      "files": ["editor/framework/std/src/view/element/lit-host.ts"],
       "rules": {
         "lit/binding-positions": "off",
         "lit/no-invalid-html": "off"
@@ -429,7 +429,7 @@
       "files": [
         "packages/**/*.{ts,tsx}",
         "tools/**/*.{ts,tsx}",
-        "blocksuite/**/*.{ts,tsx}"
+        "editor/**/*.{ts,tsx}"
       ],
       "rules": {
         "import-x-js/no-extraneous-dependencies": [
@@ -480,7 +480,7 @@
       "files": [
         "packages/frontend/apps/electron/scripts/**/*",
         "tests/blocksuite/**/*.{ts,tsx}",
-        "blocksuite/**/__tests__/**/*.{ts,tsx}"
+        "editor/**/__tests__/**/*.{ts,tsx}"
       ],
       "rules": {
         "import-x-js/no-extraneous-dependencies": "off"

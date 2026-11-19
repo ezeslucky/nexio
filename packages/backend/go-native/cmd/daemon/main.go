@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/daemon"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/daemon"
 )
 
 func main() {

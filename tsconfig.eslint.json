@@ -6,7 +6,7 @@
   "include": [
     ".",
     ".github/actions/*/*.mjs",
-    "blocksuite/docs-site/.vitepress/**/*.ts"
+    "editor/docs-site/.vitepress/**/*.ts"
   ],
   "exclude": [
     "**/target",

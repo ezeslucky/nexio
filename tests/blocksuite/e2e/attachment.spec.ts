@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { sleep } from '@blocksuite/global/utils';
+import { sleep } from '@editor/global/utils';
 import { expect, type Page } from '@playwright/test';
 
 import { dragBlockToPoint, popImageMoreMenu } from './utils/actions/drag.js';
@@ -44,7 +44,7 @@ const FILE_NAME = 'test-card-1.png';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FILE_PATH = path.resolve(
   __dirname,
-  `../../../blocksuite/playground/public/${FILE_NAME}`
+  `../../../editor/playground/public/${FILE_NAME}`
 );
 
 function getAttachment(page: Page) {
@@ -187,7 +187,7 @@ test('should undo/redo works for attachment', async ({ page }, testInfo) => {
 test('should rename attachment works', async ({ page }) => {
   test.info().annotations.push({
     type: 'issue',
-    description: 'https://github.com/toeverything/blocksuite/issues/4534',
+    description: 'https://github.com/toeverything/editor/issues/4534',
   });
   await enterPlaygroundRoom(page);
   await initEmptyParagraphState(page);

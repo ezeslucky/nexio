@@ -104,4 +104,4 @@ storageState.json
 # local test/browser artifacts
 /.playwright-browsers/
 **/.vitest-attachments/
-/blocksuite/framework/std/src/__tests__/gfx/__screenshots__/
+/editor/framework/std/src/__tests__/gfx/__screenshots__/

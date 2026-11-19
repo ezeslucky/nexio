@@ -6,16 +6,16 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/authsession"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/crdt"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/filetype"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/hashcash"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/imageinspect"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/nbstore"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/reserveddoc"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/safefetch"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/tokenizer"
-	"github.com/toeverything/nexio/packages/backend/go-native/pkg/urlpolicy"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/authsession"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/crdt"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/filetype"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/hashcash"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/imageinspect"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/nbstore"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/reserveddoc"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/safefetch"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/tokenizer"
+	"github.com/ezeslucky/nexio/packages/backend/go-native/pkg/urlpolicy"
 )
 
 func NewRouter() http.Handler {

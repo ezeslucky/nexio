@@ -7,13 +7,13 @@
   },
   "include": ["./src", "src/**/*.json"],
   "references": [
-    { "path": "../../../blocksuite/nexio/data-view" },
-    { "path": "../../../blocksuite/framework/global" },
-    { "path": "../../../blocksuite/nexio/all" },
-    { "path": "../../../blocksuite/nexio/blocks/root" },
-    { "path": "../../../blocksuite/nexio/components" },
-    { "path": "../../../blocksuite/nexio/shared" },
-    { "path": "../../../blocksuite/framework/std" },
+    { "path": "../../../editor/nexio/data-view" },
+    { "path": "../../../editor/framework/global" },
+    { "path": "../../../editor/nexio/all" },
+    { "path": "../../../editor/nexio/blocks/root" },
+    { "path": "../../../editor/nexio/components" },
+    { "path": "../../../editor/nexio/shared" },
+    { "path": "../../../editor/framework/std" },
     { "path": "../component" },
     { "path": "../../common/debug" },
     { "path": "../electron-api" },
@@ -25,7 +25,6 @@
     { "path": "../../common/reader" },
     { "path": "../track" },
     { "path": "../../common/infra" },
-    { "path": "../../../blocksuite/nexio/ext-loader" }
+    { "path": "../../../editor/nexio/ext-loader" }
   ]
 }
-
