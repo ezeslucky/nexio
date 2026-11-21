@@ -1,7 +1,7 @@
 [package]
 edition      = "2024"
 license-file = "LICENSE"
-name         = "affine_server_native"
+name         = "nexio_server_native"
 publish      = false
 version      = "1.0.0"
 
@@ -11,7 +11,7 @@ crate-type = ["cdylib"]
 [dependencies]
 affine_core = "0.0.4"
 aes-gcm = { workspace = true }
-affine_common = { workspace = true, features = ["hashcash", "napi"] }
+nexio_common = { workspace = true, features = ["hashcash", "napi"] }
 affine_doc_loader = { workspace = true }
 anyhow = { workspace = true }
 argon2 = "0.5"

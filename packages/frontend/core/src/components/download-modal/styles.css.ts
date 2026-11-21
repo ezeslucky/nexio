@@ -171,6 +171,57 @@ export const badge = style({
   background: cssVarV2('layer/background/hoverOverlay'),
   color: cssVarV2('text/secondary'),
   border: `1px solid ${cssVarV2('layer/insideBorder/border')}`,
+  cursor: 'pointer',
+  transition: 'all 0.15s ease',
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '4px',
+  userSelect: 'none',
+  ':hover': {
+    background: cssVarV2('button/primary'),
+    color: '#ffffff',
+    borderColor: cssVarV2('button/primary'),
+  },
+});
+
+export const detectedBannerRight = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-end',
+  gap: '8px',
+  '@media': {
+    'screen and (max-width: 640px)': {
+      alignItems: 'flex-start',
+      width: '100%',
+    },
+  },
+});
+
+export const detectedChips = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '6px',
+  flexWrap: 'wrap',
+});
+
+export const chipButton = style({
+  padding: '2px 8px',
+  borderRadius: '6px',
+  fontSize: '11px',
+  fontWeight: 500,
+  cursor: 'pointer',
+  background: 'transparent',
+  color: cssVarV2('text/secondary'),
+  border: `1px solid ${cssVarV2('layer/insideBorder/border')}`,
+  transition: 'all 0.15s ease',
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '3px',
+  ':hover': {
+    background: cssVarV2('layer/background/hoverOverlay'),
+    color: cssVarV2('text/primary'),
+    borderColor: cssVarV2('button/primary'),
+  },
 });
 
 export const cardActions = style({
@@ -214,4 +265,85 @@ export const footerLink = style({
   ':hover': {
     textDecoration: 'underline',
   },
+});
+
+export const terminalCard = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '10px',
+  padding: '14px 18px',
+  borderRadius: '12px',
+  background: cssVarV2('layer/background/secondary'),
+  border: `1px solid ${cssVarV2('layer/insideBorder/border')}`,
+  marginTop: '8px',
+});
+
+export const terminalHeader = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flexWrap: 'wrap',
+  gap: '8px',
+});
+
+export const terminalTitle = style({
+  fontSize: cssVar('fontSm'),
+  fontWeight: 600,
+  color: cssVarV2('text/primary'),
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+});
+
+export const terminalTabs = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '6px',
+});
+
+export const terminalTab = style({
+  padding: '4px 10px',
+  borderRadius: '6px',
+  fontSize: '12px',
+  fontWeight: 500,
+  cursor: 'pointer',
+  border: `1px solid ${cssVarV2('layer/insideBorder/border')}`,
+  background: 'transparent',
+  color: cssVarV2('text/secondary'),
+  transition: 'all 0.15s ease',
+  selectors: {
+    '&:hover': {
+      background: cssVarV2('layer/background/hoverOverlay'),
+      color: cssVarV2('text/primary'),
+    },
+    '&[data-active="true"]': {
+      background: cssVarV2('button/primary'),
+      color: '#ffffff',
+      borderColor: cssVarV2('button/primary'),
+    },
+  },
+});
+
+export const terminalCodeRow = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '12px',
+  background: '#121214',
+  borderRadius: '8px',
+  padding: '10px 14px',
+  border: '1px solid rgba(255, 255, 255, 0.08)',
+});
+
+export const terminalCode = style({
+  fontFamily: 'SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  fontSize: '13px',
+  color: '#4ade80',
+  whiteSpace: 'nowrap',
+  overflowX: 'auto',
+  userSelect: 'all',
+});
+
+export const terminalCopyBtn = style({
+  flexShrink: 0,
 });

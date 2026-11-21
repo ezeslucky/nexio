@@ -60,7 +60,12 @@ export class ServersService extends Service {
 
   server$(id: string) {
     return this.servers$.map(servers =>
-      servers.find(server => server.id === id)
+      servers.find(
+        server =>
+          server.id === id ||
+          (id === 'nexio-cloud' && server.id === 'affine-cloud') ||
+          (id === 'affine-cloud' && server.id === 'nexio-cloud')
+      )
     );
   }
 

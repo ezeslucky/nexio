@@ -1,6 +1,6 @@
 [package]
 edition = "2024"
-name    = "affine_native"
+name    = "nexio_native"
 publish = false
 version = "0.0.0"
 
@@ -8,12 +8,12 @@ version = "0.0.0"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-affine_common = { workspace = true, features = ["hashcash"] }
+nexio_common = { workspace = true, features = ["hashcash"] }
 affine_doc_loader = { workspace = true }
 affine_importer = { workspace = true }
-affine_media_capture = { path = "./media_capture" }
-affine_nbstore = { workspace = true, features = ["napi"] }
-affine_sqlite_v1 = { path = "./sqlite_v1" }
+nexio_media_capture = { path = "./media_capture" }
+nexio_nbstore = { workspace = true, features = ["napi"] }
+nexio_sqlite_v1 = { path = "./sqlite_v1" }
 hex = { workspace = true }
 infer = { workspace = true }
 napi = { workspace = true }

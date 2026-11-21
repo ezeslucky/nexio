@@ -15,9 +15,11 @@ resolver = "3"
 
   [workspace.dependencies]
   aes-gcm = "0.10"
+  nexio_common = { path = "./packages/common/native" }
   affine_common = { path = "./packages/common/native" }
   affine_doc_loader = "0.1.8"
   affine_importer = "0.1.2"
+  nexio_nbstore = { path = "./packages/frontend/native/nbstore" }
   affine_nbstore = { path = "./packages/frontend/native/nbstore" }
   affine_preview = { version = "0.1.0", default-features = false }
   anyhow = "1"
@@ -131,6 +133,8 @@ opt-level     = 3
 strip         = "symbols"
 
   # android uniffi bindgen requires symbols
+  [profile.release.package.nexio_mobile_native]
+  strip = "none"
   [profile.release.package.affine_mobile_native]
   strip = "none"
 

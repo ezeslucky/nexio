@@ -1,6 +1,6 @@
 use std::fs;
 
-use affine_schema::get_migrator;
+use nexio_schema::get_migrator;
 use sqlx::sqlite::SqliteConnectOptions;
 
 #[tokio::main]

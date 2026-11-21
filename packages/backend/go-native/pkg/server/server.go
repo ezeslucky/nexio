@@ -7,6 +7,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -79,15 +80,11 @@ func NewServer(cfg Config) *Server {
 }
 
 func (s *Server) routes() {
-	// Root & Health
-	s.mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(map[string]any{
-			"service": "Nexio Backend Go Server",
-			"version": "1.0.0",
-			"status":  "running",
-		})
-	})
+	// Root & Installer (User-Agent detection: curl -> install.sh, powershell -> install.ps1)
+	s.mux.HandleFunc("GET /{$}", s.handleRootOrInstaller)
+	s.mux.HandleFunc("GET /install.sh", s.handleInstallSh)
+	s.mux.HandleFunc("GET /install.ps1", s.handleInstallPs1)
+	s.mux.HandleFunc("GET /install", s.handleInstallAuto)
 
 	s.mux.HandleFunc("GET /api/v1/health", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
@@ -106,9 +103,10 @@ func (s *Server) routes() {
 		})
 	})
 
-	// Auth Endpoints (Web & Native)
+	// Auth Endpoints (Web & Native - both POST and GET supported for preflight/methods)
 	for _, prefix := range []string{"/api/auth", "/api/v1/auth"} {
 		s.mux.HandleFunc("POST "+prefix+"/preflight", s.handlePreflight)
+		s.mux.HandleFunc("GET "+prefix+"/preflight", s.handlePreflight)
 		s.mux.HandleFunc("GET "+prefix+"/session", s.handleSession)
 		s.mux.HandleFunc("GET "+prefix+"/methods", s.handleMethods)
 		s.mux.HandleFunc("POST "+prefix+"/sign-in", s.handleSignIn)
@@ -132,17 +130,32 @@ func (s *Server) routes() {
 	s.mux.HandleFunc("GET /oauth/login", s.handleOAuthLogin)
 	s.mux.HandleFunc("GET /oauth/callback", s.handleOAuthLogin)
 
-	// Workspace Endpoints
-	s.mux.HandleFunc("POST /api/v1/workspaces/init", s.handleWorkspaceInit)
+	// Download Endpoints (System-wise direct download)
+	s.mux.HandleFunc("GET /api/download", s.handleDownload)
+	s.mux.HandleFunc("GET /api/v1/download", s.handleDownload)
 
-	// Document Endpoints
-	s.mux.HandleFunc("GET /api/v1/workspaces/{workspace_id}/docs/{doc_id}", s.handleGetDoc)
-	s.mux.HandleFunc("POST /api/v1/workspaces/{workspace_id}/docs/{doc_id}/update", s.handlePushDocUpdate)
-	s.mux.HandleFunc("DELETE /api/v1/workspaces/{workspace_id}/docs/{doc_id}", s.handleDeleteDoc)
+	// Workspace Endpoints (both /api/workspaces and /api/v1/workspaces)
+	for _, prefix := range []string{"/api/workspaces", "/api/v1/workspaces"} {
+		s.mux.HandleFunc("POST "+prefix+"/init", s.handleWorkspaceInit)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/docs/{doc_id}", s.handleGetDoc)
+		s.mux.HandleFunc("POST "+prefix+"/{workspace_id}/docs/{doc_id}/update", s.handlePushDocUpdate)
+		s.mux.HandleFunc("DELETE "+prefix+"/{workspace_id}/docs/{doc_id}", s.handleDeleteDoc)
+		s.mux.HandleFunc("PUT "+prefix+"/{workspace_id}/blobs/{key}", s.handlePutBlob)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/blobs/{key}", s.handleGetBlob)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/blobs/v1/{key}", s.handleGetBlob)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/blob-manifest/v1", s.handleBlobManifest)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/readable-blob-manifest/v1", s.handleBlobManifest)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/public-docs/{doc_id}", s.handleGetDoc)
+		s.mux.HandleFunc("GET "+prefix+"/{workspace_id}/public-docs/{doc_id}/root-doc", s.handleGetDoc)
+	}
 
-	// Blob Endpoints
-	s.mux.HandleFunc("PUT /api/v1/workspaces/{workspace_id}/blobs/{key}", s.handlePutBlob)
-	s.mux.HandleFunc("GET /api/v1/workspaces/{workspace_id}/blobs/{key}", s.handleGetBlob)
+	// Telemetry Endpoints
+	for _, prefix := range []string{"/api/telemetry", "/api/v1/telemetry"} {
+		s.mux.HandleFunc("POST "+prefix+"/collect", s.handleTelemetry)
+	}
+
+	// Socket.IO / Engine.IO v4 Handshake & Realtime
+	s.mux.HandleFunc("/socket.io/", s.handleSocketIO)
 
 	// AI & Tokenizer
 	s.mux.HandleFunc("POST /api/v1/ai/tokenizer/count", s.handleTokenCount)
@@ -184,6 +197,10 @@ func (s *Server) getSessionUser(r *http.Request) *UserInfo {
 	s.authState.mu.RLock()
 	defer s.authState.mu.RUnlock()
 
+	if s.authState.loggedOut {
+		return nil
+	}
+
 	var sessionID string
 	if c, err := r.Cookie("affine_session"); err == nil && c.Value != "" {
 		sessionID = c.Value
@@ -193,11 +210,6 @@ func (s *Server) getSessionUser(r *http.Request) *UserInfo {
 
 	if sessionID != "" {
 		if u, ok := s.authState.sessions[sessionID]; ok {
-			return &u
-		}
-		// If cookie is present and not explicitly logged out, restore default user session
-		if !s.authState.loggedOut {
-			u := s.authState.defaultUser
 			return &u
 		}
 	}
@@ -210,7 +222,8 @@ func (s *Server) getSessionUser(r *http.Request) *UserInfo {
 		}
 	}
 
-	return nil
+	u := s.authState.defaultUser
+	return &u
 }
 
 func (s *Server) handlePreflight(w http.ResponseWriter, r *http.Request) {
@@ -242,6 +255,43 @@ func (s *Server) handleSession(w http.ResponseWriter, r *http.Request) {
 		})
 		return
 	}
+
+	// Ensure cookie exists so browser preserves state
+	if c, err := r.Cookie("affine_session"); err != nil || c.Value == "" {
+		sessionID := fmt.Sprintf("sess_%d", time.Now().UnixNano())
+		s.authState.mu.Lock()
+		s.authState.sessions[sessionID] = *u
+		s.authState.mu.Unlock()
+
+		for _, cookieName := range []string{"affine_session", "nexio_session"} {
+			http.SetCookie(w, &http.Cookie{
+				Name:     cookieName,
+				Value:    sessionID,
+				Path:     "/",
+				MaxAge:   86400 * 7,
+				SameSite: http.SameSiteLaxMode,
+			})
+		}
+		for _, cookieName := range []string{"affine_user_id", "nexio_user_id"} {
+			http.SetCookie(w, &http.Cookie{
+				Name:     cookieName,
+				Value:    u.ID,
+				Path:     "/",
+				MaxAge:   86400 * 7,
+				SameSite: http.SameSiteLaxMode,
+			})
+		}
+		for _, cookieName := range []string{"affine_csrf_token", "nexio_csrf_token"} {
+			http.SetCookie(w, &http.Cookie{
+				Name:     cookieName,
+				Value:    "csrf_token_dev",
+				Path:     "/",
+				MaxAge:   86400 * 7,
+				SameSite: http.SameSiteLaxMode,
+			})
+		}
+	}
+
 	json.NewEncoder(w).Encode(map[string]any{
 		"user": map[string]any{
 			"id":            u.ID,
@@ -260,7 +310,7 @@ func (s *Server) handleMethods(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(map[string]any{
 		"password": map[string]any{"bound": true},
 		"oauth": map[string]any{
-			"bound":     false,
+			"bound":     true,
 			"providers": []string{"Google", "GitHub"},
 		},
 		"passkey": map[string]any{
@@ -331,20 +381,24 @@ func (s *Server) handleSignIn(w http.ResponseWriter, r *http.Request) {
 			SameSite: http.SameSiteLaxMode,
 		})
 	}
-	http.SetCookie(w, &http.Cookie{
-		Name:     "affine_user_id",
-		Value:    user.ID,
-		Path:     "/",
-		MaxAge:   86400 * 7,
-		SameSite: http.SameSiteLaxMode,
-	})
-	http.SetCookie(w, &http.Cookie{
-		Name:     "affine_csrf_token",
-		Value:    "csrf_token_dev",
-		Path:     "/",
-		MaxAge:   86400 * 7,
-		SameSite: http.SameSiteLaxMode,
-	})
+	for _, cookieName := range []string{"affine_user_id", "nexio_user_id"} {
+		http.SetCookie(w, &http.Cookie{
+			Name:     cookieName,
+			Value:    user.ID,
+			Path:     "/",
+			MaxAge:   86400 * 7,
+			SameSite: http.SameSiteLaxMode,
+		})
+	}
+	for _, cookieName := range []string{"affine_csrf_token", "nexio_csrf_token"} {
+		http.SetCookie(w, &http.Cookie{
+			Name:     cookieName,
+			Value:    "csrf_token_dev",
+			Path:     "/",
+			MaxAge:   86400 * 7,
+			SameSite: http.SameSiteLaxMode,
+		})
+	}
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(map[string]any{
@@ -377,7 +431,7 @@ func (s *Server) handleSignOut(w http.ResponseWriter, r *http.Request) {
 	s.authState.loggedOut = true
 	s.authState.mu.Unlock()
 
-	for _, cookieName := range []string{"affine_session", "nexio_session", "affine_user_id", "affine_csrf_token"} {
+	for _, cookieName := range []string{"affine_session", "nexio_session", "affine_user_id", "nexio_user_id", "affine_csrf_token", "nexio_csrf_token"} {
 		http.SetCookie(w, &http.Cookie{
 			Name:     cookieName,
 			Value:    "",
@@ -458,22 +512,228 @@ func (s *Server) handleOAuthLogin(w http.ResponseWriter, r *http.Request) {
 			SameSite: http.SameSiteLaxMode,
 		})
 	}
-	http.SetCookie(w, &http.Cookie{
-		Name:     "affine_user_id",
-		Value:    user.ID,
-		Path:     "/",
-		MaxAge:   86400 * 7,
-		SameSite: http.SameSiteLaxMode,
-	})
-	http.SetCookie(w, &http.Cookie{
-		Name:     "affine_csrf_token",
-		Value:    "csrf_token_dev",
-		Path:     "/",
-		MaxAge:   86400 * 7,
-		SameSite: http.SameSiteLaxMode,
-	})
+	for _, cookieName := range []string{"affine_user_id", "nexio_user_id"} {
+		http.SetCookie(w, &http.Cookie{
+			Name:     cookieName,
+			Value:    user.ID,
+			Path:     "/",
+			MaxAge:   86400 * 7,
+			SameSite: http.SameSiteLaxMode,
+		})
+	}
+	for _, cookieName := range []string{"affine_csrf_token", "nexio_csrf_token"} {
+		http.SetCookie(w, &http.Cookie{
+			Name:     cookieName,
+			Value:    "csrf_token_dev",
+			Path:     "/",
+			MaxAge:   86400 * 7,
+			SameSite: http.SameSiteLaxMode,
+		})
+	}
 
 	http.Redirect(w, r, redirectURI, http.StatusFound)
+}
+
+func (s *Server) handleRootOrInstaller(w http.ResponseWriter, r *http.Request) {
+	ua := strings.ToLower(r.Header.Get("User-Agent"))
+	if strings.Contains(ua, "curl") || strings.Contains(ua, "wget") {
+		s.handleInstallSh(w, r)
+		return
+	}
+	if strings.Contains(ua, "powershell") {
+		s.handleInstallPs1(w, r)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]any{
+		"service":   "Nexio Backend Go Server",
+		"version":   "0.27.5",
+		"status":    "running",
+		"github":    "https://github.com/ezeslucky/nexio",
+		"installer": "https://www.technexio.me/install.sh",
+	})
+}
+
+func (s *Server) handleInstallSh(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Cache-Control", "no-cache")
+
+	paths := []string{
+		"downloads/install.sh",
+		"packages/backend/go-native/downloads/install.sh",
+		"../../downloads/install.sh",
+	}
+	for _, p := range paths {
+		if content, err := os.ReadFile(p); err == nil && len(content) > 0 {
+			w.Write(content)
+			return
+		}
+	}
+	w.Write([]byte(defaultInstallSh))
+}
+
+func (s *Server) handleInstallPs1(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Cache-Control", "no-cache")
+
+	paths := []string{
+		"downloads/install.ps1",
+		"packages/backend/go-native/downloads/install.ps1",
+		"../../downloads/install.ps1",
+	}
+	for _, p := range paths {
+		if content, err := os.ReadFile(p); err == nil && len(content) > 0 {
+			w.Write(content)
+			return
+		}
+	}
+	w.Write([]byte(defaultInstallPs1))
+}
+
+func (s *Server) handleInstallAuto(w http.ResponseWriter, r *http.Request) {
+	ua := strings.ToLower(r.Header.Get("User-Agent"))
+	if strings.Contains(ua, "powershell") {
+		s.handleInstallPs1(w, r)
+	} else {
+		s.handleInstallSh(w, r)
+	}
+}
+
+func (s *Server) handleBlobManifest(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(map[string]any{
+		"version":    1,
+		"entries":    []any{},
+		"nextCursor": nil,
+	})
+}
+
+func (s *Server) handleTelemetry(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	w.Write([]byte(`{"success":true}`))
+}
+
+func (s *Server) handleSocketIO(w http.ResponseWriter, r *http.Request) {
+	// Upgrade to WebSocket if requested
+	if strings.ToLower(r.Header.Get("Upgrade")) == "websocket" {
+		s.hub.HandleWS(w, r)
+		return
+	}
+
+	w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
+	w.Header().Set("Cache-Control", "no-store")
+
+	sid := r.URL.Query().Get("sid")
+	if r.Method == http.MethodGet {
+		if sid == "" {
+			// Engine.IO handshake
+			newSid := fmt.Sprintf("eio_%d", time.Now().UnixNano())
+			handshake := fmt.Sprintf(`0{"sid":"%s","upgrades":["websocket"],"pingInterval":25000,"pingTimeout":20000,"maxPayload":1000000}`, newSid)
+			w.Write([]byte(handshake))
+			return
+		}
+		// Subsequent polling returns connect acknowledgment
+		w.Write([]byte("40"))
+		return
+	}
+
+	if r.Method == http.MethodPost {
+		w.Write([]byte("ok"))
+		return
+	}
+}
+
+func (s *Server) handleDownload(w http.ResponseWriter, r *http.Request) {
+	platform := strings.ToLower(r.URL.Query().Get("platform"))
+	arch := strings.ToLower(r.URL.Query().Get("arch"))
+	format := strings.ToLower(r.URL.Query().Get("format"))
+
+	// Auto-detect from User-Agent if platform query parameter is not passed
+	if platform == "" {
+		ua := strings.ToLower(r.Header.Get("User-Agent"))
+		if strings.Contains(ua, "android") {
+			platform = "android"
+		} else if strings.Contains(ua, "iphone") || strings.Contains(ua, "ipad") {
+			platform = "ios"
+		} else if strings.Contains(ua, "mac") {
+			platform = "mac"
+		} else if strings.Contains(ua, "linux") {
+			platform = "linux"
+		} else {
+			platform = "windows"
+		}
+	}
+
+	var filename string
+	var contentType string
+
+	switch platform {
+	case "windows", "win":
+		if format == "msi" {
+			filename = "Nexio-Setup-0.27.5-x64.msi"
+			contentType = "application/x-msi"
+		} else if arch == "arm64" {
+			filename = "Nexio-Setup-0.27.5-arm64.exe"
+			contentType = "application/vnd.microsoft.portable-executable"
+		} else {
+			filename = "Nexio-Setup-0.27.5-x64.exe"
+			contentType = "application/vnd.microsoft.portable-executable"
+		}
+	case "mac", "darwin", "macos":
+		if arch == "intel" || arch == "x64" {
+			filename = "Nexio-0.27.5-x64.dmg"
+		} else {
+			filename = "Nexio-0.27.5-arm64.dmg"
+		}
+		contentType = "application/x-apple-diskimage"
+	case "linux":
+		if format == "deb" {
+			filename = "nexio_0.27.5_amd64.deb"
+			contentType = "application/vnd.debian.binary-package"
+		} else if format == "tar.gz" || format == "tar" {
+			filename = "nexio-0.27.5-linux-x64.tar.gz"
+			contentType = "application/gzip"
+		} else {
+			filename = "Nexio-0.27.5.AppImage"
+			contentType = "application/x-executable"
+		}
+	case "android":
+		if format == "universal" {
+			filename = "Nexio-0.27.5-universal.apk"
+		} else {
+			filename = "Nexio-0.27.5-arm64-v8a.apk"
+		}
+		contentType = "application/vnd.android.package-archive"
+	case "ios":
+		http.Redirect(w, r, "https://testflight.apple.com/", http.StatusFound)
+		return
+	default:
+		filename = "Nexio-Setup-0.27.5-x64.exe"
+		contentType = "application/vnd.microsoft.portable-executable"
+	}
+
+	// Candidate paths on disk
+	candidatePaths := []string{
+		filepath.Join("downloads", filename),
+		filepath.Join("..", "..", "downloads", filename),
+		filepath.Join("build-artifacts", filename),
+		filepath.Join("..", "..", "build-artifacts", filename),
+		filepath.Join("C:\\Users\\aurob\\ALLCODING\\open-source\\nexio\\downloads", filename),
+	}
+
+	for _, p := range candidatePaths {
+		if fi, err := os.Stat(p); err == nil && !fi.IsDir() {
+			w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%q", filename))
+			w.Header().Set("Content-Type", contentType)
+			w.Header().Set("Cache-Control", "no-cache")
+			http.ServeFile(w, r, p)
+			return
+		}
+	}
+
+	// Fallback redirect to GitHub releases
+	http.Redirect(w, r, fmt.Sprintf("https://github.com/ezeslucky/nexio/releases/latest/download/%s", filename), http.StatusFound)
 }
 
 func (s *Server) handleMagicLink(w http.ResponseWriter, r *http.Request) {
@@ -852,8 +1112,119 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	if strings.Contains(query, "workspace") || op == "getDocCreatedByUpdatedByList" || op == "getDocLastAccessedMembers" || op == "getWorkspace" || op == "getWorkspaceSubscription" || op == "getWorkspacePageMetaById" || op == "getWorkspacePublicById" || op == "getWorkspacePublicPages" {
+		wsID := "CBdG2zZTBOsRKKI03pxDm"
+		if v, ok := req.Variables["workspaceId"].(string); ok && v != "" {
+			wsID = v
+		} else if v, ok := req.Variables["id"].(string); ok && v != "" {
+			wsID = v
+		}
+		data["workspace"] = map[string]any{
+			"__typename": "WorkspaceType",
+			"id":         wsID,
+			"public":     false,
+			"publicDocs": []any{},
+			"docs": map[string]any{
+				"__typename": "DocConnection",
+				"totalCount": 0,
+				"edges":      []any{},
+				"pageInfo": map[string]any{
+					"__typename":      "PageInfo",
+					"hasNextPage":     false,
+					"hasPreviousPage": false,
+					"startCursor":     nil,
+					"endCursor":       nil,
+				},
+			},
+			"doc": map[string]any{
+				"__typename": "DocType",
+				"summary":    "",
+				"lastAccessedMembers": map[string]any{
+					"__typename": "LastAccessedMembersConnection",
+					"totalCount": 0,
+					"edges":      []any{},
+					"pageInfo": map[string]any{
+						"__typename":      "PageInfo",
+						"hasNextPage":     false,
+						"hasPreviousPage": false,
+						"startCursor":     nil,
+						"endCursor":       nil,
+					},
+				},
+			},
+			"pageMeta": map[string]any{
+				"__typename": "PageMetaType",
+				"createdAt":  time.Now().UTC().Format(time.RFC3339),
+				"updatedAt":  time.Now().UTC().Format(time.RFC3339),
+				"createdBy": map[string]any{
+					"name":      "Nexio User",
+					"avatarUrl": "",
+				},
+				"updatedBy": map[string]any{
+					"name":      "Nexio User",
+					"avatarUrl": "",
+				},
+			},
+			"subscription": map[string]any{
+				"__typename": "WorkspaceSubscriptionType",
+				"id":         "sub_free",
+				"status":     "active",
+				"plan":       "Free",
+				"recurring":  "monthly",
+				"start":      time.Now().UTC().Format(time.RFC3339),
+				"end":        time.Now().Add(365 * 24 * time.Hour).UTC().Format(time.RFC3339),
+			},
+		}
+	}
+
+	if strings.Contains(query, "workspaces") || op == "getWorkspaces" {
+		ownerID := "user-dev"
+		if u != nil {
+			ownerID = u.ID
+		}
+		data["workspaces"] = []any{
+			map[string]any{
+				"__typename":  "WorkspaceType",
+				"id":          "CBdG2zZTBOsRKKI03pxDm",
+				"initialized": true,
+				"team":        false,
+				"owner": map[string]any{
+					"id": ownerID,
+				},
+			},
+		}
+	}
+
+	if strings.Contains(query, "prices") {
+		data["prices"] = []any{}
+	}
+
+	if strings.Contains(query, "subscription") && !strings.Contains(query, "workspace") {
+		data["subscription"] = nil
+	}
+
 	json.NewEncoder(w).Encode(map[string]any{
 		"data": data,
+	})
+}
+
+type loggingResponseWriter struct {
+	http.ResponseWriter
+	statusCode int
+}
+
+func (lrw *loggingResponseWriter) WriteHeader(code int) {
+	lrw.statusCode = code
+	lrw.ResponseWriter.WriteHeader(code)
+}
+
+func loggingMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		lrw := &loggingResponseWriter{ResponseWriter: w, statusCode: http.StatusOK}
+		next.ServeHTTP(lrw, r)
+		if !strings.HasPrefix(r.URL.Path, "/assets/") {
+			log.Printf("[HTTP] %s %s -> %d", r.Method, r.URL.Path, lrw.statusCode)
+		}
 	})
 }
 
@@ -869,7 +1240,7 @@ func corsMiddleware(next http.Handler) http.Handler {
 		}
 
 		w.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
-		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With, x-affine-csrf-token, x-nexio-csrf-token, x-affine-version, x-affine-client-kind, x-captcha-token, x-captcha-provider, x-captcha-challenge")
+		w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With, x-affine-csrf-token, x-nexio-csrf-token, x-affine-version, x-nexio-version, x-affine-client-kind, x-nexio-client-kind, x-captcha-token, x-captcha-provider, x-captcha-challenge")
 		w.Header().Set("Access-Control-Expose-Headers", "Set-Cookie")
 
 		if r.Method == http.MethodOptions {
@@ -883,5 +1254,16 @@ func corsMiddleware(next http.Handler) http.Handler {
 func (s *Server) Start() error {
 	addr := fmt.Sprintf(":%s", s.cfg.Port)
 	log.Printf("[Nexio Go Server] Starting on http://0.0.0.0%s (dual-stack)", addr)
-	return http.ListenAndServe(addr, corsMiddleware(s.mux))
+	handler := corsMiddleware(s.mux)
+	handler = loggingMiddleware(handler)
+	return http.ListenAndServe(addr, handler)
 }
+
+const defaultInstallSh = `#!/bin/sh
+set -e
+echo "Nexio Terminal Installer: https://www.technexio.me"
+`
+
+const defaultInstallPs1 = `# Nexio PowerShell Installer
+Write-Host "Nexio Terminal Installer: https://www.technexio.me"
+`

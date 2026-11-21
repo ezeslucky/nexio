@@ -112,6 +112,16 @@ export function isI18nString(value: unknown): value is I18nString {
 }
 
 export function createI18nWrapper(getI18nFn: () => i18n) {
+  const resolveAltKey = (key: string): string | null => {
+    if (key.startsWith('com.nexio.')) {
+      return key.replace(/^com\.nexio\./, 'com.affine.');
+    }
+    if (key.startsWith('com.affine.')) {
+      return key.replace(/^com\.affine\./, 'com.nexio.');
+    }
+    return null;
+  };
+
   const I18nMethod = {
     t(key: I18nString, options?: Record<string, any>) {
       if (typeof key === 'object' && 'i18nKey' in key) {
@@ -122,10 +132,13 @@ export function createI18nWrapper(getI18nFn: () => i18n) {
       const i18n = getI18nFn();
       if (i18n.exists(key)) {
         return i18n.t(key, options);
-      } else {
-        // unknown translate key 'xxx.xxx' returns itself
-        return key;
       }
+      const altKey = resolveAltKey(key);
+      if (altKey && i18n.exists(altKey)) {
+        return i18n.t(altKey, options);
+      }
+      // unknown translate key 'xxx.xxx' returns itself
+      return key;
     },
     get language() {
       const i18n = getI18nFn();
@@ -156,6 +169,10 @@ export function createI18nWrapper(getI18nFn: () => i18n) {
       }
       const i18n = getI18nFn();
       if (i18n.exists(key)) {
+        return true;
+      }
+      const altKey = resolveAltKey(key);
+      if (altKey && i18n.exists(altKey)) {
         return true;
       }
       return false;

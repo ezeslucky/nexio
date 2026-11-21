@@ -48,7 +48,7 @@ export class RunCommand extends PackageCommand {
 
       \`nexio build\`           A proxy for <-p package>'s \`build\` script
 
-      \`affine dev\`             A proxy for <-p package>'s \`dev\` script
+      \`nexio dev\`              A proxy for <-p package>'s \`dev\` script
     `,
     examples: [
       [`See detail of each command`, '$0 -h'],

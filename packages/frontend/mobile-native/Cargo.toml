@@ -1,6 +1,6 @@
 [package]
 edition = "2024"
-name    = "affine_mobile_native"
+name    = "nexio_mobile_native"
 publish = false
 version = "0.0.0"
 
@@ -14,11 +14,11 @@ path = "uniffi-bindgen.rs"
 
 [features]
 default    = ["use-as-lib"]
-use-as-lib = ["affine_nbstore/use-as-lib"]
+use-as-lib = ["nexio_nbstore/use-as-lib"]
 
 [dependencies]
-affine_common  = { workspace = true, features = ["hashcash"] }
-affine_nbstore = { workspace = true }
+nexio_common  = { workspace = true, features = ["hashcash"] }
+nexio_nbstore = { workspace = true }
 anyhow         = { workspace = true }
 base64-simd    = { workspace = true }
 chrono         = { workspace = true }

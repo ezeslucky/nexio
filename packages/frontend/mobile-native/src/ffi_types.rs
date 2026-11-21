@@ -1,4 +1,4 @@
-use affine_nbstore::{
+use nexio_nbstore::{
   Blob as NbBlob, Data, DocClock as NbDocClock, DocIndexedClock as NbDocIndexedClock, DocRecord as NbDocRecord,
   DocUpdate as NbDocUpdate, ListedBlob as NbListedBlob, SetBlob as NbSetBlob,
   indexer::{

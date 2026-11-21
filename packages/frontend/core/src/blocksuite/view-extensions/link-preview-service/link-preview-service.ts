@@ -1,4 +1,4 @@
-﻿import {
+import {
   LinkPreviewCacheIdentifier,
   type LinkPreviewCacheProvider,
   LinkPreviewService,
@@ -31,7 +31,10 @@ export function createNexioLinkPreviewFetch(
 ): typeof globalThis.fetch {
   return (input, init) => {
     const headers = new Headers(init?.headers);
-    if (version) headers.set('x-affine-version', version);
+    if (version) {
+      headers.set('x-nexio-version', version);
+      headers.set('x-affine-version', version);
+    }
     return fetcher(input, { ...init, headers });
   };
 }

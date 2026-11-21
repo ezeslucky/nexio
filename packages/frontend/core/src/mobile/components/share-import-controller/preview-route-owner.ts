@@ -158,6 +158,7 @@ export class SharePreviewRouteOwner {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-nexio-version': BUILD_CONFIG.appVersion,
         'x-affine-version': BUILD_CONFIG.appVersion,
       },
       body: JSON.stringify({ url, include: ['transcript'] }),

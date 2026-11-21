@@ -4,7 +4,8 @@ import { AuthProvider } from '../provider/auth';
 import { ServerScope } from '../scopes/server';
 import { FetchService } from '../services/fetch';
 
-const CSRF_COOKIE_NAME = 'affine_csrf_token';
+const CSRF_COOKIE_NAME = 'nexio_csrf_token';
+const LEGACY_CSRF_COOKIE_NAME = 'affine_csrf_token';
 
 function getCookieValue(name: string) {
   if (typeof document === 'undefined') {
@@ -94,10 +95,17 @@ export function configureDefaultAuthProvider(framework: Framework) {
         });
       },
       async signOut() {
-        const csrfToken = getCookieValue(CSRF_COOKIE_NAME);
+        const csrfToken =
+          getCookieValue(CSRF_COOKIE_NAME) ||
+          getCookieValue(LEGACY_CSRF_COOKIE_NAME);
         await fetchService.fetch('/api/auth/sign-out', {
           method: 'POST',
-          headers: csrfToken ? { 'x-affine-csrf-token': csrfToken } : undefined,
+          headers: csrfToken
+            ? {
+                'x-nexio-csrf-token': csrfToken,
+                'x-affine-csrf-token': csrfToken,
+              }
+            : undefined,
         });
       },
       async clearSession() {},

@@ -5,7 +5,7 @@ impl DocStoragePool {
   pub async fn get_blob(&self, universal_id: String, key: String) -> Result<Option<Blob>> {
     #[cfg(any(target_os = "android", target_os = "ios", test))]
     {
-      use affine_nbstore::Blob as NbBlob;
+      use nexio_nbstore::Blob as NbBlob;
       enum BlobEncodeOutcome {
         Cached(Blob),
         Inline(NbBlob),

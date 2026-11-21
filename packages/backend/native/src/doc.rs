@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use affine_common::napi_utils::map_napi_err;
+use nexio_common::napi_utils::map_napi_err;
 use affine_doc_loader::{
   self as doc_loader, Bounds, CanvasBlock, CanvasElement, CanvasProjectionV1, DocumentSearchProjectionV1,
   DocumentSearchUnit, MarkdownResult, PageDocContent, ProjectionWarning, SearchUnitSource, Visibility,
