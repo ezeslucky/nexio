@@ -1,4 +1,4 @@
-﻿import { Button } from '@nexio/component/ui/button';
+import { Button } from '@nexio/component/ui/button';
 import { notify } from '@nexio/component/ui/notification';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import { AuthService, ServerService } from '@nexio/core/modules/cloud';
@@ -53,9 +53,9 @@ export function OAuth({ redirectUrl }: { redirectUrl?: string }) {
 
   const availableProviders = useMemo(() => {
     if (oauthProviders && oauthProviders.length > 0) {
-      return oauthProviders;
+      return oauthProviders.filter(p => p === OAuthProviderType.Google);
     }
-    return [OAuthProviderType.Google, OAuthProviderType.GitHub];
+    return [OAuthProviderType.Google];
   }, [oauthProviders]);
 
   const onContinue = useAsyncCallback(

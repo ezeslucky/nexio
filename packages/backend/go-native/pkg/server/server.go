@@ -235,7 +235,7 @@ func (s *Server) handlePreflight(w http.ResponseWriter, r *http.Request) {
 			"magicLink": map[string]any{"available": true},
 			"oauth": map[string]any{
 				"available": true,
-				"providers": []string{"Google", "GitHub"},
+				"providers": []string{"Google"},
 			},
 			"passkey": map[string]any{
 				"available":    false,
@@ -311,7 +311,7 @@ func (s *Server) handleMethods(w http.ResponseWriter, r *http.Request) {
 		"password": map[string]any{"bound": true},
 		"oauth": map[string]any{
 			"bound":     true,
-			"providers": []string{"Google", "GitHub"},
+			"providers": []string{"Google"},
 		},
 		"passkey": map[string]any{
 			"bound": false,
@@ -1071,7 +1071,6 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 			"calendarProviders": []string{},
 			"oauthProviders": []string{
 				"Google",
-				"GitHub",
 			},
 			"credentialsRequirement": map[string]any{
 				"__typename": "CredentialsRequirementType",
@@ -1090,7 +1089,6 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 				"__typename": "ServerConfigType",
 				"oauthProviders": []string{
 					"Google",
-					"GitHub",
 				},
 			}
 		}
