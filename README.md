@@ -2,6 +2,25 @@
 
 > **Next-generation all-in-one workspace, knowledge operating system, and AI automation engine.**  
 > Nexio unifies wikis, knowledge management, presentation canvases, and visual AI workflows into a single platform — built to outperform tools like Notion, Miro, and n8n.
+>
+> 🌐 **Website**: [https://www.technexio.me](https://www.technexio.me)  
+> 📦 **GitHub**: [https://github.com/ezeslucky/nexio](https://github.com/ezeslucky/nexio)
+
+---
+
+## ⚡ Instant Install (1-Line Terminal Installers)
+
+Install and run Nexio on any platform in seconds:
+
+### macOS & Linux
+```bash
+curl -fsSL https://www.technexio.me/ | sh
+```
+
+### Windows (PowerShell)
+```powershell
+irm https://www.technexio.me/install.ps1 | iex
+```
 
 ---
 
@@ -30,6 +49,9 @@
 - **💾 Local-First with Real-Time Collaboration**  
   Your data lives on your own disk first, with optional cloud sync and real-time collaboration across devices. Responsive and reliable offline, while seamlessly supporting multi-user sessions in the browser and desktop apps.
 
+- **🚀 Ultra-Fast Go Native Backend**  
+  Equipped with a native Golang backend (`packages/backend/go-native`) providing high-concurrency document synchronization, Socket.IO v4 real-time transport, GraphQL APIs, and universal platform installers without requiring heavy external databases.
+
 - **🛠️ Self-Host & Shape Your Own Nexio**  
   Fork, self-host, and customize Nexio to match your workflows. Built with an open, extensible plugin architecture so teams can build custom blocks, node types, and integrations.
 
@@ -37,29 +59,27 @@
 
 ## 🏛️ Architecture Overview
 
-Nexio is organized as a **Yarn v4 + Turborepo monorepo**. It pairs a web and Electron desktop client with a high-performance TypeScript backend server, a shared block engine, and native Rust accelerators.
+Nexio is organized as a **Yarn v4 + Turborepo monorepo** with high-performance TypeScript frontend packages, an ultra-fast Go backend daemon, native Rust modules, and an extensible block editor engine.
 
 ### High-Level Runtime Diagram
 
 ```text
-                 ┌──────────────────────────────┐
-                 │      Nexio Client Apps       │
-                 │  - Web: @nexio/web           │
-                 │  - Desktop: Electron app     │
-                 │  - Workflow Studio Engine    │
-                 └───────────────┬──────────────┘
-                                 │ HTTP / GraphQL / WebSockets
-                                 v
-                 ┌──────────────────────────────┐
-                 │        Backend Server        │
-                 │    packages/backend/server   │
-                 └───────┬───────────┬──────────┘
-                         │           │
-                         v           v
-                    PostgreSQL      Redis
-                         │
-                         v
-               (optional) Search/Indexer
+                 ┌────────────────────────────────────────┐
+                 │           Nexio Client Apps            │
+                 │   - Web App: @nexio/web (:8080)        │
+                 │   - Desktop App: Electron (:8080)      │
+                 │   - Workflow Studio Engine             │
+                 └──────────────────┬─────────────────────┘
+                                    │ HTTP / GraphQL / Socket.IO
+                                    v
+                 ┌────────────────────────────────────────┐
+                 │          Nexio Backend Layer           │
+                 │  - Go Native Server (:3010)            │
+                 │  - Node Server: @nexio/server (:3010)  │
+                 └──────────────┬──────────────────┬──────┘
+                                │                  │
+                                v                  v
+                           PostgreSQL/SQLite      Redis
 ```
 
 ### Runtime Ports & URLs (Defaults)
@@ -67,13 +87,10 @@ Nexio is organized as a **Yarn v4 + Turborepo monorepo**. It pairs a web and Ele
 - **Web App**: `http://localhost:8080`
   - Proxies to backend for `/_` endpoints (`/api`, `/graphql`, `/socket.io`)
 - **Backend Server**: `http://localhost:3010`
+  - **Installer Endpoints**: `http://localhost:3010/install.sh` & `/install.ps1`
+  - **Socket.IO Engine.IO v4**: `http://localhost:3010/socket.io/`
   - **GraphQL Playground**: `http://localhost:3010/graphql`
   - **Swagger API Docs (Dev)**: `http://localhost:3010/api/docs`
-- **Dev Services**:
-  - PostgreSQL: `localhost:5432`
-  - Redis: `localhost:6379`
-  - Mailpit UI: `http://localhost:8025` (SMTP: `localhost:1025`)
-  - Search/Indexer: `localhost:9308`
 
 ---
 
@@ -81,7 +98,7 @@ Nexio is organized as a **Yarn v4 + Turborepo monorepo**. It pairs a web and Ele
 
 ```text
 nexio/
-├── packages/                          # 📦 Product code (workspaces)
+├── packages/                          # 📦 Monorepo packages
 │   ├── frontend/
 │   │   ├── apps/                      # 📱 Client applications
 │   │   │   ├── web/                   # 🌐 Web app (@nexio/web)
@@ -89,32 +106,29 @@ nexio/
 │   │   │   └── electron-renderer/     # 🖥️ Electron UI renderer
 │   │   ├── core/                      # 🧩 Core UI, routes & workflow studio
 │   │   │   └── src/desktop/pages/workspace/workflow/  # ⚡ Visual AI workflow engine
-│   │   ├── routes/                    # 🧭 Route definitions
 │   │   ├── i18n/                      # 🌍 Localization resources
 │   │   ├── templates/                 # 🧰 Document & workspace templates
-│   │   └── native/                    # 🦀 Rust/NAPI native bindings (frontend)
+│   │   └── native/                    # 🦀 Rust/NAPI native bindings (nexio_native)
 │   ├── backend/
-│   │   ├── server/                    # 🌐 Backend server & OAuth handlers
-│   │   └── server-native/             # 🦀 Rust/NAPI native bindings (server)
-│   └── common/                        # 🔁 Shared libraries & utilities
-├── canvas/                            # 🧱 Block/document engine & canvas framework
-├── tools/                             # 🛠️ Monorepo CLI & build tools
-│   └── cli/                           # 🧰 `yarn nexio ...` runner
+│   │   ├── go-native/                 # 🚀 High-performance Go native server & installers
+│   │   ├── server/                    # 🌐 Node.js backend server & OAuth handlers
+│   │   └── native/                    # 🦀 Rust/NAPI server native (nexio_server_native)
+│   └── common/                        # 🔁 Shared libraries & utilities (nexio_common)
+├── editor/                            # 🧱 Block/document engine & canvas framework
+├── tools/                             # 🛠️ Monorepo CLI & build tools (`yarn nexio ...`)
 ├── docs/                              # 📚 Guides and architecture documentation
-├── tests/                             # 🧪 Unit, integration, and E2E test suites
-└── .docker/                           # 🐳 Docker compose configurations
+└── tests/                             # 🧪 Unit, integration, and E2E test suites
 ```
 
 ---
 
 ## 📋 Requirements
 
-- **OS**: Linux, macOS, or Windows (WSL2 or native PowerShell)
-- **Node.js**: `v20.x` (`nvm` recommended)
+- **OS**: Linux, macOS, or Windows
+- **Node.js**: `v20.x` or higher
 - **Yarn**: `v4.x` (via Corepack)
-- **PostgreSQL**: `v14+` running on `localhost:5432`
-- **Redis**: running on `localhost:6379`
-- **Git** and **Docker** (optional, for containerized services)
+- **Go**: `v1.22+` (for compiling Go native backend)
+- **Git**
 
 ---
 
@@ -133,52 +147,14 @@ corepack enable
 yarn install
 ```
 
-### 2. Configure PostgreSQL
+### 2. Start Backend & Web Dev Server
 
-Create the `nexio` user and database:
+You can start the lightweight Go server and Web client in two terminals:
 
+**Terminal 1 — High-Performance Go Server (`:3010`)**
 ```bash
-sudo -u postgres psql
-```
-
-Inside the PostgreSQL prompt:
-
-```sql
-CREATE ROLE nexio WITH LOGIN PASSWORD 'nexio';
-ALTER ROLE nexio WITH LOGIN PASSWORD 'nexio';
-CREATE DATABASE nexio OWNER nexio;
-GRANT ALL PRIVILEGES ON DATABASE nexio TO nexio;
-\q
-```
-
-Ensure `packages/backend/server/.env` includes your database and OAuth credentials (optional):
-
-```env
-DATABASE_URL="postgres://nexio:nexio@localhost:5432/nexio"
-REDIS_SERVER_HOST="localhost"
-REDIS_SERVER_PORT=6379
-
-# (Optional) Google & GitHub OAuth
-OAUTH_GOOGLE_CLIENT_ID="your-google-client-id"
-OAUTH_GOOGLE_CLIENT_SECRET="your-google-client-secret"
-OAUTH_GITHUB_CLIENT_ID="your-github-client-id"
-OAUTH_GITHUB_CLIENT_SECRET="your-github-client-secret"
-```
-
-### 3. Run Database Migrations
-
-```bash
-yarn run nexio @nexio/server prisma migrate deploy
-```
-
-### 4. Start the Application
-
-You can start the backend and frontend in two separate terminals:
-
-**Terminal 1 — Backend API Server (`:3010`)**
-```bash
-yarn dev:server
-# or: yarn nexio dev -p @nexio/server
+# Run the Go native server
+go run -C packages/backend/go-native ./cmd/server
 ```
 
 **Terminal 2 — Web Client (`:8080`)**
@@ -187,10 +163,10 @@ yarn dev:web
 # or: yarn nexio dev -p @nexio/web
 ```
 
-Once started, navigate to:
+Once started, open your browser:
 - **Web App**: [http://localhost:8080](http://localhost:8080)
 - **Workflow Studio**: [http://localhost:8080/workflow](http://localhost:8080/workflow)
-- **API Docs (Swagger)**: [http://localhost:3010/api/docs](http://localhost:3010/api/docs)
+- **Terminal Installer**: [https://www.technexio.me](https://www.technexio.me)
 
 ---
 
@@ -208,7 +184,7 @@ Once started, navigate to:
 ## 🤝 Acknowledgement & Inspiration
 
 Nexio stands on the shoulders of pioneers in knowledge-work, visual collaboration, and automation:
-- **Quip & Notion** — the universal document block model.
+- **Quip & Notion** — universal document block model.
 - **n8n & Zapier** — visual node-based workflow orchestration and automation.
 - **Miro & Whimsical** — edgeless whiteboard collaboration.
 - **Airtable & Trello** — programmable datasheets and Kanban workflows.
