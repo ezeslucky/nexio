@@ -124,11 +124,18 @@ nexio/
 
 ## 📋 Requirements
 
+### Core Requirements (Standard Development & Running)
 - **OS**: Linux, macOS, or Windows
 - **Node.js**: `v20.x` or higher
 - **Yarn**: `v4.x` (via Corepack)
-- **Go**: `v1.22+` (for compiling Go native backend)
+- **Go**: `v1.22+` (for compiling Go native backend, or use the pre-built binary in `packages/backend/go-native/bin/`)
 - **Git**
+
+> [!NOTE]
+> **Rust is NOT required** for standard development, running the web app, or using the Go backend.
+
+### Optional (Native Rust Crate Development Only)
+- **Rust & Cargo**: `v1.85+` (Edition 2024) — Only needed if you are modifying and recompiling the low-level native Rust crates (`packages/frontend/native`, `packages/backend/native`, `packages/frontend/mobile-native`) via `cargo build` or `napi build`.
 
 ---
 
