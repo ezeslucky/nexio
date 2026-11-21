@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use affine_schema::{
+use nexio_schema::{
   get_migrator,
   import_validation::{V2_IMPORT_SCHEMA_RULES, validate_import_schema, validate_required_schema},
 };
@@ -202,7 +202,7 @@ impl SqliteDocStorage {
 mod tests {
   use std::{borrow::Cow, fs, path::Path};
 
-  use affine_schema::get_migrator;
+  use nexio_schema::get_migrator;
   use sqlx::migrate::{Migration, Migrator};
   use uuid::Uuid;
 

@@ -20,7 +20,7 @@ pub mod tiktoken;
 pub mod url_policy;
 mod utils;
 
-use affine_common::napi_utils::map_napi_err;
+use nexio_common::napi_utils::map_napi_err;
 use napi::{Result, Status, bindgen_prelude::*};
 use y_octo::{Doc, Update};
 

@@ -1,4 +1,4 @@
-﻿import { useDocMetaHelper } from '@nexio/core/components/hooks/use-block-suite-page-meta';
+import { useDocMetaHelper } from '@nexio/core/components/hooks/use-block-suite-page-meta';
 import { useDocCollectionPage } from '@nexio/core/components/hooks/use-block-suite-workspace-page';
 import { FetchService } from '@nexio/core/modules/cloud';
 import {
@@ -181,7 +181,7 @@ export const useSnapshotPage = (
   pageDocId: string,
   ts?: string
 ) => {
-  const affineWorkspace = useService(WorkspaceService).workspace;
+  const nexioWorkspace = useService(WorkspaceService).workspace;
   const workspacesService = useService(WorkspacesService);
   const snapshot = usePageHistory(docCollection.id, pageDocId, ts);
   const historyShell = useMemo(() => {
@@ -190,10 +190,10 @@ export const useSnapshotPage = (
       docCollection.id,
       pageDocId,
       new Date(ts).getTime(),
-      workspacesService.getWorkspaceFlavourProvider(affineWorkspace.meta)
+      workspacesService.getWorkspaceFlavourProvider(nexioWorkspace.meta)
     );
   }, [
-    affineWorkspace.meta,
+    nexioWorkspace.meta,
     docCollection.id,
     pageDocId,
     ts,

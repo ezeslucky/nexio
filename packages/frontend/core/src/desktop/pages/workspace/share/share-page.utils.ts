@@ -1,4 +1,4 @@
-﻿import { UserFriendlyError } from '@nexio/error';
+import { UserFriendlyError } from '@nexio/error';
 import { type DocMode, DocModes } from '@blocksuite/nexio/model';
 import { TimeoutError } from 'rxjs';
 
@@ -42,6 +42,7 @@ export const fetchSharedPublishMode = async ({
   );
   const headers = {
     Accept: 'application/octet-stream',
+    'x-nexio-version': BUILD_CONFIG.appVersion,
     'x-affine-version': BUILD_CONFIG.appVersion,
   };
   const headResponse = await globalThis.fetch(url, {

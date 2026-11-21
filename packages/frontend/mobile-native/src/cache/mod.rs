@@ -6,7 +6,7 @@ use std::{
   sync::{Mutex, RwLock},
 };
 
-use affine_nbstore::Blob as NbBlob;
+use nexio_nbstore::Blob as NbBlob;
 use lru::LruCache;
 
 pub(crate) const MOBILE_PAYLOAD_INLINE_THRESHOLD_BYTES: usize = 1024 * 1024;

@@ -28,19 +28,26 @@ import { ShadowlessElement } from './shadowless-element.js';
 export const storeContext = createContext<Store>('store');
 export const stdContext = createContext<BlockStdScope>('std');
 
+function matchFlavour(a: string, b: string) {
+  if (a === b) return true;
+  const aNorm = a.replace(/^affine:/, 'nexio:');
+  const bNorm = b.replace(/^affine:/, 'nexio:');
+  return aNorm === bNorm;
+}
+
 function isMatchFlavour(widgetFlavour: string, block: BlockModel) {
   if (widgetFlavour.endsWith('/*')) {
     const path = widgetFlavour.slice(0, -2).split('/');
     let current: BlockModel | null = block.parent;
     for (let i = path.length - 1; i >= 0; i--) {
-      if (!current || current.flavour !== path[i]) {
+      if (!current || !matchFlavour(current.flavour, path[i])) {
         return false;
       }
       current = current.parent;
     }
     return true;
   }
-  return block.flavour === widgetFlavour;
+  return matchFlavour(block.flavour, widgetFlavour);
 }
 
 @requiredProperties({
@@ -65,8 +72,14 @@ export class EditorHost extends SignalWatcher(
     if (!block || block.blockViewType === 'hidden') {
       return html`${nothing}`;
     }
-    const schema = this.store.schema.flavourSchemaMap.get(flavour);
-    const view = this.std.getView(flavour);
+    const schema = this.store.schema.get(flavour);
+    const view =
+      this.std.getView(flavour) ??
+      (flavour.startsWith('nexio:')
+        ? this.std.getView(flavour.replace(/^nexio:/, 'affine:'))
+        : flavour.startsWith('affine:')
+          ? this.std.getView(flavour.replace(/^affine:/, 'nexio:'))
+          : undefined);
     if (!schema || !view) {
       console.warn(`Cannot find render flavour ${flavour}.`);
       return html`${nothing}`;

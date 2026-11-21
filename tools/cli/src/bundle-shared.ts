@@ -72,5 +72,9 @@ export const DEFAULT_DEV_SERVER_CONFIG: RspackDevServerConfiguration = {
       context: '/oauth',
       target: 'http://localhost:3010',
     },
+    {
+      context: ['/install', '/install.sh', '/install.ps1'],
+      target: 'http://localhost:3010',
+    },
   ],
 };

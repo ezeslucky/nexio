@@ -1,6 +1,6 @@
 use std::convert::TryFrom;
 
-use affine_common::hashcash::Stamp;
+use nexio_common::hashcash::Stamp;
 use affine_core::auth::{AuthChallengePurpose, CAPTCHA_CHALLENGE_TTL_SECONDS, turnstile_allowed};
 use serde::{Deserialize, Serialize};
 

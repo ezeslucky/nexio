@@ -12,7 +12,7 @@ use std::{
   time::{SystemTime, UNIX_EPOCH},
 };
 
-use affine_nbstore::Blob as NbBlob;
+use nexio_nbstore::Blob as NbBlob;
 use chrono::{DateTime, Utc};
 
 use super::*;

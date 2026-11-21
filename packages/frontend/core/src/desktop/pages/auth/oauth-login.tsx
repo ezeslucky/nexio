@@ -18,7 +18,8 @@ import {
 } from './oauth-flow';
 
 const supportedProvider = z.nativeEnum(OAuthProviderType);
-const CSRF_COOKIE_NAME = 'affine_csrf_token';
+const CSRF_COOKIE_NAME = 'nexio_csrf_token';
+const LEGACY_CSRF_COOKIE_NAME = 'affine_csrf_token';
 
 function getCookieValue(name: string) {
   if (typeof document === 'undefined') {
@@ -60,10 +61,17 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   // sign out first, web only
   if (client === 'web') {
-    const csrfToken = getCookieValue(CSRF_COOKIE_NAME);
+    const csrfToken =
+      getCookieValue(CSRF_COOKIE_NAME) ||
+      getCookieValue(LEGACY_CSRF_COOKIE_NAME);
     await fetch('/api/auth/sign-out', {
       method: 'POST',
-      headers: csrfToken ? { 'x-affine-csrf-token': csrfToken } : undefined,
+      headers: csrfToken
+        ? {
+            'x-nexio-csrf-token': csrfToken,
+            'x-affine-csrf-token': csrfToken,
+          }
+        : undefined,
     });
   }
 

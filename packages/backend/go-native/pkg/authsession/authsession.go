@@ -14,9 +14,9 @@ import (
 
 const (
 	AccessTokenType      = "JWT"
-	AccessTokenIssuer    = "affine:auth"
-	AccessTokenAudience  = "affine:app"
-	RefreshTokenPrefix   = "aff_rt_v1"
+	AccessTokenIssuer    = "nexio:auth"
+	AccessTokenAudience  = "nexio:app"
+	RefreshTokenPrefix   = "nex_rt_v1"
 	ClockToleranceSecond = 30
 )
 
@@ -159,8 +159,8 @@ func VerifyAccessToken(token, expectedKeyID string, secret []byte, now int64) Ve
 	}
 
 	if claims.Typ != AccessTokenType ||
-		claims.Iss != AccessTokenIssuer ||
-		claims.Aud != AccessTokenAudience ||
+		(claims.Iss != AccessTokenIssuer && claims.Iss != "affine:auth") ||
+		(claims.Aud != AccessTokenAudience && claims.Aud != "affine:app") ||
 		claims.Iat > now+ClockToleranceSecond {
 		return invalidResult()
 	}
@@ -203,7 +203,7 @@ func CreateRefreshToken() (*RefreshToken, error) {
 
 func ParseRefreshToken(token string) (*ParsedRefreshToken, error) {
 	parts := strings.Split(token, ".")
-	if len(parts) != 3 || parts[0] != RefreshTokenPrefix {
+	if len(parts) != 3 || (parts[0] != RefreshTokenPrefix && parts[0] != "aff_rt_v1") {
 		return nil, errors.New("invalid refresh token format")
 	}
 

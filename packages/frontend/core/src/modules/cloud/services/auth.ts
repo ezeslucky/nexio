@@ -34,11 +34,20 @@ export interface DeviceAuthSession {
 
 function csrfHeader(): Record<string, string> {
   if (typeof document === 'undefined') return {};
-  const prefix = 'affine_csrf_token=';
-  const cookie = document.cookie
-    .split('; ')
-    .find(value => value.startsWith(prefix));
-  return cookie ? { 'x-affine-csrf-token': cookie.slice(prefix.length) } : {};
+  const cookies = document.cookie ? document.cookie.split('; ') : [];
+  const nexioCookie = cookies.find(v => v.startsWith('nexio_csrf_token='));
+  const affineCookie = cookies.find(v => v.startsWith('affine_csrf_token='));
+  const token = nexioCookie
+    ? nexioCookie.slice('nexio_csrf_token='.length)
+    : affineCookie
+      ? affineCookie.slice('affine_csrf_token='.length)
+      : null;
+  return token
+    ? {
+        'x-nexio-csrf-token': token,
+        'x-affine-csrf-token': token,
+      }
+    : {};
 }
 
 @OnEvent(ApplicationFocused, e => e.onApplicationFocused)

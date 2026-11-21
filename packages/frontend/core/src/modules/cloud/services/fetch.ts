@@ -4,7 +4,7 @@ import { fromPromise, Service } from '@toeverything/infra';
 
 import type { ServerService } from './server';
 
-const logger = new DebugLogger('affine:fetch');
+const logger = new DebugLogger('nexio:fetch');
 
 export type FetchInit = RequestInit & { timeout?: number };
 
@@ -58,6 +58,8 @@ export class FetchService extends Service {
           signal: abortController.signal,
           headers: {
             ...init?.headers,
+            'x-nexio-version': BUILD_CONFIG.appVersion,
+            'x-nexio-client-kind': BUILD_CONFIG.isNative ? 'native' : 'web',
             'x-affine-version': BUILD_CONFIG.appVersion,
             'x-affine-client-kind': BUILD_CONFIG.isNative ? 'native' : 'web',
           },

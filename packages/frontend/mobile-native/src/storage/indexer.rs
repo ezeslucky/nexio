@@ -1,4 +1,4 @@
-use affine_nbstore::indexer::{NativeIndexDocument, NativeIndexQuery, NativeIndexSearchOptions};
+use nexio_nbstore::indexer::{NativeIndexDocument, NativeIndexQuery, NativeIndexSearchOptions};
 
 use super::*;
 

@@ -9,7 +9,7 @@ pub mod pool;
 pub mod storage;
 
 #[cfg(not(feature = "use-as-lib"))]
-use affine_common::napi_utils::to_napi_error;
+use nexio_common::napi_utils::to_napi_error;
 use chrono::NaiveDateTime;
 use napi::bindgen_prelude::*;
 use napi_derive::napi;

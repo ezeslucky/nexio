@@ -43,7 +43,15 @@ export class Schema {
    * @returns The corresponding BlockSchemaType or undefined if not found.
    */
   get(flavour: string) {
-    return this.flavourSchemaMap.get(flavour);
+    const direct = this.flavourSchemaMap.get(flavour);
+    if (direct) return direct;
+    if (flavour.startsWith('nexio:')) {
+      return this.flavourSchemaMap.get(flavour.replace(/^nexio:/, 'affine:'));
+    }
+    if (flavour.startsWith('affine:')) {
+      return this.flavourSchemaMap.get(flavour.replace(/^affine:/, 'nexio:'));
+    }
+    return undefined;
   }
 
   /**
@@ -278,6 +286,17 @@ export class Schema {
     blockSchema.forEach(schema => {
       BlockSchema.parse(schema);
       this.flavourSchemaMap.set(schema.model.flavour, schema);
+      if (schema.model.flavour.startsWith('affine:')) {
+        this.flavourSchemaMap.set(
+          schema.model.flavour.replace(/^affine:/, 'nexio:'),
+          schema
+        );
+      } else if (schema.model.flavour.startsWith('nexio:')) {
+        this.flavourSchemaMap.set(
+          schema.model.flavour.replace(/^nexio:/, 'affine:'),
+          schema
+        );
+      }
     });
     return this;
   }
