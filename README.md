@@ -1,11 +1,8 @@
-# NEXIO 🚀
+# [NEXIO](https://www.technexio.me) 
 
 > **Next-generation all-in-one workspace, knowledge operating system, and AI automation engine.**  
-> Nexio unifies wikis, knowledge management, presentation canvases, and visual AI workflows into a single platform — built to outperform tools like Notion, Miro, and n8n.
+> Nexio unifies wikis, knowledge management, presentation canvases, and visual AI workflows into a single platform  built to outperform tools like Notion, Miro, and n8n.
 >
-> 🌐 **Website**: [https://www.technexio.me](https://www.technexio.me)  
-> 📦 **GitHub**: [https://github.com/ezeslucky/nexio](https://github.com/ezeslucky/nexio)
-
 ---
 
 ## ⚡ Instant Install (1-Line Terminal Installers)
