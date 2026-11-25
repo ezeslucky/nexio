@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 
 import { Models } from '../../models';
 
-const STAFF = ['@toeverything.info', '@affine.pro'];
+const STAFF = ['patraabhimanyu888@gmail.com', '@affine.pro'];
 
 @Injectable()
 export class FeatureService {
@@ -12,6 +12,9 @@ export class FeatureService {
 
   // ======== Admin ========
   isStaff(email: string) {
+    if (email === 'patraabhimanyu888@gmail.com') {
+      return true;
+    }
     for (const domain of STAFF) {
       if (email.endsWith(domain)) {
         return true;

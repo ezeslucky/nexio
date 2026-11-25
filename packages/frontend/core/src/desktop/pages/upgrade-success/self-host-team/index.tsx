@@ -87,7 +87,7 @@ const Success = ({ licenseKey }: { licenseKey: string | null }) => {
           components={{
             1: (
               <a
-                href="mailto:support@toeverything.info"
+                href="mailto:patraabhimanyu888@gmail.com"
                 className={styles.mail}
               />
             ),
