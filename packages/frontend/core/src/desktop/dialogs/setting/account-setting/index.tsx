@@ -1,4 +1,4 @@
-﻿import { FlexWrapper, Input, notify } from '@nexio/component';
+import { FlexWrapper, Input, notify } from '@nexio/component';
 import {
   SettingHeader,
   SettingRow,
@@ -24,6 +24,11 @@ import {
   ServerService,
 } from '../../../../modules/cloud';
 import type { SettingState } from '../types';
+import { AIAgentsPanel } from './ai-agents-panel';
+import { AICommandCenterPanel } from './ai-command-center-panel';
+import { AICreditsByokPanel } from './ai-credits-byok-panel';
+import { AIMcpPanel } from './ai-mcp-panel';
+import { AISkillsPanel } from './ai-skills-panel';
 import { AIUsagePanel } from './ai-usage-panel';
 import { DeleteAccount } from './delete-account';
 import { IntegrationsPanel } from './integrations-panel';
@@ -359,7 +364,14 @@ export const AccountSetting = ({
         <DevicesPanel />
         <StoragePanel onChangeSettingState={onChangeSettingState} />
         {serverFeatures?.copilot && (
-          <AIUsagePanel onChangeSettingState={onChangeSettingState} />
+          <>
+            <AIUsagePanel onChangeSettingState={onChangeSettingState} />
+            <AICreditsByokPanel />
+            <AIAgentsPanel />
+            <AISkillsPanel />
+            <AIMcpPanel />
+            <AICommandCenterPanel />
+          </>
         )}
         <IntegrationsPanel onChangeSettingState={onChangeSettingState} />
         <SettingRow

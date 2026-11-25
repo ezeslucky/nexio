@@ -136,7 +136,10 @@ export class ChatInputPreference extends SignalWatcher(
           options: {
             items: [
               menu.action({
-                name: 'Auto',
+                name: 'Auto (Intelligent Router)',
+                info: html`
+                  <span style="font-size: 11px; color: #059669; font-weight: 500;">⚡ Fast · 🧠 Smart · 🔄 Auto-Retry</span>
+                `,
                 prefix: html`
                   <div class="ai-model-prefix">
                     ${
@@ -146,11 +149,42 @@ export class ChatInputPreference extends SignalWatcher(
                 `,
                 select: () => this.aiModelService.resetModel(),
               }),
-              ...this.aiModelService.models.value.map(model =>
-                menu.action({
+              ...this.aiModelService.models.value.map(model => {
+                const speed =
+                  model.speed ??
+                  (model.name.includes('mini') ||
+                  model.name.includes('Flash') ||
+                  model.name.includes('Haiku')
+                    ? '⚡ Fast'
+                    : '⏳ Med');
+                const cost =
+                  model.cost ??
+                  ((model.name.includes('4o') &&
+                    !model.name.includes('mini')) ||
+                  model.name.includes('Sonnet')
+                    ? '$$$'
+                    : model.name.includes('Pro')
+                      ? '$$'
+                      : '$');
+                const intel =
+                  model.intelligence ??
+                  ((model.name.includes('4o') &&
+                    !model.name.includes('mini')) ||
+                  model.name.includes('Sonnet')
+                    ? '🧠 Smart'
+                    : model.name.includes('Pro')
+                      ? '💡 High'
+                      : '⚙️ Std');
+
+                return menu.action({
                   name: model.category,
                   info: html`
-                    <span class="ai-model-version">${model.version}</span>
+                    <div style="display: flex; align-items: center; gap: 4px; font-size: 11px;">
+                      <span class="ai-model-version">${model.version}</span>
+                      <span style="padding: 1px 4px; border-radius: 4px; background: rgba(0,0,0,0.05); font-size: 10px; font-weight: 500;">${speed}</span>
+                      <span style="padding: 1px 4px; border-radius: 4px; background: rgba(37,99,235,0.08); color: #2563eb; font-size: 10px; font-weight: 500;">${intel}</span>
+                      <span style="padding: 1px 4px; border-radius: 4px; background: rgba(245,158,11,0.08); color: #d97706; font-size: 10px; font-weight: 600;">${cost}</span>
+                    </div>
                   `,
                   prefix: html`
                     <div class="ai-model-prefix">
@@ -176,8 +210,8 @@ export class ChatInputPreference extends SignalWatcher(
                     }
                     this.aiModelService.setModel(model.id);
                   },
-                })
-              ),
+                });
+              }),
             ],
           },
         })

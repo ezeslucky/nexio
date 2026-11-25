@@ -18,6 +18,19 @@ import { WorkspaceMcpController } from './mcp/controller';
 import { McpCredentialService } from './mcp/credential';
 import { McpCredentialResolver } from './mcp/resolver';
 import {
+  AgentService,
+  ByokService,
+  ColumnPermissionService,
+  CommandCenterService,
+  CreditService,
+  McpClientService,
+  McpServerService,
+  ModelRegistryService,
+  ModelRouterService,
+  SkillService,
+  VersionHistoryService,
+} from './services';
+import {
   COPILOT_API_PROVIDERS,
   COPILOT_FEATURE_PROVIDERS,
   COPILOT_JOB_PROVIDERS,
@@ -82,7 +95,21 @@ export class CopilotApiModule {}
     CopilotFeatureModule,
     CopilotApiModule,
   ],
-  providers: [McpCredentialService, McpCredentialResolver],
+  providers: [
+    McpCredentialService,
+    McpCredentialResolver,
+    ModelRegistryService,
+    ModelRouterService,
+    ByokService,
+    CreditService,
+    AgentService,
+    SkillService,
+    McpServerService,
+    McpClientService,
+    CommandCenterService,
+    VersionHistoryService,
+    ColumnPermissionService,
+  ],
   controllers: [
     CopilotAttachmentController,
     CopilotController,

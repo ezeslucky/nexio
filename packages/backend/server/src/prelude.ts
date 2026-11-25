@@ -5,7 +5,7 @@ import { join } from 'node:path';
 
 import { config } from 'dotenv';
 
-import { createGlobalEnv } from './env';
+import { createGlobalEnv } from './env.js';
 
 function loadPrivateKey() {
   const file = join(CUSTOM_CONFIG_PATH, 'private.key');

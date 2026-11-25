@@ -236,7 +236,7 @@ const generalErrorText =
 
 const GeneralErrorRenderer = (props: ErrorProps = {}) => {
   const contactSupport = () => {
-    window.open('mailto:support@toeverything.info', '_blank');
+    window.open('mailto:patraabhimanyu888@gmail.com', '_blank');
   };
 
   return html`<ai-error-wrapper
@@ -244,7 +244,7 @@ const GeneralErrorRenderer = (props: ErrorProps = {}) => {
     .errorMessage=${props.errorMessage ?? ''}
     .showDetailPanel=${!!props.errorMessage}
     .actionText=${props.actionText ?? 'Contact us'}
-    .actionTooltip=${props.actionTooltip ?? 'support@toeverything.info'}
+    .actionTooltip=${props.actionTooltip ?? 'patraabhimanyu888@gmail.com'}
     .onClick=${props.onClick ?? contactSupport}
     .showAction=${props.showAction ?? true}
   ></ai-error-wrapper>`;

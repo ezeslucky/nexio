@@ -198,8 +198,8 @@ export class AIPanelError extends WithDisposable(LitElement) {
           <div class="error-info">
             ${error}. Please try again later. If this issue persists, please let
             us know at
-            <a href="mailto:support@toeverything.info">
-              support@toeverything.info
+            <a href="mailto:patraabhimanyu888@gmail.com">
+              patraabhimanyu888@gmail.com
             </a>
           </div>
         `;

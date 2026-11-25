@@ -13,6 +13,11 @@ export interface AIModel {
   category: string;
   version: string;
   available: boolean;
+  speed?: string;
+  intelligence?: string;
+  cost?: string;
+  description?: string;
+  isAutoRouter?: boolean;
 }
 
 export class AIModelService extends Service {

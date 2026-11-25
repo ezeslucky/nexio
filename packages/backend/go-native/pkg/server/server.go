@@ -39,11 +39,13 @@ type AuthState struct {
 }
 
 type Server struct {
-	cfg       Config
-	pool      *nbstore.DocStoragePool
-	hub       *Hub
-	mux       *http.ServeMux
-	authState *AuthState
+	cfg         Config
+	pool        *nbstore.DocStoragePool
+	hub         *Hub
+	mux         *http.ServeMux
+	authState   *AuthState
+	chatMu      sync.RWMutex
+	chatPrompts map[string]string
 }
 
 func NewServer(cfg Config) *Server {
@@ -53,8 +55,8 @@ func NewServer(cfg Config) *Server {
 
 	defaultUser := UserInfo{
 		ID:            "user-dev",
-		Name:          "Nexio User",
-		Email:         "user@technexio.me",
+		Name:          "Aurobindo Patra",
+		Email:         "patraabhimanyu888@gmail.com",
 		EmailVerified: true,
 		HasPassword:   true,
 		AvatarURL:     "",
@@ -68,11 +70,12 @@ func NewServer(cfg Config) *Server {
 	}
 
 	s := &Server{
-		cfg:       cfg,
-		pool:      pool,
-		hub:       hub,
-		mux:       http.NewServeMux(),
-		authState: authState,
+		cfg:         cfg,
+		pool:        pool,
+		hub:         hub,
+		mux:         http.NewServeMux(),
+		authState:   authState,
+		chatPrompts: make(map[string]string),
 	}
 
 	s.routes()
@@ -159,6 +162,486 @@ func (s *Server) routes() {
 
 	// AI & Tokenizer
 	s.mux.HandleFunc("POST /api/v1/ai/tokenizer/count", s.handleTokenCount)
+
+	// Copilot AI Core Endpoints (Phase 1)
+	s.mux.HandleFunc("GET /api/copilot/models", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"models": []map[string]any{
+				{
+					"id":               "auto",
+					"name":             "Auto (Intelligent Router)",
+					"provider":         "nexio",
+					"speed":            "fast",
+					"intelligence":     "smart",
+					"cost":             "$$",
+					"contextWindow":    128000,
+					"creditMultiplier": 1,
+					"description":      "Dynamic complexity routing with automatic retry fallback.",
+					"isAutoRouter":     true,
+				},
+				{
+					"id":               "gpt-4o",
+					"name":             "GPT-4o",
+					"provider":         "openai",
+					"speed":            "fast",
+					"intelligence":     "smart",
+					"cost":             "$$$",
+					"contextWindow":    128000,
+					"creditMultiplier": 5,
+					"description":      "Flagship omni model for complex reasoning, multi-step code, and analysis.",
+				},
+				{
+					"id":               "gpt-4o-mini",
+					"name":             "GPT-4o Mini",
+					"provider":         "openai",
+					"speed":            "fast",
+					"intelligence":     "standard",
+					"cost":             "$",
+					"contextWindow":    128000,
+					"creditMultiplier": 1,
+					"description":      "Ultra-fast, cost-effective model for summaries, translations, and everyday tasks.",
+				},
+				{
+					"id":               "claude-3-5-sonnet",
+					"name":             "Claude 3.5 Sonnet",
+					"provider":         "anthropic",
+					"speed":            "medium",
+					"intelligence":     "smart",
+					"cost":             "$$$",
+					"contextWindow":    200000,
+					"creditMultiplier": 5,
+					"description":      "State-of-the-art reasoning, deep coding, and nuanced writing.",
+				},
+				{
+					"id":               "claude-3-5-haiku",
+					"name":             "Claude 3.5 Haiku",
+					"provider":         "anthropic",
+					"speed":            "fast",
+					"intelligence":     "standard",
+					"cost":             "$",
+					"contextWindow":    200000,
+					"creditMultiplier": 1,
+					"description":      "Blazing fast model for quick edits and lightweight processing.",
+				},
+				{
+					"id":               "gemini-1.5-pro",
+					"name":             "Gemini 1.5 Pro",
+					"provider":         "gemini",
+					"speed":            "medium",
+					"intelligence":     "high",
+					"cost":             "$$",
+					"contextWindow":    1000000,
+					"creditMultiplier": 3,
+					"description":      "1M token context window for large documents and multi-file analysis.",
+				},
+				{
+					"id":               "gemini-1.5-flash",
+					"name":             "Gemini 1.5 Flash",
+					"provider":         "gemini",
+					"speed":            "fast",
+					"intelligence":     "standard",
+					"cost":             "$",
+					"contextWindow":    1000000,
+					"creditMultiplier": 1,
+					"description":      "High-speed, lightweight multimodal model.",
+				},
+			},
+			"default": map[string]any{
+				"id":   "auto",
+				"name": "Auto (Intelligent Router)",
+			},
+		})
+	})
+
+	// Copilot SSE Streaming Endpoints
+	s.mux.HandleFunc("GET /api/copilot/chat/{sessionId}/stream-object", s.handleCopilotChatStream)
+	s.mux.HandleFunc("GET /api/copilot/chat/{sessionId}/stream", s.handleCopilotChatStream)
+	s.mux.HandleFunc("GET /api/copilot/actions/{sessionId}/stream", s.handleCopilotChatStream)
+	s.mux.HandleFunc("POST /api/copilot/chat/{sessionId}/stream-object", s.handleCopilotChatStream)
+	s.mux.HandleFunc("POST /api/copilot/chat/{sessionId}/stream", s.handleCopilotChatStream)
+	s.mux.HandleFunc("POST /api/copilot/actions/{sessionId}/stream", s.handleCopilotChatStream)
+
+	s.mux.HandleFunc("POST /api/copilot/route", func(w http.ResponseWriter, r *http.Request) {
+		var req struct {
+			Prompt         string `json:"prompt"`
+			RequestedModel string `json:"requestedModel"`
+			Priority       string `json:"priority"`
+		}
+		json.NewDecoder(r.Body).Decode(&req)
+		selected := "gpt-4o-mini"
+		complexity := "simple"
+		reasoning := "Task routed to fast, cost-effective model."
+		if req.RequestedModel != "" && req.RequestedModel != "auto" {
+			selected = req.RequestedModel
+			complexity = "medium"
+			reasoning = "User explicitly specified model: " + req.RequestedModel
+		} else if strings.Contains(strings.ToLower(req.Prompt), "code") || strings.Contains(strings.ToLower(req.Prompt), "architect") || len(req.Prompt) > 500 {
+			selected = "gpt-4o"
+			complexity = "complex"
+			reasoning = "Complex code/reasoning task detected; routed to flagship model."
+		}
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"selectedModel": map[string]any{
+				"id": selected,
+			},
+			"taskComplexity": complexity,
+			"reasoning":      reasoning,
+			"fallbackCandidates": []string{
+				"claude-3-5-sonnet",
+				"gemini-1.5-pro",
+				"gpt-4o-mini",
+			},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/credits", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"balance":      1000,
+			"lifetimeUsed": 0,
+			"transactions": []any{},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/byok", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"keys": []any{},
+		})
+	})
+
+	// Agents & Sub-agents (Phase 2)
+	s.mux.HandleFunc("GET /api/copilot/agents", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"agents": []map[string]any{
+				{
+					"id":               "sys-researcher",
+					"name":             "Research Analyst",
+					"description":      "Autonomous research agent that surveys context and compiles structured insights.",
+					"systemPrompt":     "You are an expert Research Analyst. Extract facts and summarize findings.",
+					"modelId":          "gemini-1.5-pro",
+					"isReviewRequired": false,
+					"isSystem":         true,
+					"subAgents":        []string{},
+				},
+				{
+					"id":               "sys-architect",
+					"name":             "Code Architect",
+					"description":      "Senior engineer agent for architectural reviews, refactoring, and code generation.",
+					"systemPrompt":     "You are a Principal Software Architect. Propose robust, typed designs.",
+					"modelId":          "gpt-4o",
+					"isReviewRequired": true,
+					"isSystem":         true,
+					"subAgents":        []string{"sys-researcher"},
+				},
+				{
+					"id":               "sys-editor",
+					"name":             "Editorial Lead",
+					"description":      "Writing and content optimization agent for clarity, tone, and formatting.",
+					"systemPrompt":     "You are an Editorial Director. Polish prose and maintain consistency.",
+					"modelId":          "claude-3-5-sonnet",
+					"isReviewRequired": false,
+					"isSystem":         true,
+					"subAgents":        []string{},
+				},
+			},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/agents", func(w http.ResponseWriter, r *http.Request) {
+		var req struct {
+			Name             string   `json:"name"`
+			Description      string   `json:"description"`
+			SystemPrompt     string   `json:"systemPrompt"`
+			ModelId          string   `json:"modelId"`
+			IsReviewRequired bool     `json:"isReviewRequired"`
+			SubAgents        []string `json:"subAgents"`
+		}
+		json.NewDecoder(r.Body).Decode(&req)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"success": true,
+			"agent": map[string]any{
+				"id":               fmt.Sprintf("agent-%d", time.Now().UnixNano()),
+				"name":             req.Name,
+				"description":      req.Description,
+				"systemPrompt":     req.SystemPrompt,
+				"modelId":          req.ModelId,
+				"isReviewRequired": req.IsReviewRequired,
+				"subAgents":        req.SubAgents,
+			},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/tasks", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"tasks": []any{},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/tasks/{id}/approve", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"success": true,
+			"task": map[string]any{
+				"reviewStatus": "approved",
+				"status":       "done",
+			},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/tasks/{id}/reject", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"success": true,
+			"task": map[string]any{
+				"reviewStatus": "rejected",
+				"status":       "done",
+			},
+		})
+	})
+
+	// Skills & MCP Endpoints (Phase 3)
+	s.mux.HandleFunc("GET /api/copilot/skills", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"skills": []map[string]any{
+				{
+					"id":          "skill-summarize-meeting",
+					"name":        "Summarize Meeting",
+					"slug":        "summarize-meeting",
+					"description": "Summarize meeting notes, key decisions, action items, and owners.",
+					"version":     "1.0.0",
+					"isPublic":    true,
+					"isSystem":    true,
+					"frontmatter": map[string]any{"tags": []string{"meeting", "summary"}},
+					"content":     "You are an executive assistant. Summarize meeting decisions and action items:\n\n{{input}}",
+				},
+				{
+					"id":          "skill-code-review",
+					"name":        "Code Review & Refactor",
+					"slug":        "code-review",
+					"description": "Review code for security, performance, clean architecture, and edge cases.",
+					"version":     "1.0.0",
+					"isPublic":    true,
+					"isSystem":    true,
+					"frontmatter": map[string]any{"tags": []string{"engineering", "code-review"}},
+					"content":     "You are a Principal Software Architect. Review this code:\n\n{{input}}",
+				},
+				{
+					"id":          "skill-generate-diagram",
+					"name":        "Generate Architecture Diagram",
+					"slug":        "generate-diagram",
+					"description": "Create clear Mermaid.js architecture diagrams from text specifications.",
+					"version":     "1.0.0",
+					"isPublic":    true,
+					"isSystem":    true,
+					"frontmatter": map[string]any{"tags": []string{"diagram", "mermaid"}},
+					"content":     "Generate a Mermaid diagram for:\n\n{{input}}",
+				},
+				{
+					"id":          "skill-grammar-fix",
+					"name":        "Tone & Grammar Polish",
+					"slug":        "grammar-fix",
+					"description": "Polish tone, grammar, and flow while preserving authentic voice.",
+					"version":     "1.0.0",
+					"isPublic":    true,
+					"isSystem":    true,
+					"frontmatter": map[string]any{"tags": []string{"writing", "polish"}},
+					"content":     "Polish tone and grammar:\n\n{{input}}",
+				},
+			},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/skills", func(w http.ResponseWriter, r *http.Request) {
+		var req struct {
+			Name        string `json:"name"`
+			Slug        string `json:"slug"`
+			Description string `json:"description"`
+			Content     string `json:"content"`
+		}
+		json.NewDecoder(r.Body).Decode(&req)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"success": true,
+			"skill": map[string]any{
+				"id":          fmt.Sprintf("skill_%d", time.Now().UnixNano()),
+				"name":        req.Name,
+				"slug":        req.Slug,
+				"description": req.Description,
+				"version":     "1.0.0",
+				"content":     req.Content,
+			},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/skills/execute", func(w http.ResponseWriter, r *http.Request) {
+		var req struct {
+			Slug  string `json:"slug"`
+			Input string `json:"input"`
+		}
+		json.NewDecoder(r.Body).Decode(&req)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"skill":       req.Slug,
+			"modelUsed":   "gpt-4o-mini",
+			"costCredits": 5,
+			"output":      fmt.Sprintf("[Executed Skill /%s]\n\nProcessed successfully with input: %s", req.Slug, req.Input),
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/mcp/server/tools", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"tools": []map[string]any{
+				{"name": "nexio_list_docs", "description": "List documents in Nexio"},
+				{"name": "nexio_read_doc", "description": "Read document content by ID"},
+				{"name": "nexio_search_docs", "description": "Search workspace documents"},
+				{"name": "nexio_create_doc", "description": "Create document in Nexio"},
+				{"name": "nexio_update_doc", "description": "Update existing document"},
+				{"name": "nexio_list_databases", "description": "List database tables"},
+			},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/mcp/server/connections", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"connections": []any{},
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/mcp/server/tokens", func(w http.ResponseWriter, r *http.Request) {
+		var req struct {
+			ClientName string `json:"clientName"`
+		}
+		json.NewDecoder(r.Body).Decode(&req)
+		raw := fmt.Sprintf("nx_mcp_%d", time.Now().UnixNano())
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"success":    true,
+			"id":         fmt.Sprintf("conn_%d", time.Now().UnixNano()),
+			"clientName": req.ClientName,
+			"tokenMask":  "nx_mcp_••••" + raw[len(raw)-6:],
+			"rawToken":   raw,
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/mcp/client/servers", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"servers": []any{},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/mcp/client/confirmations", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"confirmations": []any{},
+		})
+	})
+
+	// Phase 4: Control & Safety Endpoints
+	s.mux.HandleFunc("GET /api/copilot/command-center/overview", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"totalRequests":     42,
+			"totalCreditsSpent": 180,
+			"byFeature": []map[string]any{
+				{"feature": "chat", "requests": 25, "credits": 50},
+				{"feature": "agent_execution", "requests": 10, "credits": 100},
+				{"feature": "skill_execution", "requests": 7, "credits": 30},
+			},
+			"byUser": []map[string]any{
+				{"userId": "usr_default", "requests": 42, "credits": 180},
+			},
+			"byAgent": []map[string]any{
+				{"target": "sys-researcher", "requests": 6, "credits": 60},
+				{"target": "sys-architect", "requests": 4, "credits": 40},
+			},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/command-center/limits", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"monthlyCreditLimit":    5000,
+			"dailyCreditLimit":      1000,
+			"alertThresholdPercent": 80,
+			"currentMonthUsage":     180,
+			"currentDayUsage":       45,
+			"usagePercent":          4,
+			"isAlertTriggered":      false,
+			"hardLimitEnabled":      true,
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/command-center/limits", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{"success": true})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/command-center/policies", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"allowedModels": []string{"auto", "gpt-4o", "gpt-4o-mini", "claude-3-5-sonnet", "gemini-1.5-flash"},
+			"allowedAgents": []string{"sys-researcher", "sys-architect", "sys-editor"},
+			"maxCreditPerRequest": 100,
+			"requireApprovalForAgents": false,
+		})
+	})
+
+	s.mux.HandleFunc("POST /api/copilot/command-center/policies", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{"success": true})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/documents/{id}/history", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"history": []map[string]any{
+				{
+					"id":            "rev_1",
+					"docId":         r.PathValue("id"),
+					"authorType":    "user",
+					"authorName":    "Human User",
+					"changeSummary": "Initial document draft created.",
+					"createdAt":     time.Now().Add(-2 * time.Hour).Format(time.RFC3339),
+				},
+				{
+					"id":            "rev_2",
+					"docId":         r.PathValue("id"),
+					"authorType":    "agent",
+					"authorName":    "Research Analyst",
+					"changeSummary": "Enriched document with market analysis citations and structured outline.",
+					"createdAt":     time.Now().Add(-1 * time.Hour).Format(time.RFC3339),
+				},
+			},
+		})
+	})
+
+	s.mux.HandleFunc("GET /api/copilot/databases/{id}/permissions", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(map[string]any{
+			"permissions": []map[string]any{
+				{
+					"id":           "perm_salary",
+					"databaseId":   r.PathValue("id"),
+					"propertyId":   "prop_salary",
+					"propertyName": "Compensation / Salary",
+					"allowedRoles": []string{"owner", "admin"},
+					"allowedAgents": []string{},
+					"canView":      false,
+					"canEdit":      false,
+				},
+			},
+		})
+	})
 
 	// Security & Hashcash
 	s.mux.HandleFunc("POST /api/v1/security/hashcash/mint", func(w http.ResponseWriter, r *http.Request) {
@@ -333,14 +816,14 @@ func (s *Server) handleSignIn(w http.ResponseWriter, r *http.Request) {
 
 	email := req.Email
 	if email == "" {
-		email = "user@technexio.me"
+		email = "patraabhimanyu888@gmail.com"
 	}
 	name := ""
 	parts := strings.Split(email, "@")
 	if len(parts) > 0 && parts[0] != "" {
 		name = parts[0]
 	} else {
-		name = "Nexio User"
+		name = "Aurobindo Patra"
 	}
 
 	userID := req.UserID
@@ -1048,6 +1531,18 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 					"used":       0,
 					"resetAt":    time.Now().Add(24 * time.Hour).Format(time.RFC3339),
 				},
+				"copilot": map[string]any{
+					"__typename": "UserCopilotType",
+					"chats": map[string]any{
+						"__typename": "CopilotChatConnection",
+						"edges":      []any{},
+						"pageInfo": map[string]any{
+							"__typename":      "PageInfo",
+							"hasNextPage":     false,
+							"hasPreviousPage": false,
+						},
+					},
+				},
 			}
 		} else {
 			data["currentUser"] = nil
@@ -1155,11 +1650,11 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 				"createdAt":  time.Now().UTC().Format(time.RFC3339),
 				"updatedAt":  time.Now().UTC().Format(time.RFC3339),
 				"createdBy": map[string]any{
-					"name":      "Nexio User",
+					"name":      "Aurobindo Patra",
 					"avatarUrl": "",
 				},
 				"updatedBy": map[string]any{
-					"name":      "Nexio User",
+					"name":      "Aurobindo Patra",
 					"avatarUrl": "",
 				},
 			},
@@ -1201,6 +1696,66 @@ func (s *Server) handleGraphQL(w http.ResponseWriter, r *http.Request) {
 		data["subscription"] = nil
 	}
 
+	if strings.Contains(query, "createcopilotsession") || op == "createCopilotSession" || op == "createCopilotSessionWithHistory" {
+		sessID := fmt.Sprintf("session_%d", time.Now().UnixNano())
+		wsID := "CBdG2zZTBOsRKKI03pxDm"
+		if v, ok := req.Variables["options"].(map[string]any); ok {
+			if w, ok := v["workspaceId"].(string); ok && w != "" {
+				wsID = w
+			}
+		}
+		data["createCopilotSession"] = sessID
+		data["createCopilotSessionWithHistory"] = map[string]any{
+			"__typename":      "CopilotHistories",
+			"sessionId":       sessID,
+			"workspaceId":     wsID,
+			"docId":           "",
+			"parentSessionId": nil,
+			"promptName":      "chat",
+			"action":          "",
+			"pinned":          false,
+			"title":           "New Chat",
+			"messages":        []any{},
+			"createdAt":       time.Now().UTC().Format(time.RFC3339),
+			"updatedAt":       time.Now().UTC().Format(time.RFC3339),
+		}
+	}
+
+	if strings.Contains(query, "createcopilotmessage") || op == "createCopilotMessage" {
+		msgID := fmt.Sprintf("msg_%d", time.Now().UnixNano())
+		data["createCopilotMessage"] = msgID
+		if v, ok := req.Variables["options"].(map[string]any); ok {
+			if sessID, ok := v["sessionId"].(string); ok && sessID != "" {
+				if content, ok := v["content"].(string); ok {
+					s.chatMu.Lock()
+					s.chatPrompts[sessID] = content
+					s.chatMu.Unlock()
+				}
+			}
+		}
+	}
+
+	if strings.Contains(query, "updatecopilotsession") || op == "updateCopilotSession" {
+		data["updateCopilotSession"] = true
+	}
+
+	if strings.Contains(query, "forkcopilotsession") || op == "forkCopilotSession" {
+		data["forkCopilotSession"] = fmt.Sprintf("session_%d", time.Now().UnixNano())
+	}
+
+	if strings.Contains(query, "cleanupcopilotsession") || op == "cleanupCopilotSession" {
+		data["cleanupCopilotSession"] = true
+	}
+
+	if strings.Contains(query, "copilot") {
+		if _, ok := data["copilotHistories"]; !ok {
+			data["copilotHistories"] = []any{}
+			data["copilotRecentSessions"] = []any{}
+			data["copilotSessions"] = []any{}
+			data["copilotHistoryIds"] = []any{}
+		}
+	}
+
 	json.NewEncoder(w).Encode(map[string]any{
 		"data": data,
 	})
@@ -1214,6 +1769,12 @@ type loggingResponseWriter struct {
 func (lrw *loggingResponseWriter) WriteHeader(code int) {
 	lrw.statusCode = code
 	lrw.ResponseWriter.WriteHeader(code)
+}
+
+func (lrw *loggingResponseWriter) Flush() {
+	if flusher, ok := lrw.ResponseWriter.(http.Flusher); ok {
+		flusher.Flush()
+	}
 }
 
 func loggingMiddleware(next http.Handler) http.Handler {
@@ -1247,6 +1808,73 @@ func corsMiddleware(next http.Handler) http.Handler {
 		}
 		next.ServeHTTP(w, r)
 	})
+}
+
+func generateChatResponse(prompt, modelID string) string {
+	lower := strings.ToLower(strings.TrimSpace(prompt))
+	if lower == "" || lower == "hi" || lower == "hello" || lower == "hey" {
+		return "Hello! I am Nexio AI, your intelligent workspace assistant. I can help you draft documents, organize notes, review code, execute custom skills, and coordinate autonomous agents. How can I help you today?"
+	}
+	if strings.Contains(lower, "skill") {
+		return "You can run reusable skills with `/` commands (like `/summarize-meeting`, `/code-review`, `/generate-diagram`, and `/grammar-fix`), or build custom skills in Settings -> Skills Library."
+	}
+	if strings.Contains(lower, "agent") {
+		return "Nexio Agents support autonomous task execution with multi-agent delegation and 'Review for me' safety confirmation. You can manage them in Settings -> AI Agents."
+	}
+	if strings.Contains(lower, "credit") || strings.Contains(lower, "byok") {
+		return "Nexio provides a built-in credit metering system and BYOK (Bring Your Own Key) for OpenAI, Anthropic, and Gemini with AES-256-GCM encryption."
+	}
+	if strings.Contains(lower, "code") || strings.Contains(lower, "func") {
+		return fmt.Sprintf("Here is a solution for your request:\n\n```typescript\n// Auto-routed via %s\nexport function solveTask(input: string): string {\n  console.log('Processing:', input);\n  return `Success: ${input}`;\n}\n```\n\nLet me know if you would like me to refine this or add automated tests!", modelID)
+	}
+	return fmt.Sprintf("I received your request: \"%s\". I have processed it using model `%s`. Let me know how you'd like to proceed or if you need any adjustments!", prompt, modelID)
+}
+
+func (s *Server) handleCopilotChatStream(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/event-stream")
+	w.Header().Set("Cache-Control", "no-cache")
+	w.Header().Set("Connection", "keep-alive")
+	w.Header().Set("X-Accel-Buffering", "no")
+
+	flusher, _ := w.(http.Flusher)
+
+	sessionID := r.PathValue("sessionId")
+	queryPrompt := r.URL.Query().Get("prompt")
+	modelID := r.URL.Query().Get("modelId")
+	if modelID == "" {
+		modelID = "auto"
+	}
+
+	var prompt string
+	s.chatMu.RLock()
+	if sessionID != "" && s.chatPrompts[sessionID] != "" {
+		prompt = s.chatPrompts[sessionID]
+	}
+	s.chatMu.RUnlock()
+
+	if prompt == "" && queryPrompt != "" {
+		prompt = queryPrompt
+	}
+
+	response := generateChatResponse(prompt, modelID)
+
+	words := strings.Fields(response)
+	for i, word := range words {
+		suffix := " "
+		if i == len(words)-1 {
+			suffix = ""
+		}
+		chunk := map[string]any{
+			"type":      "text-delta",
+			"textDelta": word + suffix,
+		}
+		chunkJSON, _ := json.Marshal(chunk)
+		fmt.Fprintf(w, "event: message\ndata: %s\n\n", string(chunkJSON))
+		if flusher != nil {
+			flusher.Flush()
+		}
+		time.Sleep(20 * time.Millisecond)
+	}
 }
 
 func (s *Server) Start() error {

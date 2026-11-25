@@ -1,4 +1,4 @@
-﻿import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
+import { Button, Checkbox, Loading, Switch, Tooltip } from '@nexio/component';
 import { SettingHeader } from '@nexio/component/setting-components';
 import { useAsyncCallback } from '@nexio/core/components/hooks/nexio-async-hooks';
 import {
@@ -101,7 +101,7 @@ const FeedbackIcon = ({ type }: { type: Flag['feedbackType'] }) => {
 
 const feedbackLink: Record<NonNullable<Flag['feedbackType']>, string> = {
   discord: BUILD_CONFIG.discordUrl,
-  email: 'mailto:support@toeverything.info',
+  email: 'mailto:patraabhimanyu888@gmail.com',
   github: 'https://github.com/ezeslucky/nexio/issues',
 };
 

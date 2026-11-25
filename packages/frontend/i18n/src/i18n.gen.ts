@@ -7153,7 +7153,7 @@ export function useNexioI18N(): {
       */
     ["com.affine.settings.workspace.license.self-host-team.upload-license-file.success.description"](): string;
     /**
-      * `If you encounter any issues, contact support@toeverything.info.`
+      * `If you encounter any issues, contact patraabhimanyu888@gmail.com.`
       */
     ["com.affine.settings.workspace.license.self-host-team.upload-license-file.help"](): string;
     /**
@@ -10964,7 +10964,7 @@ export const TypedTrans: {
         ["1"]: JSX.Element;
     }>>;
     /**
-      * `If you encounter any issues, contact support@toeverything.info. No license yet? <1>Click to purchase</1>.`
+      * `If you encounter any issues, contact patraabhimanyu888@gmail.com. No license yet? <1>Click to purchase</1>.`
       */
     ["com.affine.settings.workspace.license.activate-modal.tips"]: ComponentType<TypedTransProps<Readonly<{}>, {
         ["1"]: JSX.Element;

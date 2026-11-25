@@ -54,6 +54,16 @@ model User {
   workspaceMemberLastAccesses WorkspaceMemberLastAccess[]
   quotaState                  EffectiveUserQuotaState?
   ownedQuotaStates            EffectiveWorkspaceQuotaState[]
+  creditAccount               AiUserCreditAccount?
+  byokKeys                    AiUserByokKey[]
+  createdAgents               AiAgent[]
+  agentTasks                  AiAgentTask[]
+  skills                      AiSkill[]
+  mcpConnections              AiMcpConnection[]
+  externalMcpServers          AiExternalMcpServer[]
+  spendingLimits              AiSpendingLimit[]
+  changeHistories             AiDocumentChangeHistory[]
+  columnPermissions           AiDatabaseColumnPermission[]
 
   @@index([email])
   @@map("users")
@@ -1534,4 +1544,253 @@ model CalendarEventInstance {
   @@unique([calendarEventId, recurrenceId])
   @@index([calendarEventId, startAtUtc])
   @@map("calendar_event_instances")
+}
+
+model AiUserCreditAccount {
+  id           String   @id @default(uuid()) @db.VarChar
+  userId       String   @unique @map("user_id") @db.VarChar
+  balance      Int      @default(1000)
+  lifetimeUsed Int      @default(0) @map("lifetime_used")
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  transactions AiCreditTransaction[]
+
+  @@map("ai_user_credit_accounts")
+}
+
+model AiCreditTransaction {
+  id           String   @id @default(uuid()) @db.VarChar
+  accountId    String   @map("account_id") @db.VarChar
+  userId       String   @map("user_id") @db.VarChar
+  amount       Int
+  balanceAfter Int      @map("balance_after")
+  feature      String   @db.VarChar
+  model        String?  @db.VarChar
+  agentId      String?  @map("agent_id") @db.VarChar
+  metadata     Json?    @db.JsonB
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  account      AiUserCreditAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([accountId])
+  @@map("ai_credit_transactions")
+}
+
+model AiUserByokKey {
+  id           String    @id @default(uuid()) @db.VarChar
+  userId       String    @map("user_id") @db.VarChar
+  provider     String    @db.VarChar
+  encryptedKey String    @map("encrypted_key") @db.Text
+  iv           String    @db.VarChar
+  tag          String    @db.VarChar
+  keyMask      String    @map("key_mask") @db.VarChar
+  isValid      Boolean   @default(true) @map("is_valid")
+  lastUsedAt   DateTime? @map("last_used_at") @db.Timestamptz(3)
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, provider])
+  @@index([userId])
+  @@map("ai_user_byok_keys")
+}
+
+model AiAgent {
+  id               String        @id @default(uuid()) @db.VarChar
+  workspaceId      String?       @map("workspace_id") @db.VarChar
+  createdBy        String        @map("created_by") @db.VarChar
+  name             String        @db.VarChar
+  description      String?       @db.Text
+  systemPrompt     String        @map("system_prompt") @db.Text
+  modelId          String        @default("auto") @map("model_id") @db.VarChar
+  isReviewRequired Boolean       @default(false) @map("is_review_required")
+  subAgents        Json?         @map("sub_agents") @db.JsonB
+  tools            Json?         @db.JsonB
+  isSystem         Boolean       @default(false) @map("is_system")
+  createdAt        DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user             User          @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  tasks            AiAgentTask[]
+
+  @@index([createdBy])
+  @@index([workspaceId])
+  @@map("ai_agents")
+}
+
+model AiAgentTask {
+  id             String    @id @default(uuid()) @db.VarChar
+  agentId        String    @map("agent_id") @db.VarChar
+  parentTaskId   String?   @map("parent_task_id") @db.VarChar
+  userId         String    @map("user_id") @db.VarChar
+  workspaceId    String?   @map("workspace_id") @db.VarChar
+  status         String    @default("queued") @db.VarChar
+  input          String    @db.Text
+  contextDocId   String?   @map("context_doc_id") @db.VarChar
+  output         String?   @db.Text
+  reviewStatus   String    @default("none") @map("review_status") @db.VarChar
+  reviewSummary  String?   @map("review_summary") @db.Text
+  changePayload  Json?     @map("change_payload") @db.JsonB
+  appliedAt      DateTime? @map("applied_at") @db.Timestamptz(3)
+  subTaskResults Json?     @map("sub_task_results") @db.JsonB
+  costCredits    Int       @default(0) @map("cost_credits")
+  error          String?   @db.Text
+  createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt      DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  agent          AiAgent   @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([agentId])
+  @@index([userId, status])
+  @@index([parentTaskId])
+  @@map("ai_agent_tasks")
+}
+
+model AiSkill {
+  id           String   @id @default(uuid()) @db.VarChar
+  userId       String   @map("user_id") @db.VarChar
+  workspaceId  String?  @map("workspace_id") @db.VarChar
+  name         String   @db.VarChar
+  slug         String   @db.VarChar
+  description  String?  @db.Text
+  version      String   @default("1.0.0") @db.VarChar
+  isPublic     Boolean  @default(false) @map("is_public")
+  isSystem     Boolean  @default(false) @map("is_system")
+  frontmatter  Json?    @db.JsonB
+  content      String   @db.Text
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, slug])
+  @@index([workspaceId])
+  @@map("ai_skills")
+}
+
+model AiMcpConnection {
+  id          String    @id @default(uuid()) @db.VarChar
+  userId      String    @map("user_id") @db.VarChar
+  workspaceId String?   @map("workspace_id") @db.VarChar
+  clientName  String    @map("client_name") @db.VarChar
+  tokenHash   String    @unique @map("token_hash") @db.VarChar
+  tokenMask   String    @map("token_mask") @db.VarChar
+  permissions Json      @db.JsonB
+  clientIp    String?   @map("client_ip") @db.VarChar
+  userAgent   String?   @map("user_agent") @db.Text
+  lastUsedAt  DateTime? @map("last_used_at") @db.Timestamptz(3)
+  isRevoked   Boolean   @default(false) @map("is_revoked")
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([tokenHash])
+  @@map("ai_mcp_connections")
+}
+
+model AiExternalMcpServer {
+  id                  String   @id @default(uuid()) @db.VarChar
+  userId              String   @map("user_id") @db.VarChar
+  workspaceId         String?  @map("workspace_id") @db.VarChar
+  name                String   @db.VarChar
+  url                 String   @db.VarChar
+  transportType       String   @default("sse") @map("transport_type") @db.VarChar
+  headers             Json?    @db.JsonB
+  tools               Json?    @db.JsonB
+  isEnabled           Boolean  @default(true) @map("is_enabled")
+  requireConfirmation Boolean  @default(true) @map("require_confirmation")
+  createdAt           DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt           DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([workspaceId])
+  @@map("ai_external_mcp_servers")
+}
+
+model AiSpendingLimit {
+  id                    String   @id @default(uuid()) @db.VarChar
+  userId                String   @map("user_id") @db.VarChar
+  workspaceId           String?  @map("workspace_id") @db.VarChar
+  monthlyCreditLimit    Int      @default(5000) @map("monthly_credit_limit")
+  dailyCreditLimit      Int      @default(1000) @map("daily_credit_limit")
+  alertThresholdPercent Int      @default(80) @map("alert_threshold_percent")
+  currentMonthUsage     Int      @default(0) @map("current_month_usage")
+  currentDayUsage       Int      @default(0) @map("current_day_usage")
+  alertTriggered        Boolean  @default(false) @map("alert_triggered")
+  hardLimitEnabled      Boolean  @default(true) @map("hard_limit_enabled")
+  createdAt             DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt             DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, workspaceId])
+  @@index([userId])
+  @@map("ai_spending_limits")
+}
+
+model AiPolicyControl {
+  id                      String   @id @default(uuid()) @db.VarChar
+  workspaceId             String   @unique @map("workspace_id") @db.VarChar
+  allowedModels           Json     @map("allowed_models") @db.JsonB
+  allowedAgents           Json     @map("allowed_agents") @db.JsonB
+  maxCreditPerRequest     Int      @default(100) @map("max_credit_per_request")
+  requireApprovalForAgents Boolean  @default(false) @map("require_approval_for_agents")
+  createdAt               DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt               DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("ai_policy_controls")
+}
+
+model AiDocumentChangeHistory {
+  id               String   @id @default(uuid()) @db.VarChar
+  docId            String   @map("doc_id") @db.VarChar
+  workspaceId      String?  @map("workspace_id") @db.VarChar
+  userId           String   @map("user_id") @db.VarChar
+  authorType       String   @map("author_type") @db.VarChar
+  authorId         String   @map("author_id") @db.VarChar
+  authorName       String   @map("author_name") @db.VarChar
+  changeSummary    String   @map("change_summary") @db.Text
+  diffData         Json?    @map("diff_data") @db.JsonB
+  previousSnapshot String?  @map("previous_snapshot") @db.Text
+  currentSnapshot  String   @map("current_snapshot") @db.Text
+  isRestored       Boolean  @default(false) @map("is_restored")
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([docId])
+  @@index([userId])
+  @@map("ai_document_change_histories")
+}
+
+model AiDatabaseColumnPermission {
+  id            String   @id @default(uuid()) @db.VarChar
+  databaseId    String   @map("database_id") @db.VarChar
+  propertyId    String   @map("property_id") @db.VarChar
+  propertyName  String   @map("property_name") @db.VarChar
+  workspaceId   String?  @map("workspace_id") @db.VarChar
+  createdBy     String   @map("created_by") @db.VarChar
+  allowedRoles  Json     @map("allowed_roles") @db.JsonB
+  allowedAgents Json     @map("allowed_agents") @db.JsonB
+  allowedUsers  Json?    @map("allowed_users") @db.JsonB
+  canView       Boolean  @default(true) @map("can_view")
+  canEdit       Boolean  @default(true) @map("can_edit")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt     DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  user          User     @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+
+  @@index([databaseId, propertyId])
+  @@index([createdBy])
+  @@map("ai_database_column_permissions")
 }

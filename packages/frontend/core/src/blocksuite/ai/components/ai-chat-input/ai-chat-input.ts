@@ -1,4 +1,4 @@
-﻿import type {
+import type {
   AIDraftService,
   AIModelService,
   AIToolsConfigService,
@@ -837,6 +837,31 @@ export class AIChatInput extends SignalWatcher(
 
   send = async (text: string) => {
     if (!this.runtime) return;
+
+    // Check if input begins with a slash command (Phase 3 Skills execution)
+    if (text.startsWith('/') && !text.startsWith('//')) {
+      const match = text.match(/^\/([a-zA-Z0-9_-]+)(?:\s+([\s\S]*))?$/);
+      if (match) {
+        const slug = match[1];
+        const skillInput = match[2] || this.chatContextValue.quote || 'Document context';
+        try {
+          const res = await fetch('/api/copilot/skills/execute', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ slug, input: skillInput }),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            if (data?.output) {
+              text = data.output;
+            }
+          }
+        } catch {
+          // fallback to regular prompt
+        }
+      }
+    }
+
     const { images } = this.chatContextValue;
     const imageAttachments = await Promise.all(
       images?.map(image => readBlobAsURL(image))
