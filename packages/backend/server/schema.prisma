@@ -223,6 +223,15 @@ model Workspace {
   docGrants                  DocGrant[]
   mcpCredentials             McpCredential[]
   artifacts                  WorkspaceArtifact[]
+  moduleSettings             WorkspaceModuleSetting?
+  trackerProjects            WorkspaceTrackerProject[]
+  trackerIssues              WorkspaceTrackerIssue[]
+  trackerSprints             WorkspaceTrackerSprint[]
+  chatChannels               WorkspaceChatChannel[]
+  officeRooms                WorkspaceOfficeRoom[]
+  crmContacts                WorkspaceCrmContact[]
+  crmDeals                   WorkspaceCrmDeal[]
+  calendarEvents             WorkspaceCalendarEvent[]
 
   @@index([lastCheckEmbeddings])
   @@index([createdAt])
@@ -1554,7 +1563,7 @@ model AiUserCreditAccount {
   createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user         User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
   transactions AiCreditTransaction[]
 
   @@map("ai_user_credit_accounts")
@@ -1572,7 +1581,7 @@ model AiCreditTransaction {
   metadata     Json?    @db.JsonB
   createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
 
-  account      AiUserCreditAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  account AiUserCreditAccount @relation(fields: [accountId], references: [id], onDelete: Cascade)
 
   @@index([userId, createdAt])
   @@index([accountId])
@@ -1592,7 +1601,7 @@ model AiUserByokKey {
   createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user         User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, provider])
   @@index([userId])
@@ -1600,22 +1609,22 @@ model AiUserByokKey {
 }
 
 model AiAgent {
-  id               String        @id @default(uuid()) @db.VarChar
-  workspaceId      String?       @map("workspace_id") @db.VarChar
-  createdBy        String        @map("created_by") @db.VarChar
-  name             String        @db.VarChar
-  description      String?       @db.Text
-  systemPrompt     String        @map("system_prompt") @db.Text
-  modelId          String        @default("auto") @map("model_id") @db.VarChar
-  isReviewRequired Boolean       @default(false) @map("is_review_required")
-  subAgents        Json?         @map("sub_agents") @db.JsonB
-  tools            Json?         @db.JsonB
-  isSystem         Boolean       @default(false) @map("is_system")
-  createdAt        DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt        DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
+  id               String   @id @default(uuid()) @db.VarChar
+  workspaceId      String?  @map("workspace_id") @db.VarChar
+  createdBy        String   @map("created_by") @db.VarChar
+  name             String   @db.VarChar
+  description      String?  @db.Text
+  systemPrompt     String   @map("system_prompt") @db.Text
+  modelId          String   @default("auto") @map("model_id") @db.VarChar
+  isReviewRequired Boolean  @default(false) @map("is_review_required")
+  subAgents        Json?    @map("sub_agents") @db.JsonB
+  tools            Json?    @db.JsonB
+  isSystem         Boolean  @default(false) @map("is_system")
+  createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt        DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user             User          @relation(fields: [createdBy], references: [id], onDelete: Cascade)
-  tasks            AiAgentTask[]
+  user  User          @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  tasks AiAgentTask[]
 
   @@index([createdBy])
   @@index([workspaceId])
@@ -1642,8 +1651,8 @@ model AiAgentTask {
   createdAt      DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt      DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  agent          AiAgent   @relation(fields: [agentId], references: [id], onDelete: Cascade)
-  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  agent AiAgent @relation(fields: [agentId], references: [id], onDelete: Cascade)
+  user  User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([agentId])
   @@index([userId, status])
@@ -1652,21 +1661,21 @@ model AiAgentTask {
 }
 
 model AiSkill {
-  id           String   @id @default(uuid()) @db.VarChar
-  userId       String   @map("user_id") @db.VarChar
-  workspaceId  String?  @map("workspace_id") @db.VarChar
-  name         String   @db.VarChar
-  slug         String   @db.VarChar
-  description  String?  @db.Text
-  version      String   @default("1.0.0") @db.VarChar
-  isPublic     Boolean  @default(false) @map("is_public")
-  isSystem     Boolean  @default(false) @map("is_system")
-  frontmatter  Json?    @db.JsonB
-  content      String   @db.Text
-  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt    DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  id          String   @id @default(uuid()) @db.VarChar
+  userId      String   @map("user_id") @db.VarChar
+  workspaceId String?  @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  slug        String   @db.VarChar
+  description String?  @db.Text
+  version     String   @default("1.0.0") @db.VarChar
+  isPublic    Boolean  @default(false) @map("is_public")
+  isSystem    Boolean  @default(false) @map("is_system")
+  frontmatter Json?    @db.JsonB
+  content     String   @db.Text
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, slug])
   @@index([workspaceId])
@@ -1688,7 +1697,7 @@ model AiMcpConnection {
   createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt   DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([tokenHash])
@@ -1709,7 +1718,7 @@ model AiExternalMcpServer {
   createdAt           DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt           DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user                User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
   @@index([workspaceId])
@@ -1730,7 +1739,7 @@ model AiSpendingLimit {
   createdAt             DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt             DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([userId, workspaceId])
   @@index([userId])
@@ -1738,14 +1747,14 @@ model AiSpendingLimit {
 }
 
 model AiPolicyControl {
-  id                      String   @id @default(uuid()) @db.VarChar
-  workspaceId             String   @unique @map("workspace_id") @db.VarChar
-  allowedModels           Json     @map("allowed_models") @db.JsonB
-  allowedAgents           Json     @map("allowed_agents") @db.JsonB
-  maxCreditPerRequest     Int      @default(100) @map("max_credit_per_request")
+  id                       String   @id @default(uuid()) @db.VarChar
+  workspaceId              String   @unique @map("workspace_id") @db.VarChar
+  allowedModels            Json     @map("allowed_models") @db.JsonB
+  allowedAgents            Json     @map("allowed_agents") @db.JsonB
+  maxCreditPerRequest      Int      @default(100) @map("max_credit_per_request")
   requireApprovalForAgents Boolean  @default(false) @map("require_approval_for_agents")
-  createdAt               DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
-  updatedAt               DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+  createdAt                DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt                DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
   @@map("ai_policy_controls")
 }
@@ -1766,7 +1775,7 @@ model AiDocumentChangeHistory {
   createdAt        DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt        DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([docId])
   @@index([userId])
@@ -1788,9 +1797,217 @@ model AiDatabaseColumnPermission {
   createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
   updatedAt     DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
 
-  user          User     @relation(fields: [createdBy], references: [id], onDelete: Cascade)
+  user User @relation(fields: [createdBy], references: [id], onDelete: Cascade)
 
   @@index([databaseId, propertyId])
   @@index([createdBy])
   @@map("ai_database_column_permissions")
+}
+
+model WorkspaceModuleSetting {
+  id            String   @id @default(uuid()) @db.VarChar
+  workspaceId   String   @unique @map("workspace_id") @db.VarChar
+  enableTracker Boolean  @default(true) @map("enable_tracker")
+  enableChat    Boolean  @default(true) @map("enable_chat")
+  enableDocs    Boolean  @default(true) @map("enable_docs")
+  enableOffice  Boolean  @default(true) @map("enable_office")
+  createdAt     DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt     DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("workspace_module_settings")
+}
+
+model WorkspaceTrackerProject {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  key         String   @db.VarChar
+  description String?  @db.Text
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  workspace Workspace                @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  issues    WorkspaceTrackerIssue[]
+  sprints   WorkspaceTrackerSprint[]
+
+  @@index([workspaceId])
+  @@map("workspace_tracker_projects")
+}
+
+model WorkspaceTrackerSprint {
+  id          String    @id @default(uuid()) @db.VarChar
+  workspaceId String    @map("workspace_id") @db.VarChar
+  projectId   String    @map("project_id") @db.VarChar
+  name        String    @db.VarChar
+  status      String    @default("planned") @db.VarChar
+  startDate   DateTime? @map("start_date") @db.Timestamptz(3)
+  endDate     DateTime? @map("end_date") @db.Timestamptz(3)
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace               @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  project   WorkspaceTrackerProject @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  issues    WorkspaceTrackerIssue[]
+
+  @@index([workspaceId, projectId])
+  @@map("workspace_tracker_sprints")
+}
+
+model WorkspaceTrackerIssue {
+  id           String    @id @default(uuid()) @db.VarChar
+  workspaceId  String    @map("workspace_id") @db.VarChar
+  projectId    String    @map("project_id") @db.VarChar
+  sprintId     String?   @map("sprint_id") @db.VarChar
+  title        String    @db.VarChar
+  description  String?   @db.Text
+  status       String    @default("todo") @db.VarChar
+  priority     String    @default("medium") @db.VarChar
+  assignee     String?   @db.VarChar
+  reporter     String?   @db.VarChar
+  estimate     Int       @default(0)
+  labels       Json?     @db.JsonB
+  linkedDocIds Json?     @map("linked_doc_ids") @db.JsonB
+  dueDate      DateTime? @map("due_date") @db.Timestamptz(3)
+  createdAt    DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt    DateTime  @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  workspace Workspace                 @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  project   WorkspaceTrackerProject   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  sprint    WorkspaceTrackerSprint?   @relation(fields: [sprintId], references: [id], onDelete: SetNull)
+  timeLogs  WorkspaceTrackerTimeLog[]
+
+  @@index([workspaceId, projectId])
+  @@index([sprintId])
+  @@map("workspace_tracker_issues")
+}
+
+model WorkspaceTrackerTimeLog {
+  id               String   @id @default(uuid()) @db.VarChar
+  issueId          String   @map("issue_id") @db.VarChar
+  userId           String   @map("user_id") @db.VarChar
+  userName         String   @map("user_name") @db.VarChar
+  timeSpentMinutes Int      @map("time_spent_minutes")
+  description      String?  @db.Text
+  loggedAt         DateTime @default(now()) @map("logged_at") @db.Timestamptz(3)
+
+  issue WorkspaceTrackerIssue @relation(fields: [issueId], references: [id], onDelete: Cascade)
+
+  @@index([issueId])
+  @@map("workspace_tracker_time_logs")
+}
+
+model WorkspaceChatChannel {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  description String?  @db.Text
+  topic       String?  @db.Text
+  isPrivate   Boolean  @default(false) @map("is_private")
+  members     Json?    @db.JsonB
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace              @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  messages  WorkspaceChatMessage[]
+
+  @@index([workspaceId])
+  @@map("workspace_chat_channels")
+}
+
+model WorkspaceChatMessage {
+  id           String   @id @default(uuid()) @db.VarChar
+  channelId    String   @map("channel_id") @db.VarChar
+  parentId     String?  @map("parent_id") @db.VarChar
+  senderId     String   @map("sender_id") @db.VarChar
+  senderName   String   @map("sender_name") @db.VarChar
+  senderAvatar String?  @map("sender_avatar") @db.Text
+  content      String   @db.Text
+  attachments  Json?    @db.JsonB
+  reactions    Json?    @db.JsonB
+  createdAt    DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  channel WorkspaceChatChannel @relation(fields: [channelId], references: [id], onDelete: Cascade)
+
+  @@index([channelId])
+  @@index([parentId])
+  @@map("workspace_chat_messages")
+}
+
+model WorkspaceOfficeRoom {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  type        String   @default("meeting") @db.VarChar
+  description String?  @db.Text
+  capacity    Int      @default(8)
+  isLocked    Boolean  @default(false) @map("is_locked")
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("workspace_office_rooms")
+}
+
+model WorkspaceCrmContact {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  email       String?  @db.VarChar
+  phone       String?  @db.VarChar
+  company     String?  @db.VarChar
+  role        String?  @db.VarChar
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("workspace_crm_contacts")
+}
+
+model WorkspaceCrmDeal {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  title       String   @db.VarChar
+  value       Float    @default(0)
+  stage       String   @default("lead") @db.VarChar
+  contactName String?  @map("contact_name") @db.VarChar
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("workspace_crm_deals")
+}
+
+model WorkspaceAtsCandidate {
+  id          String   @id @default(uuid()) @db.VarChar
+  workspaceId String   @map("workspace_id") @db.VarChar
+  name        String   @db.VarChar
+  role        String   @db.VarChar
+  stage       String   @default("applied") @db.VarChar
+  email       String?  @db.VarChar
+  notes       String?  @db.Text
+  createdAt   DateTime @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  @@index([workspaceId])
+  @@map("workspace_ats_candidates")
+}
+
+model WorkspaceCalendarEvent {
+  id          String    @id @default(uuid()) @db.VarChar
+  workspaceId String    @map("workspace_id") @db.VarChar
+  title       String    @db.VarChar
+  description String?   @db.Text
+  startDate   DateTime  @map("start_date") @db.Timestamptz(3)
+  endDate     DateTime? @map("end_date") @db.Timestamptz(3)
+  location    String?   @db.VarChar
+  isAllDay    Boolean   @default(false) @map("is_all_day")
+  createdAt   DateTime  @default(now()) @map("created_at") @db.Timestamptz(3)
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@map("workspace_calendar_events")
 }

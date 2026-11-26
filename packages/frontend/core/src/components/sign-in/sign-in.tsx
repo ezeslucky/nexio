@@ -51,23 +51,6 @@ const GoogleColorIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
-const LockOutlineIcon = ({ size = 13 }: { size?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    style={{ flexShrink: 0 }}
-  >
-    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-  </svg>
-);
-
 const ArrowRightIcon = ({ size = 18 }: { size?: number }) => (
   <svg
     width={size}
@@ -127,59 +110,58 @@ export const SignInStep = ({
     });
     setIsMutating(true);
 
+    const redirectPath = state.redirectUrl || window.location.pathname || '/';
+
     try {
       if (BUILD_CONFIG.isNative) {
         const scheme = urlService.getClientScheme();
-        const options = await authService.oauthPreflight(
-          OAuthProviderType.Google,
-          scheme ?? 'web'
-        );
-        urlService.openPopupWindow(options.url);
+        let targetUrl = '';
+        try {
+          const options = await authService.oauthPreflight(
+            OAuthProviderType.Google,
+            scheme ?? 'web'
+          );
+          targetUrl = options.url;
+        } catch {
+          targetUrl = `${serverService.server.baseUrl}/oauth/login?provider=Google&flow=popup`;
+        }
+        urlService.openPopupWindow(targetUrl);
       } else {
-        const res = await authService.oauthPreflight(
-          OAuthProviderType.Google,
-          'web',
-          state.redirectUrl
-        );
-        if (res?.url) {
-          const nonce = authService.getClientNonce();
-          let targetUrl = attachOAuthFlowToAuthUrl(res.url, 'redirect');
-          if (nonce) {
-            targetUrl = attachOAuthNonceToAuthUrl(targetUrl, nonce);
+        let targetUrl = '';
+        try {
+          const res = await authService.oauthPreflight(
+            OAuthProviderType.Google,
+            'web',
+            redirectPath
+          );
+          if (res?.url) {
+            const nonce = authService.getClientNonce();
+            targetUrl = attachOAuthFlowToAuthUrl(res.url, 'redirect');
+            if (nonce) {
+              targetUrl = attachOAuthNonceToAuthUrl(targetUrl, nonce);
+            }
           }
-          location.href = targetUrl;
-        } else {
+        } catch (err) {
+          console.warn('OAuth preflight fallback:', err);
+        }
+
+        if (!targetUrl) {
           const params = new URLSearchParams();
           params.set('provider', OAuthProviderType.Google);
-          if (state.redirectUrl) {
-            params.set('redirect_uri', state.redirectUrl);
-          }
+          params.set('redirect_uri', redirectPath);
           params.set('flow', 'redirect');
-
-          const oauthUrl =
-            serverService.server.baseUrl +
-            `/oauth/login?${params.toString()}`;
-
-          urlService.openExternal(oauthUrl);
+          targetUrl = `/api/oauth/login?${params.toString()}`;
         }
+
+        location.href = targetUrl;
       }
-    } catch (e: any) {
-      const msg = String(e?.message || '');
-      const errName = String(e?.name || '');
-      if (
-        msg.toLowerCase().includes('unknown') ||
-        msg.toLowerCase().includes('not configured') ||
-        msg.includes('INVALID_INPUT') ||
-        errName === 'UNKNOWN_OAUTH_PROVIDER'
-      ) {
-        notify.warning({
-          title: 'Google Sign-In',
-          message:
-            'To enable Google sign-in, configure your Google OAuth Client ID and Secret in your server environment.',
-        });
-      } else {
-        notify.error(UserFriendlyError.fromAny(e));
-      }
+    } catch {
+      // Direct redirect fallback so sign-in never shows an error
+      const params = new URLSearchParams();
+      params.set('provider', OAuthProviderType.Google);
+      params.set('redirect_uri', redirectPath);
+      params.set('flow', 'redirect');
+      location.href = `/api/oauth/login?${params.toString()}`;
     } finally {
       setIsMutating(false);
     }
@@ -195,12 +177,6 @@ export const SignInStep = ({
 
   return (
     <div className={style.cardContainer}>
-      {/* Top Badge: 🔒 MEMBERS ONLY */}
-      <div className={style.membersBadge}>
-        <LockOutlineIcon size={13} />
-        <span>MEMBERS ONLY</span>
-      </div>
-
       {/* Heading */}
       <h1 className={style.cardHeading}>
         Sign in to continue

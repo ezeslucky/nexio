@@ -114,24 +114,6 @@ export const cardContainer = style({
   },
 });
 
-export const membersBadge = style({
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '6px',
-  padding: '4px 12px',
-  borderRadius: '9999px',
-  border: '1px solid var(--affine-border-color, #e5e7eb)',
-  backgroundColor: 'var(--affine-background-primary-color, #ffffff)',
-  color: 'var(--affine-text-secondary-color, #6b7280)',
-  fontSize: '11px',
-  fontWeight: 700,
-  letterSpacing: '0.12em',
-  textTransform: 'uppercase',
-  width: 'fit-content',
-  marginBottom: '20px',
-  userSelect: 'none',
-});
-
 export const cardHeading = style({
   fontSize: '26px',
   fontWeight: 700,

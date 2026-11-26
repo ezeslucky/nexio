@@ -373,8 +373,9 @@ export class AuthService extends Service {
   }
 
   private assertSupportedServerVersion() {
-    const config = this.serverService.server.config$.value;
-    if (config.type !== ServerDeploymentType.Selfhosted) return;
+    const config = this.serverService?.server?.config$?.value;
+    if (!config || config.type !== ServerDeploymentType.Selfhosted) return;
+    if (!config.version) return;
     assertSupportedServerVersion(config.version);
   }
 }

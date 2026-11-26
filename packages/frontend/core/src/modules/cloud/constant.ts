@@ -17,9 +17,14 @@ export const BUILD_IN_SERVERS: (ServerMetadata & { config: ServerConfig })[] =
           // this is ok for web app, but not for desktop app
           // since we never build desktop app in selfhosted mode, so it's fine
           config: {
+            version: '0.27.5',
             serverName: DEFAULT_SELF_HOSTED_SERVER_NAME,
-            features: [],
-            oauthProviders: [],
+            features: [
+              ServerFeature.OAuth,
+              ServerFeature.LocalWorkspace,
+              ServerFeature.Copilot,
+            ],
+            oauthProviders: [OAuthProviderType.Google],
             type: ServerDeploymentType.Selfhosted,
             credentialsRequirement: {
               password: {

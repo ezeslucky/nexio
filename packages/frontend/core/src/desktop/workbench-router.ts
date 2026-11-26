@@ -6,6 +6,34 @@ export const workbenchRoutes = [
     lazy: () => import('./pages/workspace/chat/index'),
   },
   {
+    path: '/tracker',
+    lazy: () => import('./pages/workspace/tracker/index'),
+  },
+  {
+    path: '/channels',
+    lazy: () => import('./pages/workspace/chat-channels/index'),
+  },
+  {
+    path: '/office',
+    lazy: () => import('./pages/workspace/virtual-office/index'),
+  },
+  {
+    path: '/calendar',
+    lazy: () => import('./pages/workspace/calendar/index'),
+  },
+  {
+    path: '/crm',
+    lazy: () => import('./pages/workspace/crm/index'),
+  },
+  {
+    path: '/recruiting',
+    lazy: () => import('./pages/workspace/crm/index'),
+  },
+  {
+    path: '/activity',
+    lazy: () => import('./pages/workspace/cross-features/activity-feed-page'),
+  },
+  {
     path: '/all',
     lazy: () => import('./pages/workspace/all-page/all-page'),
   },

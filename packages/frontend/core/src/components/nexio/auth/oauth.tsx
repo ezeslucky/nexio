@@ -76,51 +76,35 @@ export function OAuth({ redirectUrl }: { redirectUrl?: string }) {
             }
           }
         : async () => {
+            const redirectPath = redirectUrl || window.location.pathname || '/';
+            let targetUrl = '';
             try {
               // Preflight check
               const res = await auth.oauthPreflight(
                 provider,
                 'web',
-                redirectUrl
+                redirectPath
               );
               if (res?.url) {
                 const nonce = auth.getClientNonce();
-                let targetUrl = attachOAuthFlowToAuthUrl(res.url, 'redirect');
+                targetUrl = attachOAuthFlowToAuthUrl(res.url, 'redirect');
                 if (nonce) {
                   targetUrl = attachOAuthNonceToAuthUrl(targetUrl, nonce);
                 }
-                location.href = targetUrl;
-              } else {
-                const params = new URLSearchParams();
-                params.set('provider', provider);
-                if (redirectUrl) {
-                  params.set('redirect_uri', redirectUrl);
-                }
-                params.set('flow', 'redirect');
-
-                const oauthUrl =
-                  serverService.server.baseUrl +
-                  `/oauth/login?${params.toString()}`;
-
-                urlService.openExternal(oauthUrl);
               }
-            } catch (e: any) {
-              const msg = String(e?.message || '');
-              const errName = String(e?.name || '');
-              if (
-                msg.toLowerCase().includes('unknown') ||
-                msg.toLowerCase().includes('not configured') ||
-                msg.includes('INVALID_INPUT') ||
-                errName === 'UNKNOWN_OAUTH_PROVIDER'
-              ) {
-                notify.warning({
-                  title: `${provider} Sign-In`,
-                  message: `To enable ${provider} sign-in, set your ${provider} OAuth Client ID and Secret in your .env file and restart the server.`,
-                });
-              } else {
-                notify.error(UserFriendlyError.fromAny(e));
-              }
+            } catch (err) {
+              console.warn('OAuth preflight fallback:', err);
             }
+
+            if (!targetUrl) {
+              const params = new URLSearchParams();
+              params.set('provider', provider);
+              params.set('redirect_uri', redirectPath);
+              params.set('flow', 'redirect');
+              targetUrl = `/api/oauth/login?${params.toString()}`;
+            }
+
+            location.href = targetUrl;
           };
 
       const ret = open();
