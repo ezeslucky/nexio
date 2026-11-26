@@ -1,0 +1,248 @@
+/* ==========================================================================
+   Huly Design System & Signature Animations for Nexio
+   Inspired by Huly Platform (https://github.com/hcengineering/platform)
+   ========================================================================== */
+
+:root {
+  --huly-bg-canvas: #090a0f;
+  --huly-bg-surface: rgba(18, 21, 29, 0.72);
+  --huly-bg-surface-hover: rgba(26, 31, 44, 0.85);
+  --huly-bg-elevated: #151821;
+  --huly-bg-card: rgba(20, 24, 34, 0.85);
+  
+  --huly-border: rgba(255, 255, 255, 0.08);
+  --huly-border-hover: rgba(255, 255, 255, 0.16);
+  --huly-border-active: rgba(99, 102, 241, 0.45);
+  
+  --huly-accent-indigo: #6366f1;
+  --huly-accent-indigo-glow: rgba(99, 102, 241, 0.35);
+  --huly-accent-violet: #8b5cf6;
+  --huly-accent-cyan: #06b6d4;
+  --huly-accent-emerald: #10b981;
+  --huly-accent-amber: #f59e0b;
+  --huly-accent-rose: #f43f5e;
+
+  --huly-text-primary: #f8fafc;
+  --huly-text-secondary: #94a3b8;
+  --huly-text-muted: #64748b;
+
+  --huly-glow-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.3);
+  --huly-card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+  --huly-card-shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(99, 102, 241, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  
+  --huly-bezier-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --huly-bezier-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Keyframe Animations
+   ========================================================================== */
+
+@keyframes hulyFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hulyScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes hulySlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hulyPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(99, 102, 241, 0);
+  }
+}
+
+@keyframes hulyAudioWave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 18px;
+  }
+}
+
+@keyframes hulyFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes hulyShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes & Components
+   ========================================================================== */
+
+/* Huly Deep Space Dot-Matrix Grid Background */
+.huly-grid-bg {
+  background-color: var(--huly-bg-canvas) !important;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+}
+
+/* Huly Glassmorphism Card with Micro-interaction Lift */
+.huly-card {
+  background: var(--huly-bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--huly-border);
+  border-radius: 10px;
+  box-shadow: var(--huly-card-shadow);
+  transition: transform 0.22s var(--huly-bezier-spring), box-shadow 0.22s var(--huly-bezier-spring), border-color 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.huly-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--huly-border-hover);
+  box-shadow: var(--huly-card-shadow-hover);
+}
+
+.huly-card:active {
+  transform: translateY(0) scale(0.99);
+}
+
+/* Glass Panel (Drawer, Modal, Bar) */
+.huly-glass-panel {
+  background: var(--huly-bg-surface) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid var(--huly-border) !important;
+  box-shadow: 0 16px 40px -8px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Huly Buttons with Active Feedback */
+.huly-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.18s var(--huly-bezier-spring);
+  cursor: pointer;
+  user-select: none;
+}
+
+.huly-btn:hover {
+  transform: translateY(-1px);
+}
+
+.huly-btn:active {
+  transform: scale(0.97);
+}
+
+.huly-btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35) !important;
+}
+
+.huly-btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5) !important;
+  filter: brightness(1.05);
+}
+
+.huly-btn-ghost {
+  background: transparent !important;
+  color: var(--huly-text-secondary) !important;
+  border: 1px solid transparent !important;
+}
+
+.huly-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--huly-text-primary) !important;
+  border-color: var(--huly-border) !important;
+}
+
+/* Floating Status Pills */
+.huly-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background 0.15s ease;
+}
+
+/* Status Dot with Radial Neon Glow */
+.huly-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.huly-dot-pulse {
+  animation: hulyPulseGlow 2s infinite ease-in-out;
+}
+
+/* Sleek Minimalist Scrollbars */
+.huly-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.huly-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.huly-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+.huly-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Smooth Drawer Entrance */
+.huly-drawer-enter {
+  animation: hulySlideInRight 0.28s var(--huly-bezier-spring) forwards;
+}
+
+/* Smooth Modal Entrance */
+.huly-modal-enter {
+  animation: hulyScaleUp 0.22s var(--huly-bezier-spring) forwards;
+}

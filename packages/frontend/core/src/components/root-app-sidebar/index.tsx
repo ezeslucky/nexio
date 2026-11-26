@@ -53,6 +53,7 @@ import { TrashButton } from './trash-button';
 import { UpdaterButton } from './updater-button';
 import UserInfo from './user-info';
 import { WorkflowEntrance } from './workflow-entrance';
+import { ModuleSwitcher } from './module-switcher';
 
 export type RootAppSidebarProps = {
   isPublicWorkspace: boolean;
@@ -108,6 +109,70 @@ const AIChatButton = () => {
   return (
     <MenuLinkItem icon={<AiOutlineIcon />} active={aiChatActive} to={'/chat'}>
       <span data-testid="ai-chat">Intelligence</span>
+    </MenuLinkItem>
+  );
+};
+
+const TrackerEntrance = () => {
+  const workbench = useService(WorkbenchService).workbench;
+  const active = useLiveData(
+    workbench.location$.selector(location => location.pathname.startsWith('/tracker'))
+  );
+
+  return (
+    <MenuLinkItem
+      icon={
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="m9 12 2 2 4-4" />
+        </svg>
+      }
+      active={active}
+      to={'/tracker'}
+    >
+      <span data-testid="sidebar-tracker-entrance">Tracker</span>
+    </MenuLinkItem>
+  );
+};
+
+const ChannelsEntrance = () => {
+  const workbench = useService(WorkbenchService).workbench;
+  const active = useLiveData(
+    workbench.location$.selector(location => location.pathname.startsWith('/channels'))
+  );
+
+  return (
+    <MenuLinkItem
+      icon={
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+        </svg>
+      }
+      active={active}
+      to={'/channels'}
+    >
+      <span data-testid="sidebar-channels-entrance">Channels</span>
+    </MenuLinkItem>
+  );
+};
+
+const VirtualOfficeEntrance = () => {
+  const workbench = useService(WorkbenchService).workbench;
+  const active = useLiveData(
+    workbench.location$.selector(location => location.pathname.startsWith('/office'))
+  );
+
+  return (
+    <MenuLinkItem
+      icon={
+        <svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 21h18M3 7v14M21 7v14M9 3h6v18H9zM9 7h6M9 11h6M9 15h6" />
+        </svg>
+      }
+      active={active}
+      to={'/office'}
+    >
+      <span data-testid="sidebar-office-entrance">Virtual Office</span>
     </MenuLinkItem>
   );
 };
@@ -194,6 +259,7 @@ export const RootAppSidebar = memo((): ReactElement => {
           </div>
           <UserInfo />
         </div>
+        <ModuleSwitcher />
         <div className={quickSearchAndNewPage}>
           <QuickSearchInput
             className={quickSearch}
@@ -204,6 +270,9 @@ export const RootAppSidebar = memo((): ReactElement => {
           <AddPageButton />
         </div>
         <AllDocsButton />
+        <TrackerEntrance />
+        <ChannelsEntrance />
+        <VirtualOfficeEntrance />
         <TemplateDocEntrance />
         <AppSidebarJournalButton />
         {sessionStatus === 'authenticated' && <NotificationButton />}

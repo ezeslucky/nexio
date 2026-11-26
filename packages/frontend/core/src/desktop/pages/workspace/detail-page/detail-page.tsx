@@ -1,4 +1,4 @@
-﻿import { Scrollable } from '@nexio/component';
+import { Scrollable } from '@nexio/component';
 import { PageDetailLoading } from '@nexio/component/page-detail-skeleton';
 import { AIAppEvents, type AIChatParams } from '@nexio/core/blocksuite/ai';
 import type { NexioEditorContainer } from '@nexio/core/blocksuite/block-suite-editor';
@@ -72,6 +72,7 @@ import { EditorChatPanel } from './tabs/chat';
 import { EditorFramePanel } from './tabs/frame';
 import { EditorJournalPanel } from './tabs/journal';
 import { EditorOutlinePanel } from './tabs/outline';
+import { DocCollabTab } from '../doc-collaboration/doc-collab-tab';
 
 const DetailPageImpl = memo(function DetailPageImpl() {
   const {
@@ -444,6 +445,16 @@ const DetailPageImpl = memo(function DetailPageImpl() {
           </Scrollable.Root>
         </ViewSidebarTab>
       )}
+
+      {/* Phase 4: Collaborative Documents (Linked Issues, Version Snapshots, Discussions) */}
+      <ViewSidebarTab tabId="doc-collaboration" icon={<span style={{ fontSize: 16 }}>🤝</span>}>
+        <Scrollable.Root className={styles.sidebarScrollArea}>
+          <Scrollable.Viewport>
+            <DocCollabTab workspaceId={workspace.id} docId={doc.id} />
+          </Scrollable.Viewport>
+          <Scrollable.Scrollbar />
+        </Scrollable.Root>
+      </ViewSidebarTab>
 
       <GlobalPageHistoryModal />
       {/* FIXME: wait for better ai, <PageAIOnboarding /> */}

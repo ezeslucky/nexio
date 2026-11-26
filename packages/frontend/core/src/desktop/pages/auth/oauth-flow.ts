@@ -10,14 +10,22 @@ export function resolveOAuthFlowMode(
 }
 
 export function attachOAuthFlowToAuthUrl(url: string, flow: OAuthFlowMode) {
-  const authUrl = new URL(url);
-  const state = authUrl.searchParams.get('state');
-  if (!state) return url;
-
   try {
+    const base =
+      typeof window !== 'undefined'
+        ? window.location.origin
+        : 'http://localhost:8080';
+    const authUrl = new URL(url, base);
+    const state = authUrl.searchParams.get('state');
+    if (!state) {
+      return url;
+    }
+
     const payload = JSON.parse(state) as Record<string, unknown>;
     authUrl.searchParams.set('state', JSON.stringify({ ...payload, flow }));
-    return authUrl.toString();
+    return url.startsWith('http://') || url.startsWith('https://')
+      ? authUrl.toString()
+      : authUrl.pathname + authUrl.search + authUrl.hash;
   } catch {
     return url;
   }
@@ -35,17 +43,25 @@ export function readOAuthFlowModeFromCallbackState(state: string | null) {
 }
 
 export function attachOAuthNonceToAuthUrl(url: string, nonce: string) {
-  const authUrl = new URL(url);
-  const state = authUrl.searchParams.get('state');
-  if (!state) return url;
-
   try {
+    const base =
+      typeof window !== 'undefined'
+        ? window.location.origin
+        : 'http://localhost:8080';
+    const authUrl = new URL(url, base);
+    const state = authUrl.searchParams.get('state');
+    if (!state) {
+      return url;
+    }
+
     const payload = JSON.parse(state) as Record<string, unknown>;
     authUrl.searchParams.set(
       'state',
       JSON.stringify({ ...payload, clientNonce: nonce })
     );
-    return authUrl.toString();
+    return url.startsWith('http://') || url.startsWith('https://')
+      ? authUrl.toString()
+      : authUrl.pathname + authUrl.search + authUrl.hash;
   } catch {
     return url;
   }
